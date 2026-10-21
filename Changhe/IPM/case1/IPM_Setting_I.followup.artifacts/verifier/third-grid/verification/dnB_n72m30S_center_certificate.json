@@ -1,0 +1,74 @@
+{
+  "date_start": "2026-10-20T20:40:55.949189+00:00",
+  "date_end": "2026-10-20T20:40:56.057737+00:00",
+  "precision_bits": 256,
+  "source": "verifier/third-grid/data/dnB_n72m30S.npz",
+  "source_md5": "c81d083063696cae2087d72351ea2526",
+  "source_sha256": "0e6451d38f74e863eec5c193dfed79a0227de691767f21d8254bfefe8dbf75c8",
+  "exact_json": "data/dnB_n72m30S_exact.json",
+  "exact_json_sha256": "d438cc23d06d2ca2a0605f7ee457268b1d6790346efd88198f2d14fc6de63d65",
+  "N": 72,
+  "M": 30,
+  "c_l": 5.562978288494869,
+  "c64": "[15.688933546678459506127368633385548559936935198882 +/- 3.28e-49]",
+  "c96": "[15.688933546678459506127368633385548559936935198882 +/- 3.28e-49]",
+  "periodic": {
+    "J": 512,
+    "strip_a": "1/4",
+    "strip_bound": "[34.73871717388565455410161598862286864698 +/- 3.01e-40]",
+    "quadrature_remainder": "[1.394405302225614624693454764706108899135e-52 +/- 2.13e-92]",
+    "quadrature_sum_contribution": "[15.6889335466784595061273686333855485599369352 +/- 1.12e-45]",
+    "c": "[15.6889335466784595061273686333855485599369352 +/- 1.12e-45]"
+  },
+  "certificates_overlap": true,
+  "first_self_consistency_ball": "[1.3188061477444801274649968499262004549378364221271e-6 +/- 1.09e-56]",
+  "second_self_consistency_ball": "[1.318806147744480127464996849926200454937836422e-6 +/- 2.67e-52]",
+  "self_consistency_contains_zero": false,
+  "c_midpoint_float": 15.68893354667846,
+  "self_consistency_midpoint_float": 1.31880614774448e-06,
+  "seconds": 0.1090480291750282,
+  "scope": "Exact represented field at ideal nodes; each formula has its own truncation bound. Overlap is a consistency check. This certifies only the canonical center moment, not a full residual or a profile.",
+  "dependencies": [
+    {
+      "file": "verifier/third-grid/code/certify_center.py",
+      "sha256": "8590aec3879098db9a47a1fb6212b647091f985525de0484c51189e227edb11b"
+    },
+    {
+      "file": "verifier/third-grid/PROOF.md",
+      "sha256": "487bedf315b47b45ae09c67f58ce4b41b1f1c5ca0bf3a80e8e00b57f67890823"
+    },
+    {
+      "file": "verifier/center-moment/code/certify.py",
+      "sha256": "f766337bd2bcb34529e098a8ca84f3c699d51d94e1c4699c55fe8e439f40ad04"
+    },
+    {
+      "file": "verifier/center-moment-trapezoid/code/certify.py",
+      "sha256": "d596167891ed35f700adac65c62c55baf04b363589ebb585fa34f413ff22f6a6"
+    },
+    {
+      "file": "verifier/center-moment/PROOF.md",
+      "sha256": "dbd419c62264580d7381a1d9d7a9d3524c9f4835fbf5adf984daac15e5106868"
+    },
+    {
+      "file": "verifier/center-moment-trapezoid/PROOF.md",
+      "sha256": "6a585abaf89fc3cc0710f1b20544dbe21826939001645cb301d35213f5e108d6"
+    },
+    {
+      "file": "verifier/inner-cutoff/code/hessian.py",
+      "sha256": "cc49c9d567530abe744ab5295c43c176c72b8c2ceac175e10b4f10c17cb4c535"
+    },
+    {
+      "file": "verifier/exact-data/code/nodal_input.py",
+      "sha256": "3c5f4c2f9b304bbc8d8463e4a4237a89af91b803ab3f6e6f88fdf3913f227e75"
+    },
+    {
+      "file": "verifier/third-grid/data/dnB_n72m30S.npz",
+      "sha256": "0e6451d38f74e863eec5c193dfed79a0227de691767f21d8254bfefe8dbf75c8"
+    },
+    {
+      "file": "verifier/third-grid/data/dnB_n72m30S_exact.json",
+      "sha256": "d438cc23d06d2ca2a0605f7ee457268b1d6790346efd88198f2d14fc6de63d65"
+    }
+  ],
+  "complete": true
+}

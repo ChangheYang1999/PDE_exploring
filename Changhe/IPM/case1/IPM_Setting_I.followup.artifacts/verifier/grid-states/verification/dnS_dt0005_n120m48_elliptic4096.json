@@ -1,0 +1,80 @@
+{
+  "configuration": {
+    "density": "verifier/grid-states/data/dnS_dt0005_n120m48.npz",
+    "output": "verifier/grid-states/verification/dnS_dt0005_n120m48_elliptic4096.json",
+    "nang": 4096,
+    "order": 28,
+    "panel": 0.08,
+    "rmax": 1e+30,
+    "mode": "elliptic",
+    "points_file": "verifier/grid-states/verification/near_points.json",
+    "kernel": "split",
+    "offset": 0.37,
+    "difference_steps": ".0025",
+    "difference_orders": "8",
+    "density_step": 0.0005
+  },
+  "source_md5": "35f3672db73e30a89a460b1562e7ccda",
+  "cl": 5.5747198941051685,
+  "L": 8.0,
+  "rows": [
+    {
+      "point": [
+        8.6,
+        0.1
+      ],
+      "rho_x": 0.021866081598324587,
+      "checks": [
+        {
+          "difference_order": 8,
+          "h": 0.0025,
+          "DU": [
+            [
+              4.575322349124738,
+              0.014821836235620637
+            ],
+            [
+              -0.007044249492447514,
+              -4.5753223491510155
+            ]
+          ],
+          "E": 4.129743564479371e-09,
+          "E_normalized": 9.443262973127416e-08,
+          "E_over_rho_x": 1.888652772975931e-07,
+          "divU": -2.6277646725247905e-11,
+          "divU_normalized": 2.871671624426569e-12
+        }
+      ],
+      "seconds": 96.73256590100937
+    },
+    {
+      "point": [
+        8.6,
+        1.0
+      ],
+      "rho_x": 0.24211619307351415,
+      "checks": [
+        {
+          "difference_order": 8,
+          "h": 0.0025,
+          "DU": [
+            [
+              4.5425186908325745,
+              0.1582107648474547
+            ],
+            [
+              -0.08390540416343889,
+              -4.542518693344868
+            ]
+          ],
+          "E": -2.4062620562759207e-08,
+          "E_normalized": 4.969230156196127e-08,
+          "E_over_rho_x": 9.93845981852731e-08,
+          "divU": -2.512293484357997e-09,
+          "divU_normalized": 2.7653089119186486e-10
+        }
+      ],
+      "seconds": 96.61347338696942
+    }
+  ]
+}

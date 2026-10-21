@@ -1,0 +1,49 @@
+{
+  "checks": [
+    {
+      "family": "V",
+      "potential_laplacian_y_residual": "0",
+      "frozen_equation_y_residual": "0",
+      "G": {
+        "3": "(A - 1)*Abs(s)**(A - 1)/(6*s**2)",
+        "5": "(A - 3)*(A - 1)*Abs(s)**(A - 1)/(40*s**4)"
+      }
+    },
+    {
+      "family": "Q",
+      "potential_laplacian_y_residual": "0",
+      "frozen_equation_y_residual": "0",
+      "G": {
+        "3": "(2*A - 3)*Abs(s)**(2*A - 3)/(6*s)",
+        "5": "(2*A - 5)*(2*A - 3)*Abs(s)**(2*A - 3)/(40*s**3)"
+      }
+    }
+  ],
+  "Q2_fourth_derivative_at_minus_r": "3*r**3*y/(r**2 + y**2)**(5/2)",
+  "samples": [
+    {
+      "family": "V",
+      "A": "5/2",
+      "Z": {
+        "3": "r**(3/10)/4",
+        "5": "-3/(160*r**(9/10))"
+      }
+    },
+    {
+      "family": "Q",
+      "A": "7/4",
+      "Z": {
+        "3": "-r**(9/14)/12",
+        "5": "3/(160*r**(3/14))"
+      }
+    },
+    {
+      "family": "Q",
+      "A": "2",
+      "Z": {
+        "3": "-r/6",
+        "5": "1/40"
+      }
+    }
+  ]
+}

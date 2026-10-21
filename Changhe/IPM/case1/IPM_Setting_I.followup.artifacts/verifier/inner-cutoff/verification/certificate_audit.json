@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-20T19:43:32.424850+00:00",
+  "checks": "all source bytes, JSON equality and pins, dependencies, 750 point coverage and Hessian-bound/rational-hole relations, five center-ball flags",
+  "verdict": "CONFIRMED_OUTPUT_ASSEMBLY",
+  "rows": [
+    {
+      "source": "grid-states/data/dnB_n96m40S.npz",
+      "source_md5": "f5b77e128474f1f9da8e3051c22ad505",
+      "center_strain": "[15.72871516607236941703857335709891196378 +/- 5.79e-40]",
+      "identity": "[-6.547641122657821888253644007075626217828e-7 +/- 2.04e-47]",
+      "points_checked": 150,
+      "maximum_local_hole_exact": "17/400000000000000",
+      "maximum_local_hole_float": 4.25e-14
+    },
+    {
+      "source": "ritz-resolution/data/dnSB_n120m48.npz",
+      "source_md5": "0234b3634f747b0a50386d0359bea823",
+      "center_strain": "[15.72407785127203509719523202281692445028 +/- 3.14e-40]",
+      "identity": "[-2.247213869847817767854152750943913196553e-7 +/- 3.60e-47]",
+      "points_checked": 150,
+      "maximum_local_hole_exact": "17/400000000000000",
+      "maximum_local_hole_float": 4.25e-14
+    },
+    {
+      "source": "domain-states/data/dnB_n96m40SL4.npz",
+      "source_md5": "c103a60bbbf2279e7c21f4f5a2b580be",
+      "center_strain": "[15.72406804610115054791790827964036746548 +/- 2.46e-39]",
+      "identity": "[8.591355332206602237236725629992621129110e-7 +/- 4.15e-47]",
+      "points_checked": 150,
+      "maximum_local_hole_exact": "17/400000000000000",
+      "maximum_local_hole_float": 4.25e-14
+    },
+    {
+      "source": "fixed-cl-correction/data/n96m40S_radius0.05.npz",
+      "source_md5": "ecc8863fe40d7ef1908db1367bad3d67",
+      "center_strain": "[15.72871451130827076524947596712229389564 +/- 2.65e-39]",
+      "identity": "[-1.36139930914353877826394246856872094323e-14 +/- 5.02e-53]",
+      "points_checked": 150,
+      "maximum_local_hole_exact": "9/200000000000000",
+      "maximum_local_hole_float": 4.5e-14
+    },
+    {
+      "source": "fixed-cl-correction/data/n120m48_S_radius0.05.npz",
+      "source_md5": "23be917c8ad3967f205c614517c47d25",
+      "center_strain": "[15.72407762655065929776225588585088217339 +/- 2.96e-39]",
+      "identity": "[-1.11853488006484492328174986777867509926e-14 +/- 2.01e-53]",
+      "points_checked": 150,
+      "maximum_local_hole_exact": "9/200000000000000",
+      "maximum_local_hole_float": 4.5e-14
+    }
+  ],
+  "scope": "This output audit checks provenance and exact assembly, not a second enclosure computation of all Hessians."
+}

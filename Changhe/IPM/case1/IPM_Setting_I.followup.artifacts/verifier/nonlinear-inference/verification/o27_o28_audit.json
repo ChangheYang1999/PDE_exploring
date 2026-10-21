@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-20T15:00:43.108994+00:00",
+  "files": {
+    "lead-run-records/FINAL_REPORT.md": "9f1e5ef51fff557ce7a3b7cd84f9f062",
+    "lead-run-records/tmp/FINAL_REPORT.bak_1452a": "6dd8214d04264463881392036cce28ba",
+    "lead-run-records/tmp/s56/fr_fred38_dry.md": "e892916c8eacf55a5387b748963f6223",
+    "lead-run-records/tmp/s57/q1n2.txt": "fd07fad16f3ec1ec68e17876b18b4401",
+    "lead-run-records/tmp/s57/fr_q1n2_dry.md": "df11202f36337c63bb4fde3b88fb7dca",
+    "lead-run-records/tmp/s57/d11.txt": "318fcaf45aec3b8fd5b23466019022ed"
+  },
+  "difference_from_audited_o26": "--- audited_o26_dryrun\n+++ applied_report\n@@ -1356,7 +1356,7 @@\n ### 6.0 Timing and organization\n - T0 = 2026-10-20T00:46:19Z (start of the follow-up investigation); the investigation is limited to 24 hours, so T_end\n   is at the latest 2026-10-21T00:46:19Z.\n-- This section was last brought up to date at 2026-10-20T14:16Z, 13 h 30 min after T0; T_end is not yet reached.\n+- This section was last brought up to date at 2026-10-20T14:52Z, 14 h 6 min after T0; T_end is not yet reached.\n - Same organization as section 0: a lead researcher (analysis, specification, this report), a numerical researcher\n   (solver) and an independent verifier with separately written code; external referee audits for analytic claims.\n \n@@ -2747,7 +2747,7 @@\n   needed only at a candidate with B_3 = 0. No such trial exists, and no estimator for sampled trial data has been built.\n \n ### 6.5 The exact remaining gap\n-Status at 2026-10-20T14:16Z (interim; it is restated at the end of the investigation): neither endpoint is reached. The\n+Status at 2026-10-20T14:52Z (interim; it is restated at the end of the investigation): neither endpoint is reached. The\n gap is the following; items marked as heuristic are labelled readings from 6.4 and are not used as results.\n - Toward YES_inf. What is needed is a candidate at the full P_2 standard with B_3 = 0 (both estimators) and B_5, B_7\n   zero within their measured accuracies (6.1). For a candidate with bounded third trace at P (l_3 = 0), in particular\n@@ -4074,3 +4074,11 @@\n   identity of the velocity law (6.3.1 (j)). The obstruction to applying the frozen theorem to profiles is stated in 6.5\n   and the status note. Under the regularity of the class the fifth-order condition remains undecided; no endpoint\n   changed.\n+- 14:52 lead researcher: 6.3.1 (h) gains the conditional theorem Fifth order under summable fourth-derivative growth\n+  (for 1 < A < 2, transport, constant divergence, the class regularity and a summable weighted bound on the fourth\n+  derivatives of f and W in a left cone at P give l_5 = 0; bounded weighted quantities do not suffice for transport and\n+  divergence alone), and 6.3.1 (j) gains Local source structure and what the velocity law controls at P (linearizing\n+  chart, local div-curl identities, suppression of thin odd structures, the axis bound that would suffice); 6.5 and the\n+  status note record that the R12 data at the zero of B_3 are also excluded under the summable hypothesis (external\n+  referee, audited by a second external referee; checked by the lead researcher and by the verifier). No endpoint\n+  changed.\n",
+  "o27": "CONFIRMED: timestamps and appendix entry only",
+  "o28": "CONFIRMED mathematics and numerical mappings. Clarify ideal Chebyshev-Lobatto and Gauss angular nodes and repair opening parenthesis grammar.",
+  "normalizations": {
+    "independent reviewer_R_Nv": "report |R|/N_f, N_f=|rho|+|W1 rhox|+|W2 rhoy|",
+    "independent reviewer_R_Nf": "report |R|/N_v, N_v=|rho|+|X.grad rho|+|U.grad rho|"
+  }
+}

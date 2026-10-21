@@ -1,0 +1,26 @@
+{
+  "utc": "2026-10-21T00:28:25.771894+00:00",
+  "expected_state_md5": {
+    "72": "c81d083063696cae2087d72351ea2526",
+    "84": "53d5486acd2ebdf91a401d4c374b28e3",
+    "96": "f5b77e128474f1f9da8e3051c22ad505",
+    "108": "306dbedbf3d5f31045a4de1e4c28e028",
+    "120": "0234b3634f747b0a50386d0359bea823"
+  },
+  "timing": "Registered after original comparison and prior state audits, before followup aggregation. Not claimed as preregistration of original physical computation.",
+  "prior_records": [
+    "AV98 original72",
+    "AV120 84",
+    "AV38/AV86 96",
+    "AV150 108",
+    "AV80/AV141 120 dnSB"
+  ],
+  "manually_inspected_source_sha256": {
+    "verifier/third-grid/code/broad.py": "9fbdd3b07b21190c3276e9212371bcdf799c7e1833b1df233748bd59bb11a189",
+    "verifier/fourth-grid/code/broad.py": "9fbdd3b07b21190c3276e9212371bcdf799c7e1833b1df233748bd59bb11a189",
+    "verifier/fifth-grid/code/broad.py": "9fbdd3b07b21190c3276e9212371bcdf799c7e1833b1df233748bd59bb11a189",
+    "verifier/inverse/code/collocation.py": "fa9e48b88ad9dfd4ce116ce87de8c03995698ae57bf3a1e5c22449b631d3e22e",
+    "verifier/inverse/code/density.py": "9bf2a699606b02d53dd57449dd367d5558bdab8ae6e6efc6ccf34ee781263c88"
+  },
+  "source_inspection": "All broad programs use gradient_fd at h=1/32000 after two coarser steps, with W=d.cl*point+U. NodalDensity reads c_l and MD5 from the same NPZ. Own gradient_fd uses eighth-order centered weights4/5,-1/5,4/105,-1/280; h=relative_step*max(1,abs(x),abs(y)). Schema U and base_U both denote base-field velocity. This is code provenance already supported by prior runtime/source audits, not an extra inverse evaluation."
+}

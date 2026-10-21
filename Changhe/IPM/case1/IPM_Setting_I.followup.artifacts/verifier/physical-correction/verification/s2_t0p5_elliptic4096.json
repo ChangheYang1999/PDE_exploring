@@ -1,0 +1,80 @@
+{
+  "configuration": {
+    "density": "verifier/physical-correction/data/physical_s2_t0p5.npz",
+    "output": "verifier/physical-correction/verification/s2_t0p5_elliptic4096.json",
+    "nang": 4096,
+    "order": 28,
+    "panel": 0.08,
+    "rmax": 1e+30,
+    "mode": "elliptic",
+    "points_file": "verifier/physical-correction/verification/elliptic_points.json",
+    "kernel": "split",
+    "offset": 0.37,
+    "difference_steps": ".0025",
+    "difference_orders": "8",
+    "density_step": 0.0005
+  },
+  "source_md5": "7eb4a11a50c1933bdc98e0483d17d65b",
+  "cl": 5.598728412643589,
+  "L": 8.0,
+  "rows": [
+    {
+      "point": [
+        8.6,
+        0.1
+      ],
+      "rho_x": 0.054195635740521705,
+      "checks": [
+        {
+          "difference_order": 8,
+          "h": 0.0025,
+          "DU": [
+            [
+              4.601897492322571,
+              0.03670418771518498
+            ],
+            [
+              -0.01749145221296555,
+              -4.601897492344825
+            ]
+          ],
+          "E": 4.187628827034828e-09,
+          "E_normalized": 3.863437164293064e-08,
+          "E_over_rho_x": 7.726874627109073e-08,
+          "divU": -2.2253310305586638e-11,
+          "divU_normalized": 2.417840721426154e-12
+        }
+      ],
+      "seconds": 104.32396091986448
+    },
+    {
+      "point": [
+        8.6,
+        1
+      ],
+      "rho_x": 0.5432597225864976,
+      "checks": [
+        {
+          "difference_order": 8,
+          "h": 0.0025,
+          "DU": [
+            [
+              4.534911035993295,
+              0.3547043295662685
+            ],
+            [
+              -0.18855536905438153,
+              -4.534911038509033
+            ]
+          ],
+          "E": -2.3965847528728546e-08,
+          "E_normalized": 2.2057449743606007e-08,
+          "E_over_rho_x": 4.4114898514149855e-08,
+          "divU": -2.5157387284480137e-09,
+          "divU_normalized": 2.7737465054804343e-10
+        }
+      ],
+      "seconds": 100.97104649594985
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+No formal proof is claimed. Lean/Lake execution is prohibited for this run. The complete informal proof is ../PROOF.md. Dependencies are the three earlier local endpoint proofs and the convergent higher-source-cone construction; no teammate implementation is used.

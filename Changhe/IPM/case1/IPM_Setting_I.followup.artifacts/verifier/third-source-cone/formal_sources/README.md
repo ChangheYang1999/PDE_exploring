@@ -1,0 +1,1 @@
+No Lean or Lake build is authorized in this run. The standalone informal proof was written before the independent checks. Exact symbolic recurrences and quadrature evidence will be stored under code/ and verification/. They support selected identities and do not replace the full proof or certify a global profile.

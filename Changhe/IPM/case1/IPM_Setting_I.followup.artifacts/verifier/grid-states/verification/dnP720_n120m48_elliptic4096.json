@@ -1,0 +1,80 @@
+{
+  "configuration": {
+    "density": "verifier/grid-states/data/dnP720_n120m48.npz",
+    "output": "verifier/grid-states/verification/dnP720_n120m48_elliptic4096.json",
+    "nang": 4096,
+    "order": 28,
+    "panel": 0.08,
+    "rmax": 1e+30,
+    "mode": "elliptic",
+    "points_file": "verifier/grid-states/verification/near_points.json",
+    "kernel": "split",
+    "offset": 0.37,
+    "difference_steps": ".0025",
+    "difference_orders": "8",
+    "density_step": 0.0005
+  },
+  "source_md5": "4e60f5bf68d9f1295b2caa7ad4c1b721",
+  "cl": 5.574702263924497,
+  "L": 8.0,
+  "rows": [
+    {
+      "point": [
+        8.6,
+        0.1
+      ],
+      "rho_x": 0.021858917043298058,
+      "checks": [
+        {
+          "difference_order": 8,
+          "h": 0.0025,
+          "DU": [
+            [
+              4.57530466486191,
+              0.014817716550581395
+            ],
+            [
+              -0.007041204621496055,
+              -4.575304664887325
+            ]
+          ],
+          "E": 4.1287793912936355e-09,
+          "E_normalized": 9.444152684204658e-08,
+          "E_over_rho_x": 1.8888307152249882e-07,
+          "divU": -2.5415225479719084e-11,
+          "divU_normalized": 2.7774353121045734e-12
+        }
+      ],
+      "seconds": 97.32606767700054
+    },
+    {
+      "point": [
+        8.6,
+        1.0
+      ],
+      "rho_x": 0.242246026478529,
+      "checks": [
+        {
+          "difference_order": 8,
+          "h": 0.0025,
+          "DU": [
+            [
+              4.5425107851502196,
+              0.15828927489117461
+            ],
+            [
+              -0.08395672752207703,
+              -4.5425107876568696
+            ]
+          ],
+          "E": -2.406527735421271e-08,
+          "E_normalized": 4.967115229792169e-08,
+          "E_over_rho_x": 9.934229966139688e-08,
+          "divU": -2.5066499986792223e-09,
+          "divU_normalized": 2.759101867387991e-10
+        }
+      ],
+      "seconds": 98.18355373712257
+    }
+  ]
+}

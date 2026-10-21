@@ -1,0 +1,15 @@
+# fitted degree-12 reference (fred22 05): exact check of (40) H(t) >= A0 on [0,1], i.e. q <= 0 on [0,1], by a Sturm count
+import json, sympy as sp
+d = json.load(open('lead/exclusion_certificates/reference_fit/data/fitted_reference.json'))
+t = sp.symbols('t')
+q = sum(sp.Rational(c)*t**k for k, c in enumerate(d['q_power_coefficients_exact_decimal']))
+P = sp.Poly(q, t)
+print('real roots of q in [0,1]:', P.count_roots(0, 1), '; q(0) =', float(q.subs(t, 0)), '; q(1) =', float(q.subs(t, 1)))
+print('max of q on a 2001 grid:', max(float(q.subs(t, sp.Rational(i, 2000))) for i in range(2001)))
+A0 = sp.Rational(d['A0_exact'])
+H = sp.expand(A0 - t*(1 - t**2)*q)
+print('roots of H - A0 in (0,1) (open):', sp.Poly(H - A0, t).count_roots(sp.Rational(1, 10**30), 1 - sp.Rational(1, 10**30)))
+u = sp.symbols('u')
+w0 = -A0*u*(1 - u**2)/(1 + u**2) + u**3*(1 - u**2)**2*q.subs(t, u**2)
+print("w0'(0) + A0 =", sp.simplify(sp.diff(w0, u).subs(u, 0) + A0), "; w0(1) =", w0.subs(u, 1), "; w0'(1) - A0 =", sp.simplify(sp.diff(w0, u).subs(u, 1) - A0))
+print('w0 + u(1-u^2)H(u^2)/(1+u^2) =', sp.simplify(w0 + u*(1 - u**2)*H.subs(t, u**2)/(1 + u**2)))

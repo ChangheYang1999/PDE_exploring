@@ -1,0 +1,80 @@
+{
+  "configuration": {
+    "density": "numerics/runs/fixclSA_n120m48_d-0.01.npz",
+    "output": "verifier/fixed-cl/verification/fixclSA_n120m48_d-0.01_elliptic4096.json",
+    "nang": 4096,
+    "order": 28,
+    "panel": 0.08,
+    "rmax": 1e+30,
+    "mode": "elliptic",
+    "points_file": "verifier/fixed-cl/verification/source_points.json",
+    "kernel": "split",
+    "offset": 0.37,
+    "difference_steps": ".0025",
+    "difference_orders": "8",
+    "density_step": 0.0005
+  },
+  "source_md5": "c46f04dc39600f7bdcf3e65849ea56d1",
+  "cl": 5.56469254218355,
+  "L": 8.0,
+  "rows": [
+    {
+      "point": [
+        8.6,
+        0.1
+      ],
+      "rho_x": 0.02854029255877074,
+      "checks": [
+        {
+          "difference_order": 8,
+          "h": 0.0025,
+          "DU": [
+            [
+              4.567075922919692,
+              0.019429733983111232
+            ],
+            [
+              -0.00911056271352393,
+              -4.567075922944433
+            ]
+          ],
+          "E": 4.137864422631976e-09,
+          "E_normalized": 7.24916206473831e-08,
+          "E_over_rho_x": 1.4498325180483708e-07,
+          "divU": -2.474109805916669e-11,
+          "divU_normalized": 2.7086366065141856e-12
+        }
+      ],
+      "seconds": 106.03068933496252
+    },
+    {
+      "point": [
+        8.6,
+        1.0
+      ],
+      "rho_x": 0.3122047165688476,
+      "checks": [
+        {
+          "difference_order": 8,
+          "h": 0.0025,
+          "DU": [
+            [
+              4.534189138941518,
+              0.2050270127001243
+            ],
+            [
+              -0.10717767975686582,
+              -4.5341891414607405
+            ]
+          ],
+          "E": -2.411185745510025e-08,
+          "E_normalized": 3.861546143694084e-08,
+          "E_over_rho_x": 7.723091989157405e-08,
+          "divU": -2.5192221642100776e-09,
+          "divU_normalized": 2.778029418616543e-10
+        }
+      ],
+      "seconds": 106.29399440507405
+    }
+  ]
+}

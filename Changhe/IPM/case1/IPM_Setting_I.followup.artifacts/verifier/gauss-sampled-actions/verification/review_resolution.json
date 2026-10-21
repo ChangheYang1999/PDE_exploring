@@ -1,0 +1,18 @@
+{
+  "utc": "2026-10-20T21:53:30.557589+00:00",
+  "actual_review_model": "claude-opus-5-5",
+  "review_metadata_sha256": "6dd02a445e9d7fbd1e818adc142a18c9cd65c59f030554b85b1c741407ef0676",
+  "own_dependency_checks": {
+    "direction_coefficients": "Read inverse/code/linearized.py: vecs[:-2] only supplies nodal block, V[-2] supplies dc to density; V[-1] never enters reconstructed density.",
+    "earlier_58_norm": "Read sampled-physical-actions/code/summary.py lines41-42 and summary_all.py lines28-33: density/residual divided by sqrt(n), unit dc appended. n=58.",
+    "direction_tail": "Read scale-actions/code/tails.py. eps=1/5-1/cl>0. Markov bound |b_q|<=2N^2 H B and ell<=1+2log(r), r>=1,L>=1 imply ell*r^(-eps)<=1+2/eps. Hence the displayed rational direction constant absorbs its logarithmic factor.",
+    "point_provenance": "points.json frozen21:46:12, initialPROOF SHA189332e1, before reviewclarifications. Preserved originalPROOF and generator. No velocities yet evaluated. Currentproofece5f731. No partial actions exist."
+  },
+  "dependency_sha256": {
+    "verifier/inverse/code/linearized.py": "8ab5f549c65f1b31dc806fe0e0de653ef3e4e79b6b7b84058164461677118c6c",
+    "verifier/scale-actions/code/tails.py": "e6fa4eccefee27065c1e3d85c957269be58c4b00206f02dde5537b15f254baed",
+    "verifier/sampled-physical-actions/code/summary.py": "f3d371fa3d00871cea346447ca6d63ab2697b20e9ebd42e0ad55e9f13f21959c",
+    "verifier/gauss-sampled-actions/verification/points.json": "7d50140af51a3b53e5b18f6fa70b324e7f608de24d9138b04e4b0e5cab5d1804"
+  },
+  "verdict": "CONFIRMED for finite protocol and checked dependency scope; numerical run pending."
+}

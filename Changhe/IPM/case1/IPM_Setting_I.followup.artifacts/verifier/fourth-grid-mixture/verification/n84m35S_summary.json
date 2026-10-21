@@ -1,0 +1,518 @@
+{
+  "utc": "2026-10-21T00:04:59.183496+00:00",
+  "tag": "n84m35S",
+  "state_md5": "53d5486acd2ebdf91a401d4c374b28e3",
+  "pins": {
+    "verifier/fourth-grid-mixture/code/run.py": "4a77f861435e4495eae8822c9caf5f730621fb83daf72937575caa3155c8baa5",
+    "verifier/fourth-grid-mixture/PROOF.md": "5c3c7d890fd1966f52998273152c1dd593189048aaf32388f170c2e50258f924",
+    "verifier/fourth-grid-mixture/verification/plan.json": "4005e6a6c0cc6682b49ce1619ec8c4a9d00f986efe030eeed656f4e575af099f",
+    "verifier/fourth-grid-mixture/verification/registration.json": "521edaf21aab392f109cf334098e029ba568464f26479ca2be8267ed989b78f4",
+    "verifier/fourth-grid-actions/verification/actions.json": "461871a04d1ef797e65c5c1637b0a954a985edf346e1ca998b9a75b227e51094",
+    "verifier/fourth-grid-actions/verification/summary.json": "d566429668667d65ddab63edc72a607ec49644dc405ea9a74a53e58ba2e23d20",
+    "verifier/fourth-grid-actions/verification/summary_matrices.npz": "3fcb9be44ccad71903178329f40b0abb476315c7466ef36dd21fdd46f4e90f5b",
+    "verifier/fourth-grid-actions/verification/summary_audit.json": "74b17584676899f63834cf999ee1e75a27b784a6e9b020712a1314bd76eb6c70",
+    "verifier/fourth-grid-gauss/verification/n84m35S_actions.json": "e2d4df53c4cf26584b1e44c244e748846fc91ecbb6273755e782492b423156a2",
+    "verifier/fourth-grid-gauss/verification/n84m35S_summary.json": "19de62b182c5c4a2b90d614389223313b17fd869e077982a1663ac2abbf874c4",
+    "verifier/fourth-grid-gauss/verification/n84m35S_matrices.npz": "620e80296c9f4724800bb8d501fbc5f58368d140b88c97b5ef8969b93b088740",
+    "verifier/fourth-grid-gauss/verification/n84m35S_audit.json": "4d7e521829476243ff5c3d50ecd9e4b59170d8dc50ff9aeddc5c4fce7cc7a9c5",
+    "verifier/fourth-grid-actions/data/directions_n84m35S.npz": "607ee7f44a8b954af382317ffcb7ed2296f642a2c2b90d8994b484e5964a5d86",
+    "verifier/fourth-grid-actions/data/dnB_n84m35S.npz": "bf0d8afd571b50062ba72dc0dcff2badba3e40d7c9b5e80ef020e430ebcbe4c6",
+    "verifier/fourth-grid-gauss/data/directions_n84m35S.npz": "607ee7f44a8b954af382317ffcb7ed2296f642a2c2b90d8994b484e5964a5d86",
+    "verifier/fourth-grid-gauss/data/dnB_n84m35S.npz": "bf0d8afd571b50062ba72dc0dcff2badba3e40d7c9b5e80ef020e430ebcbe4c6",
+    "verifier/fourth-grid-gauss/verification/points.json": "7d50140af51a3b53e5b18f6fa70b324e7f608de24d9138b04e4b0e5cab5d1804",
+    "verifier/sampled-physical-actions/verification/points.json": "982356293171a40156bcc1dcc066407f3f596af01c1850045f1bd69747b831e5",
+    "verifier/fourth-grid-mixture/verification/stencil_evidence.json": "f3fac3619710a32163006e6508a532becc7f81e3baea24f1eb269f7f74adab29",
+    "verifier/fourth-grid-mixture/verification/import_resolution.json": "e27ca261d0aa30fa3a92851563bb0bacc2ffbcc8843618847542ba6882afc1f5",
+    "verifier/fourth-grid-mixture/verification/runtime_observation.json": "d7e3f0f26f29e0c5ddb41324f17e2cb68babdfa5b42d813645b8831e622cd23d"
+  },
+  "source_reconstruction": {
+    "primary_max_action_reconstruction": 6.938893903907228e-18,
+    "Gauss_max_action_reconstruction": 6.938893903907228e-18,
+    "normalizers": "primary stencil;Gauss analytic;finer velocity in each",
+    "primary_normalizer_storage": "raw rows N_report_f; primary npz has no Nf",
+    "stencil_order": 8,
+    "step": "max(1,abs(x),abs(y))/32000",
+    "stencil_provenance": "source configurations incomplete; inspected pinned producer calls, field mappings and density stencil establish convention",
+    "inverse58": {
+      "nang": 4096,
+      "order": 32,
+      "panel": 0.075,
+      "rmax": "1e30",
+      "relative_steps": [
+        3.125e-05,
+        6.25e-05
+      ]
+    },
+    "inverse64": {
+      "nang": 4096,
+      "order": 24,
+      "panel": 0.1,
+      "rmax": "1e30"
+    }
+  },
+  "rows": [
+    {
+      "dimension": 4,
+      "alpha_first_sample": 0,
+      "physical_singular_values_ascending": [
+        0.0019047415708560217,
+        0.01073199736538055,
+        0.055627312566183085,
+        0.32369258814052504
+      ],
+      "unit_cl_cost": 0.0019152456721799648,
+      "unit_cl_minimizer": [
+        0.7617757805039181,
+        40.19174498970561,
+        6.087470179269873,
+        -1.5979579791700058
+      ],
+      "metric_condition": 64.46670517619123,
+      "two_factorizations_max_difference": 5.551115123125783e-17,
+      "proved_finite_cost_lower_bound": 0.0019152456721799648
+    },
+    {
+      "dimension": 4,
+      "alpha_first_sample": 0.25,
+      "physical_singular_values_ascending": [
+        0.0028484281240265456,
+        0.014642407983899146,
+        0.07985115017824118,
+        0.6012577356372085
+      ],
+      "unit_cl_cost": 0.0028658247321013625,
+      "unit_cl_minimizer": [
+        6.1030735507251235,
+        40.484005641879556,
+        -2.5580163492580144,
+        0.3456272441330933
+      ],
+      "metric_condition": 61.69812555795524,
+      "two_factorizations_max_difference": 6.661338147750939e-16,
+      "proved_finite_cost_lower_bound": 0.0019943976736547793
+    },
+    {
+      "dimension": 4,
+      "alpha_first_sample": 0.5,
+      "physical_singular_values_ascending": [
+        0.0027206851422649646,
+        0.017046615524906984,
+        0.09219815272695571,
+        0.7837232029925716
+      ],
+      "unit_cl_cost": 0.002738203924889957,
+      "unit_cl_minimizer": [
+        6.508602485853215,
+        40.2939148119811,
+        -3.866486284013739,
+        0.6241487103064206
+      ],
+      "metric_condition": 59.72909499586689,
+      "two_factorizations_max_difference": 1.1102230246251565e-15,
+      "proved_finite_cost_lower_bound": 0.002070526062756783
+    },
+    {
+      "dimension": 4,
+      "alpha_first_sample": 0.75,
+      "physical_singular_values_ascending": [
+        0.002489059806418396,
+        0.018786765421895307,
+        0.10020913899890545,
+        0.9380638266554859
+      ],
+      "unit_cl_cost": 0.0025057750697089496,
+      "unit_cl_minimizer": [
+        6.490918702238577,
+        40.097837719961404,
+        -4.404014551038723,
+        0.7394946641442738
+      ],
+      "metric_condition": 58.320526342634736,
+      "two_factorizations_max_difference": 6.661338147750939e-16,
+      "proved_finite_cost_lower_bound": 0.002143952954808154
+    },
+    {
+      "dimension": 4,
+      "alpha_first_sample": 1,
+      "physical_singular_values_ascending": [
+        0.0021996197069484493,
+        0.020131567169539615,
+        0.10590429510024725,
+        1.0812874280742322
+      ],
+      "unit_cl_cost": 0.002214947035101771,
+      "unit_cl_minimizer": [
+        6.4124394516142385,
+        39.94624436431895,
+        -4.697769487201988,
+        0.8031600267564101
+      ],
+      "metric_condition": 57.35408095283972,
+      "two_factorizations_max_difference": 2.220446049250313e-15,
+      "proved_finite_cost_lower_bound": 0.002214947035101771
+    },
+    {
+      "dimension": 10,
+      "alpha_first_sample": 0,
+      "physical_singular_values_ascending": [
+        0.0009906816972692673,
+        0.006885708441140015,
+        0.009618975148540671,
+        0.019552395321327274,
+        0.03058537038582695,
+        0.05483937611833963,
+        0.2268146562664513,
+        0.40049453999499024,
+        0.9680098228255308,
+        1.08357982769088
+      ],
+      "unit_cl_cost": 0.0010087358535820425,
+      "unit_cl_minimizer": [
+        -122.9040812998471,
+        -31.551483931559165,
+        -0.7842365522002245,
+        -4.475994885121617,
+        3.2471071135831595,
+        2.326083925338964,
+        2.515975964460199,
+        0.17661740756952943,
+        -0.12300666248328637,
+        0.07213904614925426
+      ],
+      "metric_condition": 253.83794729169065,
+      "two_factorizations_max_difference": 6.661338147750939e-16,
+      "proved_finite_cost_lower_bound": 0.0010087358535820425
+    },
+    {
+      "dimension": 10,
+      "alpha_first_sample": 0.25,
+      "physical_singular_values_ascending": [
+        0.0015227169898469647,
+        0.011742580327288768,
+        0.01999746476752779,
+        0.04676660019425706,
+        0.06283276867001443,
+        0.09057941099158388,
+        0.30240672118525197,
+        0.43635801305876654,
+        1.0680714365172146,
+        3.0526983454798446
+      ],
+      "unit_cl_cost": 0.001537158070842421,
+      "unit_cl_minimizer": [
+        -58.672740861364346,
+        6.32969410837104,
+        2.282632061318257,
+        -2.5283758683061777,
+        1.937998654492375,
+        1.8973685719779552,
+        2.044258455631325,
+        0.06113572785402105,
+        0.18388988355309563,
+        0.19039088911545476
+      ],
+      "metric_condition": 238.01112650711963,
+      "two_factorizations_max_difference": 1.3322676295501878e-15,
+      "proved_finite_cost_lower_bound": 0.0010312272167783245
+    },
+    {
+      "dimension": 10,
+      "alpha_first_sample": 0.5,
+      "physical_singular_values_ascending": [
+        0.0016028222275985794,
+        0.013382215461288517,
+        0.01906437152317858,
+        0.04730187471636324,
+        0.074114109021109,
+        0.12016160846024422,
+        0.31302700273945094,
+        0.487029441698559,
+        1.112732132950928,
+        4.3231684974998235
+      ],
+      "unit_cl_cost": 0.0016150023704288457,
+      "unit_cl_minimizer": [
+        -39.30801392101181,
+        16.803022663131518,
+        1.137418866922365,
+        -1.7770902460138807,
+        1.424419330135882,
+        1.460907544791604,
+        1.6664391919820065,
+        -0.004130532858199558,
+        0.17181724085274525,
+        0.2037336205637747
+      ],
+      "metric_condition": 230.78629118306608,
+      "two_factorizations_max_difference": 8.881784197001252e-16,
+      "proved_finite_cost_lower_bound": 0.0010532383979645098
+    },
+    {
+      "dimension": 10,
+      "alpha_first_sample": 0.75,
+      "physical_singular_values_ascending": [
+        0.0014904538132481664,
+        0.013694009932043685,
+        0.017735682011070612,
+        0.046923021576841015,
+        0.07971821632244408,
+        0.1427696717450307,
+        0.33870852951128844,
+        0.5626072567926743,
+        1.197951026350466,
+        5.668029313432909
+      ],
+      "unit_cl_cost": 0.001500029106257192,
+      "unit_cl_minimizer": [
+        -21.127158021266705,
+        26.12751449160944,
+        0.07507605561227812,
+        -0.9008312952575417,
+        0.7667215700078582,
+        0.8086388050135641,
+        0.9889592502123449,
+        -0.07768903554330271,
+        0.17426280993967228,
+        0.21310160446824739
+      ],
+      "metric_condition": 228.65262685764435,
+      "two_factorizations_max_difference": 2.6645352591003757e-15,
+      "proved_finite_cost_lower_bound": 0.0010747988989896322
+    },
+    {
+      "dimension": 10,
+      "alpha_first_sample": 1,
+      "physical_singular_values_ascending": [
+        0.0010890396982139426,
+        0.012288234658638488,
+        0.016943806049921576,
+        0.04639342028885699,
+        0.08266627500553657,
+        0.1611041135079559,
+        0.3865127129579796,
+        0.6793593083847563,
+        1.3326602340632412,
+        7.632137941395559
+      ],
+      "unit_cl_cost": 0.0010959353190730752,
+      "unit_cl_minimizer": [
+        0.011407668161450519,
+        36.27034554030485,
+        -0.803316128743724,
+        0.28428433848791507,
+        -0.2960185909773241,
+        -0.4102455461853768,
+        -0.4412171169826195,
+        -0.13072384694311662,
+        0.21919412834131297,
+        0.2048830570344961
+      ],
+      "metric_condition": 232.7265017453854,
+      "two_factorizations_max_difference": 1.1102230246251565e-15,
+      "proved_finite_cost_lower_bound": 0.0010959353190730752
+    },
+    {
+      "dimension": 14,
+      "alpha_first_sample": 0,
+      "physical_singular_values_ascending": [
+        0.0008310942075952746,
+        0.005818241228297888,
+        0.009089629810854533,
+        0.01661916071914624,
+        0.028550031621380836,
+        0.052746046394979484,
+        0.20340508270868232,
+        0.23849344595716734,
+        0.7724163069297066,
+        1.0160448821083685,
+        1.0908119836754293,
+        1.8040769569807984,
+        2.941126728848496,
+        3.7393745298389525
+      ],
+      "unit_cl_cost": 0.0008449562807227933,
+      "unit_cl_minimizer": [
+        -117.50390732583809,
+        -29.82180186697353,
+        3.8242088631305915,
+        -4.320741434362281,
+        2.6965782523538024,
+        1.5300504534430777,
+        2.2724232043481134,
+        -0.34386918635791264,
+        -0.3009766013127984,
+        0.4079571616738467,
+        -0.03050912321525245,
+        0.04146179272185014,
+        0.019728468877712627,
+        -0.008910745204225159
+      ],
+      "metric_condition": 551.9039762386728,
+      "two_factorizations_max_difference": 2.6645352591003757e-15,
+      "proved_finite_cost_lower_bound": 0.0008449562807227933
+    },
+    {
+      "dimension": 14,
+      "alpha_first_sample": 0.25,
+      "physical_singular_values_ascending": [
+        0.001494204629156189,
+        0.011440405857382378,
+        0.018759471903827818,
+        0.04347105947729002,
+        0.055039212714797135,
+        0.08662241139507189,
+        0.28025641210115276,
+        0.4173351973690735,
+        0.9899689176237157,
+        1.0723423894564,
+        2.133297657090634,
+        2.6489654969985383,
+        3.0604269846847556,
+        5.525607025161639
+      ],
+      "unit_cl_cost": 0.0015089430975057199,
+      "unit_cl_minimizer": [
+        -63.9646506431255,
+        2.6026825605619406,
+        2.5676005608599177,
+        -2.5863507584486753,
+        1.9391055138815405,
+        1.7419184606054778,
+        1.9484929004607916,
+        -0.010675279044785371,
+        0.17721549751822127,
+        0.1906458592728545,
+        0.003322899389753973,
+        0.011214126058003026,
+        0.0020904514459134903,
+        0.006097266268299015
+      ],
+      "metric_condition": 455.9166327857017,
+      "two_factorizations_max_difference": 5.329070518200751e-15,
+      "proved_finite_cost_lower_bound": 0.0008788730685476524
+    },
+    {
+      "dimension": 14,
+      "alpha_first_sample": 0.5,
+      "physical_singular_values_ascending": [
+        0.0015915897173248389,
+        0.01243834705026275,
+        0.017689892388054206,
+        0.04314949260624787,
+        0.06521729734783943,
+        0.11104783485935886,
+        0.2832022472605793,
+        0.45929353367822123,
+        1.0129219880686637,
+        1.1071578945611407,
+        2.306572018844456,
+        3.0084143981326235,
+        4.173532958582337,
+        7.454356943757026
+      ],
+      "unit_cl_cost": 0.001604142970730863,
+      "unit_cl_minimizer": [
+        -44.10990788793082,
+        14.049221726485188,
+        1.4450348257720205,
+        -2.098010468751531,
+        1.551654324242091,
+        1.4100262524628315,
+        1.652810327203324,
+        0.027781651110030073,
+        0.16632786775390196,
+        0.20864814012120608,
+        0.002966920781857095,
+        0.003316551986570246,
+        -0.0007928872005684774,
+        0.005844458430883488
+      ],
+      "metric_condition": 405.5846505359711,
+      "two_factorizations_max_difference": 6.217248937900877e-15,
+      "proved_finite_cost_lower_bound": 0.00091152872960968
+    },
+    {
+      "dimension": 14,
+      "alpha_first_sample": 0.75,
+      "physical_singular_values_ascending": [
+        0.0014652508729708722,
+        0.012181366897844447,
+        0.01586886533580438,
+        0.042585666325897435,
+        0.07181169235848514,
+        0.1257603052798678,
+        0.29582637221272756,
+        0.5001607982460268,
+        1.0001483174183505,
+        1.179612931909018,
+        2.4603206821193133,
+        3.5541568744697005,
+        5.971490698805482,
+        9.854506689990862
+      ],
+      "unit_cl_cost": 0.0014750631951238164,
+      "unit_cl_minimizer": [
+        -27.847868109400764,
+        22.549115810001346,
+        0.4549868745374117,
+        -1.326331053001877,
+        0.9813174706623827,
+        0.8590227528042559,
+        1.1026800725719708,
+        0.0177841860309337,
+        0.15701348986270355,
+        0.2394454343441449,
+        -0.0017122816832698257,
+        -0.00026458967113047056,
+        -0.005086152771116026,
+        0.0005525533356780804
+      ],
+      "metric_condition": 375.1293284171383,
+      "two_factorizations_max_difference": 2.6645352591003757e-15,
+      "proved_finite_cost_lower_bound": 0.0009430542822071842
+    },
+    {
+      "dimension": 14,
+      "alpha_first_sample": 1,
+      "physical_singular_values_ascending": [
+        0.0009674190925614345,
+        0.010669363859330478,
+        0.013840970791335772,
+        0.041890008549173935,
+        0.07626588246961158,
+        0.1304373034858894,
+        0.32664853055678467,
+        0.5515995267621534,
+        1.0271295393278064,
+        1.289598043990098,
+        2.7930624607342884,
+        4.531071856130806,
+        12.278096068153921,
+        18.778121207495165
+      ],
+      "unit_cl_cost": 0.0009735595171712811,
+      "unit_cl_minimizer": [
+        -12.749469447350114,
+        29.234856951259292,
+        -0.2820377385708623,
+        -0.16392892710698312,
+        0.049591792496704284,
+        -0.16149351551944469,
+        -0.01671510004500388,
+        -0.006576385973547729,
+        0.16664007413415932,
+        0.2839034434586183,
+        -0.011977483255362669,
+        0.0005355895965420772,
+        -0.012964954144122288,
+        -0.011648473452649945
+      ],
+      "metric_condition": 371.2601175425146,
+      "two_factorizations_max_difference": 2.1316282072803006e-14,
+      "proved_finite_cost_lower_bound": 0.0009735595171712811
+    }
+  ],
+  "scope": "Mixed finite sampling norms with fixed computed denominators and previously measured velocity approximations. No continuum error bound, kernel count, family or endpoint.",
+  "complete": true,
+  "verdict": "PASS"
+}

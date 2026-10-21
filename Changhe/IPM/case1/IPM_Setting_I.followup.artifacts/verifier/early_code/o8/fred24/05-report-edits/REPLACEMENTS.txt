@@ -1,0 +1,87 @@
+Sentence replacements for FINAL_REPORT.md, section 6.4, item
+"Local exclusion with polynomial constants at the computed A".
+
+Keep the report's compatible-polynomial remainder convention N_phi. The
+following replacements incorporate the analytic repair and retain the simple
+exclusion radii. Original sentences are reproduced with line breaks collapsed.
+Sentences not listed need no mathematical change under this audit.
+
+1. Opening audit qualification
+
+ORIGINAL:
+Local exclusion with polynomial constants at the computed A (external referee; the reference values of B_3 and of its first derivatives in A and e at both references below, three directional derivatives and the closed-form reconstruction checked numerically by the lead researcher with separately written code; the referee's exact rational certificate rerun by the lead researcher with the same output; the analytic estimates and the bounds on the reference that enter the certificate not yet checked by the verifier).
+
+REPLACEMENT:
+Local exclusion with polynomial constants at the computed A (external referee; the reference values of B_3 and of its first derivatives in A and e at both references below, three directional derivatives and the closed-form reconstruction checked numerically by the lead researcher with separately written code; the referee's exact rational certificate rerun by the lead researcher with the same output; a subsequent analytic audit confirms the functional estimates and reference bounds in the norm actually used by the referee, identifies a different remainder convention in this summary, and supplies corrected constants for the norm displayed below).
+
+2. Definition of the norm
+
+ORIGINAL:
+For compatible directions v (odd and smooth near 0, v'(0) = 0, v(1) = v'(1) = 0) write v = c_3 phi_3 + c_5 phi_5 + c_7 phi_7 + R_v near 0, with phi_j(u) = u^j + ((j - 11)/2) u^9 + ((9 - j)/2) u^11 (so phi_j(1) = phi_j'(1) = 0) and R_v = O(u^9), and put ||v||_N = |c_3| + |c_5| + |c_7| + sup_(0<u<=r) u^(-5-sigma) |R_v''(u)| + sup_[r,1] |v''| + sup_(r<=u<1) |v''(u) - v''(1)|/(1 - u)^theta, with sigma > beta and theta + beta > 1 (with margins over the range of A).
+
+REPLACEMENT:
+For compatible directions v, odd and smooth near 0, with v'(0) = 0 and v(1) = v'(1) = 0, write v = c_3 phi_3 + c_5 phi_5 + c_7 phi_7 + R_phi on (0,r], where phi_j(u) = u^j + ((j - 11)/2) u^9 + ((9 - j)/2) u^11 and R_phi = O(u^9), with the corresponding two derivative bounds. Define ||v||_(N_phi) = |c_3| + |c_5| + |c_7| + sup_(0<u<=r) u^(-5-sigma) |R_phi''(u)| + sup_[r,1] |v''| + sup_(r<=u<1) |v''(u) - v''(1)|/(1 - u)^theta. Functions and derivatives match at r, and the tail is C^2 through 1. Require 0 < sigma <= 2 and 0 < theta <= 1. For the Cauchy estimates choose tau > 0 with A_0 - h - tau > 2, and impose sigma > b_+ and theta + b_- > 1, where b_+ = 2/(A_0 - h - tau) and b_- = 2/(A_0 + h + tau). This differs from the referee's N_mon, which uses R_mon = v - c_3 u^3 - c_5 u^5 - c_7 u^7 in the weighted origin term. In the rest of this item, N means N_phi.
+
+3. First variation and second-order constants
+
+ORIGINAL:
+(i) The referee gives the exact first variation of B in (A, e, v), with the variation of g written through an adjoint weight, and a second-order remainder bound whose constants are polynomial in quantities of the reference (suprema of w_0 and its derivatives, the infimum of -w_0/(u (1 - u)), bounds for g_0/u^2, |Q_0(1)|, the Taylor coefficients at 0) and in the inverses of the margins sigma - beta and theta + beta - 1.
+
+REPLACEMENT:
+(i) The exact first variation of B in (A, e, v), including the adjoint expression for the variation of g, is confirmed. The second-order remainder proof is valid in N_mon. It is also valid in N_phi after replacing its three origin perturbation bounds by the bounds for the full polynomials phi_j and recomputing their dependent constants. The constants use rational operations and explicit reference norms and integrals, including the weighted origin algebra norms and anchored endpoint norms, together with inverses of the positive nonvanishing, cutoff, complex-buffer and integrability margins. Scalar cutoff powers admit rational majorants. The corrected numerical bounds below use N_phi.
+
+4. Reconstruction and exponentials
+
+ORIGINAL:
+The exponential constants of 6.3.1 (n) came from absolute Gronwall-type bounds for the reconstruction of g from w; here log(g/g_0) is estimated relative to the reference through the quotients -w/(1 - u) and (A - w')/(1 - u), both removable at u = 1, so no exponential of a reference integral enters.
+
+REPLACEMENT:
+The large exponential constants of 6.3.1 (n) came from absolute Gronwall-type reconstruction bounds. Here log(g/g_0) is bounded relative to the reference using an origin algebra estimate and the removable source quotients -w/(1 - u) and (A - w')/(1 - u). Only exponentials of uniformly small perturbations are bounded by universal constants. The actual reference reconstruction and its norms remain explicit inputs and may themselves contain exp(T).
+
+5. Computed-reference constants
+
+ORIGINAL:
+(ii) At the reference q = 0 (the trace of 6.3.2 (a)) with A_0 = 10.150725, e_0 = 0.0135206, h = 0.06, h' = 0.0003, r = 1/2, sigma = 1 and theta = 9/10, exact rational arithmetic gives B(A_0, e_0, w_0) >= 0.321857 (the value is 0.3257951), ||DB||_(N*) <= 12240, a second-order constant at most 235346 on the ball of radius delta_0 >= 0.1046, and the radius eps = 1e-6.
+
+REPLACEMENT:
+(ii) At the reference q = 0, with A_0 = 10.150725, e_0 = 0.0135206, h = 0.06, h' = 0.0003, r = 1/2, sigma = 1, theta = 9/10 and tau = 1, the corrected N_phi bounds give B(A_0, e_0, w_0) >= 0.321857, ||D_w B||_(N_phi*) <= 12519, and a second-order constant C_2 <= 245246 on an allowable ball with delta_0 >= 0.10269550. The exact rational radius formula exceeds 1.8749e-6, so eps = 1e-6 is valid. The numerical reference value is 0.325795091172477577. The earlier constants 12240, 235346 and 0.1046 apply to the referee's N_mon convention.
+
+6. Profile exclusion
+
+ORIGINAL:
+With the input of 6.3.1 (h) (an exact profile that satisfies the Hoelder or cone hypothesis at P and is in P_inf has B_3 = 0), no such profile has |A - A_0| <= 0.06, source x* = L with |L^(-2) - e_0| <= 0.0003 and normalized trace with ||w~ - (A/A_0) w_0||_N <= 1e-6.
+
+REPLACEMENT:
+Using the supplied implication of 6.3.1 (h), including its classical third-axis-equation input, no Setting I profile in P_inf satisfying its Hoelder or cone hypothesis at P has |A - A_0| <= 0.06, first source x* = L with |L^(-2) - e_0| <= 0.0003, and compatible normalized trace in the affine domain of N_phi with ||w~ - (A/A_0) w_0||_(N_phi) <= 1e-6. Membership in that domain includes the weighted origin remainder condition and the anchored source exponent theta = 9/10; it is not asserted to follow from the source Hoelder or cone hypothesis alone.
+
+7. The reference at A_0 = 4
+
+ORIGINAL:
+At A = 4, e = 1/16 (the reference of 6.3.1 (n)) the same method gives 1e-8 for the same widths and 1e-7 at fixed A and e, compared with e^(-10^7) in 6.3.1 (n) (in other coordinates and another norm).
+
+REPLACEMENT:
+At the reference A_0 = 4, e_0 = 1/16, the corrected N_phi constants with tau = 1/2 give a radius formula greater than 8.0690e-8 for h = 0.06 and h' = 0.0003, and greater than 1.4814e-7 when A and e are fixed. Thus the stated simple radii 1e-8 and 1e-7 remain valid. The earlier radius exp(-10^7) in 6.3.1 (n) uses different coordinates and a different norm.
+
+8. The C^2 counterexample
+
+ORIGINAL:
+A plain C^2 tail norm is not sufficient: a direction with v''(1 - s) = s^gamma, 0 < gamma <= 1 - beta, makes the integral defining B diverge at first order, with coefficient 1/(2A (gamma + 1) g*^2) - e/(2 g*^3), which vanishes for at most one gamma.
+
+REPLACEMENT:
+A plain C^2 tail norm is not sufficient. Choose 0 < gamma <= 1 - beta away from the at most one zero of 1/(2A (gamma + 1) g*^2) - e/(2 g*^3), prescribe v''(1 - s) = s^gamma near the source, integrate from the source and cut off away from it. For sufficiently small nonzero amplitudes, these compatible C^2 perturbations preserve negativity but make the source integral defining B diverge. The displayed coefficient is its first-order coefficient.
+
+9. Dual norm and sampled bump evidence
+
+ORIGINAL:
+The dual norm of DB at this reference lies between about 8.3e-4 (numerical lower tests) and 12240 (proved); a broad bump at u = 1/8.6 has N-norm at least 4.3e14, consistent with the response of up to 1e9 natural units per unit relative change in 6.3.2 (c).
+
+REPLACEMENT:
+The directional tests give numerical evidence for a lower estimate of about 8.3e-4 for the trace derivative norm, while the corrected proved upper bound in N_phi is 12519. These do not determine the optimal dual norm accurately. A sampled evaluation of the weighted origin term for the broad bump centered at u = 1/8.6 gives about 4.28e14. This is numerical conditioning evidence, consistent with a response of order 1e9 natural units per unit relative change, rather than a certified lower bound of 4.3e14.
+
+10. Sampled distances of equally accurate fits
+
+ORIGINAL:
+Fits of equal quality (errors in w/u at most 2.3e-6, K >= 10, and the referee's fit) have Taylor coefficients of order 7 at 0 between 6.38 and 6.86, and their mutual N-distances are 15 to 56 (lead researcher, suprema sampled), mostly from the weighted origin term sup u^(-6) |R_v''| on (0, 1/2]: the trial data cannot place the computed trace, or an exact profile near it, within 1e-6 of any reference in N.
+
+REPLACEMENT:
+For the quoted fits of comparable sampled quality, including the referee's fit and those with errors in w/u at most 2.3e-6 for K >= 10, the seventh Taylor coefficients range from about 6.38 to 6.86. The lead researcher's sampled suprema give numerical estimates of mutual N_phi-distances from 15 to 56, mostly from the weighted origin remainder. These are not certified full-interval norms. Sampled fitting errors alone, without further estimates, do not certify that the computed trace or an exact profile near it lies within 1e-6 of a reference in N_phi.

@@ -1,0 +1,115 @@
+# Full-vector velocity and the constant gauge of frozen packets
+
+Date: 2026-10-20. This is a standalone audit of the velocity used in the frozen packet equation. It makes no assertion about a global coupled profile.
+
+## Statement, hypotheses and conventions
+
+Let A>1, g>0, q=2(A-1), b=g/q, c_F=(2pi)^-2, and Phi be a smooth complex function with compact support in R minus{0}, integral Phi=0 and Phi(-t)=-conjugate(Phi(t)). Let v be the continuous real frozen packet of ../packet-dyadic-audit/PROOF.md:
+
+    v(s,y)=2i c_F integral_0^infinity r^-2 sin(yr)
+           integral Phi(t)e^(i s t r^A)(1+t^2r^q)^(-b)dt dr.       (1)
+
+Define two real functions
+
+    U_2(s,y)=-2i c_F integral_0^infinity r^(q-2) sin(yr)
+              integral t^2 Phi(t)e^(i s t r^A)
+                                (1+t^2r^q)^(-b-1)dt dr,         (2)
+
+    U_1(s,y)=2 c_F integral_0^infinity r^(A-3)
+              integral t Phi(t)(1+t^2r^q)^(-b-1)
+                              [e^(i s t r^A)cos(yr)-1]dt dr.    (3)
+
+Then these grouped integrals converge locally uniformly, U is continuous, U(0,0)=0, U_1 is even in y and U_2 is odd in y. They satisfy the distributional equations on the whole plane
+
+    d_s U_1+d_y U_2=0,
+    d_s U_2-d_y U_1=-d_s v.                                    (4)
+
+Both velocity components have strictly sublinear growth. Among all distributional solutions of(4) represented by continuous sublinear functions, U is unique after fixing U(0,0)=0. If only U_2 is required odd in y, the second component is unique and the remaining freedom is one constant horizontal component. No linear harmonic velocity can be added in this class.
+
+When Phi=i phi with phi real and even, v is even in s; U_1 is odd in s and U_2 even in s. This is the full centered parity about(s,y)=(0,0), and removes both constant components without an extra normalization. This centered packet parity is not a statement of the original profile's parity about x=0 after translation to P.
+
+For A>2, removing the subtraction -1 in(3) defines a continuous U_1^dec that tends to zero at spatial infinity. Formula(2) also tends to zero at infinity in this range. Thus U^dec is the unique sublinear div-curl solution that tends to zero. Its first component differs from(3) by a constant. For 1<A<=2 the bare unsubtracted integral can diverge at zero frequency; an anchoring prescription cannot be omitted without additional moment conditions. We give its exact cancellation criterion below.
+
+The source equation A s v_s+y v_y-v+g U_2=0 is already proved for the same U_2 in the dependent packet proof. Our conclusion identifies that component by a whole-plane sublinear div-curl characterization. It does not assert that the original profile's spatial symmetric-truncation prescription applies to every translated packet.
+
+## Convergence, reality and distributional identities
+
+On the fixed t support, as r tends to zero the bracket in(3) is bounded on compact physical sets by C(r^A+r^2), by the mean-value bound for the exponential and the second-order cosine bound. Thus its absolute integrand after t integration is bounded by
+
+    C(r^(2A-3)+r^(A-1)),
+
+which is integrable for A>1. In(2), |sin(yr)|<=C r supplies the bound C r^(q-1), also integrable. At infinity the absolute bounds are C r^(-A-1-g) in(3), since q(b+1)=g+q, and C r^(-2-g) in(2). These estimates are locally uniform and prove continuity by dominated convergence. In(3), complex conjugation followed by t mapped to -t leaves the integral unchanged. The inner integral in(2) is purely imaginary under the same operation. Both U components are therefore real. The y parity and the normalization follow directly. For imaginary even Phi, t Phi is odd and the only surviving part of(3) is the sine in s, proving its s parity; the other assertions follow in the same way from the cosine in s.
+
+First truncate all r integrals to epsilon<r<R. They are smooth, so differentiation and the following cancellation are legitimate. Write
+
+    z=t^2r^q, f=(1+z)^(-b), f_1=(1+z)^(-b-1).
+
+The divergence contributions from d_s U_1 and d_y U_2 are respectively plus and minus
+
+    2i c_F r^(2A-3) integral t^2 Phi(t)e^(i s t r^A)cos(yr) f_1 dt,
+
+because q-1=2A-3. Thus divergence is zero for every truncation. For the curl, d_s U_2 and -d_y U_1 add to
+
+    2 c_F r^(A-2) sin(yr)
+       integral t Phi(t)e^(i s t r^A)(z+1)f_1 dt,
+
+which equals -d_s v's truncated integrand because(z+1)f_1=f. The subtracted constant in(3) differentiates to zero. The truncated v and U converge locally uniformly by the preceding estimates and the dependent density proof. Passing to distributional derivatives proves(4). This argument requires no unjustified pointwise differentiation of a high-frequency integral.
+
+## Sublinear growth, with endpoint logarithms
+
+The r>=1 parts of(2) and(3) are bounded uniformly in(s,y). Set S=|s| and Y=|y|. For0<r<1, using boundedness of the amplitude and the fixed t support gives
+
+    |U_2| <= C + C integral_0^1 r^(q-2) min(1,Yr)dr,             (5)
+
+    |U_1| <= C + C integral_0^1 r^(A-3)
+                             [min(1,Sr^A)+min(1,Y^2r^2)]dr.    (6)
+
+In(6) the estimate follows by writing e^(i s t r^A)cos(yr)-1 as(e^(i s t r^A)-1)cos(yr)+(cos(yr)-1). Constants absorb the harmless factor2. When S or Y is at most1, its term is uniformly bounded, so assume they exceed1.
+
+Splitting(5) at r=Y^-1 gives a bounded function for q>1, a bound C(1+log Y) for q=1, and C Y^(1-q) for0<q<1. For the S term in(6), split at r=S^(-1/A). Direct integration gives C S^((2-A)/A) for1<A<2, C(1+log S) for A=2, and a constant for A>2. For the Y term split at r=Y^-1; it gives C Y^(2-A), C(1+log Y), or a constant in those respective ranges. Thus, in particular,
+
+    |U_1(X)| <= C(1+|X|)^(2-A),                    1<A<2,
+               C(1+log(2+|X|)),                   A=2,
+               C,                                A>2.
+
+Every exponent that occurs is less than1. A logarithm is bounded by C_delta(1+|X|)^delta for any fixed0<delta<1. Both components therefore satisfy a uniform bound C(1+|X|)^kappa for some kappa<1 depending only on A and the chosen logarithmic majorant.
+
+## Uniqueness and removal of harmonic freedom
+
+The difference H of two such velocities has zero divergence and curl. In distributions,
+
+    Delta H_1=d_s div H-d_y curl H=0,
+    Delta H_2=d_y div H+d_s curl H=0.
+
+For completeness, one can apply this argument to H convolved with a compact smooth approximate identity. Each mollified component is a smooth entire harmonic function and has the same growth exponent kappa<1. The interior gradient estimate obtained by differentiating the Poisson formula on a ball of radius R gives
+
+    |grad H_epsilon(X)| <= C/R sup_(B(X,R)) |H_epsilon|
+                         <= C_X R^(kappa-1) ->0.
+
+Hence each H_epsilon is constant. Letting epsilon tend to zero in distributions makes H constant, and continuity gives pointwise equality. Fixing H(0)=0 removes it. Alternatively, oddness of H_2 in y removes its vertical component and oddness of H_1 in s removes its horizontal component. A stream-function addition lambda s y would give(-lambda s,lambda y), which grows linearly, and so cannot occur. This is a growth-and-normalization statement, not a choice of a wall Green function.
+
+## The unanchored integral and its low-frequency moments
+
+For A>2 the frequency L^1 norm of the unanchored first component is finite. In the coordinates xi=t r^A, eta=plus or minus r, it is bounded at zero by C integral_0^1 r^(A-3)dr and at infinity by C integral_1^infinity r^(-A-1-g)dr. The second component is also frequency integrable in this range: its low-r absolute weight is r^(q-2), integrable because q>1. Their frequency functions are ordinary L^1 functions on R^2, so Fourier inversion and approximation in L^1 by smooth compactly supported frequency functions show that both inverse transforms tend to zero at infinity. For the latter assertion, integration by parts proves decay for each smooth compactly supported approximation, while its Fourier inverse error is bounded uniformly by its L^1 error. Formula(3) is the unanchored first component minus its value at zero.
+
+Here is the precise radial criterion in the remaining range. Define
+
+    m_k=integral t^(2k+1)Phi(t)dt,
+    d_k=(-1)^k(b+1)(b+2)...(b+k)/k!, d_0=1.
+
+For any K, uniformly on the fixed t support,
+
+    integral t Phi(t)(1+t^2r^q)^(-b-1)dt
+                      =sum_(k<K) d_k m_k r^(kq)+O(r^(Kq)).       (7)
+
+Choose K so A-2+Kq>0. The unanchored radial integral at(0,0) converges as epsilon tends to zero exactly if
+
+    m_k=0 for every integer k>=0 with A-2+kq<=0.                 (8)
+
+Indeed every such k<K has a nonzero d_k, distinct real radial exponent A-3+kq<=-1, and gives respectively a distinct divergent power or a logarithm after integration. A nonzero first divergent coefficient cannot be cancelled by the other powers or a logarithm. The remainder is integrable by the choice of K. This proves necessity and sufficiency. At every other fixed physical point, the difference from the origin integrand is exactly the anchored bracket in(3), whose local uniform convergence was proved already. Thus(8) is also the convergence criterion for the bare grouped integral at all finite points. It does not assert absolute convergence before the t integration.
+
+The zero density moment integral Phi=0 does not imply(8). For example a nonzero real odd Phi=t chi(t), with chi a nonnegative real even smooth function compactly supported away from zero, satisfies both density conditions but has m_0=integral t^2 chi(t)dt>0. Thus for every1<A<=2 its bare first-velocity integral diverges. In the imaginary even subspace all m_k vanish by oddness, and the unanchored and anchored first integrals coincide because their grouped origin integral is identically zero. The general anchored formula remains valid without those additional moments.
+
+## Dependencies, verification and scope
+
+Only the continuous density construction and frozen U_2 equation in ../packet-dyadic-audit/PROOF.md are used. The full-vector integral, estimates, distributional div-curl passage, sublinear uniqueness and radial moment criterion are proved here. These packets still fail the profile class's weighted gradient condition by that dependent proof. No candidate residual, full variable-coefficient inverse, kernel correction or endpoint follows. Symbolic checks of the displayed integrand cancellations may be recorded alongside this argument, but are not substitutes for the convergence proof. Status OPEN until independent model review is read and resolved.

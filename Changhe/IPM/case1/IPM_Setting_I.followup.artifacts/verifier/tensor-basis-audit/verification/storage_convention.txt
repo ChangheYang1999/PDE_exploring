@@ -1,0 +1,36 @@
+Read-only inspection, never imported or reused as evaluator code. Source SHA256 6fed9d0c1abb9f6372b9d8adc78db4e5b5d4140b4684d06f90fe9b9d48eb66f2
+34: # 1-D spectral tools
+35: # ----------------------------------------------------------------------------------------------
+36: def cheb_lobatto01(N):
+37:     """N+1 Chebyshev-Gauss-Lobatto points on [0, 1], increasing (q_0 = 0, q_N = 1)."""
+38:     return 0.5 * (1.0 - np.cos(np.pi * np.arange(N + 1) / N))
+39: 
+79: class Angular:
+80:     """Quadrant grid with the map theta(s) = s + (beta/2) sin(2 s), s_j = (j+1/2) pi/(2M), 0 <= beta < 1 (theta'(pi/2) = 1 - beta:
+81:     collocation angles are clustered at the y-axis by 1/(1-beta); theta'(0) = 1 + beta).  Parities are preserved by the map, so
+82:     the four classes use trigonometric bases in s: EE cos(2k s), EO sin((2k+1) s), OO sin(2(k+1) s), OE cos((2k+1) s), k = 0..M-1.
+83:     d/dtheta = (1/theta'(s)) d/ds."""
+84:     def __init__(self, M, device, beta=0.0):
+85:         self.M = M; self.dev = device; self.beta = float(beta)
+86:         sj = (np.arange(M) + 0.5) * np.pi / (2 * M)
+87:         th = sj + 0.5 * self.beta * np.sin(2 * sj); dth = 1.0 + self.beta * np.cos(2 * sj)
+88:         k = np.arange(M)
+89:         S = {'EE': np.cos(np.outer(sj, 2 * k)), 'EO': np.sin(np.outer(sj, 2 * k + 1)),
+90:              'OO': np.sin(np.outer(sj, 2 * (k + 1))), 'OE': np.cos(np.outer(sj, 2 * k + 1))}
+91:         self.n = {'EE': 2 * k, 'EO': 2 * k + 1, 'OO': 2 * (k + 1), 'OE': 2 * k + 1}
+92:         T = lambda A: torch.tensor(np.asarray(A, dtype=np.float64), device=device)
+93:         self.S = {c: T(S[c]) for c in S}
+94:         self.A = {c: torch.linalg.inv(self.S[c]) for c in S}          # values -> coefficients
+95:         self.s_np, self.theta_np, self.dtheta_ds_np = sj, th, dth
+96:         self.s = T(sj); self.theta = T(th); self.dtheta_ds = T(dth)
+97:         self.cos = torch.cos(self.theta); self.sin = torch.sin(self.theta)
+450: 
+451: 
+452: # ----------------------------------------------------------------------------------------------
+453: # state I/O
+454: # ----------------------------------------------------------------------------------------------
+455: def save_state(path, model, x, extra=None):
+456:     b, cl = model.unpack(x)
+457:     d = dict(N=model.N, M=model.M, L=model.L, beta=model.beta, nmodes=model.nmodes, Mq=model.Mq, Npsi=model.Npsi, b=b.detach().cpu().numpy(),
+458:              c_l=float(cl), q=model.q_np, theta=model.ang.theta_np)
+459:     if extra: d.update(extra)

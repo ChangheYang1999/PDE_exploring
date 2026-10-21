@@ -1,0 +1,242 @@
+{
+  "date": "2026-10-20T16:31:12.852497+00:00",
+  "scope": "Own interpolation and algebra; supplied target FD columns; source D0 not stored",
+  "inputs": [
+    {
+      "source": "numerics/runs/crossgrid_n120m48_from_n96S.json",
+      "copy": "verifier/crossgrid-actions/data/crossgrid_n120m48_from_n96S.json",
+      "sha256": "384cd3015785871ea1bcdfc694727158f5e8061c04eaa2f4c0d2c80373d43547"
+    },
+    {
+      "source": "numerics/runs/crossgrid_n120m48_from_n96S.pt",
+      "copy": "verifier/crossgrid-actions/data/crossgrid_n120m48_from_n96S.pt",
+      "sha256": "d7b7169686ecaa9766aa096deeb7aa3568e723b8744014407818a4ecd78dcc9d"
+    },
+    {
+      "source": "numerics/runs/dnB_n96m40S.npz",
+      "copy": "verifier/crossgrid-actions/data/dnB_n96m40S.npz",
+      "sha256": "5d78856b3cda0d8aa878f712f9b7d671ac00c5ac4a19b2f651fc4e071d8bb6df"
+    },
+    {
+      "source": "numerics/runs/dnSB_n120m48.npz",
+      "copy": "verifier/crossgrid-actions/data/dnSB_n120m48.npz",
+      "sha256": "499ad16a720e0b824328f6a6bfbfed5e8f79c7d61ddd6f3df29aba3921bfe730"
+    },
+    {
+      "source": "numerics/runs/n96m40S_final_softvecs_node_cl400.pt",
+      "copy": "verifier/crossgrid-actions/data/n96m40S_final_softvecs_node_cl400.pt",
+      "sha256": "b7fe9c1804aa3c11b28c5933c2226d9ca170b4ee46f55c1527fe8fb9727780ca"
+    },
+    {
+      "source": "numerics/runs/crossgrid_n96m40_from_n120S.json",
+      "copy": "verifier/crossgrid-actions/data/crossgrid_n96m40_from_n120S.json",
+      "sha256": "d2476c07a1361042e850cec39eb64b9c3c5a0af2c98f748dc864383558fc676d"
+    },
+    {
+      "source": "numerics/runs/crossgrid_n96m40_from_n120S.pt",
+      "copy": "verifier/crossgrid-actions/data/crossgrid_n96m40_from_n120S.pt",
+      "sha256": "9922229183a610c9b676110e80d3aaa06e982f237486800a2261146e12e1bfb2"
+    },
+    {
+      "source": "numerics/runs/dnSB_n120m48.npz",
+      "copy": "verifier/crossgrid-actions/data/dnSB_n120m48.npz",
+      "sha256": "499ad16a720e0b824328f6a6bfbfed5e8f79c7d61ddd6f3df29aba3921bfe730"
+    },
+    {
+      "source": "numerics/runs/dnB_n96m40S.npz",
+      "copy": "verifier/crossgrid-actions/data/dnB_n96m40S.npz",
+      "sha256": "5d78856b3cda0d8aa878f712f9b7d671ac00c5ac4a19b2f651fc4e071d8bb6df"
+    },
+    {
+      "source": "numerics/runs/n120m48_S_softvecs_node_cl400.pt",
+      "copy": "verifier/crossgrid-actions/data/n120m48_S_softvecs_node_cl400.pt",
+      "sha256": "3e2fccadb58c2f5de10ebbb561dbbfef3bb434d1ec0742103c742fff3bb7d241"
+    }
+  ],
+  "rows": [
+    {
+      "tag": "n120m48_from_n96S",
+      "N_source": 96,
+      "M_source": 40,
+      "N_target": 120,
+      "M_target": 48,
+      "independent_interpolation_max_error": 1.8094900577914075e-14,
+      "target_state_max_error": 0.0,
+      "Q_orthogonality_error": 1.0823868692863621e-15,
+      "V_span_reconstruction_error": 3.4422280408800338e-15,
+      "ritz_target": [
+        0.0007547222638034181,
+        0.001481050748950974,
+        0.003321790175629876,
+        0.0044704300879699135,
+        0.007650146998915747,
+        0.015237373718237622,
+        0.03178360274810411,
+        0.09146356937214342,
+        0.13440294725372948,
+        0.8243811945628399
+      ],
+      "ritz_json_error": 2.220446049250313e-16,
+      "Q_actions": [
+        0.09825690579635886,
+        0.04343213655046802,
+        0.3890374444332957,
+        0.11034343952616178,
+        0.17167785329958815,
+        0.3662718050398062,
+        0.24434690082824823,
+        0.07086373917804992,
+        0.479257063383442,
+        0.2725058971223467
+      ],
+      "Q_action_json_error": 1.6653345369377348e-16,
+      "V_unit_actions": [
+        0.09825690579635873,
+        0.0344111762472335,
+        0.31751883887999416,
+        0.02375610794740793,
+        0.1360576361320949,
+        0.055094056763276014,
+        0.04202465523431664,
+        0.1737301508144776,
+        0.40830522077665576,
+        0.3196287025583898
+      ],
+      "V_unit_action_json_error": 4.996003610813204e-16,
+      "max_offdiag_cos": 0.8294059942553694,
+      "source_ritz_only_metadata": [
+        4.424000442791639e-06,
+        6.706205894308195e-06,
+        5.466981125066901e-05,
+        0.00020662503306389382,
+        0.0004124447691634728,
+        0.0008807639873504992,
+        0.0012344131076976745,
+        0.0014172052602786794,
+        0.00231563238442715,
+        0.008716434390443669
+      ],
+      "source_D0_stored": false,
+      "target_source_ritz_ratio_using_metadata": [
+        170.59723966193192,
+        220.84778968805543,
+        60.76095928700003,
+        21.635471857795373,
+        18.548294392075572,
+        17.3001779558159,
+        25.747946574695938,
+        64.5379832658524,
+        58.041573506054846,
+        94.57780069642429
+      ],
+      "source_q0_step_difference_metadata": 2.3507123174567865e-06,
+      "target_q0_step_difference_metadata": 1.038043053285344e-06,
+      "finite_difference_step": 0.0001
+    },
+    {
+      "tag": "n96m40_from_n120S",
+      "N_source": 120,
+      "M_source": 48,
+      "N_target": 96,
+      "M_target": 40,
+      "independent_interpolation_max_error": 1.872807464664561e-14,
+      "target_state_max_error": 0.0,
+      "Q_orthogonality_error": 7.538999630965938e-16,
+      "V_span_reconstruction_error": 1.5424561979185687e-15,
+      "ritz_target": [
+        0.0006725279121789211,
+        0.0013546064773932824,
+        0.008771876807423409,
+        0.019080273623743642,
+        0.02999308953989272,
+        0.05150368198802478,
+        0.14933892270760896,
+        0.3378691390319431,
+        2.409892062086732,
+        3.686104922490539
+      ],
+      "ritz_json_error": 2.220446049250313e-15,
+      "Q_actions": [
+        0.10685425225830669,
+        0.016369797274477526,
+        0.5629769375428383,
+        0.7821516455370905,
+        1.3079869545476304,
+        1.0329896032625703,
+        1.1771718484034701,
+        2.5611479802060826,
+        1.6019868729331892,
+        2.303375896764488
+      ],
+      "Q_action_json_error": 8.881784197001252e-16,
+      "V_unit_actions": [
+        0.10685425225830657,
+        0.021942725040954618,
+        0.5099734917355608,
+        0.7333122354709457,
+        0.6868994646765727,
+        1.4905376827393992,
+        1.1209996044955426,
+        2.5986592598825093,
+        1.6478999471652,
+        2.278914123473741
+      ],
+      "V_unit_action_json_error": 3.9968028886505635e-15,
+      "max_offdiag_cos": 0.8187115998549783,
+      "source_ritz_only_metadata": [
+        2.579864676571476e-06,
+        9.641191530561008e-06,
+        2.892619370626972e-05,
+        9.295175372417964e-05,
+        0.00019210902487945433,
+        0.0003518259869208357,
+        0.0005010673188418421,
+        0.0006627918279124192,
+        0.0008859281646578502,
+        0.0011269781355300985
+      ],
+      "source_D0_stored": false,
+      "target_source_ritz_ratio_using_metadata": [
+        260.68340649273136,
+        140.5019776963667,
+        303.2502961328823,
+        205.27072227557412,
+        156.12535412489316,
+        146.38964687851106,
+        298.04163451088414,
+        509.7666036349936,
+        2720.1890155704036,
+        3270.786545256887
+      ],
+      "source_q0_step_difference_metadata": 3.1953109037371266e-06,
+      "target_q0_step_difference_metadata": 2.0462925578860894e-06,
+      "finite_difference_step": 0.0001
+    }
+  ],
+  "exact_counterexample_samples": [
+    {
+      "n": 10,
+      "sigma_min": 0.09901951359278484,
+      "explicit_v_action": 0.09950371902099893,
+      "right_min_direction_distance_to_e1": 0.09865772480581354
+    },
+    {
+      "n": 100,
+      "sigma_min": 0.009999000199950016,
+      "explicit_v_action": 0.009999500037496877,
+      "right_min_direction_distance_to_e1": 0.009998625336621096
+    },
+    {
+      "n": 1000,
+      "sigma_min": 0.000999999000002,
+      "explicit_v_action": 0.000999999500000375,
+      "right_min_direction_distance_to_e1": 0.0009999986250033674
+    },
+    {
+      "n": 10000,
+      "sigma_min": 9.999999900000002e-05,
+      "explicit_v_action": 9.999999950000001e-05,
+      "right_min_direction_distance_to_e1": 9.999999862500002e-05
+    }
+  ]
+}

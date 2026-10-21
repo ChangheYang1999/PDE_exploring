@@ -1,0 +1,267 @@
+Please review the attached mathematical arguments independently. Reconstruct the mathematics and look for counterexamples; do not accept conclusions on trust. Pure text mathematical review only. Restrictions apply to this delegated task: no JavaScript/TypeScript or associated runtimes/tools, no servers/listeners/tunnels, no RLScience cluster, no Lean/Lake builds, no writes outside the verifier directory, no commits/push/posts/contact with people, CPU single-threaded, under16GB/process, at most two heavy processes. Do not ask questions. Independently verify every finite-part and expansion claim. Recompute the sign and Fourier factors in the logarithmic polynomial, check irrational A Taylor remainders, compact-frequency smoothness and all derivative estimates. Check that changing the extension cannot cancel the resonant anomaly. Give exact corrections or a concise acceptance. This is a follow-up to the accepted direct dyadic packet proof. Do not spend the entire token budget on thinking; provide a substantive answer.
+
+FILE verifier/packet-expansion-audit/PROOF.md
+# Finite-part expansion of the frozen Fourier packets
+
+Date: 2026-10-20. This is a standalone audit of the full local C^N expansion, including its logarithmic qualifications. It concerns the frozen equation only.
+
+## Statement and notation
+
+Use A>1, g>0, q=2(A-1), b=g/q, Q=A+1, h=1+g and a smooth Phi compactly supported away from zero as in ../packet-dyadic-audit/PROOF.md. In particular integral Phi=0 and Phi(-t)=-conjugate(Phi(t)). Let v be exactly the continuous tempered packet defined there. For k>=0 put
+
+    h_k=h+kq,
+    c_k=(-1)^k b(b+1)...(b+k-1)/k!, with c_0=1,
+    a_k(t)=c_k Phi(t)|t|^(-2b-2k).
+
+For an ordinary multi-index(a,c), write its anisotropic weight as lambda(a,c)=Aa+c. Define the finite set J_k={(a,c): a,c>=0 integers, c odd, lambda(a,c)<=h_k} and
+
+    M_(k,a,c)=2/(a!c!) integral a_k(t)t^a dt.
+
+There is a specific tempered extension E_k of the smooth frequency density
+
+    sgn(eta)|eta|^(-Q-h_k) a_k(xi/|eta|^A), eta!=0,       (1)
+
+defined below by radial finite parts at radius1. Put u_k=FourierInverse(E_k), with inverse factor c_F=(2pi)^-2. Then:
+
+1. Each u_k is smooth away from the origin. For every mu>0,
+
+    u_k(mu^A s,mu y)=mu^(h_k)[u_k(s,y)+log(mu)P_k(s,y)],  (2)
+
+   in distributions, hence pointwise away from the origin, where the real polynomial is
+
+    P_k(s,y)=-c_F sum_(a,c):lambda(a,c)=h_k
+                        M_(k,a,c) i^(a+c) s^a y^c.       (3)
+
+   The sum is over nonnegative a and odd positive c. Every monomial has weight h_k. An empty sum is zero.
+2. A genuinely homogeneous extension of(1) exists exactly when every resonant moment M_(k,a,c) in(3) vanishes. A change of extension by a distribution supported at zero cannot remove a nonzero logarithmic anomaly. Arbitrary such changes can also introduce polynomial terms of other weights; they need not preserve the precise form(2).
+3. For every nonnegative integer N, choose an integer K>=1 with h_K>AN. Then, near the origin,
+
+    v=sum_(0<=k<K) u_k+R_N,       R_N in C^N_loc.          (4)
+
+   The smooth terms included in R_N are not omitted. Formula(4) is a finite-order expansion for each N, not a claim that the infinite series converges.
+
+Pure homogeneity at the leading order does not exclude resonances at later h_k. No inference about an exact coupled profile, a kernel correction, an admissible global perturbation, a family, or either endpoint is made. The definition and positive regularity estimates in the preceding packet proof are dependencies; the finite parts and remainder estimates are proved here.
+
+## Construction of the finite part
+
+Fix k and temporarily write H=h_k and a(t)=a_k(t). For a Schwartz test function phi define
+
+    J_phi(r)=integral a(t)[phi(t r^A,r)-phi(t r^A,-r)]dt.
+
+The Jacobian dxi=r^A dt turns the formal pairing of(1) into integral r^(-H-1)J_phi(r)dr. Let
+
+    C_lambda(phi)=sum_(a,c):Aa+c=lambda, c odd
+                        M_(k,a,c) d_xi^a d_eta^c phi(0,0).
+
+Only weights lambda<=H are used below. They form a finite set because A>1. Taylor expansion of phi at zero gives
+
+    J_phi(r)=sum_(lambda<=H) C_lambda(phi) r^lambda
+                         +O(r^(H+delta)),   0<r<=1,       (5)
+
+for some delta>0 depending on A,H, uniformly in a fixed finite Schwartz seminorm. For clarity, choose an integer L>H and use the ordinary Taylor polynomial of total degree L-1. Its remainder is O(r^L) because |(tr^A,r)|<=C r on the fixed t support. The finitely many polynomial terms not retained in(5) have weights strictly greater than H. Take delta to be the minimum of L-H and their positive excesses. The two eta signs cancel every even c term. This proves(5) with no assumption that A is rational.
+
+Define
+
+    <E_k,phi> = integral_0^1 r^(-H-1)
+                  [J_phi(r)-sum_(lambda<=H)C_lambda(phi)r^lambda]dr
+              +integral_1^infinity r^(-H-1)J_phi(r)dr
+              +sum_(lambda<H) C_lambda(phi)/(lambda-H).   (6)
+
+The first integral converges by(5); the second converges by Schwartz decay in eta=r. Both are controlled by finitely many Schwartz seminorms, so this defines a tempered distribution. If phi is supported away from zero, its origin jets vanish and(6) is the ordinary pairing with(1). Thus E_k is an extension. Its reality follows from the symmetry of a(t) and the paired eta signs; Taylor subtraction and its real coefficients preserve that symmetry.
+
+An equivalent formula, useful for checking signs, is
+
+    <E_k,phi>=lim_(epsilon->0) [integral_epsilon^infinity
+                  r^(-H-1)J_phi(r)dr
+              -sum_(lambda<H) C_lambda(phi)epsilon^(lambda-H)/(H-lambda)
+              +C_H(phi)log(epsilon)],                    (7)
+
+where C_H=0 if the weight H does not occur. Integrating each subtracted power on(epsilon,1) proves equivalence to(6). In particular the sign of the logarithmic term is specified.
+
+## Scaling and the resonance obstruction
+
+Set delta_mu(xi,eta)=(mu^A xi,mu eta) and phi_mu=phi composed with delta_mu. Then J_(phi_mu)(r)=J_phi(mu r) and C_lambda(phi_mu)=mu^lambda C_lambda(phi). Substituting t=mu r in(7), including its subtraction terms, gives exactly
+
+    <E_k,phi_mu>=mu^H[<E_k,phi>-log(mu)C_H(phi)].          (8)
+
+Let Res_k be the distribution phi mapped to C_H(phi). The Fourier transform of u_k composed with delta_mu is the distribution phi mapped to <E_k,phi_mu>. Hence(8) gives(2) with P_k=-FourierInverse(Res_k). Since the functional d^alpha phi(0) is(-1)^|alpha|d^alpha delta_0 and the inverse transform of d^alpha delta_0 is c_F(-iX)^alpha, this is exactly(3). Thus the sign and Fourier factors in(3) are checked, not left implicit.
+
+The monomials in(3) are linearly independent. Therefore P_k=0 exactly when all the indicated moments vanish. In this case(8) says E_k is homogeneous and supplies the required extension.
+
+Conversely, two distributional extensions of(1) differ by a distribution supported at the frequency origin. Such a distribution is a finite linear combination of derivatives of delta_0, hence its inverse transform is a polynomial. One justification of this elementary structure fact is that a compactly supported distribution has finite order; after subtracting a test function's Taylor jet through that order and using shrinking cutoffs at its support point, it annihilates the remainder. Its action therefore factors through a finite jet.
+
+Suppose adding a polynomial p(X) to u_k removed the anomaly. For all mu>0 it would have to satisfy
+
+    p(delta_mu X)-mu^H p(X)=-mu^H log(mu)P_k(X).           (9)
+
+Compare the coefficient of each monomial of weight H. The left side is zero in those coefficients, since mu^H-mu^H=0. The right side is nonzero for some mu if the corresponding coefficient of P_k is nonzero. Thus(9) is impossible when P_k!=0. This also explains why nonresonant polynomial changes do not cancel resonant logarithms. No classification of all solutions of the frozen equation is used.
+
+## High-frequency expansion and the C^N remainder
+
+Write r=|eta| and t=xi/r^A. The exact packet density is
+
+    sgn(eta) r^(-Q-h) Phi(t)|t|^(-2b)
+                                (1+t^(-2)r^(-q))^(-b).   (10)
+
+Taylor's formula with integral remainder for z mapped to(1+z)^(-b) gives, for r>=1,
+
+    (10)=sum_(0<=k<K) sgn(eta)r^(-Q-h_k)a_k(t)
+                                       +error_K.         (11)
+
+Here t stays in a fixed compact set separated from zero. After setting r=2^n u with u in a fixed compact subinterval of(0,infinity), multiplying error_K by2^((Q+h_K)n), and expressing it in the scaled frequency variables(zeta,nu)=(2^(-An)xi,2^(-n)eta), every derivative of every fixed order is uniformly bounded in n>=0. To verify this directly, factor z^K from the integral remainder. The residual function of z is smooth on0<=z<=C and all its derivatives there are bounded; on the scaled support z=t^(-2)2^(-qn)u^(-q), while |t| and u have positive lower bounds. The two sign branches are separated from nu=0. Composing with their smooth coordinate maps gives the asserted uniform bounds.
+
+Take a smooth radial cutoff chi_hi(r) that is zero for r<=1 and one for r>=2. Decompose its remainder in(11) into dyadic radial pieces. Each inverse piece has the form
+
+    2^(-h_K n) G_n(2^(An)s,2^n y),
+
+with G_n uniformly Schwartz. This follows by integration by parts on the fixed compact scaled frequency support, as in the preceding packet proof. Every ordinary derivative of total order at most N is bounded by C 2^((AN-h_K)n). Since h_K>AN, the series of these derivatives converges uniformly. Thus the high-frequency remainder has continuous ordinary derivatives through order N.
+
+For each k, the distribution E_k-chi_hi E_k has compact frequency support. Its inverse transform is smooth, indeed entire: on its compact support the exponential and every derivative have uniformly convergent power series, to which the finite-order distribution can be applied. The low-frequency part of the exact packet has the same property. Finally, chi_hi E_k is multiplication of the ordinary density(1) by chi_hi, because its support avoids the origin. Subtracting sum_(k<K)E_k from the exact packet therefore leaves the C^N high-frequency remainder just proved plus a smooth low-frequency term. Fourier inversion proves(4).
+
+## Scope and verification record
+
+For each N, q>0 ensures that a finite K with h_K>AN exists. This provides every requested finite differentiability remainder, including resonant cases. The weighted smooth jets and the polynomial logarithmic terms are explicit parts of the statement, so the expansion does not justify dropping them in an axis trace. The all-order normalized trace result is separately proved by direct dyadic estimates in the preceding packet proof and need not be deduced from(4).
+
+No numerical candidate parameter is used. No Lean source or numerical experiment is required for this analytic argument. The second-model review and any corrections will be retained in verification/. Until that review is read and resolved, the status is OPEN.
+
+
+FILE verifier/packet-dyadic-audit/PROOF.md
+# Frozen packets: direct dyadic estimates and all normalized axis traces
+
+Date: 2026-10-20. This is an independent proof of a specified part of the frozen-packet statement in the lead's section6.4. It does not prove the full asymptotic expansion or any correction to the variable-coefficient equation.
+
+## Exact statement and definitions
+
+Let A>1, g>0, q=2(A-1), b=g/q and h=1+g. Choose a smooth complex function Phi compactly supported in R minus{0}, satisfying
+
+    integral Phi(t)dt=0,
+    Phi(-t)=-conjugate(Phi(t)).
+
+The Fourier transform convention is fhat(xi,eta)=integral exp(-i(s xi+y eta))f(s,y)dsdy, with inverse factor(2pi)^-2. Define the tempered distribution Vhat by the limit of the following formula restricted to |eta|>epsilon:
+
+    Vhat(xi,eta)=sgn(eta)|eta|^(-A-2)
+       (1+xi^2/eta^2)^(-b) Phi(xi/|eta|^A).
+
+The extension at zero frequency is part of this definition. Let v be its inverse transform. Define U_2[v] by the same limiting convention after multiplying the displayed expression by -xi^2/(xi^2+eta^2). Conclusions:
+
+1. These limits exist. The density is the real continuous function
+
+    v(s,y)=2i/(2pi)^2 integral_0^infinity sin(yr)r^-2
+        integral Phi(t)exp(i s t r^A)(1+t^2 r^q)^(-b)dt dr.       (1)
+
+   It is odd in y and satisfies the frozen equation
+
+    A s v_s+y v_y-v+g U_2[v]=0                                (2)
+
+   distributionally, with no additional distribution at zero frequency.
+2. v is smooth off(0,0). If m is a nonnegative integer, 0<alpha<1 and(m+alpha)A<=h, then v belongs to C^(m,alpha)_loc. The noninteger endpoint in this statement is included.
+3. For every integer j>=2, the trace d_y^j v(s,0) is smooth for s!=0 and satisfies
+
+    |d_y^j v(s,0)| <= C_j times
+       1,                         j<h,
+       1+log(1/|s|),              j=h,
+       1+|s|^((h-j)/A),           j>h,                         (3)
+
+   for0<|s|<=1/2. Thus, for every odd j>=3,
+
+    |s|^((j-1)/A) d_y^j v(s,0)/j! ->0.                     (4)
+
+   Neither boundedness of all unweighted traces nor absence of smooth Taylor terms is asserted.
+4. The mapping Phi to v is injective. If h/A>3, it gives an infinite-dimensional real space of frozen solutions in C^(2,alpha)_loc for every alpha<1, smooth off the source and satisfying(4) at every odd order.
+5. Every such packet satisfies |v(X)|<=C(1+|X|)^(1/A). Every nonzero packet fails the global bound |grad v(X)|<=C(1+|X|)^(gamma-1) for every gamma<1. Hence these uncut packets do not satisfy that growth condition of the profile class.
+
+There is no assertion that they solve the nonlinear or variable-coefficient IPM equation, that their cutoffs correct to kernel elements, or that they yield a family or either task endpoint. The full quasi-homogeneous expansion with possible resonant logarithms remains outside this proof.
+
+## The distribution at low frequency and its equation
+
+Set xi=t r^A, eta=plus or minus r. The Jacobian is r^A. For a Schwartz test function f, the pairing becomes
+
+    integral_epsilon^infinity r^-2 integral Phi(t)(1+t^2r^q)^(-b)
+           [f(t r^A,r)-f(t r^A,-r)] dt dr.                   (5)
+
+For r<=1 and t in the fixed support,
+
+    f(t r^A,r)-f(t r^A,-r)
+       =2r f_eta(0,0)+O(r^(A+1)+r^3).
+
+The amplitude is1+O(r^q), uniformly with t derivatives on this support. The zero moment of Phi cancels the leading term. The absolute value after the t integration is at most a fixed Schwartz seminorm times
+
+    C(r^(q-1)+r^(A-1)+r),
+
+which is integrable since A>1 and q>0. At infinity, the test function gives arbitrary polynomial decay and the integral converges. The same argument proves continuity with respect to finitely many Schwartz seminorms, hence defines a tempered distribution. Multiplication by the second-velocity symbol adds a factor O(r^q) at zero, so its pairing converges too.
+
+Let D=A xi d_xi+eta d_eta. The quantity t=xi/|eta|^A is invariant under D and D r=r. Direct differentiation away from eta=0 gives
+
+    D Vhat=(-A-2-g xi^2/(xi^2+eta^2))Vhat.
+
+The Fourier transform of(2) is therefore zero away from eta=0. On the cutoff |eta|>epsilon, integration by parts leaves only the boundary from D crossing r=epsilon. Explicitly, D 1_(|eta|>epsilon)=|eta| delta(|eta|-epsilon). The factor sgn(eta) turns the two boundary lines into the difference in(5). Its pairing is epsilon times the radial integrand in(5), hence O(epsilon^q+epsilon^A+epsilon^2) after the same cancellation. It tends to zero. The support in t is away from zero and compact, so there is no separate boundary on xi=0 or at t infinity. This proves(2) as a distribution on the whole plane.
+
+Grouping positive and negative eta in Fourier inversion gives(1). On bounded sets of(s,y), its low-r integrand is bounded by C(r^(A-1)+r^(q-1)): subtract the zero moment in the inner integral and use |sin(yr)|<=C r. For r>=1, the integrand is bounded by C r^(-2-g), since t stays away from zero. Both bounds are integrable and locally uniform, proving continuity and agreement with the distributional inverse. The reality condition makes the inner t integral purely imaginary for real s,r; thus v is real. Oddness in y follows from the sine. These statements also hold for U_2 with its inserted multiplier.
+
+## Smooth low frequencies and uniformly Schwartz dyadic pieces
+
+Choose a smooth partition of unity on r>0 consisting of one term supported in r<2 and terms chi(2^-n r), n>=0, with chi supported in a fixed compact subinterval of(0,infinity). Overlap is uniformly finite. The low-frequency part is smooth in(s,y). To check every derivative at r=0, write a for the number of s derivatives and c for y derivatives. If a>=1, the inner integral gains r^(Aa). For c=0 the sine gives an extra r; for c>=1 the derivative supplies r^c. All resulting powers are integrable since A>1. If a=0,c=0 or1, use the zero-moment cancellation O(r^A+r^q); if c>=2 the factor r^c alone suffices. This also justifies derivatives uniformly on compact sets.
+
+For the n-th high-frequency piece substitute r=2^n u. Since qb=g, it has the exact form
+
+    v_n(s,y)=2^(-hn) H_n(2^(An)s,2^n y).                  (6)
+
+The inverse Fourier integrand defining H_n is supported where u lies in the fixed support of chi and t lies in the fixed support of Phi. On each sign of eta, the map(t,u) to(t u^A,plus or minus u) is a smooth diffeomorphism with nonzero Jacobian. Its amplitude includes
+
+    (2^(-qn)+t^2u^q)^(-b),
+
+whose derivatives of every fixed order are bounded uniformly for n>=0. This follows because |t| and u have fixed positive lower bounds. All other factors are fixed smooth functions on this compact support. Integration by parts in the two Fourier variables, with no boundary terms because the cutoff functions are smooth and compactly supported, proves H_n are uniformly Schwartz. Consequently, for every a,c,N>=0,
+
+    |d_s^a d_y^c v_n(s,y)|
+       <= C_(a,c,N) 2^((Aa+c-h)n)
+          (1+2^(An)|s|+2^n|y|)^(-N).                  (7)
+
+On any compact set separated from(0,0), choosing N sufficiently large makes the derivative series uniformly summable. Thus v is smooth there.
+
+## Ordinary Holder regularity, including the noninteger endpoint
+
+For a derivative of total order m, Aa+c<=mA. Its uniform norm at scale n is bounded by C 2^((mA-h)n). Its first derivative is bounded by C 2^(((m+1)A-h)n). The mean-value inequality and the uniform bound give, for delta=|X-X'|<=1,
+
+    |D^m v_n(X)-D^m v_n(X')|
+       <= C 2^((mA-h)n) min(1,2^(An)delta).             (8)
+
+Put theta=h/A-m. The assumption gives theta>=alpha>0. If0<theta<1, splitting at2^(An)delta=1 sums two geometric series and gives C delta^theta. If theta=1, the low-scale part is at most C delta(1+log(1/delta)), bounded by C_alpha delta^alpha for every alpha<1. If theta>1, the derivative series of order m+1 is summable and gives a Lipschitz bound. Thus in every permitted case(8) sums to C delta^alpha. The derivatives of order m themselves are uniformly summable because theta>0; the smooth low-frequency term causes no difficulty on a compact set. This proves the asserted C^(m,alpha)_loc regularity without assuming any asymptotic expansion.
+
+## Axis traces at every order
+
+At y=0, inequality(7) gives
+
+    |d_y^j v_n(s,0)|<=C_(j,N)2^((j-h)n)(1+2^(An)|s|)^(-N).
+
+For0<|s|<=1/2 split the series at2^(An)|s|=1. Before the split, it is a bounded geometric series if j<h, a sum of O(1+log(1/|s|)) constants if j=h, and at most C|s|^((h-j)/A) if j>h. After the split, take AN>max(j-h,0); the geometric tail gives the same respective bound, with a bounded contribution from the smooth low frequencies. This proves(3). Multiplying by |s|^((j-1)/A) gives a vanishing bound: its exponent is(j-1)/A when j<h, with a logarithm if j=h, and g/A>0 when j>h. The conclusion(4) follows for every stated j. The constant may depend on j; no uniform all-orders estimate is claimed.
+
+## Injectivity, dimension and far-field admissibility
+
+If v is zero as a distribution, Vhat is zero. On eta>0 away from the origin its formula is a smooth function, with nonvanishing scalar factors multiplying Phi. Thus Phi is zero. The reality and moment conditions leave an infinite-dimensional real space: take Phi=i f, where f is any real even smooth compactly supported function away from zero with integral zero. Injectivity and the regularity and trace estimates prove conclusion4.
+
+For growth, put S=|s| and Y=|y|. On0<r<1 subtract the zero moment to bound the inner integral in(1) by
+
+    C(min(1,S r^A)+r^q).
+
+The first term contributes at most C(1+S)^(1/A), even after replacing the sine by1, by splitting at r=S^(-1/A) when S>1. The second contributes at most
+
+    C integral_0^1 min(1,Yr) r^(q-2)dr.
+
+For Y>1, split this integral at r=1/Y; for Y<=1 its bound is constant. For q<1 it is bounded by C(1+Y)^(1-q), for q=1 by C(1+log(1+Y)), and for q>1 by a constant. Since1-q=3-2A<1/A for A>1, all cases are bounded by C(1+Y)^(1/A). The high-r part is uniformly bounded. This proves the isotropic growth bound.
+
+A stronger fact follows from rescaling(1): as R tends to infinity,
+
+    R^-1 v(R^A s,R y) -> V_0(s,y),                      (9)
+
+locally uniformly, where V_0 is(1) with the amplitude(1+t^2r^q)^(-b) replaced by1. For the rescaled integral, the amplitude is(1+t^2r^q/R^q)^(-b). At r<=1 the same moment cancellation gives an integrable bound C(r^(A-1)+r^(q-1)), uniform for R>=1 and compact(s,y); at r>=1 use C r^-2. Dominated convergence, with the same bounds on compact sets, proves(9). The limiting Fourier distribution is given by the preceding construction with amplitude1: the same zero-moment cancellation gives a convergent low-frequency pairing, and the locally uniform integral bounds give its continuous inverse V_0. It is nonzero for nonzero Phi, again by its formula on eta>0. V_0 is odd in y.
+
+Suppose the weighted gradient bound in conclusion5 held. On each compact set with |s| bounded away from zero,
+
+    d_y[R^-1 v(R^A s,Ry)]=v_y(R^A s,Ry)
+       =O(R^(A(gamma-1))) ->0.
+
+Using the fundamental theorem of calculus between two finite y values and the locally uniform limit(9), V_0 is independent of y on s!=0. Oddness makes it zero there, and continuity makes it zero on s=0 as well. This contradicts its nonzero Fourier distribution. Thus no nonzero packet satisfies that weighted gradient condition. This is a failure of one admissibility condition for the uncut field, not a conclusion about a compact cutoff or its possible correction.
+
+## Dependencies and scope
+
+The proof uses Fourier inversion for tempered distributions, integration by parts, the mean-value inequality, geometric series, dominated convergence and elementary compactly supported Fourier decay. The needed estimates are supplied above. It does not use numerics, the full quasi-homogeneous expansion, a classification of all frozen solutions, or a variable-coefficient inverse. In particular it supplies no exact coupled profile, no smooth-center candidate and no endpoint. Review evidence and any finite exponent checks belong in verification/. The independent verifier must read and resolve a second-model review before attributing the proof as confirmed.

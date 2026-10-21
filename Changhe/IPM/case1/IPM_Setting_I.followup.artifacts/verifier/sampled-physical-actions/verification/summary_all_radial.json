@@ -1,0 +1,1696 @@
+{
+  "date": "2026-10-20T19:40:43.801387+00:00",
+  "normalizer_inverse": "a4096_r32",
+  "gradient_step": 3.125e-05,
+  "source_inverse_sha256": {
+    "a2048_r24": "09af595c61c74a6f1fbb603671b82c312adf60f8afb3e483eba519717f102863",
+    "a4096_r24": "44bfe0b1bc8d70179ac32534e09fd3ce9b3d5b6689a3b124828ad01abc66a10a",
+    "a4096_r32": "74d6df0e51e6e7383b1e7f51209ca39129189413e63cdb86c58e3aca61200915"
+  },
+  "gradient_sha256": "09a3b75793b7eb3f9ec87fee2484d677af9208454909f8cc630e6dca04a99548",
+  "analytic_gradient_sha256": "de66a381b2b05c171c8d2581d1b58d86e0473e5ef0d33535c317636afccbe6f6",
+  "states": [
+    {
+      "tag": "n96m40S",
+      "state_md5": "f5b77e128474f1f9da8e3051c22ad505",
+      "direction_sha256": "6e98727f48d8aa3c9c85385eb135af8f45e7516d38f3e4d8ffa267e3a6814d3c",
+      "inverse_diagnostics": {
+        "a2048_r24": {
+          "max_abs_node_actions": [
+            0.0006168700053132169,
+            6.665149828146922e-05,
+            0.0011778675324177772,
+            0.0015765315710844715,
+            0.006358856764194387,
+            0.0076350798148131,
+            0.003750489835383972,
+            0.07987716160784086,
+            0.006817291671919065,
+            0.013763731119999378,
+            0.34453695997624856,
+            0.11722449619452231,
+            0.1773101330835019,
+            0.20423769915562015
+          ],
+          "maximizing_point_indices": [
+            35,
+            35,
+            35,
+            35,
+            35,
+            35,
+            33,
+            35,
+            35,
+            18,
+            34,
+            35,
+            34,
+            34
+          ],
+          "base_max_R_fixed_Nf": 0.0054817012200052894,
+          "base_max_point_index": 35
+        },
+        "a4096_r24": {
+          "max_abs_node_actions": [
+            0.0006168700053095388,
+            6.665149828199791e-05,
+            0.0011778675324163952,
+            0.001576531571083098,
+            0.006358856764191516,
+            0.007635079814815313,
+            0.003750489835381503,
+            0.07987716160782946,
+            0.00681729167191898,
+            0.013763731119806421,
+            0.3445369599762474,
+            0.11722449619450422,
+            0.17731013308350163,
+            0.20423769915561918
+          ],
+          "maximizing_point_indices": [
+            35,
+            35,
+            35,
+            35,
+            35,
+            35,
+            33,
+            35,
+            35,
+            18,
+            34,
+            35,
+            34,
+            34
+          ],
+          "base_max_R_fixed_Nf": 0.005481701219449338,
+          "base_max_point_index": 35
+        },
+        "a4096_r32": {
+          "max_abs_node_actions": [
+            0.0006168700053037476,
+            6.665149828249103e-05,
+            0.0011778675324142503,
+            0.0015765315710872716,
+            0.006358856764187062,
+            0.007635079814814736,
+            0.0037504898996548637,
+            0.07987716160778412,
+            0.00681729167191198,
+            0.013763731117881631,
+            0.3445369599949249,
+            0.11722449619445556,
+            0.1773101330673025,
+            0.20423769919471588
+          ],
+          "maximizing_point_indices": [
+            35,
+            35,
+            35,
+            35,
+            35,
+            35,
+            33,
+            35,
+            35,
+            18,
+            34,
+            35,
+            34,
+            34
+          ],
+          "base_max_R_fixed_Nf": 0.005481701218311028,
+          "base_max_point_index": 35
+        }
+      },
+      "spaces": {
+        "4": {
+          "metric_condition": 41.16463835700655,
+          "metric_singular_values_descending": [
+            0.03216179896531742,
+            0.012616648868161193,
+            0.0033127922443642044,
+            0.0007812967694842684
+          ],
+          "inverses": {
+            "a2048_r24": {
+              "physical_singular_values_ascending": [
+                0.002862491060214078,
+                0.006447163756806852,
+                0.019960147127563097,
+                0.1382383090832673
+              ],
+              "whitening_relative_reconstruction": 1.0192994812181869e-16,
+              "tail_Frobenius_bound_using_numerical_gradients": 1.6417866688776838e-10,
+              "derivative_differences": {
+                "0.00025": {
+                  "Frobenius": 3.7243712074270157e-09,
+                  "spectral": 3.722272079735386e-09,
+                  "maximum_singular_change": 2.1921853221584797e-11,
+                  "maximum_node_action_change": 1.618558145020845e-10
+                },
+                "0.000125": {
+                  "Frobenius": 1.705280924593965e-10,
+                  "spectral": 1.4682586979509483e-10,
+                  "maximum_singular_change": 8.235356840913255e-12,
+                  "maximum_node_action_change": 1.0343838767199733e-12
+                },
+                "6.25e-05": {
+                  "Frobenius": 2.1064716862451362e-10,
+                  "spectral": 1.654541729087867e-10,
+                  "maximum_singular_change": 2.2236629204641645e-11,
+                  "maximum_node_action_change": 1.5896580718201832e-12
+                },
+                "3.125e-05": {
+                  "Frobenius": 0.0,
+                  "spectral": 0.0,
+                  "maximum_singular_change": 0.0,
+                  "maximum_node_action_change": 0.0
+                },
+                "analytic_chainrule": {
+                  "Frobenius": 1.805713402061521e-10,
+                  "spectral": 1.531068382070483e-10,
+                  "maximum_singular_change": 1.5016016208235783e-11,
+                  "maximum_node_action_change": 1.1522572037499486e-12
+                }
+              },
+              "cl_cost": 0.0030226244768708464,
+              "cl_cost_minimizer": [
+                14.975859787778717,
+                101.27833218363759,
+                4.945107005431941,
+                -0.9163667179196529
+              ],
+              "cl_cost_constraint": 0.9999999999999997,
+              "node_action_condition": 57.33802460989637
+            },
+            "a4096_r24": {
+              "physical_singular_values_ascending": [
+                0.002862491059910863,
+                0.00644716375407887,
+                0.01996014712722974,
+                0.13823830908259777
+              ],
+              "whitening_relative_reconstruction": 1.0924586563132353e-16,
+              "tail_Frobenius_bound_using_numerical_gradients": 1.6417866688776838e-10,
+              "derivative_differences": {
+                "0.00025": {
+                  "Frobenius": 3.724371195380526e-09,
+                  "spectral": 3.722272068415042e-09,
+                  "maximum_singular_change": 2.192176995485795e-11,
+                  "maximum_node_action_change": 1.6185581441177314e-10
+                },
+                "0.000125": {
+                  "Frobenius": 1.705280433300208e-10,
+                  "spectral": 1.4682582390856637e-10,
+                  "maximum_singular_change": 8.235356840913255e-12,
+                  "maximum_node_action_change": 1.0343824059351248e-12
+                },
+                "6.25e-05": {
+                  "Frobenius": 2.1064727626353248e-10,
+                  "spectral": 1.6545423138514972e-10,
+                  "maximum_singular_change": 2.223660144906603e-11,
+                  "maximum_node_action_change": 1.5896580718201832e-12
+                },
+                "3.125e-05": {
+                  "Frobenius": 0.0,
+                  "spectral": 0.0,
+                  "maximum_singular_change": 0.0,
+                  "maximum_node_action_change": 0.0
+                },
+                "analytic_chainrule": {
+                  "Frobenius": 1.8057122391816264e-10,
+                  "spectral": 1.531067724096271e-10,
+                  "maximum_singular_change": 1.5015932941508936e-11,
+                  "maximum_node_action_change": 1.152256757031305e-12
+                }
+              },
+              "cl_cost": 0.003022624476734763,
+              "cl_cost_minimizer": [
+                14.975859773328986,
+                101.27833225362876,
+                4.94510700930174,
+                -0.9163667127049142
+              ],
+              "cl_cost_constraint": 1.0,
+              "node_action_condition": 57.33802462776973
+            },
+            "a4096_r32": {
+              "physical_singular_values_ascending": [
+                0.0028624914346303447,
+                0.006447165117007384,
+                0.019960146394630333,
+                0.13823830862176556
+              ],
+              "whitening_relative_reconstruction": 9.691752469571209e-17,
+              "tail_Frobenius_bound_using_numerical_gradients": 1.6417866688776838e-10,
+              "derivative_differences": {
+                "0.00025": {
+                  "Frobenius": 3.7243711949550354e-09,
+                  "spectral": 3.7222720667395106e-09,
+                  "maximum_singular_change": 2.1921742199282335e-11,
+                  "maximum_node_action_change": 1.6185581468190084e-10
+                },
+                "0.000125": {
+                  "Frobenius": 1.7052812974814635e-10,
+                  "spectral": 1.4682586550149684e-10,
+                  "maximum_singular_change": 8.235412352064486e-12,
+                  "maximum_node_action_change": 1.0343838767199733e-12
+                },
+                "6.25e-05": {
+                  "Frobenius": 2.10647250473134e-10,
+                  "spectral": 1.6545424658391203e-10,
+                  "maximum_singular_change": 2.2236629204641645e-11,
+                  "maximum_node_action_change": 1.5896580718138837e-12
+                },
+                "3.125e-05": {
+                  "Frobenius": 0.0,
+                  "spectral": 0.0,
+                  "maximum_singular_change": 0.0,
+                  "maximum_node_action_change": 0.0
+                },
+                "analytic_chainrule": {
+                  "Frobenius": 1.805712650418989e-10,
+                  "spectral": 1.5310677186857206e-10,
+                  "maximum_singular_change": 1.501596069708455e-11,
+                  "maximum_node_action_change": 1.152256757031305e-12
+                }
+              },
+              "cl_cost": 0.0030226247325687828,
+              "cl_cost_minimizer": [
+                14.975873052884408,
+                101.27826509338313,
+                4.945104424974623,
+                -0.9163697240417359
+              ],
+              "cl_cost_constraint": 1.0000000000000002,
+              "node_action_condition": 57.33801472926922
+            }
+          },
+          "inverse_differences": [
+            {
+              "from": "a2048_r24",
+              "to": "a4096_r24",
+              "Frobenius": 2.264545538129153e-11,
+              "spectral": 2.0156117930798887e-11,
+              "maximum_singular_change": 2.7279819028724894e-12,
+              "Frobenius_over_second_smallest": 7.91110082348928e-09
+            },
+            {
+              "from": "a2048_r24",
+              "to": "a4096_r32",
+              "Frobenius": 1.618714505507572e-08,
+              "spectral": 1.2924759363279445e-08,
+              "maximum_singular_change": 1.360200532068978e-09,
+              "Frobenius_over_second_smallest": 5.654914756859732e-06
+            },
+            {
+              "from": "a4096_r24",
+              "to": "a4096_r32",
+              "Frobenius": 1.6188296103009772e-08,
+              "spectral": 1.2924164516670843e-08,
+              "maximum_singular_change": 1.3629285139718506e-09,
+              "Frobenius_over_second_smallest": 5.655316870878354e-06
+            }
+          ]
+        },
+        "10": {
+          "metric_condition": 233.07750606408763,
+          "metric_singular_values_descending": [
+            0.13823699511557722,
+            0.02518326517220424,
+            0.01686129190419524,
+            0.00825565418316785,
+            0.005074682393576334,
+            0.003952581857709359,
+            0.0026477964233181765,
+            0.0021539752157682937,
+            0.0010990893720550482,
+            0.0005930945351610515
+          ],
+          "inverses": {
+            "a2048_r24": {
+              "physical_singular_values_ascending": [
+                0.0022982443280305056,
+                0.0034863272618865194,
+                0.009559811987977737,
+                0.022044209596556785,
+                0.03399056330664515,
+                0.07624314946662719,
+                0.12597756345384709,
+                0.26034016593201353,
+                1.2233076571339223,
+                3.6509193874295613
+              ],
+              "whitening_relative_reconstruction": 1.6500498401547377e-16,
+              "tail_Frobenius_bound_using_numerical_gradients": 1.1682708549013284e-09,
+              "derivative_differences": {
+                "0.00025": {
+                  "Frobenius": 2.0180632865530108e-07,
+                  "spectral": 2.0180532062284503e-07,
+                  "maximum_singular_change": 4.399569597524078e-10,
+                  "maximum_node_action_change": 4.434387355425212e-09
+                },
+                "0.000125": {
+                  "Frobenius": 1.147884158053355e-09,
+                  "spectral": 1.0053195100863966e-09,
+                  "maximum_singular_change": 6.033828992002555e-11,
+                  "maximum_node_action_change": 1.975759231386025e-11
+                },
+                "6.25e-05": {
+                  "Frobenius": 1.0581157362335885e-09,
+                  "spectral": 8.571103662616781e-10,
+                  "maximum_singular_change": 1.1975131997132848e-10,
+                  "maximum_node_action_change": 1.606394566064063e-11
+                },
+                "3.125e-05": {
+                  "Frobenius": 0.0,
+                  "spectral": 0.0,
+                  "maximum_singular_change": 0.0,
+                  "maximum_node_action_change": 0.0
+                },
+                "analytic_chainrule": {
+                  "Frobenius": 7.342667846296883e-10,
+                  "spectral": 5.030716033179826e-10,
+                  "maximum_singular_change": 8.802708562072326e-11,
+                  "maximum_node_action_change": 1.5463031610615063e-11
+                }
+              },
+              "cl_cost": 0.002456975340851761,
+              "cl_cost_minimizer": [
+                19.3556455266795,
+                159.27480813422682,
+                -10.480319043148215,
+                5.7153885563978895,
+                -4.1063095240947085,
+                -2.242968750950471,
+                3.017828760397929,
+                -0.276515846486854,
+                -0.768831834027086,
+                0.2978315176297098
+              ],
+              "cl_cost_constraint": 0.9999999999999997,
+              "node_action_condition": 2573.741370840213
+            },
+            "a4096_r24": {
+              "physical_singular_values_ascending": [
+                0.0022982443277511128,
+                0.0034863272597939862,
+                0.009559811987287597,
+                0.022044209595081066,
+                0.03399056330673987,
+                0.07624314946660728,
+                0.12597756345341582,
+                0.260340165931102,
+                1.2233076571334753,
+                3.6509193874294876
+              ],
+              "whitening_relative_reconstruction": 1.3720039223517715e-16,
+              "tail_Frobenius_bound_using_numerical_gradients": 1.1682708549013284e-09,
+              "derivative_differences": {
+                "0.00025": {
+                  "Frobenius": 2.018063286520138e-07,
+                  "spectral": 2.0180532061956982e-07,
+                  "maximum_singular_change": 4.399605124660866e-10,
+                  "maximum_node_action_change": 4.434387355115573e-09
+                },
+                "0.000125": {
+                  "Frobenius": 1.1478842249942059e-09,
+                  "spectral": 1.0053195375326394e-09,
+                  "maximum_singular_change": 6.033795685311816e-11,
+                  "maximum_node_action_change": 1.9757591230124044e-11
+                },
+                "6.25e-05": {
+                  "Frobenius": 1.0581159927728351e-09,
+                  "spectral": 8.571107924356235e-10,
+                  "maximum_singular_change": 1.197515420159334e-10,
+                  "maximum_node_action_change": 1.6063943957626597e-11
+                },
+                "3.125e-05": {
+                  "Frobenius": 0.0,
+                  "spectral": 0.0,
+                  "maximum_singular_change": 0.0,
+                  "maximum_node_action_change": 0.0
+                },
+                "analytic_chainrule": {
+                  "Frobenius": 7.342671176430505e-10,
+                  "spectral": 5.03072044255077e-10,
+                  "maximum_singular_change": 8.802719664302572e-11,
+                  "maximum_node_action_change": 1.546303024304319e-11
+                }
+              },
+              "cl_cost": 0.0024569753408809174,
+              "cl_cost_minimizer": [
+                19.355645512613133,
+                159.27480819738994,
+                -10.480319037516612,
+                5.7153885574416785,
+                -4.106309520212122,
+                -2.2429687511043404,
+                3.0178287609226864,
+                -0.2765158466634423,
+                -0.7688318343062908,
+                0.297831517824728
+              ],
+              "cl_cost_constraint": 0.999999999999999,
+              "node_action_condition": 2573.7413720029876
+            },
+            "a4096_r32": {
+              "physical_singular_values_ascending": [
+                0.002298244505684174,
+                0.003486329553928051,
+                0.009559813551090018,
+                0.022044210048245014,
+                0.033990560738303484,
+                0.0762431489262003,
+                0.1259775618548441,
+                0.26034016192127785,
+                1.2233076606401572,
+                3.6509193879966695
+              ],
+              "whitening_relative_reconstruction": 1.7015946379235203e-16,
+              "tail_Frobenius_bound_using_numerical_gradients": 1.1682708549013284e-09,
+              "derivative_differences": {
+                "0.00025": {
+                  "Frobenius": 2.018063286862035e-07,
+                  "spectral": 2.0180532065214848e-07,
+                  "maximum_singular_change": 4.399578479308275e-10,
+                  "maximum_node_action_change": 4.434387355063966e-09
+                },
+                "0.000125": {
+                  "Frobenius": 1.1478842057413486e-09,
+                  "spectral": 1.0053195385772756e-09,
+                  "maximum_singular_change": 6.033817889772308e-11,
+                  "maximum_node_action_change": 1.9757591178517558e-11
+                },
+                "6.25e-05": {
+                  "Frobenius": 1.0581162278721e-09,
+                  "spectral": 8.571111663498586e-10,
+                  "maximum_singular_change": 1.1975176406053833e-10,
+                  "maximum_node_action_change": 1.6063942641661205e-11
+                },
+                "3.125e-05": {
+                  "Frobenius": 0.0,
+                  "spectral": 0.0,
+                  "maximum_singular_change": 0.0,
+                  "maximum_node_action_change": 0.0
+                },
+                "analytic_chainrule": {
+                  "Frobenius": 7.342667877881149e-10,
+                  "spectral": 5.030716874467083e-10,
+                  "maximum_singular_change": 8.802686357611833e-11,
+                  "maximum_node_action_change": 1.5463028565832395e-11
+                }
+              },
+              "cl_cost": 0.0024569752254282947,
+              "cl_cost_minimizer": [
+                19.35566755685016,
+                159.27476983309845,
+                -10.480330815369385,
+                5.715389765021893,
+                -4.106315101228821,
+                -2.242969459572779,
+                3.0178298671695156,
+                -0.2765156613198857,
+                -0.7688335121551878,
+                0.29783172585291257
+              ],
+              "cl_cost_constraint": 0.9999999999999999,
+              "node_action_condition": 2573.7405989265676
+            }
+          },
+          "inverse_differences": [
+            {
+              "from": "a2048_r24",
+              "to": "a4096_r24",
+              "Frobenius": 3.335776439570531e-11,
+              "spectral": 2.8526002611382694e-11,
+              "maximum_singular_change": 2.0925331779830803e-12,
+              "Frobenius_over_second_smallest": 1.4514455226936938e-08
+            },
+            {
+              "from": "a2048_r24",
+              "to": "a4096_r32",
+              "Frobenius": 4.407023736170667e-08,
+              "spectral": 3.1300000583212925e-08,
+              "maximum_singular_change": 4.010735688009248e-09,
+              "Frobenius_over_second_smallest": 1.917560871034791e-05
+            },
+            {
+              "from": "a4096_r24",
+              "to": "a4096_r32",
+              "Frobenius": 4.406918359668177e-08,
+              "spectral": 3.129905700151048e-08,
+              "maximum_singular_change": 4.00982413939488e-09,
+              "Frobenius_over_second_smallest": 1.917515020168084e-05
+            }
+          ]
+        },
+        "14": {
+          "metric_condition": 364.5565198712725,
+          "metric_singular_values_descending": [
+            0.19725847238361088,
+            0.03182449012053944,
+            0.026808099779872665,
+            0.016990461978110483,
+            0.010682516669013195,
+            0.008505057696599937,
+            0.006986146162391307,
+            0.006688223804975948,
+            0.0034701462363475335,
+            0.002516998992789626,
+            0.0019775941977631085,
+            0.0018257577508620406,
+            0.0008999172214293356,
+            0.0005410916048168999
+          ],
+          "inverses": {
+            "a2048_r24": {
+              "physical_singular_values_ascending": [
+                0.0021378930078865305,
+                0.003270502005100144,
+                0.007960506550121768,
+                0.016628065009267324,
+                0.03351273207906798,
+                0.0698319075210981,
+                0.12000512235757231,
+                0.23725062055509172,
+                1.0708150390230216,
+                1.2207725614506229,
+                2.7506268762403465,
+                3.0701311080913203,
+                7.073976863466193,
+                18.456598729514297
+              ],
+              "whitening_relative_reconstruction": 3.9077836169292855e-16,
+              "tail_Frobenius_bound_using_numerical_gradients": 1.8336632555510232e-09,
+              "derivative_differences": {
+                "0.00025": {
+                  "Frobenius": 2.1727202166067975e-07,
+                  "spectral": 2.1727054214040203e-07,
+                  "maximum_singular_change": 4.556661714616439e-09,
+                  "maximum_node_action_change": 4.434387355425212e-09
+                },
+                "0.000125": {
+                  "Frobenius": 1.2953082346961931e-09,
+                  "spectral": 1.0930197326959818e-09,
+                  "maximum_singular_change": 8.471801038467675e-11,
+                  "maximum_node_action_change": 1.975759231386025e-11
+                },
+                "6.25e-05": {
+                  "Frobenius": 1.2840126149000734e-09,
+                  "spectral": 9.853417440008885e-10,
+                  "maximum_singular_change": 1.2172129970622336e-10,
+                  "maximum_node_action_change": 1.606394566064063e-11
+                },
+                "3.125e-05": {
+                  "Frobenius": 0.0,
+                  "spectral": 0.0,
+                  "maximum_singular_change": 0.0,
+                  "maximum_node_action_change": 0.0
+                },
+                "analytic_chainrule": {
+                  "Frobenius": 8.984879628895449e-10,
+                  "spectral": 5.53591426106672e-10,
+                  "maximum_singular_change": 8.343992163872826e-11,
+                  "maximum_node_action_change": 1.5463031610615063e-11
+                }
+              },
+              "cl_cost": 0.0023650953458047934,
+              "cl_cost_minimizer": [
+                13.444344842895186,
+                175.63654321571502,
+                -6.282290693490329,
+                5.845088840865445,
+                -3.6145388230705944,
+                -2.238842171337429,
+                2.929063219721975,
+                -0.26703955180771255,
+                -0.48374982064308325,
+                0.25506349942566503,
+                -0.019254860516620956,
+                0.02555910965430904,
+                -0.01188721799911768,
+                -0.024283243126787372
+              ],
+              "cl_cost_constraint": 1.0000000000000002,
+              "node_action_condition": 20505.793082617063
+            },
+            "a4096_r24": {
+              "physical_singular_values_ascending": [
+                0.0021378930080502893,
+                0.0032705020042928562,
+                0.007960506551220735,
+                0.016628065008408213,
+                0.033512732079208296,
+                0.06983190752073079,
+                0.1200051223569148,
+                0.23725062055344404,
+                1.0708150390240962,
+                1.2207725614487426,
+                2.750626876239716,
+                3.070131108090298,
+                7.073976863465869,
+                18.456598729514255
+              ],
+              "whitening_relative_reconstruction": 3.922925247416247e-16,
+              "tail_Frobenius_bound_using_numerical_gradients": 1.8336632555510232e-09,
+              "derivative_differences": {
+                "0.00025": {
+                  "Frobenius": 2.1727202164373343e-07,
+                  "spectral": 2.17270542116207e-07,
+                  "maximum_singular_change": 4.556664823240908e-09,
+                  "maximum_node_action_change": 4.434387355115573e-09
+                },
+                "0.000125": {
+                  "Frobenius": 1.295308819027939e-09,
+                  "spectral": 1.0930201009866582e-09,
+                  "maximum_singular_change": 8.472156309835555e-11,
+                  "maximum_node_action_change": 1.9757591230124044e-11
+                },
+                "6.25e-05": {
+                  "Frobenius": 1.2840162575023184e-09,
+                  "spectral": 9.85346883834272e-10,
+                  "maximum_singular_change": 1.2172485241990216e-10,
+                  "maximum_node_action_change": 1.6063943957626597e-11
+                },
+                "3.125e-05": {
+                  "Frobenius": 0.0,
+                  "spectral": 0.0,
+                  "maximum_singular_change": 0.0,
+                  "maximum_node_action_change": 0.0
+                },
+                "analytic_chainrule": {
+                  "Frobenius": 8.984883190804156e-10,
+                  "spectral": 5.535934152761733e-10,
+                  "maximum_singular_change": 8.344080981714797e-11,
+                  "maximum_node_action_change": 1.546303024304319e-11
+                }
+              },
+              "cl_cost": 0.00236509534601696,
+              "cl_cost_minimizer": [
+                13.444344857714217,
+                175.63654322574348,
+                -6.282290708545046,
+                5.845088841100844,
+                -3.614538822479148,
+                -2.238842171111389,
+                2.9290632210619254,
+                -0.2670395518532113,
+                -0.4837498231165847,
+                0.2550634998262186,
+                -0.019254860428243245,
+                0.02555910960305359,
+                -0.011887218001024304,
+                -0.02428324302737593
+              ],
+              "cl_cost_constraint": 0.9999999999999994,
+              "node_action_condition": 20505.79308623442
+            },
+            "a4096_r32": {
+              "physical_singular_values_ascending": [
+                0.002137893046784865,
+                0.003270503431065425,
+                0.007960508373245913,
+                0.016628063600344883,
+                0.033512729417309615,
+                0.06983190662986444,
+                0.1200051188668964,
+                0.23725061613988757,
+                1.0708150352443098,
+                1.2207725650247312,
+                2.750626878204301,
+                3.070131114574251,
+                7.0739768659042195,
+                18.456598743199848
+              ],
+              "whitening_relative_reconstruction": 3.5362388945318026e-16,
+              "tail_Frobenius_bound_using_numerical_gradients": 1.8336632555510232e-09,
+              "derivative_differences": {
+                "0.00025": {
+                  "Frobenius": 2.1727202169117863e-07,
+                  "spectral": 2.1727054217171144e-07,
+                  "maximum_singular_change": 4.556664823240908e-09,
+                  "maximum_node_action_change": 4.434387355063966e-09
+                },
+                "0.000125": {
+                  "Frobenius": 1.295307817299162e-09,
+                  "spectral": 1.0930199897657517e-09,
+                  "maximum_singular_change": 8.472156309835555e-11,
+                  "maximum_node_action_change": 1.9757591178517558e-11
+                },
+                "6.25e-05": {
+                  "Frobenius": 1.2840160134171618e-09,
+                  "spectral": 9.853469341673255e-10,
+                  "maximum_singular_change": 1.2172041152780366e-10,
+                  "maximum_node_action_change": 1.6063942641661205e-11
+                },
+                "3.125e-05": {
+                  "Frobenius": 0.0,
+                  "spectral": 0.0,
+                  "maximum_singular_change": 0.0,
+                  "maximum_node_action_change": 0.0
+                },
+                "analytic_chainrule": {
+                  "Frobenius": 8.984871245204807e-10,
+                  "spectral": 5.535925175965738e-10,
+                  "maximum_singular_change": 8.343548074662976e-11,
+                  "maximum_node_action_change": 1.5463028565832395e-11
+                }
+              },
+              "cl_cost": 0.002365095133169797,
+              "cl_cost_minimizer": [
+                13.444349676431994,
+                175.63657923837897,
+                -6.282300984187728,
+                5.845089339386601,
+                -3.614543553625562,
+                -2.238843200354055,
+                2.9290642567589686,
+                -0.26703942913102746,
+                -0.48375080945053756,
+                0.2550637686053126,
+                -0.0192548730695373,
+                0.025559137027502746,
+                -0.011887198610030637,
+                -0.024283238009649252
+              ],
+              "cl_cost_constraint": 0.9999999999999998,
+              "node_action_condition": 20505.791796487818
+            }
+          },
+          "inverse_differences": [
+            {
+              "from": "a2048_r24",
+              "to": "a4096_r24",
+              "Frobenius": 5.834406638627403e-11,
+              "spectral": 5.231676661027012e-11,
+              "maximum_singular_change": 1.880273714505165e-12,
+              "Frobenius_over_second_smallest": 2.729045193869759e-08
+            },
+            {
+              "from": "a2048_r24",
+              "to": "a4096_r32",
+              "Frobenius": 1.3827238474638558e-07,
+              "spectral": 1.3189822164760787e-07,
+              "maximum_singular_change": 1.3685550470654562e-08,
+              "Frobenius_over_second_smallest": 6.467694207356662e-05
+            },
+            {
+              "from": "a4096_r24",
+              "to": "a4096_r32",
+              "Frobenius": 1.382673185009126e-07,
+              "spectral": 1.3189399506413083e-07,
+              "maximum_singular_change": 1.3685593103218707e-08,
+              "Frobenius_over_second_smallest": 6.467457233599691e-05
+            }
+          ]
+        }
+      }
+    },
+    {
+      "tag": "n120m48_S",
+      "state_md5": "0234b3634f747b0a50386d0359bea823",
+      "direction_sha256": "0acca8d56bd6c9297603dc8a2615e38941d917f5e47f18122514f2d9b35799a3",
+      "inverse_diagnostics": {
+        "a2048_r24": {
+          "max_abs_node_actions": [
+            0.00017355625449646403,
+            0.00025480695716843734,
+            0.0008718721643312303,
+            0.0030861965891059015,
+            0.0027851346191409567,
+            0.0044761452660609215,
+            0.013527027815997617,
+            0.016089559978089,
+            0.03748854373082445,
+            0.0738595028720579,
+            0.2439051878666815,
+            0.21045356474367094,
+            0.15347077272115822,
+            0.2202672647508116
+          ],
+          "maximizing_point_indices": [
+            35,
+            35,
+            35,
+            35,
+            35,
+            35,
+            35,
+            35,
+            35,
+            35,
+            34,
+            35,
+            34,
+            35
+          ],
+          "base_max_R_fixed_Nf": 0.002626981377300024,
+          "base_max_point_index": 34
+        },
+        "a4096_r24": {
+          "max_abs_node_actions": [
+            0.00017355625449461107,
+            0.00025480695716610413,
+            0.000871872164332432,
+            0.00308619658910713,
+            0.0027851346191434248,
+            0.004476145266062863,
+            0.01352702781600151,
+            0.016089559978090986,
+            0.0374885437308289,
+            0.07385950287206534,
+            0.24390518786668078,
+            0.21045356474365604,
+            0.15347077272115803,
+            0.22026726475080607
+          ],
+          "maximizing_point_indices": [
+            35,
+            35,
+            35,
+            35,
+            35,
+            35,
+            35,
+            35,
+            35,
+            35,
+            34,
+            35,
+            34,
+            35
+          ],
+          "base_max_R_fixed_Nf": 0.002626981377320628,
+          "base_max_point_index": 34
+        },
+        "a4096_r32": {
+          "max_abs_node_actions": [
+            0.00017355625449171476,
+            0.0002548069571627562,
+            0.0008718721643335977,
+            0.003086196589103434,
+            0.0027851346191444942,
+            0.004476145266065347,
+            0.013527027816006829,
+            0.016089559978090195,
+            0.03748854373083665,
+            0.07385950287207212,
+            0.24390518788227628,
+            0.2104535647435958,
+            0.1534707727078485,
+            0.22026726475079128
+          ],
+          "maximizing_point_indices": [
+            35,
+            35,
+            35,
+            35,
+            35,
+            35,
+            35,
+            35,
+            35,
+            35,
+            34,
+            35,
+            34,
+            35
+          ],
+          "base_max_R_fixed_Nf": 0.0026269804156033912,
+          "base_max_point_index": 34
+        }
+      },
+      "spaces": {
+        "4": {
+          "metric_condition": 40.87842255174374,
+          "metric_singular_values_descending": [
+            0.026633840906949632,
+            0.012176023025591787,
+            0.002417239349277516,
+            0.0006515378834209325
+          ],
+          "inverses": {
+            "a2048_r24": {
+              "physical_singular_values_ascending": [
+                0.0016031622412619447,
+                0.0032590037699795262,
+                0.01102217544009138,
+                0.24712252884620367
+              ],
+              "whitening_relative_reconstruction": 1.4949089017534929e-16,
+              "tail_Frobenius_bound_using_numerical_gradients": 8.151730959714418e-10,
+              "derivative_differences": {
+                "0.00025": {
+                  "Frobenius": 1.7901964090538345e-08,
+                  "spectral": 1.790164935938686e-08,
+                  "maximum_singular_change": 5.718131523835268e-10,
+                  "maximum_node_action_change": 2.896911263419915e-10
+                },
+                "0.000125": {
+                  "Frobenius": 1.6772027649186084e-10,
+                  "spectral": 1.264713421220115e-10,
+                  "maximum_singular_change": 6.721345702231929e-12,
+                  "maximum_node_action_change": 1.4786056831305212e-12
+                },
+                "6.25e-05": {
+                  "Frobenius": 1.7846086380162883e-10,
+                  "spectral": 1.3958837778961285e-10,
+                  "maximum_singular_change": 2.7016715253846968e-11,
+                  "maximum_node_action_change": 1.8178691196301429e-12
+                },
+                "3.125e-05": {
+                  "Frobenius": 0.0,
+                  "spectral": 0.0,
+                  "maximum_singular_change": 0.0,
+                  "maximum_node_action_change": 0.0
+                },
+                "analytic_chainrule": {
+                  "Frobenius": 1.408827809186166e-10,
+                  "spectral": 1.0909946261252265e-10,
+                  "maximum_singular_change": 6.528881602019254e-12,
+                  "maximum_node_action_change": 1.5259458223524218e-12
+                }
+              },
+              "cl_cost": 0.0016141617791632383,
+              "cl_cost_minimizer": [
+                26.772108353632824,
+                40.726226648512984,
+                -5.5834418229842,
+                1.203110264440927
+              ],
+              "cl_cost_constraint": 1.0000000000000002,
+              "node_action_condition": 95.76625482674677
+            },
+            "a4096_r24": {
+              "physical_singular_values_ascending": [
+                0.0016031622412718029,
+                0.003259003770213845,
+                0.011022175440510906,
+                0.24712252884706706
+              ],
+              "whitening_relative_reconstruction": 1.2161438260700604e-16,
+              "tail_Frobenius_bound_using_numerical_gradients": 8.151730959714418e-10,
+              "derivative_differences": {
+                "0.00025": {
+                  "Frobenius": 1.7901964092003262e-08,
+                  "spectral": 1.7901649362332668e-08,
+                  "maximum_singular_change": 5.718130968723756e-10,
+                  "maximum_node_action_change": 2.8969112636779474e-10
+                },
+                "0.000125": {
+                  "Frobenius": 1.6772029072520516e-10,
+                  "spectral": 1.2647134602061569e-10,
+                  "maximum_singular_change": 6.721206924353851e-12,
+                  "maximum_node_action_change": 1.4786070474769927e-12
+                },
+                "6.25e-05": {
+                  "Frobenius": 1.784609306620663e-10,
+                  "spectral": 1.3958842416436355e-10,
+                  "maximum_singular_change": 2.7016991074879648e-11,
+                  "maximum_node_action_change": 1.8178704839766142e-12
+                },
+                "3.125e-05": {
+                  "Frobenius": 0.0,
+                  "spectral": 0.0,
+                  "maximum_singular_change": 0.0,
+                  "maximum_node_action_change": 0.0
+                },
+                "analytic_chainrule": {
+                  "Frobenius": 1.4088242724574202e-10,
+                  "spectral": 1.0909909793573016e-10,
+                  "maximum_singular_change": 6.529062013260756e-12,
+                  "maximum_node_action_change": 1.525945822150834e-12
+                }
+              },
+              "cl_cost": 0.0016141617791682395,
+              "cl_cost_minimizer": [
+                26.772108364288556,
+                40.72622663629792,
+                -5.583441829398377,
+                1.2031102622512821
+              ],
+              "cl_cost_constraint": 0.9999999999999996,
+              "node_action_condition": 95.76625481421573
+            },
+            "a4096_r32": {
+              "physical_singular_values_ascending": [
+                0.001603162225997193,
+                0.003259003465819226,
+                0.011022176795526025,
+                0.24712252858750927
+              ],
+              "whitening_relative_reconstruction": 1.5286997266196908e-16,
+              "tail_Frobenius_bound_using_numerical_gradients": 8.151730959714418e-10,
+              "derivative_differences": {
+                "0.00025": {
+                  "Frobenius": 1.7901964095119003e-08,
+                  "spectral": 1.7901649365522494e-08,
+                  "maximum_singular_change": 5.718131523835268e-10,
+                  "maximum_node_action_change": 2.8969112636779474e-10
+                },
+                "0.000125": {
+                  "Frobenius": 1.6772025375586022e-10,
+                  "spectral": 1.2647126887097025e-10,
+                  "maximum_singular_change": 6.721179168778235e-12,
+                  "maximum_node_action_change": 1.478606024217139e-12
+                },
+                "6.25e-05": {
+                  "Frobenius": 1.7846095208513845e-10,
+                  "spectral": 1.395883976751524e-10,
+                  "maximum_singular_change": 2.70166406607375e-11,
+                  "maximum_node_action_change": 1.8178691196301429e-12
+                },
+                "3.125e-05": {
+                  "Frobenius": 0.0,
+                  "spectral": 0.0,
+                  "maximum_singular_change": 0.0,
+                  "maximum_node_action_change": 0.0
+                },
+                "analytic_chainrule": {
+                  "Frobenius": 1.408825931953861e-10,
+                  "spectral": 1.0909932927915093e-10,
+                  "maximum_singular_change": 6.528770579716792e-12,
+                  "maximum_node_action_change": 1.5259458223524218e-12
+                }
+              },
+              "cl_cost": 0.0016141617500257562,
+              "cl_cost_minimizer": [
+                26.772161958347276,
+                40.72615638299326,
+                -5.583461490338018,
+                1.203102044518151
+              ],
+              "cl_cost_constraint": 1.0,
+              "node_action_condition": 95.76623695828236
+            }
+          },
+          "inverse_differences": [
+            {
+              "from": "a2048_r24",
+              "to": "a4096_r24",
+              "Frobenius": 2.2087464054196746e-11,
+              "spectral": 1.9663741658893516e-11,
+              "maximum_singular_change": 8.633926906753686e-13,
+              "Frobenius_over_second_smallest": 1.3777435299795087e-08
+            },
+            {
+              "from": "a2048_r24",
+              "to": "a4096_r32",
+              "Frobenius": 1.569059536630796e-08,
+              "spectral": 1.220284509778871e-08,
+              "maximum_singular_change": 1.3554346447314236e-09,
+              "Frobenius_over_second_smallest": 9.787278612149281e-06
+            },
+            {
+              "from": "a4096_r24",
+              "to": "a4096_r32",
+              "Frobenius": 1.569216167072433e-08,
+              "spectral": 1.220281922015995e-08,
+              "maximum_singular_change": 1.3550151192059934e-09,
+              "Frobenius_over_second_smallest": 9.788255621456868e-06
+            }
+          ]
+        },
+        "10": {
+          "metric_condition": 238.6213331732657,
+          "metric_singular_values_descending": [
+            0.11150339674717094,
+            0.019227168497588883,
+            0.015992584477021853,
+            0.005223431326605305,
+            0.0037996162374235765,
+            0.003109267996463294,
+            0.002186837536498912,
+            0.0015956324295176003,
+            0.0011662445405506317,
+            0.0004672817608734381
+          ],
+          "inverses": {
+            "a2048_r24": {
+              "physical_singular_values_ascending": [
+                0.0006137586802750587,
+                0.001231036448800122,
+                0.004262544139575447,
+                0.015246672866191443,
+                0.03468603644582127,
+                0.06552273541192241,
+                0.1107088882536209,
+                0.23236292368328584,
+                0.44522007381400475,
+                3.9191541565188523
+              ],
+              "whitening_relative_reconstruction": 1.9286037778870825e-16,
+              "tail_Frobenius_bound_using_numerical_gradients": 2.1777312596949634e-09,
+              "derivative_differences": {
+                "0.00025": {
+                  "Frobenius": 2.1158084764222567e-07,
+                  "spectral": 2.1158003737287449e-07,
+                  "maximum_singular_change": 7.0615340241886315e-09,
+                  "maximum_node_action_change": 5.355404848524616e-09
+                },
+                "0.000125": {
+                  "Frobenius": 1.196129190811378e-09,
+                  "spectral": 1.097775449627675e-09,
+                  "maximum_singular_change": 5.7676446951759885e-11,
+                  "maximum_node_action_change": 2.759220656330559e-11
+                },
+                "6.25e-05": {
+                  "Frobenius": 8.677938450558496e-10,
+                  "spectral": 7.236417276221034e-10,
+                  "maximum_singular_change": 1.5880979864490996e-10,
+                  "maximum_node_action_change": 7.240372311672484e-12
+                },
+                "3.125e-05": {
+                  "Frobenius": 0.0,
+                  "spectral": 0.0,
+                  "maximum_singular_change": 0.0,
+                  "maximum_node_action_change": 0.0
+                },
+                "analytic_chainrule": {
+                  "Frobenius": 5.710131535957263e-10,
+                  "spectral": 4.58711604455422e-10,
+                  "maximum_singular_change": 6.892020287807554e-11,
+                  "maximum_node_action_change": 5.297235606873622e-12
+                }
+              },
+              "cl_cost": 0.0010572886036109496,
+              "cl_cost_minimizer": [
+                109.57269504885222,
+                -131.7850049042261,
+                31.493996572913847,
+                11.756119671967745,
+                -3.0256817167375796,
+                0.30671104309170666,
+                -2.503324816091707,
+                -0.7008051989611115,
+                0.23883839101258927,
+                0.5111934254892965
+              ],
+              "cl_cost_constraint": 1.0000000000000002,
+              "node_action_condition": 6493.771600502129
+            },
+            "a4096_r24": {
+              "physical_singular_values_ascending": [
+                0.0006137586808202038,
+                0.0012310364486760915,
+                0.004262544139261974,
+                0.015246672868808576,
+                0.03468603644548355,
+                0.06552273541290328,
+                0.11070888825393846,
+                0.23236292368372197,
+                0.4452200738158472,
+                3.9191541565189265
+              ],
+              "whitening_relative_reconstruction": 1.2857998173154245e-16,
+              "tail_Frobenius_bound_using_numerical_gradients": 2.1777312596949634e-09,
+              "derivative_differences": {
+                "0.00025": {
+                  "Frobenius": 2.1158084768240433e-07,
+                  "spectral": 2.1158003741299457e-07,
+                  "maximum_singular_change": 7.061533580099422e-09,
+                  "maximum_node_action_change": 5.355404848111764e-09
+                },
+                "0.000125": {
+                  "Frobenius": 1.196129216259107e-09,
+                  "spectral": 1.097775498375924e-09,
+                  "maximum_singular_change": 5.7676641240789195e-11,
+                  "maximum_node_action_change": 2.759220656330559e-11
+                },
+                "6.25e-05": {
+                  "Frobenius": 8.677940733370579e-10,
+                  "spectral": 7.236418786770774e-10,
+                  "maximum_singular_change": 1.588098541560612e-10,
+                  "maximum_node_action_change": 7.240368208956853e-12
+                },
+                "3.125e-05": {
+                  "Frobenius": 0.0,
+                  "spectral": 0.0,
+                  "maximum_singular_change": 0.0,
+                  "maximum_node_action_change": 0.0
+                },
+                "analytic_chainrule": {
+                  "Frobenius": 5.710131367532406e-10,
+                  "spectral": 4.587116800672237e-10,
+                  "maximum_singular_change": 6.892067472286101e-11,
+                  "maximum_node_action_change": 5.297234239301745e-12
+                }
+              },
+              "cl_cost": 0.0010572886041226408,
+              "cl_cost_minimizer": [
+                109.57269520590695,
+                -131.7850050731845,
+                31.493996453184877,
+                11.756119615631405,
+                -3.0256816872462045,
+                0.30671104560963897,
+                -2.5033248092414464,
+                -0.7008052044138825,
+                0.23883838848179892,
+                0.5111934238566546
+              ],
+              "cl_cost_constraint": 1.0,
+              "node_action_condition": 6493.771608552683
+            },
+            "a4096_r32": {
+              "physical_singular_values_ascending": [
+                0.0006137587026666766,
+                0.0012310363106847989,
+                0.004262544784748719,
+                0.015246672721737626,
+                0.03468603519525237,
+                0.06552273680744375,
+                0.11070888969135209,
+                0.2323629220856851,
+                0.44522007360489196,
+                3.91915415667298
+              ],
+              "whitening_relative_reconstruction": 1.2461947802080039e-16,
+              "tail_Frobenius_bound_using_numerical_gradients": 2.1777312596949634e-09,
+              "derivative_differences": {
+                "0.00025": {
+                  "Frobenius": 2.1158084764966789e-07,
+                  "spectral": 2.11580037380535e-07,
+                  "maximum_singular_change": 7.061533136010212e-09,
+                  "maximum_node_action_change": 5.35540484935032e-09
+                },
+                "0.000125": {
+                  "Frobenius": 1.1961290578771206e-09,
+                  "spectral": 1.0977753970834723e-09,
+                  "maximum_singular_change": 5.7676502462911117e-11,
+                  "maximum_node_action_change": 2.7592206976157478e-11
+                },
+                "6.25e-05": {
+                  "Frobenius": 8.677938968504147e-10,
+                  "spectral": 7.236417514070182e-10,
+                  "maximum_singular_change": 1.588098819116368e-10,
+                  "maximum_node_action_change": 7.24036957652873e-12
+                },
+                "3.125e-05": {
+                  "Frobenius": 0.0,
+                  "spectral": 0.0,
+                  "maximum_singular_change": 0.0,
+                  "maximum_node_action_change": 0.0
+                },
+                "analytic_chainrule": {
+                  "Frobenius": 5.710128441823808e-10,
+                  "spectral": 4.5871134373318624e-10,
+                  "maximum_singular_change": 6.892014736692431e-11,
+                  "maximum_node_action_change": 5.297234239301745e-12
+                }
+              },
+              "cl_cost": 0.001057288918055627,
+              "cl_cost_minimizer": [
+                109.57290306762546,
+                -131.78530755637746,
+                31.493933432943848,
+                11.756100615813418,
+                -3.0256726436055468,
+                0.3067171703289345,
+                -2.503322837257602,
+                -0.7008093399278967,
+                0.23883663008203587,
+                0.5111925870963903
+              ],
+              "cl_cost_constraint": 1.0000000000000004,
+              "node_action_condition": 6493.777327394147
+            }
+          },
+          "inverse_differences": [
+            {
+              "from": "a2048_r24",
+              "to": "a4096_r24",
+              "Frobenius": 4.114200637109333e-11,
+              "spectral": 3.5875407478145453e-11,
+              "maximum_singular_change": 2.6171339401193094e-12,
+              "Frobenius_over_second_smallest": 6.703287082817747e-08
+            },
+            {
+              "from": "a2048_r24",
+              "to": "a4096_r32",
+              "Frobenius": 5.1045674783182566e-08,
+              "spectral": 4.1869201877327905e-08,
+              "maximum_singular_change": 1.5976007461393493e-09,
+              "Frobenius_over_second_smallest": 8.316896291881131e-05
+            },
+            {
+              "from": "a4096_r24",
+              "to": "a4096_r32",
+              "Frobenius": 5.1044500133834856e-08,
+              "spectral": 4.1867809506762756e-08,
+              "maximum_singular_change": 1.5980368694989977e-09,
+              "Frobenius_over_second_smallest": 8.316704905699134e-05
+            }
+          ]
+        },
+        "14": {
+          "metric_condition": 368.74056178318756,
+          "metric_singular_values_descending": [
+            0.1567671622563993,
+            0.025594867204056758,
+            0.021221000098178296,
+            0.01397091191579112,
+            0.01011051399881986,
+            0.007261288544380766,
+            0.0061080693815254074,
+            0.003757889742586133,
+            0.002696168564829965,
+            0.0020038150337297095,
+            0.0016115409257940155,
+            0.0013096800708338417,
+            0.0008547807377870435,
+            0.00042514216905862234
+          ],
+          "inverses": {
+            "a2048_r24": {
+              "physical_singular_values_ascending": [
+                0.0005292687751114362,
+                0.0009139224357578375,
+                0.0035045248457863686,
+                0.013824715956528576,
+                0.03364851219829773,
+                0.050888122441064575,
+                0.08264205724699382,
+                0.15492105529492742,
+                0.3730707852387048,
+                1.0696375732169523,
+                1.562988005053247,
+                2.906039897963934,
+                7.536981109491608,
+                18.149151826258795
+              ],
+              "whitening_relative_reconstruction": 3.264776687326685e-16,
+              "tail_Frobenius_bound_using_numerical_gradients": 3.4884787359353512e-09,
+              "derivative_differences": {
+                "0.00025": {
+                  "Frobenius": 2.3630436326937502e-07,
+                  "spectral": 2.363030509999635e-07,
+                  "maximum_singular_change": 1.3704208656761807e-08,
+                  "maximum_node_action_change": 5.355404848524616e-09
+                },
+                "0.000125": {
+                  "Frobenius": 1.406129210617439e-09,
+                  "spectral": 1.231571757999337e-09,
+                  "maximum_singular_change": 8.080891511497157e-11,
+                  "maximum_node_action_change": 2.759220656330559e-11
+                },
+                "6.25e-05": {
+                  "Frobenius": 1.1231327210050101e-09,
+                  "spectral": 8.939021437237022e-10,
+                  "maximum_singular_change": 8.489742242545617e-11,
+                  "maximum_node_action_change": 7.240372311672484e-12
+                },
+                "3.125e-05": {
+                  "Frobenius": 0.0,
+                  "spectral": 0.0,
+                  "maximum_singular_change": 0.0,
+                  "maximum_node_action_change": 0.0
+                },
+                "analytic_chainrule": {
+                  "Frobenius": 7.847891250869757e-10,
+                  "spectral": 5.918794026552373e-10,
+                  "maximum_singular_change": 4.218314586523775e-11,
+                  "maximum_node_action_change": 5.297235606873622e-12
+                }
+              },
+              "cl_cost": 0.0007327105045900662,
+              "cl_cost_minimizer": [
+                20.893898858494172,
+                12.989327669426094,
+                34.06685872345268,
+                12.934008353747831,
+                -2.661173853599254,
+                1.4302497739559632,
+                -1.7608885095120037,
+                0.31303913955011065,
+                -0.1113229690884773,
+                0.2076265058780446,
+                0.004190055050312084,
+                0.04956528156323884,
+                -0.016287630701145323,
+                0.0050240628264831425
+              ],
+              "cl_cost_constraint": 0.9999999999999997,
+              "node_action_condition": 43562.693133939116
+            },
+            "a4096_r24": {
+              "physical_singular_values_ascending": [
+                0.0005292687760411807,
+                0.0009139224350929485,
+                0.003504524845462808,
+                0.013824715958344823,
+                0.033648512198453426,
+                0.05088812244270564,
+                0.08264205724699236,
+                0.1549210552924493,
+                0.37307078524476855,
+                1.0696375732151067,
+                1.5629880050530238,
+                2.9060398979627613,
+                7.536981109492349,
+                18.149151826258997
+              ],
+              "whitening_relative_reconstruction": 3.6224897423571276e-16,
+              "tail_Frobenius_bound_using_numerical_gradients": 3.4884787359353512e-09,
+              "derivative_differences": {
+                "0.00025": {
+                  "Frobenius": 2.3630436321203626e-07,
+                  "spectral": 2.3630305093571747e-07,
+                  "maximum_singular_change": 1.3704209989029437e-08,
+                  "maximum_node_action_change": 5.355404848111764e-09
+                },
+                "0.000125": {
+                  "Frobenius": 1.4061285301816756e-09,
+                  "spectral": 1.2315717931275625e-09,
+                  "maximum_singular_change": 8.080802693655187e-11,
+                  "maximum_node_action_change": 2.759220656330559e-11
+                },
+                "6.25e-05": {
+                  "Frobenius": 1.1231336731517854e-09,
+                  "spectral": 8.939019687840733e-10,
+                  "maximum_singular_change": 8.489831060387587e-11,
+                  "maximum_node_action_change": 7.240368208956853e-12
+                },
+                "3.125e-05": {
+                  "Frobenius": 0.0,
+                  "spectral": 0.0,
+                  "maximum_singular_change": 0.0,
+                  "maximum_node_action_change": 0.0
+                },
+                "analytic_chainrule": {
+                  "Frobenius": 7.847870116400811e-10,
+                  "spectral": 5.918776454870103e-10,
+                  "maximum_singular_change": 4.218403404365745e-11,
+                  "maximum_node_action_change": 5.297234239301745e-12
+                }
+              },
+              "cl_cost": 0.000732710505513051,
+              "cl_cost_minimizer": [
+                20.89389900606067,
+                12.989327535410617,
+                34.06685853878505,
+                12.934008296827406,
+                -2.6611738220317895,
+                1.4302497857859577,
+                -1.7608885060096222,
+                0.31303913435490577,
+                -0.11132297103763471,
+                0.20762650521970205,
+                0.00419005526972268,
+                0.04956528145305429,
+                -0.0162876306661546,
+                0.005024062998139042
+              ],
+              "cl_cost_constraint": 1.0000000000000002,
+              "node_action_condition": 43562.69323292836
+            },
+            "a4096_r32": {
+              "physical_singular_values_ascending": [
+                0.0005292678473989563,
+                0.0009139226664435168,
+                0.0035045244867344992,
+                0.013824712477136455,
+                0.033648511340885,
+                0.05088812731307827,
+                0.08264206525624669,
+                0.15492105244006252,
+                0.37307078420763484,
+                1.0696375720250644,
+                1.5629880065180348,
+                2.906039905525971,
+                7.536981113602158,
+                18.149151842892913
+              ],
+              "whitening_relative_reconstruction": 3.357719485673881e-16,
+              "tail_Frobenius_bound_using_numerical_gradients": 3.4884787359353512e-09,
+              "derivative_differences": {
+                "0.00025": {
+                  "Frobenius": 2.3630436344841685e-07,
+                  "spectral": 2.3630305117105933e-07,
+                  "maximum_singular_change": 1.3704209989029437e-08,
+                  "maximum_node_action_change": 5.35540484935032e-09
+                },
+                "0.000125": {
+                  "Frobenius": 1.406129284406839e-09,
+                  "spectral": 1.231572151237359e-09,
+                  "maximum_singular_change": 8.080958124878634e-11,
+                  "maximum_node_action_change": 2.7592206976157478e-11
+                },
+                "6.25e-05": {
+                  "Frobenius": 1.123129970162161e-09,
+                  "spectral": 8.938986330321017e-10,
+                  "maximum_singular_change": 8.489475789019707e-11,
+                  "maximum_node_action_change": 7.24036957652873e-12
+                },
+                "3.125e-05": {
+                  "Frobenius": 0.0,
+                  "spectral": 0.0,
+                  "maximum_singular_change": 0.0,
+                  "maximum_node_action_change": 0.0
+                },
+                "analytic_chainrule": {
+                  "Frobenius": 7.847861798942074e-10,
+                  "spectral": 5.918756727805562e-10,
+                  "maximum_singular_change": 4.218403404365745e-11,
+                  "maximum_node_action_change": 5.297234239301745e-12
+                }
+              },
+              "cl_cost": 0.0007327097381350564,
+              "cl_cost_minimizer": [
+                20.893967662165867,
+                12.98912404052242,
+                34.066997549273765,
+                12.9340394474782,
+                -2.6611812242371755,
+                1.4302446373819055,
+                -1.7608868284611154,
+                0.31303607317772403,
+                -0.11132367950509914,
+                0.20762599453218594,
+                0.004189920267892069,
+                0.04956543538055943,
+                -0.016287638459688367,
+                0.00502400149300965
+              ],
+              "cl_cost_constraint": 0.9999999999999999,
+              "node_action_condition": 43562.68069729113
+            }
+          },
+          "inverse_differences": [
+            {
+              "from": "a2048_r24",
+              "to": "a4096_r24",
+              "Frobenius": 5.984564660654581e-11,
+              "spectral": 5.399228892100219e-11,
+              "maximum_singular_change": 6.063760604746449e-12,
+              "Frobenius_over_second_smallest": 1.1307231659154103e-07
+            },
+            {
+              "from": "a2048_r24",
+              "to": "a4096_r32",
+              "Frobenius": 1.5973907794305929e-07,
+              "spectral": 1.5350407866687797e-07,
+              "maximum_singular_change": 1.663411808294768e-08,
+              "Frobenius_over_second_smallest": 0.00030181141501053573
+            },
+            {
+              "from": "a4096_r24",
+              "to": "a4096_r32",
+              "Frobenius": 1.5973326254299483e-07,
+              "spectral": 1.534989940585919e-07,
+              "maximum_singular_change": 1.6633915578267988e-08,
+              "Frobenius_over_second_smallest": 0.00030180042737905003
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "overlaps": [
+    {
+      "d": 4,
+      "cosines_descending": [
+        0.9999996802297283,
+        0.9999059136912662,
+        0.9995476965306249,
+        0.9617475610648388
+      ],
+      "physical_sv_ratios96over120_ascending": [
+        1.7855282442485374,
+        1.9782627372526405,
+        1.8109078419729476,
+        0.5593917697908857
+      ],
+      "scope": "Same59coordinate sampling with distinct base-density denominators, no continuum-space claim."
+    },
+    {
+      "d": 10,
+      "cosines_descending": [
+        0.9999999980760695,
+        0.9999999338934329,
+        0.9999996193618326,
+        0.999998776919462,
+        0.9999859020731535,
+        0.9999712741776783,
+        0.9999103058654866,
+        0.9990868310205232,
+        0.9823192275640243,
+        0.5994295686737391
+      ],
+      "physical_sv_ratios96over120_ascending": [
+        3.744540803574262,
+        2.832028205560144,
+        2.242747943738866,
+        1.4458374263399738,
+        0.9799494392185799,
+        1.1636136193495912,
+        1.1379173091344326,
+        1.1204032019586843,
+        2.747647137145426,
+        0.9315579949261249
+      ],
+      "scope": "Same59coordinate sampling with distinct base-density denominators, no continuum-space claim."
+    },
+    {
+      "d": 14,
+      "cosines_descending": [
+        0.9999999997082623,
+        0.9999999989729722,
+        0.9999999975588416,
+        0.9999999947067515,
+        0.999999989245811,
+        0.9999998676919786,
+        0.9999996417991214,
+        0.9999986974842253,
+        0.9999899188657206,
+        0.9999860501250429,
+        0.9999481080553604,
+        0.9991981958284101,
+        0.9824557307129757,
+        0.594913001517295
+      ],
+      "physical_sv_ratios96over120_ascending": [
+        4.039340491381379,
+        3.578534104852024,
+        2.271494578901767,
+        1.2027782587048128,
+        0.9959646974512539,
+        1.3722632432559099,
+        1.4521069687065393,
+        1.5314291531273814,
+        2.870273097151293,
+        1.1412955163060834,
+        1.759851557870903,
+        1.0564655732139991,
+        0.9385690051866596,
+        1.0169400147713972
+      ],
+      "scope": "Same59coordinate sampling with distinct base-density denominators, no continuum-space claim."
+    }
+  ],
+  "scope": "Finite58point14column physical numerator actions. Numerical inverse and derivative differences are not certified error bounds. Exterior estimates use numerical gradients. Positive finite-span costs are upper bounds for larger-space infima. No continuum kernel, isolation, family, smooth candidate or endpoint.",
+  "complete": true
+}

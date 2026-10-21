@@ -1,0 +1,11 @@
+(1) Fourier form of L_g: True
+(2) solves on eta>0: True
+(2b) solves on eta<0: True
+(3) ratio vhat/lead = eta**(A*g/(A - 1))*(t**2/(eta**2 + eta**(2*A)*t**2))**(g/(2*(A - 1))) -> 1 as eta -> inf since A > 1
+    numeric ratio at eta=1e8, t=1, X3 values: 0.999999999999947
+    physical quasi-degree D - A - 1 = g + 1
+(4) ratio at low frequency = (eta/sqrt(eta**2 + eta**(2*A)*t**2))**(g/(A - 1)) -> 1 as eta -> 0;  times |eta|^A (dxi) gives eta^(-2)
+(5) v_d scaling factor: log(mu**((A*(A - d) + d - (A - 1)*(A + 3) - 1)/(A - 1)))/log(mu)  (expect -(d+2))
+    |eta| exponent minus (2b - 2 - A lambda) = 0
+X3: b = 1.625526392717517  (1+g*)/A = 3.029290026081881  (g*-2)/A = 2.7337446340039753  -2/A = -0.19703026138527052
+resonance values (g*+1) - A a1 for a1=0..3: [30.7495, 20.5988, 10.448, 0.2973]

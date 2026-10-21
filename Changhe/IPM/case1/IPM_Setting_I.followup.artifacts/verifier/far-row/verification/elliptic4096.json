@@ -1,0 +1,80 @@
+{
+  "configuration": {
+    "density": "numerics/runs/dnR8_n120m48.npz",
+    "output": "verifier/far-row/verification/elliptic4096.json",
+    "nang": 4096,
+    "order": 28,
+    "panel": 0.08,
+    "rmax": 1e+30,
+    "mode": "elliptic",
+    "points_file": "verifier/fixed-cl/verification/source_points.json",
+    "kernel": "split",
+    "offset": 0.37,
+    "difference_steps": ".0025",
+    "difference_orders": "8",
+    "density_step": 0.0005
+  },
+  "source_md5": "9f1a7bcd8d4eccc311d60605c259b115",
+  "cl": 5.574705259816156,
+  "L": 8.0,
+  "rows": [
+    {
+      "point": [
+        8.6,
+        0.1
+      ],
+      "rho_x": 0.0218494060493465,
+      "checks": [
+        {
+          "difference_order": 8,
+          "h": 0.0025,
+          "DU": [
+            [
+              4.575306326997506,
+              0.01481111001108307
+            ],
+            [
+              -0.007038300165351362,
+              -4.575306327019057
+            ]
+          ],
+          "E": 4.1270879318211495e-09,
+          "E_normalized": 9.444392979657643e-08,
+          "E_over_rho_x": 1.888878774324663e-07,
+          "divU": -2.155076117560384e-11,
+          "divU_normalized": 2.355116754520733e-12
+        }
+      ],
+      "seconds": 105.6996029629372
+    },
+    {
+      "point": [
+        8.6,
+        1.0
+      ],
+      "rho_x": 0.24221893437305553,
+      "checks": [
+        {
+          "difference_order": 8,
+          "h": 0.0025,
+          "DU": [
+            [
+              4.542516654371415,
+              0.15826736347873985
+            ],
+            [
+              -0.08395154683042823,
+              -4.542516656887748
+            ]
+          ],
+          "E": -2.4063887438252607e-08,
+          "E_normalized": 4.967383886788981e-08,
+          "E_over_rho_x": 9.934767280079933e-08,
+          "divU": -2.516332919810793e-09,
+          "divU_normalized": 2.769756404406662e-10
+        }
+      ],
+      "seconds": 105.81561481510289
+    }
+  ]
+}

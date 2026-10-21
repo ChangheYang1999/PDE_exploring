@@ -1,0 +1,1 @@
+Opus 5.5 was not invoked. The existing Python/boto3 Bedrock profile cline-profile failed before model discovery with CredentialRetrievalError: No credentials found in credential_source referenced in profile cline-profile. No substitute model was used. All work here is local, single-threaded, CPU-only, with no JavaScript/TypeScript, no servers, and no RLScience cluster.

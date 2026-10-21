@@ -1,0 +1,80 @@
+{
+  "configuration": {
+    "density": "verifier/fixed-cl/data96/fixclS_n96m40_d-0.001.npz",
+    "output": "verifier/fixed-cl/verification96/fixclS_n96m40_d-0.001_elliptic4096.json",
+    "nang": 4096,
+    "order": 28,
+    "panel": 0.08,
+    "rmax": 1e+30,
+    "mode": "elliptic",
+    "points_file": "verifier/fixed-cl/verification96/near_points.json",
+    "kernel": "split",
+    "offset": 0.37,
+    "difference_steps": ".0025",
+    "difference_orders": "8",
+    "density_step": 0.0005
+  },
+  "source_md5": "2fe11cc387e7bec4c1e0291e5c6ad9b6",
+  "cl": 5.575238170436085,
+  "L": 8.0,
+  "rows": [
+    {
+      "point": [
+        8.6,
+        0.1
+      ],
+      "rho_x": 0.017967319382232477,
+      "checks": [
+        {
+          "difference_order": 8,
+          "h": 0.0025,
+          "DU": [
+            [
+              4.575716655835486,
+              0.012014387287506912
+            ],
+            [
+              -0.005952936218904804,
+              -4.575716655860661
+            ]
+          ],
+          "E": 4.124179237702252e-09,
+          "E_normalized": 1.1476889447551867e-07,
+          "E_over_rho_x": 2.2953781529483863e-07,
+          "divU": -2.517452912798035e-11,
+          "divU_normalized": 2.7508837436214074e-12
+        }
+      ],
+      "seconds": 96.60310195782222
+    },
+    {
+      "point": [
+        8.6,
+        1.0
+      ],
+      "rho_x": 0.21821338338495405,
+      "checks": [
+        {
+          "difference_order": 8,
+          "h": 0.0025,
+          "DU": [
+            [
+              4.543433656566024,
+              0.14447701968223778
+            ],
+            [
+              -0.07373633965043257,
+              -4.543433659076364
+            ]
+          ],
+          "E": -2.4052283720266132e-08,
+          "E_normalized": 5.511184665378852e-08,
+          "E_over_rho_x": 1.102236872329461e-07,
+          "divU": -2.5103403800130764e-09,
+          "divU_normalized": 2.7626026581148665e-10
+        }
+      ],
+      "seconds": 97.38042547996156
+    }
+  ]
+}

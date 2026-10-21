@@ -1,0 +1,1 @@
+No formal proof is claimed; Lean/Lake is prohibited. See ../PROOF.md and the exact hierarchy algebra in ../../fifth-order/code/check_axis.py with its saved verification. The new parameter-range and gamma-sign proof is informal and complete.

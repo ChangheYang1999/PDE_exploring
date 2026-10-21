@@ -1,0 +1,80 @@
+{
+  "configuration": {
+    "density": "numerics/runs/fixclSA_n120m48_d0.01.npz",
+    "output": "verifier/fixed-cl/verification/fixclSA_n120m48_d0.01_elliptic4096.json",
+    "nang": 4096,
+    "order": 28,
+    "panel": 0.08,
+    "rmax": 1e+30,
+    "mode": "elliptic",
+    "points_file": "verifier/fixed-cl/verification/source_points.json",
+    "kernel": "split",
+    "offset": 0.37,
+    "difference_steps": ".0025",
+    "difference_orders": "8",
+    "density_step": 0.0005
+  },
+  "source_md5": "674b74936ddaefc6be3169963e2094a3",
+  "cl": 5.584692542183549,
+  "L": 8.0,
+  "rows": [
+    {
+      "point": [
+        8.6,
+        0.1
+      ],
+      "rho_x": 0.014105790486391382,
+      "checks": [
+        {
+          "difference_order": 8,
+          "h": 0.0025,
+          "DU": [
+            [
+              4.584102776467018,
+              0.009473994359794345
+            ],
+            [
+              -0.004631800246282487,
+              -4.584102776488152
+            ]
+          ],
+          "E": 4.119685450415522e-09,
+          "E_normalized": 1.460281454201372e-07,
+          "E_over_rho_x": 2.920563334887191e-07,
+          "divU": -2.113331731834478e-11,
+          "divU_normalized": 2.305065827361704e-12
+        }
+      ],
+      "seconds": 100.75458491500467
+    },
+    {
+      "point": [
+        8.6,
+        1.0
+      ],
+      "rho_x": 0.17168104111584595,
+      "checks": [
+        {
+          "difference_order": 8,
+          "h": 0.0025,
+          "DU": [
+            [
+              4.552817747896821,
+              0.11086497345206546
+            ],
+            [
+              -0.06081604363631651,
+              -4.552817750403558
+            ]
+          ],
+          "E": -2.4027463990661246e-08,
+          "E_normalized": 6.99770502201789e-08,
+          "E_over_rho_x": 1.3995409064678337e-07,
+          "divU": -2.506737040164353e-09,
+          "divU_normalized": 2.752951225240951e-10
+        }
+      ],
+      "seconds": 103.31204145099036
+    }
+  ]
+}

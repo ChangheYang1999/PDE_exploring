@@ -1,0 +1,9 @@
+# Checked text for the L=4 trial
+
+Prepared 2026-10-20T18:58:03.646727+00:00. Source: dnB_n96m40SL4.npz, md5 c103a60bbbf2279e7c21f4f5a2b580be. AV66 and L4_RESULT.md contain the methods and raw evidence.
+
+Suggested paragraph for6.4 Q1:
+
+The verifier independently reconstructed the completed(96,40),L=4 trial and evaluated its canonical whole-plane velocity with a separate real-space inverse. On the same58physical sample points used for L=8, max|R|/N_f=0.00382567, where N_f=|rho|+sum_i|W_i partial_i rho|; the corresponding L=8 trial gave0.00548170. These are finite sampled transport residuals, distinct from the collocation residual. The independently found positive-axis zero is x*=8.577249196808. At(x*,0.1) and(x*,1), |R|/N_f is4.85e-7 and2.42e-4, while |E|/|rho_x| is1.35e-7 and5.82e-8. The strain defect3c_l-1-c is8.59e-7. Refining the density differentiation changes the common-sample normalized residual by less than1.6e-10; at six identical main-audit points the inverse refinement changes it by less than4.0e-9. The exact omitted exterior contribution to the velocity at the sample points is below3.72e-14, separately from the unvalidated interior quadrature. Exact interval center tests exclude smoothness and exact transport for this fixed interpolant, without excluding a smooth limit of changing trials. Here L is a compactification scale on the full plane, not a finite physical boundary. This trial does not meet the endpoint residual standard and does not establish domain convergence.
+
+The elliptic defect is E=-partial_x U_2+partial_y U_1-partial_x rho. The six-point inverse comparison and58point density differentiation comparison are separate tests; do not combine them into a certified58point inverse error bound. The inner-origin strain contribution1.25e-15 from AV71 has no effect on the printed8.59e-7 defect.

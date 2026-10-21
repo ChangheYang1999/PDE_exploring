@@ -1,0 +1,80 @@
+{
+  "configuration": {
+    "density": "verifier/fixed-cl/data96/fixclSA_n96m40_d-0.001.npz",
+    "output": "verifier/fixed-cl/verification96/fixclSA_n96m40_d-0.001_elliptic4096.json",
+    "nang": 4096,
+    "order": 28,
+    "panel": 0.08,
+    "rmax": 1e+30,
+    "mode": "elliptic",
+    "points_file": "verifier/fixed-cl/verification96/near_points.json",
+    "kernel": "split",
+    "offset": 0.37,
+    "difference_steps": ".0025",
+    "difference_orders": "8",
+    "density_step": 0.0005
+  },
+  "source_md5": "a5c3086554ed561b9a7e89516edcd0e4",
+  "cl": 5.575238170436085,
+  "L": 8.0,
+  "rows": [
+    {
+      "point": [
+        8.6,
+        0.1
+      ],
+      "rho_x": 0.01889297309457725,
+      "checks": [
+        {
+          "difference_order": 8,
+          "h": 0.0025,
+          "DU": [
+            [
+              4.5757847357817925,
+              0.01261758956404706
+            ],
+            [
+              -0.006275387657739169,
+              -4.575784735805772
+            ]
+          ],
+          "E": 4.127208977355856e-09,
+          "E_normalized": 1.0922602032768087e-07,
+          "E_over_rho_x": 2.1845206451601138e-07,
+          "divU": -2.397992915348368e-11,
+          "divU_normalized": 2.6203078311248154e-12
+        }
+      ],
+      "seconds": 100.91142056905665
+    },
+    {
+      "point": [
+        8.6,
+        1.0
+      ],
+      "rho_x": 0.22771758405973933,
+      "checks": [
+        {
+          "difference_order": 8,
+          "h": 0.0025,
+          "DU": [
+            [
+              4.542741966519444,
+              0.15051114042274247
+            ],
+            [
+              -0.07720641956821238,
+              -4.54274196903345
+            ]
+          ],
+          "E": -2.406878449323635e-08,
+          "E_normalized": 5.28478858244573e-08,
+          "E_over_rho_x": 1.0569576606311684e-07,
+          "divU": -2.5140058923511788e-09,
+          "divU_normalized": 2.7670577705976536e-10
+        }
+      ],
+      "seconds": 99.83368299412541
+    }
+  ]
+}

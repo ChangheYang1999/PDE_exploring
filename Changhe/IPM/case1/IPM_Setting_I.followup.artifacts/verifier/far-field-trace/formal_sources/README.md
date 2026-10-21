@@ -1,0 +1,1 @@
+No formalization or Lean build was attempted. PROOF.md is the complete informal argument. Code is independent Python verification and a manufactured inverse test; it is not formal proof of the analytic estimates.

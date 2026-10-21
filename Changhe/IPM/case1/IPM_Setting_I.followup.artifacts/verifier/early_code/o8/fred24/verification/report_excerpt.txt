@@ -1,0 +1,52 @@
+- Local exclusion with polynomial constants at the computed A (external referee; the reference values of B_3 and of its
+  first derivatives in A and e at both references below, three directional derivatives and the closed-form
+  reconstruction checked numerically by the lead researcher with separately written code; the referee's exact rational
+  certificate rerun by the lead researcher with the same output; the analytic estimates and the bounds on the reference
+  that enter the certificate not yet checked by the verifier). Rescale u = x/x*, w~(u) = w(x* u)/x*,
+  g~(u) = g(x* u)/x*^2. Then w~ g~' = (w~' - A) g~ with g~/u^2 -> 1 at 0 and Q = x*^(-5) (g~' - e w~'')/(2 g~^3) with
+  e = x*^(-2), so B_3 in natural units is a functional B(A, e, w~) of A, of the single scalar e and of the normalized
+  trace on [0, 1], affine in e (for the family of 6.3.2 (a), w~ = -A u (1 - u^2)/(1 + u^2) for every L and B = C_A
+  (1 - S_A e)). For compatible directions v (odd and smooth near 0, v'(0) = 0, v(1) = v'(1) = 0) write v = c_3
+  phi_3 + c_5 phi_5 + c_7 phi_7 + R_v near 0, with phi_j(u) = u^j + ((j - 11)/2) u^9 + ((9 - j)/2) u^11
+  (so phi_j(1) = phi_j'(1) = 0) and R_v = O(u^9), and put ||v||_N = |c_3| + |c_5| + |c_7| + sup_(0<u<=r) u^(-5-sigma)
+  |R_v''(u)| + sup_[r,1] |v''| + sup_(r<=u<1) |v''(u) - v''(1)|/(1 - u)^theta, with sigma > beta and theta + beta > 1
+  (with margins over the range of A). (i) The referee gives the exact first variation of B in (A, e, v), with the
+  variation of g written through an adjoint weight, and a second-order remainder bound whose constants are polynomial in
+  quantities of the reference (suprema of w_0 and its derivatives, the infimum of -w_0/(u (1 - u)), bounds for g_0/u^2,
+  |Q_0(1)|, the Taylor coefficients at 0) and in the inverses of the margins sigma - beta and theta + beta - 1. The
+  exponential constants of 6.3.1 (n) came from absolute Gronwall-type bounds for the reconstruction of g from w; here
+  log(g/g_0) is estimated relative to the reference through the quotients -w/(1 - u) and (A - w')/(1 - u), both
+  removable at u = 1, so no exponential of a reference integral enters. (ii) At the reference q = 0
+  (the trace of 6.3.2 (a)) with A_0 = 10.150725, e_0 = 0.0135206, h = 0.06, h' = 0.0003, r = 1/2, sigma = 1 and
+  theta = 9/10, exact rational arithmetic gives B(A_0, e_0, w_0) >= 0.321857 (the value is 0.3257951),
+  ||DB||_(N*) <= 12240, a second-order constant at most 235346 on the ball of radius delta_0 >= 0.1046, and the radius
+  eps = 1e-6. With the input of 6.3.1 (h) (an exact profile that satisfies the Hoelder or cone hypothesis at P and is in
+  P_inf has B_3 = 0), no such profile has |A - A_0| <= 0.06, source x* = L with |L^(-2) - e_0| <= 0.0003 and normalized
+  trace with ||w~ - (A/A_0) w_0||_N <= 1e-6. At A = 4, e = 1/16 (the reference of 6.3.1 (n)) the same method gives 1e-8
+  for the same widths and 1e-7 at fixed A and e, compared with e^(-10^7) in 6.3.1 (n) (in other coordinates and another
+  norm). (iii) The norm X of 6.3.1 (i) is not necessary: N controls only R_v'' at the origin and compares v'' only with
+  its value at the source. A plain C^2 tail norm is not sufficient: a direction with v''(1 - s) = s^gamma,
+  0 < gamma <= 1 - beta, makes the integral defining B diverge at first order, with coefficient
+  1/(2A (gamma + 1) g*^2) - e/(2 g*^3), which vanishes for at most one gamma. The origin weight of DB is lambda ~ e
+  (1 - beta)(6 + beta)(7 + beta) u^(-8-beta)/(6A), so the method needs sigma > beta, and sigma = beta fails for the
+  plain supremum. The dual norm of DB at this reference lies between about 8.3e-4 (numerical lower tests) and 12240
+  (proved); a broad bump at u = 1/8.6 has N-norm at least 4.3e14, consistent with the response of up to 1e9 natural
+  units per unit relative change in 6.3.2 (c). (iv) Lead checks: at the computed A, B = 0.325795091172477577,
+  dB/de = -15.1525473710004066 and dB/dA at fixed w~/A equal to -0.0151217387326; at A = 4, e = 1/16,
+  0.153095696660659004, -4.15355281375005299 and -0.0651471618471; DB(phi_3), DB(phi_5), DB(phi_7) = 0.82913517178,
+  0.48431395934, 0.21490833993 by central differences of the exact functional of the previous item, in agreement with
+  the referee's formulas to 10 digits; the referee's closed form g_0(u) = u^2 H(u^2) e^(T(u^2))/(A_0 (1 + u^2)),
+  H(t) = A_0 - t (1 - t^2) q(t), T(t) = (1/2) int_0^t (1 + s)^2 q(s)/H(s) ds, agrees at u = 1 with the numerically
+  rebuilt g of the previous item to 20 digits on the K = 12 and K = 18 approximants. (v) Scope. The reference q = 0
+  differs from the computed trace by about 0.22 in w~ (sampled), and its N-distance to the analytic approximants of the
+  previous item is 180 to 220 (lead researcher, suprema sampled), far outside the ball. The referee also gives an
+  exactly compatible degree-12 reference of the type of the previous item, fitted to the computed trace (sampled error
+  in w~ at most 2.7e-7 on 0.02 <= u <= 0.985; w_0 < 0 on (0, 1) and H >= A_0 certified by exact Bernstein bounds), with
+  B = 0.2840732 natural units (lead researcher's code; its g(1) agrees with the referee's to 18 digits and gives
+  g* = 29.7492 against 29.7495 from the trial data); its exclusion constants are not certified. Fits of equal quality
+  (errors in w/u at most 2.3e-6, K >= 10, and the referee's fit) have Taylor coefficients of order 7 at 0 between 6.38
+  and 6.86, and their mutual N-distances are 15 to 56 (lead researcher, suprema sampled), mostly from the weighted
+  origin term sup u^(-6) |R_v''| on (0, 1/2]: the trial data cannot place the computed trace, or an exact profile near
+  it, within 1e-6 of any reference in N. The stored trace also starts at positive x, and smooth perturbations supported
+  in the unobserved origin interval change the N-norm without changing any stored value. This is a local statement
+  around traces that are not known to be axis traces of any profile; it is not NO_inf.

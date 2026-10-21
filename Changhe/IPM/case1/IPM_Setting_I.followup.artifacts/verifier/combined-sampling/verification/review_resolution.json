@@ -1,0 +1,47 @@
+{
+  "utc": "2026-10-20T22:29:46.028167+00:00",
+  "review": {
+    "start_utc": "2026-10-20T22:27:43.261511+00:00",
+    "requested_model": "us.anthropic.claude-opus-5-5",
+    "files": {
+      "verifier/combined-sampling/PROOF.md": "f2fc34a65143d814e575f1c360883a675100b970a9dd638078a354bd335f1a96",
+      "verifier/combined-sampling/code/run.py": "30eff89eb59c7dcc5d6f5708b059da03cd6c1f6c57ed50fb98a08417ecf21b2d",
+      "verifier/combined-sampling/code/contracts.py": "c0faadf7b0a4aecd11126874bceefc5ae617c3f2aad8eee0a5ba0d50d32cc101"
+    },
+    "input_sha256": "34a698cef04c06cd73734ad42632ab8f2bf79bec5ddb96a2451b97829d5221ff",
+    "thinking_requested": "adaptive",
+    "effort_requested": "low",
+    "client_sha256": "4486acd535a8885772342ea6e50bdc312a7d8bf571eee2dcf518aaaee19f04b2",
+    "end_utc": "2026-10-20T22:28:27.395888+00:00",
+    "actual_response_model": "claude-opus-5-5",
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 8578,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 4511,
+      "output_tokens_details": {
+        "thinking_tokens": 2268
+      },
+      "service_tier": "standard"
+    },
+    "request_id": "1cab0935-9e65-4f08-a0fd-4910cca3a0f9"
+  },
+  "proof_sha256": "a67d365f4e355dd9ad13a38884f2f5ab8b87793c2f680f82cb808972ca3f29d2",
+  "plan_sha256": "6fd40d3028500948b577d604d6d5f65598b9ed153dd185e4877e30d35727bbc6",
+  "verdict": "CONFIRMED finite proof and repaired source-convention checks, ready for mixed finite arrays",
+  "resolved": [
+    "current plan/source hashes checked",
+    "each source array independently reconstructed from scalar rows",
+    "primary gradient convention explicit and unchanged",
+    "truncated parameter row nonzero",
+    "optimized execution rejected",
+    "stencil degree8 exact moments and pinned source lists",
+    "finer inverse means within each source experiment"
+  ],
+  "scope": "Actual Opus5.5 review and independent checks; no numerical mixed result or endpoint yet"
+}

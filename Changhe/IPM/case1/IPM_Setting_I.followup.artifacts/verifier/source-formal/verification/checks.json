@@ -1,0 +1,88 @@
+{
+  "date": "2026-10-20T16:56:46.738593+00:00",
+  "checks": {
+    "V_first_coefficients": true,
+    "V_equation_0": true,
+    "V_equation_1": true,
+    "V_equation_2": true,
+    "Q175_first_coefficients": true,
+    "Q175_equation_0": true,
+    "Q175_equation_1": true,
+    "Q175_equation_2": true,
+    "Q2_first_coefficients": true,
+    "Q2_equation_0": true,
+    "Q2_equation_1": true,
+    "Q2_equation_2": true,
+    "Q2_compatibility": true,
+    "Q2_log_coefficient": true,
+    "Q2_beta5_free": true,
+    "Q2_beta7_free": true,
+    "Q2_defect_free": true,
+    "scalar_inverse_equation": true,
+    "endpoint_exponent_5/2": true,
+    "endpoint_exponent_7/4": true,
+    "endpoint_exponent_2": true
+  },
+  "rows": [
+    {
+      "mode": "V",
+      "A": "5/2",
+      "g": "21/4",
+      "d": "5/2",
+      "forcing": {
+        "1": "2/7",
+        "3": "2/7",
+        "5": "3/140",
+        "7": "1/490",
+        "9": "-39/15680",
+        "11": "69/34496"
+      },
+      "first_phi3_phi5": [
+        "8/63",
+        "1/70"
+      ]
+    },
+    {
+      "mode": "Q175",
+      "A": "7/4",
+      "g": "27/8",
+      "d": "5/2",
+      "forcing": {
+        "1": "14/45",
+        "3": "-2/135",
+        "5": "-11/180",
+        "7": "7/270",
+        "9": "-427/25920",
+        "11": "103/8640"
+      },
+      "first_phi3_phi5": [
+        "32/405",
+        "-11/405"
+      ]
+    },
+    {
+      "mode": "Q2",
+      "A": "2",
+      "g": "5",
+      "d": "3",
+      "forcing": {
+        "1": "4/15",
+        "3": "1/15",
+        "5": "-2/25",
+        "7": "11/525",
+        "9": "-4/315",
+        "11": "152/17325"
+      },
+      "first_phi3_phi5": [
+        "1/10",
+        "-1/48"
+      ],
+      "defect": "-1/120",
+      "log_coefficient": "-1/240",
+      "beta5_free": "-(30*phi1 - 1)/1500",
+      "beta7_free": "0",
+      "defect_free": "-1/120"
+    }
+  ],
+  "all_pass": true
+}

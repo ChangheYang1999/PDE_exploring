@@ -1,0 +1,30 @@
+{
+  "utc": "2026-10-20T22:29:45.814998+00:00",
+  "input_implementations": [
+    {
+      "file": "verifier/inverse/code/density.py",
+      "sha256": "9bf2a699606b02d53dd57449dd367d5558bdab8ae6e6efc6ccf34ee781263c88",
+      "exact_weight_list_line": 99
+    },
+    {
+      "file": "verifier/sampled-physical-actions/code/gradients.py",
+      "sha256": "d6a26020d794b5c9da79dc7f3e250ec3d02d2ee3eaa9b5b840461aaea127e633",
+      "exact_weight_list_line": 43
+    }
+  ],
+  "stencil_moments": {
+    "0": "0",
+    "1": "1",
+    "2": "0",
+    "3": "0",
+    "4": "0",
+    "5": "0",
+    "6": "0",
+    "7": "0",
+    "8": "0",
+    "9": "-576"
+  },
+  "gauss_minimum_axis_margin_at_primary_step": 0.0016881474367653696,
+  "verdict": "PASS",
+  "scope": "Exact antisymmetric stencil weights imply derivative exactness on all polynomials of degree<=8 at fixed h. Source inspection establishes h=max(1,abs(x),abs(y))/32000; this is not an error bound for the trial derivatives."
+}

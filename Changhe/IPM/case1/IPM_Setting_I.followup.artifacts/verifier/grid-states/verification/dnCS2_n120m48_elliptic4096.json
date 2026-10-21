@@ -1,0 +1,80 @@
+{
+  "configuration": {
+    "density": "verifier/grid-states/data/dnCS2_n120m48.npz",
+    "output": "verifier/grid-states/verification/dnCS2_n120m48_elliptic4096.json",
+    "nang": 4096,
+    "order": 28,
+    "panel": 0.08,
+    "rmax": 1e+30,
+    "mode": "elliptic",
+    "points_file": "verifier/grid-states/verification/near_points.json",
+    "kernel": "split",
+    "offset": 0.37,
+    "difference_steps": ".0025",
+    "difference_orders": "8",
+    "density_step": 0.0005
+  },
+  "source_md5": "65ec08e16556d812aef0208ccdfc32ab",
+  "cl": 5.57471596461196,
+  "L": 8.0,
+  "rows": [
+    {
+      "point": [
+        8.6,
+        0.1
+      ],
+      "rho_x": 0.0218257301814396,
+      "checks": [
+        {
+          "difference_order": 8,
+          "h": 0.0025,
+          "DU": [
+            [
+              4.575315432043109,
+              0.014789466320313712
+            ],
+            [
+              -0.00703626799194065,
+              -4.575315432067858
+            ]
+          ],
+          "E": 4.130814759695234e-09,
+          "E_normalized": 9.463175651969215e-08,
+          "E_over_rho_x": 1.8926353094972466e-07,
+          "divU": -2.474909166494399e-11,
+          "divU_normalized": 2.704632285191465e-12
+        }
+      ],
+      "seconds": 99.7484049599152
+    },
+    {
+      "point": [
+        8.6,
+        1.0
+      ],
+      "rho_x": 0.24251344360589805,
+      "checks": [
+        {
+          "difference_order": 8,
+          "h": 0.0025,
+          "DU": [
+            [
+              4.5424589639180235,
+              0.15846675542345254
+            ],
+            [
+              -0.08404666411778856,
+              -4.542458966433213
+            ]
+          ],
+          "E": -2.4064656933830975e-08,
+          "E_normalized": 4.9615101270237584e-08,
+          "E_over_rho_x": 9.923019761715886e-08,
+          "divU": -2.515189834184639e-09,
+          "divU_normalized": 2.7685333576672146e-10
+        }
+      ],
+      "seconds": 104.55784309795126
+    }
+  ]
+}

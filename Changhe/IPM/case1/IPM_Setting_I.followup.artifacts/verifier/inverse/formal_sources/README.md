@@ -1,0 +1,1 @@
+No formal source is claimed for this result. Lean and Lake builds are prohibited in this run. The standalone informal argument is in ../PROOF.md and numerical or symbolic checks are in ../verification/.

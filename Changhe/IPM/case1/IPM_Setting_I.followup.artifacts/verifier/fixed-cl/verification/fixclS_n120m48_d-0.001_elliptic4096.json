@@ -1,0 +1,80 @@
+{
+  "configuration": {
+    "density": "numerics/runs/fixclS_n120m48_d-0.001.npz",
+    "output": "verifier/fixed-cl/verification/fixclS_n120m48_d-0.001_elliptic4096.json",
+    "nang": 4096,
+    "order": 28,
+    "panel": 0.08,
+    "rmax": 1e+30,
+    "mode": "elliptic",
+    "points_file": "verifier/fixed-cl/verification/source_points.json",
+    "kernel": "split",
+    "offset": 0.37,
+    "difference_steps": ".0025",
+    "difference_orders": "8",
+    "density_step": 0.0005
+  },
+  "source_md5": "c7ad9b75f1efd5164fdf03022075a34c",
+  "cl": 5.573692542183549,
+  "L": 8.0,
+  "rows": [
+    {
+      "point": [
+        8.6,
+        0.1
+      ],
+      "rho_x": 0.021985983208043337,
+      "checks": [
+        {
+          "difference_order": 8,
+          "h": 0.0025,
+          "DU": [
+            [
+              4.5744324186585725,
+              0.014909347114208264
+            ],
+            [
+              -0.007076640223474063,
+              -4.574432418682233
+            ]
+          ],
+          "E": 4.129638991878792e-09,
+          "E_normalized": 9.391525875749541e-08,
+          "E_over_rho_x": 1.8783053515514413e-07,
+          "divU": -2.3660184922391636e-11,
+          "divU_normalized": 2.5861333993943523e-12
+        }
+      ],
+      "seconds": 98.16959314583801
+    },
+    {
+      "point": [
+        8.6,
+        1.0
+      ],
+      "rho_x": 0.25015899619915494,
+      "checks": [
+        {
+          "difference_order": 8,
+          "h": 0.0025,
+          "DU": [
+            [
+              4.5419897761500785,
+              0.16323736373061865
+            ],
+            [
+              -0.08692160839309877,
+              -4.54198977866397
+            ]
+          ],
+          "E": -2.4075437532466992e-08,
+          "E_normalized": 4.812027361953606e-08,
+          "E_over_rho_x": 9.624054260795087e-08,
+          "divU": -2.5138913173350375e-09,
+          "divU_normalized": 2.767389889162402e-10
+        }
+      ],
+      "seconds": 98.54262644913979
+    }
+  ]
+}

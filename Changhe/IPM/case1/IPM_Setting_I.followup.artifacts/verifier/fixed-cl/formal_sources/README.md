@@ -1,0 +1,1 @@
+No formal proof assistant was run. The mathematical arguments use the separately proved center and exterior-tail results. Exact imported binary data are checked with ball arithmetic; numerical quadrature is not a formal certificate.

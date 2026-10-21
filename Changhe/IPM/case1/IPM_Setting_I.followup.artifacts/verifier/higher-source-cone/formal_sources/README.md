@@ -1,0 +1,1 @@
+No formal source is claimed. Lean and Lake builds are prohibited in this run. PROOF.md is the standalone informal argument; verification/ contains independently implemented exact coefficient checks and numerical sanity checks, not a formal proof.

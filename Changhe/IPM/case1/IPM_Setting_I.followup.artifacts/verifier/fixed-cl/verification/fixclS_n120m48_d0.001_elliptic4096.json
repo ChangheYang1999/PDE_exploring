@@ -1,0 +1,80 @@
+{
+  "configuration": {
+    "density": "numerics/runs/fixclS_n120m48_d0.001.npz",
+    "output": "verifier/fixed-cl/verification/fixclS_n120m48_d0.001_elliptic4096.json",
+    "nang": 4096,
+    "order": 28,
+    "panel": 0.08,
+    "rmax": 1e+30,
+    "mode": "elliptic",
+    "points_file": "verifier/fixed-cl/verification/source_points.json",
+    "kernel": "split",
+    "offset": 0.37,
+    "difference_steps": ".0025",
+    "difference_orders": "8",
+    "density_step": 0.0005
+  },
+  "source_md5": "637cd4575b59f8d249df5a98bb462332",
+  "cl": 5.57569254218355,
+  "L": 8.0,
+  "rows": [
+    {
+      "point": [
+        8.6,
+        0.1
+      ],
+      "rho_x": 0.020600030878421022,
+      "checks": [
+        {
+          "difference_order": 8,
+          "h": 0.0025,
+          "DU": [
+            [
+              4.576134276667385,
+              0.013952140675783653
+            ],
+            [
+              -0.0066478943312081856,
+              -4.576134276690385
+            ]
+          ],
+          "E": 4.128570818551225e-09,
+          "E_normalized": 1.0020786932801898e-07,
+          "E_over_rho_x": 2.0041575873927414e-07,
+          "divU": -2.3000268356554443e-11,
+          "divU_normalized": 2.513067467640702e-12
+        }
+      ],
+      "seconds": 100.64970884495415
+    },
+    {
+      "point": [
+        8.6,
+        1.0
+      ],
+      "rho_x": 0.23647225912396408,
+      "checks": [
+        {
+          "difference_order": 8,
+          "h": 0.0025,
+          "DU": [
+            [
+              4.543706175791023,
+              0.1541074729787186
+            ],
+            [
+              -0.08236476207978072,
+              -4.5437061782976675
+            ]
+          ],
+          "E": -2.4065464759859267e-08,
+          "E_normalized": 5.088433221208986e-08,
+          "E_over_rho_x": 1.0176865924574945e-07,
+          "divU": -2.506644669608704e-09,
+          "divU_normalized": 2.758370118949089e-10
+        }
+      ],
+      "seconds": 99.37356288009323
+    }
+  ]
+}
