@@ -1,0 +1,143 @@
+"""Dependency identities and exact inherited scalar comparisons, not reintegration."""
+from pathlib import Path
+from fractions import Fraction as F
+from datetime import datetime,timezone
+from collections import Counter
+import json,hashlib,gzip,sys
+from flint import fmpq
+assert not sys.flags.optimize
+B=Path(__file__).resolve().parents[3];D=B/'research/source_archive_dependencies';E=D/'evidence'
+now=lambda:datetime.now(timezone.utc).isoformat()
+def sha(p):
+ with Path(p).open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
+def load(p):return json.loads(Path(p).read_text())
+start=now();pins={};visited=set();counts=Counter();roots={}
+def pin(n,h=None):
+ p=Path(n);p=p if p.is_absolute() else B/p
+ n=str(p.relative_to(B)) if p.is_relative_to(B) else str(p)
+ actual=pins.get(n)
+ if actual is None:actual=sha(p);pins[n]=actual;counts['unique_hashed_files']+=1
+ assert h is None or actual==h,n
+ counts['dependency_edges_compared']+=h is not None
+ return actual
+
+def dep(n,h=None):
+ pin(n,h)
+ if n in visited:return
+ visited.add(n)
+ if n.endswith('/evidence/verdict.json'):
+  v=load(B/n);assert v['status'].startswith('CONFIRMED'),n
+  for k,z in v['files'].items():dep(k,z)
+
+names=['n8_density_hessian','n8_velocity_hessian','n8_coefficient_closure','source_instance','source_order_family','moving_source','source_explicit_inverse','source_dilation','source_integrated_inverse','source_jet_corrections','sobolev_source_box','full_t_linkage']
+for name in names:
+ n='research/'+name+'/evidence/verdict.json';dep(n);v=load(B/n);roots[name]={'verdict_sha256':pins[n],'status':v['status'],'utc':v['utc']}
+# Old axis certificates use different, explicit provenance schemas.
+for name,files in {
+ 'canonical_inverse':['PROOF.md','code/strain_arb.py','code/exact_audit.py','evidence/final_audit_manifest.json','evidence/audit_verdict.json'],
+ 'axis_control':['PROOF.md','code/check_constants.py','evidence/constants.json'],
+ 'axis_points':['PROOF.md','code/axis_arb.py','evidence/final_addendum.json','evidence/final_iv_audit.json','evidence/axis7_result.json','evidence/axis10_result.json'],
+ 'modal_source':['PROOF.md','code/certify_source.py','evidence/source_result.json','evidence/output_audit.json','evidence/import_binding_audit.json'],
+}.items():
+ for f in files:pin('research/'+name+'/'+f)
+v=load(B/'research/canonical_inverse/evidence/final_audit_manifest.json')
+for n,h in v['sha256'].items():pin(n,h)
+v=load(B/'research/axis_control/evidence/constants.json');pin('data_exact/x3.json',v['input_sha256']);pin('research/axis_control/code/check_constants.py',v['script_sha256'])
+v=load(B/'research/axis_points/evidence/final_addendum.json')
+for n,h in v['pinned_prior_audits'].items():pin('research/axis_points/evidence/'+n,h)
+for row in v['singular_point_checks']:pin('research/axis_points/evidence/'+row['tag']+'_partition.json',row['partition_sha256'])
+
+# Complete selected input records, including all exact H coefficients, agree.
+x=load(B/'research/n8_density_hessian/evidence/density_inputs.json');y=load(B/'research/n8_velocity_hessian/evidence/moment_inputs.json')
+assert x['source_header']==y['source_header'] and x['cells']==y['cells'] and len(x['spans'])==len(y['spans'])==7
+for a,b in zip(x['spans'],y['spans']):
+ assert set(a)=={'span','first_cell','count','a_exact','b_exact','polynomial_mid_exact','density_polynomials'}
+ assert all(a[k]==b[k] for k in a)
+ assert len(a['density_polynomials'])==262 and all(len(v)==8 for v in a['density_polynomials'])
+ assert len(b['i_left'])==len(b['j_right'])==261
+ counts['density_H_balls_checked']+=262*8;counts['imported_moment_anchor_balls']+=522
+archive='research/middle_residual/evidence/original_knots.jsonl.gz'
+h='c762afdbea381b750f2c9e382ef2315b2652df9781ccf69511237d944e102648'
+assert x['files'][archive]==y['files'][archive]==h
+pin(archive,h);assert load(B/'research/full_t_linkage/evidence/verdict.json')['files'][archive]==h
+selected={a['span']:a for a in y['spans']};seen=set()
+with gzip.open(B/archive,'rt') as f:
+ header=load_header=json.loads(next(f));assert header==x['source_header']
+ for line in f:
+  a=json.loads(line)
+  if a['type']=='complete':break
+  if a['span'] in selected:
+   assert a==selected[a['span']];seen.add(a['span'])
+  if len(seen)==7:break
+assert seen==set(selected)
+counts['whole_selected_archive_records_equal']=7
+
+# Independent point certificate and its narrower source box.
+s=load(B/'research/modal_source/evidence/source_result.json');audit=load(B/'research/modal_source/evidence/output_audit.json')
+assert audit['verdict']=='PASS' and audit['source_result_sha256']==pin('research/modal_source/evidence/source_result.json')
+for key,n in {'input_sha256':'data_exact/modal_v2.json','scalar_input_sha256':'research/modal_repair/evidence/independent_gauss_iv.json','source_sha256':'research/modal_source/code/certify_source.py','moments_sha256':'research/exponential_moments/code/moments.py','Cox_sha256':'research/canonical_inverse/code/exact_audit.py'}.items():
+ assert s[key]==audit['verified_dependencies'][key];pin(n,s[key])
+assert load(B/'research/modal_source/evidence/import_binding_audit.json')['status']=='PASS'
+source=load(B/'research/source_instance/evidence/checks_v2.json')
+p,q=map(F,s['final_root_endpoints_exact']);pl,pu=map(F,source['source_bracket_exact'])
+assert pl<p<q<pu;counts['fine_root_strictly_inside_source_box']=1
+pair=lambda v:tuple(F(v[k]) for k in ('lower_exact','upper_exact'))
+ml,mh=pair(s['final_values']['mu_minus_1']);gl,gh=pair(s['final_values']['g']);dl,dh=pair(s['final_values']['gprime'])
+k=F(x['source_header']['scalars_exact']['k']);Al,Ah=2/k-1-mh,2/k-1-ml
+assert 10<Al<=Ah<F('10.2') and F('.99')<1+ml<=1+mh<F('1.01') and 29<gl<=gh<30
+counts['fine_scalar_strict_box_inclusions']=3
+assert F(source['cl_exact'])==1/k
+jets=load(B/'research/source_jet_corrections/evidence/checks.json')
+Dlo,Dhi=-mh*gl,-ml*gh;Clo,Chi=-mh+gl+dl,-ml+gh+dh
+assert (Dlo,Dhi)==pair(jets['exact_ranges']['D']) and (Clo,Chi)==pair(jets['exact_ranges']['C'])
+assert Dlo>F('6.70197e-7') and F('30.0229')<Clo<=Chi<F('30.0230')
+counts['exact_inherited_jet_endpoints_reconstructed']=4
+# A different exact arithmetic backend repeats the corner expressions and all box inequalities.
+def Q(x):
+ text=str(x)
+ if '/' in text:return fmpq(text)
+ text=text.lower();mant,exp=(text.split('e') if 'e' in text else (text,'0'))
+ power=int(exp)
+ if '.' in mant:
+  whole,frac=mant.split('.');mant=whole+frac;power-=len(frac)
+ value=fmpq(int(mant))
+ return value*fmpq(10)**power
+assert (-Q(mh)*Q(gl),-Q(ml)*Q(gh))==(Q(Dlo),Q(Dhi))
+assert (-Q(mh)+Q(gl)+Q(dl),-Q(ml)+Q(gh)+Q(dh))==(Q(Clo),Q(Chi))
+assert Q(Dlo)>Q('6.70197e-7') and Q('30.0229')<Q(Clo)<=Q(Chi)<Q('30.0230')
+assert Q(pl)<Q(p)<Q(q)<Q(pu)
+assert Q(10)<2/Q(k)-1-Q(mh)<=2/Q(k)-1-Q(ml)<Q('10.2')
+assert Q('.99')<1+Q(ml)<=1+Q(mh)<Q('1.01') and Q(29)<Q(gl)<=Q(gh)<Q(30)
+counts['fmpq_independent_exact_comparisons']=10
+
+low=load(B/'research/n8_coefficient_closure/evidence/checks.json')['exact'];mv=F(low['M_V_upper']);mr=F(low['M_rho_upper'])
+assert mv==F('0.2972') and mr==F('0.5059')
+assert (F('41.7')*mv+3*mr)==F('13.91094')
+assert 3*F('0.0165')*mv==F('0.0147114')
+moving=load(B/'research/moving_source/evidence/checks.json');sob=load(B/'research/sobolev_source_box/source/parameters.json');sp={n:F(v) for n,v in sob['inputs'].items()}
+assert F(moving['m_lower'])==Al-mv*sp['R0']
+assert F(moving['m_public_lower'])==sp['m0'] and sp['MV']==mv and sp['Mrho']==mr
+assert F(moving['epsilon_transformed_upper'])==F(moving['epsilon'])*(1+mv/sp['m0'])
+assert F(sob['upper_claims']['b1'])==F('0.06970585') and sp['H_exclusion']==F('3.2318e-7')
+counts['shared_velocity_scalar_dependencies_bound']=7
+# Pin the actual source texts whose formulas were inspected, without executing them.
+readings={
+'n8_density_hessian':['code/export_density.py','code/check_hessian.py','PROOF.md','PUBLICATION.md'],
+'n8_velocity_hessian':['code/export_moments.py','code/check_hessian.py','PROOF.md','PUBLICATION.md'],
+'n8_coefficient_closure':['code/check_closure.py','PUBLICATION.md'],
+'source_instance':['code/check_source_v2.py','PROOF.md','PUBLICATION.md'],
+'source_order_family':['code/check_constants.py','PROOF.md','ADDENDUM.md'],
+'moving_source':['code/check_constants.py','PROOF.md','PUBLICATION.md'],
+'source_explicit_inverse':['code/check_bounds.py','PROOF.md'],
+'source_dilation':['PROOF.md','PUBLICATION.md'],
+'source_integrated_inverse':['PROOF.md','PUBLICATION.md','code/check_bounds.py'],
+'source_jet_corrections':['code/check_jets.py','PROOF.md'],
+'sobolev_source_box':['code/check_constants.py','code/engine_rational.py','PROOF.md']}
+for name,fs in readings.items():
+ for f in fs:pin('research/'+name+'/'+f)
+for pth in [D/'PROOF.md',D/'TABLE.md',E/'proof_first.json',Path(__file__)]:pin(str(pth.relative_to(B)))
+manifest={'utc':now(),'files':pins,'accepted_roots':roots}
+with (E/'dependency_manifest.json').open('x') as f:json.dump(manifest,f,indent=2);f.write('\n')
+result={'start_utc':start,'utc':now(),'status':'PASS_SOURCE_ARCHIVE_DEPENDENCY_BINDING_AND_EXACT_SCALAR_AUDIT','counts':dict(counts),'selected_spans':sorted(seen),'manifest_sha256':sha(E/'dependency_manifest.json'),'roots':roots,'exact_new_comparisons':{'D_lower_margin':str(Dlo-F('6.70197e-7')),'C_lower_margin':str(Clo-F('30.0229')),'C_upper_margin':str(F('30.0230')-Chi),'fine_point_A_lower':str(Al),'fine_point_A_upper':str(Ah)},'scope':'Dependency identity and exact saved scalar audit only. H/geometry separated from I/J anchors by data paths and formulas in PROOF. No fresh field integration, derivative enclosure, analytic inverse proof or IPM endpoint.'}
+with (E/'checks.json').open('x') as f:json.dump(result,f,indent=2);f.write('\n')
+print(json.dumps({k:result[k] for k in ['utc','status','counts','manifest_sha256']}))

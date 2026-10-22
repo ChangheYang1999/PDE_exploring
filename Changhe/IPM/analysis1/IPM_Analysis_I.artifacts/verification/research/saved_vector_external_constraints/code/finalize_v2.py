@@ -1,0 +1,45 @@
+"""Publish bounded exact-vector result after actual code/output review and adjudication."""
+from pathlib import Path
+from fractions import Fraction as F
+from datetime import datetime,timezone
+import json,hashlib,sys,os
+assert not sys.flags.optimize
+B=Path(__file__).resolve().parents[3];D=B/'research/saved_vector_external_constraints';R=B/'notes/reviews'
+def sha(p):
+ with p.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
+def load(p):return json.loads(p.read_text())
+def need(v,s):
+ if not v:raise ValueError(s)
+m=load(D/'data_exact/manifest.json');s=load(D/'evidence/source_binding.json');c=load(D/'data_exact/constraints.json');a=load(D/'evidence/output_audit.json');e=load(D/'evidence/review_extract_v2.json');old_extract=load(D/'evidence/review_extract.json');extra=load(D/'evidence/convention_audit.json');first=load(D/'evidence/proof_first.json');pins={}
+need(m['status']=='PASS_SAVED_VECTOR_CAPTURE_AND_METADATA_BINDING_ONLY' and s['status']=='PASS_STATIC_ORIGINAL_COORDINATE_VECTOR_SOURCE_PATH' and a['status']=='PASS_EXACT_SAVED_VECTOR_EXTERNAL_CONSTRAINTS_INDEPENDENT_IEEE_MONOMIAL_AND_IV220' and e['status']=='PASS_COMPLETE_SAVED_VECTOR_CONSTRAINT_REVIEW_EXTRACT_V2','complete statuses');need(c['status']=='COMPUTED_EXACT_SAVED_VECTOR_EXTERNAL_CONSTRAINTS_REQUIRES_INDEPENDENT_CHECK','producer status');need(first['proof_sha256']==sha(D/'PROOF.md') and first['computation_started'] is False,'prior proof')
+expected={'column_traces':28840,'function_coefficients':36050,'functionals':800,'iv220_magnitude_checks':800,'decimal_checks':800,'nonzero_functionals':800,'manual_vector_entries':36310};need(a['counts']==e['counts']==expected,'complete independent counts');need(c['counts']==e['producer_counts']=={'columns':7210,'vector_coefficients':36050,'trace_entries':28840,'functionals':800,'nonzero_functionals':800,'endpoint_contributions':1286},'complete producer counts');need(a['summaries']==e['summaries'] and m['families']==e['families'],'actual extract')
+need(extra['status']=='PASS_COMPLETE_CONVENTION_TYPES_MANUAL_METADATA_AND_INCIDENCE_AUDIT' and e['convention_audit']=={k:v for k,v in extra.items() if k!='files'},'actual complete supplemental audit');supplemental_counts={'guarded_piece_scalars':555920,'manual_metadata_scalars':18,'manual_column_labels':7210,'manual_column_modes':7210,'endpoint_contributions':1286,'exact_trace_rechecks':28840,'source_float_trace_comparisons':28840,'symbolic_identities':16};need(extra['counts']==supplemental_counts and extra['scalar_types']=={'builtins.float':152844,'numpy.float64':403076},'all stored scalar types and independent counts');need(F(extra['max_source_float_trace_error_exact'])<F('4.1e-14') and sum(extra['incidence_breakdown'].values())==1286 and [v['endpoint_contributions'] for v in extra['families']]==[515,771],'complete diagnostic and incidences');need(old_extract['utc']==e['original_extract_utc'],'original extract identity')
+for obj in [m,s,c,a,e,old_extract,extra]:
+ for n,h in obj['files'].items():need(sha(B/n)==h,'input digest');need(n not in pins or pins[n]==h,'pin conflict');pins[n]=h
+need(sha(B/'research/external_constraint_rank/evidence/verdict.json')=='e569bd20c174f863d6ba47ef3e16070870f3ea10fcff6ea79d5f2c98ed433542','inherited source matrix anchor');need('research/saved_vector_external_constraints/code/check_v2.py' in a['files'],'actual independent checker pin')
+seen=0
+for record,M,nf in zip(c['records'],[16,24],[1953,5257],strict=True):
+ need((record['M'],record['nF'])==(M,nf) and len(record['columns'])==nf and len(record['vectors'])==5,'complete record shape')
+ for v,vec in enumerate(record['vectors']):
+  need(vec['vector']==v and len(vec['constraints'])==4*M and vec['nonzero']==4*M,'all source matrix rows');maximum=F(0)
+  for i,q in enumerate(vec['constraints']):
+   need((q['mode'],q['join_index'],q['order'])==(i//4,(i%4)//2,i%2),'all ordered rows');value=F(q['value_exact']);need(value!=0,'exact nonzero functional');lo,hi=map(F,q['abs_arb512_exact']);need(lo<=abs(value)<=hi,'exact magnitude containment');maximum=max(maximum,abs(value));seen+=1
+  need(maximum==F(vec['max_abs_exact']),'exact vector maximum')
+need(seen==800,'fresh final functional count')
+reviews={}
+for tag,verdict in [('saved_vector_external_constraints_proof',None),('saved_vector_external_constraints_complete',None),('saved_vector_external_constraints_complete_v2','CONFIRM_EXACT_SAVED_VECTOR_SOURCE_CONSTRAINTS_ONLY')]:
+ rm=load(R/(tag+'_metadata.json'));raw=load(R/(tag+'_response.json'));req=(R/(tag+'_request.txt')).read_text();txt='\n\n'.join(q['text'] for q in raw['content'] if q['type']=='text')+'\n';need(rm['requested_model']=='us.anthropic.claude-opus-5-5' and rm['actual_response_model']==raw['model']=='claude-opus-5-5' and rm['stop_reason']==raw['stop_reason']=='end_turn','actual completed model');need(hashlib.sha256(req.encode()).hexdigest()==rm['input_sha256'] and txt==(R/(tag+'_response.md')).read_text(),'review bytes');need(req[req.index('\n\nFILE ')+2:]=='\n\n'.join('FILE '+n+'\n'+(B/n).read_text() for n in rm['files']),'current exact bundle')
+ if verdict:
+  lines=[q.strip().strip('*').strip() for q in txt.splitlines()];need([q for q in lines if q.startswith('VERDICT: ')]==['VERDICT: '+verdict],'unique scoped review');required=['PROOF.md','ADDENDUM.md','IMPLEMENTATION_REPAIR.md','FINAL_ADJUDICATION.md','code/prepare.py','code/check_source.py','code/compute.py','code/check_v2.py','code/review_extract.py','code/review_extract_v2.py','code/check_conventions.py','code/finalize_v2.py','evidence/review_extract.json','evidence/review_extract_v2.json','CONVENTION_AND_METADATA_PROOF.md','REVIEW_GAPS_RESOLVED.md'];need({'research/saved_vector_external_constraints/'+n for n in required}<=set(rm['files']),'complete substantive bundle');need({'research/external_constraint_rank/sources/snapshot_v3__piece_jet.txt','research/external_constraint_rank/sources/ExpPolyBasis.txt','notes/reviews/saved_vector_external_constraints_complete_response.md'}<=set(rm['files']),'complete source bodies and first GAPS review');need('research/saved_vector_external_constraints/POSTREVIEW_ADJUDICATION.md' not in rm['files'],'separate later adjudication')
+ for su in ['_metadata.json','_response.json','_response.md','_request.txt']:
+  p=R/(tag+su);pins[str(p.relative_to(B))]=sha(p)
+ for n in rm['files']:pins[n]=sha(B/n)
+ reviews[tag]={k:rm[k] for k in ['actual_response_model','stop_reason','request_id','input_sha256','start_utc','end_utc']}
+post=load(D/'evidence/postreview_record.json');rm=load(R/'saved_vector_external_constraints_complete_v2_metadata.json');need(post['status']=='CONFIRMED_AFTER_INDEPENDENT_READING_OF_ACTUAL_COMPLETE_REVIEW' and post['review_input_sha256']==rm['input_sha256'] and post['review_request_id']==rm['request_id'] and post['review_response_sha256']==sha(R/'saved_vector_external_constraints_complete_v2_response.json') and post['adjudication_sha256']==sha(D/'POSTREVIEW_ADJUDICATION.md'),'actual postreview binding');times=[first['utc'],m['utc'],s['utc'],c['start_utc'],c['utc'],a['start_utc'],a['utc'],old_extract['utc'],reviews['saved_vector_external_constraints_complete']['start_utc'],reviews['saved_vector_external_constraints_complete']['end_utc'],extra['start_utc'],extra['utc'],e['utc'],rm['start_utc'],rm['end_utc'],post['utc']];need(all(datetime.fromisoformat(x)<datetime.fromisoformat(y) for x,y in zip(times,times[1:])) and datetime.fromisoformat(post['utc'])<=datetime.now(timezone.utc),'actual chronology')
+for p in D.rglob('*'):
+ if p.is_file() and not p.is_symlink() and p.name!='verdict.json' and '__pycache__' not in p.parts:pins[str(p.relative_to(B))]=sha(p)
+for n,h in pins.items():need(sha(B/n)==h,'final digest')
+out={'utc':datetime.now(timezone.utc).isoformat(),'status':'CONFIRMED_EXACT_SAVED_VECTOR_SOURCE_CONSTRAINTS_ONLY','counts':expected,'supplemental_counts':supplemental_counts,'convention_audit':e['convention_audit'],'summaries':a['summaries'],'reviews':reviews,'postreview_record':post,'files':dict(sorted(pins.items())),'scope':'Mandatory PROOF ADDENDUM IMPLEMENTATION_REPAIR CONVENTION_AND_METADATA_PROOF REVIEW_GAPS_RESOLVED FINAL_ADJUDICATION POSTREVIEW_ADJUDICATION. All800 exact source functionals of10 saved dyadic original-coordinate vectors are nonzero. Shared frozen columns; independent manual vector importer and polynomial arithmetic. No external execution attestation, physical omitted-component traces or cancellation, ideal exact SVD, internal matching, Sobolev membership, spectral transfer, inverse or IPM endpoint.'}
+p=D/'evidence/verdict.json'
+with p.open('x') as f:json.dump(out,f,indent=2);f.write('\n');f.flush();os.fsync(f.fileno())
+print(json.dumps({'utc':out['utc'],'status':out['status'],'pins':len(pins),'sha256':sha(p)}))

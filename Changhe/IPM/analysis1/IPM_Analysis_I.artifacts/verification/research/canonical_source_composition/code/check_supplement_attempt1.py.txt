@@ -1,0 +1,71 @@
+"""Independent source-disc geometry and exact outward parser checks."""
+import sys
+sys.dont_write_bytecode=True
+from pathlib import Path
+from datetime import datetime,timezone
+from fractions import Fraction as F
+import json,hashlib,ast,time,importlib.util,subprocess,copy
+from flint import arb,fmpq,ctx
+from mpmath import iv
+B=Path(__file__).resolve().parents[3];D=B/'research/canonical_source_composition';E=D/'evidence';ctx.prec=512;ctx.threads=1;iv.dps=180
+spec=importlib.util.spec_from_file_location('composition_check',D/'code/check.py');c=importlib.util.module_from_spec(spec);spec.loader.exec_module(c)
+need=c.need;now=c.now;sha=c.sha;load=c.load;start=now();timer=time.monotonic();pins={}
+def pin(n):pins[n]=sha(B/n)
+data=load(B/'research/n8_velocity_hessian/evidence/moment_inputs.json');pin('research/n8_velocity_hessian/evidence/moment_inputs.json')
+need(pins['research/n8_velocity_hessian/evidence/moment_inputs.json']=='6f7d3dcf4f1f09256970c0796dc461bc3262cc109051305aa40e9da76a7aa61c','same actual95 input')
+spans=data['spans'];cells=data['cells'];need(len(cells)==13 and len(spans)==7,'complete inherited source grid');parents={s['span']:s for s in spans}
+for a,b in zip(cells,cells[1:]):need(a['b_exact']==b['a_exact'],'no child gaps')
+for a,b in zip(spans,spans[1:]):need(a['b_exact']==b['a_exact'],'no parent gaps')
+for cell in cells:
+ s=parents[cell['span']];need(F(s['a_exact'])<=F(cell['a_exact'])<F(cell['b_exact'])<=F(s['b_exact']),'each source cell in its true original span')
+pmin,pmax=map(F,data['source_center_bracket_exact']);R=3*F(data['delta_exact']);theta=F(data['theta_max_exact'])
+def Q(x):x=F(x);return arb(fmpq(x.numerator,x.denominator))
+def I(x):x=F(x);return iv.mpf(x.numerator)/iv.mpf(x.denominator)
+def ends(x):
+ if isinstance(x,arb):
+  def a(y):m,e=y.man_exp();return F(int(m))*F(2)**int(e)
+  return a(x.lower()),a(x.upper())
+ def v(t):s,m,e,b=t;need(b>=0,'finite iv');return (-1 if s else 1)*F(int(m))*F(2)**int(e)
+ return tuple(v(y) for y in x._mpi_)
+geometry=[]
+for tag,q,ex,sin in [('arb512',Q,lambda x:x.exp(),lambda x:x.sin()),('iv180',I,iv.exp,iv.sin)]:
+ for source,rows in [('children',cells),('parents',spans)]:
+  a=F(rows[0]['a_exact']);b=F(rows[-1]['b_exact']);lo=ends(ex(q(a)))[1];hi=ends(ex(q(b)))[0]
+  need(lo<pmin-R and hi>pmax+R,'whole disc radial coverage '+tag+source)
+  geometry.append({'engine':tag,'source':source,'lower_exp_upper':str(lo),'required_lower':str(pmin-R),'upper_exp_lower':str(hi),'required_upper':str(pmax+R)})
+ v=ends(sin(q(theta)))[0];need(pmin>R and v>R/pmin,'angular cover');geometry.append({'engine':tag,'source':'angle','sin_lower':str(v),'required':str(R/pmin)})
+# Execute only inspected pure legacy decode/endpoint/hull definitions. Their outputs
+# are compared against separately decoded fmpq endpoints, never used as truth.
+sources=[('research/n8_velocity_hessian/code/check_hessian.py',['qa','qi','hull','decode'],'hull'),('research/source_explicit_inverse/code/check_bounds.py',['qa','qi','box','decode'],'box')]
+parsers=[]
+for path,names,hull in sources:
+ pin(path);tree=ast.parse((B/path).read_text());nodes=[n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name in names];need({n.name for n in nodes}==set(names),'exact selected pure definitions')
+ env={'F':F,'arb':arb,'fmpq':fmpq,'iv':iv};exec(compile(ast.Module(body=nodes,type_ignores=[]),path,'exec'),env);parsers.append((path,env,hull))
+checks=0;decodes=0
+for sp in spans:
+ for z in sp['i_left']+sp['j_right']:
+  m=fmpq(z['mid_m'])*fmpq(2)**z['mid_e'];r=fmpq(z['rad_m'])*fmpq(2)**z['rad_e'];need(r>=0,'rational source radius');ql,qu=m-r,m+r;a,b=F(int(ql.numerator),int(ql.denominator)),F(int(qu.numerator),int(qu.denominator))
+  for path,env,hull in parsers:
+   need(env['decode'](z)==(a,b),'legacy exact parsing');decodes+=1
+   for q in [env['qa'],env['qi']]:
+    l,u=ends(env[hull](a,b,q));need(l<=a<=b<=u,'legacy outward input hull');checks+=1
+# Synthetic gate cases cannot produce an application: they only exercise rejection.
+base={'status':'CONFIRMED_COMPLETE_CANONICAL_MOMENT_ARCHIVE','counts':c.EXPECTED,'moment_targets':813276,'exact_H_coefficients':3265568,'independent_exact_anchors':783,'files':{c.ARCHIVE:c.ASHA,c.SOURCE:c.SSHA,c.ZPATH:c.ZSHA},'actual_output_review':{'actual_response_model':'claude-opus-5-5','stop_reason':'end_turn','end_utc':'2026-10-20T12:00:00Z'},'utc':'2026-10-20T12:01:00Z'}
+mutations=[]
+for key,value in [('status','OPEN'),('moment_targets',813275),('exact_H_coefficients',3265567),('independent_exact_anchors',782),('utc','2026-10-20T11:59:00Z')]:
+ x=copy.deepcopy(base);x[key]=value;mutations.append((key,x))
+for key in [c.ARCHIVE,c.SOURCE,c.ZPATH]:
+ x=copy.deepcopy(base);x['files'][key]='0'*64;mutations.append((key,x))
+for key,value in [('actual_response_model','other'),('stop_reason','max_tokens')]:
+ x=copy.deepcopy(base);x['actual_output_review'][key]=value;mutations.append((key,x))
+x=copy.deepcopy(base);x['counts']['I']=1;mutations.append(('computed count',x));rejected=[]
+for name,x in mutations:
+ try:c.gate(x)
+ except (ValueError,KeyError):rejected.append(name)
+ else:raise ValueError('bad gate accepted '+name)
+need(not (B/c.V156).exists(),'this diagnostic requires actually absent156 verdict');need(not (E/'checks.json').exists(),'no application artifact before missing gate test')
+r=subprocess.run([sys.executable,str(D/'code/check.py')],cwd=B,capture_output=True,text=True,timeout=10);need(r.returncode!=0 and 'FileNotFoundError' in r.stderr and not (E/'checks.json').exists(),'missing156 rejects before output')
+(E/'missing156_gate.log').write_text(r.stdout+r.stderr)
+for p in [D/'PROOF.md',D/'NORMALIZATION_SCOPE.md',D/'REVIEW_RESOLUTION.md',D/'code/check.py',Path(__file__),E/'missing156_gate.log']:pin(str(p.relative_to(B)))
+out={'start_utc':start,'utc':now(),'status':'PASS_SOURCE_COMPOSITION_GEOMETRY_PARSERS_AND_ABSENT_DEPENDENCY_GATES_ONLY','counts':{'child_memberships':13,'child_adjacencies':12,'parent_adjacencies':6,'directed_geometry_inequalities':10,'legacy_exact_decodes':decodes,'legacy_outward_hulls':checks,'negative_gate_cases':len(rejected),'actually_absent156_gate':1},'geometry':geometry,'rejected_cases':rejected,'seconds':time.monotonic()-timer,'files':dict(sorted(pins.items())),'scope':'Supplementary independent geometry and parser check plus fail-closed preparation tests. No complete156 application or new downstream bound.'}
+c.write(E/'supplement_checks.json',out);print(json.dumps({k:v for k,v in out.items() if k not in ['geometry','files','scope']}))

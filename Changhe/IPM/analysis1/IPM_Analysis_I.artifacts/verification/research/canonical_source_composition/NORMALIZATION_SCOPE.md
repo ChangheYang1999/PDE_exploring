@@ -1,0 +1,5 @@
+Written 2026-10-21T20:52:07.748494+00:00 before the new composition checker. Mandatory with PROOF.md.
+
+The physical source conclusions concern the distinguished exact normalized trial rho_(z_*), where z_* is defined by the exact normalization identity of modal_repair/PROOF.md and is enclosed by Z. The notation rho_z in PROOF.md describes the auxiliary family used by the interval inclusion argument. Uniform membership for z in Z proves membership for z_*. It does not assert that every other z in Z has the same exact central normalization or the same c_l=1/k. Every old analytic hypothesis, including the distinguished normalization, remains in force. No universal source theorem for arbitrary z in Z is claimed.
+
+The full156 verdict supplies archive membership relative to this exact trial definition and accepted Z. The new check pins the accepted modal_repair audit and its PROOF.md through156, compares the exact normalization bytes and both rational interval endpoints, and does not silently replace the distinguished scalar by independent copies of Z.

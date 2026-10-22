@@ -1,0 +1,9 @@
+# Corrections to the first leakage review and scope of version2
+
+Date 2026-10-22T02:39:11.650300+00:00. I read the full actual claude-opus-5-5/end_turn response131ec481-11b6-4129-81de-5b93cf7e136c. The factor4, sign, polynomial and weighted nonmembership calculations were accepted. Before finalizing I found that the original proof imposed 'smooth on compact annuli', which conventionally means C^infinity and is not established for the exact degree-seven C^6 spline background. Version2 instead states and proves the sufficient finite hypotheses rho in C^2 and U[rho] in C^1 there. The retained original files and their review are unchanged and not FINAL. Version2 will rerun the two symbolic checks with its new proof hash before review.
+
+The review's displayed one-term Green formula is only the formula inside the source-free inner disc. The full canonical radial formula is psi_n(r)=[r^(-n)int_0^r s^(n+1)f_n(s)ds+r^n int_r^infinity s^(1-n)f_n(s)ds]/(2n). When r<1 the first integral vanishes for this annular h, giving precisely the original proof's stated interior formula. No one-term global formula is used.
+
+The symbolic moment and exponent checks verify algebra, not the integration-by-parts or functional-analytic argument. The standalone proof supplies those. The second symbolic path alone explicitly checks the degree-seven image of the sixth harmonic; the first path checks the main degree-five image and exact factors. The review's statement that both paths check every listed item should be read with this distinction. No sampled integral is used to normalize the bump.
+
+The parent's full148pins must be rechecked. The canonical application uses its finite center/far regularity only. The accepted theorem will be the version2 statement. No broader threshold, anisotropic result, exact kernel or PDE endpoint is claimed.

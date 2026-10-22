@@ -1,0 +1,45 @@
+{
+ "r<2": {
+  "eps_X_upper": "1.42514e-3",
+  "eps_minus_dteps_X_upper": "3.39214e-2",
+  "cells": 3172,
+  "eps_ball": "[0.001425135625 +/- 5.21e-15]",
+  "F_ball": "[0.03392139410 +/- 5.36e-13]"
+ },
+ "4<=r<=16": {
+  "eps_X_upper": "3.85195e-1",
+  "eps_minus_dteps_X_upper": "5.85864e+2",
+  "cells": 937,
+  "eps_ball": "[0.3851942175 +/- 3.59e-11]",
+  "F_ball": "[585.8637887 +/- 3.79e-8]"
+ },
+ "middle region rmin<=r<=R0": {
+  "eps_X_upper": "3.85651e-1",
+  "eps_minus_dteps_X_upper": "5.85873e+2",
+  "cells": 7809,
+  "eps_ball": "[0.3856505891 +/- 2.22e-11]",
+  "F_ball": "[585.8721299 +/- 1.21e-8]"
+ },
+ "outer": {
+  "eps_X_upper": "1.68303e-3",
+  "eps_minus_dteps_X_upper": "3.80058e-3",
+  "cells": 8948,
+  "eps_ball": "[0.001683024962 +/- 2.47e-13]",
+  "F_ball": "[0.003800575295 +/- 4.77e-13]"
+ },
+ "inner": {
+  "eps_X_upper": "8.86954e-7",
+  "eps_minus_dteps_X_upper": "3.89562e-5",
+  "cells": 2632,
+  "eps_ball": "[8.869532254e-7 +/- 2.29e-17]",
+  "F_ball": "[3.895610830e-5 +/- 2.73e-15]"
+ },
+ "total_finite_regions": {
+  "eps_X_upper": "3.85655e-1",
+  "eps_minus_dteps_X_upper": "5.85873e+2",
+  "eps_ball": "[0.385654261522 +/- 1.92e-13]",
+  "F_ball": "[585.872129924 +/- 3.90e-10]",
+  "r_range": "[r_T,in, r_T,out] = [5.1555e-5, 8.2440e10]; the two tails are not included"
+ },
+ "note": "upper bounds from the per-cell majorants W_i_j of the derivative certificate (this lane's rigorous bounds, audit pending); sum_N a_N^2 <= (sum_N |a_N|)^2; cell maximum of e^{2t} w at the left end (monotone decreasing); all arithmetic in Arb balls at 128 bits with exact binary64 inputs and enclosed cell starts (v3), upper endpoints printed with ceiling rounding"
+}

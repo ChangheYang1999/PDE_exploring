@@ -1,0 +1,7 @@
+# Correction to the actual review's sign description
+
+2026-10-22. I read the complete actual claude-opus-5-5/end_turn response2356fa42-4f18-4155-99fe-2e5829051908. Its analytic reconstruction is consistent with the proof and programs, but one table description is false: it says the positive number3-k equals the first outer exponent. The first outer factor exponent is k-3, which is strictly negative and is the unique maximum of the ten factor exponents. The scalar named far_margin_at_b0 is3-k, which is strictly positive and is the negative of that first outer exponent. Both programs and the proof already use these signs correctly. Their bytes and numerical outputs are unchanged.
+
+The response's phrase “zero-norm counterexample” should read “counterexample failing the zeroth norm”. The inherited counterexample has an infinite zeroth Y norm for its full image at b>=5/2; it is not a zero vector or a vector of norm zero.
+
+The literal equal arrays for interpolation and literal exponent coefficient tuples are not independent evidence for the Sobolev theorem. Their exclusion is explicit. The actual independent differential ring still checks the factorization and28normal-order identities through6, and the new independent data paths check13scalar parameters,1573knots and10outer exponents. Canonical matching and the counterexample remain inherited accepted inputs, freshly rehashed and not recomputed. Please confirm this corrected description of the already reviewed actual computation and theorem.

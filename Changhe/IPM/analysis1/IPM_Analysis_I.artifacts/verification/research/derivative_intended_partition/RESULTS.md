@@ -1,0 +1,9 @@
+# Complete geometry result, pending actual-output review
+
+All19389 true cells and19392 nodes passed exact source-box and width checks. A separate auditor read the original NPY bytes without NumPy, reconstructed every rational endpoint, emulated binary64 round-to-nearest-even and successor arithmetic using integers, and compared every row's exact endpoint discrepancy and width slack. It reproduced every MR width and every rounded start. The four Bernstein shift boxes per row,77556 boxes total, contain their coherent exact shifts and cover the required local interval. These are geometry and current-source reconstruction checks.
+
+The maximum absolute start displacements are123/92605267337805824 for the inner region,1/1407374883553280 for the middle, and1677/629659522901737472 for the outer. The last is the global delta. Arb320, independent iv110, and exp(4delta)<=1/(1-4delta) prove exp(4delta)<1.00000000000004. Its value is about1.00000000000001065337656. The theorem concerns exact weighted sums; this topic does not compute a whole physical norm.
+
+The true cells cover the annulus with log-radii from-1389482001461413/140737488355328 to7074968463789829/281474976710656, with matching inner/middle and middle/outer boundaries. This does not alter topic153's different literal union of rounded exported endpoints, which has gaps. Physical derivative majorants, canonical field input membership throughout this calculation, all omitted tails and every IPM endpoint remain OPEN.
+
+The first independent-audit attempt completed the finite geometry but stopped on an incorrect mpmath method call while evaluating the final exponential. Its source and log are preserved as audit_attempt1.py and audit_attempt1.log. The corrected invocation uses iv.exp and completed all checks from scratch in6.429seconds. This was a verifier implementation failure, not a failed mathematical inequality.

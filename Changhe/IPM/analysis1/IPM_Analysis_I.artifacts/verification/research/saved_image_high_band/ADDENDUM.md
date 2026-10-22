@@ -1,0 +1,7 @@
+# Root convention and observed changes
+
+2026-10-21. I independently read the actual Opus5.5 proof review request51002c2d-ad8d-4eb0-a91d-26a5b1c7acde, ending17:57:44 UTC. It found no mathematical gap. Explicitly alpha and beta mean the nonnegative square roots of their defined nonnegative squared minima. Every summary denominator must be checked strictly positive. Every actual total energy must be checked positive. The source capture and independent arithmetic enforce these finite hypotheses.
+
+The two observed vectors are selected from different row functionals, so their fractions do not describe one common minimizer. The saved high-cutoff H1q image yields a direct observed-band fraction, regardless of whether its floating singular-value summary is accurate. A small positive fraction is not zero and gives no estimate on N>=40. We do not infer that the cutoff32 and cutoff40 assembly matrices are nested from labels or dimension counts. Nonzero changes between stored summary scalars contradict literal equality of those stored scalars, while leaving mathematical convergence undecided.
+
+The first independent executable reached its90-second timeout without an output. It repeatedly decompressed the complete NPZ image inside the scalar loop. The preserved version2 caches that immutable array once; its arithmetic and comparison formulas are identical. The first premature extract attempt failed because no independent output existed. No numerical assertion was accepted from either failure.

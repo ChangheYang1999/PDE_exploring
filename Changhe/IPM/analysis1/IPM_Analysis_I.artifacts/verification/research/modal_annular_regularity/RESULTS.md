@@ -1,0 +1,11 @@
+# Exact annular regularity verification
+
+Written 2026-10-21T20:18:45.167389+00:00. Read PROOF.md, SPLINE_DERIVATIVE_DETAILS.md and GREEN_FACTOR_CORRECTION.md together.
+
+The new exact audit completed in under3seconds. It compared88,436 exact rational results between binary64/Fraction derivative-endpoint calculations and manual-hex/fmpq Cox polynomials. The exact source has260 factor modes,1558 positive knot spans and1557 simple interior knots, with eightfold clamped endpoints. Both endpoint constructions and both correction formulas agree for all modes and derivative orders0through6. All3640 matching equations pass separately in each method. Seven normalization-correction jets vanish in both methods. All261 canonical moment rate tests are strictly positive, including the n=2 outer rate after the density exponent is included. Signed trigonometric scattering agrees with the collected sparse density identity on every260 input basis mode, including the zero H_261 output.
+
+The analytical proof then gives rho C6, psi C7, U C6, residual eps C5 and eps-eps_t C4 on the punctured plane. This discharges the finite-mode C2 regularity premise of topic163 for the exactly joined normalized modal trial. It does not discharge the W majorant premises, moment archive membership, derivative forcing bounds or tail estimates. No physical norm ceiling follows solely from this result. In particular there is no new regularity statement at0 and no change to the earlier exact center obstruction.
+
+Stored rounded Ei,Eo are not treated as exact joining data. The proof concerns their exact replacements defined in topic15. No global moment integration was rerun. The accepted dependencies, including topic15 and all topic163 pins, were independently rehashed; all match. Complete source and comparison-stream hashes and selected endpoint records are in evidence/checks.json.
+
+Before actual review, the draft stream prefactor was found to have an extra1/n. GREEN_FACTOR_CORRECTION.md supplies the corrected r^4/2 formula and complete Poisson derivation. A separate direct-jet/Fraction versus angular/factored-fmpq audit checks all1566 coefficients across261 modes and explicitly rejects the erroneous prefactor at n=2,135. This correction is mandatory; the endpoint comparisons and regularity exponents are unchanged.

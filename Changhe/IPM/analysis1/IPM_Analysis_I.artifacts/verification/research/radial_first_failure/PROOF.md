@@ -1,0 +1,7 @@
+# The first failed radial coefficient containment
+
+Written2026-10-21 before the diagnostic calculation. Topic101 stopped at cell2955,mode135,R coefficient0. This note checks that isolated finite box; it does not claim full radial coverage.
+
+For positive E and real A,B, the initial ODE coefficient is R_0=(B-A)/(2E^2). Let independent exact boxes be E in [e0,e1], A in [a0,a1], B in [b0,b1]. Assume0<e0<=e1 and b0-a1>0. Monotonicity in A,B,E proves that the exact whole-box range is [(b0-a1)/(2e1^2),(b1-a0)/(2e0^2)]. Both endpoints are attained, so this interval is necessary and sufficient for the scalar coefficient range. Its containment in the unchanged candidate coefficient box can be decided using rational integer cross-products. If positivity fails, use all four quotient endpoint combinations and their minimum/maximum.
+
+The first independent method uses Fraction on newly regenerated source arrays. The second uses fmpq with a separate direct IEEE754 decoder for the same saved small exact inputs, and an iv180 interval evaluation. Recompute the original Arb512 coefficient to authenticate the failed witness. Compare its endpoints to the exact rational range, and distinguish loss caused by interval over-enclosure from an actual invalid candidate. No conclusion about other coefficients, remainders or canonical trial membership follows from one coefficient. The original full producer code and partial stream remain unchanged.

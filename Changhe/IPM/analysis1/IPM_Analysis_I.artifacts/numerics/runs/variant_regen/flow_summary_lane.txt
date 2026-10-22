@@ -1,0 +1,22 @@
+runs/flow_middle.json: 7809 cells, done=True, time 3583s
+runs/flow_outer.json: 8948 cells, done=True, time 6628s
+runs/flow_inner.json: 2632 cells, done=True, time 1789s
+coverage: r from 5.1555e-05 to 8.2440e+10 (19389 cells); gaps > 1e-12 relative: 0
+(Y)  min over cells of the certified lower bound of V_2/y: 0.9884542 (raw; round DOWN when quoting) at r in [8.8654, 8.8738]
+     tails: outer V_2/y >= 5.575361 (r >= 8.244e+10), inner V_2/y >= 21.301450 (r <= 5.155e-05)   [rounded OUTWARD (floor); raw 5.5753615158, 21.3014504390]
+(H4) r >= 10: X.V/r^2 >= 0.813976 (cells) ; outer tail >= 5.575362 [floor; raw 5.5753625123]
+(H4) r >= 15: X.V/r^2 >= 2.665124 (cells) ; outer tail >= 5.575362 [floor; raw 5.5753625123]
+(H4) r >= 20: X.V/r^2 >= 3.499524 (cells) ; outer tail >= 5.575362 [floor; raw 5.5753625123]
+(H4) r >= 30: X.V/r^2 >= 4.256450 (cells) ; outer tail >= 5.575362 [floor; raw 5.5753625123]
+(H2') axis: cells entirely below x_*: max of V_1/x upper bound = -0.001585 (negative required); cells above: min of lower bound = 0.007725 (positive required); cells containing x_*: 1
+      cell containing x_*: r in [8.598671, 8.606895], V_1/x axis range [-1.970e-03, 8.112e-03]
+(B_1) T_0 max on cells meeting B_1: 1.2779480 ; V_1 max on B_1: -12.8340470 ; T_0 max off B_1: -0.2399542 (raw aggregates; round UP when quoting) (outer tail T_0 <= -0.28076698, inner tail <= -6.65208740 (raw; round UP when quoting))
+      T_0 off-box maximum at r in [67.9884, 68.0959]
+      T_0 on-box maximum at r in [5.7601, 5.7688]
+unresolved angular cells (target not met at max depth): 245 in 3 radial cells; axis-sign failures: 0
+runs/flow_middle.json: complete_region=True, nc_total=7809, selection=[0, None], ntheta=200
+runs/flow_outer.json: complete_region=True, nc_total=8948, selection=[0, None], ntheta=200
+runs/flow_inner.json: complete_region=True, nc_total=2632, selection=[0, None], ntheta=200
+      r in [7.3570, 7.3688]: 31 unresolved; V2/y min 1.8686, T0 in/out -0.8803/-0.8788, V1_in -12.987
+      r in [7.3687, 7.3805]: 144 unresolved; V2/y min 1.8499, T0 in/out -0.9091/-0.8993, V1_in -12.911
+      r in [7.3805, 7.3922]: 70 unresolved; V2/y min 1.8315, T0 in/out -0.9332/-0.9199, V1_in -12.834

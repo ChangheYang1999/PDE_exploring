@@ -1,0 +1,10 @@
+from pathlib import Path
+import sys,json,subprocess
+ROOT=Path(__file__).resolve().parents[3];D=ROOT/'research/weighted_l2_tail_reduction'
+files=['PROOF.md','code/extract_inputs.py','code/check.py','evidence/proof_first.json','evidence/source_freeze.json','evidence/inputs.json','evidence/checks.json','sources/r2_tails.py','sources/r2_tails.json','sources/cert_tail.json','sources/cert_inner_tail.json','sources/variants_summary.json','evidence/report_excerpt.md']
+question='Independently review this small conditional weighted L2 tail integration theorem, exact scalar extraction, two genuinely separate interval-library computations and endpoint-label audit. Reconstruct the inequalities, polar factors, positivity, exact stored-scalar meaning, opposite rounding directions and scope. The physical residual majorants and finite-region integrals are explicitly unverified hypotheses: do not certify them. Check that the two inward JSON endpoint labels are refuted only as upper bounds on the displayed scalar bounding expression, not as assertions about the actual residual norm. The report-summary short values are below those scalar expressions; the enlarged-constant tail ceilings and full conditional scalar ceiling are outward. Every numerical output is given. Identify substantive gaps and distinguish nonblocking wording. If sound within this limited scope, finish with exactly VERDICT: CONFIRM_CONDITIONAL_WEIGHTED_L2_TAIL_REDUCTION_AND_ROUNDING_AUDIT; otherwise finish VERDICT: REJECT. No JavaScript/TypeScript, servers/listeners/tunnels, RLScience cluster, Lean/Lake, outside writes or people contact.'
+q=D/'evidence/review_question.txt';q.write_text(question+'\n');manifest=[str((D/f).relative_to(ROOT)) for f in files]
+(D/'evidence/review_files.json').write_text(json.dumps(manifest,indent=2)+'\n')
+cmd=[sys.executable,'-B',str(ROOT/'notes/reviews/focused_review.py'),'--tag','weighted_l2_tail_reduction_actual','--question',question,'--max-tokens','11000']
+for f in manifest:cmd+=['--file',f]
+raise SystemExit(subprocess.run(cmd,cwd=ROOT,timeout=555).returncode)

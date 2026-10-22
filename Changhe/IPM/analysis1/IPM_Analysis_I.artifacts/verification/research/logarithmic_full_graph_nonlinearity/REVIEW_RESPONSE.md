@@ -1,0 +1,13 @@
+# Response to the executed-evidence review
+
+Date 2026-10-22T05:38:38.752747+00:00. The two complete reviews were read. The accepted theorem is PROOF.md with ADDENDUM.md and this clarification. Original reviewed bytes remain unchanged.
+
+The executed-evidence review has one loose inequality in its first section: it writes ||Q(v_n^±)||>=c>0 without a maximum. The proof only establishes liminf max(||Q(v_n^+)||,||Q(v_n^-)||)>=c. It does not assert a positive lower limit for EACH sign or an exact eventual lower bound by the same c. After selecting the larger sign, liminf>=c, hence for example the selected output is eventually >=c/2. Both inputs tend to zero, which suffices for the continuity contradiction. The rest of the review, and the original proof, keep the maximum correctly. This sentence must not be cited to assert two simultaneous lower bounds.
+
+For a completely explicit test domain, let S range over diag(sx,sy) with sx,sy in {-1,1} and set K=union_S S(B2), with B2 one of the fixed disks constructed in the proof. Define P_cp={f in C_c^infinity(R²;R): supp(f) is a compact subset of K, f(-x,y)=f(x,y), f(x,-y)=-f(x,y)} and D_cp={-Delta f:f in P_cp}. This is a linear space containing g and every h_n. It lies away from both axes and inside the four smooth background patches. This makes explicit the domain already described in the proof and first addendum.
+
+To remove a harmless local notation reuse, call the cutoff plateau potential F_pot and call the nonlinear normalized residual map mathcalF. All derivatives of F in the plateau construction mean derivatives of F_pot; all expressions F(rho+h)-F(rho) mean mathcalF(rho+h)-mathcalF(rho). No formula changes.
+
+The data and parent hashes establish byte integrity only. Mathematical smoothness and parity are inherited proved premises of the exact joined-normalized finite modal background. They are also transparent here: on a positive-radius inner interval the density is a finite sum of radial powers times polynomials in log r and finite smooth angular functions; the canonical Green velocity has the same finite local form. These are smooth away from zero and have the stated parity. The known center linearization is an inherited exact normalization calculation. Neither this explanation nor the new finite identities claims to recompute every parent enclosure.
+
+No new numerical assertion or failed mathematical check is introduced. The two-sided Sobolev equivalence is used only qualitatively on fixed compactly contained charts. Its elementary proof and qualitative constants suffice for the discontinuity theorem; no quantitative Newton bound is claimed.

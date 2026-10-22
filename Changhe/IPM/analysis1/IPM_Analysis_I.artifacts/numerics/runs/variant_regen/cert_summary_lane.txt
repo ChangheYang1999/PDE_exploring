@@ -1,0 +1,54 @@
+middle region: 7809 sub-cells, done=True
+  multiplier form (lead 16:5xZ): max W (1+u)^(1/2) / m [allowed growth k - 1/2] = 3.8070e-04 at r = 8.79 ; secondary (1+u)^(1/2-k): 3.3187e-04
+  r range [0.0076514, 3413]; max W/m = 2.5964e-04 at r in [8.79, 8.798]; max W = 1.2015e-04; sum L2 pieces = 4.9727e-09
+  shell [0.007651,   0.0156): divisor W/m = 2.1899e-08 at r = 0.007721 ; multiplier W(1+u)^(1/2)/m = 2.1910e-08 ; (1+u)^(1/2-k): 2.1906e-08 ; max W = 2.250e-17 ; L2 piece sum 1.190e-21
+  shell [  0.0156,   0.0625): divisor W/m = 5.1779e-08 at r = 0.06248 ; multiplier W(1+u)^(1/2)/m = 5.1991e-08 ; (1+u)^(1/2-k): 5.1915e-08 ; max W = 2.819e-14 ; L2 piece sum 9.900e-19
+  shell [  0.0625,     0.25): divisor W/m = 5.1039e-07 at r = 0.2497 ; multiplier W(1+u)^(1/2)/m = 5.1867e-07 ; (1+u)^(1/2-k): 5.1568e-07 ; max W = 1.772e-11 ; L2 piece sum 1.265e-15
+  shell [    0.25,        1): divisor W/m = 7.0372e-06 at r = 0.9984 ; multiplier W(1+u)^(1/2)/m = 7.4834e-06 ; (1+u)^(1/2-k): 7.3201e-06 ; max W = 1.534e-08 ; L2 piece sum 3.181e-12
+  shell [       1,        4): divisor W/m = 1.9003e-05 at r = 3.951 ; multiplier W(1+u)^(1/2)/m = 2.3411e-05 ; (1+u)^(1/2-k): 2.1723e-05 ; max W = 1.887e-06 ; L2 piece sum 1.415e-10
+  shell [       4,       16): divisor W/m = 2.5964e-04 at r = 8.79 ; multiplier W(1+u)^(1/2)/m = 3.8070e-04 ; (1+u)^(1/2-k): 3.3187e-04 ; max W = 1.201e-04 ; L2 piece sum 3.255e-09
+  shell [      16,       64): divisor W/m = 2.0261e-05 at r = 16.07 ; multiplier W(1+u)^(1/2)/m = 3.5695e-05 ; (1+u)^(1/2-k): 2.9133e-05 ; max W = 1.735e-05 ; L2 piece sum 4.292e-10
+  shell [      64,      256): divisor W/m = 6.4954e-06 at r = 117.2 ; multiplier W(1+u)^(1/2)/m = 3.3222e-05 ; (1+u)^(1/2-k): 1.7685e-05 ; max W = 1.113e-05 ; L2 piece sum 4.181e-10
+  shell [     256,     1024): divisor W/m = 6.0920e-06 at r = 305.9 ; multiplier W(1+u)^(1/2)/m = 5.6438e-05 ; (1+u)^(1/2-k): 2.4758e-05 ; max W = 1.293e-05 ; L2 piece sum 4.202e-10
+  shell [    1024,     3413): divisor W/m = 5.5625e-06 at r = 3408 ; multiplier W(1+u)^(1/2)/m = 1.1761e-04 ; (1+u)^(1/2-k): 3.9362e-05 ; max W = 1.661e-05 ; L2 piece sum 3.086e-10
+  P-shell [x*/2, 2x*] = [4.3, 17.2]: max W/m = 2.5964e-04 at r = 8.79 ; max W = 1.201e-04
+  max Taylor remainder of eps over cells: 2.11e-11 ; max remA 9.3e-15 remB 1.5e-14
+outer region: 8948 sub-cells, r in [3413, 8.228e+10]: max W/m = 9.3189e-05 at r = 3.343e+04 ; max W (1+u)^0.3206 / m = 1.4636e-03 at r = 5.214e+04 ; (v1 weight (1+u)^0.5: 7.3680e-03) ; L2 sum 3.906e-07
+inner region: 2632 sub-cells, r in [5.155e-05, 0.007637]: max W/m = 9.1893e-06 at r = 0.007146 ; max W (1+u)^0.3206 / m = 9.1921e-06 at r = 0.007146 ; (v1 weight (1+u)^0.5: 9.2023e-06) ; L2 sum 3.483e-16
+  inner R4: max W / r^5 = 1.2562e-03 at r = 5.155e-05
+runs/cert_tail.json : {'T_out': 17.0, 'r_T': 82440053208.41086, 'delta': 0.3206394687062458, 'tail_bound_weighted': '[1.75411e-6 +/- 1.44e-12]', 'tail_bound_unweighted': '[1.06482e-9 +/- 2.78e-15]', 'monotone_ok': True, 'crude_total_diagnostic_only': '[0.00933708 +/- 4.75e-9]', 'leading_sumC': '[6.67721e-8 +/- 1.16e-14]', 'rest_majorant': '[3.23009e-10 +/- 9.78e-17]', 'crude_bound_weighted_diagnostic_only': '[0.244105 +/- 2.39e-7]', 'lin': '[1.27729e-11 +/- 8.24e-18]', 'PR_twice': '[0.000300660 +/- 6.96e-11]', 'QR_twice': '[0.00903642 +/- 4.70e-9]', 'time': 0.7025876045227051, 'note': 'termwise majorant at tau = T of W(1+u)^delta/m; valid for all tau >= T since every term decays relative to m (1+u)^-delta (delta < 1-k)'}
+runs/cert_inner_tail.json : {'T_in': 5.0, 'r_T': 5.155489343160731e-05, 'bound_W_over_m': '[2.138e-6 +/- 4.11e-10]', 'majorant_total': '[5.38729e-12 +/- 3.93e-19]', 'conv3_removed': '[5.38729e-12 +/- 3.92e-19]', 'normalization_defect': '[+/- 2.45e-15]', 'bound_W_over_r5': '[1.796 +/- 9.64e-5]', 'time': 0.43131017684936523, 'note': "valid for all r <= r_T: every term has exponent >= 3 in tau' (>= 0 after division by m), hence maximal at -T; exponent-3 part replaced by its exact value proportional to |3 c_l - 1 - c|"}
+cert_deriv_middle.json (middle): 7809 cells, done=True
+   sup W_0_0 / m = 2.5964e-04 at r = 8.79
+   sup W_0_1 / m = 4.2277e-02 at r = 8.765
+   sup W_0_2 / m = 1.0205e+01 at r = 8.574
+   sup W_1_0 / m = 3.7844e-01 at r = 8.781
+   sup W_1_1 / m = 6.1584e+01 at r = 8.773
+   sup W_2_0 / m = 5.8518e+02 at r = 8.79
+   sup W_eps_minus_dteps / m = 4.2744e-01 at r = 8.781  (unweighted sup W_eps_minus_dteps = 1.9753e-01)
+   sup W_K / m = 4.5076e+02 at r = 1.161  (unweighted sup W_K = 6.5918e+02)
+   sup W1_K / m = 1.1485e+03 at r = 3408  (unweighted sup W1_K = 3.4292e+03)
+   sup W_dtK / m = 2.1187e+03 at r = 8.832  (unweighted sup W_dtK = 9.8821e+02)
+   P-disc cells (r in [0.75 x*, 1.25 x*]): 376 cells with nder = [5]
+cert_deriv_regions_outer.json (outer): 8948 cells, done=True
+   sup W_0_0 / m = 9.3189e-05 at r = 3.343e+04
+   sup W_0_1 / m = 4.1296e-03 at r = 2.769e+04
+   sup W_0_2 / m = 1.1080e+00 at r = 2.095e+04
+   sup W_1_0 / m = 1.4101e-04 at r = 3413
+   sup W_1_1 / m = 5.0277e-03 at r = 3459
+   sup W_2_0 / m = 2.9011e-02 at r = 3432
+   sup W_eps_minus_dteps / m = 1.4151e-04 at r = 3413  (unweighted sup W_eps_minus_dteps = 5.0649e-04)
+   sup W_K / m = 2.2202e+02 at r = 8.228e+10  (unweighted sup W_K = 1.3985e+04)
+   sup W1_K / m = 1.1968e+03 at r = 8.228e+10  (unweighted sup W1_K = 7.5388e+04)
+   sup W_dtK / m = 4.0622e+01 at r = 3413  (unweighted sup W_dtK = 2.5083e+03)
+cert_deriv_regions_inner.json (inner): 2632 cells, done=True
+   sup W_0_0 / m = 9.1893e-06 at r = 0.007146
+   sup W_0_1 / m = 3.0677e-05 at r = 0.007146
+   sup W_0_2 / m = 1.4916e-04 at r = 0.007132
+   sup W_1_0 / m = 2.6191e-04 at r = 0.006919
+   sup W_1_1 / m = 8.6776e-04 at r = 0.006919
+   sup W_2_0 / m = 1.3242e-02 at r = 0.007186
+   sup W_eps_minus_dteps / m = 2.5826e-04 at r = 0.006905  (unweighted sup W_eps_minus_dteps = 2.1718e-13)
+   sup W_K / m = 4.5051e+02 at r = 0.007637  (unweighted sup W_K = 4.4795e-07)
+   sup W1_K / m = 9.0101e+02 at r = 0.007637  (unweighted sup W1_K = 8.9589e-07)
+   sup W_dtK / m = 1.3515e+03 at r = 5.155e-05  (unweighted sup W_dtK = 1.3438e-06)

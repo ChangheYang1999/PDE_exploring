@@ -1,0 +1,15 @@
+# Separate saved-output and exact-source audit
+
+2026-10-21. Written before the auditor runs. This audit complements the complete second propagation; it does not replace it with witness checks.
+
+The full run starts fresh. It reads every original span in order, checks every H coefficient exactly, and compares all261 forward I moments before stepping across the span. The reverse pass compares all261 J moments before stepping left. It never seeds a step with an archive moment. A successful stream has one header,1558 forward rows,1558 backward rows in descending order, and one footer. Each row saves the worst positive-radius relative margin and modes1,2,3,261, plus a digest over all261 candidates. A zero-radius target is still checked by the complete producer. Full counters are3265568 H and406638 each I,J and each direction's steps. The footer hashes the complete preceding stream; input pins are checked before and after execution. An exception preserves the failed stage and any available moment witness and cannot create a successful summary.
+
+A separately implemented auditor, using Fraction arithmetic, reads every archive row and every saved row, checks exact target bindings, geometry, coverage, chronological order, all saved moment containments and the recorded relative margin. It reconstructs one predetermined H coefficient on every span at different interpolation nodes, using the independently implemented recursive basis and Newton differences already accepted in topic99. This is a partial third H check. It does not claim to recompute all discarded moment candidates or certify the worst margin by sampling.
+
+The auditor also reconstructs all analytic anchors from independent endpoint polynomial jets. It uses a triangular derivative recurrence for the exact jet correction. If g_v is the v-th prescribed discrepancy and e^bs sum e_l s^l supplies the correction, Leibniz's rule gives
+
+ g_v=sum_(l=0)^v binom(v,l) l! e_l b^(v-l).
+
+The coefficient of e_v is v!, so the triangular recurrence determines every e_v uniquely and is equivalent to the explicit exponential-product formula in PROOF.md. With these independently reconstructed coefficients, integrating each exponential monomial gives the same complete rational inner and outer anchor formulas. All261 I0,U0,V0 values must equal the full producer's saved exact anchors. Thus the source, tails, signs and normalization coupling are independently checked; propagation itself is the complete mpmath.iv second method against the earlier complete Arb archive.
+
+The queue waits until topic107's existing computation and audits have completed, then runs the full second propagation and this audit sequentially at nice19 with one thread. Neither waiting nor elapsed time is numerical evidence. If the prior queue does not finish, this task remains prepared. Every stage has a time limit within the run deadline. Final acceptance additionally requires an actual Opus5.5 review of the completed extract and a separately written later verifier adjudication. Preparation acceptance is never numerical acceptance.

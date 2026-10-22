@@ -1,0 +1,7 @@
+## 2026-10-20T19:05:58.410295+00:00: V11 revised scalar feasibility CONFIRMED
+
+Topic49 research/conormal_feasibility/PROOF.md checks the exact modal k and alpha=1/20,s=153/50,b=307/100,a=129/20,gamma=129/1000,gamma_prime=1129/1000. All14rational margins are positive. Delta=-6.6520874292393045...; the frozen saddle base inverse cost is0.1503287517846641... and its sum-graph cost1.1503287517846641.... The necessary window gives cost>1/(A-3/2-D alpha)=0.1318278122740081... and alpha<(A-3/2)/D=0.4061096799303653.... These are frozen model statements, not a variable IPM inverse estimate.
+
+The delta threshold exceeds the corner threshold by(b-s)(2+1/A)>0. Thus the corner inequality is redundant under b>s and delta<0. The earlier saddle C^(4,nu) trace correspondence does not apply at b=3.07, since it requires b=2.5+alpha=2.55. T1 is checked only for the displayed frozenmu=1g-family, T2/T4 and scalarT6 are checked; T3,T5 and all global trace/extension/embedding/inverse estimates remain OPEN.
+
+Fraction arithmetic decides the margins. The16Arb/iv containments only check representation of8exact rational values. Actual Claude Opus5.5 accepted the repaired mathematics19:04:46; its remaining provenance requirement is now discharged by independently matching source/proof hashes to the regenerated19:04:21output. All9pins rehashed. VerdictSHA25656995a078584f71613665b735febb6c2362355bb13af585d8005275a4cc04598. No existence, exclusion or decisive endpoint.

@@ -1,0 +1,5 @@
+# Isolated result, pending review
+
+The first frozen topic101 failure is reproducible on cell2955, mode135, coefficient R_0. Direct rational endpoint evaluation proves that its exact whole-input-box range is contained in the unchanged candidate coefficient interval. An independent fmpq calculation using direct IEEE754 decoding gives the identical exact range. mpmath.iv180 also passes; the original Arb512 expression reproduces the failed sufficient bound. The least exact containment margin is positive, about1.017193e-5 times the candidate radius.
+
+Thus this one failed sufficient test is caused by excess width in the independently computed Arb enclosure. Its precise internal source has not been diagnosed. It is not evidence that this candidate coefficient is invalid. This conclusion does not certify the remaining coefficients or any complete cell. The full radial result remains OPEN. Any improved verifier must use new frozen code and fresh output, preserve the failed stream, and undergo actual-output review. The full angular computation can proceed as a finite algebraic check with its radial membership hypothesis explicit.

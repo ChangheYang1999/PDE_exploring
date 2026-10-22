@@ -1,0 +1,5 @@
+# Version2 source lineage and replay correction
+
+UTC 2026-10-22T00:50:16.288965+00:00. The original frozen180 workflow is preserved in research/outer_derivative_cells, including its first smoke cell0. It was not accepted as preparation and had no full output. On own audit I found its fixed replay set0,39,88 did not enforce PROOF.md's obligation to replay the actual largest contributions. This is a workflow gap, not a refutation of the analytic engine theorem.
+
+Version2 keeps both mathematical engine files byte-for-byte identical to the actual reviewed original files, and the gates verify this identity. All copied proof-first and actual engine-review/adjudication records remain unchanged. The full audit now computes the exact largest cell upper contribution for each norm and requires replay on the union of those cells with0,39,88. The gates check this union. Fixed-source smoke, actual preparation review and full calculation are repeated under this new immutable version. The original version is not silently repaired. The accepted178tail ceilings and179v2 historical-source content bindings are unchanged.

@@ -1,0 +1,94 @@
+"""Explicit premise composition. No archived moment is recomputed here."""
+import sys
+sys.dont_write_bytecode=True
+from pathlib import Path
+from fractions import Fraction as F
+from datetime import datetime,timezone
+import json,hashlib,gzip,argparse,time
+from flint import fmpq
+B=Path(__file__).resolve().parents[3];D=B/'research/canonical_source_composition';E=D/'evidence'
+ARCHIVE='research/middle_residual/evidence/original_knots.jsonl.gz'
+ASHA='c762afdbea381b750f2c9e382ef2315b2652df9781ccf69511237d944e102648'
+SOURCE='data_exact/modal_v2.json';SSHA='57f67a53c1ee5c8fd5ede8480428f1a5584123ac4e54b6d3530d091ea2a67ca6'
+ZPATH='research/modal_repair/evidence/independent_gauss_iv.json';ZSHA='0985679510dfa1fbfceccddd19566d85452599c4b37ecde4c84adbd5aa5f0a2a'
+V156='research/canonical_archive_second/evidence/verdict.json'
+V164='research/source_archive_dependencies/evidence/verdict.json'
+EXPECTED={'H':3265568,'I':406638,'J':406638,'I_steps':406638,'J_steps':406638}
+def now():return datetime.now(timezone.utc).isoformat()
+def need(x,s):
+ if not x:raise ValueError(s)
+def unique(items):
+ out={}
+ for k,v in items:need(k not in out,'duplicate JSON key');out[k]=v
+ return out
+def parse(s):return json.loads(s,object_pairs_hook=unique,parse_constant=lambda s:(_ for _ in ()).throw(ValueError(s)))
+def load(p):return parse(Path(p).read_text())
+def sha(p):
+ with Path(p).open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
+def write(p,v):
+ with Path(p).open('x') as f:json.dump(v,f,indent=2);f.write('\n')
+def gate(v):
+ need(v['status']=='CONFIRMED_COMPLETE_CANONICAL_MOMENT_ARCHIVE','actual complete156 verdict')
+ need(v['counts']==EXPECTED and v['moment_targets']==813276 and v['exact_H_coefficients']==3265568 and v['independent_exact_anchors']==783,'all complete156 counters')
+ for p,h in [(ARCHIVE,ASHA),(SOURCE,SSHA),(ZPATH,ZSHA)]:need(v['files'][p]==h,'156 exact mathematical identity')
+ r=v['actual_output_review'];need(r['actual_response_model']=='claude-opus-5-5' and r['stop_reason']=='end_turn','actual completed156 model review')
+ need(datetime.fromisoformat(r['end_utc'])<datetime.fromisoformat(v['utc']),'156 final after actual review')
+def ball(x):
+ need(set(x)=={'schema','mid_m','mid_e','rad_m','rad_e'} and x['schema']=='arb-dyadic-mid-radius-v1','exact archived ball schema')
+ m=F(int(x['mid_m']))*F(2)**int(x['mid_e']);r=F(int(x['rad_m']))*F(2)**int(x['rad_e']);need(r>=0,'nonnegative radius')
+ a,b=m-r,m+r
+ # Independent native rational arithmetic and integer numerator/denominator extraction.
+ qm=fmpq(x['mid_m'])*fmpq(2)**x['mid_e'];qr=fmpq(x['rad_m'])*fmpq(2)**x['rad_e'];ql,qu=qm-qr,qm+qr
+ need(a.numerator==int(ql.numerator) and a.denominator==int(ql.denominator) and b.numerator==int(qu.numerator) and b.denominator==int(qu.denominator),'two exact endpoint methods')
+ return str(a),str(b)
+def main():
+ ap=argparse.ArgumentParser();ap.add_argument('--prepare',action='store_true');args=ap.parse_args();start=now();tick=time.monotonic();pins={};edges=0
+ # Application fails before any success artifact if156 is absent or incomplete.
+ v156=None
+ if not args.prepare:v156=load(B/V156);gate(v156)
+ def pin(n,h=None):
+  nonlocal edges
+  p=(B/n).resolve();need(p.is_relative_to(B) or (n=='numerics/data/cert_green.npz' and h=='c2c2e4f73f5ac6ee49fd0052b81700fc88ee68d01a5a526691cf03c2b82c2ef1'),'authorized read-only pin');actual=pins.get(n)
+  if actual is None:actual=sha(p);pins[n]=actual
+  need(h is None or h==actual,'immutable pin '+n);edges+=h is not None;return actual
+ def merge(v):
+  for n,h in v['files'].items():pin(n,h)
+ v164=load(B/V164);pin(V164,'c5ff09aa2078f0c32d24291d5b5d8b8791dde55697d54498b3e2bbebec78dd9e');need(v164['status'].startswith('CONFIRMED'),'accepted164');merge(v164)
+ for n,h in [(ARCHIVE,ASHA),(SOURCE,SSHA),(ZPATH,ZSHA)]:pin(n,h)
+ z=load(B/ZPATH)['values']['A00_correction'];Z=[str(F(z[k])) for k in ['lower_exact_dyadic','upper_exact_dyadic']];need(F(Z[0])<=F(Z[1]),'ordered unchanged Z')
+ x=load(B/'research/n8_density_hessian/evidence/density_inputs.json');y=load(B/'research/n8_velocity_hessian/evidence/moment_inputs.json')
+ need(x['source_header']==y['source_header'] and x['cells']==y['cells'],'identical inherited source header/cells')
+ selected={r['span']:r for r in y['spans']};need(len(selected)==7 and set(selected)==set(range(663,670)),'all fixed selected spans')
+ need(len(x['spans'])==7,'all selected density rows')
+ for a,b in zip(x['spans'],y['spans'],strict=True):need(all(a[k]==b[k] for k in a),'complete density export fields')
+ counts={'archive_spans':0,'archive_H_shapes':0,'archive_moment_shapes':0,'selected_records':0,'selected_H_balls':0,'selected_moment_two_method_boxes':0};seen=set()
+ with gzip.open(B/ARCHIVE,'rt') as f:
+  h=parse(next(f));need(h==x['source_header'],'same original archive header')
+  need(h['spans']==1558 and h['cells']==7809 and h['degree']==7 and h['stream_modes']==261 and h['hashes']['input']==SSHA and h['hashes']['normalization']==ZSHA,'same complete archive/trial/Z dimensions')
+  for si in range(1558):
+   line=next(f);need(line.endswith('\n'),'complete original row');r=parse(line)
+   need(r['type']=='span' and r['span']==si,'ordered complete original archive')
+   need(len(r['density_polynomials'])==262 and all(len(v)==8 for v in r['density_polynomials']),'complete H target shape')
+   need(len(r['i_left'])==len(r['j_right'])==261,'complete moment target shape')
+   counts['archive_spans']+=1;counts['archive_H_shapes']+=262*8;counts['archive_moment_shapes']+=522
+   if si in selected:
+    need(r==selected[si],'exact whole source record identity');seen.add(si);counts['selected_records']+=1;counts['selected_H_balls']+=262*8
+    for target in r['i_left']+r['j_right']:ball(target);counts['selected_moment_two_method_boxes']+=1
+  footer=parse(next(f));need(footer['type']=='complete' and footer['spans']==1558 and footer['cells']==7809 and not f.read(),'complete original footer and no trailing bytes')
+ need(seen==set(selected),'all inherited selected records bound')
+ if not args.prepare:
+  pin(V156);merge(v156)
+  n='research/canonical_archive_second/evidence/full_spans.jsonl';pin(n,v156['files'][n])
+  with (B/n).open() as f:head=parse(next(f))
+  need(head['type']=='header' and head['schema']=='ipm-canonical-second-v1' and head['source_sha256']==SSHA and head['archive_sha256']==ASHA and head['normalization_sha256']==ZSHA and head['Z_exact']==Z and head['full_run'] is True and head['spans']==1558 and head['modes']==261 and head['anchor_checks']==3915,'actual full156 source/normalization header')
+  postname='research/canonical_archive_second/evidence/postreview_record.json';pin(postname,v156['files'][postname]);post=load(B/postname)
+  need(post['status']=='CONFIRMED_AFTER_INDEPENDENT_READING_OF_ACTUAL_COMPLETE_REVIEW' and post['all_substantive_objections_resolved'] is True and post['review_request_id']==v156['actual_output_review']['request_id'] and post['review_input_sha256']==v156['actual_output_review']['input_sha256'],'actual156 later independent disposition')
+  need(datetime.fromisoformat(v156['actual_output_review']['end_utc'])<datetime.fromisoformat(post['utc'])<datetime.fromisoformat(v156['utc'])<datetime.fromisoformat(start),'156 accepted before this application')
+  for n in ['full_summary.json','full_output_audit.json']:
+   obj=load(B/'research/canonical_archive_second/evidence'/n);need(obj['counts']==EXPECTED and obj['archive_footer_read'] is True,'computed and separately audited156 counts');need(obj['output_sha256']==pins['research/canonical_archive_second/evidence/full_spans.jsonl'],'same156 full output')
+  need('research/modal_repair/PROOF.md' in v156['files'] and 'research/modal_repair/evidence/audit_verdict.json' in v156['files'],'distinguished exact normalized trial bound')
+ for p in [D/'PROOF.md',D/'NORMALIZATION_SCOPE.md',D/'REVIEW_RESOLUTION.md',E/'proof_first.json',Path(__file__)]:pin(str(p.relative_to(B)))
+ for n,hsh in pins.items():need(sha(B/n)==hsh,'immutable after audit '+n)
+ out={'start_utc':start,'utc':now(),'status':'PASS_CANONICAL_SOURCE_INPUT_PREPARATION_ONLY' if args.prepare else 'PASS_COMPLETE_CANONICAL_SOURCE_PREMISE_COMPOSITION_REQUIRES_ACTUAL_REVIEW','complete_application':not args.prepare,'counts':counts,'selected_spans':sorted(seen),'normalization_exact':Z,'accepted_dependencies':{'164':{'sha256':pins[V164],'utc':v164['utc']},**({'156':{'sha256':pins[V156],'utc':v156['utc']}} if v156 else {})},'edges_compared':edges,'seconds':time.monotonic()-tick,'files':dict(sorted(pins.items())),'scope':'Only the shared canonical I/J premise in topic164 category(c) is removed on complete application. All other old hypotheses remain. No fresh enclosures, global inverse, physical derivative forcing, X3 neighbourhood, nonlinear closure or decisive endpoint.'}
+ write(E/('preparation_checks.json' if args.prepare else 'checks.json'),out);print(json.dumps({k:v for k,v in out.items() if k not in ['files','normalization_exact','scope']}))
+if __name__=='__main__':main()

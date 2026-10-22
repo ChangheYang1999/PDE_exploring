@@ -1,0 +1,11 @@
+from common import *
+def complete():
+ p={};a=load(E/'checks.json');b=load(E/'source_checks.json');need(a['status']=='PASS_EXACT_STORED_AND_IDEAL_TAIL_OBSTRUCTION_REQUIRES_ACTUAL_REVIEW' and b['status']=='PASS_EXPLICIT_TRIAL_PAIR_AND_SHIFTED_PIECE_CONVENTION','both complete stages');need(b['main_checks_sha256']==sha(E/'checks.json') and b['trial_scalars_each_import_path']==5996 and b['Mh']==16,'all explicit source inputs');need(a['counts']=={'manual_and_numpy_scalars':523,'leading_coefficients_bound':260,'literal_Bm_operations':261,'ideal_product_two_routes':261,'strict_lower_rates_each_convention':10,'exact_determinants_two_routes':2,'directed_determinants_each_engine':2,'IEEE_rejections':3,'nearest_even_tie_cases':5},'all finite checks');need(when(a['utc'])<when(b['start_utc'])<when(b['utc']),'stage chronology')
+ for v in [a,b]:merge(p,v)
+ for f in D.rglob('*'):
+  if f.is_file() and f.name not in ['verdict.json','postreview_record.json','POSTREVIEW_ADJUDICATION.md']:pin(p,f)
+ r=auth(p,'scaling_tail_obstruction_proof','OBJECTIONS',load(D/'proof_files.json'));return p,a,b,r
+if __name__=='__main__':
+ p,a,b,r=complete();tag='scaling_tail_obstruction_actual';review=auth(p,tag,'CONFIRM_EXPLICIT_STORED_TAIL_OBSTRUCTION',load(D/'actual_files.json'));need(when(b['utc'])<when(review['start_utc']) and when(r['end_utc'])<when(review['start_utc']),'actual review after full output and proof objections');postrec=post(p,tag,review,E/'postreview_record.json',D/'POSTREVIEW_ADJUDICATION.md')
+ for n,h in p.items():need(sha(B/n)==h,'final unchanged pins')
+ out={'utc':now(),'status':'CONFIRMED_EXPLICIT_STORED_TAIL_OBSTRUCTION','counts':a['counts'],'source_scalars_each_path':b['trial_scalars_each_import_path'],'determinants':a['determinants'],'rates':a['rates'],'omitted_ideal_B260_exact':a['omitted_ideal_B260_exact'],'rounded_product_discrepancies':a['rounded_product_discrepancies'],'actual_output_review':review,'proof_review':r,'postreview':postrec,'files':dict(sorted(p.items())),'scope':a['scope']+' Mandatory REVIEW_RESOLUTION includes explicit pairing and Fortran-order correction.'};write(E/'verdict.json',out);print(json.dumps({'utc':out['utc'],'status':out['status'],'pins':len(p),'sha256':sha(E/'verdict.json')}))

@@ -1,0 +1,9 @@
+# Exact external-rank output assessment prepared for review
+
+At2026-10-21T15:45:17.402620+00:00 the exact source and independent determinant audits passed. For M16 the external constraint matrix has rank64 on1955 coefficients, hence coefficient kernel dimension1891. For M24 it has rank96 on5259 coefficients, hence kernel dimension5163. These are the matrices of the four exact matching functionals per mode, before a tolerance-dependent singular truncation. All160 selected pure-exponential source columns were reread independently. The checker reconstructed640 matrix entries, summed960 signed determinant terms and performed160 nonzero elimination pivots. All40 block determinants agreed.
+
+The canonical integer/dyadic source input is exported in data_exact/minors.json, not manually reproduced as a large table. The earlier accepted source pin map and the actual restricted-reader inputs are rehashed. Formal Lean verification is not attempted under the run restrictions; verification here is exact Python rational arithmetic and the written determinant proof.
+
+The saved numerical ranks72/96 and48/64 in the other lane are not accepted as independently recomputed or as exact ranks of C. The source algorithm performs a truncated SVD, which generically keeps linear combinations of the named row functionals. Calling this a literal deletion of all outer C0 rows requires a row-space analysis not supplied here. A later retained space could be smaller than the full exact constraint kernel, so dimension counting alone does not prove that its particular saved vectors violate an external constraint.
+
+This concerns two external circles only. The already documented internal polynomial jumps remain. No actual Gram/SVD matrix, Q, operator norm, Sobolev membership, inverse or IPM endpoint follows. A completed actual model review and an independent post-review assessment are required before a final verdict.

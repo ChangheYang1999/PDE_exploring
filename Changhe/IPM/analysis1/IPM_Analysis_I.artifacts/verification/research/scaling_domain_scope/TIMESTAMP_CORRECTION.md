@@ -1,0 +1,5 @@
+# Timestamp precision correction
+
+Recorded 2026-10-22T11:59:08.391186+00:00. The proof header says Written11:58Z, but this was an inaccurate manually typed minute, not a clock reading. The saved request preparation timestamp is 2026-10-22T11:57:47.908816+00:00; the file mtime currently records 2026-10-22T11:57:47.671481+00:00, and the completed actual request started11:57:48.129624. The file was therefore already present before11:58. The11:58 heading is corrected by this mandatory addendum; frozen reviewed bytes are retained to preserve request authentication. No11:58 event is inferred. The own request preparation timestamp and recorded model start are the relevant local chronology. None is a provider signature.
+
+The elementary span{K} proof is independent of this typo. Actual reviewae475d52-501f-4713-b0cd-397cb497dbc1 agreed with the domain correction. Its reference to the annular numerical bound is inherited from the separately completed scaling application, not a new numerical verification in this text-only packet. Membership and nonzero image suffice for the logical counterexample. A later own adjudication is still required.

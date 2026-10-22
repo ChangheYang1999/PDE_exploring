@@ -1,0 +1,7 @@
+# Proof review resolutions and arithmetic scope
+
+The actual claude-opus-5-5 proof review ended normally on2026-10-21 after reading the proposed theorem and inherited joining proof. Its unique verdict accepted the new assembly proof only. No new global output was supplied. The full raw response and metadata are retained under notes/reviews/global_residual_second_proof.
+
+The condition b_mid,new>=b_mid,old is sufficient for the shortcut maximum identity, not logically necessary. It follows from the stipulated joint maximum construction and is checked exactly in the application. The old-total subtraction/addition and direct regional addition are separately coded consistency checks of shared rational inputs; they are not independent regional proofs. The fresh square-root calculations use different interval libraries. Their endpoints and the integer ceiling are checked by exact rational squaring. The angular orthogonality identity is elementary and is reconstructed in PROOF.md; referring to its previous audit does not replace its proof.
+
+All actual full topic46 acceptance prerequisites remain required. The completed cell methods share canonical inputs, and neither this theorem nor scalar addition proves the separately queued canonical integration claims. The later actual-output review and independent post-review assessment must precede any final verdict. Every displayed decimal is obtained from a strict rational ceiling, while a region attaining the largest upper majorant need not contain the actual residual maximum.

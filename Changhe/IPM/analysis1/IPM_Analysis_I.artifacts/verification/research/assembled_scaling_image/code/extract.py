@@ -1,0 +1,2 @@
+from common import *
+ps,a,b,p=collect();o={'utc':now(),'status':'ACTUAL_COMPLETE_SAVED_IMAGE_EXTRACT_REQUIRES_REVIEW','actual_check_utc':a['utc'],'actual_supplement_utc':b['utc'],'checks':a['checks'],'interval_overlaps':a['interval_overlaps'],'original_diagnostic_tolerances_passed':a['original_diagnostic_tolerances_passed'],'first_actual_proof_review':p,'files':dict(sorted(ps.items())),'scope':a['scope']};write(E/'review_extract.json',o);print(json.dumps({'utc':o['utc'],'pins':len(ps),'status':o['status']}))

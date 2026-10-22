@@ -1,0 +1,9 @@
+# Accepted conditional semigroup theorem
+
+The analytic theorem in PROOF.md, with ADDENDUM.md, is confirmed. The restricted generator has inverse -integral_0^infinity S(t) dt on N and norm at most K/lambda under the specified exponential bound. Finite codimension makes the stated generator-domain invariance sufficient for semigroup invariance. No invariance of the chosen complement M or commutation of Q is used. The strong integral on each vector, not an operator-norm Bochner integral, is meant. Invertibility alone does not imply exponential decay.
+
+Two actual Claude Opus5.5 reviews accepted the full proof after checking the domain and quotient argument and the explicit counterexamples. The finite exact matrix tests and interval values supplement the analytic proof. They do not prove the Banach theorem. The saved matrix rows' decay_K, decay_lambda and full_generator_determinant fields are analytic labels proved by the displayed explicit matrix formulas, not independently computed norm or determinant data. The interval partial-plus-tail identity is an arithmetic regression, not a numerical integration. Counts in checks.json describe exactly the stated finite checks; no sample is promoted to a universal theorem.
+
+For the research report: a dynamic-rescaling route based on exponential decay of the realized linearized semigroup, after finitely many modulation directions are removed, also supplies the stationary inverse on the same space and domain with norm at most K/lambda. Establishing the actual decay bound remains necessary for that particular route. The result does not say that every possible dynamic method must prove exponential decay or that weighted decay is equivalent to invertibility.
+
+The actual IPM space, generator realization, domain, modulation complement and decay estimate are not supplied here. No global IPM inverse or decisive endpoint is asserted.

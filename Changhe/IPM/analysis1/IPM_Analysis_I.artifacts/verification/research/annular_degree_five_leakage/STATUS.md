@@ -1,0 +1,1 @@
+2026-10-22T02:39:11.650300+00:00: Not FINAL. Original conditional analytic calculation retained. Canonical application had an unnecessarily strong C^infinity annulus hypothesis, replaced prospectively by the finite-regularity proof and rerun in ../annular_degree_five_leakage_v2. Original review and bytes retained.

@@ -1,0 +1,3 @@
+# Timestamp correction
+
+Recorded 2026-10-22T03:58:26.790000+00:00. The label 2026-10-22T04:02Z in evidence/finalizer_first_failure.txt is a mistaken manually written future timestamp. Its file modification time is 2026-10-22T03:57:37.967069+00:00, and the final verdict completed at2026-10-22T03:57:44.168511+00:00. The failed parser run occurred before the failure note was written and after the03:56:22UTC refresh. The exact failure instant was not captured. All proof-first, computation, review, adjudication and verdict timestamps were generated from the clock and are unchanged. The failure description is accurate; its manual time label is withdrawn. The pinned old bytes are retained for audit.

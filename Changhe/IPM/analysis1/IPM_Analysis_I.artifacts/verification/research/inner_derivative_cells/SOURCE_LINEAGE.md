@@ -1,0 +1,7 @@
+# Reviewed engines and new orchestration
+
+The analytic proof was saved before the engines. The exact engine hashes and all three actual source reviews are fixed in ENGINE_ADJUDICATION.json. Neither engine is rewritten by this workflow. Its draft labels are historical. Source consistency and the separate manufactured algebra checks are accepted only within their stated scope. The reviewed precision correction and the later own adjudication are both retained, including their disagreement about the unretained initial inline checker source.
+
+The new protocol, runner, audit, replay and gates adapt the exterior180v2 workflow to the inner theorem. Differences are the exact44-cell partition; three probes0,15,43; inner scalar fields and cutoff; distinct522/526 ODE rates; all62688 cross-method derivative input jets; a separately reconstructed dynamic analytic input count; removal of both temporary primary coefficient arrays; and the accepted inner tail squares. Both actual maximizing cells remain required in the replay. No exterior-only assertion is inherited as inner evidence.
+
+The accepted179v2 preparation map binds45,171,178 and their complete transitive inputs. It explicitly rebinds six historical external source paths to byte-identical local snapshots and keeps the four original NPZ paths literal. This result records the same interpretation rather than altering any old accepted file map. The179v2 and180v2 full numerical results are scheduling prerequisites only, not premises of the conditional inner-region estimate.

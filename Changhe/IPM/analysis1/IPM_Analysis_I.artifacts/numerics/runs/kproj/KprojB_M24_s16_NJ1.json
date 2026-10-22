@@ -1,0 +1,60 @@
+{
+ "trial": "data/trial_v2_h0.008.npz",
+ "section": "runs/c2/c2raw_M24_s16_o40_p4_cols.pkl",
+ "vec": "runs/c2/c2gram2_M24_s16_o40_p4_H1m_NJ1_rowsH1q_vec.npz",
+ "proj": "runs/kproj/Kproj_M24_s16_NJ1.npz",
+ "span": "F-",
+ "Mh": 24,
+ "Mout": 40,
+ "Ne": 467,
+ "NJ": 1,
+ "thresh": 1e-10,
+ "n_kept": 2748,
+ "PK_norm": 7659.906085000729,
+ "K_norm": 7659.129265258356,
+ "cos2": 1.0002028583431777,
+ "cos2_low": 0.9992855267551177,
+ "c_PK": -0.0012530615822490265,
+ "functionals_LPK": {
+  "L2": 149935.17113531154,
+  "L2q": 54722.832510397675,
+  "H1": 619907.1566980884,
+  "H1q": 160886.00341068822
+ },
+ "functionals_LK_direct": {
+  "L2": 0.028649817766395344,
+  "L2q": 0.006058481426265436,
+  "H1": 6.1203761205483715,
+  "H1q": 0.4800572815939778
+ },
+ "functionals_difference": {
+  "L2": 149935.16138033746,
+  "L2q": 54722.82890982011,
+  "H1": 619907.1903720628,
+  "H1q": 160886.0017574432
+ },
+ "quotients_PK": {
+  "L2": 19.57402211874472,
+  "L2q": 7.14406050193662,
+  "H1": 80.92881946842164,
+  "H1q": 21.003652215231163
+ },
+ "quotients_K": {
+  "L2": 3.740610293176575e-06,
+  "L2q": 7.910143851137983e-07,
+  "H1": 0.0007990955510191302,
+  "H1q": 6.26777881620966e-05
+ },
+ "note": "quotients = row functional of the image / X norm of the vector; compare with the sections' smallest singular values (same rows, same X norm); the direct image of K uses the floating identity L K = eps~ - X.grad eps~ (exactly normalized trial, ver topic 138) evaluated by the analytic jets; the difference row measures the image of K - P K (unrepresented part) plus the identity's defect",
+ "H1q_value_part_radius_quantiles_of_LPK": {
+  "0.1": 73889.49913039285,
+  "0.5": 254694.84063663404,
+  "0.9": 666848.277266014
+ },
+ "H1q_value_part_radius_quantiles_of_LK": {
+  "0.1": 8.653030311960908,
+  "0.5": 8.8130514131419,
+  "0.9": 8.866966380183381
+ },
+ "time": 92.87135791778564
+}

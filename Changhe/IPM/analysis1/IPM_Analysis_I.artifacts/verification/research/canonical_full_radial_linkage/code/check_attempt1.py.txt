@@ -1,0 +1,142 @@
+"""Full canonical composition gate and independent direct ZIP/NPY source binding."""
+from pathlib import Path
+from fractions import Fraction as F
+from collections import defaultdict,Counter
+from datetime import datetime,timezone
+from flint import fmpq as Q,ctx
+import ast,struct,zipfile,hashlib,json,math,argparse,sys,time,os
+assert not sys.flags.optimize
+ctx.threads=1
+B=Path(__file__).resolve().parents[3];D=B/'research/canonical_full_radial_linkage';E=D/'evidence';R=B/'research/radial_tm_refined/evidence'
+now=lambda:datetime.now(timezone.utc).isoformat()
+EXTERNAL={str((B.parent/'ipmA-num'/s).resolve()) for s in ['data/cert_green.npz','data/cert_inner_green.npz','data/cert_outer_green.npz','data/trial_v2_h0.008.npz','src/cert_green.py','src/cert_green_outer.py','src/cert_resid.py','src/cert_resid_deriv.py','src/midrad.py','src/xnorm_cert.py']}
+def need(v,s):
+ if not v:raise ValueError(s)
+def sha(p):
+ with Path(p).open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
+def unique(pairs):
+ d={}
+ for k,v in pairs:need(k not in d,'duplicate JSON key');d[k]=v
+ return d
+def parse(t):return json.loads(t,object_pairs_hook=unique,parse_constant=lambda s:(_ for _ in ()).throw(ValueError(s)))
+def load(p):return parse(Path(p).read_text())
+pins={};checked={};count=Counter();digest=hashlib.sha256()
+def pin(p,h=None):
+ p=Path(p);p=(p if p.is_absolute() else B/p).resolve();need(p.is_relative_to(B) or str(p) in EXTERNAL,'source allowlist '+str(p));n=str(p.relative_to(B)) if p.is_relative_to(B) else str(p)
+ if n in checked:a=checked[n]
+ else:a=sha(p);checked[n]=a
+ need(h is None or a==h,'input hash '+n);need(n not in pins or pins[n]==a,'conflicting pin '+n);pins[n]=a
+ return a
+def hexq(s):
+ sign=-1 if s.startswith('-') else 1;s=s.lstrip('+-');mant,ex=s.split('p');a,b=mant[2:].split('.');return F(sign*int(a+b,16))*F(2)**(int(ex)-4*len(b))
+def ieee(raw):
+ u=struct.unpack('<Q',raw)[0];sign=-1 if u>>63 else 1;e=(u>>52)&2047;x=u&((1<<52)-1);need(e!=2047,'nonfinite binary64');return sign*F(x if e==0 else (1<<52)+x)*F(2)**(-1074 if e==0 else e-1075)
+def npy_header(f):
+ need(f.read(6)==b'\x93NUMPY','NPY magic');ver=f.read(2);need(ver in [b'\x01\x00',b'\x02\x00',b'\x03\x00'],'NPY version');nbytes=2 if ver[0]==1 else 4;buf=f.read(nbytes);need(len(buf)==nbytes,'NPY header length');length=int.from_bytes(buf,'little');need(0<length<=100000,'NPY header cap');raw=f.read(length);need(len(raw)==length and raw.endswith(b'\n'),'complete NPY header');h=ast.literal_eval(raw.decode('utf-8' if ver[0]==3 else 'latin1'))
+ need(type(h) is dict and set(h)=={'descr','fortran_order','shape'} and h['descr']=='<f8' and h['fortran_order'] is False,'NPY representation');shape=h['shape'];need(type(shape) is tuple and len(shape)>0 and all(type(n) is int and n>0 for n in shape),'NPY dimensions');return shape
+
+def algebra():
+ # Route A: closed H rows inserted in the differentiated radial identities.
+ def hw(j):
+  if j==0:return {0:F(2,8),2:F(-1,8)}
+  if j==1:return {0:F(2,8),1:F(1,8),2:F(-1,8),3:F(-1,8)}
+  return {i:F(w,8) for i,w in [(j-1,1),(j,1),(j+1,-1),(j+2,-1)] if 0<=i<260}
+ # Route B: signed sine scattering followed by angular raising/lowering.
+ signed=[defaultdict(Q) for _ in range(262)]
+ for j in range(260):
+  for f in [1+2*j,1-2*j,3+2*j,3-2*j]:signed[(abs(f)-1)//2][j]+=Q(1 if f>0 else -1,8)
+ for n in range(1,262):
+  m=2*n
+  for k in range(8):
+   a=defaultdict(F);b=defaultdict(Q)
+   for j,w in [(n-1,4-m),(n,4+m)]:
+    for mode,v in hw(j).items():
+     a[k,mode]+=w*v/2
+     if k<7:a[k+1,mode]+=(k+1)*v/2
+    for mode,v in signed[j].items():
+     b[k,mode]+=Q(w,2)*v
+     if k<7:b[k+1,mode]+=Q(k+1,2)*v
+   for key in set(a)|set(b):
+    need(Q(a[key].numerator,a[key].denominator)==b[key],'forcing symbolic coefficient');count['forcing_weight_comparisons']+=1
+    digest.update((str((n,k,key))+'='+str(a[key])+'\n').encode())
+   count['forcing_forms']+=1
+  # Direct jet differentiation versus separately prescribed radial equations.
+  # Coordinates are I,J,Hlower,Hupper,Hlower_prime,Hupper_prime.
+  Ip=[F(-m-4),0,1,0,0,0];Jp=[0,F(m-4),0,-1,0,0]
+  A=[F(-m),0,F(1,2),F(1,2),0,0];Bb=[0,F(m),F(-1,2),F(-1,2),0,0]
+  Ap=[4*x-m*y for x,y in zip(A,Ip)];Bp=[4*x+m*y for x,y in zip(Bb,Jp)]
+  Ap[4]+=F(1,2);Ap[5]+=F(1,2);Bp[4]-=F(1,2);Bp[5]-=F(1,2)
+  FF=[0,0,Q(4-m,2),Q(4+m,2),Q(1,2),Q(1,2)]
+  AQ=[Q(x.numerator,x.denominator) if isinstance(x,F) else Q(x) for x in A];BQ=[Q(x.numerator,x.denominator) if isinstance(x,F) else Q(x) for x in Bb]
+  for i in range(6):
+   need(Q(Ap[i].numerator,Ap[i].denominator)==-m*AQ[i]+FF[i],'A ODE')
+   need(Q(Bp[i].numerator,Bp[i].denominator)==m*BQ[i]-FF[i],'B ODE')
+   count['canonical_ODE_coefficients']+=2
+  for i in range(6):
+   expected=Q(-m) if i==0 else Q(m) if i==1 else Q(0)
+   need(AQ[i]+BQ[i]==expected,'A+B=2mpsi');count['canonical_sum_coefficients']+=1
+   dd=4*(Q(1) if i==1 else Q(-1) if i==0 else Q(0))+(Q(Jp[i].numerator,Jp[i].denominator) if isinstance(Jp[i],F) else Q(Jp[i]))-(Q(Ip[i].numerator,Ip[i].denominator) if isinstance(Ip[i],F) else Q(Ip[i]))
+   need(BQ[i]-AQ[i]==dd,'B-A=2rpsi_r');count['canonical_difference_coefficients']+=1
+ count['canonical_modes']=261
+
+def main():
+ ap=argparse.ArgumentParser();ap.add_argument('--smoke-validation',action='store_true');args=ap.parse_args();tick=time.monotonic();start=now();smoke=args.smoke_validation;tag='smoke_refined' if smoke else 'full';indices=[0,2955,4102,7808] if smoke else list(range(7809));accepted={}
+ expected={'full_green_linkage':('a026f566d277e12ed22b05ec1eb5aadfabe66449940eb3644c96cbe961fbabd5','CONFIRMED_COMPLETE_GREEN_AB_BOUNDARIES_SHARED_CANONICAL_INPUTS'),'full_t_linkage':('3732110a42745c75a1f10cf1e057d0d6b81a087bb74e3d9289ef0b0e33635b','CONFIRMED_COMPLETE_FINITE_SPLINE_T_AND_H_MEMBERSHIP'),'modal_annular_regularity':('f830e308944bc1b37c488e190c7c417b513d2cf25497c0329bfb3bfdaa0f1b55','CONFIRMED_EXACT_MODAL_ANNULAR_REGULARITY')}
+ if not smoke:
+  rv=load(R/'verdict.json');need(rv['status']=='CONFIRMED_COMPLETE_FINITE_RADIAL_TAYLOR_MODELS_ENDPOINT_REFINED' and rv['cells']==7809 and rv['modes']==261 and rv['polynomial_degree']==12 and rv['original_array_hashes']==54663,'actual completed radial dependency');expected['radial_tm_refined']=(sha(R/'verdict.json'),rv['status'])
+ for name,(h,status) in expected.items():
+  p=B/'research'/name/'evidence/verdict.json';pin(p,h);v=load(p);need(v['status']==status,'accepted dependency status')
+  for n,s in v['files'].items():pin(n,s)
+  accepted[name]={'status':status,'sha256':h,'utc':v['utc']}
+ if smoke:
+  p=B/'notes/radial_refined_closure/preparation_acceptance.json';pin(p,'79c9ffcbe654778961d0c204f485fa67c81516645ee88098ee1cad642313d9eb');v=load(p)
+  for n,h in v['files'].items():pin(n,h)
+ s=load(R/(tag+'_summary.json'));pin(R/(tag+'_summary.json'));need(s['status']=='COMPUTED_REQUIRES_SEPARATE_OUTPUT_AUDIT' and s['cells']==indices and s['modes']==list(range(1,262)) and s['cells_complete']==len(indices) and s['complete'] is True,'actual run coverage')
+ expectedcounts={e+'_'+k:v*len(indices) for e in ['arb512','iv180_rational_exp'] for k,v in [('coefficients',6786),('remainders',522)]};expectedcounts['forcing']=2088*len(indices);need(s['counts']==expectedcounts,'full finite counts')
+ for v in s['input_pins'].values():pin(v['path'],v['sha256'])
+ rows={};header=None;footer=None;prefix=hashlib.sha256();path=R/(tag+'_rows.jsonl');pin(path,s['rows_sha256'])
+ with path.open('rb') as f:
+  for raw in f:
+   need(raw.endswith(b'\n'),'complete row');v=parse(raw)
+   if header is None:
+    header=v;need(v['type']=='header' and v['schema']=='radial-refined-v2' and v['cells']==indices and v['modes']==s['modes'] and v['degree']==12 and v['input_pins']==s['input_pins'],'run header')
+   elif v['type']=='cell':
+    need(footer is None and len(rows)<len(indices) and v['cell']==indices[len(rows)] and v['failures']==[],'ordered accepted rows');rows[v['cell']]=v
+   else:
+    need(v['type']=='footer' and footer is None and v['rows']==len(indices)==len(rows) and v['counts']==expectedcounts and v['complete'] is True and v['prior_stream_sha256']==prefix.hexdigest(),'complete footer');footer=v
+   prefix.update(raw)
+ need(footer is not None,'footer present')
+ inp=B/'data_exact/modal_v2.json';pin(inp,'57f67a53c1ee5c8fd5ede8480428f1a5584123ac4e54b6d3530d091ea2a67ca6');x=load(inp);knots=sorted(set(hexq(t) for t in x['arrays']['knots']['hex']));need(len(knots)==1559,'original distinct knots')
+ part=load(s['input_pins']['partition']['path']);need(len(part['spans'])==1558,'parent coverage');points=[];parents=[]
+ for j,v in enumerate(part['spans']):
+  a,b=F(v['a_exact']),F(v['b_exact']);need(a==knots[j] and b==knots[j+1] and a<b and v['first_cell']==len(points),'exact parent identity');N=v['count'];need(type(N) is int and N>0,'positive child count')
+  for z in range(N):points.append(((N-z)*a+z*b)/N);parents.append(j)
+ points.append(knots[-1]);need(len(points)==7810,'exact full geometry');count['parent_spans']=1558;count['partition_boundaries']=7810
+ for ci,row in rows.items():need((F(row['a']),F(row['b']),row['parent_span'])==(points[ci],points[ci+1],parents[ci]),'same canonical child coordinates')
+ original=[('T_mid',(7809,8,260)),('T_rad',(7809,8,260)),('A_mid',(7810,261)),('A_rad',(7810,261)),('B_mid',(7810,261)),('B_rad',(7810,261))]
+ def member(z,name,shape,target):
+  with z.open(name+'.npy') as f:
+   need(npy_header(f)==shape,'source NPY shape '+name);width=math.prod(shape[1:])*8
+   for ci in range(shape[0]):
+    raw=f.read(width);need(len(raw)==width,'complete contiguous cell')
+    if ci not in rows:continue
+    row=rows[ci];item=row['array_manifest'][target];h=hashlib.sha256(raw).hexdigest();need(item=={'shape':list(shape[1:]),'dtype':'<f8','sha256':h},'original array identity '+target);count['original_array_hashes']+=1;digest.update((str(ci)+':'+target+':'+h+'\n').encode())
+    if target=='scalar':
+     hh,em,er=(ieee(raw[i:i+8]) for i in [0,8,16]);need(0<points[ci+1]-points[ci]<=hh and hh==F(row['h']) and 0<=er<em,'same valid input geometry');count['scalar_geometry_checks']+=1
+   need(f.read(1)==b'','no member suffix')
+ green=Path(s['input_pins']['green']['path']);scalar=Path(s['input_pins']['scalars']['path'])
+ with zipfile.ZipFile(green) as z:
+  need(len(z.namelist())==len(set(z.namelist())),'unique green ZIP names')
+  for name,shape in original:member(z,name,shape,name)
+ with zipfile.ZipFile(scalar) as z:
+  need(len(z.namelist())==len(set(z.namelist())),'unique scalar ZIP names');member(z,'middle',(7809,36),'scalar')
+ need(count['original_array_hashes']==7*len(indices),'all required source slices')
+ algebra()
+ for p in [D/'PROOF.md',E/'proof_first.json',Path(__file__)]:pin(p)
+ # Rehash directly read sources after consuming the complete ZIP members.
+ for p in [green,scalar]:need(sha(p)==s['input_pins']['green' if p==green else 'scalars']['sha256'],'unchanged source after independent reading')
+ out={'start_utc':start,'utc':now(),'status':'PASS_FOUR_CELL_COMPOSITION_READER_DIAGNOSTIC_ONLY' if smoke else 'PASS_COMPLETE_CANONICAL_RADIAL_COMPOSITION_REQUIRES_ACTUAL_REVIEW','full_middle':not smoke,'cells':indices,'counts':dict(count),'comparison_stream_sha256':digest.hexdigest(),'accepted_dependencies':accepted,'radial_summary_sha256':sha(R/(tag+'_summary.json')),'canonical_moment_condition_retained':True,'seconds':time.monotonic()-tick,'scope':'Exact algebra and new direct original NPY input binding; inherited full numerical membership required. I/J canonical archive membership retained. No angular assembly, physical derivatives, inverse or endpoint.','files':pins}
+ dest=E/('smoke_checks.json' if smoke else 'full_checks.json')
+ with dest.open('x') as f:json.dump(out,f,indent=2);f.write('\n');f.flush();os.fsync(f.fileno())
+ print(json.dumps({k:out[k] for k in ['utc','status','counts','seconds']}),flush=True)
+if __name__=='__main__':main()

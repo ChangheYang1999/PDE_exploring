@@ -1,0 +1,5 @@
+# Read-only inherited input paths
+
+The actual complete-middle scan exposed four absolute paths in the accepted6500-prefix pin map. They are the sibling numerics data files cert_green.npz, cert_inner_green.npz, cert_outer_green.npz and trial_v2_h0.008.npz. The run permits reading them. A preparer that unconditionally calls relative_to(this_lane) would reject these inherited pins before arithmetic. Neither prepare_v2.py nor this new global assembly has yet run.
+
+prepare_v3.py preserves the reviewed prepare_v2.py and changes only pin-path handling. It allows lane-local files and exactly those four resolved external paths, preserves absolute keys for the latter, and rehashes every file against the accepted inherited digest. All numerical, coverage, point, review, per-cell joint-maximum and chronology checks are unchanged. No external mutation occurs. The original code reviews continue to refer to their unchanged files; the actual complete-output review must inspect the new preparer and this correction. finalize_v3.py requires them in its completed review bundle. The mathematics and the shared-data scope are unchanged.

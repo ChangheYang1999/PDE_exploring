@@ -1,0 +1,13 @@
+# Independent preparation disposition
+
+2026-10-21T18:19:45.336790+00:00
+
+I read the complete actual Claude Opus5.5/end_turn response, request 13fb77e4-997d-41fa-9f7b-e4afb6000eac, raw response SHA256 64ea6688753b3883647c5ed30d51d36f3e19f61fd09798675bcf8be0e54939c2. Its result is preparation-only acceptance. No full second moment propagation has run.
+
+I independently rechecked the source Cox factors, angular cancellations, endpoint factorials, complete inner/outer integrals and reversed J sign. With u=(b-t)/h, J_u=(4-m)h J+h H_n(b-hu), so both the sign and n=2 polynomial-primitive branch are correct. The particular coefficient equation is (k+1)q_(k+1)-zeta q_k=hP_k. Exact rational q construction prevents cancellation in those coefficient calculations; evaluation of q(1)+exp(zeta)(y-q(0)) still occurs in outward intervals and can lose accuracy. The review's wording that cancellation occurs in exact arithmetic must not be read as eliminating this interval cancellation. A failed containment remains a failed sufficient test until its witness is examined.
+
+The auditor uses separately implemented Fraction Newton differences at nodes(j+1)/9 and triangular jet corrections, and checks all783 anchor values exactly. The complete813276 moment checks depend on the full second iv engine against the earlier Arb archive, not on the15580 saved witnesses. I do not use the review's probabilistic comment about a buggy step almost surely failing as evidence. Correctness rests on the proved identities, reviewed implementation and complete directed comparisons.
+
+The two non-blocking provenance checks have been resolved without mutating reviewed code. The actual normalization endpoint strings equal their reduced fmpq and Fraction forms exactly, so the stated string-format failure does not arise for this pinned source. Topic99's final verdict3732110a42745c75a1f10cf1e057d0d0d6b81a087bb74e3d9289ef0b0e33635b contains the same audit_coefficients.py source hash as this preparation. Its provenance statement is therefore accurate. This new result does not inherit99's numerical claim as a substitute for its own complete H checks.
+
+Strict wall-clock comparisons can fail after a clock adjustment; such a failure is closed and must be investigated. The queue is accepted only as a sequential waiter after topic107, launched at nice19. Its proof scope does not require a historical numerics executable to match the regenerated source. Every new output remains contingent on actual execution, the separate output/anchor audit, an actual completed-output Opus5.5 review and a later independent disposition. All substantive preparation objections are resolved.

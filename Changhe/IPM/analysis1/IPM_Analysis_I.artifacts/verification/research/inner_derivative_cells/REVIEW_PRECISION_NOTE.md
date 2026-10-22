@@ -1,0 +1,5 @@
+# Precision note on the draft source review
+
+The actual draft review is correct about the two different angular encodings, but its single sentence saying the degree assertions are below1044 strides must be read for the compressed secondary method only. The primary full signed Fourier product has exponent shifts0 through2086 and degree at most2086*(2Q+1)+2Q. Its linear term starts at shift520 because Lin has shift523, making the total1043. The secondary product uses compressed shifts0 through1043 and degree less than1044*(2Q+1). Both have radial degree at most2Q, which is strictly less than their common stride2Q+1. Neither aliases radial degrees between adjacent angular slots.
+
+An exact all-basis check independently compares both linear strain maps on all261 input frequencies, for eta and Deta separately, with all262 output slots, giving136764 coefficient equalities. All8908 signed linear Laurent slots are injective and land at the intended1043+/-nu shifts. This note adds precision to the review language; the source has not changed.

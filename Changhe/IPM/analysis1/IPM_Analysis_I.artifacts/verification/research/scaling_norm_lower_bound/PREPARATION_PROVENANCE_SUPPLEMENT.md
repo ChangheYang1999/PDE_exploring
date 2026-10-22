@@ -1,0 +1,9 @@
+# Scaling preparation provenance supplement
+
+2026-10-22T11:27:22.587460+00:00. The original preparation response is REJECT and remains unchanged. This supplement supplies its missing review evidence. The mathematical application remains OPEN.
+
+The original freeze preceded all three rows. Its fixed map contains common.py, audit.py and replay.py. The common.py SHA is06511b7fb61791d0e363a9edd7548318fa6b6205f67bba58e3c8a4b89f7b1595, which is what the diagnostic input_selfcheck source field names. That diagnostic inline wrapper was not saved and is not a numerical premise. The actual run and every polynomial replay call input_data themselves. The78 input diagnostic parent pins are exactly common.parents();112 extract pins are common.source(), adding fixed sources and review records. The difference will be recomputed in the supplemental check.
+
+The projection selects all three raw rows in their original order, so the raw rows are now supplied to make that equality directly inspectable. The workflow review, provenance follow-up, both adjudications, source freeze and old source external rehash are supplied. Local byte and model-record verification is not a provider digital signature. No review author is claimed to have run the code. The independently saved polynomial replay covers all three annuli,6264 density coefficients and three exact square integrals.
+
+The frozen original gate cannot accept a REJECT response. It remains unchanged. A new narrowly scoped acceptance adapter requires that original REJECT, the complete frozen projection, the supplemental provenance checks and a new actual Opus5.5 confirmation followed by later own adjudication. Its preparation status remains limited to exactly the three listed spans, never1558-span coverage. A separate theorem and application gate are needed for the final selected-annulus consequence.

@@ -1,0 +1,11 @@
+# Final mathematical adjudication of the selected-cell result
+
+The exact local polynomial and inherited canonical center moment boxes define entire local continuations. The physical Green ODE and weighted density-moment ODE calculations independently enclose every Taylor coefficient through degree64 in all522 residual modes. The explicit complex-disk majorants and Cauchy ratio bound control all omitted derivatives through total order5 on the three closed cells4102,4125,4211. The real derivatives agree with the physical residual there by ODE uniqueness and the trial's C6 radial joins.
+
+The complete saved-output audit passed at2026-10-21T15:16:35.114169+00:00. It compared101790 coefficient pairs and18792 point-derivative pairs, checked36 opposite-arithmetic disk formulas, and formed63 exact finite-plus-tail bounds. The local guard also verified all7809 producer row identifiers and all63 diagnostic labels. The proofs, code and exact output paths are explicit; no derivative sample is used without a whole-cell analytic remainder.
+
+The verified conclusion is a finite collection of upper bounds, not a small global forcing certificate. All63 bounds are larger than the saved producer caps. The table in evidence/review_extract.json gives exact strict rational ceilings and separate floating display values for maxima of our majorants over the selected three cells. The display values are not outward-rounded ceilings and are not locations or values of physical maxima. The records in evidence/output_audit.json give the exact per-cell finite part and tail.
+
+Every claim depends on the accepted canonical input certificate; there is no new integration. Product counts are recorded, while each retained coefficient is independently recomputed and compared. This result establishes no estimate outside these cells, no complete derivative cover, no global inverse or nonlinear bound, and no decisive IPM endpoint. The numerical trial is the exact normalized modal trial, not an undisclosed redefinition of the original X3 ansatz.
+
+Mandatory reading is PROOF.md, ADDENDUM.md and REVIEW_RESOLUTIONS.md together with this adjudication. Final acceptance is effective only when evidence/verdict.json exists and its pins and completed-review records validate. The incomplete max_tokens review is retained as history and does not count as acceptance.

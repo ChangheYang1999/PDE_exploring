@@ -1,0 +1,3 @@
+# Leading stream degree, final ancillary correction
+
+The third response correctly withdraws the log-degree and optimal-constant claims, but introduces one wrong adjective: the leading stream -x³y/3 has CUBIC velocity, not quadratic velocity. Direct derivatives give -psi_y=x³/3 and psi_x=-x²y. Both components are degree3. This is consistent with the original proof, which separates a polynomial velocity of degree at most3 from the order5 remainder. The linear harmonic strain remains degree1. The wrong adjective was never present in the proof or codes and does not alter any theorem. No additional endpoint or quantitative constant is inferred.

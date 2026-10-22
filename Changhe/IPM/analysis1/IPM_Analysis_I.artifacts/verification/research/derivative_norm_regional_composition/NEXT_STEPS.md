@@ -1,0 +1,12 @@
+# Regional composition application schedule
+
+The proof and source workflow are prepared. No numerical application has run. Consult RUN_STATUS.md for the current review/freeze status.
+
+1. Source review tag derivative_regional_workflow must return actual claude-opus-5-5/end_turn. Read the entire response and independently adjudicate any objections. Write later WORKFLOW_ADJUDICATION.md and WORKFLOW_ADJUDICATION.json at this topic root, using the standard post-review keys. Then code/gate.py freeze. Never change frozen sources.
+2. After179v2 FINAL, run code/extract.py coarse, code/evaluate.py coarse, code/replay.py coarse, code/gate.py extract_actual --mode coarse, code/gate.py actual --mode coarse. Each command is a short scalar or metadata audit. No cell engine is run. The actual tag is derivative_regional_coarse_actual. Read complete actual5.5/end_turn response and write later evidence/coarse/POSTREVIEW_ADJUDICATION.md and .json. Run code/gate.py finalize --mode coarse and independently rehash every final pin. Publish all six regional terminating-decimal squares and both published_whole_plane_norm_ceilings. Also retain original179 whole-plane ceilings as separate parent values. This is the lead's01:11 request.
+3. After180v2 FINAL, repeat with mode exterior. This uses179middle+179inner+180combinedexterior;178outertail is already included exactly once in180. All actual review/adjudication/externalpin steps remain required. Tag derivative_regional_exterior_actual. Notify lead by its12:10 integration cutoff.
+4. If181v2 is FINAL in time, repeat with mode both, tag derivative_regional_both_actual. This additionally replaces the inner disk by181combinedinner;178inner tail is already included exactly once. Never call these refinements a discharge of the old19389W claim.
+
+Each application's checks.json has exact_parent_reductions and displayed_region_reductions. The published_whole_plane_norm_ceilings correspond to adding the printed regional squared ceilings, preventing inward addition in the report. The sharper exact-parent ceilings have separately retained exact inputs. All global fields and norms must be identical.
+
+Source review authenticates recorded provider model and file consistency only, not provider digital signatures. NoJS/TS/Node, servers/listeners/tunnels, RLSciencecluster, Lean/Lake, outsidewrites or peoplecontact. Soleheavy179 continues; this workflow uses only short local scalar checks. T_end is pending and no decisive endpoint exists.

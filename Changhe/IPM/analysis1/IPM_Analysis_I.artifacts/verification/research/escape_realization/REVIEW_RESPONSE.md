@@ -1,0 +1,11 @@
+# Response to the complete model review
+
+The complete actual Claude Opus5.5 review, request38e54480-9629-4aaa-b183-ec2ce3a3b56f, covered all seven sections and returned end_turn. The first truncated response remains an incomplete review. The failed disabled-thinking call is an availability record, not a mathematical review.
+
+The proposed erratum E1 assumes skew-adjoint Riesz transforms. Here, as explicitly defined in the accepted topic87, R_j denotes the self-adjoint Fourier multiplier with real symbol xi_j/|xi|, acting on complexified L2. Thus M=R_1^2 has symbol n_1^2 and is nonnegative, while the physical U_2=-R_1^2. If one instead writes the usual skew-adjoint transform T_1 with symbol -i n_1, the same M is T_1^*T_1=-T_1^2. These are the same positive operator with different names. This paragraph fixes the convention explicitly for topic88; no physical sign or formula changes. The normalization correction sigma=B'(0) in ADDENDUM remains necessary and in force.
+
+The review's explanation that h_y(0)=0 makes angular averages vanish is not used. The proof of absolute integrability is the weighted Cauchy-Schwarz calculation in section5. Its hypotheses are a>2, gamma<2 and h in L2(omega); zero h_y(0) removes the separate local distributional derivative term. A general smooth h with zero h_y(0) need not have every angular average zero. The distributional identification uses the stated approximation/domain premise.
+
+A fresh audit at1536bits uses log-Gamma before exponentiation, a third expression for the same scalar constant. Each of the two primary reported rational intervals contains the whole fresh enclosure. The exact tests also prove that decimal0.0078148 is below C_sigma and is unsuitable as an upper bound. The safe ceilings are C_sigma<78149/10000000 and C_c<521/200000. Arb is the primary enclosure engine; mpmath.iv is the independently programmed directed second engine. No claim that an unaudited numerical library has itself been formally verified is made.
+
+All other dependencies and open statements in CLARIFICATIONS remain. In particular no actual escape weight, weighted fractional commutator norm, equivalence of the unspecified A_s, or global inverse has been established.

@@ -1,0 +1,3 @@
+# Correction to a rough number in the follow-up request
+
+Recorded 2026-10-22T04:04:24.323375+00:00. The follow-up request question says widthN is about1e-35. That rough number was typed before inspecting the printed exact-endpoint calculation and is wrong. The actual saved REVIEW_RESPONSE.md, supplied in the same request, correctly states approximately1.810759098547242426661446e-37. The source evidence and all strict windows remain unchanged. The own final adjudication must use that correct value and reject both the first review estimate2e-136 and this rough request estimate1e-35. The independent proof never uses either inaccurate descriptive estimate.

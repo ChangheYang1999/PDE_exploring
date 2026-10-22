@@ -1,0 +1,13 @@
+# Own final adjudication of the quadrant Euler-norm corollary
+
+Date 2026-10-22T03:08:32.189563+00:00. Verdict CONFIRMED for the exact norm defined in PROOF.md and the canonical background application. This is the lead's requested03:00 corollary and is not a PDE endpoint.
+
+I read the complete actual claude-opus-5-5/end_turn review0e352abb-17b7-4958-8964-4cc13320cf3f. The saved request reconstructs from current reviewed bytes and the actual model identity and terminal verdict are checked. The following adjudication is later and independently verifies the short argument.
+
+For every integer m>=0, the Euler-derivative norm contains its zeroth weighted square integral. On a fixed positive interval y1<=y<=y2, y^(-2b) has positive lower bound min(y1^(-2b),y2^(-2b)) for every finite real b. Restricting a nonnegative integral to the parent's rectangle therefore preserves a lower bound. The actual pointwise bound g=Lh>=c x^2 gives integral x^(4-2a), which diverges exactly at a>=5/2. The working a129/20 has exponent-89/10, and b307/100 changes only the positive constant. No derivative of g beyond the parent's construction is assumed: zeroth-order failure is already exclusion from the space.
+
+The exact same h is smooth and compactly supported at positive distance from both axes. Every finite Euler derivative has that support and is bounded. The finite-weight square integrals are finite for every fixed finite real a,b and every integer m>=0. Parent parity, the global x^2y factor and J=Sigma=0 are unchanged.
+
+Review bookkeeping is resolved explicitly. Item192 is the team report number for research/axis_weighted_nonlocal_mapping, named in the proof's dependency section. That parent itself inherited164 pins from its predecessor, then its own accepted evidence increased its FINAL set to181. Here all181 current parent files plus the parent verdict itself are freshly rehashed; there is no unexplained change in the checked set. The support1<r<2 is stated and proved in that pinned parent PROOF.md even though the particular excerpt sent to the reviewer emphasized only the axis gaps. Both properties are now directly checked against that source. Hash identity is provenance; the accepted Gram, harmonic-expansion and Taylor arguments are the mathematical dependency.
+
+The corollary concerns the displayed norm without Taylor subtraction or quotienting. It refutes preservation of the whole stated smooth compact test class, not invertibility on every possible image-compatible domain. No full inverse, stationary solution, distance bound or exclusion neighborhood is established. No numerical enclosure was needed, and the179 numerical queue was unchanged.

@@ -1,0 +1,9 @@
+# Exact interval endpoint comparisons
+
+Written 2026-10-22 after the initial exploratory cell passed and before the optimization below. The initial source and output remain archived. This changes only the representation used to compare and hash input Taylor-coefficient interval endpoints. It changes neither interval arithmetic nor a mathematical remainder bound.
+
+A finite mpmath binary endpoint tuple (s,m,e,bc) represents (-1)^s m 2^e, with s in{0,1}, nonnegative integer m and bc its bit count. Check finite bc>=0, m>=0 and bc=m.bit_length(). To compare two tuples, put E=min(e1,e2). Multiplication by the positive factor2^-E shows the exact comparison is the integer comparison between (-1)^s1 (m1 << (e1-E)) and (-1)^s2 (m2 << (e2-E)). Zero is included. Nonfinite tuples are rejected.
+
+Two closed intervals overlap exactly when each lower endpoint is no greater than the other upper endpoint. Thus the two exact integer comparisons replace the earlier four Fraction conversions without changing the overlap predicate. Every input derivative coefficient is still checked. The diagnostic hash records the endpoint tuples through their canonical integer decimal tuple representations. This digest is an audit identifier and is not an arithmetic proof premise. The exact comparison proof is the signed integer rescaling above.
+
+The optimized whole-cell output must reproduce every initial Arb/iv numerical bound, every coefficient count and every input-check count on the repeated initial cell. Only the representation-dependent diagnostic digest and timing may differ. Manufactured comparison checks additionally compare the integer predicate against Fraction on signs, zeros, unequal exponents and ordered/disjoint/touching intervals. The initial source and exploratory output remain separate. Actual source review, fixed-source smoke and complete execution remain necessary.

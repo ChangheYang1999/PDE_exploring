@@ -1,0 +1,13 @@
+Written 2026-10-21T23:23:02.200662+00:00 after the analytic proof review, before finite checking.
+
+# Rank-one cancellation, residual convention and canonical instance
+
+Read with PROOF.md. In L(P_n-sigma_n g), the rank-one term from LP_n is sigma_n G/3 and that from -sigma_n Lg is -sigma_n G/3. They cancel exactly. The proof bounds LP_n and sigma_n Lg separately, which is sufficient for its graph estimate; the final expression Lh_n has no rank-one term. The same exact cancellation Sigma(h_n)=0 removes the quadratic rank-one term before forming Q(h_n).
+
+The residual-difference sentence has the additional convention that the background satisfies c_l=(1+Sigma(rho))/3. For a compact perturbation, define c_l(rho+h)=(1+Sigma(rho)+Sigma(h))/3 and F(rho+h)=(c_l(rho+h)X+U[rho+h]) dot grad(rho+h)-(rho+h). The sum U[rho]+U[h] is the canonical velocity of rho+h: it solves the required distributional equations, has the required parity and is sublinear at infinity. Canonical uniqueness, in the class specified by topic138, gives equality. Expanding the product then gives F(rho+h)-F(rho)=Lh+Q(h). In this convention the liminf of the norm of the difference along h_n is at least sqrt(p^2 w(p) E_H). Without this additional normalization convention, only the theorem about L and Q is asserted. The canonical normalized trial does satisfy the convention, by topic89 ADDENDUM.
+
+For the canonical instance use topic138 PROOF equations(3)-(5), together with its ADDENDUM's explicit algebraic domain, for the global derivative and local velocity bounds. Topic89's rational bracket and its regularity assertion supply the exact equilibrium. Topic169 with NORMALIZATION_SCOPE discharges the canonical archive premise only for the distinguished exact normalized scalar z_*, as needed here. No assertion about every auxiliary z in Z is made. The root p remains the exact uniquely defined real.
+
+Topic141's full exact energy computation is an accepted dependency and is explicitly identified as inherited in PROOF.md. The new finite check will additionally re-sum the saved gradient polynomials by two exact disk-moment formulas. This repeats that finite energy sum, without claiming to reconstruct the entire Green polynomial anew. The new axis differentiation and translated strain calculation are fresh and use two distinct methods.
+
+The proof-review response used the first velocity component in its brief parity discussion; both components vanish at zero because the full stream is odd in both coordinates. Its item(d) is treated as a requirement for the new promised checks, not as evidence that they have already been run. No finite or analytic final acceptance is granted by that response alone.

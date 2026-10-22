@@ -1,0 +1,525 @@
+[
+ {
+  "tag": "",
+  "label": "X3 trial (h = 0.008, M = 260)",
+  "scalars": {
+   "x_star": [
+    8.600063805157177,
+    2.9402020296740933e-13
+   ],
+   "mu_minus_1": [
+    -2.2528936380700347e-08,
+    -2.2527166467961448e-08
+   ],
+   "g": [
+    29.749490663330192,
+    29.74949066333678
+   ],
+   "w_prime_P": [
+    10.150725243807495,
+    10.150725243814781
+   ],
+   "c": [
+    15.726087831924634,
+    15.72608783192464
+   ],
+   "c_l": [
+    5.575362610641545,
+    5.575362610641548
+   ],
+   "contracted": true
+  },
+  "middle": {
+   "ncells": 7809,
+   "done": true,
+   "r_range": [
+    0.007651424601381517,
+    3412.966858161569
+   ],
+   "sup_W_over_m": 0.00025964455093859006,
+   "r_at": [
+    8.789667941225016,
+    8.79805929034142
+   ],
+   "sup_W": 0.00012014506637702245,
+   "mult_half": 0.0003807011593202373,
+   "mult_half_minus_k": 0.00033186615979928253,
+   "L2": 4.972666464073578e-09,
+   "P_shell_W_over_m": 0.00025964455093859006,
+   "max_rem_eps": 2.1050454733198957e-11,
+   "max_remA": 9.25739277649166e-15
+  },
+  "outer": {
+   "ncells": 8948,
+   "r_range": [
+    3412.966858161562,
+    82283576852.31306
+   ],
+   "sup_W_over_m": 9.318860061291218e-05,
+   "r_at": 33425.56062528836,
+   "mult_half_minus_k": 0.0014635654148289347,
+   "L2": 3.906463222718494e-07
+  },
+  "inner": {
+   "ncells": 2632,
+   "r_range": [
+    5.155489343160731e-05,
+    0.007636903017964362
+   ],
+   "sup_W_over_m": 9.189299753646398e-06,
+   "r_at": 0.007145642962974531,
+   "mult_half_minus_k": 9.192055793252726e-06,
+   "L2": 3.4825602683775895e-16
+  },
+  "tail": {
+   "T_out": 17.0,
+   "r_T": 82440053208.41086,
+   "delta": 0.3206394687062458,
+   "tail_bound_weighted": "[1.75411e-6 +/- 1.44e-12]",
+   "tail_bound_unweighted": "[1.06482e-9 +/- 2.78e-15]",
+   "monotone_ok": true,
+   "crude_total_diagnostic_only": "[0.00933708 +/- 4.75e-9]",
+   "leading_sumC": "[6.67721e-8 +/- 1.16e-14]",
+   "rest_majorant": "[3.23009e-10 +/- 9.78e-17]",
+   "crude_bound_weighted_diagnostic_only": "[0.244105 +/- 2.39e-7]",
+   "lin": "[1.27729e-11 +/- 8.24e-18]",
+   "PR_twice": "[0.000300660 +/- 6.96e-11]",
+   "QR_twice": "[0.00903642 +/- 4.70e-9]",
+   "time": 0.7025876045227051,
+   "note": "termwise majorant at tau = T of W(1+u)^delta/m; valid for all tau >= T since every term decays relative to m (1+u)^-delta (delta < 1-k)"
+  },
+  "tail05": {
+   "T_out": 17.0,
+   "r_T": 82440053208.41086,
+   "delta": 0.5,
+   "tail_bound_weighted": "[0.000110528 +/- 1.88e-10]",
+   "tail_bound_unweighted": "[1.06482e-9 +/- 2.78e-15]",
+   "monotone_ok": true,
+   "crude_total_diagnostic_only": "[0.00933708 +/- 4.75e-9]",
+   "leading_sumC": "[6.67721e-8 +/- 1.16e-14]",
+   "rest_majorant": "[3.23009e-10 +/- 9.78e-17]",
+   "crude_bound_weighted_diagnostic_only": "[15.3813 +/- 2.59e-6]",
+   "lin": "[1.27729e-11 +/- 8.24e-18]",
+   "PR_twice": "[0.000300660 +/- 6.96e-11]",
+   "QR_twice": "[0.00903642 +/- 4.70e-9]",
+   "time": 0.7032859325408936,
+   "note": "termwise majorant at tau = T of W(1+u)^delta/m; valid for all tau >= T since every term decays relative to m (1+u)^-delta (delta < 1-k)"
+  },
+  "itail": {
+   "T_in": 5.0,
+   "r_T": 5.155489343160731e-05,
+   "bound_W_over_m": "[2.138e-6 +/- 4.11e-10]",
+   "majorant_total": "[5.38729e-12 +/- 3.93e-19]",
+   "conv3_removed": "[5.38729e-12 +/- 3.92e-19]",
+   "normalization_defect": "[+/- 2.45e-15]",
+   "bound_W_over_r5": "[1.796 +/- 9.64e-5]",
+   "time": 0.43131017684936523,
+   "note": "valid for all r <= r_T: every term has exponent >= 3 in tau' (>= 0 after division by m), hence maximal at -T; exponent-3 part replaced by its exact value proportional to |3 c_l - 1 - c|"
+  }
+ },
+ {
+  "tag": "v3_h0.004",
+  "label": "v3: knot spacing h = 0.004",
+  "scalars": {
+   "x_star": [
+    8.600063805157177,
+    2.94020202967414e-13
+   ],
+   "mu_minus_1": [
+    -2.2528947927019803e-08,
+    -2.2527178014280904e-08
+   ],
+   "g": [
+    29.7494906633302,
+    29.749490663336786
+   ],
+   "w_prime_P": [
+    10.150725243807502,
+    10.150725243814788
+   ],
+   "c": [
+    15.726087831924634,
+    15.72608783192464
+   ],
+   "c_l": [
+    5.575362610641545,
+    5.575362610641548
+   ],
+   "contracted": true
+  },
+  "middle": {
+   "ncells": 8874,
+   "done": true,
+   "r_range": [
+    0.007651424601381517,
+    3412.966858161569
+   ],
+   "sup_W_over_m": 0.00025964457010047937,
+   "r_at": [
+    8.789667941225016,
+    8.79805929034142
+   ],
+   "sup_W": 0.00012014507524378453,
+   "mult_half": 0.00038070118741616093,
+   "mult_half_minus_k": 0.00033186618429116035,
+   "L2": 4.96390089309879e-09,
+   "P_shell_W_over_m": 0.00025964457010047937,
+   "max_rem_eps": 2.0988429015524388e-11,
+   "max_remA": 1.0876635277878632e-15
+  },
+  "outer": {
+   "ncells": 8948,
+   "r_range": [
+    3412.966858161562,
+    82283576852.31306
+   ],
+   "sup_W_over_m": 9.318765833602586e-05,
+   "r_at": 33425.56062528836,
+   "mult_half_minus_k": 0.00146357780503833,
+   "L2": 3.906731331543327e-07
+  },
+  "inner": {
+   "ncells": 2632,
+   "r_range": [
+    5.155489343160731e-05,
+    0.007636903017964362
+   ],
+   "sup_W_over_m": 5.435001162284262e-06,
+   "r_at": 0.007394210462219211,
+   "mult_half_minus_k": 5.436687903179344e-06,
+   "L2": 6.84968232478848e-17
+  },
+  "tail": {
+   "T_out": 17.0,
+   "r_T": 82440053208.41086,
+   "delta": 0.3206394687062458,
+   "tail_bound_weighted": "[1.75522e-6 +/- 3.91e-12]",
+   "tail_bound_unweighted": "[1.06549e-9 +/- 2.55e-15]",
+   "monotone_ok": true,
+   "crude_total_diagnostic_only": "[0.00933708 +/- 4.75e-9]",
+   "leading_sumC": "[6.68147e-8 +/- 3.58e-14]",
+   "rest_majorant": "[3.23009e-10 +/- 2.72e-16]",
+   "crude_bound_weighted_diagnostic_only": "[0.244105 +/- 2.39e-7]",
+   "lin": "[1.27727e-11 +/- 2.35e-17]",
+   "PR_twice": "[0.000300660 +/- 6.96e-11]",
+   "QR_twice": "[0.00903642 +/- 4.70e-9]",
+   "time": 0.8213272094726562,
+   "note": "termwise majorant at tau = T of W(1+u)^delta/m; valid for all tau >= T since every term decays relative to m (1+u)^-delta (delta < 1-k)"
+  },
+  "tail05": {
+   "T_out": 17.0,
+   "r_T": 82440053208.41086,
+   "delta": 0.5,
+   "tail_bound_weighted": "[0.000110598 +/- 2.86e-10]",
+   "tail_bound_unweighted": "[1.06549e-9 +/- 2.55e-15]",
+   "monotone_ok": true,
+   "crude_total_diagnostic_only": "[0.00933708 +/- 4.75e-9]",
+   "leading_sumC": "[6.68147e-8 +/- 3.58e-14]",
+   "rest_majorant": "[3.23009e-10 +/- 2.72e-16]",
+   "crude_bound_weighted_diagnostic_only": "[15.3813 +/- 2.59e-6]",
+   "lin": "[1.27727e-11 +/- 2.35e-17]",
+   "PR_twice": "[0.000300660 +/- 6.96e-11]",
+   "QR_twice": "[0.00903642 +/- 4.70e-9]",
+   "time": 0.8464395999908447,
+   "note": "termwise majorant at tau = T of W(1+u)^delta/m; valid for all tau >= T since every term decays relative to m (1+u)^-delta (delta < 1-k)"
+  },
+  "itail": {
+   "T_in": 5.0,
+   "r_T": 5.155489343160731e-05,
+   "bound_W_over_m": "[2.138e-6 +/- 4.26e-10]",
+   "majorant_total": "[5.38729e-12 +/- 3.93e-19]",
+   "conv3_removed": "[5.38729e-12 +/- 3.92e-19]",
+   "normalization_defect": "[+/- 2.45e-15]",
+   "bound_W_over_r5": "[1.7960 +/- 8.65e-5]",
+   "time": 0.606351375579834,
+   "note": "valid for all r <= r_T: every term has exponent >= 3 in tau' (>= 0 after division by m), hence maximal at -T; exponent-3 part replaced by its exact value proportional to |3 c_l - 1 - c|"
+  }
+ },
+ {
+  "tag": "v4_M230",
+  "label": "v4: 230 modes",
+  "scalars": {
+   "x_star": [
+    8.60006380515718,
+    2.6202748963151136e-13
+   ],
+   "mu_minus_1": [
+    -2.2528272314137166e-08,
+    -2.252669544250425e-08
+   ],
+   "g": [
+    29.749490663337518,
+    29.7494906633434
+   ],
+   "w_prime_P": [
+    10.150725243807326,
+    10.15072524381381
+   ],
+   "c": [
+    15.726087831924634,
+    15.72608783192464
+   ],
+   "c_l": [
+    5.575362610641545,
+    5.575362610641548
+   ],
+   "contracted": true
+  },
+  "middle": {
+   "ncells": 7809,
+   "done": true,
+   "r_range": [
+    0.007651424601381517,
+    3412.966858161569
+   ],
+   "sup_W_over_m": 0.00025970262700291904,
+   "r_at": [
+    8.789667941225016,
+    8.79805929034142
+   ],
+   "sup_W": 0.00012017193985685669,
+   "mult_half": 0.00038078631275380206,
+   "mult_half_minus_k": 0.00033194039005127684,
+   "L2": 5.000905575886972e-09,
+   "P_shell_W_over_m": 0.00025970262700291904,
+   "max_rem_eps": 2.1050454733198818e-11,
+   "max_remA": 9.25739277649166e-15
+  },
+  "outer": {
+   "ncells": 8948,
+   "r_range": [
+    3412.966858161562,
+    82283576852.31306
+   ],
+   "sup_W_over_m": 9.357359488291693e-05,
+   "r_at": 33362.1168291769,
+   "mult_half_minus_k": 0.0014683192383374401,
+   "L2": 3.9069791892104853e-07
+  },
+  "inner": {
+   "ncells": 2632,
+   "r_range": [
+    5.155489343160731e-05,
+    0.007636903017964362
+   ],
+   "sup_W_over_m": 9.18917969302056e-06,
+   "r_at": 0.007145642962974531,
+   "mult_half_minus_k": 9.191935696618503e-06,
+   "L2": 3.4824283781765466e-16
+  },
+  "tail": {
+   "T_out": 17.0,
+   "r_T": 82440053208.41086,
+   "delta": 0.3206394687062458,
+   "tail_bound_weighted": "[1.75835e-6 +/- 6.06e-13]",
+   "tail_bound_unweighted": "[1.06739e-9 +/- 1.58e-16]",
+   "monotone_ok": true,
+   "crude_total_diagnostic_only": "[0.00933708 +/- 4.15e-9]",
+   "leading_sumC": "[6.69342e-8 +/- 1.41e-14]",
+   "rest_majorant": "[3.23010e-10 +/- 4.33e-16]",
+   "crude_bound_weighted_diagnostic_only": "[0.244105 +/- 2.55e-7]",
+   "lin": "[1.27730e-11 +/- 3.12e-17]",
+   "PR_twice": "[0.000300660 +/- 6.90e-11]",
+   "QR_twice": "[0.00903642 +/- 4.10e-9]",
+   "time": 0.605065107345581,
+   "note": "termwise majorant at tau = T of W(1+u)^delta/m; valid for all tau >= T since every term decays relative to m (1+u)^-delta (delta < 1-k)"
+  },
+  "tail05": {
+   "T_out": 17.0,
+   "r_T": 82440053208.41086,
+   "delta": 0.5,
+   "tail_bound_weighted": "[0.000110795 +/- 2.26e-10]",
+   "tail_bound_unweighted": "[1.06739e-9 +/- 1.58e-16]",
+   "monotone_ok": true,
+   "crude_total_diagnostic_only": "[0.00933708 +/- 4.15e-9]",
+   "leading_sumC": "[6.69342e-8 +/- 1.41e-14]",
+   "rest_majorant": "[3.23010e-10 +/- 4.33e-16]",
+   "crude_bound_weighted_diagnostic_only": "[15.3813 +/- 1.61e-6]",
+   "lin": "[1.27730e-11 +/- 3.12e-17]",
+   "PR_twice": "[0.000300660 +/- 6.90e-11]",
+   "QR_twice": "[0.00903642 +/- 4.10e-9]",
+   "time": 0.6053924560546875,
+   "note": "termwise majorant at tau = T of W(1+u)^delta/m; valid for all tau >= T since every term decays relative to m (1+u)^-delta (delta < 1-k)"
+  },
+  "itail": {
+   "T_in": 5.0,
+   "r_T": 5.155489343160731e-05,
+   "bound_W_over_m": "[2.138e-6 +/- 4.11e-10]",
+   "majorant_total": "[5.38729e-12 +/- 3.93e-19]",
+   "conv3_removed": "[5.38729e-12 +/- 3.92e-19]",
+   "normalization_defect": "[+/- 2.45e-15]",
+   "bound_W_over_r5": "[1.796 +/- 9.65e-5]",
+   "time": 0.38197779655456543,
+   "note": "valid for all r <= r_T: every term has exponent >= 3 in tau' (>= 0 after division by m), hence maximal at -T; exponent-3 part replaced by its exact value proportional to |3 c_l - 1 - c|"
+  }
+ },
+ {
+  "tag": "v5_R0knot2",
+  "label": "v5: knot scheme 2",
+  "scalars": {
+   "x_star": [
+    8.600063805157173,
+    2.9402020296741347e-13
+   ],
+   "mu_minus_1": [
+    -2.252895592062558e-08,
+    -2.252718600788668e-08
+   ],
+   "g": [
+    29.749490663330196,
+    29.749490663336783
+   ],
+   "w_prime_P": [
+    10.150725243807514,
+    10.1507252438148
+   ],
+   "c": [
+    15.726087831924634,
+    15.72608783192464
+   ],
+   "c_l": [
+    5.575362610641545,
+    5.575362610641548
+   ],
+   "contracted": true
+  },
+  "middle": {
+   "ncells": 7279,
+   "done": true,
+   "r_range": [
+    0.007651424601381517,
+    1467.9616993091718
+   ],
+   "sup_W_over_m": 0.0002596444459776816,
+   "r_at": [
+    8.789667941225016,
+    8.79805929034142
+   ],
+   "sup_W": 0.00012014501780856503,
+   "mult_half": 0.000380701005422382,
+   "mult_half_minus_k": 0.00033186602564290034,
+   "L2": 5.2085346047612634e-09,
+   "P_shell_W_over_m": 0.0002596444459776816,
+   "max_rem_eps": 2.100580791830412e-11,
+   "max_remA": 3.2718827593298975e-15
+  },
+  "outer": {
+   "ncells": 8948,
+   "r_range": [
+    1467.9616993091693,
+    35391242962.85218
+   ],
+   "sup_W_over_m": 9.314410448038817e-05,
+   "r_at": 33483.54410505129,
+   "mult_half_minus_k": 0.0014639096416433366,
+   "L2": 3.914095095360141e-07
+  },
+  "inner": {
+   "ncells": 2632,
+   "r_range": [
+    5.155489343160731e-05,
+    0.007636903017964362
+   ],
+   "sup_W_over_m": 9.179393517086517e-06,
+   "r_at": 0.007145642962974531,
+   "mult_half_minus_k": 9.182146585630735e-06,
+   "L2": 3.476317534967698e-16
+  },
+  "tail": {
+   "T_out": 17.0,
+   "r_T": 35458545490.87109,
+   "delta": 0.3206394687062458,
+   "tail_bound_weighted": "[2.70279e-6 +/- 2.42e-12]",
+   "tail_bound_unweighted": "[2.15040e-9 +/- 4.01e-15]",
+   "monotone_ok": true,
+   "crude_total_diagnostic_only": "[0.0160393 +/- 4.40e-8]",
+   "leading_sumC": "[1.15361e-7 +/- 5.35e-14]",
+   "rest_majorant": "[1.10890e-9 +/- 3.80e-16]",
+   "crude_bound_weighted_diagnostic_only": "[0.372208 +/- 7.30e-8]",
+   "lin": "[4.38628e-11 +/- 3.30e-18]",
+   "PR_twice": "[0.000516477 +/- 3.66e-10]",
+   "QR_twice": "[0.0155229 +/- 3.35e-8]",
+   "time": 0.686260461807251,
+   "note": "termwise majorant at tau = T of W(1+u)^delta/m; valid for all tau >= T since every term decays relative to m (1+u)^-delta (delta < 1-k)"
+  },
+  "tail05": {
+   "T_out": 17.0,
+   "r_T": 35458545490.87109,
+   "delta": 0.5,
+   "tail_bound_weighted": "[0.000146389 +/- 2.35e-10]",
+   "tail_bound_unweighted": "[2.15040e-9 +/- 4.01e-15]",
+   "monotone_ok": true,
+   "crude_total_diagnostic_only": "[0.0160393 +/- 4.40e-8]",
+   "leading_sumC": "[1.15361e-7 +/- 5.35e-14]",
+   "rest_majorant": "[1.10890e-9 +/- 3.80e-16]",
+   "crude_bound_weighted_diagnostic_only": "[20.1596 +/- 4.94e-5]",
+   "lin": "[4.38628e-11 +/- 3.30e-18]",
+   "PR_twice": "[0.000516477 +/- 3.66e-10]",
+   "QR_twice": "[0.0155229 +/- 3.35e-8]",
+   "time": 0.7253882884979248,
+   "note": "termwise majorant at tau = T of W(1+u)^delta/m; valid for all tau >= T since every term decays relative to m (1+u)^-delta (delta < 1-k)"
+  },
+  "itail": {
+   "T_in": 5.0,
+   "r_T": 5.155489343160731e-05,
+   "bound_W_over_m": "[2.138e-6 +/- 4.12e-10]",
+   "majorant_total": "[5.38729e-12 +/- 3.93e-19]",
+   "conv3_removed": "[5.38729e-12 +/- 3.92e-19]",
+   "normalization_defect": "[+/- 2.45e-15]",
+   "bound_W_over_r5": "[1.796 +/- 9.62e-5]",
+   "time": 0.40875864028930664,
+   "note": "valid for all r <= r_T: every term has exponent >= 3 in tau' (>= 0 after division by m), hence maximal at -T; exponent-3 part replaced by its exact value proportional to |3 c_l - 1 - c|"
+  }
+ },
+ {
+  "tag": "n7",
+  "label": "N7: centre-regular variant",
+  "scalars": {
+   "x_star": [
+    8.600063805157177,
+    2.9402020296740933e-13
+   ],
+   "mu_minus_1": [
+    -2.2528936380700347e-08,
+    -2.2527166467961448e-08
+   ],
+   "g": [
+    29.749490663330192,
+    29.74949066333678
+   ],
+   "w_prime_P": [
+    10.150725243807495,
+    10.150725243814781
+   ],
+   "c": [
+    15.726087831924634,
+    15.72608783192464
+   ],
+   "c_l": [
+    5.575362610641545,
+    5.575362610641548
+   ],
+   "contracted": true
+  },
+  "middle": {
+   "ncells": 7809,
+   "done": true,
+   "r_range": [
+    0.007651424601381517,
+    3412.966858161569
+   ],
+   "sup_W_over_m": 0.00025964455093859006,
+   "r_at": [
+    8.789667941225016,
+    8.79805929034142
+   ],
+   "sup_W": 0.00012014506637702245,
+   "mult_half": 0.0003807011593202373,
+   "mult_half_minus_k": 0.00033186615979928253,
+   "L2": 4.972666464624229e-09,
+   "P_shell_W_over_m": 0.00025964455093859006,
+   "max_rem_eps": 2.1050454733198957e-11,
+   "max_remA": 9.25739277649166e-15
+  }
+ }
+]

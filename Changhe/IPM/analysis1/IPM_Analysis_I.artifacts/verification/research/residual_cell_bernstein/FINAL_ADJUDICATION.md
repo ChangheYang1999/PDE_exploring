@@ -1,0 +1,7 @@
+# Completed Bernstein output assessment prepared for review
+
+At 2026-10-21T15:49:52.391223+00:00, all27 exact and subdivision chunks, the complete output audit, explicit input guards and review extract have passed. On cells4102,4125 and4211 the resulting upper bounds validate all63 saved caps for D_t^i D_theta^j with i+j<=5. This means only those cells and orders. The exact comparisons use fractions, not the displayed decimal values.
+
+The direct algorithm uses exact local polynomial composition; the separate checker uses exact and Arb global Bernstein conversion followed by three midpoint subdivision levels. They share the proved power-to-Bernstein identity. Recorded comparisons cover4698000 Bernstein coefficients,9396 exact coefficient stream matches,75168 saved modal maximum enclosure checks and9396 coefficient-radius checks. The final audit reconstructs63 angularly weighted cell bounds. The supplementary guard binds3132 coefficient rows,27 chronological chunk pairs and63 inherited interval, half-width and tail labels. All inherited coefficient inputs and the accepted topic144 verdict have explicit digest bindings.
+
+The analytic tails and original canonical center integrals are inherited from the accepted topic144 scope. This new range refinement does not integrate canonical moments independently, cover other cells, locate any full-domain maximum, establish global derivative forcing or prove an inverse. A complete actual model review and a subsequent independent written assessment remain required for the final verdict. No IPM endpoint is claimed.
