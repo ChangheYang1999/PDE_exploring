@@ -1,0 +1,60 @@
+{
+  "utc": "2026-10-20T23:26:06.987741+00:00",
+  "script_sha256": "94edc3eddb4aa6cee22ada1886aca90d4beb36bf65ccd893b441dbcd9953733e",
+  "proof_sha256": "1c821b1f60544bc85f23bfd34af1b6698dd53ecc5c562adfdca7f7e543f71e2d",
+  "own_compiler": {
+    "path": "verification/certificates/inverse/integer_beta_closed_form/exact_inverse.py",
+    "sha256": "b18483f69affdc972f506f9cd557213797825625d72d558b21916d6da06a76d5"
+  },
+  "own_helper": {
+    "path": "verification/certificates/inverse/beta2_closed_form/exact_inverse.py",
+    "sha256": "894cd8316d422d442e7345835603c877cfca5cc570967ab34a1e998b7a1baa6e"
+  },
+  "states": [
+    {
+      "source": "numerics/states/TL_B2m_N176.npz",
+      "source_sha256": "92363f7d6a126466610f033a52c71859b6bc3ca9979827069f8d95153b77bcc6",
+      "metadata": {
+        "beta": 2.0,
+        "beta_map": 2.0,
+        "L": 1.0,
+        "sigma_a": 1.5,
+        "sigma_G": 1.25,
+        "M": 44,
+        "N": 176,
+        "Me": 88,
+        "Ne": 352,
+        "mapname": "t",
+        "e_a": 6.0,
+        "e_G": 5.0,
+        "exponent_semantics": "Source computes rounded binary64 products first, then uses the resulting integer exponents on t."
+      },
+      "compiled_file": "TL_B2m_N176_compiled.json",
+      "compiled_sha256": "3788b78b8c2863ba0311a6ec3c981cad7cb28886167c5f649168543ec02523a5",
+      "bytes": 5251329
+    },
+    {
+      "source": "numerics/states/TL_Nn6_a0m1_N144.npz",
+      "source_sha256": "3e80949b5d43657189ba08c20f18492bf2e13eee43241f6c9990e4f094eee143",
+      "metadata": {
+        "beta": 3.0,
+        "beta_map": 3.0,
+        "L": 1.0,
+        "sigma_a": 1.3333333333333333,
+        "sigma_G": 1.1666666666666667,
+        "M": 36,
+        "N": 144,
+        "Me": 72,
+        "Ne": 288,
+        "mapname": "t",
+        "e_a": 8.0,
+        "e_G": 7.0,
+        "exponent_semantics": "Source computes rounded binary64 products first, then uses the resulting integer exponents on t."
+      },
+      "compiled_file": "TL_Nn6_a0m1_N144_compiled.json",
+      "compiled_sha256": "e2042f16abeb62ac97d4c71c47d49da8ce4a09b6c1a0c1fd2d9ac5014676a8a9",
+      "bytes": 3379507
+    }
+  ],
+  "cpu_seconds": 0.919875749
+}

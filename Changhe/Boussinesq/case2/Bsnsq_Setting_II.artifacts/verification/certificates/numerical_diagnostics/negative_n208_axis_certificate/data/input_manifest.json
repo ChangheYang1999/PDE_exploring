@@ -1,0 +1,65 @@
+{
+  "utc": "2026-10-21T00:08:02.203939+00:00",
+  "script_sha256": "85b0d134958c91e3657fc0dfa5cc6a8bf9f1531602651ea4a6b29b075694fc6d",
+  "proof_sha256": "963fa4a7f5b05bc2230722aa4d1ff61faa2f0aabe9f961ce014464f7e2428ec6",
+  "own_compiler": {
+    "path": "verification/certificates/inverse/integer_beta_closed_form/exact_inverse.py",
+    "sha256": "b18483f69affdc972f506f9cd557213797825625d72d558b21916d6da06a76d5"
+  },
+  "own_helper": {
+    "path": "verification/certificates/inverse/beta2_closed_form/exact_inverse.py",
+    "sha256": "894cd8316d422d442e7345835603c877cfca5cc570967ab34a1e998b7a1baa6e"
+  },
+  "states": [
+    {
+      "source": "numerics/states/TL_B2m_N208.npz",
+      "source_sha256": "d3348148012b3cde4990603ee56762a5a00a722e278ad745328bd5227e4e1e61",
+      "metadata": {
+        "beta": 2.0,
+        "beta_map": 2.0,
+        "L": 1.0,
+        "sigma_a": 1.5,
+        "sigma_G": 1.25,
+        "M": 52,
+        "N": 208,
+        "Me": 104,
+        "Ne": 416,
+        "mapname": "t",
+        "e_a": 6.0,
+        "e_G": 5.0,
+        "exponent_semantics": "Source computes rounded binary64 products first, then uses the resulting integer exponents on t."
+      },
+      "compiled_file": "TL_B2m_N208_compiled.json",
+      "compiled_sha256": "321ac1744916a91f17603ffea9befa747e9ddbdb47da1c02f975e732c0c7e0ac",
+      "bytes": 8409623,
+      "exact_moments": {
+        "a0": {
+          "numerator": "-1125899905732427",
+          "denominator": "1125899906842624",
+          "zero": false
+        },
+        "b0": {
+          "numerator": "-57646075141315911",
+          "denominator": "144115188075855872",
+          "zero": false
+        },
+        "c": {
+          "numerator": "3221432668574009001294916636366228713653530870499577659354712398100087685948968241007957724292335315881",
+          "denominator": "536905446316048490587494396803591862536984729009026525831687794507372910484056784793209713681078681600",
+          "zero": false
+        },
+        "c_minus_6": {
+          "numerator": "-9322281942230049744455322461568377503554581495635414368944149776955372467751300557794136773719",
+          "denominator": "536905446316048490587494396803591862536984729009026525831687794507372910484056784793209713681078681600",
+          "zero": false
+        },
+        "five_b0_minus_two_a0": {
+          "numerator": "160921757",
+          "denominator": "144115188075855872",
+          "zero": false
+        }
+      }
+    }
+  ],
+  "cpu_seconds": 0.9496986219999999
+}
