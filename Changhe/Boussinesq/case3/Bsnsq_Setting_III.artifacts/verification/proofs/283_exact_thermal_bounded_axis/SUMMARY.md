@@ -1,0 +1,16 @@
+# P283: global thermal transport with a bounded central axis component
+
+Published 2026-10-22T05:39:32.769583+00:00. **CONFIRMED**, by the complete independent proof,55/55controls plus15/15support controls, and actual Opus492-494follow-up reviews with all advice independently adjudicated. Actual Opus491was truncated and supplies no verdict. Proof written05:28:19before controls; original54/55harness issue and corrected55/55are preserved.
+
+For every beta>=2,A!=0and realc0there are smooth Psi,Omega,Theta with compactly supported Psi andOmega, exact full-plane inverse U, U(0)=(0,c0), the required x parity and nonzero center jet, such that the thermal PDE holds on allR2and every mixed derivative of the vorticity residual vanishes everywhere on the axis. The central component of {Theta_xx(0,y)!=0}is(-3,3), with all thermal/vorticity axis jets flat at its ends and A I2tending to negative infinity at both ends from withinJ. Outside a ball centered at(0,c0/beta),Theta is exactly homogeneous of degree(beta-2)/beta, with corresponding bounds on every derivative; beta2temperature is bounded.
+
+The construction is **not a B2solution**: its vorticity residual is nonzero somewhere offaxis. Its vorticity changes sign onx>0. Thus the exact thermal equation, full-plane inverse, center and parity, sublinearity, and all vorticity axis Taylor equations together still do not exclude a boundedJ. Positivity and the offaxis vorticity equation are not imposed. General B2 remainsOPEN.
+
+New proof ingredients: a flat-residual correction integrated along the complete backward flow, justified under transverse expansion from suppR; uniform transverse expansion for beta>2; and an explicit one-way passage estimate from suppRfor beta2. See PROOF.mdand verification/SUPPORT_PROOF.md. The all-order coefficient construction is P278with a modified exterior drift and additional summable bounds on cutoffs. No numerical candidate or formal proof build is claimed.
+
+Exact/literal controls and manufactured ordinary quadrature checks are in verification/controls.json. Additional15/15controls are in verification/support_checks.json. Public review metadata and full independent adjudication are in verification/opus_adjudication.md. All four modelcalls returned claude-opus-5-5; their public text is preserved separately from unused private response blocks. Three explanatory errors in the review prose were corrected through follow-ups, without changing the main theorem.
+
+
+## A164 review adjudication, 2026-10-22T05:53:10.031992+00:00
+
+CONFIRMED: all six sections of the lead's Astra review were read and independently compared to the existing argument. A164_SUPPLEMENT_PROOF.md explicitly derives the aggregate flow-chain exponent before21/21new comparison controls (0.371279251s, 2026-10-22T05:52:42.935268+00:00 to 2026-10-22T05:52:43.306556+00:00). Parity, final taper area, cutoff ranges, finite active cutoffs, critical escape, endpoint constant and compactness-before-energy requirements are already satisfied. The main proof hash is unchanged. A164 made no successful Opus invocation; it is not an Opus endorsement. Actual Opus492-494are separate previously adjudicated reviews. No unresolved correction to P283remains. Global B2 OPEN.

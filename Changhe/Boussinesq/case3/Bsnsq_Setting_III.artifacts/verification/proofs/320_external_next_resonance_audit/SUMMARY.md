@@ -1,0 +1,11 @@
+# P320: A171 next-resonance audit adjudication
+
+Published 2026-10-22T08:31:33.518155+00:00. **CONFIRMED** for the matrix, analytic compatibility argument, factorial conversions and local realization, with one intermediate displayed-formula correction. **REFUTED as written**: the four-term display in A171's proof lacks a plus sign before its third term. The corrected display gives exactly the subsequent stated residue. This does not change P308's proof or matrix.
+
+All 34/34 independent controls pass, 2026-10-22T08:27:58.262079+00:00 to 2026-10-22T08:27:58.305692+00:00, 0.043613 seconds. The finite convolution is -6/385, the explicit curvature terms are416a and390a, and the normalized matrix is (12Ck/25,0; -9k^8/1925,-9Ck/20), determinant -27C^2k^2/125. For increments ell T^2 in D and F_gamma Z in gamma, the columns scale by C^2/24 and1/6, giving (C^3k/50,0; -3C^2k^8/15400,-3Ck/40) and determinant -3C^4k^2/2000. The prior vorticity residue after curvature tuning is -9Ck(H+k^7/231)/10. The corrected plus gives the required -CHk/5 contribution.
+
+Exact one-character replacement and the corrected full A171 proof (47c59990) are in verification/. Code: code_independent/check_external_next_resonance_audit.py (1b7d24b5ba7a1368543659dbd0ef70ca351628632ab1bf8a5064eef8b8bea4ec). The standalone informal proof was written and frozen before the controls. The initial quote-delimiter preparation failure happened before any computation and is recorded in freeze.json.
+
+A171's advertised Opus request failed at credential retrieval before invocation. This verifier's actual request550 reached us.anthropic.claude-opus-5-5 and returned claude-opus-5-5 but NO_AUDIT_TEXT/refusal, 08:27:20.542813 to08:27:25.824730 UTC, 5.281707 seconds. Neither is a completed model endorsement. P308's earlier534/535 limitations remain recorded. The complete referee argument has now been independently read and adjudicated against P308's already established arbitrary-parameter proof and exact controls, with the local transcription defect explicitly identified.
+
+This packet concerns finitely many analytic axis coefficients and polynomial residual orders O(x^8), O(x^7). It establishes no exact neighborhood transport solution, all-orders convergence, full-plane inverse or global B2 endpoint. General B2 remains **OPEN**.

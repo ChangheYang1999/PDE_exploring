@@ -1,0 +1,9 @@
+# Whole-report review19 entry: CONFIRMED with one duration correction
+
+Recorded 2026-10-22T07:30:28.733848+00:00. The complete R1-R5 audit passes 81/81 controls. Use verification/approved_text.md with the exact duration replacement in required_wording_replacements.json. Its mathematical additions, historical fifteen-row count, unchanged95state rows, and162-entry timeline are confirmed. The complete proposed report was reconstructed independently, without executing a lead assembler. The P304 seven corrections and seven subsequent L1-L7 refinements are retained in approved_preview.md; actual4.53 placeholders and rebasing still require readback.
+
+R1 correctly counts fifteen earlier rows changed to y*, excluding the two new rows inserted already carrying y*. R2 uses the fixed positive constant A=a0 of Q1. The finite-order, simple-order and infinite-order endpoint statements retain their distinct local hypotheses. R3 and R4 alter references and layout only. R5 must respect the controlling48hourwall-clockcap and report gaps separately, without calling them active research. GeneralB2remainsOPEN.
+
+Actual Claude Opus5.5 reviews530and531 returned complete public answers. Review530's extra boundedness caveat was incorrect because A is constant. Review531 withdrew it after the definition was provided. Its remaining positive-side and beta>0 scope notes already hold explicitly in the verified theorem. Review531 did not rederive the coefficient -C/(4beta+3); that coefficient has a complete independent proof in P299. No unseen-file review is implied.
+
+The initial pair parser read the wrong quoted fragment in R4, producing71/73controls, preserved in verification. After correction73/73passed. The present audit adds direct95rowcount and P304L1-L7propagation, yielding81/81. This doesnotchangeanymathematical result. Actual adoption remains to be verified.

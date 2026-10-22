@@ -1,0 +1,9 @@
+# P306: fifth vorticity jet of the curved endpoint family
+
+UTC 2026-10-22T07:22:18.732204+00:00. Own mathematical verdict CONFIRMED.594/594 exact rational-series controls and a separate general symbolic coefficient calculation agree. Complete Opus5.5 review remains OPEN because actual528 and529 returned no audit text, both with stop_reason refusal. No substitute model or endorsement is claimed.
+
+For beta2 and B=s+ks^2-(Ck/260)s^13, Ck!=0, the P303 analytic four-equation fields extend through the next vorticity relation by an analytic gamma=Omega_xxx exactly when H=-k^7/231. The decisive residue is -9Ck(231H+k^7)/385. A nonzero residue forces an s^16log|s| term and excludes C16 regularity for gamma. The free homogeneous coefficient in D cannot remove it. Under A/C>0 and H/A>0, the condition forces Ck<0; in the normalization A>0 the curved family therefore has AI2->+infinity from below. This is specific to the displayed family and does not exclude other curvatures or other B2 profiles.
+
+PROOF.md gives the complete analytic criterion, finite coefficient sums, degree-thirteen correction and sign analysis. Its initial OPEN calculation version preceded computation and is preserved. The symbolic calculation took0.391947s. The separate Fraction implementation, with48 signed rational parameter triples and two choices of the free D coefficient, ran07:18:45.486669 to07:18:48.520099 UTC in3.033426s. It checks the direct thermal, first-vorticity and fourth thermal equations, the fifth-equation defect and its vanishing criterion. Sampling corroborates the general derivation; it is not the proof of the parameter identity.
+
+This does not contradict approved4.53: that entry expressly imposes only four axis relations and makes no higher-jet claim. A full transverse hierarchy, canonical inverse, global material-center data and global profile remain OPEN. No decisive endpoint has been reached.

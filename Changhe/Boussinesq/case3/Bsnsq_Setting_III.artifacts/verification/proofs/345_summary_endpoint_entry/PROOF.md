@@ -1,0 +1,27 @@
+# Conditional summary of formal and smooth endpoint factorizations
+
+Prepared 2026-10-22T10:53:31.607794+00:00 before this packet's checks. The purpose is to audit exactly two proposed replacements and one timeline entry in the lead report. General B2 existence remains OPEN.
+
+## Statement and assumptions
+A profile means a smooth full-plane solution of the prompt's moving-center B2 equations, with beta>0, x-reflection parity, Theta(0,y)=0, the nonzero center coefficient a0, the canonical relative whole-plane inverse, sublinear U and the stated admissible tails. Let J be the component of {Theta_xx(0,y) != 0} containing0, b(y)=W_2(0,y). At any finite endpoint y_* of J where b has a simple zero, kappa=-b'(y_*)>0. In one sufficiently small connected symmetric neighbourhood of (0,y_*), there are nonzero real constants c1,c2 of the same sign, positive integers n>m with n-m even, smooth positive Y, and a smooth defining function phi of the local unstable curve such that
+
+Theta=c1 x^2 phi^n, Omega=c2 x phi^m Y,
+n=2+(3beta+2)/kappa, m=1+(2beta+1)/kappa.
+
+The gradient of phi is nonzero at every point of its zero curve. Both zero sets in that neighbourhood are exactly the union of the axis with the curve, and xOmegaTheta>0 off this union. The finite endpoint and simple-zero conditions are conditional; neither endpoint existence nor boundedness of J is asserted.
+
+Separately, for the specific formal beta2 family of P321/P331, the formal temperature equals c x^2 phi_form^10, c=C/2 nonzero, with phi_form in R[[x^2,y_*-y]]. This is a formal identity, not a smooth or convergent realization.
+
+## Proof with exact dependencies
+The already audited sublinear-flow exclusion of beta<2 applies to the nonzero temperature, so any profile has beta>=2. The axis coefficient equations b a'=(2b'-3beta-2)a and b eta'+(2beta+1-b')eta=2a, and the center conditions, identify the ends of J with the nearest noncentral zeros of b. At a simple finite end its derivative is negative. The independently checked axis asymptotics give nonzero coefficients C and E of the same sign in original coordinates, E/C>0, with thermal order n and vorticity order m as displayed. These are the hypotheses proved and tracked in P337/P338/P339/P342, including the global parity argument, not new assumptions on an arbitrary local field.
+
+For clarity the integrality/parity argument is not local alone: the audited global axis continuation and W=beta X+o(|X|) give d=1/kappa and r0=beta/kappa positive integers, r0+d odd, n=2+3r0+2d and m=1+2r0+d. Thus n-m=1+r0+d is positive and even; the displayed formulas give n-m=1+(beta+1)/kappa>1. This implication uses the full profile hypotheses.
+
+Use signed u=epsilon(y-y_*), epsilon=+1 or -1, and the normalized P338 temperature root Z=(u-H(x))L, with H even, H(0)=0, L smooth positive and L(0,0)=1. The actual smooth root and invariant graph, not merely their formal jets, come from P338. Its graph is the local unstable manifold because, as derived in P338 from div W=2beta and b'(y_*)=-kappa, the eigenvalues at the endpoint are 2beta+kappa>0 and -kappa<0. Put phi=Z. At its zero graph, partial_u Z=L>0, so the gradient is nonzero. P339/P342 give Theta=(C_u/2)x^2Z^n and Omega=E_u xZ^mY with Y smooth positive in a smaller connected neighbourhood, C_u=epsilon^n C, E_u=epsilon^m E. Since n-m is even, C_u and E_u have the same nonzero sign. Set c1=C_u/2,c2=E_u. The zero sets follow because Y,L and both constants are nonzero. Moreover xOmegaTheta=(C_u E_u/2)x^4Z^(n+m)Y; n+m is even, so the product is positive when x and Z are nonzero. Reflection symmetry follows from H even. All assertions use the same small neighbourhood supplied by P342. Shrinking it if necessary would also make the gradient nonzero everywhere there, but only the zero-set assertion is needed.
+
+For the formal statement P321 supplies the formal beta2 solution and P331 proves Theta=(C/2)r Z^10, r=x^2, with Z formal in (r,y_*-y). Hence c=C/2 and phi_form=Z give the claim directly. Its formal nature is essential: P326 gives analyticity of each separate axis coefficient on a common disk, with no convergence in x. The lead's reuse of phi in separately qualified sentences is logically harmless; distinct phi_form is optional notation, not a correction to the theorem.
+
+## Editorial verification
+Freeze the original report, SPEC, proposed replacement text, preview, timeline entries and relevant referee public answer. Independently extract each quoted replacement pair without executing the lead's script. Verify uniqueness and location of old anchors, exact new text after whitespace normalization, and reconstruct the whole report's word sequence by just those replacements and one new timeline entry. Compare every existing timeline entry and table, including97 state rows. The Summary and section5 wording must preserve conditional local scope and distinguish the formal series from the actual smooth function. Fill timeline placeholders with the real verification interval and checked count, never inside a clock token accidentally. Keep old files if any check fails. Verify actual adoption separately later.
+
+No other lane's code is run; source is read only. These finite editorial checks do not re-prove all preceding theorems and do not turn local necessary conditions into a global solution. No JavaScript/TypeScript, servers, RLScience cluster, or Lean/Lake builds are used. All writes stay in this lane.

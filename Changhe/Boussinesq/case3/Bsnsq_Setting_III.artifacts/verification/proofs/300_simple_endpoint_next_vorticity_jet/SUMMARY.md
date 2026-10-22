@@ -1,0 +1,11 @@
+# P300: next local vorticity jet
+
+UTC 2026-10-22T07:00:57.430030+00:00. Verdict CONFIRMED,72/72independentcontrols; actualOpus518 returnedclaude-opus-5-5 andacceptedthenewproofconditionalonP299. NoB2endpoint.
+
+Every P299localanalyticconstruction extends through the nextvorticity equation b gamma_y+(6beta+1-3b_y)gamma=D+2v_y eta-6v eta_y. An analyticgammaoforderatleast6-q existsuniquelyinthatorderclass. Its scalarhomogeneousexponentis5-3/(3beta+2)<5, belowtheforcingorder6-q>=5;anexplicitconvergentseries provesexistence. Thus allprescribedextendedlimits ofAI2 persistthroughthisadditionalnecessaryrelation.
+
+Localpolynomialsin x then satisfy thePoissonequationexactly, thethermalresidualthroughx^4,andthevorticityresidualthroughx^3. The remainders areO(x^6)andO(x^5)uniformlyoncompactyintervals,asx->0. These arefiniteTaylorcancellations,notanexactlocalPDEsolution,noglobalinverseorfarfieldclaim,andtheendpointT=0isnottheprompt'snonzeroa0center.
+
+OwnCartesianpolynomialdifferentiationandscalarchecks:code_independent/check_simple_endpoint_next_jet.py SHA95ef90b68edfaf75e50914fd651897695dac8e366cf84b4978bdd07a511b4243, 2026-10-22T06:59:06.845528+00:00to2026-10-22T06:59:08.145992+00:00,1.300458s. The72controlsincludealljetcoefficients,signedcoordinateconversion,positivecoefficientgaps,seriesinverse identities,parityandP299dependencyhash. Initial72/72preservedbeforeminorwordingclarifications.
+
+ActualOpus518 completepublicreviewacceptedtheconditionaltheorem in33.390489s. It independentlyderivedthejetsandseriesargumentandexplicitlydidnotinspectP299orartifacts. P299is independentlyprovedand318controls/actualOpus515/517verified. Itsminorrequests(explicitrealanalyticdata,spacing,andbeta1/3lower-orderhomogeneousexample)wereadoptedwithoutchangingequations. GeneralB2andfullhierarchyextendibilityremainOPEN.

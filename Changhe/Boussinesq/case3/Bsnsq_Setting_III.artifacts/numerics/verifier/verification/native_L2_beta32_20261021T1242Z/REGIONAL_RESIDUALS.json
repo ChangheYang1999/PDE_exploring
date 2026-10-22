@@ -1,0 +1,890 @@
+{
+  "created_utc": "2026-10-21T12:42:49.829713+00:00",
+  "source_results_sha256": "a3c182e36edc66de58e3b4096fcaa494590c7f589a23c6d4e19d1315f145042f",
+  "method": "Reduction of saved raw arrays, h=1e-5 max(1,r); no new PDE evaluations.",
+  "states": [
+    {
+      "label": "L2_beta3p2",
+      "source_sha256": "a9b09aa21357068d24dabd43118264a5e051ecd23a4a8e530a27ac71e3c9ff33",
+      "forcing_description": "eps*stored_Omega+(1-eps)*stored_external_Omega+lam*seed_defect; source in original beta_seed=3.0, unknown beta_basis=3.2; independently integrated whole-plane inverse, not solver interpolation",
+      "runs": [
+        {
+          "kind": "transport",
+          "raw_arrays_sha256": "de88f22006fc95d5948e380f3437af7e92461e19f613357bab00e3ea07c2502c",
+          "regions": [
+            {
+              "field": "F",
+              "r_min": 0,
+              "r_max": 0.03,
+              "points": 2688,
+              "max_abs": 8.900606355055629e-06,
+              "max_abs_point": [
+                0.0,
+                0.023713737056616554
+              ],
+              "max_ratio": 3.6854197126667698e-06,
+              "max_ratio_point": [
+                0.00042169650342858224,
+                -2.5821463656772206e-20
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "F",
+              "r_min": 0.03,
+              "r_max": 0.3,
+              "points": 960,
+              "max_abs": 9.062242366741913e-06,
+              "max_abs_point": [
+                0.0,
+                0.1313665910371465
+              ],
+              "max_ratio": 3.6776986343464783e-06,
+              "max_ratio_point": [
+                0.031555069809571096,
+                0.002068228544695865
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "F",
+              "r_min": 0.3,
+              "r_max": 3,
+              "points": 2592,
+              "max_abs": 0.0006833554540786047,
+              "max_abs_point": [
+                0.0,
+                1.978138801922537
+              ],
+              "max_ratio": 0.00010650145574438994,
+              "max_ratio_point": [
+                0.0,
+                1.978138801922537
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "F",
+              "r_min": 3,
+              "r_max": 30,
+              "points": 2592,
+              "max_abs": 0.0002933560697711002,
+              "max_abs_point": [
+                0.4127600617243142,
+                3.1352239364111365
+              ],
+              "max_ratio": 1.7646282776506367e-05,
+              "max_ratio_point": [
+                2.9944559942427236,
+                1.0164808402246561
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "F",
+              "r_min": 30,
+              "r_max": 300,
+              "points": 1632,
+              "max_abs": 1.040087995307984e-06,
+              "max_abs_point": [
+                0.0,
+                56.23413251903491
+              ],
+              "max_ratio": 4.823529188778645e-05,
+              "max_ratio_point": [
+                237.2120496633475,
+                -158.5000242421007
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "F",
+              "r_min": 300,
+              "r_max": null,
+              "points": 4992,
+              "max_abs": 3.4274275981444665e-07,
+              "max_abs_point": [
+                27.58027090963924,
+                420.7936188447291
+              ],
+              "max_ratio": 0.0006206832073182727,
+              "max_ratio_point": [
+                -86602540.37844387,
+                -50000000.00000001
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "G",
+              "r_min": 0,
+              "r_max": 0.03,
+              "points": 2688,
+              "max_abs": 5.529195570286305e-06,
+              "max_abs_point": [
+                -2.758027090963924e-05,
+                0.00042079361884472913
+              ],
+              "max_ratio": 1.3822624789946434e-06,
+              "max_ratio_point": [
+                -0.00042169650342858224,
+                -2.5821463656772206e-20
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "G",
+              "r_min": 0.03,
+              "r_max": 0.3,
+              "points": 960,
+              "max_abs": 5.526357849117147e-06,
+              "max_abs_point": [
+                0.0,
+                0.03162277660168379
+              ],
+              "max_ratio": 1.3798370733107779e-06,
+              "max_ratio_point": [
+                -0.03162277660168379,
+                -1.9363366072701935e-18
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "G",
+              "r_min": 0.3,
+              "r_max": 3,
+              "points": 2592,
+              "max_abs": 0.0004043968902136541,
+              "max_abs_point": [
+                0.0,
+                1.978138801922537
+              ],
+              "max_ratio": 5.393037029611318e-05,
+              "max_ratio_point": [
+                -2.9811237245499727,
+                0.1953931719876652
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "G",
+              "r_min": 3,
+              "r_max": 30,
+              "points": 2592,
+              "max_abs": 0.00021883294751079418,
+              "max_abs_point": [
+                0.4127600617243142,
+                3.1352239364111365
+              ],
+              "max_ratio": 5.9899886066359326e-05,
+              "max_ratio_point": [
+                3.1555069809571097,
+                0.2068228544695865
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "G",
+              "r_min": 30,
+              "r_max": 300,
+              "points": 1632,
+              "max_abs": 6.562453618623454e-06,
+              "max_abs_point": [
+                0.0,
+                133.3521432163324
+              ],
+              "max_ratio": 0.00015648607241061925,
+              "max_ratio_point": [
+                279.8106908559347,
+                55.6578069362915
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "G",
+              "r_min": 300,
+              "r_max": null,
+              "points": 4992,
+              "max_abs": 3.4956313588499184e-06,
+              "max_abs_point": [
+                -55.04243886504293,
+                418.08883138357123
+              ],
+              "max_ratio": 0.000714282355174689,
+              "max_ratio_point": [
+                17441.10269810316,
+                3469.251027391435
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "Theta",
+              "r_min": 0,
+              "r_max": 0.03,
+              "points": 2632,
+              "max_abs": 4.966739154611995e-09,
+              "max_abs_point": [
+                0.023713737056616554,
+                -1.452047609110372e-18
+              ],
+              "max_ratio": 3.6854197141705124e-06,
+              "max_ratio_point": [
+                0.00042169650342858224,
+                -2.5821463656772206e-20
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "Theta",
+              "r_min": 0.03,
+              "r_max": 0.3,
+              "points": 940,
+              "max_abs": 5.827163951366288e-07,
+              "max_abs_point": [
+                0.25810150513933733,
+                0.01691686640465714
+              ],
+              "max_ratio": 3.6776988137406988e-06,
+              "max_ratio_point": [
+                0.031555069809571096,
+                0.002068228544695865
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "Theta",
+              "r_min": 0.3,
+              "r_max": 3,
+              "points": 2538,
+              "max_abs": 0.00020243374195061392,
+              "max_abs_point": [
+                2.9811237245499727,
+                0.1953931719876652
+              ],
+              "max_ratio": 9.974726481607818e-05,
+              "max_ratio_point": [
+                -0.12937646769730105,
+                1.973903454902924
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "Theta",
+              "r_min": 3,
+              "r_max": 30,
+              "points": 2538,
+              "max_abs": 0.0002323098772416543,
+              "max_abs_point": [
+                3.1555069809571097,
+                0.2068228544695865
+              ],
+              "max_ratio": 1.7646312798397624e-05,
+              "max_ratio_point": [
+                2.9944559942427236,
+                1.0164808402246561
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "Theta",
+              "r_min": 30,
+              "r_max": 300,
+              "points": 1598,
+              "max_abs": 0.00557792042111771,
+              "max_abs_point": [
+                226.3377628878032,
+                -173.67507386259413
+              ],
+              "max_ratio": 4.823527742351109e-05,
+              "max_ratio_point": [
+                -237.2120496633475,
+                -158.5000242421007
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "Theta",
+              "r_min": 300,
+              "r_max": null,
+              "points": 4888,
+              "max_abs": 8.808393776507273,
+              "max_abs_point": [
+                79335334.02912351,
+                -60876142.90087207
+              ],
+              "max_ratio": 0.0006206832122286548,
+              "max_ratio_point": [
+                86602540.37844387,
+                -50000000.00000001
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "Omega",
+              "r_min": 0,
+              "r_max": 0.03,
+              "points": 2632,
+              "max_abs": 1.3091585249896953e-07,
+              "max_abs_point": [
+                0.023713737056616554,
+                -1.452047609110372e-18
+              ],
+              "max_ratio": 1.3822624791492697e-06,
+              "max_ratio_point": [
+                -0.00042169650342858224,
+                -2.5821463656772206e-20
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "Omega",
+              "r_min": 0.03,
+              "r_max": 0.3,
+              "points": 940,
+              "max_abs": 1.3942153190837914e-06,
+              "max_abs_point": [
+                0.2586553060042349,
+                -1.5838069629028272e-17
+              ],
+              "max_ratio": 1.3798368296773201e-06,
+              "max_ratio_point": [
+                0.03162277660168379,
+                -1.9363366072701935e-18
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "Omega",
+              "r_min": 0.3,
+              "r_max": 3,
+              "points": 2538,
+              "max_abs": 0.00017243996078630808,
+              "max_abs_point": [
+                2.9811237245499727,
+                0.1953931719876652
+              ],
+              "max_ratio": 5.3930361221784235e-05,
+              "max_ratio_point": [
+                2.9811237245499727,
+                0.1953931719876652
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "Omega",
+              "r_min": 3,
+              "r_max": 30,
+              "points": 2538,
+              "max_abs": 0.00019101565734558346,
+              "max_abs_point": [
+                -3.101515381641116,
+                0.6169297670266568
+              ],
+              "max_ratio": 5.989988072366219e-05,
+              "max_ratio_point": [
+                3.1555069809571097,
+                0.2068228544695865
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "Omega",
+              "r_min": 30,
+              "r_max": 300,
+              "points": 1598,
+              "max_abs": 0.00018865269539002083,
+              "max_abs_point": [
+                226.33776288780325,
+                173.67507386259405
+              ],
+              "max_ratio": 0.00015648605607001019,
+              "max_ratio_point": [
+                279.8106908559347,
+                55.6578069362915
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "Omega",
+              "r_min": 300,
+              "r_max": null,
+              "points": 4888,
+              "max_abs": 0.00035469985775999843,
+              "max_abs_point": [
+                -2126.820436595299,
+                -1048.8317702968734
+              ],
+              "max_ratio": 0.0007142823260677376,
+              "max_ratio_point": [
+                17441.10269810316,
+                3469.251027391435
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            }
+          ]
+        },
+        {
+          "kind": "self",
+          "raw_arrays_sha256": "a29c7093a33c5c5155811624b46cd9520b626b00454959093d0014a614e8d22a",
+          "regions": [
+            {
+              "field": "F",
+              "r_min": 0,
+              "r_max": 0.03,
+              "points": 2688,
+              "max_abs": 3.9520585328166926,
+              "max_abs_point": [
+                0.0,
+                0.023713737056616554
+              ],
+              "max_ratio": 0.6183736870572907,
+              "max_ratio_point": [
+                0.0,
+                0.023713737056616554
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "F",
+              "r_min": 0.03,
+              "r_max": 0.3,
+              "points": 960,
+              "max_abs": 5.420208065066667,
+              "max_abs_point": [
+                0.0,
+                0.2586553060042349
+              ],
+              "max_ratio": 0.654341763078596,
+              "max_ratio_point": [
+                0.0,
+                0.2586553060042349
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "F",
+              "r_min": 0.3,
+              "r_max": 3,
+              "points": 2592,
+              "max_abs": 15.173254317940614,
+              "max_abs_point": [
+                0.0,
+                1.5308263650666825
+              ],
+              "max_ratio": 0.726829283414396,
+              "max_ratio_point": [
+                0.0,
+                1.272916534689162
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "F",
+              "r_min": 3,
+              "r_max": 30,
+              "points": 2592,
+              "max_abs": 5.973680102305263,
+              "max_abs_point": [
+                0.0,
+                3.5382524171673637
+              ],
+              "max_ratio": 0.30673692853543716,
+              "max_ratio_point": [
+                -1.4769003145138162,
+                3.5655527695723435
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "F",
+              "r_min": 30,
+              "r_max": 300,
+              "points": 1632,
+              "max_abs": 0.02018873100606284,
+              "max_abs_point": [
+                0.0,
+                31.622776601683793
+              ],
+              "max_ratio": 0.1474173765933289,
+              "max_ratio_point": [
+                29.94455994242723,
+                -10.164808402246571
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "F",
+              "r_min": 300,
+              "r_max": null,
+              "points": 4992,
+              "max_abs": 0.0005118278621631834,
+              "max_abs_point": [
+                0.0,
+                316.2277660168379
+              ],
+              "max_ratio": 0.08896256718145006,
+              "max_ratio_point": [
+                283.6160634562789,
+                -139.8639644424681
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "G",
+              "r_min": 0,
+              "r_max": 0.03,
+              "points": 2688,
+              "max_abs": 2.450226968770476,
+              "max_abs_point": [
+                0.0,
+                0.023713737056616554
+              ],
+              "max_ratio": 0.37607759943031877,
+              "max_ratio_point": [
+                0.0,
+                0.023713737056616554
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "G",
+              "r_min": 0.03,
+              "r_max": 0.3,
+              "points": 960,
+              "max_abs": 3.1034077822202737,
+              "max_abs_point": [
+                0.0,
+                0.2586553060042349
+              ],
+              "max_ratio": 0.3940595250422403,
+              "max_ratio_point": [
+                0.0,
+                0.2586553060042349
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "G",
+              "r_min": 0.3,
+              "r_max": 3,
+              "points": 2592,
+              "max_abs": 6.080557013729717,
+              "max_abs_point": [
+                0.0,
+                1.5308263650666825
+              ],
+              "max_ratio": 0.41416175031529573,
+              "max_ratio_point": [
+                0.0,
+                0.8152453096108179
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "G",
+              "r_min": 3,
+              "r_max": 30,
+              "points": 2592,
+              "max_abs": 4.046237483384246,
+              "max_abs_point": [
+                0.0,
+                3.859326507516048
+              ],
+              "max_ratio": 0.24214277362845682,
+              "max_ratio_point": [
+                0.0,
+                4.216965034285822
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "G",
+              "r_min": 30,
+              "r_max": 300,
+              "points": 1632,
+              "max_abs": 0.05968780278750066,
+              "max_abs_point": [
+                0.0,
+                31.622776601683793
+              ],
+              "max_ratio": 0.11000481331663008,
+              "max_ratio_point": [
+                -20.850345414164586,
+                -23.775262272160653
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "G",
+              "r_min": 300,
+              "r_max": null,
+              "points": 4992,
+              "max_abs": 0.003611077628420947,
+              "max_abs_point": [
+                0.0,
+                316.2277660168379
+              ],
+              "max_ratio": 0.07583193437813175,
+              "max_ratio_point": [
+                208.50345414164585,
+                -237.7526227216065
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "Theta",
+              "r_min": 0,
+              "r_max": 0.03,
+              "points": 2632,
+              "max_abs": 0.0021496670810600186,
+              "max_abs_point": [
+                0.023713737056616554,
+                -1.452047609110372e-18
+              ],
+              "max_ratio": 0.6183650386783082,
+              "max_ratio_point": [
+                0.0015509526092435367,
+                0.023662964125278765
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "Theta",
+              "r_min": 0.03,
+              "r_max": 0.3,
+              "points": 940,
+              "max_abs": 0.2572998220373399,
+              "max_abs_point": [
+                0.25368531682714696,
+                0.05046114693954631
+              ],
+              "max_ratio": 0.6542479232721837,
+              "max_ratio_point": [
+                -0.016916866404657303,
+                0.25810150513933733
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "Theta",
+              "r_min": 0.3,
+              "r_max": 3,
+              "points": 2538,
+              "max_abs": 7.985999102471892,
+              "max_abs_point": [
+                -1.2574334296829355,
+                1.2574334296829353
+              ],
+              "max_ratio": 0.726325126658703,
+              "max_ratio_point": [
+                0.08325272461746178,
+                1.2701911226775418
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "Theta",
+              "r_min": 3,
+              "r_max": 30,
+              "points": 2538,
+              "max_abs": 7.305922610686512,
+              "max_abs_point": [
+                -23.740572434678878,
+                -11.707554707526757
+              ],
+              "max_ratio": 0.3067369285309971,
+              "max_ratio_point": [
+                1.4769003145138162,
+                3.5655527695723435
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "Theta",
+              "r_min": 30,
+              "r_max": 300,
+              "points": 1598,
+              "max_abs": 11.01578168351271,
+              "max_abs_point": [
+                237.2120496633475,
+                -158.5000242421007
+              ],
+              "max_ratio": 0.1474173765954136,
+              "max_ratio_point": [
+                29.94455994242723,
+                -10.164808402246571
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "Theta",
+              "r_min": 300,
+              "r_max": null,
+              "points": 4888,
+              "max_abs": 31.447403267044592,
+              "max_abs_point": [
+                79335334.02912351,
+                -60876142.90087207
+              ],
+              "max_ratio": 0.08896256718779323,
+              "max_ratio_point": [
+                -283.6160634562789,
+                -139.8639644424681
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "Omega",
+              "r_min": 0,
+              "r_max": 0.03,
+              "points": 2632,
+              "max_abs": 0.05665231630216496,
+              "max_abs_point": [
+                0.023713737056616554,
+                -1.452047609110372e-18
+              ],
+              "max_ratio": 0.3760730459111746,
+              "max_ratio_point": [
+                0.0015509526092435367,
+                0.023662964125278765
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "Omega",
+              "r_min": 0.03,
+              "r_max": 0.3,
+              "points": 940,
+              "max_abs": 0.6190153465924426,
+              "max_abs_point": [
+                0.24984184017619243,
+                0.06694491931071635
+              ],
+              "max_ratio": 0.3940045584093364,
+              "max_ratio_point": [
+                0.016916866404657303,
+                0.25810150513933733
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "Omega",
+              "r_min": 0.3,
+              "r_max": 3,
+              "points": 2538,
+              "max_abs": 2.506452465948217,
+              "max_abs_point": [
+                0.6993092242508069,
+                1.2112391066039743
+              ],
+              "max_ratio": 0.4139168549330924,
+              "max_ratio_point": [
+                0.05331959433874472,
+                0.8134998068235726
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "Omega",
+              "r_min": 3,
+              "r_max": 30,
+              "points": 2538,
+              "max_abs": 2.1297558294383596,
+              "max_abs_point": [
+                0.8226890664695758,
+                4.135937233602639
+              ],
+              "max_ratio": 0.24119717756599443,
+              "max_ratio_point": [
+                0.27580270909639243,
+                4.207936188447291
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "Omega",
+              "r_min": 30,
+              "r_max": 300,
+              "points": 1598,
+              "max_abs": 0.4916995258406474,
+              "max_abs_point": [
+                -17.568673365324287,
+                -26.29337780093202
+              ],
+              "max_ratio": 0.1100048133190232,
+              "max_ratio_point": [
+                20.850345414164586,
+                -23.775262272160653
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            },
+            {
+              "field": "Omega",
+              "r_min": 300,
+              "r_max": null,
+              "points": 4888,
+              "max_abs": 0.19141459820304824,
+              "max_abs_point": [
+                158.11388300841892,
+                -273.8612787525831
+              ],
+              "max_ratio": 0.07583193437814738,
+              "max_ratio_point": [
+                208.50345414164585,
+                -237.7526227216065
+              ],
+              "zero_normalizers": 0,
+              "infinite_ratios": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

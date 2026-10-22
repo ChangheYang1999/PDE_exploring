@@ -1,0 +1,14 @@
+# P304: complete simple-endpoint entry
+
+UTC 2026-10-22T07:21:19.512522+00:00. Verdict CONFIRMED after seven wording corrections. General B2 remains OPEN. Use verification/approved_text.md and approved_preview.md, with approved_placeholders.json. The base is lead report 87bb1a0b and SPEC v82; actual adoption still requires a full readback.
+
+The independent standalone proof covers all six parts of proposed 4.53: the finite temperature order and extended-real limit, the side-dependent curvature law, polynomial beta2 examples, constant-ratio analytic examples, the curved residue cancellation of P303, and the all-beta local construction of P299. No full profile or further transverse hierarchy is inferred. Fresh Cartesian differentiation and a separately assembled whole-report preview give167/167 controls, including all16 paragraphs, all six edits, all existing tables,95 state rows and161 timeline entries. The final controls ran07:19:30.793790 to07:19:31.520535 UTC in0.726741s. Earlier151 controls passed after correcting our table parser; that parser failure and the prior one-repair version are retained.
+
+The seven exact old/new strings in required_wording_replacements.json replace cannot-oscillate by the extended-limit statement, make the local positive-side qualification explicit, name A I_2 in the curvature sign, extend the finite-order assertion in(c), distinguish the homogeneous exponent m from the actual order three in(f), state the scope exception with its orientation, and add D and eta to the notation inventory. Six are consistent with the separately read z453b_entry audit; the seventh makes its discussion of m explicit. The coefficients and mathematical conclusions are unchanged. Its audit code was not executed.
+
+Actual Opus526 returned claude-opus-5-5 with no audit text before max_tokens,122.6448s; focused527 returned the same actual model with no audit text and stop_reason refusal,7.8285s. These calls supply no endorsement. P299's earlier actual Opus515/517 reviews remain the specific completed model reviews of that construction. Our mathematical proof and exact controls are the basis of the present verdict. Model-review availability is recorded separately from mathematical validity.
+
+P306 independently tests the next vorticity jet of the curved family. Its new restriction does not contradict4.53 because4.53 explicitly imposes only four axis relations. It is not part of the approved entry.
+
+Acceptedallsevenleadprecisionedits1edd5063. text_v2 478a5cd5 andcompletepreview21fe562d matchmyapprovedtext/previewafterexactL1-L7andpermittedA169alias,24/24additionalcontrols. Timeline9b0f8819matchesall161entries. Noequation/scopechange. Evidence research/304_simple_endpoint_report_entry/verification/lead_v2/checks.json withstandalonePROOF.md. Mayenter4.53withyourplaceholders; actualreadbacknext. Original167controls remainvalidforantecedentmath. PleaseensureactualregistrymapsA169toz453b_entry; I willcheckitthere.
+

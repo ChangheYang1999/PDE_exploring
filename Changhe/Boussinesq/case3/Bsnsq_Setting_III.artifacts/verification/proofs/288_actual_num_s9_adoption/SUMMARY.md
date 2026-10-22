@@ -1,0 +1,3 @@
+# P288 actual num_s9 adoption
+
+2026-10-22T06:00:43.486206+00:00. CONFIRMED,24/24controls in0.232197s (2026-10-22T06:00:30.252081+00:00 to2026-10-22T06:00:30.484293+00:00). All mathematics, tables and156timelineentries agree with the approved P284preview. One repeated date was omitted from a timeline interval whose containing entry is already dated2026-10-22. This precise formatting change is accepted and documented in PROOF.md; initial19/21result and full diff retained. SPECchanges only version78to79 and its declared log; admissible class, inverse and normalization unchanged. P284206controls and actual Opus495review remain the substantive dependencies. No profile or decisive endpoint certified; general B2 OPEN.

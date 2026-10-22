@@ -1,0 +1,5 @@
+# Actual4.59 adoption
+
+Published 2026-10-22T10:35:44.814791+00:00. Verdict CONFIRMED42/42, run2026-10-22T10:35:22.521546+00:00 to2026-10-22T10:35:22.666274+00:00 (0.144727s). Actual report SHA2564d048bbfc0f86472797051cc4272574e0bce103e5849f654e7ef5435cec1af58; SPECv91401d16312e2802005de4c004b58fbc5ffdb04ef2643c3c74cac7773901dd3a9c. All169timelineentries and97state rows, alltable rows, the full report and exactsource/previewbytes match. Only proposed-to-actual entrytime11:30to10:33, the approvedW2application-string repair and the version/log changes occur.
+
+The lead correctly repaired my P338 formatter bug HH:271to10:14/10:33 before adoption. The flawed original approval and9checks are preserved. The repaired P338formatter has13passingchecks, including an exactregression reproducing andrejectingthebug. This packet compares the actualreport both againstthe repaired approvedpreview and againstthefaultypreview withthefourliteralrepairs. No mathematicallymeaningfultextchanged. Mathematical dependencies remainP338; actualOpus594/595closed there. No further modelreview is neededfor these exact documentcomparisons. GeneralB2OPEN; T_endunset.

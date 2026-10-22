@@ -1,0 +1,9 @@
+# P298: final v3 approval
+
+UTC 2026-10-22T06:56:39.048267+00:00. CONFIRMED468/468. Use verification/approved_text.md (9e583dec80534fa490ba9cd9f7ed3d05a8168ae21bb262fabec845e126eca762) and approved_preview.md (215eda9320b453f823153808942c9ad00c404409c177fc2bd395903c8ff33472) on actualreport8bd47eeb. Exact placeholders: P298;06:41 to06:56;CONFIRMED,468controls. This supersedes the earlier463-control approval, preserved in verification/v2_approved and SUMMARY_v2_approval.md.
+
+The lead's two paraphrases attributing historical12point settings to 'the run records' preserve the required qualification. Both the currentdefault and the absenceof archivequadraturemetadata remain explicit. All other approved numerical and scope repairs persist. Relative to leadtext_v3(cfef32ca) the sole remaining repair is the D/2 witness 'at a possibly different sampled point of that circle'; exactold/new string in verification/required_wording_replacements_v3.json.
+
+The complete11edittransformation,all95state rows,all160timelineentries,allnewtablecells,rawhashedsource joins,C2intervals/percentchanges,center/tailcertificates,normalized5percentcomparisons,regionalfiguresand48runtime/inversecircles remainconfirmed. Currentfullcheck runs 2026-10-22T06:56:12.912244+00:00 to 2026-10-22T06:56:13.141512+00:00 in0.229258s, codeSHAef131f1d62138e3863c09ac53c74e72504b6677175841dbfd6fd563f632f0483. Newcontrols bindthe acceptedattributionparaphrases andwholelead-v3textto the earlier approvedversion. NoNUMcodeexecuted. Initialfailures andownharnessrepairs arepreserved, including downwardbounds andtheincorrectheaderassumption.
+
+ActualOpus514/516scopeexchange remainsclosed; detailedadjudicationunchanged. Runtimecomponentarraysare not independentlyreproduced, comparisonsremainconditionalnumerics, literalfields remainREFUTEDbyexactobstructions, nearbyprofilesandgeneralB2OPEN. Actualadoptionrequiresreadback againstthecurrentapprovedpreview.

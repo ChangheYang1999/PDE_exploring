@@ -1,0 +1,21 @@
+(1) physical residuals minus tau-power x (B2-P) residuals (W = beta X + U - v0):
+  omega equation: R_om - tau^-2 P_om: 0 (identity holds)
+  theta equation: R_th - tau^(beta-3) P_th: 0 (identity holds)
+  Poisson: R_ps - tau^-1 P_ps: 0 (identity holds)
+(2) material centre: z_c'(t) - u(t, z_c(t)) with u = tau^(beta-1) U(X), X(z_c) = 0:
+  component 1: tau**(beta - 1)*(v01 + Subs(Derivative(Psi(0, y), y), y, 0))  -> zero iff v01 = U_1(0) (= 0 by the x-parity of Psi)
+  component 2: tau**(beta - 1)*(v02 - Subs(Derivative(Psi(x, 0), x), x, 0))  -> zero iff v02 = U_2(0)
+  limit: z_c - z_* = -tau**beta*v02/beta -> 0 as tau -> 0 (beta > 0): True
+(3) translation equivalence (fixed limiting centre z_*): X' = (z - z_*)/tau^beta = X - v0/beta; fields Omega'(X') = Omega(X' + v0/beta) etc.
+  (P) residual of the translate - (B2-P) residual: omega: 0 (identity holds)
+  (P) residual of the translate - (B2-P) residual: theta: 0 (identity holds)
+  fixed-centre field at X' = -v0/beta (material centre): (-v01 - Subs(Derivative(Psi(0, y), y), y, 0), -v02 + Subs(Derivative(Psi(x, 0), x), x, 0)) -> vanishes iff v0 = U(0): the material centre is the stagnation point of (P)
+  fixed-centre field at X' = 0 (blow-up point z_*): (-Subs(Derivative(Psi(v01/beta, _xi_2), _xi_2), _xi_2, v02/beta), Subs(Derivative(Psi(_xi_1, v02/beta), _xi_1), _xi_1, v01/beta)) = U(v0/beta) -> nonzero in general; it is U(0) = 0 only in B1 (then v0 = 0 and both points coincide)
+(4) scaling family (same beta): Theta_l = l Theta(X/l), Omega_l = Omega(X/l), Psi_l = l^2 Psi(X/l), v0_l = l v0
+  omega: S_om - P_om(X/l): 0 (identity holds)
+  theta: S_th - l P_th(X/l): 0 (identity holds)
+  Poisson: S_ps - P_ps(X/l): 0 (identity holds)
+  jet: Theta_l = l a0 (x/l)^2 + ... = (a0/l) x^2: a0 -> a0/l; U_l(0) = l U(0): v0 -> l v0; the centre strain Psi_xy(0) is scale invariant
+(5) local centre identities (PROMPT sec. 3) with Theta = a0 x^2 + ..., Omega = b0 x + ..., Psi = c x y + ... (W(0) = 0):
+  theta x^2 coefficient: -a0*(-beta + 2*c - 2) = 0 -> c = beta/2 + 1
+  omega x coefficient: -2*a0 + b0*beta - b0*c + b0 = 0 -> b0 = 4*a0/beta

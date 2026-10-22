@@ -1,0 +1,359 @@
+# Complete topic catalog
+
+Packets 310, 314, 318, 322, 327, 358, 359 and 360 audited the packaging of an earlier, superseded version of the working archives and of the report files as they then stood; they concern no mathematical or numerical result and are not included here. Only the written proof and summary of each packet are published; links to other files of a packet (its verification/ subfolder, inputs and outputs) point into the working archives, which are not published.
+
+Snapshot 2026-10-22T12:43:37.176505+00:00. This is chronological navigation. File existence is not a proof-quality verdict. Read the [root summary](../FINAL_VERIFIER_SUMMARY.md), each proof's dependencies and its scoped verdict for mathematical reading order.
+
+- 1. Transport restrictions for outward similarity fields: [proof](01_transport/PROOF.md).
+- 2. The local equilibrium curve at beta=2: [proof](02_beta2_curve/PROOF.md).
+- 3. Canonical relative velocity and the absolute center drift: [proof](03_inverse/PROOF.md).
+- 4. Temperature on the source basin when beta>2: [proof](04_source_basin/PROOF.md).
+- 5. Restricted exclusions from the forward scattering map: [proof](05_scattering_tail/PROOF.md).
+- 6. A single finite temperature L^p integral is impossible: [proof](06_temperature_integrability/PROOF.md).
+- 7. Moving-center reconstruction, signed scaling, and observer changes: [proof](07_reconstruction_scaling/PROOF.md).
+- 8. The beta=2 branch cannot have globally real-analytic velocity: [proof](08_analytic_beta2/PROOF.md).
+- 9. Vorticity mass and finite-integrability obstructions: [proof](09_vorticity_mass/PROOF.md).
+- 10. The translation mode in material-center dynamic rescaling: [proof](10_translation_mode/PROOF.md).
+- 11. Three counterexamples to insufficient verification criteria: [proof](11_adversarial_examples/PROOF.md).
+- 12. Smoothness conditions for the polar representation near the center: [proof](12_polar_smoothness/PROOF.md).
+- 13. An explicit averaged-velocity convention for a power-decaying vorticity class: [proof](13_mean_velocity_gauge/PROOF.md).
+- 14. Angular temperature limits and critical vorticity tails without velocity derivative decay: [proof](14_angular_far_field/PROOF.md).
+- 15. Sectorial mass and the absolute center-velocity integral: [proof](15_sector_mass/PROOF.md).
+- 16. A fixed radial tail exponent does not give an unconstrained similarity exponent: [proof](16_basis_exponent/PROOF.md).
+- 17. Nonzero transported circulation and the necessary slow vorticity tail: [proof](17_circulation_mass/PROOF.md).
+- 18. Slow-tail circulation in a fixed sector away from the axis: [proof](18_sector_circulation/PROOF.md).
+- 19. A logarithmic resonance in the whole-plane inverse: [proof](19_logarithmic_resonance/PROOF.md).
+- 20. A smooth beta=2 transport field with a compact equilibrium segment: [proof](20_beta2_transport_counterexample/PROOF.md).
+- 21. The circulation resolvent is not differentiable at the center: [proof](21_circulation_resolvent_regularities/PROOF.md).
+- 22. Independent Gaussian forcing and characteristic checks: [proof](22_gaussian_forcing_check/PROOF.md).
+- 23. Scattering from an integrable variational tail: [proof](23_integrable_variational_tail/PROOF.md).
+- 24. Beta-two regular levels and the range on the equilibrium set: [proof](24_beta2_regular_levels/PROOF.md).
+- 25. Constant relative velocity and noninteger endpoint powers: [proof](25_relative_constant_tail/PROOF.md).
+- 26. A velocity interpolation defect at the moving center: [proof](26_interpolated_velocity/PROOF.md).
+- 27. Exact desingularized transport on the invariant axis: [proof](27_axis_transport/PROOF.md).
+- 28. Axis zeros and smoothness resonances: [proof](28_axis_resonance/PROOF.md).
+- 29. Positive slow-tail forcing with the correct center data: [proof](29_shifted_power_forcing/PROOF.md).
+- 30. Continuation past an axis saddle imposes another parity condition: [proof](30_global_axis_parity/PROOF.md).
+- 31. Canonical relative inversion under sublinear velocity: [proof](31_sublinear_relative_inverse/PROOF.md).
+- 32. Power-decaying vorticity need not satisfy the orbit-integral derivative hypothesis: [proof](32_decaying_vorticity_without_D/PROOF.md).
+- 33. An automatic derivative-decay bootstrap from transported temperature: [proof](33_automatic_D_in_class_A/PROOF.md).
+- 34. The center strain identity and its correct polar temperature moment: [proof](34_center_strain_moment/PROOF.md).
+- 35. Fixed-polar second terms from local Boussinesq continuation: [proof](35_fixed_polar_second_terms/PROOF.md).
+- 36. Local propagation of all spatial derivatives and uniform polar corrections: [proof](36_local_smooth_continuation/PROOF.md).
+- 37. Cell interfaces and angular jets in a differentiated stream interpolant: [proof](37_revised_stream_interpolation/PROOF.md).
+- 38. Velocity second terms and the beta-two logarithmic resonance: [proof](38_velocity_second_terms/PROOF.md).
+- 39. Decaying, bounded, and beta-two vorticity class reductions: [proof](39_bounded_vorticity_reduction/PROOF.md).
+- 40. Polynomially bounded vorticity reduces to the decaying class: [proof](40_polynomial_tail_reduction/PROOF.md).
+- 41. Reduction under bounded macroscopic absolute vorticity averages: [proof](41_averaged_vorticity_reduction/PROOF.md).
+- 42. Smooth global stream and temperature search representation: [proof](42_global_stream_representation/PROOF.md).
+- 43. The scalar compatibility condition in the forced continuation: [proof](43_homotopy_scalar_compatibility/PROOF.md).
+- 44. Critical vorticity flux at infinity: [proof](44_critical_vorticity_flux/PROOF.md).
+- 45. Beta-two equilibrium arc, flat endpoints, and an outgoing open set: [proof](45_beta2_equilibrium_arc/PROOF.md).
+- 46. Independent modal integration for an interpolation error audit: [proof](46_production_interpolation_audit/PROOF.md), [verification results](46_production_interpolation_audit/verification/SUMMARY.md).
+- 47. A strain moment does not replace the transport equations: [proof](47_strain_moment_counterexamples/PROOF.md), [verification results](47_strain_moment_counterexamples/verification/SUMMARY.md).
+- 48. Global coordinates for a planar source with transported temperature: [proof](48_global_source_coordinates/PROOF.md).
+- 49. Independent audit of axis reflection exclusions: [proof](49_axis_reflection_exclusions/PROOF.md).
+- 50. Axis quotients and finite weighted identities for the full target class: [proof](50_axis_quotients_full_class/PROOF.md).
+- 51. Remaining global-source estimates and resolvent qualifications: [proof](51_global_source_integrals/PROOF.md).
+- 52. A two-term dipole obstruction and shifted radial vorticity exclusion: [proof](52_two_term_dipole_obstruction/PROOF.md).
+- 53. Beta-two zero-arc dynamics and an analytic-boundary exclusion: [proof](53_beta2_zero_arc_audit/PROOF.md).
+- 54. Beta-two scattering, weighted production, and canonical moments: [proof](54_beta2_scattering_identities/PROOF.md), [verification results](54_beta2_scattering_identities/verification/SUMMARY.md).
+- 55. Extremal temperature forces a zero-vorticity escaping orbit at beta two: [proof](55_beta2_extremal_orbits/PROOF.md).
+- 56. Weak vorticity sign and degenerate angular temperature extrema: [proof](56_weak_sign_extrema/PROOF.md).
+- 57. Additional equilibria for beta greater than two: [proof](57_additional_equilibria/PROOF.md).
+- 58. Weak vorticity sign near interior equilibrium fibres: [proof](58_beta2_interior_fibre_sign/PROOF.md).
+- 59. Finite-order critical directions and bounded vorticity jets at beta2: [proof](59_beta2_critical_jets/PROOF.md).
+- 60. Physical temperature critical points on escaping trajectories: [proof](60_physical_critical_orbits/PROOF.md).
+- 61. Smoothness of the escape conjugacy away from the trapped set: [proof](61_smooth_scattering_map/PROOF.md).
+- 62. Manufactured forcing and saved-state validation: [proof](62_manufactured_nonlinear_validation/PROOF.md).
+- 63. Adaptive full-plane modal inverse with the material-center gauge: [proof](63_adaptive_fullplane_inverse/PROOF.md).
+- 64. Global-source map formulation and the adjoint center-strain identity: [proof](64_global_source_map_adjoint/PROOF.md).
+- 65. Positive axis tails and their angular matching: [proof](65_axis_angular_tail_matching/PROOF.md).
+- 66. Positive global-source temperature tail and angular area geometry: [proof](66_global_temperature_tail_geometry/PROOF.md).
+- 67. Resonant logarithms and angular compatibility in the global-source class: [proof](67_resonant_angular_tail/PROOF.md).
+- 68. Independent characteristic reconstruction and its cutoff limit: [proof](68_independent_characteristic_reconstruction/PROOF.md).
+- 69. Homogeneous test functions, the strain identity, and their exact scope: [proof](69_homogeneous_weights/PROOF.md).
+- 70. Coordinate translation and the B2 center jet: [proof](70_literature_conventions/PROOF.md).
+- 71. Exact angular null directions in the serialized value fits: [proof](71_angular_sampling_nullspace/PROOF.md).
+- 72. Analytic time trajectories do not force analytic closure at an equilibrium: [proof](72_analytic_trajectories_and_endpoint_scope/PROOF.md).
+- 73. A local affine-coordinate obstruction to flat detachment: [proof](73_local_affine_detachment/PROOF.md).
+- 74. Arbitrary values of the strain functional with fixed positive fields and center jets: [proof](74_prescribed_strain_functional/PROOF.md).
+- 75. Exact center-strain shells and their scale dependence: [proof](75_strain_shells_and_tail/PROOF.md).
+- 76. A fixed forcing tail and a changing exponent basis: [proof](76_fixed_forcing_tail_scope/PROOF.md).
+- 77. Absolute integration by parts can fail for the adjoint strain kernel: [proof](77_adjoint_derivative_integrability/PROOF.md).
+- 78. A fixed source tail survives in the full-plane velocity: [proof](78_fixed_source_velocity_tail/PROOF.md).
+- 79. The exact integrated residual balance: [proof](79_integrated_residual_balance/PROOF.md).
+- 80. The source tail when the retied exponent increases: [proof](80_retied_source_above_seed/PROOF.md).
+- 81. Exact temperature transport and one strain identity do not certify a profile: [proof](81_exact_transport_and_one_strain_moment/PROOF.md).
+- 82. Type I tests and the scope of two boundary-profile papers: [proof](82_typeI_and_boundary_literature/PROOF.md).
+- 83. No exact profile with finite angular support: [proof](83_finite_angular_support/PROOF.md).
+- 84. Finite angular vorticity implies the excluded finite-mode system: [proof](84_finite_vorticity_angular_support/PROOF.md).
+- 85. A fixed spline envelope fixes the admissible exponent: [proof](85_fixed_envelope_rigidity/PROOF.md).
+- 86. Positive Gaussian source and a conditional transport-moment diagnostic: [proof](86_positive_gaussian_moment/PROOF.md), [verification results](86_positive_gaussian_moment/verification/SUMMARY.md).
+- 87. Positive vorticity, exact temperature transport, and one strain identity: [proof](87_positive_transport_strain_construction/PROOF.md).
+- 88. The homogeneous far field cannot be stationary: [proof](88_nonstationary_homogeneous_limit/PROOF.md).
+- 89. Exact far-field residual coefficients of the serialized spline fields: [proof](89_exact_serialized_tail_residuals/PROOF.md), [verification results](89_exact_serialized_tail_residuals/verification/SUMMARY.md).
+- 90. Third scalar tails and the determined constant velocity for 2 < beta < 3: [proof](90_third_terms_and_constant_velocity/PROOF.md).
+- 91. The beta-three third-source resonance and the next scalar terms: [proof](91_beta_three_logarithmic_tail/PROOF.md).
+- 92. Positive leading angular data do not force the beta-three logarithm: [proof](92_beta_three_resonance_not_forced_by_sign/PROOF.md).
+- 93. A stable ordinary-moment formula for the constant of a serialized inverse: [proof](93_stable_constant_of_serialized_inverse/PROOF.md), [verification results](93_stable_constant_of_serialized_inverse/verification/SUMMARY.md).
+- 94. Annular control of the constant while preserving the entire core: [proof](94_annular_control_of_inverse_constant/PROOF.md), [verification results](94_annular_control_of_inverse_constant/verification/SUMMARY.md).
+- 95. Stable logarithmic constant of a serialized beta-three source: [proof](95_serialized_beta_three_log_constant/PROOF.md), [verification results](95_serialized_beta_three_log_constant/verification/SUMMARY.md).
+- 96. Annular perturbations and the prompt's normalized residuals: [proof](96_normalized_residual_topology/PROOF.md), [verification results](96_normalized_residual_topology/verification/SUMMARY.md).
+- 97. The source-inverse constant as the basis exponent approaches three: [proof](97_nonresonant_to_log_limit/PROOF.md), [verification results](97_nonresonant_to_log_limit/verification/SUMMARY.md).
+- 98. A finite-part source constant for every noninteger exponent b>1: [proof](98_constant_above_three/PROOF.md), [verification results](98_constant_above_three/verification/SUMMARY.md).
+- 99. A missing fractional exponent forces C=0 for noninteger beta>2: [proof](99_constant_gap_noninteger_beta/PROOF.md), [verification results](99_constant_gap_noninteger_beta/verification/SUMMARY.md).
+- 100. Mixed-chart reformulation with its resonant correction: [proof](100_mixed_chart_verification/PROOF.md).
+- 101. Distinct tail powers for a fixed exponent-three source: [proof](101_native_source_mixed_powers/PROOF.md).
+- 102. An exact positivity certificate for the exponent-three temperature representation: [proof](102_exact_temperature_monotonicity/PROOF.md), [verification results](102_exact_temperature_monotonicity/verification/SUMMARY.md).
+- 103. A proper canonical chart from a certified exponent-three temperature: [proof](103_proper_temperature_chart/PROOF.md), [verification results](103_proper_temperature_chart/verification/SUMMARY.md).
+- 104. Exact certificate for the constant of a finite full-plane inverse: [proof](104_exact_inverse_constant/PROOF.md), [verification results](104_exact_inverse_constant/verification/SUMMARY.md).
+- 105. Independent physical residual from a mixed-coordinate generating function: [proof](105_independent_generating_function_evaluator/PROOF.md), [verification results](105_independent_generating_function_evaluator/verification/SUMMARY.md).
+- 106. Independent audit of positive axis compatibility: [proof](106_positive_axis_compatibility/PROOF.md), [verification results](106_positive_axis_compatibility/verification/SUMMARY.md).
+- 107. Axis slope as a monotone functional of the axial velocity: [proof](107_axis_slope_functional/PROOF.md), [verification results](107_axis_slope_functional/verification/SUMMARY.md).
+- 108. A smooth stream-function trial space with the canonical relative inverse: [proof](108_independent_stream_basis_solver/PROOF.md), [verification results](108_independent_stream_basis_solver/verification/SUMMARY.md).
+- 109. The inverse constant is not controlled by weak tail convergence for noninteger beta: [proof](109_noninteger_tail_constant_topology/PROOF.md), [verification results](109_noninteger_tail_constant_topology/verification/SUMMARY.md).
+- 110. Endpoint audit of an unweighted compactified polynomial inverse: [proof](110_compactified_inverse_endpoint_audit/PROOF.md), [verification results](110_compactified_inverse_endpoint_audit/verification/SUMMARY.md).
+- 111. Exact higher-order constant of the serialized relative inverse: [proof](111_higher_inverse_constant_certificate/PROOF.md), [verification results](111_higher_inverse_constant_certificate/verification/SUMMARY.md).
+- 112. Axis transport with an inexact center slope and finite cutoffs: [proof](112_axis_cutoff_normalization/PROOF.md), [verification results](112_axis_cutoff_normalization/verification/SUMMARY.md).
+- 113. Audit of the exterior C=0 construction and report scope: [proof](113_report_referee4_scope_audit/PROOF.md), [verification results](113_report_referee4_scope_audit/verification/SUMMARY.md).
+- 114. A smooth coefficient chart for a free-beta stream search: [proof](114_free_beta_stream_solver/PROOF.md), [verification results](114_free_beta_stream_solver/verification/SUMMARY.md).
+- 115. Affine kernels and the first constant-induced tail in the stream trial space: [proof](115_affine_kernel_and_fractional_tail/PROOF.md), [verification results](115_affine_kernel_and_fractional_tail/verification/SUMMARY.md).
+- 116. A smooth center chart imposing the first constant-induced tail identities: [proof](116_fractional_tail_center_chart/PROOF.md), [verification results](116_fractional_tail_center_chart/verification/SUMMARY.md).
+- 117. Prescribing the first nonlinear tail correction: [proof](117_first_ladder_tail_chart/PROOF.md), [verification results](117_first_ladder_tail_chart/verification/SUMMARY.md).
+- 118. Exact first transverse residual coefficients: [proof](118_exact_local_stream_residual/PROOF.md), [verification results](118_exact_local_stream_residual/verification/SUMMARY.md).
+- 119. Formal center recursion and smooth flat-residual realization: [proof](119_flat_center_realization/PROOF.md), [verification results](119_flat_center_realization/verification/SUMMARY.md).
+- 120. Angular transition widths and the location of a possible jump: [proof](120_angular_transition_diagnostics/PROOF.md), [verification results](120_angular_transition_diagnostics/verification/SUMMARY.md).
+- 121. Local realization, finite-axis realization, and the compact-exterior obstruction: [proof](121_local_and_finite_axis_realization/PROOF.md), [verification results](121_local_and_finite_axis_realization/verification/SUMMARY.md).
+- 122. The complete first axis system with a flat center residual: [proof](122_global_axis_first_order_realization/PROOF.md), [verification results](122_global_axis_first_order_realization/verification/SUMMARY.md).
+- 123. Smooth realization of every vorticity jet on the whole axis: [proof](123_whole_axis_flat_realization/PROOF.md), [verification results](123_whole_axis_flat_realization/verification/SUMMARY.md).
+- 124. A prescribed analytic velocity can fail on every open set: [proof](124_analytic_prescribed_velocity_obstruction/PROOF.md), [verification results](124_analytic_prescribed_velocity_obstruction/verification/SUMMARY.md).
+- 125. Enforcing the first transverse center equations in a tail-compatible chart: [proof](125_third_order_center_tail_chart/PROOF.md), [verification results](125_third_order_center_tail_chart/verification/SUMMARY.md).
+- 126. Exact profile equations on an arbitrary prescribed disk: [proof](126_arbitrary_disk_anisotropic_realization/PROOF.md), [verification results](126_arbitrary_disk_anisotropic_realization/verification/SUMMARY.md).
+- 127. Arbitrary exact disks, whole-axis flatness and smooth angular tails: [proof](127_prescribed_disk_full_axis_symbols/PROOF.md), [verification results](127_prescribed_disk_full_axis_symbols/verification/SUMMARY.md).
+- 128. Horizontal primitive reduction of B2 to a stream equation: [proof](128_horizontal_primitive_stream_reduction/PROOF.md), [verification results](128_horizontal_primitive_stream_reduction/verification/SUMMARY.md).
+- 129. Smooth angular tails of a horizontal primitive: [proof](129_horizontal_primitive_angular_compatibility/PROOF.md), [verification results](129_horizontal_primitive_angular_compatibility/verification/SUMMARY.md).
+- 130. Exact two-moment cancellation for polynomial angular source tails: [proof](130_exact_primitive_tail_cancellation/PROOF.md), [verification results](130_exact_primitive_tail_cancellation/verification/SUMMARY.md).
+- 131. Exact center certificate for a horizontal-primitive stream: [proof](131_exact_primitive_center_certificate/PROOF.md), [verification results](131_exact_primitive_center_certificate/verification/SUMMARY.md).
+- 132. A triangular repair of the primitive thermal residual through degree four: [proof](132_primitive_local_residual_projection/PROOF.md), [verification results](132_primitive_local_residual_projection/verification/SUMMARY.md).
+- 133. Axis normalization and a conditional primitive-tail obstruction: [proof](133_primitive_application_hypotheses/PROOF.md), [verification results](133_primitive_application_hypotheses/verification/SUMMARY.md).
+- 134. A joint local and leading-tail chart for the horizontal primitive: [proof](134_joint_primitive_center_tail_chart/PROOF.md), [verification results](134_joint_primitive_center_tail_chart/verification/SUMMARY.md).
+- 135. Independent verification of exterior exactness with a prescribed disk: [proof](135_exterior_gluing_verification/PROOF.md), [verification results](135_exterior_gluing_verification/verification/SUMMARY.md).
+- 136. Horizontal offsets of the exact primitive: [proof](136_horizontal_offset_obstruction/PROOF.md), [verification results](136_horizontal_offset_obstruction/verification/SUMMARY.md).
+- 137. A compact residual detected without boundary terms: [proof](137_compact_residual_detector/PROOF.md), [verification results](137_compact_residual_detector/verification/SUMMARY.md).
+- 138. A nonzero thermal jet forces a compatibility obstruction: [proof](138_compatibility_jet_injectivity/PROOF.md), [verification results](138_compatibility_jet_injectivity/verification/SUMMARY.md).
+- 139. Smooth local sufficiency of the compatibility equation: [proof](139_smooth_compatibility_uniqueness/PROOF.md), [verification results](139_smooth_compatibility_uniqueness/verification/SUMMARY.md).
+- 140. A compact thermal conjugacy changes the strain-weighted residual moment: [proof](140_compact_conjugacy_moment/PROOF.md), [verification results](140_compact_conjugacy_moment/verification/SUMMARY.md).
+- 141. The scalar transverse-zero kernel is not realized by its cubic-x stream family: [proof](141_beta2_transverse_J_obstruction/PROOF.md), [verification results](141_beta2_transverse_J_obstruction/verification/SUMMARY.md).
+- 142. Residual impulse identities for perturbations with fixed exterior fields: [proof](142_compact_residual_impulse/PROOF.md), [verification results](142_compact_residual_impulse/verification/SUMMARY.md).
+- 143. Compact changes preserving the temperature equation: [proof](143_compact_thermal_deformations/PROOF.md), [verification results](143_compact_thermal_deformations/verification/SUMMARY.md).
+- 144. Infinitely many polynomial moment constraints on a local repair: [proof](144_polynomial_patch_adjoint_moments/PROOF.md), [verification results](144_polynomial_patch_adjoint_moments/verification/SUMMARY.md).
+- 145. The impulse of a compact residual and its large-radius leading term: [proof](145_exterior_residual_impulse/PROOF.md), [verification results](145_exterior_residual_impulse/verification/SUMMARY.md).
+- 146. A compact stream with a positive core must change vorticity sign: [proof](146_compact_stream_sign_loss/PROOF.md), [verification results](146_compact_stream_sign_loss/verification/SUMMARY.md).
+- 147. Realized angular temperature moments with sign-changing vorticity: [proof](147_angular_tail_realization/PROOF.md), [verification results](147_angular_tail_realization/verification/SUMMARY.md).
+- 148. Compact residual configurations with exactly zero affine impulse: [proof](148_zero_impulse_glued_configurations/PROOF.md), [verification results](148_zero_impulse_glued_configurations/verification/SUMMARY.md).
+- 149. A conditional exterior dipole formula for the residual impulse: [proof](149_renormalized_impulse/PROOF.md), [verification results](149_renormalized_impulse/verification/SUMMARY.md).
+- 150. Finite exterior expansions forced by the profile equations: [proof](150_finite_exterior_expansion/PROOF.md), [verification results](150_finite_exterior_expansion/verification/SUMMARY.md).
+- 151. Renormalized energy: the cubic boundary term and its precise scope: [proof](151_renormalized_energy_audit/PROOF.md), [verification results](151_renormalized_energy_audit/verification/SUMMARY.md).
+- 152. Compact thermal-preserving deformations change the finite-part energy: [proof](152_compact_energy_variation/PROOF.md), [verification results](152_compact_energy_variation/verification/SUMMARY.md).
+- 153. A transverse-pressure term missing from an asserted axis reduction: [proof](153_axis_reduction_literature_audit/PROOF.md), [verification results](153_axis_reduction_literature_audit/verification/SUMMARY.md).
+- 154. Compact twists make the finite-part energy unbounded above: [proof](154_unbounded_compact_energy/PROOF.md), [verification results](154_unbounded_compact_energy/verification/SUMMARY.md).
+- 155. Far-annulus conjugacies make finite-part energy arbitrarily negative: [proof](155_arbitrary_finite_part_energy/PROOF.md), [verification results](155_arbitrary_finite_part_energy/verification/SUMMARY.md).
+- 156. A beta-two configuration satisfying both equations near its equilibrium arc: [proof](156_beta2_local_pde_realization/PROOF.md), [verification results](156_beta2_local_pde_realization/verification/SUMMARY.md).
+- 157. A decaying canonical-pressure counterexample to the closed apex equation: [proof](157_decaying_canonical_pressure_counterexample/PROOF.md), [verification results](157_decaying_canonical_pressure_counterexample/verification/SUMMARY.md).
+- 158. Outgoing endpoint geometry and a forced vorticity defect at beta = 2: [proof](158_beta2_outgoing_residual/PROOF.md), [verification results](158_beta2_outgoing_residual/verification/SUMMARY.md).
+- 159. Nonanalytic strong unstable germs with the same beta-two local equations: [proof](159_nonanalytic_endpoint_deformation/PROOF.md), [verification results](159_nonanalytic_endpoint_deformation/verification/SUMMARY.md).
+- 160. Exact center-strain certificates for the saved native-source representation: [proof](160_exact_center_strain/PROOF.md), [verification results](160_exact_center_strain/verification/SUMMARY.md).
+- 161. A harmonic local outgoing region with a nonanalytic boundary at beta two: [proof](161_harmonic_local_outgoing_region/PROOF.md), [verification results](161_harmonic_local_outgoing_region/verification/SUMMARY.md).
+- 162. No terminal temperature plateau at an outgoing beta-two endpoint: [proof](162_outgoing_endpoint_plateau_obstruction/PROOF.md), [verification results](162_outgoing_endpoint_plateau_obstruction/verification/SUMMARY.md).
+- 163. Exact center lower bounds for normalized residuals: [proof](163_exact_center_residual_lower_bounds/PROOF.md), [verification results](163_exact_center_residual_lower_bounds/verification/SUMMARY.md).
+- 164. Finite transverse polynomial velocities cannot form a smooth outgoing endpoint: [proof](164_finite_transverse_polynomial_endpoint/PROOF.md), [verification results](164_finite_transverse_polynomial_endpoint/verification/SUMMARY.md).
+- 165. Flatness rates require more than the local identities alone: [proof](165_no_automatic_quantitative_flatness/PROOF.md), [verification results](165_no_automatic_quantitative_flatness/verification/SUMMARY.md).
+- 166. An analytic transverse trace excludes an outgoing endpoint: [proof](166_transverse_analytic_cauchy_obstruction/PROOF.md), [verification results](166_transverse_analytic_cauchy_obstruction/verification/SUMMARY.md).
+- 167. What finite continuation comparisons can and cannot establish: [proof](167_finite_continuation_diagnostics/PROOF.md), [verification results](167_finite_continuation_diagnostics/verification/SUMMARY.md).
+- 168. The analytic value-trace hypothesis is not automatic from harmonicity on one side: [proof](168_analytic_trace_hypothesis_is_needed/PROOF.md), [verification results](168_analytic_trace_hypothesis_is_needed/verification/SUMMARY.md).
+- 169. Exact smoothness tests at radial spline knots: [proof](169_exact_spline_knot_regularity/PROOF.md), [verification results](169_exact_spline_knot_regularity/verification/SUMMARY.md).
+- 170. A center hypothesis in the compatibility converse: [proof](170_compatibility_center_hypothesis/PROOF.md), [verification results](170_compatibility_center_hypothesis/verification/SUMMARY.md).
+- 171. A Cartesian check of the full-plane inverse, with exact manufactured sources: [proof](171_independent_elliptic_residual_audit/PROOF.md), [verification results](171_independent_elliptic_residual_audit/verification/SUMMARY.md).
+- 172. Full-plane harmonic moments and a stable local Poisson representation: [proof](172_center_moment_inverse/PROOF.md), [verification results](172_center_moment_inverse/verification/SUMMARY.md).
+- 173. Smooth arc coordinates for the beta-two system: [proof](173_smooth_arc_coordinate_audit/PROOF.md), [verification results](173_smooth_arc_coordinate_audit/verification/SUMMARY.md).
+- 174. Strong unstable flatness, endpoint curvature, and the index of a zero arc: [proof](174_endpoint_unstable_curve_and_index/PROOF.md), [verification results](174_endpoint_unstable_curve_and_index/verification/SUMMARY.md).
+- 175. The first odd curvature jet determines endpoint crossing: [proof](175_odd_curvature_endpoint_crossing/PROOF.md), [verification results](175_odd_curvature_endpoint_crossing/verification/SUMMARY.md).
+- 176. Smooth fields within the finite spline representation: [proof](176_smooth_finite_spline_counterexample/PROOF.md), [verification results](176_smooth_finite_spline_counterexample/verification/SUMMARY.md).
+- 177. An isothermal side at incoming endpoints with isolated exterior zeros: [proof](177_incoming_endpoint_isothermal_side/PROOF.md), [verification results](177_incoming_endpoint_isothermal_side/verification/SUMMARY.md).
+- 178. The compact tree, incoming sectors and flat attachments at beta two: [proof](178_incoming_tree_sectors_and_attachments/PROOF.md), [verification results](178_incoming_tree_sectors_and_attachments/verification/SUMMARY.md).
+- 179. No constant-temperature or irrotational neighborhood along the endpoint strong orbits: [proof](179_strong_unstable_neighborhood_obstruction/PROOF.md), [verification results](179_strong_unstable_neighborhood_obstruction/verification/SUMMARY.md).
+- 180. A geometric incoming zero arc with four sources and two saddle ancestors: [proof](180_incoming_arc_with_saddle_ancestors/PROOF.md), [verification results](180_incoming_arc_with_saddle_ancestors/verification/SUMMARY.md).
+- 181. Sharp Hölder control of the compactified inverse constant: [proof](181_holder_control_of_inverse_constant/PROOF.md), [verification results](181_holder_control_of_inverse_constant/verification/SUMMARY.md).
+- 182. Three-region geometry when the beta-two zero set is the central arc: [proof](182_beta2_global_three_region_decomposition/PROOF.md), [verification results](182_beta2_global_three_region_decomposition/verification/SUMMARY.md).
+- 183. Exact comparisons of native radial splines and their inverse constants: [proof](183_certified_native_spline_differences/PROOF.md), [verification results](183_certified_native_spline_differences/verification/SUMMARY.md).
+- 184. A harmonic endpoint sign constraint and the critical vorticity flux at beta two: [proof](184_beta2_endpoint_sign_and_critical_flux/PROOF.md), [verification results](184_beta2_endpoint_sign_and_critical_flux/verification/SUMMARY.md).
+- 185. Quasianalytic exclusions for the beta-two B2 problem: [proof](185_quasianalytic_B2_exclusions/PROOF.md), [verification results](185_quasianalytic_B2_exclusions/verification/SUMMARY.md).
+- 186. Directional regularity at a smooth flat interface: [proof](186_directional_quasianalytic_obstructions/PROOF.md), [verification results](186_directional_quasianalytic_obstructions/verification/SUMMARY.md).
+- 187. Exact full-plane norms for native desingularized vorticity: [proof](187_full_modal_L2_certificates/PROOF.md), [verification results](187_full_modal_L2_certificates/verification/SUMMARY.md).
+- 188. Exact local coordinates, gluing and formal jets at an outgoing endpoint: [proof](188_local_outgoing_endpoint_reduction/PROOF.md), [verification results](188_local_outgoing_endpoint_reduction/verification/SUMMARY.md).
+- 189. Physical norms and the constant term of the relative inverse: [proof](189_physical_norms_and_inverse_constant/PROOF.md), [verification results](189_physical_norms_and_inverse_constant/verification/SUMMARY.md).
+- 190. What three reduced-mismatch samples establish: [proof](190_finite_difference_curvature_audit/PROOF.md), [verification results](190_finite_difference_curvature_audit/verification/SUMMARY.md).
+- 191. Physical weighted norms controlling the center strain: [proof](191_weighted_center_strain_control/PROOF.md), [verification results](191_weighted_center_strain_control/verification/SUMMARY.md).
+- 192. Primary boundary-profile claims and the wall trace: [proof](192_WLGB_boundary_literature_audit/PROOF.md), [verification results](192_WLGB_boundary_literature_audit/verification/SUMMARY.md).
+- 193. Scope of the fresh literature audit: [proof](193_recent_literature_search/PROOF.md), [verification results](193_recent_literature_search/verification/SUMMARY.md).
+- 194. Finite stagnation samples and the whole-plane inverse: [proof](194_stagnation_grid_audit/PROOF.md), [verification results](194_stagnation_grid_audit/verification/SUMMARY.md).
+- 195. Smooth local equations at an interior zero arc: [proof](195_interior_zero_arc_examples/PROOF.md), [verification results](195_interior_zero_arc_examples/verification/SUMMARY.md).
+- 196. Distinct mixed powers and own-ladder coefficient defects: [proof](196_forced_tail_coefficients/PROOF.md), [verification results](196_forced_tail_coefficients/verification/SUMMARY.md).
+- 197. What the vertex map-scale samples establish: [proof](197_vertex_mapscale_audit/PROOF.md), [verification results](197_vertex_mapscale_audit/verification/SUMMARY.md).
+- 198. Spatial scaling in divided fields and a projected fixed-point Jacobian: [proof](198_scaling_and_projected_jacobian/PROOF.md), [verification results](198_scaling_and_projected_jacobian/verification/SUMMARY.md).
+- 199. Finite separated representations at an outgoing endpoint: [proof](199_finite_separation_outgoing_endpoint/PROOF.md), [verification results](199_finite_separation_outgoing_endpoint/verification/SUMMARY.md).
+- 200. Projected source parameter and a finite-cutoff characteristic map: [proof](200_projected_characteristic_response/PROOF.md), [verification results](200_projected_characteristic_response/verification/SUMMARY.md).
+- 201. Differentiating a retied exponent and a projected coefficient map: [proof](201_retied_exponent_derivatives/PROOF.md), [verification results](201_retied_exponent_derivatives/verification/SUMMARY.md).
+- 202. Exact strain moments and finite-cutoff characteristic sensitivities: [proof](202_moment_inverse_and_flow_sensitivity/PROOF.md), [verification results](202_moment_inverse_and_flow_sensitivity/verification/SUMMARY.md).
+- 203. Outgoing endpoints: independent proof and scope audit: [proof](203_outgoing_endpoint_gevrey_audit/PROOF.md), [verification results](203_outgoing_endpoint_gevrey_audit/verification/SUMMARY.md).
+- 204. Incoming endpoints and the sign-independent local Gevrey obstruction: [proof](204_incoming_endpoint_gevrey_extension/PROOF.md), [verification results](204_incoming_endpoint_gevrey_extension/verification/SUMMARY.md).
+- 205. A physical Gram matrix and a sharp center-strain norm: [proof](205_physical_gram_and_strain_norm/PROOF.md), [verification results](205_physical_gram_and_strain_norm/verification/SUMMARY.md).
+- 206. Accumulating equilibria: a trapped neighborhood and a harmonic side: [proof](206_accumulating_endpoint_phase/PROOF.md), [verification results](206_accumulating_endpoint_phase/verification/SUMMARY.md).
+- 207. Constant-temperature open sets and their global orbit saturation: [proof](207_global_isothermal_hull/PROOF.md), [verification results](207_global_isothermal_hull/verification/SUMMARY.md).
+- 208. What a saved discrete Jacobian can and cannot verify: [proof](208_saved_jacobian_audit/PROOF.md), [verification results](208_saved_jacobian_audit/verification/SUMMARY.md).
+- 209. Endpoint continuation and quantifier audit of the referee17 edits: [proof](209_referee17_adoption/PROOF.md), [verification results](209_referee17_adoption/verification/SUMMARY.md).
+- 210. Selected input derivatives of the projected characteristic map: [proof](210_independent_jacobian_actions/PROOF.md), [verification results](210_independent_jacobian_actions/verification/SUMMARY.md).
+- 211. Scope and metric of the saved Jacobian report entry: [proof](211_jacobian_report_entry/PROOF.md), [verification results](211_jacobian_report_entry/verification/SUMMARY.md).
+- 212. Moment-stable inverse and moving-hit derivatives for selected inputs: [proof](212_moment_jacobian_actions/PROOF.md), [verification results](212_moment_jacobian_actions/verification/SUMMARY.md).
+- 213. Derivatives of transported and fitted characteristic outputs: [proof](213_transport_fit_derivative_controls/PROOF.md), [verification results](213_transport_fit_derivative_controls/verification/SUMMARY.md).
+- 214. Constant endpoint subarcs: independent restricted results: [proof](214_constant_subarc_audit/PROOF.md), [verification results](214_constant_subarc_audit/verification/SUMMARY.md).
+- 215. Equal-count refinement, stored-field residuals, and the limits of plateau evidence: [proof](215_equal_count_resolution_audit/PROOF.md), [verification results](215_equal_count_resolution_audit/verification/SUMMARY.md).
+- 216. Augmented finite matrices and conditional continuation: [proof](216_augmented_matrix_audit/PROOF.md), [verification results](216_augmented_matrix_audit/verification/SUMMARY.md).
+- 217. What three radial map scales can establish: [proof](217_three_map_scale_audit/PROOF.md), [verification results](217_three_map_scale_audit/verification/SUMMARY.md).
+- 218. A beta=2 obstruction for globally separable temperature level sets: [proof](218_separable_temperature_foliation/PROOF.md), [verification results](218_separable_temperature_foliation/verification/SUMMARY.md).
+- 219. Equal-count entry: verification contract and proof of scope: [proof](219_equal_count_entry_audit/PROOF.md), [verification results](219_equal_count_entry_audit/verification/SUMMARY.md).
+- 220. A smooth full-plane transport field with the required leading center jets: [proof](220_compact_foliation_manufactured/PROOF.md), [verification results](220_compact_foliation_manufactured/verification/SUMMARY.md).
+- 221. Audit of the thirteenth whole-report review adoption: [proof](221_referee18_adoption_audit/PROOF.md), [verification results](221_referee18_adoption_audit/verification/SUMMARY.md).
+- 222. Independent audit of the separable-temperature report entry: [proof](222_separable_foliation_entry_audit/PROOF.md), [verification results](222_separable_foliation_entry_audit/verification/SUMMARY.md).
+- 223. A vorticity obstruction for polynomial transport constants: [proof](223_polynomial_foliation_constant/PROOF.md), [verification results](223_polynomial_foliation_constant/verification/SUMMARY.md).
+- 224. Opposite derivative signs on regular temperature curves: [proof](224_foliation_constant_sign/PROOF.md), [verification results](224_foliation_constant_sign/verification/SUMMARY.md).
+- 225. Exclusion of a global separated temperature foliation at beta2: [proof](225_global_foliation_exclusion/PROOF.md), [results](225_global_foliation_exclusion/SUMMARY.md).
+- 226. Supercritical exclusion for a global separated temperature with a quadratic center jet: [proof](226_supercritical_foliation_exclusion/PROOF.md), [verification results](226_supercritical_foliation_exclusion/verification/SUMMARY.md).
+- 227. Independent audit of the lead's local vorticity route: [proof](227_lead_separable_vorticity_audit/PROOF.md), [results](227_lead_separable_vorticity_audit/SUMMARY.md).
+- 228. Finite polynomial dependence on the horizontal coordinate is impossible: [proof](228_finite_horizontal_polynomial/PROOF.md), [results](228_finite_horizontal_polynomial/SUMMARY.md).
+- 229. Supercritical separated temperature near the entire axis under symbol bounds: [proof](229_supercritical_neighbourhood_symbols/PROOF.md), [results](229_supercritical_neighbourhood_symbols/SUMMARY.md).
+- 230. A finite axis-derivative obstruction at beta greater than two: [proof](230_finite_axis_jet_obstruction/PROOF.md), [results](230_finite_axis_jet_obstruction/SUMMARY.md).
+- 231. A finite axis-ratio obstruction at beta equal to two: [proof](231_critical_finite_axis_ratios/PROOF.md), [results](231_critical_finite_axis_ratios/SUMMARY.md).
+- 232. Independent audit of proposed report item 4.39: [proof](232_restricted_representation_entry/PROOF.md), [results](232_restricted_representation_entry/SUMMARY.md).
+- 233. Independent proof and entry audit of report4.40: [proof](233_neighbourhood_report_entry/PROOF.md), [results](233_neighbourhood_report_entry/SUMMARY.md).
+- 234. Independent verification of the lineage1 lambda0.96 Jacobian: [proof](234_lineage1_jacobian/PROOF.md), [verification results](234_lineage1_jacobian/verification/SUMMARY.md).
+- 235. Independent proof and entry audit of report 4.41: [proof](235_finite_axis_report_entry/PROOF.md), [results](235_finite_axis_report_entry/SUMMARY.md).
+- 236. Independent signed Gaussian source feedback audit: [proof](236_signed_gaussian_feedback/PROOF.md), [verification results](236_signed_gaussian_feedback/verification/SUMMARY.md).
+- 237. Finite axis-jet obstructions on the component containing the center: [proof](237_axis_component_extensions/PROOF.md), [verification results](237_axis_component_extensions/verification/SUMMARY.md).
+- 238. Two additional axis equilibria in a signed Gaussian transport field: [proof](238_signed_source_axis_equilibria/PROOF.md), [verification results](238_signed_source_axis_equilibria/verification/SUMMARY.md).
+- 239. Exact angular blind directions in the signed-source scan: [proof](239_signed_scan_angular_nullspace/PROOF.md).
+- 240. Controlled temperature-fit experiment on literal Gaussian transport: [proof](240_temperature_alias_transport/PROOF.md), [verification results](240_temperature_alias_transport/verification/SUMMARY.md).
+- 241. Scope audit of the entered lineage-one Jacobian report: [proof](241_j2_report_scope/PROOF.md), [verification results](241_j2_report_scope/verification/SUMMARY.md).
+- 242. Two constant axis ratios: independent physical-coordinate reduction: [proof](242_two_axis_ratios_beta_gt2/PROOF.md), [verification results](242_two_axis_ratios_beta_gt2/verification/SUMMARY.md).
+- 243. Independent audit of the proposed axis-component entry 4.42: [proof](243_axis_component_report_entry/PROOF.md), [verification results](243_axis_component_report_entry/verification/SUMMARY.md).
+- 244. Revised J2 diagnostics: exact finite-matrix implications and limits: [proof](244_j2_revision_and_schur/PROOF.md), [verification results](244_j2_revision_and_schur/verification/SUMMARY.md).
+- 245. A value-invisible temperature changes the transported vorticity: [proof](245_alias_transport_manufacture/PROOF.md), [verification results](245_alias_transport_manufacture/verification/SUMMARY.md).
+- 246. Independent audit of the two-ratio report entry: [proof](246_two_ratio_report_entry/PROOF.md), [verification results](246_two_ratio_report_entry/verification/SUMMARY.md).
+- 247. Gradient of the finite-sphere characteristic extension: [proof](247_finite_sphere_gradient/PROOF.md), [verification results](247_finite_sphere_gradient/verification/SUMMARY.md).
+- 248. Independent whole-plane audit of three K40 represented fields: [proof](248_k40_vertex_regional/PROOF.md), [verification results](248_k40_vertex_regional/verification/SUMMARY.md).
+- 249. Integrity of the consolidated finite residual table: [proof](249_consolidated_table_integrity/PROOF.md), [verification results](249_consolidated_table_integrity/verification/SUMMARY.md).
+- 250. Independent audit of the 4.39 to 4.43 consistency edits: [proof](250_report_block_consistency/PROOF.md), [verification results](250_report_block_consistency/verification/SUMMARY.md).
+- 251. Independent whole-plane audit of two additional K40 represented fields: [proof](251_k40_extension_regional/PROOF.md), [verification results](251_k40_extension_regional/verification/SUMMARY.md).
+- 252. Interior Poisson residuals do not bound velocity error, even with matching center jets: [proof](252_interior_elliptic_blindness/PROOF.md), [verification results](252_interior_elliptic_blindness/verification/SUMMARY.md).
+- 253. New K40 elliptic, transport-geometry and endpoint diagnostics: [proof](253_k40_inverse_geometry_diagnostics/PROOF.md), [verification results](253_k40_inverse_geometry_diagnostics/verification/SUMMARY.md).
+- 254. Independent whole-plane audit of two K48 represented fields: [proof](254_k48_vertex_regional/PROOF.md), [verification results](254_k48_vertex_regional/verification/SUMMARY.md).
+- 255. Sublinear canonical velocity and exact thermal transport do not force vorticity decay: [proof](255_nondecaying_vorticity_transport/PROOF.md), [verification results](255_nondecaying_vorticity_transport/verification/SUMMARY.md).
+- 256. Finite numerical evidence and its report integration: [proof](256_numerics_integration_entry/PROOF.md), [verification results](256_numerics_integration_entry/verification/SUMMARY.md).
+- 257. No nonzero finite fourth-order axis-ratio limit at an infinite end: [proof](257_nonzero_axis_ratio_limit/PROOF.md), [verification results](257_nonzero_axis_ratio_limit/verification/SUMMARY.md).
+- 258. Decay restrictions on fourth-order axis-ratio tails: [proof](258_axis_ratio_tail_restrictions/PROOF.md), [verification results](258_axis_ratio_tail_restrictions/verification/SUMMARY.md).
+- 259. A one-sided constraint on the weighted fourth-order axis ratio: [proof](259_axis_ratio_weighted_mean/PROOF.md), [verification results](259_axis_ratio_weighted_mean/verification/SUMMARY.md).
+- 260. Audit of the proposed report entry 4.44: [proof](260_axis_limit_report_entry/PROOF.md), [verification results](260_axis_limit_report_entry/verification/SUMMARY.md).
+- 261. Power thresholds for a signed fourth-order axis ratio: [proof](261_axis_ratio_power_lower_bound/PROOF.md), [verification results](261_axis_ratio_power_lower_bound/verification/SUMMARY.md).
+- 262. Independent whole-plane audit of the first-lineage K48 field at beta=3.076: [proof](262_lineage1_k48_regional/PROOF.md), [verification results](262_lineage1_k48_regional/verification/SUMMARY.md).
+- 263. Both signs of supercritical axis ratios: [proof](263_axis_ratio_both_signs/PROOF.md), [verification results](263_axis_ratio_both_signs/verification/SUMMARY.md).
+- 264. Critical tails compatible with the low-order axis equations: [proof](264_critical_axis_data/PROOF.md), [verification results](264_critical_axis_data/verification/SUMMARY.md).
+- 265. Independent audit of the 4.45 two-sign power-restriction entry: [proof](265_axis_power_report_entry/PROOF.md), [verification results](265_axis_power_report_entry/verification/SUMMARY.md).
+- 266. Logarithmically enhanced critical tails in the low-order axis system: [proof](266_logarithmic_critical_axis_data/PROOF.md), [verification results](266_logarithmic_critical_axis_data/verification/SUMMARY.md).
+- 267. Independent whole-plane audit of the first-lineage K48 field at beta=3.092: [proof](267_lineage1_k48_beta3092/PROOF.md), [verification results](267_lineage1_k48_beta3092/verification/SUMMARY.md).
+- 268. Critical axis tails with either sign: [proof](268_critical_axis_both_signs/PROOF.md), [verification results](268_critical_axis_both_signs/verification/SUMMARY.md).
+- 269. Independent audit of report item 4.46: [proof](269_critical_axis_report_entry/PROOF.md), [verification results](269_critical_axis_report_entry/verification/SUMMARY.md).
+- 270. Both signs of logarithmically enhanced critical axis tails: [proof](270_concave_logarithmic_axis_tails/PROOF.md), [verification results](270_concave_logarithmic_axis_tails/verification/SUMMARY.md).
+- 271. No positive signed divergence of the quartic axis ratio at beta2: [proof](271_beta2_positive_ratio_divergence/PROOF.md), [verification results](271_beta2_positive_ratio_divergence/verification/SUMMARY.md).
+- 272. Quantitative critical limits of normalized axis jets: [proof](272_quantitative_axis_ratio_limits/PROOF.md), [verification results](272_quantitative_axis_ratio_limits/verification/SUMMARY.md).
+- 273. A bounded central component for the low-order axis equations: [proof](273_bounded_axis_component/PROOF.md), [results](273_bounded_axis_component/SUMMARY.md).
+- 274. Audit of the logarithmic-axis report entry: [proof](274_logarithmic_axis_report_entry/PROOF.md), [results](274_logarithmic_axis_report_entry/SUMMARY.md).
+- 275. Curvature spikes prevent critical axis limits: [proof](275_curvature_spikes_axis_limits/PROOF.md), [results](275_curvature_spikes_axis_limits/SUMMARY.md), [verification results](275_curvature_spikes_axis_limits/verification/SUMMARY.md).
+- 276. Critical limits: independent audit of the proposed report entry: [proof](276_critical_limits_report_entry/PROOF.md), [results](276_critical_limits_report_entry/SUMMARY.md), [verification results](276_critical_limits_report_entry/verification/SUMMARY.md).
+- 277. Independent whole-plane audit of the backward K48 field at beta=3.076: [proof](277_backward_k48_beta3076/PROOF.md), [verification results](277_backward_k48_beta3076/verification/SUMMARY.md).
+- 278. Smooth compact fields satisfying every axis Taylor equation: [proof](278_all_axis_jets_compact_extension/PROOF.md), [verification results](278_all_axis_jets_compact_extension/verification/SUMMARY.md).
+- 279. Independent verification of numerics integration num_s8: [proof](279_numerics_integration_s8/PROOF.md).
+- 280. Independent whole-plane audit of the backward K48 field at beta=3.062: [proof](280_backward_k48_beta3062/PROOF.md), [verification results](280_backward_k48_beta3062/verification/SUMMARY.md).
+- 281. Actual adoption of the corrected num_s8 entry: [proof](281_actual_num_s8_adoption/PROOF.md), [verification results](281_actual_num_s8_adoption/verification/SUMMARY.md).
+- 282. Bounded axis component: independent audit of the complete report entry: [proof](282_bounded_component_report_entry/PROOF.md), [results](282_bounded_component_report_entry/SUMMARY.md), [verification results](282_bounded_component_report_entry/verification/SUMMARY.md).
+- 283. Exact global thermal transport with a bounded axis component: [proof](283_exact_thermal_bounded_axis/PROOF.md), [results](283_exact_thermal_bounded_axis/SUMMARY.md), [verification results](283_exact_thermal_bounded_axis/verification/SUMMARY.md).
+- 284. P284. Second backward 48-mode run: complete report entry audit: [proof](284_numerics_integration_s9/PROOF.md), [verification results](284_numerics_integration_s9/verification/SUMMARY.md).
+- 285. P285. Actual adoption of the bounded-component construction: [proof](285_actual_bounded_component_adoption/PROOF.md), [verification results](285_actual_bounded_component_adoption/verification/SUMMARY.md).
+- 286. P286. Universal ratio law at a finite-order axis endpoint: [proof](286_finite_order_axis_endpoint/PROOF.md), [results](286_finite_order_axis_endpoint/SUMMARY.md), [verification results](286_finite_order_axis_endpoint/verification/SUMMARY.md).
+- 287. Independent whole-plane audit of six quadrature re-solves: [proof](287_quadrature_resolved_fields/PROOF.md), [results](287_quadrature_resolved_fields/SUMMARY.md), [verification results](287_quadrature_resolved_fields/verification/SUMMARY.md).
+- 288. Actual num_s9 adoption audit: [proof](288_actual_num_s9_adoption/PROOF.md), [results](288_actual_num_s9_adoption/SUMMARY.md), [verification results](288_actual_num_s9_adoption/verification/SUMMARY.md).
+- 289. Infinitely flat axis endpoints with two different ratio behaviors: [proof](289_infinitely_flat_axis_endpoints/PROOF.md), [results](289_infinitely_flat_axis_endpoints/SUMMARY.md), [verification results](289_infinitely_flat_axis_endpoints/verification/SUMMARY.md).
+- 290. Full entry 4.50 audit: [proof](290_exact_thermal_report_entry/PROOF.md), [results](290_exact_thermal_report_entry/SUMMARY.md), [verification results](290_exact_thermal_report_entry/verification/SUMMARY.md).
+- 291. Independent inverse norms and the runtime quadrature comparison: [proof](291_runtime_velocity_norms/PROOF.md), [results](291_runtime_velocity_norms/SUMMARY.md), [verification results](291_runtime_velocity_norms/verification/SUMMARY.md).
+- 292. P292. Complete finite-order endpoint report entry: [proof](292_finite_order_report_entry/PROOF.md), [results](292_finite_order_report_entry/SUMMARY.md).
+- 293. P293. Complete infinite-order endpoint report entry: [proof](293_infinite_order_report_entry/PROOF.md), [results](293_infinite_order_report_entry/SUMMARY.md).
+- 294. Independent whole-plane audit of two tighter quadrature re-solves: [proof](294_tight_quadrature_roots/PROOF.md), [results](294_tight_quadrature_roots/SUMMARY.md), [verification results](294_tight_quadrature_roots/verification/SUMMARY.md).
+- 295. P295. Actual adoption of exact temperature transport with bounded axis component: [proof](295_actual_exact_thermal_adoption/PROOF.md), [results](295_actual_exact_thermal_adoption/SUMMARY.md).
+- 296. Simple axis endpoints: limits, signs and analytic realizations: [proof](296_simple_axis_endpoints/PROOF.md), [results](296_simple_axis_endpoints/SUMMARY.md).
+- 297. P297. Actual adoption of the two endpoint results: [proof](297_actual_axis_endpoint_adoption/PROOF.md), [results](297_actual_axis_endpoint_adoption/SUMMARY.md).
+- 298. P298. Complete audit of the six quadrature restarts and runtime-norm report entry: [proof](298_numerics_integration_s10/PROOF.md), [results](298_numerics_integration_s10/SUMMARY.md).
+- 299. Simple axis endpoints with any prescribed extended ratio limit: [proof](299_simple_endpoint_all_limits/PROOF.md), [results](299_simple_endpoint_all_limits/SUMMARY.md).
+- 300. The next vorticity jet does not restrict the simple-endpoint constructions: [proof](300_simple_endpoint_next_vorticity_jet/PROOF.md), [results](300_simple_endpoint_next_vorticity_jet/SUMMARY.md).
+- 301. Agreement of two runtime orders does not certify their full-plane accuracy: [proof](301_runtime_24_48_comparison/PROOF.md), [results](301_runtime_24_48_comparison/SUMMARY.md).
+- 302. Actual adoption of numerical integration s10: [proof](302_actual_numerics_s10/PROOF.md), [results](302_actual_numerics_s10/SUMMARY.md).
+- 303. Curved simple ends with either infinite ratio sign: [proof](303_curved_simple_endpoint_residue/PROOF.md), [results](303_curved_simple_endpoint_residue/SUMMARY.md).
+- 304. Simple endpoint theorem and local examples: complete entry audit: [proof](304_simple_endpoint_report_entry/PROOF.md), [results](304_simple_endpoint_report_entry/SUMMARY.md).
+- 305. Two finite secant states: complete numerical-entry audit: [proof](305_numerics_integration_s11/PROOF.md), [results](305_numerics_integration_s11/SUMMARY.md).
+- 306. The next vorticity relation at a curved simple endpoint: [proof](306_curved_endpoint_next_jet/PROOF.md), [results](306_curved_endpoint_next_jet/SUMMARY.md).
+- 307. Independent audit of the proposed whole-report review adoption: [proof](307_whole_report_review19/PROOF.md), [results](307_whole_report_review19/SUMMARY.md).
+- 308. Next two transverse resonances of the curved simple-endpoint family: [proof](308_next_two_curved_resonances/PROOF.md), [results](308_next_two_curved_resonances/SUMMARY.md).
+- 309. Actual adoption of4.53 and whole-report review19: [proof](309_actual_453_review19/PROOF.md), [results](309_actual_453_review19/SUMMARY.md).
+- 311. Ninth-order curvature removes the fifth-equation sign restriction: [proof](311_ninth_order_curvature/PROOF.md), [results](311_ninth_order_curvature/SUMMARY.md).
+- 312. Complete-entry audit of the fifth axis relation at a simple endpoint: [proof](312_fifth_axis_relation_report_entry/PROOF.md), [results](312_fifth_axis_relation_report_entry/SUMMARY.md).
+- 313. Integrity and scope of the 123-entry residual consolidation: [proof](313_consolidated_123_state_audit/PROOF.md), [results](313_consolidated_123_state_audit/SUMMARY.md).
+- 315. Actual adoption of numerical integration s11: [proof](315_actual_numerics_s11/PROOF.md), [results](315_actual_numerics_s11/SUMMARY.md).
+- 316. Portable inputs for the consolidated residual table: [proof](316_portable_residual_package/PROOF.md), [results](316_portable_residual_package/SUMMARY.md).
+- 317. Actual adoption of the fifth axis relation entry: [proof](317_actual_fifth_axis_entry/PROOF.md), [results](317_actual_fifth_axis_entry/SUMMARY.md).
+- 319. Complete report entry for the next two axis relations: [proof](319_two_further_axis_entry/PROOF.md), [results](319_two_further_axis_entry/SUMMARY.md).
+- 320. Independent adjudication of A171 on the next two resonances: [proof](320_external_next_resonance_audit/PROOF.md), [results](320_external_next_resonance_audit/SUMMARY.md).
+- 321. Arbitrary-order transverse compatibility in the curved local family: [proof](321_all_order_formal_resonance/PROOF.md), [results](321_all_order_formal_resonance/SUMMARY.md).
+- 323. Actual adoption of Section4.55: [proof](323_actual_two_further_axis_entry/PROOF.md), [results](323_actual_two_further_axis_entry/SUMMARY.md).
+- 324. Direct nonlinear coefficient checks for the formal local family: [proof](324_nonlinear_formal_jet_checks/PROOF.md), [results](324_nonlinear_formal_jet_checks/SUMMARY.md).
+- 325. Audit of the complete 4.56 entry: [proof](325_all_order_report_entry/PROOF.md), [results](325_all_order_report_entry/SUMMARY.md).
+- 326. A common analytic axis domain for the formal endpoint hierarchy: [proof](326_common_axis_disk/PROOF.md), [results](326_common_axis_disk/SUMMARY.md).
+- 328. Leading weighted temperature polynomial at the formal endpoint: [proof](328_leading_weighted_temperature/PROOF.md), [results](328_leading_weighted_temperature/SUMMARY.md).
+- 329. Actual Section 4.56 adoption: [proof](329_actual_all_order_entry/PROOF.md), [results](329_actual_all_order_entry/SUMMARY.md).
+- 330. Preservation criterion for the numerical report wording repairs: [proof](330_numerics_wording_rebase/PROOF.md), [results](330_numerics_wording_rebase/SUMMARY.md).
+- 331. Exact formal factorization at the simple endpoint: [proof](331_formal_temperature_factorization/PROOF.md), [results](331_formal_temperature_factorization/SUMMARY.md).
+- 332. Complete leading-temperature report entry: [proof](332_leading_temperature_report_entry/PROOF.md), [results](332_leading_temperature_report_entry/SUMMARY.md).
+- 333. Actual numerics wording adoption: [proof](333_actual_numerics_wording/PROOF.md), [results](333_actual_numerics_wording/SUMMARY.md).
+- 334. Smooth temperature factorization at a simple hyperbolic endpoint: [proof](334_smooth_temperature_factorization/PROOF.md), [results](334_smooth_temperature_factorization/SUMMARY.md).
+- 335. Actual Section 4.57 adoption: [proof](335_actual_leading_temperature_entry/PROOF.md), [results](335_actual_leading_temperature_entry/SUMMARY.md).
+- 336. Complete Section 4.58 audit: formal temperature factorization: [proof](336_formal_factorization_report_entry/PROOF.md), [results](336_formal_factorization_report_entry/SUMMARY.md).
+- 337. Smooth temperature factorization at every simple hyperbolic endpoint: [proof](337_general_smooth_endpoint/PROOF.md), [results](337_general_smooth_endpoint/SUMMARY.md).
+- 338. Complete smooth endpoint entry: extension and scope: [proof](338_smooth_endpoint_report_entry/PROOF.md), [results](338_smooth_endpoint_report_entry/SUMMARY.md), [packet index](338_smooth_endpoint_report_entry/INDEX.md).
+- 339. Actual vorticity factorization at a simple endpoint: [proof](339_smooth_vorticity_factorization/PROOF.md), [results](339_smooth_vorticity_factorization/SUMMARY.md), [packet index](339_smooth_vorticity_factorization/INDEX.md).
+- 340. Actual Section4.58 adoption: [proof](340_actual_formal_factorization_entry/PROOF.md), [results](340_actual_formal_factorization_entry/SUMMARY.md).
+- 341. Actual4.59 readback and correction of the verification interval: [proof](341_actual_smooth_endpoint_entry/PROOF.md), [results](341_actual_smooth_endpoint_entry/SUMMARY.md), [packet index](341_actual_smooth_endpoint_entry/INDEX.md).
+- 342. Complete vorticity endpoint entry and product sign: [proof](342_vorticity_factorization_report_entry/PROOF.md), [results](342_vorticity_factorization_report_entry/SUMMARY.md), [packet index](342_vorticity_factorization_report_entry/INDEX.md).
+- 343. Actual4.60 entry audit: [proof](343_actual_vorticity_endpoint_entry/PROOF.md), [results](343_actual_vorticity_endpoint_entry/SUMMARY.md), [packet index](343_actual_vorticity_endpoint_entry/INDEX.md).
+- 344. Formal vorticity factorization at the beta=2 simple endpoint: [proof](344_formal_vorticity_factorization/PROOF.md), [verification results](344_formal_vorticity_factorization/verification/SUMMARY.md), [packet index](344_formal_vorticity_factorization/INDEX.md).
+- 345. Conditional summary of formal and smooth endpoint factorizations: [proof](345_summary_endpoint_entry/PROOF.md), [verification results](345_summary_endpoint_entry/verification/SUMMARY.md), [packet index](345_summary_endpoint_entry/INDEX.md).
+- 346. Actual adoption of the endpoint summary: [proof](346_actual_summary_endpoint_entry/PROOF.md), [verification results](346_actual_summary_endpoint_entry/verification/SUMMARY.md), [packet index](346_actual_summary_endpoint_entry/INDEX.md).
+- 347. Final evidence and real time: verification criterion: [proof](347_final_evidence_and_time/PROOF.md), [results](347_final_evidence_and_time/SUMMARY.md), [packet index](347_final_evidence_and_time/INDEX.md).
+- 348. Independent verification synthesis: exact criterion and finite evidence: [proof](348_final_verifier_synthesis/PROOF.md), [results](348_final_verifier_synthesis/SUMMARY.md), [packet index](348_final_verifier_synthesis/INDEX.md).
+- 349. Numerical-lane final time source: exact bookkeeping and limits: [proof](349_numerics_final_time_source/PROOF.md), [results](349_numerics_final_time_source/SUMMARY.md), [packet index](349_numerics_final_time_source/INDEX.md).
+- 350. Final reading-order and scope audit: [proof](350_final_reading_order_audit/PROOF.md), [results](350_final_reading_order_audit/SUMMARY.md), [packet index](350_final_reading_order_audit/INDEX.md).
+- 351. Absolute and signed center drift: exact scope: [proof](351_spec_absolute_and_signed_drift/PROOF.md), [results](351_spec_absolute_and_signed_drift/SUMMARY.md), [packet index](351_spec_absolute_and_signed_drift/INDEX.md).
+- 352. Revised numerical final-entry clock: actual source audit: [proof](352_revised_numerics_time_source/PROOF.md), [results](352_revised_numerics_time_source/SUMMARY.md), [packet index](352_revised_numerics_time_source/INDEX.md).
+- 353. Actual SPEC v94 drift clarification: [proof](353_actual_spec_drift_clarification/PROOF.md), [results](353_actual_spec_drift_clarification/SUMMARY.md), [packet index](353_actual_spec_drift_clarification/INDEX.md).
+- 354. Extended exact formal coefficient comparison: [proof](354_extended_formal_coefficients/PROOF.md), [results](354_extended_formal_coefficients/SUMMARY.md), [packet index](354_extended_formal_coefficients/INDEX.md).
+- 355. Euler inverses and the remaining transverse convergence gap: [proof](355_euler_resonance_operator_bounds/PROOF.md), [results](355_euler_resonance_operator_bounds/SUMMARY.md), [packet index](355_euler_resonance_operator_bounds/INDEX.md).
+- 356. Actual adoption of the numerical clock repairs: [proof](356_actual_numerics_clock_repair/PROOF.md), [results](356_actual_numerics_clock_repair/SUMMARY.md), [packet index](356_actual_numerics_clock_repair/INDEX.md).
+- 357. Lower-width check of the extended formal hierarchy: [proof](357_lower_width_formal_extension/PROOF.md), [results](357_lower_width_formal_extension/SUMMARY.md), [packet index](357_lower_width_formal_extension/INDEX.md).
+- 361. The Euler inverse loses one analytic radius factor after two derivatives: [proof](361_euler_one_radius_loss/PROOF.md), [results](361_euler_one_radius_loss/SUMMARY.md), [packet index](361_euler_one_radius_loss/INDEX.md).
