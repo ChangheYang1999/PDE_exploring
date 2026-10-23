@@ -1,0 +1,97 @@
+{
+  "schema": "ipm.documentation.farfield_derivation_provenance.v1",
+  "prepared": "2026-10-23",
+  "scope": "Documentation only; source materials read without execution or modification. Original paths identify provenance only and are not runtime dependencies.",
+  "original_research_root_for_provenance_only": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization",
+  "portable_notes": [
+    "docs/BASIS_860_SPEC.md",
+    "docs/reference/FAR_FIELD_DERIVATION_EXTRACT.md"
+  ],
+  "references": [
+    {
+      "original_research_relative_path": "farfield_asymptotic_audit_20261022/math_derivation.md",
+      "sha256": "7e045625e3a585da53e647eb715b96327be001b5ce18c77eb6f21f24e02d181e",
+      "bytes": 16193,
+      "used_for": "formal_derivation_accepted64"
+    },
+    {
+      "original_research_relative_path": "farfield_asymptotic_audit_20261022/matching_strategy.md",
+      "sha256": "c168dbe61d5e29ba8f6e029c218e5743f980d00b5d17e6e94a64cc594b16e491",
+      "bytes": 11560,
+      "used_for": "analytic_embedding_and_radial_moments_accepted64"
+    },
+    {
+      "original_research_relative_path": "farfield_asymptotic_audit_20261022/FAR_FIELD_MATCHING_AUDIT.md",
+      "sha256": "66414d411f9fc70085c64a8b2dbbe908ca2ba1757f6db3f37b94d3554ebb5057",
+      "bytes": 22634,
+      "used_for": "accepted64_report_not_current_numerics"
+    },
+    {
+      "original_research_relative_path": "farfield_asymptotic_audit_20261022/coefficients_audit.py",
+      "sha256": "3093c987f11bd6eff8e48e69819d4e86cfc2a51d131713362decb55bbbf332cb",
+      "bytes": 24893,
+      "used_for": "earlier_analytic_Fourier_audit_source"
+    },
+    {
+      "original_research_relative_path": "farfield_asymptotic_audit_20261022_0836/FAR_FIELD_MATCHING_AUDIT.md",
+      "sha256": "6f88aeb41f6633dcb970d1922cfbd810361aa365bad2313f8d6dc76287fee9a0",
+      "bytes": 23841,
+      "used_for": "accepted165_followup_not_current_numerics"
+    },
+    {
+      "original_research_relative_path": "farfield_asymptotic_audit_20261022_0836/candidate_binding.json",
+      "sha256": "43966d145ca195e7505629793cf9946ff306c2cd43bdb970fa2fceaa59486cde",
+      "bytes": 3063,
+      "used_for": "accepted165_snapshot_binding"
+    },
+    {
+      "original_research_relative_path": "farfield_asymptotic_audit_20261022_0836/coefficients_audit.py",
+      "sha256": "3093c987f11bd6eff8e48e69819d4e86cfc2a51d131713362decb55bbbf332cb",
+      "bytes": 24893,
+      "used_for": "source_analytic_Fourier_and_normalization_maps"
+    },
+    {
+      "original_research_relative_path": "absolute_fields.py",
+      "sha256": "84849ae05d37d25ad9193946a16f04a005611ab1bd9f6f59776cee855503a55e",
+      "bytes": 11109,
+      "used_for": "core_order_exponents_and_center_elimination"
+    },
+    {
+      "original_research_relative_path": "base/spectral_basis.py",
+      "sha256": "6cd09d759fd0444e86536a24a016e4610b41eb4bb390db57f1d0eb64a088426b",
+      "bytes": 8484,
+      "used_for": "source_Legendre_normalization_and_cl_derivative"
+    },
+    {
+      "original_research_relative_path": "base/campaign_tools.py",
+      "sha256": "481347365ef514a02af41a5eaa4ca28b9c25ebfa3184b8b78b61d8c15e08abad",
+      "bytes": 10840,
+      "used_for": "source_Global_mode_selection"
+    },
+    {
+      "repository_relative_path": "research/inputs/global.json",
+      "sha256": "3093bc3ba8f9bd28085b79b683c9e21003ded22d0e8711f6ee400624f7c83488",
+      "bytes": 26323,
+      "used_for": "portable_saved_basis_manifest_not_current_coefficients"
+    },
+    {
+      "repository_relative_path": "research/campaign/global181_v3/snapshots/accepted_00000278.json",
+      "sha256": "812d34466c078e2ce643c49671299f4359f764fe2e1d925426762ba962d6e955",
+      "bytes": 153168,
+      "used_for": "current_authoritative_accepted_candidate"
+    },
+    {
+      "repository_relative_path": "verification/farfield.json",
+      "sha256": "eef2066a4c97caf7fbe406401498600ac62bd1200daef50f563fbccdf8e8c0f0",
+      "bytes": 451289,
+      "used_for": "current_accepted278_farfield_evidence"
+    }
+  ],
+  "candidate_scope": {
+    "accepted64": "The first audit and candidate-independent formal derivation; parameter-specific numerics are not current.",
+    "accepted165": "The follow-up report; 0.145222 percent is its E1 L2 norm fraction beyond harmonic19, not energy fraction or current prediction.",
+    "accepted278": "The authoritative incumbent; current verification/farfield.json supplies its numerical evidence."
+  },
+  "derivation_status": "Independent mathematical identities and formal necessary asymptotic relations; no asymptotic expansion/existence theorem, no implemented860 basis.",
+  "next_campaign_policy": "Keep original J_abs; measure full E1/E2/E3 and unresolved Fourier content as diagnostics; no new hard farfield constraints or penalties."
+}

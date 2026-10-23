@@ -1,0 +1,552 @@
+{
+  "schema": "stage13_integration_epoch_v1",
+  "label": "epoch0001_w4_reviewed_roundoff",
+  "physical_identity": {
+    "p_sha256": "c82316fd3398ddd44d6a1a54c7a252ef97c4d090d37648e016cf9ffbfd261f8e",
+    "extra_sha256": "11f976e0e2e205ced27d28ae91b9391616e1b7d702275b2e177b2a3c3fbcc2f2",
+    "modes_sha256": "820153ce1b74e3cfeaec27c8b7abc8286d873b78e8d9cc1c19c9ae6652e510fc",
+    "feasible_variables": 181,
+    "a_ref": 23.95065822465609,
+    "center_convention": "center_chart"
+  },
+  "candidate_path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/inputs/global.json",
+  "candidate_sha256": "3093bc3ba8f9bd28085b79b683c9e21003ded22d0e8711f6ee400624f7c83488",
+  "a_ref": 23.95065822465609,
+  "center_convention": "center_chart",
+  "workers": 4,
+  "mesh_level": 0,
+  "upper_log_radius": 16.0,
+  "independent_initial_upper_log_radius": 44.0,
+  "default_independent_error_abs": 1e-14,
+  "relative_accuracy": 1e-06,
+  "meshes": {
+    "training": {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0001_w4/meshes/training.npz",
+      "sha256": "05b493b2a67175e6763b49f82e863c8372f26d77879639878546d56ea567ba1f",
+      "fingerprint": "692680ea0a82f0a4c644754f63771817cf0ab58767764203d435bb19f20e9697",
+      "metadata": {
+        "schema": "absolute_loss_three_block_whole_axis_mesh_v1",
+        "origin_radius": 0.02,
+        "upper_log_radius": 16.0,
+        "origin_order": 24,
+        "middle_order": 16,
+        "infinity_order": 128,
+        "angular_order": 64,
+        "middle_panel_width_max": 1.0,
+        "middle_panel_count": 20,
+        "radial_nodes": 472,
+        "blocks": [
+          {
+            "id": 0,
+            "name": "origin",
+            "mapping": "s=log(r0)+log(u), 0<u<1",
+            "weight": "du/u",
+            "radial_nodes": 24,
+            "log_radius_min_node": -9.941650584611727,
+            "log_radius_max_node": -3.914432295439359
+          },
+          {
+            "id": 1,
+            "name": "middle",
+            "mapping": "s in [log(r0), S]",
+            "weight": "ds",
+            "radial_nodes": 320,
+            "log_radius_min_node": -3.906746784771088,
+            "log_radius_max_node": 15.994723779342943
+          },
+          {
+            "id": 2,
+            "name": "infinity",
+            "mapping": "s=S-log(u), 0<u<1",
+            "weight": "du/u",
+            "radial_nodes": 128,
+            "log_radius_min_node": 16.000087559859686,
+            "log_radius_max_node": 25.343231667403657
+          }
+        ],
+        "whole_axis_domain_covered_by_transformations": true,
+        "weights_positive": true,
+        "nodes_and_weights_independent_of_cl_and_candidate_parameters": true,
+        "origin_or_infinity_contribution_omitted_from_residual_vector": false,
+        "finite_quadrature_is_exact_integral": false,
+        "finite_quadrature_is_exactly_scale_invariant": false,
+        "whole_axis_qualified": false,
+        "neighborhood_validated": false,
+        "mesh": {
+          "schema": "absolute_loss_frozen_log_mesh_v1",
+          "name": "epoch0001_w4_training",
+          "nodes": 30208,
+          "log_radius_min": -9.941650584611727,
+          "log_radius_max": 25.343231667403657,
+          "angular_min": 0.000545818944362416,
+          "angular_max": 1.5702505078505342,
+          "mesh_sha256": "692680ea0a82f0a4c644754f63771817cf0ab58767764203d435bb19f20e9697",
+          "weights_are_ds_dtheta": true,
+          "exact_whole_line_invariance_claimed": false,
+          "whole_axis_qualified_by_mesh_alone": false
+        }
+      }
+    },
+    "refined": {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0001_w4/meshes/refined.npz",
+      "sha256": "715c8271252dd8db67f9f51ea44ebaa4f0470bb80ca80591cf6585a67657dc56",
+      "fingerprint": "9d13af4ac208eda4470ac1b8c776d7610c9f46959c36bf18e4d96fdac3512d69",
+      "metadata": {
+        "schema": "absolute_loss_three_block_whole_axis_mesh_v1",
+        "origin_radius": 0.02,
+        "upper_log_radius": 16.0,
+        "origin_order": 48,
+        "middle_order": 32,
+        "infinity_order": 256,
+        "angular_order": 96,
+        "middle_panel_width_max": 1.0,
+        "middle_panel_count": 20,
+        "radial_nodes": 944,
+        "blocks": [
+          {
+            "id": 0,
+            "name": "origin",
+            "mapping": "s=log(r0)+log(u), 0<u<1",
+            "weight": "du/u",
+            "radial_nodes": 48,
+            "log_radius_min_node": -11.306730535482723,
+            "log_radius_max_node": -3.912637690682211
+          },
+          {
+            "id": 1,
+            "name": "middle",
+            "mapping": "s in [log(r0), S]",
+            "weight": "ds",
+            "radial_nodes": 640,
+            "log_radius_min_node": -3.9106609542831667,
+            "log_radius_max_node": 15.998637948855022
+          },
+          {
+            "id": 2,
+            "name": "infinity",
+            "mapping": "s=S-log(u), 0<u<1",
+            "weight": "du/u",
+            "radial_nodes": 256,
+            "log_radius_min_node": 16.000021975231956,
+            "log_radius_max_node": 26.725605546525948
+          }
+        ],
+        "whole_axis_domain_covered_by_transformations": true,
+        "weights_positive": true,
+        "nodes_and_weights_independent_of_cl_and_candidate_parameters": true,
+        "origin_or_infinity_contribution_omitted_from_residual_vector": false,
+        "finite_quadrature_is_exact_integral": false,
+        "finite_quadrature_is_exactly_scale_invariant": false,
+        "whole_axis_qualified": false,
+        "neighborhood_validated": false,
+        "mesh": {
+          "schema": "absolute_loss_frozen_log_mesh_v1",
+          "name": "epoch0001_w4_refined",
+          "nodes": 90624,
+          "log_radius_min": -11.306730535482723,
+          "log_radius_max": 26.725605546525948,
+          "angular_min": 0.00024386307985261202,
+          "angular_max": 1.5705524637150439,
+          "mesh_sha256": "9d13af4ac208eda4470ac1b8c776d7610c9f46959c36bf18e4d96fdac3512d69",
+          "weights_are_ds_dtheta": true,
+          "exact_whole_line_invariance_claimed": false,
+          "whole_axis_qualified_by_mesh_alone": false
+        }
+      }
+    }
+  },
+  "whole_axis_qualified": true,
+  "neighborhood_validated": true,
+  "representative_neighborhood_only": true,
+  "uniform_rigorous_certificate": false,
+  "passed": true,
+  "prepared_epoch": 1792620389.5240161,
+  "source_sha256_at_design": {
+    "stage13_integration.py": "ef8e6953e5d98a74159450ac33a3fe2da69464c0b9b129b3282ada037552bc13",
+    "stage13_model.py": "427261ef54bf417da18a15482a51890e5693add32d9f815babf122a16e6f13aa",
+    "whole_axis_mesh.py": "c42233ad7c55b5e4eff778cdc8e305b5d81ce896a4027e5d7dc20a3404501b6c",
+    "absolute_model.py": "aa67c402cacb46321bf85d5e1d1a2f759ff42f76bcc0fa00130303be3081d6a8",
+    "absolute_fields.py": "84849ae05d37d25ad9193946a16f04a005611ab1bd9f6f59776cee855503a55e",
+    "highprecision_origin.py": "75f9b65e4ccc171d4a91326a44d457cfa08e62877152867d588e8535e6852f87",
+    "tail_envelope.py": "129816786c19b80675498d0650d380884d8827c1e31b1707c13b803b41f6919d",
+    "outer_envelopes.py": "6931eac402cff4db33644cefe6d73408bf837aecce86bbebccfc2187e0ef2323",
+    "log_integral.py": "1accf26e3fab9006a9e47f82dc4325b3870b438a4fcc2bd075121857451391ba",
+    "absolute_common.py": "f44ef69dd9e8d2bc8b22c57336435c1609a5b7246585b3165c2919e40d7ad3db",
+    "absolute_chart.py": "eb069dacbae41dc7ba19cb72e988293f58c40261ff15b65e9d42d60aecd12a62",
+    "absolute_chart_v2.py": "d7fcf09fabf3ce4375cdcd06c435789524263a82a827e77677838bf491acacf1",
+    "field_tests.py": "d20afcd54cee463bf686b6f0e229cbc6d7f5483c5e679dfb799cafc8b36b5dc1"
+  },
+  "not_a_fixed_physical_cutoff": true,
+  "all_transformed_blocks_in_training_residual": true,
+  "source_sha256": {
+    "stage13_integration.py": "ef8e6953e5d98a74159450ac33a3fe2da69464c0b9b129b3282ada037552bc13",
+    "stage13_model.py": "427261ef54bf417da18a15482a51890e5693add32d9f815babf122a16e6f13aa",
+    "whole_axis_mesh.py": "c42233ad7c55b5e4eff778cdc8e305b5d81ce896a4027e5d7dc20a3404501b6c",
+    "absolute_model.py": "aa67c402cacb46321bf85d5e1d1a2f759ff42f76bcc0fa00130303be3081d6a8",
+    "absolute_fields.py": "84849ae05d37d25ad9193946a16f04a005611ab1bd9f6f59776cee855503a55e",
+    "highprecision_origin.py": "75f9b65e4ccc171d4a91326a44d457cfa08e62877152867d588e8535e6852f87",
+    "tail_envelope.py": "129816786c19b80675498d0650d380884d8827c1e31b1707c13b803b41f6919d",
+    "outer_envelopes.py": "6931eac402cff4db33644cefe6d73408bf837aecce86bbebccfc2187e0ef2323",
+    "log_integral.py": "1accf26e3fab9006a9e47f82dc4325b3870b438a4fcc2bd075121857451391ba",
+    "absolute_common.py": "f44ef69dd9e8d2bc8b22c57336435c1609a5b7246585b3165c2919e40d7ad3db",
+    "absolute_chart.py": "eb069dacbae41dc7ba19cb72e988293f58c40261ff15b65e9d42d60aecd12a62",
+    "absolute_chart_v2.py": "d7fcf09fabf3ce4375cdcd06c435789524263a82a827e77677838bf491acacf1",
+    "field_tests.py": "d20afcd54cee463bf686b6f0e229cbc6d7f5483c5e679dfb799cafc8b36b5dc1"
+  },
+  "derivative_record": {
+    "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/results/model_benchmark/checks.json",
+    "sha256": "b234f414544c64e63a1d8b5cbd7b7021aa3ec98e68129171390de8ee6d81998a",
+    "passed": true,
+    "full_cl_tested": true,
+    "all_19_core_directions_retained_and_checked": true,
+    "all_extra_coefficients_retained_and_checked": true
+  },
+  "qualification_source_sha256": "c1e49ef7cbc77a455ea3a160976cfbc4b18bb475d811e2707c9784467f315b23",
+  "starting_point_path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0001_w4/starting_point.json",
+  "starting_point_sha256": "1f5123070cf74d4885aa1c683a65a91e0d7f2977399a74762ebc0c4dcbdefec8",
+  "original_global_reproduction": {
+    "reference_path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/absolute_validation_reference_results/integrals/global.json",
+    "reference_sha256": "b94d4b91bed62278e506c4cc2a617b67e21e43df02cb45041a9599506b773e89",
+    "J_abs_reference": 4.2406652907080184e-08,
+    "difference": 2.4947767274599315e-21,
+    "combined_error_diagnostic": 9.175632163311711e-15,
+    "passed": true
+  },
+  "representative_points": [
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0001_w4/trust_points/point_000.json",
+      "sha256": "8b8f76ad3e1303eca33f0da31e46593028eee18e2bee0d2cf0c439513b549256",
+      "passed": true,
+      "direction": "complete_cl_feasible",
+      "signed_trust_radius_multiple": -1.0,
+      "J_abs": 8.153334562242056e-08,
+      "error_abs": 5.222865528950747e-15
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0001_w4/trust_points/point_001.json",
+      "sha256": "65ba6ce8241a71f5c91b1a69844a17693dcf57d7b2574081491026556f0295a4",
+      "passed": true,
+      "direction": "complete_cl_feasible",
+      "signed_trust_radius_multiple": 1.0,
+      "J_abs": 8.361281833760741e-08,
+      "error_abs": 5.225559210172981e-15
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0001_w4/trust_points/point_002.json",
+      "sha256": "6491cba97d5e40130a01f6d2688dbb4df33c147b30499223a3881dfcd0eb5495",
+      "passed": true,
+      "direction": "complete_cl_feasible",
+      "signed_trust_radius_multiple": 0.5,
+      "J_abs": 5.294034399055701e-08,
+      "error_abs": 5.224939175161157e-15
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0001_w4/trust_points/point_003.json",
+      "sha256": "e36a2dfe0f3f8180e129dccbf8eba98df05400c2555e9038f61db73bd4c778e0",
+      "passed": true,
+      "direction": "all_core_mixed",
+      "signed_trust_radius_multiple": -1.0,
+      "J_abs": 5.811986472373113e-08,
+      "error_abs": 5.223238363107868e-15
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0001_w4/trust_points/point_004.json",
+      "sha256": "857d7c37da17c43cb318ea46bcaf231ff1d44ed8fb2affda3aa0c42121ceb7ea",
+      "passed": true,
+      "direction": "all_core_mixed",
+      "signed_trust_radius_multiple": 1.0,
+      "J_abs": 5.9119595628182433e-08,
+      "error_abs": 5.225274484769757e-15
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0001_w4/trust_points/point_005.json",
+      "sha256": "88bf0ed8481abf139d6ef06a693f9d2a76bf901c4c2ab2be92736dc98324c31a",
+      "passed": true,
+      "direction": "distributed_extra",
+      "signed_trust_radius_multiple": -1.0,
+      "J_abs": 5.1900325641549176e-08,
+      "error_abs": 4.485234143323457e-15
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0001_w4/trust_points/point_006.json",
+      "sha256": "918537aba84617b0cd1f260ca227bd4b44cdc539ae5f64fb6b439243e666e921",
+      "passed": true,
+      "direction": "distributed_extra",
+      "signed_trust_radius_multiple": 1.0,
+      "J_abs": 4.998243857022391e-08,
+      "error_abs": 6.688427189476903e-15
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0001_w4/trust_points/point_007.json",
+      "sha256": "bc7fbf3aa6c41ae1ccdead56091b5ccde9bdd3fccb5a5cb67d4b1fdf88af9280",
+      "passed": true,
+      "direction": "all_extra_mixed",
+      "signed_trust_radius_multiple": -1.0,
+      "J_abs": 5.239105391589329e-08,
+      "error_abs": 3.195545966372134e-15
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0001_w4/trust_points/point_008.json",
+      "sha256": "19b13924e5b30db846faa809b7aa1778f7c3e250002d91c0b94bad9024b1dab8",
+      "passed": true,
+      "direction": "all_extra_mixed",
+      "signed_trust_radius_multiple": 1.0,
+      "J_abs": 5.441272423487542e-08,
+      "error_abs": 5.438499296774861e-15
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0001_w4/trust_points/point_009.json",
+      "sha256": "d01fbc4d6dfaf9d66f71305827ef7edd6361621fe75bffeff0a35b6e31d44230",
+      "passed": true,
+      "direction": "complete_core_and_extra_mixed",
+      "signed_trust_radius_multiple": -1.0,
+      "J_abs": 5.63079884338424e-08,
+      "error_abs": 8.258873219356167e-15
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0001_w4/trust_points/point_010.json",
+      "sha256": "dfff77e39d279a9699a7a19a751171173e6b900c8f361971b2b50ece098fc7c4",
+      "passed": true,
+      "direction": "complete_core_and_extra_mixed",
+      "signed_trust_radius_multiple": 1.0,
+      "J_abs": 5.7110831527188797e-08,
+      "error_abs": 3.1677912808539237e-15
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0001_w4/trust_points/point_011.json",
+      "sha256": "8c73a84f4233ae698b7531aa1d86876d4e1632293d322b0632eee5a194d25876",
+      "passed": true,
+      "direction": "complete_core_and_extra_mixed",
+      "signed_trust_radius_multiple": 0.5,
+      "J_abs": 4.6183490174009513e-08,
+      "error_abs": 4.073923251078505e-15
+    }
+  ],
+  "exact_dilation_checks": [
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0001_w4/dilations/lambda_2.json",
+      "sha256": "57a3bb6f0114ebc0ff8c6802485d0a378f465d9eb27ed77c863944100c18cde3",
+      "factor": 2.0,
+      "passed": true,
+      "difference": 3.95061460555326e-21
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0001_w4/dilations/lambda_16.json",
+      "sha256": "1697607f4b974fe15ab57964ddeec7809e7076ccbe789268b2533941e38e23e9",
+      "factor": 16.0,
+      "passed": true,
+      "difference": 9.926167350636332e-23
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0001_w4/dilations/lambda_256.json",
+      "sha256": "cc56a9cf88e1e769823643fb8bba75d6608099d9fc71511e629fa8859ee2c34c",
+      "factor": 256.0,
+      "passed": true,
+      "difference": 4.1028158382630173e-22
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0001_w4/dilations/lambda_1024.json",
+      "sha256": "4e2f44f7132c8fe44c19058ac677fde23308baa56879c851764d29c5814a5a1a",
+      "factor": 1024.0,
+      "passed": true,
+      "difference": 1.0124690697649059e-21
+    }
+  ],
+  "endpoint_restore": {
+    "passed": true,
+    "bitwise_residual_restored": false,
+    "physical_p_bitwise_restored": true,
+    "physical_extra_and_modes_bitwise_unchanged_verified": true,
+    "residual_difference_norm": 2.4088697278261887e-17,
+    "tolerance": 1.3620248156305243e-14,
+    "tolerance_policy": "Predeclared condition-scaled 64epsilon plus preexisting provider limit and negligible objective perturbation; strict cached selected-thread fresh-process replay also required.",
+    "original_stateless64epsilon_passed": false,
+    "cached_selected_policy_original64epsilon_passed": true,
+    "scope": "Separate supplemental numerical qualification; original failed replay remains immutable."
+  },
+  "geometry": {
+    "version": "absolute_loss_analytic_center_full19_c5_rightinverse_v2",
+    "constraint_row_scales": [
+      6.249851977043475e-05,
+      0.00017236267934885434,
+      3.313015755712604e-05,
+      1.3781660030108494e-05,
+      4.4139490165832015e-05
+    ],
+    "coefficient_row_scaled_singular_values": [
+      2.1522507023426933,
+      0.517182375920641,
+      0.31071101035559934,
+      0.05490927737566842,
+      0.027981129433120748
+    ],
+    "coefficient_row_scaled_condition": 76.91793526372506,
+    "all_five_singular_pairs_retained": true,
+    "coefficient_rank_floor_diagnostic": 1.0991600108730003e-14,
+    "full_row_scaled_constraint_singular_values": [
+      2.1523420856009023,
+      0.5346838130820312,
+      0.31071257633765087,
+      0.07129140318166104,
+      0.04182850040547488
+    ],
+    "raw_G_normal_minus_identity_norm": 6.150844137636805e-15,
+    "raw_G_normal_condition": 1.0000000000000018,
+    "tangent_constraint_error": 4.390701289085256e-12,
+    "relative_tangent_backward_error": 1.2049187468865561e-17,
+    "tangent_rank": 19,
+    "complete_24_rank": 24,
+    "complete_24_condition": 82603.068450098,
+    "cl_tangent_row_norm": 0.49834208293893695,
+    "base_HP": {
+      "precision": 70,
+      "center_convention": "analytic_center_elimination",
+      "coefficients_decimal": [
+        "-0.4142252332343651243588033069468140454640237734688197118558841927365671",
+        "-3.20826310714390405820495288935489952564239501953125",
+        "-0.06527393744815306042550417942038620822131633758544921875",
+        "-1.428496680633342119648432344547472894191741943359375",
+        "7.1747731006198680603347384021617472171783447265625",
+        "1.4070557353023060986885184320271946489810943603515625",
+        "-0.46146319087653686619177051397855393588542938232421875",
+        "0.00534383570427525260437828791282299789600074291229248046875",
+        "-2.4070642892628253406428484595380723476409912109375",
+        "3.18617014073469118073944628122262656688690185546875",
+        "-0.09211597418935400793937873231698176823556423187255859375",
+        "0.1332267526091861220560730316719855181872844696044921875",
+        "-0.00473673252682286181902693300571627332828938961029052734375",
+        "-0.12039303969723759435428434017012477852404117584228515625",
+        "0.459401253164217759916709837852977216243743896484375",
+        "-0.010602621003371066887854823335146647877991199493408203125",
+        "-0.016530554661440814701034440759030985645949840545654296875",
+        "0.000551694786008681569734746208411024781526066362857818603515625",
+        "0.04676768242628048799502948895678855478763580322265625",
+        "-0.07906141121020356099524661885880050249397754669189453125",
+        "-31.5453465415574356711658765561878681182861328125",
+        "-7.05324899489598866608730531879700720310211181640625",
+        "-0.42592390239631205961501336787478066980838775634765625",
+        "0.05889927503474083614332101888066972605884075164794921875"
+      ],
+      "jets": {
+        "a": "17.97877084668588930964281302135745926872996754812567546863058312591625",
+        "b": "-1.21413480945941420328921473620158557372991458006951137621406547092593",
+        "c": "-2.52047200255163478868782807556936683769878431666661232422255835422877",
+        "d": "1.02185207883687767307930856147448138163581496252466833482929974059003",
+        "e": "2.0720248746418923933742437207614950889109774418309108654835583098502",
+        "g": "1.09958685908924129580836849392480994494475544266311603824381955467234",
+        "h": "-0.88078149329106447673609636694891378283500671386718750000000000000000",
+        "u": "0.12432847529242936611445992123921584878724536526946708625657123015331",
+        "v": "0.280383127860708701648611657494646009122726161420370039148117260155315",
+        "w": "-0.12388704522680644702959720812716325289758970720484571247560593621226",
+        "z": "-0.2682779018018969586208816805591100780985776176669598483008467063524400",
+        "k": "-0.12671911692362015175115986790841648546152445888300313205810181907930"
+      },
+      "constraints_decimal": [
+        "-4.6819965801346845176229553750080432177639738161454311107538E-11",
+        "-1.8557833273210681816404219366260401107608388795447447856142E-11",
+        "2.332672784894921246165876912747827197601864958904076447483E-11",
+        "3.629426994867883081474762504481645265076701805933796303835E-11",
+        "1.0488124909822614860770285367736768521081306833825784938441E-11"
+      ],
+      "constraints": [
+        -4.681996580134684e-11,
+        -1.855783327321068e-11,
+        2.3326727848949214e-11,
+        3.6294269948678834e-11,
+        1.0488124909822615e-11
+      ],
+      "max_abs": 4.681996580134684e-11,
+      "center_decimal": "0E-68",
+      "center_abs": 0.0,
+      "poisson_max_abs": 2.8e-67,
+      "a0": 17.97877084668589,
+      "physical_bounds": true
+    },
+    "base_point_corrected": false,
+    "constraint_tolerance": 1e-10,
+    "newton_target": 3e-12,
+    "normal_corrections_leave_cl_fixed": true
+  },
+  "initial_trust_coordinate_path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0001_w4/initial_trust_coordinates.npz",
+  "initial_trust_coordinate_sha256": "702785562c56b225d592ce8d179732c1b616b6a392b9439898ec55a7c873fbf2",
+  "initial_column_scaled_trust_radius": 0.00014561362503416638,
+  "initial_trust_dimension": 181,
+  "all_column_norms_positive": true,
+  "origin_tail_error_abs": 5.518471187595503e-33,
+  "infinity_tail_error_abs": 7.53375089275708e-19,
+  "radial_quadrature_error_abs": 2.5393638999112425e-15,
+  "angular_quadrature_error_abs": 3.785178483042655e-21,
+  "per_trial_independent_validation_required": true,
+  "trust_qualification_scope": "Five fixed representative directions in the actual all-column initial trust coordinates, signs at the initial radius 0.5*norm(r), and two half-radius steps. Every one of the 19+K columns has scale 1/norm(column) from the actual training Jacobian. This finite set does not certify the entire ball; every campaign trial is independently validated, including after radius growth.",
+  "all_19_core_and_every_extra_direction_retained": true,
+  "optimization_performed": false,
+  "candidate_refit": false,
+  "completed": true,
+  "elapsed_seconds": 2143.1680738925934,
+  "environment": {
+    "epoch": 1792622532.610113,
+    "host": "DHCP-142-217.caltech.edu",
+    "machine": "x86_64",
+    "python": "3.9.6",
+    "numpy": "1.23.5",
+    "scipy": "1.9.3",
+    "nice": 15,
+    "threadpools": [
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libopenblas",
+        "filepath": "/Users/caltech/research/IPM_R2_macpro_runs/verification_20261020_01/native_venv/lib/python3.9/site-packages/numpy/.dylibs/libopenblas64_.0.dylib",
+        "version": "0.3.20",
+        "threading_layer": "pthreads",
+        "architecture": "Haswell"
+      },
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libopenblas",
+        "filepath": "/Users/caltech/research/IPM_R2_macpro_runs/verification_20261020_01/native_venv/lib/python3.9/site-packages/scipy/.dylibs/libopenblas.0.dylib",
+        "version": "0.3.18",
+        "threading_layer": "pthreads",
+        "architecture": "SkylakeX"
+      }
+    ],
+    "resource_session": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/resource_session",
+    "resource_run": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/resource_session/runs/20261021T220629Z_1792620389011924000_stage13_qualify_epoch0001_w4"
+  },
+  "original_failed_epoch": {
+    "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0001_w4/epoch.json",
+    "sha256": "48b6fa85953b7ac2b7ac2d3b8a4bd15fb381f224830f4c74f6f3e1a36953ae28"
+  },
+  "supplemental_replay_review": {
+    "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0001_w4_reviewed/review.json",
+    "sha256": "046eca73af17aef58bf8b07e190a2956a3454bc09975ca11fd38a00dcfa5be01"
+  },
+  "supplemental_replay_policy": {
+    "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/provenance/replay_resolution_policy_v1.json",
+    "sha256": "8e54a0120a8d5faca143c7c6517f7c1313de89c9a0a6c74d7969bedd8e10527f"
+  },
+  "supplemental_replay_diagnostics": [
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/results/reproducibility/endpoint_repro_01/checks.json",
+      "sha256": "785b945537de6707ac5c64d49b7c5ca9690385b58a2bf241b1be6fac2c35639a"
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/results/reproducibility/endpoint_repro_02/checks.json",
+      "sha256": "0db2e9f02610587d0daa776015fbca66f9c782b84144ff3b005c3d818b38fef8"
+    }
+  ],
+  "original_endpoint_restore": {
+    "bitwise_residual_restored": false,
+    "residual_difference_norm": 2.4088697278261887e-17,
+    "tolerance": 4.1385881398288805e-18,
+    "physical_p_bitwise_restored": true,
+    "passed": false
+  },
+  "original_stateless_64epsilon_test_passed": false,
+  "review_epoch": 1792622930.411731,
+  "reviewer_source_sha256": "404789f550f6b1c16db5a9c8bdf1b047909668efa9bc157d958dcdac484a3910",
+  "numerical_sources_candidates_meshes_or_original_proofs_modified": false
+}

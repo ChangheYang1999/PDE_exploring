@@ -1,0 +1,973 @@
+{
+  "schema": "stage13_integration_epoch_v3",
+  "label": "epoch0004_v3_w4_released_fresh_process",
+  "physical_identity": {
+    "p_sha256": "2bb06715f03b0a6a39213225992b03c849cfe79f2a4fa6a212224f0ac7c9d95c",
+    "extra_sha256": "02fe8b85e0be1926d34e4ad25d4263e400c4cef23f035d7dd4c9ff7bd8cdc1e6",
+    "modes_sha256": "820153ce1b74e3cfeaec27c8b7abc8286d873b78e8d9cc1c19c9ae6652e510fc",
+    "feasible_variables": 181,
+    "a_ref": 23.95065822465609,
+    "center_convention": "center_chart"
+  },
+  "candidate_path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/campaign/global181/snapshots/accepted_00000006.json",
+  "candidate_sha256": "1af8c8d1e2d8e2e5184086bc4352fe8487d2afdc226910b8a3c7bc7f88809046",
+  "a_ref": 23.95065822465609,
+  "center_convention": "center_chart",
+  "workers": 4,
+  "mesh_level": 1,
+  "upper_log_radius": 16.0,
+  "meshes": {
+    "training": {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0002_v2_w4/meshes/training.npz",
+      "sha256": "715c8271252dd8db67f9f51ea44ebaa4f0470bb80ca80591cf6585a67657dc56",
+      "fingerprint": "9d13af4ac208eda4470ac1b8c776d7610c9f46959c36bf18e4d96fdac3512d69",
+      "metadata": {
+        "schema": "absolute_loss_three_block_whole_axis_mesh_v1",
+        "origin_radius": 0.02,
+        "upper_log_radius": 16.0,
+        "origin_order": 48,
+        "middle_order": 32,
+        "infinity_order": 256,
+        "angular_order": 96,
+        "middle_panel_width_max": 1.0,
+        "middle_panel_count": 20,
+        "radial_nodes": 944,
+        "blocks": [
+          {
+            "id": 0,
+            "name": "origin",
+            "mapping": "s=log(r0)+log(u), 0<u<1",
+            "weight": "du/u",
+            "radial_nodes": 48,
+            "log_radius_min_node": -11.306730535482723,
+            "log_radius_max_node": -3.912637690682211
+          },
+          {
+            "id": 1,
+            "name": "middle",
+            "mapping": "s in [log(r0), S]",
+            "weight": "ds",
+            "radial_nodes": 640,
+            "log_radius_min_node": -3.9106609542831667,
+            "log_radius_max_node": 15.998637948855022
+          },
+          {
+            "id": 2,
+            "name": "infinity",
+            "mapping": "s=S-log(u), 0<u<1",
+            "weight": "du/u",
+            "radial_nodes": 256,
+            "log_radius_min_node": 16.000021975231956,
+            "log_radius_max_node": 26.725605546525948
+          }
+        ],
+        "whole_axis_domain_covered_by_transformations": true,
+        "weights_positive": true,
+        "nodes_and_weights_independent_of_cl_and_candidate_parameters": true,
+        "origin_or_infinity_contribution_omitted_from_residual_vector": false,
+        "finite_quadrature_is_exact_integral": false,
+        "finite_quadrature_is_exactly_scale_invariant": false,
+        "whole_axis_qualified": false,
+        "neighborhood_validated": false,
+        "mesh": {
+          "schema": "absolute_loss_frozen_log_mesh_v1",
+          "name": "epoch0002_v2_w4_training",
+          "nodes": 90624,
+          "log_radius_min": -11.306730535482723,
+          "log_radius_max": 26.725605546525948,
+          "angular_min": 0.00024386307985261202,
+          "angular_max": 1.5705524637150439,
+          "mesh_sha256": "9d13af4ac208eda4470ac1b8c776d7610c9f46959c36bf18e4d96fdac3512d69",
+          "weights_are_ds_dtheta": true,
+          "exact_whole_line_invariance_claimed": false,
+          "whole_axis_qualified_by_mesh_alone": false
+        }
+      }
+    },
+    "refined": {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0002_v2_w4/meshes/refined.npz",
+      "sha256": "1ea8ad2ac2e7332bedca7df514cd8c182cd1597fc854545c4fe1d4e942deae02",
+      "fingerprint": "c1460792ab3ea7fc670803ee0a43e073b429546b8480b9f43a54c1898c4b9b12",
+      "metadata": {
+        "schema": "absolute_loss_three_block_whole_axis_mesh_v1",
+        "origin_radius": 0.02,
+        "upper_log_radius": 16.0,
+        "origin_order": 96,
+        "middle_order": 64,
+        "infinity_order": 512,
+        "angular_order": 128,
+        "middle_panel_width_max": 1.0,
+        "middle_panel_count": 20,
+        "radial_nodes": 1888,
+        "blocks": [
+          {
+            "id": 0,
+            "name": "origin",
+            "mapping": "s=log(r0)+log(u), 0<u<1",
+            "weight": "du/u",
+            "radial_nodes": 96,
+            "log_radius_min_node": -12.682509349036252,
+            "log_radius_max_node": -3.912178265538758
+          },
+          {
+            "id": 1,
+            "name": "middle",
+            "mapping": "s in [log(r0), S]",
+            "weight": "ds",
+            "radial_nodes": 1280,
+            "log_radius_min_node": -3.911677054804518,
+            "log_radius_max_node": 15.999654049376373
+          },
+          {
+            "id": 2,
+            "name": "infinity",
+            "mapping": "s=S-log(u), 0<u<1",
+            "weight": "du/u",
+            "radial_nodes": 512,
+            "log_radius_min_node": 16.00000550452296,
+            "log_radius_max_node": 28.109943199768217
+          }
+        ],
+        "whole_axis_domain_covered_by_transformations": true,
+        "weights_positive": true,
+        "nodes_and_weights_independent_of_cl_and_candidate_parameters": true,
+        "origin_or_infinity_contribution_omitted_from_residual_vector": false,
+        "finite_quadrature_is_exact_integral": false,
+        "finite_quadrature_is_exactly_scale_invariant": false,
+        "whole_axis_qualified": false,
+        "neighborhood_validated": false,
+        "mesh": {
+          "schema": "absolute_loss_frozen_log_mesh_v1",
+          "name": "epoch0002_v2_w4_refined",
+          "nodes": 241664,
+          "log_radius_min": -12.682509349036252,
+          "log_radius_max": 28.109943199768217,
+          "angular_min": 0.00013753268471130022,
+          "angular_max": 1.5706587941101853,
+          "mesh_sha256": "c1460792ab3ea7fc670803ee0a43e073b429546b8480b9f43a54c1898c4b9b12",
+          "weights_are_ds_dtheta": true,
+          "exact_whole_line_invariance_claimed": false,
+          "whole_axis_qualified_by_mesh_alone": false
+        }
+      }
+    }
+  },
+  "default_independent_error_abs": 2.5e-15,
+  "relative_accuracy": 2.5e-07,
+  "independent_initial_upper_log_radius": 44.0,
+  "original_reference_epoch": {
+    "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0002_v2_w4/epoch.json",
+    "sha256": "3e3c8f253409cca76a43a5434a9e9e349941941dda923ff76616bbc3873beae5"
+  },
+  "recovery": {
+    "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/results/trust_point_recovery/v2_original_02/checks.json",
+    "sha256": "b52aca1e86b45dd74e4886d609edc1450ccb741fc2e069761e6b93b6ea876ed8"
+  },
+  "failed_v2_release": {
+    "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0002_v2_w4_released/review.json",
+    "sha256": "7bd90454525347a1236fe8ca6d7cb541e7e4825e13e0170b506c2add4161000a"
+  },
+  "replay_policy": {
+    "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/provenance/replay_resolution_policy_v3.json",
+    "sha256": "61673cb088b5662d97a3298580186b781769e1e5e642680135bdf9d108e392dc"
+  },
+  "source_sha256_at_design": {
+    "stage13_integration_v2.py": "c4a218e6f5da47251889dd479279fc33493269783ccb4c7e056a050b75c79a8a",
+    "stage13_model.py": "427261ef54bf417da18a15482a51890e5693add32d9f815babf122a16e6f13aa",
+    "stage13_model_v2.py": "ddbfc2c56dbea9c8bdc5b03e5c781fb4d0f4366e31ace2b04ebeaf790cec7d9f",
+    "absolute_fields_v2.py": "893c097e166d287fbeeeedf9bd210ef5f026ccdfeae122730ab7cb5a3d3498e6",
+    "absolute_model_v2.py": "5be548183993caef0dc909813f9a2fcbb283091a939b2909b36e467e3ef88624",
+    "whole_axis_mesh.py": "c42233ad7c55b5e4eff778cdc8e305b5d81ce896a4027e5d7dc20a3404501b6c",
+    "absolute_model.py": "aa67c402cacb46321bf85d5e1d1a2f759ff42f76bcc0fa00130303be3081d6a8",
+    "absolute_fields.py": "84849ae05d37d25ad9193946a16f04a005611ab1bd9f6f59776cee855503a55e",
+    "highprecision_origin.py": "75f9b65e4ccc171d4a91326a44d457cfa08e62877152867d588e8535e6852f87",
+    "tail_envelope.py": "129816786c19b80675498d0650d380884d8827c1e31b1707c13b803b41f6919d",
+    "outer_envelopes.py": "6931eac402cff4db33644cefe6d73408bf837aecce86bbebccfc2187e0ef2323",
+    "log_integral.py": "1accf26e3fab9006a9e47f82dc4325b3870b438a4fcc2bd075121857451391ba",
+    "absolute_common.py": "f44ef69dd9e8d2bc8b22c57336435c1609a5b7246585b3165c2919e40d7ad3db",
+    "absolute_chart.py": "eb069dacbae41dc7ba19cb72e988293f58c40261ff15b65e9d42d60aecd12a62",
+    "absolute_chart_v2.py": "d7fcf09fabf3ce4375cdcd06c435789524263a82a827e77677838bf491acacf1",
+    "field_tests.py": "d20afcd54cee463bf686b6f0e229cbc6d7f5483c5e679dfb799cafc8b36b5dc1",
+    "stage13_integration_v3.py": "c9d4c9be4c786fe472c3222a73b85f904ddb50ae7d2fd5bd600a102f40ab7b62",
+    "stage13_model_v3.py": "b4bddb922f7b89fa7bda13d2feed0c394f24788bcfbb5af6fd0012259d1c4386",
+    "stage13_stable_exp.py": "987f80286ba5194f0a862123e22d71dda2c2c36e8078d2a50d1d591110073935"
+  },
+  "independent_source_sha256": {
+    "stage13_integration_v2.py": "c4a218e6f5da47251889dd479279fc33493269783ccb4c7e056a050b75c79a8a",
+    "stage13_model.py": "427261ef54bf417da18a15482a51890e5693add32d9f815babf122a16e6f13aa",
+    "stage13_model_v2.py": "ddbfc2c56dbea9c8bdc5b03e5c781fb4d0f4366e31ace2b04ebeaf790cec7d9f",
+    "absolute_fields_v2.py": "893c097e166d287fbeeeedf9bd210ef5f026ccdfeae122730ab7cb5a3d3498e6",
+    "absolute_model_v2.py": "5be548183993caef0dc909813f9a2fcbb283091a939b2909b36e467e3ef88624",
+    "whole_axis_mesh.py": "c42233ad7c55b5e4eff778cdc8e305b5d81ce896a4027e5d7dc20a3404501b6c",
+    "absolute_model.py": "aa67c402cacb46321bf85d5e1d1a2f759ff42f76bcc0fa00130303be3081d6a8",
+    "absolute_fields.py": "84849ae05d37d25ad9193946a16f04a005611ab1bd9f6f59776cee855503a55e",
+    "highprecision_origin.py": "75f9b65e4ccc171d4a91326a44d457cfa08e62877152867d588e8535e6852f87",
+    "tail_envelope.py": "129816786c19b80675498d0650d380884d8827c1e31b1707c13b803b41f6919d",
+    "outer_envelopes.py": "6931eac402cff4db33644cefe6d73408bf837aecce86bbebccfc2187e0ef2323",
+    "log_integral.py": "1accf26e3fab9006a9e47f82dc4325b3870b438a4fcc2bd075121857451391ba",
+    "absolute_common.py": "f44ef69dd9e8d2bc8b22c57336435c1609a5b7246585b3165c2919e40d7ad3db",
+    "absolute_chart.py": "eb069dacbae41dc7ba19cb72e988293f58c40261ff15b65e9d42d60aecd12a62",
+    "absolute_chart_v2.py": "d7fcf09fabf3ce4375cdcd06c435789524263a82a827e77677838bf491acacf1",
+    "field_tests.py": "d20afcd54cee463bf686b6f0e229cbc6d7f5483c5e679dfb799cafc8b36b5dc1",
+    "provenance/base_manifest.json": "6578baddb7be1f68fed56841a2faf0a4132b30b91b85886dc8072408249a223f",
+    "base/basis_extreme_tests.py": "50b1e8b39108df0c3e7cca616dfd27d3b68296421ec45465f2ee8f9e675ae966",
+    "base/basis_high_angular_tests.py": "2fd4244b8e635ed0314feeb9e23b36cc1ed2aa00c330d374879b9f3592c98e5d",
+    "base/basis_tests.py": "40eb50f247d06bb8bb1398a2d2c200ef4678c2626f841a45692dfefc07eb1f8e",
+    "base/c5_chart.py": "521b28e824912e93ebc8ee4077e48bc84ca79369f38adf9532b81d558164f2f2",
+    "base/campaign_tools.py": "481347365ef514a02af41a5eaa4ca28b9c25ebfa3184b8b78b61d8c15e08abad",
+    "base/coefficient_normal_chart.py": "35948ec0b265ff67b1149bcdb8994fc14c2998c4f46ac8fbc12a66c227c39382",
+    "base/continuation_chart.py": "a04eba12225dcd36982156b58e576cdd90e6d2be302387cefa17fb1a28d77c87",
+    "base/engine/completion_impl.py": "ee19b204b2edf8917e595d6e3e5dfd96c788adec583a8ff1aca59225b41f6948",
+    "base/engine/diagnostics_impl.py": "e3fb29b5f65b598900763b1c61fd2f8051d2cc5e80305dde95dbff7d6f3987d2",
+    "base/engine/fit_impl.py": "13ece05d0a9a95b6dc231df57bb1c3c12fc9e5a85f5c729119d158642eb10691",
+    "base/engine/ipm_portable.py": "f358631c361941f65acea2bf20e02e5861d9a5429bacc10a7a6ad1e38993d378",
+    "base/engine/polynomial_check.py": "79cea9c2a6962580e1d01ad955cfe7f9c156d1837872ca9413119b6b58cdd006",
+    "base/engine/secondary_impl.py": "a594461d830130769ac9ceab22a3609dd9995058c5ef59b3620da6af2be3fe67",
+    "base/engine/stage10.py": "d0e000aaeac5170034fcfca2768e19e436bb27240e812eeaf0884fd2885eda13",
+    "base/engine/stage1_engine.py": "990261775757be5f59810d72802fa53aac0548e603488925561b9dfb70755833",
+    "base/engine/stage2_engine.py": "26ccd21d89bba27685d0a5c795864871b77f1919eb0604a6465f5276c3a89100",
+    "base/engine/stage3_engine.py": "758ae70b8277b19346118676f94740cc1e600374ab4de1168c0ddbc2c75f32fc",
+    "base/engine/stage4_engine.py": "69cb0f262c8b3751db9ed90133ad34e3d1eae54dbb6b6d1b138e480041874ec3",
+    "base/engine/stage5_engine.py": "064e5010906299dc0dac7434e640451a6b913c427ed6206fa007fe5b979e443e",
+    "base/engine/stage6_engine.py": "a54f0b872b333f5a1b188ae9312d9c22e09a9dd3ac31ce583953d689a2dbbca3",
+    "base/engine/stage8.py": "ccf3001266f32d16111f9dd1c4e6dbbd1aa5bf17f4f66fda65ebff0f1b302e42",
+    "base/engine/stage9.py": "caccc87aed84d80fb47f4d053ba9d14a8cfb5723fb9087a5b85b1eb99f39ccab",
+    "base/engine/taylor_jet.py": "efc313b2b446125c921dd33754c50952faf8499c7082b929a9121025aa080c52",
+    "base/hardware/guard.py": "22567f5bf8776a23f93b3844a8b8236d350021e4074655f0e4b742a67fe510f4",
+    "base/hardware/policy.py": "f8e4548bd9a29b23e18471716be441ef104976f3d439622752a2797933fd3e20",
+    "base/hardware/telemetry.py": "8395327c4b8a7c12d32cd7f6823c2f24adbafc125ae917c0ef6f915c17bf5bf8",
+    "base/hardware/test_guard.py": "3cafce134bf1f9bcbe428986ff0e2886e06a23817d6c292c6bd97738abb5cf2b",
+    "base/hardware/worker_bootstrap.py": "919b6f929930bbaa50089e822b6dd60e8b6ab882396a04a82719b207bd82c1e9",
+    "base/jacobian_operator.py": "2fa761c893cdced6f3fffeea00e23c65a8630760f53d9c708accfe03dfa179a5",
+    "base/launch_tools/run_verified_stage11.py": "574120c2c2594d4056ab8c8f0ea3885a64fb78c9ecc339bf6a2adfc764ef3ce9",
+    "base/launch_tools/summarize_deployment.py": "383706701de36a044a28f56904f60092de07ac3dadf19b837310e7c0a4c099ce",
+    "base/nested_model.py": "62b406e6950b3c17fefcb62d11d12c94e168411c6b94f3ae3cbb500609b6f3e1",
+    "base/preflight.py": "846ff619abf472809cd2a8dcb5e7e339ce27fcace3e75debfc81db93775c2998",
+    "base/repro_helpers.py": "cf5b1e2653961c884a6f7354042e1eba9bbbb72b84b1bb4068d5c3f906ecf402",
+    "base/reproduction/verify_candidates.py": "cf5b1e2653961c884a6f7354042e1eba9bbbb72b84b1bb4068d5c3f906ecf402",
+    "base/run_future_experiment.py": "3e8c1ca9086c5b50e331ac9461c942c8e23270e09d6c763fc01dee3dd76a1aca",
+    "base/spectral_basis.py": "6cd09d759fd0444e86536a24a016e4610b41eb4bb390db57f1d0eb64a088426b",
+    "base/stage11_common.py": "815b959f7f0894375c4c677b13c6feef29ecd068d3f99e78064134af87c078d7",
+    "base/stage12_assess.py": "89728ab11e125a498d5c539b4276d7a364e7905dd57c2cd53c14d98090bd054f",
+    "base/stage12_chart.py": "36bc71987c974a2c1395e3179110bf363a76096dc3be9a8469ce8794a7fa4790",
+    "base/stage12_common.py": "7a00e923797a381741639c7415409bb350ecb3b3dff2eaaaf71d67c11787fe59",
+    "base/stage12_model.py": "13a83af4ae47a76986b803310fec0f8345001423997740407dcad4e127f255ed"
+  },
+  "original_physical_trust_design_retained": true,
+  "old_points_relabelled_as_new_normalized_design": false,
+  "old_trust_coordinates": {
+    "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0002_v2_w4/initial_trust_coordinates.npz",
+    "sha256": "d5fc8dda27869d70b3c1e7bb12fcb69cf75843d32285675ddbaf8c99f6057402"
+  },
+  "fresh_production_column_scales_used_only_for_new_campaign_and_radius_conversion": true,
+  "production_origin_order": 20,
+  "independent_origin_orders": [
+    20,
+    24
+  ],
+  "prepared_epoch": 1792633592.887006,
+  "whole_axis_qualified": true,
+  "neighborhood_validated": true,
+  "representative_neighborhood_only": true,
+  "uniform_rigorous_certificate": false,
+  "fresh_process_cached_proof_pending": false,
+  "passed": true,
+  "completed": true,
+  "local_qualification_passed": true,
+  "endpoint_restore": {
+    "passed": true,
+    "bitwise_residual_restored": true,
+    "residual_difference_norm": 0.0,
+    "tolerance": 3.3967796885660428e-18,
+    "physical_p_bitwise_restored": true,
+    "physical_extra_bitwise_restored": true,
+    "positive_term_condition_norm": 0.9461435718269603,
+    "condition_scaled64epsilon_bound": 1.3445508838955224e-14,
+    "condition_arrays_path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0002_v2_w4/endpoint_condition_scale.npz",
+    "condition_arrays_sha256": "3a6591c03a4fa3da12abc769d98cf3a875caac37c6165844001593374427d8cd",
+    "condition_reference_unchanged_old_stateless_provider": true,
+    "stateless_and_cross_provider_checks": {
+      "stateless_initial_cached": {
+        "difference_norm": 7.809513214132727e-16,
+        "relative_difference": 3.267207998683609e-12,
+        "condition_scaled_bound": 1.3445508838955224e-14,
+        "preexisting_provider_relative_limit": 5e-09,
+        "induced_loss_change_bound": 1.8666854594622133e-19,
+        "induced_loss_change_limit": 1.0654986216780052e-18,
+        "strict64epsilon_bound": 3.3967796885660578e-18,
+        "strict64epsilon_passed": false,
+        "condition_policy_passed": true
+      },
+      "stateless_final_cached": {
+        "difference_norm": 7.809513214132727e-16,
+        "relative_difference": 3.267207998683609e-12,
+        "condition_scaled_bound": 1.3445508838955224e-14,
+        "preexisting_provider_relative_limit": 5e-09,
+        "induced_loss_change_bound": 1.8666854594622133e-19,
+        "induced_loss_change_limit": 1.0654986216780052e-18,
+        "strict64epsilon_bound": 3.3967796885660578e-18,
+        "strict64epsilon_passed": false,
+        "condition_policy_passed": true
+      },
+      "benchmark_cached_initial": {
+        "difference_norm": 0.0,
+        "relative_difference": 0.0,
+        "condition_scaled_bound": 1.3445508838955224e-14,
+        "preexisting_provider_relative_limit": 5e-09,
+        "induced_loss_change_bound": 0.0,
+        "induced_loss_change_limit": 1.0654986216780052e-18,
+        "strict64epsilon_bound": 3.3967796885660428e-18,
+        "strict64epsilon_passed": true,
+        "condition_policy_passed": true
+      }
+    },
+    "provider": "Fresh V3 cached selected4 instances; no old failed cache values relabelled",
+    "initial_cache": {
+      "version": "stage13_exact_last_cl_field_cache_v3_origin20_private_scalar_exp",
+      "workers": 4,
+      "cache_builds": 1,
+      "cache_build_seconds": 22.565586241,
+      "basis_cache_bytes": 1552416768,
+      "direct_nodes": 86016,
+      "Taylor_nodes": 4608,
+      "exact_cl_cache_key": true,
+      "cl_interpolation_used": false,
+      "all_raw_columns": 186,
+      "feasible_columns": 181,
+      "evaluation_cache_hits": 0,
+      "production_origin_residual_order": 20,
+      "production_origin_all_raw_derivative_order": 20,
+      "physical_model_or_objective_changed": false,
+      "original_provider_edited": false,
+      "arithmetic_provider": {
+        "frozen_physical_source_sha256": {
+          "absolute_fields.py": "84849ae05d37d25ad9193946a16f04a005611ab1bd9f6f59776cee855503a55e",
+          "stage13_model.py": "427261ef54bf417da18a15482a51890e5693add32d9f815babf122a16e6f13aa",
+          "stage13_model_v2.py": "ddbfc2c56dbea9c8bdc5b03e5c781fb4d0f4366e31ace2b04ebeaf790cec7d9f",
+          "absolute_fields_v2.py": "893c097e166d287fbeeeedf9bd210ef5f026ccdfeae122730ab7cb5a3d3498e6",
+          "highprecision_origin.py": "75f9b65e4ccc171d4a91326a44d457cfa08e62877152867d588e8535e6852f87",
+          "base/spectral_basis.py": "6cd09d759fd0444e86536a24a016e4610b41eb4bb390db57f1d0eb64a088426b"
+        },
+        "original_v2_freeze_path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/provenance/stage13_numerical_sources_v2.json",
+        "original_v2_freeze_sha256": "c6b9431ccfd605047147f56f070f11b52c2eb8840c27920e51f5a9332465d3c2",
+        "base_manifest_sha256": "6578baddb7be1f68fed56841a2faf0a4132b30b91b85886dc8072408249a223f",
+        "helper_sha256": "987f80286ba5194f0a862123e22d71dda2c2c36e8078d2a50d1d591110073935",
+        "compiled_source_text_modified": false,
+        "sys_modules_modified": false,
+        "replacement": "Only explicit np.exp in the two private field namespaces",
+        "original_independent_stateless_namespaces_modified": false
+      },
+      "scalar_exp_cache": {
+        "calls": 122976,
+        "hits": 121212,
+        "misses": 1764,
+        "evictions": 1508,
+        "maximum_arrays": 256,
+        "peak_entries": 256,
+        "current_entries": 256,
+        "retained_input_and_output_bytes": 4194304,
+        "key": "Exact dtype string, shape, and complete binary64 input bytes",
+        "cached_value_alias_returned": false,
+        "interpolation_used": false,
+        "scalar_primitive": "Python math.exp (native scalar libm)",
+        "other_numpy_operations": "Delegated unchanged to original NumPy"
+      },
+      "original_namespace_identity": {
+        "passed": true,
+        "identities": {
+          "numpy.exp": true,
+          "absolute_fields.np": true,
+          "absolute_fields.core_matrices": true,
+          "absolute_fields.fields": true,
+          "absolute_fields.residual": true,
+          "absolute_fields._harmonics": true,
+          "absolute_fields.evaluate_modes": true,
+          "spectral_basis.np": true,
+          "spectral_basis.evaluate_modes": true,
+          "spectral_basis._harmonics": true,
+          "absolute_fields_v2.np": true,
+          "absolute_fields_v2.fields": true,
+          "absolute_fields_v2.residual": true,
+          "absolute_model.physical_residual": true,
+          "absolute_model_v2.physical_residual": true,
+          "stage13_model.core_matrices": true,
+          "stage13_model.evaluate_modes": true,
+          "stage13_model.CachedAbsoluteProblem._ensure_basis": true,
+          "original_core_function_numpy_is_original": true,
+          "original_spectral_function_numpy_is_original": true,
+          "private_core_function_numpy_is_private_proxy": true,
+          "private_spectral_function_numpy_is_private_proxy": true
+        },
+        "old_independent_stateless_modified": false,
+        "global_numpy_exp_replaced": false
+      },
+      "namespace_identity_checks": 2,
+      "cache_builder_code_object_is_original": true,
+      "residual_and_full_raw_derivative_inherited_unchanged": true,
+      "model_provider_sha256": "b4bddb922f7b89fa7bda13d2feed0c394f24788bcfbb5af6fd0012259d1c4386"
+    },
+    "final_cache": {
+      "version": "stage13_exact_last_cl_field_cache_v3_origin20_private_scalar_exp",
+      "workers": 4,
+      "cache_builds": 1,
+      "cache_build_seconds": 22.005159669000022,
+      "basis_cache_bytes": 1552416768,
+      "direct_nodes": 86016,
+      "Taylor_nodes": 4608,
+      "exact_cl_cache_key": true,
+      "cl_interpolation_used": false,
+      "all_raw_columns": 186,
+      "feasible_columns": 181,
+      "evaluation_cache_hits": 0,
+      "production_origin_residual_order": 20,
+      "production_origin_all_raw_derivative_order": 20,
+      "physical_model_or_objective_changed": false,
+      "original_provider_edited": false,
+      "arithmetic_provider": {
+        "frozen_physical_source_sha256": {
+          "absolute_fields.py": "84849ae05d37d25ad9193946a16f04a005611ab1bd9f6f59776cee855503a55e",
+          "stage13_model.py": "427261ef54bf417da18a15482a51890e5693add32d9f815babf122a16e6f13aa",
+          "stage13_model_v2.py": "ddbfc2c56dbea9c8bdc5b03e5c781fb4d0f4366e31ace2b04ebeaf790cec7d9f",
+          "absolute_fields_v2.py": "893c097e166d287fbeeeedf9bd210ef5f026ccdfeae122730ab7cb5a3d3498e6",
+          "highprecision_origin.py": "75f9b65e4ccc171d4a91326a44d457cfa08e62877152867d588e8535e6852f87",
+          "base/spectral_basis.py": "6cd09d759fd0444e86536a24a016e4610b41eb4bb390db57f1d0eb64a088426b"
+        },
+        "original_v2_freeze_path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/provenance/stage13_numerical_sources_v2.json",
+        "original_v2_freeze_sha256": "c6b9431ccfd605047147f56f070f11b52c2eb8840c27920e51f5a9332465d3c2",
+        "base_manifest_sha256": "6578baddb7be1f68fed56841a2faf0a4132b30b91b85886dc8072408249a223f",
+        "helper_sha256": "987f80286ba5194f0a862123e22d71dda2c2c36e8078d2a50d1d591110073935",
+        "compiled_source_text_modified": false,
+        "sys_modules_modified": false,
+        "replacement": "Only explicit np.exp in the two private field namespaces",
+        "original_independent_stateless_namespaces_modified": false
+      },
+      "scalar_exp_cache": {
+        "calls": 1721664,
+        "hits": 1696968,
+        "misses": 24696,
+        "evictions": 24440,
+        "maximum_arrays": 256,
+        "peak_entries": 256,
+        "current_entries": 256,
+        "retained_input_and_output_bytes": 4194304,
+        "key": "Exact dtype string, shape, and complete binary64 input bytes",
+        "cached_value_alias_returned": false,
+        "interpolation_used": false,
+        "scalar_primitive": "Python math.exp (native scalar libm)",
+        "other_numpy_operations": "Delegated unchanged to original NumPy"
+      },
+      "original_namespace_identity": {
+        "passed": true,
+        "identities": {
+          "numpy.exp": true,
+          "absolute_fields.np": true,
+          "absolute_fields.core_matrices": true,
+          "absolute_fields.fields": true,
+          "absolute_fields.residual": true,
+          "absolute_fields._harmonics": true,
+          "absolute_fields.evaluate_modes": true,
+          "spectral_basis.np": true,
+          "spectral_basis.evaluate_modes": true,
+          "spectral_basis._harmonics": true,
+          "absolute_fields_v2.np": true,
+          "absolute_fields_v2.fields": true,
+          "absolute_fields_v2.residual": true,
+          "absolute_model.physical_residual": true,
+          "absolute_model_v2.physical_residual": true,
+          "stage13_model.core_matrices": true,
+          "stage13_model.evaluate_modes": true,
+          "stage13_model.CachedAbsoluteProblem._ensure_basis": true,
+          "original_core_function_numpy_is_original": true,
+          "original_spectral_function_numpy_is_original": true,
+          "private_core_function_numpy_is_private_proxy": true,
+          "private_spectral_function_numpy_is_private_proxy": true
+        },
+        "old_independent_stateless_modified": false,
+        "global_numpy_exp_replaced": false
+      },
+      "namespace_identity_checks": 2,
+      "cache_builder_code_object_is_original": true,
+      "residual_and_full_raw_derivative_inherited_unchanged": true,
+      "model_provider_sha256": "b4bddb922f7b89fa7bda13d2feed0c394f24788bcfbb5af6fd0012259d1c4386"
+    }
+  },
+  "fresh_process_cached_replay_released": true,
+  "source_sha256": {
+    "stage13_integration_v2.py": "c4a218e6f5da47251889dd479279fc33493269783ccb4c7e056a050b75c79a8a",
+    "stage13_model.py": "427261ef54bf417da18a15482a51890e5693add32d9f815babf122a16e6f13aa",
+    "stage13_model_v2.py": "ddbfc2c56dbea9c8bdc5b03e5c781fb4d0f4366e31ace2b04ebeaf790cec7d9f",
+    "absolute_fields_v2.py": "893c097e166d287fbeeeedf9bd210ef5f026ccdfeae122730ab7cb5a3d3498e6",
+    "absolute_model_v2.py": "5be548183993caef0dc909813f9a2fcbb283091a939b2909b36e467e3ef88624",
+    "whole_axis_mesh.py": "c42233ad7c55b5e4eff778cdc8e305b5d81ce896a4027e5d7dc20a3404501b6c",
+    "absolute_model.py": "aa67c402cacb46321bf85d5e1d1a2f759ff42f76bcc0fa00130303be3081d6a8",
+    "absolute_fields.py": "84849ae05d37d25ad9193946a16f04a005611ab1bd9f6f59776cee855503a55e",
+    "highprecision_origin.py": "75f9b65e4ccc171d4a91326a44d457cfa08e62877152867d588e8535e6852f87",
+    "tail_envelope.py": "129816786c19b80675498d0650d380884d8827c1e31b1707c13b803b41f6919d",
+    "outer_envelopes.py": "6931eac402cff4db33644cefe6d73408bf837aecce86bbebccfc2187e0ef2323",
+    "log_integral.py": "1accf26e3fab9006a9e47f82dc4325b3870b438a4fcc2bd075121857451391ba",
+    "absolute_common.py": "f44ef69dd9e8d2bc8b22c57336435c1609a5b7246585b3165c2919e40d7ad3db",
+    "absolute_chart.py": "eb069dacbae41dc7ba19cb72e988293f58c40261ff15b65e9d42d60aecd12a62",
+    "absolute_chart_v2.py": "d7fcf09fabf3ce4375cdcd06c435789524263a82a827e77677838bf491acacf1",
+    "field_tests.py": "d20afcd54cee463bf686b6f0e229cbc6d7f5483c5e679dfb799cafc8b36b5dc1",
+    "stage13_integration_v3.py": "c9d4c9be4c786fe472c3222a73b85f904ddb50ae7d2fd5bd600a102f40ab7b62",
+    "stage13_model_v3.py": "b4bddb922f7b89fa7bda13d2feed0c394f24788bcfbb5af6fd0012259d1c4386",
+    "stage13_stable_exp.py": "987f80286ba5194f0a862123e22d71dda2c2c36e8078d2a50d1d591110073935"
+  },
+  "derivative_record": {
+    "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/results/model_benchmark_v3/checks.json",
+    "sha256": "c60b74ac40f2dcc6803806eeb3cb6c7387f0b49f91f9e30205c9b6239751162b",
+    "passed": true,
+    "full_cl_tested": true,
+    "all_19_core_directions_retained_and_checked": true,
+    "all_extra_coefficients_retained_and_checked": true
+  },
+  "qualification_source_sha256": "e5777685a18b3ecabdb085b4359517e0d0a4b919f88a40b1521cf29bc58a6f56",
+  "starting_point_path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0004_v3_w4/starting_point.json",
+  "starting_point_sha256": "011238fde050be5b5357815b11ae627bc3ae74c7de36c05e02eb56adfa51426f",
+  "endpoint_initial_arrays": {
+    "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0004_v3_w4/endpoint_initial.npz",
+    "sha256": "ecd9548064175799352664d82c92d9a9a977b59182ed62d752f956a71b0053ce"
+  },
+  "representative_points": [
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0004_v3_w4/trust_points/point_000.json",
+      "sha256": "132c47568616d80311a15d38bfc68c5e29ee659549a13fcf4b31f2839c7aba28",
+      "passed": true,
+      "direction": "complete_cl_feasible",
+      "signed_trust_radius_multiple": -1.0
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0004_v3_w4/trust_points/point_001.json",
+      "sha256": "ed469010d3285700ff7b8f8477bf0c062a1601784fed8164cdae6148be49a977",
+      "passed": true,
+      "direction": "complete_cl_feasible",
+      "signed_trust_radius_multiple": 1.0
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0004_v3_w4/trust_points/point_002.json",
+      "sha256": "bcd8096c5173d6f955af7dc0998f9210c4ac1700dd89954abc40a87d346e86d3",
+      "passed": true,
+      "direction": "complete_cl_feasible",
+      "signed_trust_radius_multiple": 0.5
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0004_v3_w4/trust_points/point_003.json",
+      "sha256": "62486e11b111b84e1c9b7cdceb79effd2cbd3bf38ef24887ac88c4a5997eeb71",
+      "passed": true,
+      "direction": "all_core_mixed",
+      "signed_trust_radius_multiple": -1.0
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0004_v3_w4/trust_points/point_004.json",
+      "sha256": "3059254efa82ea9cc559c9af22ed0a6493126ca9b6cebfcb592674b1bf75a726",
+      "passed": true,
+      "direction": "all_core_mixed",
+      "signed_trust_radius_multiple": 1.0
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0004_v3_w4/trust_points/point_005.json",
+      "sha256": "7e2f292c326b4a6bb4c1d45e16f681001e997583b31a753aef225ab4cf4d64fe",
+      "passed": true,
+      "direction": "distributed_extra",
+      "signed_trust_radius_multiple": -1.0
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0004_v3_w4/trust_points/point_006.json",
+      "sha256": "d040f128178e3c7bb2ecdbf63cae92571fd9231e97f39c961515b63d5b23c548",
+      "passed": true,
+      "direction": "distributed_extra",
+      "signed_trust_radius_multiple": 1.0
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0004_v3_w4/trust_points/point_007.json",
+      "sha256": "f82fc7fb1ee082641c3d194ad6cd4ceb7d60f1627d88fe8469e62189e34e42d9",
+      "passed": true,
+      "direction": "all_extra_mixed",
+      "signed_trust_radius_multiple": -1.0
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0004_v3_w4/trust_points/point_008.json",
+      "sha256": "073c1b36a9e3ff67e2e3dfeca1e4c0de137d10f6a9f9c327c4a245256e949e00",
+      "passed": true,
+      "direction": "all_extra_mixed",
+      "signed_trust_radius_multiple": 1.0
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0004_v3_w4/trust_points/point_009.json",
+      "sha256": "0a85a684706d1daf1b64fedfa897efce28972df707c870a31b10258ceeb26ad4",
+      "passed": true,
+      "direction": "complete_core_and_extra_mixed",
+      "signed_trust_radius_multiple": -1.0
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0004_v3_w4/trust_points/point_010.json",
+      "sha256": "9e4cb247a149724913e47dd8ac54e26acf64beffa840bec54e15cd88e54e7afc",
+      "passed": true,
+      "direction": "complete_core_and_extra_mixed",
+      "signed_trust_radius_multiple": 1.0
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0004_v3_w4/trust_points/point_011.json",
+      "sha256": "3339127dabc06f220b7f4c52f8501e617717c64afac96fc81c8314a8909d161e",
+      "passed": true,
+      "direction": "complete_core_and_extra_mixed",
+      "signed_trust_radius_multiple": 0.5
+    }
+  ],
+  "exact_dilation_checks": [
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0002_v2_w4/dilations/lambda_2.json",
+      "sha256": "80deb0c0fa837009a49c536276a2af7ea4df78828ba951666a19fdc3bfb56e47",
+      "factor": 2.0,
+      "passed": true,
+      "difference": 6.031801026736678e-21
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0002_v2_w4/dilations/lambda_16.json",
+      "sha256": "c38e14db99a4f616bd562121a22efb9de770d96f9a4cefbf7f75740a331a039b",
+      "factor": 16.0,
+      "passed": true,
+      "difference": 7.259337055765371e-21
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0002_v2_w4/dilations/lambda_256.json",
+      "sha256": "32fe5814135985b3cdd9e20470936cbb4bbf583f984f9bb46f7d91af5aa9d915",
+      "factor": 256.0,
+      "passed": true,
+      "difference": 4.4965538098382584e-21
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0002_v2_w4/dilations/lambda_1024.json",
+      "sha256": "ec5ae3108bbd3c5455640a25d6ecb15f8521d9efbf43fa41c64f6050bf40dd3e",
+      "factor": 1024.0,
+      "passed": true,
+      "difference": 7.497565072180643e-21
+    }
+  ],
+  "exact_dilation_reference_reuse_only": true,
+  "initial_trust_coordinate_path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0004_v3_w4/initial_trust_coordinates.npz",
+  "initial_trust_coordinate_sha256": "1193ce448f9c01c692cf379fbae6338c0232fb3c9a193ac15ad38e0c920b9b88",
+  "initial_column_scaled_trust_radius": 0.00011951356046629453,
+  "initial_trust_dimension": 181,
+  "all_column_norms_positive": true,
+  "geometry": {
+    "version": "absolute_loss_analytic_center_full19_c5_rightinverse_v2",
+    "constraint_row_scales": [
+      6.350057824020324e-05,
+      0.00017488017121779472,
+      3.44644461711682e-05,
+      1.396159323616095e-05,
+      4.509833030175583e-05
+    ],
+    "coefficient_row_scaled_singular_values": [
+      2.1523521756009267,
+      0.5153098722322278,
+      0.3127908631772948,
+      0.055906461286590735,
+      0.029532884470952397
+    ],
+    "coefficient_row_scaled_condition": 72.87984950193103,
+    "all_five_singular_pairs_retained": true,
+    "coefficient_rank_floor_diagnostic": 1.0992118335289306e-14,
+    "full_row_scaled_constraint_singular_values": [
+      2.1524228045377067,
+      0.5321326181776815,
+      0.3127912623337834,
+      0.07218862298717865,
+      0.04344481069986555
+    ],
+    "raw_G_normal_minus_identity_norm": 8.915479154467335e-15,
+    "raw_G_normal_condition": 1.0000000000000033,
+    "tangent_constraint_error": 3.744164101887187e-12,
+    "relative_tangent_backward_error": 1.0452834603075801e-17,
+    "tangent_rank": 19,
+    "complete_24_rank": 24,
+    "complete_24_condition": 81199.8507372447,
+    "cl_tangent_row_norm": 0.5097943053950446,
+    "base_HP": {
+      "precision": 70,
+      "center_convention": "analytic_center_elimination",
+      "coefficients_decimal": [
+        "-0.4103458607398365097138560251850095545547408612969297248804259493475957",
+        "-3.208630110810930080589287172188051044940948486328125",
+        "-0.065125336197620231626359554866212420165538787841796875",
+        "-1.428961291129613897510353126563131809234619140625",
+        "7.17417126815276073870109030394814908504486083984375",
+        "1.404335061855579880329969455488026142120361328125",
+        "-0.45562713261229303984833904905826784670352935791015625",
+        "0.004993202588106101548481863261486068950034677982330322265625",
+        "-2.411048433996212825292104753316380083560943603515625",
+        "3.191773652109239467478118967846967279911041259765625",
+        "-0.09092783839757061226105605555858346633613109588623046875",
+        "0.13267780379099469723058746239985339343547821044921875",
+        "-0.00475957264688008953312792215228910208679735660552978515625",
+        "-0.11971998116229838615698355397398700006306171417236328125",
+        "0.460211306864668101557214185959310270845890045166015625",
+        "-0.0103747377022841806570863099068446899764239788055419921875",
+        "-0.016819291387513819746590826298415777273476123809814453125",
+        "0.000732451092198165725800917957855062923044897615909576416015625",
+        "0.046495084729413944935050295725886826403439044952392578125",
+        "-0.07889074388239190882554652262115268968045711517333984375",
+        "-31.451159142675209068329422734677791595458984375",
+        "-7.06044690997613155758472203160636126995086669921875",
+        "-0.426098466979239975938043016867595724761486053466796875",
+        "0.0588511517769638725638969845022074878215789794921875"
+      ],
+      "jets": {
+        "a": "17.70199241248915007379844020102624580210056632528415537184971903059380",
+        "b": "-1.09994114474852473875407027668491855691782994272876600423053929156596",
+        "c": "-2.23265261270987133357333514438983782964459008051300723690255916958217",
+        "d": "0.75830675126405908852241302500346710348585299293158037284370267920984",
+        "e": "1.4962880327626505663649105258105661391041032598793720786662386339535",
+        "g": "0.82593193448391999305754777685947360558392085814689770117390911763382",
+        "h": "-0.88080890765587094293209702300373464822769165039062500000000000000000",
+        "u": "0.11439831141978587053037346444658225596396240196134722389296652499501",
+        "v": "0.252248736829722375720983294448390596341980912281574777517213238860306",
+        "w": "-0.09321868559390583329719577276954027109106678756997775484101935404070",
+        "z": "-0.1948088821963532813576227741038438320203460367211277324257372726709300",
+        "k": "-0.09118613861735907222920422034990346430430651497159888813890268159408"
+      },
+      "constraints_decimal": [
+        "2.6427170698216155402151447476226104659006903892691458417E-14",
+        "-2.4747831388960478911084248258188589853788207481030408711E-14",
+        "-5.9708756298867903147471975916446036458212326825860586269E-14",
+        "-9.499183620731432145981332228389747696119445290205032304E-14",
+        "7.2571933973030757042422263131121294695343247074790016888E-14"
+      ],
+      "constraints": [
+        2.6427170698216154e-14,
+        -2.474783138896048e-14,
+        -5.970875629886791e-14,
+        -9.499183620731432e-14,
+        7.257193397303076e-14
+      ],
+      "max_abs": 9.499183620731432e-14,
+      "center_decimal": "0E-68",
+      "center_abs": 0.0,
+      "poisson_max_abs": 2.2e-67,
+      "a0": 17.70199241248915,
+      "physical_bounds": true
+    },
+    "base_point_corrected": false,
+    "constraint_tolerance": 1e-10,
+    "newton_target": 3e-12,
+    "normal_corrections_leave_cl_fixed": true
+  },
+  "unchanged_checkpoint_comparison": {
+    "passed": true,
+    "difference": 0.0,
+    "combined_error_diagnostic": 6.554110550448981e-15,
+    "physical_coefficients_changed": false
+  },
+  "trust_qualification_scope": "Fresh V3 production checked at the twelve EXACT ORIGINAL V2 physical points; their old normalized design is retained. New V3 production column scales are separate campaign preconditioning, not a relabeling of these points. Every future trial receives fresh independent integration.",
+  "all_19_core_and_every_extra_direction_retained": true,
+  "per_trial_independent_validation_required": true,
+  "original_independent_namespace": {
+    "passed": true,
+    "identities": {
+      "numpy.exp": true,
+      "absolute_fields.np": true,
+      "absolute_fields.core_matrices": true,
+      "absolute_fields.fields": true,
+      "absolute_fields.residual": true,
+      "absolute_fields._harmonics": true,
+      "absolute_fields.evaluate_modes": true,
+      "spectral_basis.np": true,
+      "spectral_basis.evaluate_modes": true,
+      "spectral_basis._harmonics": true,
+      "absolute_fields_v2.np": true,
+      "absolute_fields_v2.fields": true,
+      "absolute_fields_v2.residual": true,
+      "absolute_model.physical_residual": true,
+      "absolute_model_v2.physical_residual": true,
+      "stage13_model.core_matrices": true,
+      "stage13_model.evaluate_modes": true,
+      "stage13_model.CachedAbsoluteProblem._ensure_basis": true,
+      "original_core_function_numpy_is_original": true,
+      "original_spectral_function_numpy_is_original": true,
+      "private_core_function_numpy_is_private_proxy": true,
+      "private_spectral_function_numpy_is_private_proxy": true
+    },
+    "old_independent_stateless_modified": false,
+    "global_numpy_exp_replaced": false
+  },
+  "optimization_performed": false,
+  "candidate_refit": false,
+  "environment": {
+    "epoch": 1792634074.098439,
+    "host": "DHCP-142-217.caltech.edu",
+    "machine": "x86_64",
+    "python": "3.9.6",
+    "numpy": "1.23.5",
+    "scipy": "1.9.3",
+    "nice": 15,
+    "threadpools": [
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libopenblas",
+        "filepath": "/Users/caltech/research/IPM_R2_macpro_runs/verification_20261020_01/native_venv/lib/python3.9/site-packages/numpy/.dylibs/libopenblas64_.0.dylib",
+        "version": "0.3.20",
+        "threading_layer": "pthreads",
+        "architecture": "Haswell"
+      },
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libopenblas",
+        "filepath": "/Users/caltech/research/IPM_R2_macpro_runs/verification_20261020_01/native_venv/lib/python3.9/site-packages/scipy/.dylibs/libopenblas.0.dylib",
+        "version": "0.3.18",
+        "threading_layer": "pthreads",
+        "architecture": "SkylakeX"
+      }
+    ],
+    "resource_session": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/resource_session",
+    "resource_run": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/resource_session/runs/20261022T014909Z_1792633749785037000_v3_continue_03_qualify"
+  },
+  "elapsed_seconds": 323.8359718322754,
+  "output_adapter": {
+    "schema": "stage13_qualification_native_bool_output_adapter_v1",
+    "adapter_path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/stage13_qualification_json_v3.py",
+    "adapter_sha256": "582ee66522ffbf732e22bd4cb9293778cb2b66c83d84c9edc3dce52b35e9e640",
+    "original_qualification_path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/stage13_qualification_v3.py",
+    "original_qualification_sha256": "e5777685a18b3ecabdb085b4359517e0d0a4b919f88a40b1521cf29bc58a6f56",
+    "private_run_global_overrides": [
+      "atomic"
+    ],
+    "private_main_global_overrides": [
+      "run"
+    ],
+    "original_numeric_run_code_object_executed": true,
+    "original_parser_main_code_object_executed": true,
+    "original_run_code_filename": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/stage13_qualification_v3.py",
+    "original_module_globals_unchanged": true,
+    "only_original_payload_field_type_changed": "unchanged_checkpoint_comparison.passed",
+    "original_field_type": "numpy.bool_",
+    "converted_field_type": "builtins.bool",
+    "original_payload_other_fields_preserved": true,
+    "all_other_atomic_writes_unchanged": true,
+    "other_atomic_write_count_before_final": 13
+  },
+  "original_pending_epoch": {
+    "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0004_v3_w4/epoch.json",
+    "sha256": "782b3b6c846c7302a084e6537afd54987ba534aab04e93277f15a364128f4958"
+  },
+  "supplemental_replay_review": {
+    "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0004_v3_w4_released_iofix/review.json",
+    "sha256": "2f12c3c3b317803bcfec8c7f300c73ec18a6921f452e4a29c40ed11fac5de51f"
+  },
+  "supplemental_replay_policy": {
+    "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/provenance/replay_resolution_policy_v3.json",
+    "sha256": "61673cb088b5662d97a3298580186b781769e1e5e642680135bdf9d108e392dc"
+  },
+  "supplemental_replay_diagnostics": [
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/results/reproducibility/v3_continue_03_fresh_process_1/checks.json",
+      "sha256": "38475c9a56a2be522ac57edb41f767d1446ac99db3baa6b18c75f9a79ea597bf"
+    },
+    {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/results/reproducibility/v3_continue_03_fresh_process_2/checks.json",
+      "sha256": "b684b08fe5ade75c5b2f159c36e102b62dc547bf7bd4987943315b88ffd9294e"
+    }
+  ],
+  "reviewer_source_sha256": "266a101e0766fae07fdaf50ae5ca2cf1afbd1944dba3b5c6578b175adf034b09",
+  "review_epoch": 1792634502.8666081,
+  "review_io_adapter": {
+    "schema": "stage13_reviewer_binary_reference_adapter_v1",
+    "adapter_path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/stage13_review_binary_io_v3.py",
+    "adapter_sha256": "4d805ca784cb2d4f108da5721d9b57e7d1785c534ef812be244dccbe5152b25e",
+    "original_reviewer_path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/stage13_qualification_review_v3.py",
+    "original_reviewer_sha256": "266a101e0766fae07fdaf50ae5ca2cf1afbd1944dba3b5c6578b175adf034b09",
+    "private_validate_original_global_overrides": [
+      "bound"
+    ],
+    "private_run_global_overrides": [
+      "validate_original",
+      "atomic"
+    ],
+    "private_main_global_overrides": [
+      "run"
+    ],
+    "only_reference_read_changed": "initial_trust_coordinate_path",
+    "binary_reference": {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0004_v3_w4/initial_trust_coordinates.npz",
+      "sha256": "1193ce448f9c01c692cf379fbae6338c0232fb3c9a193ac15ad38e0c920b9b88"
+    },
+    "pending_epoch": {
+      "path": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/integration_epochs/epoch0004_v3_w4/epoch.json",
+      "sha256": "782b3b6c846c7302a084e6537afd54987ba534aab04e93277f15a364128f4958"
+    },
+    "all_other_bound_calls_unchanged": true,
+    "numerical_comparison_code_unchanged": true,
+    "original_validate_original_code_object_executed": true,
+    "original_run_code_object_executed": true,
+    "original_parser_main_code_object_executed": true,
+    "original_validate_original_code_filename": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/stage13_qualification_review_v3.py",
+    "original_run_code_filename": "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization/stage13_qualification_review_v3.py",
+    "original_module_globals_unchanged": true,
+    "binary_reference_sha256_verified": true,
+    "binary_npz_format_verified": true,
+    "binary_reference_read_count": 1,
+    "binary_coordinate_headers": {
+      "scales.npy": {
+        "shape": [
+          181
+        ],
+        "descr": "<f8",
+        "fortran_order": false,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "column_norms.npy": {
+        "shape": [
+          181
+        ],
+        "descr": "<f8",
+        "fortran_order": false,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "base_tangent.npy": {
+        "shape": [
+          24,
+          19
+        ],
+        "descr": "<f8",
+        "fortran_order": false,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "reference_residual.npy": {
+        "shape": [
+          90624
+        ],
+        "descr": "<f8",
+        "fortran_order": false,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "production_raw_jacobian.npy": {
+        "shape": [
+          90624,
+          186
+        ],
+        "descr": "<f8",
+        "fortran_order": false,
+        "version": [
+          1,
+          0
+        ]
+      }
+    }
+  }
+}

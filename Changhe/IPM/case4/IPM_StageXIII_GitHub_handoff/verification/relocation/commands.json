@@ -1,0 +1,200 @@
+[
+  {
+    "argv": [
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/.venv/bin/python",
+      "-m",
+      "pip",
+      "check"
+    ],
+    "cwd": "/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02",
+    "returncode": 0,
+    "seconds": 0.42630887031555176,
+    "stdout": "No broken requirements found.\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/.venv/bin/python",
+      "-B",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/tools/prepare_assets.py"
+    ],
+    "cwd": "/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02",
+    "returncode": 0,
+    "seconds": 0.10480880737304688,
+    "stdout": "{\n  \"passed\": true,\n  \"assets\": [\n    {\n      \"path\": \"research/base/inputs/assessment_grids_stage12.json\",\n      \"status\": \"already_verified\"\n    }\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/.venv/bin/python",
+      "-B",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/tools/portable.py",
+      "inspect",
+      "--repo",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023",
+      "--output",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02/inspect.json"
+    ],
+    "cwd": "/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02",
+    "returncode": 0,
+    "seconds": 0.15632891654968262,
+    "stdout": "{\"passed\": true, \"action\": \"inspect\", \"output\": \"/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02/inspect.json\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/.venv/bin/python",
+      "-B",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/tools/portable.py",
+      "restart-audit",
+      "--repo",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023",
+      "--output",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02/restart-audit.json"
+    ],
+    "cwd": "/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02",
+    "returncode": 0,
+    "seconds": 0.3408482074737549,
+    "stdout": "{\"passed\": true, \"action\": \"restart-audit\", \"output\": \"/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02/restart-audit.json\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/.venv/bin/python",
+      "-B",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/research/hardware/guard.py",
+      "init",
+      "--session-dir",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02/session",
+      "--disk-path",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02",
+      "--policy",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/environment/smoke_policy.json"
+    ],
+    "cwd": "/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02",
+    "returncode": 0,
+    "seconds": 0.6678059101104736,
+    "stdout": "{\"session_dir\": \"/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02/session\", \"session_id\": \"d2f8d459-f25e-4393-aba6-8b1b46c0e3ec\", \"initial_assessment\": {\"stop\": false, \"reasons\": [], \"warnings\": [], \"rates\": {\"session_swap_growth_mib\": 0.0}}}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/.venv/bin/python",
+      "-B",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/research/hardware/guard.py",
+      "run",
+      "--session-dir",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02/session",
+      "--cwd",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02",
+      "--lock-file",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02/verification.lock",
+      "--label",
+      "relocated_smoke",
+      "--",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/.venv/bin/python",
+      "-B",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/tools/portable.py",
+      "smoke",
+      "--repo",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023",
+      "--output",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02/relocated_smoke.json"
+    ],
+    "cwd": "/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02",
+    "returncode": 0,
+    "seconds": 30.695441722869873,
+    "stdout": "{\"run_dir\": \"/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02/session/runs/20261023T190953Z_1792782593924280000_relocated_smoke\", \"success\": true, \"wall_seconds\": 30.552558143, \"returncode\": 0, \"stop_reasons\": [], \"peak_family_rss_mib\": 91.76953125}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/.venv/bin/python",
+      "-B",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/research/hardware/guard.py",
+      "run",
+      "--session-dir",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02/session",
+      "--cwd",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02",
+      "--lock-file",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02/verification.lock",
+      "--label",
+      "relocated_replay01",
+      "--",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/.venv/bin/python",
+      "-B",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/tools/portable.py",
+      "replay",
+      "--repo",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023",
+      "--output",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02/relocated_replay01.json"
+    ],
+    "cwd": "/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02",
+    "returncode": 0,
+    "seconds": 25.234466075897217,
+    "stdout": "{\"run_dir\": \"/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02/session/runs/20261023T191024Z_1792782624622549000_relocated_replay01\", \"success\": true, \"wall_seconds\": 25.094343897, \"returncode\": 0, \"stop_reasons\": [], \"peak_family_rss_mib\": 1875.13671875}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/.venv/bin/python",
+      "-B",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/research/hardware/guard.py",
+      "run",
+      "--session-dir",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02/session",
+      "--cwd",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02",
+      "--lock-file",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02/verification.lock",
+      "--label",
+      "relocated_replay02",
+      "--",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/.venv/bin/python",
+      "-B",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/tools/portable.py",
+      "replay",
+      "--repo",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023",
+      "--output",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02/relocated_replay02.json"
+    ],
+    "cwd": "/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02",
+    "returncode": 0,
+    "seconds": 25.294310092926025,
+    "stdout": "{\"run_dir\": \"/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02/session/runs/20261023T191049Z_1792782649852742000_relocated_replay02\", \"success\": true, \"wall_seconds\": 25.156815131, \"returncode\": 0, \"stop_reasons\": [], \"peak_family_rss_mib\": 1850.27734375}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/.venv/bin/python",
+      "-B",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/research/hardware/guard.py",
+      "run",
+      "--session-dir",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02/session",
+      "--cwd",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02",
+      "--lock-file",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02/verification.lock",
+      "--label",
+      "relocated_whole_axis",
+      "--",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/.venv/bin/python",
+      "-B",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/tools/portable.py",
+      "objective",
+      "--repo",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023",
+      "--output",
+      "/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02/relocated_whole_axis.json"
+    ],
+    "cwd": "/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02",
+    "returncode": 0,
+    "seconds": 224.76468992233276,
+    "stdout": "{\"run_dir\": \"/Users/caltech/research/IPM_stage13_github_clean_20261023/runs/relocation02/session/runs/20261023T191115Z_1792782675149892000_relocated_whole_axis\", \"success\": true, \"wall_seconds\": 224.63225596799998, \"returncode\": 0, \"stop_reasons\": [], \"peak_family_rss_mib\": 387.53515625}\n",
+    "stderr": ""
+  }
+]
