@@ -1,0 +1,21 @@
+PROPOSED 4.10 insertion (after the C_p(Theta) values "+413.6, +108.5, +113.7, +7.45, +10.62."), for checker 304:
+
+For these c = 2 states the node residuals are computed with the solver's own quadrature of the inverse rows (24-point
+Gauss on [0, min(1, y)],
+four logarithmic panels per decade with 8 points each, and an 80-point Gauss rule in u for the tail t = y + (1 + y)
+(u/(1 - u))^3), the between-node maxima of the main computation and the checker's values with refined quadratures. For
+the 96 x 24 state the two quadratures differ at far nodes near the xi-axis: at the collocation node (1998, 65.4), on the
+first collocation angle, the solver's rule gives V_2 = -0.774 and refined rules give +0.542, and under the refined
+quadrature the largest |R_h|/N_f at the 2304 collocation nodes of this state is 8.8e-6, 1.6e-5, 7.4e-4 and 5.0e-3 in
+r < 0.1, 0.1 <= r < 1, 1 <= r < 100 and r >= 100. So the node residuals refer to the discrete equations assembled with
+the solver's quadrature, a different discrete operator; the sampled maxima measure together the error of the solve,
+the difference of the two quadratures and the defects away from the nodes, and do not separate these contributions.
+
+Numbers from num NUM_REPORT 4P(b)(xvi) item 14 (96x24: own-node maxima 8.7e-6 / 1.6e-5 / 7.4e-4 / 5.0e-3, num's
+external referee 8.76e-6 / 1.55e-5 / 7.36e-4 / 5.001e-3; node (1998, 65.4): old rule V_2 -0.778 (num) / -0.7741
+(referee), refined +0.5419 / +0.5420). Please check each number against your own evaluation and the producer source,
+and say how the node and the rule should be described if the producer's map matrices cannot be checked (reconstructed
+rule). Values for 160/192/224 are NOT proposed (num's node checks pending).
+
+Edit 2026-10-22T00:57Z: the prefix 'For these c = 2 states' added (the c = 3 runs used other inner rules). Builder:
+code/edq.py with questions/ed85q/repsq.py (draft number from env DN; base = the installed draft).

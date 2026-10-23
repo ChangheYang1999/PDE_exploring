@@ -1,0 +1,17 @@
+# Closure of the independent verification record
+
+Written 2026-10-22T12:08:55.020860+00:00, before this result's implementation, final review or end-time observation. The principal verdict is UNRESOLVED.
+
+## Statement and scope
+
+This is a documentary closure of the verifier's actual research record, not a new PDE theorem. The synthesis must accurately summarize the exact problem, canonical inverse, origin and scale relations, conditional analytic results, independent primary and auxiliary numerical evidence, failures, and the absence of either decisive endpoint. The previously accepted proofs and computations retain their original scopes. Current byte identity can establish that the cited versions remain available; it cannot independently prove their mathematics again. A final model review must see the actual proposed synthesis and the principal accepted evidence and explicitly examine scope inflation. Its response is corroboration, not a proof.
+
+## Acceptance argument
+
+For each explicitly cited immutable final manifest, verify its recorded status, all listed check outcomes, and every bound file hash. Read each manifest independently. This is a finite implication: identical byte sequences preserve the observation that was accepted under those hashes. Do not promote unchanged files into universally correct mathematics. Hash equality has its ordinary computational collision assumption. Check the supplied top-level report's finite tables against the separately accepted arithmetic summaries using their reported rounded precision. Every file named in the curated reading order must exist. Check both raw and metadata model identifiers and complete nonempty response before counting a review. Retain any model objections and independently settle them or restrict the final statement.
+
+The exact T0 is the first shift start line2026-10-20T12:44:21Z in shifts/shifts.log, predating the coordinator's model switch. A scheduled deadline is not an actual T_end. Finalization may occur only after observing UTC>=2026-10-22T12:44:21Z, unless the full principal YES/NO endpoint is independently verified; no such endpoint is known. Compute elapsed seconds by datetime subtraction at finalization. The record covers wall-clock duration including documented interruptions, not continuous CPU or continuous referee work. The initial1333seconds preceded the referee switch; seven30second restart gaps total210seconds. The final admitted shift begins2026-10-22T07:09:48Z. No shifted loop-admission cutoff is substituted for the actual48hour deadline.
+
+Freeze the reviewed mathematical synthesis separately from its final timing wrapper. On completion the root report may add only the observed end time, elapsed duration, links to this closure and verdict status; retain the reviewed body hash. Source snapshots are observations at their own times. The lead's11:39reported-analysis cutoff, its11:51installation and the verifier's later installation check are distinct. The lead's early finalization is not proof of48hours of work by that lane and is not a decisive endpoint. Numerics has its ownT0 and timestamps. A census at one instant does not attest all past or future process behavior.
+
+All writes stay in the verifier lane. NoJavaScript/TypeScript/Node,servers/listeners/tunnels,RLScience cluster,GPU,Lean/Lake,commits/push/posts/humancontact. No numerical task is needed for this documentary closure. Any computational checks are short and single-threaded; all commands finish within10minutes.

@@ -1,0 +1,68 @@
+{
+  "utc": "2026-10-21T05:45:19.264184+00:00",
+  "elapsed_seconds": 0.24514150409959257,
+  "status": "PASS",
+  "checks": 1150,
+  "counts": {
+    "Cartesian_advection": 18,
+    "Poisson_leading": 18,
+    "rate_and_trace": 18,
+    "positive_forcing": 18,
+    "steady_sign_and_normalization": 54,
+    "integrating_factor_series": 15,
+    "scalar_ODE_series": 15,
+    "initial_positive_derivative": 15,
+    "Chebyshev_endpoint": 480,
+    "Q_map_first_correction": 480,
+    "third_mode_extraction": 8,
+    "constant_start": 9,
+    "source_hash": 2
+  },
+  "cases": [
+    {
+      "C": "3/2",
+      "p": "2/3",
+      "degree": "1/3",
+      "Q": "1/44",
+      "constant_cw_1_8_steady_b3": "-4/11"
+    },
+    {
+      "C": "2",
+      "p": "1/2",
+      "degree": "0",
+      "Q": "1/28",
+      "constant_cw_1_8_steady_b3": "-2/7"
+    },
+    {
+      "C": "5/2",
+      "p": "2/5",
+      "degree": "-1/5",
+      "Q": "3/68",
+      "constant_cw_1_8_steady_b3": "-4/17"
+    },
+    {
+      "C": "3",
+      "p": "1/3",
+      "degree": "-1/3",
+      "Q": "1/20",
+      "constant_cw_1_8_steady_b3": "-1/5"
+    },
+    {
+      "C": "7",
+      "p": "1/7",
+      "degree": "-5/7",
+      "Q": "3/44",
+      "constant_cw_1_8_steady_b3": "-1/11"
+    },
+    {
+      "C": "101/100",
+      "p": "100/101",
+      "degree": "99/101",
+      "Q": "1/1612",
+      "constant_cw_1_8_steady_b3": "-200/403"
+    }
+  ],
+  "proof_sha256": "c965cfe66356842a4a74fbedcb35ccba0217b8e06aa6ee4ca10df4a6bc738526",
+  "code_sha256": "4fd5c749290d3572daf59b890b0e5270943606e40694558dc3a5f8ffae743001",
+  "scope": "Exact finite coefficient identities and scalar ODE checks. Time-uniform asymptotic expansion remains an explicit hypothesis; no DR existence/stability theorem."
+}

@@ -1,0 +1,41 @@
+[
+  {
+    "op": "replace",
+    "old_lines": [
+      2,
+      3
+    ],
+    "new_lines": [
+      2,
+      3
+    ],
+    "old": "Version v55, 2026-10-21T18:26Z (see CHANGELOG). Status markers: [PROVED-lead] = proof written by lead, awaiting verifier+referee;\n",
+    "new": "Version v58, 2026-10-21T22:55Z (see CHANGELOG). Status markers: [PROVED-lead] = proof written by lead, awaiting verifier+referee;\n"
+  },
+  {
+    "op": "insert",
+    "old_lines": [
+      526,
+      526
+    ],
+    "new_lines": [
+      526,
+      566
+    ],
+    "old": "",
+    "new": "      [v56 update] d = 17 closure CONFIRMED independently by checker 275 (q = v/z reduction, 710 exact tests, 18:57Z).\n      d >= 19 (P >= 21/2) with the real-node bound (alpha^2 real for at most two pairs; exactly one real node for even\n      e), (A9), (A10), the two-pairs discriminant K (K > 0 when T (A_1 + A_3) > A_1 A_3) and the type (I)/(II)\n      eliminations for d = 15, 17: external x3n CORRECT (hand-checked 19:01Z); checker 278 CONFIRMED the d79\n      preliminary mathematics (19:19Z; 864 + 5307 + 61 checks) with the A7 clarification (the relations used keep\n      their form under the scaling; (A7) changes form and is not used); formal d79 trial 96e33929... posted 19:38Z.\n      [PROVED-lead + external audit; checker pending] d = 19: 67 patterns, 16 survivors; (1; 4, 4, 1) by pi'(z) =\n      1077/160 (n = 1), 275917/61952 (n = 2); 15 by types (I)-(IV) (new: (III) two triples, M_3 = C_1 b_2 + C_0, branch\n      Res(C_1, C_0) of degree 7; (IV) singleton + two pairs, Lambda of degree 234), all coefficients of Lambda(21 + m)\n      positive. External x3o CORRECT after one wording repair (sign normalization of Res(C_1, C_0)), recomputed with\n      direct exact resultants; hand-checked 19:36Z (identical coefficient lists): d >= 21, P >= 23/2 (for d80).\n      [v57 update] d = 19 CONFIRMED independently by checker 282 (q = v/z Newton reduction, 1932 + 128 + 131 exact\n      tests, 20:07Z); the d80 preliminary (d >= 21, P >= 23/2, ten saved states in the 3.80 application) CONFIRMED by\n      checker 283 (2411 + 101 + 245, 20:30Z) with one 4.10 wording repair (c = 3 weights); formal d80 943f1db1...\n      posted 20:36Z, install on CONFIRM.\n      [PROVED-lead + external x3p; checker pending (queued after 284)] d = 21: 103 patterns, 29 survivors (x3p,\n      enum21.py); (1; 4, 4, 2) and (1; 3, 3, 3, 1) by n = 1 values of pi'(z) (71745/15488, 165445/21296); (1; 3, 3, 2,\n      2) by K (n >= 2 by the lemma, K = 114804/121 at n = 1); 26 by types (I)-(VI) (new: (V) a triple and a quadruple,\n      core Lambda of degree 90; (VI) singleton + pair + triple, Lambda of degree 160, branches L_1 = 0, L_2 = 0 closed),\n      all coefficients of Lambda(23 + m) positive; hand-checked 20:00-20:24Z with own code (research/p_ext/d81):\n      d >= 23, P >= 25/2 (for d81; text questions/ed81/). No uniform-in-d route: e = 2 has real solutions (d = 107),\n      so each degree needs integrality or an exact positivity certificate.\n      [v58 update] d = 21 CONFIRMED independently by checker 285 (its own type (V)/(VI) route, degrees 165/198 and\n      946/1322; 1058 + 8468 + 282 + 335 + 320 + 15 + 16 + 354 exact checks, 21:23Z); the d81 text (d >= 23, P >= 25/2) audited by\n      checker 291 with one repair (all three R_56, R_45, R_46 divided by their eta and T powers before b_1 is\n      eliminated), repaired preliminary 872b311a... CONFIRMED by checker 294 (40 checks, 22:40Z) and INSTALLED as draft\n      81. The lead's alternative V/VI route (316/370/1222) is not used (checker 288 open). [PROVED-lead + external x3q;\n      checker 292 pending] d = 23: 153 patterns, 49 survivors; would give d >= 25, P >= 27/2 (for d82; texts\n      questions/ed82/). This is the last degree step: the application of 3.80 uses only (a), so higher degrees do\n      not change the verdict.\n (G46) [VERIFIED numerics: checker 265, 276, 277; for d80] c = 2 hydrostatic sequence with the logarithmic-panel rule,\n      five saved states (96 x 24 stall; 128 x 32 cap and continued; 160 x 40 stall at 22; 192 x 48 stall at 69). 192 x 48:\n      node residual 1.8e-7; between-node max |R_h|/N_f 4.4e-5 (1 <= r < 100), 8.8e-5 (r >= 100, r_max 3.6e7); checker's\n      774-point max 4.60e-5 (on the axis); exact axis values 6.46e-5 (y = 1e6), 2.34e-5 (1e8); E = -0.957, B = -4.239,\n      B - 6E = +1.5 (B = 6E necessary for a C^3 exact solution, 3.73(a)); centre defect -5.4e-5; C_p/K = 10.62; nonzero\n      axis limit of R_h, -0.5773 (not an exact solution). Function-space differences of consecutive c = 2 states on\n      19649 common points (276): weighted field 0.129, 0.066, 0.0079 and gradient 0.33, 0.11, 0.014 in 1 <= r < 100;\n      pointwise relative 0.12, 0.061, 0.0074; full-sample gradient maxima 1.74, 0.53, 0.031 at r = 1e7. Velocities (277):\n      decreasing differences, no rate. Decreasing sampled residuals and differences, unsettled E, B, centre defect and\n      C_p: neither convergence nor its absence established. 224 x 56 running (harvest about 23:50Z; for d81).\n"
+  },
+  {
+    "op": "insert",
+    "old_lines": [
+      527,
+      527
+    ],
+    "new_lines": [
+      567,
+      574
+    ],
+    "old": "",
+    "new": "- v58 2026-10-21T22:55Z: (G45) d = 21 confirmed by checker 285; d81 (3.80(b) with d >= 23, P >= 25/2) installed after checkers\n  291 and 294; d = 23 (d >= 25, P >= 27/2) prepared for d82, checker 292 pending; no further degree steps.\n- v57 2026-10-21T20:39Z: (G45) d = 19 confirmed by checker 282, d80 preliminary by checker 283 (formal d80 posted 20:36Z); d = 21\n  excluded by the lead with external x3p (d >= 23, P >= 25/2; checker pending; new elimination types (V), (VI)).\n- v56 2026-10-21T19:45Z: (G45) d >= 19 confirmed by checkers 275 and 278 (formal d79 trial posted); d = 19 excluded by the lead\n  with external audit x3o (d >= 21, P >= 23/2; checker pending); d = 21 external x3p running. (G46) added: the\n  verified c = 2 sequence through 192 x 48 and the function-space and velocity differences (checkers 265, 276, 277).\n"
+  }
+]

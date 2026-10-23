@@ -1,0 +1,71 @@
+{
+  "utc": "2026-10-21T03:29:27.759498+00:00",
+  "proof_sha256": "af3c673b46ad866c450b92d389866f7ca2d2955fe9ca0a174bb86afe3dc43bed",
+  "checker_sha256": "16a49f9e68e183acb022c0dcffcd6a6c21717ec5ade1fc5763d7072271de38e1",
+  "checks": 20919,
+  "exact_checks": 20894,
+  "numerical_comparisons": 25,
+  "max_quartic_scaled_error": 5.620504062164855e-14,
+  "max_scaling_scaled_error": 1.1061163489176621e-13,
+  "sine_integral_error": 2.6645352591003757e-15,
+  "items": [
+    {
+      "item": "Odd extension and homogeneity",
+      "verdict": "CONFIRMED",
+      "method": "Anisotropic degrees 5-6+2=1 give locally absolutely convergent odd pairing; QH=d_t^3 delta."
+    },
+    {
+      "item": "Smoothness off zero",
+      "verdict": "CONFIRMED",
+      "method": "Independent dyadic Fourier proof supplies every derivative, without relying on a hypoellipticity citation."
+    },
+    {
+      "item": "Fourier constants and continuity",
+      "verdict": "CONFIRMED",
+      "method": "Quartic Green jump gives 2pi; the absolutely convergent sine integral gives kappa=1/(2sqrt(pi))."
+    },
+    {
+      "item": "Isotropic growth and smoothing",
+      "verdict": "CONFIRMED",
+      "method": "Anisotropic derivative bounds imply the common growth exponent2/3; convolution preserves parity and gives compact forcing."
+    },
+    {
+      "item": "Three rotated terms",
+      "verdict": "CONFIRMED",
+      "method": "Reflections exchange the two rotated terms, with the required sign; the compact slope correction changes no far field."
+    },
+    {
+      "item": "Uniform isotropic limit",
+      "verdict": "CONFIRMED",
+      "method": "Exact anisotropic rescaling plus uniform continuity gives convergence on every compact set."
+    },
+    {
+      "item": "Exterior operator",
+      "verdict": "CONFIRMED",
+      "method": "Product of the three commuting rotated operators is nonzero and annihilates the density outside a compact set."
+    },
+    {
+      "item": "Infinite rank in every linear coordinates",
+      "verdict": "CONFIRMED",
+      "method": "At least one cusp line moves with nonzero slope. Arbitrarily many sections can have mutually unique cusps; finite minors pass to the far field."
+    },
+    {
+      "item": "Finite angular support",
+      "verdict": "CONFIRMED",
+      "method": "The limiting angular function has three noncancelling square-root cusps; finite-dimensional trigonometric spaces are closed."
+    },
+    {
+      "item": "Full IPM endpoint",
+      "verdict": "OPEN",
+      "method": "No transport equation, origin strain, or global profile is supplied by this scope example."
+    }
+  ],
+  "scope": "Test density comparing ansatz classes; not an IPM solution.",
+  "actual_opus_review": {
+    "model": "Claude Opus5.5 lead",
+    "received_utc": "2026-10-21T03:39Z",
+    "inspected_utc": "2026-10-21T03:43:05.493990+00:00",
+    "source_snapshot": "research/all_projection_local_audit/verification/draft42/LEAD_HAND_REVIEW_0339.md",
+    "scope": "Hand proofs of coefficient-norm contraction, infinite extension and rational slopes (125); low-frequency dyadic sum and moving cusps/parities (127)."
+  }
+}

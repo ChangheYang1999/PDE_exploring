@@ -1,0 +1,60 @@
+{
+  "started_utc": "2026-10-21T07:34:26.541282+00:00",
+  "status": "FAILED",
+  "proof_sha256": "397815ee88d28c02b392836ae3768b11c080dc887f4195ca1c38dba3b8c89893",
+  "symbolic": [
+    "radial-angular-strain",
+    "first-radial-antiderivative",
+    "second-radial-antiderivative",
+    "radial-hydrostatic-vertical",
+    "radial-center",
+    "profile-cubic-xxy",
+    "profile-cubic-yyy",
+    "anisotropic-cubic-poisson",
+    "eliminated-cubic",
+    "radial-not-profile-jet"
+  ],
+  "quadratures": [
+    {
+      "epsilon": 100.0,
+      "scipy_strain": -0.008264462809917356,
+      "exact_strain": -0.008264462809917356,
+      "mp60_strain": "-0.0082644628099173553719008264462809917355371900826446",
+      "estimated_error": 7.78134205539555e-16,
+      "absolute_error": 0.0
+    },
+    {
+      "epsilon": 1.0,
+      "scipy_strain": -0.25000000000000006,
+      "exact_strain": -0.25,
+      "mp60_strain": "-0.25",
+      "estimated_error": 3.5339496460705744e-15,
+      "absolute_error": 5.551115123125783e-17
+    },
+    {
+      "epsilon": 0.01,
+      "scipy_strain": -0.8264462809917356,
+      "exact_strain": -0.8264462809917354,
+      "mp60_strain": "-0.82644628099173553562609453706072990269992350017906",
+      "estimated_error": 1.0175596671623654e-14,
+      "absolute_error": 1.1102230246251565e-16
+    },
+    {
+      "epsilon": 0.0001,
+      "scipy_strain": -0.9802960494069209,
+      "exact_strain": -0.9802960494069208,
+      "mp60_strain": "-0.9802960494069208896436892129206970060986735557946",
+      "estimated_error": 1.2826176029616359e-14,
+      "absolute_error": 1.1102230246251565e-16
+    },
+    {
+      "epsilon": 1e-08,
+      "scipy_strain": -0.9998000299960005,
+      "exact_strain": -0.9998000299960006,
+      "mp60_strain": "-0.99980002999600049993791537066838760104080579764218",
+      "estimated_error": 6.145690776786416e-14,
+      "absolute_error": 1.1102230246251565e-16
+    }
+  ],
+  "failure": "The epsilon=1e-12 scalar quadrature missed an endpoint transition despite a small error estimate. Original strain -0.9999993183128852; exact and MP60 -0.999998000003. Explicit logarithmic z=a*tan(t) breakpoints repair the integration. No analytical formula changed."
+}

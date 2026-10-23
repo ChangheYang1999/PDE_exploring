@@ -1,0 +1,50 @@
+{
+  "utc": "2026-10-22T01:10:07.268944+00:00",
+  "reason": "Both nested idle Python supervisors became oldest queued jobs and their sole computation child was stopped by the shared CPU guard. Retire idle supervisors, preserve computation and let guard schedule it. No SIGCONT sent.",
+  "pids": {
+    "632053": {
+      "cwd": "verification",
+      "cmdline": "python3 -u independent_code/run_224_summary_then_degree23.py ",
+      "status": [
+        "Name:\tpython3",
+        "Umask:\t0002",
+        "State:\tS (sleeping)",
+        "Tgid:\t632053",
+        "Ngid:\t0",
+        "Pid:\t632053",
+        "PPid:\t632052"
+      ]
+    },
+    "647414": {
+      "cwd": "verification",
+      "cmdline": "python3 -u independent_code/run_degree23_campaign.py ",
+      "status": [
+        "Name:\tpython3",
+        "Umask:\t0002",
+        "State:\tT (stopped)",
+        "Tgid:\t647414",
+        "Ngid:\t0",
+        "Pid:\t647414",
+        "PPid:\t632053"
+      ]
+    },
+    "651441": {
+      "cwd": "verification",
+      "cmdline": "python3 -u independent_code/check_degree23_outer.py ",
+      "status": [
+        "Name:\tpython3",
+        "Umask:\t0002",
+        "State:\tT (stopped)",
+        "Tgid:\t651441",
+        "Ngid:\t0",
+        "Pid:\t651441",
+        "PPid:\t647414"
+      ]
+    }
+  },
+  "retired_supervisors": [
+    632053,
+    647414
+  ],
+  "preserved_compute_pid": 651441
+}

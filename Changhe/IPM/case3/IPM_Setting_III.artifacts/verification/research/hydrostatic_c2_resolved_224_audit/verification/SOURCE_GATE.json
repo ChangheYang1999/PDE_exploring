@@ -1,0 +1,137 @@
+{
+  "status": "PASS",
+  "started_utc": "2026-10-21T23:32:39.060713+00:00",
+  "attempt_start_utc": "2026-10-21T20:59:21Z",
+  "checks": [
+    {
+      "name": "attempt2 log header",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "attempt2 launcher",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "source newer than attempt start",
+      "passed": true,
+      "evidence": {
+        "mtime_ns": 1792625490627087432
+      }
+    },
+    {
+      "name": "stable bytes across two seconds",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "nonempty numeric archive",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "actual reader module paths",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "exact dimensions",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "exact parameters",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "explicit local basis",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "coefficient count",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "finite coefficients",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "binary64 values",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "stored ordered nodes",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "metadata consistency",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "reader source hash",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "raw diagnostics absent",
+      "passed": true,
+      "evidence": null
+    }
+  ],
+  "proof_sha256": "f3a75d938636f1783d3b5b7901a2bd6c535bbe55f83852b265386db3e67d0e6f",
+  "review_proof_sha256": "301d81254e156c3153b580c3e78f53c6df8e741507a0953c17598c214dadba56",
+  "followup_proof_sha256": "69477dfb690c4b3987cc7bccc304be16d698d96af0e022fb4f931d9b9f294511",
+  "final_preparation_proof_sha256": "00b010a0966c367e01764e1734ddf6dd9d72fbfc5785585a360aa20c8dc71225",
+  "driver_sha256": "ca87375017c70b79b5bd3ef1501d9909902020cb523d4f40eca2112a266c56da",
+  "source_candidates": [
+    "../numerics/artifacts/data/hs/hsG_c2.0_N224_log.pt",
+    "../numerics/runs/hsG_c2.0_N224_log.pt",
+    "../numerics/runs/hsG_c2.0_N224_log.raw.pt"
+  ],
+  "source": "../numerics/runs/hsG_c2.0_N224_log.raw.pt",
+  "staged": "research/hydrostatic_c2_resolved_224_audit/verification/source_staging/7e413aac45294b6ea932b1475dd3d2c2.pt",
+  "frozen": "research/hydrostatic_c2_resolved_224_audit/verification/hsG_c2.0_N224_log.raw.pt",
+  "source_sha256": "7c5ec5f1ce8a749ae2f9aac120a0c2fa839c108e429d50db4c664b55497e840e",
+  "bytes": 194709,
+  "source_mtime_ns": 1792625490627087432,
+  "raw": true,
+  "modules": {
+    "verification/independent_code/q_local_checkpoint.py": "2dde893801466b9ba5616bb8ee134aa6694e5a479d6e142c8ca485384353ef83",
+    "verification/independent_code/q_checkpoint_reader.py": "53e09615fbff5baeec9862921765ef2a196ff3326808faac3bb7e252d47dc0a4"
+  },
+  "metadata": {
+    "N": 224,
+    "M": 56,
+    "L": 1.0,
+    "p": 2.0,
+    "cl": 2.0,
+    "basis": "local",
+    "basis_nodes_source": "stored"
+  },
+  "coefficient_count": 11060,
+  "result_status": "missing by design, raw save before diagnostics",
+  "missing_metadata": [
+    "map_formula",
+    "basis_nodes",
+    "cH",
+    "centre_defect_single"
+  ],
+  "log_sha256": "80c390973e774e397cebdb363bfe13f3c3a68cb9f36191233c02539fe86caf17",
+  "launcher_sha256": "26571f29cbdffce2dddd01006e2c1fe757c81c24fde59f897e7c44f850bdc1c7",
+  "u_binary_sha256": "74c35965d1115a82a62a9d98a7d414e939ecd5101068db9540c000290e59d880",
+  "tk_binary_sha256": "8a2ab9d804adb4a3583a2465c7d309838e1a29ead52f38e6aa3f4b7c8a5f3ea7",
+  "staged_retained": false,
+  "input_sha256": "bdd6fb076566e600718f1f41997caa6289751aa0b4ab072b83a19780d291bfa9",
+  "count": 16,
+  "finished_utc": "2026-10-21T23:32:43.258893+00:00",
+  "admitted_manifest_source": "research/hydrostatic_c2_resolved_224_audit/verification/hsG_c2.0_N224_log.raw.pt",
+  "updated_utc": "2026-10-21T23:32:43.258904+00:00"
+}

@@ -1,0 +1,176 @@
+{
+  "status": "PASS",
+  "complete_source": {
+    "run": "../numerics/runs/hsG_c2.0_N224_log.pt",
+    "published": "../numerics/artifacts/data/hs/hsG_c2.0_N224_log.pt",
+    "frozen": "research/hydrostatic_c2_resolved_224_audit/verification/hsG_c2.0_N224_log.completed.pt",
+    "sha256": "fd0bc052d8a5eb54d759cb4c29cbcaf2983d92c94e13eabc953503a131abc632",
+    "bytes": 196277
+  },
+  "raw_source": {
+    "frozen": "research/hydrostatic_c2_resolved_224_audit/verification/hsG_c2.0_N224_log.raw.pt",
+    "sha256": "7c5ec5f1ce8a749ae2f9aac120a0c2fa839c108e429d50db4c664b55497e840e"
+  },
+  "equal_definition_fields": [
+    "N",
+    "M",
+    "basis",
+    "u",
+    "tk",
+    "L",
+    "kappa",
+    "cl"
+  ],
+  "metadata": {
+    "raw": {
+      "cl": 2.0,
+      "L": 1.0,
+      "p": 2.0,
+      "gamma": 0.5,
+      "C": 2.0,
+      "c": 2.0,
+      "rcond": 1e-08,
+      "N": 224,
+      "M": 56,
+      "basis": "local",
+      "source": "verification/research/hydrostatic_c2_resolved_224_audit/verification/hsG_c2.0_N224_log.raw.pt",
+      "sha256": "7c5ec5f1ce8a749ae2f9aac120a0c2fa839c108e429d50db4c664b55497e840e",
+      "basis_nodes_source": "stored"
+    },
+    "complete": {
+      "cl": 2.0,
+      "L": 1.0,
+      "p": 2.0,
+      "gamma": 0.5,
+      "C": 2.0,
+      "c": 2.0,
+      "rcond": 1e-08,
+      "N": 224,
+      "M": 56,
+      "basis": "local",
+      "source": "verification/research/hydrostatic_c2_resolved_224_audit/verification/hsG_c2.0_N224_log.completed.pt",
+      "sha256": "fd0bc052d8a5eb54d759cb4c29cbcaf2983d92c94e13eabc953503a131abc632",
+      "basis_nodes_source": "stored"
+    }
+  },
+  "additional_complete_keys": [
+    "basis_nodes",
+    "cH",
+    "centre_defect_single",
+    "map_formula"
+  ],
+  "utc": "2026-10-22T00:39:49.166775+00:00",
+  "count": 25,
+  "checks": [
+    {
+      "name": "binding research/hydrostatic_c2_resolved_224_audit/verification/SOURCE_GATE.json",
+      "passed": true
+    },
+    {
+      "name": "source16PASS",
+      "passed": true
+    },
+    {
+      "name": "binding research/hydrostatic_c2_resolved_224_audit/verification/hsG_c2.0_N224_log.raw.pt",
+      "passed": true
+    },
+    {
+      "name": "stable and published complete bytes",
+      "passed": true
+    },
+    {
+      "name": "announced completed hash",
+      "passed": true
+    },
+    {
+      "name": "binding research/hydrostatic_c2_resolved_224_audit/verification/hsG_c2.0_N224_log.completed.pt",
+      "passed": true
+    },
+    {
+      "name": "exact discrete N",
+      "passed": true
+    },
+    {
+      "name": "exact discrete M",
+      "passed": true
+    },
+    {
+      "name": "exact discrete basis",
+      "passed": true
+    },
+    {
+      "name": "exact scalar L",
+      "passed": true
+    },
+    {
+      "name": "exact scalar kappa",
+      "passed": true
+    },
+    {
+      "name": "exact scalar cl",
+      "passed": true
+    },
+    {
+      "name": "exact scalar p",
+      "passed": true
+    },
+    {
+      "name": "exact scalar eta",
+      "passed": true
+    },
+    {
+      "name": "shape u",
+      "passed": true
+    },
+    {
+      "name": "dtype u",
+      "passed": true
+    },
+    {
+      "name": "exact numeric bytes u",
+      "passed": true
+    },
+    {
+      "name": "finite u",
+      "passed": true
+    },
+    {
+      "name": "shape tk",
+      "passed": true
+    },
+    {
+      "name": "dtype tk",
+      "passed": true
+    },
+    {
+      "name": "exact numeric bytes tk",
+      "passed": true
+    },
+    {
+      "name": "finite tk",
+      "passed": true
+    },
+    {
+      "name": "11060 coefficient entries",
+      "passed": true
+    },
+    {
+      "name": "stored nodes both files",
+      "passed": true
+    },
+    {
+      "name": "fixed c2 map",
+      "passed": true
+    }
+  ],
+  "bindings": {
+    "verification/independent_code/check_hydrostatic_224_completed_identity.py": "8810a42b22f4a63bf9d19db66aa13d2f521f7a7a26172561d9133f5aedcca55a",
+    "research/hydrostatic_c2_resolved_224_audit/COMPLETED_ARTIFACT_IDENTITY_PROOF.md": "5668a35f2cfdd40ade7c494c28a315e2bd5299c10f8297deea7b9710f8cdc80a",
+    "independent_code/q_local_checkpoint.py": "2dde893801466b9ba5616bb8ee134aa6694e5a479d6e142c8ca485384353ef83",
+    "independent_code/q_checkpoint_reader.py": "53e09615fbff5baeec9862921765ef2a196ff3326808faac3bb7e252d47dc0a4",
+    "research/hydrostatic_c2_resolved_224_audit/verification/SOURCE_GATE.json": "4634b43d4d696aa56e558f5aeecb41cafe6fe1ab35aface615621cf9350cb538",
+    "research/hydrostatic_c2_resolved_224_audit/verification/hsG_c2.0_N224_log.raw.pt": "7c5ec5f1ce8a749ae2f9aac120a0c2fa839c108e429d50db4c664b55497e840e",
+    "research/hydrostatic_c2_resolved_224_audit/verification/hsG_c2.0_N224_log.completed.pt": "fd0bc052d8a5eb54d759cb4c29cbcaf2983d92c94e13eabc953503a131abc632"
+  },
+  "scope": "Exact represented density identity only. Completed diagnostic numbers not accepted or substituted for independent289 evaluation. Full-planeUNRESOLVED."
+}

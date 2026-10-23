@@ -1,0 +1,144 @@
+{
+  "utc": "2026-10-20T17:26:48.847621+00:00",
+  "verdict": "PASS",
+  "gaussian": {
+    "sigma": "y(1+4x^2) exp(-r^2)",
+    "rho": "-sigma/100",
+    "a": "-1/100",
+    "D": "1/400",
+    "stream_sigma_modes": {
+      "2": "(t/2 + 3/4 + 3/(4*t))*exp(-t) - 3/(4*t)",
+      "4": "(t/4 + 3/4 + 3/(2*t) + 3/(2*t**2))*exp(-t) - 3/(2*t**2)"
+    },
+    "angular_integrals": [
+      {
+        "density_mode": 1,
+        "stream_mode": 2,
+        "radial_integral_over_pi": "1/2",
+        "angular_integral_over_pi": "-1/2"
+      },
+      {
+        "density_mode": 1,
+        "stream_mode": 4,
+        "radial_integral_over_pi": "-1/2",
+        "angular_integral_over_pi": "1/2"
+      },
+      {
+        "density_mode": 3,
+        "stream_mode": 2,
+        "radial_integral_over_pi": "0",
+        "angular_integral_over_pi": "0"
+      },
+      {
+        "density_mode": 3,
+        "stream_mode": 4,
+        "radial_integral_over_pi": "0",
+        "angular_integral_over_pi": "0"
+      }
+    ],
+    "J_sigma_exact": "pi*(-83 + log(5444517870735015415413993718908291383296))/32",
+    "J_rho_exact": "pi*(-83 + log(5444517870735015415413993718908291383296))/320000",
+    "J_rho_decimal": "0.00008340366772538325760528604298489469268852496343941122911",
+    "quadrature_error_sigma": "1.294989493984878432642864402287053858522230335904229989e-50",
+    "required_J_for_transport": 0,
+    "conclusion": "Gaussian satisfies strain/sign/kinematic escape but fails this weighted transport identity."
+  },
+  "forcing_source": {
+    "source": "../numerics/runs/eps_cl2_eps0.0156.pt",
+    "sha256": "5474ff1b49600f99b81a8c89a196e7806b08f405ac869b923f56eae42e3d4dec",
+    "scalar_metadata": {
+      "cl": 2.0,
+      "gamma": 0.5,
+      "N": 96,
+      "M": 32,
+      "L": 1.0,
+      "p": 2.0,
+      "mu": 0.4253011240008549,
+      "beta": 4.0,
+      "Lf": 0.0156
+    },
+    "all_keys": [
+      "b",
+      "cl",
+      "gamma",
+      "N",
+      "M",
+      "L",
+      "p",
+      "mu",
+      "beta",
+      "Lf"
+    ]
+  },
+  "forcing_bounds": [
+    {
+      "width": 0.0156,
+      "coefficient_mu_width_fourth": 2.5188071874807336e-08,
+      "regions": [
+        {
+          "radius_lower": 1.0,
+          "valid_bound": 2.5188071874807336e-08,
+          "tighter_valid_bound": 2.5175816810234634e-08,
+          "printed_max": 0.00011,
+          "printed_over_bound": 4367.146502786506
+        },
+        {
+          "radius_lower": 10.0,
+          "valid_bound": 2.5188071874807336e-11,
+          "tighter_valid_bound": 2.5187949279871417e-11,
+          "printed_max": 0.00036,
+          "printed_over_bound": 14292479.463664928
+        },
+        {
+          "radius_lower": 100.0,
+          "valid_bound": 2.5188071874807337e-14,
+          "tighter_valid_bound": 2.5188070648853558e-14,
+          "printed_max": 0.0006,
+          "printed_over_bound": 23820799106.10821
+        },
+        {
+          "radius_lower": 10000.0,
+          "valid_bound": 2.5188071874807336e-20,
+          "tighter_valid_bound": 2.5188071874684748e-20,
+          "printed_max": 0.00064,
+          "printed_over_bound": 2.540885237984876e+16
+        }
+      ]
+    },
+    {
+      "width": 0.015625,
+      "coefficient_mu_width_fourth": 2.5349922418645316e-08,
+      "regions": [
+        {
+          "radius_lower": 1.0,
+          "valid_bound": 2.5349922418645316e-08,
+          "tighter_valid_bound": 2.533754905828359e-08,
+          "printed_max": 0.00011,
+          "printed_over_bound": 4339.263773016246
+        },
+        {
+          "radius_lower": 10.0,
+          "valid_bound": 2.5349922418645315e-11,
+          "tighter_valid_bound": 2.5349798640180546e-11,
+          "printed_max": 0.00036,
+          "printed_over_bound": 14201226.893507715
+        },
+        {
+          "radius_lower": 100.0,
+          "valid_bound": 2.5349922418645316e-14,
+          "tighter_valid_bound": 2.534992118085618e-14,
+          "printed_max": 0.0006,
+          "printed_over_bound": 23668711489.179523
+        },
+        {
+          "radius_lower": 10000.0,
+          "valid_bound": 2.5349922418645316e-20,
+          "tighter_valid_bound": 2.534992241852154e-20,
+          "printed_max": 0.00064,
+          "printed_over_bound": 2.5246625588458164e+16
+        }
+      ]
+    }
+  ],
+  "scope": "Exact algebra and high precision quadrature for a specified nonprofile; analytic upper bounds refute printed forcing maxima. This does not recompute actual sampled residuals or assert an exact-profile counterexample."
+}

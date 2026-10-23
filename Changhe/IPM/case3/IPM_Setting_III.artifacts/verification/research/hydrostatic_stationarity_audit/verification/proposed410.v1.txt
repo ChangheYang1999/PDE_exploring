@@ -1,0 +1,69 @@
+4.10 Hydrostatic least-squares states (eps = 0 problem of 3.72; numerics lane, NUM_REPORT 4P; verifier 187, 190)
+
+Setting. In the frame of 3.72 (x = sqrt(a0) xi, rho = a0 g, psi = sqrt(a0) Phi) the hydrostatic problem is
+(c xi + V_1) g_xi + (c y + V_2) g_y = g with the vertical-line inverse V_1 = -int_y^inf g_xi dt, V_2 = int_0^y t g_xixi dt
++ y int_y^inf g_xixi dt, the normalisation g_y(0) = 1 and the y-axis tail g(0, y) ~ K y^{1/c} as y -> infinity, with K = 1. The numerics
+lane discretised g in the smooth radial-angular basis of 4.7 (radial map exponent P = c/(c - 1); the axis tail exponent 1 - 1/P = 1/c is fixed by the
+map), evaluated the inverse by Gauss quadrature with g_xixi by central differences (validated on the manufactured
+field g = exp(-xi^2) y exp(-y^2): V_1 to 3e-15, V_2 to 2e-10), and solved the collocation rows at the radial nodes times
+the quadrant angles together with the two normalisation rows by Gauss-Newton least squares (SVD steps, cutoff 1e-13 of
+the largest singular value). The centre condition c + int_0^inf g_xixi(0, t) dt = 1 was either not imposed (its defect
+reported) or added as a row.
+
+Runs and results (discrete states; no claim about the continuum problem). At fixed c = 3 and 48 x 12, 64 x 16, 96 x 24,
+128 x 32 the iteration stalls (line search fails) after 8 to 13 steps at node residuals 1.7e-4, 5.9e-7, 1.1e-7, 7.7e-7
+(not monotone). Between the nodes, with the exact y-axis in the sample set (the peaks sit on the axis), the maximum of
+|R_h|/N_f in 1 <= r < 100 is 9.5e-3, 8.6e-3, 1.9e-3, 3.1e-3 and for r >= 100 it is 6.3e-3, 1.3e-2, 1.1e-3, 4.5e-3; the
+verifier's independent evaluation of the same coefficient vectors (a 774-point full-line quadrature audit, result 187; on
+the axis a second check by an exact compact-polynomial primitive, result 190) gives 9.46e-3, 9.49e-3, 1.89e-3, 3.33e-3 and 6.52e-3, 1.25e-2, 1.11e-3, 4.38e-3 (results 187, 190). The cubic
+coefficients of g(xi, y) = y (1 + B xi^2 + E y^2 + ...) do not settle: E = -2.15, +1.63, -0.41, -0.99 and B = -0.55,
+-7.35, -4.86, -6.45. The centre defect c + int_0^inf g_xixi(0, t) dt - 1 is +3.395e-4, -2.909e-4, -1.779e-5, +1.026e-5
+(exact rational evaluation by the verifier, 187; the lane's quadrature agrees to three digits). At c = 2 (64 x 16,
+96 x 24) the picture is the same (node residuals 5.5e-7, 6.9e-7; annulus 4.9e-4, 2.0e-4; E = -8.84, -2.71; B = -13.05,
+-11.17). The stall points depend on quadrature details: with the finite-difference step of the inverse scaled by the
+local radius instead of fixed, the same starts reach stalls with node residuals 7.9e-8, 5.2e-8 (c = 2) and 3.2e-7
+(c = 3, 64 x 16) but far-field between-node residuals 3e-2 to 9e-2 and cubic coefficients E = -2.03, +0.11, +0.59,
+B = -4.18, -3.22, -4.53. The c = 1.5 runs are not used: with the fixed step the far-field rows are round-off dominated
+where g is large, and with the scaled step the 64 x 16 iteration did not converge (node residual 5.6 after 40 steps
+from a start residual 3e3) while 96 x 24 stalled at 1.1e-6 with E = -35, B = -26 and far-field between-node residual
+7.6e-2.
+
+Linearisation at the stalls. The residual rows have, in the full coefficient space, 1, 27, 247, 679 singular values
+below 1e-13 of the largest at 48 .. 128; these are weakly visible coefficient directions of the basis (as in 4.9).
+Restricted to the visible coefficient subspace (per angular mode, the directions with sampling singular value at least
+1e-8 of that mode's largest)
+no singular value is below 1e-13 of the largest, but 30, 49, 118, 212 are below 1e-8 and 138, 243, 550, 954 below 1e-4
+(of 504, 823, 1644, 2658 visible directions): a soft spectrum, not an exact degeneracy. The dilation direction
+(the per-mode projection of g - X . grad g onto the basis, with mode-value projection defects 3e-5 to 7e-6; it changes
+K by (1 - p) K, p = 1/c, and is tangent to the residual rows only, not to the K = 1 row) is a near-null direction of
+the residual rows at the measured level 1e-9 (it is an exact kernel direction only at an exact solution; at a trial
+density its image is R - X . grad R, which is not small merely because R is small at the nodes) and is not the
+smallest singular vector (overlap 0.71, 0.66, 0.07, 0.19
+with the visible-subspace smallest vector). At the stalls the fraction of the residual in the range of the kept singular directions is 2e-3 to 1e-2
+(64 x 16 to 128 x 32), so they are first-order stationary points of the least-squares functional on the controllable
+directions to about one percent, not demonstrated minimisers; the remaining residual lies along the dropped coefficient
+directions. These numbers describe the linearisation at the stall points only.
+
+Variants. (i) Free c: with the radial map held fixed (map exponent P = c_start/(c_start - 1), hence the axis tail exponent
+1/c_start fixed) exact axis transport forces c = c_start; the runs returned c = 2.999999 and 2.000006 and are fixed-tail-exponent experiments, not a test of whether
+the discrete problem selects c (a test with the map rebuilt from c was not run). (ii) Starts at the re-gauged stall
+states of 4.7 (dilated to K = a0 and projected): their hydrostatic residual is of order one (max |R_h| 0.99, 1.04 for
+the c_l = 3 state on 64 x 16, 96 x 24; 0.18, 0.22 for c_l = 2.5), so they are not near the eps = 0 regime; Gauss-Newton
+from them reaches stalls of the same kind with unrelated cubic coefficients (c_l = 3 on 64 x 16: node 1.7e-6, E = +2.14,
+B = -4.64; the 96 x 24 trial did not converge and is discarded). (iii) Angular oversampling (rows at 3M angles): the
+stalls change character, node residuals 4.0e-4, 1.3e-4 (64, 96), misfit concentrated at the centre (|R_h|/N_f 2.0e-2,
+1.1e-2 for r < 0.1; 4.5e-4, 2.3e-4 in the annulus), origin coefficients E = +252, +181, B = +479, +385, centre defect
+-4.9e-2, -2.5e-2; the simple and the chain start reach the same diagnostics to two digits at 64 x 16. (iv) Centre
+condition imposed as a finite-difference row: the row is satisfied to 1e-8 at the stalls, while the exact defect of the
+stored fields is +4.49e-7 (64 x 16) and +2.70e-8 (96 x 24) (verifier's exact axis primitive, result 190, reproduced by
+the numerics lane's implementation of the same primitive to 1e-12; the difference is the finite-difference error of
+the row); node residuals 7.2e-7, 1.1e-7 (64, 96); with the exact
+primitive used as the row, stalls with exact defect -7.7e-9 (64 x 16) and -9.0e-10 (96 x 24) are reached, with cubic
+coefficients E = -0.16, -0.53 and B = -3.4, -4.8; E = +0.010,
+-0.539, B = -8.99, -4.99, annulus 1.5e-2, 1.9e-3; a different stall point of the same character.
+
+Reading. All states are finite smooth trial densities at Gauss-Newton stalls, reconstructible from the saved
+coefficients (the verifier confirmed the exported nodes and coefficients bit for bit); none is a converged solution of
+the discrete hydrostatic problem, and these finite results do not demonstrate convergence with resolution. Nothing follows for the existence of
+hydrostatic states, and a hydrostatic state would in any case not be a profile of Setting III (3.72). The eps > 0
+bridge (a0 and K prescribed, c free, map rebuilt) was not run. No candidate.

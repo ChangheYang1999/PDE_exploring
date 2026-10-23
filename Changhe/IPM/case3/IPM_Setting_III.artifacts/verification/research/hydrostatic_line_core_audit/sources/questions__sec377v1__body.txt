@@ -1,0 +1,36 @@
+3.77 The core constant of the vertical velocity is the same on every vertical line, and necessary far-field conditions
+under explicit hypotheses (main analysis; the agreement of the moments in (a) and the statements (c) and (d) also
+obtained in an external analysis; STATUS PENDING). Let g solve (3) of 3.72 in the class of 3.73, with G, v, K and
+gamma as there, b = c y + V_2 and Delta(xi, y) = V_2(xi, y) - V_2(0, y) for y >= 0. (a) There are y_0 >= 1 and C_3,
+independent of xi, such that for every xi and every y >= y_0 the improper integral
+    I(xi, y) = int_y^inf G(t) Delta(xi, t)/(b(xi, t) v(t)) dt   (1)
+converges and |I(xi, y)| <= C_3 xi^2 y^{gamma - 2}. Consequently, for fixed xi, Delta(xi, y) = A y^alpha (1 + o(1)) as
+y -> inf with A != 0 and alpha > gamma - 1 - p is impossible; in particular, if Delta(xi, y) has a limit as y -> inf,
+this limit is 0. If the hypothesis of 3.74(d) holds on the axis with the constant Q, and int_0^inf t |g_xixi(xi_1,
+t) - Q_1 t^{p - 2}| dt < inf for some xi_1 and a constant Q_1, then Q_1 = Q and m(xi_1) = int_0^inf t (g_xixi(xi_1,
+t) - Q t^{p - 2}) dt equals m_0: the moment does not depend on the line. (b) Every c > 1. Let f = r^p Theta(th) be
+smooth on R^2 minus the origin, even in xi and odd in y, with Theta(pi/2) = K, let chi be a smooth radial function
+with chi = 0 for r <= 1/2 and chi = 1 for r >= 1, and put R = g - chi f. If for every |xi| >= 2 the limit v_R(xi) of
+V_2[R](xi, y) - V_2[R](0, y) as y -> inf exists, and v_R(xi) = o(|xi|^p) as |xi| -> inf, then C_p(Theta) = 0 (C_p as
+in 3.74(d)). (c) c > 2. With f, chi and R as in (b), suppose |d_xi^2 R| <= C' (1 + r)^{-2 - eps} for some eps > 0.
+Then the hypothesis of 3.74(d) holds on every vertical line with Q = p K + Theta''(pi/2), C_p(Theta) = 0, m_0 = 0, and
+    G(y) = K y^p + A_2 y^{2p - 1} + o(y^{p - 1}),   A_2 = K Q/((1 - p) D),   (2)
+so the axis density has no term of degree p - 1. If moreover R = chi f_d + R_2, where f_d is smooth on R^2 minus the
+origin, even in xi, odd in y and homogeneous of degree d = 2p - 1 (< 0), and |d_xi^2 R_2| <= C' (1 + r)^{e - 2} with
+e < d, then also C_d^-(f_d) = int_0^inf s q_{f_d}(s) ds = 0, where q_u is defined as in 3.76 (with q = d) and the
+integral converges because d < 0. (d) c = 2 (p = 1/2, D = 1). Suppose g = chi (f + f_0) + R_2 with f as in (b), f_0
+smooth on R^2 minus the origin, even in xi, odd in y and homogeneous of degree 0, and |d_xi^2 R_2| <= C'
+(1 + r)^{e - 2} with e < 0. Define B by d_xi^2 f_0(0, y) = B y^{-2} for y > 0 and C_0(f_0) = lim_{S -> inf} (int_0^S s
+q_{f_0}(s) ds - B log S), with q_{f_0}(s) = 2 s F_0'(s) + s^2 F_0''(s), F_0(s) = f_0(1, s). Then C_p(Theta) = 0,
+B = 0, V_2(0, y) = 4 Q y^{1/2} + C_0(f_0) + o(1) and
+    G(y) = K y^{1/2} + 2 K Q + (K C_0(f_0)/4) y^{-1/2} + o(y^{-1/2}).   (3)
+(e) Scope. (a) holds for every solution in the class; it uses neither g_y > 0 nor any far-field hypothesis. By the
+bounds of 3.73, g(xi, y) - G(y) = O(xi^2 y^{gamma - 2}) with gamma - 2 < p - 1, so g(xi, y) = G(y) + M(xi)
+y^{p - 1} + o(y^{p - 1}) with M(xi) != 0 is impossible in the class; (a) is the corresponding statement for the
+velocity: a constant part of V_2 at large height cannot depend on the line. (b)-(d) are conditional: their far-field
+hypotheses are not proved for solutions (3.74(b) gives uniform convergence of r^{-p} g without derivatives). They show
+that the conditions C_p(Theta) = 0 of 3.74(d), and C_d^-(f_d) = 0, m_0 = 0 for c > 2 and B = 0 for c = 2, are
+necessary for solutions with expansions of the stated kinds, not only for termwise formal expansions. Nothing here
+shows that such solutions exist, and nonzero values of these numbers for a trial density, which is not a solution, do
+not exclude solutions; whether expansions with angular layers of shrinking width occur is not decided.
+

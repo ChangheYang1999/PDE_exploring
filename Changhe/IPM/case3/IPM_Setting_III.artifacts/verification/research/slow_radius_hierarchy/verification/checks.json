@@ -1,0 +1,106 @@
+{
+  "utc": "2026-10-20T17:58:04.637322+00:00",
+  "verdict": "PASS",
+  "checks": [
+    "source strain trigonometric operator, all j=1..17 odd",
+    "direct density x derivative, all j=1..17 odd",
+    "nonresonant Poisson and every projected row through mode17, including boundary coupling",
+    "invariant linear source blocks and exact spectra for alpha=8,12,...,36; finite tests only",
+    "two-mode incompatibility factor 5 h hprime/144 from the omitted fifth harmonic"
+  ],
+  "finite_block_checks": [
+    {
+      "alpha": 8,
+      "N": 0,
+      "eigenvalues": [
+        2
+      ],
+      "exact_characteristic_polynomial": "lam - 2"
+    },
+    {
+      "alpha": 12,
+      "N": 1,
+      "eigenvalues": [
+        2,
+        6
+      ],
+      "exact_characteristic_polynomial": "(lam - 6)*(lam - 2)"
+    },
+    {
+      "alpha": 16,
+      "N": 2,
+      "eigenvalues": [
+        2,
+        6,
+        10
+      ],
+      "exact_characteristic_polynomial": "(lam - 10)*(lam - 6)*(lam - 2)"
+    },
+    {
+      "alpha": 20,
+      "N": 3,
+      "eigenvalues": [
+        2,
+        6,
+        10,
+        14
+      ],
+      "exact_characteristic_polynomial": "(lam - 14)*(lam - 10)*(lam - 6)*(lam - 2)"
+    },
+    {
+      "alpha": 24,
+      "N": 4,
+      "eigenvalues": [
+        2,
+        6,
+        10,
+        14,
+        18
+      ],
+      "exact_characteristic_polynomial": "(lam - 18)*(lam - 14)*(lam - 10)*(lam - 6)*(lam - 2)"
+    },
+    {
+      "alpha": 28,
+      "N": 5,
+      "eigenvalues": [
+        2,
+        6,
+        10,
+        14,
+        18,
+        22
+      ],
+      "exact_characteristic_polynomial": "(lam - 22)*(lam - 18)*(lam - 14)*(lam - 10)*(lam - 6)*(lam - 2)"
+    },
+    {
+      "alpha": 32,
+      "N": 6,
+      "eigenvalues": [
+        2,
+        6,
+        10,
+        14,
+        18,
+        22,
+        26
+      ],
+      "exact_characteristic_polynomial": "(lam - 26)*(lam - 22)*(lam - 18)*(lam - 14)*(lam - 10)*(lam - 6)*(lam - 2)"
+    },
+    {
+      "alpha": 36,
+      "N": 7,
+      "eigenvalues": [
+        2,
+        6,
+        10,
+        14,
+        18,
+        22,
+        26,
+        30
+      ],
+      "exact_characteristic_polynomial": "(lam - 30)*(lam - 26)*(lam - 22)*(lam - 18)*(lam - 14)*(lam - 10)*(lam - 6)*(lam - 2)"
+    }
+  ],
+  "scope": "Exact formal coefficient identities. No small-D asymptotic theorem or nonlinear PDE existence inference. The displayed finite spectrum tests alone do not prove an all-N formula."
+}

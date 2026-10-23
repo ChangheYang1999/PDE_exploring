@@ -1,0 +1,69 @@
+"""Result245: exact algebra checks and finite-certificate hypothesis audit.
+The proof, not this finite test set, supplies the universal statement.
+"""
+from pathlib import Path
+from datetime import datetime,timezone
+import hashlib,json,sys
+import gmpy2
+import sympy as s
+sys.set_int_max_str_digits(0)
+ROOT=Path('research/hydrostatic_finite_axis_obstruction');V=ROOT/'verification'
+checks=[];sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def ck(name,ok,evidence=None):checks.append(dict(name=name,passed=bool(ok),evidence=evidence))
+t,P,c,m=s.symbols('t P c m');w=1-t*t;Q=1+(2*P-1)*t*t
+def positive_base_zero(expr):
+ z=s.symbols('z',positive=True)
+ return s.simplify(expr.subs(1-t*t,z).subs(t*t,1-z))==0
+# Differentiate each factor before cancelling powers; no primitive formula.
+F=s.Function('F')(t);D=w*s.diff(F,t)+2*(P-1)*t*F
+ck('density derivative',s.simplify(s.diff(F*w**(1-P),t)-D*w**(-P))==0)
+ck('coordinate derivative',positive_base_zero(s.diff(t*w**(-P),t)-Q*w**(-P-1)))
+A=s.Function('A')(t)
+ck('velocity derivative rational identity',positive_base_zero(s.diff(w**(-P)*A,t)/(Q*w**(-P-1))-(w*s.diff(A,t)+2*P*t*A)/Q))
+ck('quadratic coefficient condition',s.expand(2*(P-1)-m-m*(2*P-1))==2*(P-1-P*m))
+for p in [s.Rational(101,100),s.Rational(5,4),s.Rational(3,2),s.Rational(7,4),s.Rational(2)]:
+ for f in [t,t**3,t**7,t*(t*t+1),t*(t*t+1)**3,t**3*(t*t+2)**2,t*(t*t-4)**2*(t*t+3)]:
+  d=s.Poly(s.expand(w*s.diff(f,t)+2*(p-1)*t*f),t);fp=s.Poly(f,t);degree=fp.degree();j=s.gcd(d,fp).monic();j2=s.gcd(fp.diff(),fp).monic()
+  label=f'P={p},F={f}'
+  ck('no endpoint poles '+label,d.eval(1)!=0 and d.eval(-1)!=0)
+  ck('gcd identity '+label,j==j2)
+  distinct=fp.sqf_part().degree();ck('multiplicity degree '+label,j.degree()==degree-distinct)
+  if degree!=2*(p-1):
+   ck('leading degree '+label,d.degree()==degree+1)
+   dq=d.exquo(j);fq=fp.exquo(j);ck('coprime quotients '+label,s.gcd(dq,fq).degree()==0)
+   ck('quadratic remainder nonzero '+label,s.rem(fp*s.Poly(Q.subs(P,p),t),d)!=0)
+   ck('gcd degree count '+label,dq.degree()==distinct+1)
+  else:ck('only listed resonance '+label,p==s.Rational(3,2) and degree==1)
+# All possible exceptional degrees in the stated range: 0<2(P-1)<=2, odd m.
+ck('only exceptional positive odd degree',[a for a in range(1,20,2)if 0<a<=2]==[1])
+a=t*(1+2*t*t-c);num=s.expand(w*s.diff(a,t)+3*t*a)
+ck('exceptional numerator',s.expand(num-((1-c)+(8-2*c)*t*t))==0)
+ck('exceptional uncancelled remainder',s.rem(num,1+2*t*t,t)==-3)
+ck('exceptional all-c contradiction',s.expand((8-2*c)-2*(1-c))==6)
+# Pole order, including non-real locations and repeated poles, checked exactly.
+z=s.symbols('z')
+for alpha in [s.Integer(0),s.Integer(2),s.I,s.Rational(3,2)]:
+ for order in range(1,7):
+  local=(t-alpha)**(-order);expr=w*s.diff(local,t)+2*P*t*local
+  leading=s.cancel(expr*(t-alpha)**(order+1)).subs(t,alpha)
+  ck(f'pole coefficient {alpha} order{order}',s.simplify(leading+order*(1-alpha*alpha))==0 and 1-alpha*alpha!=0)
+# Exact fields are numeric data extracted by our independent reconstruction.
+# Their high degree is not expanded here; the proof applies to every degree.
+paths=[]
+for root in ['hydrostatic_c2_resolved_audit','hydrostatic_c2_continuation_audit','hydrostatic_c2_resolved_160_audit','hydrostatic_resolved_map_audit']:
+ paths.extend(sorted((Path('research')/root/'verification').glob('*.polynomials.json')))
+ck('certificates include four c2 and five c3',len(paths)==9,len(paths))
+records=[];q=lambda a:gmpy2.mpq(gmpy2.mpz(a[0]),gmpy2.mpz(a[1]))
+for path in paths:
+ z=json.loads(path.read_text());H=list(map(q,z['H_w']));k=list(map(q,z['k_w']));p=q(z['P']);L=q(z['L']);label=path.stem
+ ck(label+' positive map length',L>0)
+ ck(label+' exact exponent in theorem',1<p<=2,str(p))
+ ck(label+' zero H constant',H[0]==0)
+ ck(label+' nonzero far coefficient',H[1]!=0)
+ ck(label+' optional zero k constant',k[0]==0)
+ degree=max(i for i,v in enumerate(H)if v!=0);fm=2*degree-1
+ ck(label+' nonresonant degree',fm!=2*(p-1))
+ records.append(dict(path=str(path),sha256=sha(path),P=str(p),H_degree=degree,F_degree=fm,H1_nonzero=H[1]!=0,k_degree=max(i for i,v in enumerate(k)if v!=0)))
+result=dict(status='PASS'if all(x['passed']for x in checks)else'FAIL',utc=datetime.now(timezone.utc).isoformat(),count=len(checks),checks=checks,certificates=records,proof_sha256=sha(ROOT/'PROOF.md'),driver_sha256=sha(__file__),scope='Universal finite-ansatz proof in PROOF.md; finite exact tests support the algebra. No IPM nonexistence claim or uniform residual lower bound.')
+(V/'CHECKS.json').write_text(json.dumps(result,indent=2)+'\n');print(result['status'],result['count']);print([c for c in checks if not c['passed']])
+if result['status']!='PASS':raise SystemExit(1)

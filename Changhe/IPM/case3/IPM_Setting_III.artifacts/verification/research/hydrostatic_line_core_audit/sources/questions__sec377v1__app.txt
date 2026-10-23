@@ -1,0 +1,75 @@
+## A.3.77 The core constant of the vertical velocity, and necessary far-field conditions
+
+Bounds on a vertical line. In the class of 3.73, r >= y gives |g_xixi(xi, y)| <= C (1 + y)^{gamma - 2}, and g_xi(0,
+y) = 0 by evenness, so |g_xi(xi, y)| <= C |xi| (1 + y)^{gamma - 2} and |g(xi, y) - G(y)| <= C xi^2
+(1 + y)^{gamma - 2}/2. Integrating, |V_1(xi, y)| <= C |xi| (1 + y)^{gamma - 1}/(1 - gamma), and |V_2(xi, y)| <= C
+int_0^y t (1 + t)^{gamma - 2} dt + C y int_y^inf (1 + t)^{gamma - 2} dt <= C_1 (1 + y)^gamma with C_1 independent of
+xi. Hence there is y_0 >= 1, independent of xi, with b(xi, t) >= c t/2 for t >= y_0, and |a(xi, t)| <= C_2 |xi| with
+a = c xi + V_1.
+
+(a) For t >= y_0, (3) of 3.72 gives g_y = (g - a g_xi)/b, and 3.73 gives G' = G/v with v > 0 and G > 0 on (0, inf).
+Since v - b = -Delta,
+    g_y(xi, t) - G'(t) = (g - G)/b - a g_xi/b - G Delta/(b v),   (A1)
+and by the bounds the first two terms on the right are at most C_4 xi^2 t^{gamma - 3} in absolute value, with C_4
+independent of xi. Integrate (A1) over [y, Y] and let Y -> inf: (g - G)(xi, Y) -> 0, and the first two terms are
+absolutely integrable, so the integral of the last term converges and
+    I(xi, y) = (g - G)(xi, y) + int_y^inf ((g - G)/b - a g_xi/b) dt,
+whence |I(xi, y)| <= (C/2 + C_4/(2 - gamma)) xi^2 y^{gamma - 2}. By 3.73 and the bound on V_2, G(t)/(b(xi, t)
+v(t)) = (K/c^2) t^{p - 2} (1 + O(t^{gamma - 1})) > 0 for large t. If Delta(xi, t) = A t^alpha (1 + o(1)) with A != 0,
+the integrand of (1) has eventually the sign of A and absolute value at least |A| K t^{p - 2 + alpha}/(2 c^2). If
+p - 1 + alpha >= 0 the integral diverges; otherwise |I(xi, y)| >= |A| K y^{p - 1 + alpha}/(2 c^2 (1 - p - alpha)) for
+large y, which contradicts the bound when p - 1 + alpha > gamma - 2. A nonzero limit is the case alpha = 0, admissible
+since gamma - 1 - p < 0. Moments: as in A.3.74(d), if int_0^inf t |g_xixi(xi, t) - Q(xi) t^{p - 2}| dt < inf, then
+V_2(xi, y) = Q(xi) y^p/(p (1 - p)) + m(xi) + o(1). Under the two hypotheses, Delta(xi_1, y) = (Q_1 - Q) y^p/(p
+(1 - p)) + m(xi_1) - m_0 + o(1); if Q_1 != Q this has the form A y^p (1 + o(1)) with A != 0, which is excluded
+(alpha = p > gamma - 1 - p), and if Q_1 = Q it tends to m(xi_1) - m_0, which is therefore 0.
+
+(b) chi f is smooth on R^2 and d_xi^2 (chi f) = O(r^{p - 2}) as r -> inf, so the integrals (2) of 3.72 for chi f
+converge on every vertical line, V_2[R] is defined, and V_2 = V_2[chi f] + V_2[R]. For |xi| >= 2, chi f = f near the
+vertical line through (xi, 0), so V_2[chi f](xi, y) = V_2[f](xi, y), and the computation of A.3.74(d) gives, for fixed
+xi != 0 and y -> inf, V_2[f](xi, y) = Q y^p/(p (1 - p)) + C_p(Theta) |xi|^p + O(xi^2 y^{p - 2}), Q = p
+K + Theta''(pi/2). On the axis, d_xi^2 (chi f)(0, t) = Q t^{p - 2} for t >= 1, so for y >= 1, V_2[chi f](0, y) = Q
+y^p/(p (1 - p)) + kappa with kappa = int_0^1 t d_xi^2 (chi f)(0, t) dt - Q/p. Hence for |xi| >= 2, Delta(xi,
+y) -> C_p(Theta) |xi|^p - kappa + v_R(xi) as y -> inf, and by (a) this limit is 0. Dividing by |xi|^p and letting
+|xi| -> inf gives C_p(Theta) = 0.
+
+(c) Since r >= (|xi| + t)/sqrt 2, int_0^inf t |d_xi^2 R(xi, t)| dt <= C' int_0^inf t (1 + (|xi| + t)/sqrt
+2)^{-2 - eps} dt <= C'' (1 + |xi|)^{-eps}, so w(xi) = int_0^inf t d_xi^2 R(xi, t) dt exists and tends to 0 as
+|xi| -> inf, and V_2[R](xi, y) = w(xi) - int_y^inf (t - y) d_xi^2 R(xi, t) dt -> w(xi) as y -> inf, the last integral
+being bounded by int_y^inf t |d_xi^2 R(xi, t)| dt. So the hypothesis of (b) holds with v_R = w - w(0), C_p(Theta) = 0,
+and the limit in the proof of (b) gives -kappa + w(xi) - w(0) = 0 for |xi| >= 2; letting |xi| -> inf,
+kappa + w(0) = 0. On every vertical line g_xixi - Q t^{p - 2} = (d_xi^2 (chi f) - Q t^{p - 2}) + d_xi^2 R; t times the
+bracket is integrable near t = 0 (d_xi^2 (chi f) is bounded on compact sets and t^{p - 1} is integrable since p > 0),
+and the bracket is O(xi^2 t^{p - 4}) as t -> inf (from d_xi^2 f(xi, t) = |xi|^{p - 2} q(t/|xi|) and q(s) = Q
+s^{p - 2} + O(s^{p - 4}), exactly 0 on the axis for t >= 1), so the hypothesis of 3.74(d) holds on every line; on the
+axis V_2(0, y) - Q y^p/(p (1 - p)) = kappa + V_2[R](0, y) -> kappa + w(0) = 0, that is m_0 = 0, and more precisely
+E(y) = V_2(0, y) - Q y^p/(p (1 - p)) = -int_y^inf (t - y) d_xi^2 R(0, t) dt = O(y^{-eps}). Write a_Q = Q/(p (1 - p)),
+so v(y) = c y + a_Q y^p + E(y). By 3.73, log(G(y)/(K y^p)) = -int_y^inf (1/v(t) - p/t) dt, and 1/v - p/t = -(a_Q
+t^p + E(t))/(c t v(t)) = -a_Q t^{p - 2}/c^2 + O(t^{2p - 3}) + O(t^{-2 - eps}). Integrating, log(G(y)/(K y^p)) = a_Q
+y^{p - 1}/(c^2 (1 - p)) + O(y^{2p - 2}) + O(y^{-1 - eps}), and 2p - 2 < -1 since p < 1/2; exponentiating gives (2)
+with A_2 = K a_Q p^2/(1 - p) = K Q p/(1 - p)^2 = K Q/((1 - p) D), since D = (1 - p)/p. For the second statement: chi
+f_d is smooth on R^2 and has d_xi^2 (chi f_d) = O(r^{d - 2}) and d - 2 = -2 - (1 - 2p), and e < d, so |d_xi^2
+R| <= C'' (1 + r)^{d - 2} and the first hypothesis holds with eps = 1 - 2p. For |xi| >= 2, d_xi^2 f_d(xi,
+t) = |xi|^{d - 2} q_{f_d}(t/|xi|), where q_{f_d}(s) = O(s) as s -> 0 (smoothness and oddness at the horizontal axis)
+and q_{f_d}(s) = Q_{f_d} s^{d - 2} + O(s^{d - 4}) as s -> inf, so s q_{f_d} is integrable (d < 0) and int_0^inf t
+d_xi^2 f_d(xi, t) dt = C_d^-(f_d) |xi|^d; and int_0^inf t (1 + r)^{e - 2} dt = O(|xi|^e) (substitute t = |xi| u; the
+integral in u converges since e < 0). Hence w(xi) = C_d^-(f_d) |xi|^d + O(|xi|^e) for |xi| >= 2. By the previous
+paragraph w is constant on |xi| >= 2 and tends to 0, so w = 0 there, and C_d^-(f_d) |xi|^d = O(|xi|^e) with e < d
+forces C_d^-(f_d) = 0.
+
+(d) Here p = 1/2, Q y^p/(p (1 - p)) = 4 Q y^{1/2}, and the computation in (b) for chi f applies unchanged. For
+|xi| >= 2, d_xi^2 f_0(xi, t) = xi^{-2} q_{f_0}(t/|xi|) with q_{f_0} the expression of 3.76 at q = 0; as s -> inf,
+F_0(s) = f_0(1/s, 1) = F_inf + (B/2) s^{-2} + O(s^{-4}) by homogeneity and smoothness at the vertical axis, so
+q_{f_0}(s) = B s^{-2} + O(s^{-4}), and q_{f_0}(s) = O(s) as s -> 0. Hence int_0^S s q_{f_0} ds = B log
+S + C_0(f_0) + O(S^{-2}) and S int_S^inf q_{f_0} ds = B + O(S^{-2}), so with S = y/|xi|, V_2[f_0](xi, y) = B log y - B
+log |xi| + C_0(f_0) + B + o(1) as y -> inf. On the axis d_xi^2 (chi f_0)(0, t) = B t^{-2} for t >= 1, so for y >= 1,
+V_2[chi f_0](0, y) = kappa_0 + B log y + B with kappa_0 = int_0^1 t d_xi^2 (chi f_0)(0, t) dt. As in (c), V_2[R_2](xi,
+y) -> w_2(xi) = int_0^inf t d_xi^2 R_2(xi, t) dt with |w_2(xi)| <= C'' (1 + |xi|)^e. Hence for |xi| >= 2,
+    Delta(xi, y) -> C_p(Theta) |xi|^{1/2} - B log |xi| + C_0(f_0) - kappa - kappa_0 + w_2(xi) - w_2(0),
+and by (a) this limit is 0 for every |xi| >= 2. Dividing by |xi|^{1/2}, then by log |xi|, and letting |xi| -> inf
+gives C_p(Theta) = 0, then B = 0, and then C_0(f_0) = kappa + kappa_0 + w_2(0). On the axis, with B = 0, V_2(0, y) = 4
+Q y^{1/2} + kappa + kappa_0 + V_2[R_2](0, y) = 4 Q y^{1/2} + C_0(f_0) + O(y^e). Then v = 2 y (1 + u) with u = 2 Q
+y^{-1/2} + C_0(f_0)/(2 y) + O(y^{e - 1}), 1/v - 1/(2 t) = (1/(2 t)) (-u + u^2 + O(u^3)) = -Q t^{-3/2} + (4
+Q^2 - C_0(f_0)/2)/(2 t^2) + O(t^{-5/2}) + O(t^{e - 2}), so log(G(y)/(K y^{1/2})) = 2 Q y^{-1/2} - (2
+Q^2 - C_0(f_0)/4)/y + o(1/y), and exponentiating gives (3).
+

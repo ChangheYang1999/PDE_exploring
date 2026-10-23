@@ -1,0 +1,50 @@
+4.10 Hydrostatic least-squares trial states (eps = 0 problem of 3.72; numerics lane, NUM_REPORT 4P; verifier results 187, 190)
+
+Computed. In the frame of 3.72 (x = sqrt(a0) xi, rho = a0 g, psi = sqrt(a0) Phi) the hydrostatic problem (c xi + V_1) g_xi
++ (c y + V_2) g_y = g, with V_1 = -int_y^inf g_xi dt, V_2 = int_0^y t g_xixi dt + y int_y^inf g_xixi dt, g_y(0) = 1 and the
+y-axis tail g(0, y) ~ K y^{1/c} (K = 1), was discretised in the smooth radial-angular basis of 4.7 with radial map exponent
+P = c/(c - 1), which fixes the axis tail exponent 1 - 1/P = 1/c. The inverse was evaluated by Gauss quadrature with g_xixi by
+central differences (validated on the manufactured field g = exp(-xi^2) y exp(-y^2): V_1 to 3e-15, V_2 to 2e-10; a fixed
+step of 1e-5 is round-off dominated where g is large, so the c = 1.5 runs are not used; a radius-scaled step was added), and
+the collocation rows at the radial nodes times the quadrant angles plus the normalisation rows a0 = 1, K = 1 were solved by
+Gauss-Newton least squares (SVD steps keeping singular values above 1e-13 of the largest) at c = 3 (48 x 12 to 128 x 32) and
+c = 2 (64 x 16, 96 x 24), from the simple start g = y (1 + r^2)^{(1/c - 1)/2} and from the re-gauged stall states of 4.7,
+with c fixed or free (the map stays fixed, so exact axis transport forces c = c_start: a fixed-tail-exponent experiment, not
+a test of selection), with collocated or angularly oversampled rows, and with the centre condition c + int_0^inf g_xixi(0, t)
+dt = 1 dropped or imposed as a row (finite-difference row, or the exact axis primitive of result 190, which the lane
+implemented independently: on the two centre-kept states at c = 3 and on the free-c kept state the lane's values differ
+from the verifier's exact values by 8.5e-13, 7.0e-13 and 7.5e-13, on the oversampled kept state by 9.5e-10, and the four
+c = 3 collocated states agree with the verifier's values, which were sent rounded to four digits, within that rounding).
+
+Measured. Every run ends in a Gauss-Newton stall (line search fails). At c = 3 the node residuals are 1.7e-4, 5.9e-7,
+1.1e-7, 7.7e-7 (48 .. 128; not monotone); the between-node maxima of |R_h|/N_f with the exact y-axis in the sample set are
+9.5e-3, 8.6e-3, 1.9e-3, 3.1e-3 in 1 <= r < 100 and 6.3e-3, 1.3e-2, 1.1e-3, 4.5e-3 for 100 <= r <= r_max with r_max = 7.5e3,
+1.7e4, 5.9e4, 1.4e5 (the verifier's 774-point full-line quadrature audit of the same exported u and tk gives 9.46e-3,
+9.49e-3, 1.89e-3, 3.33e-3 and 6.52e-3, 1.25e-2, 1.11e-3, 4.38e-3; the exact axis primitive is a separate check on the axis
+only). The cubic coefficients of g(xi, y) = y (1 + B xi^2 + E y^2 + ...) do not settle (E = -2.15, +1.63, -0.41, -0.99; B =
+-0.55, -7.35, -4.86, -6.45), and the exact centre defects are +3.395e-4, -2.909e-4, -1.779e-5, +1.026e-5. Re-running with
+the radius-scaled finite-difference step, a change of the maps at the 1e-3 relative level, gives stalls with node residuals
+3.2e-7 (c = 3, 64 x 16), 7.9e-8, 5.2e-8 (c = 2, 64, 96), far-field between-node residuals 3e-2 to 9e-2 and E = +0.59, -2.03,
++0.11, B = -4.53, -4.18, -3.22: the stall reached is sensitive to this discretisation change. Oversampled rows move the
+misfit to the centre (|R_h|/N_f 2.0e-2, 1.1e-2 for r < 0.1; E = +252, +181; B = +479, +385; centre defect -4.9e-2, -2.5e-2);
+with the exact centre row the stalls meet the condition to -7.7e-9, -9.0e-10 (64, 96) with E = -0.16, -0.53, B = -3.4,
+-4.8. Linearisation (Euclidean norms of the coefficient vector and of the unweighted row vector): the residual rows have
+1, 27, 247, 679 singular values below 1e-13 of the largest in the full coefficient space (48 .. 128); restricted to the
+per-mode visible coefficient directions (sampling singular value at least 1e-8 of that mode's largest; 504, 823, 1644, 2658
+of 522, 920, 2052, 3632 directions) none is below 1e-13, while 30, 49, 118, 212 are below 1e-8 and 138, 243, 550, 954 below
+1e-4; this restriction does not certify the rank of the full matrix. The measured approximate dilation direction (per-mode
+projection of g - X . grad g, mode-value projection defects 6.5e-6 to 3.1e-5; exact kernel direction only at an exact
+solution, and not tangent to the K = 1 row) has |J_h v|/(smax |v|) = 1e-9 to 5e-9 and overlaps 0.71, 0.66, 0.07, 0.19 with
+the visible-subspace smallest singular vector. Decomposing the residual at the stalls into the kept left-singular range,
+the dropped range and the complement of the column range gives fractions 2.2e-3 / 0.84 / 0.54 (64 x 16), 7.3e-3 / 0.99 /
+0.17 (96 x 24), 8.5e-3 / 1.00 / 0.045 (128 x 32) at c = 3, with normalised gradient |J^T F|/(smax |F|) = 8e-4 to 3.5e-3: the
+predicted fractional decrease of |F|^2 for the full linearised step is the square of the kept fraction, 5e-6 to 1e-4; the
+states are approximately stationary in this sense only, not declared stationary points or minima, and whether the dropped
+part could be removed by order-one changes of the field was not measured.
+
+Scope. All states are finite smooth trial densities at Gauss-Newton stalls, reconstructible from the exported coefficient
+vectors u and nodes tk (the verifier reproduced these exported arrays bit for bit for the 21 states checked so far, the
+seven states of the re-runs being pending; derived arrays such as beta involve rounding); none is a converged solution of the discrete hydrostatic problem, these finite
+results do not demonstrate convergence with resolution, and selection of c was not tested (a run with the map rebuilt from
+c was not made). Nothing follows for the existence of hydrostatic states, and a hydrostatic state would in any case not be a
+profile of Setting III (3.72). The eps > 0 bridge was not run. No candidate.

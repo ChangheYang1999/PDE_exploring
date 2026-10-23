@@ -1,0 +1,67 @@
+{
+  "utc": "2026-10-20T21:15:58.062271+00:00",
+  "status": "PASS",
+  "checks": [
+    {
+      "test": "smooth_radial_MP90_hypergeometric",
+      "p": 0.4,
+      "order": 64,
+      "points": 27,
+      "max_scaled_error": 1.2307445206700289e-14
+    },
+    {
+      "test": "smooth_radial_MP90_hypergeometric",
+      "p": 0.4,
+      "order": 128,
+      "points": 27,
+      "max_scaled_error": 1.2307445206700289e-14
+    },
+    {
+      "test": "smooth_radial_MP90_hypergeometric",
+      "p": 0.75,
+      "order": 64,
+      "points": 27,
+      "max_scaled_error": 4.813412106017856e-16
+    },
+    {
+      "test": "smooth_radial_MP90_hypergeometric",
+      "p": 0.75,
+      "order": 128,
+      "points": 27,
+      "max_scaled_error": 5.6995378982162645e-16
+    },
+    {
+      "test": "Q_radial_exact_rational_inverse",
+      "kappa": 2,
+      "points": 6,
+      "max_scaled_error": 1.339999321867227e-15
+    },
+    {
+      "test": "Q_radial_exact_rational_inverse",
+      "kappa": 6,
+      "points": 6,
+      "max_scaled_error": 5.975703434571443e-16
+    },
+    {
+      "test": "nonradial_Q_overlap",
+      "case": 2,
+      "max_error": 1.942890293094024e-16
+    },
+    {
+      "test": "nonradial_Q_overlap",
+      "case": 4,
+      "max_error": 6.938893903907228e-17
+    },
+    {
+      "test": "nonradial_Q_overlap",
+      "case": 7,
+      "max_error": 1.942890293094024e-16
+    },
+    {
+      "test": "nonradial_Q_overlap",
+      "case": 8,
+      "max_error": 1.1102230246251565e-16
+    }
+  ],
+  "scope": "Independent hypergeometric and rational radial inverses at both endpoints, plus nonradial chart overlap. This is not a uniform error certificate for candidate data."
+}

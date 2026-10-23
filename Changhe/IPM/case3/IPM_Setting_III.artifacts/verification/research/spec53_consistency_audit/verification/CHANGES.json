@@ -1,0 +1,54 @@
+[
+  {
+    "tag": "replace",
+    "old_lines": [
+      2,
+      3
+    ],
+    "new_lines": [
+      2,
+      3
+    ],
+    "old": "Version v52, 2026-10-21T16:56Z (see CHANGELOG). Status markers: [PROVED-lead] = proof written by lead, awaiting verifier+referee;\n",
+    "new": "Version v53, 2026-10-21T18:02Z (see CHANGELOG). Status markers: [PROVED-lead] = proof written by lead, awaiting verifier+referee;\n"
+  },
+  {
+    "tag": "replace",
+    "old_lines": [
+      486,
+      488
+    ],
+    "new_lines": [
+      486,
+      488
+    ],
+    "old": "      text questions/ed74/sec380_{body,app}.txt, to be installed as 3.80 + A.3.80 in draft 74; checker 249 CONFIRMED the\n      d74 preliminary (16:09Z, 206 checks) and the formal d74 trial (251, 16:19Z); INSTALLED in draft 74, 16:41Z] Finite\n",
+    "new": "      checker 249 CONFIRMED the d74 preliminary (16:09Z, 206 checks) and the formal d74 trial (251, 16:19Z); INSTALLED\n      in draft 74, 16:41Z; superseded in draft 77 by G45 (3.80(a), (b)), which contains it] Finite\n"
+  },
+  {
+    "tag": "replace",
+    "old_lines": [
+      505,
+      515
+    ],
+    "new_lines": [
+      505,
+      522
+    ],
+    "old": " (G45) [IN PROGRESS: checker 253 algebra 2036 checks, its review pending, not adopted; lead derivation unchecked,\n      referee x3h launched 16:52Z] Extension of G43 to all P > 1. Checker 253: for H nonzero with H(0) = 0 (H = w^n h,\n      h(0) != 0, n >= 1) and any P > 1 an open-interval identity forces P = n + m/2, m = deg[t h(1 - t^2)] odd >= 5.\n      Lead (research/p_ext/NOTES.md): at P = n + m/2, x = t/w^{1/2}, s = 1 + x^2 make y = C x s^{P-1/2}, G = Psi(x)\n      (odd, degree m) and k(1/s) polynomial; Psi'/Psi = m s^e (x^2 - u_*)^delta/R, u_* = -1/(2P), residues of\n      g(u) positive integers. delta = 0 impossible (u_* a root; signs between the real poles u_*, 0); delta = 1 adds\n      pi'(v_*) = 0 (v = 1/(1+u), v_* = 2P/(2P-1)): e = 0, e = 1 (factorization, AM-GM gives A_0 < 1) and equal\n      multiplicities of the nonzero roots (truncated binomial series) impossible; so m = 5, 7 excluded for all n.\n      Exact elimination (scan_exc.py): m = 9 excluded, m = 11 e = 2 excluded, larger m running. Open: e >= 2 with\n      unequal multiplicities for m >= 11. Not in the report until checked by the checker and audited.\n",
+    "new": " (G45) [3.80(a): PROVED (checker 253, 2036 checks; external audit x3i CORRECT; hand-checked 16:59Z); 3.80(b) with\n      d >= 11: PROVED (checker 258, 724 + 53 checks; hand-checked 17:22Z); both INSTALLED in draft 77 (17:59Z, checker 263\n      preliminary 88, 266 trial 25; external audit x3k of the assembled text CORRECT AFTER one notation repair, in d78).\n      Strengthening to d >= 15: one-exceptional-value lemma (external x3h; hand-checked 17:23Z; checker 261, 824 + 26 + 22)\n      and d = 13 (external x3j, hand-checked 17:46Z; checker 264 by a different argument, 82): d78 preliminary\n      ecedbd50... posted 18:02Z, external audit x3l running] Extension of G43 to all P > 1. For H nonzero with H(0) = 0\n      (H = w^n h, h(0) != 0, n >= 1), F = C t h(1 - t^2) of odd degree d, any P > 1 and any c, an open-interval identity\n      forces (a) P = n + d/2, d >= 5; (b) (polynomial coordinates x = t/w^{1/2}, Psi(x) = G, residue function phi with\n      positive even weights A_j at nodes v_j, odd A_0 at v = 1; delta = 1, pi'(z) = 0, M_l = 0 for l <= e, (A7))\n      e >= 2, values not all equal, not pairwise distinct; if one exceptional value A_1 != b then A_1 < b, A_0 = 1 and\n      b - A_1 > 2n; d >= 15, P >= 17/2 (d = 11 by the lemma, d = 13 by the quadratic in b_1 with negative discriminant).\n      [PROVED-lead, sent to the checker 17:52Z] d = 15: the four remaining patterns ((1;1,3,3), (3;2,2,1,1), (1;3,2,1,1),\n      (1;2,2,1,1,1)) excluded for every real n >= 1 (research/p_ext/classify.py, e3_2211.py, m15_res.py); would give\n      d >= 17, P >= 19/2. [CONJ/OPEN] e = 2 in general: num(n, nu, mu) = 0 has no integer solution with n <= 1000\n      (external x3j: necessary nu > 4n, mu - nu - n > (4 + 2 sqrt 6) n); real (non-integer) solutions exist (d = 107,\n      n in (1, 1.001), checker 261), so integrality of n is essential. The class excluded is the class of polynomial axis\n      data only: no degree-uniform residual bound, no statement on limits. NOT a NO endpoint.\n"
+  },
+  {
+    "tag": "insert",
+    "old_lines": [
+      516,
+      516
+    ],
+    "new_lines": [
+      523,
+      527
+    ],
+    "old": "",
+    "new": "- v53 2026-10-21T18:02Z: (G43) the stale \"to be installed as 3.80\" phrase removed (checker 260) and the supersession by\n  G45 recorded. (G45) rewritten: 3.80(a), (b) with d >= 11 installed in draft 77 (17:59Z); the strengthening to\n  d >= 15 (lemma 261, d = 13 by 264 and the external quadratic) in the d78 preliminary; the d = 15 closure (lead) sent to\n  the checker; e = 2 in general open (integrality of n essential). No change to the endpoint: UNRESOLVED.\n"
+  }
+]

@@ -1,0 +1,83 @@
+"""Result247 follow-up: independent inventory, decimal arithmetic and report rounding."""
+from pathlib import Path
+from decimal import Decimal,localcontext
+from fractions import Fraction
+from datetime import datetime,timezone
+import json,hashlib,re
+ROOT=Path('research/cubic_fit_history_audit');V=ROOT/'verification';checks=[]
+sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def ck(n,b,e=None):checks.append(dict(name=n,passed=bool(b),evidence=e))
+D=Decimal
+raw=json.loads((V/'CHECKS.json').read_text());ss=raw['states'];arch=V/'initial_failed_audit'
+ck('initial failure preserved',raw['status']=='FAIL' and raw['count']==669 and sha(V/'CHECKS.json')==sha(arch/'CHECKS.json'))
+ck('initial source preserved',sha(arch/'audit_cubic_fit_history.py')==raw['source_sha256'])
+ck('initial proof preserved',sha(arch/'PROOF.md')==raw['proof_sha256'])
+ck('reader hash',sha('independent_code/candidate_reader.py')==raw['reader_sha256'])
+failed=[c for c in raw['checks']if not c['passed']]
+ck('seven initial failures exactly',len(failed)==7 and sum('physical amplitude gauge'in c['name']for c in failed)==5 and any(c['name']=='64 original states'for c in failed) and any(c['name']=='eps_cl1.5_far states match logged rows'for c in failed))
+for z in json.loads((V/'RECORD_INPUTS.json').read_text())['files']:ck('record '+z['frozen'],sha(z['frozen'])==z['sha256'])
+for z in json.loads((V/'STATE_INPUTS.json').read_text())['states']:
+ ck('source '+z['source'],sha(z['source'])==z['source_sha256']);ck('snapshot '+z['snapshot'],sha(z['snapshot'])==z['snapshot_sha256'])
+g=json.loads((V/'MANUFACTURE_GATE.json').read_text());ck('29 initial manufactures',g['status']=='PASS'and g['count']==29 and all(c['passed']for c in g['checks']))
+tags=['eps_cl2','eps_cl3','eps_cl2_hi','eps_cl1.5','eps_cl1.5_far','eps_cl1.5_hi','eps_cl1.5_L01b'];counts={t:sum(s['tag']==t for s in ss)for t in tags}
+ck('saved inventory',[counts[t]for t in tags]==[13,13,7,13,7,5,5] and len(ss)==63,counts)
+producer=(V/'records/bcub_reextract.txt').read_text();ck('producer data count63',sum(line.startswith('  eps=')for line in producer.splitlines())==63)
+headers=[int(v)for v in re.findall(r'# eps[^:]+: (\d+) logged rows',producer)];ck('headers count logged rows64',sum(headers)==64 and len(headers)==7,headers)
+far=(V/'records/eps_cl1.5_far.log').read_text();farrows=[x for x in far.splitlines()if re.match(r'eps=\s*[0-9.]+:',x)]
+ck('failed eighth far row',len(farrows)==8 and 'eps=  0.0014: |F|=2.0e-03'in farrows[-1] and far.rstrip().endswith('not converged; stop'))
+ck('no failed checkpoint',not Path('../numerics/runs/eps_cl1.5_far_eps0.0014.pt').exists())
+source=(V/'records/eps_continuation.py.txt').read_text();ck('save only after convergence',"if info['nF'] < 1e-8:"in source and source.index("if info['nF'] < 1e-8:")<source.index('torch.save(')<source.index('not converged; stop'))
+results=[];table=[]
+with localcontext()as ctx:
+ ctx.prec=90
+ for s in ss:
+  a=D(s['fitA']['b_fit']);b=D(s['logged']['b_fit']);j=D(s['logged']['b_fit_Lraw2']);L=D(s['Lraw']);lg=D(str(s['metadata']['L']));ap=a*L*L
+  ea=(a-b)/abs(b);ej=(ap-j)/abs(j);eb=(D(s['fitB']['b_fit'])-b)/abs(b)
+  for label,value,key in [('A',ea,'relative_log_error_A'),('A_Lraw2',ej,'relative_log_error_A_Lraw2'),('B',eb,'relative_log_error_B')]:ck(s['state']+' recompute '+label,abs(value-D(s[key]))<D('1e-49'))
+  ck(s['state']+' log b within5e-6',abs(ea)<D('5e-6'))
+  ck(s['state']+' log bL within5e-6',abs(ej)<D('5e-6'))
+  ck(s['state']+' physical L',abs(D(s['Lphys'])-lg*L)<D('1e-13'))
+  ck(s['state']+' actual eps metadata',abs(D(s['state'].split('_eps')[-1])-D(str(s['metadata']['Lf'])))<=D('.00005'))
+  ck(s['state']+' center consistency',D(str(s['center_angular_leak']))<D('1e-9'))
+  amp=D(s['physical_mean_far_amplitude']);ck(s['state']+' displayed amplitude',amp.quantize(D('.0001'))==D('4.0000'))
+  if s['precision_error']is not None:ck(s['state']+' higher precision record',D(s['precision_error'])<D('1e-40'))
+  results.append(dict(state=s['state'],error_A=str(ea),error_A_Lraw2=str(ej),error_B=str(eb),bA=str(a),bA_Lraw2=str(ap),bA_Lphys2=str(a*D(s['Lphys'])**2)))
+ byname={s['state']:s for s in ss};res={s['state']:s for s in results}
+ maximal={key:max(results,key=lambda s:abs(D(s[key])))for key in ['error_A','error_A_Lraw2','error_B']}
+ ck('claimed3e-6 b refuted',abs(D(maximal['error_A']['error_A']))>D('3e-6'))
+ ck('claimed3e-6 product refuted',abs(D(maximal['error_A_Lraw2']['error_A_Lraw2']))>D('3e-6'))
+ trial=Path('research/draft72_consistency_audit/verification/v3/FINAL_REPORT.d72trial_v3.md').read_text();chunk=trial.split('    c_l = 2 (4A = 12):',1)[1].split('\nRefinement (144',1)[0];tag='eps_cl2'
+ for line in chunk.splitlines():
+  if 'c_l = 3 (4A'in line:tag='eps_cl3';continue
+  if 'c_l = 1.5 (4A'in line:tag='eps_cl1.5';continue
+  tokens=line.split()
+  if not tokens or not re.fullmatch(r'\d+(?:\.\d+)?',tokens[0]):continue
+  eps=D(tokens[0]);candidates=[s for s in ss if s['tag']==tag];s=min(candidates,key=lambda s:abs(D(str(s['metadata']['Lf']))-eps));value=D(res[s['state']]['bA_Lphys2']);printed=D(tokens[4]);radius=D(5).scaleb(printed.as_tuple().exponent-1)
+  ck('table maps '+tag+str(eps),abs(D(str(s['metadata']['Lf']))-eps)<D('.00005'))
+  ck('table cubic printed rounding '+s['state'],abs(value-printed)<=radius,dict(actual=str(value),printed=str(printed),half_width=str(radius)))
+  table.append(dict(state=s['state'],printed=str(printed),value=str(value),relative_error=str((value-printed)/abs(printed))))
+ ck('eleven cubic table entries',len(table)==11)
+ ck('table is coarser than3e-6',max(abs(D(q['relative_error']))for q in table)>D('3e-6'))
+ s=byname['eps_cl1.5_eps0.0156'];t=byname['eps_cl1.5_L01b_eps0.0156'];comparison={}
+ for key in ['a0','Kphys','Lphys']:
+  a,b=D(s[key]),D(t[key]);comparison[key]={'L1':str(a),'L01':str(b),'absolute_difference':str(b-a),'relative_difference':str((b-a)/abs(a))}
+ a,b=D(s['fitA']['b_fit']),D(t['fitA']['b_fit']);comparison['b_fit']={'L1':str(a),'L01':str(b),'absolute_difference':str(b-a),'relative_difference':str((b-a)/abs(a))}
+ ck('a0 printed five decimals agree',D(s['a0']).quantize(D('.00001'))==D(t['a0']).quantize(D('.00001'))==D('3.44380'))
+ ck('a0 absolute1e-6 would fail',abs(D(comparison['a0']['absolute_difference']))>D('1e-6'))
+ ck('a0 relative1e-6 holds',abs(D(comparison['a0']['relative_difference']))<D('1e-6'))
+ ck('b_fit relative2e-5 would fail',abs(D(comparison['b_fit']['relative_difference']))>D('2e-5'))
+ defects=[]
+ for tag in ['eps_cl1.5','eps_cl1.5_L01b']:
+  log=(V/'records'/(tag+'.log')).read_text();line=next(line for line in log.splitlines()if re.match(r'eps=\s*0\.0156:',line));m=re.search(r'\bDelta=([+0-9.e-]+)',line);defects.append(D(m[1]))
+ ck('Delta rounds equally',all(v.quantize(D('.00001'))==D('.03937')for v in defects))
+ comparison['Delta_printed_logs']=[str(v)for v in defects]
+ beta=Fraction(86177,10000);lower=beta-Fraction(1,20000);upper=beta+Fraction(1,20000)
+ ck('exact ideal beta rounding bracket',lower**3<Fraction(640)<upper**3)
+ ck('exact conservative physical rounding bound',Fraction(1,20000)**3<Fraction(233,10**7)**3*10)
+ amp=D(t['physical_mean_far_amplitude']);comparison['refined_physical_amplitude']=str(amp);comparison['refined_amplitude_minus4']=str(amp-4)
+ ck('amplitude exact equality refuted',abs(amp-4)>D('1e-5'))
+ ck('amplitude rounding error bound observed',abs(amp-4)<D('2.33e-5'))
+ ck('five refined metadata definitions',all(s['metadata']['L']==.1 and s['metadata']['beta']==8.6177 and abs(s['metadata']['gamma']-2/3)<1e-16 for s in ss if s['tag']=='eps_cl1.5_L01b'))
+out=dict(status='PASS'if all(c['passed']for c in checks)else'FAIL',utc=datetime.now(timezone.utc).isoformat(),count=len(checks),checks=checks,states=results,maxima=maximal,table=table,equal_eps=comparison,raw_gate='FAIL7of669 retained',raw_sha256=sha(V/'CHECKS.json'),proof_sha256=sha(ROOT/'SUMMARY_PROOF.md'),source_sha256=sha(__file__))
+(V/'SUMMARY.json').write_text(json.dumps(out,indent=2)+'\n');print(out['status'],out['count']);print([c for c in checks if not c['passed']])
+if out['status']!='PASS':raise SystemExit(1)

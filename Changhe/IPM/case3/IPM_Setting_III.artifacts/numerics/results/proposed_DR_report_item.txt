@@ -1,0 +1,35 @@
+Proposed text for a FINAL_REPORT Section 4 item on dynamic rescaling (num, shift 4, revised 08:3xZ after referee rounds dr1-dr3 and checker results 167-183;
+sources NUM_REPORT 4O; the numbers are the main computation's unless attributed to the checker; nothing here is evidence about existence).
+
+4.x Dynamic rescaling in pseudo-time (variant A).  The time-dependent problem d_tau rho = c_w rho - (c_x X + U[rho]).grad rho, whose steady states with
+c_w > 0 are the profiles rho/c_w with c_l = c_x/c_w, was integrated in the smooth basis of 4.7 with the canonical inverse at every stage, the slope
+normalisation c_w = c_x + psi_xy(0) and a fixed target c_x = C c_w (so a steady state would have c_l = C exactly and the far-field trace Theta is frozen;
+K/a0 is a gauge slice, 3.5).  The discrete right-hand side reproduces the checker's manufactured field (psi = -xy/[4(1+r^2)]) to 2.6e-15 in rho_tau and to
+1e-11 in its cubic coefficients at 64x16, and the strain identity c = -a0/4 + int f_3 s^-2 ds holds to 1e-8 .. 1e-15 along the runs; two implementation
+defects (product-rule leakage in the differentiation, a duplicated moment routine) were found by the team and repaired during the shift.  Findings (finite
+windows, discrete states):
+(i) From the start rho = y w(r) (a0 = 1) at C = 3 the scalars c, c_w agree across 64x16, 96x24, 128x32, three cutoffs, two bases and three time steps at exact
+output times to 7e-5 relative at tau = 15 and 2e-3 at tau = 20; the sampled density agrees to 9e-5 on 0.1 <= r < 1 and the velocity to 5e-4 (96 vs 128, times
+20.047 / 20.036); the annulus 1 <= r < 100 is not resolved (projection defects 32 / 11 / 3.5 percent of the right-hand side at 64 / 96 / 128, checker 167;
+pointwise gradients differing by up to a factor 2 at (6, 8), checker 173).  c_w falls from 0.125 to 0.0166 (a0* = 1/c_w from 8 to 60) with the sampled
+normalised residual of rho/c_w at 0.02 .. 0.6 by region: no approach to a steady state is observed on tau <= 20; the later phase is unresolved and not read.
+The tail coefficient b3 follows the checker's law (154) to 4 digits.  The exterior density contributes 62 percent of the strain c + a0/4 at tau = 20
+(I_1 = 0.135 of 0.217).  Over the sampled C in {1.2, 1.5, 2, 2.5, 3, 4, 5, 6} the drift of c_w is the same decelerating one (centred rate -0.11 .. -0.14 at
+tau = 5, -0.07 .. -0.095 at tau = 10) with no arrest or reversal; if profiles exist only at isolated c_l (hypothesis, 3.28), no steady state of variant (A)
+exists at a generic C, so the drift carries no information on existence.
+(ii) Started at the stalled fixed-c_l states of 4.7(c) (a0 19.7 .. 21.9 at C = 3; c_w = 1, c_x = 3), the flow leaves them with an early-window growth rate
+of the core time derivative of 15.2 .. 15.8 per unit tau at 64x16 .. 160x40 (0.69 .. 0.78 a0; 9.8 .. 10.8 = 0.73 .. 0.77 a0 for the c_l = 2.5 chain),
+step-converged in that slope at 64x16 (15.49 / 15.52 / 15.52 for three steps) and cutoff-dependent at 128x32 (15.5 .. 18.5 for cutoffs 1e-8 .. 1e-13, both
+bases alike at matched cutoff); c_w reached zero in three runs (tau 1.17, 1.37, 1.46) and not by tau 1.35 .. 1.5 in the others.  With the start's velocity,
+strain and rates frozen (a linear transport flow) the core derivative grows by 0.7 .. 1.0 per unit tau; with the velocity live and the rates frozen the
+departure is comparable to the full one (13.6 .. 15.8), with the velocity frozen and the rates live it is much weaker (0.5 .. 3.8); these ablations alter the
+slope normalisation and are modified flows.  The Jacobian compressed to the visible coefficient directions has positive spectral abscissae 0.73 .. 0.78 a0
+at the stall states (0.19 .. 0.30 without the perturbation's velocity; printed real parts equal for the tested angular resolutions at fixed N and increasing
+over three N) and 0.47 .. 0.53 a0 at the constant start; the checker's independent compression agrees to 0.25 .. 2 percent (176).  The lift residuals of the
+compressed eigenpairs are 0.4 .. 9 relative to Re lambda, finite-window linear amplification of lifted and random vectors is 12.7 .. 14.7 per unit tau, and the
+nonlinear sensitivity to prescribed perturbations is within 0.1 .. 1 percent of the frozen-tangent prediction over tau = 0.3: finite amplification is seen in
+the tested integrations; no converged full or continuum eigenmode is demonstrated.
+(iii) Interpretation (not proof): the velocity feedback -U[h].grad rho on the unstably stratified core (local constant-gradient symbol a0 k_1^2/|k|^2 in DR
+time).  If exact profiles with a0* >> 1 shared such an instability (hypothesis; the stall states are not proved profiles), forward integration would reach
+them only from their stable set; this concerns the tested forward integrations and starts and does not show that every candidate-finding use of the flow
+fails.  Three external referee rounds and checker results 167-183 were applied.  Verdict unchanged.

@@ -1,0 +1,16 @@
+chain-start reruns, fixed scheme (local basis, rcond 1e-8; one Chebyshev cross-check): c_w ; |rho_tau|inf(r<=1) [projected]; growth rate of |rho_tau|(r<=1) between tau 0.1 and 0.5; crossing
+drW_C3.0_chain64           a0  19.742 | tau=0: cw 1.00000 rt1 1.24e-04 rtall 3.03e-03 | tau .25: 0.9990 7.47e-03 | .5: 0.9640 2.43e-01 | .75: 0.8018 1.69e+00 | 1.0: 0.4548 4.46e+00 | 1.25: 0.0452 9.40e+00 | rate(.1-.5)  15.5 | cw=0 at 1.1679 (last tau 1.16)
+drW_C3.0_chain96           a0  20.694 | tau=0: cw 1.00000 rt1 2.29e-05 rtall 8.14e-04 | tau .25: 0.9993 3.23e-03 | .5: 0.9814 9.10e-02 | .75: 0.8841 7.42e-01 | 1.0: 0.6841 2.39e+00 | 1.25: 0.3670 8.89e+00 | rate(.1-.5)  15.8 | cw=0 at 1.3705 (last tau 1.36)
+drW_C3.0_chain128          a0  21.804 | tau=0: cw 1.00000 rt1 1.26e-05 rtall 4.71e-04 | tau .25: 0.9996 1.76e-03 | .5: 0.9900 4.88e-02 | .75: 0.9303 4.33e-01 | 1.0: 0.7910 2.18e+00 | 1.25: 0.6569 2.09e+01 | rate(.1-.5)  15.9 | cw=0 at - (last tau 1.35)
+drW_C3.0_chain160          a0  21.915 | tau=0: cw 1.00000 rt1 1.33e-05 rtall 3.85e-04 | tau .25: 0.9997 1.33e-03 | .5: 0.9924 3.58e-02 | .75: 0.9419 3.51e-01 | 1.0: 0.8110 2.35e+00 | 1.25: 0.6432 1.61e+01 | rate(.1-.5)  15.2 | cw=0 at - (last tau 1.40)
+drW_C3.0_chain128_cheb missing
+drW_C2.5_chain64           a0  12.879 | tau=0: cw 1.00000 rt1 1.76e-04 rtall 1.94e-02 | tau .25: 0.9998 3.38e-03 | .5: 0.9947 3.96e-02 | .75: 0.9604 2.35e-01 | 1.0: 0.8738 7.61e-01 | 1.25: 0.7470 1.52e+00 | rate(.1-.5)   9.8 | cw=0 at - (last tau 1.50)
+Traceback (most recent call last):
+  File "<stdin>", line 17, in <module>
+  File "<stdin>", line 17, in <dictcomp>
+  File "<stdin>", line 16, in at
+IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+# addendum (08:0xZ): remaining batch-3 chain reruns
+drW_C2.5_chain96           a0  13.944 | tau=0: cw 1.00000 rt1 2.19e-04 rtall 8.90e-03 | tau .25: 0.9999 3.07e-03 | .5: 0.9955 4.10e-02 | .75: 0.9612 2.37e-01 | 1.0: 0.8671 7.94e-01 | 1.25: 0.7257 1.52e+00 | rate(.1-.5)  10.8 (0.77 a0) | cw=0 at - (last tau 1.50)
+drW_C2.5_chain128          a0  14.303 | tau=0: cw 1.00000 rt1 1.79e-04 rtall 7.82e-03 | tau .25: 0.9999 2.72e-03 | .5: 0.9958 3.82e-02 | .75: 0.9622 2.56e-01 | 1.0: 0.8657 8.89e-01 | 1.25: 0.7138 1.85e+00 | rate(.1-.5)  10.5 (0.73 a0) | cw=0 at - (last tau 1.50)
+drW_C3.0_chain128_cheb     a0  21.804 | tau=0: cw 1.00000 rt1 2.82e-06 rtall 4.95e-04 | tau .25: 0.9999 5.13e-04 | .5: 0.9942 2.68e-02 | .75: 0.9406 3.26e-01 | 1.0: 0.7766 1.63e+00 | 1.25: 0.5330 3.54e+00 | rate(.1-.5)  18.5 (0.85 a0) | cw=0 at 1.4612 (last tau 1.45)

@@ -1,0 +1,33 @@
+{
+  "utc": "2026-10-20T18:53:24.437232+00:00",
+  "status": "PASS",
+  "canonical_gaussian": "rho=D*y*(4-2*r^2)*exp(-r^2), psi=-D*x*y*exp(-r^2), ell=1+D; non-profile",
+  "E_over_D_squared": "720*pi",
+  "residual_energy_identity": "exact for symbolic ell,D with all eight ordered derivative slots",
+  "eta3_squared_at_ell_1_plus_D": "(4069997*D**2 + 5351840*D + 4199040)/524880",
+  "eta3_limit_squared": "8",
+  "eta3_samples": [
+    {
+      "D": "0.0001",
+      "eta3": 2.8286073797357
+    },
+    {
+      "D": "0.01",
+      "eta3": 2.8465309641983914
+    },
+    {
+      "D": "0.1",
+      "eta3": 3.0161519573679407
+    }
+  ],
+  "full_vs_sum_counterexample": {
+    "ell": 1.2,
+    "a": 0.001,
+    "R": 0.001,
+    "V": 0.282842712474619,
+    "full_rhs": 1.0217881341544661,
+    "A": 1.4,
+    "coarsened_rhs": 2.3051775951912736
+  },
+  "scope": "Exact Gaussian integration and algebra support the separate general proof; no exact IPM profile, global norm certificate or distance theorem."
+}

@@ -1,0 +1,33 @@
+{
+  "utc": "2026-10-21T04:09:32.184420+00:00",
+  "verdict": "CONFIRMED finite shared-grid canonical evaluation",
+  "summary_sha256": "8ff2b7da5e1d6cad6edd110d9669c582642461aec138b4a422296f7f5ab42e83",
+  "point_count_sum": 97280,
+  "selected_MP_count_sum": 64,
+  "method": "Independent canonical density Green inverse and analytic derivatives at exported producer sampling locations; independent MP source primitives75/110 targetdigits at selected maxima. Own Cartesian five-point flow gate previously passed. No producer code executed.",
+  "scope": "The producer sampling definition alone is shared. The evaluator, density derivatives, canonical full-plane inverse and MP source-primitives inverse are independently implemented. Floating-point operation order may change coordinates by rounding. MP values cover selected points, not the full grid, and all grid maxima are sampled numerical estimates. Differences between producer and canonical maxima are not pointwise inverse-error estimates. All source and data hashes are checked. No uniform residual or existence certificate.",
+  "items": [
+    {
+      "item": "Hash-matched checkpoints/exported locations",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "item": "Three inverse orders and64 selected MP checks",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "item": "Different samples alone explain producer/canonical discrepancy",
+      "verdict": "REFUTED",
+      "reason": "Discrepancy remains on shared sampling definition, modulo explicit floating-point coordinate rounding."
+    },
+    {
+      "item": "Pointwise producer inverse error",
+      "verdict": "OPEN",
+      "reason": "Only maxima are compared; producer velocity is not separately reevaluated at each point."
+    },
+    {
+      "item": "Uniform residual and primary endpoint",
+      "verdict": "OPEN"
+    }
+  ]
+}

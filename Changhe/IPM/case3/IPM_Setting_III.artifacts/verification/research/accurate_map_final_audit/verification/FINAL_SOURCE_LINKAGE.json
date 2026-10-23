@@ -1,0 +1,72 @@
+{
+  "status": "PASS_STATIC_BOUND_INHERITANCE_AND_SIGN_RULE",
+  "utc": "2026-10-22T08:07:26.049733+00:00",
+  "bindings": {
+    "independent_code/check_accurate_map_final.py": "296b3b17a8f2f887b438e8316e9a4094b524873d14a2d82a54f87e2e4c0c9059",
+    "independent_code/check_larger_node_final.py": "18c678c22aca1d14c95d8e332aff4a63862557b500dc9690d1c7f1dddf988289",
+    "independent_code/larger_node_independent_arithmetic.py": "7de0d12df78873a121614a716d1db1fde48079c2f19a48e7eb054ed323e6a18a",
+    "research/accurate_map_final_audit/verification/candidate/B_angular_B.npz": "02846dfc18731c093f50ea8ac56ef9567c404560e28ca9ad13f45b2a0e82745b",
+    "research/accurate_map_final_audit/verification/candidate/G128_angular_B.npz": "427380bbc41b19e71c49a2f11af65c36d2ac842df4e2a2f356aa73feb2f531d3"
+  },
+  "final_checks_sha256": "38795a2d791c663a3f58605c1fcbecd5cb29d9c3e573c6713a5c2f1adc0b8706",
+  "source_chain": "from check_larger_node_final import Audit as Parent; class Audit(Parent); no spreads override; checked_spreads returns self.spreads",
+  "counts": [
+    {
+      "tag": "B",
+      "radius": 3,
+      "strict_adjacent_product_count": 6,
+      "sign_product_count": 6,
+      "zero_values": 0
+    },
+    {
+      "tag": "B",
+      "radius": 30,
+      "strict_adjacent_product_count": 32,
+      "sign_product_count": 32,
+      "zero_values": 0
+    },
+    {
+      "tag": "B",
+      "radius": 300,
+      "strict_adjacent_product_count": 32,
+      "sign_product_count": 32,
+      "zero_values": 0
+    },
+    {
+      "tag": "B",
+      "radius": 3000,
+      "strict_adjacent_product_count": 32,
+      "sign_product_count": 32,
+      "zero_values": 0
+    },
+    {
+      "tag": "G128",
+      "radius": 3,
+      "strict_adjacent_product_count": 33,
+      "sign_product_count": 33,
+      "zero_values": 0
+    },
+    {
+      "tag": "G128",
+      "radius": 30,
+      "strict_adjacent_product_count": 32,
+      "sign_product_count": 32,
+      "zero_values": 0
+    },
+    {
+      "tag": "G128",
+      "radius": 300,
+      "strict_adjacent_product_count": 25,
+      "sign_product_count": 25,
+      "zero_values": 0
+    },
+    {
+      "tag": "G128",
+      "radius": 3000,
+      "strict_adjacent_product_count": 26,
+      "sign_product_count": 26,
+      "zero_values": 0
+    }
+  ],
+  "scope": "Static source linkage and finite counting, not re-execution of the full final checker."
+}

@@ -1,0 +1,24 @@
+== summary
+hsQ_c2.0_N80_acc6_fine      80x20  2.000  r      2.6e-05          2.1e-03 3.2e-04 1.0e-04 7.9e-07            +120.364    +211.515    1.2e-15            -4.8e-03    220s
+hsQ_c2.0_N96_acc6_fine      96x24  2.000  r      8.1e-06          4.7e-04 7.9e-05 3.1e-05 5.4e-07            +34.697    +54.815    7.5e-16            -1.1e-03    403s
+hsQ_c2.0_N112_acc6_fine    112x28  2.000  r      6.6e-06          2.1e-04 3.1e-05 2.4e-05 4.7e-07            +7.750    +12.747    5.2e-16            -3.7e-04    671s
+hsQ_c2.0_N128_acc6_fine    128x32  2.000  r      2.3e-06          1.7e-05 2.4e-05 8.0e-06 6.7e-08            -1.570    -9.552    3.7e-16            -9.4e-06    1132s
+== exact centre defect
+hsQ_c2.0_N80_acc6_fine        80x20  c 2.0000000 P 2.0000000: D_exact -4.8055380375e-03  D_FD -4.8055e-03 (diff -1.09e-11)
+hsQ_c2.0_N96_acc6_fine        96x24  c 2.0000000 P 2.0000000: D_exact -1.1210755121e-03  D_FD -1.1211e-03 (diff -8.92e-12)
+hsQ_c2.0_N112_acc6_fine      112x28  c 2.0000000 P 2.0000000: D_exact -3.7220274253e-04  D_FD -3.7220e-04 (diff -6.75e-13)
+hsQ_c2.0_N128_acc6_fine      128x32  c 2.0000000 P 2.0000000: D_exact -9.3652094639e-06  D_FD -9.3652e-06 (diff -8.98e-12)
+== C_p
+hsQ_c2.0_N80_acc6_fine          80x20  2.0  0.5000 +1.000000 -0.131269  +2.229770e-04 / +2.103278e-04 / +2.086822e-04   +2.140438e-04 / +2.436395e-04 / -3.497417e-04   +0.000209        5.31e-03 / 5.33e-04   || +2.229771213e-04 / +2.104253961e-04 / +2.100284786e-04 / +2.100159269e-04   +2.100159411e-04
+hsQ_c2.0_N96_acc6_fine          96x24  2.0  0.5000 +1.000000 -0.159158  +1.666375e-04 / +1.466621e-04 / +1.486759e-04   +1.524796e-04 / +1.753393e-04 / +1.696934e-04   +0.000149        5.75e-03 / 5.77e-04   || +1.666374569e-04 / +1.467309275e-04 / +1.461014332e-04 / +1.460815267e-04   +1.460815292e-04
+hsQ_c2.0_N112_acc6_fine        112x28  2.0  0.5000 +1.000000 -0.155778  +7.599320e-05 / +5.692763e-05 / +4.785262e-05   +6.248209e-05 / +8.803460e-05 / +3.964280e-04   +0.000048        5.67e-03 / 5.69e-04   || +7.599327036e-05 / +5.700313358e-05 / +5.640261726e-05 / +5.638362741e-05   +5.638362778e-05
+hsQ_c2.0_N128_acc6_fine        128x32  2.0  0.5000 +1.000000 -0.158480  +2.254904e-05 / +3.192632e-06 / +4.158401e-06   +8.852144e-06 / +3.532166e-05 / +8.729558e-04   +0.000004        5.72e-03 / 5.74e-04   || +2.254910563e-05 / +3.285760610e-06 / +2.676603250e-06 / +2.657340137e-06   +2.657340134e-06
+== m_0
+  c = 2: F = m + B_log log y + A_3 y^(-1/2) + A_4 y^(-1) + A_5 y^(-3/2) on y >= 1e2:  m -0.04432977  B_log +0.00186626  maxres 7.8e-04   (B_log = axis curvature coefficient of the degree-0 far-field term; no finite m_0 unless B_log = 0)
+  c = 2: F = m + B_log log y + A_3 y^(-1/2) + A_4 y^(-1) + A_5 y^(-3/2) on y >= 1e2:  m -0.06796852  B_log +0.01347763  maxres 5.5e-03   (B_log = axis curvature coefficient of the degree-0 far-field term; no finite m_0 unless B_log = 0)
+  c = 2: F = m + B_log log y + A_3 y^(-1/2) + A_4 y^(-1) + A_5 y^(-3/2) on y >= 1e2:  m -0.05145035  B_log +0.00835868  maxres 4.9e-03   (B_log = axis curvature coefficient of the degree-0 far-field term; no finite m_0 unless B_log = 0)
+  c = 2: F = m + B_log log y + A_3 y^(-1/2) + A_4 y^(-1) + A_5 y^(-3/2) on y >= 1e2:  m -0.00003281  B_log +0.00067666  maxres 6.2e-04   (B_log = axis curvature coefficient of the degree-0 far-field term; no finite m_0 unless B_log = 0)
+hsQ_c2.0_N80_acc6_fine          80x20  2.0 K +1.000000 Q -0.131269 defect -4.81e-03  m_0 +nan (spread nan; from R +nan; direct +nan)  pred +nan  meas +0.0000855 / -0.0030255 / -0.0603942
+hsQ_c2.0_N96_acc6_fine          96x24  2.0 K +1.000000 Q -0.159158 defect -1.12e-03  m_0 +nan (spread nan; from R +nan; direct +nan)  pred +nan  meas -0.0001493 / +0.0013421 / -0.0228121
+hsQ_c2.0_N112_acc6_fine        112x28  2.0 K +1.000000 Q -0.155778 defect -3.72e-04  m_0 +nan (spread nan; from R +nan; direct +nan)  pred +nan  meas -0.0000573 / +0.0007314 / -0.0048247
+hsQ_c2.0_N128_acc6_fine        128x32  2.0 K +1.000000 Q -0.158480 defect -9.37e-06  m_0 +nan (spread nan; from R +nan; direct +nan)  pred +nan  meas +0.0000064 / +0.0000630 / -0.0001053

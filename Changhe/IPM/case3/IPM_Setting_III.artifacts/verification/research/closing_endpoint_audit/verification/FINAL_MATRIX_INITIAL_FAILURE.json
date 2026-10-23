@@ -1,0 +1,16 @@
+{
+  "recorded_utc": "2026-10-22T11:24:35.798524+00:00",
+  "exception": "AssertionError: exact finite Jacobian36",
+  "initial_source": "verification/research/closing_endpoint_audit/verification/FINAL_MATRIX_CHECKER_INITIAL.py",
+  "initial_source_sha256": "c14b6c3dcf8701e26a82f56a0f6b1d7f22108ed8d19b25c641656e6546688d46",
+  "cause": "Source stores binary64 ell +/- float(c), not direct rounding of the exact rational ell +/- c. N36 differs by one ulp from direct rounding; N40/N44 agree. No final matrix record was emitted.",
+  "observed_N36": [
+    4.000000000000057,
+    0.9999999999999427
+  ],
+  "direct_exact_round_N36": [
+    4.000000000000058,
+    0.9999999999999426
+  ],
+  "repair": "Check the actual two-stage floating expression and separately quantify its difference from the exact rational relation."
+}

@@ -1,0 +1,67 @@
+[
+  {
+    "op": "replace",
+    "old_lines": [
+      2,
+      3
+    ],
+    "new_lines": [
+      2,
+      3
+    ],
+    "old": "Version v53, 2026-10-21T18:02Z (see CHANGELOG). Status markers: [PROVED-lead] = proof written by lead, awaiting verifier+referee;\n",
+    "new": "Version v55, 2026-10-21T18:26Z (see CHANGELOG). Status markers: [PROVED-lead] = proof written by lead, awaiting verifier+referee;\n"
+  },
+  {
+    "op": "replace",
+    "old_lines": [
+      513,
+      514
+    ],
+    "new_lines": [
+      513,
+      515
+    ],
+    "old": "      positive even weights A_j at nodes v_j, odd A_0 at v = 1; delta = 1, pi'(z) = 0, M_l = 0 for l <= e, (A7))\n",
+    "new": "      positive even u-residues A_j (weights) at the poles u_j, attached to the transformed nodes v_j = 1/(1 + u_j) (the\n      v-residue is -A_j v_j^2, not A_j), odd A_0 at u = 0 (v = 1); delta = 1, pi'(z) = 0, M_l = 0 for l <= e, (A7))\n"
+  },
+  {
+    "op": "replace",
+    "old_lines": [
+      516,
+      519
+    ],
+    "new_lines": [
+      517,
+      523
+    ],
+    "old": "      [PROVED-lead, sent to the checker 17:52Z] d = 15: the four remaining patterns ((1;1,3,3), (3;2,2,1,1), (1;3,2,1,1),\n      (1;2,2,1,1,1)) excluded for every real n >= 1 (research/p_ext/classify.py, e3_2211.py, m15_res.py); would give\n      d >= 17, P >= 19/2. [CONJ/OPEN] e = 2 in general: num(n, nu, mu) = 0 has no integer solution with n <= 1000\n",
+    "new": "      [PROVED, checker 267 (204 + 16 checks, independent method, 18:13Z); lead's own derivation also; external audit of\n      a report text still needed] d = 15: the four remaining patterns ((1;1,3,3), (3;2,2,1,1), (1;3,2,1,1),\n      (1;2,2,1,1,1)) excluded for every real n >= 1: d >= 17, P >= 19/2 (for d79). [PROVED-lead, sent to the checker\n      18:15Z] d = 17: all nine patterns excluded for every real n >= 1 (two-class and three-class resultants,\n      research/p_ext/tc.py, res3g.py, res3.py, e3_two_class.py): would give d >= 19, P >= 21/2. d = 19, 21: running\n      (research/p_ext/drv.py). [CONJ/OPEN] e = 2 in general: num(n, nu, mu) = 0 has no integer solution with n <= 1000\n"
+  },
+  {
+    "op": "replace",
+    "old_lines": [
+      520,
+      521
+    ],
+    "new_lines": [
+      524,
+      525
+    ],
+    "old": "      n in (1, 1.001), checker 261), so integrality of n is essential. The class excluded is the class of polynomial axis\n",
+    "new": "      n in (1, 1.001), checker 261), so integrality of n is essential to the necessary residue argument (that solution gives no polynomial H and no profile). The class excluded is the class of polynomial axis\n"
+  },
+  {
+    "op": "insert",
+    "old_lines": [
+      523,
+      523
+    ],
+    "new_lines": [
+      527,
+      531
+    ],
+    "old": "",
+    "new": "- v55 2026-10-21T18:26Z: (G45) the two repairs of checker 270: u-residues A_j distinguished from the transformed\n  nodes v_j; 'integrality essential' scoped to the necessary residue argument.\n- v54 2026-10-21T18:18Z: (G45) d = 15 closure CONFIRMED by checker 267 (d >= 17, P >= 19/2; for d79); d = 17 closure\n  by the lead sent to the checker (note 18:15Z); d = 19, 21 scan started.\n"
+  }
+]

@@ -1,0 +1,26 @@
+  A = np.trapz(osc, lr); res.update(Aq=A, Aq_range=(RR[0, 0], RR[-1, 0]), Aq_tail_osc=osc[-1], DA_test=(abs(D / S.a0 - 0.25), 0.4135 * A))
+QDIAG 2026-10-21T00:13:20Z runs/r1C_cl3.0_N128_Lh.pt [Q] N=128 M=32 L=0.5 Lf=0.25 gK=20.0 mu=None
+  c_l=3.0000000000 D=2 a0=21.9046266431 a0/D=10.9523 a0/4A=1.0952 c(modal)=-1.9999999833 c_l+c-1=+1.669e-08 (forced Delta=mu/a0=+0.000e+00) K=6.2996053 L_can=0.154229
+  between-node residual tables (unforced R; for forced states R_f = R - mu y phi):
+    r in [0,0.1): max|R| 2.11e-06 at (r=0.0953, th=0.810); max|R|/Nf 9.50e-07 at (r=0.00867, th=1.571); max|R|/Nv 5.51e-07 at (r=0.0953, th=0.810)
+    r in [0.1,1): max|R| 3.38e-06 at (r=0.987, th=0.761); max|R|/Nf 6.88e-07 at (r=0.108, th=0.834); max|R|/Nv 5.89e-07 at (r=0.14, th=0.761)
+    r in [1,100): max|R| 2.53e-05 at (r=96.4, th=1.178); max|R|/Nf 4.30e-07 at (r=96.4, th=1.178); max|R|/Nv 6.77e-07 at (r=96.4, th=1.178)
+    r in [100,10000): max|R| 7.19e-05 at (r=3.44e+03, th=1.129); max|R|/Nf 4.37e-07 at (r=132, th=1.129); max|R|/Nv 6.99e-07 at (r=132, th=1.129)
+    r in [10000,1e+08): max|R| 2.70e-04 at (r=7.74e+05, th=1.154); max|R|/Nf 3.47e-07 at (r=1.1e+04, th=1.178); max|R|/Nv 5.51e-07 at (r=1.1e+04, th=1.178)
+  G6 energy: Rg=max|grad rho|=21.9031 at (r=0.00153, th=0.006); V=max|DU|_F=2.82742 at (r=0.00153, th=0.006); m2=2V+Rg-(c_l-1)=+25.5579; m3=3V+Rg+3(2+sqrt2)sqrt(V Rg)-(2c_l-1)=+105.99; FD checks: max|div U|=2.4e-10, max|curl U + rho_x|/(|rho_x|+|DU|)=9.2e-05, c from the secant of U1 at x = +-1e-6 (a Taylor-regime estimate only where r = 1e-6 is inside the origin scale): -1.99999998
+  G2 Theta0 (from b(t=1,.)): min Theta0/sin th = 6.29961 at th=1.5708; min_[0.01,pi/2] |Theta0|+|Theta0'| = 6.29961 at th=1.5708; Theta0(pi/2)=K=6.29961; Theta0'(0)=14.8175; zeros of Theta0 in (0,pi/2): none
+    r^-gamma rho at node r=2.87e+04 vs Theta0: max rel dev 1.27e-04
+    r^-gamma rho at node r=2.26e+03 vs Theta0: max rel dev 6.91e-04
+    r^-gamma rho at node r=352 vs Theta0: max rel dev 2.38e-03
+  CAP DIAGNOSTIC q = rho/(a0 y) on the between-node set: max q - 1 = -7.114e-05 at (r=0.00153, th=0.006); min q = 3.41085e-05 (sampled)
+  min over nodes of rho/(a0 y) = w b/a0 = 3.4114e-05 at (r=7.74e+05, th=1.546); min over the between-node set of rho/(a0 y) = 3.41085e-05
+  strain moment int rho_3 r^-2 dr (evaluated rho, GL 400 x 64 angles) = +3.47615666; negative part = +0.0000e+00; c(modal) + a0/4 = +3.47615668 (difference -1.9e-08); exact profile needs 1 - c_l + a0/4 = +3.47615666 (defect -2.044e-09); max|rho_3|/max|rho_1| = 1.325e-01
+  G1/G3 x-axis: min W_1(x,0)/(c_l x) = 1.00004 at x=7.74e+05; min rho_y(x,0)/a0 = 8.02246e-05 at x=7.74e+05; sign changes DETECTED between adjacent samples (tangential/flat zeros not detectable) of w: none; of g: none
+  off-axis min |W|/(c_l r) over the between-node set = 0.333428 at (r=0.00153, th=1.571) (1 means U negligible; a zero of W would show as ~0)
+  sign of rho_x on Q1 (between-node set): fraction negative 0.994, min rho_x = -1.06 at (r=0.23, th=0.491), max rho_x = 1.157e-16
+  STRAIN SUP: sigma = sup|sym DU|_op (sampled) = 1.99929 at (r=0.00153, th=0.006); sigma/D = 0.9996; |sym DU(0)|_op = |c| = 2; M = sup(-X.U/r^2) (sampled) = 1.99972 at (r=0.00153, th=1.571); 3 sigma + (25/7)|a0| - (2 c_l - 1) = +79.23 (sampled; a negative value does not exclude)
+  ANGULAR CONTRAST (sampled): A(q) = int osc_th(rho/(a0 y)) dr/r over r in [0.0015, 7.7e+05] (log-spaced sample radii) = 0.99515; osc at the last radius 4.61e-05; |D/a0 - 1/4| = 0.1587 vs 0.4135 A(q) = 0.4115
+  WEIGHTED m=2.5: E_m = ||R - a0 delta y||_m/||h||_m = 7.111e-06; terms/||h||^2: ((m-1)c_l - 1) = +3.5, m int (X.U/r^2) h^2 r^-2m = -1.413, a0 int v_2 h r^-2m = -2.087; lower bound (m-1)c_l - 1 - m sigma = -1.498; ||h||_m = 60.6; median radius of the weighted mass of h: 0.434  (quadrature on r < 1e+120)
+  WEIGHTED m=3.0: E_m = ||R - a0 delta y||_m/||h||_m = 4.305e-05; terms/||h||^2: ((m-1)c_l - 1) = +5, m int (X.U/r^2) h^2 r^-2m = -2.778, a0 int v_2 h r^-2m = -2.222; lower bound (m-1)c_l - 1 - m sigma = -0.9979; ||h||_m = 128; median radius of the weighted mass of h: 0.113  (quadrature on r < 1e+120)
+  WEIGHTED m=3.5: E_m = ||R - a0 delta y||_m/||h||_m = 0.0001862; terms/||h||^2: ((m-1)c_l - 1) = +6.5, m int (X.U/r^2) h^2 r^-2m = -4.022, a0 int v_2 h r^-2m = -2.474; lower bound (m-1)c_l - 1 - m sigma = -0.4975; ||h||_m = 510; median radius of the weighted mass of h: 0.0368  (quadrature on r < 1e+120)
+  (4 s)

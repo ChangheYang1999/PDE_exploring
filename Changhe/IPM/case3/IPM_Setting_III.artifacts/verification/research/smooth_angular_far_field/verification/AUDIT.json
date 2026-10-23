@@ -1,0 +1,51 @@
+{
+  "utc": "2026-10-21T04:49:13.663044+00:00",
+  "proof_sha256": "ae5c2d146d5648326f15ab066a4873b9bc009edeeedd80dd9e3c7983ca748a6a",
+  "checks_passed": 5722,
+  "method": "Complete independent informal proof and separately implemented exact Cartesian operator checks",
+  "items": [
+    {
+      "item": "Angular smoothness",
+      "result": "Symbol bounds at every order and uniform trace give precompactness in each C^j with a unique uniform limit. No analytic regularity is inferred.",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "item": "Smooth angular inverse",
+      "result": "Division by m^2-(s+1)^2 preserves rapid Fourier decay off the one possible resonance. Downward log-polynomial recurrence and kernel integration give smooth coefficients. The infinity of source modes is permitted.",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "item": "Full-plane gauge",
+      "result": "Cut off both density and particular stream; h=f_x+Delta psi0 is compact and odd-odd. Add its full-plane Green inverse. Tail beta_m estimates are geometric on r>=2R, all angular/radial derivatives included. The total stream is globally smooth with sublinear velocity and the correct gauge.",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "item": "Symbol remainder",
+      "result": "The138lemma applies to the smooth global difference after subtracting the finite cutoffs, with b<1 noncritical. Retained moments are moments of that difference, not divergent original-source moments.",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "item": "Exact transport induction",
+      "result": "The radial identity has positive TB and T maps S^b for b<p. Product errors gain delta in the threshold; logarithmic lower terms remain S^p. Each step lowers the threshold by at least delta/2; finitely many steps suffice for each finite target.",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "item": "Degree sets and uniqueness",
+      "result": "Induced deficits delta+t1+t2 and harmonic deficits m+2+t2 stay in kdelta+2l. Collect equal degrees/log powers. Highest power/log comparison proves uniqueness of rho and totalU only.",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "item": "Irrational logarithms",
+      "result": "A resonance requires (k+1)delta to be an even integer. This is impossible for irrational delta. Logfree input then stays logfree at every finite depth. Rational divisibility is necessary only; absent source projections can prevent logs.",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "item": "Scope",
+      "result": "No series convergence, radius uniform over profiles, analytic trace, or primary endpoint is asserted. The highest-mode cascade requires separate finite-leading support.",
+      "verdict": "CONFIRMED"
+    }
+  ],
+  "actual_opus_review": "requested now, OPEN",
+  "primary_endpoint": "OPEN",
+  "gate_repair": "Initial test incorrectly expected every resonant stream log degree to exceed the original density log degree. At s=-13,n=13,d=1 the resonant source loses its leading degree under d_x. Repaired the test to compare to the actual source degree, as the proof states. The proof itself required no change."
+}

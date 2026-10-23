@@ -1,0 +1,18 @@
+{
+  "utc": "2026-10-21T04:02:43.076473+00:00",
+  "files": [
+    {
+      "source": "numerics/src/eta_k.py",
+      "snapshot": "research/polar_derivative_norms/verification/quarter_window_comparison/eta_k.py",
+      "sha256": "3af36c90e24b883b623726b069dc4fe4d42f47419e590d40eeff35735ec4159d"
+    },
+    {
+      "source": "numerics/runs/eta_k_cl3_abs.txt",
+      "snapshot": "research/polar_derivative_norms/verification/quarter_window_comparison/eta_k_cl3_abs.txt",
+      "sha256": "8810631cc0f03f66c54580fd66e618fd9d85ade689bb9a9849571f1a21daeca8"
+    }
+  ],
+  "verdict": "CONFIRMED quadrant factor; unqualified full-annulus absolute norm labels require correction",
+  "method": "Read complete producer source but did not execute it; inspect angular weights and prove the parity factor directly. Ratios unchanged.",
+  "additional_scope": "The source and opening c20 still call the evaluated inverse canonical, while later c20 correctly distinguishes the separate interpolated stream. The former phrase should say producer stream interpolant. This is a description mismatch, not a new inverse calculation."
+}

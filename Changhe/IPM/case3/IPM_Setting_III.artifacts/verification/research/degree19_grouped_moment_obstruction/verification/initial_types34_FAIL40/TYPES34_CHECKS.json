@@ -1,0 +1,222 @@
+{
+  "status": "FAIL",
+  "started_utc": "2026-10-21T19:54:52.793946+00:00",
+  "error": "Traceback (most recent call last):\n  File \"verification/independent_code/check_degree19_types34.py\", line 76, in <module>\n    determinant('III pivot',polys,data['pivot_branch']);progress('III pivot complete')\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"verification/independent_code/check_degree19_types34.py\", line 44, in determinant\n    ck(name+' exact determinant n='+str(v),det==peval(co,v),dict(divisions=nd,swaps=ns,determinant=str(det)))\n  File \"verification/independent_code/check_degree19_types34.py\", line 15, in ck\n    if not value:raise AssertionError(name)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: III pivot exact determinant n=1\n",
+  "finished_utc": "2026-10-21T19:54:52.972178+00:00",
+  "count": 40,
+  "checks": [
+    {
+      "name": "initial proof binding",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "discovery binding",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "library/proof binding TYPES34_PROOF.md",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "library/proof binding REVIEW_REDUCTION_ADDENDUM.md",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "library/proof binding exact_polynomial_275.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "library/proof binding exact_rational_282.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "universal quadratic-linear resultant identity",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "universal first remainder elimination",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "III first moment zero",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "III second moment zero",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "III U logarithm",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "III W logarithm",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "III moment3 exact rational identity",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "III moment3 denominator divides allowed product",
+      "passed": true,
+      "evidence": {
+        "0": 3,
+        "1": 1
+      }
+    },
+    {
+      "name": "III moment3 scalar-only primitive content",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "III moment3 linear y",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "III exact C1",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "III exact C0",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "III pivot 0 exact rational identity",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "III pivot 0 denominator divides allowed product",
+      "passed": true,
+      "evidence": {}
+    },
+    {
+      "name": "III pivot 0 scalar-only primitive content",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "III pivot 1 exact rational identity",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "III pivot 1 denominator divides allowed product",
+      "passed": true,
+      "evidence": {}
+    },
+    {
+      "name": "III pivot 1 scalar-only primitive content",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "III pivot saved degrees",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "III pivot resultant degree bound",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "III pivot nonzero constant",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "III pivot shift identity 0",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "III pivot strict positive shift 0",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "III pivot positive exponent 0",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "III pivot shift identity 1",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "III pivot strict positive shift 1",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "III pivot positive exponent 1",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "III pivot shift identity 2",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "III pivot strict positive shift 2",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "III pivot positive exponent 2",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "III pivot exact factor convolution",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "III pivot coefficient degree within bound",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "III pivot integer resultant coefficients",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "III pivot exact determinant n=1",
+      "passed": false,
+      "evidence": {
+        "divisions": 14,
+        "swaps": 0,
+        "determinant": "1179156385952289360"
+      }
+    }
+  ],
+  "details": {},
+  "driver_sha256": "947f660ba01f9c9c1122c11da4a02576627ebd86b5fb94ea68634f86e52f93d9",
+  "proof_sha256": "3aabc3c5bb1c6433d585ad0a62c9d0216aa0f3e11ffa0498cfae41b40434daa3",
+  "certificate_sha256": "2bb3e5ee4a2de985c5307b881306bc1c5bb9fea1c0bd4ae8a0df0a891f7910c5",
+  "rational_library_sha256": "1dd453f835a1240ae756c62e693405c3de815c78da04b17fc28887e9f2a666b3",
+  "scope": "Only III,IV and special integer branch; complete degree19 also needs13cases and exact partition enumeration."
+}

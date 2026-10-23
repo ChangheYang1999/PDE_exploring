@@ -1,0 +1,120 @@
+Further elimination types. Write prem_y(f,g) for the remainder obtained by
+pseudo-division in y, so that lc_y(g)^k f = h g + prem_y(f,g) for some
+polynomial h and integer k >= 0. A common zero of f and g is a zero of
+this remainder, also when the leading coefficient vanishes at the
+specialization. Primitive parts below have integer coefficients with
+gcd 1 and positive leading coefficient. In the two new types, only
+powers of eta and T, and in the regular branch of type (VI) also powers
+of eta-zeta_1 and of the numerators of L_1 and L_2, are removed when
+they divide the polynomials under consideration; these factors do not
+vanish on the respective branches.
+
+Type (V): two values theta_1 = 4 and theta_2 = 2, taken by three and four
+nodes, with A_0 = 1, so e = 6 and T = eta-21. Put
+    pi_1(v) = v^3-b_1 v^2+b_2 v-b_3,
+    pi_2(v) = v^4+c_1 v^3+c_2 v^2+c_3 v+c_4.
+The first relation of (A9) gives b_3, with coefficient -T, M_1, M_2 and
+M_3 give c_1, c_2 and c_3 with coefficients -2, -4 and -6, and the
+second relation of (A9) gives c_4 with coefficient -T. All these pivots
+are nonzero. The primitive numerator N_0 of M_4 is quadratic in b_2,
+with leading coefficient 384 T^2. Let F_1 and F_2 be the primitive
+numerators of M_5 and M_6, and let their primitive pseudo-remainders
+modulo N_0 in b_2 be
+    R_1 = r_1 b_2+r_0,   R_2 = r_3 b_2+r_2.
+A solution annuls
+    U = r_1 r_2-r_0 r_3,
+    V_1 = Res_{b_2}(N_0,R_1),   V_2 = Res_{b_2}(N_0,R_2).
+After removing the indicated nonzero factors and taking primitive parts,
+it therefore annuls both Res_{b_1}(U,V_1) and Res_{b_1}(U,V_2).
+Their primitive gcd Lambda is the elimination polynomial used here.
+No r_i is divided out; a vanishing coefficient or identically vanishing
+specialized remainder is included by these polynomial implications.
+
+Type (VI): one node zeta_1 of value 6, one pair of value 4 and one class
+of three nodes of value 2, with A_0 = 1, so e = 5 and T = eta-21. Put
+    pi_1(v) = v^2-b_1 v+b_2,
+    pi_2(v) = v^3+c_1 v^2+c_2 v+c_3.
+The two sums, with L_0 = 1/(eta-zeta_1), give
+    L_1 = [T zeta_1-(T+4)eta]/[2eta(eta-zeta_1)],
+    L_2 = [(T+2)eta-T zeta_1]/[2eta(eta-zeta_1)].
+If L_1 L_2 != 0, the relation pi_1'(eta) = L_1 pi_1(eta) gives b_2
+with coefficient -L_1, M_1 and M_2 give c_1 and c_2 with coefficients
+-2 and -4, and pi_2'(eta) = L_2 pi_2(eta) gives c_3 with coefficient
+-L_2. Let N_0, F_1 and F_2 be the primitive numerators of M_3, M_4 and
+M_5, whose degrees in b_1 are 3, 4 and 4. Form
+    U = Res_{b_1}(N_0,F_1),   V = Res_{b_1}(N_0,F_2),
+    Q_1 = prem_{b_1}(F_1,N_0),   Q_2 = prem_{b_1}(F_2,N_0),
+    R = prem_{b_1}(N_0,Q_1),   W = Res_{b_1}(Q_2,R),
+taking primitive parts and removing the indicated nonzero factors after
+each operation. The degrees of Q_1, Q_2 and R in b_1 are 2, 2 and 1.
+A solution annuls U, V and W, and hence both H = Res_{zeta_1}(U,V) and
+J = Res_{zeta_1}(U,W). Let Lambda be their primitive gcd after removing
+powers of eta and T. No coefficient of a pseudo-remainder is a pivot:
+the construction uses polynomial operations throughout, so possible
+specialized degree drops introduce no omitted branch.
+
+If L_1 = 0, then zeta_1 = eta(1+4/T), b_1 = 2eta and L_2 = -L_0 != 0.
+M_1 and M_2 give c_1 and c_2 and the logarithmic relation for pi_2 gives
+c_3, leaving b_2 as the variable. The numerators of M_3, M_4 and M_5
+have degrees 1, 2 and 2 in b_2. The resultants of the first with the
+other two have degrees 16 and 18 in eta, and primitive gcd T^4.
+If L_2 = 0, then zeta_1 = eta(1+2/T) and L_1 = -L_0 != 0. The
+logarithmic relation for pi_1 gives b_2, M_1 gives c_1, pi_2'(eta) = 0
+gives c_2 with coefficient 1, and M_3 gives c_3 with coefficient -6.
+The numerators of M_2, M_4 and M_5 have degrees 2, 4 and 5 in b_1;
+the resultants of the first with the other two have degrees 24 and 30,
+and primitive gcd T^8. Thus neither zero branch is possible. Both L_i
+cannot vanish together, since L_0 != 0.
+
+Patterns for d = 21. There are 103 patterns (A_0; mu_1, ...) with e >= 2.
+The preceding lemmas exclude all except the following 29:
+    (1; 4, 4, 2), (1; 3, 3, 3, 1), (1; 3, 3, 2, 2);
+    (1; 6, 2, 1, 1), (1; 5, 3, 1, 1), (1; 5, 2, 2, 1),
+    (3; 5, 2, 1, 1), (3; 4, 3, 1, 1), (3; 4, 2, 2, 1),
+    (3; 3, 3, 2, 1), (5; 4, 2, 1, 1), (5; 3, 2, 2, 1),
+    (7; 3, 2, 1, 1);
+    (1; 4, 2, 2, 1, 1), (1; 3, 3, 2, 1, 1),
+    (3; 3, 3, 1, 1, 1), (3; 3, 2, 2, 1, 1),
+    (5; 2, 2, 2, 1, 1), (7; 2, 2, 1, 1, 1);
+    (1; 4, 2, 1, 1, 1, 1), (1; 3, 3, 1, 1, 1, 1),
+    (1; 3, 2, 2, 1, 1, 1), (1; 2, 2, 2, 2, 1, 1),
+    (3; 3, 2, 1, 1, 1, 1), (3; 2, 2, 2, 1, 1, 1),
+    (5; 2, 2, 1, 1, 1, 1);
+    (1; 2, 2, 2, 1, 1, 1, 1), (3; 2, 2, 1, 1, 1, 1, 1);
+    (1; 2, 2, 1, 1, 1, 1, 1, 1).
+For each of the first two patterns the exceptional node is
+eta(1-4/T), with T = eta-21. The moments give respectively
+pi'(eta) = 3 P_4(eta)/(128 T^2) and 7 P_6(eta)/(48 T^3), where
+    P_4(23+m) = 382640+342880m+75528m^2+4760m^3+91m^4,
+    P_6(23+m) = 4537920+6105600m+2794320m^2+479680m^3
+                 +35724m^4+1200m^5+15m^6.
+Both are positive for m >= 0, a contradiction. For (1;3,3,2,2),
+the two-pairs discriminant is -4*6*4*K, where
+    K = 3 P_K(eta)/(eta-1)^2,
+    P_K(23+m) = 153072+204592m+57392m^2+3892m^3+77m^4 > 0.
+Thus this case too is excluded for every real n >= 1.
+
+The ten remaining patterns with e = 3 and the two patterns
+(1;4,2,1,1,1,1), (3;3,2,1,1,1,1) are of type (II). The three patterns
+(1;4,2,2,1,1), (1;3,3,2,1,1), (3;3,2,2,1,1) are of type (IV);
+(3;2,2,2,1,1,1) is of type (III); (1;2,2,2,1,1,1,1) is of type (V);
+and (1;3,2,2,1,1,1) is of type (VI). The other eight are of type (I),
+with pi_1 the pair, of value 2 for (1;2,2,2,2,1,1) and
+(5;2,2,2,1,1), of value 6 for (1;3,3,1,1,1,1) and (3;3,3,1,1,1),
+and of value 4 in the other four cases.
+
+In each case every coefficient of Lambda in powers of eta-23 is
+strictly positive. Its degree is 54 or 150 in type (II), according
+as e = 3 or e = 5; 26, 38, 63 or 81 in type (I), according as
+e = 4, 5, 6 or 7; 81 in type (III); 234 in type (IV); 102 in
+type (V); and 160 in type (VI). The exceptional resultant in type
+(III) has degree 7 and also only positive coefficients in powers
+of eta-23. In each of the six zero branches of type (IV), the
+remaining numerators of M_3 and M_4 have gcd 1. In type (V) the
+two resultants before taking their gcd have degrees 165 and 198;
+in type (VI) they have degrees 946 and 1322, and the latter itself
+also has only positive coefficients in powers of eta-23.
+These computations use exact integer polynomial arithmetic,
+Newton identities, pseudo-division, resultants and gcds, with no
+interpolation or numerical root tests. They exclude all 29 patterns
+for every real n >= 1. Hence d >= 23, and P = n+d/2 >= 25/2.

@@ -1,0 +1,63 @@
+{
+  "utc": "2026-10-21T03:49:31.926522+00:00",
+  "proof_sha256": "fe3c6930ef50b00e80605b4ec62e50abee55cf6f33514d55b9e017a2663ef078",
+  "checker_sha256": "986cec9158d3034ab5bbebc61cc18b6ded7ee85445f085e2cb16b9ca9d3db821",
+  "exact_checks": 23896,
+  "items": [
+    {
+      "item": "Radial transport integral",
+      "verdict": "CONFIRMED",
+      "method": "Exact PDE identity, convergent endpoint and all-derivative remainder estimate;200 polynomial-log integral checks."
+    },
+    {
+      "item": "Exterior modal inverse",
+      "verdict": "CONFIRMED",
+      "method": "Complete Green integral split with retained interior harmonic terms and resonant logarithms;288 exact Green/Euler comparisons including36 resonances."
+    },
+    {
+      "item": "Finite expansion at every prescribed depth",
+      "verdict": "CONFIRMED",
+      "method": "Threshold induction improves remainder by delta, with strict threshold choices. Only a finite expansion is asserted."
+    },
+    {
+      "item": "Multipoles and angular grade",
+      "verdict": "CONFIRMED",
+      "method": "Free harmonic terms lie strictly below the maximal angular grade; induced products preserve it, including coincident powers."
+    },
+    {
+      "item": "Nonzero highest coefficient",
+      "verdict": "CONFIRMED",
+      "method": "Never-resonant boundary terms are logfree and obey the independently proved130recurrence.960 boundary modes checked."
+    },
+    {
+      "item": "Exterior finite angular theorem peer audit",
+      "verdict": "CONFIRMED",
+      "method": "ActualClaudeOpus5.5 line-by-line hand audit received04:01Z and checked; see verification/opus_20261021T0401"
+    },
+    {
+      "item": "Full primary endpoint",
+      "verdict": "OPEN",
+      "method": "Only a restricted class could be excluded by this theorem; general angular profiles remain unaddressed."
+    }
+  ],
+  "actual_opus_review": "Received04:01Z, independently compared with full proof; CONFIRMED",
+  "scope": "Restricted exterior finite-angular theorem, own and actualOpus5.5 checks complete; primary endpoint OPEN",
+  "followup": {
+    "utc": "2026-10-21T04:05:07.882047+00:00",
+    "actual_model": "us.anthropic.claude-opus-5-5",
+    "method": "Read actual lead hand review and independently rechecked against full proof; no lead or external code executed.",
+    "proof_sha256": "fe3c6930ef50b00e80605b4ec62e50abee55cf6f33514d55b9e017a2663ef078",
+    "review_sha256": "52c843bcb8574fed62c432360769b1895c0b1218c2bd2a63c6a9066dae71ce0a",
+    "verdict": "CONFIRMED",
+    "items": [
+      "Radial integral and all-order differentiation",
+      "Polynomial Euler inverse and logarithmic resonance",
+      "Green remainder split, retained low multipoles and geometric high modes",
+      "Finite threshold induction and uniqueness",
+      "Locally finite costs, collisions and strict harmonic grading",
+      "Nonresonant logfree top chain and paired sign",
+      "Contradiction for a common finite exterior angular cutoff"
+    ],
+    "scope": "Restricted exterior finite-angular-support theorem, not primary NO. External analysis mentioned in lead note has not been treated as independently inspected evidence."
+  }
+}

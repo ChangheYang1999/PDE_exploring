@@ -1,0 +1,82 @@
+{
+  "utc": "2026-10-21T03:17:38.539538+00:00",
+  "verdict": "CONFIRMED",
+  "scope": "N>=2 and infinity, prescribed finite disc only",
+  "items": [
+    {
+      "item": "Polynomial inverse and fixed moments",
+      "verdict": "CONFIRMED",
+      "method": "Independent Cartesian Laplacian/differentiation, plus the written moment integration. The top harmonic is retained in the prescribed moment convention."
+    },
+    {
+      "item": "General tridiagonal matrix and determinant",
+      "verdict": "CONFIRMED",
+      "method": "Derived from own Cartesian sine polynomials at degrees3..21, checked affine c,a dependence, every physical truncation, and independent dense determinants. General all-degree derivation in PROOF.md."
+    },
+    {
+      "item": "Weighted dominance, exceptional sets",
+      "verdict": "CONFIRMED",
+      "method": "Binomial conjugation gives margin lambda at a=0 and a-coefficient row norm at most1. This proves high-degree inverse control and local finiteness for finiteN and infinity."
+    },
+    {
+      "item": "Rational nonresonant slopes",
+      "verdict": "CONFIRMED",
+      "method": "For integer c>=2,4^dP_d is monic integral up tosign; every noninteger rational slope avoids all exceptional sets. This uses the all-degree recurrence, not only finite tests."
+    },
+    {
+      "item": "Relation to result120",
+      "verdict": "CONFIRMED",
+      "method": "P_3(2j)=Delta_j exactly. No factor2. The cubic physical matrix isB_2(2)."
+    },
+    {
+      "item": "Full moment-system characteristic polynomial",
+      "verdict": "CONFIRMED",
+      "method": "Independent signed Fourier assembly and direct determinants support the displayed general factorization. Structural j=1..N-2 resonances are retained and handled by smoothness and fixed moments."
+    },
+    {
+      "item": "Nonlinear convergence",
+      "verdict": "CONFIRMED",
+      "method": "Weighted complex coefficient norm is an algebra; the prescribed inverse has degree-independent velocity bound. Written contraction closes without losing radius and produces a real analytic function."
+    },
+    {
+      "item": "Strict q sign",
+      "verdict": "CONFIRMED",
+      "method": "F>0 at a>=4c+20, b,e strictly negative; explicit tail bound and radius include points on the x-axis by smooth division."
+    },
+    {
+      "item": "Finite and infinite compact extension",
+      "verdict": "CONFIRMED",
+      "method": "Upper moments restored exactly, negative first-mode bump preserves inner inverse, geometric C_k bound implies uniform convergence of every derivative on the annulus."
+    },
+    {
+      "item": "Full-plane gauge and dilation",
+      "verdict": "CONFIRMED",
+      "method": "Compact density has its unique sublinear parity-preserving canonical velocity. The inner strain is induced by exterior moments. Dilation preserves slope and strain but its affine limit is inadmissible."
+    },
+    {
+      "item": "Finite supporting jets",
+      "verdict": "CONFIRMED",
+      "method": "Five rational parameter/truncation choices through density degree13; recomputed projected or full residual and Poisson independently. Not a numerical evaluation of the constructed analytic function."
+    },
+    {
+      "item": "Lead03:06 summary literal errors",
+      "verdict": "REFUTED",
+      "method": "N>=1 is not the supplied proof range. Its r120_polar test compared Cm-2*C8 and printed nonzero despite the allPASS summary. Correct comparison is Cm-C8. Neither issue refutes the N>=2 theorem."
+    },
+    {
+      "item": "Full primary endpoint",
+      "verdict": "OPEN",
+      "method": "The nonzero compact extension cannot satisfy transport globally. Arbitrarily large exact discs supply no admissible global limit."
+    }
+  ],
+  "gate_utc": "2026-10-21T03:16:22.146824+00:00",
+  "gate_count": 1376,
+  "proof_sha256": "5a6aee1a977e9af63604a5b37c32a33b27c08f1ff0fd6bd924db1547573db081",
+  "actual_opus_review": {
+    "model": "Claude Opus5.5 lead",
+    "received_utc": "2026-10-21T03:39Z",
+    "inspected_utc": "2026-10-21T03:43:05.493990+00:00",
+    "source_snapshot": "research/all_projection_local_audit/verification/draft42/LEAD_HAND_REVIEW_0339.md",
+    "scope": "Hand proofs of coefficient-norm contraction, infinite extension and rational slopes (125); low-frequency dyadic sum and moving cusps/parities (127)."
+  }
+}

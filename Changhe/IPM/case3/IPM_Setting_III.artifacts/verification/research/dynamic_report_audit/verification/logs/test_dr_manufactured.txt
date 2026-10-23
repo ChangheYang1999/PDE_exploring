@@ -1,0 +1,12 @@
+exact rho_tau(1/7,4/21) = 110374593/23578364168 (verifier: 110374593/23578364168) True
+exact Taylor of rho_tau: y: 0  x^2y: 9/8  y^3: 1/8
+ls 32x8: c -0.250000000034 cw 0.125000000017 cx 0.375000000051 | max|rho_d - rho| 1.6e-09 | max|rho_tau_d - exact| 3.41e-09 (max|exact| 1.01e-01) | jets of rho_tau: a' +3.101e-17 b' 0.0175780593 (9/8) e' 0.0019531963 (1/8) | projection defect at nodes 4.0e-16
+ls 48x12: c -0.250000000000 cw 0.125000000000 cx 0.375000000000 | max|rho_d - rho| 1.4e-14 | max|rho_tau_d - exact| 7.86e-14 (max|exact| 1.01e-01) | jets of rho_tau: a' +4.018e-16 b' 0.0175781250 (9/8) e' 0.0019531250 (1/8) | projection defect at nodes 6.7e-16
+ls 64x16: c -0.250000000000 cw 0.125000000000 cx 0.375000000000 | max|rho_d - rho| 7.0e-16 | max|rho_tau_d - exact| 2.60e-15 (max|exact| 1.01e-01) | jets of rho_tau: a' -1.132e-15 b' 0.0175781250 (9/8) e' 0.0019531250 (1/8) | projection defect at nodes 1.0e-15
+sq 32x8: c -0.250000000034 cw 0.125000000017 cx 0.375000000051 | max|rho_d - rho| 1.6e-09 | max|rho_tau_d - exact| 3.41e-09 (max|exact| 1.01e-01) | jets of rho_tau: a' -1.290e-16 b' 0.0175780593 (9/8) e' 0.0019531963 (1/8) | projection defect at nodes 2.7e-16
+sq 48x12: c -0.250000000000 cw 0.125000000000 cx 0.375000000000 | max|rho_d - rho| 1.4e-14 | max|rho_tau_d - exact| 7.86e-14 (max|exact| 1.01e-01) | jets of rho_tau: a' +1.157e-16 b' 0.0175781250 (9/8) e' 0.0019531250 (1/8) | projection defect at nodes 5.8e-15
+sq 64x16: c -0.250000000000 cw 0.125000000000 cx 0.375000000000 | max|rho_d - rho| 7.0e-16 | max|rho_tau_d - exact| 2.60e-15 (max|exact| 1.01e-01) | jets of rho_tau: a' -7.383e-17 b' 0.0175781250 (9/8) e' 0.0019531250 (1/8) | projection defect at nodes 1.6e-12
+mass-map round trip (ls, 48x12): max|u1 - u0| = 0.8920497044837885  (invisible directions excluded by the cutoff would show here)
+mass-map round trip (sq, 48x12): max|u2 - u0| = 784211.9246579219
+Jacobian 32x8: max|Ja - Jf| = 7.71e+00, max|Ja| = 1.67e+07 (analytic 0.0s, FD 0.7s)
+spectrum at the manufactured state 32x8: radius 9.161e+00, max Re +5.423e-01, #Re>0 208

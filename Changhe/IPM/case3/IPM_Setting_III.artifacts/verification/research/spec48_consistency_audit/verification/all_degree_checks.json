@@ -1,0 +1,51 @@
+{
+  "utc": "2026-10-20T15:06:52.589314+00:00",
+  "low_degree_comparisons": [
+    {
+      "degree": 3,
+      "criterion": "-(-4*A + a)/(2*A)",
+      "ratio_to_independent_Fourier_determinant_polynomial": "-1/(2*A)"
+    },
+    {
+      "degree": 5,
+      "criterion": "(128*A**2 - 38*A*a + 128*A + 3*a**2 - 26*a)/(24*A*(A + 1))",
+      "ratio_to_independent_Fourier_determinant_polynomial": "1/(24*A*(A + 1))"
+    },
+    {
+      "degree": 7,
+      "criterion": "-(-8*A + a - 4)*(96*A**2 - 18*A*a + 192*A + a**2 - 30*a)/(24*A*(A + 2)*(2*A + 1))",
+      "ratio_to_independent_Fourier_determinant_polynomial": "-1/(24*A*(A + 2)*(2*A + 1))"
+    }
+  ],
+  "exact_PDE_examples": [
+    {
+      "degree": 3,
+      "A": "2",
+      "a": "8",
+      "P": "0",
+      "both_PDEs_exact": true
+    },
+    {
+      "degree": 5,
+      "A": "3/2",
+      "a": "11/3",
+      "P": "12/5",
+      "both_PDEs_exact": true
+    },
+    {
+      "degree": 7,
+      "A": "11/4",
+      "a": "-5",
+      "P": "207886/8151",
+      "both_PDEs_exact": true
+    },
+    {
+      "degree": 11,
+      "A": "17/3",
+      "a": "70/3",
+      "P": "199116419/5046609",
+      "both_PDEs_exact": true
+    }
+  ],
+  "scope": "All-degree positivity is proved in PROOF.md; finite exact tests are consistency checks."
+}

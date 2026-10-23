@@ -1,0 +1,13 @@
+Pointwise comparison at the verifier's shared-sampling maximizers (coordinates (x, y); evidence/q_shared_sampling in the verifier's lane), 2026-10-21T04:13Z.
+state                 (x, y)                 r        th       lane R (discrete stream)  canonical R (verifier)  N_f (both)   lane |R|/N_f  canonical |R|/N_f  R difference
+r1C_cl3.0_N128  (0.10774, 0.000661)   0.10774  0.00614   +1.260e-08                -5.339e-08              3.6389e-02   3.46e-07      1.467e-06          +6.60e-08
+r1C_cl3.0_N128  (0.15946, 0.000978)   0.15946  0.00614   +2.305e-08                -7.855e-08              5.8764e-02   3.92e-07      1.337e-06          +1.02e-07
+r1C_cl3.0_N160  (0.13945, 0.000685)   0.13945  0.00491   -8.008e-09                -4.511e-08              4.0119e-02   2.00e-07      1.124e-06          +3.71e-08
+r1C_cl3.0_N160  (0.24584, 0.001207)   0.24584  0.00491   -1.506e-08                -7.219e-08              7.9310e-02   1.90e-07      9.102e-07          +5.71e-08
+r1C_cl3.0_N192  (0.09567, 0.000391)   0.09567  0.00409   +2.854e-09                -3.283e-08              2.1432e-02   1.33e-07      1.532e-06          +3.57e-08
+r1C_cl3.0_N192  (0.16341, 0.000668)   0.16341  0.00409   +9.233e-09                -5.662e-08              4.1082e-02   2.25e-07      1.378e-06          +6.59e-08
+The denominators N_f agree to six digits (N_f contains U as well as the density gradient, so this shows W.grad rho and rho agree to that level); the RESIDUALS
+differ by 4e-8 .. 1e-7 in absolute value.  With rho_y ~ 21 dominating, attributing the difference to U_2 gives an estimated velocity difference of
++3.2e-9, +1.8e-9, +1.7e-9 (128, 160, 192; relative 2 .. 3e-6 of U_2); a dU_1 rho_x part is not separated (|rho_x| ~ 5e-3 .. 9e-3).  The lane's between-node
+|R|/N_f is low by a factor 3 .. 11 at these near-axis points and the canonical normalised residual of the chain is 1.1e-6 .. 1.5e-6 at 128x32, 160x40, 192x48.
+(Wording corrected 2026-10-21T04:4xZ after verifier 04:27Z: the ~1e-7 is a residual difference, the velocity difference is the ~2e-9 estimate.)

@@ -1,0 +1,164 @@
+{
+  "status": "PASS_EXACT_ACCEPTANCE_COUNTEREXAMPLE",
+  "utc": "2026-10-22T02:01:51.140731+00:00",
+  "count": 28,
+  "checks": [
+    {
+      "name": "source research/stationarity_inference_audit/verification/producer_stationarity_static.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "source research/stationarity_inference_audit/verification/producer_stationarity_log.txt",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "source research/stationarity_inference_audit/verification/producer_note163.txt",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "counterexample arithmetic",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "counterexample dependency independent_code/check_stationarity_inference.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "counterexample dependency research/stationarity_inference_audit/PROOF.md",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "counterexample dependency research/stationarity_inference_audit/verification/COUNTEREXAMPLE_INPUT.json",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "manufactured rho squared less than required slope",
+      "passed": true,
+      "evidence": {
+        "rho2": "5929/100005929",
+        "alpha": "1/10000"
+      }
+    },
+    {
+      "name": "Cauchy lower-bound polynomial positive coefficients",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "explicit smaller step strict norm descent",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "explicit smaller step positive threshold",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "explicit smaller step rejected by actual-form test",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "supporting hyperplane exact",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Cauchy exact squared inequality",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "entire printed-rho rounding bin below alpha",
+      "passed": true,
+      "evidence": {
+        "lo": "3087/400000",
+        "hi": "15437/2000000"
+      }
+    },
+    {
+      "name": "source log observed negative derivative",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "source log observed nonzero normalized gradient",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "source finite-step conclusion observed",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "source finite trial range",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "source norm threshold form",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "unchanged independent_code/check_stationarity_acceptance.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "unchanged research/stationarity_inference_audit/ACCEPTANCE_RULE_PROOF.md",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "unchanged research/stationarity_inference_audit/PROOF.md",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "unchanged research/stationarity_inference_audit/verification/CHECKS.json",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "unchanged research/stationarity_inference_audit/verification/SOURCES.json",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "unchanged research/stationarity_inference_audit/verification/producer_stationarity_static.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "unchanged research/stationarity_inference_audit/verification/producer_stationarity_log.txt",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "unchanged research/stationarity_inference_audit/verification/producer_note163.txt",
+      "passed": true,
+      "evidence": null
+    }
+  ],
+  "bindings": {
+    "independent_code/check_stationarity_acceptance.py": "5f8c58c4d644802b6ab3c0a5c240342952c5dcded68981efa38f16aff69f17e3",
+    "research/stationarity_inference_audit/ACCEPTANCE_RULE_PROOF.md": "6fa1729ccfa1419f292763ec4b2261beb0fbdeee68be64f6a774420f5ad7acb4",
+    "research/stationarity_inference_audit/PROOF.md": "c447b69fb91ee07e9c965b19f9fef6f13d53f59aaa96b041621d4ef029fa3254",
+    "research/stationarity_inference_audit/verification/CHECKS.json": "0b881122b38020f87883f63f803f312c803d15ffc18f0a1f4a8a710fd96fb671",
+    "research/stationarity_inference_audit/verification/SOURCES.json": "8593e8a4f37a136a6a2b27037fd7cef754a406c8209fe0c1c9f0b41f49c22bb0",
+    "research/stationarity_inference_audit/verification/producer_stationarity_static.py": "2d408449439b241a514db435bcb7fbcb775bd44a3e8e6c08ad98e29ee3e37343",
+    "research/stationarity_inference_audit/verification/producer_stationarity_log.txt": "6740a62762483f0be98339c0a8ee891a6557a8da43884f0fec68b8e18c3b1d71",
+    "research/stationarity_inference_audit/verification/producer_note163.txt": "dc67b121400e560c721a46b6051246d85c778d9eac0a0c315024640d8dd51369"
+  },
+  "scope": "Exact logical result and frozen source-text audit. Actual Jacobian, gradient and discrete state remain unverified. No primary IPM endpoint."
+}

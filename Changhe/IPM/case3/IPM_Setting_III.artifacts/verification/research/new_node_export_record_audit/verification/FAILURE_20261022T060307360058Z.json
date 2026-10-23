@@ -1,0 +1,27 @@
+{
+  "utc": "2026-10-22T06:03:07.360139+00:00",
+  "checks": [
+    {
+      "name": "all5 varied finite rows",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Nf and Nv allzero undefined",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Nfzero Nvpositive",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "explicit distributed residual",
+      "passed": false,
+      "evidence": null
+    }
+  ],
+  "bindings": {},
+  "traceback": "Traceback (most recent call last):\n  File \"verification/independent_code/check_new_node_export_records.py\", line 69, in <module>\n    if sys.argv[1:]==['--manufactures']:out=manufactures();name='MANUFACTURES.json'\n                                            ^^^^^^^^^^^^^^\n  File \"verification/independent_code/check_new_node_export_records.py\", line 27, in manufactures\n    f,e=core.check_rows(d);ck('all5 varied finite rows',f.shape==(5,5));ck('Nf and Nv allzero undefined',np.isnan(f[2,3])and np.isnan(f[2,4]));ck('Nfzero Nvpositive',np.isnan(f[3,3])and f[3,4]==0 and f[3,2]>0);ck('explicit distributed residual',Q(f[0,0])==67)\n                                                                                                                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"verification/independent_code/check_new_node_export_records.py\", line 14, in ck\n    if not b:raise AssertionError((name,e))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ('explicit distributed residual', None)\n"
+}

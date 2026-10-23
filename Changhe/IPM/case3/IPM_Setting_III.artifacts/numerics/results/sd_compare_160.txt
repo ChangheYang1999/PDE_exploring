@@ -1,0 +1,34 @@
+=== size 160: simple start (hsG_c2.0_N160_log) vs projected coarser start (hsS_c2.0_N160_log_from128)
+== summary
+hsG_c2.0_N160_log          160x40  2.000  r      1.2e-07          1.3e-05 4.2e-05 5.7e-05 3.1e-04            -1.306    -3.943    3.3e-18            +1.4e-05    1719s
+hsS_c2.0_N160_log_from128  160x40  2.000  r      1.2e-07          1.1e-05 4.1e-05 5.8e-05 3.0e-04            -1.527    -4.102    3.3e-18            +8.8e-06    1570s
+== exact centre defect
+hsG_c2.0_N160_log            160x40  c 2.0000000 P 2.0000000: D_exact +1.4287153620e-05  D_FD +1.4287e-05 (diff +1.01e-13)
+hsS_c2.0_N160_log_from128    160x40  c 2.0000000 P 2.0000000: D_exact +8.7735775551e-06  D_FD +8.7736e-06 (diff -2.88e-13)
+== C_p
+hsG_c2.0_N160_log              160x40  2.0  0.5000 +1.000000 +1.010191  +7.436514e+00 / +7.451262e+00 / +7.451726e+00   +7.446985e+00 / +7.451628e+00 / +7.452791e+00   +7.451726        2.20e-02 / 2.43e-03   || +7.436514113e+00 / +7.451262190e+00 / +7.451728496e+00 / +7.451743242e+00   +7.451743242e+00
+hsS_c2.0_N160_log_from128      160x40  2.0  0.5000 +1.000000 +1.005886  +7.278509e+00 / +7.292850e+00 / +7.293307e+00   +7.288691e+00 / +7.293207e+00 / +7.294266e+00   +7.293307        2.18e-02 / 2.42e-03   || +7.278509079e+00 / +7.292849667e+00 / +7.293303087e+00 / +7.293317425e+00   +7.293317425e+00
+  c = 2: F = m + B_log log y + A_3 y^(-1/2) + A_4 y^(-1) + A_5 y^(-3/2) on y >= 1e2:  m -2535.67112541  B_log +230.34468716  maxres 4.9e+01   (B_log = axis curvature coefficient of the degree-0 far-field term; no finite m_0 unless B_log = 0)
+  c = 2: F = m + B_log log y + A_3 y^(-1/2) + A_4 y^(-1) + A_5 y^(-3/2) on y >= 1e2:  m -2495.18128326  B_log +226.52687195  maxres 4.8e+01   (B_log = axis curvature coefficient of the degree-0 far-field term; no finite m_0 unless B_log = 0)
+hsG_c2.0_N160_log              160x40  2.0 K +1.000000 Q +1.010191 defect +1.43e-05  m_0 +nan (spread nan; from R +nan; direct +nan)  pred +nan  meas +2.0366374 / -22.4672883 / -1758.0196758
+hsS_c2.0_N160_log_from128      160x40  2.0 K +1.000000 Q +1.005886 defect +8.77e-06  m_0 +nan (spread nan; from R +nan; direct +nan)  pred +nan  meas +2.0271958 / -21.1859742 / -1718.6462918
+== hs_cauchy (pair)
+c = 2.0, p = 0.5000; 19649 points (401 log radii 1e-3..1e7 x 49 angles incl. both axes); columns per region: max|dg|/(1+r)^p, max|dg|/|g_b|, max|d grad g|/(1+r)^(p-1)
+pair                                    [0,0.1)                         [0.1,1)                         [1,100)                         [100,10000)                     [10000,1e+07)                 
+160x40 -> 160x40                         1.34e-06  3.25e-05  4.02e-05    1.02e-04  2.76e-04  3.29e-04    5.79e-04  5.34e-04  1.08e-03    5.56e-04  5.12e-04  2.47e-03    3.29e-04  5.40e-04  3.45e-03   
+scale of 160x40: max|g|/(1+r)^p, max|grad g|/(1+r)^(p-1) 8.98e-02            1.03e+00    5.46e-01            1.04e+00    1.09e+00            1.00e+00    1.09e+00            9.56e-01    1.05e+00            9.21e-01   
+
+axis trace G(y) = g(0, y): max |G_a - G_b| / (1 + y)^p by region; x-axis slope k(xi) = g_y(xi, 0): max |k_a - k_b| / (1 + xi)^(p-1)
+== hs_centre_reg
+hsG_c2.0_N160_log 160x40 c=2.0  E_state=+nan B_state=+nan  (first Radau node r = 2.447e-03)
+  (G/y-1)/y^2:    -1.3059    -1.3035    -1.2791    -1.1048    -0.6659    -0.5751    -0.5429    -0.4564    -0.2041
+  slope|G/y-1|:   +1.9983    +1.9917    +1.9228    +1.7296    +1.7296    +1.9074    +1.8946    +1.5986    +1.3316
+  (k-1)/xi^2:     -3.9427    -3.9408    -3.9222    -3.7878    -3.4227    -3.2151    -2.5107    -1.2217    -0.3002
+hsS_c2.0_N160_log_from128 160x40 c=2.0  E_state=+nan B_state=+nan  (first Radau node r = 2.447e-03)
+  (G/y-1)/y^2:    -1.5271    -1.5243    -1.4961    -1.2913    -0.7342    -0.5815    -0.5436    -0.4570    -0.2043
+  slope|G/y-1|:   +1.9984    +1.9917    +1.9225    +1.7062    +1.6653    +1.8623    +1.8907    +1.5983    +1.3312
+  (k-1)/xi^2:     -4.1025    -4.1002    -4.0774    -3.9116    -3.4543    -3.2220    -2.5138    -1.2229    -0.3004
+hsG_c2.0_N160_log 160x40: s(y) =    1.9992    1.9592    1.7066    1.6918    1.9630    1.9412    1.6776   | exact E -1.3059 B -3.9427  B - 6E = +3.893
+      r =   3e-02: angular fit B_r = -3.1897  E_r = -0.5691  B_r - 6 E_r = +0.2251  rel fit residual 1.7e-02
+hsS_c2.0_N160_log_from128 160x40: s(y) =    1.9993    1.9593    1.7027    1.5854    1.9318    1.9409    1.6772   | exact E -1.5271 B -4.1025  B - 6E = +5.060
+      r =   3e-02: angular fit B_r = -3.1978  E_r = -0.5704  B_r - 6 E_r = +0.2245  rel fit residual 1.9e-02

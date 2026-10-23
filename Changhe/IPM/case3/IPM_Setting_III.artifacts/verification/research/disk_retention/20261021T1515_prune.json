@@ -1,0 +1,41 @@
+{
+  "utc": "2026-10-21T15:15:51.893851+00:00",
+  "reason": "Regenerable independent full-plane inverse matrix caches removed to respect 2 GB lane budget; candidate inputs, solver outputs, diagnostics and proofs retained. Metadata marker moved so MatrixCache regenerates rather than treating removed arrays as committed.",
+  "files": [
+    {
+      "path": "evidence/smooth_solver/matrix_v2_7ff1bd33f59afd6af24b582c/ux.npy",
+      "bytes": 106142528,
+      "sha256": "781fc35027239df5575837accb4e8bfed7fc25e6a2295ffd0cff8c654e3c12d5"
+    },
+    {
+      "path": "evidence/smooth_solver/matrix_v2_7ff1bd33f59afd6af24b582c/uy.npy",
+      "bytes": 106142528,
+      "sha256": "f68de05a407dffe3d2ff199b16e1713380cdcc1cc465ef0f9ae3107492c5ed74"
+    },
+    {
+      "path": "evidence/smooth_solver/matrix_v2_a51934af939c66e165801c51/ux.npy",
+      "bytes": 71544800,
+      "sha256": "bde44124a185ce5d2632c0f289faf8c5feed4b85a41f1009b9ff1d01c4d06a74"
+    },
+    {
+      "path": "evidence/smooth_solver/matrix_v2_a51934af939c66e165801c51/uy.npy",
+      "bytes": 71544800,
+      "sha256": "e51c3ed8dabb72aff87642f9db287fff70df8d6c067bf685d642b47b6fa334e3"
+    }
+  ],
+  "metadata": [
+    {
+      "original": "evidence/smooth_solver/matrix_v2_7ff1bd33f59afd6af24b582c/committed.json",
+      "archive": "research/disk_retention/matrix_v2_7ff1bd33f59afd6af24b582c.committed.json",
+      "sha256": "7d7fc2cef837f05688a87ca84a4159078b4ba62fb1e6f5306b53d75dfd500c99"
+    },
+    {
+      "original": "evidence/smooth_solver/matrix_v2_a51934af939c66e165801c51/committed.json",
+      "archive": "research/disk_retention/matrix_v2_a51934af939c66e165801c51.committed.json",
+      "sha256": "72311ba0f74289183264b1db9dc992f0a7cc60227af9b40325279d42d89a4ce5"
+    }
+  ],
+  "regeneration": "independent_code/smooth_solver.py constructs MatrixCache from the saved geometry and source identity in each archived committed.json; absent committed marker causes recomputation.",
+  "bytes_removed": 355374656,
+  "lane_bytes_after": 1615721406
+}

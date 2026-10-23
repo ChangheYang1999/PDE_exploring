@@ -1,0 +1,85 @@
+{
+  "utc": "2026-10-22T06:18:10.258276+00:00",
+  "source_design_acceptance_sha256": "6b6fb0f5b617139096108cf1108fc19ac0f51172244a71d50836d94e01e44209",
+  "producer_hash_list": "research/new_node_export_record_audit/verification/exports/export_nodes_sha256.txt",
+  "producer_hash_list_sha256": "763e04794c33671082e62a90ca987ae7cf7a17f48ea694e7da211d02255a00ae",
+  "states": [
+    {
+      "tag": "S160",
+      "N": 160,
+      "M": 40,
+      "fine": false,
+      "state": "research/hydrostatic_function_space_audit/verification/hsG_c2.0_N160_log.pt",
+      "state_sha256": "60e3a92f81620d109192e1557e5da3e27d4d8b0c534fac63afd07dac09c9ac20",
+      "producer_state_basename": "hsG_c2.0_N160_log.pt",
+      "manifest": "research/accurate_map_final_audit/verification/INPUTS_ADDITIONAL.json",
+      "manifest_sha256": "ab9b8b47435cc95ef50afbf337e9da34814686437677de5df5ac21d783be3fc6",
+      "export": "research/new_node_export_record_audit/verification/exports/hsG_c2.0_N160_log_nodes_resolved.npz",
+      "export_sha256": "ecfadc376fb7fc6ebedffb4e69c0cac658eaebaf945c5b0ca53c33f16545c16d",
+      "record": "research/new_node_export_record_audit/verification/exports/hs_node_check_c2_N160_export.txt",
+      "record_sha256": "1618156a980a447188dce8f63150f48988d546aa73f1c282ac983c21169221c0",
+      "producer_export_basename": "hsG_c2.0_N160_log_nodes_resolved.npz"
+    },
+    {
+      "tag": "G128",
+      "N": 128,
+      "M": 32,
+      "fine": true,
+      "state": "research/accurate_map_final_audit/verification/hsQ_c2.0_N128_acc6_fine.pt",
+      "state_sha256": "3658ff1e504b477ff194b546a3f0612e321f816b3e891ee4b332755974d15bc6",
+      "producer_state_basename": "hsQ_c2.0_N128_acc6_fine.pt",
+      "manifest": "research/accurate_map_final_audit/verification/INPUTS.json",
+      "manifest_sha256": "2d6e1a9104dcc7dd470e58d55c34ce883e67d136cfa56cfebdf8950b5da5b2dd",
+      "export": "research/new_node_export_record_audit/verification/exports/hsQ_c2.0_N128_acc6_fine_rows_resolved.npz",
+      "export_sha256": "288e95d19baa407201dd034078ca80b085b4321256d8d67bdf6348d6085b7163",
+      "record": "research/new_node_export_record_audit/verification/exports/hs_node_check_c2_N128_acc6_fine_export.txt",
+      "record_sha256": "a41656881384a2e68046d3219adbbd10bc0d1ad8bca98caa88bb4b4cb0f5cdb1",
+      "producer_export_basename": "hsQ_c2.0_N128_acc6_fine_rows_resolved.npz"
+    }
+  ],
+  "files": [
+    {
+      "source": "numerics/data/hs_points_export/hsG_c2.0_N160_log_nodes_resolved.npz",
+      "frozen": "research/new_node_export_record_audit/verification/exports/hsG_c2.0_N160_log_nodes_resolved.npz",
+      "sha256": "ecfadc376fb7fc6ebedffb4e69c0cac658eaebaf945c5b0ca53c33f16545c16d",
+      "two_reads_identical": true,
+      "bytes": 465567
+    },
+    {
+      "source": "numerics/runs/hs_node_check_c2_N160_export.txt",
+      "frozen": "research/new_node_export_record_audit/verification/exports/hs_node_check_c2_N160_export.txt",
+      "sha256": "1618156a980a447188dce8f63150f48988d546aa73f1c282ac983c21169221c0",
+      "two_reads_identical": true,
+      "bytes": 924
+    },
+    {
+      "source": "numerics/data/hs_points_export/hsQ_c2.0_N128_acc6_fine_rows_resolved.npz",
+      "frozen": "research/new_node_export_record_audit/verification/exports/hsQ_c2.0_N128_acc6_fine_rows_resolved.npz",
+      "sha256": "288e95d19baa407201dd034078ca80b085b4321256d8d67bdf6348d6085b7163",
+      "two_reads_identical": true,
+      "bytes": 889559
+    },
+    {
+      "source": "numerics/runs/hs_node_check_c2_N128_acc6_fine_export.txt",
+      "frozen": "research/new_node_export_record_audit/verification/exports/hs_node_check_c2_N128_acc6_fine_export.txt",
+      "sha256": "a41656881384a2e68046d3219adbbd10bc0d1ad8bca98caa88bb4b4cb0f5cdb1",
+      "two_reads_identical": true,
+      "bytes": 950
+    },
+    {
+      "source": "numerics/runs/export_nodes_sha256.txt",
+      "frozen": "research/new_node_export_record_audit/verification/exports/export_nodes_sha256.txt",
+      "sha256": "763e04794c33671082e62a90ca987ae7cf7a17f48ea694e7da211d02255a00ae",
+      "two_reads_identical": true,
+      "bytes": 275
+    },
+    {
+      "source": "numerics/runs/export_nodes.out",
+      "frozen": "research/new_node_export_record_audit/verification/exports/export_nodes.out",
+      "sha256": "1e12ec61ce620827b14334443b8dcb03afccfd7ced0193c8cb5e04e085213f66",
+      "two_reads_identical": true,
+      "bytes": 123
+    }
+  ],
+  "scope": "Stable local copies after producer log DONE06:16:13Z, verifier observed06:17:47Z. Same-run internal consistency only, no historical authenticity."
+}

@@ -1,0 +1,7 @@
+# manufactured test of hs.hydro_V with the two FD step rules (hstep='x': h = hrel (1+|xi|); hstep='r': h = hrel (1 + sqrt(xi^2+t^2))); lead's g = exp(-xi^2) y exp(-tau y^2), tau = 1
+hstep x hrel 1e-06: max|V1-exact| 2.72e-15  max|V2-exact| 1.82e-11  (42 points xi<=2.5, y<=20)
+hstep x hrel 1e-05: max|V1-exact| 2.72e-15  max|V2-exact| 2.03e-10  (42 points xi<=2.5, y<=20)
+hstep x hrel 1e-04: max|V1-exact| 2.72e-15  max|V2-exact| 2.03e-08  (42 points xi<=2.5, y<=20)
+hstep r hrel 1e-06: max|V1-exact| 2.72e-15  max|V2-exact| 6.83e-12  (42 points xi<=2.5, y<=20)
+hstep r hrel 1e-05: max|V1-exact| 2.72e-15  max|V2-exact| 4.22e-10  (42 points xi<=2.5, y<=20)
+hstep r hrel 1e-04: max|V1-exact| 2.72e-15  max|V2-exact| 4.22e-08  (42 points xi<=2.5, y<=20)

@@ -1,0 +1,18 @@
+## A.3.80 Finite polynomial axis data
+
+Notation. As in 3.80; F, D, A, I, J, h, a, l, m, s, mu and alpha are local. Write H(w) = w h(w) with h a polynomial, so h(0) = H'(0) != 0, and put F(t) = C t h(1 - t^2) and D = w F' + 2 (P - 1) t F, with ' = d/dt on functions of t. F is a nonzero odd polynomial of odd degree m >= 1 with F(0) = 0 and F(1) = -F(-1) = C h(0) != 0, so F and w have no common complex root. From y = C t w^{-P}, G = y H(w) = F w^{1 - P}, dG/dt = D w^{-P} and dy/dt = C Q w^{-P - 1}, so G' = dG/dy = D w/(C Q). Further D(1) = 2 (P - 1) F(1) != 0 and D(-1) = -2 (P - 1) F(-1) != 0, so D is a nonzero polynomial without the roots +-1.
+
+Suppose that (c y + V) G' = G on an open interval I of y > 0; shrinking I, D != 0 on I. Then c y + V = G/G' = C w^{-P} F Q/D, that is
+    V = C w^{-P} A(t),   A = F Q/D - c t,   (A1)
+with A a rational function of t (P need not be rational). Differentiate (A1) in t on I: dV/dt = k(w) dy/dt = C k(w) Q w^{-P - 1}, and d(w^{-P})/dt = 2 P t w^{-P - 1}; multiplying by w^{P + 1}/C gives
+    w A' + 2 P t A = k(w) Q.   (A2)
+Both sides of (A2) are rational functions of t that agree on an interval, so (A2) is an identity of rational functions.
+
+A is a polynomial. At a pole alpha of A with alpha != +-1, of order l >= 1 and leading Laurent coefficient a != 0, the term w A' has a pole of order l + 1 with leading coefficient -l w(alpha) a != 0, and 2 P t A has a pole of order at most l, so the left side of (A2) has a pole while the right side is a polynomial; A has no pole at +-1 because D(+-1) != 0. A rational function without poles is a polynomial, so
+    D divides F Q.   (A3)
+
+Case m != 2 (P - 1). The leading coefficient of D is 2 (P - 1) - m times that of F, so deg D = m + 1. At a root alpha of F of multiplicity mu, F' has multiplicity mu - 1 and w(alpha) != 0, so D = w F' + 2 (P - 1) t F has multiplicity exactly mu - 1 there. Hence the monic greatest common divisor J of D and F is the monic greatest common divisor of F and F', of degree m - s with s the number of distinct complex roots of F. By (A3), D/J divides (F/J) Q, and D/J and F/J are coprime, so D/J divides Q and s + 1 = deg(D/J) <= 2. Since F(0) = 0, s >= 1, so s = 1 and F = a t^m with a != 0. Then D = a t^{m - 1} (m + (2 (P - 1) - m) t^2), J = t^{m - 1}, and D/J, of degree 2, divides Q and is therefore a constant multiple of Q: 2 (P - 1) - m = m (2P - 1), that is m = (P - 1)/P, which lies in (0, 1/2] and is not a positive integer. Case m = 2 (P - 1). As m is a positive odd integer and 0 < 2 (P - 1) <= 2, m = 1 and P = 3/2. Then F = a t with a = C h(0), D = a, Q = 1 + 2 t^2 and A = t (1 + 2 t^2 - c), and (A2) gives
+    k(1 - t^2) = ((1 - c) + (8 - 2 c) t^2)/(1 + 2 t^2).
+The numerator equals -3 at t^2 = -1/2 for every c, so the right side has poles at t = +-i/sqrt(2) and is not a polynomial in t, while the left side is. In both cases a contradiction; so the identity holds on no nonempty open interval.
+
+Application. On the axis g_xi(0, y) = 0, so V_1(0, y) = 0, and differentiating (2) of 3.72 at xi = 0 gives d/dy V_2(0, y) = y g_xixi(0, y) + int_y^inf g_xixi(0, s) ds - y g_xixi(0, y) = int_y^inf g_xixi(0, s) ds. The checks comprise 329 exact tests: the identities for dG/dt, dy/dt, (A1) and (A2); the leading coefficients of the poles in (A2); the gcd, multiplicity and degree counts and the coprimality of the quotients for sample exponents P and odd degrees; the case P = 3/2; and, for each of the nine saved states, C > 0, the stored exponent in (1, 2], H(0) = 0, H'(0) != 0, k(0) = 0 and the degrees.

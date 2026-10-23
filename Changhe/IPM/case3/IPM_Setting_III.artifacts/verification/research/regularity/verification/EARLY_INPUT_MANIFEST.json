@@ -1,0 +1,46 @@
+{
+  "utc": "2026-10-20T22:47:52.017443+00:00",
+  "certificate": "research/regularity/verification/arb_first_jets.json",
+  "certificate_sha256": "5ee9fc7807d7a2534839d4493ecf5ee3752e59cccd5993436e7494d4db15e2e6",
+  "code": "independent_code/certify_radial_jet.py",
+  "code_sha256": "461723f4f8e4db8a4b9a2f29c0e8970c106bb796cb3b844aa52e6f77faf1afd8",
+  "inputs": [
+    {
+      "input": "research/regularity/verification/coupled_N48_a1_input.json",
+      "sha256": "fe3ddb3e709cb2a27f0e0eb04207df4cceb2435298cae6e54c3794b38cdb80db",
+      "source": "evidence/coupled_N48_a1.npz",
+      "source_sha256": "f9b5cb93959dc7c166cea4fc9f573b2f6df64b9b45e71132618e078c0d85e8c4",
+      "N": 48,
+      "M": 12,
+      "mean_count": 49
+    },
+    {
+      "input": "research/regularity/verification/res_p23_N96M16_input.json",
+      "sha256": "3105dee3a16b30cb35fb9a17366550d4fa2e9a3abf2086c3022fe01db544a902",
+      "source": "evidence/res_p23_N96M16.npz",
+      "source_sha256": "f9a504ae85dbd7411fafd886645f7fa95b7ec8426e75d509cbc8e1c582779d69",
+      "N": 96,
+      "M": 16,
+      "mean_count": 97
+    },
+    {
+      "input": "research/regularity/verification/res_p23_N192M24_input.json",
+      "sha256": "89e979e84f6d195c1a1298bc8b4aa72b1b7e7b3e1c84ccd2f6dfa4ebd8e6473b",
+      "source": "evidence/res_p23_N192M24.npz",
+      "source_sha256": "a2c48bd68a278f44596671bf4d4e6eedacc9cf9b753707826ecc8f460c7c5aa6",
+      "N": 192,
+      "M": 24,
+      "mean_count": 193
+    },
+    {
+      "input": "research/regularity/verification/res_p23_N256M32_input.json",
+      "sha256": "290408ac0f42013b120c9b9072c56ad6f713c5ae9052771cab7e733fd24f11bc",
+      "source": "evidence/res_p23_N256M32.npz",
+      "source_sha256": "797df010c1345029f153a1f57fc17fd0bca0d5d5c3b98862aa61d489f07aa632",
+      "N": 256,
+      "M": 32,
+      "mean_count": 257
+    }
+  ],
+  "scope": "Each registered JSON contains exact rational angular means of all stored binary nodal values, not rounded floating-point means. The interval checker needs only these means and the exact declared Radau nodes. Original full nodal NPZ data are also retained and hashed."
+}

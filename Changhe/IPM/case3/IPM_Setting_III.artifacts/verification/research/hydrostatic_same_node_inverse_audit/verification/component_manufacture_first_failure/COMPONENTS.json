@@ -1,0 +1,152 @@
+{
+  "status": "FAIL",
+  "started_utc": "2026-10-22T00:51:52.382555+00:00",
+  "checks": [
+    {
+      "name": "base complete",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "base driver unchanged",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "base sources unchanged",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "base module unchanged q_local_checkpoint.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "base module unchanged q_checkpoint_reader.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "base module unchanged independent_hydrostatic.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "base module unchanged hydrostatic_power_tail.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "base module unchanged scalar_mp_hydrostatic_density.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "exact manufactured antiderivative",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "frozen state",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "manufacture component identity (0.137, 0.219, 80)",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "manufacture component identity (0.137, 0.219, 640)",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "refined diagnostic manufacture (0.137, 0.219)",
+      "passed": true,
+      "evidence": 9.593205292550542e-11
+    },
+    {
+      "name": "manufacture component identity (30.0, 1.0, 80)",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "manufacture component identity (30.0, 1.0, 640)",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "refined diagnostic manufacture (30.0, 1.0)",
+      "passed": false,
+      "evidence": 1.9257439200075825e-09
+    }
+  ],
+  "driver_sha256": "bb9f9e7d740b2214c7561a1f1e635f651bbeaac22b4f46aa27e7bf7f69acdbca",
+  "proof_sha256": "4f59b39810d6356812dab1b791f2cdbf0fee6ceeb0286d2df6d19c286d1c1346",
+  "base_sha256": "8e80d9a8fd6398393f3399b193d8dfa83127572a3051de43eb98dee88ec95784",
+  "base_driver_sha256": "786a73dc209bd1de4952717e0ff0bb5f0658bfa74ceb2e52d2b0f005c4e95c75",
+  "manufactures": [
+    {
+      "x": 0.137,
+      "y": 0.219,
+      "ntail": 80,
+      "expected": [
+        0.13480529151018847,
+        -0.21517402865475346
+      ],
+      "computed": [
+        0.13480532823627744,
+        -0.21517408736288104
+      ],
+      "scaled_error": 4.831252659881738e-08
+    },
+    {
+      "x": 0.137,
+      "y": 0.219,
+      "ntail": 640,
+      "expected": [
+        0.13480529151018847,
+        -0.21517402865475346
+      ],
+      "computed": [
+        0.13480529158311388,
+        -0.2151740287713276
+      ],
+      "scaled_error": 9.593205292550542e-11
+    },
+    {
+      "x": 30.0,
+      "y": 1.0,
+      "ntail": 80,
+      "expected": [
+        5.474186891177649,
+        -0.09138829336661612
+      ],
+      "computed": [
+        5.474193169769281,
+        -0.09138850265300445
+      ],
+      "scaled_error": 9.697884441575575e-07
+    },
+    {
+      "x": 30.0,
+      "y": 1.0,
+      "ntail": 640,
+      "expected": [
+        5.474186891177649,
+        -0.09138829336661612
+      ],
+      "computed": [
+        5.474186903645275,
+        -0.09138829378220635
+      ],
+      "scaled_error": 1.9257439200075825e-09
+    }
+  ],
+  "rows": [],
+  "updated_utc": "2026-10-22T00:51:52.479815+00:00",
+  "finished_utc": "2026-10-22T00:51:52.479293+00:00",
+  "traceback": "Traceback (most recent call last):\n  File \"verification/independent_code/check_hydrostatic_same_node_components.py\", line 39, in main\n    if nt==640:ck('refined diagnostic manufacture '+str((m['x'],m['y'])),err<1e-9,err)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"verification/independent_code/check_hydrostatic_same_node_components.py\", line 29, in ck\n    if not b:raise AssertionError((n,e))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ('refined diagnostic manufacture (30.0, 1.0)', 1.9257439200075825e-09)\n"
+}

@@ -1,0 +1,39 @@
+{
+  "status": "FAILED",
+  "input_sha256": "c05b3c945331bdc56d245d75f9580290af71a75cf5fd2f7fb169b46235c1eb89",
+  "source_gate_sha256": "f456a979a59c808727ffd68f9b7ae5c17fa511baa9490541d70286c50f70e44f",
+  "code_and_proof_sha256": {
+    "research/hydrostatic_c2_resolved_224_audit/verification/manufactured_recovery/pipeline_changed/synthetic_code.txt": "e7b94c92481828a381945afb68caf8a17445cc6629817e2be984d7cf5c507300"
+  },
+  "checks": [
+    {
+      "name": "inapplicable input unchanged",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "inapplicable source gate unchanged",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "inapplicable code/proof research/hydrostatic_c2_resolved_224_audit/verification/manufactured_recovery/pipeline_changed/synthetic_code.txt",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "inapplicable admitted source hsG_c2.0_N224_log",
+      "passed": false,
+      "evidence": null
+    }
+  ],
+  "states": [
+    {
+      "tag": "hsG_c2.0_N224_log",
+      "status": "RUNNING"
+    }
+  ],
+  "utc_failed": "2026-10-21T22:23:43.556028+00:00",
+  "error": "Traceback (most recent call last):\n  File \"<actual prepared AST>\", line 198, in <module>\n  File \"verification/independent_code/check_hydrostatic_224_admission_protocol.py\", line 51, in check\n    if not ok:raise AssertionError(name)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: inapplicable admitted source hsG_c2.0_N224_log\n",
+  "failure_kind": "provenance before applicability verdict"
+}

@@ -1,0 +1,67 @@
+[
+  {
+    "op": "replace",
+    "old_lines": [
+      2,
+      3
+    ],
+    "new_lines": [
+      2,
+      3
+    ],
+    "old": "Version v51, 2026-10-21T16:13Z (see CHANGELOG). Status markers: [PROVED-lead] = proof written by lead, awaiting verifier+referee;\n",
+    "new": "Version v52, 2026-10-21T16:56Z (see CHANGELOG). Status markers: [PROVED-lead] = proof written by lead, awaiting verifier+referee;\n"
+  },
+  {
+    "op": "replace",
+    "old_lines": [
+      487,
+      489
+    ],
+    "new_lines": [
+      487,
+      490
+    ],
+    "old": "      d74 preliminary (16:09Z, 206 checks); formal d74 trial posted 16:12Z] Finite polynomial axis data. With\n      0 < t < 1, w = 1 - t^2, C > 0 (C = 0 gives G = 0 and the claim fails), y = C t w^{-P}, G = y H(w), V' = k(w) (H, k\n",
+    "new": "      d74 preliminary (16:09Z, 206 checks) and the formal d74 trial (251, 16:19Z); INSTALLED in draft 74, 16:41Z] Finite\n      polynomial axis data. With\n      0 < t < 1, w = 1 - t^2, C > 0 (C = 0 does not parametrize positive y), y = C t w^{-P}, G = y H(w), V' = k(w) (H, k\n"
+  },
+  {
+    "op": "replace",
+    "old_lines": [
+      497,
+      499
+    ],
+    "new_lines": [
+      498,
+      501
+    ],
+    "old": " (G44) [VERIFIED numerics; not in report] checker 241/242 (15:29Z, 15:46Z): c = 2 resolved-map states, complete axis\n      search on 100 <= y <= 1e12: maxRf N96 .0761, cap128 .00326, cont128 .00344, N160 .000311; the earlier 774-point\n",
+    "new": " (G44) [VERIFIED numerics; in the d75 trial] checker 241/242 (15:29Z, 15:46Z): c = 2 resolved-map states, finite axis\n      search using the complete inverse on 100 <= y <= 1e12 (dense scan maxima, not certified suprema; no claim of root\n      completeness): maxRf N96 .0761, cap128 .00326, cont128 .00344, N160 .000311; the earlier 774-point\n"
+  },
+  {
+    "op": "replace",
+    "old_lines": [
+      501,
+      502
+    ],
+    "new_lines": [
+      503,
+      515
+    ],
+    "old": "      Reported in the draft 75 preliminary (4.10 addendum, with this domain sensitivity), awaiting the checker.\n",
+    "new": "      Reported in draft 75 (4.10 addendum, with this domain sensitivity): preliminary CONFIRMED (252, 213 checks), formal\n      trial 26b06fe8... posted 16:52Z.\n (G45) [IN PROGRESS: checker 253 algebra 2036 checks, its review pending, not adopted; lead derivation unchecked,\n      referee x3h launched 16:52Z] Extension of G43 to all P > 1. Checker 253: for H nonzero with H(0) = 0 (H = w^n h,\n      h(0) != 0, n >= 1) and any P > 1 an open-interval identity forces P = n + m/2, m = deg[t h(1 - t^2)] odd >= 5.\n      Lead (research/p_ext/NOTES.md): at P = n + m/2, x = t/w^{1/2}, s = 1 + x^2 make y = C x s^{P-1/2}, G = Psi(x)\n      (odd, degree m) and k(1/s) polynomial; Psi'/Psi = m s^e (x^2 - u_*)^delta/R, u_* = -1/(2P), residues of\n      g(u) positive integers. delta = 0 impossible (u_* a root; signs between the real poles u_*, 0); delta = 1 adds\n      pi'(v_*) = 0 (v = 1/(1+u), v_* = 2P/(2P-1)): e = 0, e = 1 (factorization, AM-GM gives A_0 < 1) and equal\n      multiplicities of the nonzero roots (truncated binomial series) impossible; so m = 5, 7 excluded for all n.\n      Exact elimination (scan_exc.py): m = 9 excluded, m = 11 e = 2 excluded, larger m running. Open: e >= 2 with\n      unequal multiplicities for m >= 11. Not in the report until checked by the checker and audited.\n"
+  },
+  {
+    "op": "insert",
+    "old_lines": [
+      503,
+      503
+    ],
+    "new_lines": [
+      516,
+      522
+    ],
+    "old": "",
+    "new": "- v52 2026-10-21T16:56Z: drafts 73 and 74 INSTALLED 16:41Z (checker 251, 132 checks; FINAL_REPORT sha e1578ca3...); formal d75\n  trial 26b06fe8... posted; d76 preliminary (checker 248 repairs of 4.6, 4.7, 4.9) ef965850... posted. Checker 250\n  repairs: (G43) \"C = 0 does not parametrize positive y\" (not a counterexample); (G44) \"finite axis search using the\n  complete inverse\", no certified suprema or root completeness. Correction to the v51 entry below: the repairs of\n  16:07Z are checker 250, not 249. (G45) added: extension of 3.80 to P > 1 (checker 253 and the lead's analysis of\n  the exceptional exponents), in progress. No change to the endpoint: UNRESOLVED.\n"
+  }
+]

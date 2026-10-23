@@ -1,0 +1,39 @@
+hsG_c2.0_N96_log.pt 96x24 c=2.0 maps {'n_in': 24, 'n_tail': 80, 'hstep': 'r', 'inner': 'log', 'n0': 24, 'per_decade': 4, 'ngl': 8, 'q': 3}: |F|2 4.1746e-07 |F|max 3.9309e-08 (saved: 4.1746e-07 / 3.9309e-08)
+  smax 6.648e+04  smin 4.493e-13  |J^T F|/(smax |F|) = 3.633e-03  (first-order stationarity, full)
+  cutoff 1e-13: retained 1748/2052  rho_K = |U_K^T F|/|F| = 7.718e-03  (max relative decrease of |F|^2 in the linear model rho_K^2 = 5.96e-05);  |S_K U_K^T F|/(smax |F|) = 3.633e-03
+  cutoff 1e-10: retained 1582/2052  rho_K = |U_K^T F|/|F| = 7.717e-03  (max relative decrease of |F|^2 in the linear model rho_K^2 = 5.96e-05);  |S_K U_K^T F|/(smax |F|) = 3.633e-03
+  cutoff 1e-08: retained 1428/2052  rho_K = |U_K^T F|/|F| = 7.717e-03  (max relative decrease of |F|^2 in the linear model rho_K^2 = 5.96e-05);  |S_K U_K^T F|/(smax |F|) = 3.633e-03
+  cutoff 1e-06: retained 1216/2052  rho_K = |U_K^T F|/|F| = 7.716e-03  (max relative decrease of |F|^2 in the linear model rho_K^2 = 5.95e-05);  |S_K U_K^T F|/(smax |F|) = 3.633e-03
+  truncated GN step: |du| 3.544e-03, directional derivative F^T J du = -1.0380e-17 (= -|U_K^T F|^2 = -1.0381e-17)
+  exact profile along du: lam, |F(u+lam du)|/|F(u)|, acceptance threshold (1 - 1e-4 lam):
+    1.000e+00  1.00001246  0.99990000  increase
+    5.000e-01  1.00001298  0.99995000  increase
+    2.500e-01  1.00001144  0.99997500  increase
+    1.250e-01  1.00001244  0.99998750  increase
+    6.250e-02  1.00002439  0.99999375  increase
+    3.125e-02  1.00000409  0.99999688  increase
+    1.562e-02  1.00001433  0.99999844  increase
+    7.812e-03  1.00002239  0.99999922  increase
+    3.906e-03  1.00003821  0.99999961  increase
+    1.953e-03  1.00001736  0.99999980  increase
+    9.766e-04  1.00001398  0.99999990  increase
+    4.883e-04  1.00004347  0.99999995  increase
+    2.441e-04  1.00000001  0.99999998  increase
+  best ratio 1.00000000 at lam 0.000e+00: no decrease along du: numerical local minimum along the GN direction
+  linear-model attainable |F|/|F_0| = sqrt(1 - rho_K^2) = 0.99997022
+  PART 2: map error at the nodes (V_ref - V_map) and the forcing b = dV1 gx + dV2 gy, by region: max|dV1|, max|dV2|, max|b|, max|b|/N_f
+    r in [0, 0.1): 8.473e-07  1.561e-06  1.546e-06  8.759e-06
+    r in [0.1, 1): 8.881e-06  6.192e-06  4.343e-06  1.553e-05
+    r in [1, 100): 5.518e-03  8.148e-03  8.190e-04  7.361e-04
+    r in [100, 1e+300): 8.949e+01  4.491e+02  5.091e-02  5.001e-03
+    exported numerics/data/hs_points_export/hsG_c2.0_N96_log_nodes_maps.npz (X, Y, V1_map, V2_map, V1_ref, V2_ref, gx, gy, g, F_rows, b_rows)
+    |b| 1.186e-01 against |F_rows| 4.175e-07; F_ref = F + b has |F_ref|max 5.091e-02
+    cutoff 1e-13: unabsorbed |(I - U_K U_K^T) b|/|b| = 4.198e-06; |d| 3.424e+01; predicted change of the function max |g_d|/(1+r)^p by region: 2.33e-04 2.36e-02 1.13e-01 8.84e-02 9.23e-02   (gradient: 2.06e-01 in [1, 100))
+    cutoff 1e-10: unabsorbed |(I - U_K U_K^T) b|/|b| = 1.509e-05; |d| 1.217e-01; predicted change of the function max |g_d|/(1+r)^p by region: 2.25e-05 3.18e-03 2.15e-02 1.79e-02 1.89e-02   (gradient: 5.07e-02 in [1, 100))
+    cutoff 1e-08: unabsorbed |(I - U_K U_K^T) b|/|b| = 4.467e-05; |d| 6.453e-03; predicted change of the function max |g_d|/(1+r)^p by region: 3.27e-06 6.94e-05 5.95e-04 6.59e-04 1.03e-03   (gradient: 4.77e-03 in [1, 100))
+    share of |U_K^T b|^2 in singular values in (1e-13, 1e-10] smax: 0.000 (166 directions)
+    share of |U_K^T b|^2 in singular values in (1e-10, 1e-07] smax: 0.000 (249 directions)
+    share of |U_K^T b|^2 in singular values in (1e-07, 1e-04] smax: 0.009 (463 directions)
+    share of |U_K^T b|^2 in singular values in (1e-04, 1e-01] smax: 0.984 (823 directions)
+    share of |U_K^T b|^2 in singular values in (1e-01, 2e+00] smax: 0.007 (47 directions)
+    nonlinear check with the old maps: |F_map(u + d)|max 7.226e-02 against linear |F + J d|max 5.091e-02; |F_map(u+d) + b|max (the corrected residual if b were constant) 7.226e-02

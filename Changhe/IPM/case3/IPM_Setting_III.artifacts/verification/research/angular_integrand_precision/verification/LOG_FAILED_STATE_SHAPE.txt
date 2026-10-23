@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "verification/independent_code/run_angular_integrand_precision.py", line 163, in <module>
+    (manufacture if sys.argv[1]=='manufacture'else candidate)()
+  File "verification/independent_code/run_angular_integrand_precision.py", line 120, in candidate
+    ck('exact state',q.N==128 and q.M==32 and q.cl==2 and q.p==.5 and q.L==1 and q.kappa==2 and q.basis=='local'and q.tk is not None and q.tk.shape==(32,)and np.isfinite(q.tk).all()and(q.tk<1).all()and q.meta['basis_nodes_source']=='stored')
+  File "verification/independent_code/run_angular_integrand_precision.py", line 104, in ck
+    if not b:raise AssertionError(n)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: exact state

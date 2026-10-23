@@ -1,0 +1,9 @@
+# Independent audit of regenerated velocity tables
+
+Result284. Written before extraction at 2026-10-21T20:28:24.275142+00:00. Scope: the two producer q=2 tables frozen below, not its claimed mechanism for the q=3 drift.
+
+For each consecutive pair of the same seven frozen auxiliary states as result277, use the independently evaluated225-point arrays. The first two columns are max |V_old,i-V_new,i|/(1+r)^p over each nominal-radius region, p=1/c. The third is the ratio of two separate unweighted Euclidean regional maxima. The last-state scales use component magnitudes divided by (1+r)^p. For the98 axis tokens use the own order128 refined inverse values: V2(0,y)/y^p and V1(x,0)/(1+x)^p. All coordinate and state identities must be bound to the previously verified raw/refinement/adaptive evidence.
+
+Parse every new printed token, not only the changes listed in the producer note. Compare against half the final printed unit using exact rational decimal arithmetic. Finite float discrepancies are empirical, not certified intervals. Report any gap outside the rounding interval, even if it is much smaller than other errors. Independently compare all174 token changes against the previous frozen tables; a prose list may omit a change. This audit may confirm numerical tokens while refuting a purported exhaustive change list.
+
+No fresh inverse integration is required solely for a text regeneration. Result277 already used three full rules, two witness-refinement rules, an independently implemented adaptive inverse and manufactured Gaussian/algebraic-tail tests. Do not import or execute the producer evaluator. Bind all relevant input and independent evaluator hashes. The altered tail rule's cause is not established by a table comparison. Declining finitely sampled differences prove neither convergence nor a full-plane solution. Primary endpoint UNRESOLVED.

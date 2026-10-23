@@ -1,0 +1,18 @@
+{
+  "utc": "2026-10-21T11:11:19.739956+00:00",
+  "waiting_parent": 2088583,
+  "worker": 2127360,
+  "parent_command": "python3 independent_code/run_smooth_N44_audit.py ",
+  "worker_command": "python3 independent_code/audit_smooth_N44_parity.py ",
+  "worker_status": "Name:\tpython3\nUmask:\t0002\nState:\tT (stopped)\nTgid:\t2127360\nNgid:\t0\nPid:\t2127360\nPPid:\t2088583\nTracerPid:\t0\nUid:\t1000\t1000\t1000\t1000\nGid:\t1000\t1000\t1000\t1000\nFDSize:\t64\nGroups:\t4 10 190 987 988 1000 \nNStgid:\t2127360\nNSpid:\t2127360\nNSpgid:\t2088582\nNSsid:\t2088582\nKthread:\t0\nVmPeak:\t  520488 kB\nVmSize:\t  514344 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t  136648 kB\nVmRSS:\t  132848 kB\nRssAnon:\t   95056 kB\nRssFile:\t   37792 kB\nRssShmem:\t       0 kB\nVmData:\t  165588 kB\nVmStk:\t     136 kB\nVmExe:\t       4 kB\nVmLib:\t   92740 kB\nVmPTE:\t     456 kB\nVmSwap:\t       0 kB\nHugetlbPages:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t1\nSigQ:\t48/30446\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000000000000\nSigIgn:\t0000000001001000\nSigCgt:\t0000000000000082\nCapInh:\t0000000000000000\nCapPrm:\t0000000000000000\nCapEff:\t0000000000000000\nCapBnd:\t000001ffffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSeccomp_filters:\t0\nSpeculation_Store_Bypass:\tvulnerable\nSpeculationIndirectBranch:\talways enabled\nCpus_allowed:\tffffffff,ffffffff,ffffffff\nCpus_allowed_list:\t0-95\nMems_allowed:\t00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000003\nMems_allowed_list:\t0-1\nvoluntary_ctxt_switches:\t1\nnonvoluntary_ctxt_switches:\t239\n",
+  "guard_sha256": "0ebb83417c63f94c229eacab7ee8ddd837c6dd8d5dbc5458cacd0e10bc26758d",
+  "relevant_guard_log": [
+    "2026-10-21T01:17:39Z verification: pause pid 3479291 (age 46 min; 2 running > 1)",
+    "2026-10-21T01:19:40Z verification: pause pid 3479291 (age 48 min; 2 running > 1)",
+    "2026-10-21T01:23:41Z verification: pause pid 3479291 (age 52 min; 2 running > 1)",
+    "2026-10-21T11:09:19Z verification: pause pid 2127360 (age 2 min; 2 running > 1)"
+  ],
+  "cause": "Guard counts all old detached Python processes, including coordinator blocked in child.wait(). Thus idle coordinator occupies the sole slot and pauses its only computational child.",
+  "action": "SIGTERM only the idle coordinator. Do not signal worker or modify guard; allow automatic oldest-first resumption. After parity finishes, run short summary and recover pipeline record explicitly.",
+  "actual_heavy_workers": 1
+}

@@ -1,0 +1,15 @@
+from pathlib import Path
+from datetime import datetime,timezone
+import json,hashlib
+import boto3
+from botocore.config import Config
+R=Path('research/degree13_grouped_moment_obstruction');V=R/'verification'/'opus_review';V.mkdir(exist_ok=True)
+model='us.anthropic.claude-opus-5question='Independently audit the attached new m13 grouped-moment obstruction. The 258 moment reduction and 261 complete enumeration are prior proved dependencies; audit this standalone exclusion on its own hypotheses. Do not trust a symbolic resultant: check the hand elimination, exceptional denominator s=-1/6, Sylvester degree bound and specialization logic, and positivity transform and all endpoint arithmetic. Exact certificate JSON is attached, and our independent integer determinant checker is being written concurrently. A result only restricts finite auxiliary polynomials, not full-plane IPM. Try to refute it and return CORRECT, LOCAL REPAIRS, or INVALID with precise reasoning under1400words. Identify any arithmetic you cannot check. No tools, noJavaScript/TypeScript/Node, no servers/listeners/tunnels, noRLSciencecluster, noLean/Lake, no online posting/contacting people; write only verification.\n\n'+(R/'PROOF.md').read_text()+'\n\nCERTIFICATE\n'+(R/'verification/certificate.json').read_text()xt()
+(V/'request.txt').write_text(question);start=datetime.now(timezone.utc).isoformat()
+meta=dict(started_utc=start,requested_model=model,proof_sha256=hashlib.sha256((R/'PROOF.md').read_bytes()).hexdigest())
+try:
+ client=boto3.client('bedrock-runtime',region_name='us-east-1',config=Config(connect_timeout=15,read_timeout=450,retries={'max_attempts':0}))
+ response=client.invoke_model(modelId=model,body=json.dumps(dict(anthropic_version='bedrock-2023-05-31',max_tokens=16000,thinking=dict(type='adaptive'),output_config=dict(effort='low'),messages=[dict(role='user',content=question)])))
+ payload=json.loads(response['body'].read());(V/'response.json').write_text(json.dumps(payload,indent=2)+'\n');answer='\n\n'.join(z.get('text','')for z in payload.get('content',[])if z.get('type')=='text');(V/'answer.md').write_text(answer+'\n');meta.update(returned_model=payload.get('model'),usage=payload.get('usage'),stop_reason=payload.get('stop_reason'),stop_details=payload.get('stop_details'),request_id=response.get('ResponseMetadata',{}).get('RequestId'),answer_nonempty=bool(answer))
+except Exception as exc:meta.update(status='unavailable',error_type=type(exc).__name__,error=str(exc))
+meta['finished_utc']=datetime.now(timezone.utc).isoformat();(V/'metadata.json').write_text(json.dumps(meta,indent=2)+'\n');print(json.dumps(meta,indent=2),flush=True)

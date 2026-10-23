@@ -1,0 +1,230 @@
+{
+  "status": "PASS",
+  "utc": "2026-10-21T16:30:47.719270+00:00",
+  "count": 43,
+  "checks": [
+    {
+      "name": "frozen SPEC_v51.md",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "frozen spec_v50_to_v51.diff",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "frozen v50_CHECKS.json",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "frozen axis_SUMMARY.json",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "v51hash",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "entireprefixexceptversion",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "entireoldchangelog",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "theorem repaired 0 < t < 1",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "theorem repaired C > 0",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "theorem repaired H(0) = 0",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "theorem repaired H'(0) != 0",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "theorem repaired 1 < P <= 2",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "theorem repaired nonempty open interval of y > 0",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "theorem repaired equality at single points is not excluded",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "theorem repaired each expansion finite, degrees unbounded",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "theorem repaired no degree-uniform residual bound",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "theorem repaired NOT a NO endpoint",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "degenerate C0 explanation remains",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "C0 noncoordinate",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "singleton equality",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "singletonpositive",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "G44 repaired 100 <= y <= 1e12",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "G44 repaired .0761",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "G44 repaired .00326",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "G44 repaired .00344",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "G44 repaired .000311",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "G44 repaired 96 -> 128 -> 160",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "G44 repaired continuation of the capped 128 state raises it slightly",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "G44 repaired not converged",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "complete search ambiguity remains",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "axisgate",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "two resolutions128between96and160",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "continued128rises",
+      "passed": true,
+      "evidence": 0.0552743566938342
+    },
+    {
+      "name": "axis scope not exhaustive",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "history repaired 63 saved converged states",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "history repaired within 5e-6 relative",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "history repaired table to its displayed precision",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "history repaired 4.0000 to the displayed precision",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "history repaired not exactly 4",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "history repaired UNRESOLVED",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "wrong attribution249",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "prior v50 audit35",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "exactbyte reverse",
+      "passed": true,
+      "evidence": null
+    }
+  ],
+  "verdict": "REPAIRS_REQUIRED",
+  "proof_sha256": "2723d1998f0ea9a0e86255ffccf90dcd36f537d0d0a47deb333b826ac8e4d8a0",
+  "driver_sha256": "90998b4088c10d4990a6813246e532db701d61bc43a187f9924c6daebd0081bc",
+  "repairs": [
+    "Replace C=0 explanation by C=0 does not parametrize positive y.",
+    "Replace complete axis search by finite axis search using the complete inverse; no root completeness or certified suprema.",
+    "Changelog16:07 scope repairs are result250, not249."
+  ]
+}

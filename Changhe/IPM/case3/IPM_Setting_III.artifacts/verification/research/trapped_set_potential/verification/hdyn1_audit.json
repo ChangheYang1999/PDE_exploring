@@ -1,0 +1,49 @@
+{
+  "utc": "2026-10-20T16:57:38.409208+00:00",
+  "source": "../analysis/referee/hdyn1/PROOF.md",
+  "source_sha256": "1b92e0cacbc511c95ee1528a8ee5bbc3b02456082d59dba3b894a24d513fe263",
+  "method": "Read all586lines; independently reconstructed compact-set/potential/axis/scattering arguments in research/trapped_set_potential/PROOF.md. Exact algebra tests are queued, not yet executed.",
+  "items": [
+    {
+      "id": "H1",
+      "verdict": "CONFIRMED",
+      "reason": "Nested backward disks, volume contraction, exact transport, local nodal axis and first-root axis ODE give all equivalences without finite Z."
+    },
+    {
+      "id": "H2",
+      "verdict": "CONFIRMED",
+      "reason": "At a regular equilibrium DW^T grad rho=grad rho gives eigenvalues1,A; at a critical equilibrium curl forces symmetry, trace2ell."
+    },
+    {
+      "id": "H3",
+      "verdict": "CONFIRMED",
+      "reason": "Simple-root regular-singular axis ODE has a nonzero smooth factor times distance^(1-A/lambda), forcing integer m>=2. No-resonance Taylor induction proves flatness at lambda0. First density term checked separately."
+    },
+    {
+      "id": "H4",
+      "verdict": "CONFIRMED",
+      "reason": "gradP=W+rho e2, Pdot=|W|\u00b2+rho W2. Backward error is integrable; uniformly continuous |W|\u00b2 tends to0. Forward-bounded points are nodal, giving the forward limit-set assertion. No finite-Z claim of single-point limits."
+    },
+    {
+      "id": "H5",
+      "verdict": "CONFIRMED",
+      "reason": "Independent exterior angular ODE, positive limiting derivative and explicit radial factor give global smooth scattering diffeomorphism and exact pullback of far-field density."
+    },
+    {
+      "id": "H6",
+      "verdict": "CONFIRMED CONDITIONAL",
+      "reason": "Finite-Z center-stable manifolds yield at most two incoming trajectories per zero; strict potential and invariant-area argument give a finite tree and the stated criterion. Its finite-Z hypothesis appears removable by the new independent potential-maximum proof38, still under adversarial review."
+    },
+    {
+      "id": "H7",
+      "verdict": "CONFIRMED",
+      "reason": "Odd m forces a sign change of g, hence an escaping point of the opposite density sign. Its interior scattering angle and the nonzero y-axis coefficient force an angular zero."
+    }
+  ],
+  "new_strengthening": {
+    "verdict": "OPEN pending review",
+    "proof": "research/trapped_set_potential/PROOF.md",
+    "statement": "Hdyn iff no interior upper far-field zero, with no finite-equilibrium assumption."
+  },
+  "provenance": "Own referee reconstruction; hdyn1 is another referee report. Actual lead Opus5.5 has independently read Sections1-6. hdyn1 nested Opus attempt failed before invocation; it is not an executed audit."
+}

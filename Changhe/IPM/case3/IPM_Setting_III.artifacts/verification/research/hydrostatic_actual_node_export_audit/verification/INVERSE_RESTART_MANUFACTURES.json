@@ -1,0 +1,200 @@
+{
+  "status": "PASS_PHASE_RESTART_AND_TAMPER_REJECTION",
+  "started_utc": "2026-10-22T02:34:07.513065+00:00",
+  "finished_utc": "2026-10-22T02:34:08.414902+00:00",
+  "elapsed_monotonic_seconds": 0.9018244061153382,
+  "count": 32,
+  "checks": [
+    {
+      "name": "real child terminated bySIGTERM after checkpoint",
+      "passed": true,
+      "evidence": {
+        "returncode": -15,
+        "stdout": "",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "exact32 retained",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "new process resumes and exits",
+      "passed": true,
+      "evidence": {
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "bitwise same arrays indices",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "bitwise same arrays velocity",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "bitwise same arrays Phi",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "bitwise same arrays dV2dy",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "bitwise same arrays tail_velocity",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "bitwise same arrays metadata",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "bitwise same arrays residual",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "bitwise same arrays decomposition",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "completed resume file unchanged",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "wrong binding rejected",
+      "passed": true,
+      "evidence": "snapshot binding/rule/phase/schema mismatch"
+    },
+    {
+      "name": "wrong indices rejected",
+      "passed": true,
+      "evidence": "snapshot index mismatch"
+    },
+    {
+      "name": "wrong rule rejected",
+      "passed": true,
+      "evidence": "snapshot binding/rule/phase/schema mismatch"
+    },
+    {
+      "name": "wrong phase rejected",
+      "passed": true,
+      "evidence": "snapshot binding/rule/phase/schema mismatch"
+    },
+    {
+      "name": "tampered status rejected",
+      "passed": true,
+      "evidence": "snapshot count/status mismatch"
+    },
+    {
+      "name": "tampered completed rejected",
+      "passed": true,
+      "evidence": "invalid completed count"
+    },
+    {
+      "name": "tampered dtype rejected",
+      "passed": true,
+      "evidence": "snapshot array shape/dtype velocity"
+    },
+    {
+      "name": "tampered prefix rejected",
+      "passed": true,
+      "evidence": "nonfinite prefix velocity"
+    },
+    {
+      "name": "tampered suffix rejected",
+      "passed": true,
+      "evidence": "nonempty suffix velocity"
+    },
+    {
+      "name": "tampered ratio rejected",
+      "passed": true,
+      "evidence": "invalid residual ratio prefix"
+    },
+    {
+      "name": "finite corrupted replay row rejected",
+      "passed": true,
+      "evidence": "replayed boundary row differs velocity"
+    },
+    {
+      "name": "selection same content preserves hash",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "changed A archive selection rejected",
+      "passed": true,
+      "evidence": "selection changed, including baseline hash"
+    },
+    {
+      "name": "C resume after selection identical",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "stable verification/independent_code/check_node_export_restart.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "stable independent_code/node_export_checkpoint.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "stable independent_code/node_export_inverse_stage.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "stable independent_code/node_export_arithmetic_strict.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "stable independent_code/node_export_arithmetic.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "stable research/hydrostatic_actual_node_export_audit/INVERSE_RESTART_AND_REVIEW_PROOF.md",
+      "passed": true,
+      "evidence": null
+    }
+  ],
+  "bindings": {
+    "verification/independent_code/check_node_export_restart.py": "6362da397f68fbb68d0677edd0b0d8cfbf2d182e8e4acd7f6d294724be262400",
+    "independent_code/node_export_checkpoint.py": "75a5f256c1a1f2438af39dad1836afb60667eb4a7ab7afa1533fb1dc281fc6fb",
+    "independent_code/node_export_inverse_stage.py": "f281d4a091aa2c912994f198ed716b33b69543048034a6f6625df7f542101905",
+    "independent_code/node_export_arithmetic_strict.py": "eb1ff52158da24b3f6be46e5fea71ae188b9f30951ec6d8ba6f549f1296a8521",
+    "independent_code/node_export_arithmetic.py": "15fe747566e1556cec4d02bcefb681c662faccce17888c22bcc13bb3cd219b43",
+    "research/hydrostatic_actual_node_export_audit/INVERSE_RESTART_AND_REVIEW_PROOF.md": "af2e686d4cb5cc5671248246e5fbf8f4ea5ee72175cdf8d06762219311b00ce2"
+  },
+  "artifact_bindings": {
+    "research/hydrostatic_actual_node_export_audit/verification/restart_manufactures/uninterrupted.npz": "c2d0e7646a21f6e08349dbc94688449d1573d675f56e7302db0e907ea5c09b7e",
+    "research/hydrostatic_actual_node_export_audit/verification/restart_manufactures/resumed.npz": "520f1268162e91f1400c45165d586bfe595bc2a7466e0e5755396a88150ef513",
+    "research/hydrostatic_actual_node_export_audit/verification/restart_manufactures/partial32.npz": "c7ad8b607bca9666cd8d05addabf0c7f400b9943b23b441c7612d7cfe8e96d5e",
+    "research/hydrostatic_actual_node_export_audit/verification/restart_manufactures/tampered_status.npz": "056341bb80bf24efec8dbf58e7bb5caff29ec73506ad8fc843985a1e2c00be9c",
+    "research/hydrostatic_actual_node_export_audit/verification/restart_manufactures/tampered_completed.npz": "8e108b4eff9eb05c961e0a96926c59a69e046c9b109a6c1a2b6e3da20e200e59",
+    "research/hydrostatic_actual_node_export_audit/verification/restart_manufactures/tampered_dtype.npz": "cd5dbe53a8f40b305dfd9223dbe2b15a6b901aa60d1e1c52bfc1f4a2bf9a988b",
+    "research/hydrostatic_actual_node_export_audit/verification/restart_manufactures/tampered_prefix.npz": "bc5c991d0cab166c409fb88f3d73bea81978b7bec579fbd74e1382c5f628f512",
+    "research/hydrostatic_actual_node_export_audit/verification/restart_manufactures/tampered_suffix.npz": "ac213ebd6406cfbc5a9e2a1c32d14860e9c28cad28e6e8f3fe203002f1b13710",
+    "research/hydrostatic_actual_node_export_audit/verification/restart_manufactures/tampered_ratio.npz": "81aa3c6fcb3ba49c5bc47c0ac8f17685da2bd3b46b334423eb1005857e6a6a53",
+    "research/hydrostatic_actual_node_export_audit/verification/restart_manufactures/tampered_boundary.npz": "0580262f1c3b032c54ef7ea62bd4e0ee0c34d320738705f715f15b6156fbb6c9",
+    "research/hydrostatic_actual_node_export_audit/verification/restart_manufactures/SELECTION.json": "115ae62de6df0d6a46832bb0f216c5fe00c52cc2a803be2aed4a31c4c9a4e965",
+    "research/hydrostatic_actual_node_export_audit/verification/restart_manufactures/C.npz": "ccfacd3242c1db292d538a0cd7bc1dc93f488fa7abc45e7375137ed2f90572ab"
+  },
+  "scope": "Synthetic70-point actual kill/resume plus corruption tests. No actual candidate inverse run."
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "kind": "replace",
+    "old_start": 3,
+    "new_start": 3,
+    "before": "Version v48, 2026-10-21T14:51Z (see CHANGELOG). Status markers: [PROVED-lead] = proof written by lead, awaiting verifier+referee;\n",
+    "after": "Version v49, 2026-10-21T15:19Z (see CHANGELOG). Status markers: [PROVED-lead] = proof written by lead, awaiting verifier+referee;\n"
+  },
+  {
+    "kind": "replace",
+    "old_start": 65,
+    "new_start": 65,
+    "before": "    (T2) and (4.1)+(4.2) are local/nonlocal consistency checks a candidate must pass; (T2) is NOT enforced by any solver,\n    so it is the required \"independent check that does not merely reuse the origin constraint\".\n",
+    "after": "    (T2) and (4.1)+(4.2) are local/nonlocal consistency checks a candidate must pass; (T2) is not a row of any solver of\n    the numerics lane, so for its states it is the required \"independent check that does not merely reuse the origin\n    constraint\". [v49, checker 239] The checker's smooth-basis fits include (T1), (T2) as finite-weight penalty rows (not\n    exact enforcement): for those states recompute (T2) independently and use another omitted check (FINAL_REPORT 3.3, d72).\n"
+  },
+  {
+    "kind": "replace",
+    "old_start": 90,
+    "new_start": 92,
+    "before": "    (g_scale has zero y-slope at 0). Global slices: L = 1 (5.4) or K fixed (K_l = l^{1-p} K, d/dl K_l = (1-p)K != 0).\n",
+    "after": "    (g_scale has zero y-slope at 0). Global slices: L = 1 (5.4) or K fixed (K_l = l^{1-p} K, d/dl K_l = (1-p)K != 0); [v49, checker 239] K fixed at a value\n    kappa reaches only the profiles with sign K = sign kappa (no other-sign exclusion is proved); L = 1 covers both signs.\n"
+  },
+  {
+    "kind": "replace",
+    "old_start": 188,
+    "new_start": 191,
+    "before": "      at fixed c_l and a0, with L_can and b L_can^2 invariant; a candidate must reappear at >= 3 values of the slice\n",
+    "after": "      at fixed c_l and a0, with b L_can^2 invariant (L_can itself scales like l; v49, checker 239); a candidate must reappear at >= 3 values of the slice\n"
+  },
+  {
+    "kind": "replace",
+    "old_start": 204,
+    "new_start": 207,
+    "before": " (F7) Jet resonance curves known to degree 13; smallest positive resonant slope at each degree checked >= 4A\n      (degree <= 13 only; general statement open). Report the distance of a0 to the nearest curve.\n",
+    "after": " (F7) Jet resonance curves known to degree 13; [v49, checker 239] for every odd n >= 5 every real resonance has\n      a0 > 4A + n - 5 (FINAL_REPORT 3.9: the checker's all-degree bound; the external audit proved weaker bounds), equality\n      a0 = 4A only at n = 3; fixed top-harmonic hypothesis as in 3.9; the explicit curve list stays finite (degree <= 13). Report the distance of a0 to the nearest curve.\n"
+  },
+  {
+    "kind": "replace",
+    "old_start": 460,
+    "new_start": 464,
+    "before": " (G41) [FORMAL; CONFIRMED (checker 215/216, v4 CONFIRM 12:36Z; strat6; aud26); installed as FINAL_REPORT 3.78 + A.3.78 in draft 66 (12:44Z), installation check requested 12:44Z] Near-axis inner layer of the hydrostatic problem at physical width\n",
+    "after": " (G41) [FORMAL; CONFIRMED (checker 215/216, v4 CONFIRM 12:36Z; strat6; aud26); installed as FINAL_REPORT 3.78 + A.3.78 in draft 66 (12:44Z), installation confirmed] Near-axis inner layer of the hydrostatic problem at physical width\n"
+  },
+  {
+    "kind": "replace",
+    "old_start": 467,
+    "new_start": 471,
+    "before": "      that of b_2 never). Consequence if confirmed: 3.77(b)-(d) are not consequences of matched asymptotics allowing a\n      layer of width y^((p+1)/2); sharpens 3.77(e). Not in report. Next-order solvability not examined (lead expects\n",
+    "after": "      that of b_2 never). Consequence (formal, as installed in FINAL_REPORT 3.78): 3.77(b)-(d) are not consequences of\n      matched asymptotics allowing a layer of width y^((p+1)/2); sharpens 3.77(e). In the report as 3.78 (formal). Next-order solvability not examined (lead expects\n"
+  },
+  {
+    "kind": "replace",
+    "old_start": 470,
+    "new_start": 474,
+    "before": " (G42) [FORMAL (K > 0 and the symmetry g -> -g proved); lead; checks code/chk_neg1-3.py, chk_AE2-3.py; external audit sec379 CONFIRMED WITH REPAIRS 13:21Z (applied in v2); checker 224 confirmed the ODE obstruction independently; checker 226 CONFIRMED v1, v2 and v3 (13:53Z, 97 + 78 + 59 checks); checker 228 (13:50Z, 273 checks) proves the ODE statement independently by Laplace integrals and Abel's identity; INSTALLED as 3.79 + A.3.79 in draft 69 (2026-10-21T13:57Z), installation check requested; draft 70 = v4 (Abel paragraph, statement in (c) labelled proved) prepared in questions/sec379v4, review requested] Signed problem (a0 -> -inf limit of 3.72(e)): (c xi - V_1) g_xi + (c y - V_2) g_y = g. K > 0 also here (proof of A.3.73(a) with\n",
+    "after": " (G42) [FORMAL (K > 0 and the symmetry g -> -g proved); lead; checks code/chk_neg1-3.py, chk_AE2-3.py; external audit sec379 CONFIRMED WITH REPAIRS 13:21Z (applied in v2); checker 224 confirmed the ODE obstruction independently; checker 226 CONFIRMED v1, v2 and v3 (13:53Z, 97 + 78 + 59 checks); checker 228 (13:50Z, 273 checks) proves the ODE statement independently by Laplace integrals and Abel's identity; INSTALLED as 3.79 + A.3.79 in draft 69 (2026-10-21T13:57Z); v4 (Abel paragraph, statement in (c) on the solutions of (1) labelled proved) installed in draft 70 and confirmed (14:36Z); the derivation of the inner problem stays formal] Signed problem (a0 -> -inf limit of 3.72(e)): (c xi - V_1) g_xi + (c y - V_2) g_y = g. K > 0 also here (proof of A.3.73(a) with\n"
+  },
+  {
+    "kind": "insert",
+    "old_start": 482,
+    "new_start": 486,
+    "before": "",
+    "after": "- v49 2026-10-21T15:19Z: checker 239 repairs 1-5 (F2 invariance of L_can, 5.5 sign of the fixed-K slice, 4.3 (T2) penalty rows of the checker's fits, F7 all-degree bound of 3.9, G41/G42 status lines); draft 72 trial (x3b, x3c repairs) built 15:18Z; draft 71 installation CONFIRMED (14:54Z, 27 checks).\n"
+  }
+]

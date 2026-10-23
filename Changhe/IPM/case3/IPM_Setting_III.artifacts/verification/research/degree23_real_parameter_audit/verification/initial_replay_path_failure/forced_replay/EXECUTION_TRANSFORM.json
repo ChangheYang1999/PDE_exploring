@@ -1,0 +1,18 @@
+{
+  "original_sha256": "0bd1361dc495c569b1ccdedc16173efde728e8af13a6ee4512a57beafa1207bf",
+  "executed_sha256": "b9689bdce09fcf5ca605149095cd2813f3f4a6109b77e97a9925d2edc77fc5a3",
+  "substitutions": [
+    [
+      "if out.exists():\n  old=",
+      "if False:\n  old="
+    ],
+    [
+      "out=V/('INDEPENDENT_REAL_'+cid+'.json.gz')",
+      "out=V/'forced_replay'/('INDEPENDENT_REAL_'+cid+'.json.gz')"
+    ],
+    [
+      "(V/'REAL_INDEX.json').write_text",
+      "(V/'forced_replay/REAL_INDEX.json').write_text"
+    ]
+  ]
+}

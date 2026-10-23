@@ -1,0 +1,87 @@
+# Lead check of verifier result 120, part 1: radial equations (3) by polar multiplication, Poisson by mode,
+# 8x8 linearization, characteristic determinant (11), j = 1 kernel (6)-(7). Own derivation; no verifier code.
+import sympy as s
+r,th,c,a,H,j=s.symbols('r th c a H j',positive=True)
+D=c-1
+fs=[s.Function(n)(r) for n in ('f','g','k','T','S','J','K','L')]
+f,g,k,T,S,J,K,L=fs
+dot=lambda e: r*s.diff(e,r)
+mom={s.Derivative(T,r):-g/r, s.Derivative(S,r):(2*S-k)/r, s.Derivative(J,r):(f-4*J)/r,
+     s.Derivative(K,r):(g-6*K)/r, s.Derivative(L,r):(k-8*L)/r}
+def sub(e):
+    e=s.expand(e)
+    for _ in range(3):
+        e=e.subs({s.Derivative(T,(r,2)):s.diff(-g/r,r).subs(mom),s.Derivative(S,(r,2)):s.diff((2*S-k)/r,r).subs(mom),
+                  s.Derivative(J,(r,2)):s.diff((f-4*J)/r,r).subs(mom),s.Derivative(K,(r,2)):s.diff((g-6*K)/r,r).subs(mom),
+                  s.Derivative(L,(r,2)):s.diff((k-8*L)/r,r).subs(mom)})
+        e=e.subs(mom)
+    return s.expand(e)
+u=(T-J)/2; v=(S-K)/2; w=-L/2
+rho=r*(f*s.sin(th)+g*s.sin(3*th)+k*s.sin(5*th))
+psi=r**2*(u*s.sin(2*th)+v*s.sin(4*th)+w*s.sin(6*th))
+# Poisson: -Lap psi = rho_x, rho_x = cos th rho_r - sin th rho_th / r
+lap=s.diff(psi,r,2)+s.diff(psi,r)/r+s.diff(psi,th,2)/r**2
+rhox=s.cos(th)*s.diff(rho,r)-s.sin(th)*s.diff(rho,th)/r
+pois=sub(-lap-rhox)
+pc=[s.simplify(sub(s.integrate(s.expand(s.expand_trig(pois*s.sin(m*th))),(th,0,2*s.pi)))) for m in (2,4,6)]
+pc2=[s.simplify(s.integrate(s.expand(pois.rewrite(s.exp)*s.exp(s.I*m*th)),(th,0,2*s.pi))) for m in range(0,13)]
+print('Poisson modes 2,4,6:',pc,' all Fourier coefficients zero:',all(x==0 for x in pc2))
+Ur=-s.diff(psi,th)/r; Uth=s.diff(psi,r)
+R=(c*r+Ur)*s.diff(rho,r)+Uth/r*s.diff(rho,th)-rho
+R=sub(R)
+fd,gd,kd=[s.Symbol(n) for n in ('fd','gd','kd')]
+Fs=s.symbols('f g k T S J K L')
+rep={**{fs[i]:Fs[i] for i in range(8)}}
+def proj(n):
+    e=s.integrate(s.expand(s.expand_trig(R*s.sin(n*th))),(th,0,2*s.pi))
+    e=s.expand(e/(s.pi*r))
+    e=e.subs({s.Derivative(f,r):fd/r,s.Derivative(g,r):gd/r,s.Derivative(k,r):kd/r})
+    return s.expand(e.subs(rep))
+fS,gS,kS,TS,SS,JS,KS,LS=Fs
+E=[proj(n) for n in (1,3,5)]
+uS=(TS-JS)/2; B=-uS-KS+SS; C=KS-s.Rational(3,2)*LS-SS
+F1=(D+TS)*fS-fS**2/4+fS*gS/2+(-JS+2*KS+4*SS-2*TS)*gS+(-4*KS+6*LS-6*SS)*kS+gS*kS/2
+F3=(JS+2*SS)*fS-fS**2/4-fS*gS/2+(D+3*LS)*gS+(-2*JS-3*TS+fS+gS/2)*kS
+F5=D*kS+(2*JS+TS)*gS+2*KS*fS-fS*gS-fS*kS/2-s.Rational(3,4)*gS**2
+Ev=[(c+uS)*fd+B*gd+C*kd+F1, B*fd+(c-s.Rational(3,2)*LS)*gd-uS*kd+F3, C*fd-uS*gd+c*kd+F5]
+print('radial equations (3):',[s.simplify(E[i]-Ev[i]) for i in range(3)])
+# 8x8 system zY' = Phi(Y), z d/dz = dot/2
+Mm=s.Matrix([[E[i].coeff(x) for x in (fd,gd,kd)] for i in range(3)])
+rest=s.Matrix([s.expand(E[i]-sum(Mm[i,q]*(fd,gd,kd)[q] for q in range(3))) for i in range(3)])
+assert all(s.simplify(Mm[i,q].diff(x))==0 for i in range(3) for q in range(3) for x in (fd,gd,kd))
+Y0={fS:a,gS:0,kS:0,TS:a/4-D,SS:0,JS:a/4,KS:0,LS:0}
+M0=Mm.subs(Y0)
+print('M0:',M0.applyfunc(s.simplify).tolist(),' det M0*8:',s.factor(s.expand(8*M0.det())))
+dots=-Mm.inv()*rest
+Phi=s.Matrix([dots[0]/2,dots[1]/2,dots[2]/2,-gS/2,(2*SS-kS)/2,(fS-4*JS)/2,(gS-6*KS)/2,(kS-8*LS)/2])
+print('Phi(Y0)=0:',all(s.simplify(x.subs(Y0))==0 for x in Phi))
+A=Phi.jacobian(list(Fs)).subs(Y0).applyfunc(s.simplify)
+detc=s.factor(s.simplify((j*s.eye(8)-A).det()))
+Aj=(c+1)*j-a/4; Bj=D*j+2*D-a/4-a/(2*j); Cj=D*j-a/4+a/(2*j+4); Ej=2*c*j+D-a/2
+Vj=(j+3)*(D-a/(4*(j-1))); Wj=(j-1)*(D-a/(4*(j+3)))
+Dj=Aj*(Ej**2-Vj*Wj)-Bj*Cj*Ej
+h3=c**3+9*c**2-c-1
+print('(10):',s.simplify(Bj*Cj-(D**2*j*(j+2)-D*a*(j+1)/2+a**2/16)),s.simplify(Vj*Wj-(D**2*(j+3)*(j-1)-D*a*(j+1)/2+a**2/16)))
+print('(11): det(jI-A) - j(j-1)(j+2)(j+3)(j+4)Delta_j/h3 =',s.simplify(detc-j*(j-1)*(j+2)*(j+3)*(j+4)*Dj/h3))
+Dp=s.Poly(s.expand(Dj),a); print('Delta_j leading in a:',Dp.LC(),' degree',Dp.degree())
+print('Delta_j / j^3 -> ',s.factor(s.limit(Dj/j**3,j,s.oo)))
+# order-j matrix (8): variation of E at Y0 with z^j, dot -> 2j
+fj,gj,kj,e=s.symbols('fj gj kj e')
+var={fS:a+e*fj,gS:e*gj,kS:e*kj,TS:a/4-D-e*gj/(2*j),SS:-e*kj/(2*j-2),JS:a/4+e*fj/(2*j+4),KS:e*gj/(2*j+6),LS:e*kj/(2*j+8),
+     fd:2*j*e*fj,gd:2*j*e*gj,kd:2*j*e*kj}
+rows=[s.expand(s.diff(Ei.subs(var),e).subs(e,0)) for Ei in E]
+Cm=s.Matrix([[s.simplify(rw.coeff(x)) for x in (fj,gj,kj)] for rw in rows])
+C8=s.Matrix([[Aj,Bj,0],[Cj,Ej,Vj],[0,Wj,Ej]])
+print('order-j matrix (8): Cm - C_j =',(Cm-C8).applyfunc(s.simplify).tolist())
+# j = 1 kernel: k1 = 0, S1 = H free, T1 = -g1/2, J1 = f1/6, K1 = g1/8, L1 = 0
+f1,g1=s.symbols('f1 g1')
+v1={fS:a+e*f1,gS:e*g1,kS:0,TS:a/4-D-e*g1/2,SS:e*H,JS:a/4+e*f1/6,KS:e*g1/8,LS:0,fd:2*e*f1,gd:2*e*g1,kd:0}
+r1=[s.expand(s.diff(Ei.subs(v1),e).subs(e,0)) for Ei in E]
+print('order 1, E5 row:',s.simplify(r1[2]))
+Fa=a**2-(4*c+20)*a+128*c-64
+sol=s.solve(r1[:2],[f1,g1],dict=True)[0]
+print('(7):',s.simplify(sol[f1]+24*H*a*(a-4*c+4)/Fa),s.simplify(sol[g1]-8*H*a*(a-4*c-4)/Fa))
+print('(6) rows/2:',[s.simplify(x/2) for x in r1[:2]])
+print('b,e:',s.factor(sol[f1]+3*sol[g1]),' ',s.factor(sol[f1]-sol[g1]))
+# kernel of I - A is one-dimensional
+ker=(s.eye(8)-A).nullspace(); print('dim ker(I-A):',len(ker))

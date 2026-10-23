@@ -1,0 +1,23 @@
+{
+  "utc": "2026-10-22T07:33:33.880619+00:00",
+  "status": "PASS_FINITE_SOURCE_AND_RADIAL_INDEX_INSPECTION",
+  "bindings": {
+    "research/hydrostatic_larger_node_audit/verification/producer_hs_node_check.py": "7d09a4382a99325c387ed0b4b025c3bd2a8833ced77f0bfa417568a70c3a3635",
+    "research/hydrostatic_larger_node_audit/verification/producer_hs_node_check_current_20261022_0728.py": "a193817482491bc03fd45bf92f5dcbae66d3702d8593b6ec81e6acf492084b69",
+    "research/hydrostatic_larger_node_audit/verification/FINAL_ARITHMETIC_CHECKS.json": "a6c7897fc100347d450211cde40c2be372765d17dc85f5cac823bace43da8eb3",
+    "independent_code/larger_node_independent_arithmetic.py": "7de0d12df78873a121614a716d1db1fde48079c2f19a48e7eb054ed323e6a18a",
+    "PROMPT.md": "dd0a2a455db83feabf54889efbeb0c162c0fb3c41ab6adfab66dad149d992241"
+  },
+  "original_and_current_residual_and_median_lines_identical": true,
+  "matching_lines": [
+    "        Rh = (c * X + V1) * gx + (c * Y + V2) * gy - g; Nf = np.abs((c * X + V1) * gx) + np.abs((c * Y + V2) * gy) + np.abs(g)",
+    "            if msk.any(): print(f\"   r in [{lo:g}, {hi:g}): max |R_h| {np.abs(Rh[msk]).max():.3e}   max |R_h|/N_f {(np.abs(Rh) / Nf)[msk].max():.3e}   max N_f {Nf[msk].max():.3e}   median |R_h|/N_f {np.median((np.abs(Rh) / Nf)[msk]):.2e}\")"
+  ],
+  "whole_sources_identical": false,
+  "source_diff": "--- research/hydrostatic_larger_node_audit/verification/producer_hs_node_check.py\n\n+++ research/hydrostatic_larger_node_audit/verification/producer_hs_node_check_current_20261022_0728.py\n\n@@ -38,6 +38,12 @@\n\n             if msk.any(): print(f\"   r in [{lo:g}, {hi:g}): max |R_h| {np.abs(Rh[msk]).max():.3e}   max |R_h|/N_f {(np.abs(Rh) / Nf)[msk].max():.3e}   max N_f {Nf[msk].max():.3e}   median |R_h|/N_f {np.median((np.abs(Rh) / Nf)[msk]):.2e}\")\n         # where is the maximum\n         i = int(np.argmax(np.abs(Rh) / Nf)); print(f\"   argmax |R_h|/N_f at (x, y) = ({X[i]:.4g}, {Y[i]:.4g}), r = {R[i]:.4g}, theta = {np.degrees(np.arctan2(Y[i], X[i])):.2f} deg; R_h {Rh[i]:.3e}, N_f {Nf[i]:.3e}\")\n+        sv = __import__('os').environ.get('HS_SAVE', '')                                               # optional node-level export (added 2026-10-22T05:5xZ for the checker): all arrays at the evaluated nodes\n+        if sv:\n+            import hashlib\n+            np.savez(sv, x=np.asarray(X, float), y=np.asarray(Y, float), V1=V1, V2=V2, g=np.asarray(g, float), g_xi=np.asarray(gx, float), g_y=np.asarray(gy, float), R_h=Rh, N_f=Nf,\n+                     c=float(c), N=int(N), M=int(M), fine=bool(fine), rule=rule, state_file=f, state_sha256=hashlib.sha256(open(f, 'rb').read()).hexdigest(), solver_nodes_Fmax=float(nodeF))\n+            print(f\"   node arrays saved to {sv} (x, y, V1, V2, g, g_xi, g_y, R_h, N_f at all {len(X)} evaluated nodes; sha256 of the state recorded)\")\n \n if __name__ == '__main__':\n     main(sys.argv[1:])",
+  "N192_far_absR_max_index": 9180,
+  "radial_index_zero_based": 191,
+  "angular_index_zero_based": 12,
+  "outermost_radial_ring_index": 191,
+  "scope": "Static source text and checked node index, not historical execution authentication or true-integral accuracy."
+}

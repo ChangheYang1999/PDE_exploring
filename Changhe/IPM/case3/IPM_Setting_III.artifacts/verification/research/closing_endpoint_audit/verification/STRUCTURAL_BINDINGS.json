@@ -1,0 +1,60 @@
+{
+  "status": "CONFIRMED_BY_HAND_STRUCTURAL_SAFEGUARDS",
+  "recorded_utc": "2026-10-22T07:46:25.826762+00:00",
+  "primary_endpoint": "UNRESOLVED",
+  "T_end_reached": false,
+  "method": "By-hand mathematical check; hash and metadata checks only are automated.",
+  "model_checks": [
+    {
+      "label": "design",
+      "model": "claude-opus-5-5",
+      "stop_reason": "refusal",
+      "request_id": "eba13166-1151-4d08-92a2-c2b87777f9bc"
+    },
+    {
+      "label": "focused",
+      "model": "claude-opus-5-5",
+      "stop_reason": "refusal",
+      "request_id": "0ae54780-6f89-4354-962e-d55f1d1c888b"
+    },
+    {
+      "label": "structural_recheck",
+      "model": "claude-opus-5-5",
+      "stop_reason": "end_turn",
+      "request_id": "2bd7f7f2-8e25-42fd-b64b-de2e32a34b42"
+    },
+    {
+      "label": "structural_followup",
+      "model": "claude-opus-5-5",
+      "stop_reason": "end_turn",
+      "request_id": "6d40da9d-3165-4bb4-8267-af8c0e2a7195"
+    }
+  ],
+  "bindings": {
+    "research/closing_endpoint_audit/PROOF.md": "39216a99be119242b874ca96d92d9f508fe004030b300bc1015d9f667f5bd11c",
+    "research/closing_endpoint_audit/PROOF.pre_structural_review.md": "b501c8ae6f0ec95ded6b24c1bbc6f74cb0247b05db609ce8902ccb1db8648e90",
+    "research/closing_endpoint_audit/STRUCTURAL_REVIEW_RESOLUTION.md": "38826db77eb7b4b1bde6b90752df7feebb640639cca4f70cb30560a669207265",
+    "research/closing_endpoint_audit/MODEL_AVAILABILITY.md": "4494959e30c6ef21a59f0db0b6d153d99054d6f5c4b8e0e06950b7180669ff6f",
+    "research/closing_endpoint_audit/STRUCTURAL_RESULTS.md": "6da7074b6cde0cce2e802a354e8dd63bf9087cf8707092f97b1a3aca51c97249",
+    "research/closing_endpoint_audit/verification/opus_design/metadata.json": "ecbfb72de024b23846c775a558ffb7089c8c179c8480db22b1b85d745416e6b3",
+    "research/closing_endpoint_audit/verification/opus_design/answer.md": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "research/closing_endpoint_audit/verification/opus_design/response.json": "5607a3dc7179ec7dbdb6378bc89395f455c50785af9ca2db6d4d1019f6527aba",
+    "research/closing_endpoint_audit/verification/opus_design/request.txt": "f24be73c07724381ffbd1a8d2d4595833a0d171eb5d038157c8494a4fcfa219b",
+    "research/closing_endpoint_audit/verification/opus_focused/metadata.json": "06e3ca80cc73d9991346a735a00c0747d2ff51ca8196faae7324a36b0c4ce6f7",
+    "research/closing_endpoint_audit/verification/opus_focused/answer.md": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "research/closing_endpoint_audit/verification/opus_focused/response.json": "8165c4b1b1a8b10e4527b7840cb7edf9375d547916268bc3fec3832d0dc33da2",
+    "research/closing_endpoint_audit/verification/opus_focused/request.txt": "fc4fa107e09ddad1ef1681b80e9010ba4f112030678c0c6a6822da78cde3ed0e",
+    "research/closing_endpoint_audit/verification/opus_structural_recheck/metadata.json": "4a75b1847b9836eb7ff4bd1da302f8ab7248beb70ff55757d26b57b3afaa421c",
+    "research/closing_endpoint_audit/verification/opus_structural_recheck/answer.md": "26b52d336cf708ebad7f809e2002e2919e7c4594b96236bbc0a63e697800e50c",
+    "research/closing_endpoint_audit/verification/opus_structural_recheck/response.json": "f601d0c2f2469b82f3d5a27e198e492fb32ab5623c2ef1fccffad934478b2adf",
+    "research/closing_endpoint_audit/verification/opus_structural_recheck/request.txt": "32744d0f597f4a14fb287ff1565b23d319d9cee3c42517b537e2b21400a08b7e",
+    "research/closing_endpoint_audit/verification/opus_structural_followup/metadata.json": "4b8a92046436d0fccdfaa9d6bd3610fdbecbe5ba1a82ea7d78d0dfec2312b787",
+    "research/closing_endpoint_audit/verification/opus_structural_followup/answer.md": "053b1a0dae854900495a69794408f7798be6504910c6b5d9263bc531eaa907c0",
+    "research/closing_endpoint_audit/verification/opus_structural_followup/response.json": "83ac45b5e7101429bade78de8ec58d7c6e42831793465cbe4953d129c0686666",
+    "research/closing_endpoint_audit/verification/opus_structural_followup/request.txt": "7e38b131cb9334a375f2cf17ab288c469af6ab8acdb1dc1d50ebb6847c0575e9",
+    "research/inverse/PROOF.md": "020549666a06249e2a68ffc105e6f787bbc2053e8b1cf2fa50c1b157837e6439",
+    "research/origin/PROOF.md": "c3dd7ed2930217d7a41a69b2dd37efd80a0a7ba7479f39dc79bb948050ae535b",
+    "research/scaling/PROOF.md": "b1351a9436efda071cb670963020505ad81f6ab0387d5ed9d4afcd42b51fdd1d",
+    "research/physical_scaling/PROOF.md": "203de11ac66e92a7bc1193609906d6062db79ef22815260283a1281912c65d47"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "utc": "2026-10-21T02:58:49.601092+00:00",
+  "status": "FAIL",
+  "stage": "quick gate, dilation modal_rows",
+  "error": "ValueError: non-broadcastable output operand with shape (6,) does not match broadcast shape (4,6)",
+  "cause": "chebvander of a scalar retains a leading length-one axis; adding another axis made radial three-dimensional",
+  "repair": "reshape the scalar Chebyshev row to one dimension before the angular outer product",
+  "original_sha256": "3256dffbf2a3f948c1b62febe8977bddac9c331fdfd9776d1dc6f19faa9b6098"
+}

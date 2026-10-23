@@ -1,0 +1,7 @@
+ref runs/r1C_cl3.0_N128.pt: L=1.0 gK=20.0 |F|2=4.972252e-04 max=3.765e-05 a0=21.8044035715 c=-1.9999998977
+  same u in the model with L=0.5: |F|2=4.972252e-04 max|F - F_ref|=0.000e+00 a0=21.8044035715 c=-1.9999998977  (covariance: identical up to rounding)
+  same u in the model with L=2.0: |F|2=4.972252e-04 max|F - F_ref|=0.000e+00 a0=21.8044035715 c=-1.9999998977  (covariance: identical up to rounding)
+segment ref -> runs/r1C_cl3.0_N128_Lh.pt (its own L=0.5, gK=20.0): |F|2 at the other endpoint evaluated in the ref model = 4.1866e-04 (its own log: see runs); |u1-u0|/|u0| = 9.310e-01
+   t: |F|2 = 0.00:4.972e-04(a0 21.804) 0.10:8.019e-04(a0 21.814) 0.25:1.412e-03(a0 21.829) 0.50:1.831e-03(a0 21.855) 0.75:1.399e-03(a0 21.880) 0.90:7.655e-04(a0 21.895) 1.00:4.187e-04(a0 21.905)
+segment ref -> runs/r1C_cl3.0_N128_L2.pt (its own L=2.0, gK=20.0): |F|2 at the other endpoint evaluated in the ref model = 6.5806e-04 (its own log: see runs); |u1-u0|/|u0| = 2.155e+00
+   t: |F|2 = 0.00:4.972e-04(a0 21.804) 0.10:1.363e-02(a0 21.851) 0.25:2.837e-02(a0 21.920) 0.50:3.783e-02(a0 22.036) 0.75:2.837e-02(a0 22.151) 0.90:1.363e-02(a0 22.221) 1.00:6.581e-04(a0 22.267)

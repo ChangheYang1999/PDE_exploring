@@ -1,0 +1,20 @@
+=== conditioning of the coefficient -> mode-value map A_k (singular values) ===
+64x16 cheb : k=0: 8.3e+00/5.7e+00 (cond 1.5e+00); k=4: 5.9e+00/4.0e-10 (cond 1.5e+10); k=8: 5.8e+00/6.5e-16 (cond 9.0e+15); k=12: 5.8e+00/1.7e-16 (cond 3.5e+16); k=15: 5.8e+00/7.1e-17 (cond 8.2e+16)
+64x16 local: k=0: 8.3e+00/5.7e+00 (cond 1.5e+00); k=4: 5.9e+00/4.7e-08 (cond 1.2e+08); k=8: 5.8e+00/1.9e-11 (cond 3.0e+11); k=12: 5.6e+00/4.7e-13 (cond 1.2e+13); k=15: 5.6e+00/1.6e-13 (cond 3.4e+13)
+128x32 cheb : k=0: 1.2e+01/8.0e+00 (cond 1.4e+00); k=4: 8.3e+00/2.3e-12 (cond 3.7e+12); k=8: 8.2e+00/1.9e-16 (cond 4.3e+16); k=12: 8.1e+00/6.4e-17 (cond 1.3e+17); k=31: 8.1e+00/6.3e-20 (cond 1.3e+20)
+128x32 local: k=0: 1.2e+01/8.0e+00 (cond 1.4e+00); k=4: 8.3e+00/2.7e-10 (cond 3.1e+10); k=8: 8.2e+00/4.4e-16 (cond 1.9e+16); k=12: 8.1e+00/1.0e-16 (cond 7.7e+16); k=31: 7.8e+00/1.7e-17 (cond 4.7e+17)
+=== manufactured field (verifier 151) with the local basis ===
+48x12 cheb : c -0.250000000000 max|rho_tau_d - exact| 7.86e-14 | jets rho: 1.0000000000 -1.5000000000 -1.5000000000 (1, -3/2, -3/2); jets rho_tau: +4.0e-16 1.1249999997 0.1250000003 (0, 9/8, 1/8); d f 0.2499999999 0.2499999999; I_0 +0.00e+00 (0) ; proj defect 7.2e-16
+48x12 local: c -0.250000000000 max|rho_tau_d - exact| 7.79e-14 | jets rho: 1.0000000000 -1.5000000000 -1.5000000000 (1, -3/2, -3/2); jets rho_tau: -3.8e-16 1.1249999997 0.1250000003 (0, 9/8, 1/8); d f 0.2499999999 0.2499999999; I_0 +0.00e+00 (0) ; proj defect 7.2e-16
+64x16 cheb : c -0.250000000000 max|rho_tau_d - exact| 2.60e-15 | jets rho: 1.0000000000 -1.5000000000 -1.5000000000 (1, -3/2, -3/2); jets rho_tau: -1.1e-15 1.1250000000 0.1250000000 (0, 9/8, 1/8); d f 0.2500000000 0.2500000000; I_0 +0.00e+00 (0) ; proj defect 1.1e-15
+64x16 local: c -0.250000000000 max|rho_tau_d - exact| 2.79e-15 | jets rho: 1.0000000000 -1.5000000000 -1.5000000000 (1, -3/2, -3/2); jets rho_tau: -4.2e-16 1.1250000000 0.1250000000 (0, 9/8, 1/8); d f 0.2500000000 0.2500000000; I_0 +0.00e+00 (0) ; proj defect 8.9e-16
+=== field round trip with random coefficients (local basis) ===
+64x16: field defect 9.25e-05 / 4.41e+01; max|u1-u0| 3.79e-01; max|u0| 3.51e+00
+128x32: field defect 5.19e-04 / 9.63e+01; max|u1-u0| 2.03e+00; max|u0| 4.14e+00
+=== Jacobian spectrum with the local basis ===
+64x16 const: c_w 0.12500 |rho_tau|inf 1.280e-02; spectral radius 4.971e+03, max Re +8.523e+01, #Re>1e-10 664 of 920, max|J| 1.59e+08
+   leading: +8.523e+01+0.000e+00j +3.817e+01+0.000e+00j +8.650e+00+0.000e+00j +3.447e+00+4.928e+00j +3.447e+00-4.928e+00j +2.267e+00+0.000e+00j
+64x16 runs/r1C_cl3.0_N64.pt: c_w 1.00000 |rho_tau|inf 5.446e-03; spectral radius 1.043e+05, max Re +1.730e+03, #Re>1e-10 764 of 920, max|J| 5.94e+09
+   leading: +1.730e+03+0.000e+00j +6.318e+02+0.000e+00j +1.653e+02+0.000e+00j +2.935e+01+5.396e+01j +2.935e+01-5.396e+01j +1.557e+01+8.151e+00j
+96x24 const: c_w 0.12500 |rho_tau|inf 1.280e-02; spectral radius 3.716e+13, max Re +1.021e+13, #Re>1e-10 1008 of 2052, max|J| 6.88e+16
+   leading: +1.021e+13+0.000e+00j +4.784e+11+0.000e+00j +2.363e+11+0.000e+00j +4.117e+09+0.000e+00j +8.266e+08+0.000e+00j +2.010e+07+0.000e+00j

@@ -1,0 +1,15 @@
+# Audit of the resolved-map paragraph proposed for Section4.10
+
+Written before the checker. This is a finite numerical-evidence audit; it asserts no existence or nonexistence theorem. The exact proposed paragraph and producer logs/code are frozen under verification. The field and inverse evaluations are our own completed result227, which did not execute or reuse the producer evaluator. Static code inspection here checks only the description of the method and its provenance.
+
+For a saved state g, the auxiliary hydrostatic velocity is V1(x,y)=-int_y^infinity g_x(x,t)dt and V2(x,y)=int_0^y t*g_xx(x,t)dt+y*int_y^infinity g_xx(x,t)dt on the upper quadrant, with parity extension. Its residual is R_h=(c*x+V1)g_x+(c*y+V2)g_y-g and N_f=abs((c*x+V1)g_x)+abs((c*y+V2)g_y)+abs(g). Ratios with zero denominator are undefined. We compare the reported maximum against the already verified values on774common physical sample points at radii1e-5 through1e4, including the vertical axis. The resulting maximum is a finite sample statistic. Changed quadrature rules and independent Cartesian derivatives support its reported digits; they give no uniform bound off that set. The stored exact cubic coefficients give E=e/a, B=b, and delta=c+int_0^infinity g_xx(0,t)dt-1. The paragraph's rounded values must be checked against these quantities, not the producer's finite-difference estimates.
+
+There is one literal issue in the method wording. The actual inner quadrature uses a24-point Gauss rule on[0,min(1,y)] and8-point Gauss on each equal subinterval in log(t) from0 tolog(y), for y>1. The common number of logarithmic panels is
+
+    n=ceil(4*log10(max(y_max,10))).
+
+Thus a row with y>1 has n/log10(y) panels per decade, which is at least4 but varies with y. It is not a fixed number of points per decade across the rows. Its physical nodes cover geometric scales and its Jacobian is dt=t*dlog(t); for y<=1 the logarithmic intervals have zero length. The description should say uniformly spaced logarithmic panels, or at least4panels per decade, rather than a fixed number of points per decade. Merely having geometric panels does not prove that every feature on every scale is resolved, so the unqualified phrase resolves all scales should also be avoided. This changes no reported number.
+
+The three frozen logs show c=3, sizes64x16,96x24,128x32, simple starts, radius-scaled finite-difference steps, inner=log and maxit60. Each terminates by line-search failure before the cap. The finite iteration histories therefore justify the word stalls. Their E values and sampled residual maxima are distinct and not settled at the quoted precision. This supports the finite observation that these particular runs continue to stall with changing coefficients after the quadrature change. It does not exclude another start, better nonlinear algorithm, subsequent resolution convergence, or a full-plane IPM solution.
+
+The proposed replacement wording retains all numbers and narrows only the quadrature description and finite-run conclusion. It will be stored separately and checked against the original word changes; the lead owns any eventual installation.

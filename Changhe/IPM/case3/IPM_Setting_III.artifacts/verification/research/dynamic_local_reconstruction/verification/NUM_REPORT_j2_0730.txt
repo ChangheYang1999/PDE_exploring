@@ -1,0 +1,15 @@
+    Spreads across all eight variants: c and c_w 2e-7 (tau = 5), 5e-6 (10), 7e-5 (15), 1.9e-3 (20) relative; the exterior strain moments I_1, I_10, I_100 agree
+    to 4 digits at every time and every variant; the strain identity c = -a0/4 + I_0 holds to 1e-8 .. 1e-15 (the duplicate-function bug of (d3) is gone);
+    the time-step runs (0.094 / 0.02 / 0.01) agree to 7 digits in c, a0*, e_c/a0 and to 2e-3 in b_c/a0 at tau = 20 (runs/drZ_C3_N64_stepcheck.txt).  The
+    exterior density contributes to the strain I_1 = +0.135 against -a0/4 = -0.25 and c = -0.0333 at tau = 20: the drift of c_w is carried by the far field
+    (I_1 grows while the centre term is fixed), as the lead's 06:09Z request anticipated.  Sampled between-node maxima of rho* = rho/c_w (128x32; regions
+    r < 0.1, 0.1-1, 1-100, > 100): max |R*| = 0.090 0.81 0.82 0.28 and max N_f* = 1.42 8.5 50 585 at tau = 0; 0.137 6.3 23.6 11.4 and 5.45 22.6 184 2190 at
+    tau = 10; 0.196 15.6 95 53 and 11.2 49 370 4390 at tau = 20: nowhere near a steady state (|R*|/N_f* 0.018 .. 0.61 at tau = 20).
+    (j2) Fixed-point probes (DR state rho, rho_x, rho_y, U_1, U_2 at exact times; runs/drY_probes.txt): at tau <= 10 the three sizes agree to 6 .. 7 digits at
+    all five points, including (6, 8) and (30, 40); at tau = 20 the core point (0.5, 0.5) agrees to 1e-4 (rho 0.37283 / 0.37277 / 0.37276) and (30, 40) to
+    1e-5, but the annulus points differ: at (0, 3) rho = 0.8227 / 0.8416 / 0.8441 (2.3 percent between 64 and 96, 0.3 percent between 96 and 128), rho_y =
+    0.0781 / 0.0913 / 0.0943, U_2 = -0.0633 / -0.0828 / -0.0853; at (6, 8) rho_x = +0.0037 / -0.0167 / -0.0081 (sign change).  Cutoff and basis variants at
+    the same size agree at (0, 3) to 5 .. 6 digits.  So at tau = 20 the annulus 1 <= r < 10 is resolved to about 0.3 percent at 128x32 and not at 64x16,
+    consistent with the verifier's projection defects (result 167) and with (e).
+    (j3) Departure from the 64x16 stall state under time-step refinement (dtau = 0.0115, 0.00575, 0.002875; runs/drZ_steprefine.txt): the |rho_tau| traces
+    agree to 3 .. 4 digits up to tau = 0.8 and the growth rate between tau = 0.1 and 0.5 is 15.49, 15.52, 15.52.  The departure is therefore time-step
