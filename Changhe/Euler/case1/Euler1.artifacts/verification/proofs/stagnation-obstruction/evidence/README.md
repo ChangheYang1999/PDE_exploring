@@ -1,0 +1,1 @@
+The lead proposed claim L1 in EQUATIONS.md v1, snapshot recorded in ../../../evidence/equations_snapshot.json. This independent proof replaces the inverse-flow estimate with a direct vorticity norm inequality and proves the local null-graph lemma. Numerical data do not prove this theorem.

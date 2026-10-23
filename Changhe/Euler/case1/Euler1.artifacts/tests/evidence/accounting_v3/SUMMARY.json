@@ -1,0 +1,25 @@
+{
+ "test": "accounting_version 3: one unmerged work interval per optimizer step / validation pass",
+ "run_utc": "2026-10-23T08:19:38Z",
+ "records": 1,
+ "n_intervals": 13,
+ "active_seconds": 7.78,
+ "sum_interval_lengths": 7.78,
+ "inter_interval_gaps_s": [
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.002,
+  0.0,
+  0.0,
+  0.001,
+  0.0,
+  0.0,
+  0.0,
+  0.0
+ ],
+ "max_gap_s": 0.002,
+ "campaign_ledger_touched": false,
+ "command": "python3 train.py --exp tests/evidence/lbfgs_resume_test_config.json --device cuda:0 --run-root tests/evidence/accounting_v3 --max-steps 12 --ignore-global-stop --ledger-path tests/evidence/accounting_v3/test_ledger.jsonl"
+}

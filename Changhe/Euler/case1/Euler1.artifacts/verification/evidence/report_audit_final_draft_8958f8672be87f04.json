@@ -1,0 +1,257 @@
+{
+  "date_utc": "2026-10-23T07:41:17.398340+00:00",
+  "report_sha256": "8958f8672be87f0444312a1884555a4ebe8d8cf6daf78be53c650eb19f12023e",
+  "report_snapshot": "snapshots/REPORT-final-8958f8672be87f04.md",
+  "status": "FINAL STATUS NOT VALIDATED",
+  "reason": "Pre-audit of final draft: semantic repairs and final post-stop snapshot required.",
+  "checks": [
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "0,3",
+      "claim": "L2 statement, proof and primary coverage",
+      "result": "The exact C2, uniformly sublinear theorem and its decay corollary are confirmed in the versioned theory audit. Constant axial recentering is removed by translation. No stagnation, symmetry, axis vorticity or angular-tail restriction is added.",
+      "verdict": "CONFIRMED",
+      "evidence": "THEORY_V3_AUDIT.md; SCOPE_AUDIT.md"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "3.2",
+      "claim": "Seven-step proof outline",
+      "result": "Global trapping, strict Bernoulli decrease, vorticity transport, exceptional spectra, singleton backward limit, null graphs and harmonic Liouville all agree with the complete independently checked proof.",
+      "verdict": "CONFIRMED",
+      "evidence": "research/uncountable-stagnation/PROOF.md; THEORY_V3_AUDIT.md"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "3.3,3.4",
+      "claim": "Limits of L2 and endpoint examples",
+      "result": "c=1/2 and c>1/2 are not covered; the affine examples demonstrate proof failure outside sublinearity, not decaying endpoint counterexamples. Raywise-only decay and alternate ansatzes are not excluded. No novelty, formal-verification, stability or blowup claim is made.",
+      "verdict": "CONFIRMED",
+      "evidence": "HOSTILE_THEORY_AUDIT.md; SCOPE_AUDIT.md"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "3.5",
+      "claim": "Positive qualitative residual floor",
+      "result": "For fixed c,K and all stated global bounds, pressure reconstruction and compactness give a positive uncomputed absolute global floor. Uniform control of second derivatives is needed for this compactness argument; a D3 bound is a sufficient form. No sampled relative threshold follows.",
+      "verdict": "CONFIRMED",
+      "evidence": "FLOOR_AUDIT.md; research/compact-residual-floor/PROOF.md"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "3.6",
+      "claim": "Independent proof and review history",
+      "result": "Complete independent proofs and the actual lead Opus5.5 review are preserved; the hostile-review repairs were rechecked. This is written mathematics and a bounded source search.",
+      "verdict": "CONFIRMED",
+      "evidence": "UNCOUNTABLE_AUDIT.md; THEORY_V3_AUDIT.md; HOSTILE_THEORY_AUDIT.md"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "0",
+      "claim": "49 evaluated checkpoints and numerical rejection",
+      "result": "All 49 table hashes identify preserved checkpoints and agree with evaluation evidence. Worst momentum ranges 0.14625103764046682 to 0.3331640990216087, well above 1e-3. The selected strict-primary checkpoint is f47c4600fc4e6356 at step3000.",
+      "verdict": "CONFIRMED",
+      "evidence": "evidence/report0732-numeric-audit.json"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "0,5",
+      "claim": "Frozen training and combined interval enclosures",
+      "result": "51 records: 0.730806090861894 to 0.911348056726986 h credited training union. With 78 closed validation intervals: 0.775419116845068 to 0.955961082710160 h. Arithmetic agrees with the lead to roundoff. These are credited elapsed pieces, not bounds on all eligible work.",
+      "verdict": "CONFIRMED",
+      "evidence": "evidence/report0732-numeric-audit.json"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "0,5,8",
+      "claim": "96-hour noncompletion and early-closure scope",
+      "result": "The primary obstruction exception is applicable under the audited scope. The report explicitly leaves secondary questions and numerical milestones unfinished and gives the actual primary-obstruction reason. Neither the numerical milestones nor 96 hours are claimed.",
+      "verdict": "CONFIRMED",
+      "evidence": "SCOPE_AUDIT.md; PROMPT.md"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "0",
+      "claim": "Required-question quantitative answers",
+      "result": "47 worst momentum regions are shell1_2 and two are shell0.25_1. Ring n2 range 0.3543373 to 0.6868158; tail ranges agree with frozen evidence to displayed rounding.",
+      "verdict": "CONFIRMED",
+      "evidence": "evidence/report0732-numeric-audit.json"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "0,8",
+      "claim": "No exact profile / no candidate exists",
+      "result": "Zero is an exact decaying profile. Change every unqualified no-exact-profile assertion to no nonzero exact decaying profile, and every no-candidate-exists assertion to no acceptable candidate was found. Approximate candidates are not ruled out by L2.",
+      "verdict": "REFUTED",
+      "evidence": "snapshots/REPORT-final-8958f8672be87f04.md"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "0,4",
+      "claim": "Only constraints and no nondegeneracy penalty",
+      "result": "The source has lambda_amp=1 times (smooth_max_norm(U)-1)^2, a soft amplitude constraint that prevents trivial collapse. Say no additional anti-axisymmetry penalty was used, while retaining this soft scale surrogate. The architecture also imposes envelope restrictions and a pressure-at-infinity gauge.",
+      "verdict": "REFUTED",
+      "evidence": "../e1-num/project/euler_ss/losses.py; RUNTIME_REPAIR_AUDIT.md"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "1",
+      "claim": "Ansatz, c_l and tail conventions",
+      "result": "Equation signs, constant axial translation, d range and the nonzero-tail L2 power count agree with independent derivations. The physical blowup-time tail statement is a conditional formal matching statement, not a constructed finite-energy evolution.",
+      "verdict": "CONFIRMED",
+      "evidence": "EQUATIONS_V15_AUDIT.md; research/profile-identities/PROOF.md"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "1",
+      "claim": "33 symbolic checks",
+      "result": "This count is explicitly attributed to the lead check log; independent equation audits are separately identified.",
+      "verdict": "CONFIRMED",
+      "evidence": "../e1-lead/verify/check_equations.out; EQUATIONS_V15_AUDIT.md"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "2",
+      "claim": "Primary-method attribution and unused optimizers",
+      "result": "Local R1/R2 primary versions support the stated transferable ideas. Only Adam campaign steps are evidenced; planned standard LBFGS is not SS-Broyden or SS-eSOAP. R3 restrictions have additional hypotheses.",
+      "verdict": "CONFIRMED",
+      "evidence": "sources/METHOD_AUDIT_R2_R4.md; SOURCE_NOTES.md"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "4,7",
+      "claim": "Representation symmetry, smoothness, tail limits",
+      "result": "Curl and Q projection are exact at the representation level, with FP64 numerical evaluation. Nonzero first-layer radial weights imply generic logarithmic saturation. Add that qualification in section4 as already done in section7. The second representation still needs the intervening degree d-2 term to cancel.",
+      "verdict": "CONFIRMED",
+      "evidence": "research/radial-feature-tails/PROOF.md; research/bounded-tail-expansion/PROOF.md"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "4",
+      "claim": "Training loss and gauge",
+      "result": "Region-stratified MSE differs from physical L2. The amplitude term uses the finite-point 2p-norm smooth surrogate with p=8, not a resolved global maximum. Call it a soft sampled smooth-maximum surrogate; its global gauge fidelity is not established.",
+      "verdict": "OPEN",
+      "evidence": "../e1-num/project/euler_ss/losses.py; EQUATIONS_AUDIT.md"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "4,5",
+      "claim": "Started branches and Adam stages",
+      "result": "All evaluated models are M1 with fixed c_l. Other seed families are configured or queued. Step counts in the execution table concern the frozen training snapshot, not selected best checkpoints. Final post-stop values still require refresh.",
+      "verdict": "OPEN",
+      "evidence": "snapshots/report0732-CAMPAIGN_LEDGER.frozen-1ed5a4c6404ab225.jsonl"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "5",
+      "claim": "Training stopped and artifacts are final",
+      "result": "The 07:35 draft says training continued until the queue was stopped. At this audit the stop/final-ledger confirmation is pending. Replace the report snapshot after graceful stop and remaining checkpoint evaluations.",
+      "verdict": "OPEN",
+      "evidence": "../e1-num/RUN_STATUS.md; VALIDATOR_STATUS.json"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "6",
+      "claim": "Independent method and decoder tests",
+      "result": "32 calibration tests and nine synthetic decoder configurations passed. The finite-difference evaluator does not import trainer residual code. Matched old and repaired norms agree for the explicitly recorded versions.",
+      "verdict": "CONFIRMED",
+      "evidence": "CHECKPOINT_INTERFACE.md; evidence/unit_tests.json; evidence/checkpoint_decoder_tests.json; REFERENCE_COMPARISON_AUDIT.md"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "6",
+      "claim": "Best by representation and exponent table",
+      "result": "All 12 displayed best choices, saved steps, worst regions and nonlinear tail values match the 49-checkpoint frozen evidence.",
+      "verdict": "CONFIRMED",
+      "evidence": "evidence/report0732-numeric-audit.json"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "6",
+      "claim": "Selected residuals and geometry",
+      "result": "Momentum, vorticity, pressure, angular fractions, derivative Gram fraction, Taylor defects, cylindrical RMS, local stretching, located roots and tail values agree with the selected immutable record.",
+      "verdict": "CONFIRMED",
+      "evidence": "evidence/report0732-numeric-audit.json"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "6",
+      "claim": "Divergence below threshold everywhere",
+      "result": "The numerical bound is on every sampled region, not everywhere in R3. Rewrite as relative RMS below 1.5e-12 in every sampled region. Exact analytic curl cancellation is a separate representation statement.",
+      "verdict": "REFUTED",
+      "evidence": "evidence/checkpoint-f47c4600fc4e6356-b401c544dd-d33806fc.json"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "6",
+      "claim": "Angular energies agree to 3e-5",
+      "result": "The 32/64-angle core velocity energy difference is 3.02924e-5 in absolute energy units, about 1.042e-4 relative. Explicitly call the displayed 3e-5 absolute; it is not a relative accuracy bound.",
+      "verdict": "OPEN",
+      "evidence": "evidence/checkpoint-f47c4600fc4e6356-b401c544dd-d33806fc.json"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "6",
+      "claim": "Whole-space finite quadratures",
+      "result": "The two checkpoint comparisons and rounded residual numbers match. Three targets, radius256, two resolutions, and missing exterior/quadrature certification are disclosed.",
+      "verdict": "CONFIRMED",
+      "evidence": "evidence/whole-space-998d429a7b0387d0.json; evidence/whole-space-88c0f47198ccbe4c.json"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "6",
+      "claim": "Comparable-budget control comparison",
+      "result": "The fixed-c control is a descriptive sampled comparison. No matched-budget experimental design was completed. State that costs and stopping steps differ, or omit comparable budgets.",
+      "verdict": "OPEN",
+      "evidence": "snapshots/REPORT-final-8958f8672be87f04.md"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "0,6",
+      "claim": "Tail screen of 1e-2",
+      "result": "This is the verifier diagnostic screen, not a prompt-prescribed universal threshold or a proven sufficient criterion. Identify it as our diagnostic screen.",
+      "verdict": "OPEN",
+      "evidence": "validation/report.py; PROMPT.md"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "7",
+      "claim": "Seed, homogeneous-tail and false-solution claims",
+      "result": "Seed imbalance, non-irrotational homogeneous leading tail and trace-free affine family have standalone proofs and calibration evidence. Numeric collapse diagnostics do not establish global completeness.",
+      "verdict": "CONFIRMED",
+      "evidence": "research/seed-family/PROOF.md; research/irrotational-leading-tail/PROOF.md"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "7",
+      "claim": "Rounded lower bound on affine remainder",
+      "result": "Minimum is 0.3286623468665186. Replace at least 0.33 by about 0.33 or at least 0.328; do not round a lower bound upward. The 88 percent and 0.098 lower bounds are conservative.",
+      "verdict": "REFUTED",
+      "evidence": "evidence/report0732-numeric-audit.json"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "7,9",
+      "claim": "Runtime repairs and remaining defects",
+      "result": "The repaired disjoint norm, C factor, LBFGS reset and model reload are distinguished from remaining stage-transition, full rollback and eligibility-accounting defects. Exact resume is correctly limited to tested cases.",
+      "verdict": "CONFIRMED",
+      "evidence": "RUNTIME_REPAIR_AUDIT.md"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "8",
+      "claim": "Incomplete refinements and secondary questions",
+      "result": "No free exponent, systematic refinement, other seed-family execution, LBFGS campaign stage or c>1/2 search is evidenced. The decision to stop secondary work is explicit and does not label those tasks proved.",
+      "verdict": "CONFIRMED",
+      "evidence": "DELIVERABLES_AUDIT.md; SCOPE_AUDIT.md"
+    },
+    {
+      "date_utc": "2026-10-23T07:41:17.398340+00:00",
+      "section": "9",
+      "claim": "Frozen artifacts and continuation semantics",
+      "result": "The pre-final snapshot is now frozen in both lanes. Final checkpoint/ledger hashes are pending. The current resume script restores the existing queue; it does not by itself add any c_l>1/2 experiment. Keep the literal continuation claim limited to the actual queue.",
+      "verdict": "OPEN",
+      "evidence": "../e1-num/project/bin/resume.sh; ../e1-num/project/STATE.json"
+    }
+  ]
+}

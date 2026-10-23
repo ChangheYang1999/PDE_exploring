@@ -1,0 +1,48 @@
+{
+  "observed_utc": "2026-10-23T06:46:37.978291+00:00",
+  "ledger": {
+    "records": [
+      {
+        "interval_start": 0,
+        "interval_end": 2,
+        "active_seconds": 1
+      },
+      {
+        "interval_start": 0,
+        "interval_end": 1,
+        "active_seconds": 1
+      }
+    ],
+    "source_sha256": "06e47f50bba8b39a801977596ace0f263273eb0ae70e3470fc361e2ed5a08692",
+    "density_estimate": 1.5,
+    "covered_wall_seconds": 2.0,
+    "true_union_if_A_active_first_second": 1.0,
+    "true_union_if_A_active_second_second": 2.0,
+    "conclusion": "Identical records allow different true unions. Density estimate can overcount or undercount."
+  },
+  "weights": {
+    "true_physical_ratio": 0.7071067811865476,
+    "overlapping_sampler_ratio": 0.816496580927726,
+    "relative_change": 0.15470053837925146,
+    "conclusion": "Overlapping physical weights do not cancel in a residual ratio."
+  },
+  "state_dict_alias": {
+    "checkpoint_before_mutation": 1.0,
+    "saved_tensor_became_nan": true,
+    "reloading_alias_restored_finite": false,
+    "independent_copy_remained_finite": true
+  },
+  "retained_batch_resume": {
+    "max_current_batch_difference": 0.8371898315429552,
+    "conclusion": "Saving only the post-draw RNG state cannot recreate the batch retained across a resampling block."
+  },
+  "drift_normalization": {
+    "C": 2.0,
+    "dzU_norm": 3.0,
+    "correct_drift_norm": 6.0,
+    "twice_scaled_drift_norm": 12.0,
+    "scope": "Current runs use C=0, so this source defect is dormant in those runs."
+  },
+  "all_counterexamples_reproduced": true,
+  "scope": "Source-defect counterexamples, not Euler experiments; these seconds are not counted in the numerical campaign."
+}

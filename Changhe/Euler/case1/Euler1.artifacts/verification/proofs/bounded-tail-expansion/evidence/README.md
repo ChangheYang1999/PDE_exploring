@@ -1,0 +1,1 @@
+The exact v2 source snapshot is registered in ../../../evidence/model_v2_source_snapshot.json. Decoder tests are in ../../../evidence/checkpoint_decoder_tests.json. The asymptotic argument is analytical; these implementation checks are separate evidence.

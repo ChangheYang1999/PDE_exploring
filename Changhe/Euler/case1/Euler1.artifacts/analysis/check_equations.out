@@ -1,0 +1,34 @@
+PASS 1.1 similarity reduction (E) (concrete field, 4 points)
+PASS 1.2 similarity reduction (E_C), z_c = z_* + (C/c)tau^c (concrete field, 4 points)
+PASS 1.3a div R_m = delta + V.grad delta + tr(G^2) + Lap P
+PASS 1.3a R_P = -div R_m + delta + V.grad delta
+PASS 1.3b curl R_m = R_omega + delta Omega
+PASS 1.3c Bernoulli: (1-2c)V + Omega x V + grad H = R_m
+PASS 1.3c V.grad H = (2c-1)|V|^2 + V.R_m
+PASS 1.3d Omega.R_omega = |Om|^2 + (1/2) V.grad|Om|^2 - Om.G Om
+PASS 1.4 scaling: R_m[U_a,P_a,aC](y) = a R_m[U,P,C](y/a)
+PASS 1.2 (E) residual of shifted field = (E_C) residual at y = Y - (C/c) e3
+PASS 2 cylindrical residuals = rotated Cartesian residuals (random cubic field, 5 points)
+PASS 2 cylindrical vorticity components
+PASS 5.2 curl(S F) = S curl F for Q = diag(-1,-1,1)
+PASS 5.2 improper O = diag(-1,1,1): curl(O F(O^T y)) = -O curl F(O^T y)
+PASS 3.1 (E_C) is equivariant under Q
+PASS 3.4 Sigma_z maps (E_C) to (E_{-C})
+PASS 4.1 div of axis expansion = a + d + w'
+PASS 7.1/10 tr M = 0 and M + M^2 = diag(k,k,2), k = a + a^2 + bc
+PASS 7.1 affine U = My, P = -y.(M+M^2)y/2 solves (E) for all c
+PASS 7.1 skew(tM + t^2 M^2) = (t - t^2) skew M
+PASS 7.1 skew part of N+N^2 = (1 + tr N)(n12 - n21)
+PASS 10 curl(-(1/3) y x My) = My for tr M = 0
+PASS 10 explicit U_seed formula
+PASS 10 div U_seed = 0
+PASS 10 U_seed(Qy) = Q U_seed(y)
+PASS 10 seed is odd: -U_seed(-y) = U_seed(y)
+PASS 10 seed has Sigma_z symmetry
+PASS 10 seed tail coefficient A_inf
+PASS 8.1 (1-c)U + c y.grad U = (1-c+cq)U for U homogeneous of degree q (test field)
+PASS 8.2 div(R^d A) = R^{d-1}[(d+2)A_r + div_S2 A_T] (test field)
+PASS 9.2 Omega(0) = (0,0,c-b) for block G
+PASS 9.2 G Omega = Omega with Omega_3 != 0 forces e = 1
+PASS 10 seed cylindrical components (4 points)
+SUMMARY 33/33 passed

@@ -1,0 +1,42 @@
+{
+  "created_utc": "2026-10-23T07:17:03.089485+00:00",
+  "source_manifest": "snapshots/repair-project-dd9c125438565393/MANIFEST.json",
+  "max_parameter_difference": 0.004001681978285876,
+  "parameter_differences": {
+    "cl_fixed": 0.0,
+    "seed_abc": 0.0,
+    "netA.lins.0.weight": 0.0040015329243338615,
+    "netA.lins.0.bias": 0.003961162087579631,
+    "netA.lins.1.weight": 0.004001681978285876,
+    "netA.lins.1.bias": 0.00400030591215236,
+    "netA.lins.2.weight": 0.003999973211669006,
+    "netA.lins.2.bias": 5.2693598880356254e-06,
+    "netP.lins.0.weight": 0.00399328555351719,
+    "netP.lins.0.bias": 0.003988492482822819,
+    "netP.lins.1.weight": 0.003992805753533446,
+    "netP.lins.1.bias": 0.003976483829118799,
+    "netP.lins.2.weight": 0.003993424454747416,
+    "netP.lins.2.bias": 0.0034989503109357006
+  },
+  "continuous_state": {
+    "stage": 2,
+    "step": 0,
+    "global_step": 4,
+    "active_seconds": 0.21128153800964355,
+    "best_val": 1.0,
+    "nan_count": 0,
+    "interruptions": []
+  },
+  "resumed_state": {
+    "stage": 2,
+    "step": 0,
+    "global_step": 4,
+    "active_seconds": 0.1300044059753418,
+    "best_val": 1.0,
+    "nan_count": 0,
+    "interruptions": []
+  },
+  "restored_previous_stage_batch": true,
+  "verdict": "REFUTED",
+  "scope": "Two 2-step Adam stages, resample_every=5, genuine Euler training loss. Only validation replaced by deterministic inexpensive metrics; interruption injected immediately after atomic stage-advance checkpoint. No campaign-time credit."
+}

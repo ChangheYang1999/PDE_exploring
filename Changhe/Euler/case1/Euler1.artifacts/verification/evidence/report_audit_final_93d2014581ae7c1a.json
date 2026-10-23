@@ -1,0 +1,241 @@
+{
+  "date_utc": "2026-10-23T08:07:08.483396+00:00",
+  "report_sha256": "93d2014581ae7c1a546c0a6c04c0571882d7bd15aaab035b5be4c63cbf580eae",
+  "report_snapshot": "snapshots/REPORT-final-93d2014581ae7c1a.md",
+  "status": "FINAL STATUS NOT VALIDATED",
+  "reason": "Two post-stop scope repairs: current stage-transition repair and timing window.",
+  "checks": [
+    {
+      "date_utc": "2026-10-23T08:07:08.483396+00:00",
+      "section": "0,3",
+      "claim": "Exact primary-class obstruction",
+      "result": "The C2 uniformly sublinear theorem for0<c<1/2 and its zero-under-decay corollary agree with the complete independent proof. No stagnation, symmetry or axis-vorticity assumption is needed.",
+      "verdict": "CONFIRMED",
+      "evidence": "THEORY_V3_AUDIT.md; research/uncountable-stagnation/PROOF.md"
+    },
+    {
+      "date_utc": "2026-10-23T08:07:08.483396+00:00",
+      "section": "3.2",
+      "claim": "Seven-step proof outline",
+      "result": "Trapping, Bernoulli identity, vorticity estimate, exceptional spectrum, equilibrium-arc capture, null graphs and harmonic Liouville agree with the checked proof.",
+      "verdict": "CONFIRMED",
+      "evidence": "THEORY_V3_AUDIT.md; HOSTILE_THEORY_AUDIT.md"
+    },
+    {
+      "date_utc": "2026-10-23T08:07:08.483396+00:00",
+      "section": "0,3,8",
+      "claim": "Endpoint, secondary and alternate-ansatz scope",
+      "result": "The endpoint, larger exponents and listed alternative classes remain undecided. Written mathematics is not formal verification; no stability, finite-energy blowup construction or novelty claim is made.",
+      "verdict": "CONFIRMED",
+      "evidence": "SCOPE_AUDIT.md; HOSTILE_THEORY_AUDIT.md"
+    },
+    {
+      "date_utc": "2026-10-23T08:07:08.483396+00:00",
+      "section": "3.5",
+      "claim": "Qualitative residual floor",
+      "result": "Fixed derivative/tail bounds and nonzero curvature normalization imply a positive uncomputed global absolute residual floor. This gives no sampled relative threshold.",
+      "verdict": "CONFIRMED",
+      "evidence": "FLOOR_AUDIT.md; research/compact-residual-floor/PROOF.md"
+    },
+    {
+      "date_utc": "2026-10-23T08:07:08.483396+00:00",
+      "section": "1,2,3.6",
+      "claim": "Equation and source attribution",
+      "result": "The equations and source claims match their exact-version audits, including the limited accessible Chae-Wolf source. Adam is the only executed campaign optimizer; standard LBFGS was configured.",
+      "verdict": "CONFIRMED",
+      "evidence": "EQUATIONS_V15_AUDIT.md; SOURCE_NOTES.md; sources/METHOD_AUDIT_R2_R4.md"
+    },
+    {
+      "date_utc": "2026-10-23T08:07:08.483396+00:00",
+      "section": "0,5",
+      "claim": "Frozen snapshot identification",
+      "result": "The77-hash table,64-record training ledger and108closed validation intervals match frozen SHA256 values. These are checkpoint files/hashes, not77independent trials.",
+      "verdict": "CONFIRMED",
+      "evidence": "final_snapshot/20261023T075719Z/NUMERIC_AUDIT.json"
+    },
+    {
+      "date_utc": "2026-10-23T08:07:08.483396+00:00",
+      "section": "0,5",
+      "claim": "Credited time enclosures",
+      "result": "Training0.999384131988\u20131.179929723408h and combined1.144556348681\u20131.325101940102h are conservatively rounded in the final row. Scope is credited intervals, not all eligible numerical activity.",
+      "verdict": "CONFIRMED",
+      "evidence": "final_snapshot/20261023T075719Z/NUMERIC_AUDIT.json"
+    },
+    {
+      "date_utc": "2026-10-23T08:07:08.483396+00:00",
+      "section": "0,5",
+      "claim": "All numerical work ended before07:57; universal1.8-hour bound",
+      "result": "The frozen campaign evidence ends before07:57, but a separately timestamped post-stop Euler lifecycle comparison ran08:00:14\u201308:00:28. Scope the window to the frozen evidence and disclose later repair tests separately.",
+      "verdict": "REFUTED",
+      "evidence": "POST_STOP_RUNTIME_AUDIT.md; POST_STOP_AUDIT.json"
+    },
+    {
+      "date_utc": "2026-10-23T08:07:08.483396+00:00",
+      "section": "0,8",
+      "claim": "96-hour noncompletion and primary stopping exception",
+      "result": "The report explicitly states that96hours and most numerical milestones were not completed. The primary obstruction is the actual stopping reason; secondary numerical questions remain unfinished.",
+      "verdict": "CONFIRMED",
+      "evidence": "PROMPT.md; SCOPE_AUDIT.md; DELIVERABLES_AUDIT.md"
+    },
+    {
+      "date_utc": "2026-10-23T08:07:08.483396+00:00",
+      "section": "0,4",
+      "claim": "Soft amplitude constraint and representation restrictions",
+      "result": "The16-norm over2048fixed core points with weight1 is correctly described as a surrogate that discourages collapse. Exact Q symmetry, curl representation, algebraic envelopes and the pressure gauge are disclosed.",
+      "verdict": "CONFIRMED",
+      "evidence": "../e1-num/project/euler_ss/losses.py; EQUATIONS_V15_AUDIT.md"
+    },
+    {
+      "date_utc": "2026-10-23T08:07:08.483396+00:00",
+      "section": "4",
+      "claim": "Seed and tail representations",
+      "result": "Only M1 branches were executed. Generic log saturation is qualified by all nonzero first-layer radial weights. The bounded representation permits angular tails and still requires the intervening d-2 coefficient to cancel.",
+      "verdict": "CONFIRMED",
+      "evidence": "research/radial-feature-tails/PROOF.md; research/bounded-tail-expansion/PROOF.md"
+    },
+    {
+      "date_utc": "2026-10-23T08:07:08.483396+00:00",
+      "section": "5",
+      "claim": "Execution table and stopping",
+      "result": "All12trained IDs, final steps and stopped/held/requeued distinctions match the frozen ledger and final queue. Recorded trainer and verifier workers exited.",
+      "verdict": "CONFIRMED",
+      "evidence": "FINAL_COVERAGE.json; NUMERICS_HANDOFF_AUDIT.md"
+    },
+    {
+      "date_utc": "2026-10-23T08:07:08.483396+00:00",
+      "section": "6",
+      "claim": "Independent numerical method",
+      "result": "Independent potential tangents, physical FD4/FD6 and direct cylindrical differences are separate from trainer residual/model code.32calibration and9decoder tests pass. Grid/axis measures are correctly distinguished from volume shells.",
+      "verdict": "CONFIRMED",
+      "evidence": "evidence/unit_tests.json; evidence/checkpoint_decoder_tests.json; CHECKPOINT_INTERFACE.md"
+    },
+    {
+      "date_utc": "2026-10-23T08:07:08.483396+00:00",
+      "section": "0,6",
+      "claim": "All-state momentum range and rejection",
+      "result": "Worst relative momentum spans0.129427920625\u20130.333164099022; every file fails1e-3. The best strict-primary value is0.148232007626. Worst shells split71on1_2 and6on0.25_1.",
+      "verdict": "CONFIRMED",
+      "evidence": "final_snapshot/20261023T075719Z/NUMERIC_AUDIT.json"
+    },
+    {
+      "date_utc": "2026-10-23T08:07:08.483396+00:00",
+      "section": "6",
+      "claim": "Best by representation and exponent table",
+      "result": "All12selected saved steps, worst-region values and tail ratios agree with the frozen evidence to displayed rounding.",
+      "verdict": "CONFIRMED",
+      "evidence": "final_snapshot/20261023T075719Z/NUMERIC_AUDIT.json"
+    },
+    {
+      "date_utc": "2026-10-23T08:07:08.483396+00:00",
+      "section": "6",
+      "claim": "Selected checkpoint and duplicate state",
+      "result": "The selected SHA0b690cfd0b74062c has c=.43step6565;572dc35c3762ab7d contains the same saved numerical state. Its scientific diagnostics agree.",
+      "verdict": "CONFIRMED",
+      "evidence": "final_snapshot/20261023T075719Z/NUMERIC_AUDIT.json"
+    },
+    {
+      "date_utc": "2026-10-23T08:07:08.483396+00:00",
+      "section": "6",
+      "claim": "Regional residual table",
+      "result": "All70numeric cells agree with the selected checkpoint within half a unit in the last displayed place.",
+      "verdict": "CONFIRMED",
+      "evidence": "evidence/report-final-32dd5e7197f1dbf1-numeric-cells.json"
+    },
+    {
+      "date_utc": "2026-10-23T08:07:08.483396+00:00",
+      "section": "6",
+      "claim": "Selected divergence, symmetry, nonaffinity and dimensionality",
+      "result": "Divergence relative RMS is below3e-10on every sampled region; Q defect0; affine remainder.70154; reflection defects.36384/.46018; derivative Gram minimum.0808356. These are sampled diagnostics.",
+      "verdict": "CONFIRMED",
+      "evidence": "final_snapshot/20261023T075719Z/NUMERIC_AUDIT.json"
+    },
+    {
+      "date_utc": "2026-10-23T08:07:08.483396+00:00",
+      "section": "6",
+      "claim": "Selected angular energies",
+      "result": "Core velocity n2fraction.65738,outer.68305,core vorticity.34465; the absolute32/64angle core velocity energy difference4.334e-5 and relative6.260e-4 are correctly distinguished.",
+      "verdict": "CONFIRMED",
+      "evidence": "final_snapshot/20261023T075719Z/NUMERIC_AUDIT.json"
+    },
+    {
+      "date_utc": "2026-10-23T08:07:08.483396+00:00",
+      "section": "6",
+      "claim": "Selected axis and differentiation checks",
+      "result": "Horizontal axis velocity0; off-block Jacobian RMS1.844e-20; cylindrical comparison1.856e-13RMS. Derivative-step momentum maximum1.4613e-7RMS supports the stated1.5e-7 bound on that finite sweep.",
+      "verdict": "CONFIRMED",
+      "evidence": "final_snapshot/20261023T075719Z/NUMERIC_AUDIT.json"
+    },
+    {
+      "date_utc": "2026-10-23T08:07:08.483396+00:00",
+      "section": "6",
+      "claim": "Selected local geometry",
+      "result": "Three roots located from31starts, not a complete count; local refined stretching ratios-.32491and-.23073 disagree with the exact nonzero-extremum identity.",
+      "verdict": "CONFIRMED",
+      "evidence": "final_snapshot/20261023T075719Z/NUMERIC_AUDIT.json"
+    },
+    {
+      "date_utc": "2026-10-23T08:07:08.483396+00:00",
+      "section": "0,6",
+      "claim": "Selected and all-state tail diagnostics",
+      "result": "Range endpoints and selected ratios3.1087to58.7599 agree; full-term ratios.0178778to1.9671e-7 and scaled nonlinear residual.18633to4.17856 agree. The1e-2screen is correctly identified as a chosen diagnostic.",
+      "verdict": "CONFIRMED",
+      "evidence": "final_snapshot/20261023T075719Z/NUMERIC_AUDIT.json"
+    },
+    {
+      "date_utc": "2026-10-23T08:07:08.483396+00:00",
+      "section": "6",
+      "claim": "Tail trends and comparison limits",
+      "result": "After identifying duplicate saved states, the evaluated c=.41,.43,.45sequences have increasing tail ratios. Cross-representation improvement spans3\u20135orders; costs differ and the comparison is descriptive, not matched-budget.",
+      "verdict": "CONFIRMED",
+      "evidence": "final_snapshot/20261023T075719Z/NUMERIC_AUDIT.json"
+    },
+    {
+      "date_utc": "2026-10-23T08:07:08.483396+00:00",
+      "section": "6",
+      "claim": "Finite whole-space comparisons",
+      "result": "The pilot and v2step500pressure/velocity values match their finite quadratures; three targets,two resolutions,R<=256and missing exterior bounds are disclosed. The selected checkpoint has no such completed check.",
+      "verdict": "CONFIRMED",
+      "evidence": "evidence/whole-space-998d429a7b0387d0.json; evidence/whole-space-88c0f47198ccbe4c.json"
+    },
+    {
+      "date_utc": "2026-10-23T08:07:08.483396+00:00",
+      "section": "6",
+      "claim": "Last-batch training/holdout gap",
+      "result": "The exact replay, point counts,regional ratios2.09and1.59and limitations match the independent audit. Saved holdout was used for selection; independent final points are separate.",
+      "verdict": "CONFIRMED",
+      "evidence": "TRAINING_HOLDOUT_AUDIT.md"
+    },
+    {
+      "date_utc": "2026-10-23T08:07:08.483396+00:00",
+      "section": "7",
+      "claim": "False-solution checks and lower bounds",
+      "result": "Affine remainder>=.328,n2/nonaxisymmetric ring fraction>=.85,and directional fraction>=.072are conservative across the final table. These are finite collapse screens, not global certificates.",
+      "verdict": "CONFIRMED",
+      "evidence": "final_snapshot/20261023T075719Z/NUMERIC_AUDIT.json"
+    },
+    {
+      "date_utc": "2026-10-23T08:07:08.483396+00:00",
+      "section": "7",
+      "claim": "Historical runtime defects",
+      "result": "The stated weighting,Cfactor,LBFGShistory and model-rollback defects and repairs during training match their versioned source audits. No actual NaN event is asserted.",
+      "verdict": "CONFIRMED",
+      "evidence": "RUNTIME_REPAIR_AUDIT.md; PRIORITY_RUNTIME_FINDINGS.md"
+    },
+    {
+      "date_utc": "2026-10-23T08:07:08.483396+00:00",
+      "section": "7,9",
+      "claim": "Current stage-transition resume and continuation limitation",
+      "result": "The historical counterexample is valid, but current train.py61c6f9e23750908e repairs this exact case and the repeated test is bitwise equal. Rewrite the unconditional current-failure and continuation wording; retain universal/legacy resume and full NaN rollback limitations.",
+      "verdict": "REFUTED",
+      "evidence": "POST_STOP_RUNTIME_AUDIT.md"
+    },
+    {
+      "date_utc": "2026-10-23T08:07:08.483396+00:00",
+      "section": "8,9",
+      "claim": "Incomplete studies and continuation queue",
+      "result": "The existing queue restores fixed-exponent runs; it creates no c>.5or free-exponent branch. Other seed families,refinement,LBFGScampaign stages and long milestones remain unperformed.",
+      "verdict": "CONFIRMED",
+      "evidence": "DELIVERABLES_AUDIT.md; ../e1-num/NEXT_STEPS.md"
+    }
+  ]
+}

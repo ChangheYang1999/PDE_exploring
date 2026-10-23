@@ -1,0 +1,46 @@
+{
+  "date_utc": "2026-10-23T07:53:26.822713+00:00",
+  "numerics_report_sha256": "815becd39377604cdeaba42f95ace20767da16e653623328af69e307a27220db",
+  "issues": [
+    {
+      "claim": "Numerical screening range",
+      "finding": "Section4 and current verdict use 0.17-0.33 and every worst shell1_2; the table already includes 0.146251 and shell0.25_1 cases. Refresh from the forthcoming frozen table. 0.15-0.33 versus 1e-3 is about 2.2-2.5 orders of magnitude, not three to four.",
+      "verdict": "REFUTED"
+    },
+    {
+      "claim": "Theorem and search status",
+      "finding": "Section6 still invokes countability L1 and says the search continues. Replace by the confirmed L2 scope, with the qualitative fixed-class floor only under its full bounds.",
+      "verdict": "REFUTED"
+    },
+    {
+      "claim": "Runtime and activity",
+      "finding": "Section7 still says 24 legacy records and exact compute chunks. The final ledger has 38 legacy and 26 chunk records. Rounded inter-step elapsed chunks include I/O/short pauses and omit first steps. Record bounds on credited elapsed pieces, not eligible compute.",
+      "verdict": "REFUTED"
+    },
+    {
+      "claim": "Exact resume and rollback",
+      "finding": "Restrict exact resume to the tested within-stage cases. The stage-transition counterexample gives max parameter difference 0.00400168198. Disk parameter reload does not fully restore optimizer/sampler/RNG/counters on NaN. Do not state never triggered without an audited log claim.",
+      "verdict": "REFUTED"
+    },
+    {
+      "claim": "Derivative agreement",
+      "finding": "The fast derivative tests use forward values 1e-12, Jacobian 1e-11, Hessian 1e-10, and parameter gradients relative1e-9. The statement 1e-12 including parameter gradients is false.",
+      "verdict": "REFUTED"
+    },
+    {
+      "claim": "Tail theorem",
+      "finding": "Qualify saturation by nonzero first-layer radial weights. Generic tail degeneration is not unconditional over all representable weights.",
+      "verdict": "REFUTED"
+    },
+    {
+      "claim": "Candidate and amplitude wording",
+      "finding": "Write no acceptable candidate was found. A sampled soft amplitude penalty discourages zero collapse but does not prevent it mathematically.",
+      "verdict": "REFUTED"
+    },
+    {
+      "claim": "Internal diagnostics",
+      "finding": "Internal held-out metrics were reused for checkpoint selection. They are diagnostics, not independent acceptance evidence; full-scope ranges and zero-set completeness are not established.",
+      "verdict": "OPEN"
+    }
+  ]
+}

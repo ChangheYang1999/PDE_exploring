@@ -1,0 +1,103 @@
+{
+  "date_utc": "2026-10-23T07:21:07.160544+00:00",
+  "source": "e1-lead/THEORY_NOTES.md v3 with 07:19 edits",
+  "sha256": "48c76438fe5995496033c69a396ec089f0dd2aafac41d2b1d18435a6f1ab62b0",
+  "snapshot": "snapshots/THEORY_NOTES-48c76438fe599549.md",
+  "checks": [
+    {
+      "check": "Regularity and global flow",
+      "method_result": "P becomes C2 from its gradient; C2 V of at most linear growth has complete locally differentiable flow. Backward radial trapping follows from uniform sublinearity.",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "check": "Bernoulli signs and alpha-limit sets",
+      "method_result": "For kappa=1-2c>0, grad H=-(kappa I+Omega cross)V. Along backward time H increases to h and e=h-H decreases. Invariance makes every alpha-limit point a zero.",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "check": "Low-strain vorticity exclusion",
+      "method_result": "If the compact alpha-limit set avoids E, a uniform strain bound below one holds on an eventual backward neighborhood. Bounded backward vorticity then forces Omega(a)=0.",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "check": "Rank and spectral lemma",
+      "method_result": "At E, either A Omega=(1+c)Omega or A is symmetric; trace A=3c forces a negative real part. Rank is at least two, and rank two has simple positive, negative and zero eigenvalues.",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "check": "Topology lemma and 07:19 edit",
+      "method_result": "Shrink the chart to exclude a chosen second point. Missing arc points on both sides produce a proper clopen subset of alpha via a closed tube boundary. Thus alpha contains a one-sided interval through p.",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "check": "Interior arc point and 07:19 edit",
+      "method_result": "q need not be in E. Simple real eigenvalue signs at p persist nearby; the arc supplies the zero eigenvalue. This justifies the second capture argument.",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "check": "Bernoulli capture",
+      "method_result": "DV is injective on the normal plane to the equilibrium arc. Taylor bounds give sqrt(abs(H-h))<=C abs(V). The exact dissipation identity bounds remaining length by C sqrt(e), trapping a sufficiently late visit and forcing convergence.",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "check": "Variation-of-constants capture",
+      "method_result": "Independent own proof controls the integral of both normal coordinates using opposite time endpoints. Arbitrarily small normal distance bounds tangential drift independently of duration.",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "check": "Null graph including center directions",
+      "method_result": "For -V, the expanding spectral subspace is nonempty. Weighted variation of constants makes the center-stable projection injective with a Lipschitz inverse on all locally trapped forward orbits. Nonorthogonal projections and Jordan growth are absorbed in M0.",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "check": "Finite cover and countable time images",
+      "method_result": "Compact E is covered by finitely many smaller neighborhoods. Each orbit converging to E is eventually trapped in one associated null graph; countably many integer flow images cover all such orbits.",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "check": "Vorticity and Liouville conclusion",
+      "method_result": "The nonzero vorticity set is open and lies in a null set, so it is empty. Harmonic sublinear Cartesian components are constant by the interior gradient estimate.",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "check": "Optional rank-one alpha-limit remark",
+      "method_result": "The same gradient capture applies to any rank-two zero interval, including two expanding normal eigenvalues. Remaining rank-one zeros have eigenvalues 0,0,3c, zero vorticity and strain spectrum -c,-c,2c.",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "check": "Drift and primary scope",
+      "method_result": "Constant C is removed by axial translation. Smooth decaying exact profiles with 0.4<c<0.5 are a subset of this theorem without any tail, symmetry, stagnation or finite-energy addition.",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "check": "Scope exclusion of growing velocity",
+      "method_result": "The phrase growing velocity in section 7.8 is too broad: U=o(R) includes sublinear growth. Replace it by velocity without sublinear growth, including affine backgrounds. This wording does not affect the theorem.",
+      "verdict": "REFUTED"
+    },
+    {
+      "check": "Endpoint and other ansatzes",
+      "method_result": "c=0.5 and larger c are not excluded. The result does not cover nonsmooth, anisotropic, rotating, discretely self-similar or other time-dependent profiles, nor construct or preclude other Euler or NS blowup mechanisms.",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "check": "Section 8 qualitative floor",
+      "method_result": "Fixed C3 and weighted C2 bounds give C2 local compactness, tail localization preserves the curvature normalization, and a distributionally curl-free limit reconstructs pressure. L2 gives the contradiction. No stagnation margin is now needed.",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "check": "Modulus requirement in the stated class",
+      "method_result": "The example U_l=l^2 W(y/l) preserves curvature normalization and fixed weighted bounds through order two, while its momentum residual is O(l^2) and D3 diverges. Thus deleting all fixed D2 continuity control invalidates this floor. A D3 bound itself is sufficient, not uniquely necessary.",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "check": "Numerical interpretation",
+      "method_result": "The floor is for a fixed globally controlled class and a specified absolute norm. It supplies no 1e-3 or 1e-5 threshold, no conclusion from a decreasing relative loss, and no obligation for a trainable exponent to move to 0.5 whenever loss improves.",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "check": "Actual Opus collaboration",
+      "method_result": "The actual lead model is us.anthropic.claude-opus-5-5. Its dated local reply and reconciled proof reviewed both independent arguments and tightened two presentation points. This fulfills the requested substantive exchange; failed separate referee model calls are not counted.",
+      "verdict": "CONFIRMED"
+    }
+  ]
+}

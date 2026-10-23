@@ -1,0 +1,1 @@
+Verification evidence is stored in the lane-level evidence directory. Relevant artifacts: ../../../evidence/unit_tests.json, ../../../EQUATIONS_AUDIT.md. Numerical diagnostics are not exact-profile proofs.

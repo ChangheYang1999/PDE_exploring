@@ -1,0 +1,123 @@
+{
+  "date_utc": "2026-10-23T07:32:08.366816+00:00",
+  "source": "e1-lead/THEORY_NOTES.md v3.1 with 07:28 hostile-audit repairs",
+  "sha256": "828ff9f3df4557e605f3bbcefa5fc121a1d20bfd02443768938e755c2f64d4cd",
+  "snapshot": "snapshots/THEORY_NOTES-828ff9f3df4557e6.md",
+  "checks": [
+    {
+      "check": "Regularity and global flow",
+      "method_result": "P becomes C2 from its gradient; C2 V of at most linear growth has complete locally differentiable flow. Backward radial trapping follows from uniform sublinearity.",
+      "verdict": "CONFIRMED",
+      "date_utc": "2026-10-23T07:32:08.366816+00:00"
+    },
+    {
+      "check": "Bernoulli signs and alpha-limit sets",
+      "method_result": "For kappa=1-2c>0, grad H=-(kappa I+Omega cross)V. Along backward time H increases to h and e=h-H decreases. Invariance makes every alpha-limit point a zero.",
+      "verdict": "CONFIRMED",
+      "date_utc": "2026-10-23T07:32:08.366816+00:00"
+    },
+    {
+      "check": "Low-strain vorticity exclusion",
+      "method_result": "If the compact alpha-limit set avoids E, a uniform strain bound below one holds on an eventual backward neighborhood. Bounded backward vorticity then forces Omega(a)=0.",
+      "verdict": "CONFIRMED",
+      "date_utc": "2026-10-23T07:32:08.366816+00:00"
+    },
+    {
+      "check": "Rank and spectral lemma",
+      "method_result": "At E, either A Omega=(1+c)Omega or A is symmetric; trace A=3c forces a negative real part. Rank is at least two, and rank two has simple positive, negative and zero eigenvalues.",
+      "verdict": "CONFIRMED",
+      "date_utc": "2026-10-23T07:32:08.366816+00:00"
+    },
+    {
+      "check": "Topology lemma and 07:19 edit",
+      "method_result": "Shrink the chart to exclude a chosen second point. Missing arc points on both sides produce a proper clopen subset of alpha via a closed tube boundary. Thus alpha contains a one-sided interval through p.",
+      "verdict": "CONFIRMED",
+      "date_utc": "2026-10-23T07:32:08.366816+00:00"
+    },
+    {
+      "check": "Interior arc point and 07:19 edit",
+      "method_result": "q need not be in E. Simple real eigenvalue signs at p persist nearby; the arc supplies the zero eigenvalue. This justifies the second capture argument.",
+      "verdict": "CONFIRMED",
+      "date_utc": "2026-10-23T07:32:08.366816+00:00"
+    },
+    {
+      "check": "Bernoulli capture",
+      "method_result": "DV is injective on the normal plane to the equilibrium arc. Taylor bounds give sqrt(abs(H-h))<=C abs(V). The exact dissipation identity bounds remaining length by C sqrt(e), trapping a sufficiently late visit and forcing convergence.",
+      "verdict": "CONFIRMED",
+      "date_utc": "2026-10-23T07:32:08.366816+00:00"
+    },
+    {
+      "check": "Variation-of-constants capture",
+      "method_result": "The repaired alternative fixes a thin box, transverse boundary separation from the full zero set, late return and a uniform axial drift bound. Both possible first exits are excluded. Time reversal interchanges the two normal directions; finite length then gives convergence. The independent proof and primary Bernoulli proof agree.",
+      "verdict": "CONFIRMED",
+      "date_utc": "2026-10-23T07:32:08.366816+00:00"
+    },
+    {
+      "check": "Null graph including center directions",
+      "method_result": "The real generalized spectral splitting now explicitly uses the sum of the Euclidean norms on its summands. Both projections then have norm at most one. Weighted variation of constants with Jordan growth in M0 gives an injective center-stable projection and Lipschitz inverse on the trapped set, of dimension at most two.",
+      "verdict": "CONFIRMED",
+      "date_utc": "2026-10-23T07:32:08.366816+00:00"
+    },
+    {
+      "check": "Finite cover and countable time images",
+      "method_result": "Compact E is covered by finitely many smaller neighborhoods. Each orbit converging to E is eventually trapped in one associated null graph; countably many integer flow images cover all such orbits.",
+      "verdict": "CONFIRMED",
+      "date_utc": "2026-10-23T07:32:08.366816+00:00"
+    },
+    {
+      "check": "Vorticity and Liouville conclusion",
+      "method_result": "The nonzero vorticity set is open and lies in a null set, so it is empty. Harmonic sublinear Cartesian components are constant by the interior gradient estimate.",
+      "verdict": "CONFIRMED",
+      "date_utc": "2026-10-23T07:32:08.366816+00:00"
+    },
+    {
+      "check": "Optional rank-one alpha-limit remark",
+      "method_result": "The same gradient capture applies to any rank-two zero interval, including two expanding normal eigenvalues. Remaining rank-one zeros have eigenvalues 0,0,3c, zero vorticity and strain spectrum -c,-c,2c.",
+      "verdict": "CONFIRMED",
+      "date_utc": "2026-10-23T07:32:08.366816+00:00"
+    },
+    {
+      "check": "Drift and primary scope",
+      "method_result": "Constant C is removed by axial translation. Smooth decaying exact profiles with 0.4<c<0.5 are a subset of this theorem without any tail, symmetry, stagnation or finite-energy addition.",
+      "verdict": "CONFIRMED",
+      "date_utc": "2026-10-23T07:32:08.366816+00:00"
+    },
+    {
+      "check": "Scope of sublinear growth",
+      "method_result": "The repaired section 7.8 explicitly includes unbounded sublinear growth and excludes velocity failing U=o(R). Nonzero constant fields are allowed without decay; global decay forces zero. Raywise decay alone is not substituted for uniform decay.",
+      "verdict": "CONFIRMED",
+      "date_utc": "2026-10-23T07:32:08.366816+00:00"
+    },
+    {
+      "check": "Endpoint and other ansatzes",
+      "method_result": "c=0.5 and larger c are not excluded. The result does not cover nonsmooth, anisotropic, rotating, discretely self-similar or other time-dependent profiles, nor construct or preclude other Euler or NS blowup mechanisms.",
+      "verdict": "CONFIRMED",
+      "date_utc": "2026-10-23T07:32:08.366816+00:00"
+    },
+    {
+      "check": "Section 8 qualitative floor",
+      "method_result": "Fixed C3 and weighted C2 bounds give C2 local compactness, tail localization preserves the curvature normalization, and a distributionally curl-free limit reconstructs pressure. L2 gives the contradiction. No stagnation margin is now needed.",
+      "verdict": "CONFIRMED",
+      "date_utc": "2026-10-23T07:32:08.366816+00:00"
+    },
+    {
+      "check": "Modulus requirement in the stated class",
+      "method_result": "The example U_l=l^2 W(y/l) preserves curvature normalization and fixed weighted bounds through order two, while its momentum residual is O(l^2) and D3 diverges. Thus deleting all fixed D2 continuity control invalidates this floor. A D3 bound itself is sufficient, not uniquely necessary.",
+      "verdict": "CONFIRMED",
+      "date_utc": "2026-10-23T07:32:08.366816+00:00"
+    },
+    {
+      "check": "Numerical interpretation",
+      "method_result": "Section 8 now fixes c,K, the curvature normalization and the absolute whole-space L-infinity momentum norm. It states that decreasing sampled or relative loss, or an exponent tending to 1/2, is insufficient. A common D2 modulus is sufficient; D3 is not uniquely necessary.",
+      "verdict": "CONFIRMED",
+      "date_utc": "2026-10-23T07:32:08.366816+00:00"
+    },
+    {
+      "check": "Actual Opus collaboration",
+      "method_result": "The actual lead model is us.anthropic.claude-opus-5-5. Its dated local reply and reconciled proof reviewed both independent arguments and tightened two presentation points. This fulfills the requested substantive exchange; failed separate referee model calls are not counted.",
+      "verdict": "CONFIRMED",
+      "date_utc": "2026-10-23T07:32:08.366816+00:00"
+    }
+  ],
+  "method": "Exact diff against the fully audited v3, checked against both independent proofs and the full hostile and scope reviews. No reliance on theorem consensus alone."
+}

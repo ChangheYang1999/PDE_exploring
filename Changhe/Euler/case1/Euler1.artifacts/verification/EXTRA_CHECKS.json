@@ -1,0 +1,322 @@
+[
+  {
+    "check": "Audited numerics ledger gives a measured activity union",
+    "method": "Saved source and executable interval counterexample",
+    "result": "Identical records can describe true unions of 1 or 2 seconds; the density procedure returns 1.5. This algorithm is an estimate. Historical active-time uncertainty remains unresolved.",
+    "verdict": "REFUTED",
+    "evidence": "evidence/runtime_counterexamples.json",
+    "date_utc": "2026-10-23T06:46:37.978291+00:00"
+  },
+  {
+    "check": "Audited trainer regional weights give one physical-volume measure",
+    "method": "Overlapping-support calculation and matched checkpoint comparison",
+    "result": "Origin and axis samples add support multiplicity. Pilot500 central-ball ratio changes from 0.190595 to 0.215703 when only disjoint core+shell weights are retained; the latter has only 61 points in R<1.",
+    "verdict": "REFUTED",
+    "evidence": "evidence/reference-compare-998d429a7b0387d0.json",
+    "date_utc": "2026-10-23T06:54:34.026494+00:00"
+  },
+  {
+    "check": "Audited LBFGS stage handles resampling history",
+    "method": "Review immutable train.py and planned stages",
+    "result": "The same LBFGS optimizer retains history across collocation resampling. Required reset or fixed-stage objective is absent in the audited source.",
+    "verdict": "REFUTED",
+    "evidence": "PRIORITY_RUNTIME_FINDINGS.md",
+    "date_utc": "2026-10-23T06:54:34.026494+00:00"
+  },
+  {
+    "check": "Audited checkpoint reproduces a retained collocation batch on resume",
+    "method": "Checkpoint fields plus post-draw RNG counterexample",
+    "result": "The current batch is absent. An interruption within a multi-step resampling block draws another batch. The reported Adam resample_every=1 test does not cover this case.",
+    "verdict": "REFUTED",
+    "evidence": "evidence/runtime_counterexamples.json",
+    "date_utc": "2026-10-23T06:46:37.978291+00:00"
+  },
+  {
+    "check": "Audited in-memory NaN rollback restores a frozen state",
+    "method": "Torch state_dict alias mutation counterexample",
+    "result": "The stored in-memory tensor aliases mutate with the model; reloading after NaN retains NaN. A deep copy or full disk rollback is required.",
+    "verdict": "REFUTED",
+    "evidence": "evidence/runtime_counterexamples.json",
+    "date_utc": "2026-10-23T06:46:37.978291+00:00"
+  },
+  {
+    "check": "Audited nonzero-C denominator has the correct drift factor",
+    "method": "Compare momentum_terms with validate and scalar counterexample",
+    "result": "The norm of C*d_z U is multiplied by abs(C) again. Current C=0 runs are unaffected; nonzero-C diagnostics require repair.",
+    "verdict": "REFUTED",
+    "evidence": "PRIORITY_RUNTIME_FINDINGS.md",
+    "date_utc": "2026-10-23T06:54:34.026494+00:00"
+  },
+  {
+    "check": "Pilot500 decoder and derivatives reproduce saved trainer metrics",
+    "method": "Identical archived 9728-point holdout, independent NumPy and physical FD6, two steps",
+    "result": "All saved eps_m/eps_nl agree within 3.0e-13 relative. Origin velocity agrees within 7.7e-17 and grad U within 2.35e-13 absolute. This is an implementation comparison, not independent sampling or a training gap.",
+    "verdict": "CONFIRMED",
+    "evidence": "evidence/reference-compare-998d429a7b0387d0.json",
+    "date_utc": "2026-10-23T06:47:38.662960+00:00"
+  },
+  {
+    "check": "Pilot500 pressure agrees with finite Newton quadrature to RMS 1e-3",
+    "method": "Independent tr(J^2) with FD6; three targets; radii through 256; angular/radial refinement",
+    "result": "Pressure-gradient mismatch RMS is 0.021220118827601324; quadrature refinement change is 0.0031010650622721285. The mismatch persists. No rigorous exterior bound is supplied.",
+    "verdict": "REFUTED",
+    "evidence": "evidence/whole-space-998d429a7b0387d0.json",
+    "date_utc": "2026-10-23T06:49:41.967286+00:00"
+  },
+  {
+    "check": "Pilot500 whole-space Biot-Savart consistency",
+    "method": "Same quadrature with independently differentiated vorticity",
+    "result": "Velocity mismatch RMS decreases from 7.28e-4 to 5.57e-5. This supports numerical convergence; further angular refinement and exterior control remain open.",
+    "verdict": "OPEN",
+    "evidence": "evidence/whole-space-998d429a7b0387d0.json",
+    "date_utc": "2026-10-23T06:49:41.967286+00:00"
+  },
+  {
+    "check": "Bounded dir_tau representation removes generic angular saturation",
+    "method": "Uniform boundary Taylor expansion and eight decoder tests",
+    "result": "Bounded features permit nonconstant angular leading terms. Exact Euler balance still requires the combined degree d-2 velocity coefficient to vanish; the second envelope alone does not remove it.",
+    "verdict": "CONFIRMED",
+    "evidence": "research/bounded-tail-expansion/PROOF.md",
+    "date_utc": "2026-10-23T06:54:34.026494+00:00"
+  },
+  {
+    "check": "Current copied trainer unit tests",
+    "method": "Run immutable copies on CPU with one thread and no trainer work-directory writes",
+    "result": "15 tests pass, including random-network symmetry, scaling, recentering, dtype, and v2 tail powers. Lifecycle and combined-measure defects are outside these tests.",
+    "verdict": "CONFIRMED",
+    "evidence": "evidence/trainer_unit_test_results.json",
+    "date_utc": "2026-10-23T06:54:34.026494+00:00"
+  },
+  {
+    "check": "Independent decoder includes saved Q-paired Gaussian blobs",
+    "method": "Explicit Gaussian curl versus a separate Torch potential with AD; saved parameters differ from initial config; NPZ round trip; unknown-state rejection",
+    "result": "All nine synthetic architectures pass. Blob velocity/pressure comparison has sampled maximum 4.55e-16. Unrecognized saved fields are rejected. Trainer model source SHA256 819834714f926925a0df60b4715527b19065ed8916f93ee30a9b4712f3ead2ed.",
+    "verdict": "CONFIRMED",
+    "evidence": "evidence/checkpoint_decoder_tests.json",
+    "date_utc": "2026-10-23T06:59:45.079216+00:00"
+  },
+  {
+    "check": "Lead historical ledger endpoints enclose all credited chunks exactly",
+    "method": "Audit floored timestamps, checkpoint boundary and 22 immutable ledger records",
+    "result": "Four active lengths exceed displayed wall lengths; a step can straddle checkpoint start. Conservative enlarged-interval bounds are 0.2564744438 to 0.4044444444 h under stated clock/protocol assumptions. Exact eligible activity remains unverified.",
+    "verdict": "REFUTED",
+    "evidence": "evidence/ledger-bounds-ace268c70c2f4ad9.json",
+    "date_utc": "2026-10-23T07:06:37.479095+00:00"
+  },
+  {
+    "check": "Arbitrary stagnation-set obstruction for exact C2 sublinear profiles with 0<c<1/2",
+    "method": "Two independent complete informal proofs; variation-of-constants and Bernoulli transverse-Hessian capture; line-by-line cross-audit",
+    "result": "Curl U=0 and U constant, hence zero under decay. Two independent proofs and actual lead Opus 5.5 review agree. Lead v3 and its 07:19 edits were checked independently. No stagnation-set assumption, novelty claim or numerical 96-hour claim.",
+    "verdict": "CONFIRMED",
+    "evidence": "THEORY_V3_AUDIT.md",
+    "date_utc": "2026-10-23T07:21:07.160544+00:00"
+  },
+  {
+    "check": "Matched v2 M1 c_l=0.45 step500 derivative comparison",
+    "method": "Independent NumPy potential tangents and sixth-order physical finite differences at two steps on the saved 9728-point holdout",
+    "result": "Checkpoint 88c0f47198ccbe4c: every saved regional eps_m/eps_nl agrees within 3e-8 relative. The largest absolute eps_nl difference is 1.403e-7 on D6, whose ratio is 5.51449 and fails tail screening. This verifies cross-implementation agreement, not the PDE or training/holdout gap.",
+    "verdict": "CONFIRMED",
+    "date_utc": "2026-10-23T07:13:09.922511+00:00",
+    "evidence": "evidence/reference-compare-88c0f47198ccbe4c.json"
+  },
+  {
+    "check": "R2 and R4 numerical-method source attribution",
+    "method": "Read primary v1 methodology, experiments, theorem statements and full R4 algorithm",
+    "result": "Wide-range sampling, exact constraints, staged optimizers and separate validation are documented. R2 hybrid asymptotics are future work; R4 theorems give variance and directional secant statements, not global convergence or full-spectrum matching. Current code is Adam/L-BFGS.",
+    "verdict": "CONFIRMED",
+    "date_utc": "2026-10-23T07:14:34.567034+00:00",
+    "evidence": "sources/METHOD_AUDIT_R2_R4.md"
+  },
+  {
+    "check": "07:12 runtime repair: disjoint norms, C factor, fresh-batch L-BFGS reset and disk model reload",
+    "method": "Immutable source review and bounded CPU counterexamples",
+    "result": "These four repairs are present in immutable train.py 4444390f7ffb17b8. All 17 copied physics tests pass. Historical outputs retain their original normalization.",
+    "verdict": "CONFIRMED",
+    "evidence": "RUNTIME_REPAIR_AUDIT.md",
+    "date_utc": "2026-10-23T07:19:34.870056+00:00"
+  },
+  {
+    "check": "07:12 runtime repair: exact stage-transition resume",
+    "method": "Immutable source review and bounded CPU counterexamples",
+    "result": "Actual Euler training, two two-step Adam stages with resample_every=5. Interruption after stage_advance restores the preceding-stage batch and changes parameters by up to 0.004001681978285876. Validation only was replaced by deterministic inexpensive metrics.",
+    "verdict": "REFUTED",
+    "evidence": "evidence/stage_advance_resume_counterexample.json",
+    "date_utc": "2026-10-23T07:19:34.870056+00:00"
+  },
+  {
+    "check": "07:12 runtime repair: exact eligible numerical activity",
+    "method": "Immutable source review and bounded CPU counterexamples",
+    "result": "New chunks are intervals between accepted step ends. A reproduced example counts 11 seconds containing 10 seconds of checkpoint I/O and one numerical second. Legacy floored-endpoint bounds also remain invalid.",
+    "verdict": "REFUTED",
+    "evidence": "evidence/runtime_repair_counterexamples.json",
+    "date_utc": "2026-10-23T07:19:34.870056+00:00"
+  },
+  {
+    "check": "07:12 runtime repair: full NaN rollback",
+    "method": "Immutable source review and bounded CPU counterexamples",
+    "result": "Disk model reload fixes aliasing, but L-BFGS history, batch, sampler, RNG and counters are not restored as a coherent checkpoint. This is a source audit, not an observed running-job NaN.",
+    "verdict": "REFUTED",
+    "evidence": "RUNTIME_REPAIR_AUDIT.md",
+    "date_utc": "2026-10-23T07:19:34.870056+00:00"
+  },
+  {
+    "check": "Positive residual floor in a fixed globally controlled approximation class",
+    "method": "C2 local compactness, pressure reconstruction, tail localization of curvature normalization, L2 contradiction; explicit shrinking-core counterexample without a uniform D2 modulus",
+    "result": "Section 8 is correct for fixed c and K. The floor has no computed numerical value and does not bound a decreasing relative training loss.",
+    "verdict": "CONFIRMED",
+    "date_utc": "2026-10-23T07:21:07.160544+00:00",
+    "evidence": "research/compact-residual-floor/PROOF.md"
+  },
+  {
+    "check": "45-record mixed historical and new-chunk ledger reconstruction",
+    "method": "Independent union enclosure with floored legacy timestamps, 0.502ms explicit endpoint padding, worker grouping; 4096 exhaustive rounding tests",
+    "result": "Credited elapsed union lies between 0.5627574864 and 0.7432977790 hours under protocol assumptions. Inter-step I/O/pauses and omitted first steps mean this is not a certificate of eligible numerical activity.",
+    "verdict": "CONFIRMED",
+    "date_utc": "2026-10-23T07:23:21.566017+00:00",
+    "evidence": "evidence/ledger-reconstruction-0d4ff4dfe48e7c9f.json"
+  },
+  {
+    "check": "Hostile L2 referee review",
+    "method": "Read full 551-line review and independently check Bernoulli capture, adapted spectral norms, graph nullity and exact family counterchecks",
+    "result": "The theorem survives. Make direct-sum norms explicit and complete or remove the optional dynamical first-exit argument. No added hypothesis is needed.",
+    "verdict": "CONFIRMED",
+    "date_utc": "2026-10-23T07:27:01.663115+00:00",
+    "evidence": "HOSTILE_THEORY_AUDIT.md"
+  },
+  {
+    "check": "Scope of primary obstruction and campaign exception",
+    "method": "Compare exact hypotheses to PROMPT and check recentering, decay and secondary cases",
+    "result": "Primary exact smooth decaying class excluded, including c=2/5. c=1/2 calibration and c>1/2 remain undecided. No 96-hour or full-numerical-completion claim is authorized.",
+    "verdict": "CONFIRMED",
+    "date_utc": "2026-10-23T07:27:01.663115+00:00",
+    "evidence": "SCOPE_AUDIT.md"
+  },
+  {
+    "check": "v2 M1 c_l=.45 step500 whole-space pressure comparison",
+    "method": "Independent FD6 tr(J^2), target-centered Newton quadrature through radius 256; 3 targets and two quadrature resolutions",
+    "result": "Pressure-gradient mismatch RMS 0.0214862 coarse and 0.0197057 fine; refinement difference 0.00618089. This fails the finite quadrature pressure comparison. Exterior and quadrature errors are not rigorously enclosed.",
+    "verdict": "REFUTED",
+    "date_utc": "2026-10-23T07:27:01.663115+00:00",
+    "evidence": "evidence/whole-space-88c0f47198ccbe4c.json"
+  },
+  {
+    "check": "v2 M1 c_l=.45 step500 whole-space velocity comparison",
+    "method": "Independent FD6 curl source and target-centered Biot-Savart quadrature through radius 256",
+    "result": "Mismatch RMS decreases from 0.00530309 to 0.000278605. This convergence is encouraging for the curl reconstruction but has no rigorous exterior or quadrature bound.",
+    "verdict": "OPEN",
+    "date_utc": "2026-10-23T07:27:01.663115+00:00",
+    "evidence": "evidence/whole-space-88c0f47198ccbe4c.json"
+  },
+  {
+    "check": "THEORY_NOTES v3.1 hostile-audit and scope repairs",
+    "method": "Exact diff against independently checked full proof; replay both capture arguments and the generalized spectral projection bounds",
+    "result": "SHA 828ff9f3df4557e6: the thin first-exit box, adapted direct-sum norm, sublinear-growth scope and fixed-class floor quantifiers are repaired. The exact theorem remains confirmed; secondary exponents and numerical completion remain outside it.",
+    "verdict": "CONFIRMED",
+    "evidence": "THEORY_V3_AUDIT.md",
+    "date_utc": "2026-10-23T07:34:31.036489+00:00"
+  },
+  {
+    "check": "EQUATIONS v1.5 summary repairs",
+    "method": "Exact source diff and independent spectral, zero-set, constant-solution and Fourier counterchecks",
+    "result": "SHA 897a4196960f34c0: all five section 9.3 clauses and section 7.2 spectral criteria are repaired. Unchanged representation completeness and numerical-gauge questions remain open.",
+    "verdict": "CONFIRMED",
+    "evidence": "EQUATIONS_V15_AUDIT.md",
+    "date_utc": "2026-10-23T07:34:31.036489+00:00"
+  },
+  {
+    "check": "v2 M1 c_l=.45 step4500 repaired metric comparison",
+    "method": "Independent NumPy potential tangents and physical FD6 at two steps on the saved holdout; explicitly disjoint core and shell measure",
+    "result": "Checkpoint 6946a4395f6b2299: all twelve regional ratios agree within 1.33e-08 relative at the finer step; origin Jacobian discrepancy 5.58e-13. All sample counts match. The core momentum ratio is 0.244541 and the outer nonlinear ratio is 14.2473, so agreement does not make this an acceptable profile.",
+    "verdict": "CONFIRMED",
+    "evidence": "evidence/reference-compare-6946a4395f6b2299-disjoint.json",
+    "date_utc": "2026-10-23T07:34:31.036489+00:00"
+  },
+  {
+    "check": "Last-batch training/holdout gap at v2 cl045 step4476",
+    "method": "Exact sampler-state replay; independent FD6 at two steps; matched disjoint physical-region norms",
+    "result": "R<1 eps_m 0.103332351 training versus 0.216025352 holdout, ratio 2.09058780 (100 versus 61 points); core absolute RMS ratio 2.03421829. Regional step-size changes <= 3.96e-08. This is one observed batch gap, not full-training generalization.",
+    "verdict": "CONFIRMED",
+    "evidence": "TRAINING_HOLDOUT_AUDIT.md",
+    "date_utc": "2026-10-23T07:39:54.658616+00:00"
+  },
+  {
+    "check": "Final numerics shutdown and training ledger",
+    "method": "Retained worker PID checks, runner log, announced SHA and independent rounded-interval reconstruction",
+    "result": "All seven recorded processes exited; 64-record training ledger 9f9477b05b19cafb gives credited union 0.999384131988 to 1.179929723408 hours. Eligible numerical time is not certified.",
+    "verdict": "CONFIRMED",
+    "evidence": "NUMERICS_HANDOFF_AUDIT.md",
+    "date_utc": "2026-10-23T07:50:06.315698+00:00"
+  },
+  {
+    "check": "Numerics companion final-state wording at initial handoff",
+    "method": "Compare hashed RUN_STATUS and STATE with training ledger, queue and audited instrumentation",
+    "result": "There were 12 trained experiment IDs, not 10; two pending entries had already trained. Exact-compute wording is false. NUM_REPORT was still historical. See dated audit for later repair status.",
+    "verdict": "REFUTED",
+    "evidence": "NUMERICS_HANDOFF_AUDIT.md",
+    "date_utc": "2026-10-23T07:50:06.315698+00:00"
+  },
+  {
+    "check": "Final current-checkpoint coverage and verifier shutdown",
+    "method": "SHA256 matching of all current best/last and published native PT files to successful immutable validation evidence; recorded PID checks and graceful drain log",
+    "result": "All26 current files,24 distinct hashes, are covered. No recorded numerics or verifier worker remains active. Verifier stopped07:56:56 UTC. Historical unmatched interval remains excluded; no96-hour completion claim.",
+    "verdict": "CONFIRMED",
+    "evidence": "FINAL_COVERAGE.json",
+    "date_utc": "2026-10-23T07:57:18.608139+00:00"
+  },
+  {
+    "check": "Post-stop stage-boundary retained-batch repair",
+    "method": "Repeat four-step two-stage Euler Adam interruption against train.py SHA61c6f9e23750908e with a deterministic validation stub",
+    "result": "Parameters, optimizer, sampler, RNG state and numerical counters agree bitwise. This repairs the previously demonstrated stage-advance case. No historical run used this source and no campaign-time credit is added.",
+    "verdict": "CONFIRMED",
+    "date_utc": "2026-10-23T08:01:05.202601+00:00",
+    "evidence": "POST_STOP_RUNTIME_AUDIT.md"
+  },
+  {
+    "check": "Post-stop accounting excludes every I/O or pause gap",
+    "method": "Execute the actual merge branch on work intervals[0,.1] and[.5,.6]",
+    "result": "The merged credited interval is[0,.6], including a.4-second nonwork gap. Explicit step starts improve instrumentation but do not make credited time equal eligible compute.",
+    "verdict": "REFUTED",
+    "date_utc": "2026-10-23T08:01:05.202601+00:00",
+    "evidence": "POST_STOP_RUNTIME_AUDIT.md"
+  },
+  {
+    "check": "Post-stop exact resume for all histories",
+    "method": "Scope the executed repair test and inspect legacy-batch fallback",
+    "result": "The specific stage-boundary test passes. Legacy batches without metadata are redrawn; arbitrary configuration edits and every optimizer interruption remain untested. Full NaN rollback is still incomplete.",
+    "verdict": "OPEN",
+    "date_utc": "2026-10-23T08:01:05.202601+00:00",
+    "evidence": "POST_STOP_RUNTIME_AUDIT.md"
+  },
+  {
+    "check": "Later removal of inter-interval accounting merge",
+    "method": "Read complete source diff and execute actual optimizer and validation AST branches on the former counterexample",
+    "result": "At source2f6dbd5ecb0f18f8, both branches preserve work[0,.1]and[.5,.6] separately and credit0.2seconds. The historical0.4secondgap defect is repaired. Exact eligible activity remains unestablished because rounding and within-block suspension are not resolved. No campaign credit added.",
+    "verdict": "CONFIRMED",
+    "date_utc": "2026-10-23T08:13:04.375037+00:00",
+    "evidence": "post_stop_audit/2f6dbd5ecb0f18f8/ACCOUNTING_FOLLOWUP.json"
+  },
+  {
+    "check": "Post-stop secondary-only continuation queue",
+    "method": "Read and hash every JSON in the three explicit queue directories",
+    "result": "Stopped2and pending3entries all have fixed c=.5. Archived_primary preserves25entries. No c>.5or free-exponent branch is queued.",
+    "verdict": "CONFIRMED",
+    "date_utc": "2026-10-23T08:13:04.375037+00:00",
+    "evidence": "post_stop_audit/2f6dbd5ecb0f18f8/ACCOUNTING_FOLLOWUP.json"
+  },
+  {
+    "check": "Complete selected residual statistics",
+    "method": "Directly transcribe all four residual distributions from the immutable selected-checkpoint JSON",
+    "result": "40 equation-region rows retain absolute RMS, q50/q90/q99/q999, sampled maximum, denominator, relative RMS and measure. No new numerical work or ledger credit.",
+    "verdict": "CONFIRMED",
+    "date_utc": "2026-10-23T08:19:19.271321+00:00",
+    "evidence": "SELECTED_RESIDUALS.md; evidence/selected-residual-transcription.json"
+  },
+  {
+    "check": "Exact final lead-report audit",
+    "method": "Read full report and every subsequent diff; compare numerical tables and versioned theorem, equation, runtime and source audits",
+    "result": "FINAL STATUS VALIDATED for REPORT SHA256 d5563816c676650b01b289be534a6911291125e51dea442cda276bf5e14873f7. All 33 report-level checks and 124 displayed-table comparisons pass within the explicit scope. No96-hour completion or successful numerical candidate is asserted.",
+    "verdict": "CONFIRMED",
+    "date_utc": "2026-10-23T08:21:39.772686+00:00",
+    "evidence": "REPORT_AUDIT.md; CURRENT_REPORT_AUDIT.json"
+  }
+]

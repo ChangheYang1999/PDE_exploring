@@ -1,0 +1,1 @@
+Independent comparison: ../../../THEORY_V3_AUDIT.md and ../../../FLOOR_AUDIT.md. Archived floor1 source: ../../../snapshots/floor1-f4c73485061e3f4b.md. No numerical experiment is evidence for the compactness theorem.

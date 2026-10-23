@@ -1,0 +1,1 @@
+Verification evidence is stored in the lane-level evidence directory. Relevant artifacts: ../../../evidence/seed-calibration-c045.json, ../../../evidence/unit_tests.json. Numerical diagnostics are not exact-profile proofs.

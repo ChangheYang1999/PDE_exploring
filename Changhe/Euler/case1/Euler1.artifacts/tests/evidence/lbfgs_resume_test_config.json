@@ -1,0 +1,85 @@
+{
+ "exp_id": "lbfgs_resume_test",
+ "priority": 100,
+ "config": {
+  "cl": 0.45,
+  "cl_trainable": false,
+  "cl_bounds": [
+   0.4,
+   0.5
+  ],
+  "C": 0.0,
+  "model": {
+   "width": 32,
+   "depth": 3,
+   "feature_set": "dir_tau",
+   "n_tail": 2,
+   "last_init_std": 0.02,
+   "zero_last": true
+  },
+  "seed": {
+   "use": true,
+   "a": 0.2,
+   "b": -0.4,
+   "c": 0.7,
+   "trainable": true,
+   "scale": 1.0,
+   "scale_trainable": false
+  },
+  "sampling": {
+   "R_core": 4.0,
+   "R_max": 1000.0,
+   "r_tube": 0.2,
+   "z_min": 0.01,
+   "R_origin": 0.5
+  },
+  "counts": {
+   "n_core": 512,
+   "n_shell": 512,
+   "n_axis": 128,
+   "n_origin": 64
+  },
+  "val_counts": {
+   "n_core": 256,
+   "n_shell": 256,
+   "n_axis": 64,
+   "n_origin": 32
+  },
+  "loss": {
+   "T_lambda": 0.0,
+   "lambda_amp": 1.0,
+   "amp_p": 8,
+   "n_gauge": 2048,
+   "lambda_nonaxi": 0.0,
+   "log_nonaxi": false
+  },
+  "stages": [
+   {
+    "opt": "adam",
+    "steps": 30,
+    "lr": 0.001,
+    "lr_final": 0.0001,
+    "resample_every": 1,
+    "loss": {
+     "T_lambda": 0.0
+    }
+   },
+   {
+    "opt": "lbfgs",
+    "steps": 8,
+    "max_iter": 10,
+    "history": 10,
+    "resample_every": 5,
+    "loss": {
+     "T_lambda": 0.5
+    }
+   }
+  ],
+  "eval_every": 1000,
+  "log_every": 5,
+  "ckpt_minutes": 10,
+  "archive_every_steps": 2000,
+  "rng_seed": 1,
+  "stag_starts": 16
+ }
+}

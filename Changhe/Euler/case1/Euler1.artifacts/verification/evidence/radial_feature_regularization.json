@@ -1,0 +1,58 @@
+{
+  "date_utc": "2026-10-23T06:22:39.276979+00:00",
+  "torch_version": "2.13.0+cu130",
+  "dtype": "float64",
+  "device": "CPU",
+  "results": {
+    "sqrt_R2_plus_1e_300": {
+      "value": 3.3333333333333334e-151,
+      "hessian_finite": true,
+      "hessian": [
+        [
+          3.333333333333333e+149,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          3.333333333333333e+149,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          3.333333333333333e+149
+        ]
+      ],
+      "formula_at_origin": "I/(3*sqrt(1e-300))",
+      "third_derivative_finite": false,
+      "third_derivative_max_absolute": "nan"
+    },
+    "half_log1p_R2": {
+      "value": 0.0,
+      "hessian_finite": true,
+      "hessian": [
+        [
+          0.3333333333333333,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.3333333333333333,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.3333333333333333
+        ]
+      ],
+      "formula_at_origin": "I/3",
+      "third_derivative_finite": true,
+      "third_derivative_max_absolute": 0.0
+    }
+  },
+  "scope": "independent scalar-feature reproducer, no trainer import",
+  "third_derivative_test_utc": "2026-10-23T06:23:22.582875+00:00"
+}

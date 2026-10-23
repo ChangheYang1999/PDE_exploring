@@ -1,0 +1,105 @@
+{
+ "exp_id": "v2_Z0_cl045",
+ "priority": 60,
+ "config": {
+  "cl": 0.45,
+  "cl_trainable": false,
+  "cl_bounds": [
+   0.4,
+   0.5
+  ],
+  "C": 0.0,
+  "model": {
+   "width": 96,
+   "depth": 5,
+   "feature_set": "dir_tau",
+   "n_tail": 2,
+   "l_in": 1.0,
+   "l_env": 1.0,
+   "zero_last": true,
+   "last_init_std": 0.02
+  },
+  "seed": {
+   "use": true,
+   "a": 0.6,
+   "b": 0.5,
+   "c": 0.5,
+   "trainable": true
+  },
+  "sampling": {
+   "R_core": 4.0,
+   "R_max": 3000.0,
+   "r_tube": 0.2,
+   "z_min": 0.01,
+   "R_origin": 0.5
+  },
+  "counts": {
+   "n_core": 6144,
+   "n_shell": 6144,
+   "n_axis": 2048,
+   "n_origin": 1024
+  },
+  "val_counts": {
+   "n_core": 4096,
+   "n_shell": 4096,
+   "n_axis": 1024,
+   "n_origin": 512
+  },
+  "loss": {
+   "T_lambda": 0.0,
+   "lambda_amp": 1.0,
+   "amp_p": 8,
+   "n_gauge": 2048,
+   "lambda_nonaxi": 0.0,
+   "log_nonaxi": false
+  },
+  "stages": [
+   {
+    "opt": "adam",
+    "steps": 8000,
+    "lr": 0.001,
+    "lr_final": 0.0001,
+    "warmup": 200,
+    "resample_every": 1,
+    "loss": {
+     "T_lambda": 0.0
+    }
+   },
+   {
+    "opt": "adam",
+    "steps": 6000,
+    "lr": 0.0003,
+    "lr_final": 3e-05,
+    "resample_every": 1,
+    "loss": {
+     "T_lambda": 0.5
+    }
+   },
+   {
+    "opt": "adam",
+    "steps": 8000,
+    "lr": 0.0001,
+    "lr_final": 1e-05,
+    "resample_every": 1,
+    "loss": {
+     "T_lambda": 1.0
+    }
+   },
+   {
+    "opt": "lbfgs",
+    "steps": 300,
+    "max_iter": 50,
+    "history": 50,
+    "resample_every": 10,
+    "loss": {
+     "T_lambda": 1.0
+    }
+   }
+  ],
+  "eval_every": 500,
+  "log_every": 50,
+  "ckpt_minutes": 10,
+  "archive_every_steps": 4000,
+  "rng_seed": 2
+ }
+}

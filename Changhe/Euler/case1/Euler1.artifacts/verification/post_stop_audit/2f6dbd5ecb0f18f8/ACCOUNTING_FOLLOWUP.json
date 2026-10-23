@@ -1,0 +1,200 @@
+{
+  "date_utc": "2026-10-23T08:12:32.488597+00:00",
+  "source_sha256": "2f6dbd5ecb0f18f8f2256c24274b6e02beee289a7a7bf812f97266ddc3131033",
+  "scope": "Static source diff and actual AST accounting branch execution only; no model, optimizer or elapsed numerical work was run or credited. The demonstrated inter-interval gap inclusion is repaired. Rounding and time suspended inside a measured interval remain outside this narrow test. Historical frozen records are unchanged.",
+  "checks": [
+    {
+      "line": 397,
+      "extracted_source": "if interval['open'] is not None:\n    interval['chunks'].append([round(interval['open'][0], 3), round(interval['open'][1], 3)])\ninterval['open'] = [t0, t1]",
+      "credited_intervals": [
+        [
+          0.0,
+          0.1
+        ],
+        [
+          0.5,
+          0.6
+        ]
+      ],
+      "credited_seconds": 0.19999999999999998,
+      "nonwork_gap_credited_seconds": -2.7755575615628914e-17,
+      "verdict": "CONFIRMED"
+    },
+    {
+      "line": 502,
+      "extracted_source": "if interval['open'] is not None:\n    interval['chunks'].append([round(interval['open'][0], 3), round(interval['open'][1], 3)])\ninterval['open'] = [t_begin, t]",
+      "credited_intervals": [
+        [
+          0.0,
+          0.1
+        ],
+        [
+          0.5,
+          0.6
+        ]
+      ],
+      "credited_seconds": 0.19999999999999998,
+      "nonwork_gap_credited_seconds": -2.7755575615628914e-17,
+      "verdict": "CONFIRMED"
+    }
+  ],
+  "queue": {
+    "stopped": [
+      {
+        "file": "v1_M1_cl050.json",
+        "sha256": "e67ce7eb69adae0b74efb302485d5408306afe70be14bd3e3bf31d21934bb643",
+        "cl": 0.5
+      },
+      {
+        "file": "v2_M1_cl050.json",
+        "sha256": "efa9a3f9842c1b1f1a347c74744e7def8d6cd6497306e3eb092112f2468cdc55",
+        "cl": 0.5
+      }
+    ],
+    "pending": [
+      {
+        "file": "v2_M3_cl050.json",
+        "sha256": "303eea40047e7f9896ee4e921af871c983cd2413f408a06d06c771ebb981ebac",
+        "cl": 0.5
+      },
+      {
+        "file": "v2_Z0_cl050.json",
+        "sha256": "b1f8af8f24b07722dc3450da32bc1a216c85179bf6f3e7f0c3d44003dabb3bbc",
+        "cl": 0.5
+      },
+      {
+        "file": "v2b_BL_cl050.json",
+        "sha256": "19820e5806f9fcc554c5c31a6f5a5d8f0df355549c8d1472fbedf1b8b5a57602",
+        "cl": 0.5
+      }
+    ],
+    "archived_primary": [
+      {
+        "file": "pilot_cl045_M1.json",
+        "sha256": "ec560d23f7f3efe2f74748a0577aad3911bb36e4d5226df0e38d80f97e209749",
+        "cl": 0.45
+      },
+      {
+        "file": "v1_M1_cl041.json",
+        "sha256": "494c6c29f2f024d5beb135e36ced5ba7d4be7dc17fc1b1cd28a4b62b7a022db4",
+        "cl": 0.41
+      },
+      {
+        "file": "v1_M1_cl043.json",
+        "sha256": "8897a405fabdb6962058626744580fc5c653f6b743e441ee079e332670ff3288",
+        "cl": 0.43
+      },
+      {
+        "file": "v1_M1_cl045.json",
+        "sha256": "2f9d90d9054b60c11d168833dc2eadcea440d6be262674a97e8896ab78811820",
+        "cl": 0.45
+      },
+      {
+        "file": "v1_M1_cl047.json",
+        "sha256": "a3431b11ac20cc85ad894fb3f882a5ddd338fa66c411c69475912f7343c00153",
+        "cl": 0.47
+      },
+      {
+        "file": "v1_M1_cl049.json",
+        "sha256": "533f1c5904edfde4942a21b3ba2a60fa443dfcb3791a4affdf6087bf14d078d8",
+        "cl": 0.49
+      },
+      {
+        "file": "v2_M1_cl041.json",
+        "sha256": "e804ff5b3f984d3356e9a6fc1e06251de388088e8c13762f81ddab099730444a",
+        "cl": 0.41
+      },
+      {
+        "file": "v2_M1_cl043.json",
+        "sha256": "ba231d2cd9fa8273df911bc24a479d64cb9faa2d002f7a108223289339a1b7a9",
+        "cl": 0.43
+      },
+      {
+        "file": "v2_M1_cl045.json",
+        "sha256": "9ae699b79f727dcf9afb382fe7540a101488823c52e382271487fbad6b6c9ddd",
+        "cl": 0.45
+      },
+      {
+        "file": "v2_M1_cl047.json",
+        "sha256": "e9fb80ceb229d0d9f3a83138d7358352ac17106b223a791fb636f84abbdd0563",
+        "cl": 0.47
+      },
+      {
+        "file": "v2_M1_cl049.json",
+        "sha256": "0763b3e8b7f3bd3d012b3a28736ce1d6706c5bdc7f4a7134f8bddb538fd95b4a",
+        "cl": 0.49
+      },
+      {
+        "file": "v2_M3_cl041.json",
+        "sha256": "c8697e9701324062ac47e1cad91e236690f01d47debfab2054b8a59be9728433",
+        "cl": 0.41
+      },
+      {
+        "file": "v2_M3_cl043.json",
+        "sha256": "5b46e439d5203b6cf19eff6641caffc6195055f85a444f260773a3c2a6573c0f",
+        "cl": 0.43
+      },
+      {
+        "file": "v2_M3_cl045.json",
+        "sha256": "f5f602cf58d394599555b5683b794e0d53dfb084687084644415dd4f748c319d",
+        "cl": 0.45
+      },
+      {
+        "file": "v2_M3_cl047.json",
+        "sha256": "986b25ca033376eb52eb26f87b55229443ef7efb90e99179517ef492ecfce1c3",
+        "cl": 0.47
+      },
+      {
+        "file": "v2_M3_cl049.json",
+        "sha256": "9183e933f920a505bba234cfa5971a13d8561b11361bda9477bd4fb89beb4789",
+        "cl": 0.49
+      },
+      {
+        "file": "v2_Z0_cl041.json",
+        "sha256": "257d1c9d8f5dffb8df1d4448ab6e07ea406652249862d1aa0af7fd4619c2f016",
+        "cl": 0.41
+      },
+      {
+        "file": "v2_Z0_cl043.json",
+        "sha256": "2e30e3b0b6aff4defd8589185e2f27badc3aee2cc9c9638993f92b453efd2220",
+        "cl": 0.43
+      },
+      {
+        "file": "v2_Z0_cl045.json",
+        "sha256": "f2eb11478cedee2e38971471f85ce105d286bd08650c69532e34e63383c189d3",
+        "cl": 0.45
+      },
+      {
+        "file": "v2_Z0_cl047.json",
+        "sha256": "e53acadf5ed3eb4d86ee10cd35d11cfb2c9c8f7bbbd265e156566c5530ac0531",
+        "cl": 0.47
+      },
+      {
+        "file": "v2_Z0_cl049.json",
+        "sha256": "11b89614287c1e42fd257be70aa38219642ce5dee68f5bbbfd62263d510c31f7",
+        "cl": 0.49
+      },
+      {
+        "file": "v2b_BL_cl041.json",
+        "sha256": "55b3d72f989fd93d4fa7c88d37e879afaa99182c47688a3c52341ca7501795e5",
+        "cl": 0.41
+      },
+      {
+        "file": "v2b_BL_cl043.json",
+        "sha256": "33e04919b62f4c199ee5b92a505864074c0352d51a5ded01ca938271686173da",
+        "cl": 0.43
+      },
+      {
+        "file": "v2b_BL_cl045.json",
+        "sha256": "f505242a0090b43dd277f0d3d5132729fbaeeb2b396d8b1d2e00bc8cb6a56442",
+        "cl": 0.45
+      },
+      {
+        "file": "v2b_BL_cl047.json",
+        "sha256": "d8803f97201445c3a853e05abbe55e68a34d96936b7642aca2c900f1e087c55c",
+        "cl": 0.47
+      }
+    ]
+  },
+  "queue_verdict": "CONFIRMED"
+}

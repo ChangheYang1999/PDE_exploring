@@ -1,0 +1,38 @@
+{
+ "test": "exact resume across a stage boundary (stop right after the stage_advance checkpoint at global step 30, resume to 34) vs continuous run to 34",
+ "max_param_diff": 0.0,
+ "per_tensor_max_diff": {
+  "seed_abc": 0.0,
+  "cl_fixed": 0.0,
+  "netA.lins.0.weight": 0.0,
+  "netA.lins.0.bias": 0.0,
+  "netA.lins.1.weight": 0.0,
+  "netA.lins.1.bias": 0.0,
+  "netA.lins.2.weight": 0.0,
+  "netA.lins.2.bias": 0.0,
+  "netA.lins.3.weight": 0.0,
+  "netA.lins.3.bias": 0.0,
+  "netP.lins.0.weight": 0.0,
+  "netP.lins.0.bias": 0.0,
+  "netP.lins.1.weight": 0.0,
+  "netP.lins.1.bias": 0.0,
+  "netP.lins.2.weight": 0.0,
+  "netP.lins.2.bias": 0.0,
+  "netP.lins.3.weight": 0.0,
+  "netP.lins.3.bias": 0.0
+ },
+ "A_state": {
+  "stage": 1,
+  "step": 4,
+  "global_step": 34
+ },
+ "B_state": {
+  "stage": 1,
+  "step": 4,
+  "global_step": 34
+ },
+ "ckpt_sha256_A": "3f722c1b1e5ee4a075a3a00c1c3291f010587bb485def56aafa4e7d87a13aaad",
+ "ckpt_sha256_B": "71109e62f5f0670ef63cd9bf7a1467d70730d6be6dfbf8777171735a56a47003",
+ "note": "checkpoint files differ in bytes because of save time, RNG consumer order and interval bookkeeping; the model and optimizer tensors are compared above",
+ "no_ledger": true
+}

@@ -1,0 +1,324 @@
+{
+  "created_utc": "2026-10-23T06:58:04.724845+00:00",
+  "tests": [
+    {
+      "branch": false,
+      "n_tail": 1,
+      "use_blobs": false,
+      "numpy_vs_independent_torch": {
+        "rms": 1.8257610303176765e-16,
+        "q50": 1.4946276680890027e-16,
+        "q90": 2.7077345285204735e-16,
+        "q99": 3.6372126270100653e-16,
+        "q999": 3.7533265454343397e-16,
+        "sampled_max": 3.7662280919259246e-16
+      },
+      "tangent_check": {
+        "velocity_vs_finite_difference_potential_curl": {
+          "rms": 2.969781140357642e-14,
+          "q50": 2.5862396039811002e-14,
+          "q90": 4.391220673889046e-14,
+          "q99": 6.134718321869364e-14,
+          "q999": 6.865063599536986e-14,
+          "sampled_max": 6.946213074833389e-14
+        },
+        "sample_count": 65,
+        "passed": true,
+        "scope": "Checks handwritten tangents against finite differences; trainer forward-reference comparison remains separate."
+      },
+      "npz_reload_error": {
+        "rms": 0.0,
+        "q50": 0.0,
+        "q90": 0.0,
+        "q99": 0.0,
+        "q999": 0.0,
+        "sampled_max": 0.0
+      },
+      "passed": true
+    },
+    {
+      "branch": true,
+      "n_tail": 1,
+      "use_blobs": false,
+      "numpy_vs_independent_torch": {
+        "rms": 1.7062294547299736e-16,
+        "q50": 1.4414651695655345e-16,
+        "q90": 2.5430738213522807e-16,
+        "q99": 3.456938348260431e-16,
+        "q999": 3.6767247415224246e-16,
+        "sampled_max": 3.7011454518848656e-16
+      },
+      "tangent_check": {
+        "velocity_vs_finite_difference_potential_curl": {
+          "rms": 4.3980375568545094e-14,
+          "q50": 3.47619512491917e-14,
+          "q90": 6.937025909001459e-14,
+          "q99": 9.349617620123443e-14,
+          "q999": 9.650756486869287e-14,
+          "sampled_max": 9.684216360952159e-14
+        },
+        "sample_count": 65,
+        "passed": true,
+        "scope": "Checks handwritten tangents against finite differences; trainer forward-reference comparison remains separate."
+      },
+      "npz_reload_error": {
+        "rms": 0.0,
+        "q50": 0.0,
+        "q90": 0.0,
+        "q99": 0.0,
+        "q999": 0.0,
+        "sampled_max": 0.0
+      },
+      "passed": true
+    },
+    {
+      "branch": "dir_log",
+      "n_tail": 1,
+      "use_blobs": false,
+      "numpy_vs_independent_torch": {
+        "rms": 1.9914505944504253e-16,
+        "q50": 1.7738393708168754e-16,
+        "q90": 2.765735521978912e-16,
+        "q99": 3.4323959643571127e-16,
+        "q999": 3.435620548528442e-16,
+        "sampled_max": 3.4359788356585895e-16
+      },
+      "tangent_check": {
+        "velocity_vs_finite_difference_potential_curl": {
+          "rms": 6.571186416787915e-14,
+          "q50": 5.954473604317745e-14,
+          "q90": 8.894091861787172e-14,
+          "q99": 1.3155272208235969e-13,
+          "q999": 1.372348382080979e-13,
+          "sampled_max": 1.3786618444429103e-13
+        },
+        "sample_count": 65,
+        "passed": true,
+        "scope": "Checks handwritten tangents against finite differences; trainer forward-reference comparison remains separate."
+      },
+      "npz_reload_error": {
+        "rms": 0.0,
+        "q50": 0.0,
+        "q90": 0.0,
+        "q99": 0.0,
+        "q999": 0.0,
+        "sampled_max": 0.0
+      },
+      "passed": true
+    },
+    {
+      "branch": "asinh",
+      "n_tail": 1,
+      "use_blobs": false,
+      "numpy_vs_independent_torch": {
+        "rms": 1.8206604858313695e-16,
+        "q50": 1.3494794684729454e-16,
+        "q90": 2.9197490843466093e-16,
+        "q99": 3.903858028378185e-16,
+        "q999": 3.947846471040853e-16,
+        "sampled_max": 3.9527340757811487e-16
+      },
+      "tangent_check": {
+        "velocity_vs_finite_difference_potential_curl": {
+          "rms": 4.326471852937946e-14,
+          "q50": 3.857821580801481e-14,
+          "q90": 6.522953829136868e-14,
+          "q99": 8.280971933707077e-14,
+          "q999": 8.548532158211556e-14,
+          "sampled_max": 8.578261072045386e-14
+        },
+        "sample_count": 65,
+        "passed": true,
+        "scope": "Checks handwritten tangents against finite differences; trainer forward-reference comparison remains separate."
+      },
+      "npz_reload_error": {
+        "rms": 0.0,
+        "q50": 0.0,
+        "q90": 0.0,
+        "q99": 0.0,
+        "q999": 0.0,
+        "sampled_max": 0.0
+      },
+      "passed": true
+    },
+    {
+      "branch": "both",
+      "n_tail": 1,
+      "use_blobs": false,
+      "numpy_vs_independent_torch": {
+        "rms": 1.7318878010428081e-16,
+        "q50": 1.4881706727425543e-16,
+        "q90": 2.552907948677658e-16,
+        "q99": 3.343569281198883e-16,
+        "q999": 3.603305122330466e-16,
+        "sampled_max": 3.632164660233972e-16
+      },
+      "tangent_check": {
+        "velocity_vs_finite_difference_potential_curl": {
+          "rms": 4.662020875422473e-14,
+          "q50": 3.784257717518861e-14,
+          "q90": 6.91299144799842e-14,
+          "q99": 9.937543171383153e-14,
+          "q999": 9.994289179964256e-14,
+          "sampled_max": 1.0000594292028823e-13
+        },
+        "sample_count": 65,
+        "passed": true,
+        "scope": "Checks handwritten tangents against finite differences; trainer forward-reference comparison remains separate."
+      },
+      "npz_reload_error": {
+        "rms": 0.0,
+        "q50": 0.0,
+        "q90": 0.0,
+        "q99": 0.0,
+        "q999": 0.0,
+        "sampled_max": 0.0
+      },
+      "passed": true
+    },
+    {
+      "branch": "dir_tau",
+      "n_tail": 1,
+      "use_blobs": false,
+      "numpy_vs_independent_torch": {
+        "rms": 1.4300903351340605e-16,
+        "q50": 1.2747558585635161e-16,
+        "q90": 1.9763884095789975e-16,
+        "q99": 2.8917301964292307e-16,
+        "q999": 3.0055705229422513e-16,
+        "sampled_max": 3.0182194481103634e-16
+      },
+      "tangent_check": {
+        "velocity_vs_finite_difference_potential_curl": {
+          "rms": 4.192749764137533e-14,
+          "q50": 3.643415842696857e-14,
+          "q90": 6.006054930757118e-14,
+          "q99": 8.663285131705422e-14,
+          "q999": 9.214179734828696e-14,
+          "sampled_max": 9.275390246286838e-14
+        },
+        "sample_count": 65,
+        "passed": true,
+        "scope": "Checks handwritten tangents against finite differences; trainer forward-reference comparison remains separate."
+      },
+      "npz_reload_error": {
+        "rms": 0.0,
+        "q50": 0.0,
+        "q90": 0.0,
+        "q99": 0.0,
+        "q999": 0.0,
+        "sampled_max": 0.0
+      },
+      "passed": true
+    },
+    {
+      "branch": "dir_tau",
+      "n_tail": 2,
+      "use_blobs": false,
+      "numpy_vs_independent_torch": {
+        "rms": 1.2437435243519468e-16,
+        "q50": 1.0600463267728694e-16,
+        "q90": 1.9648761707721185e-16,
+        "q99": 2.409648508060981e-16,
+        "q999": 2.45772154767295e-16,
+        "sampled_max": 2.4630629965187236e-16
+      },
+      "tangent_check": {
+        "velocity_vs_finite_difference_potential_curl": {
+          "rms": 5.157858824545096e-14,
+          "q50": 3.6808969533476817e-14,
+          "q90": 7.280663412585466e-14,
+          "q99": 1.3511498945413273e-13,
+          "q999": 1.6840503144895915e-13,
+          "sampled_max": 1.7210392500393987e-13
+        },
+        "sample_count": 65,
+        "passed": true,
+        "scope": "Checks handwritten tangents against finite differences; trainer forward-reference comparison remains separate."
+      },
+      "npz_reload_error": {
+        "rms": 0.0,
+        "q50": 0.0,
+        "q90": 0.0,
+        "q99": 0.0,
+        "q999": 0.0,
+        "sampled_max": 0.0
+      },
+      "passed": true
+    },
+    {
+      "branch": "both",
+      "n_tail": 2,
+      "use_blobs": false,
+      "numpy_vs_independent_torch": {
+        "rms": 1.8142500184987353e-16,
+        "q50": 1.4101333390143947e-16,
+        "q90": 2.6217168648771043e-16,
+        "q99": 4.0295570888616265e-16,
+        "q999": 4.65323072261921e-16,
+        "sampled_max": 4.722527793036711e-16
+      },
+      "tangent_check": {
+        "velocity_vs_finite_difference_potential_curl": {
+          "rms": 5.017883021358414e-14,
+          "q50": 4.348595287550112e-14,
+          "q90": 7.043315390994496e-14,
+          "q99": 1.0180806378133303e-13,
+          "q999": 1.0653440221211906e-13,
+          "sampled_max": 1.0705955092665084e-13
+        },
+        "sample_count": 65,
+        "passed": true,
+        "scope": "Checks handwritten tangents against finite differences; trainer forward-reference comparison remains separate."
+      },
+      "npz_reload_error": {
+        "rms": 0.0,
+        "q50": 0.0,
+        "q90": 0.0,
+        "q99": 0.0,
+        "q999": 0.0,
+        "sampled_max": 0.0
+      },
+      "passed": true
+    },
+    {
+      "branch": "dir_tau",
+      "n_tail": 2,
+      "use_blobs": true,
+      "numpy_vs_independent_torch": {
+        "rms": 1.7437236209155904e-16,
+        "q50": 1.341790708838652e-16,
+        "q90": 2.3955407899609534e-16,
+        "q99": 4.1779576235986234e-16,
+        "q999": 4.509107889985034e-16,
+        "sampled_max": 4.545902364027965e-16
+      },
+      "tangent_check": {
+        "velocity_vs_finite_difference_potential_curl": {
+          "rms": 9.597750812247827e-14,
+          "q50": 6.836454639336722e-14,
+          "q90": 1.4064728694609503e-13,
+          "q99": 2.304599486747985e-13,
+          "q999": 2.455020197222407e-13,
+          "sampled_max": 2.471733609497343e-13
+        },
+        "sample_count": 65,
+        "passed": true,
+        "scope": "Checks handwritten tangents against finite differences; trainer forward-reference comparison remains separate."
+      },
+      "npz_reload_error": {
+        "rms": 0.0,
+        "q50": 0.0,
+        "q90": 0.0,
+        "q99": 0.0,
+        "q999": 0.0,
+        "sampled_max": 0.0
+      },
+      "passed": true
+    }
+  ],
+  "unknown_field_rejected": true,
+  "passed": true,
+  "torch_version": "2.13.0+cu130",
+  "scope": "Synthetic nonzero weights, independent seed matrix, potential autograd versus hand tangents, no trainer modules imported."
+}

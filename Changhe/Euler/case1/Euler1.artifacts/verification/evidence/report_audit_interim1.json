@@ -1,0 +1,262 @@
+{
+  "date_utc": "2026-10-23T07:10:15.237984+00:00",
+  "source_sha256": "98bae70ae562b2b815f90ba975085a7b0a4355c182878d903ed905985325b527",
+  "checks": [
+    {
+      "section": "0",
+      "claim": "No acceptable candidate at the recorded snapshot",
+      "verdict": "CONFIRMED",
+      "result": "Both tabulated states fail independent regional momentum screening by more than two orders of magnitude.",
+      "evidence": "evidence/checkpoint-864b6cf706d4fb02-8bed781757.json",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "0",
+      "claim": "L1 countable-stagnation theorem",
+      "verdict": "CONFIRMED",
+      "result": "Exact stated C2, sublinear, countable hypotheses suffice. A stronger theorem is now cross-audited separately.",
+      "evidence": "research/stagnation-obstruction/PROOF.md",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "0,5",
+      "claim": "Active time 0.22 to 0.23 h is a rigorous bound",
+      "verdict": "REFUTED",
+      "result": "Displayed ledger endpoints are floored and do not enclose every credited chunk. Replace with conservative conditional enclosures.",
+      "evidence": "research/ledger-bounds/PROOF.md",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "0",
+      "claim": "Fixed input c_l is not a resolved exponent",
+      "verdict": "CONFIRMED",
+      "result": "No free refit or refinement sensitivity estimate has been supplied.",
+      "evidence": "CHECKPOINT_TABLE.tsv",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "0,6",
+      "claim": "Pilot worst region and tail ratios",
+      "verdict": "CONFIRMED",
+      "result": "1168-step pilot: worst momentum 0.179776 on 1<R<2; R=4096 full-term ratio 0.0164704, nonlinear ratio 338701.27.",
+      "evidence": "evidence/checkpoint-864b6cf706d4fb02-8bed781757.json",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "1",
+      "claim": "Similarity equation, axial recentering and d range",
+      "verdict": "CONFIRMED",
+      "result": "Direct differentiation confirms signs, centering equivalence and -1.5<d<-1.",
+      "evidence": "research/profile-identities/PROOF.md",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "1",
+      "claim": "U itself is not L2 for every admissible profile",
+      "verdict": "REFUTED",
+      "result": "This follows for a nonzero natural leading tail, not from admissibility or decay alone. State the nonzero-tail qualification.",
+      "evidence": "research/profile-identities/PROOF.md",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "1",
+      "claim": "Natural power tail is locally L2 at the physical singularity iff c>2/5",
+      "verdict": "CONFIRMED",
+      "result": "For a nonzero finite-angular-energy tail the radial integral is integral r^(2d+2) dr, convergent iff d>-3/2.",
+      "evidence": "research/profile-identities/PROOF.md",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "1",
+      "claim": "Resolved cylindrical n=2 excludes pure fourfold and axisymmetry",
+      "verdict": "CONFIRMED",
+      "result": "Correct Fourier convention. It does not alone exclude affine or effectively 2D fields.",
+      "evidence": "EQUATIONS_AUDIT.md",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "1",
+      "claim": "33 symbolic checks passed",
+      "verdict": "OPEN",
+      "result": "Equations were independently audited, but this count was not rerun in this report audit. Attribute it to the lead log.",
+      "evidence": "evidence/equations_audit_current.json",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "2",
+      "claim": "R1/R2 joint attribution of every listed method",
+      "verdict": "OPEN",
+      "result": "R1 primary supplement was read; complete independent R2 method attribution remains outstanding.",
+      "evidence": "SOURCE_NOTES.md",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "2",
+      "claim": "SS-eSOAP and SS-Broyden were not implemented",
+      "verdict": "CONFIRMED",
+      "result": "Audited source defines Adam and standard Torch LBFGS. At the snapshot only Adam execution is evidenced; label the pipeline planned.",
+      "evidence": "snapshots/train.py-cc6a8a37cc4a0da6.txt",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "2",
+      "claim": "R3 does not exclude the whole target class under prompt assumptions alone",
+      "verdict": "CONFIRMED",
+      "result": "The checked source restrictions require extra hypotheses. The new obstruction is a separate proof.",
+      "evidence": "SOURCE_NOTES.md",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "3",
+      "claim": "L1 and L1 prime proof outline",
+      "verdict": "CONFIRMED",
+      "result": "Signs, exceptional spectral argument and null-cover argument agree with independent proofs.",
+      "evidence": "research/stagnation-obstruction/PROOF.md",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "3",
+      "claim": "Small eps W refutes an unconditional residual floor",
+      "verdict": "CONFIRMED",
+      "result": "For sufficiently small eps, V=cy+eps W is strongly monotone with a unique nondegenerate zero; residual tends to zero with trivial limit.",
+      "evidence": "research/stagnation-obstruction/PROOF.md",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "3",
+      "claim": "Unspecified normalized convergence implies the compactness trichotomy",
+      "verdict": "OPEN",
+      "result": "Specify topology, pressure reconstruction, inherited sublinearity and closed nontriviality. The new floor1 corollary is under separate review.",
+      "evidence": "EQUATIONS_AUDIT.md",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "3",
+      "claim": "Every exact C2 decaying profile has uncountably many zeros",
+      "verdict": "REFUTED",
+      "result": "Missing nontrivial: U=P=0 has the single zero y=0 of V. The intended L1 consequence concerns nonzero profiles.",
+      "evidence": "research/stagnation-obstruction/PROOF.md",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "3",
+      "claim": "All compactness diagnostics are tracked on every branch",
+      "verdict": "OPEN",
+      "result": "Sampled derivatives and found roots do not establish global bounds or complete isolation. Every-branch coverage is not demonstrated.",
+      "evidence": "VERIFY_REPORT.md",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "4",
+      "claim": "Exact curl, Q symmetry and FP64 parameterization",
+      "verdict": "CONFIRMED",
+      "result": "Independent decoder tests, saved dtypes and analytic curl establish these representation checks. Evaluations still have roundoff.",
+      "evidence": "evidence/checkpoint_decoder_tests.json",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "4",
+      "claim": "No additional network parity is imposed",
+      "verdict": "CONFIRMED",
+      "result": "Unconstrained Cartesian outputs can break inversion and z reflection; seed accidental parities are not hard constraints.",
+      "evidence": "validation/checkpoint.py",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "4",
+      "claim": "Two envelopes provide leading and subleading degrees",
+      "verdict": "CONFIRMED",
+      "result": "The stated degrees exist in v2, but a generic intervening degree d-2 term must cancel. Existence of envelopes is not tail balance.",
+      "evidence": "research/bounded-tail-expansion/PROOF.md",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "4",
+      "claim": "Physical-region loss is a physical L2 norm",
+      "verdict": "OPEN",
+      "result": "Stratified sampler MSE is an objective. Log shells are not uniform in physical volume; old combined importance weights overlap. Clarify the distinction.",
+      "evidence": "evidence/reference-compare-998d429a7b0387d0.json",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "4",
+      "claim": "Three seed families searched",
+      "verdict": "OPEN",
+      "result": "Configured or queued; only M1 training was established at this snapshot. Label configured, started and completed separately.",
+      "evidence": "../e1-num/NUM_REPORT.md",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "5",
+      "claim": "Two A100 GPUs and supervised checkpoint workers",
+      "verdict": "CONFIRMED",
+      "result": "Read-only worker state and ledgers report GPUs 2 and 3; verifier uses CPU.",
+      "evidence": "../e1-num/RUN_STATUS.md",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "5",
+      "claim": "Bitwise exact resume for the whole Adam stage",
+      "verdict": "OPEN",
+      "result": "Supplied test covers one resample_every=1 case, not retained-batch resume or LBFGS. Qualify by tested configuration.",
+      "evidence": "PRIORITY_RUNTIME_FINDINGS.md",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "6",
+      "claim": "Every numerical value in the seed and pilot table",
+      "verdict": "CONFIRMED",
+      "result": "All match the immutable evidence to displayed rounding. Ring energy uses equal ring weights; seed divergence zero is the analytic identity.",
+      "evidence": "evidence/report-audit-numbers.json",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "6",
+      "claim": "Pilot vorticity, pressure-Poisson and local peak failure",
+      "verdict": "CONFIRMED",
+      "result": "Worst vorticity 0.353965; pressure-Poisson 0.917862 on 32<R<64; local stretch ratios -0.0263791 and -0.00294889. These are local diagnostics.",
+      "evidence": "evidence/checkpoint-864b6cf706d4fb02-8bed781757.json",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "6",
+      "claim": "Cartesian/cylindrical agreement 2.5e-13",
+      "verdict": "CONFIRMED",
+      "result": "Momentum RMS difference 2.4561154e-13 on 96 points; sampled maximum 8.8124128e-13. Specify RMS rather than a uniform bound.",
+      "evidence": "evidence/checkpoint-864b6cf706d4fb02-8bed781757.json",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "7",
+      "claim": "Seed d-2 residual and conditional logarithmic saturation",
+      "verdict": "CONFIRMED",
+      "result": "Correct with the stated nonzero first-layer radial weights. NUM_REPORT omits that condition and needs repair.",
+      "evidence": "research/radial-feature-tails/PROOF.md",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "7",
+      "claim": "Nonzero homogeneous leading tail cannot be irrotational",
+      "verdict": "CONFIRMED",
+      "result": "Correct for fields smooth on R3 minus the origin. Replace globally smooth by smooth away from the origin to avoid a vacuous statement.",
+      "evidence": "research/irrotational-leading-tail/PROOF.md",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "7",
+      "claim": "Affine family and accelerating constants are excluded exact artifacts",
+      "verdict": "CONFIRMED",
+      "result": "Trace-free M with M+M2 symmetric gives exact affine residual. Nonzero constants require a linear pressure, incompatible with decaying pressure.",
+      "evidence": "research/profile-identities/PROOF.md",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    },
+    {
+      "section": "8",
+      "claim": "No global uncountable-stagnation argument exists",
+      "verdict": "OPEN",
+      "result": "Accurate as historical open status, now outdated. Verifier and uncount1 have full arguments; actual lead Opus review remains pending.",
+      "evidence": "UNCOUNTABLE_AUDIT.md",
+      "date_utc": "2026-10-23T07:10:15.237984+00:00"
+    }
+  ]
+}

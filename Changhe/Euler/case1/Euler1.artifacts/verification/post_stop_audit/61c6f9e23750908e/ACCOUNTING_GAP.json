@@ -1,0 +1,25 @@
+{
+  "date_utc": "2026-10-23T08:01:05.202601+00:00",
+  "source_sha256": "61c6f9e23750908e6b3bb655dca6e72660bcf0ca6b8f36df1c4cb817f451a66c",
+  "extracted_source": "if interval['open'] is not None and t_begin - interval['open'][1] <= MERGE_GAP:\n    interval['open'][1] = t\nelse:\n    if interval['open'] is not None:\n        interval['chunks'].append([round(interval['open'][0], 3), round(interval['open'][1], 3)])\n    interval['open'] = [t_begin, t]",
+  "work_intervals": [
+    [
+      0.0,
+      0.1
+    ],
+    [
+      0.5,
+      0.6
+    ]
+  ],
+  "work_union_seconds": 0.2,
+  "merged_credited_interval": [
+    0.0,
+    0.6
+  ],
+  "merged_credited_seconds": 0.6,
+  "nonwork_gap_credited_seconds": 0.4,
+  "verdict": "REFUTED",
+  "claim": "New accounting excludes all checkpoint/logging time and pauses",
+  "scope": "Executed actual AST branch on two work intervals separated by a0.4-second nonwork gap. This does not alter the frozen historical ledger."
+}

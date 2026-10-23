@@ -1,0 +1,1 @@
+No formal proof sources or proof-assistant certification are claimed. Lean and lake execution are prohibited in this campaign. The adjacent PROOF.md contains the complete informal argument; numerical checks live in the adjacent evidence folder.

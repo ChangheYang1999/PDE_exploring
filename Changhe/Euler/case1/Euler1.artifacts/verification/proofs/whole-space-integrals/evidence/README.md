@@ -1,0 +1,1 @@
+Verification evidence is stored in the lane-level evidence directory. Relevant artifacts: ../../../evidence/whole_space_unit_tests.json, ../../../evidence/whole-space-998d429a7b0387d0.json. Numerical diagnostics are not exact-profile proofs.

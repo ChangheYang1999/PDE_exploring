@@ -1,0 +1,58 @@
+{
+  "created_utc": "2026-10-23T07:15:52.063491+00:00",
+  "source_sha256": "e5d0d7cc089e51aae165866a6104091d6ac1747763992bbf1827ff9d8b8eec97",
+  "legacy_truncation_counterexample": {
+    "input": [
+      {
+        "interval_start": 0,
+        "interval_end": 1,
+        "active_seconds": 1.4
+      }
+    ],
+    "reported": {
+      "exact_union_seconds_chunks": 0.0,
+      "legacy_lower_seconds": 1.0,
+      "legacy_upper_seconds": 1.0,
+      "combined_lower_seconds": 1.0,
+      "combined_upper_seconds": 1.0,
+      "n_records_with_chunks": 0,
+      "n_legacy_records": 1
+    },
+    "true_activity_seconds": 1.4
+  },
+  "checkpoint_io_counterexample": {
+    "recorded_chunks": [
+      [
+        100.0,
+        111.0
+      ]
+    ],
+    "eligible_optimizer_intervals": [
+      [
+        110.0,
+        111.0
+      ]
+    ],
+    "reported": {
+      "exact_union_seconds_chunks": 11.0,
+      "legacy_lower_seconds": 0.0,
+      "legacy_upper_seconds": 0.0,
+      "combined_lower_seconds": 11.0,
+      "combined_upper_seconds": 11.0,
+      "n_records_with_chunks": 1,
+      "n_legacy_records": 0
+    }
+  },
+  "stage_advance_batch_counterexample": {
+    "saved": {
+      "step_drawn": 0,
+      "origin_stage": 0
+    },
+    "resumed_stage": 1,
+    "resumed_step": 0,
+    "incorrectly_restored": true
+  },
+  "explicit_empty_chunks_correct": true,
+  "all_counterexamples_reproduced": true,
+  "scope": "Executable branch/interval counterexamples, not an Euler numerical experiment. No campaign-time credit."
+}

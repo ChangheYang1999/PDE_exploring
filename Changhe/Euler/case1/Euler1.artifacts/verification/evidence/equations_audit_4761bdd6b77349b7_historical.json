@@ -1,0 +1,241 @@
+{
+  "snapshot": {
+    "date_utc": "2026-10-23T06:42:08.371108+00:00",
+    "source": "EQUATIONS.md",
+    "sha256": "4761bdd6b77349b797a86b4e8d7d507d85c00fbcdf34c45a9bcf8e7bac2dd770",
+    "copy": "snapshots/EQUATIONS-4761bdd6b77349b7.md"
+  },
+  "date_utc": "2026-10-23T06:42:08.371108+00:00",
+  "checks": [
+    {
+      "section": "Notation",
+      "verdict": "CONFIRMED",
+      "result": "J_ij=\u2202_j U_i and W a=\u03a9\u00d7a/2 have consistent curl signs. Independent index contraction tests pass."
+    },
+    {
+      "section": "1.1 canonical signs",
+      "verdict": "CONFIRMED",
+      "result": "Direct differentiation of tau and y gives the stated positive collapse and stretching signs; manufactured time-dependent test passes."
+    },
+    {
+      "section": "1.2 axial recentering",
+      "verdict": "CONFIRMED",
+      "result": "Y=y+(C/c_l)e_z removes C; translations of the field U_h(y)=U(y-h e_z) correspond to C_h=C-c_l h. Coordinate-translation wording should specify this convention."
+    },
+    {
+      "section": "1.3(a) divergence identity",
+      "verdict": "CONFIRMED",
+      "result": "Independent tensor calculation gives div Rm=\u03b4+V\u00b7\u2207\u03b4+tr(J\u00b2)+\u0394P. The nonzero divergence correction is essential."
+    },
+    {
+      "section": "1.3(b) curl identity",
+      "verdict": "CONFIRMED",
+      "result": "Independent manufactured compressible test verifies curl Rm=R\u03c9+\u03b4\u03a9."
+    },
+    {
+      "section": "1.3(c) Bernoulli identity",
+      "verdict": "CONFIRMED",
+      "result": "Expanding \u03a9\u00d7V=(J-J\u1d40)V and \u2207|V|\u00b2/2 reproduces Rm, including the C-dependent center."
+    },
+    {
+      "section": "1.3(d) vorticity maximum",
+      "verdict": "CONFIRMED",
+      "result": "Dot the vorticity equation with \u03a9 and use \u2207|\u03a9|\u00b2=0. Requires a nonzero interior extremum; not a normalization."
+    },
+    {
+      "section": "1.4 scale symmetry",
+      "verdict": "CONFIRMED",
+      "result": "Independent symbolic and numerical rescaling tests verify U_a=aU(y/a), P_a=a\u00b2P(y/a), C_a=aC. Vorticity amplitude is invariant."
+    },
+    {
+      "section": "2 cylindrical formulation",
+      "verdict": "CONFIRMED",
+      "result": "Angular basis differentiation produces both geometric terms. Independent physical-coordinate and cylindrical finite differences agree on off-axis tests."
+    },
+    {
+      "section": "3.1 Q symmetry",
+      "verdict": "CONFIRMED",
+      "result": "Proper rotation Q preserves the equations and C e_z; simultaneous transverse parity is the required symmetry."
+    },
+    {
+      "section": "3.2 Fourier content",
+      "verdict": "CONFIRMED",
+      "result": "Cylindrical modes are even; horizontal Cartesian components shift by \u00b11. Quadratic terms generate higher even frequencies."
+    },
+    {
+      "section": "3.3 group average and energies",
+      "verdict": "CONFIRMED",
+      "result": "Pullback R_-\u03b1 U(R_\u03b1 y) is correct. Independent affine average and physical-volume Parseval tests pass. At n=0, sum over \u00b1n must count the zero mode once."
+    },
+    {
+      "section": "3.4 orthogonal equivalences",
+      "verdict": "CONFIRMED",
+      "result": "For O e_z=\u00b1e_z, Q commutes with O; transform C with the corresponding sign. Velocity is polar and vorticity is axial under reflections."
+    },
+    {
+      "section": "3.5 seed extra symmetries",
+      "verdict": "CONFIRMED",
+      "result": "The explicit seed formula transforms correctly under orthogonal matrices commuting with M, including inversion and z-reflection. These are branch restrictions unless released."
+    },
+    {
+      "section": "4.1 axis Taylor structure",
+      "verdict": "CONFIRMED",
+      "result": "Parity gives odd horizontal and even vertical transverse degrees. Divergence supplies the transverse trace relation; n=2 velocity can be order r."
+    },
+    {
+      "section": "4.2 Fourier smoothness",
+      "verdict": "CONFIRMED",
+      "result": "For smooth Cartesian fields, a scalar angular mode has r^|k| times a smooth function of r\u00b2. The \u00b11 component shift gives the stated coupled orders."
+    },
+    {
+      "section": "4.3 limiting regularity",
+      "verdict": "CONFIRMED",
+      "result": "Finite smooth representations do not prove derivative convergence of a limiting profile. The listed checks are required numerical evidence, not a theorem of convergence."
+    },
+    {
+      "section": "5.1 symmetry projector",
+      "verdict": "CONFIRMED",
+      "result": "S\u00b2=S by Q\u00b2=I."
+    },
+    {
+      "section": "5.2 curl and projector",
+      "verdict": "CONFIRMED",
+      "result": "Curl commutes with the action of a proper rotation, with determinant factor for an improper one. Hence U=curl(SA) has the required properties."
+    },
+    {
+      "section": "5.3 envelopes and maps",
+      "verdict": "CONFIRMED",
+      "result": "The product divergence term must be kept; potential envelopes avoid it. Chain rules are with respect to physical coordinates."
+    },
+    {
+      "section": "5.4 representation menu",
+      "verdict": "OPEN",
+      "result": "These are proposed search branches, not validated completeness claims. A smooth network on compactified directions has integer radial Taylor increments; explicit fractional envelope families add needed powers, while flat remainders can also occur."
+    },
+    {
+      "section": "6.1 freedoms",
+      "verdict": "CONFIRMED",
+      "result": "No free amplitude of \u03a9 is provided. Canonical translation alone is not a profile symmetry; C allows a coordinate recentering."
+    },
+    {
+      "section": "6.2 amplitude/pressure/phase gauges",
+      "verdict": "OPEN",
+      "result": "A resolved global max gives the stated scale gauge. A fixed-grid or fixed-weight surrogate requires local sensitivity and interior-resolution checks. The proposed pressure-n=2 phase gauge degenerates when that coefficient vanishes, as it does for the initial seed. No P(0) loss was found in the current numerics loss, consistent with its P\u221e=0 architecture."
+    },
+    {
+      "section": "6.3 invariant derivatives",
+      "verdict": "CONFIRMED",
+      "result": "J(0) and the sup of \u03a9 are invariant under spatial scaling. Higher derivatives of J scale as a^-k and should not be called invariant without that qualification."
+    },
+    {
+      "section": "7.1 exact affine family, scalar factor clause",
+      "verdict": "CONFIRMED",
+      "result": "v1.1 repairs the scalar-factor error and classifies Q-equivariant homogeneous linear matrices by Cayley-Hamilton. General affine fields also allow an axial constant offset with a compensating linear pressure; the displayed classification should be read as the U=M y family."
+    },
+    {
+      "section": "7.2 rejection list, force interpretation",
+      "verdict": "CONFIRMED",
+      "result": "v1.1 correctly identifies constant velocity and linear pressure as an exact unforced solution excluded by the target decay and vorticity requirements."
+    },
+    {
+      "section": "7.3 diagnostic requirements",
+      "verdict": "CONFIRMED",
+      "result": "The required distinctions are mathematically appropriate. Check completion separately; no diagnostic list proves the properties automatically."
+    },
+    {
+      "section": "8.1 natural degrees",
+      "verdict": "CONFIRMED",
+      "result": "The homogeneous multiplier vanishes at d=1-1/c_l, giving all stated exponent ranges. This is an assumed matching class, not an exhaustive theorem."
+    },
+    {
+      "section": "8.2 leading divergence",
+      "verdict": "CONFIRMED",
+      "result": "Spherical divergence gives div_S A_T+(d+2)A_r=0; integrate over S\u00b2 and use d+2\u22600."
+    },
+    {
+      "section": "8.3 nonlinear correction multiplier",
+      "verdict": "CONFIRMED",
+      "result": "At degree 2d-1 the multiplier is -1. The formal cascade is a possible hierarchy; an arbitrary exact tail expansion is not proved to contain only those powers."
+    },
+    {
+      "section": "8.3 monopole/dipole cancellation",
+      "verdict": "CONFIRMED",
+      "result": "With the stated derivative decay and d<-1, f=\u2202i\u2202j(U_i U_j) has zero total mass and first moments by integration by parts. Both boundary terms for the first moment are O(R^(2d+2)). Decay of U alone without derivative control is insufficient for this argument."
+    },
+    {
+      "section": "8.4 finite-energy interpretation",
+      "verdict": "CONFIRMED",
+      "result": "The core exponent is 5c_l-2. For a nonzero angular leading tail the fixed-ball power of tau cancels, local L\u00b2 requires d>-3/2, and the profile itself need not lie in L\u00b2 at infinity. Strong matching is an additional hypothesis."
+    },
+    {
+      "section": "8.5 Chae attribution",
+      "verdict": "CONFIRMED",
+      "result": "v1.1 correctly requires all p in an interval (0,p1). Independently saved original theorem math/0601060v2 and related note math/0601661v1 agree on that hypothesis; journal attribution is not independently verified here."
+    },
+    {
+      "section": "8.6 Newtonian pressure and Biot-Savart",
+      "verdict": "CONFIRMED",
+      "result": "With regularity and natural derivative decay, the integrals and signs are justified in research/whole-space-integrals/PROOF.md. Finite-radius quadrature with no analytic tail bound remains a numerical consistency check."
+    },
+    {
+      "section": "9.1 R3 Theorems 2.1, 3.4, 3.8, 3.9, 4.5",
+      "verdict": "CONFIRMED",
+      "result": "Primary v3 checked. Keep finite-energy plus gradient-growth hypotheses for 2.1; p>max(3c_l,1) for 3.4; nonzero \u03a9 and local outgoing at a zero for 3.8; decay, normalization and finite nodal set in Definition 3.7 for 3.9; axisymmetry and (3.5),(3.8) for 4.5."
+    },
+    {
+      "section": "9.1 quantitative O(1) n=2 consequence",
+      "verdict": "CONFIRMED",
+      "result": "v1.1 removes the unsupported quantitative conclusion and asks for a resolved nonzero n=2 signal."
+    },
+    {
+      "section": "9.2 axis and off-axis local checks",
+      "verdict": "CONFIRMED",
+      "result": "At a zero with \u03a9\u22600, J\u03a9=S\u03a9=\u03a9; trace then gives the stated incoming direction and eigenvalue sum. It is conditional and must not be imposed when \u03a9=0."
+    },
+    {
+      "section": "9.3 L1, exact conditional theorem",
+      "verdict": "CONFIRMED",
+      "result": "Complete independent proof, including the local null-graph lemma, in research/stagnation-obstruction/PROOF.md. The C\u00b2 decaying countable-stagnation class is excluded below one half."
+    },
+    {
+      "section": "9.3 numerical residual-floor interpretation",
+      "verdict": "OPEN",
+      "result": "A finite root search does not certify countability or exhaust all zeros. No universal quantitative residual floor follows without global compactness and stagnation-structure control."
+    },
+    {
+      "section": "9.4 peak identity",
+      "verdict": "CONFIRMED",
+      "result": "Same statement as 1.3(d). A numerically refined local extremum is not a global maximum certificate."
+    },
+    {
+      "section": "10 seed algebra and degrees",
+      "verdict": "CONFIRMED",
+      "result": "Independent curl derivation and symbolic/numerical tests agree. The displayed cylindrical n=2 formula is for the affine core M y; the localized seed has additional radial factors. Its generic tail is asymptotic, not exactly homogeneous at finite radius."
+    },
+    {
+      "section": "10 seed as Euler profile",
+      "verdict": "REFUTED",
+      "result": "Correctly labeled initializer in the lead file. Direct tests find momentum, vorticity and pressure defects. Its R^(d-2) correction generally fails nonlinear tail balance below one half."
+    },
+    {
+      "section": "11 residual metrics",
+      "verdict": "CONFIRMED",
+      "result": "The termwise L\u00b2 denominator is well defined away from degeneracy. Use physical weights for physical norms. Quantiles/maxima stay sampled quantities. Proposed numeric thresholds are screening choices."
+    },
+    {
+      "section": "12 Navier-Stokes scaling",
+      "verdict": "CONFIRMED",
+      "result": "The viscosity coefficient is nu exp[-(1-2c_l)s]. Decay of that coefficient alone establishes no NS singularity."
+    },
+    {
+      "section": "13 validation tests",
+      "verdict": "OPEN",
+      "result": "The independent test suite and synthetic decoder checks pass. Cross-implementation tests are still partial and must be attached to actual checkpoint/source hashes. Numerics test results are its responsibility."
+    },
+    {
+      "section": "8.5 irrotational leading power-law allowance",
+      "verdict": "REFUTED",
+      "result": "For a nonzero smooth homogeneous leading field of degree -3/2<d<-1, div=0 and curl=0 imply componentwise harmonicity with spherical eigenvalue d(d+1) in (0,3/4), impossible below the first positive eigenvalue 2. See research/irrotational-leading-tail/PROOF.md. Chae does not supply this exclusion, but the angular argument does. Derivative-compatible global angular asymptotics are required."
+    }
+  ]
+}

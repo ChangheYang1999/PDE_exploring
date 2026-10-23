@@ -1,0 +1,15 @@
+# Scope audit of the L2 conclusion
+
+Date: 2026-10-23T07:26:20.053110+00:00. Independent referee source: `snapshots/l2scope1-226dbc468908e564.md`, SHA256 `226dbc468908e5644f505eee4d23c7404e69f36279bd1333d40d955aa7c2dc1a`. The full 261-line report was read, including its task quotations, axial recentering, raywise counterexample, energy scaling, and residual-floor replacement. L2 itself was verified separately in THEORY_V3_AUDIT.md.
+
+CONFIRMED: the theorem excludes every nonzero exact C2, globally decaying profile in the primary interval 2/5 < c_l < 1/2. It also excludes c_l=2/5. The change Y=y+(C/c_l)e_z removes the allowed axial drift, preserves regularity, global decay and Q symmetry, and yields no exception. No profile energy, power-tail, derivative-decay, outgoing, nodal-set or analytic-at-infinity hypothesis is needed. Nonconstant sublinear growth is excluded as well.
+
+CONFIRMED: global decay is uniform outside a ball, not just decay along sampled rays or even every fixed ray. The referee's separated Q-paired compact velocity bumps have raywise decay but fail sublinearity. They are a counterexample to a logical implication, not Euler solutions. Its finite-energy scaling argument is conditional on uniform physical energy and strong local L2 convergence, and does not add a hidden profile L2 assumption to L2.
+
+CONFIRMED: the theorem does not address c_l=1/2, larger exponents, genuinely rough limits, nonstationary similarity dynamics, or other blowup mechanisms. A fitted exponent whose uncertainty crosses 1/2 cannot be excluded from the central estimate alone. Nonzero constant sublinear profiles remain exact solutions with linear pressure; global decay removes them.
+
+CONFIRMED, restricted stopping scope: PROMPT section 13 supersedes further blind search for the now-excluded primary exact-profile class. The status RIGOROUS OBSTRUCTION UNDER EXPLICIT ASSUMPTIONS is justified for that class after the proof audit. L2 is not a theorem excluding the c_l=1/2 calibration or all secondary possibilities. It does not automatically discharge every numerical deliverable or create 96 measured active hours. Nor does the prompt demand an exhaustive new 96-hour search over all c_l>=1/2. If the team ends the whole campaign, the final report must name the unfinished secondary and calibration work, give the actual decision/reason for leaving it unfinished, and record the actual limited activity without calling all requested experiments complete.
+
+CONFIRMED: the section 8 floor requires one fixed normalized class, common global tail and derivative bounds and a common continuity modulus of D2U. A D3 bound is sufficient, not the only possible modulus. The floor is positive but uncomputed in the absolute whole-space L-infinity momentum norm. A decreasing sampled or relative loss is not this hypothesis. See FLOOR_AUDIT.md and research/compact-residual-floor/PROOF.md.
+
+FINAL STATUS NOT YET VALIDATED. This scope audit does not validate an unwritten or revised final REPORT. The exact final report must be frozen and checked separately.
