@@ -1,4 +1,4 @@
-# Seven-Day Numerical Investigation of Rotating Self-Similar 3D Euler Profiles
+# 96-Hour Numerical Investigation of Rotating Self-Similar 3D Euler Profiles
 
 ## Mission and execution authorization
 
@@ -10,11 +10,11 @@ Investigate whether smooth, globally decaying, genuinely non-axisymmetric rotati
 
 The available research server is reported to have eight NVIDIA A100 GPUs, strong multicore CPUs, and substantial system memory. Inspect the actual allocation and hardware before choosing job sizes. Do not assume a particular GPU-memory capacity or interconnect.
 
-A campaign of up to 168 hours of actual wall-clock time is authorized. Organize it into the three stages below. These are execution budgets, not predictions of convergence. Do not stop after a few initial failures or a small training loss. Use remaining time for new initializations, refinement, independent methods, and attempts to invalidate apparent successes. Do not pad runtime with sleeps or repeat an ineffective run merely to consume the budget.
+A campaign of up to 96 hours of actual wall-clock time is authorized. Organize it into Stage I (hours 0–30, 30 hours), Stage II (hours 30–72, 42 hours), and Stage III (hours 72–96, 24 hours). The hours are measured from a logged campaign start. Protect the final 24 hours for independent verification even if discovery/refinement is incomplete. These are execution budgets, not predictions of convergence. Do not stop after a few initial failures or a small training loss. Use remaining time for new initializations, refinement, independent methods, and attempts to invalidate apparent successes. Do not pad runtime with sleeps or repeat an ineffective run merely to consume the budget.
 
 Proceed autonomously with reversible decisions. Do not ask for routine confirmation about optimizer choices, initial parameters, resolution, or task scheduling. Stop early only for a documented safety/resource problem, a genuine externally imposed execution limit, or a fully justified mathematical obstruction covering the entire stated target class. An optimizer failure is not such an obstruction.
 
-Keep all work in a dedicated directory, preferably `rotating_euler_7day/` inside the current workspace. Inspect existing instructions and reusable code before creating files. Do not overwrite unrelated work, kill other users' jobs, purchase resources, or modify system-wide installations. Use an isolated environment.
+Keep all work in a dedicated directory, preferably `rotating_euler_96h/` inside the current workspace. Inspect existing instructions and reusable code before creating files. Do not overwrite unrelated work, kill other users' jobs, purchase resources, or modify system-wide installations. Use an isolated environment.
 
 All reports, comments, and documentation must be in English. Always write `c_l` for the scaling exponent and `omega` for the rotation parameter. Write `omega/c_l` explicitly; do not introduce another symbol for this ratio.
 
@@ -312,11 +312,11 @@ Implement a campaign supervisor with a persistent job queue, GPU affinity, bound
 
 Test interruption and resume on a disposable job. Do not merely assert that resume works. Keep old accepted checkpoints immutable and promote a candidate only after independent evaluation.
 
-Measure actual elapsed campaign time and GPU/CPU usage. Save a concise daily report and a machine-readable status summary. Do not rely on an interactive chat session remaining alive for seven days. Use an available scheduler or durable process supervisor, but do not claim the AI agent itself can restart automatically unless an actual supported mechanism is configured and tested.
+Measure actual elapsed campaign time and GPU/CPU usage. Save a concise daily report and a machine-readable status summary. Do not rely on an interactive chat session remaining alive for 96 hours. Use an available scheduler or durable process supervisor, but do not claim the AI agent itself can restart automatically unless an actual supported mechanism is configured and tested.
 
 If the execution environment ends the agent session, report exactly which jobs remain running, their fresh heartbeats, and exact recovery commands. A submitted job is not a completed experiment. Never fabricate elapsed time, iterations, or future results.
 
-# STAGE I — Foundations and broad discovery, hours 0–48
+# STAGE I — Foundations and broad discovery, hours 0–30
 
 ## I.1. Build the tested baseline
 
@@ -369,7 +369,7 @@ Use trust-region/Gauss-Newton, Levenberg-Marquardt, L-BFGS, or a measured combin
 
 ## I.3. Start the independent route now
 
-Do not wait until day six to implement the second method. Reserve resources during Stage I for a genuinely independent Cartesian/vector-potential PINN, smooth spline collocation, or another discretization with separately implemented derivatives.
+Do not postpone implementing the second method until Stage II or Stage III. Reserve resources during Stage I for a genuinely independent Cartesian/vector-potential PINN, smooth spline collocation, or another discretization with separately implemented derivatives.
 
 At least one route should evaluate the primitive momentum equation with an independent pressure treatment rather than reproduce the primary spectral curl residual. Any neural architecture must use sufficiently smooth activations and represent the far-field spiral/decay without introducing an origin singularity.
 
@@ -383,7 +383,7 @@ A Stage-I candidate is only a discovery lead. It must have measurable nonzero vo
 
 If no candidate is promising, continue rather than stop. Diagnose parameter trapping, normalization errors, pressure truncation, missing modes, derivative conditioning, and representation limitations. Reallocate part of Stage II to corrected search and removal of the two-fold symmetry restriction.
 
-# STAGE II — Refinement, continuation, and full-space matching, hours 48–120
+# STAGE II — Refinement, continuation, and full-space matching, hours 30–72
 
 ## II.1. Refine several genuinely distinct branches
 
@@ -427,7 +427,7 @@ By the end of Stage II, produce either a small set of refinement-stable candidat
 
 If losses stagnate, test alternative bases, primal versus curl formulations, randomized continuation, and unrestricted azimuthal modes. Do not spend all remaining resources repeatedly restarting the same unsuccessful local optimization.
 
-# STAGE III — Independent replication and adversarial validation, hours 120–168
+# STAGE III — Independent replication and adversarial validation, hours 72–96
 
 The purpose of this stage is to disprove apparent successes whenever possible. Preserve enough time for it even when Stage II remains difficult.
 
