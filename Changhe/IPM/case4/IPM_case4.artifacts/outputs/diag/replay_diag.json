@@ -1,0 +1,96 @@
+{
+ "host": "ip-10-0-18-154.ec2.internal",
+ "saved_norm": 9.239450857163359e-05,
+ "threshold_64eps": 1.3130049377939711e-18,
+ "v3_private_scalar_exp_workers1": {
+  "diff_norm": 2.1726781345069966e-15,
+  "max_abs": 1.6170081309233248e-16,
+  "n_differ": 72690,
+  "rel_norm": 2.3515230159187612e-11,
+  "J": 4.268372607096007e-09
+ },
+ "v2_cached_numpy_exp_workers1": {
+  "diff_norm": 2.5187320741730066e-15,
+  "max_abs": 1.6296082754093245e-16,
+  "n_differ": 77644,
+  "rel_norm": 2.7260625259132477e-11,
+  "J": 4.2683726070959244e-09
+ },
+ "v2_stateless_workers1": {
+  "diff_norm": 2.6086950671147736e-15,
+  "max_abs": 1.5750080022337203e-16,
+  "n_differ": 82843,
+  "rel_norm": 2.82343085908861e-11,
+  "J": 4.268372607095967e-09
+ },
+ "v3_private_scalar_exp_workers4": {
+  "diff_norm": 2.172678134506999e-15,
+  "max_abs": 1.6170081309233248e-16,
+  "n_differ": 72690,
+  "rel_norm": 2.3515230159187635e-11,
+  "J": 4.2683726070960105e-09
+ },
+ "v2_cached_numpy_exp_workers4": {
+  "diff_norm": 2.5187320741730078e-15,
+  "max_abs": 1.6296082754093245e-16,
+  "n_differ": 77644,
+  "rel_norm": 2.7260625259132483e-11,
+  "J": 4.2683726070959286e-09
+ },
+ "v2_stateless_workers4": {
+  "diff_norm": 2.6086950671147744e-15,
+  "max_abs": 1.5750080022337203e-16,
+  "n_differ": 82843,
+  "rel_norm": 2.8234308590886106e-11,
+  "J": 4.26837260709597e-09
+ },
+ "v3_w1_vs_w4_bitwise": true,
+ "v2c_w1_vs_w4_bitwise": true,
+ "v3_vs_v2cached_w4_diff_norm": 1.4652740477243876e-15,
+ "v3_vs_v2stateless_w4_diff_norm": 1.6621684168468871e-15,
+ "v3_w4_repeat_bitwise": true,
+ "numpy_exp_vs_math_exp_differing_fraction": 0.23662,
+ "numpy_exp_vs_math_exp_max_ulp": 1.0,
+ "threadpools": [
+  {
+   "user_api": "blas",
+   "internal_api": "openblas",
+   "num_threads": 1,
+   "prefix": "libopenblas",
+   "filepath": "@NUM_DIR@/env/lib/python3.9/site-packages/numpy.libs/libopenblas64_p-r0-742d56dc.3.20.so",
+   "version": "0.3.20",
+   "threading_layer": "pthreads",
+   "architecture": "SkylakeX"
+  },
+  {
+   "user_api": "blas",
+   "internal_api": "openblas",
+   "num_threads": 1,
+   "prefix": "libopenblas",
+   "filepath": "@NUM_DIR@/env/lib/python3.9/site-packages/scipy.libs/libopenblasp-r0-41284840.3.18.so",
+   "version": "0.3.18",
+   "threading_layer": "pthreads",
+   "architecture": "SkylakeX"
+  }
+ ],
+ "relocation": {
+  "research": "@WORK_REALPATH@/research",
+  "path_mapping": {
+   "/Users/caltech/research/IPM_R2_macpro_experiments/stage13_absolute_optimization": "@WORK_REALPATH@/research",
+   "/Users/caltech/research/IPM_R2_macpro_runs/verification_20261020_01": "@WORK_REALPATH@/unshipped_provenance/0",
+   "/Users/caltech/research/IPM_R2_macpro_reference_20261020": "@WORK_REALPATH@/unshipped_provenance/1",
+   "/Users/caltech/research/IPM_R2_macpro_experiments/stage11_five_taylor": "@WORK_REALPATH@/unshipped_provenance/2",
+   "/Users/caltech/research/IPM_R2_macpro_experiments/stage12_large_scale": "@WORK_REALPATH@/unshipped_provenance/3",
+   "/Users/caltech/research/IPM_R2_macpro_experiments/stage12_absolute_loss": "@WORK_REALPATH@/unshipped_provenance/4",
+   "/Users/caltech/Changhe/IPM/IPM_R2": "@WORK_REALPATH@/unshipped_provenance/5"
+  },
+  "translated_unique_paths": 93,
+  "blocked_original_reads": [],
+  "allowed_interpreter_prefixes": [
+   "@NUM_DIR@/env",
+   "/usr"
+  ],
+  "scientific_bytes_modified": false,
+  "denial_scope": "CPython open/listdir/scandir audit hook; not a native-code sandbox"
+ }
+}

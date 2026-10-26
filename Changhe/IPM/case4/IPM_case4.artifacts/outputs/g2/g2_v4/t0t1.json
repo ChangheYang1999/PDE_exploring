@@ -1,0 +1,622 @@
+{
+ "schema": "g2_t0_t1_v1",
+ "code_manifest": "@OUTPUT_REALPATH@/manifests/code_manifest_g2_v4.json",
+ "code_manifest_sha256": "6f0cf834c13b9bb3d0d3e083ecd94e97acd3aae53fcb907ad11011c62c0250d7",
+ "basis_version": "basis860_v5_T1_longdouble_all860_exact_exponent_differences_centered_q_stableL_origin48_v93",
+ "checks": [
+  {
+   "check": "T0.1_canonical_860_unique_bijective",
+   "value": true,
+   "tolerance": null,
+   "passed": true
+  },
+  {
+   "check": "T0.1_per_j_215_per_jm_26_minus_m",
+   "value": true,
+   "tolerance": null,
+   "passed": true
+  },
+  {
+   "check": "T0.2_Tinv_T_identity_low_digits60",
+   "value": 0.0,
+   "tolerance": 1e-40,
+   "passed": true
+  },
+  {
+   "check": "T0.2_Tinv_T_identity_high_rel_digits60",
+   "value": 4.6636614055729704e-60,
+   "tolerance": 1e-40,
+   "passed": true
+  },
+  {
+   "check": "T0.2_Tinv_T_identity_low_digits110",
+   "value": 0.0,
+   "tolerance": 1e-40,
+   "passed": true
+  },
+  {
+   "check": "T0.2_Tinv_T_identity_high_rel_digits110",
+   "value": 0.0,
+   "tolerance": 1e-40,
+   "passed": true
+  },
+  {
+   "check": "T0.2_T_block_triangular_nonzero_diagonal",
+   "value": true,
+   "tolerance": null,
+   "passed": true
+  },
+  {
+   "check": "T0.2b_frozen_Nn_hex_equal_lead_manifest",
+   "value": true,
+   "tolerance": null,
+   "passed": true
+  },
+  {
+   "check": "T0.2b_N0_exactly_one",
+   "value": true,
+   "tolerance": null,
+   "passed": true
+  },
+  {
+   "check": "T0.2b_production_mode_chi_matches_frozen_Nn_value_rel",
+   "value": 2.5971667009550805e-16,
+   "tolerance": 1e-14,
+   "passed": true
+  },
+  {
+   "check": "T0.3_low_identities_digits85",
+   "value": 3.640489456873312e-70,
+   "tolerance": 1e-40,
+   "passed": true
+  },
+  {
+   "check": "T0.3_high_identities_digits85",
+   "value": 3.3099588268719585e-52,
+   "tolerance": 1e-40,
+   "passed": true
+  },
+  {
+   "check": "T0.4_old_core_identities_digits85",
+   "value": 8.241419730190764e-54,
+   "tolerance": 1e-40,
+   "passed": true
+  },
+  {
+   "check": "T0.3_low_identities_digits110",
+   "value": 2.299256499077881e-95,
+   "tolerance": 1e-40,
+   "passed": true
+  },
+  {
+   "check": "T0.3_high_identities_digits110",
+   "value": 3.618290483200261e-77,
+   "tolerance": 1e-40,
+   "passed": true
+  },
+  {
+   "check": "T0.4_old_core_identities_digits110",
+   "value": 1.529163411542192e-79,
+   "tolerance": 1e-40,
+   "passed": true
+  },
+  {
+   "check": "T0.5_strain_equals_jet_h_cl1.8090",
+   "value": 0.0,
+   "tolerance": 1e-12,
+   "passed": true
+  },
+  {
+   "check": "T0.5_strain_equals_jet_h_decimal_cl1.8090",
+   "value": 2e-59,
+   "tolerance": 1e-55,
+   "passed": true
+  },
+  {
+   "check": "T0.5_old_core_jets_via_B_map_cl1.8090",
+   "value": 1.3642420526593924e-12,
+   "tolerance": 1e-11,
+   "passed": true
+  },
+  {
+   "check": "T0.5_low_evaluator_vs_old_core_matrices_envelope_rel_cl1.8090",
+   "value": 3.0713265673238473e-13,
+   "tolerance": 1e-12,
+   "passed": true,
+   "plain_relative_diagnostic": 5.5097293683138705e-09,
+   "note": "plain relative error grows like R^s at large r for the offset generators s=1,2 (SPEC v5 section 5); the absolute error stays at eps times the monomial envelope"
+  },
+  {
+   "check": "T0.5_low_evaluator_cl_derivative_envelope_rel_cl1.8090",
+   "value": 7.912179120356125e-14,
+   "tolerance": 1e-12,
+   "passed": true
+  },
+  {
+   "check": "T0.5_strain_equals_jet_h_cl1.5000",
+   "value": 0.0,
+   "tolerance": 1e-12,
+   "passed": true
+  },
+  {
+   "check": "T0.5_strain_equals_jet_h_decimal_cl1.5000",
+   "value": 2e-59,
+   "tolerance": 1e-55,
+   "passed": true
+  },
+  {
+   "check": "T0.5_old_core_jets_via_B_map_cl1.5000",
+   "value": 9.094947017729282e-13,
+   "tolerance": 1e-11,
+   "passed": true
+  },
+  {
+   "check": "T0.5_low_evaluator_vs_old_core_matrices_envelope_rel_cl1.5000",
+   "value": 2.4310812284559825e-12,
+   "tolerance": 1e-12,
+   "passed": false,
+   "plain_relative_diagnostic": 4.798666499188041e-09,
+   "note": "plain relative error grows like R^s at large r for the offset generators s=1,2 (SPEC v5 section 5); the absolute error stays at eps times the monomial envelope"
+  },
+  {
+   "check": "T0.5_low_evaluator_cl_derivative_envelope_rel_cl1.5000",
+   "value": 3.0446515621713284e-13,
+   "tolerance": 1e-12,
+   "passed": true
+  },
+  {
+   "check": "T0.5_strain_equals_jet_h_cl2.5000",
+   "value": 0.0,
+   "tolerance": 1e-12,
+   "passed": true
+  },
+  {
+   "check": "T0.5_strain_equals_jet_h_decimal_cl2.5000",
+   "value": 0.0,
+   "tolerance": 1e-55,
+   "passed": true
+  },
+  {
+   "check": "T0.5_old_core_jets_via_B_map_cl2.5000",
+   "value": 9.094947017729282e-13,
+   "tolerance": 1e-11,
+   "passed": true
+  },
+  {
+   "check": "T0.5_low_evaluator_vs_old_core_matrices_envelope_rel_cl2.5000",
+   "value": 9.405555025340892e-14,
+   "tolerance": 1e-12,
+   "passed": true,
+   "plain_relative_diagnostic": 5.393038344422008e-09,
+   "note": "plain relative error grows like R^s at large r for the offset generators s=1,2 (SPEC v5 section 5); the absolute error stays at eps times the monomial envelope"
+  },
+  {
+   "check": "T0.5_low_evaluator_cl_derivative_envelope_rel_cl2.5000",
+   "value": 3.121334331266148e-12,
+   "tolerance": 1e-12,
+   "passed": false
+  },
+  {
+   "check": "T0.5_strain_equals_jet_h_cl4.0000",
+   "value": 0.0,
+   "tolerance": 1e-12,
+   "passed": true
+  },
+  {
+   "check": "T0.5_strain_equals_jet_h_decimal_cl4.0000",
+   "value": 0.0,
+   "tolerance": 1e-55,
+   "passed": true
+  },
+  {
+   "check": "T0.5_old_core_jets_via_B_map_cl4.0000",
+   "value": 0.0,
+   "tolerance": 1e-11,
+   "passed": true
+  },
+  {
+   "check": "T0.5_low_evaluator_vs_old_core_matrices_envelope_rel_cl4.0000",
+   "value": 1.1105182864918032e-12,
+   "tolerance": 1e-12,
+   "passed": false,
+   "plain_relative_diagnostic": 5.425525393400756e-09,
+   "note": "plain relative error grows like R^s at large r for the offset generators s=1,2 (SPEC v5 section 5); the absolute error stays at eps times the monomial envelope"
+  },
+  {
+   "check": "T0.5_low_evaluator_cl_derivative_envelope_rel_cl4.0000",
+   "value": 2.8033360607806295e-13,
+   "tolerance": 1e-12,
+   "passed": true
+  },
+  {
+   "check": "T1.0_accepted278_sha256",
+   "value": true,
+   "tolerance": null,
+   "passed": true
+  },
+  {
+   "check": "T1.1b_raw_a_vs_lead_min_agreeing_digits",
+   "value": -49.33429081310728,
+   "tolerance": -40.0,
+   "passed": true,
+   "nonzero_compared": 186,
+   "zero_mismatch_abs": 0.0
+  },
+  {
+   "check": "T1.1b_lead_assumes_I_order",
+   "value": true,
+   "tolerance": null,
+   "passed": true
+  },
+  {
+   "check": "T1.1_a000_elimination_minus_b00_b01_b02",
+   "value": 8.2689869982e-89,
+   "tolerance": 1e-80,
+   "passed": true,
+   "a000_eliminated": "-3.61163242075381424156918772659893277015340086601993008630436e+0",
+   "b_sum": "-3.61163242075381424156918772659893277015340086601993008630436e+0"
+  },
+  {
+   "check": "T1.1_a000_equals_map_B_value",
+   "value": 0.0,
+   "tolerance": 1e-80,
+   "passed": true
+  },
+  {
+   "check": "T1.1_a000_lead_reference_40_digits",
+   "value": 4.008660199300863e-40,
+   "tolerance": 1e-39,
+   "passed": true
+  },
+  {
+   "check": "T1.2_low_max_abs_20.1129691482296_at_003",
+   "value": 3.305975530529395e-14,
+   "tolerance": 1e-12,
+   "passed": true,
+   "argmax": [
+    0,
+    0,
+    3
+   ]
+  },
+  {
+   "check": "T1.3_high_equals_old_globals_bitwise",
+   "value": true,
+   "tolerance": null,
+   "passed": true
+  },
+  {
+   "check": "T1.3_c300_equals_b32",
+   "value": true,
+   "tolerance": null,
+   "passed": true,
+   "c300": "0.00027142682098612697"
+  },
+  {
+   "check": "T1.3_nonzero_internal_count_186",
+   "value": true,
+   "tolerance": null,
+   "passed": true,
+   "count": 186
+  },
+  {
+   "check": "T1.4_center_defect_zero",
+   "value": 0.0,
+   "tolerance": 1e-80,
+   "passed": true
+  },
+  {
+   "check": "T1.4_C5_raw_defects_max",
+   "value": 7.944402969899589e-14,
+   "tolerance": 1e-12,
+   "passed": true,
+   "defects": [
+    -3.715130705452457e-15,
+    2.0509364727487432e-14,
+    4.976501881806823e-14,
+    7.944402969899589e-14,
+    -6.19513534936856e-14
+   ]
+  },
+  {
+   "check": "T1.4_C5_float_chart_vs_json_constraints_decimal",
+   "value": 6.028847640105653e-14,
+   "tolerance": 1e-12,
+   "passed": true,
+   "note": "float64 chart point P re-rounds the low coefficients (about 1e-16 relative); the 100-digit map B agreement is tested separately below"
+  },
+  {
+   "check": "T1.4_C5_from_exact_map_vs_json",
+   "value": 8.460077802213431e-67,
+   "tolerance": 1e-60,
+   "passed": true,
+   "C5": [
+    "9.488817911309202717617039e-15",
+    "1.527777006470175594193753e-14",
+    "2.662600919851599376563730e-14",
+    "1.915555329793936735784440e-14",
+    "-4.888293456858600607932312e-14"
+   ]
+  },
+  {
+   "check": "T1.4_center_from_exact_map",
+   "value": 4.5617990746e-88,
+   "tolerance": 1e-60,
+   "passed": true
+  },
+  {
+   "check": "T1.5_poisson_identities",
+   "value": 3.1e-97,
+   "tolerance": 1e-60,
+   "passed": true
+  },
+  {
+   "check": "T1.6_a0",
+   "value": 3.7460004809863625e-17,
+   "tolerance": 1e-13,
+   "passed": true,
+   "a0": "1.47677299906064815531992364789e+1"
+  },
+  {
+   "check": "T1.6_Wx",
+   "value": 1.540916206880937e-15,
+   "tolerance": 1e-12,
+   "passed": true,
+   "Wx": "2.7795669555872015409e+0"
+  },
+  {
+   "check": "T1.6_Wy",
+   "value": 3.0776391623725258e-15,
+   "tolerance": 1e-12,
+   "passed": true,
+   "Wy": "2.2052925144170369224e+0"
+  },
+  {
+   "check": "T1.7_a_8_25_0",
+   "value": 2.324670198146465e-12,
+   "tolerance": 1e-10,
+   "passed": true,
+   "val": "1.3043459787291676753e+3"
+  },
+  {
+   "check": "T1.7_k26_leakage_coefficient",
+   "value": 3.552677365110897e-11,
+   "tolerance": 1e-09,
+   "passed": true,
+   "val": "6.0583226457852335527e+4"
+  },
+  {
+   "check": "T1.8_content_fields_bitwise_equal_after_json_normalization",
+   "value": false,
+   "tolerance": null,
+   "passed": false,
+   "differing_content_fields": [
+    "a000_float_production_chart",
+    "hp_report_float_chart"
+   ],
+   "sealed_sha256": "d80ad6eb2336a61177dd89609f594ebaadfd50e4dcf63cdad26e777aff29b0e5",
+   "regenerated_sha256": "3fd712eb6734dc5ab7936b59d378910c386f8be83357f66672fafafb29eee61f",
+   "content_fields": [
+    "cl",
+    "cl_hex",
+    "P_raw_chart_hex",
+    "low_hex",
+    "high_hex",
+    "low_float",
+    "high_float",
+    "a_canonical_decimal50",
+    "a_canonical_float",
+    "low_decimal_from_map_B",
+    "a000_analytic_from_map_B",
+    "a000_eliminated_decimal",
+    "a000_float_production_chart",
+    "hp_report_float_chart",
+    "C5_from_exact_map",
+    "a0_decimal",
+    "W_x",
+    "W_y",
+    "tail_moments_C_mj0",
+    "frozen_Nn_hex",
+    "T_version",
+    "schema",
+    "source_candidate_sha256",
+    "lead_reference_sha256"
+   ]
+  }
+ ],
+ "began_utc": "2026-10-24T07:28:01Z",
+ "canonical_record_roundtrip_rel_loss": {
+  "60": 4.5747041445730874e-39,
+  "110": 1.0445112104183247e-88
+ },
+ "T_float_condition": 955809609567429.5,
+ "Nn_hex": [
+  "0x1.0000000000000p+0",
+  "0x1.bb67ae8584cabp+0",
+  "0x1.1e3779b97f4a8p+1",
+  "0x1.52a7fa9d2f8e9p+1",
+  "0x1.7ffffffffffffp+1",
+  "0x1.a887293fd6f35p+1",
+  "0x1.cd82b446159f2p+1",
+  "0x1.efbdeb14f4edcp+1",
+  "0x1.07e0f66afed05p+2",
+  "0x1.16f8334644df4p+2",
+  "0x1.2548eb9151e84p+2",
+  "0x1.32eee75770416p+2",
+  "0x1.3fffffffffffcp+2",
+  "0x1.4c8dc2e423980p+2",
+  "0x1.58a68a4a8d9f5p+2",
+  "0x1.645640568c1ccp+2",
+  "0x1.6fa6ea162d0efp+2",
+  "0x1.7aa10d193c225p+2",
+  "0x1.854bfb363dc3ep+2",
+  "0x1.8fae0c15ad399p+2",
+  "0x1.99ccc999ffeeap+2",
+  "0x1.a3ad12a1da179p+2",
+  "0x1.ad5336963eef4p+2",
+  "0x1.b6c30b83593f7p+2",
+  "0x1.c00000000000fp+2",
+  "0x1.c90d29d2d43cfp+2"
+ ],
+ "Nn_ulps_from_sqrt": [
+  0.0,
+  1.0,
+  0.0,
+  -1.0,
+  -1.0,
+  1.0,
+  -1.0,
+  2.0,
+  -2.0,
+  -5.0,
+  -1.0,
+  0.0,
+  -4.0,
+  0.0,
+  2.0,
+  9.0,
+  -1.0,
+  -8.0,
+  5.0,
+  15.0,
+  -22.0,
+  25.0,
+  -8.0,
+  17.0,
+  15.0,
+  1.0
+ ],
+ "identity_worst": {
+  "85": {
+   "internal_low_vs_monomial": 3.640489456873312e-70,
+   "internal_high_vs_monomial_expansion": 3.3099588268719585e-52,
+   "old_core_vs_B_map": 8.241419730190764e-54
+  },
+  "110": {
+   "internal_low_vs_monomial": 2.299256499077881e-95,
+   "internal_high_vs_monomial_expansion": 3.618290483200261e-77,
+   "old_core_vs_B_map": 1.529163411542192e-79
+  }
+ },
+ "identity_seconds": 162.50355863571167,
+ "lead_reference_sha256": "6b118ca02a0c153c9aafa9b768751d8720d3aee7e671fb56a20e17fa3750f081",
+ "low_max_abs": "2.0112969148229566940e+1",
+ "low_argmax": [
+  0,
+  0,
+  3
+ ],
+ "widths": {
+  "W_x": "2.779566955587201540916207e+0",
+  "W_y": "2.205292514417036922360838e+0",
+  "l": "9.0657765194864065171e-1",
+  "eta": "2.3143498449754931047e-1"
+ },
+ "tail_moments_C_mj0": {
+  "0,0": "-2.1399861847780044842e-1",
+  "1,0": "1.1932861574358665081e+0",
+  "2,0": "-3.8608545132566571381e-2",
+  "3,0": "-8.1654069953974010164e-3",
+  "4,0": "7.1714608747116988194e-5",
+  "5,0": "2.1606305516515170280e-5",
+  "6,0": "7.1382595582244148378e-7",
+  "7,0": "-9.6377215297504043122e-8",
+  "8,0": "-4.3238280322039270541e-7",
+  "9,0": "-2.6160086749413758257e-8",
+  "0,1": "-1.5987918128109541716e+0",
+  "1,1": "-2.5989004357685741020e+0",
+  "2,1": "-2.0700212094244727079e-1",
+  "3,1": "3.6497995965417986963e-2",
+  "4,1": "0.0000000000000000000e+19",
+  "5,1": "0.0000000000000000000e+19",
+  "6,1": "0.0000000000000000000e+19",
+  "7,1": "0.0000000000000000000e+19",
+  "8,1": "0.0000000000000000000e+19",
+  "9,1": "0.0000000000000000000e+19",
+  "0,2": "6.8870225291787185995e+0",
+  "1,2": "5.5970846861894250068e+0",
+  "2,2": "5.6646481122629777083e-1",
+  "3,2": "-6.4398242651104928291e-2",
+  "4,2": "0.0000000000000000000e+19",
+  "5,2": "0.0000000000000000000e+19",
+  "6,2": "0.0000000000000000000e+19",
+  "7,2": "0.0000000000000000000e+19",
+  "8,2": "0.0000000000000000000e+19",
+  "9,2": "0.0000000000000000000e+19",
+  "0,3": "-2.0112969148229566940e+1",
+  "1,3": "-1.3767970292171268554e+1",
+  "2,3": "-4.8772078618899095126e-1",
+  "3,3": "4.4648950711438227523e-2",
+  "4,3": "0.0000000000000000000e+19",
+  "5,3": "0.0000000000000000000e+19",
+  "6,3": "0.0000000000000000000e+19",
+  "7,3": "0.0000000000000000000e+19",
+  "8,3": "0.0000000000000000000e+19",
+  "9,3": "0.0000000000000000000e+19"
+ },
+ "k25_nonzero": [
+  [
+   8,
+   0,
+   "1.30434597873e+3"
+  ]
+ ],
+ "seed_path": "@OUTPUT_REALPATH@/g2/g2_v4/seed_check/seed_860.json",
+ "seed_sha256": "3fd712eb6734dc5ab7936b59d378910c386f8be83357f66672fafafb29eee61f",
+ "T1.8_descriptor_differences_reported": {
+  "top_level": {
+   "basis_version": {
+    "sealed": "basis860_v2_T1_raw_monomial_low60_legendre_high800_frozenNn",
+    "regenerated": "basis860_v5_T1_longdouble_all860_exact_exponent_differences_centered_q_stableL_origin48_v93"
+   },
+   "created_utc": {
+    "sealed": "2026-10-24T04:25:08Z",
+    "regenerated": "2026-10-24T07:30:47Z"
+   },
+   "code_manifest_sha256": {
+    "sealed": "edb5e7aa780692025733ccbde8a40251cf9bb0b050fe229bc72dc836530b3463",
+    "regenerated": "6f0cf834c13b9bb3d0d3e083ecd94e97acd3aae53fcb907ad11011c62c0250d7"
+   }
+  },
+  "manifest_keys": [
+   "R_f_assembly_v9",
+   "R_f_path_v93",
+   "derivative_version",
+   "eliminated_center_coefficient",
+   "exponent_differences",
+   "extended_arithmetic",
+   "floors",
+   "high_block_provider",
+   "linear_transport",
+   "low_block_provider",
+   "origin_disk_order",
+   "origin_order_production",
+   "origin_orders_integrator",
+   "radial_derivatives",
+   "replay_reference_file",
+   "rounding_bound_kappa_v93",
+   "supported_production_configurations",
+   "switch_radius_r_s",
+   "version"
+  ]
+ },
+ "import_closure": {
+  "work_root": "@WORK_REALPATH@",
+  "count": 11,
+  "files": {
+   "research/absolute_common.py": "f44ef69dd9e8d2bc8b22c57336435c1609a5b7246585b3165c2919e40d7ad3db",
+   "research/absolute_fields.py": "84849ae05d37d25ad9193946a16f04a005611ab1bd9f6f59776cee855503a55e",
+   "research/base/basis_tests.py": "40eb50f247d06bb8bb1398a2d2c200ef4678c2626f841a45692dfefc07eb1f8e",
+   "research/base/engine/ipm_portable.py": "f358631c361941f65acea2bf20e02e5861d9a5429bacc10a7a6ad1e38993d378",
+   "research/base/engine/taylor_jet.py": "efc313b2b446125c921dd33754c50952faf8499c7082b929a9121025aa080c52",
+   "research/base/spectral_basis.py": "6cd09d759fd0444e86536a24a016e4610b41eb4bb390db57f1d0eb64a088426b",
+   "research860/basis860.py": "de75ea42f9d0ae8225f97fe462ef44f9d4d525983c7e24039dcce5032fa20ea8",
+   "research860/chart860.py": "9e2254e2039e57483507ad401cb7bcd87f73569ddc3facd6912e97b3e49f62e5",
+   "research860/closure860.py": "301d85b2ff0ee6373251935ad4360710f710d0532811e57b13f83262db64b10d",
+   "research860/hp860.py": "69a2bafd8226c1019f0acde3224d52d5d6be2afc1444583adc314af1b0fc7ce9",
+   "research860/tests/g2_t0_t1.py": "c1cd9bd8b23c79b1ec95b6578d494dd64dd0656c4451fde2e015a9b3f27a18fa"
+  }
+ },
+ "passed": false,
+ "finished_utc": "2026-10-24T07:30:47Z"
+}

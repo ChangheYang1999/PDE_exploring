@@ -1,0 +1,68 @@
+{
+ "utc": "2026-10-24T12:45:44Z",
+ "manifest": "@OUTPUT_REALPATH@/manifests/code_manifest_g3_v1.json",
+ "manifest_sha256": "fcedf0984e7ca9b53479d44c8291517f13fd0983123f82ea440742b1cd302165",
+ "checks": {
+  "M1_tag_base": true,
+  "M2_every_entry_present_hash_and_size_equal": true,
+  "M3_closure_identical_to_g2_v4": true,
+  "M4_library_unchanged_except_replaced": true,
+  "M5_replaced_and_added_files_equal_the_post_R5_pending_hashes_1234Z": true,
+  "M4b_basis860_differs_only_in_FIELD_METHODS_and_VERSION_values_by_AST": true,
+  "M4c_patched_basis860_sha256_equals_the_lead_replay": true,
+  "M6_kappa_records_listed": true,
+  "M7_runner_harness_tools_listed": true,
+  "M8_no_pycache_and_no_g2_v11_file_lost": true,
+  "M9_accepted278_and_seed_hashes_equal_g2_v4": true
+ },
+ "details": {
+  "M1_tag_base": {
+   "base": "6f0cf834c13b9bb3d0d3e083ecd94e97acd3aae53fcb907ad11011c62c0250d7"
+  },
+  "M2_every_entry_present_hash_and_size_equal": {
+   "n": 109,
+   "bad": []
+  },
+  "M3_closure_identical_to_g2_v4": {
+   "n": 58
+  },
+  "M4_library_unchanged_except_replaced": {
+   "changed": []
+  },
+  "M5_replaced_and_added_files_equal_the_post_R5_pending_hashes_1234Z": {
+   "mismatches": {}
+  },
+  "M4b_basis860_differs_only_in_FIELD_METHODS_and_VERSION_values_by_AST": {
+   "pre": "@OUTPUT_REALPATH@/dev_v9/backups_20261024/basis860_prepatch_g2_v4.py",
+   "pre_sha256": "de75ea42f9d0ae82",
+   "version_new": "basis860_v6_T1_longdouble_all860_exact_exponent_differences_centered_q_stableL_origin48_v99",
+   "rest_identical": true,
+   "literal_eval_ok": true,
+   "field_methods_keys_equal_and_str": true,
+   "changed_keys": [
+    "cl_derivative_cancellation",
+    "common",
+    "f"
+   ]
+  },
+  "M4c_patched_basis860_sha256_equals_the_lead_replay": {
+   "sha256": "5a3c9a8b2b830152",
+   "bytes": 36598
+  },
+  "M6_kappa_records_listed": {
+   "typed": "04f6cd8fd6b4dbd7"
+  },
+  "M7_runner_harness_tools_listed": {},
+  "M8_no_pycache_and_no_g2_v11_file_lost": {
+   "lost": [],
+   "changed_bin_utilities": [
+    "bin/run_g3_steps.sh",
+    "bin/runner_selftest_v5.py"
+   ]
+  },
+  "M9_accepted278_and_seed_hashes_equal_g2_v4": {}
+ },
+ "passed": true,
+ "script_sha256": "ab3260b956431433d4f967427e1dc5fc658b403017c8ec9e1554f26c8b8f6dd3",
+ "M10_manual_publication_step": "not a boolean of this script: the manifest sha256 above is recorded in WORKLOG and RUN_STATUS and sent to the lead by hand (verifier 12:31Z)"
+}

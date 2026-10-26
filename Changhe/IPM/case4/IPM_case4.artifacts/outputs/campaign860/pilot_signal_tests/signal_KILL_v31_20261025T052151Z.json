@@ -1,0 +1,158 @@
+{
+ "schema": "pilot_signal_test_v3.1_KILL",
+ "helper_path": "@NUM_DIR@/bin/pilot_signal_test_v3.sh",
+ "helper_sha256": "dd6a1ea1c1345304eb03f7c3e2ea79db8b8f7e43a8b4a3ed639cc62917b0b6eb",
+ "guard_py_path": "@WORK_REALPATH@/research/hardware/guard.py",
+ "guard_py_sha256": "22567f5bf8776a23f93b3844a8b8236d350021e4074655f0e4b742a67fe510f4",
+ "root": "@OUTPUT_REALPATH@/campaign860/pilot_g4_v2",
+ "signal": "SIGSTOP worker; SIGKILL pool children; wait; SIGKILL worker",
+ "phase_wait_regex": "trial_fun|validation",
+ "started_utc": "2026-10-25T05:21:51.217Z",
+ "selection": {
+  "guard_pid": 3098362,
+  "guard_ppid": 70811,
+  "guard_pgid": 70811,
+  "worker_pid": 3098368,
+  "worker_ppid": 3098362,
+  "worker_pgid": 3098368,
+  "heartbeat_pid": 3098368,
+  "agree": 1
+ },
+ "heartbeat_before": {
+  "phase": "trial_fun",
+  "slice": 4,
+  "trials": 8,
+  "accepted": 8,
+  "objective": 9.101327573108117e-10,
+  "J_abs_independent": 9.101327573108012e-10,
+  "radius": 0.005913248548583754,
+  "status": "running",
+  "phase_trial": 9,
+  "note": "trial committed",
+  "utc": "2026-10-25T05:22:35Z",
+  "epoch": 1792905755.5362613,
+  "pid": 3098368,
+  "guard_run_id": "20261025T050629Z_1792904789035689767_pilot_slice"
+ },
+ "family_before": [
+  {
+   "pid": 70811,
+   "ppid": 70810,
+   "pgid": 70811,
+   "state": "S",
+   "argv": "/bin/bash bin/supervise860_v4.sh @OUTPUT_REALPATH@/campaign860/pilot_g4_v2 pilot 3300 8  12 "
+  },
+  {
+   "pid": 3098362,
+   "ppid": 70811,
+   "pgid": 70811,
+   "state": "S",
+   "argv": "@NUM_DIR@/env/bin/python -B @WORK_REALPATH@/research/hardware/guard.py ru"
+  },
+  {
+   "pid": 3098368,
+   "ppid": 3098362,
+   "pgid": 3098368,
+   "state": "S",
+   "argv": "@NUM_DIR@/env/bin/python -B @WORK_REALPATH@/research860/campaign860.py --"
+  }
+ ],
+ "last_event_before": "event_00000018.json",
+ "guard_runs_before": 8,
+ "intents_before": 9,
+ "proposals_before": 24,
+ "sigstop_worker": {
+  "utc": "2026-10-25T05:22:37.106Z",
+  "rc": 0,
+  "worker_state_after": "T"
+ },
+ "sigstop_state_ok": true,
+ "inside_trial_check": {
+  "newest_intent_trial": 9,
+  "newest_intent_file": "trial_00000009_1792905751618302094.json",
+  "last_committed_trial": 8,
+  "commit_for_newest_exists": false,
+  "ok": true
+ },
+ "group_members_before": [
+  {
+   "pid": 3098368,
+   "ppid": 3098362,
+   "pgid": 3098368,
+   "state": "T"
+  }
+ ],
+ "sigkill_children": [],
+ "children_wait": {
+  "done_utc": "2026-10-25T05:22:37.917Z",
+  "seconds": 0,
+  "children_after": "",
+  "timed_out": false
+ },
+ "sigkill_worker": {
+  "utc": "2026-10-25T05:22:37.981Z",
+  "epoch": 1792905757.9833446,
+  "rc": 0
+ },
+ "worker_gone": {
+  "utc": "2026-10-25T05:22:40.990Z",
+  "worker_gone_wait_timed_out": false
+ },
+ "family_after_worker_gone": [
+  {
+   "pid": 70811,
+   "ppid": 70810,
+   "pgid": 70811,
+   "state": "S",
+   "argv": "/bin/bash bin/supervise860_v4.sh @OUTPUT_REALPATH@/campaign860/pilot_g4_v2 pilot 3300 8  12 "
+  }
+ ],
+ "new_pair_found": true,
+ "new_pair_wait_timed_out": false,
+ "new_worker_pid": 3570170,
+ "new_guard_pid": 3570144,
+ "new_pair_seen_utc": "2026-10-25T05:24:46.177Z",
+ "last_event_after_20s": "event_00000019.json",
+ "guard_runs_after": 10,
+ "new_events": [
+  "event_00000019.json"
+ ],
+ "family_final": [
+  {
+   "pid": 70811,
+   "ppid": 70810,
+   "pgid": 70811,
+   "state": "S",
+   "argv": "/bin/bash bin/supervise860_v4.sh @OUTPUT_REALPATH@/campaign860/pilot_g4_v2 pilot 3300 8  12 "
+  },
+  {
+   "pid": 3570144,
+   "ppid": 70811,
+   "pgid": 70811,
+   "state": "S",
+   "argv": "@NUM_DIR@/env/bin/python -B @WORK_REALPATH@/research/hardware/guard.py ru"
+  },
+  {
+   "pid": 3570170,
+   "ppid": 3570144,
+   "pgid": 3570170,
+   "state": "S",
+   "argv": "@NUM_DIR@/env/bin/python -B @WORK_REALPATH@/research860/campaign860.py --"
+  }
+ ],
+ "supervisor_log_tail": [
+  "{\"run_dir\": \"@OUTPUT_REALPATH@/campaign860/pilot_g4_v2/guard_session/runs/20261025T034356Z_1792899836152903318_pilot_assess\", \"success\": true, \"wall_seconds\": 3993.9916389330756, \"returncode\": 0, \"stop_reasons\": [], \"peak_family_rss_mib\": 18872.68359375}",
+  "2026-10-25T04:50:30Z slice 3 start --resume",
+  "{\"run_dir\": \"@OUTPUT_REALPATH@/campaign860/pilot_g4_v2/guard_session/runs/20261025T045030Z_1792903830292873163_pilot_slice\", \"success\": true, \"wall_seconds\": 896.1369293110911, \"returncode\": 0, \"stop_reasons\": [], \"peak_family_rss_mib\": 126627.25}",
+  "2026-10-25T05:05:26Z slice 3 end guard_exit=0 new_run_dirs=1 result={\"run_id\": \"20261025T045030Z_1792903830292873163_pilot_slice\", \"success\": true, \"returncode\": 0, \"stop_reasons\": [], \"wall\": 896} completion=yes status=stopped_by_request",
+  "2026-10-25T05:05:26Z SIGTERM without STOP file: treated as a process fault",
+  "{\"run_dir\": \"@OUTPUT_REALPATH@/campaign860/pilot_g4_v2/guard_session/runs/20261025T050626Z_1792904786684819330_pilot_assess\", \"success\": true, \"wall_seconds\": 2.204167360905558, \"returncode\": 0, \"stop_reasons\": [], \"peak_family_rss_mib\": 21.38671875}",
+  "2026-10-25T05:06:28Z slice 4 start --resume",
+  "{\"run_dir\": \"@OUTPUT_REALPATH@/campaign860/pilot_g4_v2/guard_session/runs/20261025T050629Z_1792904789035689767_pilot_slice\", \"success\": false, \"wall_seconds\": 971.0996454581618, \"returncode\": -9, \"stop_reasons\": [], \"peak_family_rss_mib\": 132798.51953125}",
+  "2026-10-25T05:22:40Z slice 4 end guard_exit=2 new_run_dirs=1 result={\"run_id\": \"20261025T050629Z_1792904789035689767_pilot_slice\", \"success\": false, \"returncode\": -9, \"stop_reasons\": [], \"wall\": 971} completion=no status=unknown",
+  "2026-10-25T05:22:40Z process fault #2 (guard_exit=2 result={\"run_id\": \"20261025T050629Z_1792904789035689767_pilot_slice\", \"success\": false, \"returncode\": -9, \"stop_reasons\": [], \"wall\": 971} completion_status=unknown); backoff",
+  "{\"run_dir\": \"@OUTPUT_REALPATH@/campaign860/pilot_g4_v2/guard_session/runs/20261025T052440Z_1792905880344390038_pilot_assess\", \"success\": true, \"wall_seconds\": 2.1736134549137205, \"returncode\": 0, \"stop_reasons\": [], \"peak_family_rss_mib\": 52.3203125}",
+  "2026-10-25T05:24:42Z slice 5 start --resume"
+ ],
+ "note": "B8 (b) record v3.1 (numerics); no STOP file written; family listings = every process whose argv contains the root (tool shells and this helper excluded) with pid, ppid, pgid, state"
+}

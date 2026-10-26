@@ -1,0 +1,73 @@
+{
+ "intervention": 7,
+ "ruling": "lead 2026-10-25T00:53:32Z option A, standing authority (c4-lead/NOTES_FOR_TEAM.md)",
+ "root": "@OUTPUT_REALPATH@/campaign860/pilot_g4_v1",
+ "worker_pid": 4145605,
+ "target_pool_child_pid": 4190221,
+ "pre_snapshot_utc": "2026-10-25T01:15:35Z",
+ "conditions": {
+  "i_parent_in_terminate_pool_join": {
+   "py_spy_terminate_pool_frames": 1,
+   "py_spy_join_frames": 1,
+   "wchan": "do_wait"
+  },
+  "ii_target_is_pool_child_blocked_in_semlock": {
+   "ppid": 4145605,
+   "py_spy_semlock_enter_frames": 1,
+   "py_spy_pool_worker_frames": 1,
+   "wchan": "futex_wait_queue"
+  },
+  "iii_zero_cpu_over_6s": {
+   "ticks_before": 4040,
+   "ticks_after": 4040
+  },
+  "iv_every_other_pool_worker_exited": {
+   "children_states": [
+    "4190221:S",
+    "4190222:Z",
+    "4190223:Z",
+    "4190224:Z",
+    "4190225:Z",
+    "4190226:Z",
+    "4190227:Z",
+    "4190228:Z"
+   ],
+   "non_zombie_others": 0
+  },
+  "all_hold": true
+ },
+ "signal": "SIGKILL to the idle pool child only",
+ "signal_sent_utc": "2026-10-25T01:15:41.740Z",
+ "kill_rc": 0,
+ "post": {
+  "utc": "2026-10-25T01:15:45Z",
+  "worker_wchan": "futex_wait_queue",
+  "target": "gone",
+  "heartbeat": {
+   "phase": "validation",
+   "slice": 2,
+   "trials": 0,
+   "accepted": 0,
+   "objective": 4.26837260709569e-09,
+   "J_abs_independent": 4.2683726070956366e-09,
+   "radius": 4.619725428581058e-05,
+   "status": "running",
+   "phase_trial": 1,
+   "utc": "2026-10-25T01:14:59Z",
+   "epoch": 1792890899.6608615,
+   "pid": 4145605,
+   "note": null,
+   "guard_run_id": "20261025T010459Z_1792890299046826222_pilot_slice"
+  }
+ },
+ "not_signalled": [
+  "the worker",
+  "the guard",
+  "the supervisor"
+ ],
+ "tool": "bin/pool_unblock_once.sh",
+ "stack_files": [
+  "@OUTPUT_REALPATH@/diag/interventions/intervention_0007_parent_stack.txt",
+  "@OUTPUT_REALPATH@/diag/interventions/intervention_0007_child_stack.txt"
+ ]
+}

@@ -1,0 +1,3 @@
+# dev_policy_assess8_psi60.json
+
+Created 2026-10-25T16:55:24Z on the lead decision of 2026-10-25T16:49:16Z (c4-lead/NOTES_FOR_TEAM.md): a copy of outputs/dev_policy_assess8.json with only max_memory_psi_full_avg10 changed from 5.0 to 60.0 (the run policy campaign_policy_v3.json value), because the run guard observed host-wide PSI full avg10 above 5.0 in 87 samples (up to 22.77). Every other limit is unchanged (max_seconds 14400, max_family_rss_mib 163840, load 1.5 per CPU, disk floor 10 GiB, min_available 16 GiB and 10 percent, swap, pageout, temperature, nice increment 15, sample 1 s, grace 120 s). For the E3 option (A) standalone assessment only. sha256 of the copy: 9ba18a6f4e88da4fcfd490c642c48a36aad592766da7e3da2796554c0338801e

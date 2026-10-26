@@ -1,0 +1,26 @@
+Process 4145605: @NUM_DIR@/env/bin/python -B @WORK_REALPATH@/research860/campaign860.py --root @OUTPUT_REALPATH@/campaign860/pilot_g4_v1 --seed-json @OUTPUT_REALPATH@/campaign860/seed/seed_860.json --seed-npz @OUTPUT_REALPATH@/campaign860/seed/seed_860_replay_v3.npz --manifest @OUTPUT_REALPATH@/manifests/code_manifest_g4_v1.json --label pilot --seconds 3300 --workers 8 --max-trials 12 --kappa-file @OUTPUT_REALPATH@/campaign860/kappa_calibration_typed.json --resume
+Python v3.9.25 (/usr/bin/python3.9)
+
+Thread 4145605 (idle): "MainThread"
+    poll (multiprocessing/popen_fork.py:27)
+    wait (multiprocessing/popen_fork.py:43)
+    join (multiprocessing/process.py:149)
+    _terminate_pool (multiprocessing/pool.py:729)
+    __call__ (multiprocessing/util.py:224)
+    terminate (multiprocessing/pool.py:654)
+    __exit__ (multiprocessing/pool.py:736)
+    residual_parallel (fields860.py:100)
+    residual (fields860.py:106)
+    _panel (integrate860.py:63)
+    independent_integral (integrate860.py:99)
+    validate (integrate860.py:153)
+    run (campaign860.py:718)
+    main (campaign860.py:829)
+    <module> (campaign860.py:841)
+Thread 4145698 (idle): "heartbeat"
+    wait (threading.py:316)
+    wait (threading.py:581)
+    loop (campaign860.py:309)
+    run (threading.py:917)
+    _bootstrap_inner (threading.py:980)
+    _bootstrap (threading.py:937)

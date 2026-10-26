@@ -1,0 +1,29 @@
+{
+ "schema": "t3_rss_stop_sidecar_v1",
+ "utc_written": "2026-10-24T08:15:00Z",
+ "first_attempt_run_dir": "outputs/g2/session_g2_v4_s1/runs/20261024T080342Z_1792829022326986859_g2_t3",
+ "run_id": "20261024T080342Z_1792829022326986859_g2_t3",
+ "started_time": 1792829022.3312016,
+ "finished_time": 1792829268.0891976,
+ "wall_seconds": 245.7579695340246,
+ "success": false,
+ "returncode": -15,
+ "stop_reasons": [
+  "process-family RSS ceiling"
+ ],
+ "peak_family_rss_mib_observed_by_guard": 68070.02734375,
+ "policy_at_the_time": "outputs/g2_policy_v2.json (max_family_rss_mib 40960)",
+ "hold_record_snapshot_keys": [
+  "reasons",
+  "run_id",
+  "snapshot",
+  "time"
+ ],
+ "relaunch": {
+  "session": "outputs/g2/session_g2_v4_s7",
+  "policy": "outputs/g2_policy_v3.json (max_family_rss_mib 163840; all other limits unchanged; note outputs/g2_policy_v3.note.md)",
+  "runner": "bin/run_g2_steps_v5.sh (strict verdict)",
+  "started_utc": "2026-10-24T08:10:56Z"
+ },
+ "statement": "The lead accepted policy v3 for the t3 relaunch as a stated deviation in policy and resources only; before the G4 manifest the guard reports PSS (smaps_rollup) or the G3 benchmark records peak PSS at the production worker count, so that the G4 limit rests on a measurement (refcount writes turn copy-on-write pages into real copies)."
+}

@@ -1,0 +1,1092 @@
+{
+ "configuration": {
+  "workers": 4,
+  "cache_threads": 4,
+  "block_size": 4096,
+  "mode_block": 64
+ },
+ "sampling_statement": "memory is sampled by a thread every 0.5 s during each timed operation, with the thread first sample before the timer starts and one exit read after it; thread-sample counts show the sampler was active, not that a sample fell inside the timed operation; a sampled maximum is an observed peak, not an upper bound; for an operation shorter than the sampling interval its memory may not have been observed; the reported peak is the maximum of the samples taken by the row thread and the configuration-level sampler (SPEC v9.22 section 16)",
+ "rows": {
+  "fun": [
+   {
+    "wall_s": 143.93942675902508,
+    "cpu_s": 370.57241799999997,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 13796.1962890625,
+    "peak_family_rss_sum_mib": 13813.25390625,
+    "pss_samples": 175,
+    "pss_loop_samples": 174,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false,
+    "cache_builds_delta": 1,
+    "label": "observed: cold cache build at 4 threads"
+   },
+   {
+    "wall_s": 147.4952360871248,
+    "cpu_s": 379.2900000000004,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 16494.439453125,
+    "peak_family_rss_sum_mib": 16511.52734375,
+    "pss_samples": 175,
+    "pss_loop_samples": 174,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false,
+    "cache_builds_delta": 1,
+    "label": "observed: cold cache build (c_l changed back)"
+   },
+   {
+    "wall_s": 148.85958931711502,
+    "cpu_s": 385.19000000000005,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 17652.7763671875,
+    "peak_family_rss_sum_mib": 17670.28125,
+    "pss_samples": 177,
+    "pss_loop_samples": 176,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false,
+    "cache_builds_delta": 1,
+    "label": "trial fun after a lift (c_l changes: cache rebuild)"
+   },
+   {
+    "wall_s": 149.21341426600702,
+    "cpu_s": 381.6700000000001,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 17592.61328125,
+    "peak_family_rss_sum_mib": 17609.51953125,
+    "pss_samples": 175,
+    "pss_loop_samples": 174,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false,
+    "cache_builds_delta": 1,
+    "label": "trial fun after a lift (c_l changes: cache rebuild)"
+   },
+   {
+    "wall_s": 167.08749784715474,
+    "cpu_s": 446.59000000000015,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 17600.830078125,
+    "peak_family_rss_sum_mib": 17618.44921875,
+    "pss_samples": 193,
+    "pss_loop_samples": 192,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false,
+    "cache_builds_delta": 1,
+    "label": "trial fun after a lift (c_l changes: cache rebuild)"
+   }
+  ],
+  "jacobian_warm": [
+   {
+    "wall_s": 79.71157798916101,
+    "cpu_s": 191.8873230000001,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 17434.19140625,
+    "peak_family_rss_sum_mib": 67435.171875,
+    "pss_samples": 73,
+    "pss_loop_samples": 72,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 3,
+    "pss_parent_read_failed": false,
+    "cache_builds_delta": 0,
+    "label": "warm Jacobian at the key just evaluated by fun (seed)"
+   },
+   {
+    "wall_s": 0.23098936793394387,
+    "cpu_s": 0.2400000000000091,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 14801.060546875,
+    "peak_family_rss_sum_mib": 14817.86328125,
+    "pss_samples": 2,
+    "pss_loop_samples": 1,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false,
+    "cache_builds_delta": 0,
+    "label": "warm Jacobian at the key just evaluated by fun (c_l perturbed 1, after fun)"
+   },
+   {
+    "wall_s": 0.23451640596613288,
+    "cpu_s": 0.23000000000047294,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 14801.802734375,
+    "peak_family_rss_sum_mib": 14818.890625,
+    "pss_samples": 2,
+    "pss_loop_samples": 1,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false,
+    "cache_builds_delta": 0,
+    "label": "warm Jacobian at the key just evaluated by fun (c_l perturbed 2, after fun)"
+   }
+  ],
+  "jacobian_rebuild": [
+   {
+    "wall_s": 224.72986698010936,
+    "cpu_s": 569.1074869999999,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 18626.9951171875,
+    "peak_family_rss_sum_mib": 70733.58984375,
+    "pss_samples": 246,
+    "pss_loop_samples": 245,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 2,
+    "pss_parent_read_failed": false,
+    "cache_builds_delta": 1,
+    "label": "Jacobian with a cache rebuild (c_l perturbed 1, first call)"
+   },
+   {
+    "wall_s": 227.23093347693793,
+    "cpu_s": 577.4817570000002,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 18241.240234375,
+    "peak_family_rss_sum_mib": 70881.91796875,
+    "pss_samples": 246,
+    "pss_loop_samples": 245,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 2,
+    "pss_parent_read_failed": false,
+    "cache_builds_delta": 1,
+    "label": "Jacobian with a cache rebuild (c_l perturbed 2, first call)"
+   }
+  ],
+  "svd": [
+   {
+    "wall_s": 15.981347274966538,
+    "cpu_s": 16.0600000000004,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 13656.345703125,
+    "peak_family_rss_sum_mib": 13673.92578125,
+    "pss_samples": 3,
+    "pss_loop_samples": 2,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false,
+    "factor_seconds": 15.762213815003633,
+    "A_shape": [
+     90624,
+     855
+    ]
+   },
+   {
+    "wall_s": 16.157922755926847,
+    "cpu_s": 16.240000000000236,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 14247.501953125,
+    "peak_family_rss_sum_mib": 14265.08203125,
+    "pss_samples": 3,
+    "pss_loop_samples": 2,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false,
+    "factor_seconds": 15.93901373911649,
+    "A_shape": [
+     90624,
+     855
+    ]
+   },
+   {
+    "wall_s": 16.245555996894836,
+    "cpu_s": 16.329999999999927,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 14247.6318359375,
+    "peak_family_rss_sum_mib": 14265.08203125,
+    "pss_samples": 3,
+    "pss_loop_samples": 2,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false,
+    "factor_seconds": 16.027228370076045,
+    "A_shape": [
+     90624,
+     855
+    ]
+   }
+  ],
+  "trust": [
+   {
+    "wall_s": 0.08545232214964926,
+    "cpu_s": 0.07999999999992724,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 13656.345703125,
+    "peak_family_rss_sum_mib": 13673.92578125,
+    "pss_samples": 2,
+    "pss_loop_samples": 1,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false,
+    "radius": 4.619725428581058e-05,
+    "metadata": {
+     "schema": "stage12-exact-euclidean-svd-gn-trust-v1",
+     "radius": 4.619725428581058e-05,
+     "active": true,
+     "damping": 0.3598116862481977,
+     "damping_decimal": "0.35981168624819771925",
+     "lagrange_multiplier": 0.12946444956077147,
+     "lagrange_multiplier_decimal": "0.12946444956077147571",
+     "multiplier_convention": "mu=lambda^2 in A.T@(r+A p)+mu*p=0",
+     "relative_tolerance": 1e-12,
+     "bracket_iterations": 2,
+     "root_iterations": 41,
+     "singular_values_supplied": 855,
+     "positive_singular_values_used": 855,
+     "exact_zero_singular_values": 0,
+     "smallest_positive_singular_value": 4.1408300181957735e-18,
+     "no_numerical_rank_threshold": true,
+     "no_positive_singular_directions_deleted": true,
+     "exact_zero_rule": "minimum-norm SVD coordinate zero",
+     "unconstrained_minimum_norm": 447352928.2297571,
+     "unconstrained_minimum_norm_decimal": "447352928.22975705122",
+     "returned_step_norm": 4.61972542857874e-05,
+     "relative_radius_gap": 5.017067657071052e-13,
+     "returned_step_relative_radius_gap": 5.017503832770956e-13,
+     "kkt_stationarity_diagonal_norm": 1.2222821263463807e-21,
+     "kkt_stationarity_diagonal_relative": 4.5295882264012297e-17,
+     "A_gradient_diagonal_norm": 5.9809020973284574e-06,
+     "lambda_squared_step_diagonal_norm": 5.9809020973284574e-06,
+     "complementarity": -2.7724441806278497e-22,
+     "complementarity_relative_to_mu_radius_squared": 1.0034134981240506e-12,
+     "predicted_original_least_squares_decrease": 4.100841432281653e-10,
+     "predicted_response_norm": 1.6357437952166187e-05,
+     "Vt_rows_orthonormal_assumed": true,
+     "right_rotation_multiplications": 1,
+     "scope": "Finite-precision convex quadratic trust-subproblem solution; no nonlinear or interval certificate",
+     "actual_matrix_predicted_decrease": 4.1008414322816543e-10,
+     "actual_matrix_response_norm": 1.635743795216617e-05,
+     "factor_seconds": 15.762213815003633,
+     "secular_and_rotation_seconds": 0.057634419994428754,
+     "full_columns": 855,
+     "diagnostic_numerical_rank": 351,
+     "rank_threshold_only_diagnostic": true
+    }
+   },
+   {
+    "wall_s": 0.08394864690490067,
+    "cpu_s": 0.09000000000014552,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 13656.345703125,
+    "peak_family_rss_sum_mib": 13673.92578125,
+    "pss_samples": 2,
+    "pss_loop_samples": 1,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false,
+    "radius": 4.619725428581058e-06,
+    "metadata": {
+     "schema": "stage12-exact-euclidean-svd-gn-trust-v1",
+     "radius": 4.619725428581058e-06,
+     "active": true,
+     "damping": 1.6775191443026536,
+     "damping_decimal": "1.6775191443026535491",
+     "lagrange_multiplier": 2.814070479501907,
+     "lagrange_multiplier_decimal": "2.814070479501906981",
+     "multiplier_convention": "mu=lambda^2 in A.T@(r+A p)+mu*p=0",
+     "relative_tolerance": 1e-12,
+     "bracket_iterations": 1,
+     "root_iterations": 41,
+     "singular_values_supplied": 855,
+     "positive_singular_values_used": 855,
+     "exact_zero_singular_values": 0,
+     "smallest_positive_singular_value": 4.1408300181957735e-18,
+     "no_numerical_rank_threshold": true,
+     "no_positive_singular_directions_deleted": true,
+     "exact_zero_rule": "minimum-norm SVD coordinate zero",
+     "unconstrained_minimum_norm": 447352928.2297571,
+     "unconstrained_minimum_norm_decimal": "447352928.22975705122",
+     "returned_step_norm": 4.619725428580315e-06,
+     "relative_radius_gap": 1.607072893325212e-13,
+     "returned_step_relative_radius_gap": 1.6084945825933745e-13,
+     "kkt_stationarity_diagonal_norm": 1.2611542454269202e-21,
+     "kkt_stationarity_diagonal_relative": 4.673642278348137e-17,
+     "A_gradient_diagonal_norm": 1.3000232951972161e-05,
+     "lambda_squared_step_diagonal_norm": 1.3000232951972161e-05,
+     "complementarity": -1.9303358226344685e-23,
+     "complementarity_relative_to_mu_radius_squared": 3.2141455295897625e-13,
+     "predicted_original_least_squares_decrease": 7.279748916743569e-11,
+     "predicted_response_norm": 5.047768303268714e-06,
+     "Vt_rows_orthonormal_assumed": true,
+     "right_rotation_multiplications": 1,
+     "scope": "Finite-precision convex quadratic trust-subproblem solution; no nonlinear or interval certificate",
+     "actual_matrix_predicted_decrease": 7.279748916743576e-11,
+     "actual_matrix_response_norm": 5.047768303268702e-06,
+     "factor_seconds": 15.93901373911649,
+     "secular_and_rotation_seconds": 0.05687715392559767,
+     "full_columns": 855,
+     "diagnostic_numerical_rank": 351,
+     "rank_threshold_only_diagnostic": true
+    }
+   },
+   {
+    "wall_s": 0.08653590804897249,
+    "cpu_s": 0.08999999999969077,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 13656.4755859375,
+    "peak_family_rss_sum_mib": 13673.92578125,
+    "pss_samples": 2,
+    "pss_loop_samples": 1,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false,
+    "radius": 4.619725428581058e-07,
+    "metadata": {
+     "schema": "stage12-exact-euclidean-svd-gn-trust-v1",
+     "radius": 4.619725428581058e-07,
+     "active": true,
+     "damping": 6.446439771141159,
+     "damping_decimal": "6.4464397711411583415",
+     "lagrange_multiplier": 41.55658572295047,
+     "lagrange_multiplier_decimal": "41.556585722950469933",
+     "multiplier_convention": "mu=lambda^2 in A.T@(r+A p)+mu*p=0",
+     "relative_tolerance": 1e-12,
+     "bracket_iterations": 1,
+     "root_iterations": 41,
+     "singular_values_supplied": 855,
+     "positive_singular_values_used": 855,
+     "exact_zero_singular_values": 0,
+     "smallest_positive_singular_value": 4.1408300181957735e-18,
+     "no_numerical_rank_threshold": true,
+     "no_positive_singular_directions_deleted": true,
+     "exact_zero_rule": "minimum-norm SVD coordinate zero",
+     "unconstrained_minimum_norm": 447352928.2297571,
+     "unconstrained_minimum_norm_decimal": "447352928.22975705122",
+     "returned_step_norm": 4.619725428579652e-07,
+     "relative_radius_gap": 3.041814083665423e-13,
+     "returned_step_relative_radius_gap": 3.043483203268276e-13,
+     "kkt_stationarity_diagonal_norm": 1.2379715231723798e-21,
+     "kkt_stationarity_diagonal_relative": 4.587730700720815e-17,
+     "A_gradient_diagonal_norm": 1.9198001578926444e-05,
+     "lambda_squared_step_diagonal_norm": 1.9198001578926444e-05,
+     "complementarity": -5.395539164507233e-24,
+     "complementarity_relative_to_mu_radius_squared": 6.083628609557246e-13,
+     "predicted_original_least_squares_decrease": 1.0122056865922936e-11,
+     "predicted_response_norm": 1.5831028132847552e-06,
+     "Vt_rows_orthonormal_assumed": true,
+     "right_rotation_multiplications": 1,
+     "scope": "Finite-precision convex quadratic trust-subproblem solution; no nonlinear or interval certificate",
+     "actual_matrix_predicted_decrease": 1.0122056865922948e-11,
+     "actual_matrix_response_norm": 1.5831028132847507e-06,
+     "factor_seconds": 16.027228370076045,
+     "secular_and_rotation_seconds": 0.05906536080874503,
+     "full_columns": 855,
+     "diagnostic_numerical_rank": 351,
+     "rank_threshold_only_diagnostic": true
+    }
+   }
+  ],
+  "kkt": [
+   {
+    "wall_s": 0.1810389100573957,
+    "cpu_s": 0.18999999999959982,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 13656.345703125,
+    "peak_family_rss_sum_mib": 13673.92578125,
+    "pss_samples": 2,
+    "pss_loop_samples": 1,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false
+   },
+   {
+    "wall_s": 0.17656288016587496,
+    "cpu_s": 0.169999999999618,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 13656.345703125,
+    "peak_family_rss_sum_mib": 13673.92578125,
+    "pss_samples": 2,
+    "pss_loop_samples": 1,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false
+   },
+   {
+    "wall_s": 0.17845719191245735,
+    "cpu_s": 0.18000000000029104,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 13656.4755859375,
+    "peak_family_rss_sum_mib": 13673.92578125,
+    "pss_samples": 2,
+    "pss_loop_samples": 1,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false
+   }
+  ],
+  "lift": [
+   {
+    "wall_s": 0.21588548296131194,
+    "cpu_s": 0.2199999999997999,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 14247.501953125,
+    "peak_family_rss_sum_mib": 14265.08203125,
+    "pss_samples": 2,
+    "pss_loop_samples": 1,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false,
+    "iterations": 2,
+    "radius": 4.619725428581058e-05
+   },
+   {
+    "wall_s": 0.2489803780335933,
+    "cpu_s": 0.25,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 14183.2236328125,
+    "peak_family_rss_sum_mib": 14200.02734375,
+    "pss_samples": 2,
+    "pss_loop_samples": 1,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false,
+    "iterations": 2,
+    "radius": 4.619725428581058e-06
+   },
+   {
+    "wall_s": 0.2902167709544301,
+    "cpu_s": 0.2899999999990541,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 14185.8984375,
+    "peak_family_rss_sum_mib": 14203.51953125,
+    "pss_samples": 2,
+    "pss_loop_samples": 1,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false,
+    "iterations": 2,
+    "radius": 4.619725428581058e-07
+   }
+  ],
+  "condition_sums": [
+   {
+    "wall_s": 6.124975068029016,
+    "cpu_s": 6.639999999999873,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 15342.9013671875,
+    "peak_family_rss_sum_mib": 15360.3515625,
+    "pss_samples": 13,
+    "pss_loop_samples": 12,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false
+   },
+   {
+    "wall_s": 6.347206125967205,
+    "cpu_s": 6.930000000000291,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 15326.8076171875,
+    "peak_family_rss_sum_mib": 15343.9453125,
+    "pss_samples": 13,
+    "pss_loop_samples": 12,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false
+   },
+   {
+    "wall_s": 6.246397692942992,
+    "cpu_s": 6.790000000000873,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 15333.203125,
+    "peak_family_rss_sum_mib": 15350.75,
+    "pss_samples": 13,
+    "pss_loop_samples": 12,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false
+   }
+  ],
+  "chart": [
+   {
+    "wall_s": 0.5456273609306663,
+    "cpu_s": 0.6299999999999955,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 12255.1162109375,
+    "peak_family_rss_sum_mib": 12272.2578125,
+    "pss_samples": 3,
+    "pss_loop_samples": 2,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false
+   }
+  ],
+  "stationarity": [
+   {
+    "wall_s": 0.027195178903639317,
+    "cpu_s": 0.01999999999998181,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 13656.345703125,
+    "peak_family_rss_sum_mib": 13673.92578125,
+    "pss_samples": 2,
+    "pss_loop_samples": 1,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false,
+    "indicator": 0.9999935943228447
+   },
+   {
+    "wall_s": 0.02907325094565749,
+    "cpu_s": 0.03000000000020009,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 13656.345703125,
+    "peak_family_rss_sum_mib": 13673.92578125,
+    "pss_samples": 2,
+    "pss_loop_samples": 1,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false,
+    "indicator": 0.9999935943228447
+   },
+   {
+    "wall_s": 0.02809717506170273,
+    "cpu_s": 0.03000000000020009,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 13656.4755859375,
+    "peak_family_rss_sum_mib": 13673.92578125,
+    "pss_samples": 2,
+    "pss_loop_samples": 1,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false,
+    "indicator": 0.9999935943228447
+   }
+  ],
+  "integral": [
+   {
+    "wall_s": 678.4159855549224,
+    "cpu_s": 2531.8766779999996,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 16201.4697265625,
+    "peak_family_rss_sum_mib": 73055.82421875,
+    "pss_samples": 708,
+    "pss_loop_samples": 707,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false,
+    "J_abs": 3.8582885319116485e-09,
+    "error_abs": 4.2242812185165974e-19,
+    "accuracy_passed": true,
+    "requires_refinement": false,
+    "predicted_decrease_used": 4.1008414322816543e-10,
+    "acceptance_tolerance": 2.5e-15,
+    "acceptance_tolerance_note": "accuracy_tolerance of validate: the ACCEPTANCE tolerance on |J_training - J_independent|, not the integration target",
+    "target_error_abs": 2.5e-15,
+    "training_J_abs": 3.858288531911694e-09,
+    "actual_mesh_decrease": 4.1008407518399387e-10
+   },
+   {
+    "wall_s": 737.4556207871065,
+    "cpu_s": 2755.9146549999996,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 16213.1494140625,
+    "peak_family_rss_sum_mib": 73133.0546875,
+    "pss_samples": 706,
+    "pss_loop_samples": 705,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 1,
+    "pss_parent_read_failed": false,
+    "J_abs": 4.195575133809586e-09,
+    "error_abs": 4.2234364841118233e-19,
+    "accuracy_passed": true,
+    "requires_refinement": false,
+    "predicted_decrease_used": 7.279748916743576e-11,
+    "acceptance_tolerance": 2.5e-15,
+    "acceptance_tolerance_note": "accuracy_tolerance of validate: the ACCEPTANCE tolerance on |J_training - J_independent|, not the integration target",
+    "target_error_abs": 2.5e-15,
+    "training_J_abs": 4.195575133809641e-09,
+    "actual_mesh_decrease": 7.279747328604663e-11
+   },
+   {
+    "wall_s": 858.7749175189529,
+    "cpu_s": 3107.6384259999995,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 16213.0146484375,
+    "peak_family_rss_sum_mib": 73117.97265625,
+    "pss_samples": 795,
+    "pss_loop_samples": 794,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 4,
+    "pss_parent_read_failed": false,
+    "J_abs": 4.258250548237174e-09,
+    "error_abs": 4.2233982534003476e-19,
+    "accuracy_passed": true,
+    "requires_refinement": false,
+    "predicted_decrease_used": 1.0122056865922948e-11,
+    "acceptance_tolerance": 2.5e-15,
+    "acceptance_tolerance_note": "accuracy_tolerance of validate: the ACCEPTANCE tolerance on |J_training - J_independent|, not the integration target",
+    "target_error_abs": 2.5e-15,
+    "training_J_abs": 4.258250548237229e-09,
+    "actual_mesh_decrease": 1.0122058858458947e-11
+   }
+  ],
+  "io": [
+   {
+    "wall_s": 0.10689357691444457,
+    "cpu_s": 0.10999999999876309,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 13650.7373046875,
+    "peak_family_rss_sum_mib": 13668.63671875,
+    "pss_samples": 2,
+    "pss_loop_samples": 1,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false,
+    "label": "snapshot npz (5 arrays) + event JSON with fsync, lane tmp dir"
+   },
+   {
+    "wall_s": 0.1550898989662528,
+    "cpu_s": 0.15999999999985448,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 13650.7373046875,
+    "peak_family_rss_sum_mib": 13668.63671875,
+    "pss_samples": 2,
+    "pss_loop_samples": 1,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false,
+    "label": "snapshot npz (5 arrays) + event JSON with fsync, lane tmp dir"
+   },
+   {
+    "wall_s": 0.1320679432246834,
+    "cpu_s": 0.1400000000012369,
+    "cpu_s_definition": "process family: psutil user+system of self and live children plus RUSAGE_CHILDREN of reaped children",
+    "peak_family_pss_mib": 13650.7373046875,
+    "peak_family_rss_sum_mib": 13668.63671875,
+    "pss_samples": 2,
+    "pss_loop_samples": 1,
+    "pss_exit_samples": 1,
+    "pss_thread_first_sample_before_timer": true,
+    "pss_read_failures": 0,
+    "pss_parent_read_failed": false,
+    "label": "snapshot npz (5 arrays) + event JSON with fsync, lane tmp dir"
+   }
+  ]
+ },
+ "cache_record": {
+  "version": "model860_v6_T1_origin48_longdouble_assembly_centered_q_stableL_exact_exponents_v93",
+  "workers": 4,
+  "cache_build_threads": 4,
+  "block_size": 4096,
+  "mode_block": 64,
+  "cache_builds": 8,
+  "cache_build_seconds": 988.5137419658713,
+  "basis_cache_bytes": 12510167040,
+  "direct_nodes": 86016,
+  "Taylor_nodes": 4608,
+  "stable_linear_nodes": 74208,
+  "centered_direct_nodes": 11808,
+  "switch_radius": 1.0,
+  "origin_order": 48,
+  "exact_cl_cache_key": true,
+  "cl_interpolation_used": false,
+  "all_raw_columns": 860,
+  "feasible_columns": 855,
+  "evaluation_cache_hits": 4,
+  "jacobian_seconds": 233.62061456404626,
+  "origin_series_seconds": 437.84990914235823,
+  "assembly_seconds": 21.698234267067164,
+  "generator_provider": "basis860.generator_block (longdouble, all 860 generators; cache build in point blocks of block_size nodes)",
+  "residual_assembly": {
+   "arithmetic": "longdouble field sums (one matrix-vector product per field over all direct nodes), longdouble products, one rounding to binary64",
+   "chunking": "cache build: blocks of 4096 nodes; residual: whole direct node set in one call per field; origin disk: longdouble evaluation of the order-48 Decimal polynomial; Jacobian origin columns: Decimal column polynomials formed in a fork pool of `workers` processes (bitwise identical to serial), evaluated in binary64",
+   "forms": {
+    "r_le_0.02": "Decimal series (exact a_000) in longdouble",
+    "0.02_lt_r_lt_r_s": "centered q direct form",
+    "r_ge_r_s": "stable linear transport"
+   },
+   "a_000": "analytic Decimal value carried to the 64-bit significand (prepare: c_ld)"
+  },
+  "jacobian_columns": "binary64 from rounded longdouble generator values and rounded field multipliers",
+  "extended_arithmetic": {
+   "dtype": "float128",
+   "itemsize": 16,
+   "nmant": 63,
+   "significand_bits": 64,
+   "eps": 1.0842021724855044e-19,
+   "unit_roundoff": 5.421010862427522e-20,
+   "platform_dependency": "x86-64 80-bit extended precision (64-bit significand) through glibc expl/logl/log1pl/expm1l/sqrtl; another longdouble format changes the bits and requires requalification (replay is defined on this host)",
+   "functions_using_longdouble": [
+    "basis860.generator_block (all 860 generator fields, cl derivatives, stable remainders, centered low ratio)",
+    "basis860.radial_jets, legendre_t_jets, _power_jets, centered_ratio",
+    "model860.Model860 cache (longdouble field matrices) and residual assembly; origin series evaluated by origin860.evaluate_series_ld",
+    "fields860.fields_direct / residual (stateless provider) field sums, q and R_f assembly",
+    "integrate860 (validation residual and independent integral through fields860.residual)"
+   ],
+   "rounded_once_to_binary64": [
+    "R_f (production, stateless, integrator)",
+    "field values used as Jacobian multipliers",
+    "generator values used for the binary64 Jacobian columns"
+   ],
+   "thread_behavior": "longdouble operations do not use BLAS; point blocks are evaluated independently (ThreadPoolExecutor in Model860._ensure_basis when threads > 1; fork process pool in fields860.residual_parallel); outputs go to disjoint slices, so results are bitwise independent of the thread/process count"
+  },
+  "mesh_sha256": "9d13af4ac208eda4470ac1b8c776d7610c9f46959c36bf18e4d96fdac3512d69"
+ },
+ "A_shape": [
+  90624,
+  855
+ ],
+ "peak_rss_mib_this_process": 18740.25,
+ "peak_family_pss_mib": 18626.9951171875,
+ "peak_family_rss_sum_mib": 73133.0546875,
+ "pss_read_failures": 12,
+ "pss_parent_read_failed": false,
+ "stats": {
+  "fun": {
+   "wall_s": {
+    "median": 148.85958931711502,
+    "min": 143.93942675902508,
+    "max": 167.08749784715474,
+    "n": 5
+   },
+   "cpu_s": {
+    "median": 381.6700000000001,
+    "min": 370.57241799999997,
+    "max": 446.59000000000015,
+    "n": 5
+   },
+   "peak_family_pss_mib": {
+    "median": 17592.61328125,
+    "min": 13796.1962890625,
+    "max": 17652.7763671875,
+    "n": 5
+   }
+  },
+  "jacobian_warm": {
+   "wall_s": {
+    "median": 0.23451640596613288,
+    "min": 0.23098936793394387,
+    "max": 79.71157798916101,
+    "n": 3
+   },
+   "cpu_s": {
+    "median": 0.2400000000000091,
+    "min": 0.23000000000047294,
+    "max": 191.8873230000001,
+    "n": 3
+   },
+   "peak_family_pss_mib": {
+    "median": 14801.802734375,
+    "min": 14801.060546875,
+    "max": 17434.19140625,
+    "n": 3
+   }
+  },
+  "jacobian_rebuild": {
+   "wall_s": {
+    "median": 225.98040022852365,
+    "min": 224.72986698010936,
+    "max": 227.23093347693793,
+    "n": 2
+   },
+   "cpu_s": {
+    "median": 573.2946220000001,
+    "min": 569.1074869999999,
+    "max": 577.4817570000002,
+    "n": 2
+   },
+   "peak_family_pss_mib": {
+    "median": 18434.11767578125,
+    "min": 18241.240234375,
+    "max": 18626.9951171875,
+    "n": 2
+   }
+  },
+  "svd": {
+   "wall_s": {
+    "median": 16.157922755926847,
+    "min": 15.981347274966538,
+    "max": 16.245555996894836,
+    "n": 3
+   },
+   "cpu_s": {
+    "median": 16.240000000000236,
+    "min": 16.0600000000004,
+    "max": 16.329999999999927,
+    "n": 3
+   },
+   "peak_family_pss_mib": {
+    "median": 14247.501953125,
+    "min": 13656.345703125,
+    "max": 14247.6318359375,
+    "n": 3
+   }
+  },
+  "trust": {
+   "wall_s": {
+    "median": 0.08545232214964926,
+    "min": 0.08394864690490067,
+    "max": 0.08653590804897249,
+    "n": 3
+   },
+   "cpu_s": {
+    "median": 0.08999999999969077,
+    "min": 0.07999999999992724,
+    "max": 0.09000000000014552,
+    "n": 3
+   },
+   "peak_family_pss_mib": {
+    "median": 13656.345703125,
+    "min": 13656.345703125,
+    "max": 13656.4755859375,
+    "n": 3
+   }
+  },
+  "kkt": {
+   "wall_s": {
+    "median": 0.17845719191245735,
+    "min": 0.17656288016587496,
+    "max": 0.1810389100573957,
+    "n": 3
+   },
+   "cpu_s": {
+    "median": 0.18000000000029104,
+    "min": 0.169999999999618,
+    "max": 0.18999999999959982,
+    "n": 3
+   },
+   "peak_family_pss_mib": {
+    "median": 13656.345703125,
+    "min": 13656.345703125,
+    "max": 13656.4755859375,
+    "n": 3
+   }
+  },
+  "lift": {
+   "wall_s": {
+    "median": 0.2489803780335933,
+    "min": 0.21588548296131194,
+    "max": 0.2902167709544301,
+    "n": 3
+   },
+   "cpu_s": {
+    "median": 0.25,
+    "min": 0.2199999999997999,
+    "max": 0.2899999999990541,
+    "n": 3
+   },
+   "peak_family_pss_mib": {
+    "median": 14185.8984375,
+    "min": 14183.2236328125,
+    "max": 14247.501953125,
+    "n": 3
+   }
+  },
+  "condition_sums": {
+   "wall_s": {
+    "median": 6.246397692942992,
+    "min": 6.124975068029016,
+    "max": 6.347206125967205,
+    "n": 3
+   },
+   "cpu_s": {
+    "median": 6.790000000000873,
+    "min": 6.639999999999873,
+    "max": 6.930000000000291,
+    "n": 3
+   },
+   "peak_family_pss_mib": {
+    "median": 15333.203125,
+    "min": 15326.8076171875,
+    "max": 15342.9013671875,
+    "n": 3
+   }
+  },
+  "chart": {
+   "wall_s": {
+    "median": 0.5456273609306663,
+    "min": 0.5456273609306663,
+    "max": 0.5456273609306663,
+    "n": 1
+   },
+   "cpu_s": {
+    "median": 0.6299999999999955,
+    "min": 0.6299999999999955,
+    "max": 0.6299999999999955,
+    "n": 1
+   },
+   "peak_family_pss_mib": {
+    "median": 12255.1162109375,
+    "min": 12255.1162109375,
+    "max": 12255.1162109375,
+    "n": 1
+   }
+  },
+  "stationarity": {
+   "wall_s": {
+    "median": 0.02809717506170273,
+    "min": 0.027195178903639317,
+    "max": 0.02907325094565749,
+    "n": 3
+   },
+   "cpu_s": {
+    "median": 0.03000000000020009,
+    "min": 0.01999999999998181,
+    "max": 0.03000000000020009,
+    "n": 3
+   },
+   "peak_family_pss_mib": {
+    "median": 13656.345703125,
+    "min": 13656.345703125,
+    "max": 13656.4755859375,
+    "n": 3
+   }
+  },
+  "integral": {
+   "wall_s": {
+    "median": 737.4556207871065,
+    "min": 678.4159855549224,
+    "max": 858.7749175189529,
+    "n": 3
+   },
+   "cpu_s": {
+    "median": 2755.9146549999996,
+    "min": 2531.8766779999996,
+    "max": 3107.6384259999995,
+    "n": 3
+   },
+   "peak_family_pss_mib": {
+    "median": 16213.0146484375,
+    "min": 16201.4697265625,
+    "max": 16213.1494140625,
+    "n": 3
+   }
+  },
+  "io": {
+   "wall_s": {
+    "median": 0.1320679432246834,
+    "min": 0.10689357691444457,
+    "max": 0.1550898989662528,
+    "n": 3
+   },
+   "cpu_s": {
+    "median": 0.1400000000012369,
+    "min": 0.10999999999876309,
+    "max": 0.15999999999985448,
+    "n": 3
+   },
+   "peak_family_pss_mib": {
+    "median": 13650.7373046875,
+    "min": 13650.7373046875,
+    "max": 13650.7373046875,
+    "n": 3
+   }
+  }
+ },
+ "counts": {
+  "fun": 5,
+  "jacobian_warm": 3,
+  "jacobian_rebuild": 2,
+  "svd": 3,
+  "trust": 3,
+  "kkt": 3,
+  "lift": 3,
+  "condition_sums": 3,
+  "chart": 1,
+  "stationarity": 3,
+  "integral": 3,
+  "io": 3
+ },
+ "calls_total": {
+  "fun": 7,
+  "jacobian_warm": 3,
+  "jacobian_rebuild": 2,
+  "svd": 6,
+  "trust": 6,
+  "kkt": 3,
+  "lift": 3,
+  "condition_sums": 4,
+  "chart": 1,
+  "stationarity": 3,
+  "integral": 3,
+  "io": 3
+ },
+ "calls_timed_of_total": {
+  "fun": "5 timed of 7",
+  "jacobian_warm": "3 timed of 3",
+  "jacobian_rebuild": "2 timed of 2",
+  "svd": "3 timed of 6",
+  "trust": "3 timed of 6",
+  "kkt": "3 timed of 3",
+  "lift": "3 timed of 3",
+  "condition_sums": "3 timed of 4",
+  "chart": "1 timed of 1",
+  "stationarity": "3 timed of 3",
+  "integral": "3 timed of 3",
+  "io": "3 timed of 3"
+ },
+ "planned_counts": {
+  "fun": 5,
+  "jacobian_warm": 3,
+  "jacobian_rebuild": 2,
+  "svd": 3,
+  "trust": 3,
+  "kkt": 3,
+  "lift": 3,
+  "condition_sums": 3,
+  "chart": 1,
+  "stationarity": 3,
+  "integral": 3,
+  "io": 3
+ },
+ "child_import_closure": {
+  "work_root": "@WORK_REALPATH@",
+  "count": 20,
+  "files": {
+   "research/absolute_common.py": "f44ef69dd9e8d2bc8b22c57336435c1609a5b7246585b3165c2919e40d7ad3db",
+   "research/absolute_fields.py": "84849ae05d37d25ad9193946a16f04a005611ab1bd9f6f59776cee855503a55e",
+   "research/absolute_model.py": "aa67c402cacb46321bf85d5e1d1a2f759ff42f76bcc0fa00130303be3081d6a8",
+   "research/base/basis_tests.py": "40eb50f247d06bb8bb1398a2d2c200ef4678c2626f841a45692dfefc07eb1f8e",
+   "research/base/spectral_basis.py": "6cd09d759fd0444e86536a24a016e4610b41eb4bb390db57f1d0eb64a088426b",
+   "research/highprecision_origin.py": "75f9b65e4ccc171d4a91326a44d457cfa08e62877152867d588e8535e6852f87",
+   "research/log_integral.py": "1accf26e3fab9006a9e47f82dc4325b3870b438a4fcc2bd075121857451391ba",
+   "research/outer_envelopes.py": "6931eac402cff4db33644cefe6d73408bf837aecce86bbebccfc2187e0ef2323",
+   "research/stage13_solver.py": "d86bd65a3fcfff989ca40e150822d47940a35695be282f4fbf1b9c446c46c003",
+   "research/tail_envelope.py": "129816786c19b80675498d0650d380884d8827c1e31b1707c13b803b41f6919d",
+   "research860/basis860.py": "5a3c9a8b2b83015278fb5510e9b0e6ffc844c26199c518a8b63fbb6f2f5d4ffc",
+   "research860/bench860.py": "45d9d8699af89dd6d7202ed7ba3cc36373409d3b291102218c175de3d545f091",
+   "research860/chart860.py": "9e2254e2039e57483507ad401cb7bcd87f73569ddc3facd6912e97b3e49f62e5",
+   "research860/closure860.py": "301d85b2ff0ee6373251935ad4360710f710d0532811e57b13f83262db64b10d",
+   "research860/fields860.py": "dca86255db7f290fcc7504cf309b8dce9c6f3e4232c8302c64bbdae76ff1e58c",
+   "research860/hp860.py": "69a2bafd8226c1019f0acde3224d52d5d6be2afc1444583adc314af1b0fc7ce9",
+   "research860/integrate860.py": "d405a1066be33b4d8ff1364a59e93ec175d345bc9a546b793cc73ad174dc5c71",
+   "research860/model860.py": "b9b7b4b3403c5a5fea4f37d0f1763e2daab19f5601e0ec2da5f9a1e02d32e154",
+   "research860/origin860.py": "829280679739e51ca60ed3ddb4d5dc5dfbffcaa49b2f2900b58bb70a9863efab",
+   "tools/runtime.py": "a12830760575f808d9e9d610fabd607b58487e97b4773427d3cb50ea0412b867"
+  }
+ },
+ "child_cpu_total_s_rusage_self_plus_children": 12307.68716
+}

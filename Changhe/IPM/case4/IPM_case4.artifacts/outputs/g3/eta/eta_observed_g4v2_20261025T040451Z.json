@@ -1,0 +1,35 @@
+{
+ "root": "outputs/campaign860/pilot_g4_v2",
+ "utc": "2026-10-25T04:04:51Z",
+ "trials": 6,
+ "accepted": 6,
+ "rejected": 0,
+ "iteration_wall_seconds": [
+  564.7845527650788,
+  639.1035288157873,
+  513.736787057016,
+  663.8577749468386,
+  924.9669203949161,
+  936.1060573919676
+ ],
+ "slice_overhead_seconds": [
+  605.3231654167175,
+  185.87147617340088
+ ],
+ "assessment_seconds": [
+  3209.260746717453
+ ],
+ "slice_seconds": 3300.0,
+ "reserve_seconds": 1404.0,
+ "iteration_wall_median": 651.480651881313,
+ "iteration_wall_mean": 707.0926035619341,
+ "iteration_wall_max": 936.1060573919676,
+ "trials_per_slice_model": 3,
+ "slice_wall_estimate_seconds": 2365.039276438998,
+ "trials_per_hour_model": 4.5665203565927195,
+ "acceptance_rate_observed": 1.0,
+ "trials_in_24h_model": 109,
+ "trials_in_48h_model": 219,
+ "trials_in_72h_model": 328,
+ "scope": "Model from observed iteration walls (median) and the observed slice overhead; it predicts how many trials a compute budget buys, not when or whether the optimizer converges. Cadence assessments (about 3209 s each, every significant improvement / slice boundary by the supervisor rule) are extra. The radius has doubled every trial so far; later trials may be rejected and the walls may change with mesh refinement."
+}

@@ -1,0 +1,59 @@
+{
+ "schema": "kappa_calibration_typed_v1",
+ "kappa": 2048.0,
+ "rho_max": 48.37027853518094,
+ "rho_argmax": {
+  "cl_label": "cl3minus2m20",
+  "point": "b3",
+  "path": "single",
+  "rho": 48.37027853518094,
+  "S_R": 29775.822573794085,
+  "abs_error": 2.9507650201801695e-13
+ },
+ "definition": "SPEC v9.7: rho = max(0, |R_f(path) - R_f(Decimal 85)| - 2^-53 |R_f(Decimal)|) / (u S_R(path)), u = 2^-64, S_R from the production path itself (Model860.condition_sums / fields860.condition_sums); kappa = max(2^11, 4 rho_max)",
+ "u": 5.421010862427522e-20,
+ "coverage": [
+  {
+   "set": "T2.6c_finite_v92",
+   "covered": true,
+   "count": 19,
+   "reason": null
+  },
+  {
+   "set": "T2.6b_far",
+   "covered": true,
+   "count": 9,
+   "reason": null
+  },
+  {
+   "set": "T2.6x_parameter_values",
+   "covered": true,
+   "count": 5,
+   "reason": null
+  },
+  {
+   "set": "T2.6d_embedded_training_sized_configuration_of_the_T2.6c_points",
+   "covered": false,
+   "count": null,
+   "reason": "not evaluated: g2_v4 t26 T2.6d found R_f bitwise equal between the training-sized embedded call and the one-point and batch shapes at these points at the seed c_l, but it did not compare the condition sums S_R, so rho in the training-sized configuration is not established for these points"
+  },
+  {
+   "set": "T3.6_diagnosed_points",
+   "covered": true,
+   "count": 5,
+   "reason": null
+  },
+  {
+   "set": "near_y_axis_training_nodes_v913",
+   "covered": true,
+   "count": 4,
+   "reason": null
+  }
+ ],
+ "source_step_json": "@OUTPUT_REALPATH@/g2/g2_v10/kappa.json",
+ "source_step_json_sha256": "7456adf666fd55abd0e39e0dafb744f896f60d3456f38e835c23fd1a2d98efbd",
+ "source_kappa_json": "@OUTPUT_REALPATH@/campaign860/kappa_calibration.json",
+ "source_kappa_json_sha256": "efd5e58918a03878dae9acc88323149379686097c477ea56b84dce83ebc1b3b1",
+ "code_manifest_sha256_of_calibration": "4b1f2091186da6da3de40b9ff116a5eee1f705f07417b0276ab7e4516500c785",
+ "utc": "2026-10-24T09:33:25Z"
+}

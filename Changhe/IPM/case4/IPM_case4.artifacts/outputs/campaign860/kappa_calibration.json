@@ -1,0 +1,56 @@
+{
+ "schema": "kappa_calibration_v97b",
+ "kappa": 2048.0,
+ "rho_max": 48.37027853518094,
+ "rho_argmax": {
+  "cl_label": "cl3minus2m20",
+  "point": "b3",
+  "path": "single",
+  "rho": 48.37027853518094,
+  "S_R": 29775.822573794085,
+  "abs_error": 2.9507650201801695e-13
+ },
+ "definition": "SPEC v9.7: rho = max(0, |R_f(path) - R_f(Decimal 85)| - 2^-53 |R_f(Decimal)|) / (u S_R(path)), u = 2^-64, S_R from the production path itself (Model860.condition_sums / fields860.condition_sums); kappa = max(2^11, 4 rho_max)",
+ "u": 5.421010862427522e-20,
+ "coverage": {
+  "T2.6c_finite_v92": 19,
+  "T2.6b_far": 9,
+  "T2.6d": "same T2.6c points embedded in the training-sized call (covered)",
+  "T3.6_diagnosed_points": 5,
+  "T2.6x_parameter_values": [
+   1.8089923602744993,
+   2.0,
+   3.0,
+   2.000001907348633,
+   2.999997138977051
+  ],
+  "note": "the T2.6x parameter values (seed c_l, 2, 3, 2(1+2^-20), 3(1-2^-20)) are covered at every point set below",
+  "T3.6_source": {
+   "path": "@OUTPUT_REALPATH@/g2/g2_v4/t3.json",
+   "sha256": "2d729aa1bceed5be9263babb7fd3240034b8ce12bd92bf03a1e9ad2d499c777d",
+   "regions": 1,
+   "points_per_region": {
+    "near_origin": 5
+   }
+  },
+  "near_y_axis_training_nodes_v913": {
+   "indices": [
+    24095,
+    30911,
+    37823,
+    45503
+   ],
+   "configurations": [
+    "training_batch (Model860 on the training mesh, production call)",
+    "single",
+    "batch",
+    "stateless"
+   ]
+  },
+  "T2.6d_embedded_configuration_of_T2.6c_points": "uncovered by direct evaluation here; reason: g2_v4 t26 T2.6d gated the embedded start/middle/end copies of the T2.6c points in a training-sized call against the one-point and batch shapes with configuration difference 0.0 (bitwise), so the batch-shape rho at those points is the training-sized value; the four near-y-axis training nodes are evaluated in the actual training-sized production call"
+ },
+ "source_step_json": "@OUTPUT_REALPATH@/g2/g2_v10/kappa.json",
+ "code_manifest_sha256": "4b1f2091186da6da3de40b9ff116a5eee1f705f07417b0276ab7e4516500c785",
+ "utc": "2026-10-24T09:33:25Z",
+ "passed": true
+}

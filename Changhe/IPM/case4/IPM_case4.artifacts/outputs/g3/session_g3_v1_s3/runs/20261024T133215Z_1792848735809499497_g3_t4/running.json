@@ -1,0 +1,53 @@
+{
+  "command": [
+    "@NUM_DIR@/env/bin/python",
+    "-B",
+    "tests/g3_t4.py",
+    "@OUTPUT_REALPATH@/g3/g3_v1/t4.json",
+    "@OUTPUT_REALPATH@/manifests/code_manifest_g3_v1.json",
+    "8"
+  ],
+  "controlled_environment": {
+    "BLIS_NUM_THREADS": "1",
+    "GOTO_NUM_THREADS": "1",
+    "IPM_GUARD_TERMINATE_GRACE_SECONDS": "120",
+    "IPM_RESOURCE_RUN": "@OUTPUT_REALPATH@/g3/session_g3_v1_s3/runs/20261024T133215Z_1792848735809499497_g3_t4",
+    "IPM_RESOURCE_SESSION": "@OUTPUT_REALPATH@/g3/session_g3_v1_s3",
+    "MKL_DYNAMIC": "FALSE",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_DYNAMIC": "FALSE",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "cwd": "@WORK_REALPATH@/research860",
+  "peak_family_rss_mib": 19.10546875,
+  "policy": {
+    "blas_threads": 1,
+    "max_family_rss_mib": 163840,
+    "max_load_per_cpu": 1.5,
+    "max_memory_psi_full_avg10": 60.0,
+    "max_pageout_mib_s": 8.0,
+    "max_seconds": 28800,
+    "max_session_seconds": 600000,
+    "max_swap_growth_mib": 512.0,
+    "max_swapout_mib_s": 8.0,
+    "max_temperature_c": 95.0,
+    "min_available_mib": 16384,
+    "min_available_pct": 10,
+    "min_disk_free_gib": 10,
+    "nice_increment": 15,
+    "sample_seconds": 2,
+    "terminate_grace_seconds": 120
+  },
+  "run_id": "20261024T133215Z_1792848735809499497_g3_t4",
+  "session_id": "c85ee8ce-0daf-4402-b48c-ccb1a3174f33",
+  "session_seconds_before": 0.0,
+  "started_time": 1792848735.812554,
+  "stop_reasons": [],
+  "supervisor_pid": 184689,
+  "wall_seconds": 0.0,
+  "worker_pid": 184690,
+  "worker_started": true
+}

@@ -1,0 +1,43 @@
+{
+ "root": "outputs/campaign860/pilot_g4_v2",
+ "utc": "2026-10-25T05:49:18Z",
+ "trials": 10,
+ "accepted": 9,
+ "rejected": 1,
+ "iteration_wall_seconds": [
+  564.7845527650788,
+  639.1035288157873,
+  513.736787057016,
+  663.8577749468386,
+  924.9669203949161,
+  936.1060573919676,
+  740.2565616411157,
+  721.9454084848985,
+  708.8607169759925,
+  574.5037871338427
+ ],
+ "slice_overhead_seconds": [
+  605.3231654167175,
+  185.87147617340088,
+  154.79981923103333,
+  157.29905104637146,
+  138.94166040420532
+ ],
+ "assessment_seconds": [
+  3209.260746717453,
+  3992.3352797031403
+ ],
+ "slice_seconds": 3300.0,
+ "reserve_seconds": 1404.0,
+ "iteration_wall_median": 686.3592459614156,
+ "iteration_wall_mean": 698.8122095607454,
+ "iteration_wall_max": 936.1060573919676,
+ "trials_per_slice_model": 3,
+ "slice_wall_estimate_seconds": 2322.5247723385924,
+ "trials_per_hour_model": 4.650111864738168,
+ "acceptance_rate_observed": 0.9,
+ "trials_in_24h_model": 111,
+ "trials_in_48h_model": 223,
+ "trials_in_72h_model": 334,
+ "scope": "Model from observed iteration walls (median) and the observed slice overhead; it predicts how many trials a compute budget buys, not when or whether the optimizer converges. Cadence assessments (about 3601 s each, every significant improvement / slice boundary by the supervisor rule) are extra. The radius has doubled every trial so far; later trials may be rejected and the walls may change with mesh refinement."
+}

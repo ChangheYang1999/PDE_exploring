@@ -1,0 +1,256 @@
+{
+ "checks": [
+  {
+   "check": "embedded_c0_matches_old_analytic_c0",
+   "value": 0.0,
+   "tolerance": 1e-15,
+   "passed": true
+  },
+  {
+   "check": "five_taylor_max_abs",
+   "value": 5.071368232413771e-14,
+   "tolerance": 1e-10,
+   "passed": true,
+   "old": 4.8882934568586004e-14
+  },
+  {
+   "check": "five_taylor_match_old",
+   "value": 7.092933324419489e-15,
+   "tolerance": 1e-13,
+   "passed": true
+  },
+  {
+   "check": "a0_matches_old",
+   "value": 0.0,
+   "tolerance": 1e-12,
+   "passed": true,
+   "a0": 14.767729990606481
+  },
+  {
+   "check": "poisson_jets",
+   "value": 9.6e-67,
+   "tolerance": 1e-10,
+   "passed": true
+  },
+  {
+   "check": "center_abs",
+   "value": 0.0,
+   "tolerance": 1e-60,
+   "passed": true
+  },
+  {
+   "check": "constraint_rank_5",
+   "value": true,
+   "tolerance": null,
+   "passed": true
+  },
+  {
+   "check": "old_constraint_jacobian_reproduced_via_embedding",
+   "value": 1.0843741896494359e-15,
+   "tolerance": 1e-09,
+   "passed": true
+  },
+  {
+   "check": "tangent_rank_55",
+   "value": true,
+   "tolerance": null,
+   "passed": true
+  },
+  {
+   "check": "complete_rank_60",
+   "value": true,
+   "tolerance": null,
+   "passed": true
+  },
+  {
+   "check": "tangent_constraint_error",
+   "value": 1.5843571367514346e-11,
+   "tolerance": 1e-08,
+   "passed": true
+  },
+  {
+   "check": "nonzero_constraint_columns_60",
+   "value": true,
+   "tolerance": null,
+   "passed": true
+  },
+  {
+   "check": "lift0_feasible",
+   "value": 4.082290001185027e-14,
+   "tolerance": 1e-10,
+   "passed": true,
+   "seconds": 0.36269235610961914,
+   "iterations": 3
+  },
+  {
+   "check": "lift0_cl_bit_pattern_preserved",
+   "value": true,
+   "tolerance": null,
+   "passed": true
+  },
+  {
+   "check": "lift0_tangent_fd_rel",
+   "value": 1.2922213209547514e-10,
+   "tolerance": 1e-06,
+   "passed": true
+  },
+  {
+   "check": "lift1_feasible",
+   "value": 5.586239895148493e-14,
+   "tolerance": 1e-10,
+   "passed": true,
+   "seconds": 0.36094093322753906,
+   "iterations": 3
+  },
+  {
+   "check": "lift1_cl_bit_pattern_preserved",
+   "value": true,
+   "tolerance": null,
+   "passed": true
+  },
+  {
+   "check": "lift1_tangent_fd_rel",
+   "value": 2.6849700784962485e-10,
+   "tolerance": 1e-06,
+   "passed": true
+  },
+  {
+   "check": "lift2_feasible",
+   "value": 1.0397464665398038e-13,
+   "tolerance": 1e-10,
+   "passed": true,
+   "seconds": 0.3601799011230469,
+   "iterations": 3
+  },
+  {
+   "check": "lift2_cl_bit_pattern_preserved",
+   "value": true,
+   "tolerance": null,
+   "passed": true
+  },
+  {
+   "check": "lift2_tangent_fd_rel",
+   "value": 1.861867756003646e-10,
+   "tolerance": 1e-06,
+   "passed": true
+  },
+  {
+   "check": "old_19_tangent_in_new_55_tangent",
+   "value": 9.82446972762421e-16,
+   "tolerance": 1e-09,
+   "passed": true
+  }
+ ],
+ "hp_seconds": 0.0024979114532470703,
+ "constraint_jacobian_shape": [
+  5,
+  60
+ ],
+ "constraint_singular_values": [
+  138356.66900726446,
+  55558.32141272771,
+  31491.405395826234,
+  10423.795902381858,
+  1880.5461970256372
+ ],
+ "chart_seconds": 0.3555722236633301,
+ "geometry": {
+  "version": "chart860_analytic_center_full55_c5_rightinverse_v1",
+  "constraint_row_scales": [
+   6.12454389355885e-05,
+   0.00014468726554104253,
+   1.7354369206731665e-05,
+   7.3847419212685574e-06,
+   2.7252384343565416e-05
+  ],
+  "coefficient_row_scaled_singular_values": [
+   1.6221631753839088,
+   1.1623886936111767,
+   0.8491287330116424,
+   0.5155021719143122,
+   0.1751486880309587
+  ],
+  "coefficient_row_scaled_condition": 9.261634749426046,
+  "full_row_scaled_constraint_singular_values": [
+   1.6221968564641605,
+   1.162535735613085,
+   0.8572750331711696,
+   0.5166871003410415,
+   0.17581107156814568
+  ],
+  "raw_G_normal_minus_identity_norm": 4.194418533359294e-15,
+  "tangent_constraint_error": 1.5843571367514346e-11,
+  "relative_tangent_backward_error": 1.398571356998091e-17,
+  "tangent_rank": 55,
+  "complete_rank": 60,
+  "complete_condition": 138356.6692606971,
+  "cl_tangent_row_norm": 0.9843577324334791,
+  "feasible_core_dimension": 55,
+  "raw_core_parameters": 60,
+  "constraints": 5,
+  "nonzero_constraint_columns": 60
+ },
+ "exceptional_cl_scan": [
+  {
+   "cl": 1.1,
+   "s0": 7.462809917355372,
+   "jet_matrix_rank": 9,
+   "constraint_rank_at_embedded_coeffs": 5
+  },
+  {
+   "cl": 1.5,
+   "s0": 6.111111111111111,
+   "jet_matrix_rank": 9,
+   "constraint_rank_at_embedded_coeffs": 5
+  },
+  {
+   "cl": 1.8089923602744993,
+   "s0": 5.5167568598371375,
+   "jet_matrix_rank": 9,
+   "constraint_rank_at_embedded_coeffs": 5
+  },
+  {
+   "cl": 1.999,
+   "s0": 5.251250687875204,
+   "jet_matrix_rank": 9,
+   "constraint_rank_at_embedded_coeffs": 5
+  },
+  {
+   "cl": 2.0,
+   "s0": 5.25,
+   "jet_matrix_rank": 9,
+   "constraint_rank_at_embedded_coeffs": 5
+  },
+  {
+   "cl": 2.5,
+   "s0": 4.76,
+   "jet_matrix_rank": 9,
+   "constraint_rank_at_embedded_coeffs": 5
+  },
+  {
+   "cl": 2.999,
+   "s0": 4.444963148214014,
+   "jet_matrix_rank": 9,
+   "constraint_rank_at_embedded_coeffs": 5
+  },
+  {
+   "cl": 3.0,
+   "s0": 4.4444444444444455,
+   "jet_matrix_rank": 9,
+   "constraint_rank_at_embedded_coeffs": 5
+  },
+  {
+   "cl": 3.5,
+   "s0": 4.224489795918367,
+   "jet_matrix_rank": 9,
+   "constraint_rank_at_embedded_coeffs": 5
+  },
+  {
+   "cl": 6.0,
+   "s0": 3.6944444444444438,
+   "jet_matrix_rank": 9,
+   "constraint_rank_at_embedded_coeffs": 5
+  }
+ ],
+ "passed": true
+}

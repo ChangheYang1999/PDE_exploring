@@ -1,0 +1,234 @@
+{
+ "schema": "eta860_v1",
+ "utc": "2026-10-24T22:50:12Z",
+ "label": "computed from the child record bench.child_w8_t4.json (bench.json absent: guard stop 22:20Z, exception E-G3.B); assessment wall 4539 s = assess_0, spot 485 s = spot_0; window start = expected pilot end",
+ "source": {
+  "kind": "child record",
+  "sha256": "0d49876d127680c3d8bef339f0731b081b5dcaaecb87148e94995d5c78851b75",
+  "configuration": {
+   "workers": 8,
+   "cache_threads": 4,
+   "block_size": 4096,
+   "mode_block": 64
+  }
+ },
+ "assumptions": {
+  "driver_sequence": "rejected: trust + KKT + lift + trial fun (cache rebuild, c_l changes) + condition_sums + independent integral + I/O; accepted adds Chart860 + Jacobian ASSEMBLY (first warm row, one observation) + SVD + stationarity + I/O (bench860.py per_trial_estimate_s; lead 18:32Z treatment)",
+  "slice_startup": "cold cache build (first fun) + Jacobian assembly + SVD + chart; plus 60 s process/guard/cadence overhead per slice",
+  "slice_end": "campaign860.py:661-662: the loop breaks when the reserve no longer fits; slice wall = startup + trials + overhead (the slice length is only an upper bound)",
+  "reserve_rule": "campaign860.py F3(a): a trial starts only if remaining slice time >= max(900 s, 1.5 x largest trial wall)",
+  "max_trials_per_slice": 12,
+  "acceptance_rates_are_hypothetical": "no 860 trial has been accepted or rejected yet; the pilot measures the real rate",
+  "assessment_cadence": "section 13: seed, each halving of J_abs, every 100 accepted, end; n_assess assumed per window",
+  "convergence": "NOT estimated: these figures are the time to spend a trial budget, not a time to convergence"
+ },
+ "per_component_s": {
+  "fun_cold_cache_build_s": 211.75501902215183,
+  "fun_cache_rebuild_median_s (c_l changed)": 205.6308899220312,
+  "fun_cached_median_s": null,
+  "jacobian_rebuild_median_s (cache + assembly)": 313.7883096799487,
+  "jacobian_first_warm_row_s (assembly at a cached key)": 103.43546699685976,
+  "jacobian_warm_retrieval_median_s (cached matrix)": 0.29335962201002985,
+  "svd_median_s": 17.832967238966376,
+  "trust_median_s": 0.10418719705194235,
+  "kkt_median_s": 0.20244849706068635,
+  "lift_median_s": 0.39231165195815265,
+  "condition_sums_median_s": 8.810982963070273,
+  "chart_s": 0.5995210299734026,
+  "stationarity_median_s": 0.0389068010263145,
+  "integral_median_s": 648.5920804068446,
+  "integral_min_s": 581.5301979510114,
+  "integral_max_s": 650.016808090033,
+  "io_median_s": 0.15590459411032498
+ },
+ "per_trial_s": {
+  "rejected": 863.8888052321272,
+  "accepted_recorded_median_warm": 882.8303105441155,
+  "accepted_with_first_warm_assembly": 985.9515718930634,
+  "slice_startup_s": 333.62297428795137
+ },
+ "full_assessment_s": null,
+ "spot_check_s": null,
+ "assessment_wall_used_s": 4539.0,
+ "spot_wall_used_s": 485.0,
+ "schedule": [
+  {
+   "slice_s": 3300.0,
+   "startup_s": 333.62297428795137,
+   "trial_wall_s": 894.4044968973612,
+   "reserve_s": 1478.927357839595,
+   "trials_per_slice": 2,
+   "slice_wall_s": 2182.431968082674,
+   "unused_slice_s": 1177.5680319173262,
+   "duty_cycle": 0.8196402087008651,
+   "trials_per_hour": 3.299071909364211,
+   "acceptance_rate": 0.25
+  },
+  {
+   "slice_s": 3300.0,
+   "startup_s": 333.62297428795137,
+   "trial_wall_s": 924.9201885625953,
+   "reserve_s": 1478.927357839595,
+   "trials_per_slice": 2,
+   "slice_wall_s": 2243.463351413142,
+   "unused_slice_s": 1116.536648586858,
+   "duty_cycle": 0.8245467330500358,
+   "trials_per_hour": 3.2093236537448986,
+   "acceptance_rate": 0.5
+  },
+  {
+   "slice_s": 3300.0,
+   "startup_s": 333.62297428795137,
+   "trial_wall_s": 955.4358802278293,
+   "reserve_s": 1478.927357839595,
+   "trials_per_slice": 2,
+   "slice_wall_s": 2304.49473474361,
+   "unused_slice_s": 1055.50526525639,
+   "duty_cycle": 0.8291933722592147,
+   "trials_per_hour": 3.1243291171160115,
+   "acceptance_rate": 0.75
+  },
+  {
+   "slice_s": 5000.0,
+   "startup_s": 333.62297428795137,
+   "trial_wall_s": 894.4044968973612,
+   "reserve_s": 1478.927357839595,
+   "trials_per_slice": 4,
+   "slice_wall_s": 3971.2409618773963,
+   "unused_slice_s": 1088.7590381226037,
+   "duty_cycle": 0.9008816191043046,
+   "trials_per_hour": 3.626070575478862,
+   "acceptance_rate": 0.25
+  },
+  {
+   "slice_s": 5000.0,
+   "startup_s": 333.62297428795137,
+   "trial_wall_s": 924.9201885625953,
+   "reserve_s": 1478.927357839595,
+   "trials_per_slice": 4,
+   "slice_wall_s": 4093.3037285383325,
+   "unused_slice_s": 966.6962714616675,
+   "duty_cycle": 0.9038373401065674,
+   "trials_per_hour": 3.5179407527479176,
+   "acceptance_rate": 0.5
+  },
+  {
+   "slice_s": 5000.0,
+   "startup_s": 333.62297428795137,
+   "trial_wall_s": 955.4358802278293,
+   "reserve_s": 1478.927357839595,
+   "trials_per_slice": 4,
+   "slice_wall_s": 4215.366495199269,
+   "unused_slice_s": 844.6335048007313,
+   "duty_cycle": 0.9066218857277927,
+   "trials_per_hour": 3.416073078438055,
+   "acceptance_rate": 0.75
+  }
+ ],
+ "windows": [
+  {
+   "window_end_utc": "2026-10-26T03:05:00Z",
+   "window_start_utc": "2026-10-25T05:30:00Z",
+   "available_s": 77700,
+   "available": "21 h 35 min",
+   "assessment_overhead_s": 13617.0,
+   "n_assessments_assumed": 3,
+   "trial_budgets": [
+    {
+     "slice_s": 3300.0,
+     "acceptance_rate": 0.25,
+     "trials_in_window": 58.726229213274095,
+     "accepted_in_window": 14.681557303318524,
+     "hours_per_100_trials": 30.31155511225936
+    },
+    {
+     "slice_s": 3300.0,
+     "acceptance_rate": 0.5,
+     "trials_in_window": 57.12863547303731,
+     "accepted_in_window": 28.564317736518657,
+     "hours_per_100_trials": 31.159213214071414
+    },
+    {
+     "slice_s": 3300.0,
+     "acceptance_rate": 0.75,
+     "trials_in_window": 55.6156618922626,
+     "accepted_in_window": 41.71174641919695,
+     "hours_per_100_trials": 32.00687131588347
+    },
+    {
+     "slice_s": 5000.0,
+     "acceptance_rate": 0.25,
+     "trials_in_window": 64.54707796900331,
+     "accepted_in_window": 16.136769492250828,
+     "hours_per_100_trials": 27.578062235259697
+    },
+    {
+     "slice_s": 5000.0,
+     "acceptance_rate": 0.5,
+     "trials_in_window": 62.622277016206894,
+     "accepted_in_window": 31.311138508103447,
+     "hours_per_100_trials": 28.425720337071755
+    },
+    {
+     "slice_s": 5000.0,
+     "acceptance_rate": 0.75,
+     "trials_in_window": 60.80894752376274,
+     "accepted_in_window": 45.60671064282205,
+     "hours_per_100_trials": 29.27337843888381
+    }
+   ]
+  },
+  {
+   "window_end_utc": "2026-10-26T15:03:00Z",
+   "window_start_utc": "2026-10-25T05:30:00Z",
+   "available_s": 120780,
+   "available": "33 h 33 min",
+   "assessment_overhead_s": 13617.0,
+   "n_assessments_assumed": 3,
+   "trial_budgets": [
+    {
+     "slice_s": 3300.0,
+     "acceptance_rate": 0.25,
+     "trials_in_window": 98.20512306199916,
+     "accepted_in_window": 24.55128076549979,
+     "hours_per_100_trials": 30.31155511225936
+    },
+    {
+     "slice_s": 3300.0,
+     "acceptance_rate": 0.5,
+     "trials_in_window": 95.53354186285127,
+     "accepted_in_window": 47.76677093142563,
+     "hours_per_100_trials": 31.159213214071414
+    },
+    {
+     "slice_s": 3300.0,
+     "acceptance_rate": 0.75,
+     "trials_in_window": 93.00346699375086,
+     "accepted_in_window": 69.75260024531315,
+     "hours_per_100_trials": 32.00687131588347
+    },
+    {
+     "slice_s": 5000.0,
+     "acceptance_rate": 0.25,
+     "trials_in_window": 107.93905585556702,
+     "accepted_in_window": 26.984763963891755,
+     "hours_per_100_trials": 27.578062235259697
+    },
+    {
+     "slice_s": 5000.0,
+     "acceptance_rate": 0.5,
+     "trials_in_window": 104.72030135742364,
+     "accepted_in_window": 52.36015067871182,
+     "hours_per_100_trials": 28.425720337071755
+    },
+    {
+     "slice_s": 5000.0,
+     "acceptance_rate": 0.75,
+     "trials_in_window": 101.6879553624048,
+     "accepted_in_window": 76.26596652180359,
+     "hours_per_100_trials": 29.27337843888381
+    }
+   ]
+  }
+ ]
+}

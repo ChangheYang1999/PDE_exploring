@@ -1,0 +1,17 @@
+pilot_g4_v1 whole-family exit record (S1 (c)), written 2026-10-25T01:25:01Z by c4-num shift 5
+guard run dir: outputs/campaign860/pilot_g4_v1/guard_session/runs/20261025T010459Z_1792890299046826222_pilot_slice
+result.json: success True returncode 0 stop_reasons [] wall_seconds 871.8864137639757 peak_family_rss_mib 126648.94140625 supervisor_pid 4145604 worker_pid 4145605 finished_time 1792891170.9394374
+slice_completion: slice_0002_20261025T010459Z_1792890299046826222_pilot_slice.json {"schema": "slice_completion_860_v3", "slice": 2, "status": "stopped_by_request", "guard_run_id": "20261025T010459Z_1792890299046826222_pilot_slice", "slice_end_event_sequence": 7, "utc": "2026-10-25T01:19:29Z", "trials_this_slice": 1, "accepted": 1, "trials": 1, "objective": 3.858288531911697e-09, "J_abs_independent": 3.8582885319116485e-09, "slice_end_reason": "operator STOP", "pid": 4145605}
+process checks at 01:19:50Z (shift 5 shell): ps -p 4145604,4145605 -> no rows; pgrep -af pilot_g4_v1 -> only the watchdog 4128867; no campaign860.py --root, guard.py run, or supervise860 process of this lane.
+watchdog: STOP touched 2026-10-25T01:20:15.616Z; log line '2026-10-25T01:20:16Z STOP file present; watchdog exits'; kill -0 4128867 failed at 2026-10-25T01:21:19.773Z.
+install: 67fa61278edcbbc9aee142ccf52545d9f6b9f0f4230ac71e3902ad156543fff9  work/research860/campaign860.py 98240 bytes at 2026-10-25T01:22:04.9Z
+freeze: dacb203633d450ac9af62393244f88aa8aba7a8cc9416afbd1c2e84efb723037  outputs/manifests/code_manifest_g4_v2.json 26967 bytes 2026-10-25 01:22:05.066278986 +0000; preview dacb203633d450ac9af62393244f88aa8aba7a8cc9416afbd1c2e84efb723037; cmp: identical
+ACTIVE_MANIFEST: @OUTPUT_REALPATH@/manifests/code_manifest_g4_v2.json (87 bytes, sha256 3adeaf7d86a3a047e91657808778367d103ed19d7ca818e784ef22cc3a8aef1b, written 2026-10-25T01:22:05.1Z)
+re-check at 2026-10-25T01:25:53.780Z (every process on the box whose command line contains the string; tool shells of this lane, whose command line contains shell-snapshots, are listed separately):
+  root path pilot_g4_v1        matches: NONE (own tool shells excluded: ['69458'])
+  campaign860.py --root        matches: NONE (own tool shells excluded: ['69458'])
+  guard.py run                 matches: NONE (own tool shells excluded: ['69458'])
+  supervise860                 matches: NONE (own tool shells excluded: ['69458'])
+  /proc/4145604 exists: False
+  /proc/4145605 exists: False
+  /proc/4128867 exists: False

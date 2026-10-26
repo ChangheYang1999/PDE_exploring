@@ -1,0 +1,66 @@
+{
+ "intervention": 1,
+ "ruling": "lead 2026-10-25T00:53:32Z option A (c4-lead/NOTES_FOR_TEAM.md)",
+ "root": "outputs/campaign860/pilot_g4_v1",
+ "worker_pid": 3968008,
+ "target_pool_child_pid": 3996603,
+ "pre_snapshot_utc": "2026-10-25T00:57:11Z",
+ "conditions": {
+  "i_parent_in_terminate_pool_join": {
+   "py_spy_terminate_pool_frames": 1,
+   "py_spy_join_frames": 1,
+   "wchan": "do_wait",
+   "holds": true
+  },
+  "ii_target_is_pool_child_blocked_in_semlock": {
+   "ppid": 3968008,
+   "py_spy_semlock_enter_frames": 1,
+   "py_spy_pool_worker_frames": 1,
+   "wchan": "futex_wait_queue",
+   "holds": true
+  },
+  "iii_zero_cpu_over_6s": {
+   "ticks_before": 2910,
+   "ticks_after": 2910,
+   "holds": true
+  },
+  "iv_every_other_pool_worker_exited": {
+   "children_states": [
+    "3996603:S",
+    "3996604:Z",
+    "3996605:Z",
+    "3996606:Z",
+    "3996608:Z",
+    "3996609:Z",
+    "3996610:Z",
+    "3996611:Z"
+   ],
+   "non_zombie_others": 0,
+   "holds": true
+  }
+ },
+ "signal": "SIGKILL to 3996603 only",
+ "signal_sent_utc": "2026-10-25T00:57:17.618Z",
+ "kill_rc": 0,
+ "post": {
+  "utc": "2026-10-25T00:58:51Z",
+  "worker_wchan": "do_wait",
+  "target_exists": false,
+  "heartbeat": {
+   "phase": "validation",
+   "slice": 1,
+   "utc": "2026-10-25T00:58:35Z",
+   "epoch": 1792889915.4397063,
+   "pid": 3968008,
+   "phase_trial": null,
+   "note": null,
+   "guard_run_id": "20261025T001634Z_1792887394822372765_pilot_slice"
+  }
+ },
+ "not_signalled": [
+  "guard 3968005",
+  "supervisor 3601953",
+  "worker 3968008"
+ ],
+ "result_neutrality": "pool.map had returned all parts before Pool.__exit__; the killed child was idle (zero CPU, blocked on the inqueue rlock)"
+}
