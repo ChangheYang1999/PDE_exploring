@@ -1,0 +1,103 @@
+{
+  "inputs": {
+    "71_logarithmic_low_transfer/verification/audit.json": "7d78ada3347907e5f4944accbb7de32a7e3507e947c30b3f9896314f8df79e50",
+    "51_exterior_weight_transfer/verification/compute.json": "fe9a053abf83da0761e42dd540d359e1cc91e82b51eaff5fc5fbe8e9bc0e2cf0",
+    "52_refit_annular_distance/verification/nb_Mpen2_exact.annular.json": "724075db89368ecd86aca47e92a86a1a54bc60dbdb5f406180e62ba92bc3b295",
+    "52_refit_annular_distance/verification/nb_Mpen2_exact.rational_audit.json": "1c5e6fcdce071d4394b6ac025d22757ebecb94c7924af6584851f28ec1ce796a",
+    "52_refit_annular_distance/verification/nb_d2_exact.annular.json": "480f2d269e91f40a1f27909a7bcc39c177f80c4a9125d720606e490f904cf07e",
+    "52_refit_annular_distance/verification/nb_d2_exact.rational_audit.json": "60bfc336f202dfb03a7dde22190f39c072db9d13248cf06e85ac24daa3b3e602"
+  },
+  "moments": {
+    "2": "4*beta",
+    "4": "32*beta*(beta + 2)",
+    "6": "384*beta*(beta**2 + 6*beta + 7)"
+  },
+  "weight_ratio_worst_FLOAT": 0.9996858950301684,
+  "D_R": {
+    "31": {
+      "exact": "54498347932406454442484523339354210799/14272476927059598810582859694494951363827466240",
+      "FLOAT_display": 3.818422563296036e-09
+    },
+    "32": {
+      "exact": "871973566076704040595640459488911163887/456719261665907161938651510223838443642478919680",
+      "FLOAT_display": 1.9092112798048745e-09
+    },
+    "35": {
+      "exact": "3571603723633171316669605680282028981879279/14965776766268445882405732687014738121276749240074240",
+      "FLOAT_display": 2.3865140977401547e-10
+    }
+  },
+  "rows": [
+    {
+      "candidate": "state131",
+      "T_power": 31,
+      "L_integer_lower": 372474829674258475,
+      "N_log_integer_lower": 35350194988431047182367358,
+      "ratio_to_fractional_record_FLOAT_display": 0.9999999961825097
+    },
+    {
+      "candidate": "state131",
+      "T_power": 32,
+      "L_integer_lower": 1602697408584840334,
+      "N_log_integer_lower": 152106025684049937879446804,
+      "ratio_to_fractional_record_FLOAT_display": 0.9999999980912548
+    },
+    {
+      "candidate": "state131",
+      "T_power": 35,
+      "L_integer_lower": 127617579877087467912,
+      "N_log_integer_lower": 12111707931248526899493046278,
+      "ratio_to_fractional_record_FLOAT_display": 0.9999999997614069
+    },
+    {
+      "candidate": "nb_Mpen2_exact",
+      "T_test_power": 20,
+      "N_int_fractional": 1759901917,
+      "N_log_integer_lower": 1935892101,
+      "bound_exact": "27629975454697502831995264130052069177223894522331660288/14272476981557946742989314136979474703181677039",
+      "bound_FLOAT_display": 1935892101.307946
+    },
+    {
+      "candidate": "nb_d2_exact",
+      "T_test_power": 20,
+      "N_int_fractional": 1760486552,
+      "N_log_integer_lower": 1936535199,
+      "bound_exact": "27639154063200579469400951751247309338703544920129404928/14272476981557946742989314136979474703181677039",
+      "bound_FLOAT_display": 1936535199.8054903
+    }
+  ],
+  "checks": {
+    "M_2 = 4*beta": true,
+    "M_4 = 32*beta*(beta + 2)": true,
+    "M_6 = 384*beta*(beta**2 + 6*beta + 7)": true,
+    "moment polynomials have nonnegative coefficients": true,
+    "values at beta = 1: 4, 96, 5376": true,
+    "M_1^2 <= M_2 = 4": true,
+    "M_3^2 <= M_2 M_4 = 384 < 400": true,
+    "M_5^2 <= M_4 M_6 = 516096 < 518400": true,
+    "Da tangential eigenvalue -sigma/(R^2+r^2)": true,
+    "Da radial eigenvalue -sigma(R^2-r^2)/(R^2+r^2)^2": true,
+    "|R^2 - r^2| <= R^2 + r^2, so |Da| <= sigma/(R^2+|Z|^2)": true,
+    "1/(2R) - s/(R^2+s^2) = (R-s)^2/(2R(R^2+s^2)) >= 0": true,
+    "weight ratio <= (1 + t/R)^3 (FLOAT, 20000 samples)": true,
+    "1 - 1/rho <= rho - 1 for rho >= 1": true,
+    "commutator expansion sigma[u/2 + 5u^2/2 + 9u^3/2 + 7u^4/2 + u^5]": true,
+    "D_R coefficients 41/5, 34, 218, 3696/5, 1584": true,
+    "D_R exact equals the record at 2^31, 2^32, 2^35": true,
+    "D_(2^31) < 2^-27": true,
+    "state131 R >= 2^31: N = 35350194988431047182367358 is the floor": true,
+    "state131 R >= 2^32: N = 152106025684049937879446804 is the floor": true,
+    "state131 R >= 2^35: N = 12111707931248526899493046278 is the floor": true,
+    "nb_Mpen2_exact: rational audit confirms": true,
+    "nb_Mpen2_exact: recorded N_lower ball above N_int": true,
+    "nb_Mpen2_exact: L_lower > ell N_int (squared)": true,
+    "nb_Mpen2_exact: N = 1935892101 is the floor of (11/10) N_int/(1 + D_R)": true,
+    "nb_d2_exact: rational audit confirms": true,
+    "nb_d2_exact: recorded N_lower ball above N_int": true,
+    "nb_d2_exact: L_lower > ell N_int (squared)": true,
+    "nb_d2_exact: N = 1936535199 is the floor of (11/10) N_int/(1 + D_R)": true
+  },
+  "all_pass": true,
+  "seconds": 0.8,
+  "code_sha256": "137a936d831c7576cfa80c08412b549fb3e7416b4e8670cda6e4b300e689622c"
+}

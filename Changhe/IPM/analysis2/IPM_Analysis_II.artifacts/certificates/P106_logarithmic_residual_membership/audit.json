@@ -1,0 +1,141 @@
+{
+  "utc": "2026-10-28T15:33:48.972678+00:00",
+  "all_pass": true,
+  "count": 27,
+  "checks": [
+    {
+      "claim": "original exact exponent",
+      "pass": true
+    },
+    {
+      "claim": "original strictly admissible",
+      "pass": true
+    },
+    {
+      "claim": "refit exact exponent",
+      "pass": true
+    },
+    {
+      "claim": "refit decay",
+      "pass": true
+    },
+    {
+      "claim": "original first high decay",
+      "pass": true
+    },
+    {
+      "claim": "original second high decay",
+      "pass": true
+    },
+    {
+      "claim": "original low Hardy decay",
+      "pass": true
+    },
+    {
+      "claim": "original radial integrability",
+      "pass": true
+    },
+    {
+      "claim": "refit first high decay",
+      "pass": true
+    },
+    {
+      "claim": "refit second high decay",
+      "pass": true
+    },
+    {
+      "claim": "refit low Hardy decay",
+      "pass": true
+    },
+    {
+      "claim": "refit radial integrability",
+      "pass": true
+    },
+    {
+      "claim": "Gamma Jensen concavity 1/5",
+      "pass": true
+    },
+    {
+      "claim": "Gamma Jensen concavity 4/5",
+      "pass": true
+    },
+    {
+      "claim": "original source exponent",
+      "pass": true
+    },
+    {
+      "claim": "nonzero original leading residual",
+      "pass": true
+    },
+    {
+      "claim": "differentiated original exponent",
+      "pass": true
+    },
+    {
+      "claim": "nb_Mpen2_exact source exponent",
+      "pass": true
+    },
+    {
+      "claim": "nb_Mpen2_exact stationary leading branches",
+      "pass": true
+    },
+    {
+      "claim": "nb_Mpen2_exact leading profile preserved",
+      "pass": true
+    },
+    {
+      "claim": "nb_Mpen2_exact two dangerous descendants absent",
+      "pass": true
+    },
+    {
+      "claim": "nb_Mpen2_exact independent source bindings",
+      "pass": true
+    },
+    {
+      "claim": "nb_d2_exact source exponent",
+      "pass": true
+    },
+    {
+      "claim": "nb_d2_exact stationary leading branches",
+      "pass": true
+    },
+    {
+      "claim": "nb_d2_exact leading profile preserved",
+      "pass": true
+    },
+    {
+      "claim": "nb_d2_exact two dangerous descendants absent",
+      "pass": true
+    },
+    {
+      "claim": "nb_d2_exact independent source bindings",
+      "pass": true
+    }
+  ],
+  "manual_derivation_checks": [
+    "Weighted heat bound follows by moderation and Young convolution inequality.",
+    "The Gaussian radial moment follows by s=r^2/(4t).",
+    "The two gamma integrals are absolutely Bochner integrable under the displayed bounds.",
+    "Small heat times cost Delta g; large heat times are integrable because of exp(-t).",
+    "Q=B_(1-beta)(I+tau K) is an exact scalar multiplier identity, including beta=1.",
+    "The zero angular mode vanishes for centrally odd tests; angular Poincare gives the homogeneous Hardy bound.",
+    "Every cutoff derivative has the same symbol order on its supported annulus.",
+    "The high and low cutoff bounds prove membership in the actual compact-core completion.",
+    "Finite regularized-power expansions differentiate termwise at r>=2 and the interior is smooth."
+  ],
+  "inputs_sha256": {
+    "research/05_tails/verification/state131_tail.json": "2d7c23ff2009dd2c1fbf9df07f0832e584ff937a662eac5497c59a75afe4d1b4",
+    "research/20_real_velocity/verification/annular_residual.json": "7e906ce69c12e329cda7712392e538b6e84619c09f7b9d917e6829c80532d02d",
+    "research/19_nb_candidates/verification/nb_Mpen2_exact.audit.json": "084356aca1cca201d7e5f0b45e6aa8c843f4a5e79f9361fc60935eb97b741770",
+    "research/52_refit_annular_distance/verification/nb_Mpen2_exact.rational_audit.json": "1c5e6fcdce071d4394b6ac025d22757ebecb94c7924af6584851f28ec1ce796a",
+    "research/19_nb_candidates/verification/nb_d2_exact.audit.json": "166436b176ef4a06f659510e2f84e967cf7d32a2d37bf981d867325b99c9eaa9",
+    "research/52_refit_annular_distance/verification/nb_d2_exact.rational_audit.json": "60bfc336f202dfb03a7dde22190f39c072db9d13248cf06e85ac24daa3b3e602",
+    "research/05_tails/PROOF.md": "2cfde522c930a96e658db716ad3b1ee4ec49fff8a9b781fbac0c22e52b58523e",
+    "research/20_real_velocity/RESIDUAL_PROOF.md": "ae2b1494aeae0e53c609452467212fab72cbf01a274d82a7a1377916cb633e10",
+    "research/19_nb_candidates/PROOF.md": "c626c9b30cf287b3cc343e9f231da534889c72d7baaeff16223e093b12ff786f",
+    "research/42_d2_candidate/PROOF.md": "d01c78c51a66a759c154cd6eea01f36942765d2a40f8805feb8037bab538efdb",
+    "research/52_refit_annular_distance/PROOF.md": "2d95fab69dd00a1914903efd2ecf248eb26c4ac083ef383a0943f29ebafa6d70",
+    "research/106_logarithmic_residual_membership/PROOF.md": "ce556a33f8d53fb9b0c0d6da53a737585ae2d8a071aa544482ca80796959dcbe"
+  },
+  "method": "Exact rational exponents and source bindings; independent hand audit of the complete heat, multiplier, Hardy and cutoff argument. No numerical norm upper bound."
+}

@@ -1,0 +1,123 @@
+{
+  "identity_tests": {
+    "x^2 y exp(-r^2)": {
+      "b": "2",
+      "c": "-2",
+      "C_h_0": "-3/2",
+      "radial_quadrature": {
+        "0.33333": {
+          "T_eps_h_0_FLOAT": -1.2925456798429786,
+          "difference_FLOAT": 0.0
+        },
+        "1.4": {
+          "T_eps_h_0_FLOAT": -0.07324637887894339,
+          "difference_FLOAT": 0.0
+        },
+        "3.0": {
+          "T_eps_h_0_FLOAT": 0.00037022941226003863,
+          "difference_FLOAT": 0.0
+        }
+      },
+      "T_eps_h_0_at_eps_2^-20_FLOAT": -1.499999999998181
+    },
+    "(x^2 y + y^3/3) exp(-2 r^2)": {
+      "b": "4",
+      "c": "-2",
+      "C_h_0": "-1",
+      "radial_quadrature": {
+        "0.33333": {
+          "T_eps_h_0_FLOAT": -0.7414235212192667,
+          "difference_FLOAT": 0.0
+        },
+        "1.4": {
+          "T_eps_h_0_FLOAT": 0.0060846023882735545,
+          "difference_FLOAT": 0.0
+        },
+        "3.0": {
+          "T_eps_h_0_FLOAT": 7.614989872356314e-08,
+          "difference_FLOAT": -1.3684555315672042e-48
+        }
+      },
+      "T_eps_h_0_at_eps_2^-20_FLOAT": -0.9999999999975747
+    }
+  },
+  "off_center_FLOAT": {
+    "x^2 y exp(-r^2), eps = 0.25": {
+      "T_eps_FLOAT": -0.15766306011891262,
+      "average_FLOAT": -0.1576630601189127,
+      "difference_FLOAT": 8.326672684688674e-17
+    },
+    "x^2 y exp(-r^2), eps = 1.0": {
+      "T_eps_FLOAT": -0.15784747448047837,
+      "average_FLOAT": -0.1578474744804783,
+      "difference_FLOAT": -5.551115123125783e-17
+    },
+    "(x^2 y + y^3/3) exp(-2 r^2), eps = 0.25": {
+      "T_eps_FLOAT": 0.5884501011529154,
+      "average_FLOAT": 0.5884501011529156,
+      "difference_FLOAT": -2.220446049250313e-16
+    },
+    "(x^2 y + y^3/3) exp(-2 r^2), eps = 1.0": {
+      "T_eps_FLOAT": -0.07085460326203853,
+      "average_FLOAT": -0.07085460326203849,
+      "difference_FLOAT": -4.163336342344337e-17
+    }
+  },
+  "A_direct_minus_formula_FLOAT": {
+    "0.5": 0.0,
+    "3.0": 0.0,
+    "10.0": 0.0
+  },
+  "asymptotic_ratio_norm_over_prediction_FLOAT": {
+    "beta = 1.0, error norm (8)": {
+      "8": 0.9168906929477822,
+      "16": 0.9537550687551889,
+      "32": 0.9754849170628963
+    },
+    "beta = 0.0, cutoff norm (9)/(10)": {
+      "8": 0.9641465957841464,
+      "16": 0.9814622521175567,
+      "32": 0.9905701369917583
+    },
+    "beta = 0.5, cutoff norm (9)/(10)": {
+      "8": 0.8917448171052551,
+      "16": 0.9084251552025965,
+      "32": 0.9220250266406922
+    }
+  },
+  "checks": {
+    "-Delta H_in = P_eps": true,
+    "H_out harmonic": true,
+    "radial derivative 0 matches at r = eps": true,
+    "radial derivative 1 matches at r = eps": true,
+    "radial derivative 2 matches at r = eps": true,
+    "third radial derivative jumps (no smoother than C2)": true,
+    "inside: d_xxy H + d_y P/4 = 0": true,
+    "outside: d_xxy H = -sin(3 theta)/(pi r^3)": true,
+    "sin(3 theta) = y(3x^2 - y^2)/r^3": true,
+    "int P_1 = 1": true,
+    "int x^2 P_1 = 1/6": true,
+    "||d_x P_1||_1 = 16/(3 pi)": true,
+    "symbol of C = -(i r/4) sin(3 theta)": true,
+    "(2 pi)^-2 int (sin(3 theta)/4)^2 = 1/(64 pi)": true,
+    "harmonic 3 orthogonal to sin(theta) (b = 0 on representatives)": true,
+    "(<Y>(1 + t))^2 - (<Y> + t)^2 = t(<Y> - 1)(<Y>(2 + t) + t) >= 0": true,
+    "1 + 2 M_1 + M_2 <= (1 + 2 sqrt(beta))^2 with M_1 <= sqrt(M_2), M_2 = 4 beta": true,
+    "(2) at the origin, eps = 1/3, 7/5, 3 (40-digit quadrature, FLOAT): x^2 y exp(-r^2)": true,
+    "C h(0) = c + b/4 exactly, and T_eps h(0) -> C h(0) (eps = 2^-20, FLOAT): x^2 y exp(-r^2)": true,
+    "contact term needed (b != 0): x^2 y exp(-r^2)": true,
+    "(2) at the origin, eps = 1/3, 7/5, 3 (40-digit quadrature, FLOAT): (x^2 y + y^3/3) exp(-2 r^2)": true,
+    "C h(0) = c + b/4 exactly, and T_eps h(0) -> C h(0) (eps = 2^-20, FLOAT): (x^2 y + y^3/3) exp(-2 r^2)": true,
+    "contact term needed (b != 0): (x^2 y + y^3/3) exp(-2 r^2)": true,
+    "(2) at X0 = (1/2, 0), eps = 1/4 and 1 (FLOAT quadrature)": true,
+    "pure harmonic 1: C h(0) = 0, c = -b/4 with b != 0": true,
+    "pure harmonic 1: angular mean of C h vanishes at every r (disk averages at 0 vanish)": true,
+    "pure harmonic 1: C h is not identically zero": true,
+    "A(z) = 8 J_2(z)/z^2 (FLOAT, direct quadrature)": true,
+    "bounds (5) on z = 0.02 ... 200 (FLOAT)": true,
+    "asymptotic ratios approach 1 (FLOAT)": true
+  },
+  "all_pass": true,
+  "seconds": 95.4,
+  "code_sha256": "377faba80538b07958b9324abf77bc123421041023734f9eadf2296ab24ec120"
+}

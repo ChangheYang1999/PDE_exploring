@@ -1,0 +1,62 @@
+{
+  "disjoint_FLOAT": {
+    "lhs": 3.47694621095155e-14,
+    "rhs": 6.95460166324537e-14
+  },
+  "scaling_FLOAT": {
+    "0.5": {
+      "norm2": 1.0612159731733698e-14,
+      "bound": 1.0641424227903361e-14
+    },
+    "0.25": {
+      "norm2": 3.167730038352406e-15,
+      "bound": 3.1769373265955875e-15
+    }
+  },
+  "A_chi_FLOAT": 9.562554537772572e-09,
+  "direct_FLOAT": {
+    "2": {
+      "direct_FLOAT": 4.35210612351953e-09,
+      "A_chi_sum_FLOAT": 4.35210612351953e-09
+    },
+    "3": {
+      "direct_FLOAT": 6.651414458498654e-09,
+      "A_chi_sum_FLOAT": 6.651414458498654e-09
+    },
+    "4": {
+      "direct_FLOAT": 8.136801757986064e-09,
+      "A_chi_sum_FLOAT": 8.136801757986064e-09
+    }
+  },
+  "series_FLOAT": {
+    "sum_(1+n)a_n^2_to_2e5": 1.555067442791315,
+    "sum_a_n_to_2e5": 2.900771709958644,
+    "loglog_2e5": 2.5019335857292173
+  },
+  "checks": {
+    "d/dlam int e^-t (1 - e^(-t lam)) dt/t = int e^(-t(1+lam)) dt = 1/(1 + lam) = d/dlam log(1 + lam)": true,
+    "both sides vanish at lam = 0": true,
+    "autocorrelation of exp(-|X|^2) = (pi/2) exp(-|z|^2/2)": true,
+    "heat identity both sides = (pi/2)(1 - 1/(1 + 2t)) for the Gaussian": true,
+    "log(1 + s/eps^2) <= 2 log(1/eps) + log(1 + s) for eps <= 1: (1 + s)/eps^2 - (1 + s/eps^2) = (1/eps^2 - 1) >= 0": true,
+    "Phi = r sin(3 theta) chi(r)": true,
+    "Phi even in x, odd in y": true,
+    "int_0^(2 pi) sin(3 theta)^2 = pi": true,
+    "2 s/(1 + s^2) <= 1: 1 + s^2 - 2 s = (1 - s)^2": true,
+    "2 |xi|^2 <= 1 + |xi|^4: difference (1 - |xi|^2)^2": true,
+    "omega2 <= 1 + 2r: (1 + 2r)^2 - (1 + 4 r^2) = 4r >= 0 and (1 + 4r^2)^(4/5) <= 1 + 4r^2": true,
+    "table of squared scaling factors A^2 eps^2": true,
+    "support separation (3/2) 4^-(n+1) < 4^-n": true,
+    "log(1 + u) <= u (u > 0): derivative 1/(1+u) <= 1, value 0 at 0": true,
+    "(3) for two disjoint annular bumps (FLOAT FFT)": true,
+    "(4) scaling estimate for Phi at eps = 1/2, 1/4 (FLOAT FFT)": true,
+    "A_chi > 0 (FLOAT)": true,
+    "T_(eps_N) h(0) = A_chi sum a_n (FLOAT, N = 2, 3, 4)": true,
+    "partial sum of (1 + n) a_n^2 (n <= 2e5) below 3/(4 log(3)^2)... + 2/log 2 (FLOAT)": true,
+    "sum a_n (n <= 2e5) - log log 2e5 is bounded (FLOAT display)": true
+  },
+  "all_pass": true,
+  "check_count": 20,
+  "seconds": 4.6,
+  "code_sha256": "54d4284d912ce7ce4a5e97afe46a269f1d9c8e38e1465961f1e904721c78aeb5"
+}

@@ -1,0 +1,7 @@
+# Independent audit 2026-10-28T08:01:36.101012+00:00
+
+CONFIRMED the analytical exponential derivative bound and its cylinder consequence. The proof constructs an orthonormal Laplace basis directly, differentiates it exactly, and bounds its Hilbert-Schmidt norm by n(n^2+2)/6. It assumes only distinct positive real exponential rates. Four unrelated rational rate sets independently verify every orthogonality and normalization identity, the exact trace formula, and the full cylinder square identity. The origin and infinity boundary terms vanish for the stated finite exponential functions.
+
+The radial factor is retained before any derivative estimate. This yields Q_n=[2n(n^2+2)+1]/3 in the cylinder denominator. The actual full-plane negative norm then follows by positive inverse duality, with the required factor pi/2. The exact original-source sine vector and compactified finite-family algebra were independently established in topic26.
+
+All21 rows agree between384-bit branchwise logarithmic gamma products and512-bit direct finite products. B_75/eta_U>1308, B_779/eta_U>1.0035179, and B_780/eta_U<0.9995471. Strict monotonicity excludes every59<=K<=779 in the six-branch family. The cap779 allows270180 coefficient slots before constraints. The value780 only marks the stopping point of this bound, not a feasible candidate. Addedbranch6 lies outside the theorem. Lead review was CORRECT at 2026-10-28T08:17Z. V123 confirms the third mpmath interval computation and records the distinction between rounded diagnostic decimals and exact binary endpoints.

@@ -1,0 +1,112 @@
+{
+  "inputs": {
+    "source_audit/state131_exact.json": "e525e9d55f74e227b1ad9d2138032eb67f43261c05848e53844f33f8c55162b5",
+    "96/polynomials.json": "bcabf342df4f5165094d6894b381975ee382d8aa2ba8abe957c7bedd54071dd9",
+    "96/B1_global.json": "fe322257e8ef131cb4331dd89f00c0f531c535cfce11ad89620764c71658091f",
+    "96/B1_global.recheck.json": "a937dc95a1c88c4cca3ca8624625bcce319435dff8a91902aae235c8c83397de",
+    "96/B2_global.json": "f53209711c0545ea61f9dedc2f331fd9bf9cb814fe8634fa90c5f7b3c6ae5a1d",
+    "96/B2_global.recheck.json": "c5c3a63751e213fdcdba11b7760f27702e8954c04a399c55c2a95f3fb54fb00f",
+    "96/B3_global.json": "a76145519d8bd2214d7addd2567a81f4c3493171a0159f4dfcb17b004681969e",
+    "96/B3_global.recheck.json": "9eed0355da8f231d6ec3e0b06666fab8ea3eb979ad43fb0f2ec4d851e6220c94",
+    "96/symDU_global.json": "a63597227f698a9b6d4096d1dd5dfb005a1976b61a45b8f2d1cf5e23c8716c72",
+    "96/symDU_global.recheck.json": "32c5fee3a46218a3c498615401fc6bcfbf2458368d72148ab0e9f94974132198"
+  },
+  "records": {
+    "B1": {
+      "leaves": 99,
+      "worst_lower_after_target": "[8.57222322959004e-5 +/- 4.06e-21]",
+      "worst_path": "TzTTTTTTTTTTZTT",
+      "precision_bits": 384
+    },
+    "B2": {
+      "leaves": 144,
+      "worst_lower_after_target": "[7.20731389105110e-5 +/- 1.28e-20]",
+      "worst_path": "TZTTTTTTTTzTtT",
+      "precision_bits": 384
+    },
+    "B3": {
+      "leaves": 164,
+      "worst_lower_after_target": "[9.09553516720554e-5 +/- 2.20e-20]",
+      "worst_path": "TzTTTzTTTTTzTzTTZzTZT",
+      "precision_bits": 384
+    },
+    "symDU": {
+      "leaves": 49,
+      "worst_lower_after_target": "[4.55717898758719e-5 +/- 2.53e-20]",
+      "worst_path": "tttttttttt",
+      "precision_bits": 384
+    }
+  },
+  "poly_vs_potential_max_rel_FLOAT": 3.3781238127911948e-25,
+  "grid_sampled": {
+    "extreme": {
+      "B1": 0.9913459659204912,
+      "B2": 0.6148442140117747,
+      "B3": -1.2036100316500193,
+      "symDU": 0.8103192101999981
+    },
+    "at_t_z_radius": {
+      "B1": [
+        0.999999,
+        0.0,
+        3.298239386161014e-45
+      ],
+      "B2": [
+        0.999999,
+        0.0,
+        6.597535902967305e-45
+      ],
+      "B3": [
+        0.999999,
+        0.0,
+        9.84561634905299e-45
+      ],
+      "symDU": [
+        0.0,
+        -1.0,
+        1.065211380220997e-59
+      ]
+    },
+    "points": 2911,
+    "margin_over_target_display": {
+      "B1": 0.018470965920491134,
+      "B2": 0.027606214011774655,
+      "B3": 0.02726596834998074,
+      "symDU": 0.00047278980000187154
+    }
+  },
+  "checks": {
+    "input: 860 canonical coefficients, c = 4076476460239181/2^51": true,
+    "96: u.X = -d_theta chi_xy (d_theta = x d_y - y d_x), so e = u.X/r^2 = -d_theta chi_xy / r^2": true,
+    "96: V.D log omega = (16/5) r^2 (c + e)/(1 + 4 r^2) = (16/5) t (c + e)/(1 + 3t), t = r^2/(1 + r^2)": true,
+    "96: B1 = I - sym Du + A = [[1 - chi04, chi13], [chi13, 1 - chi22]]": true,
+    "96: B2 = [1 - c + (16/5) t (c + e)/(1 + 3t)] I + [[chi22 - chi04, (-chi31 + 3 chi13)/2], [., -2 chi22]], B3 = [1 - 2c + ...] I + [[2 chi22 - chi04, -chi31 + 2 chi13], [., -3 chi22]]": true,
+    "96: sym Du = [[-chi22, (chi31 - chi13)/2], [., chi22]], trace 0, ||sym Du||^2 = chi22^2 + (chi31 - chi13)^2/4; rho_y = -chi22 - chi04, rho_x = -chi31 - chi13": true,
+    "96 lemma: (a - L)(b - L) = C^2 and a - L = (a - b + s)/2 >= 0 at L = (a + b - s)/2, s = ((a - b)^2 + 4C^2)^(1/2); min(a, b) - C is a lower bound for [[a', q], [q, b']], a' >= a, b' >= b, |q| <= C (2000 exact tests)": true,
+    "96: targets imply the thresholds: 972875/10^6 >= 9/10, 293619/500000 >= 1/2, -307719/250000 >= -5/4, 101349/125000 < 17/20": true,
+    "96: targets imply the compact-region numbers 0.972874, 0.587237, -1.230877 (lower) and 0.810792 (upper)": true,
+    "records: the polynomial record carries the hash of the exact source record and c": true,
+    "records B1: COMPLETE, no failed or pending cell, target 7783/8000, root t in [0, 1], 99 leaves": true,
+    "records B1: rectangles equal their paths; complete binary tree of [0, 1] x [-1, 1]; total area 2": true,
+    "records B1: every directed lower bound after the target is positive; worst = smallest leaf": true,
+    "records B1: recheck all pass at 448 bits, same 99 paths, every row positive; hashes bind primary and polynomials": true,
+    "records B2: COMPLETE, no failed or pending cell, target 293619/500000, root t in [0, 1], 144 leaves": true,
+    "records B2: rectangles equal their paths; complete binary tree of [0, 1] x [-1, 1]; total area 2": true,
+    "records B2: every directed lower bound after the target is positive; worst = smallest leaf": true,
+    "records B2: recheck all pass at 448 bits, same 144 paths, every row positive; hashes bind primary and polynomials": true,
+    "records B3: COMPLETE, no failed or pending cell, target -307719/250000, root t in [0, 1], 164 leaves": true,
+    "records B3: rectangles equal their paths; complete binary tree of [0, 1] x [-1, 1]; total area 2": true,
+    "records B3: every directed lower bound after the target is positive; worst = smallest leaf": true,
+    "records B3: recheck all pass at 448 bits, same 164 paths, every row positive; hashes bind primary and polynomials": true,
+    "records symDU: COMPLETE, no failed or pending cell, target 101349/125000, root t in [0, 1], 49 leaves": true,
+    "records symDU: rectangles equal their paths; complete binary tree of [0, 1] x [-1, 1]; total area 2": true,
+    "records symDU: every directed lower bound after the target is positive; worst = smallest leaf": true,
+    "records symDU: recheck all pass at 448 bits, same 49 paths, every row positive; hashes bind primary and polynomials": true,
+    "96 FLOAT: the 20 branch polynomials reproduce chi22, chi04, chi31, chi13, e from numerical derivatives of the original potential at 28 points (r = 0.05 to 300), relative difference < 1e-15": true,
+    "96 sampled (Arb balls at 2911 grid points of [0, 1] x [-1, 1], t up to 1 - 1e-12 and t = 1): the smallest lower ends of lambda_min(B1), lambda_min(B2), lambda_min(B3) exceed the targets and the largest upper end of ||sym Du|| is below its target": true
+  },
+  "all_pass": true,
+  "check_count": 28,
+  "seconds": 12.5,
+  "code_sha256": "6ad67d083546ffdc97400b5cfb078d08ce372ca6b3d1a6b7a6f4b82824b60313"
+}

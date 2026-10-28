@@ -1,0 +1,92 @@
+{
+  "utc": "2026-10-28T06:05:13.830311+00:00",
+  "status": "CONFIRMED_SUMMARY_AUDIT",
+  "scope": "Aggregation and code-path audit only. It does not independently certify the numerical enclosures.",
+  "input_sha256": "50097680170eb5d0615db5f6fc10135a106e9533307c378dacb0a840598f6703",
+  "code_sha256": "88038d70b936362e2f54c6ee31b385718a8538f8e2fc1b0a4e168ec0f15602a9",
+  "rows": 40081,
+  "summary": {
+    "Frob_D1_rho": {
+      "finite_rows": 40081,
+      "nonfinite_or_missing_rows": 0,
+      "largest_recorded_upper_bound": 10.300398990511896,
+      "largest_bound_cell": [
+        -1,
+        -1
+      ],
+      "nonfinite_r_range": null
+    },
+    "Frob_D1_U": {
+      "finite_rows": 39803,
+      "nonfinite_or_missing_rows": 278,
+      "largest_recorded_upper_bound": 1.1460061296820643,
+      "largest_bound_cell": [
+        -1,
+        -1
+      ],
+      "nonfinite_r_range": [
+        47.95672643041444,
+        101.778502590813
+      ]
+    },
+    "Frob_D2_rho": {
+      "finite_rows": 37126,
+      "nonfinite_or_missing_rows": 2955,
+      "largest_recorded_upper_bound": 3.192622864618898,
+      "largest_bound_cell": [
+        282,
+        51
+      ],
+      "nonfinite_r_range": [
+        0.0,
+        101.778502590813
+      ]
+    },
+    "wFrob_D2_rho": {
+      "finite_rows": 37126,
+      "nonfinite_or_missing_rows": 2955,
+      "largest_recorded_upper_bound": 9.06408988575772,
+      "largest_bound_cell": [
+        348,
+        35
+      ],
+      "nonfinite_r_range": [
+        0.0,
+        101.778502590813
+      ]
+    },
+    "Frob_D2_U": {
+      "finite_rows": 28164,
+      "nonfinite_or_missing_rows": 11917,
+      "largest_recorded_upper_bound": 0.8299396545626224,
+      "largest_bound_cell": [
+        270,
+        55
+      ],
+      "nonfinite_r_range": [
+        0.0,
+        101.778502590813
+      ]
+    },
+    "wFrob_D2_U": {
+      "finite_rows": 28164,
+      "nonfinite_or_missing_rows": 11917,
+      "largest_recorded_upper_bound": 1.9306211672292892,
+      "largest_bound_cell": [
+        354,
+        0
+      ],
+      "nonfinite_r_range": [
+        0.0,
+        101.778502590813
+      ]
+    }
+  },
+  "origin_r_hi": 0.005,
+  "issues": [
+    "The claims 10.3003 and 1.1459 are below recorded enclosure upper bounds. Their certification does not follow from this artifact.",
+    "A uniform upper bound greater than the origin value does not prove the exact supremum equals the origin value.",
+    "For the origin square [-r_hi,r_hi]^2 the radial weight maximum is (1+8r_hi^2)^(2/5), not (1+4r_hi^2)^(2/5). The latter remains valid on the inscribed disk only.",
+    "Nonfinite rows do not certify their respective fields; a full-plane statement also needs the exterior certificate."
+  ]
+}

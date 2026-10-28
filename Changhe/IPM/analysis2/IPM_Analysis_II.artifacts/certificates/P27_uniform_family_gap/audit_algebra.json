@@ -1,0 +1,102 @@
+{
+  "utc": "2026-10-28T07:47:10.433778+00:00",
+  "verdict": "CONFIRMED exact algebra and numerical lower bounds; lead proof review CORRECT 07:41Z",
+  "precision_bits": 512,
+  "small_Gram_checks": [
+    {
+      "exponents": [
+        "-2/5",
+        "-1/5",
+        "1/10",
+        "7/5",
+        "2"
+      ],
+      "distance_squared": "3645/8281",
+      "dilation_Frobenius_squared": "877/20",
+      "all_entries_exact": true
+    },
+    {
+      "exponents": [
+        "0",
+        "1",
+        "2",
+        "5",
+        "8"
+      ],
+      "distance_squared": "400/6561",
+      "dilation_Frobenius_squared": "556",
+      "all_entries_exact": true
+    },
+    {
+      "exponents": [
+        "-49/100",
+        "-48/100",
+        "-1/3",
+        "3/4",
+        "29/10",
+        "10"
+      ],
+      "distance_squared": "6207740799024200/1490128223548041",
+      "dilation_Frobenius_squared": "15020681/45000",
+      "all_entries_exact": true
+    }
+  ],
+  "original_source_hash": "7ff9415cbbe66f9d4a105aa4a999704e67157d8376c969b7561a1c01b1de57bc",
+  "original_canonical_hash": "4d80cf85ea1746d41c3fcfbdc622c74465cff5b9358e68614e521531ea78fb01",
+  "leading_sector_recomputed_from_stationary_branches": true,
+  "stationary_lower_sectors_exact_zero": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "e_modes": 70,
+  "e_max_mode": 139,
+  "leading_full_circle_L2": "[3081.2744011157981572487118667982381055647605054429154247401753519 +/- 2.32e-62]",
+  "Hminus_bound": "[2.6775016378326689230736989646264596206038004575863944803904330987e-7 +/- 4.28e-73]",
+  "Route_U_N_bound": "[0.00013376691925569397849027703788670699971639225383578212580462269956 +/- 1.64e-69]",
+  "ratio_to_eta": "[210.39717168818785378413110291863751840192358593716361752156207772 +/- 3.31e-63]",
+  "candidate_membership": [
+    {
+      "name": "nb_stableA2_exact",
+      "audit_sha256": "ec0894864b3414719ef43da1f03b95492d90e07b159d6ae1ae3ddbc6a0f6efa0",
+      "canonical_sha256": "cf454b10cb4fefaa8fffb8f89d1ef4018401e5500442d737588fa0882c41407b"
+    },
+    {
+      "name": "nb_stableA3_exact",
+      "audit_sha256": "6661c8fd138abbb3f4e64f12176e97c4d3d59503f4a7bc9685839fd875a5cb00",
+      "canonical_sha256": "c7bfb3c68d198f0902cb59f1eefb75843913334e3f35019a0916268fcd8a883d"
+    },
+    {
+      "name": "nb_stableA4_exact",
+      "audit_sha256": "ac023142240a99487ad3818b8cd5e0e0285099ef87afefb8b18ca5001bf41d10",
+      "canonical_sha256": "72a6cca58b7d7d63cfc924376ec74f200120d2eac78b84fa11772c42a7d39c38"
+    },
+    {
+      "name": "nb_stableA5_exact",
+      "audit_sha256": "8a7dc0ec09bd8b6cfde06ba727cc9f407f03d3c1a057af4b9ebfbfbd3146148e",
+      "canonical_sha256": "afe9df84f6d90ee6ccc780cf742168f469dc78ce6eafd98b83ce5ab6d9b8c4c9"
+    },
+    {
+      "name": "nb_Mpen_exact",
+      "audit_sha256": "c5416def6c91464df003de481f2779eb29aeccb83a512876f621fe481c80e3be",
+      "canonical_sha256": "ee2702eb5365b4b967c3c0552b36646ec1986dec8bd6b7e3a80b200d94708b2e"
+    }
+  ],
+  "dependencies": {
+    "26_uniform_family_gap/PROOF.md": "a169bf69133cd6da5be6d94798a32259f1a004858d6bdda546251452b6348718",
+    "26_uniform_family_gap/verification/muntz_bound.py": "7e66a5c46e5c91610d052292d77271c2843a147f9b69abe2b06bcfefc3b72b58",
+    "26_uniform_family_gap/verification/muntz_bound.json": "48f655cb9197a884a1c6fea5a1bb264ab557219411ddf1113211db3418f36b27",
+    "10_tail_splice/verification/state131_splice.json": "89a7c06a3003ed480a321c836b2be8b23b3c0716a4ee9d2f25dea8b4ab9a23bc",
+    "23_admissible_tail_gap/verification/nb_stableA2_exact.annular.json": "6aebb0482b6af0285bc43e6b7d3fa9dd4a616d080be9d562e410957bc2d0de49",
+    "source_audit/recover_state.py": "bbe99bb6a93f97b300fd8183bfe341c51e4b888e10d5f84193fd2ccea10cdfb9",
+    "13_algebraic_repair/verification/audit_repair.py": "464f66dd70ce25ce1c24bc90607f5dec73a7a1c76f9eb5862ef2c46b14e6802d",
+    "11_residual_norms/PROOF.md": "df10d784b11575bfbb1b7f91a8f395110bd969f28ed9c851212dd431319889e1",
+    "11_residual_norms/verification/compact_norms.py": "584888e545cd26aa61388d018edf9de6b795b4f62e64bfcc57dd908b5b34092c",
+    "02_energy/verification/compact_matrix.py": "eca76a7bb2bd2ed0836b42840836f7fff22d602b5bc02fa7542705256795fb19"
+  },
+  "code_hash": "151c50e7f8ae7f53a3897199882e2873b17ad854616b7994b17b98ca37e1ea9c",
+  "seconds": 1.9425038858316839
+}

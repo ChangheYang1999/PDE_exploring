@@ -1,0 +1,121 @@
+{
+  "exact_constants": {
+    "a0": "57/14336",
+    "a1": "29/14336",
+    "a2": "29/7",
+    "Ch_squared": "236582775/939524096",
+    "Cu_squared": "1134189135/822083584",
+    "d_h": "598833/143360",
+    "d_u": "1081413/143360",
+    "ell_squared": "121/900719925474099200",
+    "kappa": "95/37",
+    "D_R_at_2^31": "54498347932406454442484523339354210799/14272476927059598810582859694494951363827466240"
+  },
+  "ratios_FLOAT_display": {
+    "Ch^2 / (51/100)^2": 0.9681326044825593,
+    "Cu^2 / (6/5)^2": 0.958091560371068,
+    "ell^2 d_h 120000^3": 0.9696546199906246,
+    "(13/3)^2 ell^2 d_u 37000^3": 0.963848023761308
+  },
+  "margins": [
+    {
+      "reference": "state131",
+      "T_power": 31,
+      "stated_radius_power": 57,
+      "largest_positive_power": 57,
+      "margin_at_stated_floor": 8315239644695768,
+      "margin_at_stated_FLOAT_display": 8315239644695768.0,
+      "margin_at_next_power_FLOAT_display": -4.85275072803787e+17
+    },
+    {
+      "reference": "state131",
+      "T_power": 32,
+      "stated_radius_power": 56,
+      "largest_positive_power": 56,
+      "margin_at_stated_floor": 440055764061517694,
+      "margin_at_stated_FLOAT_display": 4.400557640615177e+17,
+      "margin_at_next_power_FLOAT_display": -4.709697838889794e+17
+    },
+    {
+      "reference": "state131",
+      "T_power": 35,
+      "stated_radius_power": 54,
+      "largest_positive_power": 54,
+      "margin_at_stated_floor": 39641666366939626796,
+      "margin_at_stated_FLOAT_display": 3.964166636693963e+19,
+      "margin_at_next_power_FLOAT_display": -1.9096858634921296e+19
+    },
+    {
+      "reference": "nb_Mpen2_exact",
+      "T_power": 20,
+      "stated_radius_power": 21,
+      "largest_positive_power": 21,
+      "margin_at_stated_floor": 14166,
+      "margin_at_stated_FLOAT_display": 14166.654229670929,
+      "margin_at_next_power_FLOAT_display": -146605.82568398496
+    },
+    {
+      "reference": "nb_d2_exact",
+      "T_power": 20,
+      "stated_radius_power": 21,
+      "largest_positive_power": 21,
+      "margin_at_stated_floor": 14224,
+      "margin_at_stated_FLOAT_display": 14224.744819589774,
+      "margin_at_next_power_FLOAT_display": -146547.7350940661
+    }
+  ],
+  "inputs_sha256": {
+    "original state 131": "7ff9415cbbe66f9d4a105aa4a999704e67157d8376c969b7561a1c01b1de57bc",
+    "49_negative_annular_distance/verification/compute.json": "58aa23ed6425bcac2575bc67609ff01c13626bafb9daeb1ac7ad956a0d9c4b91",
+    "52_refit_annular_distance/verification/nb_Mpen2_exact.annular.json": "724075db89368ecd86aca47e92a86a1a54bc60dbdb5f406180e62ba92bc3b295",
+    "nb_Mpen2_exact source": "07bb884b96121b22ca099c3b9d3451d19a65d6af684422b595b305e48d918e05",
+    "52_refit_annular_distance/verification/nb_d2_exact.annular.json": "480f2d269e91f40a1f27909a7bcc39c177f80c4a9125d720606e490f904cf07e",
+    "nb_d2_exact source": "f3339f85eff0ac81033a2a1f0fd07e12298ef9bd74da501a4e874c3cef6057e3"
+  },
+  "checks": {
+    "1 + 2 M1 + M2 <= 57/7": true,
+    "1 + 2 M1 <= 29/7": true,
+    "a0, a1, a2 = 57/(7 2048), 29/(7 2048), 29/7": true,
+    "2^(1/5) < 5/4": true,
+    "prefactor 3 (1/2)(5/4) = 15/8": true,
+    "Cu^2 equals (15/8)^2 8 a0 (1200 a0 + 54 a1 + (9/5) a2)": true,
+    "Ch^2 < (51/100)^2": true,
+    "Cu^2 < (6/5)^2": true,
+    "d_h = a2 + (11/5) a1 + (15/2) a0": true,
+    "d_u = (9/5) a2 + (33/10) a1 + 20 a0": true,
+    "ell^2 d_h < 120000^-3": true,
+    "(13/3)^2 ell^2 d_u < 37000^-3": true,
+    "kappa = 95/37": true,
+    "D_(2^31) < 2^-27 < 1/10 (D_R decreasing: positive coefficients)": true,
+    "(1 + D_R) 2^(-53/2) <= ell for R >= 2^31: (1 + D)^2 <= 121/100": true,
+    "E|X| = sqrt(pi T) for the 2D heat kernel (FLOAT, T = 3/7)": true,
+    "Gamma(u + 1/2)/Gamma(u) <= sqrt(u) on u = 1/400 ... 1 (FLOAT)": true,
+    "E sqrt(U) = Gamma(beta + 1/2)/Gamma(beta) <= sqrt(pi)/2 on beta = 1/400 ... 1 (FLOAT)": true,
+    "the composite gamma(u) mixture over U ~ gamma(beta) has E T = beta (FLOAT 2D quadrature at beta = 3/10, 4/5)": true,
+    "(9): (F - equation) zeta - right side = div G exactly": true,
+    "topic 49 record: L2 constants 1/190000, 1/60000": true,
+    "state131 T = 2^31: A_h + A_u and A overlap (diagnostic only)": true,
+    "state131 T = 2^31: margin at the stated radius 2^57 > 0 (exact, directed)": true,
+    "state131 T = 2^31: largest positive dyadic radius >= stated": true,
+    "state131 T = 2^32: A_h + A_u and A overlap (diagnostic only)": true,
+    "state131 T = 2^32: margin at the stated radius 2^56 > 0 (exact, directed)": true,
+    "state131 T = 2^32: largest positive dyadic radius >= stated": true,
+    "state131 T = 2^35: A_h + A_u and A overlap (diagnostic only)": true,
+    "state131 T = 2^35: margin at the stated radius 2^54 > 0 (exact, directed)": true,
+    "state131 T = 2^35: largest positive dyadic radius >= stated": true,
+    "nb_Mpen2_exact: record source hash = numerics data file": true,
+    "nb_Mpen2_exact: record original hash = original state 131": true,
+    "nb_Mpen2_exact T = 2^20: A_h + A_u and A overlap (diagnostic only)": true,
+    "nb_Mpen2_exact T = 2^20: margin at the stated radius 2^21 > 0 (exact, directed)": true,
+    "nb_Mpen2_exact T = 2^20: largest positive dyadic radius >= stated": true,
+    "nb_d2_exact: record source hash = numerics data file": true,
+    "nb_d2_exact: record original hash = original state 131": true,
+    "nb_d2_exact T = 2^20: A_h + A_u and A overlap (diagnostic only)": true,
+    "nb_d2_exact T = 2^20: margin at the stated radius 2^21 > 0 (exact, directed)": true,
+    "nb_d2_exact T = 2^20: largest positive dyadic radius >= stated": true
+  },
+  "all_pass": true,
+  "check_count": 40,
+  "seconds": 13.5,
+  "code_sha256": "05d3739c2b8c8d62978f5686a24a6b2c1d647e7173c32bd373456699382de220"
+}

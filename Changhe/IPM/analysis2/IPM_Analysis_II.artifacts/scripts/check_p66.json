@@ -1,0 +1,384 @@
+{
+  "inputs": {
+    "66_gaussian_holder/verification/compute.json": "b94973a9b7f206374e06368b52d42a6bcba7dd47e95d116b27a0e883f1bf8165",
+    "source_audit/state088_exact.json": "0388177245de992b2c174725d3e397d35162341e08cc815c7c09aa996a497636",
+    "source_audit/state131_exact.json": "e525e9d55f74e227b1ad9d2138032eb67f43261c05848e53844f33f8c55162b5"
+  },
+  "state88_parameters": {
+    "c": "4072466420739489/2251799813685248",
+    "a0": "4029127086436669008331775828317073/391269509438319365196563215286272",
+    "lambda": "2946566513896865/1125899906842624",
+    "sigma": "4029127086436669008331775828317073/632712842290354732345271775816448",
+    "sigma_float": 6.368018502440456,
+    "jet_widths": [
+      1.6667732799253843e-147,
+      3.934758036187491e-148,
+      3.934758036187491e-148
+    ],
+    "checks": {
+      "lambda=2c-1": true,
+      "c+strain=1": true,
+      "sigma=a0/(lambda-1)": true,
+      "sigma_equals_topic66_record": true,
+      "checkpoint_sha256_equals_record": true,
+      "sigma>6": true,
+      "jet_rho_y(0)_encloses_a0": true,
+      "jet_V1_x(0)_encloses_lambda": true,
+      "jet_V2_y(0)_encloses_1": true
+    }
+  },
+  "state131_parameters": {
+    "c": "4076476460239181/2251799813685248",
+    "a0": "12102479225522702540364244077864789/1174964343508337542719888806641664",
+    "lambda": "2950576553396557/1125899906842624",
+    "sigma": "4034159741840900846788081359288263/634730785896556883619549546570496",
+    "sigma_float": 6.3557020259268695,
+    "jet_widths": [
+      1.461481556298211e-147,
+      3.78812109073951e-148,
+      3.78812109073951e-148
+    ],
+    "checks": {
+      "lambda=2c-1": true,
+      "c+strain=1": true,
+      "sigma=a0/(lambda-1)": true,
+      "sigma_equals_topic66_record": true,
+      "checkpoint_sha256_equals_record": true,
+      "sigma>6": true,
+      "jet_rho_y(0)_encloses_a0": true,
+      "jet_V1_x(0)_encloses_lambda": true,
+      "jet_V2_y(0)_encloses_1": true
+    }
+  },
+  "state88_moments": {
+    "values": [
+      4.385965623888153,
+      8.771931247776307,
+      55.89980693999554,
+      585.143825026657,
+      8649.78106187649,
+      165324.63440155546,
+      3917510.4906767746,
+      111692313.26820414
+    ],
+    "positive": true,
+    "overlap_record": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "state131_moments": {
+    "values": [
+      4.3198246704106,
+      8.6396493408212,
+      55.064232872105705,
+      576.4530233384851,
+      8522.623211202272,
+      162924.5527379261,
+      3861979.0271148984,
+      110170008.00481391
+    ],
+    "positive": true,
+    "overlap_record": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "state88_B": {
+    "erf": 0.643759999001975,
+    "gamma_lower": 2.9852989988887373,
+    "B": 7.179310481427134,
+    "checks": {
+      "erf_z": true,
+      "gamma_lower": true,
+      "A_theta": true,
+      "k_theta": true,
+      "B": true,
+      "erf_two_series_overlap": true,
+      "B_positive": true
+    }
+  },
+  "state131_B": {
+    "erf": 0.6444795528160506,
+    "gamma_lower": 2.98687747332687,
+    "B": 7.21977226014279,
+    "checks": {
+      "erf_z": true,
+      "gamma_lower": true,
+      "A_theta": true,
+      "k_theta": true,
+      "B": true,
+      "erf_two_series_overlap": true,
+      "B_positive": true
+    }
+  },
+  "rows": [
+    {
+      "state": 88,
+      "degree": 2,
+      "family": "binomial",
+      "bound_upper": 110.33848025958319,
+      "record_safe_integer": 111,
+      "below_record_integer": true,
+      "A_squared_overlap": true,
+      "bound_overlap": true
+    },
+    {
+      "state": 88,
+      "degree": 2,
+      "family": "two_term",
+      "bound_upper": 109.03394214295916,
+      "record_safe_integer": 110,
+      "below_record_integer": true,
+      "A_squared_overlap": true,
+      "bound_overlap": true
+    },
+    {
+      "state": 88,
+      "degree": 3,
+      "family": "binomial",
+      "bound_upper": 97.51247812726416,
+      "record_safe_integer": 98,
+      "below_record_integer": true,
+      "A_squared_overlap": true,
+      "bound_overlap": true
+    },
+    {
+      "state": 88,
+      "degree": 3,
+      "family": "two_term",
+      "bound_upper": 104.58249600096971,
+      "record_safe_integer": 105,
+      "below_record_integer": true,
+      "A_squared_overlap": true,
+      "bound_overlap": true
+    },
+    {
+      "state": 88,
+      "degree": 4,
+      "family": "binomial",
+      "bound_upper": 96.11387674626486,
+      "record_safe_integer": 97,
+      "below_record_integer": true,
+      "A_squared_overlap": true,
+      "bound_overlap": true
+    },
+    {
+      "state": 88,
+      "degree": 4,
+      "family": "two_term",
+      "bound_upper": 113.1945388117883,
+      "record_safe_integer": 114,
+      "below_record_integer": true,
+      "A_squared_overlap": true,
+      "bound_overlap": true
+    },
+    {
+      "state": 88,
+      "degree": 5,
+      "family": "binomial",
+      "bound_upper": 96.09173716684386,
+      "record_safe_integer": 97,
+      "below_record_integer": true,
+      "A_squared_overlap": true,
+      "bound_overlap": true
+    },
+    {
+      "state": 88,
+      "degree": 5,
+      "family": "two_term",
+      "bound_upper": 123.54631802023886,
+      "record_safe_integer": 124,
+      "below_record_integer": true,
+      "A_squared_overlap": true,
+      "bound_overlap": true
+    },
+    {
+      "state": 88,
+      "degree": 6,
+      "family": "binomial",
+      "bound_upper": 96.37413928954469,
+      "record_safe_integer": 97,
+      "below_record_integer": true,
+      "A_squared_overlap": true,
+      "bound_overlap": true
+    },
+    {
+      "state": 88,
+      "degree": 6,
+      "family": "two_term",
+      "bound_upper": 134.38933298293685,
+      "record_safe_integer": 135,
+      "below_record_integer": true,
+      "A_squared_overlap": true,
+      "bound_overlap": true
+    },
+    {
+      "state": 88,
+      "degree": 7,
+      "family": "binomial",
+      "bound_upper": 96.72182802261388,
+      "record_safe_integer": 97,
+      "below_record_integer": true,
+      "A_squared_overlap": true,
+      "bound_overlap": true
+    },
+    {
+      "state": 88,
+      "degree": 7,
+      "family": "two_term",
+      "bound_upper": 145.39933474726948,
+      "record_safe_integer": 146,
+      "below_record_integer": true,
+      "A_squared_overlap": true,
+      "bound_overlap": true
+    },
+    {
+      "state": 131,
+      "degree": 2,
+      "family": "binomial",
+      "bound_upper": 110.12500299311857,
+      "record_safe_integer": 111,
+      "below_record_integer": true,
+      "A_squared_overlap": true,
+      "bound_overlap": true
+    },
+    {
+      "state": 131,
+      "degree": 2,
+      "family": "two_term",
+      "bound_upper": 108.82403415389585,
+      "record_safe_integer": 109,
+      "below_record_integer": true,
+      "A_squared_overlap": true,
+      "bound_overlap": true
+    },
+    {
+      "state": 131,
+      "degree": 3,
+      "family": "binomial",
+      "bound_upper": 97.32420558458762,
+      "record_safe_integer": 98,
+      "below_record_integer": true,
+      "A_squared_overlap": true,
+      "bound_overlap": true
+    },
+    {
+      "state": 131,
+      "degree": 3,
+      "family": "two_term",
+      "bound_upper": 104.38192781209587,
+      "record_safe_integer": 105,
+      "below_record_integer": true,
+      "A_squared_overlap": true,
+      "bound_overlap": true
+    },
+    {
+      "state": 131,
+      "degree": 4,
+      "family": "binomial",
+      "bound_upper": 95.92869424335666,
+      "record_safe_integer": 96,
+      "below_record_integer": true,
+      "A_squared_overlap": true,
+      "bound_overlap": true
+    },
+    {
+      "state": 131,
+      "degree": 4,
+      "family": "two_term",
+      "bound_upper": 112.97908420885896,
+      "record_safe_integer": 113,
+      "below_record_integer": true,
+      "A_squared_overlap": true,
+      "bound_overlap": true
+    },
+    {
+      "state": 131,
+      "degree": 5,
+      "family": "binomial",
+      "bound_upper": 95.90691330703272,
+      "record_safe_integer": 96,
+      "below_record_integer": true,
+      "A_squared_overlap": true,
+      "bound_overlap": true
+    },
+    {
+      "state": 131,
+      "degree": 5,
+      "family": "two_term",
+      "bound_upper": 123.31281974110551,
+      "record_safe_integer": 124,
+      "below_record_integer": true,
+      "A_squared_overlap": true,
+      "bound_overlap": true
+    },
+    {
+      "state": 131,
+      "degree": 6,
+      "family": "binomial",
+      "bound_upper": 96.1890250191636,
+      "record_safe_integer": 97,
+      "below_record_integer": true,
+      "A_squared_overlap": true,
+      "bound_overlap": true
+    },
+    {
+      "state": 131,
+      "degree": 6,
+      "family": "two_term",
+      "bound_upper": 134.13924744134908,
+      "record_safe_integer": 135,
+      "below_record_integer": true,
+      "A_squared_overlap": true,
+      "bound_overlap": true
+    },
+    {
+      "state": 131,
+      "degree": 7,
+      "family": "binomial",
+      "bound_upper": 96.53636039349479,
+      "record_safe_integer": 97,
+      "below_record_integer": true,
+      "A_squared_overlap": true,
+      "bound_overlap": true
+    },
+    {
+      "state": 131,
+      "degree": 7,
+      "family": "two_term",
+      "bound_upper": 145.13498633518142,
+      "record_safe_integer": 146,
+      "below_record_integer": true,
+      "A_squared_overlap": true,
+      "bound_overlap": true
+    }
+  ],
+  "headline": {
+    "state88_deg5_binomial_upper": 96.09173716684386,
+    "below_97": true,
+    "below_96.092": true,
+    "state131_deg5_binomial_upper": 95.90691330703272,
+    "below_96": true,
+    "below_95.907": true,
+    "best_over_all_rows": {
+      "88": 96.09173716684386,
+      "131": 95.90691330703272
+    }
+  },
+  "all_pass": true,
+  "seconds": 0.8,
+  "code_sha256": "4cfbdc6a215ff2c05d1196fd9d9a140f9df70141ad96369866918bdaa6efec33"
+}

@@ -1,0 +1,86 @@
+{
+  "sos_display": "2*e1**2*n**2 + e1**2 + 2*e2**2*n**2 + e2**2 - 2*e2*n + n**2 + 1",
+  "err5_FLOAT": 5.239181484484323e-13,
+  "FLOAT": {
+    "norm_b": 0.06185283955734841,
+    "rows": {
+      "beta=1.0": [
+        {
+          "n": 32,
+          "top_g_over_n": 1.3021694284589003,
+          "top_T": 1.8759121059135361e-06,
+          "ratio_to_limit": 29.77301736530242
+        },
+        {
+          "n": 64,
+          "top_g_over_n": 0.08948342116378959,
+          "top_T": 1.3480511898568178e-07,
+          "ratio_to_limit": 2.0459637540171802
+        },
+        {
+          "n": 128,
+          "top_g_over_n": 0.047849917598649164,
+          "top_T": 1.3143444120442146e-08,
+          "ratio_to_limit": 1.0940484367528955
+        },
+        {
+          "n": 256,
+          "top_g_over_n": 0.044641199824770265,
+          "top_T": 1.4018294036381837e-09,
+          "ratio_to_limit": 1.02068378241977
+        }
+      ],
+      "beta=0.0": [
+        {
+          "n": 32,
+          "top_g_over_n": 0.8396279043283653,
+          "top_T": 1.2158015418240225e-05,
+          "ratio_to_limit": 19.19739139133837
+        },
+        {
+          "n": 64,
+          "top_g_over_n": 0.07770279910178204,
+          "top_T": 1.0854343557110232e-06,
+          "ratio_to_limit": 1.7766096611006255
+        },
+        {
+          "n": 128,
+          "top_g_over_n": 0.04747243494345236,
+          "top_T": 1.2435018060246334e-07,
+          "ratio_to_limit": 1.0854176108383478
+        },
+        {
+          "n": 256,
+          "top_g_over_n": 0.04458001324434714,
+          "top_T": 1.5199464601512978e-08,
+          "ratio_to_limit": 1.0192848023165302
+        }
+      ]
+    }
+  },
+  "checks": {
+    "(5) symbol: -R1 R2 (|xi|^2) = symbol of -d_xy = -(i xi1)(i xi2)": true,
+    "(5) symbol: R1^2 (|xi|^2) = symbol of d_xx = (i xi1)^2": true,
+    "psi = phi_x solves -Delta psi = h_x and (-psi_y, psi_x) = (-phi_xy, phi_xx)": true,
+    "(6) upper plateau: h_0 = -s, U[h_0] = (0, s), Dh_0 = 0 with s = 1": true,
+    "(6) lower plateau: h_0 = -s, U[h_0] = (0, s), Dh_0 = 0 with s = -1": true,
+    "phi_0 even in x, odd in y; h_0 too": true,
+    "b even in x, odd in y; h_n = -A Delta(b cos ny) S1; b_tilde = sign(y) b even in y": true,
+    "(9) for constant s: s d_y h_n = -A d_y Delta(s b cos ny)": true,
+    "n-degrees of D^2 g_n entries: xx 3, xy 4, yy 5": true,
+    "leading yy coefficient: -A s b times d_y^5 cos(ny)/n^5 = -A s b (-sin ny)": true,
+    "n-degrees: U1[h_n] 1, U2[h_n] 0, d_x h_n 2, d_y h_n 3": true,
+    "T(h_n) has n-degree at most 3 and is quadratic in (cos ny, sin ny), i.e. frequencies 0 and 2n": true,
+    "scaling: A n^4 L^beta = 1, A n^5 L^beta = n, A^2 n^5 L^beta = n^-3 L^-beta, n^(-1/2) n = sqrt(n)": true,
+    "(2): 2(1 + n^2)(1 + |eta|^2) - (1 + |eta + n e_y|^2) = 1 + e1^2 + (n - e2)^2 + 2 n^2 |eta|^2 >= 0": true,
+    "(5) FLOAT: symbol velocity of h = -Delta phi equals (-phi_xy, phi_xx) for a compact S1 potential": true,
+    "(10) FLOAT beta = 1.0: ||D^2 Q g_n||/n / (||b||/sqrt 2) approaches 1 monotonically (n = 32 .. 256)": true,
+    "(11) FLOAT beta = 1.0: top component of T(h_n) decays at least like n^-2 (n = 32 .. 256)": true,
+    "(10) FLOAT beta = 0.0: ||D^2 Q g_n||/n / (||b||/sqrt 2) approaches 1 monotonically (n = 32 .. 256)": true,
+    "(11) FLOAT beta = 0.0: top component of T(h_n) decays at least like n^-2 (n = 32 .. 256)": true
+  },
+  "all_pass": true,
+  "check_count": 19,
+  "seconds": 6.2,
+  "code_sha256": "985781ab6ce262bb2d1da6fb1ecac0de326c91a32f9420ee6182ee589df100cf"
+}

@@ -1,0 +1,44 @@
+{
+  "I_s_minus_1_over_2s_FLOAT": {
+    "4": -0.4593422527937526,
+    "5": -0.4613212178524249,
+    "6": -0.4621241106871366,
+    "7": -0.46247493012066704,
+    "8": -0.4626371534068005,
+    "9": -0.46271490009266864,
+    "10": -0.4627529235148135,
+    "11": -0.4627717216517577,
+    "12": -0.4627810671894056
+  },
+  "checks": {
+    "lb=i r sin": true,
+    "lc=-i r sin cos^2": true,
+    "lc=-(i r/4)(sin+sin3)": true,
+    "c+b/4 pure harmonic 3": true,
+    "radial=1/(2s(s+1))": true,
+    "angular pi, pi/4, pi/8": true,
+    "Gram (2)": true,
+    "norm (3)": true,
+    "norm (4)": true,
+    "b-orthogonal to harmonic 3": true,
+    "Schur = harmonic-3 variance": true,
+    "A_p = pi/8, pi/16, pi": true,
+    "limit 1/(8 sqrt pi)": true,
+    "limit 1/(8 sqrt(2 pi))": true,
+    "agrees with exact H^(2+s) limits": true,
+    "log coefficient 1/(64 pi)": true,
+    "pairing c with i p (p = sin cos^2) = pi/8": true,
+    "pairing c with i p (p = sin3/4) = pi/16": true,
+    "concavity (16/5)": true,
+    "26*2^22 < 2^53": true,
+    "I_s - 1/(2s) bounded (FLOAT)": true,
+    "radial quadrature at s=2^-12 (FLOAT)": true
+  },
+  "norms_at_s=2^-12": {
+    "c": 4.512965802856305,
+    "c_on_ker_b": 3.1911487224626853
+  },
+  "all_pass": true,
+  "seconds": 3.4,
+  "code_sha256": "779a0d881d9660d6534be0f87b52de1bf62ec101f24d8583677e8dab359accf6"
+}

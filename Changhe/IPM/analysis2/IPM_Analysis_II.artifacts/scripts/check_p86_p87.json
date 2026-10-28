@@ -1,0 +1,135 @@
+{
+  "inputs": {
+    "51_exterior_weight_transfer/verification/compute.json": "fe9a053abf83da0761e42dd540d359e1cc91e82b51eaff5fc5fbe8e9bc0e2cf0",
+    "52_refit_annular_distance/verification/nb_Mpen2_exact.annular.json": "724075db89368ecd86aca47e92a86a1a54bc60dbdb5f406180e62ba92bc3b295",
+    "52_refit_annular_distance/verification/nb_Mpen2_exact.rational_audit.json": "1c5e6fcdce071d4394b6ac025d22757ebecb94c7924af6584851f28ec1ce796a",
+    "52_refit_annular_distance/verification/nb_d2_exact.annular.json": "480f2d269e91f40a1f27909a7bcc39c177f80c4a9125d720606e490f904cf07e",
+    "52_refit_annular_distance/verification/nb_d2_exact.rational_audit.json": "60bfc336f202dfb03a7dde22190f39c072db9d13248cf06e85ac24daa3b3e602"
+  },
+  "86_D_log2_FLOAT_display": 27.96678654619452,
+  "86_floors": {
+    "state131": "35350195123413029343106947",
+    "nb_Mpen2_exact": "1935892108",
+    "nb_d2_exact": "1936535207"
+  },
+  "86_log2_gap_over_2^-37_FLOAT_display": {
+    "state131": 121.86992055052293,
+    "nb_Mpen2_exact": 67.85035140391757,
+    "nb_d2_exact": 67.85083058437529
+  },
+  "87_contact_tests": [
+    {
+      "h": "(y) exp(-1 r^2)",
+      "b": "1",
+      "a3": "0",
+      "c_fourier": "-1/4",
+      "c_formula": "-1/4",
+      "equal": true
+    },
+    {
+      "h": "(3*x**2*y - y**3) exp(-1 r^2)",
+      "b": "0",
+      "a3": "r**3*exp(-r**2)",
+      "c_fourier": "1/2",
+      "c_formula": "1/2",
+      "equal": true
+    },
+    {
+      "h": "(x**2*y) exp(-1 r^2)",
+      "b": "0",
+      "a3": "r**3*exp(-r**2)/4",
+      "c_fourier": "1/8",
+      "c_formula": "1/8",
+      "equal": true
+    },
+    {
+      "h": "(y*(x**2 + y**2)) exp(-1 r^2)",
+      "b": "0",
+      "a3": "0",
+      "c_fourier": "0",
+      "c_formula": "0",
+      "equal": true
+    },
+    {
+      "h": "(5*x**2*y - 3*y**3 + 2*y) exp(-2 r^2)",
+      "b": "2",
+      "a3": "2*r**3*exp(-2*r**2)",
+      "c_fourier": "0",
+      "c_formula": "0",
+      "equal": true
+    }
+  ],
+  "FLOAT": {
+    "worst_ratio_12": 0.5889340087868895,
+    "embedding_ratios_sup_hoelder": [
+      [
+        0.2305356123454499,
+        0.02815433897940371
+      ],
+      [
+        0.08740402386693999,
+        0.060808340267673684
+      ],
+      [
+        0.06798451109384854,
+        0.05706515557284534
+      ],
+      [
+        0.033553129683371145,
+        0.04859385663882915
+      ],
+      [
+        0.022539647636105675,
+        0.037915312595234056
+      ],
+      [
+        0.01580361236371322,
+        0.032882622395773616
+      ],
+      [
+        0.010816312666334867,
+        0.01816887841479821
+      ],
+      [
+        0.009151774706679772,
+        0.015191495001359683
+      ]
+    ]
+  },
+  "checks": {
+    "86 (2): 1 + 77 2^(17/2) R^(6/5) tau < 2^30 at R = 2^31, tau = 2^-24 (tenth powers)": true,
+    "86: tau^beta <= tau^(1/2) = 2^-12 for beta >= 1/2, so 2 + 16 tau^beta <= 2 + 2^-8 < 3; 3 * 2^30 < 2^32": true,
+    "86: radii 2^32 tau^-beta (2^25 tau^beta) = 2^57 and 2^32 tau^-beta (2^-11 tau^beta) = 2^21 (topic 73 radii)": true,
+    "86: ratios to r0 = 2^-20 tau^beta sqrt(eps): 2^45/sqrt(eps) >= 2^45 and 2^9/sqrt(eps) >= 512": true,
+    "86 (5): the topic 51 witness at R >= 2^31 is 372474829674258475": true,
+    "86 (1): isqrt(2^53 L^2) = 35350195123413029343106947 and it is strict (2^53 L^2 not a square)": true,
+    "86 (6) nb_Mpen2_exact: n_old = 1759901917 in both topic 52 records, rational audit passes": true,
+    "86 (6) nb_Mpen2_exact: integer part of (11/10) n_old = 1935892108, strict": true,
+    "86 (6) nb_d2_exact: n_old = 1760486552 in both topic 52 records, rational audit passes": true,
+    "86 (6) nb_d2_exact: integer part of (11/10) n_old = 1936535207, strict": true,
+    "86: the native floors exceed the P71 floors (1 + D_R loss removed)": true,
+    "86: every floor exceeds 2^-37 >= eta by more than 2^67 (state 131: more than 2^121)": true,
+    "87 (7): (1 + 11 tau), (1 + 7 tau) <= 2 at tau <= 2^-20; P0, P1 <= 2m/2048, P2 <= 2m": true,
+    "87 (8): 2(507/2048 + 40/2048 + 1) = 2 (2595/2048) < 3": true,
+    "87 (9): int_R2 (1 + |xi|^2)^-2 = pi; (2 pi)^-2 sqrt(pi) (2 pi) = 1/(2 sqrt(pi)) < 1/2": true,
+    "87 (9): int_0^oo r^2/(1 + r^2)^2 = pi/4; (2 pi)^-2 * 2 * (2 pi) * pi/4 = 1/4 (squared Hoelder dual factor)": true,
+    "87 (9): |e^(is) - 1|^2 = 4 sin^2(s/2) <= min(4, s^2) <= 2|s| (s^2 <= 2|s| for |s| <= 2, 4 <= 2|s| otherwise)": true,
+    "87 annulus: sqrt2 < 17/12, 4^(1/5) < 4/3, (3/2)(29/12)(4/3) < 5 <= 8; four indices max(0, j-1) <= l <= j+2": true,
+    "87 annulus: supp chi_l = [2^(l-1), 2^(l+1)] meets [2^j, 2^(j+1)] iff j - 1 <= l <= j + 2 (all j <= 40)": true,
+    "87: 4 * 8 = 32; 2^(j/5 - j/4) <= 1; ball: 3 4^(1/5) < 4 (3^5 4 < 4^5), 3 * 4 = 12, 12 + 32 = 44 <= 64": true,
+    "87 (12): sin(3 theta) is orthogonal to cos^a sin^b for a + b <= 2; int |sin 3 theta| = 4": true,
+    "87 (13): int_0^1 t/6 + int_1^oo t^-2 = 13/12; (4/pi)(13/12) = 13/(3 pi); 4 * 13/(3 pi) < 52/9 < 6": true,
+    "87 (2): int_(r<1) r^-3 |a3 sin 3theta| dX = 4 int_0^1 |a3| dr/r^2 (polar); P3(y) = P3(r sin theta) = 0": true,
+    "87 (14): (1 + r^2)^(6/5) <= 2^(6/5) r^(12/5) on r >= 1, 2^6 < 3^5, int_1^oo r^(-13/5) = 5/8, 15/(8 pi) < 1": true,
+    "87 (5), (6): 1 + 64 + 6 + 4 = 75 < 128 and 128 * 32 = 2^12": true,
+    "87 (4): c[h] = -b[h]/4 + int_0^oo a3 dr/r^2 equals the Fourier value of d_y U_2[h](0) on five Gaussian inputs": true,
+    "87 (4): the inputs include b != 0 with a3 = 0 (c = -1/4) and b = 0 with a3 != 0": true,
+    "87 (12) FLOAT: |(1/pi) int sin(3 theta) exp(i t nu.e) dtheta| <= (4/pi) min(1, t^3/6) on a grid": true,
+    "87 (9) FLOAT: |exp(is) - 1|^2 <= 2|s| on a grid of 2e5 points in [-50, 50]": true,
+    "87 (9) FLOAT: sup and Hoelder quotients of eight random fields below (1/2)||F||_H2": true
+  },
+  "all_pass": true,
+  "check_count": 30,
+  "seconds": 4.6,
+  "code_sha256": "fe0a075ce433ef80e03a9e97de17c9d96c5e46577d6a6664a36109eb36650f25"
+}

@@ -1,0 +1,7 @@
+# Independent audit 2026-10-28T08:07:06.108201+00:00
+
+CONFIRMED all70 exact density coefficients of the numerical work's stationary order7. Both implementations reconstruct the original860 coefficients from the read-only original, including independent center elimination and canonical/NPZ identity. The first uses real sine multiplication and the diagonal angular Poisson inverse; the second uses complex Fourier Cartesian differentiation and convolution. Every density and stream coefficient through order8 agrees exactly. Each potential coefficient array is differentiated independently back to both fields. The prior six-order record is reproduced exactly.
+
+The seven-branch residual invariant(7,0), after actually including the seventh stationary order, has full-circle norm9679.96558019927435194... and first-quadrant norm4839.98279009963717597... . Strictly9679.9655<full-circle norm<9679.9656. The former value2166 was the first-quadrant norm of the old six-branch residual at that exponent: independently2165.57872824541469444... . It omits the new interactions(1,7),(7,1) and cannot be used for the seven-branch invariant.
+
+The power is-2.5808898480858597... . Unless removed exactly,(2,1) at-2.3428336930321974... still comes first. The exact rational comparisons and absence of sector collisions are proved inPROOF.md. A soft penalty is not an exact cancellation. The finite formal series carries no convergence or global existence claim. Lead review is requested.

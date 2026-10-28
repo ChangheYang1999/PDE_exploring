@@ -1,0 +1,99 @@
+{
+  "exact": {
+    "l1": "217993391519176010777252335296349996383/28544953854119197621165719388989902727654932480",
+    "l2": "628342220341444085087/28544953854119197621165719388989902727654932480",
+    "l3": "55/5708990770823839524233143877797980545530986496",
+    "C0": "9325421/600",
+    "rate_margin_tau_2^-20": "9511693337894601347469/13694862800321971119718400",
+    "conversion_beta1": "1763710719/7",
+    "conversion_factor_beta_ge_half": "108489/448"
+  },
+  "FLOAT": {
+    "odd_moment_ratios": {
+      "n=1,tau=0.000244141": [
+        0.9993240285907516,
+        0.9993236993014554,
+        0.9993235893599807
+      ],
+      "n=1,tau=0.142857": [
+        0.7647006959931628,
+        0.7376244828134327,
+        0.7239953460048059
+      ],
+      "n=1,tau=1": [
+        0.4307132791656665,
+        0.3643651816712239,
+        0.3256400870434975
+      ],
+      "n=3,tau=0.000244141": [
+        0.9986492943912226,
+        0.9986486376577793,
+        0.9986484182489013
+      ],
+      "n=3,tau=0.142857": [
+        0.6321948465203233,
+        0.6073755826399323,
+        0.5940527451183332
+      ],
+      "n=3,tau=1": [
+        0.2977472245254826,
+        0.2677347875963888,
+        0.24776626591254364
+      ],
+      "n=20,tau=0.000244141": [
+        0.9929635078363221,
+        0.9929601408508367,
+        0.9929590098023098
+      ],
+      "n=20,tau=0.142857": [
+        0.31724655720745853,
+        0.31134174559453687,
+        0.30691093242463846
+      ],
+      "n=20,tau=1": [
+        0.12456984050581846,
+        0.12170998100091891,
+        0.11914663794553289
+      ]
+    },
+    "M1_B11": 1.3531256736304276,
+    "worst_ratio_14": 0.9999911284546905
+  },
+  "checks": {
+    "M2(P^n) = 4 v exactly": true,
+    "M4(P^n) = 32[v^2 + (tau + 1) v] exactly": true,
+    "M1 bound = pi v": true,
+    "M3 bound = 6 pi [v^2 + (tau + 1/2) v]": true,
+    "M5 bound = 60 pi [v^3 + (3 tau + 2) v^2 + (2 tau^2 + 2 tau + 3/4) v]": true,
+    "pi < 22/7 < 10/3": true,
+    "6 pi <= 20 and 6 pi (tau + 1/2) <= 30 for tau <= 1": true,
+    "60 pi <= 200, 60 pi (3 tau + 2) <= 1000, 60 pi (2 tau^2 + 2 tau + 3/4) <= 1000 for tau <= 1": true,
+    "pi <= 4 and 4 = M2 coefficient; 32 (tau + 1) <= 64": true,
+    "topic 71 coefficients 41/10, 17/2, 109/10, 77/10, 11/5": true,
+    "l1, l2, l3 of topic 77 exactly": true,
+    "l1 < 8, l2 < 1, l3 < 1 at R = 2^31 (so (9) dominates both component factors 1 + 8v and the low factor)": true,
+    "topic 75 moment majorants (4, 4, 10, 33, 160) tau at tau <= 2^-12": true,
+    "topic 75 low coefficients 82/5, 34, 109, 2541/10, 352": true,
+    "topic 75 ||B_tau|| <= 1 + 8 tau: 2 pi < 8 and the low excess below 8 tau": true,
+    "(11): log((1 + tau z)/(1 + z)) = -int (1 - e^-tz)(e^-t - e^(-t/tau))/t dt (z-derivative)": true,
+    "(11): mass of nu equals beta log(1/tau)": true,
+    "(13): (1 + z)/(1 + tau z) = tau^-1 (1 - (1 - tau)/(1 + tau z))": true,
+    "S0 to S3 by differentiating 1 - (1 - q)^beta": true,
+    "a_n = (-1)^(n+1) binom(beta, n) >= 0 for 0 < beta < 1 (n <= 40, beta = 1/3, 1/2, 9/10)": true,
+    "termwise: tau S1 = beta q tau^beta; tau^2 S2 = beta q tau^(beta+1) + beta(1-beta) q^2 tau^beta; tau^3 S3 similar": true,
+    "coefficient sums 1 + (1 + 1) + (1 + 3 + 2) = 1, 2, 6 and 8 + 2 + 6 = 16": true,
+    "(12): 1 + pi < 29/7": true,
+    "(17): C0 (1 + 8 tau)^3 < 2^14 for tau <= 2^-12": true,
+    "(18): 1/20 - C0 tau (1 + 8 tau)^3 > 1/29 at tau = 2^-20": true,
+    "topic 75: 29 (29/7)(2/tau + 7) < 2^28 at tau = 2^-20": true,
+    "(5): (841/7)(2 + 16/1024) < 256": true,
+    "odd moments M1, M3, M5 of P^n below their bounds (FLOAT quadrature)": true,
+    "M1(B_(1,1)) <= pi/2 (FLOAT)": true,
+    "(6), the power integral of (16) and the resolvent integral of (17) (FLOAT)": true,
+    "binomial partial sums equal S0 to S3 (tau >= 0.01) and the closed forms satisfy (14) on a grid of (beta, tau) (FLOAT)": true
+  },
+  "all_pass": true,
+  "check_count": 31,
+  "seconds": 13.0,
+  "code_sha256": "d54422970ace8da22997b6bb7cf4231cddf7a4809b5afc6a6b7dcfee58df87ef"
+}

@@ -1,0 +1,46 @@
+{
+  "utc": "2026-10-28T07:15:45.510720+00:00",
+  "verdict": "CONFIRMED necessary point tests; full contract remains uncertified",
+  "A2_A3_hessian_failures": [
+    {
+      "name": "nb_stableA2_exact",
+      "point": [
+        "0",
+        "1/10"
+      ],
+      "rho_yy": "[4.7176016405470888731528583182715250768911879287544628413685800338 +/- 4.99e-65]",
+      "strict_lower": "[4.71760000000 +/- 1e-16]",
+      "D2rho_bound_3_refuted": true,
+      "source_sha256": "feafb9b64e3c7084a3dd99c06da1e62dc2a8a924078375834e22aafa76b6dbb9",
+      "canonical_sha256": "cf454b10cb4fefaa8fffb8f89d1ef4018401e5500442d737588fa0882c41407b"
+    },
+    {
+      "name": "nb_stableA3_exact",
+      "point": [
+        "0",
+        "1/10"
+      ],
+      "rho_yy": "[10.899083407856601903718167989335716877676977363574682508038437058 +/- 4.69e-64]",
+      "strict_lower": "[10.8990800000 +/- 3e-15]",
+      "D2rho_bound_3_refuted": true,
+      "source_sha256": "8c5dc97edb2a8956f79545899744957e58d0b3a0ed2395490f7c359412968727",
+      "canonical_sha256": "c7bfb3c68d198f0902cb59f1eefb75843913334e3f35019a0916268fcd8a883d"
+    }
+  ],
+  "A4": {
+    "F_3_4": "[-2.06597467801986207604708723170118707632269555086363477360128 +/- 3.26e-60]",
+    "N_point_witness_lower": "[0.093586027018866934388086832690026972977429927846662809509349 +/- 4.48e-61]",
+    "strict_N_lower": "9/100",
+    "strict_gap_power_over_eta_2^-35": 31
+  },
+  "dependencies": {
+    "25_candidate_contract/PROOF.md": "a6156e5cb955170ac7ec877b8dc87a9432baaaafec9062439aa993028c56e5fa",
+    "22_axis_constraints/verification/axis_audit.json": "a9b2fd2195e9a5fac83feb6aaeb26e09af7768ae3268a5b033a18428b40ca78f",
+    "19_nb_candidates/verification/nb_stableA4_exact.points.json": "20cef148f43da87d028b80b4e8bf293637c273dcaa8bed4fad35e9d698a0e123",
+    "19_nb_candidates/verification/nb_stableA4_exact.audit.json": "ac023142240a99487ad3818b8cd5e0e0285099ef87afefb8b18ca5001bf41d10",
+    "18_fractional_constants/PROOF.md": "7bbc37c6b2a718101a5636158175bae4e5e0ba4c643888d88766cec3c4612341",
+    "16_weighted_fractional/REFERENCE_AUDIT.md": "ee1c54bd7f9a0707611d80275440862366da04d200030dc0f990881dd8e366e0",
+    "24_weaker_matrix/PROOF.md": "8ab6e156fea53d4f97c8e1b6a4a3122ac47e63456c93d727cf9ef574813d4733"
+  },
+  "code_sha256": "99e4472a8c1a54d7ac2d54151dabc331041079931bf1d61522aceacdf8e91ea1"
+}

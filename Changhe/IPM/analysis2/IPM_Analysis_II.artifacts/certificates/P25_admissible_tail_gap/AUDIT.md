@@ -1,0 +1,9 @@
+# Independent audit of the A2 and A3 annular lower bounds
+
+The completed certificates establish the numerical hypotheses of PROOF.md. Each run reconstructs the supplied exact coefficients from monomial and Legendre generator descriptions and binds them to the earlier independent source audit. All 73 nonzero retained residual sectors are formed by exact Laurent arithmetic. Every sector above the first exponent gamma-6delta vanishes identically. The separate summary program also checks equality of the entire leading angular vector across the two records, since the separate invocations cannot share an in-memory comparison.
+
+The combined test uses the exact leading angular polynomial, not an individually selected Fourier mode. Its signed subleading cross terms are bounded only when negative. The leading exponent plus one is negative, and the lower bound retains the necessary factor 2^(p_star+1). The uniform remainder accounts for every omitted potential term and both cross products in the quadratic residual. It uses the actual coefficient sums of each candidate. This is a candidate-specific bound; it is not uniform over unbounded free coefficients in the family.
+
+All numerical operations use 768-bit Arb. Four large rational-direction points per candidate compare the full Cartesian potential jets against the separately constructed finite exterior series and its proved remainder. The summary verifies the saved source hashes, proof and code hashes, integer lower bounds and strict powers of two.
+
+At R=T=2^31 the results are N(F_A2)>20014377 and N(F_A3)>20013535. Both exceed 2^24, so both miss eta=2^-35 by a factor exceeding 2^59. The second annulus T=2^35, with the same weight radius R=2^31, independently gives N>39623>2^15 for each. All statements hold for 0<s<=2^-12 in the specified norm. No upper bound or nonexistence claim follows.

@@ -1,0 +1,5 @@
+# Independent audit 2026-10-28T07:36:33.119138+00:00
+
+V111 confirms the analytical construction and upper bound after exact recurrence checks and independent arithmetic. The claim concerns a linear relaxation of residuals. It does not provide any density whose actual IPM residual is the constructed function. The numerical upper bound is3.460197e-13, less than0.01189 timeseta2^-35, for every0<s<=1/2 andR2^31.
+
+Checked: parity and origin smoothness; exact leading coefficient and eight cancellations; degree154 forw and153 forH; shifted power-space distance; dilation Frobenius bound;512 exact two-variable radial recurrence comparisons; all tensor multiplicities; nonnegative endpoint powers in the weighted integrals; trace factor sqrt(2); gamma-time domination for Bessel orders up to2; weighted negative-order divergence decomposition; compact parity completion; all70 mode constants by a separate log-product implementation. The lead analytical review at07:41Z confirmed every construction and norm-estimate step, with the previously audited low Bessel commutator factor as a dependency. Its numerical qualification is met by the independent arithmetic recorded here.
