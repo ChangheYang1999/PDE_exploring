@@ -1,0 +1,75 @@
+{
+ "job_id": "c2x2_L10_cl0.47_om+1.0_free",
+ "type": "continuation",
+ "stage": "I",
+ "priority": 10,
+ "max_retries": 6,
+ "config": {
+  "L": 10,
+  "Nk": 24,
+  "Nr": 72,
+  "m_parity": "even",
+  "R0": 1.0,
+  "formulation": "mom",
+  "c_l": 0.47,
+  "omega": 1.0,
+  "free_params": true,
+  "n_starts": 1,
+  "seed": 0,
+  "max_iter": 300,
+  "init_from": "runs/s1k_sigmaZ_L6_cl0.47_om+1.0/starts/start_000.pt",
+  "perturb": 0.0,
+  "nl_weighting": true,
+  "sigmaZ": 1.0,
+  "far_radii": [
+   4096.0,
+   16384.0,
+   65536.0
+  ],
+  "time_limit_per_start": 7200,
+  "chunk": 256,
+  "threads": 1,
+  "ftol": 1e-07,
+  "families": [
+   "init_from"
+  ],
+  "channels": {
+   "NkB": 6,
+   "NkD": 6,
+   "NkE": 6,
+   "core_damp": 2
+  },
+  "tail_constraints": true,
+  "sigmaZ_ramp_iters": 60
+ },
+ "exclusive": true,
+ "note": "continuation of runs/s1k_sigmaZ_L6_cl0.47_om+1.0/starts/start_000.pt (holdout rho_u 0.35865120401329403)",
+ "created": "2026-10-24T20:44:57Z",
+ "retries": 4,
+ "failures": [
+  {
+   "ts": "2026-10-24T21:08:41Z",
+   "reason": "exit 3"
+  },
+  {
+   "ts": "2026-10-24T21:12:12Z",
+   "reason": "supervisor_stop"
+  },
+  {
+   "ts": "2026-10-24T21:16:32Z",
+   "reason": "supervisor_stop"
+  },
+  {
+   "ts": "2026-10-24T21:27:02Z",
+   "reason": "supervisor_stop"
+  },
+  {
+   "ts": "2026-10-24T22:23:08Z",
+   "reason": "exit 3"
+  }
+ ],
+ "cancelled": {
+  "ts": "2026-10-24T22:25:05Z",
+  "reason": "stopped by SIGTERM (checkpointed) and cancelled: nl weighting superseded by all5 (FAILURE_ANALYSIS item 12)"
+ }
+}

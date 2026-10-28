@@ -1,0 +1,58 @@
+{
+ "job_id": "nest8_L8_cl0.45_om+1.0_fixed_cl1",
+ "type": "continuation",
+ "stage": "I",
+ "priority": 9,
+ "max_retries": 6,
+ "config": {
+  "L": 8,
+  "Nk": 20,
+  "Nr": 60,
+  "m_parity": "even",
+  "R0": 0.3,
+  "formulation": "mom",
+  "c_l": 0.45,
+  "omega": 1.0,
+  "free_params": false,
+  "n_starts": 1,
+  "seed": 0,
+  "max_iter": 300,
+  "init_from": "runs/s11_L6_cl0.45_om+1.0_fixed_cl1/starts/start_000.pt",
+  "perturb": 0.0,
+  "nl_weighting": true,
+  "sigmaZ": null,
+  "far_radii": [
+   4096.0,
+   16384.0,
+   65536.0
+  ],
+  "time_limit_per_start": 16000.0,
+  "chunk": 128,
+  "threads": 1,
+  "ftol": 1e-07,
+  "families": [
+   "init_from"
+  ],
+  "tail_constraints": true,
+  "sigmaZ_ramp_iters": 0,
+  "nl_denominator": "all5far",
+  "channels": {
+   "NkB": 4,
+   "NkD": 4,
+   "NkE": 4,
+   "core_damp": 2,
+   "LB": 19,
+   "LD": 18,
+   "LE": 8
+  },
+  "closure_lambda": 1.0
+ },
+ "exclusive": true,
+ "note": "continuation of runs/s11_L6_cl0.45_om+1.0_fixed_cl1/starts/start_000.pt (holdout rho_u 0.04525776207444502)",
+ "created": "2026-10-26T03:54:21Z",
+ "gpus_allowed": [
+  0,
+  4
+ ],
+ "deadline_note": "lead d128 BV 2 (b): GPU 0 or 4 only; absolute end 2026-10-27T14:00:00Z (cut time_limit_per_start if launched after about 09:00Z Oct 27; stop and read the checkpoint if still running at 14:00Z)"
+}

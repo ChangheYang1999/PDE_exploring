@@ -1,0 +1,47 @@
+## s3r2a_L8_cl0.45_om+1.0_fixed_Nr90 (queue/done; start 0; ts 2026-10-27T13:26:05Z; GPU NVIDIA A100-SXM4-80GB; L 8 Nk 20 even mom all5far; channels {'NkB': 4, 'NkD': 4, 'NkE': 4, 'core_damp': 2, 'LB': 19, 'LD': 18, 'LE': 8}; closure 0.001; extra cfg: omega=1.0, c_l=0.45)
+source: nest8_L8_cl0.45_om+1.0_fixed_p0_cont150 (ledger row found; meta source holdout 0.04367 / 0.04331)
+| metric | start | end | end/start |
+|---|---|---|---|
+| holdout rho_u^max std | 0.04367 | 0.04331 | 0.992 |
+| holdout rho_u^max half | 0.04331 | 0.04324 | 0.998 |
+| rho_nl^max (holdout, all shells) | 1.135 | 1.134 | 0.999 |
+| single-sphere rho_u max | 0.05113 | 0.05137 | 1.005 |
+| rho_lin^max (holdout) | 0.1565 | 0.1503 | 0.960 |
+| sigma_u^max std / half | 0.4181 / 0.3711 | 0.4179 / 0.3638 | 1.000 / 0.981 |
+| sigma_u^max core sets | 0.4364 | 0.4415 | 1.012 |
+| sigma_Om | 0.4212 | 0.4249 | 1.009 |
+| holdout rho_Om^max (vorticity ratio) | 0.06752 | 0.06911 | 1.023 |
+| a_max std / half | 0.4955 / 0.4471 | 0.4937 / 0.4418 | 0.996 / 0.988 |
+| a_max core sets | 0.6042 | 0.6453 | 1.068 |
+| a_eff (core resolved) | 0.2662 / yes | 0.2638 / yes |  |
+| strain ratio at located max | 0.9851 | 0.976 | 0.991 |
+| tau_F (2^8 R0) | 0.5641 | 0.5557 | 0.985 |
+| delta_G core / max | 0.02198 / 0.5641 | 0.02395 / 0.5557 | 1.089 / 0.985 |
+| sampled Q_sw | 0.651 | 0.6755 | 1.038 |
+| e_core (holdout) / e_F | 0.1227 / 0.0733 | 0.1252 / 0.07419 | 1.020 / 1.012 |
+| N_core / N_F | 0.8012 / 0.6224 | 0.8172 / 0.6309 | 1.020 / 1.014 |
+| E_ren | -1.583 | -1.571 | 0.992 |
+| max E_F (radius) | 1 / 59.22 | 1 / 70.43 | 1.000 / 1.189 |
+| H_tot / int|h| | -0.7 | -0.6991 | 0.999 |
+| H_tot | -4.58 | -4.632 | 1.011 |
+| core alignment | -0.9529 | -0.9525 | 1.000 |
+| K_E ratio (carried/required) | -4.942 | -3.606 | 0.730 |
+| K_H ratio | 1.051 | 1.039 | 0.989 |
+| carried mismatch m | 0.06696 | 0.05122 | 0.765 |
+| G defect F-comp / parallel frac | 0.01852 / 0.4774 | 0.01446 / 0.4997 | 0.781 / 1.047 |
+| kappa finite radius | {'2^12': -5.968433339211158, '2^14': -5.20531226004066, '2^16': -4.972726164343228} | {'2^12': -3.7843171236202067, '2^14': -3.5690766877333253, '2^16': -3.5382641229887852} |  |
+| radial-lambda share | 0.7448 | 0.7383 | 0.991 |
+| f_sw tail | 0.7169 | 0.7162 | 0.999 |
+| tau_0/1/2 floored | 0.00439 / 0.03957 / 0.1574 | 0.004793 / 0.04071 / 0.16 |  |
+| max|U| / max|Omega| | 1.254 / 13.31 | 1.273 / 13.63 | 1.015 / 1.024 |
+| rotation content | 0.6309 | 0.6386 | 1.012 |
+| V10 last-tenth decrease | 0.002135 | 0.004555 | 2.133 |
+| terminal LM cost (cost_after_reweight) | 2.131e-08 | 1.552e-08 | 0.728 |
+| rms_mom (unnormalized weighted training momentum RMS) | 0.08621 | 0.08268 | 0.959 |
+| iterations / status / seconds | 83 / ftol / 3409 | 150 / max_iter / 7993 |  |
+| c_l / omega | 0.45 / 1 | 0.45 / 1 | 1.000 / 1.000 |
+battery memory: heaviest item 'start (LM state released)' 50.63 GB; items: start (LM state released) 50.63, spec_diagnostics (training grid) 3.27, spec_diagnostics (holdout grid) 8.37, half-offset family and spheres 5.97, ray functionals (tau_F, delta_G, Q_sw) 6.81, G closure and far helicity 9.82, critical points 3.95, strength 7.86, core resolution 6.41, global balances and far rate 6.18
+code versions: worker.py 2edbd00ccd2b, fields.py f12b5b6c0709, residuals.py 9272f55c0f6a, correction.py f8dc0cf55a95, lm.py 82aafe7cf939, problem.py ca146af805bd, poisson_sh.py 68890852688f, ray_integral.py 66a94707cbc6, spec_diagnostics.py e22ed3abb6f8
+zfile: runs/s3r2a_L8_cl0.45_om+1.0_fixed_Nr90/starts/start_000.pt; failure flag: None; tier S holdout std/half: NO / NO
+
+written reports/arm_reading_s3r2a_L8_cl0.45_om+1.0_fixed_Nr90.json

@@ -1,0 +1,58 @@
+{
+ "job_id": "nest8_L8_cl0.45_om+1.0_fixed_cl1_sgcont150b",
+ "type": "continuation",
+ "stage": "I",
+ "priority": 8,
+ "max_retries": 0,
+ "config": {
+  "L": 8,
+  "Nk": 20,
+  "Nr": 60,
+  "m_parity": "even",
+  "R0": 0.3,
+  "formulation": "mom",
+  "c_l": 0.45,
+  "omega": 1.0,
+  "free_params": false,
+  "n_starts": 1,
+  "seed": 0,
+  "max_iter": 150,
+  "init_from": "runs/stage3_prep/aligned/nest8_cl1_om1_aligned_q8.pt",
+  "perturb": 0.0,
+  "nl_weighting": true,
+  "sigmaZ": null,
+  "far_radii": [
+   4096.0,
+   16384.0,
+   65536.0
+  ],
+  "time_limit_per_start": 3600.0,
+  "chunk": 128,
+  "threads": 1,
+  "ftol": 1e-07,
+  "families": [
+   "init_from"
+  ],
+  "tail_constraints": true,
+  "sigmaZ_ramp_iters": 0,
+  "nl_denominator": "all5far",
+  "channels": {
+   "NkB": 4,
+   "NkD": 4,
+   "NkE": 4,
+   "core_damp": 2,
+   "LB": 19,
+   "LD": 18,
+   "LE": 8
+  },
+  "closure_lambda": 1.0,
+  "refresh_block": 5,
+  "refresh_backtrack": true
+ },
+ "exclusive": true,
+ "note": "continuation of runs/stage3_prep/aligned/nest8_cl1_om1_aligned_q8.pt (holdout rho_u None)",
+ "created": "2026-10-26T18:32:56Z",
+ "lead_note": "lead d128 ID item 3 (2026-10-26T18:26:18Z): re-run of the safeguarded diagnostic continuation (HS 4 (a)) from the PRE-ALIGNED parent runs/stage3_prep/aligned/nest8_cl1_om1_aligned_q8.pt (sha256 5bc2402e0856334b7c28f9c380fc98b0b9fb08653e462685e88b747a1f734ed8; parent nest8_L8_cl0.45_om+1.0_fixed_cl1 rotated by gamma -0.6727 rad to the pivot (S, q 8) the worker chooses); CPU check reports/block_costs/sgcont150b_aligned_start_check.json: projection relative change 0.0, closure-refreshed total 5.407931496e-9 (parent 5.407931496e-9); 3600 s LM, cap 1.9 reserved GPU-h, priority 8, end by 2026-10-27T14:00:00Z; one attempt (retries only for an infrastructure failure before the first accepted step); reading rules of HS 4 (a) plus the Z0 consistency condition (the LM's frozen objective at Z0 must equal the posted block-cost total to relative 1e-6, else a tooling failure); report the GPU time of the invalid sgcont150 beside it.",
+ "deadline_note": "absolute end 2026-10-27T14:00:00Z (stop with SIGTERM and read the checkpoint if still running)",
+ "enqueued_utc": "2026-10-26T18:32:56Z"
+}

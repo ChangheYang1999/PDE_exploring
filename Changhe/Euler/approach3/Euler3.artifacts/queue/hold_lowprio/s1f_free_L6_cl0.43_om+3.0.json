@@ -1,0 +1,39 @@
+{
+ "job_id": "s1f_free_L6_cl0.43_om+3.0",
+ "type": "multistart",
+ "stage": "I",
+ "priority": 1,
+ "max_retries": 2,
+ "config": {
+  "L": 6,
+  "Nk": 16,
+  "m_parity": "even",
+  "R0": 1.0,
+  "formulation": "mom",
+  "c_l": 0.43,
+  "omega": 3.0,
+  "free_params": true,
+  "n_starts": 6,
+  "seed": 6001,
+  "max_iter": 200,
+  "families": [
+   "random",
+   "tail",
+   "nonaxi",
+   "poloidal",
+   "toroidal",
+   "random"
+  ],
+  "time_limit_per_start": 1500,
+  "chunk": 256,
+  "threads": 1,
+  "ftol": 1e-05,
+  "nl_weighting": true,
+  "efrac": null,
+  "optimizer": "lm",
+  "Nr": 40,
+  "tail_constraints": true
+ },
+ "created": "2026-10-24T18:14:53Z",
+ "note": "held: free-parameter pressure Jacobian columns to be replaced by rebuilt-pressure finite differences (astra review2 item 6)"
+}

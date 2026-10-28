@@ -1,0 +1,199 @@
+{
+ "tool": "s14_stage2_reading_v2.py",
+ "tool_sha256": "d4b98167f0adb2c37860682d4366e365684dcec087b281a796022d6d5322d1c9",
+ "smoke": false,
+ "smoke_relaxed_checks": [],
+ "job": "s14b_L6_cl0.45_om+1.0_fixed_p0_om+1.0s5",
+ "registered": "registered",
+ "c_l": 0.45,
+ "omega": 1.0,
+ "config": {
+  "L": 6,
+  "Nk": 16,
+  "Nr": 48,
+  "m_parity": "all",
+  "channels": {
+   "NkB": 4,
+   "NkD": 4,
+   "NkE": 4,
+   "core_damp": 2,
+   "LB": 15,
+   "LD": 14,
+   "LE": 6
+  },
+  "closure_lambda": 0.001,
+  "nl_denominator": "all5far",
+  "max_iter": 300,
+  "time_limit_per_start": 7200,
+  "chunk": 256
+ },
+ "init_from": "runs/s14_L4_cl0.45_om+1.0/starts/start_005.pt",
+ "source": {
+  "job": "s14_L4_cl0.45_om+1.0",
+  "start": 5,
+  "family": "nonaxi",
+  "rng_seed": 14001042008,
+  "L": 4,
+  "Nk": 12,
+  "m_parity": "all",
+  "holdout": {
+   "std": 0.252794739634493,
+   "half": 0.2599642748948021,
+   "open": null
+  },
+  "status": "max_iter",
+  "iterations": 300,
+  "max_iter": 300,
+  "time_limit_per_start": 900.0
+ },
+ "status": "time_limit",
+ "iterations": 261,
+ "lm_seconds": 7221.993087053299,
+ "job_start": "2026-10-26T23:03:46Z",
+ "job_done": "2026-10-27T01:32:10Z",
+ "whole_job_seconds": 8904.0,
+ "holdout": {
+  "std": 0.22678354604674825,
+  "half": 0.21150032564737298,
+  "open": null
+ },
+ "v10": 0.021906446245223678,
+ "rms_mom": 0.29168932237904455,
+ "cost_final": 5.680476992592247e-06,
+ "rho_nl_max_holdout": 12.83381362300958,
+ "max_U": 0.9391595683160157,
+ "max_abs_Omega": 20.098696109444894,
+ "core_resolved": true,
+ "a_max_core": 4.364400076526843,
+ "sigma_u_max_core": 3.169101792698219,
+ "sigma_Om": 1.3992237275355408,
+ "a_eff": 0.13148358684393144,
+ "E_ren": -1.8769849713930853,
+ "H_tot_over_abs": 0.16592838210491564,
+ "K_E_ratio": 39.6622993195342,
+ "K_H_ratio": -10.562410273142858,
+ "G_carried_mismatch_rel": 2.525522716952807,
+ "Q_sw": 0.08506865288876873,
+ "tau_F_R8": 0.9270151751407537,
+ "rotation_content_rel": 1.7388047094004777,
+ "collapse_check": {
+  "values": {
+   "N_core": {
+    "L4": 1.7679343017029867,
+    "L6": 1.7645826259235105,
+    "ratio_L6_over_L4": 0.9981041853329913,
+    "collapsing": false,
+    "warning": false
+   },
+   "N_F": {
+    "L4": 1.7855278931883565,
+    "L6": 1.7855384566359462,
+    "ratio_L6_over_L4": 1.0000059161481767,
+    "collapsing": false,
+    "warning": false
+   },
+   "e_core": {
+    "L4": 0.9756023336204973,
+    "L6": 0.9758733724518519,
+    "ratio_L6_over_L4": 1.0002778169157804,
+    "collapsing": false,
+    "warning": false
+   },
+   "e_F": {
+    "L4": 0.9684241165988796,
+    "L6": 0.9685693145736192,
+    "ratio_L6_over_L4": 1.0001499322169398,
+    "collapsing": false,
+    "warning": false
+   }
+  },
+  "collapsing": false,
+  "warning": false,
+  "verdict": "not collapsing",
+  "rule": "SPEC 7.4: warning if N_core < 1e-2, N_F < 1e-2, e_core < 1e-4 or e_F < 1e-4; collapsing if any of the four decreases by more than 2x per refinement level (L4 -> L6); OPEN if any input is missing or non-finite or an L4 value is not positive"
+ },
+ "odd_m_L6": {
+  "path": "reports/oddm/oddm_s14b_L6_cl0.45_om+1.0_fixed_p0_om+1.0s5_0.json",
+  "sha256": "8500610c8a5ab8b429acf90d145159b62619de411d8849ad31f09b85a20c483c",
+  "bound": true,
+  "reason": "bound",
+  "values": {
+   "energy_all": 0.7670231958503851,
+   "energy_core": 0.9342600620210475,
+   "energy_tail": 0.5027837813046688,
+   "amp_U": 0.8757986046177427,
+   "amp_Omega": 0.8048174631801462,
+   "amp_DU": 0.7523783679357299,
+   "coef_norm_fraction": 0.7399154288861286
+  }
+ },
+ "odd_m_L4": {
+  "path": "reports/oddm/oddm_s14_L4_cl0.45_om+1.0_5.json",
+  "sha256": "dc476d4c6f33362121529774137d1e01931e32d0c312f4e55b975825182e85b5",
+  "bound": true,
+  "reason": "bound",
+  "values": {
+   "energy_all": 0.7909181003786404,
+   "energy_core": 0.933795170704322,
+   "energy_tail": 0.5013889400032545,
+   "amp_U": 0.8893357635778741,
+   "amp_Omega": 0.8322926031816237,
+   "amp_DU": 0.7737176696921171,
+   "coef_norm_fraction": 0.6059237982747143
+  }
+ },
+ "comparator": {
+  "comparator": "nest6_L6_cl0.45_om+1.0_fixed_p0_om+1.0s43s0",
+  "queue_file": "queue/done/nest6_L6_cl0.45_om+1.0_fixed_p0_om+1.0s43s0.json",
+  "arm_reading_json": "reports/arm_reading_nest6_L6_cl0.45_om+1.0_fixed_p0_om+1.0s43s0.json",
+  "arm_reading_sha256": "851be8d137a7b8923e5dceae2f7bce6a12492a4a98110a5e87e95504f729468c",
+  "code_versions": null,
+  "holdout": {
+   "std": 0.04604329400049428,
+   "half": 0.04630453544302656,
+   "open": null
+  },
+  "max_iter": 600,
+  "time_limit_per_start": 7200,
+  "iterations": 600,
+  "status": "max_iter",
+  "target_arm_reading_json": "reports/arm_reading_s14b_L6_cl0.45_om+1.0_fixed_p0_om+1.0s5.json",
+  "target_arm_reading_sha256": "e2157d9414251687838ab0671d1e23db2bbf4a0cdeab838a6ccc1ab6bf99fed9",
+  "order": {
+   "order_json": "reports/order_73b_s14b_L6_cl0.45_om+1.0_fixed_p0_om+1.0s5__vs__nest6_L6_cl0.45_om+1.0_fixed_p0_om+1.0s43s0.json",
+   "order_json_sha256": "895f7f5d69cb5a7bf9e613301e5e47736156432508bc00c65abebf6f7123b844",
+   "command": ".venv/bin/python scripts/order_73b.py s14b_L6_cl0.45_om+1.0_fixed_p0_om+1.0s5 nest6_L6_cl0.45_om+1.0_fixed_p0_om+1.0s43s0 --json reports/order_73b_s14b_L6_cl0.45_om+1.0_fixed_p0_om+1.0s5__vs__nest6_L6_cl0.45_om+1.0_fixed_p0_om+1.0s43s0.json",
+   "returncode": 0,
+   "pair": {
+    "relation": "<",
+    "words": "nest6_L6_cl0.45_om+1.0_fixed_p0_om+1.0s43s0 ahead of s14b_L6_cl0.45_om+1.0_fixed_p0_om+1.0s5",
+    "ratios": [
+     4.9254413909724555,
+     4.567594159487995,
+     7.098598964310435,
+     3.443801420231336,
+     7.82779251308742
+    ]
+   },
+   "stdout_table": [
+    "| X | Y | holdout std X/Y | holdout half X/Y | core sigma_u X/Y | sigma_Om X/Y | core a_max X/Y | resolved X / Y | relation |",
+    "| s14b_L6_cl0.45_om+1.0_fixed_p0_om+1.0s5 | nest6_L6_cl0.45_om+1.0_fixed_p0_om+1.0s43s0 | 4.925 | 4.568 | 7.099 | 3.444 | 7.828 | True / True | nest6_L6_cl0.45_om+1.0_fixed_p0_om+1.0s43s0 ahead of s14b_L6_cl0.45_om+1.0_fixed_p0_om+1.0s5 |"
+   ],
+   "tool_sha256": "addfa078bd3d23ab8a68f6b1bc1665fee814aa23a11988c7ee4ab9e9b3c87972"
+  },
+  "quadrature_sentence": "same degree 6, Nk 16, Nr 48: same holdout quadrature; conditional on verified core resolution (core flags primary-reported)",
+  "ratio_std": 4.9254413909724555,
+  "ratio_half": 4.567594159487995
+ },
+ "code_versions": {
+  "src/optimization/lm.py": "82aafe7cf939",
+  "scripts/worker.py": "3bed13b5c663",
+  "src/optimization/problem.py": "ca146af805bd",
+  "src/equations/fields.py": "f12b5b6c0709",
+  "src/pressure/poisson_sh.py": "68890852688f",
+  "src/equations/residuals.py": "9272f55c0f6a",
+  "src/far_field/correction.py": "f8dc0cf55a95",
+  "src/validation/spec_diagnostics.py": "e22ed3abb6f8",
+  "src/pressure/ray_integral.py": "66a94707cbc6"
+ }
+}

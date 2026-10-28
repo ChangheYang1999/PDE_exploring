@@ -1,0 +1,43 @@
+{
+ "job": "s11_L6_cl0.45_om+0.3_fixed_cl1",
+ "start": "runs/s11_L6_cl0.45_om+0.3_fixed_cl1/starts/start_000.pt",
+ "c_l": 0.45,
+ "omega": 0.3,
+ "omega_over_c_l": 0.6666666666666666,
+ "C0_momentum_rows": 3.1195011515331225e-07,
+ "gauge_rows_cost": 0.0,
+ "n_pde_rows": 430236,
+ "E_ren": -1.2033304100689293,
+ "H_tot_over_abs": -0.8906573040014926,
+ "b0": 2.2412745089678645,
+ "balances_source": "Problem.balance_rows at lambda 1 (GlobalBalances.integrals)",
+ "ledger_values": {
+  "E_ren": -1.2033304100680198,
+  "H_tot_over_abs": -0.8906573040014923
+ },
+ "balance_lambda_by_kappa": {
+  "0.1": 0.00011797637543026866,
+  "1": 0.0003730740564507762,
+  "10": 0.0011797637543026866,
+  "100": 0.0037307405645077623
+ },
+ "device": "cpu",
+ "pins_frozen_at_Z0": {
+  "core_pin": 0.8460116761229597,
+  "nonaxi_pin": [
+   0.19201385293410866,
+   0.19750637191689321
+  ],
+  "nonaxi_r_tail": 1.7172657131881202
+ },
+ "targets_met_at_Z0": false,
+ "skip": false,
+ "skip_reason": "",
+ "chain_commands": [
+  "scripts/enqueue_continuation.py --src runs/s11_L6_cl0.45_om+0.3_fixed_cl1/starts/start_000.pt --tag s9d --L 6 --Nk 16 --channels 4,4,4 --chdeg 15,14,6 --closure_lambda 1 --nl_den all5far --balance_lambda 0.00011797637543026866 --core_pin 0.84601167612295969 --nonaxi_pin 0.19201385293410866,0.19750637191689321 --nonaxi_r_tail 1.7172657131881202 --max_iter 100 --time_limit 5400 --exclusive --priority 12 --suffix _k0.1",
+  "scripts/enqueue_continuation.py --src <end state of the previous step> --tag s9d --L 6 --Nk 16 --channels 4,4,4 --chdeg 15,14,6 --closure_lambda 1 --nl_den all5far --balance_lambda 0.00037307405645077622 --core_pin 0.84601167612295969 --nonaxi_pin 0.19201385293410866,0.19750637191689321 --nonaxi_r_tail 1.7172657131881202 --max_iter 100 --time_limit 5400 --exclusive --priority 12 --suffix _k1",
+  "scripts/enqueue_continuation.py --src <end state of the previous step> --tag s9d --L 6 --Nk 16 --channels 4,4,4 --chdeg 15,14,6 --closure_lambda 1 --nl_den all5far --balance_lambda 0.0011797637543026866 --core_pin 0.84601167612295969 --nonaxi_pin 0.19201385293410866,0.19750637191689321 --nonaxi_r_tail 1.7172657131881202 --max_iter 100 --time_limit 5400 --exclusive --priority 12 --suffix _k10",
+  "scripts/enqueue_continuation.py --src <end state of the previous step> --tag s9d --L 6 --Nk 16 --channels 4,4,4 --chdeg 15,14,6 --closure_lambda 1 --nl_den all5far --balance_lambda 0.0037307405645077623 --core_pin 0.84601167612295969 --nonaxi_pin 0.19201385293410866,0.19750637191689321 --nonaxi_r_tail 1.7172657131881202 --max_iter 100 --time_limit 5400 --exclusive --priority 12 --suffix _k100"
+ ],
+ "definition": "lambda_k = sqrt(kappa_k C0 / b0); C0 = sum of squares of the weighted momentum rows at Z0 (no pin/closure/balance rows); b0 = E_ren^2 + (H_tot/int|h|)^2 at Z0 (lead 2026-10-25T17:20:02Z)"
+}

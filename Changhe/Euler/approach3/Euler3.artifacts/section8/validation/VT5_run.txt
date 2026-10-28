@@ -1,0 +1,5 @@
+HELPER RUN 2026-10-27T18:45:15Z: CUDA_VISIBLE_DEVICES=-1 OMP_NUM_THREADS=1 nice -n 19 taskset -c 22 .venv/bin/python runs/section8_validation/compare_vt_nest10_v2.py runs/section8_validation/vt_nest10_full/validate_full_nest10.json runs/section8_validation/vt_nest10_full/VT5_compare_v2.md runs/section8_validation/vt_nest10_full/VT5_compare_v2.json
+Summary: 89 rows; n_match 81 (within 1e-6 relative or identical), n_diff 7, n_missing_vt 0 (saved keys missing in the VT output), n_new 0 (VT values without a saved counterpart; unreviewed), n_definitional 1, n_absent_both 0; identity n_match + n_diff + n_missing_vt + n_new + n_definitional + n_absent_both = 89 = row count (asserted).
+wrote runs/section8_validation/vt_nest10_full/VT5_compare_v2.md runs/section8_validation/vt_nest10_full/VT5_compare_v2.json
+c0cddf37a49200741c11c9735fbd8a0594e87a11ec40757f2d4002ca712bd642  runs/section8_validation/vt_nest10_full/VT5_compare_v2.md
+97ba0fab537e7b4d9babd7be59fce5800ed981a6db31277e7c16428aad607f06  runs/section8_validation/vt_nest10_full/VT5_compare_v2.json

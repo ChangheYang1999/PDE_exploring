@@ -1,0 +1,54 @@
+{
+ "job_id": "d6w3_L6_cl0.45_om+0.3_fixed_cl1e-2",
+ "type": "continuation",
+ "stage": "I",
+ "priority": 14,
+ "max_retries": 6,
+ "config": {
+  "L": 6,
+  "Nk": 16,
+  "Nr": 48,
+  "m_parity": "even",
+  "R0": 0.3,
+  "formulation": "mom",
+  "c_l": 0.45,
+  "omega": 0.3,
+  "free_params": false,
+  "n_starts": 1,
+  "seed": 0,
+  "max_iter": 300,
+  "init_from": "runs/d6w_L6_cl0.45_om+0.3_fixed/starts/start_000.pt",
+  "perturb": 0.0,
+  "nl_weighting": true,
+  "sigmaZ": null,
+  "far_radii": [
+   4096.0,
+   16384.0,
+   65536.0
+  ],
+  "time_limit_per_start": 7200,
+  "chunk": 256,
+  "threads": 1,
+  "ftol": 1e-07,
+  "families": [
+   "init_from"
+  ],
+  "tail_constraints": true,
+  "sigmaZ_ramp_iters": 0,
+  "nl_denominator": "all5far",
+  "channels": {
+   "NkB": 4,
+   "NkD": 4,
+   "NkE": 4,
+   "core_damp": 2,
+   "LB": 15,
+   "LD": 14,
+   "LE": 6
+  },
+  "closure_lambda": 0.01
+ },
+ "exclusive": false,
+ "note": "continuation of runs/d6w_L6_cl0.45_om+0.3_fixed/starts/start_000.pt (holdout rho_u 0.05284146100177552)",
+ "created": "2026-10-25T01:28:23Z",
+ "note_exclusive": "2026-10-25T01:28:23Z L6 extended-channel job (23 GB peak) may share a GPU with small L2/L6 jobs; never with an L>=8 or another extended job"
+}

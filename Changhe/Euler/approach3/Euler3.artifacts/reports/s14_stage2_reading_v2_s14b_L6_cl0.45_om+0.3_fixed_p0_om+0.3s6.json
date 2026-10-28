@@ -1,0 +1,199 @@
+{
+ "tool": "s14_stage2_reading_v2.py",
+ "tool_sha256": "d4b98167f0adb2c37860682d4366e365684dcec087b281a796022d6d5322d1c9",
+ "smoke": false,
+ "smoke_relaxed_checks": [],
+ "job": "s14b_L6_cl0.45_om+0.3_fixed_p0_om+0.3s6",
+ "registered": "registered",
+ "c_l": 0.45,
+ "omega": 0.3,
+ "config": {
+  "L": 6,
+  "Nk": 16,
+  "Nr": 48,
+  "m_parity": "all",
+  "channels": {
+   "NkB": 4,
+   "NkD": 4,
+   "NkE": 4,
+   "core_damp": 2,
+   "LB": 15,
+   "LD": 14,
+   "LE": 6
+  },
+  "closure_lambda": 0.001,
+  "nl_denominator": "all5far",
+  "max_iter": 300,
+  "time_limit_per_start": 7200,
+  "chunk": 256
+ },
+ "init_from": "runs/s14_L4_cl0.45_om+0.3/starts/start_006.pt",
+ "source": {
+  "job": "s14_L4_cl0.45_om+0.3",
+  "start": 6,
+  "family": "poloidal",
+  "rng_seed": 14000042006,
+  "L": 4,
+  "Nk": 12,
+  "m_parity": "all",
+  "holdout": {
+   "std": 0.35466606354197644,
+   "half": 0.3536443239373428,
+   "open": null
+  },
+  "status": "max_iter",
+  "iterations": 300,
+  "max_iter": 300,
+  "time_limit_per_start": 900.0
+ },
+ "status": "time_limit",
+ "iterations": 259,
+ "lm_seconds": 7220.861210346222,
+ "job_start": "2026-10-26T23:01:44Z",
+ "job_done": "2026-10-27T01:17:17Z",
+ "whole_job_seconds": 8133.0,
+ "holdout": {
+  "std": 0.16461250989554294,
+  "half": 0.1648164186249728,
+  "open": null
+ },
+ "v10": 0.10386348299038575,
+ "rms_mom": 0.3961470230295884,
+ "cost_final": 2.5950957414274912e-06,
+ "rho_nl_max_holdout": 7.526887817291257,
+ "max_U": 1.7151613903347127,
+ "max_abs_Omega": 29.712275815060252,
+ "core_resolved": true,
+ "a_max_core": 2.6918774175664892,
+ "sigma_u_max_core": 1.5087079749914984,
+ "sigma_Om": 1.5352077228193481,
+ "a_eff": 0.1627691801980993,
+ "E_ren": -1.7494632094990266,
+ "H_tot_over_abs": 0.6032583746800863,
+ "K_E_ratio": 1.724311774353021,
+ "K_H_ratio": -17.560067988952955,
+ "G_carried_mismatch_rel": 1.0847654905933797,
+ "Q_sw": 0.04808505488263499,
+ "tau_F_R8": 1.4718645142299216,
+ "rotation_content_rel": 1.150524799048317,
+ "collapse_check": {
+  "values": {
+   "N_core": {
+    "L4": 1.2613936767734188,
+    "L6": 1.283256610290142,
+    "ratio_L6_over_L4": 1.0173323633369142,
+    "collapsing": false,
+    "warning": false
+   },
+   "N_F": {
+    "L4": 1.14611227434,
+    "L6": 1.1735623166122313,
+    "ratio_L6_over_L4": 1.0239505700155236,
+    "collapsing": false,
+    "warning": false
+   },
+   "e_core": {
+    "L4": 0.8628428291618319,
+    "L6": 0.8601536185112052,
+    "ratio_L6_over_L4": 0.9968833134381624,
+    "collapsing": false,
+    "warning": false
+   },
+   "e_F": {
+    "L4": 0.8618731618512215,
+    "L6": 0.8673888896200512,
+    "ratio_L6_over_L4": 1.0063996977896172,
+    "collapsing": false,
+    "warning": false
+   }
+  },
+  "collapsing": false,
+  "warning": false,
+  "verdict": "not collapsing",
+  "rule": "SPEC 7.4: warning if N_core < 1e-2, N_F < 1e-2, e_core < 1e-4 or e_F < 1e-4; collapsing if any of the four decreases by more than 2x per refinement level (L4 -> L6); OPEN if any input is missing or non-finite or an L4 value is not positive"
+ },
+ "odd_m_L6": {
+  "path": "reports/oddm/oddm_s14b_L6_cl0.45_om+0.3_fixed_p0_om+0.3s6_0.json",
+  "sha256": "f6812c02dc6fa77e763427f86a32b1722e8353f199384453ced078d579df6e5f",
+  "bound": true,
+  "reason": "bound",
+  "values": {
+   "energy_all": 0.359307164880315,
+   "energy_core": 0.3663653121332796,
+   "energy_tail": 0.7127823260770623,
+   "amp_U": 0.5994223593429886,
+   "amp_Omega": 0.6509299551791938,
+   "amp_DU": 0.6430001509086555,
+   "coef_norm_fraction": 0.7425163112213432
+  }
+ },
+ "odd_m_L4": {
+  "path": "reports/oddm/oddm_s14_L4_cl0.45_om+0.3_6.json",
+  "sha256": "b6564fc3ae87e1fb568db2973e4dd787d36cb94ae0429e67b7ef012b9240f755",
+  "bound": true,
+  "reason": "bound",
+  "values": {
+   "energy_all": 0.37068175897542616,
+   "energy_core": 0.37756494886258063,
+   "energy_tail": 0.7151188405565388,
+   "amp_U": 0.6088363975448791,
+   "amp_Omega": 0.6647717214836142,
+   "amp_DU": 0.6384091686873798,
+   "coef_norm_fraction": 0.657818691644523
+  }
+ },
+ "comparator": {
+  "comparator": "nest6_L6_cl0.45_om+0.3_fixed_p0_om+0.3s55s0",
+  "queue_file": "queue/done/nest6_L6_cl0.45_om+0.3_fixed_p0_om+0.3s55s0.json",
+  "arm_reading_json": "reports/arm_reading_nest6_L6_cl0.45_om+0.3_fixed_p0_om+0.3s55s0.json",
+  "arm_reading_sha256": "72fe72f2d9dba3758fccd25756f0cb933a8f86cb212905572085e760df4e57f8",
+  "code_versions": null,
+  "holdout": {
+   "std": 0.06686971005633605,
+   "half": 0.06752539299146001,
+   "open": null
+  },
+  "max_iter": 600,
+  "time_limit_per_start": 7200,
+  "iterations": 413,
+  "status": "time_limit",
+  "target_arm_reading_json": "reports/arm_reading_s14b_L6_cl0.45_om+0.3_fixed_p0_om+0.3s6.json",
+  "target_arm_reading_sha256": "de5a70787c15eca3424d95e12adf1420f817ecedaa3bd0f27c389b0ed030408b",
+  "order": {
+   "order_json": "reports/order_73b_s14b_L6_cl0.45_om+0.3_fixed_p0_om+0.3s6__vs__nest6_L6_cl0.45_om+0.3_fixed_p0_om+0.3s55s0.json",
+   "order_json_sha256": "7cac84c3ecd81f22949be92b29abb6bc319217216509c959102008c865351f11",
+   "command": ".venv/bin/python scripts/order_73b.py s14b_L6_cl0.45_om+0.3_fixed_p0_om+0.3s6 nest6_L6_cl0.45_om+0.3_fixed_p0_om+0.3s55s0 --json reports/order_73b_s14b_L6_cl0.45_om+0.3_fixed_p0_om+0.3s6__vs__nest6_L6_cl0.45_om+0.3_fixed_p0_om+0.3s55s0.json",
+   "returncode": 0,
+   "pair": {
+    "relation": "<",
+    "words": "nest6_L6_cl0.45_om+0.3_fixed_p0_om+0.3s55s0 ahead of s14b_L6_cl0.45_om+0.3_fixed_p0_om+0.3s6",
+    "ratios": [
+     2.4616901995965144,
+     2.4408065073507568,
+     2.51988496948178,
+     3.4970750427484294,
+     2.7407330789850977
+    ]
+   },
+   "stdout_table": [
+    "| X | Y | holdout std X/Y | holdout half X/Y | core sigma_u X/Y | sigma_Om X/Y | core a_max X/Y | resolved X / Y | relation |",
+    "| s14b_L6_cl0.45_om+0.3_fixed_p0_om+0.3s6 | nest6_L6_cl0.45_om+0.3_fixed_p0_om+0.3s55s0 | 2.462 | 2.441 | 2.520 | 3.497 | 2.741 | True / True | nest6_L6_cl0.45_om+0.3_fixed_p0_om+0.3s55s0 ahead of s14b_L6_cl0.45_om+0.3_fixed_p0_om+0.3s6 |"
+   ],
+   "tool_sha256": "addfa078bd3d23ab8a68f6b1bc1665fee814aa23a11988c7ee4ab9e9b3c87972"
+  },
+  "quadrature_sentence": "same degree 6, Nk 16, Nr 48: same holdout quadrature; conditional on verified core resolution (core flags primary-reported)",
+  "ratio_std": 2.4616901995965144,
+  "ratio_half": 2.4408065073507568
+ },
+ "code_versions": {
+  "src/optimization/lm.py": "82aafe7cf939",
+  "scripts/worker.py": "3bed13b5c663",
+  "src/optimization/problem.py": "ca146af805bd",
+  "src/equations/fields.py": "f12b5b6c0709",
+  "src/pressure/poisson_sh.py": "68890852688f",
+  "src/equations/residuals.py": "9272f55c0f6a",
+  "src/far_field/correction.py": "f8dc0cf55a95",
+  "src/validation/spec_diagnostics.py": "e22ed3abb6f8",
+  "src/pressure/ray_integral.py": "66a94707cbc6"
+ }
+}

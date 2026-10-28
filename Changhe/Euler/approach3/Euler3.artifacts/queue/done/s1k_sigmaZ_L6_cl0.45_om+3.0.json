@@ -1,0 +1,50 @@
+{
+ "job_id": "s1k_sigmaZ_L6_cl0.45_om+3.0",
+ "type": "multistart",
+ "stage": "I",
+ "priority": 9,
+ "max_retries": 2,
+ "config": {
+  "L": 6,
+  "Nk": 16,
+  "m_parity": "even",
+  "R0": 1.0,
+  "formulation": "mom",
+  "c_l": 0.45,
+  "omega": 3.0,
+  "free_params": false,
+  "n_starts": 4,
+  "seed": 11005,
+  "max_iter": 200,
+  "families": [
+   "affine_core",
+   "random",
+   "nonaxi",
+   "affine_core"
+  ],
+  "time_limit_per_start": 1500,
+  "chunk": 512,
+  "threads": 1,
+  "ftol": 1e-05,
+  "nl_weighting": true,
+  "efrac": null,
+  "optimizer": "lm",
+  "sigmaZ": 1.0,
+  "gauge": "F",
+  "Nr": 40,
+  "far_radii": [
+   4096.0,
+   16384.0,
+   65536.0
+  ]
+ },
+ "exclusive": false,
+ "created": "2026-10-24T19:56:10Z",
+ "retries": 1,
+ "failures": [
+  {
+   "ts": "2026-10-24T20:04:00Z",
+   "reason": "exit 3"
+  }
+ ]
+}

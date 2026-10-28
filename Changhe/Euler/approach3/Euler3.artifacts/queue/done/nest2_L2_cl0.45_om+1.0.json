@@ -1,0 +1,47 @@
+{
+ "job_id": "nest2_L2_cl0.45_om+1.0",
+ "type": "multistart",
+ "stage": "I",
+ "priority": 12,
+ "max_retries": 2,
+ "config": {
+  "L": 2,
+  "Nk": 8,
+  "m_parity": "even",
+  "R0": 0.3,
+  "formulation": "mom",
+  "c_l": 0.45,
+  "omega": 1.0,
+  "free_params": false,
+  "n_starts": 60,
+  "seed": 7001,
+  "max_iter": 200,
+  "families": [
+   "random",
+   "tail",
+   "nonaxi",
+   "poloidal",
+   "toroidal",
+   "affine_core"
+  ],
+  "time_limit_per_start": 600.0,
+  "chunk": 512,
+  "threads": 1,
+  "ftol": 1e-07,
+  "nl_weighting": true,
+  "efrac": null,
+  "optimizer": "lm",
+  "sigmaZ": null,
+  "gauge": "F",
+  "far_radii": [
+   4096.0,
+   16384.0,
+   65536.0
+  ],
+  "nl_denominator": "all5",
+  "tail_constraints": true,
+  "Nr": 24
+ },
+ "exclusive": false,
+ "created": "2026-10-24T23:35:12Z"
+}

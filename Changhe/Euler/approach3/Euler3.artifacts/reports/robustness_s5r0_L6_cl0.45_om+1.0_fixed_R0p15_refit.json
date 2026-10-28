@@ -1,0 +1,604 @@
+{
+ "control": "s5ctl_L6_cl0.45_om+1.0_fixed_R0p3_ctl",
+ "variant": "s5r0_L6_cl0.45_om+1.0_fixed_R0p15_refit",
+ "kind": "r0",
+ "utc": "2026-10-26T21:17:58Z",
+ "control_status": "max_iter",
+ "variant_status": "max_iter",
+ "control_failure": null,
+ "variant_failure": null,
+ "R0": {
+  "control": 0.3,
+  "variant": 0.15
+ },
+ "far_radii": {
+  "control": [
+   4096.0,
+   16384.0,
+   65536.0
+  ],
+  "variant": [
+   4096.0,
+   16384.0,
+   65536.0
+  ]
+ },
+ "compare": {
+  "json": "reports/cmp_s5r0_L6_cl0.45_om+1.0_fixed_R0p15_refit__vs__s5ctl_L6_cl0.45_om+1.0_fixed_R0p3_ctl.json",
+  "gamma": 1.3985313356646885,
+  "norm_star_U": 0.26362906751085063,
+  "norm_star1_DU": 0.5228168648020198,
+  "norm_star1_Om": 0.5227680251167716,
+  "far_sphere_ratio_U": {
+   "far 4096 R0": 0.16610089328104008,
+   "far 16384 R0": 0.1661008886325998,
+   "far 65536 R0": 0.1661008884232582
+  },
+  "F_norm2": [
+   0.9999999999999994,
+   1.0000000000000002
+  ],
+  "flagged_shells": []
+ },
+ "flag": {
+  "rule": "||V||_* against the control above the control's holdout rho_u^max (standard family); a descriptive threshold, not a solution-error or representation-independence statement",
+  "control_holdout_rho_u": 0.04376958560880786,
+  "norm_star_U": 0.26362906751085063,
+  "reading": "field discrepancy above the registered residual-number threshold: the change moves the re-solved state by more than the control's holdout rho_u^max"
+ },
+ "state_sha256": {
+  "control": "cde24e284250a3432bd8976179af4fdd838662a71420b07c13925f9e9d129040",
+  "variant": "4feecd842af8570ad7e31c3244f014db912701b9726e5db918de50c7da931528"
+ },
+ "state_files": {
+  "control": "runs/s5ctl_L6_cl0.45_om+1.0_fixed_R0p3_ctl/starts/start_000.pt",
+  "variant": "runs/s5r0_L6_cl0.45_om+1.0_fixed_R0p15_refit/starts/start_000.pt"
+ },
+ "code_versions": {
+  "control": {
+   "scripts/worker.py": {
+    "mtime": "2026-10-26T06:09:59Z",
+    "sha256_12": "1db489a1a0f5"
+   },
+   "src/equations/fields.py": {
+    "mtime": "2026-10-25T05:24:35Z",
+    "sha256_12": "f12b5b6c0709"
+   },
+   "src/equations/residuals.py": {
+    "mtime": "2026-10-24T17:39:53Z",
+    "sha256_12": "9272f55c0f6a"
+   },
+   "src/far_field/correction.py": {
+    "mtime": "2026-10-25T10:14:46Z",
+    "sha256_12": "f8dc0cf55a95"
+   },
+   "src/optimization/lm.py": {
+    "mtime": "2026-10-26T05:40:12Z",
+    "sha256_12": "82aafe7cf939"
+   },
+   "src/optimization/problem.py": {
+    "mtime": "2026-10-25T11:30:21Z",
+    "sha256_12": "185cecd9c831"
+   },
+   "src/pressure/poisson_sh.py": {
+    "mtime": "2026-10-25T19:07:21Z",
+    "sha256_12": "68890852688f"
+   },
+   "src/pressure/ray_integral.py": {
+    "mtime": "2026-10-24T18:25:44Z",
+    "sha256_12": "66a94707cbc6"
+   },
+   "src/validation/spec_diagnostics.py": {
+    "mtime": "2026-10-25T23:21:12Z",
+    "sha256_12": "e22ed3abb6f8"
+   }
+  },
+  "variant": {
+   "scripts/worker.py": {
+    "mtime": "2026-10-26T18:49:02Z",
+    "sha256_12": "3bed13b5c663"
+   },
+   "src/equations/fields.py": {
+    "mtime": "2026-10-25T05:24:35Z",
+    "sha256_12": "f12b5b6c0709"
+   },
+   "src/equations/residuals.py": {
+    "mtime": "2026-10-24T17:39:53Z",
+    "sha256_12": "9272f55c0f6a"
+   },
+   "src/far_field/correction.py": {
+    "mtime": "2026-10-25T10:14:46Z",
+    "sha256_12": "f8dc0cf55a95"
+   },
+   "src/optimization/lm.py": {
+    "mtime": "2026-10-26T05:40:12Z",
+    "sha256_12": "82aafe7cf939"
+   },
+   "src/optimization/problem.py": {
+    "mtime": "2026-10-26T18:49:02Z",
+    "sha256_12": "ca146af805bd"
+   },
+   "src/pressure/poisson_sh.py": {
+    "mtime": "2026-10-25T19:07:21Z",
+    "sha256_12": "68890852688f"
+   },
+   "src/pressure/ray_integral.py": {
+    "mtime": "2026-10-24T18:25:44Z",
+    "sha256_12": "66a94707cbc6"
+   },
+   "src/validation/spec_diagnostics.py": {
+    "mtime": "2026-10-25T23:21:12Z",
+    "sha256_12": "e22ed3abb6f8"
+   }
+  }
+ },
+ "complete": true,
+ "drift_original_to_control": {
+  "original": "nest6_L6_cl0.45_om+1.0_fixed_p0_om+1.0s43s0",
+  "json": "reports/cmp_s5ctl_L6_cl0.45_om+1.0_fixed_R0p3_ctl__vs_original__nest6_L6_cl0.45_om+1.0_fixed_p0_om+1.0s43s0.json",
+  "norm_star_U": 0.09686574626056607,
+  "norm_star1_DU": 0.16229904902731065,
+  "norm_star1_Om": 0.16937879615439705,
+  "gamma": 3.139547549874396
+ },
+ "common_shell_holdout": {
+  "shells": [
+   {
+    "edges": [
+     0.0078125,
+     0.015625
+    ],
+    "rho_u_control": 0.005149601081958765,
+    "rho_u_variant": 0.0022698063036746055,
+    "ratio": 0.440773230304518
+   },
+   {
+    "edges": [
+     0.015625,
+     0.03125
+    ],
+    "rho_u_control": 0.008694779000789762,
+    "rho_u_variant": 0.002695047310515555,
+    "ratio": 0.30996156547173415
+   },
+   {
+    "edges": [
+     0.03125,
+     0.0625
+    ],
+    "rho_u_control": 0.013629285696692313,
+    "rho_u_variant": 0.00606146876009548,
+    "ratio": 0.4447385501330078
+   },
+   {
+    "edges": [
+     0.0625,
+     0.125
+    ],
+    "rho_u_control": 0.022388182428581312,
+    "rho_u_variant": 0.009669074811764575,
+    "ratio": 0.4318829740917598
+   },
+   {
+    "edges": [
+     0.125,
+     0.25
+    ],
+    "rho_u_control": 0.03454678448836206,
+    "rho_u_variant": 0.019880438577093183,
+    "ratio": 0.5754642254416008
+   },
+   {
+    "edges": [
+     0.25,
+     0.5
+    ],
+    "rho_u_control": 0.04376958560880786,
+    "rho_u_variant": 0.03603925981815275,
+    "ratio": 0.8233859040899963
+   },
+   {
+    "edges": [
+     0.5,
+     1.0
+    ],
+    "rho_u_control": 0.03282046209216786,
+    "rho_u_variant": 0.030294736089034813,
+    "ratio": 0.9230441668968526
+   },
+   {
+    "edges": [
+     1.0,
+     2.0
+    ],
+    "rho_u_control": 0.020707061464582146,
+    "rho_u_variant": 0.014017585264019855,
+    "ratio": 0.6769471027067684
+   },
+   {
+    "edges": [
+     2.0,
+     4.0
+    ],
+    "rho_u_control": 0.01611898266347428,
+    "rho_u_variant": 0.007504771964262594,
+    "ratio": 0.46558595669120334
+   },
+   {
+    "edges": [
+     4.0,
+     8.0
+    ],
+    "rho_u_control": 0.006108564310644902,
+    "rho_u_variant": 0.002807178621138401,
+    "ratio": 0.4595480178945743
+   },
+   {
+    "edges": [
+     8.0,
+     16.0
+    ],
+    "rho_u_control": 0.0013847686110884676,
+    "rho_u_variant": 0.0005594832646483096,
+    "ratio": 0.4040265356741007
+   },
+   {
+    "edges": [
+     16.0,
+     32.0
+    ],
+    "rho_u_control": 0.0001532017345556747,
+    "rho_u_variant": 9.205666390126228e-05,
+    "ratio": 0.6008852586966512
+   },
+   {
+    "edges": [
+     32.0,
+     64.0
+    ],
+    "rho_u_control": 1.2620428124695117e-05,
+    "rho_u_variant": 1.575855813371185e-05,
+    "ratio": 1.2486547982374838
+   },
+   {
+    "edges": [
+     64.0,
+     128.0
+    ],
+    "rho_u_control": 3.6042090786375454e-06,
+    "rho_u_variant": 3.1364814587237518e-06,
+    "ratio": 0.8702273897798951
+   },
+   {
+    "edges": [
+     128.0,
+     256.0
+    ],
+    "rho_u_control": 7.582560798946199e-07,
+    "rho_u_variant": 7.551168627571369e-07,
+    "ratio": 0.9958599512477113
+   },
+   {
+    "edges": [
+     256.0,
+     512.0
+    ],
+    "rho_u_control": 1.5363480041322095e-07,
+    "rho_u_variant": 1.825855701146909e-07,
+    "ratio": 1.1884388798866081
+   },
+   {
+    "edges": [
+     512.0,
+     1024.0
+    ],
+    "rho_u_control": 2.9755567774718296e-08,
+    "rho_u_variant": 4.249985017725681e-08,
+    "ratio": 1.428299083352281
+   },
+   {
+    "edges": [
+     1024.0,
+     2048.0
+    ],
+    "rho_u_control": 6.069114230013999e-09,
+    "rho_u_variant": 9.589686835315791e-09,
+    "ratio": 1.5800801355643082
+   },
+   {
+    "edges": [
+     2048.0,
+     4096.0
+    ],
+    "rho_u_control": 1.2497929292844e-09,
+    "rho_u_variant": 2.1168943439428242e-09,
+    "ratio": 1.6937960636046363
+   },
+   {
+    "edges": [
+     4096.0,
+     8192.0
+    ],
+    "rho_u_control": 2.6257855294950525e-10,
+    "rho_u_variant": 4.619214851616842e-10,
+    "ratio": 1.7591744640717601
+   },
+   {
+    "edges": [
+     8192.0,
+     16384.0
+    ],
+    "rho_u_control": 5.553926460906731e-11,
+    "rho_u_variant": 9.999053512689563e-11,
+    "ratio": 1.80035756380129
+   }
+  ],
+  "only_control": [
+   [
+    0.0,
+    0.0078125
+   ],
+   [
+    16384.0,
+    32768.0
+   ]
+  ],
+  "only_variant": [
+   [
+    0.0,
+    0.00390625
+   ],
+   [
+    0.00390625,
+    0.0078125
+   ]
+  ]
+ },
+ "table": [
+  {
+   "name": "holdout rho_u^max std",
+   "key": "rho_u_max_holdout",
+   "control": 0.04376958560880786,
+   "variant": 0.03603925981815275,
+   "ratio": 0.8233859040899963
+  },
+  {
+   "name": "holdout rho_u^max half",
+   "key": "rho_u_max_holdout_half",
+   "control": 0.043581223758898044,
+   "variant": 0.03923807503223575,
+   "ratio": 0.9003435802838018
+  },
+  {
+   "name": "rho_nl^max holdout std",
+   "key": "rho_nl_max_holdout",
+   "control": 0.6317722280499469,
+   "variant": 0.2857557682706594,
+   "ratio": 0.4523082142320254
+  },
+  {
+   "name": "rho_nl^max holdout half",
+   "key": "rho_nl_max_holdout_half",
+   "control": 0.6763861746001008,
+   "variant": 0.2816980147928962,
+   "ratio": 0.41647512230634265
+  },
+  {
+   "name": "single-sphere rho_u max",
+   "key": "sphere_rho_u_max",
+   "control": 0.050871021334167495,
+   "variant": 0.04554402063080401,
+   "ratio": 0.8952841801942434
+  },
+  {
+   "name": "rho_lin^max holdout",
+   "key": "rho_lin_max_holdout",
+   "control": 0.16453913942035547,
+   "variant": 0.1350118795278353,
+   "ratio": 0.8205456768733574
+  },
+  {
+   "name": "sigma_u^max std",
+   "key": "sigma_u_max",
+   "control": 0.4221648869135574,
+   "variant": 0.4161941500013118,
+   "ratio": 0.9858568604416688
+  },
+  {
+   "name": "sigma_u^max half",
+   "key": "sigma_u_max_half",
+   "control": 0.37389492642455574,
+   "variant": 0.3616961703328785,
+   "ratio": 0.9673738389329584
+  },
+  {
+   "name": "sigma_u^max core sets",
+   "key": "sigma_u_max_core",
+   "control": 0.4619685269940887,
+   "variant": 0.45420104658030425,
+   "ratio": 0.9831861264135774
+  },
+  {
+   "name": "sigma_Om",
+   "key": "sigma_Om",
+   "control": 0.3954359800416459,
+   "variant": 0.4737425906960501,
+   "ratio": 1.1980260133287752
+  },
+  {
+   "name": "a_max std",
+   "key": "a_max",
+   "control": 0.4457632375390505,
+   "variant": 0.5086406200454291,
+   "ratio": 1.1410555586717048
+  },
+  {
+   "name": "a_max half",
+   "key": "a_max_half",
+   "control": 0.38390901055959353,
+   "variant": 0.43516135314743015,
+   "ratio": 1.133501275505699
+  },
+  {
+   "name": "a_max core sets",
+   "key": "a_max_core",
+   "control": 0.6659935310792092,
+   "variant": 0.873987848754933,
+   "ratio": 1.312306813759406
+  },
+  {
+   "name": "a_eff",
+   "key": "a_eff",
+   "control": 0.27262363115063887,
+   "variant": 0.23322286214902188,
+   "ratio": 0.8554755916230681
+  },
+  {
+   "name": "strain ratio at located max",
+   "key": "located_strain_ratio",
+   "control": 0.960328980441966,
+   "variant": 0.8038046381634144,
+   "ratio": 0.8370096649519883
+  },
+  {
+   "name": "holdout rho_Om^max",
+   "key": "rho_Om_max_holdout",
+   "control": 0.06665864200965213,
+   "variant": 0.0642106012743722,
+   "ratio": 0.9632749683840626
+  },
+  {
+   "name": "sampled Q_sw",
+   "key": "Q_sw",
+   "control": 0.6382395294690729,
+   "variant": 0.4426050013197313,
+   "ratio": 0.6934778886038562
+  },
+  {
+   "name": "e_core holdout",
+   "key": "e_core_holdout",
+   "control": 0.13188084560149305,
+   "variant": 0.11113040692376962,
+   "ratio": 0.842657676457236
+  },
+  {
+   "name": "e_F",
+   "key": "e_F",
+   "control": 0.09476257626209734,
+   "variant": 0.08703697423450972,
+   "ratio": 0.918474124149813
+  },
+  {
+   "name": "N_core",
+   "key": "N_core",
+   "control": 0.8008340434401102,
+   "variant": 0.7131029786196563,
+   "ratio": 0.8904503804014235
+  },
+  {
+   "name": "N_F",
+   "key": "N_F",
+   "control": 0.6725045465786363,
+   "variant": 0.6196354597683177,
+   "ratio": 0.9213847890259034
+  },
+  {
+   "name": "E_ren",
+   "key": "E_ren",
+   "control": -1.404727203814673,
+   "variant": -1.0696859465356283,
+   "ratio": 0.7614901623822706
+  },
+  {
+   "name": "H_tot/int|h|",
+   "key": "H_tot_over_abs",
+   "control": -0.6761951211503916,
+   "variant": -0.6776753336899923,
+   "ratio": 1.0021890316763635
+  },
+  {
+   "name": "max E_F",
+   "key": "E_F_max",
+   "control": 1.0000329065637406,
+   "variant": 1.0000027120182704,
+   "ratio": 0.9999698064480959
+  },
+  {
+   "name": "K_E ratio carried/required",
+   "key": "K_ratio_direct",
+   "control": -12.90367592323697,
+   "variant": -3.0591799210030257,
+   "ratio": 0.23707817363066655
+  },
+  {
+   "name": "K_H ratio",
+   "key": "K_H_ratio_direct",
+   "control": 1.1987739991016264,
+   "variant": 1.2657230721269042,
+   "ratio": 1.0558479522207271
+  },
+  {
+   "name": "carried mismatch m",
+   "key": "G_carried_mismatch_rel",
+   "control": 0.27398590797089567,
+   "variant": 0.5353132710621575,
+   "ratio": 1.9537985549206478
+  },
+  {
+   "name": "radial-lambda share",
+   "key": "radial_lambda_share",
+   "control": 0.7261708916178501,
+   "variant": 0.5835842345626147,
+   "ratio": 0.8036458653175097
+  },
+  {
+   "name": "rotation content",
+   "key": "rotation_content_rel",
+   "control": 0.6661588813601593,
+   "variant": 0.6015792651944869,
+   "ratio": 0.9030567362041108
+  },
+  {
+   "name": "max|U|",
+   "key": "max_U",
+   "control": 1.321118007572588,
+   "variant": 1.6996075181134294,
+   "ratio": 1.2864918261437335
+  },
+  {
+   "name": "max|Omega|",
+   "key": "max_abs_Omega",
+   "control": 13.699512266104563,
+   "variant": 20.48922760800518,
+   "ratio": 1.4956173044714725
+  },
+  {
+   "name": "V10 last-tenth decrease",
+   "key": "v10_last_tenth_rel_decrease",
+   "control": 0.029960243122258687,
+   "variant": 0.03585904909666771,
+   "ratio": 1.1968877872698758
+  },
+  {
+   "name": "F-gauge int|F|^2",
+   "key": "F_norm2",
+   "control": 1.0,
+   "variant": 1.0000000000000004,
+   "ratio": 1.0000000000000004
+  },
+  {
+   "name": "iterations",
+   "key": "iterations",
+   "control": 300.0,
+   "variant": 300.0,
+   "ratio": 1.0
+  },
+  {
+   "name": "LM seconds",
+   "key": "seconds",
+   "control": 2839.8103799819946,
+   "variant": 3118.7426450252533,
+   "ratio": 1.0982221443408582
+  }
+ ]
+}

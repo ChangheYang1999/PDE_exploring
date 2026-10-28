@@ -1,0 +1,54 @@
+{
+ "job_id": "nest6_L6_cl0.45_om+1.0_fixed_p0_om+1.0s43s0",
+ "type": "continuation",
+ "stage": "I",
+ "priority": 14,
+ "max_retries": 6,
+ "config": {
+  "L": 6,
+  "Nk": 16,
+  "Nr": 48,
+  "m_parity": "even",
+  "R0": 0.3,
+  "formulation": "mom",
+  "c_l": 0.45,
+  "omega": 1.0,
+  "free_params": false,
+  "n_starts": 1,
+  "seed": 0,
+  "max_iter": 600,
+  "init_from": "runs/nest4_L4_cl0.45_om+1.0_fixed_p1_om+1.0s43/starts/start_000.pt",
+  "perturb": 0.0,
+  "nl_weighting": true,
+  "sigmaZ": null,
+  "far_radii": [
+   4096.0,
+   16384.0,
+   65536.0
+  ],
+  "time_limit_per_start": 7200,
+  "chunk": 256,
+  "threads": 1,
+  "ftol": 1e-07,
+  "families": [
+   "init_from"
+  ],
+  "tail_constraints": true,
+  "sigmaZ_ramp_iters": 0,
+  "nl_denominator": "all5far",
+  "channels": {
+   "NkB": 4,
+   "NkD": 4,
+   "NkE": 4,
+   "core_damp": 2,
+   "LB": 15,
+   "LD": 14,
+   "LE": 6
+  },
+  "closure_lambda": 0.001
+ },
+ "exclusive": true,
+ "note": "continuation of runs/nest4_L4_cl0.45_om+1.0_fixed_p1_om+1.0s43/starts/start_000.pt (holdout rho_u 0.057840160671719015)",
+ "created": "2026-10-25T03:33:12Z",
+ "note_exclusive": "2026-10-25T04:01:36Z two L6 extended-channel jobs with closure rows reached 76 GB on one GPU (04:01Z): one per GPU from now on"
+}

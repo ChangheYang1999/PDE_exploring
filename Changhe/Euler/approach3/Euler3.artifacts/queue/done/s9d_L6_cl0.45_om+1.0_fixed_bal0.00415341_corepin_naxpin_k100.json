@@ -1,0 +1,60 @@
+{
+ "job_id": "s9d_L6_cl0.45_om+1.0_fixed_bal0.00415341_corepin_naxpin_k100",
+ "type": "continuation",
+ "stage": "I",
+ "priority": 12,
+ "max_retries": 6,
+ "config": {
+  "L": 6,
+  "Nk": 16,
+  "Nr": 48,
+  "m_parity": "even",
+  "R0": 0.3,
+  "formulation": "mom",
+  "c_l": 0.45,
+  "omega": 1.0,
+  "free_params": false,
+  "n_starts": 1,
+  "seed": 0,
+  "max_iter": 100,
+  "init_from": "runs/s9d_L6_cl0.45_om+1.0_fixed_bal0.00131342_corepin_naxpin_k10/starts/start_000.pt",
+  "perturb": 0.0,
+  "nl_weighting": true,
+  "sigmaZ": null,
+  "far_radii": [
+   4096.0,
+   16384.0,
+   65536.0
+  ],
+  "time_limit_per_start": 5400.0,
+  "chunk": 512,
+  "threads": 1,
+  "ftol": 1e-07,
+  "families": [
+   "init_from"
+  ],
+  "tail_constraints": true,
+  "sigmaZ_ramp_iters": 0,
+  "nl_denominator": "all5far",
+  "channels": {
+   "NkB": 4,
+   "NkD": 4,
+   "NkE": 4,
+   "core_damp": 2,
+   "LB": 15,
+   "LD": 14,
+   "LE": 6
+  },
+  "closure_lambda": 1.0,
+  "balance_lambda": 0.00415340820825342,
+  "core_pin": 1.0238682493647504,
+  "nonaxi_pin": [
+   0.12669032980835587,
+   0.08585749029527799
+  ],
+  "nonaxi_r_tail": 2.222583079787227
+ },
+ "exclusive": true,
+ "note": "continuation of runs/s9d_L6_cl0.45_om+1.0_fixed_bal0.00131342_corepin_naxpin_k10/starts/start_000.pt (holdout rho_u 0.04574309106184082)",
+ "created": "2026-10-26T11:23:45Z"
+}

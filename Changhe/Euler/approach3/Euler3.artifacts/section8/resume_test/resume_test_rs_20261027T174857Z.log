@@ -1,0 +1,10 @@
+worker pid 100019 started 17:48:57
+scripts/resume_test.sh: line 8: 100019 Killed                  .venv/bin/python scripts/worker.py $RD/job.json $RD > $RD/stdout1.log 2>&1
+killed -9 at 17:50:59; checkpoint: -rw-rw-r--. 1 ec2-user ec2-user 30803 Oct 27 17:50 runs/resume_test/checkpoint.pt
+checkpoint state: completed 0 current {'idx': 0, 'it': 230}
+second run exit 0
+2026-10-27T17:51:02Z RESUME from checkpoint: 0 starts completed, current=0, resumed 1x
+2026-10-27T17:51:03Z start 0: resuming at iteration 230
+2026-10-27T17:53:24Z start 0 done: rms 4.600e-03 -> 2.187e-04 (max_iter, 400 its, 68s) | c_l=0.4500 omega=1.0000 R_Om rms=3.214e-02 max=8.57e-02 |Om|max=1.22e-02 rot=0.00 tail_nonaxi=0.00 strain=-0.00 | gauge defect 2.22e-16 (optimizer 4.63e-06 before the exact projection) pivot defect 0.0
+2026-10-27T17:56:58Z start 1 done: rms 3.020e-03 -> 2.276e-04 (max_iter, 400 its, 156s) | c_l=0.4500 omega=1.0000 R_Om rms=3.345e-02 max=7.87e-02 |Om|max=2.08e-02 rot=0.00 tail_nonaxi=0.00 strain=-0.01 | gauge defect 1.11e-16 (optimizer 4.37e-06 before the exact projection) pivot defect 2.997226129644605e-16
+2026-10-27T17:56:58Z JOB DONE (2/2 starts, 356s total)

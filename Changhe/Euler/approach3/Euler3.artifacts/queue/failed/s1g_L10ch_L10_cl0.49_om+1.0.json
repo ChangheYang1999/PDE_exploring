@@ -1,0 +1,47 @@
+{
+ "job_id": "s1g_L10ch_L10_cl0.49_om+1.0",
+ "type": "multistart",
+ "stage": "I",
+ "priority": 5,
+ "max_retries": 2,
+ "config": {
+  "L": 10,
+  "Nk": 24,
+  "m_parity": "even",
+  "R0": 1.0,
+  "formulation": "mom",
+  "c_l": 0.49,
+  "omega": 1.0,
+  "free_params": false,
+  "n_starts": 4,
+  "seed": 7013,
+  "max_iter": 200,
+  "families": [
+   "random",
+   "tail",
+   "nonaxi",
+   "poloidal",
+   "toroidal",
+   "affine_core"
+  ],
+  "time_limit_per_start": 3600.0,
+  "chunk": 256,
+  "threads": 1,
+  "ftol": 1e-05,
+  "nl_weighting": true,
+  "efrac": null,
+  "optimizer": "lm",
+  "channels": {
+   "NkB": 6,
+   "NkD": 6,
+   "NkE": 6,
+   "core_damp": 2
+  },
+  "Nr": 60,
+  "tail_constraints": true
+ },
+ "created": "2026-10-24T18:35:24Z",
+ "exclusive": true,
+ "cancelled": "2026-10-24T23:35:12Z",
+ "cancel_note": "lead 23:06Z item 4: at most three parameter points per L=10 from-scratch sweep"
+}

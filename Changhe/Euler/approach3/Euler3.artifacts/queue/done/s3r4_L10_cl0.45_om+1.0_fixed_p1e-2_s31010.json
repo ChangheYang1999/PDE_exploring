@@ -1,0 +1,68 @@
+{
+ "job_id": "s3r4_L10_cl0.45_om+1.0_fixed_p1e-2_s31010",
+ "type": "continuation",
+ "stage": "III",
+ "priority": 7,
+ "max_retries": 0,
+ "config": {
+  "L": 10,
+  "Nk": 24,
+  "Nr": 72,
+  "m_parity": "even",
+  "R0": 0.3,
+  "formulation": "mom",
+  "c_l": 0.45,
+  "omega": 1.0,
+  "free_params": false,
+  "n_starts": 1,
+  "seed": 0,
+  "max_iter": 150,
+  "init_from": "runs/stage3_prep/perturb/r4_nest10_1e-2_s31010_rebound.pt",
+  "perturb": 0.0,
+  "nl_weighting": true,
+  "sigmaZ": null,
+  "far_radii": [
+   4096.0,
+   16384.0,
+   65536.0
+  ],
+  "time_limit_per_start": 36000.0,
+  "chunk": 64,
+  "threads": 1,
+  "ftol": 1e-07,
+  "families": [
+   "init_from"
+  ],
+  "tail_constraints": true,
+  "sigmaZ_ramp_iters": 0,
+  "nl_denominator": "all5far",
+  "channels": {
+   "NkB": 4,
+   "NkD": 4,
+   "NkE": 4,
+   "core_damp": 2,
+   "LB": 23,
+   "LD": 22,
+   "LE": 10
+  },
+  "closure_lambda": 0.001,
+  "jtj_blocks": 2,
+  "start_record": true
+ },
+ "exclusive": true,
+ "note": "Stage III R4 (CONDITIONAL S3-8; expected not run (GPU time)): 1e-2 F-preserving perturbation of nest10 (produced 2026-10-27T10:48Z by perturb_start.py 08a2300a, rebound by rebind_start_record_keys_v2.py 8a57a4bc; seed 31010)",
+ "stage3": {
+  "registration": "reports/STAGE3_REPLICATION_REGISTRATION_20261026.md",
+  "absolute_end": "2026-10-28T10:00:00Z",
+  "whole_job_cap_seconds": 43200,
+  "latest_launch": "2026-10-27T21:00:00Z",
+  "drafted": "2026-10-26T19:00:15Z",
+  "enqueue": "only if R1 to R3 have started and two GPUs are free by 2026-10-27T21:00Z; S3-1 record first",
+  "cap_watcher": "scripts/cap_watcher_v4_1.py --job s3r4_L10_cl0.45_om+1.0_fixed_p1e-2_s31010 --cap_seconds 43200 --abs_end 2026-10-28T10:00:00Z --poll 30 --grace 120",
+  "cap_watcher_version": "cap_watcher_v4.1",
+  "cap_watcher_sha256": "83a5d4208edce057020f5107ee1b52c99d9b27336459902d03be55b4c4262522",
+  "cap_watcher_note": "lead JJ/JK (2026-10-26T20:55:42Z): accepted for Stage III cap enforcement (conditional on the verifier's static audit); attach with grace 120 s, never the 5 s smoke grace; cite version and watcher_sha256 in every cap-dependent reading; the first production attachment may be recording-only (K7)",
+  "job_file_change": "2026-10-26T20:55:42Z: cap_watcher line changed from cap_watcher.py (withdrawn) to cap_watcher_v4_1.py",
+  "job_file_change_r4": "2026-10-27T10:52:04Z: init_from changed from r4_nest10_1e-2_s31010.pt (sha256 dcf14f0ba4f42da720e9bdfe2f40573bee8d47d597a5c32a05c23a4ec38c9c53) to r4_nest10_1e-2_s31010_rebound.pt (sha256 19453fae5b709de13e4ac29e6c288c2451d41f1a46d5d46268e5ccce0f63cc79; RB1-RB5 with --pivot saved --modes auto, lead JM (2); RB5 summary runs/stage3_prep/perturb/r3_rebind/RB5_r4_nest10_1e-2_s31010_20261027T105012Z.json, all_pass true; the same frozen start, rebound); the note text updated from \"to be produced\" to the production stamp; lead d128 OC item 2 (2026-10-27T10:45:21Z) decided the pair; pre-change file archived as reports/stage3_jobs/archive_pre_R4/s3r4_L10_cl0.45_om+1.0_fixed_p1e-2_s31010.json (sha256 4c6fe9c0a8db108ae8ea2a8a481cb81ff3ba09dbec02eb27cf8a84a16bc15214); nothing else changed"
+ }
+}

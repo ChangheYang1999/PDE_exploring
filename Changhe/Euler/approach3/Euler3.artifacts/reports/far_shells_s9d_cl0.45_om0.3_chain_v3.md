@@ -1,0 +1,16 @@
+pressure source: 48 source nodes, last source node r_last = 2240.9625 (7469.9 R0); far anchor evaluation radii [1228.8, 4915.2, 19660.8]
+  shell [512, 1.02e+03): source table (exterior integral beyond r_last from the source continuation)
+  shell [1.02e+03, 2.05e+03): source table (exterior integral beyond r_last from the source continuation)
+  shell [2.05e+03, 4.1e+03): straddles r_last: model beyond it
+  shell [4.1e+03, 8.19e+03): model (source from the envelope-times-Chebyshev continuation beyond the last source node)
+  shell [8.19e+03, 1.64e+04): model (source from the envelope-times-Chebyshev continuation beyond the last source node)
+  shell [1.64e+04, 3.28e+04): model (source from the envelope-times-Chebyshev continuation beyond the last source node)
+| state | rho_u [512,1.02e+03) | rho_u [1.02e+03,2.05e+03) | rho_u [2.05e+03,4.1e+03) straddles r_last | rho_u [4.1e+03,8.19e+03) MODEL | rho_u [8.19e+03,1.64e+04) MODEL | rho_u [1.64e+04,3.28e+04) MODEL | rho_nl^max (shell) | kappa 2^12 / 2^14 / 2^16 R0 | E_ren | H_tot/int|h| |
+|---|---|---|---|---|---|---|---|---|---|---|
+| s11_L6_cl0.45_om+0.3_fixed_cl1 | 1.776e-08 (nl 7.410e-02) | 2.355e-09 (nl 4.583e-02) | 3.138e-10 (nl 2.849e-02) | 4.354e-11 (nl 1.845e-02) | 6.271e-12 (nl 1.240e-02) | 9.106e-13 (nl 8.402e-03) | 5.492e-01 (8,16) | +0.586 / +0.871 / +0.944 | -1.2033 | -0.8907 |
+| s9d_L6_cl0.45_om+0.3_fixed_bal0.000117976_corepi | 1.776e-08 (nl 7.410e-02) | 2.356e-09 (nl 4.583e-02) | 3.138e-10 (nl 2.848e-02) | 4.353e-11 (nl 1.844e-02) | 6.268e-12 (nl 1.240e-02) | 9.104e-13 (nl 8.400e-03) | 5.492e-01 (8,16) | +0.585 / +0.870 / +0.944 | -1.2033 | -0.8907 |
+| s9d_L6_cl0.45_om+0.3_fixed_bal0.000373074_corepi | 1.844e-08 (nl 7.822e-02) | 2.409e-09 (nl 4.764e-02) | 3.136e-10 (nl 2.895e-02) | 4.288e-11 (nl 1.847e-02) | 6.226e-12 (nl 1.252e-02) | 9.235e-13 (nl 8.664e-03) | 4.866e-01 (8,16) | +0.597 / +0.881 / +0.947 | -0.9001 | -0.8225 |
+| s9d_L6_cl0.45_om+0.3_fixed_bal0.00117976_corepin | 5.371e-08 (nl 2.234e-01) | 6.663e-09 (nl 1.293e-01) | 8.226e-10 (nl 7.447e-02) | 1.039e-10 (nl 4.392e-02) | 1.361e-11 (nl 2.685e-02) | 1.815e-12 (nl 1.670e-02) | 2.287e+00 (8,16) | -1.366 / +0.243 / +0.729 | -0.6489 | -0.7336 |
+| s9d_L6_cl0.45_om+0.3_fixed_bal0.00373074_corepin | 1.786e-07 (nl 7.421e-01) | 2.261e-08 (nl 4.381e-01) | 2.829e-09 (nl 2.559e-01) | 3.532e-10 (nl 1.491e-01) | 4.426e-11 (nl 8.720e-02) | 5.576e-12 (nl 5.127e-02) | 3.892e+00 (16,32) | -11.851 / -3.285 / -0.486 | -0.5964 | -0.6944 |
+state files: s11_L6_cl0.45_om+0.3_fixed_cl1: runs/s11_L6_cl0.45_om+0.3_fixed_cl1/starts/start_000.pt sha256 0d70179077bd4c6c...; s9d_L6_cl0.45_om+0.3_fixed_bal0.000117976_corepin_naxpin_k0.1: runs/s9d_L6_cl0.45_om+0.3_fixed_bal0.000117976_corepin_naxpin_k0.1/starts/start_000.pt sha256 d3b5deb1333df0e2...; s9d_L6_cl0.45_om+0.3_fixed_bal0.000373074_corepin_naxpin_k1: runs/s9d_L6_cl0.45_om+0.3_fixed_bal0.000373074_corepin_naxpin_k1/starts/start_000.pt sha256 5d5c1fec9e76ff05...; s9d_L6_cl0.45_om+0.3_fixed_bal0.00117976_corepin_naxpin_k10: runs/s9d_L6_cl0.45_om+0.3_fixed_bal0.00117976_corepin_naxpin_k10/starts/start_000.pt sha256 df7b0aae9c0e828d...; s9d_L6_cl0.45_om+0.3_fixed_bal0.00373074_corepin_naxpin_k100: runs/s9d_L6_cl0.45_om+0.3_fixed_bal0.00373074_corepin_naxpin_k100/starts/start_000.pt sha256 0efa5ae58a2e3443...
+wrote reports/far_shells_s9d_cl0.45_om0.3_chain_v3.json

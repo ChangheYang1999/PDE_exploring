@@ -1,0 +1,801 @@
+{
+ "generated": "2026-10-25T23:11:15Z",
+ "label": "stage1",
+ "boundary": "2026-10-25T23:09:12Z",
+ "since": "2026-10-24T17:09:12Z",
+ "wall_hours": 30.0,
+ "note": "counts of ledger records, not of distinct random starts or accepted states; rows with ts after the boundary are not counted",
+ "jobs": {
+  "launched_distinct": 212,
+  "launches_incl_retries": 298,
+  "completed": 201,
+  "failed": 7,
+  "cancelled": 1,
+  "running_at_boundary": [
+   "nest10_L10_cl0.45_om+0.3_fixed_p0",
+   "nest10_L10_cl0.45_om+1.0_fixed_p0",
+   "s10_L6_cl0.45_om+1.0_fixed_both1",
+   "s10_L6_cl0.45_om+1.0_fixed_both10"
+  ],
+  "launched_without_terminal_record_not_running": [
+   "c2x2_L10_cl0.47_om+1.0_free",
+   "s1c_vortnlw_L6_cl0.41_om+0.3"
+  ],
+  "retries": 44,
+  "worker_errors": 42,
+  "resumes_from_checkpoint": 62,
+  "disposable_jobs": 13,
+  "free_parameter_jobs": 11,
+  "by_tag_launched": {
+   "c2x2": 9,
+   "c2x2b": 2,
+   "c2x2c": 6,
+   "c2x2split": 1,
+   "d6odd": 2,
+   "d6scan": 6,
+   "d6split": 1,
+   "d6tZ": 1,
+   "d6t": 2,
+   "d6u": 3,
+   "d6v": 2,
+   "d6w2": 2,
+   "d6w3": 3,
+   "d6w4": 1,
+   "d6w": 4,
+   "nest10": 2,
+   "nest10smoke": 3,
+   "nest2": 3,
+   "nest4": 9,
+   "nest6": 5,
+   "nest8": 6,
+   "nest8nk8": 1,
+   "nest8nk8smoke": 1,
+   "s10": 2,
+   "s10smoke": 2,
+   "s11smoke": 1,
+   "s12smoke": 1,
+   "s1a": 35,
+   "s1b_momnlw": 25,
+   "s1c_vortnlw": 24,
+   "s1j_R05": 9,
+   "s1k_sigmaZ": 9,
+   "s1nk": 4,
+   "s1r1": 1,
+   "s7a": 4,
+   "s7b": 2,
+   "s7c": 3,
+   "s8": 3,
+   "s8p": 2,
+   "s9": 1,
+   "s9b": 4,
+   "s9dsmoke": 1,
+   "smoke_kh": 2,
+   "val8dense": 1,
+   "val8split": 1
+  },
+  "by_tag_completed": {
+   "c2x2": 5,
+   "c2x2b": 2,
+   "c2x2c": 6,
+   "c2x2split": 1,
+   "d6odd": 2,
+   "d6scan": 6,
+   "d6split": 1,
+   "d6tZ": 1,
+   "d6t": 2,
+   "d6u": 3,
+   "d6v": 2,
+   "d6w2": 2,
+   "d6w3": 3,
+   "d6w4": 1,
+   "d6w": 4,
+   "nest10smoke": 3,
+   "nest2": 3,
+   "nest4": 9,
+   "nest6": 5,
+   "nest8": 6,
+   "nest8nk8": 1,
+   "nest8nk8smoke": 1,
+   "s10smoke": 1,
+   "s11smoke": 1,
+   "s12smoke": 1,
+   "s1a": 35,
+   "s1b_momnlw": 25,
+   "s1c_vortnlw": 23,
+   "s1j_R05": 9,
+   "s1k_sigmaZ": 9,
+   "s1nk": 4,
+   "s1r1": 1,
+   "s7a": 4,
+   "s7b": 2,
+   "s7c": 3,
+   "s8": 3,
+   "s8p": 2,
+   "s9": 1,
+   "s9b": 4,
+   "s9dsmoke": 1,
+   "smoke_kh": 1,
+   "val8dense": 1,
+   "val8split": 1
+  },
+  "failed_ids": [
+   "c2x2_L10_cl0.47_om+1.0_fixed",
+   "c2x2_L6_cl0.45_om+1.0_free",
+   "c2x2_L6_cl0.47_om+1.0_free",
+   "c2x2_L8_cl0.47_om+1.0_fixed",
+   "d6odd_L6_cl0.45_om+0.3_fixed_m1e-2",
+   "s10smoke_L6_cl0.45_om+1.0_fixed_both1",
+   "smoke_kh_L4_cl0.45_om+1.0_fixed_v124"
+  ],
+  "cancelled_ids": [
+   "nest10smoke_L10_cl0.45_om+1.0_fixed"
+  ]
+ },
+ "starts": {
+  "total": 892,
+  "by_status": {
+   "max_iter": 490,
+   "ftol": 346,
+   "stalled": 47,
+   "time_limit": 9
+  },
+  "by_L": {
+   "6": 642,
+   "4": 43,
+   "2": 187,
+   "10": 4,
+   "8": 16
+  },
+  "by_Nk": {
+   "16": 638,
+   "10": 19,
+   "4": 7,
+   "24": 6,
+   "8": 181,
+   "20": 16,
+   "12": 23,
+   "32": 2
+  },
+  "by_m_parity": {
+   "even": 888,
+   "all": 4
+  },
+  "by_L_and_parity": {
+   "L10 even": 4,
+   "L2 even": 187,
+   "L4 all": 2,
+   "L4 even": 41,
+   "L6 all": 2,
+   "L6 even": 640,
+   "L8 even": 16
+  },
+  "by_formulation": {
+   "vort": 357,
+   "mom": 534,
+   "both": 1
+  },
+  "by_seed_family": {
+   "tail": 127,
+   "random": 243,
+   "nonaxi": 134,
+   "poloidal": 124,
+   "toroidal": 114,
+   "affine_core": 50,
+   "init_from": 100
+  },
+  "by_nl_denominator": {
+   "None": 528,
+   "all5": 257,
+   "all5far": 98,
+   "nl": 6,
+   "split": 3
+  },
+  "by_solver_version": {
+   "v1": 328,
+   "v2-untagged": 67,
+   "v3-2026-10-24T19:12Z": 95,
+   "v4-2026-10-24T20:35Z": 12,
+   "v5-2026-10-24T21:05Z": 390
+  },
+  "by_parameter_mode": {
+   "fixed (c_l, omega)": 883,
+   "free (c_l, omega)": 9
+  },
+  "total_start_wall_hours": 99.95,
+  "by_lineage_hours": {
+   "pilot": 0.8,
+   "s1": 30.87,
+   "resume": 1.06,
+   "wtest": 0.03,
+   "c2x2": 0.98,
+   "c2x2b": 0.51,
+   "d6": 22.15,
+   "c2x2c": 5.46,
+   "smoke": 0.04,
+   "c2x2split": 0.09,
+   "nest": 31.83,
+   "s7": 1.19,
+   "s8": 3.11,
+   "s9": 1.82
+  },
+  "by_lineage_starts": {
+   "pilot": 10,
+   "s1": 584,
+   "resume": 10,
+   "wtest": 8,
+   "c2x2": 5,
+   "c2x2b": 2,
+   "d6": 27,
+   "c2x2c": 6,
+   "smoke": 15,
+   "c2x2split": 1,
+   "nest": 204,
+   "s7": 9,
+   "s8": 5,
+   "s9": 6
+  },
+  "distinct_cl_omega_points": 49,
+  "cl_omega_points": [
+   {
+    "c_l": 0.41,
+    "omega": -3.0,
+    "omega_over_cl": -7.3171,
+    "starts": 6,
+    "ranked": 0
+   },
+   {
+    "c_l": 0.41,
+    "omega": -0.3,
+    "omega_over_cl": -0.7317,
+    "starts": 6,
+    "ranked": 0
+   },
+   {
+    "c_l": 0.41,
+    "omega": 0.1,
+    "omega_over_cl": 0.2439,
+    "starts": 18,
+    "ranked": 12
+   },
+   {
+    "c_l": 0.41,
+    "omega": 0.3,
+    "omega_over_cl": 0.7317,
+    "starts": 13,
+    "ranked": 7
+   },
+   {
+    "c_l": 0.41,
+    "omega": 1.0,
+    "omega_over_cl": 2.439,
+    "starts": 18,
+    "ranked": 12
+   },
+   {
+    "c_l": 0.41,
+    "omega": 3.0,
+    "omega_over_cl": 7.3171,
+    "starts": 18,
+    "ranked": 12
+   },
+   {
+    "c_l": 0.41,
+    "omega": 10.0,
+    "omega_over_cl": 24.3902,
+    "starts": 18,
+    "ranked": 12
+   },
+   {
+    "c_l": 0.42,
+    "omega": 0.3,
+    "omega_over_cl": 0.7143,
+    "starts": 65,
+    "ranked": 57
+   },
+   {
+    "c_l": 0.43,
+    "omega": -3.0,
+    "omega_over_cl": -6.9767,
+    "starts": 6,
+    "ranked": 0
+   },
+   {
+    "c_l": 0.43,
+    "omega": -0.3,
+    "omega_over_cl": -0.6977,
+    "starts": 6,
+    "ranked": 0
+   },
+   {
+    "c_l": 0.43,
+    "omega": 0.1,
+    "omega_over_cl": 0.2326,
+    "starts": 18,
+    "ranked": 12
+   },
+   {
+    "c_l": 0.43,
+    "omega": 0.3,
+    "omega_over_cl": 0.6977,
+    "starts": 26,
+    "ranked": 20
+   },
+   {
+    "c_l": 0.43,
+    "omega": 1.0,
+    "omega_over_cl": 2.3256,
+    "starts": 26,
+    "ranked": 19
+   },
+   {
+    "c_l": 0.43,
+    "omega": 3.0,
+    "omega_over_cl": 6.9767,
+    "starts": 26,
+    "ranked": 19
+   },
+   {
+    "c_l": 0.43,
+    "omega": 10.0,
+    "omega_over_cl": 23.2558,
+    "starts": 18,
+    "ranked": 12
+   },
+   {
+    "c_l": 0.4498,
+    "omega": 0.9015,
+    "omega_over_cl": 2.0042,
+    "starts": 1,
+    "ranked": 0
+   },
+   {
+    "c_l": 0.45,
+    "omega": -3.0,
+    "omega_over_cl": -6.6667,
+    "starts": 6,
+    "ranked": 0
+   },
+   {
+    "c_l": 0.45,
+    "omega": -0.3,
+    "omega_over_cl": -0.6667,
+    "starts": 6,
+    "ranked": 0
+   },
+   {
+    "c_l": 0.45,
+    "omega": 0.1,
+    "omega_over_cl": 0.2222,
+    "starts": 12,
+    "ranked": 6
+   },
+   {
+    "c_l": 0.45,
+    "omega": 0.2065,
+    "omega_over_cl": 0.4589,
+    "starts": 1,
+    "ranked": 0
+   },
+   {
+    "c_l": 0.45,
+    "omega": 0.3,
+    "omega_over_cl": 0.6667,
+    "starts": 131,
+    "ranked": 115
+   },
+   {
+    "c_l": 0.45,
+    "omega": 0.3014,
+    "omega_over_cl": 0.6698,
+    "starts": 1,
+    "ranked": 0
+   },
+   {
+    "c_l": 0.45,
+    "omega": 0.3232,
+    "omega_over_cl": 0.7182,
+    "starts": 1,
+    "ranked": 0
+   },
+   {
+    "c_l": 0.45,
+    "omega": 0.533,
+    "omega_over_cl": 1.1844,
+    "starts": 1,
+    "ranked": 0
+   },
+   {
+    "c_l": 0.45,
+    "omega": 0.9205,
+    "omega_over_cl": 2.0456,
+    "starts": 1,
+    "ranked": 0
+   },
+   {
+    "c_l": 0.45,
+    "omega": 1.0,
+    "omega_over_cl": 2.2222,
+    "starts": 154,
+    "ranked": 96
+   },
+   {
+    "c_l": 0.45,
+    "omega": 3.0,
+    "omega_over_cl": 6.6667,
+    "starts": 27,
+    "ranked": 21
+   },
+   {
+    "c_l": 0.45,
+    "omega": 10.0,
+    "omega_over_cl": 22.2222,
+    "starts": 18,
+    "ranked": 6
+   },
+   {
+    "c_l": 0.4509,
+    "omega": 1.0001,
+    "omega_over_cl": 2.218,
+    "starts": 1,
+    "ranked": 0
+   },
+   {
+    "c_l": 0.4518,
+    "omega": 0.368,
+    "omega_over_cl": 0.8145,
+    "starts": 1,
+    "ranked": 0
+   },
+   {
+    "c_l": 0.46,
+    "omega": 0.3,
+    "omega_over_cl": 0.6522,
+    "starts": 1,
+    "ranked": 1
+   },
+   {
+    "c_l": 0.47,
+    "omega": -3.0,
+    "omega_over_cl": -6.383,
+    "starts": 6,
+    "ranked": 0
+   },
+   {
+    "c_l": 0.47,
+    "omega": -0.3,
+    "omega_over_cl": -0.6383,
+    "starts": 6,
+    "ranked": 0
+   },
+   {
+    "c_l": 0.47,
+    "omega": 0.1,
+    "omega_over_cl": 0.2128,
+    "starts": 18,
+    "ranked": 12
+   },
+   {
+    "c_l": 0.47,
+    "omega": 0.3,
+    "omega_over_cl": 0.6383,
+    "starts": 27,
+    "ranked": 20
+   },
+   {
+    "c_l": 0.47,
+    "omega": 1.0,
+    "omega_over_cl": 2.1277,
+    "starts": 32,
+    "ranked": 23
+   },
+   {
+    "c_l": 0.47,
+    "omega": 3.0,
+    "omega_over_cl": 6.383,
+    "starts": 26,
+    "ranked": 16
+   },
+   {
+    "c_l": 0.47,
+    "omega": 10.0,
+    "omega_over_cl": 21.2766,
+    "starts": 18,
+    "ranked": 12
+   },
+   {
+    "c_l": 0.4707,
+    "omega": 0.9965,
+    "omega_over_cl": 2.1171,
+    "starts": 1,
+    "ranked": 0
+   },
+   {
+    "c_l": 0.475,
+    "omega": 0.3,
+    "omega_over_cl": 0.6316,
+    "starts": 1,
+    "ranked": 1
+   },
+   {
+    "c_l": 0.48,
+    "omega": 0.3,
+    "omega_over_cl": 0.625,
+    "starts": 2,
+    "ranked": 2
+   },
+   {
+    "c_l": 0.49,
+    "omega": -3.0,
+    "omega_over_cl": -6.1224,
+    "starts": 6,
+    "ranked": 0
+   },
+   {
+    "c_l": 0.49,
+    "omega": -0.3,
+    "omega_over_cl": -0.6122,
+    "starts": 6,
+    "ranked": 0
+   },
+   {
+    "c_l": 0.49,
+    "omega": 0.1,
+    "omega_over_cl": 0.2041,
+    "starts": 18,
+    "ranked": 12
+   },
+   {
+    "c_l": 0.49,
+    "omega": 0.3,
+    "omega_over_cl": 0.6122,
+    "starts": 19,
+    "ranked": 11
+   },
+   {
+    "c_l": 0.49,
+    "omega": 1.0,
+    "omega_over_cl": 2.0408,
+    "starts": 18,
+    "ranked": 9
+   },
+   {
+    "c_l": 0.49,
+    "omega": 3.0,
+    "omega_over_cl": 6.1224,
+    "starts": 18,
+    "ranked": 10
+   },
+   {
+    "c_l": 0.49,
+    "omega": 10.0,
+    "omega_over_cl": 20.4082,
+    "starts": 18,
+    "ranked": 6
+   },
+   {
+    "c_l": 0.499,
+    "omega": 0.2702,
+    "omega_over_cl": 0.5415,
+    "starts": 1,
+    "ranked": 0
+   }
+  ]
+ },
+ "ranking": {
+  "excluded": {
+   "no ranking key (rho_u_max_holdout, rho_u_max and rms_final all missing)": 0,
+   "disposable id (smoke, lm-only, val8/wtest, resume test)": 40,
+   "free-parameter job (ranked only after a fixed-parameter evaluation, SPEC 7.3)": 8,
+   "trivial or failed state (max|Omega| <= 1e-6, rotation content <= 1e-3, failure flag, max|U| <= 1e-6 or gauge defect > 1e-3)": 271
+  },
+  "ranked": 573,
+  "ranked_pre_1939Z_rows_not_used_for_ranked_claims": 157,
+  "ranked_rows_flagged_by_correction_records": 0,
+  "ranked_latest_solver_version_only": 320,
+  "ranked_rows_after_shortlist_generation": {
+   "shortlist_generated": "2026-10-25T20:17Z",
+   "rows": [
+    {
+     "job": "nest8nk8_L8_cl0.45_om+1.0_fixed/0",
+     "ts": "2026-10-25T22:56:04Z",
+     "rank_key": 0.04082122895411087,
+     "c_l": 0.45,
+     "omega": 1.0,
+     "L": 8
+    },
+    {
+     "job": "nest8_L8_cl0.42_om+0.3_fixed_p0_cont150/0",
+     "ts": "2026-10-25T20:57:07Z",
+     "rank_key": 0.061544848816123474,
+     "c_l": 0.42,
+     "omega": 0.3,
+     "L": 8
+    }
+   ]
+  },
+  "latest_solver_version": "v5-2026-10-24T21:05Z",
+  "descriptor_bins": 214,
+  "bin_load_errors": 0,
+  "best_ranked": [
+   {
+    "job": "nest8nk8_L8_cl0.45_om+1.0_fixed/0",
+    "rank_key": 0.04082122895411087,
+    "c_l": 0.45,
+    "omega": 1.0,
+    "L": 8,
+    "ts": "2026-10-25T22:56:04Z"
+   },
+   {
+    "job": "nest8_L8_cl0.45_om+1.0_fixed_p0_cont150/0",
+    "rank_key": 0.04366996951389345,
+    "c_l": 0.45,
+    "omega": 1.0,
+    "L": 8,
+    "ts": "2026-10-25T14:42:47Z"
+   },
+   {
+    "job": "nest8_L8_cl0.45_om+1.0_fixed_p0/0",
+    "rank_key": 0.043931452775638605,
+    "c_l": 0.45,
+    "omega": 1.0,
+    "L": 8,
+    "ts": "2026-10-25T12:50:50Z"
+   },
+   {
+    "job": "d6w_L8_cl0.45_om+0.3_fixed/0",
+    "rank_key": 0.04423111353152404,
+    "c_l": 0.45,
+    "omega": 0.3,
+    "L": 8,
+    "ts": "2026-10-25T02:48:59Z"
+   },
+   {
+    "job": "s1nk_L6_cl0.45_om+1.0_fixed_Nk32/0",
+    "rank_key": 0.045101671519358275,
+    "c_l": 0.45,
+    "omega": 1.0,
+    "L": 6,
+    "ts": "2026-10-25T17:33:06Z"
+   }
+  ],
+  "bins_by_lineage": {
+   "nest": 29,
+   "D6": 5,
+   "other": 178,
+   "balance": 2
+  }
+ },
+ "gpu": {
+  "gpus": [
+   0,
+   1,
+   4,
+   5
+  ],
+  "per_gpu": {
+   "0": {
+    "process_hours": 32.73,
+    "of_which_jobs_still_running_at_boundary": 2.2,
+    "launches": 65,
+    "distinct_jobs": 54,
+    "busy_wall_hours": 28.5,
+    "mean_concurrency_when_busy": 1.15,
+    "max_concurrency": 2,
+    "hours_at_concurrency": {
+     "1": 24.27,
+     "2": 4.23
+    },
+    "idle_hours": 1.5
+   },
+   "1": {
+    "process_hours": 36.95,
+    "of_which_jobs_still_running_at_boundary": 5.65,
+    "launches": 83,
+    "distinct_jobs": 63,
+    "busy_wall_hours": 28.72,
+    "mean_concurrency_when_busy": 1.29,
+    "max_concurrency": 2,
+    "hours_at_concurrency": {
+     "1": 20.48,
+     "2": 8.24
+    },
+    "idle_hours": 1.28
+   },
+   "4": {
+    "process_hours": 40.99,
+    "of_which_jobs_still_running_at_boundary": 0.21,
+    "launches": 88,
+    "distinct_jobs": 75,
+    "busy_wall_hours": 28.65,
+    "mean_concurrency_when_busy": 1.43,
+    "max_concurrency": 2,
+    "hours_at_concurrency": {
+     "1": 16.3,
+     "2": 12.35
+    },
+    "idle_hours": 1.35
+   },
+   "5": {
+    "process_hours": 34.75,
+    "of_which_jobs_still_running_at_boundary": 6.08,
+    "launches": 62,
+    "distinct_jobs": 46,
+    "busy_wall_hours": 29.03,
+    "mean_concurrency_when_busy": 1.2,
+    "max_concurrency": 3,
+    "hours_at_concurrency": {
+     "1": 23.77,
+     "2": 4.81,
+     "3": 0.45
+    },
+    "idle_hours": 0.97
+   }
+  },
+  "allocated_gpu_hours": {
+   "value": 120.0,
+   "definition": "4 GPUs x elapsed wall clock from T0 2026-10-24T17:09:12Z to the boundary 2026-10-25T23:09:12Z (30.0 h); the primary resource figure"
+  },
+  "ledger_busy_gpu_wall_hours": {
+   "value": 114.9,
+   "definition": "sum over GPUs of the wall time during which at least one ledger launch -> first-exit interval was open (an activity proxy; never added to the other two figures)"
+  },
+  "ledger_process_hours": {
+   "value": 145.42,
+   "definition": "sum over launches of (first exit record - launch), 1 to 3 processes per GPU (an activity proxy; never added to the other two figures)"
+  },
+  "jobs_without_exit_record": {
+   "running_at_boundary_clipped": [
+    "nest10_L10_cl0.45_om+1.0_fixed_p0",
+    "nest10_L10_cl0.45_om+0.3_fixed_p0",
+    "s10_L6_cl0.45_om+1.0_fixed_both1",
+    "s10_L6_cl0.45_om+1.0_fixed_both10"
+   ],
+   "relaunched_without_exit_record_end_at_relaunch": [
+    [
+     "c2x2_L10_cl0.47_om+1.0_fixed",
+     "2026-10-24T20:49:50Z",
+     5
+    ],
+    [
+     "c2x2_L10_cl0.47_om+1.0_free",
+     "2026-10-24T21:12:38Z",
+     4
+    ],
+    [
+     "c2x2_L10_cl0.47_om+1.0_free",
+     "2026-10-24T21:17:07Z",
+     5
+    ],
+    [
+     "c2x2c_L6_cl0.45_om+1.0_free",
+     "2026-10-24T22:33:00Z",
+     5
+    ]
+   ]
+  },
+  "gpu_slot_minutes_of_completed_jobs": 7264.7,
+  "launches_with_end_inferred_from_relaunch": [
+   [
+    "c2x2_L10_cl0.47_om+1.0_fixed",
+    "2026-10-24T20:49:50Z",
+    5
+   ],
+   [
+    "c2x2_L10_cl0.47_om+1.0_free",
+    "2026-10-24T21:12:38Z",
+    4
+   ],
+   [
+    "c2x2_L10_cl0.47_om+1.0_free",
+    "2026-10-24T21:17:07Z",
+    5
+   ],
+   [
+    "c2x2c_L6_cl0.45_om+1.0_free",
+    "2026-10-24T22:33:00Z",
+    5
+   ]
+  ],
+  "method": "launch record -> first exit record (job_end/job_error/job_retry/job_done/job_failed/job_cancelled) of the same job, clipped at the boundary; 1 to 3 processes per GPU (slots_per_gpu 2 plus ad hoc evaluations are not in the ledger); exclusive jobs hold a whole GPU"
+ }
+}

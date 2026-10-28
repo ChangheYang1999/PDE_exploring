@@ -1,0 +1,54 @@
+{
+ "job_id": "s5r0_L8_cl0.45_om+1.0_fixed_R0p15",
+ "type": "continuation",
+ "stage": "I",
+ "priority": 6,
+ "max_retries": 6,
+ "config": {
+  "L": 8,
+  "Nk": 20,
+  "Nr": 60,
+  "m_parity": "even",
+  "R0": 0.15,
+  "formulation": "mom",
+  "c_l": 0.45,
+  "omega": 1.0,
+  "free_params": false,
+  "n_starts": 1,
+  "seed": 0,
+  "max_iter": 150,
+  "init_from": "runs/stage3_prep/cont150_om1_R0_0.15.pt",
+  "perturb": 0.0,
+  "nl_weighting": true,
+  "sigmaZ": null,
+  "far_radii": [
+   4096.0,
+   16384.0,
+   65536.0
+  ],
+  "time_limit_per_start": 9000.0,
+  "chunk": 128,
+  "threads": 1,
+  "ftol": 1e-07,
+  "families": [
+   "init_from"
+  ],
+  "tail_constraints": true,
+  "sigmaZ_ramp_iters": 0,
+  "nl_denominator": "all5far",
+  "channels": {
+   "NkB": 4,
+   "NkD": 4,
+   "NkE": 4,
+   "core_damp": 2,
+   "LB": 19,
+   "LD": 18,
+   "LE": 8
+  },
+  "closure_lambda": 0.001
+ },
+ "exclusive": true,
+ "note": "continuation of runs/stage3_prep/cont150_om1_R0_0.15.pt (holdout rho_u 0.04366996951389345)",
+ "created": "2026-10-26T10:54:13Z",
+ "hold_reason": "held 2026-10-26T17:15:26Z (shift 10): the group (i) re-expanded R0 variants s5r0_L6_cl0.45_om+1.0_fixed_R0p6 (DONE 17:06:57Z, LM status xtol after one accepted step, non-PDE row cost of the re-expanded start 0.3699 against a PDE cost 4.48e-8; the step raised max|U| from 1.23 to 15.25: an amplitude blow-up, a failed re-solve) and R0p15 (LM released after iteration 0) failed as re-solves; this re-expanded warm start is held until the non-PDE row cost of the re-expanded starts is diagnosed and the lead rules on a corrected warm start (rule AU). Not a failure of this job and not a reading; release with scripts/release_hold.sh or by moving the file back to queue/pending."
+}

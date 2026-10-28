@@ -1,0 +1,40 @@
+{
+ "job_id": "s1d_efrac05_L6_cl0.41_om+0.1",
+ "type": "multistart",
+ "stage": "I",
+ "priority": 7,
+ "max_retries": 2,
+ "config": {
+  "L": 6,
+  "Nk": 16,
+  "m_parity": "even",
+  "R0": 1.0,
+  "formulation": "mom",
+  "c_l": 0.41,
+  "omega": 0.1,
+  "free_params": false,
+  "n_starts": 6,
+  "seed": 4000,
+  "max_iter": 200,
+  "families": [
+   "random",
+   "tail",
+   "nonaxi",
+   "poloidal",
+   "toroidal",
+   "random"
+  ],
+  "time_limit_per_start": 1500,
+  "chunk": 512,
+  "threads": 1,
+  "ftol": 1e-05,
+  "nl_weighting": true,
+  "efrac": 0.5,
+  "optimizer": "lm",
+  "Nr": 40,
+  "tail_constraints": true,
+  "nl_denominator": "all5"
+ },
+ "created": "2026-10-24T18:14:53Z",
+ "converted": "2026-10-24T23:35:12Z lead 23:06Z item 4: nl -> all5, tail constraints on"
+}

@@ -1,0 +1,50 @@
+{
+ "job_id": "c2x2c_L6_cl0.45_om+1.0_free",
+ "type": "continuation",
+ "stage": "I",
+ "priority": 12,
+ "max_retries": 6,
+ "config": {
+  "L": 6,
+  "Nk": 16,
+  "Nr": 48,
+  "m_parity": "even",
+  "R0": 1.0,
+  "formulation": "mom",
+  "c_l": 0.45,
+  "omega": 1.0,
+  "free_params": true,
+  "n_starts": 1,
+  "seed": 0,
+  "max_iter": 300,
+  "init_from": "runs/s1k_sigmaZ_L6_cl0.45_om+1.0/starts/start_000.pt",
+  "perturb": 0.0,
+  "nl_weighting": true,
+  "sigmaZ": 1.0,
+  "far_radii": [
+   4096.0,
+   16384.0,
+   65536.0
+  ],
+  "time_limit_per_start": 7200,
+  "chunk": 256,
+  "threads": 1,
+  "ftol": 1e-07,
+  "families": [
+   "init_from"
+  ],
+  "tail_constraints": true,
+  "sigmaZ_ramp_iters": 60,
+  "nl_denominator": "all5"
+ },
+ "exclusive": false,
+ "note": "continuation of runs/s1k_sigmaZ_L6_cl0.45_om+1.0/starts/start_000.pt (holdout rho_u 0.4052920870632903)",
+ "created": "2026-10-24T22:02:39Z",
+ "retries": 1,
+ "failures": [
+  {
+   "ts": "2026-10-24T23:02:16Z",
+   "reason": "supervisor_stop"
+  }
+ ]
+}

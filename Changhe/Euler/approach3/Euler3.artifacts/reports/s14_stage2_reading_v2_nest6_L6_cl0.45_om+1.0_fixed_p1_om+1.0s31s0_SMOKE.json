@@ -1,0 +1,210 @@
+{
+ "tool": "s14_stage2_reading_v2.py",
+ "tool_sha256": "d4b98167f0adb2c37860682d4366e365684dcec087b281a796022d6d5322d1c9",
+ "smoke": true,
+ "smoke_relaxed_checks": [
+  {
+   "check": "registered-set membership",
+   "registered": "one of s14b_L6_cl0.45_om+0.3_fixed_p0_om+0.3s6, s14b_L6_cl0.45_om+1.0_fixed_p0_om+1.0s5, s14b_L6_cl0.42_om+0.3_fixed_p0_om+0.3s5, s14b_L6_cl0.48_om+1.0_fixed_p0_om+1.0s7",
+   "found": "nest6_L6_cl0.45_om+1.0_fixed_p1_om+1.0s31s0"
+  },
+  {
+   "check": "target m_parity",
+   "registered": "all",
+   "found": "even"
+  },
+  {
+   "check": "target max_iter",
+   "registered": 300,
+   "found": 600
+  },
+  {
+   "check": "source m_parity",
+   "registered": "all",
+   "found": "even"
+  }
+ ],
+ "job": "nest6_L6_cl0.45_om+1.0_fixed_p1_om+1.0s31s0",
+ "registered": "SMOKE: registered-set membership relaxed (registered: one of the four s14b jobs; found: the registered smoke target)",
+ "c_l": 0.45,
+ "omega": 1.0,
+ "config": {
+  "L": 6,
+  "Nk": 16,
+  "Nr": 48,
+  "m_parity": "even",
+  "channels": {
+   "NkB": 4,
+   "NkD": 4,
+   "NkE": 4,
+   "core_damp": 2,
+   "LB": 15,
+   "LD": 14,
+   "LE": 6
+  },
+  "closure_lambda": 0.001,
+  "nl_denominator": "all5far",
+  "max_iter": 600,
+  "time_limit_per_start": 7200,
+  "chunk": 256
+ },
+ "init_from": "runs/nest4_L4_cl0.45_om+1.0_fixed_p0_om+1.0s31/starts/start_000.pt",
+ "source": {
+  "job": "nest4_L4_cl0.45_om+1.0_fixed_p0_om+1.0s31",
+  "start": 0,
+  "family": "init_from",
+  "rng_seed": 0,
+  "L": 4,
+  "Nk": 12,
+  "m_parity": "even",
+  "holdout": {
+   "std": 0.05789567045245206,
+   "half": 0.05844623714362567,
+   "open": null
+  },
+  "status": "max_iter",
+  "iterations": 300,
+  "max_iter": 300,
+  "time_limit_per_start": 7200
+ },
+ "status": "ftol",
+ "iterations": 111,
+ "lm_seconds": 1295.2683532238007,
+ "job_start": "2026-10-25T06:31:37Z",
+ "job_done": "2026-10-25T07:17:06Z",
+ "whole_job_seconds": 2729.0,
+ "holdout": {
+  "std": 0.05155780910342347,
+  "half": 0.05124314297859359,
+  "open": null
+ },
+ "v10": 0.007653685081050603,
+ "rms_mom": 0.09647566627152518,
+ "cost_final": 5.225172192249399e-07,
+ "rho_nl_max_holdout": 3.3560366353843043,
+ "max_U": 1.1536174525835319,
+ "max_abs_Omega": 11.848604541531959,
+ "core_resolved": true,
+ "a_max_core": 1.2743979932230505,
+ "sigma_u_max_core": 0.5102344046253132,
+ "sigma_Om": 0.4561271639200978,
+ "a_eff": 0.27489655218144565,
+ "E_ren": -1.9223367273211807,
+ "H_tot_over_abs": -0.7884112606298208,
+ "K_E_ratio": null,
+ "K_H_ratio": null,
+ "G_carried_mismatch_rel": 0.4664697466018251,
+ "Q_sw": 1.1984342655916738,
+ "tau_F_R8": 0.6286178583571046,
+ "rotation_content_rel": 0.43373354801847086,
+ "collapse_check": {
+  "values": {
+   "N_core": {
+    "L4": 0.4759802340479279,
+    "L6": 0.6179058655738184,
+    "ratio_L6_over_L4": 1.2981754732100905,
+    "collapsing": false,
+    "warning": false
+   },
+   "N_F": {
+    "L4": 0.387304126469612,
+    "L6": 0.4103909062347675,
+    "ratio_L6_over_L4": 1.0596089176110726,
+    "collapsing": false,
+    "warning": false
+   },
+   "e_core": {
+    "L4": 0.056042252804077014,
+    "L6": 0.08579026818316256,
+    "ratio_L6_over_L4": 1.5308140535157324,
+    "collapsing": false,
+    "warning": false
+   },
+   "e_F": {
+    "L4": 0.03700266144149496,
+    "L6": 0.038433889512784605,
+    "ratio_L6_over_L4": 1.0386790575470515,
+    "collapsing": false,
+    "warning": false
+   }
+  },
+  "collapsing": false,
+  "warning": false,
+  "verdict": "not collapsing",
+  "rule": "SPEC 7.4: warning if N_core < 1e-2, N_F < 1e-2, e_core < 1e-4 or e_F < 1e-4; collapsing if any of the four decreases by more than 2x per refinement level (L4 -> L6); OPEN if any input is missing or non-finite or an L4 value is not positive"
+ },
+ "odd_m_L6": {
+  "path": "reports/oddm/oddm_nest6_L6_cl0.45_om+1.0_fixed_p1_om+1.0s31s0_0.json",
+  "sha256": "811bcc47caa41ac3084c5c0049f1b7e9087faf41e678688f9824597e7fe9ce49",
+  "bound": true,
+  "reason": "bound",
+  "values": {
+   "energy_all": 0.0,
+   "energy_core": 0.0,
+   "energy_tail": 0.0,
+   "amp_U": 0.0,
+   "amp_Omega": 0.0,
+   "amp_DU": 0.0,
+   "coef_norm_fraction": 0.0
+  }
+ },
+ "odd_m_L4": {
+  "path": "reports/oddm/oddm_nest4_L4_cl0.45_om+1.0_fixed_p0_om+1.0s31_0.json",
+  "sha256": "282532f25e3c12d81103377a398e9f6f5c2f8eb1338dd57dd9bc51456e646f68",
+  "bound": true,
+  "reason": "bound",
+  "values": {
+   "energy_all": 0.0,
+   "energy_core": 0.0,
+   "energy_tail": 0.0,
+   "amp_U": 0.0,
+   "amp_Omega": 0.0,
+   "amp_DU": 0.0,
+   "coef_norm_fraction": 0.0
+  }
+ },
+ "comparator": {
+  "comparator": "nest6_L6_cl0.45_om+1.0_fixed_p0_om+1.0s43s0",
+  "queue_file": "queue/done/nest6_L6_cl0.45_om+1.0_fixed_p0_om+1.0s43s0.json",
+  "arm_reading_json": "reports/arm_reading_nest6_L6_cl0.45_om+1.0_fixed_p0_om+1.0s43s0.json",
+  "arm_reading_sha256": "851be8d137a7b8923e5dceae2f7bce6a12492a4a98110a5e87e95504f729468c",
+  "code_versions": null,
+  "holdout": {
+   "std": 0.04604329400049428,
+   "half": 0.04630453544302656,
+   "open": null
+  },
+  "max_iter": 600,
+  "time_limit_per_start": 7200,
+  "iterations": 600,
+  "status": "max_iter",
+  "target_arm_reading_json": "reports/arm_reading_nest6_L6_cl0.45_om+1.0_fixed_p1_om+1.0s31s0.json",
+  "target_arm_reading_sha256": "4be05e172c5e192be2bf905c86f46bce542ad7de349c92e1407870d8b5bd381e",
+  "order": {
+   "order_json": "reports/order_73b_nest6_L6_cl0.45_om+1.0_fixed_p1_om+1.0s31s0__vs__nest6_L6_cl0.45_om+1.0_fixed_p0_om+1.0s43s0.json",
+   "order_json_sha256": "ab8b60d411b49c8511b2b22f1e51f0da6f05bc07b92c076edb3576dccd985bcf",
+   "command": ".venv/bin/python scripts/order_73b.py nest6_L6_cl0.45_om+1.0_fixed_p1_om+1.0s31s0 nest6_L6_cl0.45_om+1.0_fixed_p0_om+1.0s43s0 --json reports/order_73b_nest6_L6_cl0.45_om+1.0_fixed_p1_om+1.0s31s0__vs__nest6_L6_cl0.45_om+1.0_fixed_p0_om+1.0s43s0.json",
+   "returncode": 0,
+   "pair": {
+    "relation": "<",
+    "words": "nest6_L6_cl0.45_om+1.0_fixed_p0_om+1.0s43s0 ahead of nest6_L6_cl0.45_om+1.0_fixed_p1_om+1.0s31s0",
+    "ratios": [
+     1.1197680405504868,
+     1.106654941860793,
+     1.1428946285581505,
+     1.1226306015270349,
+     2.2857031654127438
+    ]
+   },
+   "stdout_table": [
+    "| X | Y | holdout std X/Y | holdout half X/Y | core sigma_u X/Y | sigma_Om X/Y | core a_max X/Y | resolved X / Y | relation |",
+    "| nest6_L6_cl0.45_om+1.0_fixed_p1_om+1.0s31s0 | nest6_L6_cl0.45_om+1.0_fixed_p0_om+1.0s43s0 | 1.120 | 1.107 | 1.143 | 1.123 | 2.286 | True / True | nest6_L6_cl0.45_om+1.0_fixed_p0_om+1.0s43s0 ahead of nest6_L6_cl0.45_om+1.0_fixed_p1_om+1.0s31s0 |"
+   ],
+   "tool_sha256": "addfa078bd3d23ab8a68f6b1bc1665fee814aa23a11988c7ee4ab9e9b3c87972"
+  },
+  "quadrature_sentence": "same degree 6, Nk 16, Nr 48: same holdout quadrature; conditional on verified core resolution (core flags primary-reported)",
+  "ratio_std": 1.1197680405504868,
+  "ratio_half": 1.106654941860793
+ },
+ "code_versions": {}
+}

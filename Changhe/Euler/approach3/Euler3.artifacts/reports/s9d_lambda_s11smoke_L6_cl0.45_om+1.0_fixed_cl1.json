@@ -1,0 +1,35 @@
+{
+ "job": "s11smoke_L6_cl0.45_om+1.0_fixed_cl1",
+ "start": "runs/s11smoke_L6_cl0.45_om+1.0_fixed_cl1/starts/start_000.pt",
+ "c_l": 0.45,
+ "omega": 1.0,
+ "omega_over_c_l": 2.2222222222222223,
+ "C0_momentum_rows": 7.21912895394085e-07,
+ "gauge_rows_cost": 0.0,
+ "n_pde_rows": 430236,
+ "E_ren": -1.511607444511128,
+ "H_tot_over_abs": -0.7187675795940742,
+ "b0": 2.8015838997769866,
+ "balances_source": "Problem.balance_rows at lambda 1 (GlobalBalances.integrals)",
+ "ledger_values": {
+  "E_ren": -1.5116074445115828,
+  "H_tot_over_abs": -0.7187675795940742
+ },
+ "balance_lambda_by_kappa": {
+  "0.1": 0.00016052422554956839,
+  "1.0": 0.0005076221723712302,
+  "10.0": 0.0016052422554956839,
+  "100.0": 0.005076221723712303
+ },
+ "device": "cpu",
+ "pins_frozen_at_Z0": {
+  "core_pin": 1.017531551824389,
+  "nonaxi_pin": [
+   0.1101590767258748,
+   0.07190627353785761
+  ],
+  "nonaxi_r_tail": 2.5565563384245262
+ },
+ "targets_met_at_Z0": false,
+ "definition": "lambda_k = sqrt(kappa_k C0 / b0); C0 = sum of squares of the weighted momentum rows at Z0 (no pin/closure/balance rows); b0 = E_ren^2 + (H_tot/int|h|)^2 at Z0 (lead 2026-10-25T17:20:02Z)"
+}

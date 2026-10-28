@@ -1,0 +1,53 @@
+{
+ "job_id": "s15_L6_cl0.45_om+0.3_fixed_cont600_from_s14b_s6",
+ "type": "continuation",
+ "stage": "II",
+ "priority": 5,
+ "max_retries": 0,
+ "config": {
+  "L": 6,
+  "Nk": 16,
+  "Nr": 48,
+  "m_parity": "all",
+  "R0": 0.3,
+  "formulation": "mom",
+  "c_l": 0.45,
+  "omega": 0.3,
+  "free_params": false,
+  "n_starts": 1,
+  "seed": 0,
+  "max_iter": 600,
+  "init_from": "runs/s14b_L6_cl0.45_om+0.3_fixed_p0_om+0.3s6/starts/start_000.pt",
+  "perturb": 0.0,
+  "nl_weighting": true,
+  "sigmaZ": null,
+  "far_radii": [
+   4096.0,
+   16384.0,
+   65536.0
+  ],
+  "time_limit_per_start": 19800.0,
+  "chunk": 256,
+  "threads": 1,
+  "ftol": 1e-07,
+  "families": [
+   "init_from"
+  ],
+  "tail_constraints": true,
+  "sigmaZ_ramp_iters": 0,
+  "nl_denominator": "all5far",
+  "channels": {
+   "NkB": 4,
+   "NkD": 4,
+   "NkE": 4,
+   "core_damp": 2,
+   "LB": 15,
+   "LD": 14,
+   "LE": 6
+  },
+  "closure_lambda": 0.001
+ },
+ "exclusive": true,
+ "note": "S15 (lead d128 LD, 2026-10-27T01:27:38Z; G1 to G7; registration reports/S15_REGISTRATION_20261027.md): one bounded degree-6 continuation of the (0.45, 0.3) S14 stage (ii) end state (start_000.pt sha256 1befb04cc6730a2138fe0e5dd743005ace6852dea76eb5eae1aa39e4af386463); same JSON as the stage (ii) job except job id, init_from, max_iter 600, time_limit_per_start min(19800 s, launch to 07:40Z), max_retries 0, priority 5; cap 21600 s whole-job, absolute end 08:00Z; a coverage reading decided after the stage (ii) cost histories were seen under a criterion recorded before the readings existed (G6); production worker",
+ "created": "2026-10-27T01:31:14Z"
+}

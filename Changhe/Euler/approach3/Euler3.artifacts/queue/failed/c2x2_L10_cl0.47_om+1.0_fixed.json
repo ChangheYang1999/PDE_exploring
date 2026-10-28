@@ -1,0 +1,77 @@
+{
+ "job_id": "c2x2_L10_cl0.47_om+1.0_fixed",
+ "type": "continuation",
+ "stage": "I",
+ "priority": 10,
+ "max_retries": 6,
+ "config": {
+  "L": 10,
+  "Nk": 24,
+  "Nr": 72,
+  "m_parity": "even",
+  "R0": 1.0,
+  "formulation": "mom",
+  "c_l": 0.47,
+  "omega": 1.0,
+  "free_params": false,
+  "n_starts": 1,
+  "seed": 0,
+  "max_iter": 300,
+  "init_from": "runs/s1k_sigmaZ_L6_cl0.47_om+1.0/starts/start_000.pt",
+  "perturb": 0.0,
+  "nl_weighting": true,
+  "sigmaZ": 1.0,
+  "far_radii": [
+   4096.0,
+   16384.0,
+   65536.0
+  ],
+  "time_limit_per_start": 7200,
+  "chunk": 256,
+  "threads": 1,
+  "ftol": 1e-07,
+  "families": [
+   "init_from"
+  ],
+  "channels": {
+   "NkB": 6,
+   "NkD": 6,
+   "NkE": 6,
+   "core_damp": 2
+  },
+  "tail_constraints": true,
+  "sigmaZ_ramp_iters": 60
+ },
+ "exclusive": true,
+ "note": "continuation of runs/s1k_sigmaZ_L6_cl0.47_om+1.0/starts/start_000.pt (holdout rho_u 0.35865120401329403)",
+ "created": "2026-10-24T20:44:08Z",
+ "retries": 3,
+ "failures": [
+  {
+   "ts": "2026-10-24T20:54:06Z",
+   "reason": "supervisor_stop"
+  },
+  {
+   "ts": "2026-10-24T20:55:43Z",
+   "reason": "exit 1"
+  },
+  {
+   "ts": "2026-10-24T20:56:45Z",
+   "reason": "exit 1"
+  },
+  {
+   "ts": "2026-10-24T21:15:18Z",
+   "reason": "supervisor_stop"
+  },
+  {
+   "ts": "2026-10-24T21:25:33Z",
+   "reason": "supervisor_stop"
+  },
+  {
+   "ts": "2026-10-24T23:01:15Z",
+   "reason": "supervisor_stop"
+  }
+ ],
+ "cancelled": "2026-10-24T23:35:12Z",
+ "cancel_note": "lead 23:06Z item 5: nl negative control not rerun; it ran 242 of 300 iterations (checkpoint kept in runs/), training rms 9.2e-5 at it 225; no fresh holdout"
+}

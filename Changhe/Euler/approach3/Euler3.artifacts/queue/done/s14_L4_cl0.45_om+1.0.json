@@ -1,0 +1,53 @@
+{
+ "job_id": "s14_L4_cl0.45_om+1.0",
+ "type": "multistart",
+ "stage": "II",
+ "priority": 5,
+ "max_retries": 2,
+ "config": {
+  "L": 4,
+  "Nk": 12,
+  "m_parity": "all",
+  "R0": 0.3,
+  "formulation": "mom",
+  "c_l": 0.45,
+  "omega": 1.0,
+  "free_params": false,
+  "n_starts": 8,
+  "seed": 14001,
+  "max_iter": 300,
+  "families": [
+   "random",
+   "nonaxi",
+   "poloidal",
+   "toroidal"
+  ],
+  "time_limit_per_start": 900.0,
+  "chunk": 512,
+  "threads": 1,
+  "ftol": 1e-07,
+  "nl_weighting": true,
+  "efrac": null,
+  "optimizer": "lm",
+  "sigmaZ": null,
+  "gauge": "F",
+  "far_radii": [
+   4096.0,
+   16384.0,
+   65536.0
+  ],
+  "nl_denominator": "all5far",
+  "tail_constraints": true,
+  "Nr": 36,
+  "channels": {
+   "NkB": 4,
+   "NkD": 4,
+   "NkE": 4,
+   "core_damp": 2
+  }
+ },
+ "exclusive": false,
+ "created": "2026-10-26T15:23:46Z",
+ "note": "S14 fresh all-m random multi-start (lead d128 HE item 5); record reports/S14_ENQUEUE_20261026.md",
+ "released_after_sr3_hold": "2026-10-26T20:44:20Z"
+}

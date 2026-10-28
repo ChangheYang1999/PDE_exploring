@@ -1,0 +1,55 @@
+{
+ "job_id": "s5r0_L6_cl0.45_om+0.3_fixed_R0p15_refit",
+ "type": "continuation",
+ "stage": "I",
+ "priority": 6,
+ "max_retries": 0,
+ "config": {
+  "L": 6,
+  "Nk": 16,
+  "Nr": 48,
+  "m_parity": "even",
+  "R0": 0.15,
+  "formulation": "mom",
+  "c_l": 0.45,
+  "omega": 0.3,
+  "free_params": false,
+  "n_starts": 1,
+  "seed": 0,
+  "max_iter": 300,
+  "init_from": "runs/stage3_prep/refit/nest6_om03_R0_0.15_AConly_rc1e-6_aligned.pt",
+  "perturb": 0.0,
+  "nl_weighting": true,
+  "sigmaZ": null,
+  "far_radii": [
+   4096.0,
+   16384.0,
+   65536.0
+  ],
+  "time_limit_per_start": 7200.0,
+  "chunk": 512,
+  "threads": 1,
+  "ftol": 1e-07,
+  "families": [
+   "init_from"
+  ],
+  "tail_constraints": true,
+  "sigmaZ_ramp_iters": 0,
+  "nl_denominator": "all5far",
+  "channels": {
+   "NkB": 4,
+   "NkD": 4,
+   "NkE": 4,
+   "core_damp": 2,
+   "LB": 15,
+   "LD": 14,
+   "LE": 6
+  },
+  "closure_lambda": 0.001
+ },
+ "exclusive": true,
+ "note": "robustness R0 re-solve, CORRECTED warm start (lead d128 HX, 2026-10-26T17:52:03Z): regularized A/C-only re-fit of St-B at R0 0.15 (reexpand_state.py --channels 0,0,0 --rcond 1e-6; B/D/E zero by construction), phase-aligned (phase_align_start.py); replaces the failed/held s5r0_L6_cl0.45_om+0.3_fixed_R0p15; one attempt; a stop within 5 accepted steps, max|U| more than doubled or a non-finite value is a failed re-solve; read against the re-solved control under HX R0-1/R0-2/R0-3 | RELEASED after the S1-S5 post in NUM_REPORT (lead HX/HY/HZ/IA); per-worker cap 7200 s LM; record occupied seconds",
+ "created": "2026-10-26T18:00:23Z",
+ "released": "2026-10-26T18:16:41Z",
+ "released_after_sr3_hold": "2026-10-26T20:44:20Z"
+}

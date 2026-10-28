@@ -1,0 +1,51 @@
+{
+ "job_id": "c2x2c_L10_cl0.47_om+1.0_fixed",
+ "type": "continuation",
+ "stage": "I",
+ "priority": 11,
+ "max_retries": 6,
+ "config": {
+  "L": 10,
+  "Nk": 24,
+  "Nr": 72,
+  "m_parity": "even",
+  "R0": 1.0,
+  "formulation": "mom",
+  "c_l": 0.47,
+  "omega": 1.0,
+  "free_params": false,
+  "n_starts": 1,
+  "seed": 0,
+  "max_iter": 300,
+  "init_from": "runs/s1k_sigmaZ_L6_cl0.47_om+1.0/starts/start_000.pt",
+  "perturb": 0.0,
+  "nl_weighting": true,
+  "sigmaZ": 1.0,
+  "far_radii": [
+   4096.0,
+   16384.0,
+   65536.0
+  ],
+  "time_limit_per_start": 7200,
+  "chunk": 512,
+  "threads": 1,
+  "ftol": 1e-07,
+  "families": [
+   "init_from"
+  ],
+  "tail_constraints": true,
+  "sigmaZ_ramp_iters": 60,
+  "nl_denominator": "all5",
+  "channels": {
+   "NkB": 4,
+   "NkD": 4,
+   "NkE": 4,
+   "core_damp": 2
+  }
+ },
+ "exclusive": true,
+ "note": "continuation of runs/s1k_sigmaZ_L6_cl0.47_om+1.0/starts/start_000.pt (holdout rho_u 0.35865120401329403)",
+ "created": "2026-10-24T22:02:46Z",
+ "cancelled": "2026-10-24T23:36:42Z",
+ "cancel_note": "lead 23:06Z item 5: c2x2c L10 only if L6 -> L8 gives q <= 0.85 on both families; measured c_l 0.47: L6 0.2496 -> L8 0.3537 (q > 1, both families 0.354/0.355); c_l 0.45: L6 0.3858 -> L8 0.3577 (q 0.93). Floor case for the s1k branch."
+}

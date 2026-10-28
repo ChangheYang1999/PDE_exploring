@@ -1,0 +1,33 @@
+{
+ "job_id": "s1a_L6_cl0.45_om+10.0",
+ "type": "multistart",
+ "stage": "I",
+ "priority": 10,
+ "max_retries": 2,
+ "config": {
+  "L": 6,
+  "Nk": 16,
+  "m_parity": "even",
+  "R0": 1.0,
+  "formulation": "vort",
+  "c_l": 0.45,
+  "omega": 10.0,
+  "free_params": false,
+  "n_starts": 6,
+  "seed": 1018,
+  "max_iter": 200,
+  "families": [
+   "random",
+   "tail",
+   "nonaxi",
+   "poloidal",
+   "toroidal",
+   "random"
+  ],
+  "time_limit_per_start": 1500,
+  "chunk": 512,
+  "threads": 1,
+  "ftol": 1e-05
+ },
+ "created": "2026-10-24T18:03:58Z"
+}

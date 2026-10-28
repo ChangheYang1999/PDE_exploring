@@ -1,0 +1,53 @@
+{
+ "job_id": "nest8_L8_cl0.45_om+0.3_fixed_p0_cont150",
+ "type": "continuation",
+ "stage": "I",
+ "priority": 14,
+ "max_retries": 6,
+ "config": {
+  "L": 8,
+  "Nk": 20,
+  "Nr": 60,
+  "m_parity": "even",
+  "R0": 0.3,
+  "formulation": "mom",
+  "c_l": 0.45,
+  "omega": 0.3,
+  "free_params": false,
+  "n_starts": 1,
+  "seed": 0,
+  "max_iter": 150,
+  "init_from": "runs/nest8_L8_cl0.45_om+0.3_fixed_p0/starts/start_000.pt",
+  "perturb": 0.0,
+  "nl_weighting": true,
+  "sigmaZ": null,
+  "far_radii": [
+   4096.0,
+   16384.0,
+   65536.0
+  ],
+  "time_limit_per_start": 9000.0,
+  "chunk": 128,
+  "threads": 1,
+  "ftol": 1e-07,
+  "families": [
+   "init_from"
+  ],
+  "tail_constraints": true,
+  "sigmaZ_ramp_iters": 0,
+  "nl_denominator": "all5far",
+  "channels": {
+   "NkB": 4,
+   "NkD": 4,
+   "NkE": 4,
+   "core_damp": 2,
+   "LB": 19,
+   "LD": 18,
+   "LE": 8
+  },
+  "closure_lambda": 0.001
+ },
+ "exclusive": true,
+ "note": "continuation of runs/nest8_L8_cl0.45_om+0.3_fixed_p0/starts/start_000.pt (holdout rho_u 0.06128424168723938)",
+ "created": "2026-10-25T12:39:49Z"
+}

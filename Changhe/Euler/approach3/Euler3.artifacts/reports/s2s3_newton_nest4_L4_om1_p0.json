@@ -1,0 +1,109 @@
+{
+ "state": "runs/nest4_L4_cl0.45_om+1.0_fixed_p0_om+1.0s31/starts/start_000.pt",
+ "c_l": 0.45,
+ "omega": 1.0,
+ "L": 4,
+ "Nk": 12,
+ "n_reduced": 240,
+ "n_train_rows": 56160,
+ "dense_radii": 481,
+ "build_seconds": 52.15408205986023,
+ "projection_cond": 471.7234099722848,
+ "roundtrip_rel": 2.4518749292842745e-16,
+ "seconds_residual": 0.13726067543029785,
+ "seconds_jacobian": 4.5668370723724365,
+ "n_unknowns": 242,
+ "residual_norm": 181.27925191529542,
+ "Pn_d_norm": 181.27925191529542,
+ "gauge_rows": [
+  -5.551115123125783e-17,
+  3.44088356010717e-18
+ ],
+ "gmres_iterations_tol1e3": 2000,
+ "gmres_flag": 40,
+ "gmres_final_rel_residual": 0.028628781664497904,
+ "gmres_jacobi_iterations": 2000,
+ "gmres_jacobi_flag": 40,
+ "sigma_max": 10414.016689196193,
+ "sigma_min": 8.21754813879295e-05,
+ "cond": 126729001.31894907,
+ "sigma_min_unbordered": 7.507198898290366e-05,
+ "smallest_5_singular": [
+  0.0004129563488981446,
+  0.00028484502454997646,
+  0.00021071946083428184,
+  0.000171949146001023,
+  8.21754813879295e-05
+ ],
+ "newton_step_norm_rel": 6.263338232395164,
+ "border_scalars": [
+  -0.251175588470432,
+  -0.34780943717072293
+ ],
+ "merit_before": 181.27925191529542,
+ "line_search": [
+  [
+   1.0,
+   949.3530906905492
+  ],
+  [
+   0.5,
+   301.531211893386
+  ],
+  [
+   0.25,
+   179.36827854463428
+  ],
+  [
+   0.125,
+   169.0763822635157
+  ],
+  [
+   0.0625,
+   172.90277767946154
+  ],
+  [
+   0.03125,
+   176.55861783869364
+  ]
+ ],
+ "best_step": 0.125,
+ "merit_after": 169.0763822635157,
+ "merit_reduction": 0.9326846866210502,
+ "column_scaled": {
+  "sigma_max": 225.85543831078786,
+  "sigma_min": 0.001728922825599716,
+  "cond": 130633.61473780347,
+  "gmres_iterations_tol1e3": 2000,
+  "gmres_flag": 40,
+  "gmres_final_rel_residual": 0.21692905400341336,
+  "basis_cond": 471.7234099722848,
+  "Pn_d_field_over_U_field_weighted": 0.5410325488725662
+ },
+ "field_norm": {
+  "convention": "J_field = diag(R, I) J_s diag(R, I)^-1; R from QR of the weighted unit-column basis (fixed-gauge weights (1 + r^2/R0^2)^alpha x angular Gauss, training nodes); border unknowns and gauge rows Euclidean",
+  "sigma_max": 106.00389359152926,
+  "sigma_min": 0.004160612900697313,
+  "cond": 25477.951475313446,
+  "smallest_5_singular": [
+   0.03841656503822199,
+   0.031924876208504246,
+   0.02090912020509473,
+   0.016677816020660284,
+   0.004160612900697313
+  ],
+  "unbordered_sigma_max": 105.9848487310456,
+  "unbordered_sigma_min": 0.0038683769179704854,
+  "unbordered_cond": 27397.756469565986,
+  "gmres_iterations_tol1e3": 2000,
+  "gmres_flag": 40,
+  "gmres_final_rel_residual": 0.20657685275765572,
+  "cond_R": 471.72340997228474
+ },
+ "matrices_file": "reports/s2s3_newton_matrices_nest4_L4_om1_p0.npz",
+ "holdout_rho_u_max_start": 0.05789567045245206,
+ "holdout_sigma_u_max_start": 0.5275170526596998,
+ "holdout_rho_u_max_after_step": 0.06253434209806376,
+ "holdout_sigma_u_max_after_step": 0.6258498341525801,
+ "seconds_total": 72.4015371799469
+}

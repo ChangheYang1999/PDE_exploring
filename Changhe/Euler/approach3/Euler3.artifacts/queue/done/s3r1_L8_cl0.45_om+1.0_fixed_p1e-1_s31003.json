@@ -1,0 +1,68 @@
+{
+ "job_id": "s3r1_L8_cl0.45_om+1.0_fixed_p1e-1_s31003",
+ "type": "continuation",
+ "stage": "III",
+ "priority": 7,
+ "max_retries": 0,
+ "config": {
+  "L": 8,
+  "Nk": 20,
+  "Nr": 60,
+  "m_parity": "even",
+  "R0": 0.3,
+  "formulation": "mom",
+  "c_l": 0.45,
+  "omega": 1.0,
+  "free_params": false,
+  "n_starts": 1,
+  "seed": 0,
+  "max_iter": 150,
+  "init_from": "runs/stage3_prep/perturb/r1v2_cont150_1e-1_s31003_rebound.pt",
+  "perturb": 0.0,
+  "nl_weighting": true,
+  "sigmaZ": null,
+  "far_radii": [
+   4096.0,
+   16384.0,
+   65536.0
+  ],
+  "time_limit_per_start": 9000.0,
+  "chunk": 128,
+  "threads": 1,
+  "ftol": 1e-07,
+  "families": [
+   "init_from"
+  ],
+  "tail_constraints": true,
+  "sigmaZ_ramp_iters": 0,
+  "nl_denominator": "all5far",
+  "channels": {
+   "NkB": 4,
+   "NkD": 4,
+   "NkE": 4,
+   "core_damp": 2,
+   "LB": 19,
+   "LD": 18,
+   "LE": 8
+  },
+  "closure_lambda": 0.001,
+  "start_record": true
+ },
+ "exclusive": true,
+ "note": "Stage III R1: recorded-seed F-preserving perturbation of cont150, size 1e-1 (training-grid quadrature L2), seed 31003; control s5ctl_L8_cl0.45_om+1.0_fixed_R0p3_ctl",
+ "stage3": {
+  "registration": "reports/STAGE3_REPLICATION_REGISTRATION_20261026.md",
+  "conditions": "S3-1 to S3-23",
+  "absolute_end": "2026-10-28T04:00:00Z",
+  "whole_job_cap_seconds": 12240,
+  "cap_watcher": "scripts/cap_watcher_v4_1.py --job s3r1_L8_cl0.45_om+1.0_fixed_p1e-1_s31003 --cap_seconds 12240 --abs_end 2026-10-28T04:00:00Z --poll 30 --grace 120",
+  "drafted": "2026-10-26T19:00:15Z",
+  "enqueue": "after S15 JOB DONE with queue/pending and queue/running empty and no worker running, v2.4 deployed under SRL-1 as amended by lead d128 LI, the S3-1 record of this file first; launch order R1 x3, R3, R2a to R2c",
+  "cap_watcher_version": "cap_watcher_v4.1",
+  "cap_watcher_sha256": "83a5d4208edce057020f5107ee1b52c99d9b27336459902d03be55b4c4262522",
+  "cap_watcher_note": "lead JJ/JK (2026-10-26T20:55:42Z): accepted for Stage III cap enforcement (conditional on the verifier's static audit); attach with grace 120 s, never the 5 s smoke grace; cite version and watcher_sha256 in every cap-dependent reading; the first production attachment may be recording-only (K7)",
+  "job_file_change": "2026-10-26T20:55:42Z: cap_watcher line changed from cap_watcher.py (withdrawn) to cap_watcher_v4_1.py",
+  "job_file_change_r1": "2026-10-26T21:06Z: init_from changed from r1v2_cont150_1e-1_s31003.pt to r1v2_cont150_1e-1_s31003_rebound.pt (RB1-RB5 with --pivot saved --modes auto, lead JM (2)); the same frozen start, rebound",
+  "job_file_change_li": "2026-10-27T02:24:14Z: stage3.enqueue changed per lead d128 LI (2026-10-27T02:04:53Z) item 2 (b); pre-amendment file archived as reports/stage3_jobs/archive_pre_LI/s3r1_L8_cl0.45_om+1.0_fixed_p1e-1_s31003.json (sha256 a600a01f3ebcce7567c625ab804cdccda9e466c68fb4641c295a74e53e963679); nothing else changed"
+ }
+}

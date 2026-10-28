@@ -1,0 +1,30 @@
+START 2026-10-27T16:45:11Z pid 3917835
+src/far_field/correction.py:136: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:835.)
+  return math.sqrt(float(((X ** 2).sum(-1) * w).sum()))
+[training_grid] Nr=72 Na=5724: c_l=0.4500 omega=1.0000 R_u rms=8.951e-02 max=7.59e-01 R_Om rms=2.350e+00 max=3.53e+01 |Om|max=1.35e+01 rot=0.65 tail_nonaxi=0.07 strain=0.84
+   R_u  shells RMS: 1.7e-01 2.5e-01 8.4e-02 5.9e-02 4.8e-02 2.1e-02 2.7e-03 1.5e-04 1.2e-05 3.0e-06 7.6e-07 5.0e-08
+   R_Om shells RMS: 3.0e+00 7.7e+00 1.9e+00 8.1e-01 3.4e-01 1.9e-01 3.4e-02 2.7e-03 2.1e-04 4.2e-05 1.4e-05 1.0e-06
+   rel defect R_u : 3.4e-02 5.7e-02 2.8e-02 2.1e-02 1.7e-02 6.9e-03 8.7e-04 4.8e-05 3.9e-06 9.7e-07 2.5e-07 1.6e-08
+[refined_grid] Nr=108 Na=12879: c_l=0.4500 omega=1.0000 R_u rms=8.653e-02 max=7.58e-01 R_Om rms=2.248e+00 max=3.57e+01 |Om|max=1.35e+01 rot=0.65 tail_nonaxi=0.07 strain=0.88
+   R_u  shells RMS: 1.7e-01 2.5e-01 8.5e-02 6.0e-02 4.9e-02 2.1e-02 3.2e-03 1.6e-04 1.3e-05 2.7e-06 5.4e-07 9.0e-08 4.6e-09
+   R_Om shells RMS: 2.9e+00 7.6e+00 2.0e+00 8.1e-01 3.7e-01 2.0e-01 4.0e-02 2.9e-03 2.2e-04 3.7e-05 1.0e-05 1.8e-06 1.0e-07
+   rel defect R_u : 3.3e-02 5.6e-02 2.9e-02 2.2e-02 1.7e-02 7.1e-03 1.1e-03 5.2e-05 4.1e-06 8.8e-07 1.8e-07 3.0e-08 1.5e-09
+[holdout 4003 pts] scaled R_Omega rms 2.779e+00 max 4.072e+01 (scaled |Omega| rms 1.061e+01); U(0)=[0.0, 0.0, -1.089434295679697]
+[holdout SPEC] rho_u_max 4.195e-02 rho_nl_max 1.13e+00 pi_u_max 2.86e-01 rho_Om_max 6.50e-02 A_u 4.05e-04; Sigma_Z 0.3842113329436955; tau0 0.003221008369575026; tier S False
+[two families] rho_u_max std=4.195e-02 half=4.145e-02 | rho_nl_max(all shells) std=1.129e+00 half=1.126e+00 | single-sphere rho_u max=5.002e-02 at r=0.505 rho_nl max=1.189e+00 at r=5.71 | rho_lin_max std=1.538e-01 half=1.375e-01 (r<1: 1.538e-01) | rho_sp_max std=1.129e+00 half=1.126e+00 (r<1: 1.538e-01) | d30 ||R_u||/||(1-c_l)U|| (r<1)=0.289 ||R_Om||/||Om||=0.421 | Gram closure max=6.6e-13 | v1.19 sigma_u_max std=0.405 at (0.25, 0.5) half=0.370 at (0.1767766952966369, 0.3535533905932738) (r<1: 0.405) sigma_Om=0.421 | v1.17 a_max std=0.493 at (4.0, 8.0) half=0.446; origin ball U_rms=1.089 B=2.530 L=0.617; tier S half False
+[G closure] ||G[F]|| 0.4013; dist(G, carried B/D span)/||G|| 1.744e-13 (B degree 23, D degree 22, rank 545)
+[critical] located |Omega| max 13.4820 at r=0.264: strain ratio 0.9114; W zeros 3
+[strength] {'R_trap': 0.77, 'maxU_over_cl': 2.803, 'lambda_max_S_inside_Rtrap': 5.3855, 'located_max_inside_Rtrap': True, 'ball_radius': 10.6513, 'B_u': 19.4687, 'max_DU_ball': 2.582, 'max_D2U_ball': 13.3879, 'max_U_ball': 0.6051, 'KU_ratio': 0.3274, 'KOmega_L2_ratio': 0.9445}
+[X5] ascended fixed-gauge max |R_Omega| per shell: 3.14e+00 3.46e+00 3.98e+00 4.61e+00 5.01e+00 1.18e+01 4.24e+01 4.24e+01 3.46e+00 1.91e+00 8.46e-01 1.67e-01 2.30e-02 1.45e-03 1.16e-04 8.38e-05 2.08e-05 3.44e-06 4.84e-07 6.44e-08 8.44e-09
+[SPEC 7.14 (a)] t=0.5/c_l: det defect 3.8e-06, Omega transport median 1.08e-01, beta_0 pullback median 7.42e-02; t=1.0/c_l: det defect 1.5e-05, Omega transport median 2.80e-01, beta_0 pullback median 2.63e-01; t=1.5/c_l: det defect 1.7e-05, Omega transport median 8.52e-01, beta_0 pullback median 3.14e-01; t=2.0/c_l: det defect 1.7e-05, Omega transport median 4.20e+00, beta_0 pullback median 5.15e-01; t=2.5/c_l: det defect 1.6e-05, Omega transport median 2.15e+01, beta_0 pullback median 7.40e-01; t=3.0/c_l: det defect 1.7e-05, Omega transport median 5.10e+01, beta_0 pullback median 8.30e-01; t=3.5/c_l: det defect 1.8e-05, Omega transport median 2.36e+02, beta_0 pullback median 9.62e-01; t=4.0/c_l: det defect 1.8e-05, Omega transport median 1.02e+03, beta_0 pullback median 9.84e-01
+[SPEC 7.14 (b)] y.W: relative defect median 1.234e-04 max 1.374e-04; residual accounting closure median 1.2e-04 (kinematic (integration error only))
+[SPEC 7.14 (b)] k U.W (Bernoulli): relative defect median 1.092e+00 max 3.376e+00; residual accounting closure median 1.9e-05 (defect should equal integral W.R_u)
+[SPEC 7.14 (b)] k ell + d_phi P (angular momentum): relative defect median 3.644e-01 max 1.106e+00; residual accounting closure median 9.4e-06 (defect should equal integral (J y).R_u)
+[SPEC 7.14 (b)] k |V|^2 + omega d_phi P (H_0): relative defect median 4.991e-01 max 1.183e+00; residual accounting closure median 4.7e-05 (defect should equal integral (W + omega J y).R_u)
+[SPEC 7.14 (b)] |V|^2 + c_l(1-c_l)|y|^2 - y.grad P (D): relative defect median 8.618e-02 max 6.715e-01; residual accounting closure median 1.2e-04 (defect should equal -integral y.R_u)
+[orbit T=2/c_l] <s> median 0.207 min -0.287; <rho_Om> median 0.306
+[orbit T=4/c_l] <s> median 0.277 min 0.007; <rho_Om> median 0.460
+[orbit T=8/c_l] <s> median 0.303 min 0.152; <rho_Om> median 0.573
+wrote runs/section8_validation/vt_nest10_full/validate_full_nest10.json
+EXIT 0 2026-10-27T18:42:07Z

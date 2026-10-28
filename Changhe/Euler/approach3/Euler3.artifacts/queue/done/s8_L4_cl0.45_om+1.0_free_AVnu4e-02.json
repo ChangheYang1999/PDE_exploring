@@ -1,0 +1,45 @@
+{
+ "job_id": "s8_L4_cl0.45_om+1.0_free_AVnu4e-02",
+ "type": "continuation",
+ "stage": "I",
+ "priority": 13,
+ "max_retries": 6,
+ "config": {
+  "L": 4,
+  "Nk": 12,
+  "Nr": 36,
+  "m_parity": "even",
+  "R0": 0.3,
+  "formulation": "mom",
+  "c_l": 0.45,
+  "omega": 1.0,
+  "free_params": true,
+  "n_starts": 1,
+  "seed": 0,
+  "max_iter": 300,
+  "init_from": "runs/nest4_L4_cl0.45_om+1.0_fixed_p0_om+1.0s31/starts/start_000.pt",
+  "perturb": 0.0,
+  "nl_weighting": true,
+  "sigmaZ": null,
+  "far_radii": [
+   4096.0,
+   16384.0,
+   65536.0
+  ],
+  "time_limit_per_start": 3600.0,
+  "chunk": 256,
+  "threads": 1,
+  "ftol": 1e-07,
+  "families": [
+   "init_from"
+  ],
+  "tail_constraints": true,
+  "sigmaZ_ramp_iters": 0,
+  "nl_denominator": "all5",
+  "nu": 0.038,
+  "pin_c_l": 0.45
+ },
+ "exclusive": false,
+ "note": "continuation of runs/nest4_L4_cl0.45_om+1.0_fixed_p0_om+1.0s31/starts/start_000.pt (holdout rho_u 0.05789567045245206)",
+ "created": "2026-10-25T05:38:55Z"
+}
