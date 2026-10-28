@@ -1,0 +1,40 @@
+{
+  "time_utc": "2026-10-28T07:17:46.737519+00:00",
+  "alpha": "1/2",
+  "b": "3/4",
+  "shift": "-3/20",
+  "K": "1021/1000",
+  "nx": 4096,
+  "ny": 128,
+  "source_combined": "11_lattice_pole_constraints/axis_projection_stieltjes/verification/a50_n4096_m128_v3_combined.json",
+  "source_sha256": "a5d569b07a2354f6ed4c242bb8d32e739312b85e6c3bb2190e3fd9d3ae1828cc",
+  "chunks": [
+    {
+      "path": "11_lattice_pole_constraints/axis_projection_stieltjes/verification/a50_n4096_m128_v3_s-1_r0_4096.json",
+      "sha256": "7da908433ad6de54a3a9a9132ab2e7b3cd7e84ce24c3ab4104b0683b2154f9da",
+      "sign": -1,
+      "start": 0,
+      "stop": 4096,
+      "exact_integral_lower": "654399973957036542327110237052265538263711385014578956201/10000000000000000000000000000000000000000000000000000000000",
+      "exact_integral_upper": "654399973957036542327110237052265538263711385014578956399/10000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "path": "11_lattice_pole_constraints/axis_projection_stieltjes/verification/a50_n4096_m128_v3_s1_r0_4096.json",
+      "sha256": "0b3246611d427ae2e34f279bb7b9fa0777cd1eb3218ecd69315cd6a7ffab2910",
+      "sign": 1,
+      "start": 0,
+      "stop": 4096,
+      "exact_integral_lower": "50524288739320112414944820385493882028094943447215304343/200000000000000000000000000000000000000000000000000000000",
+      "exact_integral_upper": "50524288739320112414944820385493882028094943447215304417/200000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "exact_recombined_lower": "5680614410923042163074351256326959639668458557375344173351/2500000000000000000000000000000000000000000000000000000000",
+  "exact_recombined_upper": "5680614410923042163074351256326959639668458557375344177249/2500000000000000000000000000000000000000000000000000000000",
+  "safe_D_lower_10_places": "2.2722457643",
+  "independent_safe_lower_10_places": "2.2722457643",
+  "safe_gap_above_C": "0.0752278134",
+  "profile_certificate_sha256": {
+    "data/geometric_profile_a50_tight.json": "7c77520d03f272ad753114bd2dad72a73ef71084450b99271e82747c9fd64264"
+  },
+  "verdict": "CONFIRMED after full source-hash and exact once-only coverage checks, independently recombined as rational decimal intervals under the complete Stieltjes proof."
+}

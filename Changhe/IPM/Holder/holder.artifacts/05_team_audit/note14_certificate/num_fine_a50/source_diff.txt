@@ -1,0 +1,36 @@
+--- V119_snapshot
++++ num_fine_a50_snapshot
+@@ -262,6 +262,11 @@
+     ap.add_argument('--rho_max', type=float, default=1e8); ap.add_argument('--nproc', type=int, default=3)
+     ap.add_argument('--maxdepth', type=int, default=3); ap.add_argument('--out', default=None)
+     a = ap.parse_args()
++    # source hashes taken BEFORE any worker is launched (the verification work V120): they attest the code the workers import
++    import hashlib, os
++    here = os.path.dirname(os.path.abspath(__file__))
++    SRC_HASHES = {fn: hashlib.sha256(open(os.path.join(here, fn), 'rb').read()).hexdigest() for fn in ('certify_note14.py', 'certify_lb.py', 'zcurve.py')}
++    print("source sha256 at start: " + ", ".join(f"{k} {v[:16]}" for k, v in SRC_HASHES.items()), flush=True)
+     setup(a.alpha, a.b, a.c, a.lam); alpha = float(fmpq(a.alpha))
+     t0 = time.time(); tasks = []
+     def chunk(edges, kind, ntheta):
+@@ -307,17 +312,16 @@
+     print(f"exact radii: near {near.rad().str(5)}, rest {rest.rad().str(5)}, I0 {I0.rad().str(5)} (the bracket displays above round the midpoint and inflate the shown radius)")
+     print(f"I0 = int k0 f = {I0.str(12, radius=True)} = [{I0.lower().str(12)}, {I0.upper().str(12)}]   =>   D_alpha >= |I0| + 1/2 >= {(abs(I0).lower() + arb(1)/2).str(12)}")
+     if a.out:
+-        import hashlib, os
+-        here = os.path.dirname(os.path.abspath(__file__))
+-        hashes = {fn: hashlib.sha256(open(os.path.join(here, fn), 'rb').read()).hexdigest() for fn in ('certify_note14.py', 'certify_lb.py', 'zcurve.py')}
++        hashes = SRC_HASHES
++        hashes_end = {fn: hashlib.sha256(open(os.path.join(here, fn), 'rb').read()).hexdigest() for fn in ('certify_note14.py', 'certify_lb.py', 'zcurve.py')}
+         json.dump(dict(alpha=a.alpha, b=a.b, c=a.c, lam=a.lam, params=vars(a), cells=ncells, time_s=el, near=near.str(20, radius=True), rest=rest.str(20, radius=True),
+                        near_mid=near.mid().str(40), near_rad=near.rad().str(10), rest_mid=rest.mid().str(40), rest_rad=rest.rad().str(10),
+                        inner=inner.str(20, radius=True), sliver=sliver.str(20, radius=True), tail=tail.str(20, radius=True),
+                        I0=I0.str(20, radius=True), I0_lower=I0.lower().str(20), I0_upper=I0.upper().str(20), D_lower=(abs(I0).lower() + arb(1)/2).str(20),
+-                       errors={k: v.str(10, radius=True) for k, v in errsum.items()}, source_sha256=hashes, prec_bits=ctx.prec,
++                       errors={k: v.str(10, radius=True) for k, v in errsum.items()}, source_sha256=hashes, source_sha256_at_end=hashes_end, source_unchanged_during_run=(hashes == hashes_end), prec_bits=ctx.prec,
+                        sidecar=a.out + '.tasks.json'), open(a.out, 'w'), indent=1)
+         # sidecar (the verification work request 06:58Z): every task specification with the worker's full returned tuple (mid, rad strings, cell count, error categories)
+-        json.dump([dict(task=tk, mid=res[0], rad=res[1], cells=res[2], errors=res[3]) for tk, res in zip(tasks, results)], open(a.out + '.tasks.json', 'w'))
++        json.dump(dict(source_sha256_at_start=SRC_HASHES, tasks=[dict(task=tk, mid=res[0], rad=res[1], cells=res[2], errors=res[3]) for tk, res in zip(tasks, results)]), open(a.out + '.tasks.json', 'w'))
+ 
+ if __name__ == "__main__":
+     main()

@@ -1,0 +1,99 @@
+[
+  {
+    "time_utc": "2026-10-28T06:29:47.143374+00:00",
+    "args": [
+      "code/certify_axis_clamp_layercake.py",
+      "--alpha",
+      "99/100",
+      "--b",
+      "1",
+      "--part",
+      "plus",
+      "--cells",
+      "2097152",
+      "--out",
+      "11_lattice_pole_constraints/axis_clamped_layercake/verification/a99_b1_long_plus_2097152.json",
+      "--right",
+      "900"
+    ],
+    "log": "11_lattice_pole_constraints/axis_clamped_layercake/verification/a99_b1_long_plus_2097152.log",
+    "ok": true,
+    "error": null,
+    "elapsed_seconds": 77.14915238786489
+  },
+  {
+    "time_utc": "2026-10-28T06:31:45.800546+00:00",
+    "args": [
+      "code/certify_axis_clamp_layercake.py",
+      "--alpha",
+      "99/100",
+      "--b",
+      "1",
+      "--part",
+      "mid",
+      "--cells",
+      "2097152",
+      "--out",
+      "11_lattice_pole_constraints/axis_clamped_layercake/verification/a99_b1_long_mid_2097152.json"
+    ],
+    "log": "11_lattice_pole_constraints/axis_clamped_layercake/verification/a99_b1_long_mid_2097152.log",
+    "ok": true,
+    "error": null,
+    "elapsed_seconds": 118.65664569707587
+  },
+  {
+    "time_utc": "2026-10-28T06:33:16.240672+00:00",
+    "args": [
+      "code/certify_axis_clamp_layercake.py",
+      "--alpha",
+      "99/100",
+      "--b",
+      "1",
+      "--part",
+      "minus",
+      "--cells",
+      "2097152",
+      "--out",
+      "11_lattice_pole_constraints/axis_clamped_layercake/verification/a99_b1_long_minus_2097152.json",
+      "--right",
+      "900"
+    ],
+    "log": "11_lattice_pole_constraints/axis_clamped_layercake/verification/a99_b1_long_minus_2097152.log",
+    "ok": true,
+    "error": null,
+    "elapsed_seconds": 90.43966501485556
+  },
+  {
+    "time_utc": "2026-10-28T06:33:16.717188+00:00",
+    "args": [
+      "code/combine_axis_clamp_layercake.py",
+      "a99_b1_long",
+      "--cells",
+      "2097152"
+    ],
+    "log": "11_lattice_pole_constraints/axis_clamped_layercake/verification/a99_b1_long_combination.log",
+    "ok": true,
+    "error": null,
+    "elapsed_seconds": 0.4761926210485399
+  },
+  {
+    "time_utc": "2026-10-28T06:34:19.071758+00:00",
+    "args": [
+      "code/certify_full_range_profile_v2.py",
+      "--alpha",
+      "9/10",
+      "--target",
+      "11/10",
+      "--mode",
+      "opposite",
+      "--epsilon",
+      "1/10000000",
+      "--out",
+      "07_diagonal_identity_term/full_range_profile/verification/a90_k110_opposite.json"
+    ],
+    "log": "07_diagonal_identity_term/full_range_profile/verification/a90_k110_opposite_e7.log",
+    "ok": true,
+    "error": null,
+    "elapsed_seconds": 62.35399102792144
+  }
+]

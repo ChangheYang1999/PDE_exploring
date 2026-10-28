@@ -1,0 +1,6 @@
+2026-10-28T11:52:35Z
+80080ac514a665dc75f3e5b1dce71bfbcb13c39a423adb3900418bba367c8726  code/certify_cross_only.py
+8e26940ac36754efefaad1407af35ff8e779e8be407bed1da933f50ee5bd9ddb  code/certify_far_circles.py
+6a7ac0dd2f1901f8436fa258eb3b064bde3b5aa7651af2637a4a476c1d079fe4  code/certify_reflection_chunk.py
+b61a003cd05e990c64fcb00b82275e54cf0c53acbe1baba2faaa6428150db82f  code/circle_transport_plan.py
+cmd: taskset -c 62 nice -n 5 python3 -u code/certify_cross_only.py --cells 2048 --phases 16 --alphas 1/5,3/10,1/2,3/4,9/10,99/100 --out data/cross_disk_certificate_2048.json

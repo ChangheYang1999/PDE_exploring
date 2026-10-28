@@ -1,0 +1,1 @@
+Initial v3 pilot: main lower sums finite, but the diagnostic basic sum became NaN from interval powers crossing zero. No combined result was accepted. Source.py preserves the exact source matching these output hashes. The next version uses nonnegative-power enclosures and rejects nonfinite intermediate values.

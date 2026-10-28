@@ -1,0 +1,15 @@
+# Middle-arc residual replacement for the six direct table certificates
+
+## Statement and dependencies
+
+For 0<a<1 let C_a denote the T_xx norm on real homogeneous Euclidean Holder space, with the circular principal value and extension modulo constants of 01_setup/PROOF.md. This note applies the already proved middle-arc residual lemma in ../PROOF.md to the six direct certificates a in {1/1000,1/100,1/20,1/10,1/5,99/100}. No numerical endpoint is asserted before the evaluation and acceptance checks below.
+
+The prior complete C upper certificates are V131, with the local residual improvement V161. Their middle terms have 512 radial bins, 512 angular cells in each half-plane, 17 phases and integer mass unit2^44 at160-bit precision. The source mid_nodes.py uses exactly the same bin_data function as code/certify_middle_chunks.py and the same cell_measures helper. Its modification selects a transport plan separately for each reference exponent; the extracted masses and residual variation are independent of the exponent and plan selection. Thus the unchanged extracted masses already replayed in V168 also serve these six certificates. The code checks the syntax tree of bin_data, the helper's complete file hash, the numerical parameters and original source hashes.
+
+## Proof of the replacement
+
+For each bin [a,b] and phase, retain its variation upper bound tau and signed integer extracted mass S from the accepted replay. On every one of its eight subintervals the saved interval q contains M_phi(t)-S. With Q an upper endpoint of |q| and h=min(tau,Q), the parent lemma gives width times ((tau-h)A+hB), where A=(2sin^2(right))^alpha and B=(2sin(right))^alpha. Upper endpoints of A and B are taken separately in this expression with nonnegative coefficients. Their exact rational ordering is enforced by replacing B by max(A,B), which preserves its upper-bound property. Summing all subintervals gives a valid new residual upper bound.
+
+The previous residual costs are independently enclosed from the same saved variation interval and the original radial bin sine upper bound at160 bits. They must overlap every printed residual interval in every source chunk. These checks cover all512 bins and all17 phases at each exponent, with no duplicates or missing rows. Both bounds refer to exactly the same extracted submeasures. Subtract the source residual lower endpoint and add the new upper endpoint from the accepted V161 phase total, retaining the old total wherever rounding gives no positive gain. This proves the updated phase bound. The already accepted phase interpolation factor sec(pi/64) and unchanged small-disk term give the complete operator bound.
+
+All old and new inputs, the prior acceptance chain, replay rows, source equivalence check, exact sums and rounding are recorded in the numerical audit. This is a finite residual replacement, not a new transport optimization. It introduces no new analytic assumption beyond V168 and V161. A separate numerical statement will give only endpoints that pass the checks.

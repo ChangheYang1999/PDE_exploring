@@ -1,0 +1,110 @@
+{
+ "time_utc": "2026-10-28T09:14:26.689577+00:00",
+ "method": "Theorem 3.7 upper bounds for C at six exponents of Table 1.\n\nTheorem 3.7 reads C_a <= S_a(delta) + sec(pi/(4m)) max_j (paired local circles + middle circles + exterior circles)(phi_j),\nwith delta = 1/64, m = 16 and\n  S_a(delta) = 2 a_2 delta^a/a + (1+2 delta)^a delta^2/(2(1-delta)^2).\nThe three terms are merged from the chunks in local/, mid/ and far/ (exact coverage of all radial rows and phases is\nchecked, together with the hashes of the scripts that produced them).  Output: results/table37.json.",
+ "delta": "1/64",
+ "phase_intervals": 16,
+ "grids": {
+  "local": "512 cells per circle, 256 radial bins of [delta, 1/2], greedy integer flows",
+  "middle": "512 cells per half, 512 bins of [0, pi/2], best_plan (17 trials) at the exponent itself",
+  "exterior": "512 cells, 128 bins of u in [1/4, 1], best_plan (9 trials) at the exponent itself"
+ },
+ "rows": [
+  {
+   "alpha": "1/1000",
+   "small_disk": "633.8805868640",
+   "remainder": "3.1598894460",
+   "C_upper": "637.0404763100",
+   "C_upper_6": "637.040477",
+   "C_upper_minus_2_over_pi_alpha": "0.4207039424",
+   "worst_phase": 16,
+   "parts_at_worst_phase": {
+    "local": "2.23326143",
+    "middle": "0.27362702",
+    "exterior": "0.64919479"
+   }
+  },
+  {
+   "alpha": "1/100",
+   "small_disk": "60.9759126072",
+   "remainder": "3.1123678988",
+   "C_upper": "64.0882805059",
+   "C_upper_6": "64.088281",
+   "C_upper_minus_2_over_pi_alpha": "0.4263032692",
+   "worst_phase": 16,
+   "parts_at_worst_phase": {
+    "local": "2.18294156",
+    "middle": "0.27366909",
+    "exterior": "0.65200828"
+   }
+  },
+  {
+   "alpha": "1/20",
+   "small_disk": "10.2661674077",
+   "remainder": "2.9182045990",
+   "C_upper": "13.1843720067",
+   "C_upper_6": "13.184373",
+   "C_upper_minus_2_over_pi_alpha": "0.4519765593",
+   "worst_phase": 15,
+   "parts_at_worst_phase": {
+    "local": "1.97499331",
+    "middle": "0.27412772",
+    "exterior": "0.66556848"
+   }
+  },
+  {
+   "alpha": "1/10",
+   "small_disk": "4.1413084470",
+   "remainder": "2.7107383213",
+   "C_upper": "6.8520467682",
+   "C_upper_6": "6.852047",
+   "C_upper_minus_2_over_pi_alpha": "0.4858490446",
+   "worst_phase": 15,
+   "parts_at_worst_phase": {
+    "local": "1.74803816",
+    "middle": "0.27455756",
+    "exterior": "0.68487741"
+   }
+  },
+  {
+   "alpha": "1/5",
+   "small_disk": "1.3500977783",
+   "remainder": "2.3943388262",
+   "C_upper": "3.7444366045",
+   "C_upper_6": "3.744437",
+   "C_upper_minus_2_over_pi_alpha": "0.5613377427",
+   "worst_phase": 14,
+   "parts_at_worst_phase": {
+    "local": "1.38290506",
+    "middle": "0.27495076",
+    "exterior": "0.73359894"
+   }
+  },
+  {
+   "alpha": "99/100",
+   "small_disk": "0.0100039251",
+   "remainder": "42.2153317028",
+   "C_upper": "42.2253356279",
+   "C_upper_6": "42.225336",
+   "C_upper_minus_2_over_pi_alpha": "41.5822853528",
+   "worst_phase": 11,
+   "parts_at_worst_phase": {
+    "local": "0.34390002",
+    "middle": "0.29288287",
+    "exterior": "41.52769862"
+   }
+  }
+ ],
+ "source_sha256": {
+  "code/table37.py": "a3fd67e5c4fe36037ee098a469e44dca87abb12a2d70bcec131c45e5fb041ab1",
+  "code/far_nodes.py": "b6fa56ca162a6def0fae4eb07056aa228920a384a0d4915f0610b3e62a7516db",
+  "code/refl_nodes.py": "d706104154548afc36a4cc3b07ed758846caa0c93e579a8573027fbffcce9298",
+  "code/local_nodes.py": "acedbc69ae8d14d58f87b0c64beecf2129181177c48378158bb9ddf89dda6589",
+  "code/mid_nodes.py": "abbd20a390c0188140ab0f2977d3174c90fe290c4c885c7ae02d6e76cd410111",
+  "code/certify_far_circles.py": "8e26940ac36754efefaad1407af35ff8e779e8be407bed1da933f50ee5bd9ddb",
+  "code/certify_local_circles_greedy.py": "38b0dd756ac0656f07bbf6889199810d9be31475e440acc08870499bcc72a16b",
+  "code/local_circle_greedy.py": "5245fb3d224a76661c8eae63afc06ae59d38dff2a50b95481446e528b73f5384",
+  "code/middle_circle_plan.py": "4921fda2f3451cad9e729462cde30cfe45f942b41e83bf55359b790712051fa9",
+  "code/circle_transport_plan.py": "b61a003cd05e990c64fcb00b82275e54cf0c53acbe1baba2faaa6428150db82f"
+ },
+ "verdict": "Upper bounds C_a <= C_upper (rounded up), given Theorems 3.5, 3.6 and 3.7 of the report."
+}

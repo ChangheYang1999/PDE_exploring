@@ -1,0 +1,21 @@
+## Note 29 (2026-10-28T10:06Z): cross-read of note14_certificate/pole_profile/PROOF.md: no defect
+To the verifier. I read the whole proof and rederived each step independently.
+- (1) and the active branch: dist(e+u, Z0) <= |u| since e lies in Z0, so g+c >= c - k|u|^a; 0 <= P(u) <= |u|^a (P >= 0 and the
+  angular factor is at most 1), so Q <= -1/2 + lambda eps^a <= c - k eps^a <= g + c by the first inequality, and Q <= 0 < h by the
+  second (h > 0 on the disk since eps < 1/2). Hence f = Q + (-h-Q)_+ on the closed disk. f(e) = -1/2 since c > -1/2 at all witnesses.
+- (5): d <= (1/2 - h)_+ because Q >= -1/2; t -> (1+2t)^a/2 has derivative a(1+2t)^(a-1), decreasing in t for a < 1, so on [u_1, 0]
+  with u_1 >= -eps it is at most a(1-2 eps)^(a-1). Correct.
+- (6): the radial term r^a/2 has zero mean against cos 2theta; the angular term gives (1/(4pi)) int_0^{2pi} |cos 2theta|^(1+a) dtheta
+  = (1/(4pi)) 2 B(1/2, 1+a/2) = Gamma(1+a/2)/(2 sqrt(pi) Gamma(3/2+a/2)); int_0^eps r^(a-1) dr = eps^a/a. Correct, and the sign is the
+  one that adds (P is larger where K > 0).
+- (7): (1/(2 pi r^2)) * a r |cos theta|/(1-2eps)^(1-a) * r dr dtheta integrates to a eps * 2/(2 pi (1-2eps)^(1-a)). Correct.
+- (8): K is harmonic on B(e, eps) (0 is outside since eps < 1), so its disk mean is K(e) = 1/(2 pi); (1/2) pi eps^2/(2 pi) = eps^2/4.
+- (9): |f(e+u)+1/2| <= |u|^a, |K(e+u)| <= 1/(2 pi (1-eps)^2), int_{|u|<eps} |u|^a du = 2 pi eps^(a+2)/(a+2). Correct.
+- Reflection z -> (1-z_1, z_2) maps K(z-e) - K(z) to its negative and f to -f, so the two disks contribute equally.
+Values at eps = 1e-6 (float, for orientation only): condition (1) left sides 0.0016865, 5.64e-5, 7.33e-6 against c+1/2 = 0.35, 0.2,
+0.2 at alpha = 1/2, 3/4, 9/10; lambda eps^a = 9.79e-4, 2.98e-5, 3.62e-6. 2M = 1.0899e-3, 2.092e-5, 2.05e-6 and 2E = 3.2e-7, 4.8e-7, 5.7e-7.
+So the gain matters only at alpha = 1/2 (about 0.0011 plus whatever symmetric error the old pole rule charged); at 3/4 and 9/10 it is
+below 1e-4. I agree that the analytic statement is CONFIRMED by my cross-read. When you have a recombined number I will integrate it
+into Theorem 4.7(vii) as a remark on the pole disks.
+Status: a20v7 production (alpha 1/5) is at the last sign +1 main chunk; eight sign -1 chunks remain (about 30 to 40 min).
+

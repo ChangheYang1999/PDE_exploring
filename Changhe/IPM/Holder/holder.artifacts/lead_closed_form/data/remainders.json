@@ -1,0 +1,498 @@
+{
+ "description": "Nodal upper values of the regular remainders in the uniform comparison (Theorem 9.2).\nTheorem 3.5 family: the nodal upper value is U = L + R, with the explicit local term\n  L_C = 2^(1-a) a_2(a)/a = 4*2^(-a/2)/(pi a (a+2))   for C,     L_D = 2^(1-a) A_a/a + 1/2   for D,\nand the same remainder R = sec(pi/64) * max over 17 phases of (compact part + exterior part).  We store\nR_i >= U_C(a_i) - L_C(a_i), checked to agree with U_D(a_i) - L_D(a_i) up to 1e-8 (the larger is kept).\nTheorem 3.7 family: U' = S_a(1/64) + R', and we store R'_i >= U'(a_i) - S_a(1/64).\nValues are rounded up to 6 decimals; at a node shared by two groups the larger value is kept, which is valid for\nboth.  The extra node a=0 (group 0 only) bounds lim_{a->0+} R(a) (code/combine_alpha0.py).",
+ "source_sha256": {
+  "data/uniform_result_thm35_pass3.json": "290f34929e3173cf6c9f5746d5e12390b0027842be419bf386aaa6ae67270848",
+  "data/uniform_result_thm37_pass3.json": "c90095411430cf5535ff21f5ea817db04d3791bcbc10f179395be048f64e43ac",
+  "data/remainder_a0.json": "c720eb26bd8e7d11f376dc26747a4a0cce61bc8aea7a0365eee0619997d4ecf6",
+  "code/make_remainders.py": "137483531f0df6b145aaae30a7fbe80b0a8c2bed099a91a7dafa8de061f1a756"
+ },
+ "nodes": [
+  {
+   "alpha": "0",
+   "groups": [
+    0
+   ],
+   "R": "0.993975",
+   "R_thm37": null
+  },
+  {
+   "alpha": "1/200",
+   "groups": [
+    0
+   ],
+   "R": "0.995365",
+   "R_thm37": null
+  },
+  {
+   "alpha": "13/2000",
+   "groups": [
+    0
+   ],
+   "R": "0.995787",
+   "R_thm37": null
+  },
+  {
+   "alpha": "17/2000",
+   "groups": [
+    0
+   ],
+   "R": "0.996354",
+   "R_thm37": null
+  },
+  {
+   "alpha": "11/1000",
+   "groups": [
+    0
+   ],
+   "R": "0.997068",
+   "R_thm37": null
+  },
+  {
+   "alpha": "29/2000",
+   "groups": [
+    0
+   ],
+   "R": "0.998079",
+   "R_thm37": null
+  },
+  {
+   "alpha": "19/1000",
+   "groups": [
+    0
+   ],
+   "R": "0.999399",
+   "R_thm37": null
+  },
+  {
+   "alpha": "1/40",
+   "groups": [
+    0
+   ],
+   "R": "1.001193",
+   "R_thm37": null
+  },
+  {
+   "alpha": "4/125",
+   "groups": [
+    0
+   ],
+   "R": "1.003436",
+   "R_thm37": null
+  },
+  {
+   "alpha": "1/25",
+   "groups": [
+    0
+   ],
+   "R": "1.005952",
+   "R_thm37": null
+  },
+  {
+   "alpha": "13/250",
+   "groups": [
+    0
+   ],
+   "R": "1.010043",
+   "R_thm37": null
+  },
+  {
+   "alpha": "13/200",
+   "groups": [
+    0
+   ],
+   "R": "1.014650",
+   "R_thm37": null
+  },
+  {
+   "alpha": "2/25",
+   "groups": [
+    0
+   ],
+   "R": "1.020356",
+   "R_thm37": null
+  },
+  {
+   "alpha": "1/10",
+   "groups": [
+    0
+   ],
+   "R": "1.028722",
+   "R_thm37": null
+  },
+  {
+   "alpha": "3/25",
+   "groups": [
+    0
+   ],
+   "R": "1.037791",
+   "R_thm37": null
+  },
+  {
+   "alpha": "7/50",
+   "groups": [
+    0
+   ],
+   "R": "1.047323",
+   "R_thm37": null
+  },
+  {
+   "alpha": "33/200",
+   "groups": [
+    0
+   ],
+   "R": "1.060155",
+   "R_thm37": null
+  },
+  {
+   "alpha": "19/100",
+   "groups": [
+    0,
+    1
+   ],
+   "R": "1.073991",
+   "R_thm37": null
+  },
+  {
+   "alpha": "11/50",
+   "groups": [
+    1
+   ],
+   "R": "1.091996",
+   "R_thm37": null
+  },
+  {
+   "alpha": "1/4",
+   "groups": [
+    1
+   ],
+   "R": "1.111776",
+   "R_thm37": null
+  },
+  {
+   "alpha": "11/40",
+   "groups": [
+    1
+   ],
+   "R": "1.129671",
+   "R_thm37": null
+  },
+  {
+   "alpha": "3/10",
+   "groups": [
+    1
+   ],
+   "R": "1.149060",
+   "R_thm37": null
+  },
+  {
+   "alpha": "13/40",
+   "groups": [
+    1
+   ],
+   "R": "1.170102",
+   "R_thm37": null
+  },
+  {
+   "alpha": "7/20",
+   "groups": [
+    1,
+    2
+   ],
+   "R": "1.192933",
+   "R_thm37": "2.117855"
+  },
+  {
+   "alpha": "3/8",
+   "groups": [
+    2
+   ],
+   "R": "1.217753",
+   "R_thm37": "2.091835"
+  },
+  {
+   "alpha": "2/5",
+   "groups": [
+    2
+   ],
+   "R": "1.244798",
+   "R_thm37": "2.071243"
+  },
+  {
+   "alpha": "17/40",
+   "groups": [
+    2
+   ],
+   "R": "1.274341",
+   "R_thm37": "2.056121"
+  },
+  {
+   "alpha": "9/20",
+   "groups": [
+    2
+   ],
+   "R": "1.306709",
+   "R_thm37": "2.046576"
+  },
+  {
+   "alpha": "19/40",
+   "groups": [
+    2
+   ],
+   "R": "1.342291",
+   "R_thm37": "2.042945"
+  },
+  {
+   "alpha": "1/2",
+   "groups": [
+    2,
+    3
+   ],
+   "R": "1.381553",
+   "R_thm37": "2.045476"
+  },
+  {
+   "alpha": "21/40",
+   "groups": [
+    3
+   ],
+   "R": "1.425060",
+   "R_thm37": "2.054452"
+  },
+  {
+   "alpha": "11/20",
+   "groups": [
+    3
+   ],
+   "R": "1.473501",
+   "R_thm37": "2.070407"
+  },
+  {
+   "alpha": "23/40",
+   "groups": [
+    3
+   ],
+   "R": "1.527833",
+   "R_thm37": "2.094053"
+  },
+  {
+   "alpha": "3/5",
+   "groups": [
+    3,
+    4
+   ],
+   "R": "1.588920",
+   "R_thm37": "2.126324"
+  },
+  {
+   "alpha": "5/8",
+   "groups": [
+    4
+   ],
+   "R": "1.658216",
+   "R_thm37": "2.168450"
+  },
+  {
+   "alpha": "13/20",
+   "groups": [
+    4
+   ],
+   "R": "1.737460",
+   "R_thm37": "2.222057"
+  },
+  {
+   "alpha": "27/40",
+   "groups": [
+    4
+   ],
+   "R": "1.828925",
+   "R_thm37": "2.289315"
+  },
+  {
+   "alpha": "7/10",
+   "groups": [
+    4,
+    5
+   ],
+   "R": "1.935744",
+   "R_thm37": "2.373161"
+  },
+  {
+   "alpha": "29/40",
+   "groups": [
+    5
+   ],
+   "R": "2.061853",
+   "R_thm37": "2.477773"
+  },
+  {
+   "alpha": "3/4",
+   "groups": [
+    5
+   ],
+   "R": "2.213141",
+   "R_thm37": "2.608784"
+  },
+  {
+   "alpha": "31/40",
+   "groups": [
+    5
+   ],
+   "R": "2.398072",
+   "R_thm37": "2.774420"
+  },
+  {
+   "alpha": "4/5",
+   "groups": [
+    5,
+    6
+   ],
+   "R": "2.628990",
+   "R_thm37": "2.987155"
+  },
+  {
+   "alpha": "33/40",
+   "groups": [
+    6
+   ],
+   "R": "2.925710",
+   "R_thm37": "3.266638"
+  },
+  {
+   "alpha": "17/20",
+   "groups": [
+    6
+   ],
+   "R": "3.321189",
+   "R_thm37": "3.645663"
+  },
+  {
+   "alpha": "7/8",
+   "groups": [
+    6
+   ],
+   "R": "3.874368",
+   "R_thm37": "4.183317"
+  },
+  {
+   "alpha": "9/10",
+   "groups": [
+    6,
+    7
+   ],
+   "R": "4.703732",
+   "R_thm37": "4.997831"
+  },
+  {
+   "alpha": "183/200",
+   "groups": [
+    7
+   ],
+   "R": "5.435098",
+   "R_thm37": null
+  },
+  {
+   "alpha": "93/100",
+   "groups": [
+    7
+   ],
+   "R": "6.479702",
+   "R_thm37": null
+  },
+  {
+   "alpha": "943/1000",
+   "groups": [
+    7
+   ],
+   "R": "7.829308",
+   "R_thm37": null
+  },
+  {
+   "alpha": "191/200",
+   "groups": [
+    7
+   ],
+   "R": "9.766948",
+   "R_thm37": null
+  },
+  {
+   "alpha": "963/1000",
+   "groups": [
+    7
+   ],
+   "R": "11.756539",
+   "R_thm37": null
+  },
+  {
+   "alpha": "97/100",
+   "groups": [
+    7
+   ],
+   "R": "14.367799",
+   "R_thm37": null
+  },
+  {
+   "alpha": "122/125",
+   "groups": [
+    7
+   ],
+   "R": "17.818191",
+   "R_thm37": null
+  },
+  {
+   "alpha": "49/50",
+   "groups": [
+    7
+   ],
+   "R": "21.268375",
+   "R_thm37": null
+  },
+  {
+   "alpha": "123/125",
+   "groups": [
+    7
+   ],
+   "R": "26.443642",
+   "R_thm37": null
+  },
+  {
+   "alpha": "987/1000",
+   "groups": [
+    7
+   ],
+   "R": "32.414900",
+   "R_thm37": null
+  },
+  {
+   "alpha": "1979/2000",
+   "groups": [
+    7
+   ],
+   "R": "39.997375",
+   "R_thm37": null
+  },
+  {
+   "alpha": "124/125",
+   "groups": [
+    7
+   ],
+   "R": "52.318809",
+   "R_thm37": null
+  },
+  {
+   "alpha": "1987/2000",
+   "groups": [
+    7
+   ],
+   "R": "64.261169",
+   "R_thm37": null
+  },
+  {
+   "alpha": "199/200",
+   "groups": [
+    7
+   ],
+   "R": "83.368734",
+   "R_thm37": null
+  }
+ ]
+}

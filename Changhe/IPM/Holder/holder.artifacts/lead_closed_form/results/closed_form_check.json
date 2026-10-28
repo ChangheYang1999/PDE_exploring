@@ -1,0 +1,26 @@
+{
+ "time_utc": "2026-10-28T07:39:28.396618+00:00",
+ "kappa": "209/500",
+ "c": "72/125",
+ "pieces_per_segment": 4000,
+ "segments": 59,
+ "part1_min_margin_lower": "[2.465274268948808495261907622294237068443019420514104411212301320729237104912e-5 +/- 8.19e-82]",
+ "part1_worst": {
+  "group": 0,
+  "piece": [
+   "0",
+   "1/800000"
+  ]
+ },
+ "end_subintervals": 200,
+ "part2_min_margin_lower": {
+  "C": "[0.003150658443014247313840314745903015136718750000000000000000000000000000000002 +/- 5.30e-80]",
+  "D": "[0.002900588705610601027728989720344543457031250000000000000000000000000000000003 +/- 3.00e-79]"
+ },
+ "source_sha256": {
+  "data/remainders.json": "41653b7c52d5eb5bba56533a0719cacdffba74825040a48619c7b06438d7872d",
+  "code/check_closed_form.py": "b70ab001e6e6f3f131c90bfc0876a74a6c3b2630dc319b58f02c58ac681b537f",
+  "code/check_explicit_bounds.py": "78852a18554b60e1f22041b324b0e75d472bdb45b8a7ee6393b363f211b26a47"
+ },
+ "verdict": "PASS: C_a <= F*(a) and D_a <= G*(a) for every 0<a<1, given Theorems 3.1, 3.5 and the nodal certificates of Theorem 9.2."
+}
