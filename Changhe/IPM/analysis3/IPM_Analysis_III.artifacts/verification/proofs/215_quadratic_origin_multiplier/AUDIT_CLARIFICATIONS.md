@@ -1,0 +1,3 @@
+# Independent audit clarifications
+
+Recorded 2026-10-28T14:49:36.166892+00:00. The independent audit passes all multiplier, reciprocal-coefficient, characteristic and maximal-domain checks. Fix a radial cutoff when combining topics202 and212. One explicit multiplier constant is C0+2max(C1,2C0), valid uniformly in p>0 and 0<alpha<1 for delta<=1. In inverse estimate (2), the numerator constant may be named C_M from (8). The key pointwise bound is a consequence of oddness in y. A weaker x-seminorm argument can use h(0,y)=0 directly, but the weighted y product needs the stated oddness. All smallness radii and inverse constants for the actual operator still depend on fixed alpha. No quantitative radius or sharpness of the entire factorization error is asserted.

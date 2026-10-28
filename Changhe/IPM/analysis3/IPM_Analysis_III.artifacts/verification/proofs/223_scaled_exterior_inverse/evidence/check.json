@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-28T15:04:41.213400+00:00",
+  "proof_sha256": "30980d7ffb01e0df479447034809d21c5c413f15c3693688c810323f4e6b0530",
+  "dependencies": {
+    "35_nonlinear_closure_audit": "f6b46867c604b777096bacdbd8328afa10f789c3c735c360c175f5938129a9a5",
+    "117_far_residual_leading_term": "20b9e69c24e4afef910cf965d5021c75e8b7ebee902d3bca43af96ead1dc1851",
+    "222_scaled_far_holder_realization": "6fabe851db30a53c8b1fd086509053403174ba26af180d3e99ca0a01819b932d"
+  },
+  "method": "actual forward flow, exact Jacobian, scaled Holder bounds and bounded-operator Neumann inverse",
+  "computation": "none",
+  "cross_audit": "requested from existing Opus lead lane",
+  "audit": {
+    "date": "2026-10-28T15:20:43.065264+00:00",
+    "actual_model": "us.anthropic.claude-opus-5-5",
+    "file": "xaudit_V236.md",
+    "sha256": "8e66d70705ffcd41c61dea9cc62e4cb9a82a8a6d2a3369633df055823905abc9",
+    "verdict": "PASS WITH REMARKS",
+    "clarifications_sha256": "7fdb58074127898c3859f57f4f975cd303d820a05755ee8811a051b240394e58"
+  },
+  "dependency_updates": [
+    {
+      "date": "2026-10-28T15:25:34.886310+00:00",
+      "topic": "222_scaled_far_holder_realization",
+      "old_sha256": "d5a1747bfcfa83daa7ea0458ab3051b1c05dd90ab11a879cea9cb506b61b4c08",
+      "old_archive": "../../222_scaled_far_holder_realization/evidence/audited_PROOF.md",
+      "reason": "V244 audit clarification; referenced mapping estimates unchanged"
+    }
+  ]
+}

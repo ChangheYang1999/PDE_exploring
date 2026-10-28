@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-28T14:02:43.623162+00:00",
+  "verdict": "CONFIRMED analytical proof; independent Opus cross-audit requested",
+  "proof_sha256": "1088e2e87ad372a40237dceef5ce7dff788165a33ca8bfab7e0f84babd4fd798",
+  "dependencies_sha256": {
+    "proofs/27_holder_nonlinearity/PROOF.md": "993a3225959a240e9783cdbeb36b59752995131cd03ee91f27906cdb653253b3",
+    "proofs/199_directional_holder_coupling/PROOF.md": "0a59a002ba80735379987ca931a6c4b3eba4e47f773ed77c85639066e2d91c90",
+    "proofs/201_holder_origin_strain/PROOF.md": "42906dd8d276e64ab914ecc7fa159776da8137795b07bfaf665f975c28cc0b96",
+    "proofs/202_variable_origin_holder/PROOF.md": "42dc1460554fbfbdaa752822e444e178446a94e523209b0da572440bfa64526c",
+    "proofs/203_quadratic_holder_endpoint/PROOF.md": "885960debef56932bd4c5ae2de333f069c1ae85437dde14b47e6047de419661f"
+  },
+  "checks": [
+    "Smooth flow boxes inside original analytic inner region, away from axes",
+    "Exact compact potential U[-DeltaP]=(-Pxy,Pxx), withc=0",
+    "Characteristic strip transport phase is constant exactly",
+    "Strain compensator support and exactc=0 checked",
+    "E2 input support comparison and full nonlocal graph image controlled byV207",
+    "Every nonlinear image compact and smooth, hence inE2",
+    "Kernel amplitudeO(n^-alpha logn) tends to0",
+    "Two trajectories giveE2 nonlinear lowercn and inverse lowercn",
+    "n^-1/2 rescaling gives graph-to-E2 discontinuity at0"
+  ],
+  "no_computation": true,
+  "scope": "Specified E2 graphs and their local inverses only; not all stronger spaces and not profile nonexistence"
+}

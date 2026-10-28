@@ -1,0 +1,60 @@
+{
+ "tag": "HYPA_B",
+ "ntheta": 64,
+ "prec": 160,
+ "N0": 12,
+ "ncells": 784,
+ "background": "exact modal trial modal_v2.json + z (V005 normalization)",
+ "c_l": "[5.57536261064154600888979486547 +/- 4.63e-30]",
+ "D": "[21.3014504425661840355591794619 +/- 1.49e-30]",
+ "k": "1615536043799051/9007199254740992",
+ "cells_computed": 784,
+ "d_inf": 5.575203976688894,
+ "d_sup": 15.172673860063098,
+ "d_inf_cell": 1568,
+ "d_sup_cell": 785,
+ "dprime_abs_sup": 5.598779832589993,
+ "A_left": {
+  "desc": "sup over cells meeting t <= 0 (inner half-line included) of |d - D| e^{-2t} and |d'| e^{-2t}",
+  "sup_dD_e2": null,
+  "sup_dp_e2": null,
+  "minf_dD_e2": null,
+  "minf_dp_e2": null,
+  "C_left": null
+ },
+ "A_right": {
+  "desc": "sup over cells meeting t >= 0 (outer half-line included) of |d - c_l| e^{(1-k)t} and |d'| e^{(1-k)t}",
+  "sup_dcl_ek": 89.33410963019068,
+  "sup_dp_ek": 73.311250818444,
+  "pinf_dcl_ek": 89.33410963019068,
+  "pinf_dp_ek": 73.311250818444,
+  "C_right": 162.64536044863468
+ },
+ "M_Q": 337.6559386234144,
+ "M_Q_argmax": [
+  1091,
+  49
+ ],
+ "M_P": null,
+ "M_P_parts": [
+  null,
+  1075.515568934547
+ ],
+ "conditional_on": "exact normalization c[rho~] = 3 c_l - 1 of the repaired trial (V005; z = (3/k - 1 - c_0)/s) for the dropped exponent-0 constant of d - D on the inner half-line; kappa_w identity holds a.e. (knot t = 0, axes)",
+ "enclosure": "encl.range_finite: resonance merging (clusters |e - e_0| h <= 1, J = 40, >= 512 bits) + Taylor order 8 about the cell midpoint with rigorous remainder; sub-intervals when |e|_max h > 6; half-lines: exact constant + coefficient-sum bound (tailbound.sup_bound); non-mid cells at 512 bits",
+ "sup_a0_unweighted": 1075.515568934547,
+ "kappa_star_lower": 3.037693456389889,
+ "kappa_star_argmin": [
+  1135,
+  4
+ ],
+ "kappa_w_sup": 55.1980145055938,
+ "q_range": [
+  1.3602293144648763,
+  15.1806214950623
+ ],
+ "identity_check_max": 4.388249956146864e-46,
+ "dropped_constants": 0,
+ "dropped_max_rad": 0.0,
+ "seconds": 1227.4543871879578
+}

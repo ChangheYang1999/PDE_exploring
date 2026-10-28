@@ -1,0 +1,5 @@
+# Citation clarification
+
+Recorded 2026-10-28T14:49:03.923732+00:00. The final paragraph of PROOF.md cites "proof 186 or190" for the renormalized column split. The intended references are proof 188 (V190) or proof 190 (V194). Proof 186 concerns the margin and is not a source for this split. The argument and statement are unchanged.
+
+The independent audit has been read in full. The origin inverse may be the normalized actual-variable extension; this is the choice used in proof 216 and the full-column extension of proof 217. For operator identities the output cutoff is supported where the extension agrees with the actual expression. Boundedness of the cutoff maps alone does not require that stronger support choice. In the away-axis comparison, take a C^alpha function g already odd in y and supported in x>=a>0, then add its x reflection. Odd-y parity in the actual source map follows from equivariance and uniqueness, not from an unspecified extension. The cutoff maps in fact satisfy E2->Y bounds. The weighted factor is needed for global mapping and residual membership, and does not itself make the physical strain bounded.

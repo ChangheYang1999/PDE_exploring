@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-28T14:22:24.388591+00:00",
+  "proof_sha256": "be13a724f3dfe02a9b31d38643c8712a70619467a1ea5c0acfc01bb766a89cbe",
+  "dependencies_sha256": {
+    "proofs/33_modal_origin_regularity/PROOF.md": "60905882fe95d6ba262e51cd688021cfde5673f7d041f5591af47e371bf9d401",
+    "proofs/199_directional_holder_coupling/PROOF.md": "0a59a002ba80735379987ca931a6c4b3eba4e47f773ed77c85639066e2d91c90",
+    "proofs/200_normalized_frozen_holder/PROOF.md": "91aea5b228d7725b32179631b153b58c055554e4ac44f7841f050c74201c5b31",
+    "proofs/201_holder_origin_strain/PROOF.md": "42906dd8d276e64ab914ecc7fa159776da8137795b07bfaf665f975c28cc0b96",
+    "proofs/202_variable_origin_holder/PROOF.md": "42dc1460554fbfbdaa752822e444e178446a94e523209b0da572440bfa64526c",
+    "proofs/203_quadratic_holder_endpoint/PROOF.md": "885960debef56932bd4c5ae2de333f069c1ae85437dde14b47e6047de419661f"
+  },
+  "method": "exact partial-Fourier band kernels, absolute strain series, low/high differentiated Taylor remainder, normalized product, exact compact-potential sharpness",
+  "checks": [
+    "U2-cy sup delta^(2+alpha), local y seminorm delta^2",
+    "U1/x+c sup delta^(1+alpha), local y seminorm delta",
+    "background C4,1 gives divided remainders e1=O(r^3), e2=O(r^2)",
+    "all global weighted cutoff pairs and ordinary x seminorm",
+    "sharp c=J=0 compact inputs have E2 norm bounded uniformly and output x seminorm >=c delta^2"
+  ],
+  "verdict": "CONFIRMED qualitative sharp quadratic rate; no numerical constant"
+}

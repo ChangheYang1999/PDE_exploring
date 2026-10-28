@@ -1,0 +1,61 @@
+{
+  "date_utc": "2026-10-28T04:02:27.225997+00:00",
+  "status": "PASS",
+  "symbolic_identity_modes": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "float_endpoint_counterexample": {
+    "exact": "2^-1200",
+    "rounded": 0.0,
+    "radius_contains_exact": false
+  },
+  "float_square_counterexample": {
+    "input": "0x1.0000000000001p+0",
+    "rounded_square": "2251799813685249/2251799813685248",
+    "exact_square": "20282409603651679431146506027009/20282409603651670423947251286016"
+  },
+  "coverage_counterexample": {
+    "DD2": [
+      "1",
+      "infinity"
+    ],
+    "included_cells": [
+      0
+    ],
+    "reported_max": 1
+  },
+  "crossing_cell_counterexample": {
+    "t_left": -1,
+    "t_right": 1,
+    "a0": "exp(2*t)",
+    "weighted_sup": 1,
+    "unweighted_sup": "exp(2)>1"
+  },
+  "inner_B27_near_resonance": {
+    "lambda_exact": "75/70368744177664",
+    "lambda_float": 1.0658141036401503e-12,
+    "seventh_inverse_power_log2": 278.39826916652885,
+    "interpretation": "Diagnostic conditioning, not a proved bound on final interval widths"
+  },
+  "source_sha256": "a069d85d102e17340778042f85c003705716ba799c0f68873d10c1c582ea4874",
+  "snapshot_sha256": "b5b1bf44962fa1a7a5803f0d207c32a7844564ae5a94e5968472a14756af8bd3",
+  "scope": "The identities are confirmed; the snapshot is not a sound certificate until rounding and coverage defects are repaired."
+}

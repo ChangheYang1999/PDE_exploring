@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-28T13:05:12.978640+00:00",
+  "verdict": "CONFIRMED_REPAIRS",
+  "fixtures": [
+    {
+      "tag": "correct",
+      "returncode": 0,
+      "result_written": true,
+      "expected_success": true,
+      "partial": false
+    },
+    {
+      "tag": "wrong_equal_count",
+      "returncode": 1,
+      "result_written": false,
+      "expected_success": false,
+      "partial": false
+    },
+    {
+      "tag": "missing",
+      "returncode": 1,
+      "result_written": false,
+      "expected_success": false,
+      "partial": false
+    },
+    {
+      "tag": "extra",
+      "returncode": 1,
+      "result_written": false,
+      "expected_success": false,
+      "partial": false
+    },
+    {
+      "tag": "overlap",
+      "returncode": 1,
+      "result_written": false,
+      "expected_success": false,
+      "partial": false
+    },
+    {
+      "tag": "duplicate_inside",
+      "returncode": 1,
+      "result_written": false,
+      "expected_success": false,
+      "partial": false
+    },
+    {
+      "tag": "explicit_partial",
+      "returncode": 0,
+      "result_written": true,
+      "expected_success": true,
+      "partial": true
+    }
+  ],
+  "scope": "cell accounting checks and exact input templates only; no numerical operator certificate",
+  "hashes": {
+    "proofs/192_fsec_v3_audit/PROOF.md": "5d9c20eea0a20b0ebb149e40b4ec9cea11cadebed66d3082e72399dc047e0218",
+    "proofs/192_fsec_v3_audit/code/check.py": "866ce5d5be9a75c5d0d8f7a860ca845d6616a57eed28ef59d14f6f7bc9ed3c6c",
+    "proofs/192_fsec_v3_audit/evidence/fsec_assemble_v3.py": "290817da7334ea5803ca0c697deaa731b21efc50e8e59455c065ea921bd18334",
+    "proofs/192_fsec_v3_audit/evidence/fsec_producer_v3.py": "ecd506e409bfa98bb69cb98479b311912c0c83b0c3dd90e5b5ccb71cda4fd324",
+    "proofs/192_fsec_v3_audit/evidence/num_note26.md": "dbbd79edf845f1324795a9b3eac89c90a7648eb89e4a23b51457b95f7debac25"
+  }
+}

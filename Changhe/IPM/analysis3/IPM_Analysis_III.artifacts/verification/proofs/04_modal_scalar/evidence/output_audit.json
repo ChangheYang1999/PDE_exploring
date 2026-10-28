@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-28T00:32:41.156875+00:00",
+  "verdict": "PASS",
+  "source_sha256": "a069d85d102e17340778042f85c003705716ba799c0f68873d10c1c582ea4874",
+  "computed_script_sha256": "5ab1df5643fee4f18445bdb49d58d4d1cdd69687d2955b1f0ee2b9782735eac1",
+  "audit_script_sha256": "a712b7e58f925a461a3891adc710f55016c6dce9a8d3b2376e69325963fab943",
+  "checks": [
+    "Original source bytes match copied input",
+    "Original computation script unchanged",
+    "Every retained ball lies strictly within the stated exact decimal interval"
+  ],
+  "exact_decimal_enclosures": {
+    "c0": [
+      "15.7260878319246786225638146971829",
+      "15.7260878319246786225638146971831"
+    ],
+    "normalization_correction_z": [
+      "-1.198605236453734890460334164888e-20",
+      "-1.198605236453734890460334164887e-20"
+    ],
+    "slope": [
+      "3386927.83874448932844599542335954",
+      "3386927.83874448932844599542335956"
+    ],
+    "c_X_bound": [
+      "0.00362844569114920751639699158385338",
+      "0.00362844569114920751639699158385339"
+    ],
+    "middle_taylor_absolute_remainder": [
+      "0",
+      "7.82e-183"
+    ]
+  },
+  "limitation": "This output audit checks arithmetic enclosures and identity; the formula and code proof are separately audited in PROOF.md and VERIFY_REPORT.md."
+}

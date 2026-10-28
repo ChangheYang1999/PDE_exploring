@@ -1,0 +1,69 @@
+{
+  "date": "2026-10-28T08:06:18.659779+00:00",
+  "status": "PASS_NUMERICAL_ARITHMETIC_ONLY",
+  "input_hashes": {
+    "far_points_160.json": "dfeedd960223697abb9059469cf34fe389a269c35547fc20bd10ddb329b21aea",
+    "far_points_192.json": "ca2bd6cbb032b8985a477d7fb6e79901632c053d2869a5ff52243f3608871b86"
+  },
+  "independent_point_checks": [
+    {
+      "t": "33/4",
+      "axis_overlap": true,
+      "remainder_overlap": true
+    },
+    {
+      "t": "30",
+      "axis_overlap": true,
+      "remainder_overlap": true
+    }
+  ],
+  "fine_loglinear": {
+    "axis_0_20": 123.40802939828475,
+    "remainder_0_20": 52223574.606302515,
+    "tail_convention": 203472.244212046,
+    "total": 52427170.25854396,
+    "eta": 7240.660899292548
+  },
+  "coarse_loglinear": {
+    "axis_0_20": 122.50293068639466,
+    "remainder_0_20": 51671108.86900858,
+    "tail_convention": 203472.244212046,
+    "total": 51874703.61615131,
+    "eta": 7202.409570147432
+  },
+  "fine_trapezoid": {
+    "axis_0_20": 123.7110593711098,
+    "remainder_0_20": 52409234.42948457,
+    "tail_convention": 203472.244212046,
+    "total": 52612830.384755984,
+    "eta": 7253.470230500431
+  },
+  "fitted_rates": [
+    -0.5325578672428343,
+    -0.5325578716393553
+  ],
+  "actual_limiting_rate": -0.5325578748249833,
+  "corrected_regions": {
+    "[0,4]": {
+      "energy": 37528.47950856392,
+      "share": 0.0007158211920172818
+    },
+    "[4,8.135]": {
+      "energy": 2476356.6731006075,
+      "share": 0.047234223416760514
+    },
+    "[8.135,12]": {
+      "energy": 36613172.995480664,
+      "share": 0.698362563055058
+    },
+    "[12,20]": {
+      "energy": 13096639.866242079,
+      "share": 0.24980634662630383
+    },
+    "[20,inf)": {
+      "energy": 203472.244212046,
+      "share": 0.0038810457098604613
+    }
+  },
+  "proof_sha256": "b9377052a8be42cd864a451fe05d58b16fc2bc01f48fc6beef73e0ca3df5cd9c"
+}

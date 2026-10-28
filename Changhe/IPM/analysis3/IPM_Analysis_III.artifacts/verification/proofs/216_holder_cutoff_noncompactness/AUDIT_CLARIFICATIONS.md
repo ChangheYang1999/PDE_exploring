@@ -1,0 +1,5 @@
+# Independent audit clarifications
+
+Recorded 2026-10-28T14:54:45.210262+00:00. All six checks and eleven findings of the independent audit were read and assessed. R_delta in this topic means the full L_delta inverse from proof 215, not the characteristic S_delta inverse denoted similarly in proof 202. The output cutoff has compact support inside the open disk B_(delta/2). Reflection equivariance of V transports every packet bound to the other three copies.
+
+For general f, g=R_delta eta f is known to belong to E2; it is not assumed to belong to the global weighted graph D_Y. Accordingly the general error is interpreted through its explicit expression (V.grad chi)g+(U[chi g]-chi U[g]).grad rho0+c[chi g]H0-chi c[g]H0. The operator commutator identity on D_Y is used only on the constructed f_n, for which g=h_n does belong to D_Y. The construction proves noncompactness of this error; it asserts no lower bound exceeding one and no failure of every alternative patching method. The separate far-axis range obstruction is proof 220.

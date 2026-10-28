@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-28T17:21:24.692345+00:00",
+  "status": "CONFIRMED_AFTER_INDEPENDENT_OPUS_AUDIT",
+  "verdict_record": "V291",
+  "actual_model": "us.anthropic.claude-opus-5-5",
+  "model_provenance": "Actual S2 lead model recorded in the run; cross-audit supplied through its local files. No remote call in verifier lane.",
+  "files": {
+    "proofs/246_exact_strain_hyperplane/PROOF.md": "c90fc65d68d34e2656484279b1cb91469674a90b87b42ffe0c2c34af166f9970",
+    "proofs/246_exact_strain_hyperplane/RESULTS.md": "caadd61b8bbf3f389214ee56a584fe56847f32c8cd508a003725d7652f0f7b47",
+    "proofs/246_exact_strain_hyperplane/AUDIT_CLARIFICATIONS.md": "7a8586dd749398f29571d5e349bd3f817787dd897b34e0b968a42b178d03a948",
+    "proofs/246_exact_strain_hyperplane/code/check.py": "5397bdf1735a9c75cdc134aa73b89ee54365cd27cf14f635b4136bccb99e3b6a",
+    "proofs/246_exact_strain_hyperplane/code/replay_direct.py": "d7292d26c4c3f76b48c3eb88628dcc80646807cefd68a67c9733f976a557d962",
+    "proofs/246_exact_strain_hyperplane/evidence/check.json": "8714fd38312d89f348cbb5b700dc31e9300c48ccb98a8c9ba6515da8d97cd0d2",
+    "proofs/246_exact_strain_hyperplane/evidence/direct_replay.json": "3a3cbe1fe5f0e7fe6dc2c60b447b46c48b69da4f9b64b7f2958c6fb4be500a0c",
+    "proofs/246_exact_strain_hyperplane/evidence/dyadic_whiteners.json": "a6eb01a6ef45a3d08cb949e7955e1e0ccc2aaa49ebf097f84f9f561175f01087",
+    "proofs/246_exact_strain_hyperplane/evidence/xaudit_V282topic.md": "b9401bb5c4483c26a6ca88773bddfc73cd7b4ece97039d58b60281fc2329d0e9",
+    "proofs/246_exact_strain_hyperplane/evidence/opus_recheck.py": "f40eda2f61388ce8f43c13bf467758bb27eacd250095ac34b19eb322f5e0c937",
+    "proofs/246_exact_strain_hyperplane/evidence/opus_recheck.log": "d9115a70d9a041e15b2419bbb55bc229623cdd42e40ec934e993893c69e047e1",
+    "proofs/239_s1j1_full_input/evidence/check.json": "c6d2e2c862f5023e90f24bb8ec550e655ea75e153ba9ccf22abb9f2599079858",
+    "proofs/240_s1j1_high_intersections/evidence/exact_constraints.json": "96f271d72ec6190011166d747dff391d783cedff8203b97eb31a87f49bc05344",
+    "proofs/242_s1j1_completed_audit/evidence/source/meta.json": "bd16b7d2bd321e4e931016354ab3e08b5235a9f06e186587b6ed108bc86913f7"
+  },
+  "original_source": {
+    "path": "source/analysis1/IPM_Analysis_I.artifacts/numerics/data/trial_v2_h0.008.npz",
+    "sha256": "a069d85d102e17340778042f85c003705716ba799c0f68873d10c1c582ea4874"
+  },
+  "method": "Full independent audit and fractions-only code/log read; each finite-dimensional, interval and scope finding independently checked. Existing640-bit primary and768-bit direct solve unchanged.",
+  "scope": "Exact input hyperplanes, dimensions and LOW-metric projection bound only. Floating nullspace-basis errors and all outputs remain uncertified."
+}

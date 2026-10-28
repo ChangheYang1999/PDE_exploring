@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-28T12:42:45.890420+00:00",
+  "verdict": "REFUTED_GENERIC_UNION_EQUALITY_CHECK",
+  "fixtures": [
+    {
+      "tag": "wrong_same_cardinality",
+      "done": [
+        1,
+        2
+      ],
+      "expected": [
+        0,
+        1
+      ],
+      "returncode": 0,
+      "result_written": true,
+      "warned": false,
+      "set_equality": false
+    },
+    {
+      "tag": "incomplete",
+      "done": [
+        0
+      ],
+      "expected": [
+        0,
+        1
+      ],
+      "returncode": 0,
+      "result_written": true,
+      "warned": true,
+      "set_equality": false
+    },
+    {
+      "tag": "correct",
+      "done": [
+        0,
+        1
+      ],
+      "expected": [
+        0,
+        1
+      ],
+      "returncode": 0,
+      "result_written": true,
+      "warned": false,
+      "set_equality": true
+    }
+  ],
+  "snapshot_sha256": "69b1fce8f3dcef8987057cdaaf9e72739a890228f5d328694c1facc0a206c8dc",
+  "proof_sha256": "61ad2feaf4da854b7796aaa74813316ca9518e342c8d88af31bbb4354809a1ea",
+  "code_sha256": "2d7cb67156bf413f1834ec12b98c677dfb4ee8f7e1ab3a748d906b4f14158bd4"
+}

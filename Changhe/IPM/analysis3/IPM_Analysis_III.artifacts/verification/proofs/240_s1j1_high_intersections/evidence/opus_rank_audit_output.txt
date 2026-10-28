@@ -1,0 +1,37 @@
+PART A: exported matrices and bases
+shapes: input 6x38, graph 9x38, input basis 32 x 38, graph basis 29 x 38
+row labels input: [['minus', 4], ['minus', 5], ['plus', 4], ['plus', 5], ['outer', 4], ['outer', 5]]
+row labels graph: [['minus', 4], ['minus', 5], ['minus', 6], ['plus', 4], ['plus', 5], ['plus', 6], ['outer', 4], ['outer', 5], ['outer', 6]]
+rank(input matrix)  natural order = 6, reversed order = 6
+rank(graph matrix)  natural order = 9, reversed order = 9
+nonzero A6*v over 32 input vectors: 0 (of 192 identities)
+nonzero A9*v over 29 graph vectors: 0 (of 261 identities)
+nonzero A6*v over 29 graph vectors (containment): 0 (of 174 identities)
+rank(input basis) = 32, rank(graph basis) = 29
+rank(input basis + graph basis) = 32  (32 means graph span inside input span)
+every input row equals the identically labelled graph row: True
+rank + nullity: input 6 + 32 = 38, graph 9 + 29 = 38
+
+PART B: independent reconstruction of all jump rows
+knots 42, splines 34, degree 7; clamped: True; interior knots simple: True
+partition of unity at both ends: True
+left vanishing orders b_0..b_7: [0, 1, 2, 3, 4, 5, 6, 7]; b_8..b_33 vanish to order >=8 at t_minus: True
+right vanishing orders b_26..b_33: [7, 6, 5, 4, 3, 2, 1, 0]; b_0..b_25 vanish to order >=8 at t_plus: True
+own inner coefficients equal 239 export: True
+k = 1615536043799051/9007199254740992, 0<k<1/4: True; own outer exponents equal 239 export: True; alpha_1..9 distinct: True
+own outer Lagrange rows equal 239 export: True
+all 38 columns C3 at t_minus, t_plus, t_J (jumps of order 0..3 vanish): True
+scales from 239 equal 240 export and all positive: True
+rebuilt 6x38 matrix equals exported high_input matrix entrywise: True
+rebuilt 9x38 matrix equals exported high_graph matrix entrywise: True
+column supports of order-4..6 rows: {'minus': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 'plus': [30, 31, 32], 'outer': [33, 34, 35, 36, 37]}
+supports pairwise disjoint: True
+minus rows on columns [7, 8, 9] lower triangular with nonzero diagonal: True
+plus rows on columns [32, 31, 30] lower triangular with nonzero diagonal: True
+outer block ranks: orders 4-5 -> 2, orders 4-6 -> 3
+minus block ranks (scaled): orders 4-5 -> 2, orders 4-6 -> 3
+plus block ranks (scaled): orders 4-5 -> 2, orders 4-6 -> 3
+outer block ranks (scaled): orders 4-5 -> 2, orders 4-6 -> 3
+outer fourth jumps equal P(alpha_q) of topic235: True
+rank(rebuilt input) = 6, rank(rebuilt graph) = 9
+seconds: 0.207

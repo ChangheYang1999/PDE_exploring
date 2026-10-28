@@ -1,0 +1,36 @@
+{
+  "checked_at": "2026-10-28T14:08:41.683680+00:00",
+  "method": "Independent analytic annular estimate and maximal-domain proof; no numerical computation",
+  "proof_sha256": "4cc1cf892f98f82bd1daa91386fb1b5be306125a71fef828795f92884976ffc2",
+  "dependencies": [
+    {
+      "path": "proofs/15_modal_source/PROOF.md",
+      "sha256": "20071e87df00c49ddbcc4d5c2dc8552c354c33b2802dcc6c2bc05e55f1f7a16d"
+    },
+    {
+      "path": "proofs/26_source_holder_actual_rate/PROOF.md",
+      "sha256": "885b615b3724fc6d75f2897f1f6d75d840f7c11c1ee82107ca4f94ba47005919"
+    },
+    {
+      "path": "proofs/01_operator_conventions/PROOF.md",
+      "sha256": "f0e20786d5044264b25c922bfe85ce48072366e91ee6762c0efa9d228b8251e0"
+    }
+  ],
+  "checks": [
+    "L2 semigroup and domain retained",
+    "Annular time integration uses only supremum input",
+    "Low input Bernstein factor N in dimension2",
+    "Both dyadic sums converge for alpha<1/mu",
+    "Low output controlled in L2",
+    "No density in large Holder norm assumed",
+    "Riesz multipliers bounded on stated intersection",
+    "Localized coefficient product small in complete norm",
+    "Exact strain scaling counterexample and J0 membership"
+  ],
+  "limitations": [
+    "Qualitative Holder constant",
+    "Frozen transport only",
+    "Unbounded full central strain",
+    "No actual global inverse or nonlinear closure"
+  ]
+}

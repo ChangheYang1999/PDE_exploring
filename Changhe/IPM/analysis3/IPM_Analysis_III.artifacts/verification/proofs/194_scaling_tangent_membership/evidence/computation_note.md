@@ -1,0 +1,3 @@
+# Computation record
+
+At 2026-10-28T13:20:18.684293+00:00, the exact check was accepted. The first launch was stopped after about145 seconds because an uncached NPZ array access redundantly decoded the same stored array inside the coefficient loop. It produced no certificate. That script is preserved as check_before_cached_array.py. The corrected script loads S once, performs the same exact rational arithmetic, and completes in2.5643 measured seconds. No mathematical formula or input changed. Both derivative methods and all exact C6 joins agree; the nonzero seventh jump is recorded as an exact rational.
