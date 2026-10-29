@@ -1,0 +1,57 @@
+{
+ "id": "T1_ladder/L2",
+ "branch": "T1_ladder",
+ "level": "L2",
+ "run_id": "lad3ref_lad2cont_t1lad2_cl0p740_q3p5_freecl_lm",
+ "cl": 0.749,
+ "cl_free": false,
+ "alpha": 0.33511348464619495,
+ "working_gauge": {
+  "kind": "full",
+  "target": 47.29796036855926,
+  "int_F2": 47.29796447994843,
+  "int_Ftheta2": 15.74389013447264
+ },
+ "L_to_reporting_gauge": 0.23592366280080254,
+ "a_eff": 2.5032039797173256,
+ "representation": "ball(Cartesian polynomial, D) + log-Chebyshev shells + factored power-law exterior; formulation B (phi, q)",
+ "resolution": {
+  "D": 48,
+  "nmax": 32,
+  "shells": [
+   [
+    10.0,
+    32
+   ]
+  ],
+  "emax": 4.0,
+  "nR_ball": 0,
+  "nR_shell": 0,
+  "nR_ext": 0,
+  "nmu": 38
+ },
+ "quadrature": "Gauss-Legendre tensor nodes per element (ball in x = 2 rho^2 - 1, shells in log R, exterior in log R to Tmax)",
+ "created": "2026-10-28T23:52:03Z",
+ "source_hash": "5bffeaa8e2f26972",
+ "self_measured": {
+  "rho_max": 2.3271866753907657,
+  "m_max": 4.931004318062495,
+  "per_equation": {
+   "Mr": 0.2809511217999082,
+   "Mt": 0.9385164579741577,
+   "Mz": 2.3271866753907657,
+   "q": 1.596638019884693,
+   "eta": 0.27369772239376733,
+   "div": 2.579627495819885e-17
+  },
+  "s_core": 0.6767532388253401,
+  "s_far": 0.5769455126156618,
+  "cost": 0.004753419668477596,
+  "holdout_rel_Rq": 0.08287747125966431,
+  "holdout_rel_Reta": 0.0040288047066536084
+ },
+ "z0": 0.03937253341702056,
+ "q0_pin": 3.5,
+ "note": "Re-export (loader fix). Refinement level D = 48, nmax = 32, K = 32 (2500 iterations) of the q0 = 3.5, c_l = 0.749 branch; rho_max 2.33, eta 0.004, q 0.083, s_core 0.68: NOT a solution; plateaued refinement.",
+ "status": "pilot state, NOT a candidate solution; exported so that the loader can be exercised"
+}

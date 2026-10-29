@@ -1,0 +1,4 @@
+{"job_id": "zz_test_homotopy", "priority": 0, "branch": "test", "stage": "test", "max_retries": 0, "ckpt_seconds": 60, "validate": false,
+ "cfg": {"cl": 0.6, "D": 16, "nmax": 8, "shells": [[8.0, 12]], "R1": 2.0, "gauge": "full", "s1_constraint": true, "z0_init": 0.0, "amp_param": true, "w_int": 100.0, "w_s1": 300.0, "scale_power_shift": -2.0},
+ "init": {"family": "s1_sym_v2", "seed": 1, "extra": {"q0": 1.0, "L": 1.0}}, "gauge_from_seed": true, "auto_row_scale": true,
+ "optimizer": [{"name": "homotopy", "dt0": 0.1, "dt_min": 1e-3, "max_iter_step": 150, "tol_rel": 1e-9, "time_limit": 400}]}

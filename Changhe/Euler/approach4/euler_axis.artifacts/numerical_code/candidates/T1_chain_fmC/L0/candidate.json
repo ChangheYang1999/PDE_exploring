@@ -1,0 +1,57 @@
+{
+ "id": "T1_chain_fmC/L0",
+ "branch": "T1_chain_fmC",
+ "level": "L0",
+ "run_id": "fmC_cl0p745_q5p5",
+ "cl": 0.745,
+ "cl_free": false,
+ "alpha": 0.3422818791946309,
+ "working_gauge": {
+  "kind": "full",
+  "target": 47.29796036855926,
+  "int_F2": 47.29796125570668,
+  "int_Ftheta2": 27.565976336158908
+ },
+ "L_to_reporting_gauge": 0.23775036815135583,
+ "a_eff": 2.8750580409448774,
+ "representation": "ball(Cartesian polynomial, D) + log-Chebyshev shells + factored power-law exterior; formulation B (phi, q)",
+ "resolution": {
+  "D": 36,
+  "nmax": 24,
+  "shells": [
+   [
+    10.0,
+    24
+   ]
+  ],
+  "emax": 4.0,
+  "nR_ball": 0,
+  "nR_shell": 0,
+  "nR_ext": 0,
+  "nmu": 30
+ },
+ "quadrature": "Gauss-Legendre tensor nodes per element (ball in x = 2 rho^2 - 1, shells in log R, exterior in log R to Tmax)",
+ "created": "2026-10-29T09:10:12Z",
+ "source_hash": "3becb56d15d6f9c3",
+ "self_measured": {
+  "rho_max": 2.37454118179867,
+  "m_max": 11.51386143503591,
+  "per_equation": {
+   "Mr": 0.4569016209428662,
+   "Mt": 1.059615025074071,
+   "Mz": 1.1510591294978019,
+   "q": 2.37454118179867,
+   "eta": 2.223237193422416,
+   "div": 1.9998895843416063e-17
+  },
+  "s_core": 0.7833814943384434,
+  "s_far": 0.7634234199514002,
+  "cost": 0.0016217692751483207,
+  "holdout_rel_Rq": 0.04526899773205465,
+  "holdout_rel_Reta": 0.004443753293318129
+ },
+ "z0": 0.28192136965215187,
+ "q0_pin": 5.5,
+ "note": "q0-raised fixed-c_l chain (fmC) from the 0.749 ladder state: step to c_l 0.745 with the q0 pin raised to 5.5, D36/n24/K24, 1000 LM iterations (CPU phase); holdout rho_max 2.37 (M_z; the smallest primary value with c_l below 0.7485), s_core 0.68, s_far 0.58; an order-one-residual iterate, not a solution (lead note 51 item 2)",
+ "status": "pilot state, NOT a candidate solution; exported so that the loader can be exercised"
+}

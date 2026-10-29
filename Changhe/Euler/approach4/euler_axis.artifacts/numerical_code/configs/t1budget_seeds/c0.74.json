@@ -1,0 +1,103 @@
+{
+  "c": 0.74,
+  "name": "ax3_rad0_a1_b1",
+  "terms": [
+    [
+      0.5,
+      0,
+      0,
+      1.6756756756756757,
+      1,
+      1.0
+    ],
+    [
+      1.5,
+      0,
+      1,
+      1.6756756756756757,
+      1,
+      1.0
+    ]
+  ],
+  "reference": "rk8_c0.74_n101",
+  "radial_aspect_parameter": 1,
+  "method": "exact radial conjugacy, cubic interpolation",
+  "dx": 0.050035842293906896,
+  "nm": 101,
+  "reference_nm": 101,
+  "xmin": -6.98,
+  "xmax": 6.98,
+  "S": 0.08105217127979601,
+  "Spos": 0.0811198034286006,
+  "Sneg": 6.763214880460918e-05,
+  "transformed_grid_S": 0.08105207105260419,
+  "relative_strain_interpolation_error": 1.2365762722676976e-06,
+  "axis_error": 2.141093584934927e-07,
+  "hmax": 1.342109361981172,
+  "K2": 6.16886620191797,
+  "K": 2.4837202342288816,
+  "defect": 0.6069547537383649,
+  "norm": "L2(R^5), annulus 0.05<=R<=8; angular constants cancel",
+  "lmax": 101,
+  "angular_quadrature": 768,
+  "source_ps_induced": -0.7703075028347428,
+  "source_pz_induced": -0.3221074299470862,
+  "K2_required_by_source_cubic_identity": 2.0801877551020413,
+  "spectral_axis_samples": {
+    "z": [
+      0.0,
+      0.1,
+      0.25,
+      0.5,
+      1.0,
+      2.0,
+      4.0,
+      8.0
+    ],
+    "induced_phi_z": [
+      0.5,
+      0.49046329624332285,
+      0.4435434008718204,
+      0.3126416504464481,
+      0.07611229192729815,
+      -0.053476728989617195,
+      -0.03915487410168224,
+      -0.012583978746570726
+    ]
+  },
+  "grid_description": "R=exp(x), mu=sin(j*pi/(2*(nm-1))); r=R*sqrt(1-mu^2), z=R*mu",
+  "reflection": "phi and eta odd in z; q and h even in z",
+  "source": {
+    "phi": 0.0,
+    "phi_z": 0.5,
+    "q": 2.4837202342288816,
+    "eta": 0.0
+  },
+  "status": "Numerical positive-strain prescribed field; not an Euler fixed point",
+  "selection": "Smallest stated defect among aspects .25,1,2,4,8,16,32 at this c; not a global optimum",
+  "axis_samples": {
+    "z": [
+      0,
+      0.1,
+      0.25,
+      0.5,
+      1,
+      2,
+      4,
+      8
+    ],
+    "induced_phi_z": [
+      0.5000219653108171,
+      0.49046326194217915,
+      0.44354329540924387,
+      0.31264165861492155,
+      0.07611232149525508,
+      -0.05347679580985767,
+      -0.0391549027102964,
+      -0.012584041146606759
+    ]
+  },
+  "axis_samples_method": "direct axis Green integral, asymptotic e tail",
+  "axis_direct_quadrature_change": 4.078646162995747e-08,
+  "source_cubic_inner_cutoff": 0.005
+}

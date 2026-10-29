@@ -1,0 +1,57 @@
+{
+ "id": "T1_seed_cl0p74/L1fc",
+ "branch": "T1_seed_cl0p74",
+ "level": "L1fc",
+ "run_id": "freeclmid_t1seedC_cl0p74",
+ "cl": 0.745,
+ "cl_free": true,
+ "alpha": 0.3422818791946309,
+ "working_gauge": {
+  "kind": "full",
+  "target": 29.371276953605268,
+  "int_F2": 29.371277468879125,
+  "int_Ftheta2": 11.140364140078816
+ },
+ "L_to_reporting_gauge": 0.28392180254421834,
+ "a_eff": 2.4180130845257204,
+ "representation": "ball(Cartesian polynomial, D) + log-Chebyshev shells + factored power-law exterior; formulation B (phi, q)",
+ "resolution": {
+  "D": 36,
+  "nmax": 24,
+  "shells": [
+   [
+    10.0,
+    24
+   ]
+  ],
+  "emax": 4.0,
+  "nR_ball": 0,
+  "nR_shell": 0,
+  "nR_ext": 0,
+  "nmu": 30
+ },
+ "quadrature": "Gauss-Legendre tensor nodes per element (ball in x = 2 rho^2 - 1, shells in log R, exterior in log R to Tmax)",
+ "created": "2026-10-29T09:07:46Z",
+ "source_hash": "3becb56d15d6f9c3",
+ "self_measured": {
+  "rho_max": 2.5978915059607726,
+  "m_max": 22.87392694688981,
+  "per_equation": {
+   "Mr": 0.8108692752534417,
+   "Mt": 1.435192198512453,
+   "Mz": 2.5978915059607726,
+   "q": 2.496948743417032,
+   "eta": 0.9110461956588046,
+   "div": 2.981897499264966e-17
+  },
+  "s_core": 0.6706693756652633,
+  "s_far": 0.6158689022055609,
+  "cost": 0.013752281078870809,
+  "holdout_rel_Rq": 0.11470255504355362,
+  "holdout_rel_Reta": 0.02148821769889927
+ },
+ "z0": 5.6060424414081e-08,
+ "q0_pin": 2.5,
+ "note": "free-c_l restart of the 0.74 direct-seed state L1 with bounds [0.70, 0.745]: c_l went to the bound 0.745 (ftol after 55 LM iterations); holdout rho_max 2.60 (M_z; q 2.50), s_core 0.67, s_far 0.62; the best direct-class primary value at 09:00Z; an iterate at the imposed bound, not a solution",
+ "status": "pilot state, NOT a candidate solution; exported so that the loader can be exercised"
+}

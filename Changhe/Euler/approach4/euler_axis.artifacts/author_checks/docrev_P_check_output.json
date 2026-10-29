@@ -1,0 +1,103 @@
+{
+ "F22 identity d_i d_j(U_i U_j) = tr(DU^2) + 2 U.grad div U + (div U)^2": {
+  "pass": true,
+  "detail": ""
+ },
+ "F22 U(y) = y: d_i d_j(U_i U_j) = 12, tr(DU^2) = 3": {
+  "pass": true,
+  "detail": "12, 3"
+ },
+ "F22 solid rotation inside, zero outside: J = 0, F = omega^2 a (1 - mu^2)": {
+  "pass": true,
+  "detail": "a*omega**2*(1 - mu**2)"
+ },
+ "F22 rotation reversed across the sphere: tangential jump, J = 0 and F = 0": {
+  "pass": true,
+  "detail": "0"
+ },
+ "F23 0.5^1075 underflows to 0 in binary64 (0.5^1074 is the smallest subnormal)": {
+  "pass": true,
+  "detail": "0.0, 5e-324"
+ },
+ "F23 1e4^77 finite, 1e4^78 = inf (overflow threshold log10(max) = 308.25)": {
+  "pass": true,
+  "detail": "1e+308, inf, log10 max 308.2547"
+ },
+ "F23 smallest normal binary64 is 2^-1022": {
+  "pass": true,
+  "detail": "2.2250738585072014e-308"
+ },
+ "F23 scaled powers: R^(-l-1) s^(l+2) = s (s/R)^(l+1), R^l s^(1-l) = s (R/s)^l": {
+  "pass": true,
+  "detail": ""
+ },
+ "F24 5D Green, eta_m = a R^(-m-5) outside the unit ball: phi_m = R^(-m-3)((a/n)log R + C/n + a/n^2), m = 0..5": {
+  "pass": true,
+  "detail": "m=0: C=b/5; m=1: C=b/6; m=2: C=b/7; m=3: C=b/8; m=4: C=b/9; m=5: C=b/10"
+ },
+ "F24 exterior term for symbolic m: R^m int_R^oo s^(1-m) a s^(-m-5) ds / n = (a/n^2) R^(-m-3)": {
+  "pass": true,
+  "detail": ""
+ },
+ "F24 non-resonant tails a R^(-p): coefficient of R^(-m-3) = finite part of int_0^oo s^(m+4) eta_m / n": {
+  "pass": true,
+  "detail": ""
+ },
+ "F20 3D Green, f_2 = k R^-5 outside a ball: coefficient of R^-3 log R is k/5": {
+  "pass": true,
+  "detail": "k/5"
+ },
+ "F25 phi = 1 (R <= 1), R^-3 (R > 1): harmonic on each piece, continuous, bulk inverse 0": {
+  "pass": true,
+  "detail": ""
+ },
+ "F25 distributional source is the single layer 3 delta(R - 1); Green formula with it returns phi": {
+  "pass": true,
+  "detail": "layer 3, phi(2) 1/8, phi(1/2) 1, I0 1, O0 1"
+ },
+ "F26 f_34 = 1 on 2 < R < 3 only: P_34 = c R^34 with c != 0 on R < 2": {
+  "pass": true,
+  "detail": "1853015893884545*R**34/17572723730761653152737394688"
+ },
+ "F30 int_0^2pi dtheta/|x - y| = 4 K(m)/sqrt((r+rho)^2+dz^2) with K(m) = int_0^(pi/2)(1 - m sin^2 t)^(-1/2) dt": {
+  "pass": true,
+  "detail": "1.1e-29"
+ },
+ "F30 prefactor: (1/(4 pi)) * rho * 4 K/sqrt(...) = (1/pi) rho K/sqrt(...)": {
+  "pass": true,
+  "detail": ""
+ },
+ "F20 arithmetic f_2/5 = -125460142/2188265625": {
+  "pass": true,
+  "detail": "-125460142/2188265625"
+ },
+ "F20 FAR_FIELD_ANALYSIS.md states the same example (A, B, f_2, f_2/5)": {
+  "pass": true,
+  "detail": ""
+ },
+ "F20 Cartesian recomputation: -Delta P1 = tr(DU0^2) for the local pressure R^(-4/3) Q(mu)": {
+  "pass": true,
+  "detail": "deg 6"
+ },
+ "F20 Cartesian recomputation of the resonant quadrupole f_2 = -125460142/437653125": {
+  "pass": true,
+  "detail": "f_2 = -125460142/437653125, source degree 9, 30 points"
+ },
+ "Records: five states, last-level changes <= 5e-12 (P) and 1.1e-12 (grad), direct Newton <= 1.4e-8, all levels >= bound, 2n - 1 >= D + L at every level, 765/765 finite stored samples": {
+  "pass": true,
+  "detail": "P 4.695e-12, grad 1.071e-12, direct 1.358e-08, stored 5.844e-05, degrees [64, 80, 96], bounds [50, 66]"
+ },
+ "Records: export with non-finite stored samples, full-bandwidth check": {
+  "pass": true,
+  "detail": "bound 88, degrees [96, 96, 112], last P 4.139e-13, grad 3.847e-13, direct 1.464e-08, stored 4.465e-05"
+ },
+ "Records: stored pressures 714 finite, 51 non-finite at three radii (+inf, -inf, NaN counts)": {
+  "pass": true,
+  "detail": "{'2848.035868': [9, 8, 0], '5336.699231': [0, 0, 17], '10000.000000': [0, 0, 17]}"
+ },
+ "Records: non-finite radii coincide with R^(L+1) overflow radii for some degree L (consistency, not cause)": {
+  "pass": true,
+  "detail": "L in [89]..[95]"
+ },
+ "cpu_seconds": 6.571400025
+}

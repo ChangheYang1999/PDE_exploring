@@ -1,0 +1,57 @@
+{
+ "id": "T1_ladder/L4rm5",
+ "branch": "T1_ladder",
+ "level": "L4rm5",
+ "run_id": "rm5_L1_cl0p749_q3p5",
+ "cl": 0.749,
+ "cl_free": false,
+ "alpha": 0.33511348464619495,
+ "working_gauge": {
+  "kind": "full",
+  "target": 47.29796036855926,
+  "int_F2": 47.29804601733849,
+  "int_Ftheta2": 19.754843649854113
+ },
+ "L_to_reporting_gauge": 0.235923510487735,
+ "a_eff": 2.348655671191169,
+ "representation": "ball(Cartesian polynomial, D) + log-Chebyshev shells + factored power-law exterior; formulation B (phi, q)",
+ "resolution": {
+  "D": 36,
+  "nmax": 24,
+  "shells": [
+   [
+    5.0,
+    24
+   ]
+  ],
+  "emax": 4.0,
+  "nR_ball": 0,
+  "nR_shell": 0,
+  "nR_ext": 0,
+  "nmu": 30
+ },
+ "quadrature": "Gauss-Legendre tensor nodes per element (ball in x = 2 rho^2 - 1, shells in log R, exterior in log R to Tmax)",
+ "created": "2026-10-29T02:45:45Z",
+ "source_hash": "3becb56d15d6f9c3",
+ "self_measured": {
+  "rho_max": 1.58139877964672,
+  "m_max": 8.565535593032285,
+  "per_equation": {
+   "Mr": 0.1950613851680959,
+   "Mt": 0.9180712024462152,
+   "Mz": 1.58139877964672,
+   "q": 0.8086336222870981,
+   "eta": 0.5504237108366579,
+   "div": 2.2644328658083332e-17
+  },
+  "s_core": 0.7040983640960412,
+  "s_far": 0.6462717891587005,
+  "cost": 0.004830546632954412,
+  "holdout_rel_Rq": 0.08405552473762681,
+  "holdout_rel_Reta": 0.005709306938212566
+ },
+ "z0": 0.052920939010529494,
+ "q0_pin": 3.5,
+ "note": "matching radius 5 (shells [[5, 24]]) from L1, c_l 0.749, q0 3.5, D36, 1000 LM iterations; outer-domain sensitivity test (Rm 5/10/20: 1.58/1.88/8.40); NOT a candidate solution (rho_max 1.58)",
+ "status": "pilot state, NOT a candidate solution; exported so that the loader can be exercised"
+}

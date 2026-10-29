@@ -1,0 +1,57 @@
+{
+ "id": "T1_ladder/L3sep",
+ "branch": "T1_ladder",
+ "level": "L3sep",
+ "run_id": "lad4sep_lad3ref_lad2cont_t1lad2_cl0p740_q3p5_freecl_lm",
+ "cl": 0.749,
+ "cl_free": false,
+ "alpha": 0.33511348464619495,
+ "working_gauge": {
+  "kind": "full",
+  "target": 47.29796036855926,
+  "int_F2": 47.29796521503093,
+  "int_Ftheta2": 14.802291463442522
+ },
+ "L_to_reporting_gauge": 0.2359236614276558,
+ "a_eff": 2.5032039797173256,
+ "representation": "ball(Cartesian polynomial, D) + log-Chebyshev shells + factored power-law exterior; formulation B (phi, q)",
+ "resolution": {
+  "D": 48,
+  "nmax": 32,
+  "shells": [
+   [
+    10.0,
+    32
+   ]
+  ],
+  "emax": 4.0,
+  "nR_ball": 0,
+  "nR_shell": 0,
+  "nR_ext": 0,
+  "nmu": 38
+ },
+ "quadrature": "Gauss-Legendre tensor nodes per element (ball in x = 2 rho^2 - 1, shells in log R, exterior in log R to Tmax)",
+ "created": "2026-10-29T01:28:04Z",
+ "source_hash": "3becb56d15d6f9c3",
+ "self_measured": {
+  "rho_max": 3.145231550851386,
+  "m_max": 4.844597883723368,
+  "per_equation": {
+   "Mr": 0.2856950193338967,
+   "Mt": 0.8485059334732018,
+   "Mz": 3.145231550851386,
+   "q": 1.4466543422627962,
+   "eta": 0.3138398769693212,
+   "div": 2.898240621100114e-17
+  },
+  "s_core": 0.6430192396312894,
+  "s_far": 0.5594267729546415,
+  "cost": 0.004313077816456441,
+  "holdout_rel_Rq": 0.07251003468460095,
+  "holdout_rel_Reta": 0.004688718524932429
+ },
+ "z0": 0.09668239311478571,
+ "q0_pin": 3.5,
+ "note": "lead note 26 item 4: D48 state with separated exterior columns (merge_tol 0.002) for an independent d_0; NOT a candidate solution (rho_max 3.15)",
+ "status": "pilot state, NOT a candidate solution; exported so that the loader can be exercised"
+}

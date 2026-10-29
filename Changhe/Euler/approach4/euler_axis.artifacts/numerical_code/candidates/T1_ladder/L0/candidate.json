@@ -1,0 +1,57 @@
+{
+ "id": "T1_ladder/L0",
+ "branch": "T1_ladder",
+ "level": "L0",
+ "run_id": "t1lad2_cl0p740_q2p5_freecl_lm",
+ "cl": 0.749,
+ "cl_free": true,
+ "alpha": 0.33511348464619495,
+ "working_gauge": {
+  "kind": "full",
+  "target": 29.37127695360526,
+  "int_F2": 29.371313703160958,
+  "int_Ftheta2": 20.668892785906788
+ },
+ "L_to_reporting_gauge": 0.282008823824506,
+ "a_eff": 4.356099030694608,
+ "representation": "ball(Cartesian polynomial, D) + log-Chebyshev shells + factored power-law exterior; formulation B (phi, q)",
+ "resolution": {
+  "D": 36,
+  "nmax": 24,
+  "shells": [
+   [
+    10.0,
+    24
+   ]
+  ],
+  "emax": 4.0,
+  "nR_ball": 0,
+  "nR_shell": 0,
+  "nR_ext": 0,
+  "nmu": 30
+ },
+ "quadrature": "Gauss-Legendre tensor nodes per element (ball in x = 2 rho^2 - 1, shells in log R, exterior in log R to Tmax)",
+ "created": "2026-10-28T23:51:51Z",
+ "source_hash": "5bffeaa8e2f26972",
+ "self_measured": {
+  "rho_max": 4.5939268272999305,
+  "m_max": 31.23305108008294,
+  "per_equation": {
+   "Mr": 1.187945605465187,
+   "Mt": 2.73841320757189,
+   "Mz": 4.5939268272999305,
+   "q": 2.746183236472466,
+   "eta": 4.067700715574624,
+   "div": 2.8972756898299366e-17
+  },
+  "s_core": 0.8422654848652429,
+  "s_far": 0.8388743596857858,
+  "cost": 0.42351353277993553,
+  "holdout_rel_Rq": 0.11672415899779089,
+  "holdout_rel_Reta": 0.2841887788118688
+ },
+ "z0": 1.022656028330915e-10,
+ "q0_pin": 2.5,
+ "note": "Re-export with c_l and all scalars from the FINAL state (c_l = 0.749, the upper bound; earlier metadata said 0.74). Referee positive-strain seed, q0 = 2.5 pinned, Jacobi basis D = 36, nmax = 24, slaved exterior, 1200 LM iterations; rho_max about 4.6, s_core 0.84: NOT a solution.",
+ "status": "pilot state, NOT a candidate solution; exported so that the loader can be exercised"
+}

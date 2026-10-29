@@ -1,0 +1,139 @@
+{
+ "generated": "2026-10-29T08:00:09Z",
+ "n_checks": 23,
+ "all_pass": true,
+ "wall_seconds": 13.7,
+ "exports": {
+  "T1_seed_cl0p74_L1_20261029T065203.806505Z": {
+   "N": 24,
+   "M": 24,
+   "D": 50,
+   "legendre_coefficient": "-1.2694503586210438e-11",
+   "exact_nonzero": true
+  },
+  "T1_seed_cl0p74_L3_20261029T072143.265106Z": {
+   "N": 43,
+   "M": 43,
+   "D": 88,
+   "legendre_coefficient": "9.652773519943285e-26",
+   "exact_nonzero": true
+  }
+ },
+ "checks": [
+  {
+   "check": "mu^10 coefficient of f equals the top-coefficient formula (N=4, M=2)",
+   "ok": true,
+   "value": "-467.541926241029 vs -467.541926241029"
+  },
+  {
+   "check": "Legendre coefficients above D vanish for the generic field (N=4, M=2)",
+   "ok": true,
+   "value": "7.3465e-43"
+  },
+  {
+   "check": "mu^12 coefficient of f equals the top-coefficient formula (N=2, M=5)",
+   "ok": true,
+   "value": "-175.477101760023 vs -175.477101760023"
+  },
+  {
+   "check": "Legendre coefficients above D vanish for the generic field (N=2, M=5)",
+   "ok": true,
+   "value": "4.1638e-43"
+  },
+  {
+   "check": "mu^8 coefficient of f equals the top-coefficient formula (N=3, M=3)",
+   "ok": true,
+   "value": "-2288.23032982165 vs -2288.23032982165"
+  },
+  {
+   "check": "Legendre coefficients above D vanish for the generic field (N=3, M=3)",
+   "ok": true,
+   "value": "6.1603e-44"
+  },
+  {
+   "check": "T_phi(R^2) = 2 R^(2k-2)(k-N)(k^2+(N+5)k-N) (N=0)",
+   "ok": true,
+   "value": null
+  },
+  {
+   "check": "T_phi(R^5) = 2 R^(2k-2)(k-N)(k^2+(N+5)k-N) (N=3)",
+   "ok": true,
+   "value": null
+  },
+  {
+   "check": "T_phi(R^9) = 2 R^(2k-2)(k-N)(k^2+(N+5)k-N) (N=7)",
+   "ok": true,
+   "value": null
+  },
+  {
+   "check": "T_phi(R^2) = 2 R^(2k-2)(k-N)(k^2+(N+5)k-N) (N=5)",
+   "ok": true,
+   "value": null
+  },
+  {
+   "check": "T_phi(R^4) = 2 R^(2k-2)(k-N)(k^2+(N+5)k-N) (N=4)",
+   "ok": true,
+   "value": null
+  },
+  {
+   "check": "T_phi(R^k) closed form for symbolic k, N",
+   "ok": true,
+   "value": null
+  },
+  {
+   "check": "T_phi(R^(N+2)) = (8N^2+40N+56) R^(2N+2)",
+   "ok": true,
+   "value": null
+  },
+  {
+   "check": "T_q(R^k) = 2(k-M) R^(2k) and T_q(R^(M+2)) = 4 R^(2M+4)",
+   "ok": true,
+   "value": null
+  },
+  {
+   "check": "8N^2+40N+56 > 0 for all real N (discriminant negative)",
+   "ok": true,
+   "value": null
+  },
+  {
+   "check": "Jacobi expansion of P_k^(0,n+1/2)(2t-1) (n=0, k=3)",
+   "ok": true,
+   "value": null
+  },
+  {
+   "check": "Jacobi expansion of P_k^(0,n+1/2)(2t-1) (n=5, k=4)",
+   "ok": true,
+   "value": null
+  },
+  {
+   "check": "Jacobi expansion of P_k^(0,n+1/2)(2t-1) (n=24, k=6)",
+   "ok": true,
+   "value": null
+  },
+  {
+   "check": "Jacobi expansion of P_k^(0,n+1/2)(2t-1) (n=43, k=10)",
+   "ok": true,
+   "value": null
+  },
+  {
+   "check": "export T1_seed_cl0p74_L1: exact top source degree 50 at R = 1",
+   "ok": true,
+   "value": "N=24 M=24"
+  },
+  {
+   "check": "export T1_seed_cl0p74_L1: degree-50 Legendre source coefficient agrees with the verifier table",
+   "ok": true,
+   "value": "-1.26945035862e-11 vs -1.26945035862e-11"
+  },
+  {
+   "check": "export T1_seed_cl0p74_L3: exact top source degree 88 at R = 1",
+   "ok": true,
+   "value": "N=43 M=43"
+  },
+  {
+   "check": "export T1_seed_cl0p74_L3: degree-88 Legendre source coefficient agrees with the verifier table",
+   "ok": true,
+   "value": "9.65277351994e-26 vs 9.65277351994e-26"
+  }
+ ]
+}

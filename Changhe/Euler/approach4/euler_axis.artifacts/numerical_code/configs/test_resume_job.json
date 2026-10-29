@@ -1,0 +1,39 @@
+{
+ "job_id": "zz_test_resume",
+ "priority": 0,
+ "branch": "test",
+ "stage": "test",
+ "max_retries": 1,
+ "ckpt_seconds": 5,
+ "cfg": {
+  "cl": 0.6,
+  "D": 16,
+  "nmax": 8,
+  "shells": [
+   [
+    8.0,
+    12
+   ]
+  ],
+  "R1": 2.0,
+  "gauge": "full",
+  "s1_constraint": true,
+  "z0_init": 0.0
+ },
+ "init": {
+  "family": "s1_sym_v2",
+  "seed": 1,
+  "extra": {
+   "q0": 1.0,
+   "L": 1.0
+  }
+ },
+ "gauge_from_seed": true,
+ "optimizer": [
+  {
+   "name": "lm",
+   "max_iter": 5000,
+   "verbose": true
+  }
+ ]
+}

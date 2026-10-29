@@ -1,0 +1,57 @@
+{
+ "id": "critical/L1b",
+ "branch": "critical",
+ "level": "L1b",
+ "run_id": "critref_crit1_cl0p500_s1_sym_v2_q2p0_z0p0_sh0p0_lm",
+ "cl": 0.5,
+ "cl_free": false,
+ "alpha": 1.0,
+ "working_gauge": {
+  "kind": "full",
+  "target": 581.9046057456744,
+  "int_F2": 581.9048960875958,
+  "int_Ftheta2": 0.2689542814627569
+ },
+ "L_to_reporting_gauge": 0.2036043240838082,
+ "a_eff": 1.770599351226898,
+ "representation": "ball(Cartesian polynomial, D) + log-Chebyshev shells + factored power-law exterior; formulation B (phi, q)",
+ "resolution": {
+  "D": 32,
+  "nmax": 16,
+  "shells": [
+   [
+    10.0,
+    22
+   ]
+  ],
+  "emax": 5.0,
+  "nR_ball": 0,
+  "nR_shell": 0,
+  "nR_ext": 0,
+  "nmu": 22
+ },
+ "quadrature": "Gauss-Legendre tensor nodes per element (ball in x = 2 rho^2 - 1, shells in log R, exterior in log R to Tmax)",
+ "created": "2026-10-29T08:25:06Z",
+ "source_hash": "3becb56d15d6f9c3",
+ "self_measured": {
+  "rho_max": 41.81477395585912,
+  "m_max": 70.17660491418812,
+  "per_equation": {
+   "Mr": 10.495017120316678,
+   "Mt": 0.25196426820441603,
+   "Mz": 41.81477395585912,
+   "q": 36.95883057284783,
+   "eta": 9.629362391295183,
+   "div": 7.870083791772696e-17
+  },
+  "s_core": 0.0644969370060113,
+  "s_far": 0.021498750788363087,
+  "cost": 0.12468379318363212,
+  "holdout_rel_Rq": 0.26576295583988585,
+  "holdout_rel_Reta": 0.6022197118594291
+ },
+ "z0": 0.41575078532542037,
+ "q0_pin": null,
+ "note": "c_l = 1/2 experiment: D32/n16/K22 refinement of the second-best swirl-retaining critical D24 state (16.9); holdout rho_max 41.8 (M_z), s_core 0.064, s_far 0.021 (swirl collapsed); not a solution",
+ "status": "pilot state, NOT a candidate solution; exported so that the loader can be exercised"
+}

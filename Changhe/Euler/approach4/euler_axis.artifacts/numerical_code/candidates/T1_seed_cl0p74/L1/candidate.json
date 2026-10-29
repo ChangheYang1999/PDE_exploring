@@ -1,0 +1,57 @@
+{
+ "id": "T1_seed_cl0p74/L1",
+ "branch": "T1_seed_cl0p74",
+ "level": "L1",
+ "run_id": "t1seedC_cl0p74_q2p5",
+ "cl": 0.74,
+ "cl_free": false,
+ "alpha": 0.35135135135135137,
+ "working_gauge": {
+  "kind": "full",
+  "target": 29.371276953605268,
+  "int_F2": 29.37135579287312,
+  "int_Ftheta2": 10.952569299205152
+ },
+ "L_to_reporting_gauge": 0.2863308365760183,
+ "a_eff": 2.5032039797173256,
+ "representation": "ball(Cartesian polynomial, D) + log-Chebyshev shells + factored power-law exterior; formulation B (phi, q)",
+ "resolution": {
+  "D": 36,
+  "nmax": 24,
+  "shells": [
+   [
+    10.0,
+    24
+   ]
+  ],
+  "emax": 4.0,
+  "nR_ball": 0,
+  "nR_shell": 0,
+  "nR_ext": 0,
+  "nmu": 30
+ },
+ "quadrature": "Gauss-Legendre tensor nodes per element (ball in x = 2 rho^2 - 1, shells in log R, exterior in log R to Tmax)",
+ "created": "2026-10-29T06:47:15Z",
+ "source_hash": "3becb56d15d6f9c3",
+ "self_measured": {
+  "rho_max": 2.8552688009907863,
+  "m_max": 8.043210008718372,
+  "per_equation": {
+   "Mr": 0.8252044723648415,
+   "Mt": 1.6140178356261539,
+   "Mz": 2.5173844677348898,
+   "q": 2.8552688009907863,
+   "eta": 0.877486654206676,
+   "div": 3.079741617002691e-17
+  },
+  "s_core": 0.6641776050368282,
+  "s_far": 0.6106551270427136,
+  "cost": 0.014607564923395107,
+  "holdout_rel_Rq": 0.11586889395249664,
+  "holdout_rel_Reta": 0.021935971034204683
+ },
+ "z0": 5.795058402528687e-08,
+ "q0_pin": 2.5,
+ "note": "0.74 direct positive-strain seed (q0 2.5) after 3000 LM iterations at D36/n24/K24 (continuation of the L0 state); holdout rho_max 2.86 (q equation, shell 1 random points), s_core 0.66, s_far 0.61; not a solution (order-one residual)",
+ "status": "pilot state, NOT a candidate solution; exported so that the loader can be exercised"
+}
