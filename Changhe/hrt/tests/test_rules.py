@@ -95,7 +95,7 @@ class FinalRulesTests(unittest.TestCase):
                 copies = [Minion(i, 100, 5, 0) for i in (0, 1)]
                 alive, totals = combat_tick(0, copies, [], engine.path(0), defender, cfg)
                 loss = cfg.turrets[name].damage if name == "gun3" else 0
-                self.assertEqual([copy.hp for copy in alive], [100 - loss] * 2)
+                self.assertEqual([copy.hp for copy in alive], [100 - loss, 100])
                 self.assertEqual(totals.killed, 0)
 
     def test_all_final_minions_participate_in_purchase_round(self):

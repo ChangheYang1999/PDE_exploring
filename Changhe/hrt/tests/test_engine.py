@@ -213,18 +213,54 @@ class CombatTests(unittest.TestCase):
         totals = simulate_map(PlayerState("A", 800, 100, roster=roster), self.defender, self.path, 2, self.cfg)
         self.assertEqual((totals.spawned, totals.hits, totals.cleared), (251, 229, 22))
 
-    def test_euclidean_boundary_all_targets_and_spawn_tick_attack(self):
+    def test_euclidean_boundary_single_target_and_spawn_tick_attack(self):
         data = self.cfg.to_dict()
         data["turrets"]["gun1"].update(range=5.0, damage=30)
         cfg = config_from_dict(data)
         self.defender.buildings.append(Building(3, 4, "gun1"))
-        entities, totals = combat_tick(0, [], [self.entry, self.entry], self.path, self.defender, cfg)
-        self.assertEqual(entities, [])
-        self.assertEqual(totals.killed, 2)
+        entries = [self.entry, RosterEntry(1, "tier1", 1, 12)]
+        entities, totals = combat_tick(0, [], entries, self.path, self.defender, cfg)
+        self.assertEqual([(e.roster_id, e.hp) for e in entities], [(1, 20)])
+        self.assertEqual(totals.killed, 1)
         data["turrets"]["gun1"]["range"] = 4.99
         entities, totals = combat_tick(0, [], [self.entry], self.path, self.defender, config_from_dict(data))
         self.assertEqual(entities[0].hp, 20)
         self.assertEqual(totals.killed, 0)
+
+    def test_guns_target_furthest_progress_in_range(self):
+        for name in ("gun1", "gun2", "gun3"):
+            with self.subTest(turret=name):
+                self.defender.buildings = [Building(9, 1, name)]
+                # The rear copy is closer to the gun; the globally foremost
+                # copy is outside range. Only the frontmost in range is hit.
+                copies = [Minion(0, 100, 5, 5, 9),
+                          Minion(1, 100, 5, 5, 18),
+                          Minion(2, 100, 5, 5, 13)]
+                entities, totals = combat_tick(5, copies, [], self.path, self.defender, self.cfg)
+                self.assertEqual([e.hp for e in entities],
+                                 [100, 100, 100 - self.cfg.turrets[name].damage])
+                self.assertEqual(totals.killed, 0)
+
+    def test_same_cell_copies_are_not_splash_targets_for_guns(self):
+        self.defender.buildings = [Building(0, 1, "gun1")]
+        copies = [Minion(0, 8, 5, 0), Minion(1, 100, 5, 0)]
+        entities, totals = combat_tick(0, copies, [], self.path, self.defender, self.cfg)
+        self.assertEqual([(e.roster_id, e.hp) for e in entities], [(1, 100)])
+        self.assertEqual(totals.killed, 1)
+        entities, _ = combat_tick(1, entities, [], self.path, self.defender, self.cfg)
+        self.assertEqual([(e.roster_id, e.hp) for e in entities], [(1, 92)])
+
+    def test_turrets_select_before_same_tick_damage_and_death_resolution(self):
+        for buildings, rear_hp in (
+            ([Building(0, 1, "gun1"), Building(1, 1, "gun2")], 100),
+            ([Building(0, 1, "splash"), Building(1, 1, "gun1")], 90),
+        ):
+            with self.subTest(buildings=buildings):
+                self.defender.buildings = buildings
+                copies = [Minion(0, 1, 5, 0), Minion(1, 100, 5, 0)]
+                entities, totals = combat_tick(0, copies, [], self.path, self.defender, self.cfg)
+                self.assertEqual([(e.roster_id, e.hp) for e in entities], [(1, rear_hp)])
+                self.assertEqual(totals.killed, 1)
 
     def test_arrivals_disappear_before_turrets_can_attack(self):
         self.defender.buildings.append(Building(10, 10, "gun1"))

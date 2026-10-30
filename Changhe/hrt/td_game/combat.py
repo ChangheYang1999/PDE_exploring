@@ -51,18 +51,25 @@ def combat_tick(
                 continue
         survivors.append(entity)
     turrets = [(b, config.turrets[b.type]) for b in defender.buildings if b.type != "wall"]
-    for entity in survivors:
-        x, y = path[entity.path_index]
-        damage = 0
-        for building, turret in turrets:
+    damage = [0] * len(survivors)
+    for building, turret in turrets:
+        target = None
+        for index, entity in enumerate(survivors):
+            x, y = path[entity.path_index]
             dx, dy = x - building.x, y - building.y
             if turret.aoe == 8:
-                in_range = max(abs(dx), abs(dy)) == 1
-            else:
-                in_range = dx**2 + dy**2 <= turret.range**2
-            if in_range:
-                damage += turret.damage
-        entity.hp -= damage
+                if max(abs(dx), abs(dy)) == 1:
+                    damage[index] += turret.damage
+            elif dx**2 + dy**2 <= turret.range**2:
+                # Progress along the route determines the frontmost target.
+                # Equal progress retains the stable spawn order.
+                if target is None or entity.path_index > survivors[target].path_index:
+                    target = index
+        if target is not None:
+            damage[target] += turret.damage
+    # All turrets select before damage/death resolution, as in the tick order.
+    for entity, amount in zip(survivors, damage):
+        entity.hp -= amount
     alive = [entity for entity in survivors if entity.hp > 0]
     totals.killed = len(survivors) - len(alive)
     return alive, totals
