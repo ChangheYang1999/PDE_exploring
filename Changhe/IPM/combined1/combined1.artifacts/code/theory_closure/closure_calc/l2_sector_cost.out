@@ -1,0 +1,138 @@
+gamma = 0.552389, delta = 0.447611
+
+1. Exponents and L2 membership of the sectors (h,k), e = gamma - h delta - 2k
+  (0,0): e =   0.5524   L2 route: must vanish (not in L2)   H routes: must vanish (not in Hdot^-1)
+  (1,0): e =   0.1048   L2 route: must vanish (not in L2)   H routes: must vanish (not in Hdot^-1)
+  (2,0): e =  -0.3428   L2 route: must vanish (not in L2)   H routes: must vanish (not in Hdot^-1)
+  (3,0): e =  -0.7904   L2 route: must vanish (not in L2)   H routes: must vanish (not in Hdot^-1)
+  (4,0): e =  -1.2381   L2 route: in L2                     H routes: must vanish (not in Hdot^-1)
+  (0,1): e =  -1.4476   L2 route: in L2                     H routes: must vanish (not in Hdot^-1)
+  (5,0): e =  -1.6857   L2 route: in L2                     H routes: must vanish (not in Hdot^-1)
+  (1,1): e =  -1.8952   L2 route: in L2                     H routes: must vanish (not in Hdot^-1)
+  (6,0): e =  -2.1333   L2 route: in L2                     H routes: in Hdot^-1
+  (2,1): e =  -2.3428   L2 route: in L2                     H routes: in Hdot^-1
+  (7,0): e =  -2.5809   L2 route: in L2                     H routes: in Hdot^-1
+  (3,1): e =  -2.7904   L2 route: in L2                     H routes: in Hdot^-1
+  (8,0): e =  -3.0285   L2 route: in L2                     H routes: in Hdot^-1
+
+2. Largest full-circle amplitude A of a surviving sector with exact onset T, L2 component only
+   A_max = tol * sqrt(-2e-2) * T^(-(e+1))
+   T4-019 scalar (G0 <= eta/(512(1-34s)))
+     (4,0) e=-1.2381: T=   10: 1.423e-08  T=  100: 2.463e-08  T= 1000: 4.260e-08
+     (0,1) e=-1.4476: T=   10: 3.162e-08  T=  100: 8.864e-08  T= 1000: 2.484e-07
+     (5,0) e=-1.6857: T=   10: 6.771e-08  T=  100: 3.283e-07  T= 1000: 1.592e-06
+     (1,1) e=-1.8952: T=   10: 1.254e-07  T=  100: 9.848e-07  T= 1000: 7.737e-06
+     (6,0) e=-2.1333: T=   10: 2.440e-07  T=  100: 3.316e-06  T= 1000: 4.508e-05
+     (2,1) e=-2.3428: T=   10: 4.303e-07  T=  100: 9.476e-06  T= 1000: 2.087e-04
+     (7,0) e=-2.5809: T=   10: 8.078e-07  T=  100: 3.077e-05  T= 1000: 1.172e-03
+     (3,1) e=-2.7904: T=   10: 1.393e-06  T=  100: 8.596e-05  T= 1000: 5.306e-03
+     (8,0) e=-3.0285: T=   10: 2.565e-06  T=  100: 2.739e-04  T= 1000: 2.924e-02
+   gradedL2 c1-t1 box (gamma_0 <= 3.4774e-8)
+     (4,0) e=-1.2381: T=   10: 4.151e-08  T=  100: 7.182e-08  T= 1000: 1.242e-07
+     (0,1) e=-1.4476: T=   10: 9.222e-08  T=  100: 2.585e-07  T= 1000: 7.245e-07
+     (5,0) e=-1.6857: T=   10: 1.975e-07  T=  100: 9.575e-07  T= 1000: 4.643e-06
+     (1,1) e=-1.8952: T=   10: 3.656e-07  T=  100: 2.872e-06  T= 1000: 2.256e-05
+     (6,0) e=-2.1333: T=   10: 7.116e-07  T=  100: 9.672e-06  T= 1000: 1.315e-04
+     (2,1) e=-2.3428: T=   10: 1.255e-06  T=  100: 2.763e-05  T= 1000: 6.085e-04
+     (7,0) e=-2.5809: T=   10: 2.356e-06  T=  100: 8.974e-05  T= 1000: 3.419e-03
+     (3,1) e=-2.7904: T=   10: 4.062e-06  T=  100: 2.507e-04  T= 1000: 1.547e-02
+     (8,0) e=-3.0285: T=   10: 7.479e-06  T=  100: 7.987e-04  T= 1000: 8.528e-02
+
+3. Necessary onset radius T for the known fixed sectors
+  six-branch fixed (6,0): e = -2.1333, A = 3081.27
+     L2 [T4-019 scalar (G0 <= eta/(512(1-34s)))]: T >= 8.192e+09
+     L2 [gradedL2 c1-t1 box (gamma_0 <= 3.4774e-8)]: T >= 3.186e+09
+     H  [FW-T-TB-rebal-v1 (H <= 1.8332e-8)], N =  1: T >= 9.383e+85
+     H  [FW-T-TB-rebal-v1 (H <= 1.8332e-8)], N = 39: T >= 2.698e+74
+     H  [graded c1-t1 box (gamma_H <= 3.5378e-8)], N =  1: T >= 6.763e+83
+     H  [graded c1-t1 box (gamma_H <= 3.5378e-8)], N = 39: T >= 1.945e+72
+  seven-branch fixed (7,0): e = -2.5809, A = 9679.97
+     L2 [T4-019 scalar (G0 <= eta/(512(1-34s)))]: T >= 2.373e+07
+     L2 [gradedL2 c1-t1 box (gamma_0 <= 3.4774e-8)]: T >= 1.206e+07
+     H  [FW-T-TB-rebal-v1 (H <= 1.8332e-8)], N =  1: T >= 6.054e+19
+     H  [FW-T-TB-rebal-v1 (H <= 1.8332e-8)], N = 39: T >= 2.368e+17
+     H  [graded c1-t1 box (gamma_H <= 3.5378e-8)], N =  1: T >= 1.952e+19
+     H  [graded c1-t1 box (gamma_H <= 3.5378e-8)], N = 39: T >= 7.636e+16
+  b6 first surviving (2,1): e = -2.3428, A = 5042.13
+     L2 [T4-019 scalar (G0 <= eta/(512(1-34s)))]: T >= 3.149e+08
+     L2 [gradedL2 c1-t1 box (gamma_0 <= 3.4774e-8)]: T >= 1.419e+08
+     H  [FW-T-TB-rebal-v1 (H <= 1.8332e-8)], N =  1: T >= 1.709e+33
+     H  [FW-T-TB-rebal-v1 (H <= 1.8332e-8)], N = 39: T >= 8.999e+28
+     H  [graded c1-t1 box (gamma_H <= 3.5378e-8)], N =  1: T >= 2.512e+32
+     H  [graded c1-t1 box (gamma_H <= 3.5378e-8)], N = 39: T >= 1.322e+28
+
+4. Decay rates of the exterior contribution: L2 ~ T^(e+1), H ~ T^(e+2) (T4-014)
+  fixed sector after 4 stationary branches: (4,0), e = -1.2381: L2 exponent -0.2381; H exponent not in Hdot^-1
+  fixed sector after 5 stationary branches: (5,0), e = -1.6857: L2 exponent -0.6857; H exponent not in Hdot^-1
+  fixed sector after 6 stationary branches: (6,0), e = -2.1333: L2 exponent -1.1333; H exponent -0.1333
+  fixed sector after 7 stationary branches: (7,0), e = -2.5809: L2 exponent -1.5809; H exponent -0.5809
+
+5. Fixed sector after n stationary principal branches: exterior cost on r > T (sector exact there)
+   L2:  G0_ext(T) = E T^(e+1)/sqrt(-2e-2) (exact identity);  H: T4-014 LB E T^(e+2)/(sqrt(2 sigma)(N+sigma)), N = max harmonic,
+        and the parity-Hardy UB E T^(e+2)/sqrt(-2e-4) (A2 P7.7 applied to the exterior piece; HEURISTIC as a cost of F)
+  n = 4: sector (4,0), e = -1.2381, E_n = 345.672
+     L2 cost G0_ext(T): T=   10: 2.896e+02  T=  100: 1.674e+02  T= 1000: 9.675e+01
+     L2 T_min [T4-019 scalar (G0 <= eta/(512(1-34s)))]: 4.222e+44
+     L2 T_min [gradedL2 c1-t1 box (gamma_0 <= 3.4774e-8)]: 4.709e+42
+     H cost: infinite (sector not in Hdot^-1; H frameworks require it to vanish exactly)
+  n = 5: sector (5,0), e = -1.6857, E_n = 1045.35
+     L2 cost G0_ext(T): T=   10: 1.841e+02  T=  100: 3.796e+01  T= 1000: 7.829e+00
+     L2 T_min [T4-019 scalar (G0 <= eta/(512(1-34s)))]: 7.234e+15
+     L2 T_min [gradedL2 c1-t1 box (gamma_0 <= 3.4774e-8)]: 1.519e+15
+     H cost: infinite (sector not in Hdot^-1; H frameworks require it to vanish exactly)
+  n = 6: sector (6,0), e = -2.1333, E_n = 3081.27
+     L2 cost G0_ext(T): T=   10: 1.506e+02  T=  100: 1.108e+01  T= 1000: 8.151e-01
+     L2 T_min [T4-019 scalar (G0 <= eta/(512(1-34s)))]: 8.192e+09
+     L2 T_min [gradedL2 c1-t1 box (gamma_0 <= 3.4774e-8)]: 3.186e+09
+     H LB (T4-014, N =   1): T=   10: 3.875e+03  T=  100: 2.851e+03  T= 1000: 2.097e+03
+     H LB (T4-014, N =  39): T=   10: 1.122e+02  T=  100: 8.255e+01  T= 1000: 6.074e+01
+     H LB (T4-014, N = 159): T=   10: 2.759e+01  T=  100: 2.030e+01  T= 1000: 1.494e+01
+     H UB (Hardy):         T=   10: 4.391e+03  T=  100: 3.231e+03  T= 1000: 2.377e+03
+     H T_min [FW-T-TB-rebal-v1 (H <= 1.8332e-8)], N =   1: 9.383e+85
+     H T_min [FW-T-TB-rebal-v1 (H <= 1.8332e-8)], N = 159: 7.245e+69
+     H T_min [graded c1-t1 box (gamma_H <= 3.5378e-8)], N =   1: 6.763e+83
+     H T_min [graded c1-t1 box (gamma_H <= 3.5378e-8)], N = 159: 5.222e+67
+  n = 7: sector (7,0), e = -2.5809, E_n = 9679.97
+     L2 cost G0_ext(T): T=   10: 1.429e+02  T=  100: 3.751e+00  T= 1000: 9.846e-02
+     L2 T_min [T4-019 scalar (G0 <= eta/(512(1-34s)))]: 2.373e+07
+     L2 T_min [gradedL2 c1-t1 box (gamma_0 <= 3.4774e-8)]: 1.206e+07
+     H LB (T4-014, N =   1): T=   10: 1.491e+03  T=  100: 3.914e+02  T= 1000: 1.027e+02
+     H LB (T4-014, N =  39): T=   10: 5.956e+01  T=  100: 1.563e+01  T= 1000: 4.104e+00
+     H LB (T4-014, N = 159): T=   10: 1.477e+01  T=  100: 3.877e+00  T= 1000: 1.018e+00
+     H UB (Hardy):         T=   10: 2.357e+03  T=  100: 6.188e+02  T= 1000: 1.624e+02
+     H T_min [FW-T-TB-rebal-v1 (H <= 1.8332e-8)], N =   1: 6.054e+19
+     H T_min [FW-T-TB-rebal-v1 (H <= 1.8332e-8)], N = 159: 2.148e+16
+     H T_min [graded c1-t1 box (gamma_H <= 3.5378e-8)], N =   1: 1.952e+19
+     H T_min [graded c1-t1 box (gamma_H <= 3.5378e-8)], N = 159: 6.927e+15
+  n = 8: sector (8,0), e = -3.0285, E_n = 35192.4
+     L2 cost G0_ext(T): T=   10: 1.636e+02  T=  100: 1.532e+00  T= 1000: 1.435e-02
+     L2 T_min [T4-019 scalar (G0 <= eta/(512(1-34s)))]: 9.942e+05
+     L2 T_min [gradedL2 c1-t1 box (gamma_0 <= 3.4774e-8)]: 5.866e+05
+     H LB (T4-014, N =   1): T=   10: 1.133e+03  T=  100: 1.061e+02  T= 1000: 9.935e+00
+     H LB (T4-014, N =  39): T=   10: 5.741e+01  T=  100: 5.376e+00  T= 1000: 5.035e-01
+     H LB (T4-014, N = 159): T=   10: 1.436e+01  T=  100: 1.345e+00  T= 1000: 1.259e-01
+     H UB (Hardy):         T=   10: 2.298e+03  T=  100: 2.152e+02  T= 1000: 2.015e+01
+     H T_min [FW-T-TB-rebal-v1 (H <= 1.8332e-8)], N =   1: 3.104e+11
+     H T_min [FW-T-TB-rebal-v1 (H <= 1.8332e-8)], N = 159: 4.441e+09
+     H T_min [graded c1-t1 box (gamma_H <= 3.5378e-8)], N =   1: 1.638e+11
+     H T_min [graded c1-t1 box (gamma_H <= 3.5378e-8)], N = 159: 2.343e+09
+
+6. Branches 9..12 (L2 only): E_n = 2 x quarter n(c_l-1)||G_n|| from c1-n1 numerics_v01 section 3
+   (FLOAT print of an EXACT recursion, 5-6 digits, PENDING-N4); same exact tail identity as section 5
+  n =  9: e = -3.4761, E_n = 6.2849e+05, G0_ext T=100: 3.153e+00; T_min[T4-019 scalar] = 2.520e+05; T_min[gradedL2 c1-t1 box] = 1.636e+05
+  n = 10: e = -3.9237, E_n = 9.1075e+05, G0_ext T=100: 5.351e-01; T_min[T4-019 scalar] = 4.142e+04; T_min[gradedL2 c1-t1 box] = 2.872e+04
+  n = 11: e = -4.3713, E_n = 3.5866e+06, G0_ext T=100: 2.498e-01; T_min[T4-019 scalar] = 1.485e+04; T_min[gradedL2 c1-t1 box] = 1.081e+04
+  n = 12: e = -4.8189, E_n = 1.074e+07, G0_ext T=100: 8.946e-02; T_min[T4-019 scalar] = 6.314e+03; T_min[gradedL2 c1-t1 box] = 4.771e+03
+
+7. Candidate C1-N1-003-8branch-frf (c1-n4 N4-044 CONFIRMED structure): pure-exterior-power model, L2 only
+   (the identity is exact for a pure exterior power; it is not a lower bound for a full residual, N4-041)
+  sector (3,1): e = -2.790445, E = 11957.66859, G0_ext T=100: 1.6587e+00, T=1e4: 4.3538e-04; T_min[T4-019 scalar] = 3.534e+06; T_min[gradedL2 c1-t1 box] = 1.944e+06
+  sector (8,0): e = -3.028501, E = 35192.4228, G0_ext T=100: 1.5323e+00, T=1e4: 1.3438e-04; T_min[T4-019 scalar] = 9.942e+05; T_min[gradedL2 c1-t1 box] = 5.866e+05
+   numerics_v01 R = 1e4 list check (N = n - 1 branches cancelled, sector (n,0), full circle):
+   N = 3: G0_ext(1e4) = 5.5922e+01
+   N = 4: G0_ext(1e4) = 1.6144e+00
+   N = 5: G0_ext(1e4) = 5.9970e-02
+   N = 6: G0_ext(1e4) = 2.5843e-03
+   N = 7: G0_ext(1e4) = 1.3438e-04
+   N = 8: G0_ext(1e4) = 3.5193e-05
+   N = 9: G0_ext(1e4) = 7.6037e-07

@@ -1,0 +1,68 @@
+=== R1-004 (a): FLOAT check of the parity-projected constant ===
+s= 3.8147e-6 y= 0.5  -G''(2y) formula=  -0.01439400615 numeric=  -0.01439400615  sign ok=True  ratio const/(C1^2/2)=0.99999862
+s= 3.8147e-6 y= 1.0  -G''(2y) formula=  -0.01319690419 numeric=  -0.01319690419  sign ok=True  ratio const/(C1^2/2)=0.9999987348
+s= 3.8147e-6 y= 2.0  -G''(2y) formula= -0.003085562098 numeric= -0.003085562098  sign ok=True  ratio const/(C1^2/2)=0.9999997042
+s=1.52588e-5 y= 0.5  -G''(2y) formula=  -0.01439343891 numeric=  -0.01439343891  sign ok=True  ratio const/(C1^2/2)=0.9999944801
+s=1.52588e-5 y= 1.0  -G''(2y) formula=  -0.01319673661 numeric=  -0.01319673661  sign ok=True  ratio const/(C1^2/2)=0.999994939
+s=1.52588e-5 y= 2.0  -G''(2y) formula= -0.003085561482 numeric= -0.003085561482  sign ok=True  ratio const/(C1^2/2)=0.9999988167
+s=1.90735e-5 y= 0.5  -G''(2y) formula=  -0.01439324984 numeric=  -0.01439324984  sign ok=True  ratio const/(C1^2/2)=0.9999931002
+s=1.90735e-5 y= 1.0  -G''(2y) formula=  -0.01319668075 numeric=  -0.01319668075  sign ok=True  ratio const/(C1^2/2)=0.9999936738
+s=1.90735e-5 y= 2.0  -G''(2y) formula= -0.003085561277 numeric= -0.003085561277  sign ok=True  ratio const/(C1^2/2)=0.9999985208
+s=      0.25 y= 0.5  -G''(2y) formula= -0.005022291823 numeric= -0.005022291823  sign ok=True  ratio const/(C1^2/2)=0.9605550123
+s=      0.25 y= 1.0  -G''(2y) formula= -0.009863061962 numeric= -0.009863061962  sign ok=True  ratio const/(C1^2/2)=0.9225356925
+s=      0.25 y= 2.0  -G''(2y) formula=  -0.00303278694 numeric=  -0.00303278694  sign ok=True  ratio const/(C1^2/2)=0.9761805471
+s=       0.5 y= 0.5  -G''(2y) formula=             0.0 numeric=             0.0  sign ok=True  ratio const/(C1^2/2)=1.0
+s=       0.5 y= 1.0  -G''(2y) formula= -0.007179759767 numeric= -0.007179759767  sign ok=True  ratio const/(C1^2/2)=0.8646647168
+s=       0.5 y= 2.0  -G''(2y) formula= -0.002915024465 numeric= -0.002915024465  sign ok=True  ratio const/(C1^2/2)=0.9450530833
+direct quadrature s=1/4,y=1: 0.05873044626  formula (1/2)[C1^2-G'']: 0.05873044626  C1^2/2: 0.06366197724
+
+=== R1-004 (b): exact rational relaxations of T4-017 section 4 ===
+argmax s = [mu/14400]  max = mu**(3/2)/900  equals mu^(3/2)/900: True
+pi>3: C1s r bound True, C0 r bound True, product bound True
+pi>333/106: C1s r bound True, C0 r bound True, product bound True
+C1s r chain: [16 pi s]^(-1/2) sqrt(s) mu/5 = mu/(20 sqrt(pi)) -> at mu=3/10: 0.008462843753216345
+
+=== R1-004 (c): application to N4 Cartesian point intervals ===
+    C1-A2-d2 [0, 1]: |F|=[0.011745859 +/- 1.35e-10] |V|=[1.1341456 +/- 1.03e-8] |Drho|=[8.3931826 +/- 9.43e-9]  gap(4)=[0.001380453826 +/- 2.37e-13] strictly positive=True
+ C1-A2-Mpen2 [0, 2]: |F|=[0.074361198 +/- 4.86e-10] |V|=[2.5378315 +/- 4.29e-8] |Drho|=[6.6694056 +/- 2.26e-8]  gap(4)=[0.05187508631 +/- 1.96e-12] strictly positive=True
+    C1-A2-b6 [0, 1]: |F|=[2.9582404 +/- 4.28e-8] |V|=[1.0801116 +/- 4.67e-10] |Drho|=[8.0016081 +/- 3.82e-9]  gap(4)=[2.948365887 +/- 3.66e-10] strictly positive=True
+
+FW-A2-Db ball (s=2^-18, r=2^-16)  radius [1.5258789e-5 +/- 6.25e-14]
+       C1-A2-d2 [0, 1]: gap T4-007 constant=[0.0099380071 +/- 1.06e-11] (True), gap T4-017 constant=[0.010455672 +/- 4.00e-10] (True)
+    C1-A2-Mpen2 [0, 2]: gap T4-007 constant=[0.070373311 +/- 4.74e-11] (True), gap T4-017 constant=[0.071531667 +/- 8.46e-11] (True)
+       C1-A2-b6 [0, 1]: gap T4-007 constant=[2.9565185 +/- 1.91e-8] (True), gap T4-017 constant=[2.9570115 +/- 1.68e-8] (True)
+FW-T-TB-rebal-v1 ball (s=2^-16, r=3*2^-15)  radius [9.1552734e-5 +/- 3.75e-13]
+       C1-A2-d2 [0, 1]: gap T4-007 constant=[0.0062009377 +/- 4.32e-11] (True), gap T4-017 constant=[0.0077539541 +/- 8.86e-12] (True)
+    C1-A2-Mpen2 [0, 2]: gap T4-007 constant=[0.062298467 +/- 3.42e-10] (True), gap T4-017 constant=[0.065773545 +/- 3.23e-10] (True)
+       C1-A2-b6 [0, 1]: gap T4-007 constant=[2.9529582 +/- 4.69e-8] (True), gap T4-017 constant=[2.9544373 +/- 2.52e-8] (True)
+FW-T-TB-graded-v1 instance (s=5*2^-18, n_g upper)  radius [0.00020220055 +/- 4.92e-12]
+       C1-A2-d2 [0, 1]: gap T4-007 constant=[0.00073556575 +/- 4.69e-12] (True), gap T4-017 constant=[0.0038034799 +/- 4.50e-11] (True)
+    C1-A2-Mpen2 [0, 2]: gap T4-007 constant=[0.050486000 +/- 2.38e-11] (True), gap T4-017 constant=[0.057350756 +/- 3.55e-10] (True)
+       C1-A2-b6 [0, 1]: gap T4-007 constant=[2.9477515 +/- 4.36e-9] (True), gap T4-017 constant=[2.9506733 +/- 4.73e-8] (True)
+T4-013 rational box (s=1/50000)  radius [0.00020000056 +/- 3.45e-12]
+       C1-A2-d2 [0, 1]: gap T4-007 constant=[0.0010981966 +/- 2.49e-11] (True), gap T4-017 constant=[0.0040616061 +/- 1.88e-11] (True)
+    C1-A2-Mpen2 [0, 2]: gap T4-007 constant=[0.051289130 +/- 3.10e-10] (True), gap T4-017 constant=[0.057920049 +/- 3.22e-10] (True)
+       C1-A2-b6 [0, 1]: gap T4-007 constant=[2.9480969 +/- 1.45e-8] (True), gap T4-017 constant=[2.9509191 +/- 1.67e-8] (True)
+
+uniform graded family (only m2 > 0 used): coefficient of |V| < [0.016249700 +/- 1.31e-11]  of (1+|Drho|) < [0.00033492080 +/- 1.55e-12]
+       C1-A2-d2 [0, 1]: uniform graded gap=[-0.0098350810 +/- 1.67e-11] strictly positive=False
+    C1-A2-Mpen2 [0, 2]: uniform graded gap=[0.030548113 +/- 1.14e-10] strictly positive=True
+       C1-A2-b6 [0, 1]: uniform graded gap=[2.9376687 +/- 1.49e-8] strictly positive=True
+
+=== R1-005: reproduction of the T4-013 rational box with c1-t1 gamma_map (mpmath iv, 60 digits) ===
+Gamma_P: c1-t1 mid 0.000178599130776173 width 4.7477838728799e-64  T4 [0.000178599130776173 +/- 2.07e-19]  slack positive=True
+Gamma_a: c1-t1 mid 2.9943637897571e-7 width 3.33828553561868e-67  T4 [2.99436378975710e-7 +/- 1.09e-22]  slack positive=True
+Gamma_b: c1-t1 mid 1.69591427992082e-8 width 1.62277769092575e-68  T4 [1.69591427992082e-8 +/- 1.53e-23]  slack positive=True
+Gamma_H: c1-t1 mid 8.61590044074572e-9 width 5.7956346104491e-69  T4 [8.61590044074572e-9 +/- 3.49e-24]  slack positive=True
+  m2 = 0.21156110809562 (width 2.91703841149741e-61)
+  m1 = 0.756062070800743 (width 2.33363072919793e-61)
+  m0 = 2.65894355480017 (width 6.22301527786114e-61)
+  mH = 3.79996 (width 6.22301527786114e-61)
+  nu = 0.0447214839994282 (width 2.43086534291451e-62)
+  feedback q0 < mH sqrt(m0): True  denominator 1 - q0/(mH sqrt m0) = 0.991246172609916
+  d = 0.0126155715615527  contraction d/(19/5-d) = 0.00333094561693441
+
+=== feedback condition for the c1-t1 instance (graded_instance.py box) ===
+  slacks positive: [True, True, True, True]
+  q0 = 0.0553775201265973  mH sqrt(m0) = 6.19995790887746  feedback holds: True
+rc=0

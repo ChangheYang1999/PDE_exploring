@@ -1,0 +1,548 @@
+{
+ "inputs": {
+  "PROOF": "0e0f608d167b2c3453568d06ccc4ba8319e67e5c2d066e4c4ee6854c8fb3a66b",
+  "result": "e94368caabeca952aa08be744c4df75e840d4d6e73ef9b9f990dfc3b950ffe10",
+  "check.py": "0f1e835ebd63a9260fe75a9b9852ffdb976e476bfc3382720efdf37e86e9f736",
+  "manifest": "aeac422340c535091f216bd24915ddd88f07b3393723bf4cb3f3cc768b21038e",
+  "data/007_endpoint.json": "bcd0e49225807ba313dfb86ec386b4d3d3411bdcb233072d5047e84cc27ec58b",
+  "data/013_endpoint.json": "3a2cf49c387db2fd95e7174a2b5f58103201857f01ba875e391b88714ab96471",
+  "data/014_endpoint.json": "8168bf8b326124bc720cc992a5fbe0300d9b1250eb9f4e862b0f2ce38b53b6ce",
+  "data/parameters.json": "c79ff660d2a1d930c73b6267834d09fd76a424afba450a469511fab91b84e87f",
+  "source/original_shape_PROOF.md": "ca0e008a1bfb7868fb1242af0a0eeb1897552a574dc27f7b1a9ad36e1a0b30b9",
+  "source/original_shape_result.json": "0b3e6350ea9f4183c4020b1ad5af3e43ac2c45408e86b831e9d92a05f95ca03d",
+  "source/profile_review.md": "ffb49200aa1277900c8db4e7749a7a79a193d59ff4c3b0f514c190f22421c9af"
+ },
+ "A": {
+  "int_1^inf (1 - u^-delta)^2 u^(-alpha-1) du = 1/alpha - 2/(alpha+delta) + 1/(alpha+2delta)": true,
+  "1/alpha - 2/(alpha+delta) + 1/(alpha+2delta) = 2delta^2/(alpha(alpha+delta)(alpha+2delta))": true,
+  "(alpha+delta)(alpha+2delta) - 2delta^2 = alpha^2 + 3 alpha delta (so alpha S < 1)": true,
+  "D = 1 - c(q - delta) = 5c - 1": true,
+  "alpha = -2q - 2 = 6 - 2/c, and 2q + 1 = -alpha - 1": true,
+  "(3): r0^delta at E* equals (B sqrt(S)/beta)^(2 delta/alpha)": true,
+  "d log cap/dE = -alpha g0/(2 delta (v0 + E g0)) < 0": true
+ },
+ "deps": {
+  "t4_375_review_results_sha256": "d1e0a9d9a2147933275c87d03b94fdef8478159c2ae369005ee378254420e0be",
+  "t4_410_review_results_sha256": "7a6db542a7d14e05958bf22c4a1bd72d2c9eb85b2ecf179e50fd10a533b3edb1"
+ },
+ "B": {
+  "shape_to_crude": "[0.113808363136678085662364076525 +/- 7.61e-32]",
+  "threshold_ratio_retained_over_crude_v0_0": "[0.672041641664145425927013907269 +/- 1.21e-31]",
+  "E_lower": "[0.793036506422514088355711111037 +/- 1.44e-31]",
+  "E_lower_lower": "0.79303650",
+  "007": {
+   "checks": {
+    "B": true,
+    "g0 exact": true,
+    "H0 integer < Phi(theta*)": true,
+    "Phi equals c1-t4 H_point": true,
+    "v0 equals own |U_lead(0)|": true,
+    "g0 > 0, v0 > 0": true
+   },
+   "B": "[85018.291773782657120 +/- 4.97e-16]",
+   "g0": "[28.522761466314225905 +/- 2.04e-19]",
+   "Phi": "[999775.73776455147402 +/- 2.75e-15]",
+   "v0": "[0.99148878987163689882 +/- 4.82e-21]",
+   "versions": {
+    "V_zero": {
+     "checks": {
+      "radius": true,
+      "cap": true,
+      "crude_cap": true,
+      "cap < 7643/10^10": true,
+      "cap < every beta": true,
+      "sharpw_rounded_ceiling: retained equals result.json": true,
+      "sharpw_rounded_ceiling: crude equals result.json": true,
+      "sharpw_rounded_ceiling: retained < Ecrit_upper < 583/1000": true,
+      "sharpw_rounded_ceiling: retained < crude": true,
+      "sharpw_rounded_ceiling: crude Ecrit < E_lower": true,
+      "sharpw_rounded_ceiling: cap(E = threshold) = beta": true,
+      "sharpw_rounded_ceiling: retained/crude = (alpha S)^(delta/(2(-q-1)))": true,
+      "TB_sharp_rounded_ceiling: retained equals result.json": true,
+      "TB_sharp_rounded_ceiling: crude equals result.json": true,
+      "TB_sharp_rounded_ceiling: retained < Ecrit_upper < 583/1000": true,
+      "TB_sharp_rounded_ceiling: retained < crude": true,
+      "TB_sharp_rounded_ceiling: crude Ecrit < E_lower": true,
+      "TB_sharp_rounded_ceiling: cap(E = threshold) = beta": true,
+      "TB_sharp_rounded_ceiling: retained/crude = (alpha S)^(delta/(2(-q-1)))": true,
+      "original_graded_ceiling: retained equals result.json": true,
+      "original_graded_ceiling: crude equals result.json": true,
+      "original_graded_ceiling: retained < Ecrit_upper < 583/1000": true,
+      "original_graded_ceiling: retained < crude": true,
+      "original_graded_ceiling: crude Ecrit < E_lower": true,
+      "original_graded_ceiling: cap(E = threshold) = beta": true,
+      "original_graded_ceiling: retained/crude = (alpha S)^(delta/(2(-q-1)))": true,
+      "fixed_sharpw_ball: retained equals result.json": true,
+      "fixed_sharpw_ball: crude equals result.json": true,
+      "fixed_sharpw_ball: retained < Ecrit_upper < 583/1000": true,
+      "fixed_sharpw_ball: retained < crude": true,
+      "fixed_sharpw_ball: crude Ecrit < E_lower": true,
+      "fixed_sharpw_ball: cap(E = threshold) = beta": true,
+      "fixed_sharpw_ball: retained/crude = (alpha S)^(delta/(2(-q-1)))": true
+     },
+     "r0_lower": "9696.715",
+     "cap_upper": "0.0000007639994",
+     "crude_cap_upper": "0.000006713034",
+     "thresholds": {
+      "sharpw_rounded_ceiling": {
+       "retained_upper_H0": "0.4582681",
+       "crude_upper_H0": "0.6819043",
+       "retained_upper_Phi": "0.4582678",
+       "crude_upper_Phi": "0.6819038",
+       "room_583/1000_upper": "-0.1247322",
+       "room_93/250_upper": "0.08626771",
+       "T4-410 J/H lower": "3.974970",
+       "J/H over retained threshold, lower": "8.673903"
+      },
+      "TB_sharp_rounded_ceiling": {
+       "retained_upper_H0": "0.4349171",
+       "crude_upper_H0": "0.6471580",
+       "retained_upper_Phi": "0.4349168",
+       "crude_upper_Phi": "0.6471575",
+       "room_583/1000_upper": "-0.1480832",
+       "room_93/250_upper": "0.06291677",
+       "T4-410 J/H lower": "4.188388",
+       "J/H over retained threshold, lower": "9.630320"
+      },
+      "original_graded_ceiling": {
+       "retained_upper_H0": "0.1810599",
+       "crude_upper_H0": "0.2694177",
+       "retained_upper_Phi": "0.1810598",
+       "crude_upper_Phi": "0.2694175",
+       "room_583/1000_upper": "-0.4019402",
+       "room_93/250_upper": "-0.1909402",
+       "T4-410 J/H lower": "10.06077",
+       "J/H over retained threshold, lower": "55.56602"
+      },
+      "fixed_sharpw_ball": {
+       "retained_upper_H0": "0.5275685",
+       "crude_upper_H0": "0.7850234",
+       "retained_upper_Phi": "0.5275681",
+       "crude_upper_Phi": "0.7850229",
+       "room_583/1000_upper": "-0.05543198",
+       "room_93/250_upper": "0.1555681",
+       "T4-410 J/H lower": "3.452825",
+       "J/H over retained threshold, lower": "6.544795"
+      }
+     }
+    },
+    "V_lead": {
+     "checks": {
+      "radius": true,
+      "cap": true,
+      "crude_cap": true,
+      "cap < 7643/10^10": true,
+      "cap < every beta": true,
+      "sharpw_rounded_ceiling: retained equals result.json": true,
+      "sharpw_rounded_ceiling: crude equals result.json": true,
+      "sharpw_rounded_ceiling: retained < Ecrit_upper < 583/1000": true,
+      "sharpw_rounded_ceiling: retained < crude": true,
+      "sharpw_rounded_ceiling: crude Ecrit < E_lower": true,
+      "sharpw_rounded_ceiling: cap(E = threshold) = beta": true,
+      "TB_sharp_rounded_ceiling: retained equals result.json": true,
+      "TB_sharp_rounded_ceiling: crude equals result.json": true,
+      "TB_sharp_rounded_ceiling: retained < Ecrit_upper < 583/1000": true,
+      "TB_sharp_rounded_ceiling: retained < crude": true,
+      "TB_sharp_rounded_ceiling: crude Ecrit < E_lower": true,
+      "TB_sharp_rounded_ceiling: cap(E = threshold) = beta": true,
+      "original_graded_ceiling: retained equals result.json": true,
+      "original_graded_ceiling: crude equals result.json": true,
+      "original_graded_ceiling: retained < Ecrit_upper < 583/1000": true,
+      "original_graded_ceiling: retained < crude": true,
+      "original_graded_ceiling: crude Ecrit < E_lower": true,
+      "original_graded_ceiling: cap(E = threshold) = beta": true,
+      "fixed_sharpw_ball: retained equals result.json": true,
+      "fixed_sharpw_ball: crude equals result.json": true,
+      "fixed_sharpw_ball: retained < Ecrit_upper < 583/1000": true,
+      "fixed_sharpw_ball: retained < crude": true,
+      "fixed_sharpw_ball: crude Ecrit < E_lower": true,
+      "fixed_sharpw_ball: cap(E = threshold) = beta": true
+     },
+     "r0_lower": "11036.12",
+     "cap_upper": "0.0000005566176",
+     "crude_cap_upper": "0.000004890832",
+     "thresholds": {
+      "sharpw_rounded_ceiling": {
+       "retained_upper_H0": "0.4235068",
+       "crude_upper_H0": "0.6471430",
+       "retained_upper_Phi": "0.4235064",
+       "crude_upper_Phi": "0.6471425",
+       "room_583/1000_upper": "-0.1594936",
+       "room_93/250_upper": "0.05150639"
+      },
+      "TB_sharp_rounded_ceiling": {
+       "retained_upper_H0": "0.4001558",
+       "crude_upper_H0": "0.6123967",
+       "retained_upper_Phi": "0.4001555",
+       "crude_upper_Phi": "0.6123962",
+       "room_583/1000_upper": "-0.1828445",
+       "room_93/250_upper": "0.02815545"
+      },
+      "original_graded_ceiling": {
+       "retained_upper_H0": "0.1462986",
+       "crude_upper_H0": "0.2346564",
+       "retained_upper_Phi": "0.1462985",
+       "crude_upper_Phi": "0.2346562",
+       "room_583/1000_upper": "-0.4367015",
+       "room_93/250_upper": "-0.2257015"
+      },
+      "fixed_sharpw_ball": {
+       "retained_upper_H0": "0.4928071",
+       "crude_upper_H0": "0.7502621",
+       "retained_upper_Phi": "0.4928067",
+       "crude_upper_Phi": "0.7502615",
+       "room_583/1000_upper": "-0.09019330",
+       "room_93/250_upper": "0.1208067"
+      }
+     }
+    }
+   }
+  },
+  "013": {
+   "checks": {
+    "B": true,
+    "g0 exact": true,
+    "H0 integer < Phi(theta*)": true,
+    "Phi equals c1-t4 H_point": true,
+    "v0 equals own |U_lead(0)|": true,
+    "g0 > 0, v0 > 0": true
+   },
+   "B": "[85019.833654014043351 +/- 1.21e-17]",
+   "g0": "[28.522761466314225905 +/- 2.04e-19]",
+   "Phi": "[999745.39562837066563 +/- 2.08e-16]",
+   "v0": "[0.99148878987163689882 +/- 4.82e-21]",
+   "versions": {
+    "V_zero": {
+     "checks": {
+      "radius": true,
+      "cap": true,
+      "crude_cap": true,
+      "cap < 7643/10^10": true,
+      "cap < every beta": true,
+      "sharpw_rounded_ceiling: retained equals result.json": true,
+      "sharpw_rounded_ceiling: crude equals result.json": true,
+      "sharpw_rounded_ceiling: retained < Ecrit_upper < 583/1000": true,
+      "sharpw_rounded_ceiling: retained < crude": true,
+      "sharpw_rounded_ceiling: crude Ecrit < E_lower": true,
+      "sharpw_rounded_ceiling: cap(E = threshold) = beta": true,
+      "sharpw_rounded_ceiling: retained/crude = (alpha S)^(delta/(2(-q-1)))": true,
+      "TB_sharp_rounded_ceiling: retained equals result.json": true,
+      "TB_sharp_rounded_ceiling: crude equals result.json": true,
+      "TB_sharp_rounded_ceiling: retained < Ecrit_upper < 583/1000": true,
+      "TB_sharp_rounded_ceiling: retained < crude": true,
+      "TB_sharp_rounded_ceiling: crude Ecrit < E_lower": true,
+      "TB_sharp_rounded_ceiling: cap(E = threshold) = beta": true,
+      "TB_sharp_rounded_ceiling: retained/crude = (alpha S)^(delta/(2(-q-1)))": true,
+      "original_graded_ceiling: retained equals result.json": true,
+      "original_graded_ceiling: crude equals result.json": true,
+      "original_graded_ceiling: retained < Ecrit_upper < 583/1000": true,
+      "original_graded_ceiling: retained < crude": true,
+      "original_graded_ceiling: crude Ecrit < E_lower": true,
+      "original_graded_ceiling: cap(E = threshold) = beta": true,
+      "original_graded_ceiling: retained/crude = (alpha S)^(delta/(2(-q-1)))": true,
+      "fixed_sharpw_ball: retained equals result.json": true,
+      "fixed_sharpw_ball: crude equals result.json": true,
+      "fixed_sharpw_ball: retained < Ecrit_upper < 583/1000": true,
+      "fixed_sharpw_ball: retained < crude": true,
+      "fixed_sharpw_ball: crude Ecrit < E_lower": true,
+      "fixed_sharpw_ball: cap(E = threshold) = beta": true,
+      "fixed_sharpw_ball: retained/crude = (alpha S)^(delta/(2(-q-1)))": true
+     },
+     "r0_lower": "9695.673",
+     "cap_upper": "0.0000007642144",
+     "crude_cap_upper": "0.000006714923",
+     "thresholds": {
+      "sharpw_rounded_ceiling": {
+       "retained_upper_H0": "0.4582917",
+       "crude_upper_H0": "0.6819394",
+       "retained_upper_Phi": "0.4582915",
+       "crude_upper_Phi": "0.6819391",
+       "room_583/1000_upper": "-0.1247085",
+       "room_93/250_upper": "0.08629145",
+       "T4-410 J/H lower": "3.974957",
+       "J/H over retained threshold, lower": "8.673426"
+      },
+      "TB_sharp_rounded_ceiling": {
+       "retained_upper_H0": "0.4349395",
+       "crude_upper_H0": "0.6471913",
+       "retained_upper_Phi": "0.4349393",
+       "crude_upper_Phi": "0.6471910",
+       "room_583/1000_upper": "-0.1480607",
+       "room_93/250_upper": "0.06293930",
+       "T4-410 J/H lower": "4.188374",
+       "J/H over retained threshold, lower": "9.629789"
+      },
+      "original_graded_ceiling": {
+       "retained_upper_H0": "0.1810692",
+       "crude_upper_H0": "0.2694315",
+       "retained_upper_Phi": "0.1810692",
+       "crude_upper_Phi": "0.2694314",
+       "room_583/1000_upper": "-0.4019308",
+       "room_93/250_upper": "-0.1909308",
+       "T4-410 J/H lower": "10.06073",
+       "J/H over retained threshold, lower": "55.56292"
+      },
+      "fixed_sharpw_ball": {
+       "retained_upper_H0": "0.5275956",
+       "crude_upper_H0": "0.7850638",
+       "retained_upper_Phi": "0.5275954",
+       "crude_upper_Phi": "0.7850635",
+       "room_583/1000_upper": "-0.05540465",
+       "room_93/250_upper": "0.1555954",
+       "T4-410 J/H lower": "3.452814",
+       "J/H over retained threshold, lower": "6.544436"
+      }
+     }
+    },
+    "V_lead": {
+     "checks": {
+      "radius": true,
+      "cap": true,
+      "crude_cap": true,
+      "cap < 7643/10^10": true,
+      "cap < every beta": true,
+      "sharpw_rounded_ceiling: retained equals result.json": true,
+      "sharpw_rounded_ceiling: crude equals result.json": true,
+      "sharpw_rounded_ceiling: retained < Ecrit_upper < 583/1000": true,
+      "sharpw_rounded_ceiling: retained < crude": true,
+      "sharpw_rounded_ceiling: crude Ecrit < E_lower": true,
+      "sharpw_rounded_ceiling: cap(E = threshold) = beta": true,
+      "TB_sharp_rounded_ceiling: retained equals result.json": true,
+      "TB_sharp_rounded_ceiling: crude equals result.json": true,
+      "TB_sharp_rounded_ceiling: retained < Ecrit_upper < 583/1000": true,
+      "TB_sharp_rounded_ceiling: retained < crude": true,
+      "TB_sharp_rounded_ceiling: crude Ecrit < E_lower": true,
+      "TB_sharp_rounded_ceiling: cap(E = threshold) = beta": true,
+      "original_graded_ceiling: retained equals result.json": true,
+      "original_graded_ceiling: crude equals result.json": true,
+      "original_graded_ceiling: retained < Ecrit_upper < 583/1000": true,
+      "original_graded_ceiling: retained < crude": true,
+      "original_graded_ceiling: crude Ecrit < E_lower": true,
+      "original_graded_ceiling: cap(E = threshold) = beta": true,
+      "fixed_sharpw_ball: retained equals result.json": true,
+      "fixed_sharpw_ball: crude equals result.json": true,
+      "fixed_sharpw_ball: retained < Ecrit_upper < 583/1000": true,
+      "fixed_sharpw_ball: retained < crude": true,
+      "fixed_sharpw_ball: crude Ecrit < E_lower": true,
+      "fixed_sharpw_ball: cap(E = threshold) = beta": true
+     },
+     "r0_lower": "11034.93",
+     "cap_upper": "0.0000005567743",
+     "crude_cap_upper": "0.000004892209",
+     "thresholds": {
+      "sharpw_rounded_ceiling": {
+       "retained_upper_H0": "0.4235304",
+       "crude_upper_H0": "0.6471781",
+       "retained_upper_Phi": "0.4235302",
+       "crude_upper_Phi": "0.6471778",
+       "room_583/1000_upper": "-0.1594698",
+       "room_93/250_upper": "0.05153013"
+      },
+      "TB_sharp_rounded_ceiling": {
+       "retained_upper_H0": "0.4001782",
+       "crude_upper_H0": "0.6124300",
+       "retained_upper_Phi": "0.4001780",
+       "crude_upper_Phi": "0.6124297",
+       "room_583/1000_upper": "-0.1828220",
+       "room_93/250_upper": "0.02817798"
+      },
+      "original_graded_ceiling": {
+       "retained_upper_H0": "0.1463079",
+       "crude_upper_H0": "0.2346702",
+       "retained_upper_Phi": "0.1463078",
+       "crude_upper_Phi": "0.2346701",
+       "room_583/1000_upper": "-0.4366922",
+       "room_93/250_upper": "-0.2256922"
+      },
+      "fixed_sharpw_ball": {
+       "retained_upper_H0": "0.4928343",
+       "crude_upper_H0": "0.7503025",
+       "retained_upper_Phi": "0.4928341",
+       "crude_upper_Phi": "0.7503022",
+       "room_583/1000_upper": "-0.09016597",
+       "room_93/250_upper": "0.1208341"
+      }
+     }
+    }
+   }
+  },
+  "014": {
+   "checks": {
+    "B": true,
+    "g0 exact": true,
+    "H0 integer < Phi(theta*)": true,
+    "Phi equals c1-t4 H_point": true,
+    "v0 equals own |U_lead(0)|": true,
+    "g0 > 0, v0 > 0": true
+   },
+   "B": "[85017.689718368280952 +/- 4.29e-16]",
+   "g0": "[28.522761466314225905 +/- 2.04e-19]",
+   "Phi": "[999748.87581212620121 +/- 3.00e-15]",
+   "v0": "[0.99148878987163689882 +/- 4.82e-21]",
+   "versions": {
+    "V_zero": {
+     "checks": {
+      "radius": true,
+      "cap": true,
+      "crude_cap": true,
+      "cap < 7643/10^10": true,
+      "cap < every beta": true,
+      "sharpw_rounded_ceiling: retained equals result.json": true,
+      "sharpw_rounded_ceiling: crude equals result.json": true,
+      "sharpw_rounded_ceiling: retained < Ecrit_upper < 583/1000": true,
+      "sharpw_rounded_ceiling: retained < crude": true,
+      "sharpw_rounded_ceiling: crude Ecrit < E_lower": true,
+      "sharpw_rounded_ceiling: cap(E = threshold) = beta": true,
+      "sharpw_rounded_ceiling: retained/crude = (alpha S)^(delta/(2(-q-1)))": true,
+      "TB_sharp_rounded_ceiling: retained equals result.json": true,
+      "TB_sharp_rounded_ceiling: crude equals result.json": true,
+      "TB_sharp_rounded_ceiling: retained < Ecrit_upper < 583/1000": true,
+      "TB_sharp_rounded_ceiling: retained < crude": true,
+      "TB_sharp_rounded_ceiling: crude Ecrit < E_lower": true,
+      "TB_sharp_rounded_ceiling: cap(E = threshold) = beta": true,
+      "TB_sharp_rounded_ceiling: retained/crude = (alpha S)^(delta/(2(-q-1)))": true,
+      "original_graded_ceiling: retained equals result.json": true,
+      "original_graded_ceiling: crude equals result.json": true,
+      "original_graded_ceiling: retained < Ecrit_upper < 583/1000": true,
+      "original_graded_ceiling: retained < crude": true,
+      "original_graded_ceiling: crude Ecrit < E_lower": true,
+      "original_graded_ceiling: cap(E = threshold) = beta": true,
+      "original_graded_ceiling: retained/crude = (alpha S)^(delta/(2(-q-1)))": true,
+      "fixed_sharpw_ball: retained equals result.json": true,
+      "fixed_sharpw_ball: crude equals result.json": true,
+      "fixed_sharpw_ball: retained < Ecrit_upper < 583/1000": true,
+      "fixed_sharpw_ball: retained < crude": true,
+      "fixed_sharpw_ball: crude Ecrit < E_lower": true,
+      "fixed_sharpw_ball: cap(E = threshold) = beta": true,
+      "fixed_sharpw_ball: retained/crude = (alpha S)^(delta/(2(-q-1)))": true
+     },
+     "r0_lower": "9696.284",
+     "cap_upper": "0.0000007640773",
+     "crude_cap_upper": "0.000006713718",
+     "thresholds": {
+      "sharpw_rounded_ceiling": {
+       "retained_upper_H0": "0.4582766",
+       "crude_upper_H0": "0.6819170",
+       "retained_upper_Phi": "0.4582762",
+       "crude_upper_Phi": "0.6819164",
+       "room_583/1000_upper": "-0.1247238",
+       "room_93/250_upper": "0.08627618",
+       "T4-410 J/H lower": "3.974975",
+       "J/H over retained threshold, lower": "8.673754"
+      },
+      "TB_sharp_rounded_ceiling": {
+       "retained_upper_H0": "0.4349252",
+       "crude_upper_H0": "0.6471701",
+       "retained_upper_Phi": "0.4349249",
+       "crude_upper_Phi": "0.6471695",
+       "room_583/1000_upper": "-0.1480751",
+       "room_93/250_upper": "0.06292481",
+       "T4-410 J/H lower": "4.188394",
+       "J/H over retained threshold, lower": "9.630156"
+      },
+      "original_graded_ceiling": {
+       "retained_upper_H0": "0.1810633",
+       "crude_upper_H0": "0.2694227",
+       "retained_upper_Phi": "0.1810631",
+       "crude_upper_Phi": "0.2694225",
+       "room_583/1000_upper": "-0.4019369",
+       "room_93/250_upper": "-0.1909369",
+       "T4-410 J/H lower": "10.06078",
+       "J/H over retained threshold, lower": "55.56505"
+      },
+      "fixed_sharpw_ball": {
+       "retained_upper_H0": "0.5275783",
+       "crude_upper_H0": "0.7850381",
+       "retained_upper_Phi": "0.5275778",
+       "crude_upper_Phi": "0.7850374",
+       "room_583/1000_upper": "-0.05542223",
+       "room_93/250_upper": "0.1555778",
+       "T4-410 J/H lower": "3.452830",
+       "J/H over retained threshold, lower": "6.544684"
+      }
+     }
+    },
+    "V_lead": {
+     "checks": {
+      "radius": true,
+      "cap": true,
+      "crude_cap": true,
+      "cap < 7643/10^10": true,
+      "cap < every beta": true,
+      "sharpw_rounded_ceiling: retained equals result.json": true,
+      "sharpw_rounded_ceiling: crude equals result.json": true,
+      "sharpw_rounded_ceiling: retained < Ecrit_upper < 583/1000": true,
+      "sharpw_rounded_ceiling: retained < crude": true,
+      "sharpw_rounded_ceiling: crude Ecrit < E_lower": true,
+      "sharpw_rounded_ceiling: cap(E = threshold) = beta": true,
+      "TB_sharp_rounded_ceiling: retained equals result.json": true,
+      "TB_sharp_rounded_ceiling: crude equals result.json": true,
+      "TB_sharp_rounded_ceiling: retained < Ecrit_upper < 583/1000": true,
+      "TB_sharp_rounded_ceiling: retained < crude": true,
+      "TB_sharp_rounded_ceiling: crude Ecrit < E_lower": true,
+      "TB_sharp_rounded_ceiling: cap(E = threshold) = beta": true,
+      "original_graded_ceiling: retained equals result.json": true,
+      "original_graded_ceiling: crude equals result.json": true,
+      "original_graded_ceiling: retained < Ecrit_upper < 583/1000": true,
+      "original_graded_ceiling: retained < crude": true,
+      "original_graded_ceiling: crude Ecrit < E_lower": true,
+      "original_graded_ceiling: cap(E = threshold) = beta": true,
+      "fixed_sharpw_ball: retained equals result.json": true,
+      "fixed_sharpw_ball: crude equals result.json": true,
+      "fixed_sharpw_ball: retained < Ecrit_upper < 583/1000": true,
+      "fixed_sharpw_ball: retained < crude": true,
+      "fixed_sharpw_ball: crude Ecrit < E_lower": true,
+      "fixed_sharpw_ball: cap(E = threshold) = beta": true
+     },
+     "r0_lower": "11035.63",
+     "cap_upper": "0.0000005566743",
+     "crude_cap_upper": "0.000004891331",
+     "thresholds": {
+      "sharpw_rounded_ceiling": {
+       "retained_upper_H0": "0.4235153",
+       "crude_upper_H0": "0.6471557",
+       "retained_upper_Phi": "0.4235149",
+       "crude_upper_Phi": "0.6471551",
+       "room_583/1000_upper": "-0.1594851",
+       "room_93/250_upper": "0.05151486"
+      },
+      "TB_sharp_rounded_ceiling": {
+       "retained_upper_H0": "0.4001639",
+       "crude_upper_H0": "0.6124087",
+       "retained_upper_Phi": "0.4001635",
+       "crude_upper_Phi": "0.6124082",
+       "room_583/1000_upper": "-0.1828365",
+       "room_93/250_upper": "0.02816350"
+      },
+      "original_graded_ceiling": {
+       "retained_upper_H0": "0.1463020",
+       "crude_upper_H0": "0.2346614",
+       "retained_upper_Phi": "0.1463018",
+       "crude_upper_Phi": "0.2346611",
+       "room_583/1000_upper": "-0.4366982",
+       "room_93/250_upper": "-0.2256982"
+      },
+      "fixed_sharpw_ball": {
+       "retained_upper_H0": "0.4928170",
+       "crude_upper_H0": "0.7502767",
+       "retained_upper_Phi": "0.4928165",
+       "crude_upper_Phi": "0.7502761",
+       "room_583/1000_upper": "-0.09018354",
+       "room_93/250_upper": "0.1208165"
+      }
+     }
+    }
+   }
+  }
+ },
+ "C": {
+  "FLOAT_quadrature": {
+   "007": {
+    "sqrt_I": 7.639993771587325e-07,
+    "cap": 7.639993771587325e-07,
+    "relative_difference": 1.5160061434988443e-25
+   }
+  }
+ },
+ "elapsed_s": 0.5216875919140875
+}

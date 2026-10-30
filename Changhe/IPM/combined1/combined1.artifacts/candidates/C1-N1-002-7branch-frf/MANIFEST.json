@@ -1,0 +1,92 @@
+{
+ "id": "C1-N1-002-7branch-frf",
+ "created_utc": "2026-10-28T21:47:42Z",
+ "created_by_lane": "c1-n1",
+ "parent": {
+  "id": "C1-BASE-S131",
+  "path": "source/case4/IPM_case4.artifacts/checkpoints/state131_last_unverified/accepted_00000131.json",
+  "sha256": "7ff9415cbbe66f9d4a105aa4a999704e67157d8376c969b7561a1c01b1de57bc"
+ },
+ "chart": "PRIMARY",
+ "c_l_exact": "4076476460239181/2251799813685248",
+ "theta0": {
+  "reference": "state 131 exact Theta_0 (CONTRACTS section 2); preserved EXACTLY by 10 linear moment constraints",
+  "quarter_norm": 16.57100026302882
+ },
+ "a0": {
+  "value": 31.49219992581237,
+  "status": "FLOAT from exact coefficients; a0 is a free parameter and moved from 10.300 (state 131)"
+ },
+ "B0n_status": "EXACT (center row pivoted exactly; verified in rational arithmetic)",
+ "basis": {
+  "description": "the 860 case4 T1 generators (branches 0..3, m<=9) plus new blocks: branches 1,2,3 for m=10..10j+9 and branches 4,5,6 for m=0..10j+9, each block with 4 Legendre radial functions H_m R^(p_j-m) t^max(5-m,0) P_n(2t-1), n=0..3",
+  "generator_count": 1820,
+  "branches": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "angular_max_m": 69,
+  "radial_max_k": 25
+ },
+ "coefficient_files": [
+  {
+   "name": "candB_j6_exact.json",
+   "sha256": "74f3b4cbcb3cb83289f518ce25e27a54273959dc78f637b6b9e12efb41c8669b",
+   "format": "c1-n1 generator list JSON (m, j, spec, coef exact rational string, coef_float)",
+   "exactness": "all coefficients exact rationals; 341 pivot coefficients solved exactly (flint fmpq_mat), the others are binary64 values"
+  }
+ ],
+ "evaluator_code": [
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_exact.py",
+   "sha256": "c5a7224a01c279e67ba979926112800ec2c38fa1e4058ccfddaed8038e61daf1"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_eval.py",
+   "sha256": "209e980b64a48943ad60e0b0b5139b3adf52b978a18fbb0425dbfb48e0c47db2"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_origin.py",
+   "sha256": "134d6bb2530ecc84b4604e726685ac04a3553fed7a79cbacebad983dd629a4a7"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_opt.py",
+   "sha256": "3bd624ff28649032b6046c303297a1159d51ba90edf70f0e7e07716d60324e0b"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_farpart.py",
+   "sha256": "a59cfb28ccaeef3bd75304660152bfffce5e5c84d65e174be3004fef80b331d9"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/optimization/run_candB.py",
+   "sha256": "420c0a0e059ea12919976a189415a5a82f6a7547624ae446b5ac7d10283ec70f"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/optimization/finalize_from_npy.py",
+   "sha256": "905007627de5c27443e3e7550b4f04a807fe0751a6cd018d21b34336ecc9800d"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/optimization/candidate_diag.py",
+   "sha256": "dc180b9f287692dea8abbec0444ff7f979cfc09383010b735800f41ee751a8be"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/optimization/candA_setup.py",
+   "sha256": "c0b6950e8ab274043f7e3c95976422b179f99a8b880ad4a144bc3b10dbb24033"
+  }
+ ],
+ "sector_table": {
+  "name": "sector_table.json",
+  "sha256": "2ee200240032615af8affb82535dbcb5f80e24c34743d966b187d3083b5ac50f"
+ },
+ "loss": {
+  "value": 498662.7142774858,
+  "definition": "LOSS: ||F||_2^2 + ||rF||_2^2 over R^2 restricted to 0.02 <= r <= 1e4, evaluated on the case4 radial Gauss rule x angular Gauss 160 (training rule of this run); re-evaluated on angular midpoint 200: F2 97447.86, rF2 401214.9 (same values to 5 digits), J_abs on the same region 480.08",
+  "label": "LOSS"
+ },
+ "notes": "Seven-branch exact-cancellation candidate (prompt section 8, second and third comparison: added stationary branches). 341 exact linear constraints: center; Theta_0 (10); q=1 descendant moments of branches 0,1,2 zero (10+20+30); leading moments of branches 1..6 equal to the exact stationary potentials C_1..C_6 of the recursion from Theta_0 (20+30+40+50+60+70). EXACT sector table: (h,0) for h=0..6, (0,1), (1,1), (2,1) all EXACT-ZERO; first surviving sector (7,0) at exponent -2.5808898481 with quarter norm 4839.983 (full circle 9679.966; the invariant of every seven-branch family), then (3,1) at -2.7904 (quarter 23524.8), (8,0) 9364.9, (4,1) 1.577e5, (0,2) 1.686e6, (9,0) 3.222e4. F is in Hdot^-1, L^2 and N_s (all exponents >= -2 cancelled). Optimization: 80 Gauss-Newton steps from the min-norm feasible projection of state 131 with objective ||F||^2 + ||rF||^2 on 0.02<=r<=1e4, angular Gauss 160 (bandwidth-deficient per c1-n4; re-evaluation on midpoint 200 gives the same loss to 5 digits). RESULT (FLOAT, midpoint 200): ||F||_2 restricted = 312.2, far part beyond 1e4 (exact sectors) 2.1e-3; ||rF||_2 total 634.4 (far part 34.7); sup|F| = 465 at r = 0.47, theta = 0.41: the inner region is badly deformed because the r^4-weighted objective does not see it. Far better than d2 in rF (2331.6) but far worse in ||F||_2 (d2: 4.989) and sup|F| (d2: 0.105). NOT a closure candidate; it documents that admissibility through seven branches is cheap to impose exactly and that the objective must include the inner region (next: E_2-proxy objective with gradient and Hessian terms)."
+}

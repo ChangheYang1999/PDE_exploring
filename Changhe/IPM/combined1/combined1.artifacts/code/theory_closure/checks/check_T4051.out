@@ -1,0 +1,55 @@
+====================================================================================================
+Part A. Arb arithmetic (256 bits)
+====================================================================================================
+A1. target parameters s = 2^-17, R = 2^-14:
+       nu = [0.0220970869120796 +/- 1.02e-17]
+       As = [2.54099639892578 +/- 1.26e-15]
+       Bs = [1.80060424804687 +/- 5.01e-15]
+       m1 = [0.838543684475234 +/- 6.84e-18]
+        q = 6.01037597656250
+    alpha = [0.838497828945628 +/- 3.36e-16]
+       m2 = [0.368144083713179 +/- 1.50e-16]
+       u1 = [69.4812920148134 +/- 4.85e-14]
+       v1 = 10.2656250000000
+       k1 = [69.4813703353166 +/- 1.37e-14]
+       cs = [102.128834192925 +/- 3.11e-13]
+    corner evaluation (target (10)-(11)): G1 = [0.0373173669368 +/- 3.21e-14], G0 = [0.00390653470892 +/- 4.78e-15], G2 = [10.2572995913 +/- 2.80e-11], K_X = [11.4903831523473 +/- 4.49e-14]
+    2 c_s R = [0.0124668987051911 +/- 2.21e-17] (< 0.012467: True); c_s R = [0.00623344935259554 +/- 1.03e-18] (< 0.006234: True); 12 K_X eta / R = K_X/12 = [0.9575319294 +/- 3.78e-11] < 1
+    all target inequalities reproduced.
+
+A2. operator-norm form at the target point: ||N|| <= [7.66822167197 +/- 4.56e-12] (float 7.6682216681) against the corner value [11.49038315 +/- 2.35e-9]; so X_s(F) <= R/7.6682217 = 7.9594929e-6 suffices instead of R/12 = 5.0862630e-6.
+    Reason: (f2, 128 f1, 512 f0) lies in the closed unit ball when X_s(f) <= 1, and the corner (1, 1, 1) has
+    Euclidean length sqrt 3; the bound is monotone in each component, so the sup over the ball is ||N||.
+
+A3. general low inverse constant K_L (hypothesis: ||A_k^-1||_(L2) <= K_L on B), rational (s, R) re-optimized
+    K_L | 1/sqrt(s) |       R |    nu |    m2 | ||N|| <= | eta = R/||N|| | K_L c_s R | FLOAT optimum eta
+    1/2 |       225 | 21/100000 | 0.04725 | 0.2017 | 6.925661 |   3.03220e-5 | 0.0066644 | 3.03248e-05
+      1 |       227 | 21/100000 | 0.04767 | 0.2016 | 8.682401 |   2.41869e-5 |  0.013447 | 2.41876e-05
+      2 |       228 | 21/100000 | 0.04788 | 0.2014 | 13.68558 |   1.53446e-5 |  0.027013 | 1.53455e-05
+      4 |       229 | 21/100000 | 0.04809 | 0.2013 | 25.24988 |   8.31687e-6 |  0.054263 | 8.31847e-06
+      8 |       229 | 21/100000 | 0.04809 | 0.2013 | 49.39579 |   4.25137e-6 |   0.10853 | 4.25255e-06
+     16 |       229 | 21/100000 | 0.04809 | 0.2013 | 98.23391 |   2.13775e-6 |   0.21705 | 2.13840e-06
+    (eta values are certified lower bounds of the admissible X_s(F) threshold at the stated rational point;
+     the target's K_L = 2 point gives R/12 = 5.0863e-06. The FLOAT optimum is over (s, R) with K_L c_s R < 1.)
+
+====================================================================================================
+Part B. Exact symbolic checks
+====================================================================================================
+B1. (6): g(t) = s(t-1) - t^s + 1: g(1) = 0 ; g'(t) = s*(t - t**s)/t >= 0 for t >= 1, 0 < s <= 1; and sqrt(1 + r^2) - 1 <= r since (1 + r)^2 = 1 + 2r + r^2 >= 1 + r^2
+B2. int |xi|^2 <xi>^(-4-2s) d xi = pi/(s*(s + 1)) ; claim pi/(s(1+s)); at s = 2^-17 the difference is 0.e-119
+    (1/(2 pi)) sqrt(pi/(s(1+s))) = (4 pi s(1+s))^(-1/2) = c_s: True ; <xi>^4 = 1 + 2|xi|^2 + |xi|^4 gives the J^(2+s) split; weights 1 <= 2^18, 2 <= 2^14, omega >= 1
+B3. (9): rhs - lhs = (m2/2)(P - 2 k1 a/m2)^2 + (m2/2)(P - 2 v1 b/m2)^2 + ( 0 )
+B4. root bound: (2m(B/m + sqrt(C/m)))^2 - (B + sqrt(B^2 + 4mC))^2 = 2*B*(B + 4*sqrt(C)*sqrt(m) - sqrt(B**2 + 4*C*m)) ; this is >= 0 because (B + 2 sqrt(mC))^2 >= B^2 + 4mC
+B5. d_y(A_k h)(0) = a0*wh01 + h01*wk01 ; claim a0 c[h] + c[k] h_y(0) = a0 wh01 + wk01 h01: True
+    d_y F(0) for F = V.D rho - rho: 0 (zero by the normalization c + d_y u2(0) = 1)
+B6. M1(0) = I - sym Du(0) + A(0) = [[a0 - c + 2, 0], [0, c]] ; M1 >= 9/10 gives a0 >= c - 11/10 > 9/5 - 11/10 = 7/10
+
+====================================================================================================
+Part C. FLOAT checks (not proofs)
+====================================================================================================
+C1. (6) multiplier ((1 + r^2)^(s/2) - 1)/(s r) on r in (0, 1e12], s = 7.629e-06: max = 0.40237239 (<= 1)
+C1. (6) multiplier ((1 + r^2)^(s/2) - 1)/(s r) on r in (0, 1e12], s = 9.766e-04: max = 0.40252781 (<= 1)
+C1. (6) multiplier ((1 + r^2)^(s/2) - 1)/(s r) on r in (0, 1e12], s = 3.000e-01: max = 0.46137444 (<= 1)
+C1. (6) multiplier ((1 + r^2)^(s/2) - 1)/(s r) on r in (0, 1e12], s = 1.000e+00: max = 1.00000000 (<= 1)
+C2. equality case of (8) with b(t) = 2 e^-t (1 - e^(-5t)/2): a(t) at t = 10, 20, 40, 60: [1.3574e-02 3.7164e-06 2.0133e-13 1.0567e-20]; observed rates [0.8203 0.8366 0.8381] (claimed: any rate below min(alpha, 1) = 0.8385)
+    P(t): [6.9596e+01 1.8061e+00 1.1461e-03 7.2783e-07]; observed rates [0.3652 0.3681 0.3681] (claimed: any rate below min(m2/2, alpha, 1) = 0.1841); sup_t P(t) = 462.87 (prefactor, not contractive)

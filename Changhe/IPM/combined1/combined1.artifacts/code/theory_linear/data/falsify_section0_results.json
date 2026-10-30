@@ -1,0 +1,1931 @@
+{
+ "inputs": {
+  "THEORY_FINAL_d36 (lane copy)": "455d18effe678743099f1ac7b1d530d7875803afbba574c6ea140a63081b0186",
+  "c1-shared/theory_requirements/theory_v03.md": "e541f3ba19c8a67d51c5792600a461c971cc8575eab18ffeb07cc9a29c2e0b19",
+  "c1-shared/theory_requirements/theory_v04.md": "7638b0dae2e1cd03bd307fec28143ce84ae37b5a42a0d882d64e879094fcca93",
+  "c1-t4/research/profile_velocity_shape_cap/PROOF.md": "0e0f608d167b2c3453568d06ccc4ba8319e67e5c2d066e4c4ee6854c8fb3a66b",
+  "c1-t4/research/profile_velocity_shape_cap/data/parameters.json": "c79ff660d2a1d930c73b6267834d09fd76a424afba450a469511fab91b84e87f",
+  "c1-t4/research/radial_averaged_remainder_obstruction/PROOF.md": "4d13c623b32b738f78fe7963b67fe4548b5617f24b839be5dc2fe35383155bf3",
+  "c1-t4/research/radial_averaged_remainder_obstruction/data/parameters.json": "8cf8861b8b36cd7f59691ee76e94c3d8958be0c83adad4271f2ad7aa8dd0881e",
+  "c1-t4/VERIFY_REPORT.md": "e9e75b996701163a89d649641d5f3b50a327d9906b9311a495b7f1c2436f936c",
+  "c1-n4/VERIFY_REPORT.md": "00b1bc77b96afccb60a24ea96c64a3826d1f30af7ee2026e4251d6b5a234ba4c",
+  "c1-t1/nonlinear_closure/REVIEWS_v35.md": "7fd26ed09b58f2d18ecad860f358cec5eabb73d0dfbfbb2cd8a19fbd26fc256d",
+  "c1-t2/artifacts/data/t4_375_review_results.json": "d1e0a9d9a2147933275c87d03b94fdef8478159c2ae369005ee378254420e0be",
+  "c1-t4/research/profile_velocity_shape_cap/data/007_endpoint.json": "bcd0e49225807ba313dfb86ec386b4d3d3411bdcb233072d5047e84cc27ec58b",
+  "c1-t4/research/profile_velocity_shape_cap/data/013_endpoint.json": "3a2cf49c387db2fd95e7174a2b5f58103201857f01ba875e391b88714ab96471",
+  "c1-t4/research/profile_velocity_shape_cap/data/014_endpoint.json": "8168bf8b326124bc720cc992a5fbe0300d9b1250eb9f4e862b0f2ce38b53b6ce"
+ },
+ "closure_matrix_sha256_at_run": "9cbb8f0de253b7c476e80ef8137afec9d47fd11d031d64c83bd9fb1b9b5dad25",
+ "constants": {
+  "Etest": "[0.793036506422514088355711111037 +/- 1.44e-31]",
+  "lambda": "[109.60242254841886008 +/- 8.70e-19]",
+  "ru": "[302748.40076640454794 +/- 4.38e-15]",
+  "s(1747261/10^6)": "[51837.918129636455624 +/- 7.86e-17]",
+  "T[e_min](18860)": "[0.79303619117786373284 +/- 5.56e-22]",
+  "lambda (5/18860)^delta": "[2.7473026128163763923 +/- 3.62e-20]"
+ },
+ "B": {
+  "caps_at_Etest_H0_V0": {
+   "007": {
+    "shape_upper": "1.420404e-7",
+    "crude_upper": "1.248067e-6",
+    "shape_lower": "1.420403e-7",
+    "crude_lower": "1.248066e-6"
+   },
+   "013": {
+    "shape_upper": "1.420804e-7",
+    "crude_upper": "1.248418e-6",
+    "shape_lower": "1.420803e-7",
+    "crude_lower": "1.248417e-6"
+   },
+   "014": {
+    "shape_upper": "1.420549e-7",
+    "crude_upper": "1.248194e-6",
+    "shape_lower": "1.420548e-7",
+    "crude_lower": "1.248193e-6"
+   }
+  },
+  "caps_at_Etest_Phi_V0_lower": {
+   "007": {
+    "shape": "1.420397e-7",
+    "crude": "1.248061e-6"
+   },
+   "013": {
+    "shape": "1.420800e-7",
+    "crude": "1.248414e-6"
+   },
+   "014": {
+    "shape": "1.420541e-7",
+    "crude": "1.248187e-6"
+   }
+  },
+  "radii": {
+   "FW-A2-Db fixed ball (2^-25)": {
+    "beta_lower": "1/33554432",
+    "beta_upper": "1/33554432",
+    "per_candidate": {
+     "007": {
+      "shape_H0_V0_upper": "1.055148",
+      "shape_Phi_V0_upper": "1.055147",
+      "shape_Phi_V0_lower_at_beta_upper": "1.055146",
+      "shape_Phi_Vv0_upper": "1.020386",
+      "shape_Phi_Vv0_lower_at_beta_upper": "1.020385",
+      "crude_Phi_V0_upper": "1.570062",
+      "crude_H0_V0_upper": "1.570063",
+      "class": 3,
+      "class_text": "NOT EXCLUDED by Etest, even with V >= v0",
+      "crude_T4-380_condition_suffices": false,
+      "E_1747261_fails_crude_H0_V0": true
+     },
+     "013": {
+      "shape_H0_V0_upper": "1.055202",
+      "shape_Phi_V0_upper": "1.055202",
+      "shape_Phi_V0_lower_at_beta_upper": "1.055201",
+      "shape_Phi_Vv0_upper": "1.020441",
+      "shape_Phi_Vv0_lower_at_beta_upper": "1.020440",
+      "crude_Phi_V0_upper": "1.570143",
+      "crude_H0_V0_upper": "1.570144",
+      "class": 3,
+      "class_text": "NOT EXCLUDED by Etest, even with V >= v0",
+      "crude_T4-380_condition_suffices": false,
+      "E_1747261_fails_crude_H0_V0": true
+     },
+     "014": {
+      "shape_H0_V0_upper": "1.055168",
+      "shape_Phi_V0_upper": "1.055167",
+      "shape_Phi_V0_lower_at_beta_upper": "1.055166",
+      "shape_Phi_Vv0_upper": "1.020405",
+      "shape_Phi_Vv0_lower_at_beta_upper": "1.020404",
+      "crude_Phi_V0_upper": "1.570091",
+      "crude_H0_V0_upper": "1.570092",
+      "class": 3,
+      "class_text": "NOT EXCLUDED by Etest, even with V >= v0",
+      "crude_T4-380_condition_suffices": false,
+      "E_1747261_fails_crude_H0_V0": true
+     }
+    },
+    "class": 3,
+    "class_text": "NOT EXCLUDED by Etest, even with V >= v0",
+    "crude_T4-380_condition_suffices": false,
+    "E_1747261_fails": true
+   },
+   "FW-A2-Db family ceiling (6.8626e-8)": {
+    "beta_lower": "549/8000000000",
+    "beta_upper": "34313/500000000000",
+    "per_candidate": {
+     "007": {
+      "shape_H0_V0_upper": "0.9058772",
+      "shape_Phi_V0_upper": "0.9058766",
+      "shape_Phi_V0_lower_at_beta_upper": "0.9058741",
+      "shape_Phi_Vv0_upper": "0.8711153",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.8711127",
+      "crude_Phi_V0_upper": "1.347948",
+      "crude_H0_V0_upper": "1.347949",
+      "class": 3,
+      "class_text": "NOT EXCLUDED by Etest, even with V >= v0",
+      "crude_T4-380_condition_suffices": false,
+      "E_1747261_fails_crude_H0_V0": true
+     },
+     "013": {
+      "shape_H0_V0_upper": "0.9059239",
+      "shape_Phi_V0_upper": "0.9059235",
+      "shape_Phi_V0_lower_at_beta_upper": "0.9059210",
+      "shape_Phi_Vv0_upper": "0.8711622",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.8711597",
+      "crude_Phi_V0_upper": "1.348017",
+      "crude_H0_V0_upper": "1.348018",
+      "class": 3,
+      "class_text": "NOT EXCLUDED by Etest, even with V >= v0",
+      "crude_T4-380_condition_suffices": false,
+      "E_1747261_fails_crude_H0_V0": true
+     },
+     "014": {
+      "shape_H0_V0_upper": "0.9058941",
+      "shape_Phi_V0_upper": "0.9058933",
+      "shape_Phi_V0_lower_at_beta_upper": "0.9058908",
+      "shape_Phi_Vv0_upper": "0.8711320",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.8711295",
+      "crude_Phi_V0_upper": "1.347972",
+      "crude_H0_V0_upper": "1.347974",
+      "class": 3,
+      "class_text": "NOT EXCLUDED by Etest, even with V >= v0",
+      "crude_T4-380_condition_suffices": false,
+      "E_1747261_fails_crude_H0_V0": true
+     }
+    },
+    "class": 3,
+    "class_text": "NOT EXCLUDED by Etest, even with V >= v0",
+    "crude_T4-380_condition_suffices": false,
+    "E_1747261_fails": true
+   },
+   "FW-T-T4L2-trans-v1 fixed ball (2^-23)": {
+    "beta_lower": "1/8388608",
+    "beta_upper": "1/8388608",
+    "per_candidate": {
+     "007": {
+      "shape_H0_V0_upper": "0.8188615",
+      "shape_Phi_V0_upper": "0.8188609",
+      "shape_Phi_V0_lower_at_beta_upper": "0.8188608",
+      "shape_Phi_Vv0_upper": "0.7840995",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.7840994",
+      "crude_Phi_V0_upper": "1.218468",
+      "crude_H0_V0_upper": "1.218469",
+      "class": 2,
+      "class_text": "fails for every valid universal E only with V >= v0",
+      "crude_T4-380_condition_suffices": false,
+      "E_1747261_fails_crude_H0_V0": true
+     },
+     "013": {
+      "shape_H0_V0_upper": "0.8189036",
+      "shape_Phi_V0_upper": "0.8189033",
+      "shape_Phi_V0_lower_at_beta_upper": "0.8189032",
+      "shape_Phi_Vv0_upper": "0.7841420",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.7841419",
+      "crude_Phi_V0_upper": "1.218531",
+      "crude_H0_V0_upper": "1.218531",
+      "class": 2,
+      "class_text": "fails for every valid universal E only with V >= v0",
+      "crude_T4-380_condition_suffices": false,
+      "E_1747261_fails_crude_H0_V0": true
+     },
+     "014": {
+      "shape_H0_V0_upper": "0.8188767",
+      "shape_Phi_V0_upper": "0.8188760",
+      "shape_Phi_V0_lower_at_beta_upper": "0.8188759",
+      "shape_Phi_Vv0_upper": "0.7841147",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.7841146",
+      "crude_Phi_V0_upper": "1.218490",
+      "crude_H0_V0_upper": "1.218491",
+      "class": 2,
+      "class_text": "fails for every valid universal E only with V >= v0",
+      "crude_T4-380_condition_suffices": false,
+      "E_1747261_fails_crude_H0_V0": true
+     }
+    },
+    "class": 2,
+    "class_text": "fails for every valid universal E only with V >= v0",
+    "crude_T4-380_condition_suffices": false,
+    "E_1747261_fails": true
+   },
+   "FW-T-TB-rebal-v1 family ceiling (3.5125e-7)": {
+    "beta_lower": "8781/25000000000",
+    "beta_upper": "281/800000000",
+    "per_candidate": {
+     "007": {
+      "shape_H0_V0_upper": "0.6720282",
+      "shape_Phi_V0_upper": "0.6720277",
+      "shape_Phi_V0_lower_at_beta_upper": "0.6720241",
+      "shape_Phi_Vv0_upper": "0.6372664",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.6372628",
+      "crude_Phi_V0_upper": "0.9999792",
+      "crude_H0_V0_upper": "0.9999800",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": false,
+      "E_1747261_fails_crude_H0_V0": true
+     },
+     "013": {
+      "shape_H0_V0_upper": "0.6720628",
+      "shape_Phi_V0_upper": "0.6720625",
+      "shape_Phi_V0_lower_at_beta_upper": "0.6720589",
+      "shape_Phi_Vv0_upper": "0.6373012",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.6372976",
+      "crude_Phi_V0_upper": "1.000031",
+      "crude_H0_V0_upper": "1.000032",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": false,
+      "E_1747261_fails_crude_H0_V0": true
+     },
+     "014": {
+      "shape_H0_V0_upper": "0.6720407",
+      "shape_Phi_V0_upper": "0.6720401",
+      "shape_Phi_V0_lower_at_beta_upper": "0.6720365",
+      "shape_Phi_Vv0_upper": "0.6372788",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.6372752",
+      "crude_Phi_V0_upper": "0.9999977",
+      "crude_H0_V0_upper": "0.9999986",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": false,
+      "E_1747261_fails_crude_H0_V0": true
+     }
+    },
+    "class": 1,
+    "class_text": "fails for every valid universal E, V = 0",
+    "crude_T4-380_condition_suffices": false,
+    "E_1747261_fails": true
+   },
+   "FW-T-T4L2-statL-v1 fixed ball (21/(512*10^5))": {
+    "beta_lower": "21/51200000",
+    "beta_upper": "21/51200000",
+    "per_candidate": {
+     "007": {
+      "shape_H0_V0_upper": "0.6532382",
+      "shape_Phi_V0_upper": "0.6532377",
+      "shape_Phi_V0_lower_at_beta_upper": "0.6532376",
+      "shape_Phi_Vv0_upper": "0.6184764",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.6184763",
+      "crude_Phi_V0_upper": "0.9720197",
+      "crude_H0_V0_upper": "0.9720204",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": false,
+      "E_1747261_fails_crude_H0_V0": true
+     },
+     "013": {
+      "shape_H0_V0_upper": "0.6532718",
+      "shape_Phi_V0_upper": "0.6532716",
+      "shape_Phi_V0_lower_at_beta_upper": "0.6532715",
+      "shape_Phi_Vv0_upper": "0.6185103",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.6185102",
+      "crude_Phi_V0_upper": "0.9720701",
+      "crude_H0_V0_upper": "0.9720705",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": false,
+      "E_1747261_fails_crude_H0_V0": true
+     },
+     "014": {
+      "shape_H0_V0_upper": "0.6532504",
+      "shape_Phi_V0_upper": "0.6532498",
+      "shape_Phi_V0_lower_at_beta_upper": "0.6532497",
+      "shape_Phi_Vv0_upper": "0.6184885",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.6184884",
+      "crude_Phi_V0_upper": "0.9720377",
+      "crude_H0_V0_upper": "0.9720385",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": false,
+      "E_1747261_fails_crude_H0_V0": true
+     }
+    },
+    "class": 1,
+    "class_text": "fails for every valid universal E, V = 0",
+    "crude_T4-380_condition_suffices": false,
+    "E_1747261_fails": true
+   },
+   "FW-T-T4L2-sharpw-v1 fixed ball (1351/1024000000)": {
+    "beta_lower": "1351/1024000000",
+    "beta_upper": "1351/1024000000",
+    "per_candidate": {
+     "007": {
+      "shape_H0_V0_upper": "0.5275685",
+      "shape_Phi_V0_upper": "0.5275681",
+      "shape_Phi_V0_lower_at_beta_upper": "0.5275680",
+      "shape_Phi_Vv0_upper": "0.4928067",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.4928066",
+      "crude_Phi_V0_upper": "0.7850229",
+      "crude_H0_V0_upper": "0.7850234",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": true,
+      "E_1747261_fails_crude_H0_V0": true
+     },
+     "013": {
+      "shape_H0_V0_upper": "0.5275956",
+      "shape_Phi_V0_upper": "0.5275954",
+      "shape_Phi_V0_lower_at_beta_upper": "0.5275953",
+      "shape_Phi_Vv0_upper": "0.4928341",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.4928340",
+      "crude_Phi_V0_upper": "0.7850635",
+      "crude_H0_V0_upper": "0.7850638",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": true,
+      "E_1747261_fails_crude_H0_V0": true
+     },
+     "014": {
+      "shape_H0_V0_upper": "0.5275783",
+      "shape_Phi_V0_upper": "0.5275778",
+      "shape_Phi_V0_lower_at_beta_upper": "0.5275777",
+      "shape_Phi_Vv0_upper": "0.4928165",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.4928164",
+      "crude_Phi_V0_upper": "0.7850374",
+      "crude_H0_V0_upper": "0.7850381",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": true,
+      "E_1747261_fails_crude_H0_V0": true
+     }
+    },
+    "class": 1,
+    "class_text": "fails for every valid universal E, V = 0",
+    "crude_T4-380_condition_suffices": true,
+    "E_1747261_fails": true
+   },
+   "FW-T-T4L2-sharp-v1 fixed ball (147/102400000)": {
+    "beta_lower": "147/102400000",
+    "beta_upper": "147/102400000",
+    "per_candidate": {
+     "007": {
+      "shape_H0_V0_upper": "0.5194864",
+      "shape_Phi_V0_upper": "0.5194860",
+      "shape_Phi_V0_lower_at_beta_upper": "0.5194859",
+      "shape_Phi_Vv0_upper": "0.4847247",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.4847246",
+      "crude_Phi_V0_upper": "0.7729968",
+      "crude_H0_V0_upper": "0.7729973",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": true,
+      "E_1747261_fails_crude_H0_V0": true
+     },
+     "013": {
+      "shape_H0_V0_upper": "0.5195131",
+      "shape_Phi_V0_upper": "0.5195129",
+      "shape_Phi_V0_lower_at_beta_upper": "0.5195128",
+      "shape_Phi_Vv0_upper": "0.4847516",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.4847515",
+      "crude_Phi_V0_upper": "0.7730368",
+      "crude_H0_V0_upper": "0.7730371",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": true,
+      "E_1747261_fails_crude_H0_V0": true
+     },
+     "014": {
+      "shape_H0_V0_upper": "0.5194961",
+      "shape_Phi_V0_upper": "0.5194956",
+      "shape_Phi_V0_lower_at_beta_upper": "0.5194955",
+      "shape_Phi_Vv0_upper": "0.4847343",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.4847342",
+      "crude_Phi_V0_upper": "0.7730111",
+      "crude_H0_V0_upper": "0.7730117",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": true,
+      "E_1747261_fails_crude_H0_V0": true
+     }
+    },
+    "class": 1,
+    "class_text": "fails for every valid universal E, V = 0",
+    "crude_T4-380_condition_suffices": true,
+    "E_1747261_fails": true
+   },
+   "FW-T-T4L2-bL-v1 family ceiling, beta_L = 1 (1.9568e-6)": {
+    "beta_lower": "19567/10000000000",
+    "beta_upper": "1223/625000000",
+    "per_candidate": {
+     "007": {
+      "shape_H0_V0_upper": "0.4908808",
+      "shape_Phi_V0_upper": "0.4908804",
+      "shape_Phi_V0_lower_at_beta_upper": "0.4908757",
+      "shape_Phi_Vv0_upper": "0.4561191",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.4561144",
+      "crude_Phi_V0_upper": "0.7304315",
+      "crude_H0_V0_upper": "0.7304320",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": true,
+      "E_1747261_fails_crude_H0_V0": true
+     },
+     "013": {
+      "shape_H0_V0_upper": "0.4909060",
+      "shape_Phi_V0_upper": "0.4909058",
+      "shape_Phi_V0_lower_at_beta_upper": "0.4909011",
+      "shape_Phi_Vv0_upper": "0.4561445",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.4561398",
+      "crude_Phi_V0_upper": "0.7304693",
+      "crude_H0_V0_upper": "0.7304696",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": true,
+      "E_1747261_fails_crude_H0_V0": true
+     },
+     "014": {
+      "shape_H0_V0_upper": "0.4908899",
+      "shape_Phi_V0_upper": "0.4908895",
+      "shape_Phi_V0_lower_at_beta_upper": "0.4908848",
+      "shape_Phi_Vv0_upper": "0.4561282",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.4561235",
+      "crude_Phi_V0_upper": "0.7304450",
+      "crude_H0_V0_upper": "0.7304456",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": true,
+      "E_1747261_fails_crude_H0_V0": true
+     }
+    },
+    "class": 1,
+    "class_text": "fails for every valid universal E, V = 0",
+    "crude_T4-380_condition_suffices": true,
+    "E_1747261_fails": true
+   },
+   "FW-T-T4L2-bL-v1 family ceiling, beta_L = 7/5 (2.5362e-6)": {
+    "beta_lower": "25361/10000000000",
+    "beta_upper": "12681/5000000000",
+    "per_candidate": {
+     "007": {
+      "shape_H0_V0_upper": "0.4681407",
+      "shape_Phi_V0_upper": "0.4681403",
+      "shape_Phi_V0_lower_at_beta_upper": "0.4681369",
+      "shape_Phi_Vv0_upper": "0.4333790",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.4333755",
+      "crude_Phi_V0_upper": "0.6965942",
+      "crude_H0_V0_upper": "0.6965947",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": true,
+      "E_1747261_fails_crude_H0_V0": true
+     },
+     "013": {
+      "shape_H0_V0_upper": "0.4681648",
+      "shape_Phi_V0_upper": "0.4681646",
+      "shape_Phi_V0_lower_at_beta_upper": "0.4681611",
+      "shape_Phi_Vv0_upper": "0.4334033",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.4333998",
+      "crude_Phi_V0_upper": "0.6966303",
+      "crude_H0_V0_upper": "0.6966306",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": true,
+      "E_1747261_fails_crude_H0_V0": true
+     },
+     "014": {
+      "shape_H0_V0_upper": "0.4681494",
+      "shape_Phi_V0_upper": "0.4681490",
+      "shape_Phi_V0_lower_at_beta_upper": "0.4681455",
+      "shape_Phi_Vv0_upper": "0.4333877",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.4333842",
+      "crude_Phi_V0_upper": "0.6966071",
+      "crude_H0_V0_upper": "0.6966077",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": true,
+      "E_1747261_fails_crude_H0_V0": true
+     }
+    },
+    "class": 1,
+    "class_text": "fails for every valid universal E, V = 0",
+    "crude_T4-380_condition_suffices": true,
+    "E_1747261_fails": true
+   },
+   "FW-T-T4L2-sharpw-v1 family ceiling (2.8496e-6)": {
+    "beta_lower": "5699/2000000000",
+    "beta_upper": "1781/625000000",
+    "per_candidate": {
+     "007": {
+      "shape_H0_V0_upper": "0.4582710",
+      "shape_Phi_V0_upper": "0.4582707",
+      "shape_Phi_V0_lower_at_beta_upper": "0.4582677",
+      "shape_Phi_Vv0_upper": "0.4235094",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.4235063",
+      "crude_Phi_V0_upper": "0.6819082",
+      "crude_H0_V0_upper": "0.6819087",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": true,
+      "E_1747261_fails_crude_H0_V0": true
+     },
+     "013": {
+      "shape_H0_V0_upper": "0.4582946",
+      "shape_Phi_V0_upper": "0.4582944",
+      "shape_Phi_V0_lower_at_beta_upper": "0.4582914",
+      "shape_Phi_Vv0_upper": "0.4235331",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.4235301",
+      "crude_Phi_V0_upper": "0.6819435",
+      "crude_H0_V0_upper": "0.6819438",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": true,
+      "E_1747261_fails_crude_H0_V0": true
+     },
+     "014": {
+      "shape_H0_V0_upper": "0.4582796",
+      "shape_Phi_V0_upper": "0.4582792",
+      "shape_Phi_V0_lower_at_beta_upper": "0.4582761",
+      "shape_Phi_Vv0_upper": "0.4235178",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.4235148",
+      "crude_Phi_V0_upper": "0.6819208",
+      "crude_H0_V0_upper": "0.6819214",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": true,
+      "E_1747261_fails_crude_H0_V0": true
+     }
+    },
+    "class": 1,
+    "class_text": "fails for every valid universal E, V = 0",
+    "crude_T4-380_condition_suffices": true,
+    "E_1747261_fails": true
+   },
+   "FW-T-T4L2-sharp-v1 family ceiling (3.0927e-6)": {
+    "beta_lower": "15463/5000000000",
+    "beta_upper": "30927/10000000000",
+    "per_candidate": {
+     "007": {
+      "shape_H0_V0_upper": "0.4514610",
+      "shape_Phi_V0_upper": "0.4514606",
+      "shape_Phi_V0_lower_at_beta_upper": "0.4514579",
+      "shape_Phi_Vv0_upper": "0.4166993",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.4166965",
+      "crude_Phi_V0_upper": "0.6717748",
+      "crude_H0_V0_upper": "0.6717753",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": true,
+      "E_1747261_fails_crude_H0_V0": true
+     },
+     "013": {
+      "shape_H0_V0_upper": "0.4514842",
+      "shape_Phi_V0_upper": "0.4514840",
+      "shape_Phi_V0_lower_at_beta_upper": "0.4514813",
+      "shape_Phi_Vv0_upper": "0.4167227",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.4167199",
+      "crude_Phi_V0_upper": "0.6718096",
+      "crude_H0_V0_upper": "0.6718098",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": true,
+      "E_1747261_fails_crude_H0_V0": true
+     },
+     "014": {
+      "shape_H0_V0_upper": "0.4514694",
+      "shape_Phi_V0_upper": "0.4514690",
+      "shape_Phi_V0_lower_at_beta_upper": "0.4514662",
+      "shape_Phi_Vv0_upper": "0.4167077",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.4167049",
+      "crude_Phi_V0_upper": "0.6717872",
+      "crude_H0_V0_upper": "0.6717878",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": true,
+      "E_1747261_fails_crude_H0_V0": true
+     }
+    },
+    "class": 1,
+    "class_text": "fails for every valid universal E, V = 0",
+    "crude_T4-380_condition_suffices": true,
+    "E_1747261_fails": true
+   },
+   "FW-T-TB-sharp-v1 family ceiling (3.7930e-6)": {
+    "beta_lower": "37929/10000000000",
+    "beta_upper": "3793/1000000000",
+    "per_candidate": {
+     "007": {
+      "shape_H0_V0_upper": "0.4349192",
+      "shape_Phi_V0_upper": "0.4349189",
+      "shape_Phi_V0_lower_at_beta_upper": "0.4349167",
+      "shape_Phi_Vv0_upper": "0.4001576",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.4001554",
+      "crude_Phi_V0_upper": "0.6471606",
+      "crude_H0_V0_upper": "0.6471611",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": true,
+      "E_1747261_fails_crude_H0_V0": true
+     },
+     "013": {
+      "shape_H0_V0_upper": "0.4349416",
+      "shape_Phi_V0_upper": "0.4349414",
+      "shape_Phi_V0_lower_at_beta_upper": "0.4349392",
+      "shape_Phi_Vv0_upper": "0.4001801",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.4001779",
+      "crude_Phi_V0_upper": "0.6471942",
+      "crude_H0_V0_upper": "0.6471944",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": true,
+      "E_1747261_fails_crude_H0_V0": true
+     },
+     "014": {
+      "shape_H0_V0_upper": "0.4349273",
+      "shape_Phi_V0_upper": "0.4349270",
+      "shape_Phi_V0_lower_at_beta_upper": "0.4349248",
+      "shape_Phi_Vv0_upper": "0.4001656",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.4001634",
+      "crude_Phi_V0_upper": "0.6471726",
+      "crude_H0_V0_upper": "0.6471732",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": true,
+      "E_1747261_fails_crude_H0_V0": true
+     }
+    },
+    "class": 1,
+    "class_text": "fails for every valid universal E, V = 0",
+    "crude_T4-380_condition_suffices": true,
+    "E_1747261_fails": true
+   },
+   "graded boxes, ceiling (25/54684)": {
+    "beta_lower": "45697/100000000",
+    "beta_upper": "25/54684",
+    "per_candidate": {
+     "007": {
+      "shape_H0_V0_upper": "0.1810746",
+      "shape_Phi_V0_upper": "0.1810744",
+      "shape_Phi_V0_lower_at_beta_upper": "0.1810597",
+      "shape_Phi_Vv0_upper": "0.1463131",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.1462984",
+      "crude_Phi_V0_upper": "0.2694393",
+      "crude_H0_V0_upper": "0.2694395",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": true,
+      "E_1747261_fails_crude_H0_V0": true
+     },
+     "013": {
+      "shape_H0_V0_upper": "0.1810839",
+      "shape_Phi_V0_upper": "0.1810838",
+      "shape_Phi_V0_lower_at_beta_upper": "0.1810691",
+      "shape_Phi_Vv0_upper": "0.1463225",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.1463077",
+      "crude_Phi_V0_upper": "0.2694532",
+      "crude_H0_V0_upper": "0.2694533",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": true,
+      "E_1747261_fails_crude_H0_V0": true
+     },
+     "014": {
+      "shape_H0_V0_upper": "0.1810779",
+      "shape_Phi_V0_upper": "0.1810778",
+      "shape_Phi_V0_lower_at_beta_upper": "0.1810630",
+      "shape_Phi_Vv0_upper": "0.1463165",
+      "shape_Phi_Vv0_lower_at_beta_upper": "0.1463017",
+      "crude_Phi_V0_upper": "0.2694443",
+      "crude_H0_V0_upper": "0.2694445",
+      "class": 1,
+      "class_text": "fails for every valid universal E, V = 0",
+      "crude_T4-380_condition_suffices": true,
+      "E_1747261_fails_crude_H0_V0": true
+     }
+    },
+    "class": 1,
+    "class_text": "fails for every valid universal E, V = 0",
+    "crude_T4-380_condition_suffices": true,
+    "E_1747261_fails": true
+   }
+  },
+  "class_1": [
+   "FW-T-TB-rebal-v1 family ceiling (3.5125e-7)",
+   "FW-T-T4L2-statL-v1 fixed ball (21/(512*10^5))",
+   "FW-T-T4L2-sharpw-v1 fixed ball (1351/1024000000)",
+   "FW-T-T4L2-sharp-v1 fixed ball (147/102400000)",
+   "FW-T-T4L2-bL-v1 family ceiling, beta_L = 1 (1.9568e-6)",
+   "FW-T-T4L2-bL-v1 family ceiling, beta_L = 7/5 (2.5362e-6)",
+   "FW-T-T4L2-sharpw-v1 family ceiling (2.8496e-6)",
+   "FW-T-T4L2-sharp-v1 family ceiling (3.0927e-6)",
+   "FW-T-TB-sharp-v1 family ceiling (3.7930e-6)",
+   "graded boxes, ceiling (25/54684)"
+  ],
+  "class_2": [
+   "FW-T-T4L2-trans-v1 fixed ball (2^-23)"
+  ],
+  "class_3": [
+   "FW-A2-Db fixed ball (2^-25)",
+   "FW-A2-Db family ceiling (6.8626e-8)"
+  ],
+  "needs_retained_shape": [
+   "FW-T-T4L2-trans-v1 fixed ball (2^-23)",
+   "FW-T-TB-rebal-v1 family ceiling (3.5125e-7)",
+   "FW-T-T4L2-statL-v1 fixed ball (21/(512*10^5))"
+  ]
+ },
+ "C": {
+  "radii": {
+   "FW-A2-Db fixed ball (2^-25)": {
+    "007": {
+     "r_beta_lower_end_beta": "88681.87",
+     "Kcrit/Phi_upper": "1.570062",
+     "T[e_min](r_beta)_lower": "0.7927283",
+     "T[e_1747261](r_beta)_lower": "1.248345",
+     "T4-425_crude_with_Etest": false,
+     "crude_with_1747261": false,
+     "retained_shape_class_blocked": false,
+     "retained_shape_class_blocked_V_v0": false,
+     "reach_1747261_blocked": true
+    },
+    "013": {
+     "r_beta_lower_end_beta": "88682.53",
+     "Kcrit/Phi_upper": "1.570143",
+     "T[e_min](r_beta)_lower": "0.7927283",
+     "T[e_1747261](r_beta)_lower": "1.248341",
+     "T4-425_crude_with_Etest": false,
+     "crude_with_1747261": false,
+     "retained_shape_class_blocked": false,
+     "retained_shape_class_blocked_V_v0": false,
+     "reach_1747261_blocked": true
+    },
+    "014": {
+     "r_beta_lower_end_beta": "88681.61",
+     "Kcrit/Phi_upper": "1.570091",
+     "T[e_min](r_beta)_lower": "0.7927283",
+     "T[e_1747261](r_beta)_lower": "1.248347",
+     "T4-425_crude_with_Etest": false,
+     "crude_with_1747261": false,
+     "retained_shape_class_blocked": false,
+     "retained_shape_class_blocked_V_v0": false,
+     "reach_1747261_blocked": true
+    },
+    "T4-425_argument_applies": false,
+    "blocked_with_1747261_crude": false,
+    "blocked_with_1747261": true,
+    "blocked_with_1747261_reach": true,
+    "class_blocked_retained_shape": false,
+    "class_blocked_retained_shape_V_v0": false
+   },
+   "FW-A2-Db family ceiling (6.8626e-8)": {
+    "007": {
+     "r_beta_lower_end_beta": "63072.59",
+     "Kcrit/Phi_upper": "1.347948",
+     "T[e_min](r_beta)_lower": "0.7929688",
+     "T[e_1747261](r_beta)_lower": "1.454048",
+     "T4-425_crude_with_Etest": false,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": false,
+     "retained_shape_class_blocked_V_v0": false,
+     "reach_1747261_blocked": true
+    },
+    "013": {
+     "r_beta_lower_end_beta": "63073.06",
+     "Kcrit/Phi_upper": "1.348017",
+     "T[e_min](r_beta)_lower": "0.7929688",
+     "T[e_1747261](r_beta)_lower": "1.454043",
+     "T4-425_crude_with_Etest": false,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": false,
+     "retained_shape_class_blocked_V_v0": false,
+     "reach_1747261_blocked": true
+    },
+    "014": {
+     "r_beta_lower_end_beta": "63072.41",
+     "Kcrit/Phi_upper": "1.347972",
+     "T[e_min](r_beta)_lower": "0.7929688",
+     "T[e_1747261](r_beta)_lower": "1.454050",
+     "T4-425_crude_with_Etest": false,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": false,
+     "retained_shape_class_blocked_V_v0": false,
+     "reach_1747261_blocked": true
+    },
+    "T4-425_argument_applies": false,
+    "blocked_with_1747261_crude": true,
+    "blocked_with_1747261": true,
+    "blocked_with_1747261_reach": true,
+    "class_blocked_retained_shape": false,
+    "class_blocked_retained_shape_V_v0": false
+   },
+   "FW-T-T4L2-trans-v1 fixed ball (2^-23)": {
+    "007": {
+     "r_beta_lower_end_beta": "50333.40",
+     "Kcrit/Phi_upper": "1.218468",
+     "T[e_min](r_beta)_lower": "0.7930116",
+     "T[e_1747261](r_beta)_lower": "1.607110",
+     "T4-425_crude_with_Etest": false,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": false,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "013": {
+     "r_beta_lower_end_beta": "50333.77",
+     "Kcrit/Phi_upper": "1.218531",
+     "T[e_min](r_beta)_lower": "0.7930116",
+     "T[e_1747261](r_beta)_lower": "1.607105",
+     "T4-425_crude_with_Etest": false,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": false,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "014": {
+     "r_beta_lower_end_beta": "50333.25",
+     "Kcrit/Phi_upper": "1.218490",
+     "T[e_min](r_beta)_lower": "0.7930116",
+     "T[e_1747261](r_beta)_lower": "1.607112",
+     "T4-425_crude_with_Etest": false,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": false,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "T4-425_argument_applies": false,
+    "blocked_with_1747261_crude": true,
+    "blocked_with_1747261": true,
+    "blocked_with_1747261_reach": true,
+    "class_blocked_retained_shape": false,
+    "class_blocked_retained_shape_V_v0": true
+   },
+   "FW-T-TB-rebal-v1 family ceiling (3.5125e-7)": {
+    "007": {
+     "r_beta_lower_end_beta": "32368.37",
+     "Kcrit/Phi_upper": "0.9999792",
+     "T[e_min](r_beta)_lower": "0.7930330",
+     "T[e_1747261](r_beta)_lower": "1.727589",
+     "T4-425_crude_with_Etest": false,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "013": {
+     "r_beta_lower_end_beta": "32368.61",
+     "Kcrit/Phi_upper": "1.000031",
+     "T[e_min](r_beta)_lower": "0.7930330",
+     "T[e_1747261](r_beta)_lower": "1.727589",
+     "T4-425_crude_with_Etest": false,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "014": {
+     "r_beta_lower_end_beta": "32368.28",
+     "Kcrit/Phi_upper": "0.9999977",
+     "T[e_min](r_beta)_lower": "0.7930330",
+     "T[e_1747261](r_beta)_lower": "1.727590",
+     "T4-425_crude_with_Etest": false,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "T4-425_argument_applies": false,
+    "blocked_with_1747261_crude": true,
+    "blocked_with_1747261": true,
+    "blocked_with_1747261_reach": true,
+    "class_blocked_retained_shape": true,
+    "class_blocked_retained_shape_V_v0": true
+   },
+   "FW-T-T4L2-statL-v1 fixed ball (21/(512*10^5))": {
+    "007": {
+     "r_beta_lower_end_beta": "30381.28",
+     "Kcrit/Phi_upper": "0.9720197",
+     "T[e_min](r_beta)_lower": "0.7930338",
+     "T[e_1747261](r_beta)_lower": "1.732420",
+     "T4-425_crude_with_Etest": false,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "013": {
+     "r_beta_lower_end_beta": "30381.51",
+     "Kcrit/Phi_upper": "0.9720701",
+     "T[e_min](r_beta)_lower": "0.7930338",
+     "T[e_1747261](r_beta)_lower": "1.732419",
+     "T4-425_crude_with_Etest": false,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "014": {
+     "r_beta_lower_end_beta": "30381.19",
+     "Kcrit/Phi_upper": "0.9720377",
+     "T[e_min](r_beta)_lower": "0.7930338",
+     "T[e_1747261](r_beta)_lower": "1.732420",
+     "T4-425_crude_with_Etest": false,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "T4-425_argument_applies": false,
+    "blocked_with_1747261_crude": true,
+    "blocked_with_1747261": true,
+    "blocked_with_1747261_reach": true,
+    "class_blocked_retained_shape": true,
+    "class_blocked_retained_shape_V_v0": true
+   },
+   "FW-T-T4L2-sharpw-v1 fixed ball (1351/1024000000)": {
+    "007": {
+     "r_beta_lower_end_beta": "18849.49",
+     "Kcrit/Phi_upper": "0.7850229",
+     "T[e_min](r_beta)_lower": "0.7930361",
+     "T[e_1747261](r_beta)_lower": "1.745485",
+     "T4-425_crude_with_Etest": true,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "013": {
+     "r_beta_lower_end_beta": "18849.62",
+     "Kcrit/Phi_upper": "0.7850635",
+     "T[e_min](r_beta)_lower": "0.7930361",
+     "T[e_1747261](r_beta)_lower": "1.745484",
+     "T4-425_crude_with_Etest": true,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "014": {
+     "r_beta_lower_end_beta": "18849.43",
+     "Kcrit/Phi_upper": "0.7850374",
+     "T[e_min](r_beta)_lower": "0.7930361",
+     "T[e_1747261](r_beta)_lower": "1.745485",
+     "T4-425_crude_with_Etest": true,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "T4-425_argument_applies": true,
+    "blocked_with_1747261_crude": true,
+    "blocked_with_1747261": true,
+    "blocked_with_1747261_reach": true,
+    "class_blocked_retained_shape": true,
+    "class_blocked_retained_shape_V_v0": true
+   },
+   "FW-T-T4L2-sharp-v1 fixed ball (147/102400000)": {
+    "007": {
+     "r_beta_lower_end_beta": "18210.46",
+     "Kcrit/Phi_upper": "0.7729968",
+     "T[e_min](r_beta)_lower": "0.7930362",
+     "T[e_1747261](r_beta)_lower": "1.745737",
+     "T4-425_crude_with_Etest": true,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "013": {
+     "r_beta_lower_end_beta": "18210.59",
+     "Kcrit/Phi_upper": "0.7730368",
+     "T[e_min](r_beta)_lower": "0.7930362",
+     "T[e_1747261](r_beta)_lower": "1.745737",
+     "T4-425_crude_with_Etest": true,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "014": {
+     "r_beta_lower_end_beta": "18210.40",
+     "Kcrit/Phi_upper": "0.7730111",
+     "T[e_min](r_beta)_lower": "0.7930362",
+     "T[e_1747261](r_beta)_lower": "1.745737",
+     "T4-425_crude_with_Etest": true,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "T4-425_argument_applies": true,
+    "blocked_with_1747261_crude": true,
+    "blocked_with_1747261": true,
+    "blocked_with_1747261_reach": true,
+    "class_blocked_retained_shape": true,
+    "class_blocked_retained_shape_V_v0": true
+   },
+   "FW-T-T4L2-bL-v1 family ceiling, beta_L = 1 (1.9568e-6)": {
+    "007": {
+     "r_beta_lower_end_beta": "16045.99",
+     "Kcrit/Phi_upper": "0.7304315",
+     "T[e_min](r_beta)_lower": "0.7930363",
+     "T[e_1747261](r_beta)_lower": "1.746393",
+     "T4-425_crude_with_Etest": true,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "013": {
+     "r_beta_lower_end_beta": "16046.11",
+     "Kcrit/Phi_upper": "0.7304693",
+     "T[e_min](r_beta)_lower": "0.7930363",
+     "T[e_1747261](r_beta)_lower": "1.746393",
+     "T4-425_crude_with_Etest": true,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "014": {
+     "r_beta_lower_end_beta": "16045.94",
+     "Kcrit/Phi_upper": "0.7304450",
+     "T[e_min](r_beta)_lower": "0.7930363",
+     "T[e_1747261](r_beta)_lower": "1.746393",
+     "T4-425_crude_with_Etest": true,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "T4-425_argument_applies": true,
+    "blocked_with_1747261_crude": true,
+    "blocked_with_1747261": true,
+    "blocked_with_1747261_reach": true,
+    "class_blocked_retained_shape": true,
+    "class_blocked_retained_shape_V_v0": true
+   },
+   "FW-T-T4L2-bL-v1 family ceiling, beta_L = 7/5 (2.5362e-6)": {
+    "007": {
+     "r_beta_lower_end_beta": "14432.62",
+     "Kcrit/Phi_upper": "0.6965942",
+     "T[e_min](r_beta)_lower": "0.7930364",
+     "T[e_1747261](r_beta)_lower": "1.746719",
+     "T4-425_crude_with_Etest": true,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "013": {
+     "r_beta_lower_end_beta": "14432.73",
+     "Kcrit/Phi_upper": "0.6966303",
+     "T[e_min](r_beta)_lower": "0.7930364",
+     "T[e_1747261](r_beta)_lower": "1.746719",
+     "T4-425_crude_with_Etest": true,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "014": {
+     "r_beta_lower_end_beta": "14432.58",
+     "Kcrit/Phi_upper": "0.6966071",
+     "T[e_min](r_beta)_lower": "0.7930364",
+     "T[e_1747261](r_beta)_lower": "1.746719",
+     "T4-425_crude_with_Etest": true,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "T4-425_argument_applies": true,
+    "blocked_with_1747261_crude": true,
+    "blocked_with_1747261": true,
+    "blocked_with_1747261_reach": true,
+    "class_blocked_retained_shape": true,
+    "class_blocked_retained_shape_V_v0": true
+   },
+   "FW-T-T4L2-sharpw-v1 family ceiling (2.8496e-6)": {
+    "007": {
+     "r_beta_lower_end_beta": "13761.67",
+     "Kcrit/Phi_upper": "0.6819082",
+     "T[e_min](r_beta)_lower": "0.7930364",
+     "T[e_1747261](r_beta)_lower": "1.746822",
+     "T4-425_crude_with_Etest": true,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "013": {
+     "r_beta_lower_end_beta": "13761.77",
+     "Kcrit/Phi_upper": "0.6819435",
+     "T[e_min](r_beta)_lower": "0.7930364",
+     "T[e_1747261](r_beta)_lower": "1.746822",
+     "T4-425_crude_with_Etest": true,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "014": {
+     "r_beta_lower_end_beta": "13761.63",
+     "Kcrit/Phi_upper": "0.6819208",
+     "T[e_min](r_beta)_lower": "0.7930364",
+     "T[e_1747261](r_beta)_lower": "1.746822",
+     "T4-425_crude_with_Etest": true,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "T4-425_argument_applies": true,
+    "blocked_with_1747261_crude": true,
+    "blocked_with_1747261": true,
+    "blocked_with_1747261_reach": true,
+    "class_blocked_retained_shape": true,
+    "class_blocked_retained_shape_V_v0": true
+   },
+   "FW-T-T4L2-sharp-v1 family ceiling (3.0927e-6)": {
+    "007": {
+     "r_beta_lower_end_beta": "13308.98",
+     "Kcrit/Phi_upper": "0.6717748",
+     "T[e_min](r_beta)_lower": "0.7930364",
+     "T[e_1747261](r_beta)_lower": "1.746883",
+     "T4-425_crude_with_Etest": true,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "013": {
+     "r_beta_lower_end_beta": "13309.08",
+     "Kcrit/Phi_upper": "0.6718096",
+     "T[e_min](r_beta)_lower": "0.7930364",
+     "T[e_1747261](r_beta)_lower": "1.746883",
+     "T4-425_crude_with_Etest": true,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "014": {
+     "r_beta_lower_end_beta": "13308.94",
+     "Kcrit/Phi_upper": "0.6717872",
+     "T[e_min](r_beta)_lower": "0.7930364",
+     "T[e_1747261](r_beta)_lower": "1.746883",
+     "T4-425_crude_with_Etest": true,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "T4-425_argument_applies": true,
+    "blocked_with_1747261_crude": true,
+    "blocked_with_1747261": true,
+    "blocked_with_1747261_reach": true,
+    "class_blocked_retained_shape": true,
+    "class_blocked_retained_shape_V_v0": true
+   },
+   "FW-T-TB-sharp-v1 family ceiling (3.7930e-6)": {
+    "007": {
+     "r_beta_lower_end_beta": "12244.09",
+     "Kcrit/Phi_upper": "0.6471606",
+     "T[e_min](r_beta)_lower": "0.7930364",
+     "T[e_1747261](r_beta)_lower": "1.747000",
+     "T4-425_crude_with_Etest": true,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "013": {
+     "r_beta_lower_end_beta": "12244.18",
+     "Kcrit/Phi_upper": "0.6471942",
+     "T[e_min](r_beta)_lower": "0.7930364",
+     "T[e_1747261](r_beta)_lower": "1.747000",
+     "T4-425_crude_with_Etest": true,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "014": {
+     "r_beta_lower_end_beta": "12244.06",
+     "Kcrit/Phi_upper": "0.6471726",
+     "T[e_min](r_beta)_lower": "0.7930364",
+     "T[e_1747261](r_beta)_lower": "1.747000",
+     "T4-425_crude_with_Etest": true,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "T4-425_argument_applies": true,
+    "blocked_with_1747261_crude": true,
+    "blocked_with_1747261": true,
+    "blocked_with_1747261_reach": true,
+    "class_blocked_retained_shape": true,
+    "class_blocked_retained_shape_V_v0": true
+   },
+   "graded boxes, ceiling (25/54684)": {
+    "007": {
+     "r_beta_lower_end_beta": "1728.797",
+     "Kcrit/Phi_upper": "0.2694393",
+     "T[e_min](r_beta)_lower": "0.7930365",
+     "T[e_1747261](r_beta)_lower": "1.747260",
+     "T4-425_crude_with_Etest": true,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "013": {
+     "r_beta_lower_end_beta": "1728.810",
+     "Kcrit/Phi_upper": "0.2694532",
+     "T[e_min](r_beta)_lower": "0.7930365",
+     "T[e_1747261](r_beta)_lower": "1.747260",
+     "T4-425_crude_with_Etest": true,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "014": {
+     "r_beta_lower_end_beta": "1728.792",
+     "Kcrit/Phi_upper": "0.2694443",
+     "T[e_min](r_beta)_lower": "0.7930365",
+     "T[e_1747261](r_beta)_lower": "1.747260",
+     "T4-425_crude_with_Etest": true,
+     "crude_with_1747261": true,
+     "retained_shape_class_blocked": true,
+     "retained_shape_class_blocked_V_v0": true,
+     "reach_1747261_blocked": true
+    },
+    "T4-425_argument_applies": true,
+    "blocked_with_1747261_crude": true,
+    "blocked_with_1747261": true,
+    "blocked_with_1747261_reach": true,
+    "class_blocked_retained_shape": true,
+    "class_blocked_retained_shape_V_v0": true
+   }
+  },
+  "reach_upper": {
+   "007": {
+    "value": "1.43872e-7",
+    "Rmax": "114000"
+   },
+   "013": {
+    "value": "1.43912e-7",
+    "Rmax": "114000"
+   },
+   "014": {
+    "value": "1.43887e-7",
+    "Rmax": "114000"
+   }
+  },
+  "reach_upper_Etest_Phi_v0": {
+   "007": {
+    "value": "1.14109e-7",
+    "Rmax": "122000"
+   },
+   "013": {
+    "value": "1.14141e-7",
+    "Rmax": "122000"
+   },
+   "014": {
+    "value": "1.14120e-7",
+    "Rmax": "122000"
+   }
+  },
+  "reach_upper_1747261_H0_V0": {
+   "007": {
+    "value": "2.66282e-8",
+    "Rmax": "108000"
+   },
+   "013": {
+    "value": "2.66323e-8",
+    "Rmax": "108000"
+   },
+   "014": {
+    "value": "2.66295e-8",
+    "Rmax": "108000"
+   }
+  },
+  "R1-038": {
+   "graded boxes, ceiling (25/54684)": {
+    "007": {
+     "Emax_upper": "7.941561",
+     "Etest_sqrt2pi_H0_over_B_lower": "23.37615"
+    },
+    "013": {
+     "Emax_upper": "7.941587",
+     "Etest_sqrt2pi_H0_over_B_lower": "23.37502"
+    },
+    "014": {
+     "Emax_upper": "7.941551",
+     "Etest_sqrt2pi_H0_over_B_lower": "23.37568"
+    }
+   },
+   "FW-T-T4L2-sharpw-v1 family ceiling (2.8496e-6)": {
+    "007": {
+     "Emax_upper": "20.10034",
+     "Etest_sqrt2pi_H0_over_B_lower": "23.37615"
+    },
+    "013": {
+     "Emax_upper": "20.10040",
+     "Etest_sqrt2pi_H0_over_B_lower": "23.37502"
+    },
+    "014": {
+     "Emax_upper": "20.10031",
+     "Etest_sqrt2pi_H0_over_B_lower": "23.37568"
+    }
+   },
+   "FW-T-TB-sharp-v1 family ceiling (3.7930e-6)": {
+    "007": {
+     "Emax_upper": "19.07613",
+     "Etest_sqrt2pi_H0_over_B_lower": "23.37615"
+    },
+    "013": {
+     "Emax_upper": "19.07619",
+     "Etest_sqrt2pi_H0_over_B_lower": "23.37502"
+    },
+    "014": {
+     "Emax_upper": "19.07610",
+     "Etest_sqrt2pi_H0_over_B_lower": "23.37568"
+    }
+   }
+  },
+  "R1-038_exact_graded_ceiling": {
+   "007": {
+    "Emax_lower": "7.942177"
+   },
+   "013": {
+    "Emax_lower": "7.942204"
+   },
+   "014": {
+    "Emax_lower": "7.942167"
+   }
+  }
+ },
+ "D": {
+  "T4-351_constants_crude_cap_upper": "9.27756e-11",
+  "current": {
+   "007": {
+    "crude_cap_upper": "1.66076e-8",
+    "crude_cap_lower": "1.66075e-8",
+    "shape_cap_upper": "1.89008e-9",
+    "crude_over_9.28e-11_lower": "178.9",
+    "2^-25_over_crude_lower": "1.794",
+    "6.8626e-8_lower_end_over_crude_lower": "4.132"
+   },
+   "013": {
+    "crude_cap_upper": "1.66122e-8",
+    "crude_cap_lower": "1.66121e-8",
+    "shape_cap_upper": "1.89061e-9",
+    "crude_over_9.28e-11_lower": "179.0",
+    "2^-25_over_crude_lower": "1.794",
+    "6.8626e-8_lower_end_over_crude_lower": "4.131"
+   },
+   "014": {
+    "crude_cap_upper": "1.66092e-8",
+    "crude_cap_lower": "1.66091e-8",
+    "shape_cap_upper": "1.89027e-9",
+    "crude_over_9.28e-11_lower": "178.9",
+    "2^-25_over_crude_lower": "1.794",
+    "6.8626e-8_lower_end_over_crude_lower": "4.131"
+   }
+  }
+ },
+ "E": {
+  "trace": {
+   "0.022479506978": {
+    "in_section_0": true,
+    "sources": [
+     {
+      "section": "T4-270",
+      "section_found": true,
+      "text_found": true
+     }
+    ],
+    "ok": true
+   },
+   "0.00199234339": {
+    "in_section_0": true,
+    "sources": [
+     {
+      "section": "T4-255",
+      "section_found": true,
+      "text_found": true
+     },
+     {
+      "section": "N4-204",
+      "section_found": true,
+      "text_found": true
+     }
+    ],
+    "ok": true
+   },
+   "0.00198301351067": {
+    "in_section_0": true,
+    "sources": [
+     {
+      "section": "T4-280",
+      "section_found": true,
+      "text_found": true
+     }
+    ],
+    "ok": true
+   },
+   "0.000351804115950603": {
+    "in_section_0": true,
+    "sources": [
+     {
+      "section": "T4-298",
+      "section_found": true,
+      "text_found": true
+     }
+    ],
+    "ok": true
+   },
+   "0.001232449584356253": {
+    "in_section_0": true,
+    "sources": [
+     {
+      "section": "T4-304",
+      "section_found": true,
+      "text_found": true
+     }
+    ],
+    "ok": true
+   },
+   "0.001092633159": {
+    "in_section_0": true,
+    "sources": [
+     {
+      "section": "T4-310",
+      "section_found": true,
+      "text_found": true
+     }
+    ],
+    "ok": true
+   },
+   "0.001470360924": {
+    "in_section_0": true,
+    "sources": [
+     {
+      "section": "T4-311",
+      "section_found": true,
+      "text_found": true
+     }
+    ],
+    "ok": true
+   },
+   "0.001068502321536437": {
+    "in_section_0": true,
+    "sources": [
+     {
+      "section": "T4-320",
+      "section_found": true,
+      "text_found": true
+     }
+    ],
+    "ok": true
+   },
+   "0.00167183069831928": {
+    "in_section_0": true,
+    "sources": [
+     {
+      "section": "T4-331",
+      "section_found": true,
+      "text_found": true
+     }
+    ],
+    "ok": true
+   },
+   "0.001655825792": {
+    "in_section_0": true,
+    "sources": [
+     {
+      "section": "T4-345",
+      "section_found": true,
+      "text_found": true
+     }
+    ],
+    "ok": true
+   },
+   "0.001328016044": {
+    "in_section_0": true,
+    "sources": [
+     {
+      "section": "T4-349",
+      "section_found": true,
+      "text_found": true
+     }
+    ],
+    "ok": true
+   },
+   "0.001661806967": {
+    "in_section_0": true,
+    "sources": [
+     {
+      "section": "T4-357",
+      "section_found": true,
+      "text_found": true
+     }
+    ],
+    "ok": true
+   },
+   "0.001855374677442712": {
+    "in_section_0": true,
+    "sources": [
+     {
+      "section": "T4-363",
+      "section_found": true,
+      "text_found": true
+     }
+    ],
+    "ok": true
+   },
+   "0.001864696854799172": {
+    "in_section_0": true,
+    "sources": [
+     {
+      "section": "T4-392",
+      "section_found": true,
+      "text_found": true
+     }
+    ],
+    "ok": true
+   },
+   "0.00135251075726327": {
+    "in_section_0": true,
+    "sources": [
+     {
+      "section": "T4-408",
+      "section_found": true,
+      "text_found": true
+     }
+    ],
+    "ok": true
+   },
+   "0.002634958245163687": {
+    "in_section_0": true,
+    "sources": [
+     {
+      "section": "N4-338",
+      "section_found": true,
+      "text_found": true
+     }
+    ],
+    "ok": true
+   },
+   "0.001556067368832641": {
+    "in_section_0": true,
+    "sources": [
+     {
+      "section": "N4-344",
+      "section_found": true,
+      "text_found": true
+     }
+    ],
+    "ok": true
+   },
+   "0.004769166867": {
+    "in_section_0": true,
+    "sources": [
+     {
+      "section": "N4-157",
+      "section_found": true,
+      "text_found": true
+     }
+    ],
+    "ok": true
+   },
+   "3596535.57": {
+    "in_section_0": true,
+    "sources": [
+     {
+      "section": "T4-238",
+      "section_found": true,
+      "text_found": true
+     },
+     {
+      "section": "T4-238",
+      "section_found": true,
+      "text_found": true
+     }
+    ],
+    "ok": true
+   },
+   "9.28e-11": {
+    "in_section_0": true,
+    "sources": [
+     {
+      "section": "T4-351",
+      "section_found": true,
+      "text_found": true
+     },
+     {
+      "section": "T4-351",
+      "section_found": true,
+      "text_found": true
+     }
+    ],
+    "ok": true
+   },
+   "2.00215": {
+    "in_section_0": true,
+    "sources": [
+     {
+      "section": "T4-162",
+      "section_found": true,
+      "text_found": true
+     }
+    ],
+    "ok": true
+   },
+   "215936.9": {
+    "in_section_0": true,
+    "sources": [
+     {
+      "section": "T4-325",
+      "section_found": true,
+      "text_found": true
+     }
+    ],
+    "ok": true
+   },
+   "45174": {
+    "in_section_0": true,
+    "sources": [
+     {
+      "section": "T4-329",
+      "section_found": true,
+      "text_found": true
+     }
+    ],
+    "ok": true
+   },
+   "1.747261": {
+    "in_section_0": true,
+    "sources": [
+     {
+      "section": "T4-411",
+      "section_found": true,
+      "text_found": true
+     }
+    ],
+    "ok": true
+   },
+   "85017, 85018 and 85016": {
+    "in_section_0": true,
+    "sources": [
+     {
+      "section": "T4-339",
+      "section_found": true,
+      "text_found": true
+     }
+    ],
+    "ok": true
+   },
+   "0.793036506422514088": {
+    "in_section_0": true,
+    "sources": [
+     {
+      "section": "T4-381",
+      "section_found": true,
+      "text_found": true
+     }
+    ],
+    "ok": true
+   },
+   "999745": {
+    "in_section_0": true,
+    "sources": [
+     {
+      "section": "T4-380",
+      "section_found": true,
+      "text_found": true
+     }
+    ],
+    "ok": true
+   },
+   "7.9417": {
+    "in_section_0": true,
+    "REVIEWS_v35": true
+   }
+  },
+  "factors": {
+   "4.357 times the graded ceiling [199234339/100000000000 / 25/54684]": {
+    "printed": "4.357",
+    "floor": "4.357",
+    "valid_lower_bound": true,
+    "equals_floor": true,
+    "quoted_in_section_0": true
+   },
+   "more than 2.337 times the graded ceiling [1068502321536437/1000000000000000000 / 25/54684]": {
+    "printed": "2.337",
+    "floor": "2.337",
+    "valid_lower_bound": true,
+    "equals_floor": true,
+    "quoted_in_section_0": true
+   },
+   "3.656 times the graded ceiling [20897883728991/12500000000000000 / 25/54684]": {
+    "printed": "3.656",
+    "floor": "3.656",
+    "valid_lower_bound": true,
+    "equals_floor": true,
+    "quoted_in_section_0": true
+   },
+   "more than 3.621 times the graded ceiling [12936139/7812500000 / 25/54684]": {
+    "printed": "3.621",
+    "floor": "3.621",
+    "valid_lower_bound": true,
+    "equals_floor": true,
+    "quoted_in_section_0": true
+   },
+   "(ratio 2.904; N4-272) [332004011/250000000000 / 25/54684]": {
+    "printed": "2.904",
+    "floor": "2.904",
+    "valid_lower_bound": true,
+    "equals_floor": true,
+    "quoted_in_section_0": true
+   },
+   "more than 3.634 times the graded ceiling [1661806967/1000000000000 / 25/54684]": {
+    "printed": "3.634",
+    "floor": "3.634",
+    "valid_lower_bound": true,
+    "equals_floor": true,
+    "quoted_in_section_0": true
+   },
+   "more than 4.058 times the graded ceiling [231921834680339/125000000000000000 / 25/54684]": {
+    "printed": "4.058",
+    "floor": "4.058",
+    "valid_lower_bound": true,
+    "equals_floor": true,
+    "quoted_in_section_0": true
+   },
+   "more than 4.078 times the graded ceiling [466174213699793/250000000000000000 / 25/54684]": {
+    "printed": "4.078",
+    "floor": "4.078",
+    "valid_lower_bound": true,
+    "equals_floor": true,
+    "quoted_in_section_0": true
+   },
+   "more than 2.958 times the graded ceiling [135251075726327/100000000000000000 / 25/54684]": {
+    "printed": "2.958",
+    "floor": "2.958",
+    "valid_lower_bound": true,
+    "equals_floor": true,
+    "quoted_in_section_0": true
+   },
+   "more than 5.763 times the graded ceiling [2634958245163687/1000000000000000000 / 25/54684]": {
+    "printed": "5.763",
+    "floor": "5.763",
+    "valid_lower_bound": true,
+    "equals_floor": true,
+    "quoted_in_section_0": true
+   },
+   "more than 3.403 times the graded ceiling [1556067368832641/1000000000000000000 / 25/54684]": {
+    "printed": "3.403",
+    "floor": "3.403",
+    "valid_lower_bound": true,
+    "equals_floor": true,
+    "quoted_in_section_0": true
+   },
+   "That is more than 1257 times the largest scalar ceiling [4769166867/1000000000000 / 3793/1000000000]": {
+    "printed": "1257",
+    "floor": "1257",
+    "valid_lower_bound": true,
+    "equals_floor": true,
+    "quoted_in_section_0": true
+   },
+   "more than 10.43 times the graded ceiling [4769166867/1000000000000 / 25/54684]": {
+    "printed": "10.43",
+    "floor": "10.43",
+    "valid_lower_bound": true,
+    "equals_floor": true,
+    "quoted_in_section_0": true
+   },
+   "NC-T-DIST fails by a factor above 1673 [4769166867/1000000000000 / 1781/625000000]": {
+    "printed": "1673",
+    "floor": "1673",
+    "valid_lower_bound": true,
+    "equals_floor": true,
+    "quoted_in_section_0": true
+   },
+   "the stated tolerance is 330.8 times larger [4207/20000000 / 31789/50000000000]": {
+    "printed": "330.8",
+    "floor": "330.8",
+    "valid_lower_bound": true,
+    "equals_floor": true,
+    "quoted_in_section_0": true
+   },
+   "a factor above 3596535.57 [472832039423/625000000 / 4207/20000000]": {
+    "printed": "3596535.57",
+    "floor": "3596535.59",
+    "valid_lower_bound": true,
+    "equals_floor": false,
+    "quoted_in_section_0": true
+   },
+   "a factor above 3596535.57 [75653/100 / 4207/20000000]": {
+    "printed": "3596535.57",
+    "floor": "3596529.59",
+    "valid_lower_bound": false,
+    "equals_floor": false,
+    "quoted_in_section_0": true
+   }
+  },
+  "L_45174": "[45174.3073517375 +/- 3.46e-11]"
+ },
+ "checks": {
+  "(A) quoted in section 0: Q1 universal constant": true,
+  "(A) quoted in section 0: Q2 9.28e-11": true,
+  "(A) quoted in section 0: Q3 two-weight": true,
+  "(A) quoted in section 0: Q4 blocked": true,
+  "(A) quoted in section 0: Q5 2.74 H": true,
+  "(A) quoted in section 0: Q6 matrix version": true,
+  "(A) NC-T-UNIV-E row of the necessary-condition table": true,
+  "(A) section 3.4 names the four targets": true,
+  "(A) T4-425 section 4 is stated for the four registered CI targets": true,
+  "(A) theory_v03 registered radii, text 1": true,
+  "(A) theory_v03 registered radii, text 2": true,
+  "(A) theory_v04 T4-262 fixed balls": true,
+  "(A) theory_v04 graded ceiling bound": true,
+  "(A) closure matrix rows 56 and 57 list these frameworks for 007": true,
+  "(B) Etest digits 0.793036506422514088": true,
+  "(C) lambda > Emin (T4-425)": true,
+  "(C) ru = 302748.40... (T4-425)": true,
+  "(C) T[e_min](18860) > 0.79303 (T4-425 (7))": true,
+  "(E) lambda (5/18860)^delta > 2.74 (the '2.74 H up to 18860')": true,
+  "(A) 007: T4-414 and T4-425 endpoint data equal": true,
+  "(A) 007: theta* of REVIEW_T4_375 equals the T4-425 angle": true,
+  "(A) 007: H0 integer < Phi": true,
+  "(A) 013: T4-414 and T4-425 endpoint data equal": true,
+  "(A) 013: theta* of REVIEW_T4_375 equals the T4-425 angle": true,
+  "(A) 013: H0 integer < Phi": true,
+  "(A) 014: T4-414 and T4-425 endpoint data equal": true,
+  "(A) 014: theta* of REVIEW_T4_375 equals the T4-425 angle": true,
+  "(A) 014: H0 integer < Phi": true,
+  "(B) 007 sharpw_rounded_ceiling: shape threshold (H0, V = 0) < Ecrit_upper of T4-414": true,
+  "(B) 007 sharpw_rounded_ceiling: crude Ecrit (H0, V = 0) < 0.785064": true,
+  "(C) 007 sharpw_rounded_ceiling: Kcrit/Phi equals the crude Ecrit with H = Phi": true,
+  "(B) 007 TB_sharp_rounded_ceiling: shape threshold (H0, V = 0) < Ecrit_upper of T4-414": true,
+  "(B) 007 TB_sharp_rounded_ceiling: crude Ecrit (H0, V = 0) < 0.785064": true,
+  "(C) 007 TB_sharp_rounded_ceiling: Kcrit/Phi equals the crude Ecrit with H = Phi": true,
+  "(B) 007 original_graded_ceiling: shape threshold (H0, V = 0) < Ecrit_upper of T4-414": true,
+  "(B) 007 original_graded_ceiling: crude Ecrit (H0, V = 0) < 0.785064": true,
+  "(C) 007 original_graded_ceiling: Kcrit/Phi equals the crude Ecrit with H = Phi": true,
+  "(B) 007 fixed_sharpw_ball: shape threshold (H0, V = 0) < Ecrit_upper of T4-414": true,
+  "(B) 007 fixed_sharpw_ball: crude Ecrit (H0, V = 0) < 0.785064": true,
+  "(C) 007 fixed_sharpw_ball: Kcrit/Phi equals the crude Ecrit with H = Phi": true,
+  "(B) 013 sharpw_rounded_ceiling: shape threshold (H0, V = 0) < Ecrit_upper of T4-414": true,
+  "(B) 013 sharpw_rounded_ceiling: crude Ecrit (H0, V = 0) < 0.785064": true,
+  "(C) 013 sharpw_rounded_ceiling: Kcrit/Phi equals the crude Ecrit with H = Phi": true,
+  "(B) 013 TB_sharp_rounded_ceiling: shape threshold (H0, V = 0) < Ecrit_upper of T4-414": true,
+  "(B) 013 TB_sharp_rounded_ceiling: crude Ecrit (H0, V = 0) < 0.785064": true,
+  "(C) 013 TB_sharp_rounded_ceiling: Kcrit/Phi equals the crude Ecrit with H = Phi": true,
+  "(B) 013 original_graded_ceiling: shape threshold (H0, V = 0) < Ecrit_upper of T4-414": true,
+  "(B) 013 original_graded_ceiling: crude Ecrit (H0, V = 0) < 0.785064": true,
+  "(C) 013 original_graded_ceiling: Kcrit/Phi equals the crude Ecrit with H = Phi": true,
+  "(B) 013 fixed_sharpw_ball: shape threshold (H0, V = 0) < Ecrit_upper of T4-414": true,
+  "(B) 013 fixed_sharpw_ball: crude Ecrit (H0, V = 0) < 0.785064": true,
+  "(C) 013 fixed_sharpw_ball: Kcrit/Phi equals the crude Ecrit with H = Phi": true,
+  "(B) 014 sharpw_rounded_ceiling: shape threshold (H0, V = 0) < Ecrit_upper of T4-414": true,
+  "(B) 014 sharpw_rounded_ceiling: crude Ecrit (H0, V = 0) < 0.785064": true,
+  "(C) 014 sharpw_rounded_ceiling: Kcrit/Phi equals the crude Ecrit with H = Phi": true,
+  "(B) 014 TB_sharp_rounded_ceiling: shape threshold (H0, V = 0) < Ecrit_upper of T4-414": true,
+  "(B) 014 TB_sharp_rounded_ceiling: crude Ecrit (H0, V = 0) < 0.785064": true,
+  "(C) 014 TB_sharp_rounded_ceiling: Kcrit/Phi equals the crude Ecrit with H = Phi": true,
+  "(B) 014 original_graded_ceiling: shape threshold (H0, V = 0) < Ecrit_upper of T4-414": true,
+  "(B) 014 original_graded_ceiling: crude Ecrit (H0, V = 0) < 0.785064": true,
+  "(C) 014 original_graded_ceiling: Kcrit/Phi equals the crude Ecrit with H = Phi": true,
+  "(B) 014 fixed_sharpw_ball: shape threshold (H0, V = 0) < Ecrit_upper of T4-414": true,
+  "(B) 014 fixed_sharpw_ball: crude Ecrit (H0, V = 0) < 0.785064": true,
+  "(C) 014 fixed_sharpw_ball: Kcrit/Phi equals the crude Ecrit with H = Phi": true,
+  "(B) every registered radius fails for E = 1747261/10^6": true,
+  "(C) T4-425's argument applies at its four targets": true,
+  "(C) blocked at every registered radius with the floor 1747261/10^6 (crude argument or reach bound)": true,
+  "(C) R1-038: Emax(graded boxes, ceiling (25/54684)) below 7.9417 for 007, 013 and 014": true,
+  "(C) R1-038: Etest sqrt(2 pi) H0/B > Emax(graded boxes, ceiling (25/54684))": true,
+  "(C) R1-038: Emax(FW-T-T4L2-sharpw-v1 family ceiling (2.8496e-6)) below 20.1006 for 007, 013 and 014": true,
+  "(C) R1-038: Etest sqrt(2 pi) H0/B > Emax(FW-T-T4L2-sharpw-v1 family ceiling (2.8496e-6))": true,
+  "(C) R1-038: Emax(FW-T-TB-sharp-v1 family ceiling (3.7930e-6)) below 19.0764 for 007, 013 and 014": true,
+  "(C) R1-038: Etest sqrt(2 pi) H0/B > Emax(FW-T-TB-sharp-v1 family ceiling (3.7930e-6))": true,
+  "(D) T4-351 constants (E 133, H 33917, G 28.5227, B 85020): crude cap < 9.28e-11": true,
+  "(D) 007: current crude cap below 2^-25": true,
+  "(D) 013: current crude cap below 2^-25": true,
+  "(D) 014: current crude cap below 2^-25": true,
+  "(E) factor 4.357 is a valid lower bound and quoted": true,
+  "(E) factor 2.337 is a valid lower bound and quoted": true,
+  "(E) factor 3.656 is a valid lower bound and quoted": true,
+  "(E) factor 3.621 is a valid lower bound and quoted": true,
+  "(E) factor 2.904 is a valid lower bound and quoted": true,
+  "(E) factor 3.634 is a valid lower bound and quoted": true,
+  "(E) factor 4.058 is a valid lower bound and quoted": true,
+  "(E) factor 4.078 is a valid lower bound and quoted": true,
+  "(E) factor 2.958 is a valid lower bound and quoted": true,
+  "(E) factor 5.763 is a valid lower bound and quoted": true,
+  "(E) factor 3.403 is a valid lower bound and quoted": true,
+  "(E) factor 1257 is a valid lower bound and quoted": true,
+  "(E) factor 10.43 is a valid lower bound and quoted": true,
+  "(E) factor 1673 is a valid lower bound and quoted": true,
+  "(E) factor 330.8 is a valid lower bound and quoted": true,
+  "(E) factor 3596535.57 is a valid lower bound and quoted": true,
+  "(E) line 197 states X > 756.53 next to the factor 3596535.57": true,
+  "(E) 1.3193359375e-6 / 2^-25 >= 44.2 and 2.8496e-6 / 6.8626e-8 >= 41.5 (section 4)": true,
+  "(E) 93/250 - 0.3714757 <= 5.25e-4": true,
+  "(E) (C_00/1e-3)^(1/(-q-1)) with q = -1 - 4 delta is near 45174": true
+ },
+ "elapsed_s": 0.18
+}

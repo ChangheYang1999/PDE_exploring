@@ -1,0 +1,37 @@
+g_z harmonic in (x,y,z)                                                  OK
+-d_z g_z = z (z^2 + r^2)^(-3/2)                                          OK
+n=0: h_n = -Lap f_n = -4(f_n' + t f_n'')                                 OK
+n=0: d_xy f_n = 4xy f_n'', d_xx f_n = 2 f_n' + 4x^2 f_n''                OK
+n=0: R1 h_n = -d_x f_(n+1) = -2x f_(n+1)'                                OK
+n=1: h_n = -Lap f_n = -4(f_n' + t f_n'')                                 OK
+n=1: d_xy f_n = 4xy f_n'', d_xx f_n = 2 f_n' + 4x^2 f_n''                OK
+n=1: R1 h_n = -d_x f_(n+1) = -2x f_(n+1)'                                OK
+n=2: h_n = -Lap f_n = -4(f_n' + t f_n'')                                 OK
+n=2: d_xy f_n = 4xy f_n'', d_xx f_n = 2 f_n' + 4x^2 f_n''                OK
+n=2: R1 h_n = -d_x f_(n+1) = -2x f_(n+1)'                                OK
+H_0 = (2 - t)(1 + t)^(-5/2)                                              OK
+G_00 = pi int_0^oo H_0^2 dt = 3 pi/4                                     OK
+C_00 = A_00 + 2 D_00' = 3(1 - t)(1 + t)^(-5)                             OK
+(i,j)=(0,0): T4-130 kernels = T4-128 kernels xyA, D - x^2 A              OK
+(i,j)=(0,1): T4-130 kernels = T4-128 kernels xyA, D - x^2 A              OK
+(i,j)=(1,2): T4-130 kernels = T4-128 kernels xyA, D - x^2 A              OK
+d_x(xyA) + d_y(D - x^2 A) = y(A + 2D')                                   OK
+radial moment a=7/5 l=0 k=3                                              OK
+radial moment a=9/10 l=2 k=4                                             OK
+radial moment a=1/3 l=1 k=3                                              OK
+angular moment a=7/5 l=1 p=5 q=1                                         OK
+angular moment a=1/2 l=0 p=4 q=2                                         OK
+pi^-1 int cos^0 sin^0 = formula                                          OK
+pi^-1 int cos^2 sin^0 = formula                                          OK
+pi^-1 int cos^2 sin^2 = formula                                          OK
+pi^-1 int cos^4 sin^2 = formula                                          OK
+pi^-1 int cos^6 sin^4 = formula                                          OK
+m=1: parity C_m f = ((-1)^m, +), S_m f = ((-1)^(m+1), -)                 OK
+m=2: parity C_m f = ((-1)^m, +), S_m f = ((-1)^(m+1), -)                 OK
+m=3: parity C_m f = ((-1)^m, +), S_m f = ((-1)^(m+1), -)                 OK
+m=4: parity C_m f = ((-1)^m, +), S_m f = ((-1)^(m+1), -)                 OK
+BALL_LDL congruence identity (exact 3x3 example)                         OK
+T4-128: max over 2000 random trials of (left side - bound) = -1.800e+01 <= 1e-9 OK
+T4-133: max over 2000 random trials of (left side - bound) = -1.544e+01 <= 1e-9 OK
+T4-138: max over 2000 random trials of (left side - bound) = -1.052e+02 <= 1e-9 OK
+all checks PASS (36 of 36)

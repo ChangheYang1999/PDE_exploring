@@ -1,0 +1,105 @@
+====================================================================================================
+Part A. Exact rational certificate
+====================================================================================================
+rational upper bounds: m1 <= pi_hi/(2(1-SMAX)) = 1.57233194059 ; w1c <= 1.220996 (w1c^10 >= 8^10/(5^5 6^6) checked)
+    k1u <= 1.57233194059
+    k1w <= 3.17233194059
+    cru <= 2.35849791088
+    crw <= 4.49183124421
+     c8 <= 3.87690429204
+   dtop <= 2.91793619469
+  w1c m1 <= 1.91981101013 < 1.92
+
+T4-019 base Gram (weights 2^14, 2^18, mu = 1/4): leading minors ['1/4', '144831/100', '1077858728/25'] (T4-019: 1/4, 144831/100, 1077858728/25)
+T2-R2 weights (2^14, 2^18), rational K entries: {'K00': '390.6878', 'K01': '7.9308299', 'K02': '12.689328', 'K11': '152.65454', 'K12': '31.446639', 'K22': '114.91857'}
+
+----------------------------------------------------------------------------------------------------
+FW-T-T4L2-sharp-v1 w = (16384, 262144), s = 1/7744, r = 147/200000, eta = 76219/1000000000
+  Gram leading minors at mu0 = 259/1000 : ['0.241', '1317.2867', '1646239.1'] -> PD
+  Gram leading minors at mu0 + 1/1000 = 13/50 : ['0.24', '1302.8924', '-2848432.9']
+  Gram leading minors at stated failing value 13/50 : ['0.24', '1302.8924', '-2848432.9']
+  PD threshold bracket: mu* in [0.2593656840, 0.2593656840]
+  K entries (rational upper bounds): {'K00': '390.6878', 'K01': '7.9308299', 'K02': '12.689328', 'K11': '152.65454', 'K12': '31.446639', 'K22': '114.91857'}
+  symmetric row sums <= ['400.9978821', '172.3432729', '136.9865552'] ; claimed C' = 401
+  max row sum <= C': True (slack 0.002118)
+  mu0 - C' s = 200587/968000 = 0.2072179752 ; beta = mu0 - C's - (8/5) r/sqrt(s) = 12551327/121000000 = 0.1037299752
+  beta >= stated lower bound 1037/10000 : True; K_H = 1/beta_lb = 9.6432015
+  eta <= beta_lb r : True (7.6219e-05 <= 7.62195e-05); max admissible eta at this r = 7.624153178e-05
+  c_s r/2 <= 0.00912295 : True (exact, pi >= 333/106)
+  slope margin 7/10 - c_s r >= 0.6817 : True
+
+----------------------------------------------------------------------------------------------------
+FW-T-T4L2-sharpw-v1 w = (32768, 1048576), s = 1/5184, r = 1351/1000000, eta = 4207/20000000
+  Gram leading minors at mu0 = 97/250 : ['0.112', '670.47819', '16450636'] -> PD
+  Gram leading minors at mu0 + 1/1000 = 389/1000 : ['0.111', '650.10373', '-9005599.8']
+  Gram leading minors at stated failing value 389/1000 : ['0.111', '650.10373', '-9005599.8']
+  PD threshold bracket: mu* in [0.3886455424, 0.3886455424]
+  K entries (rational upper bounds): {'K00': '390.6878', 'K01': '5.6079577', 'K02': '6.3446639', 'K11': '152.65454', 'K12': '22.236188', 'K22': '114.91857'}
+  symmetric row sums <= ['396.664114', '166.5766112', '129.2089977'] ; claimed C' = 397
+  max row sum <= C': True (slack 0.335886)
+  mu0 - C' s = 201799/648000 = 0.3114182099 ; beta = mu0 - C's - (8/5) r/sqrt(s) = 63092119/405000000 = 0.1557830099
+  beta >= stated lower bound 1557/10000 : True; K_H = 1/beta_lb = 6.4226076
+  eta <= beta_lb r : True (0.00021035 <= 0.0002103507); max admissible eta at this r = 0.0002104628463
+  c_s r/2 <= 0.01372 : True (exact, pi >= 333/106)
+  slope margin 7/10 - c_s r >= 0.6725 : True
+
+====================================================================================================
+Part B. arb cross-check of the constants and row sums (200 bits)
+====================================================================================================
+     m1 in 1.57230396775  (upper 1.57230396775)
+    w1c in 1.22099598145  (upper 1.22099598145)
+    k1u in 1.57230396775  (upper 1.57230396775)
+    k1w in 3.17230396775  (upper 3.17230396775)
+    cru in 2.35845595162  (upper 2.35845595162)
+    crw in 4.49178928495  (upper 4.49178928495)
+     c8 in 3.87690400404  (upper 3.87690400404)
+   dtop in 2.91793600269  (upper 2.91793600269)
+  FW-T-T4L2-sharp-v1: row sums upper ['400.9945442', '172.3403847', '136.9843174']
+  FW-T-T4L2-sharpw-v1: row sums upper ['396.6608073', '166.5737801', '129.2068418']
+
+====================================================================================================
+Part C. Residual component requirements and conversion constants
+====================================================================================================
+Necessary conditions from X_{s,w}(F) <= eta; 'outward' = rounded up (safe for a necessary bound),
+'inward' = rounded down (safe for a sufficient target).
+  FW-T-T4L2-sharp-v1
+    P(J^s F) <= eta = 76219/1000000000 = 7.6219000000e-05
+    G1(J^s F) <= eta/sqrt(w1) in [5.9546093750e-07, 5.9546093750e-07]; outward 5 sig: 5.9547e-07; inward: 5.9546e-07
+    G0(J^s F) <= eta/sqrt(w2) = 76219/512000000000 = 1.4886523437e-07; outward 5 sig: 1.4887e-07; inward: 1.4886e-07
+    raw P2(F) <= eta/(1 - w1c m1 s) <= eta/(1 - 1.92 s) = 7.6237901959e-05 (with w1c m1 bound: 7.6237900098e-05); outward 5 sig: 7.6238e-05
+    conversion constant C_w = max(1 + 32/25 + w1, 1 + w2/w1) = 16386.28; C_w^(s/2) = 1.0006268; 1.92 s = 2.4793e-04
+  FW-T-T4L2-sharpw-v1
+    P(J^s F) <= eta = 4207/20000000 = 2.1035000000e-04
+    G1(J^s F) <= eta/sqrt(w1) in [1.1620252683e-06, 1.1620334851e-06]; outward 5 sig: 1.1621e-06; inward: 1.1620e-06
+    G0(J^s F) <= eta/sqrt(w2) = 4207/20480000000 = 2.0541992187e-07; outward 5 sig: 2.0542e-07; inward: 2.0541e-07
+    raw P2(F) <= eta/(1 - w1c m1 s) <= eta/(1 - 1.92 s) = 2.1042793627e-04 (with w1c m1 bound: 2.1042792860e-04); outward 5 sig: 2.1043e-04
+    conversion constant C_w = max(1 + 32/25 + w1, 1 + w2/w1) = 32770.28; C_w^(s/2) = 1.0010033; 1.92 s = 3.7037e-04
+
+T4-019 (FW-T-T4L2-v1) list for comparison: eta = 1/163840 = 6.1035156250e-06 ; eta/128 = 4.7683715820e-08 ; eta/512 = 1.1920928955e-08
+
+====================================================================================================
+Part D. T4-017 point-test gaps on the two balls (arb), witness intervals data/N4_cartesian_witnesses.json
+====================================================================================================
+  FW-T-T4L2-sharp-v1: C1s r = [0.009122356590 +/- 1.51e-13], C0 r = [0.0002073262861 +/- 3.30e-14]
+        C1-A2-d2 [0, 1]: gap [-0.00054956633 +/- 4.06e-12]  excluded: False
+     C1-A2-Mpen2 [0, 2]: gap [0.049618234 +/- 2.89e-10]  excluded: True
+        C1-A2-b6 [0, 1]: gap [2.9465191 +/- 1.84e-8]  excluded: True
+  FW-T-T4L2-sharpw-v1: C1s r = [0.01371863919 +/- 4.70e-12], C0 r = [0.0003810733107 +/- 2.81e-15]
+        C1-A2-d2 [0, 1]: gap [-0.0073977940 +/- 9.73e-12]  excluded: False
+     C1-A2-Mpen2 [0, 2]: gap [0.036617771 +/- 1.71e-10]  excluded: True
+        C1-A2-b6 [0, 1]: gap [2.9399873 +/- 1.90e-8]  excluded: True
+
+====================================================================================================
+Part E. FLOAT studies (not part of the certificate)
+====================================================================================================
+  FW-T-T4L2-sharp-v1: mu*(w) = 0.25936568 (bisection bracket 0.25936568); row-sum C' = 400.99454; continuous optimum s = mu/(5C') = 1/7730.3, eta = 7.651156e-05, G0 = 1.494366e-07
+  FW-T-T4L2-sharpw-v1: mu*(w) = 0.38864554 (bisection bracket 0.38864554); row-sum C' = 396.66081; continuous optimum s = mu/(5C') = 1/5103.1, eta = 2.114412e-04, G0 = 2.064855e-07
+  best G0 requirement, beta_L = 2.0: 2.17075e-07 at log2 w = (15.331, 19.781), eta = 2.0605e-04, mu* = 0.3846, C' = 396.61, s = 1/5156
+  best G0 requirement, beta_L = 2.5: 2.48267e-07 at log2 w = (15.351, 19.417), eta = 2.0769e-04, mu* = 0.3859, C' = 397.05, s = 1/5144
+  best G0 requirement, beta_L = 3.0: 2.75924e-07 at log2 w = (15.364, 19.126), eta = 2.0869e-04, mu* = 0.3868, C' = 397.45, s = 1/5138
+  best G0 requirement, beta_L = 4.0: 3.24152e-07 at log2 w = (15.379, 18.677), eta = 2.0983e-04, mu* = 0.3877, C' = 398.16, s = 1/5134
+  largest eta over weights: 3.9997e-04 at log2 w = (121.76, 189.89); G0 there = 1.050e-32
+
+  joint-Gram variant (FLOAT): largest m with G_w(0) - s Ksym_raw - m diag(1, w1, w2) PSD, compared with mu*(w) - C's
+    FW-T-T4L2-sharp-v1: mu* - C's = 0.207584; mu* - lambda_max(Ksym) s = 0.208887 (lambda_max = 390.909); joint = 0.221976
+    FW-T-T4L2-sharpw-v1: mu* - C's = 0.312129; mu* - lambda_max(Ksym) s = 0.313268 (lambda_max = 390.757); joint = 0.323967

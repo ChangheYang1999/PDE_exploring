@@ -1,0 +1,77 @@
+{
+ "id": "C1-N1-001-refit860-jabs",
+ "created_utc": "2026-10-28T21:26:23Z",
+ "created_by_lane": "c1-n1",
+ "parent": {
+  "id": "C1-BASE-S131",
+  "path": "source/case4/IPM_case4.artifacts/checkpoints/state131_last_unverified/accepted_00000131.json",
+  "sha256": "7ff9415cbbe66f9d4a105aa4a999704e67157d8376c969b7561a1c01b1de57bc"
+ },
+ "chart": "PRIMARY",
+ "c_l_exact": "4076476460239181/2251799813685248",
+ "theta0": {
+  "reference": "state 131 exact Theta_0 (CONTRACTS section 2); preserved EXACTLY by 10 linear moment constraints (verified in sector_table.json: Theta0_float)",
+  "quarter_norm": 16.57100026302882
+ },
+ "a0": {
+  "value": 19.285286224292285,
+  "status": "FLOAT from exact coefficients (exact rational available on request); changed from 10.300 of state 131 because a0 is free"
+ },
+ "B0n_status": "EXACT (center row pivoted exactly in finalize_exact; verified sum s_i a_i = 1 - c_l in rational arithmetic)",
+ "basis": {
+  "description": "the 860 case4 generators in T1 form (60 monomials m<=4,k<=4 and 800 Legendre functions t^max(5-m,0) P_n(2t-1) H_m R^(p_j-m)), branches j=0..3, m<=9, k<=25",
+  "generator_count": 860,
+  "branches": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "angular_max_m": 9,
+  "radial_max_k": 25
+ },
+ "coefficient_files": [
+  {
+   "name": "candA_Jabs_exact.json",
+   "sha256": "8077f1305e5403264831de280689bb9334628bd1aa1233ce4dec58017dc355c7",
+   "format": "c1-n1 generator list JSON (m, j, spec, coef exact rational string, coef_float)",
+   "exactness": "all coefficients exact rationals; 61 pivot coefficients solved exactly, the others are binary64 values"
+  }
+ ],
+ "evaluator_code": [
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_exact.py",
+   "sha256": "fee8be77d0f2a5d71226740e493ed72c694c470d93572b3d7a1bf1767b98d189"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_eval.py",
+   "sha256": "72915240ab63b2552e98a283522025dbc3b0e4972ebd73a968c083411bb1af6b"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_origin.py",
+   "sha256": "134d6bb2530ecc84b4604e726685ac04a3553fed7a79cbacebad983dd629a4a7"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_opt.py",
+   "sha256": "756251bbcfe9b97d461a45225ecb50d5ba8dfa142f0ef5684b129cd912a06d40"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/optimization/run_candA.py",
+   "sha256": "8f53b4ee34b61b0f3daa25a0d9c6f73ec0edf537f56b8486b96d00e41c8a6a8f"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/optimization/candA_setup.py",
+   "sha256": "c0b6950e8ab274043f7e3c95976422b179f99a8b880ad4a144bc3b10dbb24033"
+  }
+ ],
+ "sector_table": {
+  "name": "sector_table.json",
+  "sha256": "72b97b016884aec44979b36715d741ed64a11c47699b29d5eede4bcf664a5c6d"
+ },
+ "loss": {
+  "value": 0.00127241649667103,
+  "definition": "LOSS: J_abs = (1/(pi a_ref^2)) int R_f^2 ds dtheta on the case4 training mesh (944 x 96 Gauss, s=log r) excluding the origin block r<0.02; a_ref=23.95065822465609. State 131 on the same rule: 1.26730668564e-11.",
+  "label": "LOSS"
+ },
+ "notes": "Constrained refit in the EXISTING 860 basis (prompt section 8, first comparison). Linear constraints (61 rows, all EXACT after finalization): center; Theta_0 fixed (10); q=1 descendant moments of branches 0 and 1 zero (20); leading moments of branches 1,2,3 for m<=9 equal to the harmonics<=19 truncation of the sequential stationary targets (30). Five Taylor equations hold to 4e-11 (not exact; not a theorem hypothesis). Objective J_abs, 60 Gauss-Newton steps from the min-norm feasible projection of state 131. RESULT: sectors (0,1),(1,1) EXACT-ZERO; (1,0),(2,0),(3,0) reduced to their unresolvable harmonics 21..39 (quarter norms 2.10e-3, 1.69e-2, 0.254); (4,0) and (5,0) survive (quarter norms 172.8, 131.8) because the basis has no branches 4,5. NOT admissible for N_s / Hdot^-1. Demonstrates that the existing basis cannot cancel the forbidden sectors."
+}

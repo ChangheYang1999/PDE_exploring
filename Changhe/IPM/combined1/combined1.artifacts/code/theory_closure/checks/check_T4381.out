@@ -1,0 +1,53 @@
+PASS A1 weighted gradient norm^2 of h = y(1+r)^(q-1)/a
+PASS A2 (a(1+r))^2-(1-ar)^2 = (a+1)(a-1+2ar)
+PASS A3 amplitude part r/(1+r) sin/a and gradient limit 1 at theta = pi/2
+PASS A4 moment = pi B(4,a-3)/a = 6pi/(a^2(a-1)(a-2)(a-3))
+PASS A5 FLOAT: moment at campaign q, quadrature 0.999929067773880500286551, formula 0.999929067773880500286551, T4-381 0.99992906777388050028655 (agree to 1e-22)
+PASS A6 Green formula solves the mode-1 equation
+PASS A7 two tails give -m/(2 pi r) + r^(q+2)/(a(q+1)(q+3))
+PASS A8 Hessian velocity of C y r^(q+1) is r^q times (6)
+PASS A9 Hessian velocity of the dipole potential is -DK(X)M
+PASS A10 K = (G_xy, -G_xx) for G = log|Z|/(2 pi)
+PASS A11 |(6)|^2 identity and |(6)| = Etest at theta = pi/4
+PASS A12 shape-integral identity
+PASS A13 shape integral at the campaign q, delta
+PASS A14 Etest exact = 40673572058993602044748051350395/51288398112310268946308133030216 matches T4-381
+PASS A15 D = 5c - 1 and alpha = -2q - 2 > 0, delta > 0
+PASS B1 Etest in [0.793036506422514088355, 0.793036506422514088356]
+     007 V=0 r0 > 19282.0721, crude cap < 1.248062e-6, shape cap < 1.420398e-7
+     007 v0  r0 > 21221.5500, crude cap < 9.870927e-7, shape cap < 1.123395e-7
+     013 V=0 r0 > 19279.9836, crude cap < 1.248415e-6, shape cap < 1.420801e-7
+     013 v0  r0 > 21219.2514, crude cap < 9.873724e-7, shape cap < 1.123713e-7
+     014 V=0 r0 > 19281.2198, crude cap < 1.248188e-6, shape cap < 1.420542e-7
+     014 v0  r0 > 21220.6119, crude cap < 9.871925e-7, shape cap < 1.123508e-7
+     V=0 sharpw_rounded_ceiling  : largest T4-380 E threshold over 007, 013, 014 < 0.68193906
+     V=0 TB_sharp_rounded_ceiling: largest T4-380 E threshold over 007, 013, 014 < 0.64719100
+     V=0 original_graded_ceiling : largest T4-380 E threshold over 007, 013, 014 < 0.26943139
+     V=0 fixed_sharpw_ball       : largest T4-380 E threshold over 007, 013, 014 < 0.78506347
+     v0  sharpw_rounded_ceiling  : largest T4-380 E threshold over 007, 013, 014 < 0.64717774
+     v0  TB_sharp_rounded_ceiling: largest T4-380 E threshold over 007, 013, 014 < 0.61242968
+     v0  original_graded_ceiling : largest T4-380 E threshold over 007, 013, 014 < 0.23467008
+     v0  fixed_sharpw_ball       : largest T4-380 E threshold over 007, 013, 014 < 0.75030216
+PASS B2 V=0: Etest exceeds the T4-380 threshold for the fixed sharpw ball (all three) and it is < 0.785064
+PASS B3 V=0: Etest exceeds every family-ceiling threshold (< 0.682, 0.648, 0.27)
+PASS B4 V=0: crude cap < 1.2485e-6 < 1351/1024000000 = 1.3193359375e-6
+PASS B5 V=0: shape cap < 1.421e-7
+PASS B6 with v0: crude cap < 9.88e-7 and shape cap < 1.124e-7
+     007 T4-380 stored threshold (fixed sharpw, V=0) < 0.785022802052
+     013 T4-380 stored threshold (fixed sharpw, V=0) < 0.785063468622
+     014 T4-380 stored threshold (fixed sharpw, V=0) < 0.785037318663
+PASS B7 my 24 thresholds agree with the stored T4-380 values to 1e-40
+     007 sqrt(2 pi) H0/B > 29.476787
+     013 sqrt(2 pi) H0/B > 29.475358
+     014 sqrt(2 pi) H0/B > 29.476204
+PASS B8 T4-380 thresholds (V = 0) are below the R1-038 Emax(b) bounds divided by sqrt(2 pi) H0/B
+     007 with the T4-351 H0 only: r0 < 10.0512, crude cap > 135.39
+     013 with the T4-351 H0 only: r0 < 10.0512, crude cap > 135.39
+     014 with the T4-351 H0 only: r0 < 10.0512, crude cap > 135.39
+PASS B9 with the T4-351 lower bound alone the crude cap exceeds 100 (the obstruction needs the T4-375 H0)
+     r = 1.0e+3: |U + DK M| / (H_q r^q) = 0.791503503220318 (Etest 0.793036506422514, difference -0.001533)
+     r = 1.0e+4: |U + DK M| / (H_q r^q) = 0.792882919361589 (Etest 0.793036506422514, difference -0.00015359)
+     r = 1.0e+5: |U + DK M| / (H_q r^q) = 0.793021144843708 (Etest 0.793036506422514, difference -1.5362e-5)
+     r = 1.0e+6: |U + DK M| / (H_q r^q) = 0.793034970235901 (Etest 0.793036506422514, difference -1.5362e-6)
+PASS C1 FLOAT: the remainder ratio tends to Etest with error decreasing in r (diagnostic)
+25 checks, ALL PASS

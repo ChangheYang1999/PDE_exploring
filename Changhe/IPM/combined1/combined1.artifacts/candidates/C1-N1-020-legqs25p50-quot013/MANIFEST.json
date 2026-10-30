@@ -1,0 +1,113 @@
+{
+ "id": "C1-N1-020-legqs25p50-quot013",
+ "created_utc": "2026-10-29T08:46:18Z",
+ "created_by_lane": "c1-n1",
+ "parent": {
+  "id": "C1-A2-d2",
+  "path": "source/analysis2/IPM_Analysis_II.artifacts/certificates/numerics_data/nb_d2_exact.json",
+  "sha256": "f3339f85eff0ac81033a2a1f0fd07e12298ef9bd74da501a4e874c3cef6057e3"
+ },
+ "chart": "PRIMARY",
+ "c_l_exact": "4076476460239181/2251799813685248",
+ "theta0": {
+  "reference": "state 131 exact Theta_0 (CONTRACTS section 2), preserved EXACTLY by the 10 leading-moment rows of branch 0",
+  "quarter_norm": 16.57100026302882
+ },
+ "a0": {
+  "value": null,
+  "status": "see sector/diag files"
+ },
+ "B0n_status": "EXACT (center row pivoted exactly; verified in rational arithmetic in finalize_exact)",
+ "basis": {
+  "generator_count": 2426,
+  "n_free": 2426,
+  "n_fixed": 0,
+  "branches": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "angular_max_m": 79,
+  "radial_max_k_canonical": 82,
+  "legqs_multiscale_functions": 504,
+  "radial_max_k_note": "k = largest monomial degree m+h in the canonical form r^(2k)(1+r^2)^(p-k); C1-N1-002..004 manifests wrote 25 (the T1 value) which was wrong for the new blocks (c1-n4 N4-044/N4-048): their correct values are 72 (002), 82 (003), 42 (004)",
+  "description": "balanced E_2 proxy of 007 + 1e12 sum over 67 weak probes of I^2; 016 basis + 252 legqs R0 = 50 (scales 25 and 50; 2426 generators); MID 16 rule; 12 GN steps from C1-N1-016"
+ },
+ "coefficient_files": [
+  {
+   "name": "quot013_legqs25p50_m9to15_cpu_m16_exact.json",
+   "sha256": "bddbd3120852a815cfe850635564cb09ab52a98ec596a4cce3b72c98cf04f7cf",
+   "format": "c1-n1 generator list JSON (m, j, spec, coef exact rational string, coef_float); n_free/n_fixed",
+   "exactness": "all coefficients exact rationals; pivot coefficients solved exactly (flint fmpq_mat), the others binary64 values"
+  }
+ ],
+ "evaluator_code": [
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_exact.py",
+   "sha256": "de23cda3313f4a4e2dede0f20c69911f2fa11bc50de82fa331bfd576eb38470a"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_eval.py",
+   "sha256": "9980c574701ce533057f4df04da7575f672cd858ede7757949c795d214d8b9f4"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_polar.py",
+   "sha256": "f07d09053af9106b87109c39dbc497130bb711d5d71dbd91e2682b6f01bafb15"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_origin.py",
+   "sha256": "134d6bb2530ecc84b4604e726685ac04a3553fed7a79cbacebad983dd629a4a7"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_opt.py",
+   "sha256": "af2c69f2d0fb38de93d3ae7eb57f0d72d853fd5a285585a6dd6aae7518cdc214"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_opt2.py",
+   "sha256": "90b0120527aae9fb3d3c41ec21a45beb697c1c77e67d18393c66eeac39011c57"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_farpart.py",
+   "sha256": "cbf4e0f99d55db9876c9edc134e9cb2d3791b52d8ac4a49dda4b16eef3b50b63"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_hminus1.py",
+   "sha256": "cb01d01d95286b2d3a241a6045b7e8df8590ecfd0ea79e4d3a78a5fabbc4b98b"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_tail.py",
+   "sha256": "68d32f5b818d37470b0632e33307bace0498dd5957bbae9cc1c44ab36cd7a4dc"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/optimization/run_from_d2.py",
+   "sha256": "77826ed2b0a4fad7f8f2e35ca7a3fe6f9ef8f4287b18b726cfb58b3f19b6512b"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/optimization/run_e2.py",
+   "sha256": "05ae85cf88f2dd36a3b0eb5ee874b83a625d1f18e39c40ec572f9113e87dcb1d"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/optimization/diag2.py",
+   "sha256": "c53636fc85e7288136875d754d231ccb9b767e245390564001594befa35a54a0"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/optimization/candA_setup.py",
+   "sha256": "836fcd3f607e99b901eaf942357324e1b5d29d5c4b18af9c47bc84735fbefdde"
+  }
+ ],
+ "sector_table": {
+  "name": "sector_table.json",
+  "sha256": "acc598370eb89e1bce2ff025fb6db1cce17c6b7435bbbc29af358c0ba15942cd"
+ },
+ "loss": {
+  "value": 13501900.0,
+  "definition": "balanced E_2 proxy of 007 + 1e12 sum over 67 weak probes of I^2; 016 basis + 252 legqs R0 = 50 (scales 25 and 50; 2426 generators); MID 16 rule; 12 GN steps from C1-N1-016",
+  "label": "LOSS"
+ },
+ "notes": "CPU run (core 52); exact norms of two-scale legqs candidates need the two-scale product keys (c1-n3 legqs extension; c1-n4 N4-264 backend). || NORM-T-WEAK-v1 (a=0, k=0..8) FLOAT weak-distance lower bound 1.8020e-04 (NC-T-DIST scalar budgets <= 3.793e-6, graded 4.572e-4); file quot013_legqs25p50_m9to15_cpu_m16_weaktests2.json || diag2 FLOAT summary (rule radial Gauss 32/panel x midpoint 180, 0.02 <= r <= 8356.47): G0 0.320062 (far part F2 3.79e-09), G1 3.91279, P2 226.939, rF 6.74413, H 0.611275, X3raw 573.754, sup|F| 0.1996; first surviving sector exponent -2.7904449240429297 full-circle 4911.18; (B-L2) theta_inner 0.01139, kappa_inner 0.7374, margin 0.06152."
+}

@@ -1,0 +1,72 @@
+====================================================================================================
+Part A. Exact symbolic checks
+====================================================================================================
+A1. symbol of U: (xi1 xi2, -xi1^2)/|xi|^2 = [xi1*xi2/(xi1**2 + xi2**2), -xi1**2/(xi1**2 + xi2**2)] ; principal symbol of U[.].D rho on |xi| = 1: rho_x*xi1*xi2 - rho_y*xi1**2 ; xi^T M0 xi = rho_x*xi1*xi2 - rho_y*xi1**2 ; equal: True
+A2. eigenvalues of M = b I + M0: [b - rho_y/2 - sqrt(rho_x**2 + rho_y**2)/2, b - rho_y/2 + sqrt(rho_x**2 + rho_y**2)/2] ; largest equals b + (|D rho| - rho_y)/2: True
+A3. M(S_x X) - S_x M S_x = [0, 0, 0, 0] ; M(S_y X) - S_y M S_y = [0, 0, 0, 0]
+A4. d_1^2 d_2 (log r/(2 pi)) - sin(3 theta)/(pi r^3) = 0 ; kernel odd under X -> -X, and U2 = R1^2 = -d_1^2 Lap^-1, so d_y U2[h](0) = (1/pi) int sin(3 theta) h r^-3 dX
+A5. b = -V.D log w_R - a (V.X)/(R^2 + r^2) = 0
+
+====================================================================================================
+Part C. Own evaluator for the exact state131 potential (python-flint arb, 320 bits; rigorous point enclosures)
+====================================================================================================
+    bases: Horner in v for v <= 1/2, in s = 1/(1+q) for v > 1/2; float condition numbers sum |coef| 2^-i: v basis 2.80e+12, s basis 1.76e+11
+C1. the 8 A2 stored point enclosures (data/state131_field_points.json): every own ball overlaps the A2 ball: True
+    max relative |own - A2| per field: rho 2.7e-65, rho_x 5.4e-66, rho_y 1.0e-65, u1 2.7e-65, u2 3.3e-65 ; own relative ball radius <= 6.0e-85; profile residual (cX + u).D rho - rho: |own - A2| <= 6.3e-66
+C2. the seven T4-047 weighted points (on the x axis, where rho_x = 0); lambda - (c+1) as rigorous balls:
+        a |     R |     x | rho_y (own, mid)   | lambda - (c+1) own                          | overlaps T4-047 ball | > 0
+      6/5 |   1/8 |     1 |     9.751425191788 |     +1.877189227140861e-01 (radius 5.1e-84) |                 True | True
+      6/5 |   1/4 |   3/2 |     9.414967650484 |     +9.894378730051960e-02 (radius 1.8e-86) |                 True | True
+    13/10 |   1/2 |  21/8 |     8.769966893652 |     +2.150124078765389e-01 (radius 7.9e-90) |                 True | True
+    13/10 |     1 |     5 |     7.808023300125 |     +7.236305588909832e-02 (radius 2.7e-92) |                 True | True
+      7/5 |     2 |    11 |     6.459906209767 |     +1.443494835544849e-01 (radius 9.8e-93) |                 True | True
+      7/5 |     4 |    23 |     5.199183314967 |     +1.767413630284790e-02 (radius 5.1e-93) |                 True | True
+      3/2 |    16 |   135 |     2.769901420269 |     +4.509824539235469e-02 (radius 1.9e-93) |                 True | True
+
+====================================================================================================
+Part B. FLOAT checks on a periodic box (not proofs)
+====================================================================================================
+B1. contact term c[h] = d_y U2[h](0): FFT 0.12633358; (1/pi) int sin(3 theta) h r^-3 = 0.12633331; relative difference 2.07e-06 (periodic images and quadrature)
+B3. a = 0.0, R = 1.0, X0 = (1.0, 0.8), xi = top eigenvector of M(X0) (lambda(X0) = 0.00425):
+      n = 8: quotient -5.79401, (4) error 0.661; n = 16: quotient -3.69020, (4) error 0.350; n = 32: quotient -3.05880, (4) error 0.174; n = 64: quotient -2.87026, (4) error 0.086
+      Richardson (1/n^2) from n = 32, 64: -2.80741; predicted limit -(c+1) + <xi^T M xi>_chi^2 = -2.80625; -(c+1) + lambda(X0) = -2.80607
+B3. a = 1.2, R = 1.0, X0 = (1.0, 0.8), xi = top eigenvector of M(X0) (lambda(X0) = 1.44113):
+      n = 8: quotient -4.35338, (4) error 0.661; n = 16: quotient -2.24896, (4) error 0.350; n = 32: quotient -1.62279, (4) error 0.174; n = 64: quotient -1.43578, (4) error 0.086
+      Richardson (1/n^2) from n = 32, 64: -1.37344; predicted limit -(c+1) + <xi^T M xi>_chi^2 = -1.37219; -(c+1) + lambda(X0) = -1.36919
+
+====================================================================================================
+Part D. The (a, R) map of the T4-047 obstruction for state131 (sampled sup over a polar grid)
+====================================================================================================
+D0. 6425 grid points (r in [1e-2, 1e8], 251 log-spaced values plus the T4-047 abscissae; theta in [0, pi/2], 25 values), arb fields in 27.0 s, max relative ball radius 4.8e-84
+    float64 evaluator (used only in Part B) against arb on 15 probe points with r up to 9.12e+04: max relative error 4.7e-11
+    sampled sup of theta_X = (|D rho| - rho_y)/2: 0.011362 at r = 10, theta = 0.4581; c + 1 = 2.810319
+    sampled sup of (V.X)/r^2 = c + (X.u)/r^2: 2.620618 at r = 0.01, theta = 0.0000; 2c - 1 = 2.620638 (the value at the origin along the x axis, d_x u1(0) = c - 1)
+    at r = 1e+04: max over theta of theta_X = 9.80e-04, of |(X.u)/r^2| = 1.63e-02 (r^(gamma-1) = 1.62e-02)
+    at r = 1e+06: max over theta of theta_X = 1.27e-04, of |(X.u)/r^2| = 2.05e-03 (r^(gamma-1) = 2.06e-03)
+    at r = 1e+08: max over theta of theta_X = 1.61e-05, of |(X.u)/r^2| = 2.60e-04 (r^(gamma-1) = 2.62e-04)
+    lemma (far field): every term of u has homogeneity degree <= 2 p_0 - 3 = gamma and of D rho degree <= gamma - 1, so lambda -> a c as r -> oo for every R; hence Lambda(a, R) >= a c, and a c > c + 1 iff a > 1 + 1/c = 1.552389
+D1. sampled max over the grid of lambda - (c+1), R = 2^e (rows a, columns e); a positive entry is then re-evaluated
+    in arb at the maximizing grid point (D2):
+        e:     -4     -3     -2     -1      0      1      2      3      4      5      6      7      8      9     10     11     12
+        0: -2.799 -2.799 -2.799 -2.799 -2.799 -2.799 -2.799 -2.799 -2.799 -2.799 -2.799 -2.799 -2.799 -2.799 -2.799 -2.799 -2.799
+        1: -0.260 -0.311 -0.386 -0.483 -0.593 -0.700 -0.790 -0.859 -0.907 -0.939 -0.960 -0.973 -0.982 -0.988 -0.992 -0.995 -0.997
+    11/10: -0.005 -0.061 -0.143 -0.250 -0.371 -0.489 -0.588 -0.664 -0.716 -0.752 -0.775 -0.790 -0.800 -0.806 -0.810 -0.813 -0.815
+      6/5: +0.250 +0.189 +0.099 -0.018 -0.149 -0.278 -0.386 -0.469 -0.526 -0.564 -0.590 -0.606 -0.617 -0.624 -0.629 -0.632 -0.634
+    13/10: +0.505 +0.439 +0.341 +0.215 +0.073 -0.067 -0.184 -0.273 -0.336 -0.377 -0.404 -0.422 -0.434 -0.442 -0.447 -0.450 -0.452
+      7/5: +0.760 +0.688 +0.584 +0.448 +0.294 +0.144 +0.018 -0.078 -0.145 -0.190 -0.219 -0.239 -0.251 -0.259 -0.265 -0.269 -0.271
+      3/2: +1.015 +0.938 +0.826 +0.681 +0.516 +0.355 +0.220 +0.117 +0.045 -0.003 -0.034 -0.055 -0.068 -0.077 -0.083 -0.087 -0.090
+    31/20: +1.142 +1.063 +0.947 +0.797 +0.627 +0.461 +0.321 +0.214 +0.140 +0.091 +0.058 +0.037 +0.023 +0.014 +0.008 +0.004 +0.001
+      8/5: +1.270 +1.188 +1.069 +0.913 +0.738 +0.566 +0.422 +0.312 +0.236 +0.184 +0.151 +0.129 +0.114 +0.105 +0.099 +0.095 +0.092
+D2. arb re-evaluation of every positive entry at its maximizing grid point (exact binary point, exact a and R):
+    certified lambda(X) - (c+1) > 0 (hence Lambda > c + 1, an obstruction by T4-047) for 58 of 58 entries
+D3. summary per a, R = 2^e (the obstructed side is certified by D2; the unobstructed side is FLOAT):
+    a =     0: certified obstruction for e in none; no sampled obstruction for e in -4..12; rigorous c + 1 - Lambda <= c + 1 - a c = +2.8103 for every R; sampled c + 1 - Lambda at R = 2^12: +2.7990
+    a =     1: certified obstruction for e in none; no sampled obstruction for e in -4..12; rigorous c + 1 - Lambda <= c + 1 - a c = +1.0000 for every R; sampled c + 1 - Lambda at R = 2^12: +0.9965
+    a = 11/10: certified obstruction for e in none; no sampled obstruction for e in -4..12; rigorous c + 1 - Lambda <= c + 1 - a c = +0.8190 for every R; sampled c + 1 - Lambda at R = 2^12: +0.8151
+    a =   6/5: certified obstruction for e in -4..-2; no sampled obstruction for e in -1..12; rigorous c + 1 - Lambda <= c + 1 - a c = +0.6379 for every R; sampled c + 1 - Lambda at R = 2^12: +0.6337
+    a = 13/10: certified obstruction for e in -4..0; no sampled obstruction for e in 1..12; rigorous c + 1 - Lambda <= c + 1 - a c = +0.4569 for every R; sampled c + 1 - Lambda at R = 2^12: +0.4524
+    a =   7/5: certified obstruction for e in -4..2; no sampled obstruction for e in 3..12; rigorous c + 1 - Lambda <= c + 1 - a c = +0.2759 for every R; sampled c + 1 - Lambda at R = 2^12: +0.2710
+    a =   3/2: certified obstruction for e in -4..4; no sampled obstruction for e in 5..12; rigorous c + 1 - Lambda <= c + 1 - a c = +0.0948 for every R; sampled c + 1 - Lambda at R = 2^12: +0.0896
+    a = 31/20: certified obstruction for e in -4..12; no sampled obstruction for e in none; rigorous c + 1 - Lambda <= c + 1 - a c = +0.0043 for every R; sampled c + 1 - Lambda at R = 2^12: -0.0011
+    a =   8/5: certified obstruction for e in -4..12; no sampled obstruction for e in none; rigorous c + 1 - Lambda <= c + 1 - a c = -0.0862 for every R; sampled c + 1 - Lambda at R = 2^12: -0.0918
+Total time 34.4 s

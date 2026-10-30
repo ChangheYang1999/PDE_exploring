@@ -1,0 +1,56 @@
+Part A (EXACT). Largest certified PD mu of G_w(mu) as a function of beta_L
+Part B (FLOAT). eta and G0 at fixed weights, continuous optimum s = mu/(5C'), r = (mu - C's) sqrt(s)/3.2
+
+sharp (2^14, 2^18), C' = 401
+   beta_L   mu_lo (exact PD)          s          eta  G0 = eta/sqrt(w0) eta/eta(2)
+    2.000       0.2593656840 1/    7730   7.6511e-05         1.4944e-07     1.0000
+    1.900       0.2511941007 1/    7982   7.0626e-05         1.3794e-07     0.9231
+    1.800       0.2418453919 1/    8290   6.4237e-05         1.2546e-07     0.8396
+    1.600       0.2186951667 1/    9168   4.9951e-05         9.7560e-08     0.6529
+    1.400       0.1876414436 1/   10685   3.4062e-05         6.6527e-08     0.4452
+    1.200       0.1457365928 1/   13758   1.8108e-05         3.5367e-08     0.2367
+    1.000       0.0896882230 1/   22355   5.3800e-06         1.0508e-08     0.0703
+    0.800       0.0166862054 1/  120159   8.0322e-08         1.5688e-10     0.0010
+    0.600  no positive Gram rate
+    0.500  no positive Gram rate
+    0.400  no positive Gram rate
+  smallest beta_L with G_w(0) PD lies in [0.76023506, 0.76023506] (EXACT bracket)
+
+sharpw (2^15, 2^20), C' = 397
+   beta_L   mu_lo (exact PD)          s          eta  G0 = eta/sqrt(w0) eta/eta(2)
+    2.000       0.3886455424 1/    5107   2.1135e-04         2.0640e-07     1.0000
+    1.900       0.3857142669 1/    5146   2.0739e-04         2.0253e-07     0.9813
+    1.800       0.3822665740 1/    5193   2.0278e-04         1.9803e-07     0.9595
+    1.600       0.3732191309 1/    5319   1.9100e-04         1.8652e-07     0.9037
+    1.400       0.3596764320 1/    5519   1.7414e-04         1.7006e-07     0.8239
+    1.200       0.3381664419 1/    5870   1.4926e-04         1.4576e-07     0.7062
+    1.000       0.3023785615 1/    6565   1.1285e-04         1.1020e-07     0.5339
+    0.800       0.2433264531 1/    8158   6.5553e-05         6.4017e-08     0.3102
+    0.600       0.1545163855 1/   12847   2.1065e-05         2.0571e-08     0.0997
+    0.500       0.0991593295 1/   20018   6.9495e-06         6.7866e-09     0.0329
+    0.400       0.0374768489 1/   52966   6.1028e-07         5.9597e-10     0.0029
+  smallest beta_L with G_w(0) PD lies in [0.34324816, 0.34324816] (EXACT bracket)
+
+FLOAT beta_L = c + 1 - theta - kappa of the numerics_v02 candidates (theta, kappa from numerics_v02 section 3)
+  005: beta_L = 1.4032
+  006: beta_L = -20.5397
+  d2 (theta <= 2/25, kappa = 0.7092): beta_L = 2.0211
+
+Part C (EXACT). Certified rational instances of FW-T-T4L2-bL-v1 at the sharpw weights (2^15, 2^20), C' = 397
+  beta = mu0 - C' s - (8/5) r/sqrt(s) >= beta_lb, eta <= beta_lb r; L2 contraction ratio c_s r/beta_L with
+  c_s = [2 sqrt(pi s (1+s))]^-1, checked as (c_s r)^2 = r^2/(4 pi s (1+s)) <= (ratio beta_L)^2 with pi >= 333/106
+  beta_L = 7/5: mu0 = 359/1000 (G_w(mu0) PD), s = 1/5476, r = 1213/1000000, beta = 0.14288263 >= 279/2000: True; eta = 423/2500000 = 1.6920e-04 <= beta_lb r = 1.692135e-04: True; c_s r/beta_L <= 49/2500: True; c_s r < 7/10: True; G0 <= eta/1024 = 1.6523e-07; K_H = 1/beta_lb <= 7.1685
+  beta_L = 1: mu0 = 151/500 (G_w(mu0) PD), s = 1/6561, r = 459/500000, beta = 0.12251813 >= 581/5000: True; eta = 533/5000000 = 1.0660e-04 <= beta_lb r = 1.066716e-04: True; c_s r/beta_L <= 229/10000: True; c_s r < 7/10: True; G0 <= eta/1024 = 1.0410e-07; K_H = 1/beta_lb <= 8.6059
+
+Part D (EXACT Gram, FLOAT eta). Sensitivity to the matrix floors m2 of (B5) M_2 and m1 of (B4) M_1, beta_L = 2.
+  Generalized Gram [[m2 - mu, -347/10, -5], [-347/10, w1 (m1 - mu) - 40, -3 w1], [-5, -3 w1, w0 (2 - mu)]].
+  Floors: A2 (1/2, 9/10); state131 P96 whole-plane lower bounds (293619/500000, 972875/1000000) (c1-t2 handoff Q2);
+  state131 TP-4/T4-093 packet caps (0.61151, 0.99116) are upper limits for any certificate at these weights.
+  sharp (2^14, 2^18), C' = 401
+             A2 floors: mu_lo = 0.25936568, FLOAT eta = 7.6511e-05, G0 = 1.4944e-07
+            P96 bounds: mu_lo = 0.33359565, FLOAT eta = 1.4355e-04, G0 = 2.8037e-07
+     TP-4 caps (limit): mu_lo = 0.35318261, FLOAT eta = 1.6555e-04, G0 = 3.2335e-07
+  sharpw (2^15, 2^20), C' = 397
+             A2 floors: mu_lo = 0.38864554, FLOAT eta = 2.1135e-04, G0 = 2.0640e-07
+            P96 bounds: mu_lo = 0.46968715, FLOAT eta = 3.3934e-04, G0 = 3.3139e-07
+     TP-4 caps (limit): mu_lo = 0.49156867, FLOAT eta = 3.8026e-04, G0 = 3.7135e-07

@@ -1,0 +1,23 @@
+PASS A1 kappa = 1 - q = 5 - gamma = 4 + delta and D = c kappa = 5c - 1 (symbolic c)
+PASS A2 Emin = (-q-1)/(2(-q)(-q-3)) at the campaign c equals Etest of T4-381 exactly (check_T4381 A14)
+PASS A3 2^(3-q) + 2^(1-q) = 5 2^(1-q) (symbolic q)
+PASS A4 h = -(r^gamma/c) int_r^inf s^(-gamma-1) f ds solves c r h_r - h = f (generic f)
+PASS A5 the two forms of the averaging formula (4) agree (forcing power s^(q+gamma-1) times s^(-gamma-1))
+PASS A6 the averaging operator maps a constant to itself, and int_r^inf s^(q-2) ds = r^(q-1)/kappa
+PASS A7 formula (5): both branches of T[e_min] by direct integration, equal at r_u, decreasing (d/dr < 0)
+PASS A8 (2): d/d eps of x^eps = x^eps log x, which is <= 0 for x < 1 (the case analysis is in R1-045)
+PASS B0 inputs: q = 1/c - 4, delta = 1 - 1/c, D = 5c - 1 (exact, data/T4380_inputs.json)
+     Emin = [0.7930365064225140883557111 +/- 1.11e-26]; lambda = [109.602422548419 +/- 1.40e-13]; kappa = [4.44761123101073 +/- 2.47e-15]; delta/(kappa+delta) = [0.0914383839515831 +/- 3.39e-17]
+PASS B1 lambda > Emin > 0.79303
+     r_u = 5 (lambda/Emin)^(1/delta) = [302748.4007664045 +/- 4.80e-11]
+PASS B2 r_u > 18860 and r_u agrees with the stated 302748.4007664045 to 1e-9
+     T[e_min](18860) = [0.7930361911778637328405552 +/- 2.69e-26]
+PASS B3 T[e_min](18860) > 0.79303 and agrees with the stated 0.7930361911778637328405552269 to 1e-25
+     over 12 pairs: r_beta in [1728.479, 18849.63]; Kcrit/Phi <= 0.78506348
+PASS B4 for all 12 (reference, target) pairs: 5 < r_beta < 18860, Kcrit/Phi < 0.785064 < T[e_min](18860)
+PASS B5 hence on R <= r <= r_beta the CI integrand vanishes: Eeff(r) >= T[e_min](r) >= T[e_min](18860) > Kcrit/Phi
+     universal 1.747261: r_u = [51837.9181296 +/- 3.65e-8], exact-envelope average at 18860 = [1.74548061406 +/- 4.77e-12], coarse R1-043 bound = [1.72779011843 +/- 1.14e-12]
+PASS B6 the 1.747261 case: averages 1.745480614 (exact envelope) and 1.727790118 (R1-043 coarse) to 1e-9
+     A_out-only extension (R1-044): min over 12 pairs of the averaged floor at r_beta = 0.79303648
+PASS B7 extension: with A_out only (R1-044 (R44.1)), the envelope min(Emin, lam Emin g0 s^-delta/D) averages above Kcrit/Phi at every r <= r_beta, for all 12 pairs
+ALL PASS (16 checks)

@@ -1,0 +1,51 @@
+====================================================================================================
+Part A. Exact symbolic checks
+====================================================================================================
+A1. (d_x + i d_y)(g e^{in th}) = e^{i(n+1)th}(g' - n g/r): True ; (d_x - i d_y)(g e^{in th}) = e^{i(n-1)th}(g' + n g/r): True
+    so with m = n + 1: g' - n g/r = f_m and (B f)_{m-2} = g' + n g/r = f_m + 2 n g/r
+    n > 0: r^n s^-n f_m(s) ds = F(t + v)*exp(-nn*v) dv ;  n = -nn < 0: F(t - v)*exp(-nn*v) dv
+    hence G = r (B f)_{m-2} = F + 2 n g = F - 2n int_0^oo e^{-nv} F(t+v) dv (n > 0), F + 2n int_0^oo e^{nv} F(t-v) dv (n < 0): equation (3)
+    z^5 e^{-r^2}  (m = 5, n = 4) : d-bar residual 0; direct output (x1 + I*x2)**3*(x1**2 + x2**2 - 4)*exp(-x1**2)*exp(-x2**2); radial formula (m-2 coefficient) r**3*(r - 2)*(r + 2)*exp(-r**2)
+    conj(z)^3 e^{-r^2} (m = -3, n = -4): radial ODE residual 0 ; g regular at 0: True ; output (mode -5 coefficient) (r**8 + 4*r**6 + 12*r**4 + 24*r**2 - 24*exp(r**2) + 24)*exp(-r**2)/r**5
+A2. future: H' - ((n - p) H - F) = 0 ; past: H' - (F - (k + p) H) = 0
+    then G = F - 2nH = -H' - (n+p)H (future) and G = F - 2kH = H' - (k-p)H (past), as in (5), (6)
+    Young: kernels <= e^{-(n-a)v} and e^{-kv}; int_0^oo e^{-(n-a)v} dv = -1/(a - nn)
+A3. (7) G^2 - F^2 - 4n int p|H|^2 = 4*Y*n (a multiple of Re<H',H> = 0)
+    (8) F^2 - D^2 - (n-a) int (n+a-2p)|H|^2 = 2*Y*(a - n)
+    (9) K^2 F^2 - G^2 - 4na/(n-a)^2 [D^2 + ((n^2-a^2)/a) int (a-p)|H|^2] = 4*Y*n*(a + n)/(a - n)
+    (10) F^2 - G^2 - 4k int p|H|^2 = 4*Y*k ; Re<H', pH> (Z) cancels in all four identities
+A4. p(t) for w_R = a*exp(2*t)/(R**2 + exp(2*t)) ; equal to a e^{2t}/(R^2 + e^{2t}): True (in [0, a))
+    dK_n/dn = -2*a/(a - n)**2 < 0; central oddness: e^{i m pi} = -1 iff m odd, so n = m - 1 even; future n >= 2 > a
+    (1 + (2+a)/(2-a))/2 = -2/(a - 2) ; even sector n = 1: K_1 = (1+a)/(1-a), needs a < 1
+    symbol U2 + i U1 + (1 + B)/2 = 0
+    T4-041 section 6 constant: D(1 + 2/(2-a)) -> 2D/(2-a); ratio (2/(2-a))/(1 + 2/(2-a)) = 2/(4-a): True ; at a = 6/5: 5/7 , a = 7/5: 10/13
+
+====================================================================================================
+Part B. FLOAT checks (not proofs)
+====================================================================================================
+B1. a = 1.2: future blocks n = 2, 4 on random packets: max relative residual of (9) 1.40e-06, min (K^2||F||^2 - ||G||^2)/(K^2||F||^2) = 0.0539 (>= 0); past blocks k = 2, 4: max ||G||/||F|| = 0.999937 (<= 1)
+B1. a = 1.4: future blocks n = 2, 4 on random packets: max relative residual of (9) 1.95e-06, min (K^2||F||^2 - ||G||^2)/(K^2||F||^2) = 0.1951 (>= 0); past blocks k = 2, 4: max ||G||/||F|| = 0.977356 (<= 1)
+B1. a = 1.9: future blocks n = 2, 4 on random packets: max relative residual of (9) 9.73e-07, min (K^2||F||^2 - ||G||^2)/(K^2||F||^2) = 0.0877 (>= 0); past blocks k = 2, 4: max ||G||/||F|| = 0.504997 (<= 1)
+B2. a = 1.2, n = 2: L = 2: ratio 2.79426 (forward integral vs H_L 3.3e-07); L = 4: ratio 3.54028 (forward integral vs H_L 8.3e-08); L = 6: ratio 3.77259 (forward integral vs H_L 3.7e-08); limit (2+a)/(2-a) = 4.00000
+B2. a = 1.4, n = 2: L = 2: ratio 3.30403 (forward integral vs H_L 3.3e-07); L = 4: ratio 4.61270 (forward integral vs H_L 8.3e-08); L = 6: ratio 5.11282 (forward integral vs H_L 3.7e-08); limit (2+a)/(2-a) = 5.66667
+B3. velocity constant ||w U w^-1|| on real S1 inputs (FLOAT):
+    a = 0.0: far-field sup_tau ||M(tau)||/sqrt 8 = 0.99993 (at tau = 2.27, 128 modes; modes 1, 3 only: 0.80902); T4-054 bound 2/(2-a) = 1.00000; T4-041 bound 1 + 2/(2-a) = 2.00000
+    a = 1.2: far-field sup_tau ||M(tau)||/sqrt 8 = 1.56867 (at tau = 0.00, 32 modes; modes 1, 3 only: 1.55247); T4-054 bound 2/(2-a) = 2.50000; T4-041 bound 1 + 2/(2-a) = 3.50000
+    a = 1.4: far-field sup_tau ||M(tau)||/sqrt 8 = 2.10831 (at tau = 0.00, 8 modes; modes 1, 3 only: 2.10173); T4-054 bound 2/(2-a) = 3.33333; T4-041 bound 1 + 2/(2-a) = 4.33333
+    a = 1.5: far-field sup_tau ||M(tau)||/sqrt 8 = 2.55824 (at tau = 0.00, 8 modes; modes 1, 3 only: 2.55449); T4-054 bound 2/(2-a) = 4.00000; T4-041 bound 1 + 2/(2-a) = 5.00000
+    a = 1.9: far-field sup_tau ||M(tau)||/sqrt 8 = 13.80278 (at tau = 0.00, 4 modes; modes 1, 3 only: 13.80275); T4-054 bound 2/(2-a) = 20.00000; T4-041 bound 1 + 2/(2-a) = 21.00000
+    full weighted operator, a = 1.2, R = 1.0, modes 1..7, t in [-6, 16]: discretized ||w U w^-1|| on S1 = 1.53650 (T4-054 bound 2.50000)
+    full weighted operator, a = 1.4, R = 1.0, modes 1..7, t in [-6, 16]: discretized ||w U w^-1|| on S1 = 2.02488 (T4-054 bound 3.33333)
+
+====================================================================================================
+Part C. Exact S1 velocity constant from the block bounds (rigorous given (9), (10))
+====================================================================================================
+  S1: h = sum_{m odd} g_m sin(m theta); with x_i = ||w g_(2i+1)|| (t line) the rows are
+  o_m = g_m + T_(m+1) g_(m+2) (m >= 1) and p_m = g_m + P_(m-1) g_(m-2) (m >= 3); the mode -1 output vanishes.
+  Triangle inequality with ||T_n|| <= K_n, ||P_k|| <= 1 gives S <= x^T A^T A x with A^T A tridiagonal:
+  d_0 = 2, d_i = 3 + K_(2i)^2 (i >= 1), e_i = 1 + K_(2i+2); and ||w U h||^2/||w h||^2 = S/(8 sum x_i^2).
+C1. a =   6/5: Collatz-Wielandt rho <= 20.90366543 (truncated lambda_max 20.90366543); S1 velocity constant <= 1.616466 (exact rational check); T4-054 bound 2/(2-a) = 2.500000; ratio 0.6466
+C1. a = 13/10: Collatz-Wielandt rho <= 26.97496163 (truncated lambda_max 26.97496162); S1 velocity constant <= 1.836267 (exact rational check); T4-054 bound 2/(2-a) = 2.857143; ratio 0.6427
+C1. a =   7/5: Collatz-Wielandt rho <= 36.71577430 (truncated lambda_max 36.71577429); S1 velocity constant <= 2.142307 (exact rational check); T4-054 bound 2/(2-a) = 3.333333; ratio 0.6427
+C1. a =   3/2: Collatz-Wielandt rho <= 53.46863401 (truncated lambda_max 53.46863400); S1 velocity constant <= 2.585263 (exact rational check); T4-054 bound 2/(2-a) = 4.000000; ratio 0.6463
+C1. a = 19/10: Collatz-Wielandt rho <= 1525.06010119 (truncated lambda_max 1525.06010115); S1 velocity constant <= 13.806975 (exact rational check); T4-054 bound 2/(2-a) = 20.000000; ratio 0.6903

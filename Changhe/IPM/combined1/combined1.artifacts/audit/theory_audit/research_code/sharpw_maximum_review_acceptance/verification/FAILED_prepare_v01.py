@@ -1,0 +1,7 @@
+from pathlib import Path
+import hashlib,json
+L=Path.cwd();B=L/'research/sharpw_maximum_review_acceptance';sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+p={'precision_bits':512,'s':'1/5184','sqrt_s':'1/72','mu0':'97/250','C':'397','cU':'8/5','mu':'201799/648000','A':'576/5','eta_star':'40722836401/193491763200000','r_star':'201799/149299200','r_selected':'1351/1000000','eta_selected':'4207/20000000','pi_lower':'314159/100000','forcing007_lower':'756.5312630768'};(B/'data/parameters.json').write_text(json.dumps(p,indent=2)+'\n')
+files=['PROOF.md','ERRATA_v01.md','code/check.py','data/initial_sources.json','data/parameters.json','data/PROOF_FIRST.json']+[str(p.relative_to(B)) for p in sorted((B/'source').iterdir())]+['../frozen_report_1630_audit/source/report.md','../frozen_report_1630_audit/verification/result.json'];(B/'data/manifest.json').write_text(json.dumps([dict(local=f,sha256=sha(B/f)) for f in files],indent=2)+'\n')
+tool=L/'tools/stage_reproduction.py';s=tool.read_text();line="    'sharpw_maximum_review_acceptance': ['manifest.json', 'initial_sources.json', 'parameters.json', 'PROOF_FIRST.json'],\n";assert line not in s;tool.write_text(s.replace('TOPICS = {\n','TOPICS = {\n'+line,1))
+s=(L/'maintenance/preflight_484.py').read_text().replace('candidate017_conditional_acceptance','sharpw_maximum_review_acceptance').replace('staging_484','staging_485');(L/'maintenance/preflight_485.py').write_text(s);print('prepared',len(files),'bindings')

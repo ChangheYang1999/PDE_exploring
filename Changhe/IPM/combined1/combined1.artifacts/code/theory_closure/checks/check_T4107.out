@@ -1,0 +1,34 @@
+[A1] OK polar Laplacian formula, generic quartic P, symbolic d, n = 1
+[A1] OK polar Laplacian formula, generic quartic P, symbolic d, n = 3
+[A1] OK polar Laplacian formula, generic quartic P, symbolic d, n = 5
+[A2] OK r d_r t = 2t(1-t)
+[A3] OK r d_r z^d = -2 d t z^d
+[B1] OK d = (1.5, 2.0), a = 1.0: radial 0.19955658463194994207 z-form 0.19955658463194994207
+[B1] OK d = (2.25, 2.5), a = 0.25: radial 0.11200085478193208381 z-form 0.11200085478193208381
+[B1] OK d = (2.0, 2.6), a = 1.5: radial 0.081871506547182585496 z-form 0.081871506547182585496
+[C1] OK shell exponent 2(1-a)j + 4j - 2j = 2(2-a)j
+[C2] OK 1 + 4^(j+1) <= 5*4^j for j = 1..199 (and for all j >= 0, since 1 <= 4^j)
+[C3] OK a = 1/10: max over shells of 5^(a-2)(1+r^2)^(2-a)/2^(2(2-a)j) at the outer edge = 0.734337926457
+[C3] OK a = 1: max over shells of 5^(a-2)(1+r^2)^(2-a)/2^(2(2-a)j) at the outer edge = 0.85
+[C3] OK a = 3/2: max over shells of 5^(a-2)(1+r^2)^(2-a)/2^(2(2-a)j) at the outer edge = 0.921954445729
+[C3] OK a = 19/10: max over shells of 5^(a-2)(1+r^2)^(2-a)/2^(2(2-a)j) at the outer edge = 0.983879456541
+[D0] OK the seven values decrease in a, as the monotonicity of N requires
+[D1] OK cell [0, 1/4]: 5^((l-2)/2) N(h) = 78.493757991563  B(l) = 39.5941691378108  ratio 1.98245751081072
+[D1] OK cell [1/4, 1/2]: 5^((l-2)/2) N(h) = 34.7890937176219  B(l) = 22.2946942952936  ratio 1.56042030703986
+[D1] OK cell [1/2, 3/4]: 5^((l-2)/2) N(h) = 16.4307863674825  B(l) = 12.1308546765295  ratio 1.35446238584264
+[D1] OK cell [3/4, 1]: 5^((l-2)/2) N(h) = 8.29578767700226  B(l) = 6.04452089991002  ratio 1.37244751310658
+[D1] OK cell [1, 5/4]: 5^((l-2)/2) N(h) = 4.57133487312187  B(l) = 2.506628274631  ratio 1.82369875876183
+[D1] OK cell [5/4, 3/2]: 5^((l-2)/2) N(h) = 2.87367416740148  B(l) = 0.667696416912259  ratio 4.30386339452096
+[D2] OK cell [3/2, 7/4]: N(7/4) >= N(3/2)^2/N(5/4) = 2.70131053481514; 5^(-1/4) * that = 1.8064752308883  B(3/2) = 0.0180370964857117  ratio 100.153327467052
+[D3] OK minimum ratio 1.35446238584264 (cell [1/2, 3/4]); T4-112 states > 1.35446238584264
+     a = 0: Y(F) >= 232.33192253, ceiling 39.5941691378
+     a = 1/4: Y(F) >= 95.9856637761, ceiling 22.2946942953
+     a = 1/2: Y(F) >= 42.5416534779, ceiling 12.1308546765
+     a = 3/4: Y(F) >= 20.0922974794, ceiling 6.04452089991
+     a = 1: Y(F) >= 10.1444587072, ceiling 2.50662827463
+     a = 5/4: Y(F) >= 5.59003191294, ceiling 0.667696416912
+     a = 3/2: Y(F) >= 3.5140567797, ceiling 0.0180370964857
+[E1] OK 2 - 3/2 is the mean of 2 - 5/4 and 2 - 7/4 (Cauchy-Schwarz with weights (1+r^2)^(3/8), (1+r^2)^(1/8))
+[E2] OK A = 1 + 1/c = 6328276273924429/4076476460239181 = 1.552388768989 < 7/4
+[E3] OK toy profile: N(3/2)^2 = 0.6821141062 <= N(5/4) N(7/4) = 0.6870139798
+ALL OK; total time 10.2 s

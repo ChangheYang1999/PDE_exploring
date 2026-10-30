@@ -1,0 +1,33 @@
+PASS A1 2(1+4A)(1+4B)-(1+4|Y+Z|^2) = 1+32AB+4|Y-Z|^2
+PASS A2 heat-kernel moment of r^p = (4t)^(p/2) Gamma(p/2+1)
+PASS A3 Bessel multiplier (1+|xi|^2)^(-alpha/2) from the heat semigroup (u = |xi|^2), mass 1 at u = 0
+PASS A4 int omega-moment t-integral = 4^(2/5) Gamma(beta+2/5)/Gamma(beta)
+PASS A5 (1+x)^(2/5) <= 1 + x^(2/5): g(0) = 0 and g' = (2/5)(x^(-3/5) - (1+x)^(-3/5))
+PASS A6 trace contraction norm <= sqrt(2) (identity, 200 exact tensors) and D2 Delta f = trace of D4 f
+PASS A7 (1+u)^(s/2) = (1+u)^(-(2-s)/2) (1+u)
+PASS A8 f_R(X) = R^-a f_1(X/R) and omega(RY) <= R^(4/5) omega(Y) for R >= 1
+PASS A9 relative exponents -6/5, -16/5 (weighted) and 0, -1, -2, -3 (unweighted)
+PASS A10 polar gradient coefficients of f_R
+PASS A11 a(R^2+r^2) -/+ (R^2 - a r^2) = (a-1)R^2 + 2a r^2, (a+1)R^2
+PASS A12 (1+R^-2)(R^2+r^2) - (1+r)^2 = (R - r/R)^2
+PASS A13 weighted gradient of f_R on the positive y-axis tends to 1 (a = 7/2, 9/2, campaign a)
+PASS A14 c[F sin(theta)] = -F'(0)/4 (generic odd F; and F = r e^(-r^2): Delta psi = h, c = -1/4)
+PASS A15 slopes R^(-a-1)/a and eta(0) = 1, so k_R = f_R - R^(-a-1) b/a has c = 0
+PASS A16 F_R = r^q (1 + R^2/r^2)^(-(a+1)/2)/a with bracket 1 - (a+1)w/2 + O(w^2)
+PASS A17 leading nondipole potential r^(q+2)/(a(q+1)(q+3)); the next term is C r^q/((q-1)(q+1)) = O(r^q)
+PASS A18 Green formula for r >= 1 with F supported in r <= 1: phi = -I(1)/(2r) = -(m_b/pi)/(2r) (definition)
+PASS A19 |W(pi/4)|^2 = ((a-1)/(2a(a-3)))^2; campaign Etest = 40673572058993602044748051350395/51288398112310268946308133030216
+     C_s at s = 1/5184: [4.468299565794177304409883 +/- 3.02e-25]
+PASS B1 C_s(1/5184) = 2^(2/5)(1 + 16^(2/5) Gamma(7/5) Gamma(alpha/2+2/5)/Gamma(alpha/2)) agrees with 4.468299565794177 to 1e-15
+     C_s at s = 1: [3.45926592196477 +/- 4.22e-15]; at s = 1/7744: [4.46835135946213 +/- 3.10e-16]
+PASS B2 critical points of (u^2-u)e^(1-u) are (3 -/+ sqrt5)/2; max on u >= 1 is [0.839962094657 +/- 1.76e-13] < 0.85, so |grad b| < 2.7
+PASS B3 eta'(t) = -eta(t)/(1-t)^2 and t|eta'(t)| = (u^2-u)e^(1-u), u = 1/(1-t)
+     s = 1/5184: int omega G_alpha = 2.57342161855 (FLOAT), bound C_s/2^(2/5) = 3.386337838003
+     s = 1/2: int omega G_alpha = 2.28264506311 (FLOAT), bound C_s/2^(2/5) = 3.047942057665
+     s = 3/2: int omega G_alpha = 1.52725277606 (FLOAT), bound C_s/2^(2/5) = 2.027318734738
+PASS C1 FLOAT: int omega G_alpha is below the stated bound at s = 1/5184, 1/2, 3/2
+     A_0..A_4 = 0.125144, 0.250183, 0.748632, 2.98585, 14.887; B_2, B_4 = 1.13269, 20.1017; D(sharpw, campaign a) = 2154.04
+     bump b: ||b||_2 = 0.293087; bound (5) for X(b) = 133829
+     first R = 2^j with the bound (9) <= rho and ||k_R||_2 bound <= rho/sqrt(w2): R = 512; there H_q(k_R) <= 1.000008483 and any E valid on the sharpw ball is >= Etest/H_upper = 0.793029779 (FLOAT)
+PASS C2 FLOAT: some R = 2^j <= 2^39 puts k_R in the sharpw X ball and L2 ball by the stated bounds
+24 checks, ALL PASS

@@ -1,0 +1,130 @@
+{
+ "inputs": {
+  "c1-t2/scratch/h18/T2_FINAL_SUMMARY.pre_H18.md": "f4c565da80f39c120d4a787a16f29f40d828698a7cd7bab962295107904e88d4",
+  "c1-t2/notes/T2_T4L2_sharp.md": "cb72c73e2b94c95302838ba5826a1a2cece680083f3e6bc37531a6ec03635a2f",
+  "c1-t2/artifacts/arith/t4l2_sharp_framework.py": "d9799b66b4e77d1f379c994a46c17996f913413d334d39640651810962d6a717",
+  "c1-t2/artifacts/data/family_ceilings_exact_results.json": "b1fea0a74af0a7729b38a27f1796deea0b3597b4ca9549ba235e9131af3b98a7",
+  "c1-t4/TEAM_NOTE_v58.md": "cecb5ee3753141ff0fb33afb20ce3cf2bce8b9d1f18e74bd3f1b740f42340e89",
+  "c1-t4/VERIFY_REPORT.md T4-119 block": "fc668bed8f80a4025c58e1a1bf49a3d0e9e90ca2f74edd38cb5d77ea0ced4927",
+  "c1-t4/VERIFY_REPORT.md T4-185 block": "4e5b41436e8a5fbaa693989c6272e28af1294ae6c0f85991a39d7880a3433ee0",
+  "c1-t4/VERIFY_REPORT.md T4-190 block": "72c8c5f1a05bdc830a2da040a0a39cc28ef9ab2b7748a18917d944f32fab90f4"
+ },
+ "B": {
+  "sharpw_over_A2Db": 330.851941153244,
+  "Eq_star_over_Enew": 76.04114711187239,
+  "T4_119_ratios": [
+   1.807747273031324,
+   2.1720900769766462
+  ],
+  "scan_ratios_float": [
+   1.8540527691942001,
+   1.9015925837889232
+  ]
+ },
+ "C": {
+  "TB-sharp": {
+   "printed_budget": "3793/1000000000",
+   "factor_floor": "1257",
+   "factor_exact_lower": "[1257.36886089 +/- 2.17e-9]"
+  },
+  "sharpw": {
+   "printed_budget": "1781/625000000",
+   "factor_floor": "1673",
+   "factor_exact_lower": "[1673.63985300 +/- 3.59e-11]"
+  },
+  "graded": {
+   "printed_budget": "45717/100000000",
+   "factor_floor": "1043/100",
+   "factor_exact_lower": "[10.4363192209 +/- 4.35e-12]"
+  }
+ },
+ "D": {
+  "K00_lower": "[390.684556288054 +/- 3.09e-13]",
+  "cU_lower": "[1.58711752686366 +/- 3.54e-15]",
+  "rows": [
+   {
+    "label": "T2-R3 scheme, registered floors (M2 1/2, M1 9/10, beta_L 2)",
+    "status": "PROVED within the scheme",
+    "m2": "1/2",
+    "m1": "9/10",
+    "beta": "2",
+    "Bstar_upper": "6.7691e-06",
+    "float_peak": "6.76505e-06 at mu0 0.3176, w2min 1.054e+05",
+    "gain_over_registered_upper": "2.376",
+    "registered": "sharpw",
+    "factor_007_lower": "704.5",
+    "argmax_cell": [
+     "127/400",
+     "2541/8000"
+    ]
+   },
+   {
+    "label": "TB-sharp scheme, E0 one component (M2 1/2, M1 9/10, E0 rate 11/4)",
+    "status": "PROVED within the scheme",
+    "m2": "1/2",
+    "m1": "9/10",
+    "beta": "11/4",
+    "Bstar_upper": "8.1402e-06",
+    "float_peak": "8.13541e-06 at mu0 0.3204, w2min 7.479e+04",
+    "gain_over_registered_upper": "2.147",
+    "registered": "TB-sharp",
+    "factor_007_lower": "585.8",
+    "argmax_cell": [
+     "2563/8000",
+     "641/2000"
+    ]
+   },
+   {
+    "label": "T2-R3 with state-131 floor ceilings (M2 0.61151, M1 0.99116), beta_L 2",
+    "status": "hypothetical floors",
+    "m2": "61151/100000",
+    "m1": "24779/25000",
+    "beta": "2",
+    "Bstar_upper": "1.0265e-05",
+    "float_peak": "1.02582e-05 at mu0 0.3745, w2min 7.513e+04",
+    "gain_over_registered_upper": "3.603",
+    "registered": "sharpw",
+    "factor_007_lower": "464.6",
+    "argmax_cell": [
+     "149758799/400000000",
+     "2996399/8000000"
+    ]
+   },
+   {
+    "label": "TB-sharp with state-131 floor ceilings, E0 rate 11/4",
+    "status": "hypothetical floors",
+    "m2": "61151/100000",
+    "m1": "24779/25000",
+    "beta": "11/4",
+    "Bstar_upper": "1.2412e-05",
+    "float_peak": "1.24035e-05 at mu0 0.3788, w2min 5.32e+04",
+    "gain_over_registered_upper": "3.273",
+    "registered": "TB-sharp",
+    "factor_007_lower": "384.2",
+    "argmax_cell": [
+     "151471027/400000000",
+     "75766089/200000000"
+    ]
+   },
+   {
+    "label": "T2-R3 with state-131 floor ceilings, beta_L 4",
+    "status": "hypothetical floors",
+    "m2": "61151/100000",
+    "m1": "24779/25000",
+    "beta": "4",
+    "Bstar_upper": "1.5340e-05",
+    "float_peak": "1.53299e-05 at mu0 0.3821, w2min 3.573e+04",
+    "gain_over_registered_upper": "5.383",
+    "registered": "sharpw",
+    "factor_007_lower": "310.9",
+    "argmax_cell": [
+     "152816349/400000000",
+     "61151/160000"
+    ]
+   }
+  ]
+ },
+ "checks": 66,
+ "fails": [],
+ "elapsed_s": 5.572
+}

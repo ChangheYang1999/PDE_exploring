@@ -1,0 +1,70 @@
+{
+ "id": "synthetic",
+ "record": "/tmp/tmpbxh1lg0c/synthetic_legqs_Fpoly.json",
+ "source_sha256": "14ba49c6488273bee9d7b097f57c14ccc9193a5cf6ad99fe148b848486c2ebbb",
+ "utc": "2026-10-29T10:38:59+00:00",
+ "code_sha256": "1c3a9c978efaa47a34e30e3cd40f0ef1b7745280cef1e6d6766c9008ea094e22",
+ "method": "Mode-wise Hardy upper bound of the Hdot^-1 norm of a legqs residual from its exact F record (lane c1-n3).\nLemma (hminus1_mode_hardy.py; astra-refereed, T4-327 CONFIRMS the mode-wise identity and the constant 1/n under g, r g in L^2):\nfor g = f(r) sin(n theta), n >= 1: ||g||_H <= ||r g||_2 / n. The angular modes of F are orthogonal in Hdot^-1 (the Riesz potential\ncommutes with rotations), so ||F||_H^2 = sum_n ||F_n||_H^2 <= sum_n ||r F_n||_2^2 / n^2, where ||r F_n||_2 is the exact per-mode\nweighted norm (legqs_norms.normsq_t with (1-t)^(-1) t, the weight r^2). Requires that F has no mode-0 (cos, n = 0) part: F is odd in y\nfor every candidate of this family (sine modes only); the script asserts it. Output: <ID>_legqs_hardy.json with the per-mode ||r F_n||_2\nballs, the H upper bound, and the E_2 upper bound with this H (E_2^2 = P2^2 + 2^14 G1^2 + 2^18 G0^2 + 2^18 (20/21) H^2) when the norm\nrecord is COMPLETE. Usage: legqs_hardy.py <ID> <F record (legqs format)> <outdir>",
+ "modes": [
+  {
+   "n": 1,
+   "rF_n_sq": "[1961515644.76266114548328081903 +/- 1.11e-21]",
+   "rF_n": "[44289.0013972166812670056493513 +/- 4.74e-26]",
+   "H_n_UB": "[44289.0013972166812670056493513 +/- 4.74e-26]",
+   "components": 8
+  },
+  {
+   "n": 3,
+   "rF_n_sq": "[3678056568.73850400198969375264 +/- 2.90e-21]",
+   "rF_n": "[60646.9831792027722951697379107 +/- 7.57e-27]",
+   "H_n_UB": "[20215.6610597342574317232459702 +/- 3.09e-26]",
+   "components": 7
+  },
+  {
+   "n": 5,
+   "rF_n_sq": "[6132218114.65345463267613613094 +/- 4.95e-21]",
+   "rF_n": "[78308.4804772347414029945270867 +/- 2.95e-26]",
+   "H_n_UB": "[15661.6960954469482805989054173 +/- 3.42e-26]",
+   "components": 8
+  },
+  {
+   "n": 7,
+   "rF_n_sq": "[7355533208.11546147204394205249 +/- 2.36e-21]",
+   "rF_n": "[85764.4052513364163657052588480 +/- 4.04e-26]",
+   "H_n_UB": "[12252.0578930480594808150369783 +/- 2.01e-26]",
+   "components": 8
+  },
+  {
+   "n": 9,
+   "rF_n_sq": "[176376317.756002002902466841431 +/- 2.07e-22]",
+   "rF_n": "[13280.6745971732174996018704549 +/- 3.35e-26]",
+   "H_n_UB": "[1475.63051079702416662243005055 +/- 1.85e-27]",
+   "components": 7
+  },
+  {
+   "n": 11,
+   "rF_n_sq": "[994709368.645260447684805466391 +/- 4.01e-22]",
+   "rF_n": "[31539.0134380462263641590343127 +/- 6.34e-28]",
+   "H_n_UB": "[2867.18303982238421492354857388 +/- 1.77e-27]",
+   "components": 6
+  },
+  {
+   "n": 13,
+   "rF_n_sq": "[910680497.925362202895725263792 +/- 4.49e-22]",
+   "rF_n": "[30177.4832934319127409240500441 +/- 5.50e-27]",
+   "H_n_UB": "[2321.34486872553174930185000339 +/- 2.74e-27]",
+   "components": 3
+  },
+  {
+   "n": 15,
+   "rF_n_sq": "[257208340.981610268512590610632 +/- 4.32e-22]",
+   "rF_n": "[16037.7162021782349692609569638 +/- 4.43e-26]",
+   "H_n_UB": "[1069.18108014521566461739713092 +/- 2.95e-27]",
+   "components": 1
+  }
+ ],
+ "H_upper": "[52749.59960241779547054514153992924964924195419112000476950147050539994022550072723562685784305021077034558121589322329458604847250185824687958525676858378505373564353776714508358497690674600223518218953110491532661350539653690123537792734429460094131268143811892905291257886262738626386118021966106992607443 +/- 3.12e-303]",
+ "H_upper_ball": "[52749.5996024177954705451415399 +/- 2.93e-26]",
+ "rF_check": "[146513.815258419627894502429195 +/- 1.83e-25]",
+ "elapsed_seconds": 21.5
+}

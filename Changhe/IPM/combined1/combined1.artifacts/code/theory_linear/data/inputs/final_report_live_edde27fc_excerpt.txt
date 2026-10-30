@@ -1,0 +1,32 @@
+22	1. Strongest estimate proved: conditional a posteriori existence theorems only, all AUDITED. The largest admissible
+23	   residual is that of the sharpw ball. As registered, FW-T-T4L2-sharpw-v1 states: if X_(s,w)(F) <= 2.1035e-4 (s =
+24	   1/5184, w = (2^15, 2^20)) and the background satisfies (A) to (D) of T4-019, including the signed L^2 margin
+25	   (B-L2), then an exact normalized solution exists within X_(s,w)(h) <= 1351/1000000. The g = 0 case of c1-t2's
+26	   H-free defect extension FW-T-T4L2-defect-v1 (AUDITED, T4-065), under the same hypotheses, s and weights, reaches
+27	   the exact optimum of the same estimate, X_(s,w)(F) <= 40722836401/193491763200000 (above 2.1046e-4) with X_(s,w)(h)
+28	   <= 201799/149299200 (about 1.3516e-3); the 007 sharpw norm misses it by a factor above 3594606. At r = 1351/1000000
+29	   the same estimate already admits 2.1046e-4. (Corrected 16:33Z: c1-t4's T4-479 REFUTES the earlier unrestricted
+30	   wording that 2.1035e-4 is the largest admissible residual, and c1-t2's CHECK_T4_479_SHARPW_MAX_T2 CONFIRMS the
+31	   point in exact arithmetic.) In the analysis2 norm family the best is FW-T-TB-sharp-v1, with N_s(F) <= 1.0578e-4
+118	1. Strongest estimate proved. Conditional existence theorems only, all AUDITED (proof by one batch T lane, review by
+119	   another). The largest admissible residual in a scalar norm is that of the sharpw ball. As registered,
+120	   FW-T-T4L2-sharpw-v1 (c1-t2 T2-R3, AUDITED T4-042 with c1-t1 R1-006) states: if X_(s,w)(F) <= 2.1035e-4 at s =
+121	   1/5184, w = (2^15, 2^20) (NORM-T-XSW-v1, no Hdot^-1 term) and the background satisfies (A) to (D) of T4-019,
+122	   including the signed L^2 margin c_l + 1 - theta - kappa >= 2 (B-L2), then rho_bar + h is an exact normalized
+123	   solution with X_(s,w)(h) <= 1351/1000000. The g = 0 case of c1-t2's H-free defect extension FW-T-T4L2-defect-v1
+124	   (AUDITED, T4-065) has the same hypotheses, s and weights and gives the exact optimum X_(s,w)(F) <=
+125	   40722836401/193491763200000 (above 2.1046e-4) with X_(s,w)(h) <= 201799/149299200; at r = 1351/1000000 the estimate
+126	   already admits 2.1046e-4 (corrected 16:33Z after c1-t4's T4-479; CONFIRMED by c1-t2's CHECK_T4_479_SHARPW_MAX_T2,
+127	   17 exact checks). In the analysis2 norm family the best is FW-T-TB-sharp-v1 (c1-t2 T2-R2, AUDITED T4-028): N_s(F)
+128	   <= 1.0578e-4 at s = 2^-13 under the analysis2 background hypotheses of Theorem D(b).
+380	   closure. The computed-defect theorem FW-T-T4ALT-defect-v1 (T4-004, sections 2 to 4) and c1-t2's H-free defect
+381	   extension FW-T-T4L2-defect-v1 are AUDITED conditional theorems (T4-062, T4-065). With a nonzero correction g they
+382	   need a certified computed defect, which no lane has supplied. At g = 0 the H-free extension needs no defect and
+383	   gives the threshold X_(s,w)(F) <= 40722836401/193491763200000 (above 2.1046e-4) at s = 1/5184, w = (2^15, 2^20),
+384	   with X_(s,w)(h) <= 201799/149299200, the exact optimum of the sharpw estimate (corrected 16:33Z after T4-479; the
+385	   earlier text said these theorems have no residual threshold). The scale-adapted weighted closure of T4-058 is
+468	     integrals in 512-bit balls; G0 is CONFIRMED by c1-n4's independent 2048-bit radial-Fourier assembly (N4-139), and
+469	     rF, G1 and P2 by c1-n4's independent polar method (N4-153). The elementary bound X_(s,w)(F) >= (w1 G1^2 + w2
+470	     G0^2)^(1/2) then gives X_(s,w)(F) > 732.35 with the sharpw weights (ratio 3.48e6 against FW-T-T4L2-sharpw-v1;
+471	     1.83e6 from G0 alone). With all complete components (P2 and Q3 included) c1-n3's enclosure gives X_(s,w)(F) >
+472	     756.5312630768, a certified ratio above 3596535.57 (CONFIRMED by N4-180 and T4-238), from a two-sided enclosure.

@@ -1,0 +1,1559 @@
+{
+ "replayed": 69,
+ "ok": [
+  "b4_family_cutoffs.py",
+  "bs_draft55_errata_check.py",
+  "check_v08_factors.py",
+  "check_v08_preview1_r2.py",
+  "check_v08_preview2.py",
+  "distance_budget_update.py",
+  "extract_sector_vectors.py",
+  "family_ceilings_exact.py",
+  "h18_item2_check.py",
+  "h18_wu_betacap.py",
+  "h18_wu_sampling.py",
+  "h18_wu_sharp.py",
+  "localized_bl2_constants.py",
+  "n1_016_sectors.py",
+  "n3_mode_hardy_review.py",
+  "r1_004_graded_review.py",
+  "review_t4_458.py",
+  "review_t4_459.py",
+  "review_t4_462.py",
+  "review_t4_469.py",
+  "review_t4_469_rev2.py",
+  "review_t4_474.py",
+  "sharp_kernel_constants.py",
+  "t2_E_lower.py",
+  "t4_014_review.py",
+  "t4_017_symmetry_review.py",
+  "t4_019_review.py",
+  "t4_022_review.py",
+  "t4_058_review.py",
+  "t4_081_review.py",
+  "t4_145_review.py",
+  "t4_147_review.py",
+  "t4_163_review.py",
+  "t4_176_review.py",
+  "t4_189_review.py",
+  "t4_194_review.py",
+  "t4_234_review.py",
+  "t4_242_review.py",
+  "t4_249_review.py",
+  "t4_256_extra.py",
+  "t4_256_review.py",
+  "t4_259_review.py",
+  "t4_277_review.py",
+  "t4_281_review.py",
+  "t4_294_review.py",
+  "t4_302_review.py",
+  "t4_314_review.py",
+  "t4_324_review.py",
+  "t4_335_review.py",
+  "t4_335_sharpE.py",
+  "t4_338_review.py",
+  "t4_338_thresholds.py",
+  "t4_359_review.py",
+  "t4_375_review.py",
+  "t4_381_384_review.py",
+  "t4_402_review.py",
+  "t4_410_review.py",
+  "t4_414_review.py",
+  "t4_415_review.py",
+  "t4_468_scope.py",
+  "t4_479_report_repair_check.py",
+  "t4_479_sharpw_max.py",
+  "t4alt_review.py",
+  "t4l2_g0_weight_opt.py",
+  "t4l2_sharp_framework.py",
+  "tbrebal_exact_row.py",
+  "wws_directed_floor.py"
+ ],
+ "check": {
+  "falsify_section0.py": {
+   "script": "falsify_section0.py",
+   "start": "16:35:40Z",
+   "elapsed_s": 0.3,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {
+    "falsify_section0_results.json": {
+     "differs": [
+      "/closure_matrix_sha256_at_run: 9cbb8f0de253b7c476e80ef8137afec9d47fd11d031d64c83bd9fb1b9b5dad25 -> 0d62d02a8dfc9a2f9d97fdcc179abfc2ba0a99aec2208dc0e000d77761834ca3",
+      "/inputs/c1-n4/VERIFY_REPORT.md: 00b1bc77b96afccb60a24ea96c64a3826d1f30af7ee2026e4251d6b5a234ba4c -> ad64feec2584b6e36733dd17af24953699611f0bed5c3e02475a654873e74c8e",
+      "/inputs/c1-t4/VERIFY_REPORT.md: e9e75b996701163a89d649641d5f3b50a327d9906b9311a495b7f1c2436f936c -> 07e2fedf0744bcce0ed3f8b84d973f80814e247cf4092f00c2220fa3fc1ec312"
+     ]
+    }
+   },
+   "ok": false,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "ratio_tables_floor.py": {
+   "script": "ratio_tables_floor.py",
+   "start": "16:35:42Z",
+   "elapsed_s": 0.1,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    67,
+    0
+   ],
+   "pass_fail_distributed": [
+    67,
+    0
+   ],
+   "data": {
+    "ratio_tables_floor_results.json": {
+     "differs": [
+      "/inputs/c1-t2/handoff/T2_to_T1_v01.md: ee6c4342aa084527589783615f91bb8cff96c3d506b057afc4132c179b232642 -> 18b49d55d9049b685ee8b615f7f5a3c9920c4d680dda7db5829a5c3014121a4b",
+      "/inputs/c1-t2/notes/T2_FINAL_SUMMARY.md: 4784ba1c570c8348201c3be8effe94a98333106fee217f3ca94130446225a59b -> 5eb3644b94c35d76ae3b466a6615d29f2ed470afab740999ac4eb0ec8dd8c968"
+     ]
+    }
+   },
+   "ok": false,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  }
+ },
+ "not_replayed_by_design": [
+  "weighted_weak_sharp.py",
+  "t4_094_review.py",
+  "qa_hash_abbrev_check.py",
+  "replay_sweep.py"
+ ],
+ "listed_in_README_but_not_replayed": [],
+ "records": {
+  "t4_017_symmetry_review.py": {
+   "script": "t4_017_symmetry_review.py",
+   "start": "15:27:42Z",
+   "elapsed_s": 16.3,
+   "exit": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": null,
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": null,
+   "log_first_differences": [
+    "no distributed log"
+   ]
+  },
+  "sharp_kernel_constants.py": {
+   "script": "sharp_kernel_constants.py",
+   "start": "15:27:58Z",
+   "elapsed_s": 60.4,
+   "exit": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": null,
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": null,
+   "log_first_differences": [
+    "no distributed log"
+   ]
+  },
+  "t4_019_review.py": {
+   "script": "t4_019_review.py",
+   "start": "15:28:59Z",
+   "elapsed_s": 4.4,
+   "exit": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "t4l2_sharp_framework.py": {
+   "script": "t4l2_sharp_framework.py",
+   "start": "15:29:04Z",
+   "elapsed_s": 0.2,
+   "exit": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "t4l2_g0_weight_opt.py": {
+   "script": "t4l2_g0_weight_opt.py",
+   "start": "15:29:04Z",
+   "elapsed_s": 3.3,
+   "exit": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "t4_022_review.py": {
+   "script": "t4_022_review.py",
+   "start": "15:29:08Z",
+   "elapsed_s": 14.3,
+   "exit": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "extract_sector_vectors.py": {
+   "script": "extract_sector_vectors.py",
+   "start": "15:29:22Z",
+   "elapsed_s": 0.1,
+   "exit": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": null,
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": null,
+   "log_first_differences": [
+    "no distributed log"
+   ]
+  },
+  "t4_014_review.py": {
+   "script": "t4_014_review.py",
+   "start": "15:34:02Z",
+   "elapsed_s": 105.5,
+   "exit": 0,
+   "stderr_lines": 9,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 9,
+   "log_first_differences": [
+    "-code/theory_linear/arith/t4_014_review.py:228: IntegrationWarning: The algorithm does not converge.  Roundoff error is detected",
+    "-  in the extrapolation table.  It is assumed that the requested tolerance",
+    "-  cannot be achieved, and that the returned result (if full_output = 1) is ",
+    "-  the best which can be obtained.",
+    "-  I = lambda rr: quad(lambda tt: f_full(tt) * tt ** (n + 1), 0, rr, points=[T_] if rr > T_ else None, limit=400)[0]",
+    "-code/theory_linear/arith/t4_014_review.py:229: IntegrationWarning: The occurrence of roundoff error is detected, which prevents "
+   ]
+  },
+  "b4_family_cutoffs.py": {
+   "script": "b4_family_cutoffs.py",
+   "start": "15:31:11Z",
+   "elapsed_s": 2.0,
+   "exit": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "t4alt_review.py": {
+   "script": "t4alt_review.py",
+   "start": "15:31:13Z",
+   "elapsed_s": 10.6,
+   "exit": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "r1_004_graded_review.py": {
+   "script": "r1_004_graded_review.py",
+   "start": "15:31:24Z",
+   "elapsed_s": 0.8,
+   "exit": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "distance_budget_update.py": {
+   "script": "distance_budget_update.py",
+   "start": "15:31:25Z",
+   "elapsed_s": 0.1,
+   "exit": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "t4_058_review.py": {
+   "script": "t4_058_review.py",
+   "start": "15:31:25Z",
+   "elapsed_s": 2.4,
+   "exit": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "t4_081_review.py": {
+   "script": "t4_081_review.py",
+   "start": "15:35:47Z",
+   "elapsed_s": 27.4,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "t4_147_review.py": {
+   "script": "t4_147_review.py",
+   "start": "15:36:15Z",
+   "elapsed_s": 15.6,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {
+    "t4_147_review_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "t4_145_review.py": {
+   "script": "t4_145_review.py",
+   "start": "15:36:31Z",
+   "elapsed_s": 2.2,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "localized_bl2_constants.py": {
+   "script": "localized_bl2_constants.py",
+   "start": "15:36:33Z",
+   "elapsed_s": 3.1,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "wws_directed_floor.py": {
+   "script": "wws_directed_floor.py",
+   "start": "15:36:37Z",
+   "elapsed_s": 0.1,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "t4_163_review.py": {
+   "script": "t4_163_review.py",
+   "start": "15:36:37Z",
+   "elapsed_s": 13.8,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {
+    "t4_163_review_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "t4_176_review.py": {
+   "script": "t4_176_review.py",
+   "start": "15:36:51Z",
+   "elapsed_s": 25.9,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {
+    "t4_176_review_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "t4_189_review.py": {
+   "script": "t4_189_review.py",
+   "start": "15:37:17Z",
+   "elapsed_s": 7.1,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "t4_194_review.py": {
+   "script": "t4_194_review.py",
+   "start": "15:37:25Z",
+   "elapsed_s": 14.9,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "t4_234_review.py": {
+   "script": "t4_234_review.py",
+   "start": "15:44:02Z",
+   "elapsed_s": 11.8,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {
+    "t4_234_review_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 4,
+   "log_first_differences": [
+    "-",
+    "-real\t0m14<T> s",
+    "-user\t0m10<T> s",
+    "-sys\t0m0<T> s"
+   ]
+  },
+  "t4_256_review.py": {
+   "script": "t4_256_review.py",
+   "start": "15:37:49Z",
+   "elapsed_s": 124.5,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "t4_256_extra.py": {
+   "script": "t4_256_extra.py",
+   "start": "15:39:54Z",
+   "elapsed_s": 6.7,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "t4_259_review.py": {
+   "script": "t4_259_review.py",
+   "start": "15:40:01Z",
+   "elapsed_s": 4.3,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 2,
+   "log_first_differences": [
+    "-exit 0",
+    "-<UTC>"
+   ]
+  },
+  "t4_277_review.py": {
+   "script": "t4_277_review.py",
+   "start": "15:40:05Z",
+   "elapsed_s": 0.8,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 2,
+   "log_first_differences": [
+    "-exit 0",
+    "-<UTC>"
+   ]
+  },
+  "t4_242_review.py": {
+   "script": "t4_242_review.py",
+   "start": "15:40:06Z",
+   "elapsed_s": 13.9,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 2,
+   "log_first_differences": [
+    "-exit 0",
+    "-<UTC>"
+   ]
+  },
+  "n3_mode_hardy_review.py": {
+   "script": "n3_mode_hardy_review.py",
+   "start": "15:40:20Z",
+   "elapsed_s": 20.5,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 2,
+   "log_first_differences": [
+    "-exit 0",
+    "-<UTC>"
+   ]
+  },
+  "t4_302_review.py": {
+   "script": "t4_302_review.py",
+   "start": "15:40:41Z",
+   "elapsed_s": 0.8,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 2,
+   "log_first_differences": [
+    "-exit 0",
+    "-<UTC>"
+   ]
+  },
+  "t4_249_review.py": {
+   "script": "t4_249_review.py",
+   "start": "15:44:14Z",
+   "elapsed_s": 292.6,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {
+    "t4_249_review_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "t4_294_review.py": {
+   "script": "t4_294_review.py",
+   "start": "15:49:07Z",
+   "elapsed_s": 131.3,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {
+    "t4_294_review_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 2,
+   "log_first_differences": [
+    "-exit 0",
+    "-<UTC>"
+   ]
+  },
+  "n1_016_sectors.py": {
+   "script": "n1_016_sectors.py",
+   "start": "15:51:18Z",
+   "elapsed_s": 105.1,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {
+    "n1_016_sectors_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 2,
+   "log_first_differences": [
+    "-start <UTC>",
+    "-exit 0 end <UTC>"
+   ]
+  },
+  "t4_338_review.py": {
+   "script": "t4_338_review.py",
+   "start": "15:57:47Z",
+   "elapsed_s": 515.3,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {
+    "t4_338_review_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 1,
+   "log_first_differences": [
+    "-exit 0"
+   ]
+  },
+  "t4_335_sharpE.py": {
+   "script": "t4_335_sharpE.py",
+   "start": "16:07:41Z",
+   "elapsed_s": 518.7,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {
+    "t4_335_sharpE_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 1,
+   "log_first_differences": [
+    "-exit 0"
+   ]
+  },
+  "t4_314_review.py": {
+   "script": "t4_314_review.py",
+   "start": "16:16:20Z",
+   "elapsed_s": 15.6,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {
+    "t4_314_review_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 2,
+   "log_first_differences": [
+    "-start <UTC>",
+    "-exit 0 end <UTC>"
+   ]
+  },
+  "t4_281_review.py": {
+   "script": "t4_281_review.py",
+   "start": "16:30:14Z",
+   "elapsed_s": 64.1,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {
+    "t4_281_review_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 2,
+   "log_first_differences": [
+    "-exit 0",
+    "-<UTC>"
+   ]
+  },
+  "t4_324_review.py": {
+   "script": "t4_324_review.py",
+   "start": "16:31:18Z",
+   "elapsed_s": 31.5,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {
+    "t4_324_review_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 2,
+   "log_first_differences": [
+    "-start <UTC>",
+    "-exit 0 end <UTC>"
+   ]
+  },
+  "t4_335_review.py": {
+   "script": "t4_335_review.py",
+   "start": "16:31:50Z",
+   "elapsed_s": 44.3,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {
+    "t4_335_review_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "t4_338_thresholds.py": {
+   "script": "t4_338_thresholds.py",
+   "start": "16:32:35Z",
+   "elapsed_s": 0.0,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "t4_359_review.py": {
+   "script": "t4_359_review.py",
+   "start": "16:32:35Z",
+   "elapsed_s": 29.4,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {
+    "t4_359_review_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "t4_375_review.py": {
+   "script": "t4_375_review.py",
+   "start": "16:33:05Z",
+   "elapsed_s": 4.9,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {
+    "t4_375_review_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "t2_E_lower.py": {
+   "script": "t2_E_lower.py",
+   "start": "16:33:10Z",
+   "elapsed_s": 61.4,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {
+    "t2_E_lower_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "t4_381_384_review.py": {
+   "script": "t4_381_384_review.py",
+   "start": "16:34:11Z",
+   "elapsed_s": 4.6,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {
+    "t4_381_384_review_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "t4_402_review.py": {
+   "script": "t4_402_review.py",
+   "start": "16:35:03Z",
+   "elapsed_s": 19.4,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {
+    "t4_402_review_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "t4_410_review.py": {
+   "script": "t4_410_review.py",
+   "start": "16:35:23Z",
+   "elapsed_s": 6.5,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {
+    "t4_410_review_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "t4_414_review.py": {
+   "script": "t4_414_review.py",
+   "start": "16:35:29Z",
+   "elapsed_s": 1.0,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {
+    "t4_414_review_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "t4_415_review.py": {
+   "script": "t4_415_review.py",
+   "start": "16:35:31Z",
+   "elapsed_s": 9.2,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {
+    "t4_415_review_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "falsify_section0.py": {
+   "script": "falsify_section0.py",
+   "start": "16:35:40Z",
+   "elapsed_s": 0.3,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    0,
+    0
+   ],
+   "pass_fail_distributed": [
+    0,
+    0
+   ],
+   "data": {
+    "falsify_section0_results.json": {
+     "differs": [
+      "/closure_matrix_sha256_at_run: 9cbb8f0de253b7c476e80ef8137afec9d47fd11d031d64c83bd9fb1b9b5dad25 -> 0d62d02a8dfc9a2f9d97fdcc179abfc2ba0a99aec2208dc0e000d77761834ca3",
+      "/inputs/c1-n4/VERIFY_REPORT.md: 00b1bc77b96afccb60a24ea96c64a3826d1f30af7ee2026e4251d6b5a234ba4c -> ad64feec2584b6e36733dd17af24953699611f0bed5c3e02475a654873e74c8e",
+      "/inputs/c1-t4/VERIFY_REPORT.md: e9e75b996701163a89d649641d5f3b50a327d9906b9311a495b7f1c2436f936c -> 07e2fedf0744bcce0ed3f8b84d973f80814e247cf4092f00c2220fa3fc1ec312"
+     ]
+    }
+   },
+   "ok": false,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "check_v08_factors.py": {
+   "script": "check_v08_factors.py",
+   "start": "16:35:41Z",
+   "elapsed_s": 0.1,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    31,
+    0
+   ],
+   "pass_fail_distributed": [
+    31,
+    0
+   ],
+   "data": {
+    "check_v08_factors_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "check_v08_preview1_r2.py": {
+   "script": "check_v08_preview1_r2.py",
+   "start": "16:35:41Z",
+   "elapsed_s": 0.1,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    20,
+    0
+   ],
+   "pass_fail_distributed": [
+    20,
+    0
+   ],
+   "data": {
+    "check_v08_preview1_r2_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "family_ceilings_exact.py": {
+   "script": "family_ceilings_exact.py",
+   "start": "16:35:41Z",
+   "elapsed_s": 0.1,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    37,
+    0
+   ],
+   "pass_fail_distributed": [
+    37,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "ratio_tables_floor.py": {
+   "script": "ratio_tables_floor.py",
+   "start": "16:35:42Z",
+   "elapsed_s": 0.1,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    67,
+    0
+   ],
+   "pass_fail_distributed": [
+    67,
+    0
+   ],
+   "data": {
+    "ratio_tables_floor_results.json": {
+     "differs": [
+      "/inputs/c1-t2/handoff/T2_to_T1_v01.md: ee6c4342aa084527589783615f91bb8cff96c3d506b057afc4132c179b232642 -> 18b49d55d9049b685ee8b615f7f5a3c9920c4d680dda7db5829a5c3014121a4b",
+      "/inputs/c1-t2/notes/T2_FINAL_SUMMARY.md: 4784ba1c570c8348201c3be8effe94a98333106fee217f3ca94130446225a59b -> 5eb3644b94c35d76ae3b466a6615d29f2ed470afab740999ac4eb0ec8dd8c968"
+     ]
+    }
+   },
+   "ok": false,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "check_v08_preview2.py": {
+   "script": "check_v08_preview2.py",
+   "start": "16:35:42Z",
+   "elapsed_s": 0.1,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    30,
+    0
+   ],
+   "pass_fail_distributed": [
+    30,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "tbrebal_exact_row.py": {
+   "script": "tbrebal_exact_row.py",
+   "start": "16:35:43Z",
+   "elapsed_s": 0.1,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    17,
+    0
+   ],
+   "pass_fail_distributed": [
+    17,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "h18_item2_check.py": {
+   "script": "h18_item2_check.py",
+   "start": "16:35:43Z",
+   "elapsed_s": 5.6,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    66,
+    0
+   ],
+   "pass_fail_distributed": [
+    66,
+    0
+   ],
+   "data": {
+    "h18_item2_check_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "h18_wu_sampling.py": {
+   "script": "h18_wu_sampling.py",
+   "start": "16:35:49Z",
+   "elapsed_s": 7.2,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    4,
+    0
+   ],
+   "pass_fail_distributed": [
+    4,
+    0
+   ],
+   "data": {
+    "h18_wu_sampling_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "h18_wu_sharp.py": {
+   "script": "h18_wu_sharp.py",
+   "start": "16:35:56Z",
+   "elapsed_s": 10.4,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    9,
+    0
+   ],
+   "pass_fail_distributed": [
+    9,
+    0
+   ],
+   "data": {
+    "h18_wu_sharp_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "h18_wu_betacap.py": {
+   "script": "h18_wu_betacap.py",
+   "start": "16:36:07Z",
+   "elapsed_s": 4.2,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    21,
+    0
+   ],
+   "pass_fail_distributed": [
+    21,
+    0
+   ],
+   "data": {
+    "h18_wu_betacap_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "review_t4_459.py": {
+   "script": "review_t4_459.py",
+   "start": "16:36:11Z",
+   "elapsed_s": 0.3,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    189,
+    0
+   ],
+   "pass_fail_distributed": [
+    189,
+    0
+   ],
+   "data": {
+    "review_t4_459_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "review_t4_458.py": {
+   "script": "review_t4_458.py",
+   "start": "16:36:12Z",
+   "elapsed_s": 3.4,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    30,
+    0
+   ],
+   "pass_fail_distributed": [
+    30,
+    0
+   ],
+   "data": {
+    "review_t4_458_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "review_t4_462.py": {
+   "script": "review_t4_462.py",
+   "start": "16:36:15Z",
+   "elapsed_s": 10.0,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    52,
+    0
+   ],
+   "pass_fail_distributed": [
+    52,
+    0
+   ],
+   "data": {
+    "review_t4_462_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "t4_468_scope.py": {
+   "script": "t4_468_scope.py",
+   "start": "16:36:26Z",
+   "elapsed_s": 0.1,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    11,
+    0
+   ],
+   "pass_fail_distributed": [
+    11,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "review_t4_469.py": {
+   "script": "review_t4_469.py",
+   "start": "16:36:26Z",
+   "elapsed_s": 52.0,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    59,
+    0
+   ],
+   "pass_fail_distributed": [
+    59,
+    0
+   ],
+   "data": {
+    "review_t4_469_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "review_t4_474.py": {
+   "script": "review_t4_474.py",
+   "start": "16:37:18Z",
+   "elapsed_s": 28.1,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    35,
+    0
+   ],
+   "pass_fail_distributed": [
+    35,
+    0
+   ],
+   "data": {
+    "review_t4_474_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "review_t4_469_rev2.py": {
+   "script": "review_t4_469_rev2.py",
+   "start": "16:37:47Z",
+   "elapsed_s": 6.9,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    7,
+    0
+   ],
+   "pass_fail_distributed": [
+    7,
+    0
+   ],
+   "data": {
+    "review_t4_469_rev2_results.json": "equal up to timing keys"
+   },
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "t4_479_sharpw_max.py": {
+   "script": "t4_479_sharpw_max.py",
+   "start": "16:38:18Z",
+   "elapsed_s": 0.1,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    17,
+    0
+   ],
+   "pass_fail_distributed": [
+    17,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "t4_479_report_repair_check.py": {
+   "script": "t4_479_report_repair_check.py",
+   "start": "16:48:11Z",
+   "elapsed_s": 0.0,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    12,
+    0
+   ],
+   "pass_fail_distributed": [
+    12,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  },
+  "bs_draft55_errata_check.py": {
+   "script": "bs_draft55_errata_check.py",
+   "start": "17:24:06Z",
+   "elapsed_s": 0.1,
+   "exit": 0,
+   "stderr_lines": 0,
+   "pass_fail_replay": [
+    29,
+    0
+   ],
+   "pass_fail_distributed": [
+    29,
+    0
+   ],
+   "data": {},
+   "ok": true,
+   "log_lines_differing_after_masking": 0,
+   "log_first_differences": []
+  }
+ }
+}

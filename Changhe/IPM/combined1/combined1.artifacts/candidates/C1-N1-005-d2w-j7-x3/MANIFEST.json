@@ -1,0 +1,113 @@
+{
+ "id": "C1-N1-005-d2w-j7-x3",
+ "created_utc": "2026-10-28T23:27:05Z",
+ "created_by_lane": "c1-n1",
+ "parent": {
+  "id": "C1-A2-d2",
+  "path": "source/analysis2/IPM_Analysis_II.artifacts/certificates/numerics_data/nb_d2_exact.json",
+  "sha256": "f3339f85eff0ac81033a2a1f0fd07e12298ef9bd74da501a4e874c3cef6057e3"
+ },
+ "chart": "PRIMARY",
+ "c_l_exact": "4076476460239181/2251799813685248",
+ "theta0": {
+  "reference": "state 131 exact Theta_0 (CONTRACTS section 2), preserved EXACTLY by the 10 leading-moment rows of branch 0",
+  "quarter_norm": 16.57100026302882
+ },
+ "a0": {
+  "value": null,
+  "status": "see sector/diag files"
+ },
+ "B0n_status": "EXACT (center row pivoted exactly; verified in rational arithmetic in finalize_exact)",
+ "basis": {
+  "generator_count": 2982,
+  "n_free": 2982,
+  "n_fixed": 0,
+  "branches": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "angular_max_m": 79,
+  "radial_max_k_canonical": 82,
+  "legqs_multiscale_functions": 0,
+  "radial_max_k_note": "k = largest monomial degree m+h in the canonical form r^(2k)(1+r^2)^(p-k); C1-N1-002..004 manifests wrote 25 (the T1 value) which was wrong for the new blocks (c1-n4 N4-044/N4-048): their correct values are 72 (002), 82 (003), 42 (004)",
+  "description": "LOSS: X3 proxy squared = 2^18 ||F||_2^2 + 2^14 ||grad F||_2^2 + ||omega D^2 F||_2^2 on 0.02 <= r <= 1e4 (radial Gauss 16/panel x midpoint 180), 60 Gauss-Newton steps from C1-A2-d2 with branches 6,7 added (min-norm start for the new blocks)"
+ },
+ "coefficient_files": [
+  {
+   "name": "d2w_j7_n4_X3_mid180_exact.json",
+   "sha256": "bd2a8db13b164b8ba83e1667f89686fb42d80464d523a22b537eaccd5fbdbafa",
+   "format": "c1-n1 generator list JSON (m, j, spec, coef exact rational string, coef_float); n_free/n_fixed",
+   "exactness": "all coefficients exact rationals; pivot coefficients solved exactly (flint fmpq_mat), the others binary64 values"
+  }
+ ],
+ "evaluator_code": [
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_exact.py",
+   "sha256": "de23cda3313f4a4e2dede0f20c69911f2fa11bc50de82fa331bfd576eb38470a"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_eval.py",
+   "sha256": "9980c574701ce533057f4df04da7575f672cd858ede7757949c795d214d8b9f4"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_polar.py",
+   "sha256": "f07d09053af9106b87109c39dbc497130bb711d5d71dbd91e2682b6f01bafb15"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_origin.py",
+   "sha256": "134d6bb2530ecc84b4604e726685ac04a3553fed7a79cbacebad983dd629a4a7"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_opt.py",
+   "sha256": "af2c69f2d0fb38de93d3ae7eb57f0d72d853fd5a285585a6dd6aae7518cdc214"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_opt2.py",
+   "sha256": "e0a36811a9b9295a0df3bfa0d70d9223d62c08293026353d91b28840a110a1ac"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_farpart.py",
+   "sha256": "a59cfb28ccaeef3bd75304660152bfffce5e5c84d65e174be3004fef80b331d9"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_hminus1.py",
+   "sha256": "cb01d01d95286b2d3a241a6045b7e8df8590ecfd0ea79e4d3a78a5fabbc4b98b"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_tail.py",
+   "sha256": "68d32f5b818d37470b0632e33307bace0498dd5957bbae9cc1c44ab36cd7a4dc"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/optimization/run_from_d2.py",
+   "sha256": "e01cd03bb00b35a6ad34aa2e6dc8307c06dbf6b2378b762b78b2236d43c23a6c"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/optimization/run_e2.py",
+   "sha256": "12424752a5294354f91f6df01a61efe288a9403e7ab7617d32f20f4c99879dd9"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/optimization/diag2.py",
+   "sha256": "419f9ba9a9ce1026141a6398e487a983ca9d76d067a98c21217dda43bb8639db"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/optimization/candA_setup.py",
+   "sha256": "c0b6950e8ab274043f7e3c95976422b179f99a8b880ad4a144bc3b10dbb24033"
+  }
+ ],
+ "sector_table": {
+  "name": "sector_table.json",
+  "sha256": "614e2af6f59a0c78b9322962eb87ba5f946d9329183d72ef0c9861ffee54891a"
+ },
+ "loss": {
+  "value": 1763150.0,
+  "definition": "LOSS: X3 proxy squared = 2^18 ||F||_2^2 + 2^14 ||grad F||_2^2 + ||omega D^2 F||_2^2 on 0.02 <= r <= 1e4 (radial Gauss 16/panel x midpoint 180), 60 Gauss-Newton steps from C1-A2-d2 with branches 6,7 added (min-norm start for the new blocks)",
+  "label": "LOSS"
+ },
+ "notes": "Warm start from C1-A2-d2 (parent): its 2382 generators plus branches 6 and 7 (blocks m <= 69, 79; 4 Legendre functions each, 600 new generators). Exact constraints (421 rows): center; Theta_0 (10); q=1 descendants of branches 0,1,2 zero; leading moments of branches 1..7 = exact stationary C_1..C_7 (recursion orders 1-7). Objective: NORM-T-X3-v1 raw proxy on 0.02<=r<=1e4 (no H term), 60 GN steps. RESULT (FLOAT, diag2.py, rule radial Gauss 32/panel x midpoint 180 on 0.02<=r<=8356.47 plus exact sector far parts): G0 1.5631 (d2 4.9888), G1 7.731 (1.029), P2 378.73 (20.54), rF 266.7 (2331.6), H 42.3 (390.2), X3 proxy 1327.9 (2557.6), E2 proxy with H 21169 (1.95e5), sup|F| 1.543 at r = 0.26 (d2: 0.105 at r = 30). (B-L2): theta_inner 0.0471, kappa_inner 1.357 -> theta + kappa = 1.40 > 0.810: FAILS (d2: kappa 0.710, theta <= 0.08 passes). Weak probe p=2: pairing -0.1560 (d2 -0.0288), A+5B+C = 10.63, m_min(d=0) = 0.0147. Point tests: R_nec(2^-18) = 0.0656 at (0.26, 1.566); R_sym_axis(2^-18) = 0.0106. Assessment: the X3 proxy's 2^18 weight on ||F||_2 moved the residual into the near field (small area, large pointwise values) and roughened rho (kappa doubled); H improved 9x because the (6,0) sector is cancelled. A balanced objective (near-field log-measure term and kappa penalty) is running next. NOT a closure candidate; it is the best E_2/X3 proxy value so far. || diag2 FLOAT summary (rule radial Gauss 32/panel x midpoint 180, 0.02 <= r <= 8356.47): G0 1.56306 (far part F2 8.4e-06), G1 7.73119, P2 378.734, rF 266.671, H 42.2835, X3raw 1327.85, sup|F| 1.543; first surviving sector exponent -2.7904449240429297 full-circle 68190.4; (B-L2) theta_inner 0.04705, kappa_inner 1.357, margin -0.5941."
+}

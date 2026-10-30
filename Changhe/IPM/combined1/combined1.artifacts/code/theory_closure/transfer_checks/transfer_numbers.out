@@ -1,0 +1,30 @@
+1. Linear data at the origin (EXACT given (B0n) and state 131 c_l, a0)
+   c[rho] = 1 - c_l = -0.81032; grad b(0) = diag(2.62064, 1.00000); a1 + a2 = 2 c_l = 3.62064
+   forward (Chen-Hou direction) local coefficients: eta -1.62064, xi 0.00000
+2. Transport-only D^2 rates at the origin in the S1 direction d_t h = L h (h = e^(-t) h0(e^(a1 t) x, e^(a2 t) y); the L^2 Jacobian gives e^(-c_l t))
+   ||d_xx h||_2 ~ exp((+2.43096) t)
+   ||d_yy h||_2 ~ exp((-0.81032) t)
+3. (B5) matrix M_2 at the origin: (1 + c_l) I - 2 diag(a1, a2) + A(0), A(0) = diag(a0, 0) (V.grad log omega = 0 at 0)
+   M_2(0) = diag(7.86904, 0.81032); transport part of the (1,1) entry -2.43096; (B5) needs >= 1/2: True
+4. Taylor-mode count for vanishing order k (S1 class: x^a y^b, a even, b odd)
+   k =  3: modes of degree < k: 1
+   k =  5: modes of degree < k: 3
+   k =  9: modes of degree < k: 10
+   k = 13: modes of degree < k: 21
+   k = 15: modes of degree < k: 28
+   k = 25: modes of degree < k: 78
+5. Back-of-envelope vanishing order (HEURISTIC, extraction Part I 17.1 M3)
+   C^(1/2) y-axis balance: k > 5.15 + a0 (2.53 - 1/2) - 1.62 - 1/2 = 23.94
+   L^2 block: k > a0 + 1.81 - 1/2 (y-stretching bonus) ~ 11.61
+6. FW-T-T4L2-v1 radius with and without the 1/sqrt(s) rough loss (HEURISTIC scaling only)
+   with loss (s = 2^-17): r <= 6.1042e-05 (published r = 2^-14 = 6.1035e-05)
+   if the rough constant were 5 instead of 5/sqrt(s) (s -> 0): r <= 2.9424e-02; ratio 482
+   d2 gap against FW-T-T4L2-v1 (theory_v01 sec. 7): X_s(F)/eta >= 4.2e8; remaining after this ratio: 8.71e+05
+7. Hou-Nguyen-Wang AM-GM step (2404.09410 l.233): min over S > 0 of 0.002 S + 8 S^-2
+   at S = 20: 0.0600 >= 0.048, margin 0.0120
+8. Weight windows (exponent sigma of r^-sigma at infinity; rate 1 + c_l(1 - k - sigma) in the S1 direction)
+    Hdot^-1: sigma < 2.5524
+        L^2: sigma < 1.5524
+   gradient: sigma < 0.5524
+    Hessian: sigma < -0.4476
+   forward (Chen-Hou) h-level window: weight r^-p with gamma = 0.5524 < p < 1; eta-level exponent s in (-0.4476, 0)

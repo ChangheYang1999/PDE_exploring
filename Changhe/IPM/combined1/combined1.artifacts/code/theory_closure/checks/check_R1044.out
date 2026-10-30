@@ -1,0 +1,29 @@
+PASS C0 inputs: q = 1/c - 4, delta = 1 - 1/c, D = 5c - 1 (exact)
+     lam1 = 1/2 + 5 2^(1-q) = [109.6024225 +/- 4.85e-8]; Sigma (T4-421) = [137.7145617 +/- 4.63e-8]; kap/(kap + delta) = [0.9085616160 +/- 4.85e-11]
+PASS C1 lam1 > 109.6 and kap/(kap + delta) > 0.908
+     007 sharpw r_beta^delta <= 71.20538, Kcrit/H <= 0.6819037; J/H >= 4.324044 (E >= 0.793, V >= 0); radius-dependent >= 3.928661; conditional V-term alone (V >= v0) >= 0.1895454
+     007 TB     r_beta^delta <= 67.57712, Kcrit/H <= 0.6471575; J/H >= 4.556205 (E >= 0.793, V >= 0); radius-dependent >= 4.139593; conditional V-term alone (V >= v0) >= 0.1997222
+     007 graded r_beta^delta <= 28.13296, Kcrit/H <= 0.2694174; J/H >= 10.94429 (E >= 0.793, V >= 0); radius-dependent >= 9.943560; conditional V-term alone (V >= v0) >= 0.4797451
+     007 fixed  r_beta^delta <= 81.97322, Kcrit/H <= 0.7850228; J/H >= 3.756046 (E >= 0.793, V >= 0); radius-dependent >= 3.412599; conditional V-term alone (V >= v0) >= 0.1646471
+     013 sharpw r_beta^delta <= 71.20562, Kcrit/H <= 0.6819391; J/H >= 4.324030 (E >= 0.793, V >= 0); radius-dependent >= 3.928648; conditional V-term alone (V >= v0) >= 0.1895447
+     013 TB     r_beta^delta <= 67.57735, Kcrit/H <= 0.6471910; J/H >= 4.556190 (E >= 0.793, V >= 0); radius-dependent >= 4.139579; conditional V-term alone (V >= v0) >= 0.1997215
+     013 graded r_beta^delta <= 28.13305, Kcrit/H <= 0.2694314; J/H >= 10.94425 (E >= 0.793, V >= 0); radius-dependent >= 9.943527; conditional V-term alone (V >= v0) >= 0.4797435
+     013 fixed  r_beta^delta <= 81.97350, Kcrit/H <= 0.7850635; J/H >= 3.756034 (E >= 0.793, V >= 0); radius-dependent >= 3.412588; conditional V-term alone (V >= v0) >= 0.1646465
+     014 sharpw r_beta^delta <= 71.20529, Kcrit/H <= 0.6819163; J/H >= 4.324050 (E >= 0.793, V >= 0); radius-dependent >= 3.928666; conditional V-term alone (V >= v0) >= 0.1895456
+     014 TB     r_beta^delta <= 67.57704, Kcrit/H <= 0.6471694; J/H >= 4.556211 (E >= 0.793, V >= 0); radius-dependent >= 4.139598; conditional V-term alone (V >= v0) >= 0.1997224
+     014 graded r_beta^delta <= 28.13292, Kcrit/H <= 0.2694224; J/H >= 10.94430 (E >= 0.793, V >= 0); radius-dependent >= 9.943572; conditional V-term alone (V >= v0) >= 0.4797457
+     014 fixed  r_beta^delta <= 81.97312, Kcrit/H <= 0.7850373; J/H >= 3.756051 (E >= 0.793, V >= 0); radius-dependent >= 3.412604; conditional V-term alone (V >= v0) >= 0.1646473
+PASS C2 constant use, E >= 0.793, V >= 0: lam1 E g0/(D r_beta^delta) > Kcrit/H for all 12 (reference, target) pairs
+PASS C3b radius-dependent use with min(universal 0.793, c s^-delta): Eeff >= 0.7930000 > Kcrit/H for all 12 pairs
+PASS C3 radius-dependent use: kap/(kap+delta) times the C2 bound > Kcrit/H for all 12 pairs; min ratio 4.346894
+     Lam_max sharpw (upper bounds over 007/013/014): Eprof 0: 19.02386 / 19.02491 / 19.02419; 93/250: 8.645746 / 8.646760 / 8.646086; 583/1000: 2.759233 / 2.760227 / 2.759581
+     Lam_max TB     (upper bounds over 007/013/014): Eprof 0: 17.13454 / 17.13549 / 17.13484; 93/250: 7.285240 / 7.286152 / 7.285547; 583/1000: 1.698673 / 1.699566 / 1.698988
+     Lam_max graded (upper bounds over 007/013/014): Eprof 0: 2.969641 / 2.969805 / 2.969692; 93/250: 0 / 0 / 0; 583/1000: 0 / 0 / 0
+     Lam_max fixed  (upper bounds over 007/013/014): Eprof 0: 25.21257 / 25.21396 / 25.21300; 93/250: 13.26505 / 13.26640 / 13.26550; 583/1000: 6.488365 / 6.489692 / 6.488822
+     Lam_max with universal fallback sharpw: Eprof 0: 19.02386 / 19.02491 / 19.02419; 93/250: 8.645746 / 8.646760 / 8.646086; 583/1000: 2.759233 / 2.760227 / 2.759581
+     Lam_max with universal fallback TB    : Eprof 0: 17.13454 / 17.13549 / 17.13484; 93/250: 7.285240 / 7.286152 / 7.285547; 583/1000: 1.698673 / 1.699566 / 1.698988
+     Lam_max with universal fallback graded: Eprof 0: 2.969641 / 2.969805 / 2.969692; 93/250: 0 / 0 / 0; 583/1000: 0 / 0 / 0
+     Lam_max with universal fallback fixed : Eprof 0: 28.89561 / 28.91057 / 28.90087; 93/250: 14.39347 / 14.40092 / 14.39609; 583/1000: 6.694263 / 6.697729 / 6.695481
+PASS C4 every necessary kernel constant Lam_max, with or without the universal fallback, is below lam1/3.75 (so T4-410 misses it by more than 3.75 times), and the fallback never lowers it
+PASS C5 Lam_max < 25.3 and with the fallback < 29 for every pair and Eprof >= 0 (the largest: fixed sharpw ball, Eprof = 0)
+ALL PASS (7 checks)

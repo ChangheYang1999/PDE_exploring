@@ -1,0 +1,12 @@
+Part A: 16 modes 1..31 of 160, first omitted 33; result_v03 prefix data and M2 upper equal to result_v02; M2 <= 0.622626936301; 28 checks
+Part B: L2 = 0.380360210930, J = 0.240761083124, U2 = 0.381865853176 (rounded outward); width U2 - L2 <= 0.001505643 = modes 0.000980734 + tail 0.000524909; 68 checks
+  FLOAT, per-mode gaps U_n/n^2 - J_n - L_n^2 (exact positive, shown about): 1: 2.50e-24, 3: 2.41e-24, 5: 6.17e-12, 7: 3.78e-12, 9: 2.52e-12, 11: 9.34e-13, 13: 2.96e-12, 15: 7.60e-10, 17: 1.84e-06, 19: 3.42e-05, 21: 1.24e-04, 23: 5.28e-05, 25: 6.47e-05, 27: 1.00e-04, 29: 1.69e-04, 31: 4.34e-04
+  modes 1..15 together <= 0.000000001; modes 17..31 together <= 0.000980733
+Part C: 0.616733500736 < H(016) < 0.617952953854; 628.580088526 < E2(016) < 628.879024749; H(007) - H(016) > 0.017571422147005; E2(016) - E2(007) > 21.759869526341; 81 checks
+  H(007) lower ball about 0.635524376000; E2 width <= 0.298936223, H width <= 0.001219454
+Part D: nested in N4-410 ((0.529469576, 0.619651338) for H, (608.392385921, 629.296112163) for E2); J - N4-398 floor >= 0.002101926, all from modes 5..31 (J_1 + J_3 equals the N4-398 floor exactly)
+  FLOAT: c1-n3 CLAIMED H(016) in [0.6167335007, 0.6189603636]: lower below HL by 18225240013184170643/500000000000000000000000000000 (exact, in (0.0000000000364, 0.0000000000365)), upper 1.01e-03 above HU; CLAIMED E2(016) in [628.5800885, 629.1263188]: upper 0.2473 above EU
+  FLOAT: c1-n3 later CLAIMED H(016) >= 0.6167972322 and E2(016) >= 628.5957005 lie inside, 6.37e-05 and 0.0156 above HL and EL
+  FLOAT: modes 17..31 share of the width 0.651; tail term share 0.349
+checks passed 89 ; elapsed 0.0 s
+RESULT PASS

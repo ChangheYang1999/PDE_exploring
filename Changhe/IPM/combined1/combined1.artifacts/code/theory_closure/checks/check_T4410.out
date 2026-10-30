@@ -1,0 +1,56 @@
+PASS A1 K = 1/(2 pi z^2) (v2 + i v1), |K| = 1/(2 pi |Z|^2), zero angular mean, |f'| = 1/(pi|z|^3), Taylor bound 64|Y|^3/(pi r^5)
+PASS A2 local integral of min(L, 2B/s) and L r/(4B) = k r^eps, 2B = 2^(1-a) A r^a
+PASS A3-A6 annulus 2^(3-a), far 2^(a+2)/(-a), moment 2^(-a-2)/(-a-3), Taylor 2^(2-a)/(a+5) (times A r^a)
+PASS A7 J' = -eps A r^(-eps-1)[C_a + L_a log(k r^eps)] and the e^(-x/2) step of (4) (max of x e^(-x/2) is 2/e < 1)
+PASS A8 cutoff is C1 and sup |r chi'| = 4/sqrt(3) < 3
+PASS A9 mode-n Green formula; exterior A_n = b_n r^p/(p^2-n^2) + b_n J_n r^-n/(2n) (n >= 3) and A_1 with the dipole
+PASS A10 |(phi_xy, -phi_xx)| = n(n+1) r^(-n-2) for phi = r^-n sin(n theta), n = 3, 5, 7, 9 (general n: phi = Re(i z^-n))
+PASS A11 mode-n cutoff error = |b_n|(n+1)/(2(n+q+2)) (L0/r)^(n+q+2), and n+q+2 >= q+5 > 0 for n >= 3
+PASS A12 polar gradient of chi(r) r^q b(theta) at 2 points x 2 exponents (50 digits), and the triangle step
+PASS A13 for -5 < a < -3: 2^(-a) (C_a + L_a) > 8 (1/2 + 64 + 16) = 644 (each term of C_a is positive)
+     campaign q = [-3.447611231010732 +/- 4.65e-16], delta = 1 - 1/c = [0.4476112310107325 +/- 3.57e-17], a = q - delta = [-3.895222462021465 +/- 7.14e-17]
+     at a = q - delta: C_a = [177.6296691 +/- 1.90e-8], L_a = [29.75834651 +/- 4.84e-9], C_a + L_a = [207.3880156 +/- 3.38e-8], 2^(-a)(C_a + L_a) = [3085.762216 +/- 1.27e-7]
+PASS B1 at a = q - delta: 200 < C_a + L_a < 210 and 2^(-a)(C_a + L_a) > 3000
+     007 sharpw r_beta <= 13761.4666649, Kcrit <= 681750.8057, Kcrit/(B0/sqrt(2 pi)) <= 20.100331
+     007 TB     r_beta <= 12243.9571935, Kcrit <= 647012.3330, Kcrit/(B0/sqrt(2 pi)) <= 19.076123
+     007 graded r_beta <= 1728.48451629, Kcrit <= 269357.0121, Kcrit/(B0/sqrt(2 pi)) <= 7.9415604
+     007 fixed  r_beta <= 18849.4800437, Kcrit <= 784846.7511, Kcrit/(B0/sqrt(2 pi)) <= 23.139950
+     013 sharpw r_beta <= 13761.5686315, Kcrit <= 681765.4310, Kcrit/(B0/sqrt(2 pi)) <= 20.100398
+     013 TB     r_beta <= 12244.0479161, Kcrit <= 647026.2131, Kcrit/(B0/sqrt(2 pi)) <= 19.076186
+     013 graded r_beta <= 1728.49732363, Kcrit <= 269362.7905, Kcrit/(B0/sqrt(2 pi)) <= 7.9415868
+     013 fixed  r_beta <= 18849.6197104, Kcrit <= 784863.5880, Kcrit/(B0/sqrt(2 pi)) <= 23.140027
+     014 sharpw r_beta <= 13761.4268498, Kcrit <= 681745.0950, Kcrit/(B0/sqrt(2 pi)) <= 20.100305
+     014 TB     r_beta <= 12243.9217690, Kcrit <= 647006.9133, Kcrit/(B0/sqrt(2 pi)) <= 19.076098
+     014 graded r_beta <= 1728.47951539, Kcrit <= 269354.7558, Kcrit/(B0/sqrt(2 pi)) <= 7.9415502
+     014 fixed  r_beta <= 18849.4255078, Kcrit <= 784840.1768, Kcrit/(B0/sqrt(2 pi)) <= 23.139920
+PASS B2 r_beta and Kcrit (sharpw) agree with REVIEW_T4_402 (13761.47 / 13761.57 / 13761.43; 681750.9 / 681765.5 / 681745.1, to 0.1) and are smaller at TB
+PASS B2b sharpw and TB: every r_beta < 13761.58 and every Kcrit < 681765.6; all four targets: every r_beta < 18860
+     lam1 = 1/2 + 5 2^(1-q) = [109.6024225 +/- 4.85e-8]; lam2 = 2^(-q) lam1 = [1195.788982 +/- 2.80e-7]
+PASS B3a lam1 > 109 and lam2 > 1190
+     B3: T4-410 bound/H >= 3.1635344 at every r in [L0, 13761.58] and >= 2.7473026 at every r in [L0, 18860] (eps <= delta)
+     Kcrit/H <= Kcrit_max/H_point_min < 0.68193922
+PASS B3 the T4-410 remainder bound exceeds 3.1 H on [L0, 13761.58] (sharpw, TB) and 2.7 H on [L0, 18860] (all four targets): above the audited universal constant 1.747261 (T4-411), above Kcrit/H (< 0.682) and above every room
+     B4: room 0.09893906 (F2 cutoff room, 583/1000): the A_in lower bound reaches it only for r >= 3.16610e+7
+     B4: room 0.155596   (fixed sharpw, 93/250): the A_in lower bound reaches it only for r >= 1.15143e+7
+     B4: room 0.086292   (sharpw family, 93/250): the A_in lower bound reaches it only for r >= 4.29757e+7
+     B4: room 0.06294    (TB, 93/250): the A_in lower bound reaches it only for r >= 8.69742e+7
+     B4: room 1.375261   (universal margin): the A_in lower bound reaches it only for r >= 88497.5
+     B4: with the constants at eps = delta the (F2) room needs r >= 1.31609e+8
+PASS B4 every listed room is reached by the A_in lower bound only beyond 4 times the largest r_beta (> 75000)
+     B5: for L0 <= R <= r_grad, J(R)/Kcrit >= lam2 g0/(D_delta r_beta^delta) >= 51.6762
+         with the sharper factor (1 + 1/L0)^(-a) >= 1 in place of 2^(-a): J(R)/Kcrit >= 4.73649
+PASS B5 J(R) > 50 Kcrit for every L0 <= R <= r_grad (all three candidates, all four targets), and > 4.7 Kcrit even with the factor 2^(-a) of A_out removed
+     any remainder bound of the form lam (C0 tail term at R) certifies (F3) only if lam < 23.1400 (kappa >= 0, V >= 0)
+PASS B6 the factor allowed by (F3) is below 23.2 (upper bound over candidates and the four targets)
+PASS B7a kap = 5 - 1/c, D_delta = c kap, q - delta - gamma = -kap (exact)
+     B7: kap = [4.447611231 +/- 1.08e-11]; for r <= 18860: Eeff >= 2.49609 (T4-410 alone), >= 1.72779 (minimum with 1.747261, r_u >= 51837.9); Kcrit/H <= 0.785063
+PASS B7 radius-dependent use: Eeff(r) > 2.49 (T4-410 alone) and > 1.72 (minimum with the universal constant) for every r <= 18860, above Kcrit/H < 0.7851 (all four targets)
+     r = 4.0: max over 24 angles of r^-q|U + DK M - r^q V_q[b]| = 0.2677718, B_b (L0/r)^(q+5) = 0.44486923
+     r = 8.0: max over 24 angles of r^-q|U + DK M - r^q V_q[b]| = 0.083617724, B_b (L0/r)^(q+5) = 0.15167597
+     r = 40.0: max over 24 angles of r^-q|U + DK M - r^q V_q[b]| = 0.0066726023, B_b (L0/r)^(q+5) = 0.012469344
+     r = 400.0: max over 24 angles of r^-q|U + DK M - r^q V_q[b]| = 0.0001867949, B_b (L0/r)^(q+5) = 0.00034950616
+PASS C1 FLOAT: the cutoff model error is below the bound (5) at r = 4, 8, 40, 400 (24 angles)
+     FLOAT: with eps free, min of the A_in part of (8)/H at R = 13761.58 is 0.0150729 at eps = 1.44372
+     FLOAT: with eps free, min of the A_in part of (8)/H at R = 18860.0 is 0.00955657 at eps = 1.4476
+PASS C2 FLOAT diagnostic computed
+22 checks, ALL PASS

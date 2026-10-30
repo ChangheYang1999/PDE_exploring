@@ -1,0 +1,14 @@
+Part A: 4 c1-n4 results bound (prefix 47: N4-427 d1d90c22..., N4-428 42e43b1b...; prefix 63: N4-430 dc1dfe24..., N4-431 6c5f02dc...); 21 checks
+Part B, P = 47: 24 modes, first omitted 49; tail R2 in [0.028337318, 0.028337319]; M2 in [0.622548919037, 0.622560721336]; plain H(016) < 0.789025172; 61 checks
+Part C, P = 47: U2 = 0.381799638212; 0.616733500736 < H(016) < 0.617899375475; 628.580088526 < E2(016) < 628.865881153; H(007) - H(016) > 0.017625000525836; E2(016) - E2(007) > 21.759869526341; 75 checks
+  exact: H(016) < 617899375474255800449928932337/1000000000000000000000000000000; E2(016) < 125773176230483/200000000000
+Part B, P = 63: 32 modes, first omitted 65; tail R2 in [0.009973239, 0.009973240]; M2 in [0.622555880425, 0.622558240956]; plain H(016) < 0.789023600; 119 checks
+Part C, P = 63: U2 = 0.381797157832; 0.616733500736 < H(016) < 0.617897368364; 628.580088526 < E2(016) < 628.865388795; H(007) - H(016) > 0.017627007636152; E2(016) - E2(007) > 21.759869526341; 133 checks
+  exact: H(016) < 308948684181969723952067879861/500000000000000000000000000000; E2(016) < 39304086799647/62500000000
+Part D: H upper 0.617952954 (N4-418) > 0.617899376 (P = 47) > 0.617897369 (P = 63); E2 upper 628.879025 > 628.865882 > 628.865389
+  P = 47: width U2 - L2 <= 0.001439428; FLOAT shares: 16 mode gaps (n <= 31) 0.681, modes 33..47 and tail 0.319
+  P = 63: width U2 - L2 <= 0.001436947; FLOAT shares: 16 mode gaps (n <= 31) 0.683, modes 33..63 and tail 0.317
+  FLOAT: c1-n3 CLAIMED H(016) >= 0.6167972322 lies 1.10e-03 below the P = 63 upper; c1-n3 CLAIMED upper 0.6189603636 is above it by 1.06e-03
+Part E: the four c1-n4 source files are readable; the extract equals their fields
+checks passed 272 ; elapsed 0.1 s
+RESULT PASS

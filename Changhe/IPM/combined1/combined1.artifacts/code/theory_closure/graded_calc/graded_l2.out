@@ -1,0 +1,39 @@
+FW-T-TB-gradedL2-v1 model (CONDITIONAL; beta = 2 from T4-019 condition (B))
+
+single-direction and proportional maxima (float, Nelder-Mead; comparison-system sensitivities):
+                       F2 only: lambda = 4.2433e-05 at s = 2.121e-05, box = ['2.121e-04', '3.409e-11', '4.640e-13']
+                       F1 only: lambda = 4.4243e-07 at s = 1.827e-05, box = ['1.973e-04', '5.809e-07', '5.258e-10']
+                       F0 only: lambda = 1.3825e-07 at s = 1.713e-05, box = ['1.928e-04', '5.664e-07', '7.204e-08']
+     prop. FW-A2-Db (P2,G1,G0): lambda = 2.8334e+01 at s = 1.910e-05, box = ['2.024e-04', '3.322e-07', '1.840e-08']
+       prop. T4-019 components: lambda = 2.9519e+00 at s = 1.910e-05, box = ['2.024e-04', '3.321e-07', '4.675e-08']
+
+certified instance (mpmath iv, 50 digits):
+  s = 5*2^-18; box r = (r2, r1, r0) = [0.0002023, 3.32e-07, 1.84e-08]
+  forcing condition: (gamma_2, gamma_1, gamma_0)(F) <= 28 x FW-A2-Db (P2, G1, G0) bounds = ['1.78042e-05', '1.39096e-07', '3.47739e-08']
+  Gamma(r, phi) <= r componentwise: PASS
+  Gamma: ['[0.00019991459, 0.00019991459]', '[3.2810175e-7, 3.2810175e-7]', '[1.8186613e-8, 1.8186613e-8]']
+  margins: m0 = [1.91206, 1.91206], m1 = [0.757957, 0.757957], m2 = [0.208982, 0.208982]
+  n_g(r) = [0.00020230055, 0.00020230055] ; d = c_s n_g = [0.013066911, 0.013066911] ; L2 contraction c_s n_g/beta = [0.0065334556, 0.0065334556]
+  (float scale with rounded box: 28.329; scalar T4-019 G0 requirement eta/512 = 1.1921e-08, this box admits gamma_0 <= 3.4774e-08)
+
+HEURISTIC tail table, L2 component only: sector A r^p E(theta) on r > T, G0 tail = A T^(p+1)/sqrt(-2p-2)
+  n  p=p_(n+1)   A_n(model)   T_min[T4-019 scalar (eta/512)]   T_min[gradedL2 instance]
+  4   -1.2381   3.122e+02    2.757e+44    3.071e+42
+  5   -1.6857   9.808e+02    6.595e+15    1.384e+15
+  6   -2.1333   3.081e+03    8.194e+09    3.186e+09
+  7   -2.5809   9.680e+03    2.373e+07    1.206e+07
+  8   -3.0285   3.041e+04    9.253e+05    5.459e+05
+ 10   -3.9237   3.001e+05    2.834e+04    1.965e+04
+ 12   -4.8189   2.962e+06    4.507e+03    3.405e+03
+ 16   -6.6094   2.886e+08    6.718e+02    5.550e+02
+
+point-test gaps (|F| minus necessary bound; positive = excluded); X_s(h) >= ||h||_(H^(2+s)) by Bessel
+  T4-019 ball (s=2^-17, X_s(h) <= 2^-14) radius [6.1035156e-5 +/- 2.50e-13]
+        C1-A2-d2 [0, 1]: gap T4-007 const [0.00658507 +/- 4.88e-9] (True); gap T4-017 const [0.00804926 +/- 2.46e-9] (True)
+     C1-A2-Mpen2 [0, 2]: gap T4-007 const [0.0630430 +/- 3.76e-8] (True); gap T4-017 const [0.0663194 +/- 2.62e-8] (True)
+        C1-A2-b6 [0, 1]: gap T4-007 const [2.95332 +/- 4.56e-6] (True); gap T4-017 const [2.95472 +/- 1.01e-6] (True)
+  gradedL2 instance box (s=5*2^-18) radius [0.00020230055 +/- 4.31e-12]
+        C1-A2-d2 [0, 1]: gap T4-007 const [0.000730121 +/- 2.47e-10] (True); gap T4-017 const [0.00379955 +/- 2.07e-9] (True)
+     C1-A2-Mpen2 [0, 2]: gap T4-007 const [0.0504742 +/- 6.88e-9] (True); gap T4-017 const [0.0573423 +/- 4.36e-8] (True)
+        C1-A2-b6 [0, 1]: gap T4-007 const [2.94775 +/- 3.70e-6] (True); gap T4-017 const [2.95067 +/- 4.90e-7] (True)
+rc=0

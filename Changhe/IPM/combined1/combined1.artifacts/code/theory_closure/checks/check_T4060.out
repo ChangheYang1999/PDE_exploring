@@ -1,0 +1,140 @@
+====================================================================================================
+Part A. Exact symbolic checks
+====================================================================================================
+A1. (1 + |eta + N e2|^2)^(q/2) / N^q = 1 + e*( eta2*q ) + e^2*( q*(eta1**2 + eta2**2*q - eta2**2 + 1)/2 ) + O(e^3), e = 1/N
+    so J^q(e^{iNy} a) = e^{iNy}(N^q a - i q N^(q-1) d_y a) + O(N^(q-2)) (eta2 <-> -i d_y), as in (4)
+A2. Re of the N^(2q) coefficient minus [(V.Da) a - a^2 + q (d_y V_y) a^2] = 0
+    the N^(2q+1) coefficient is purely imaginary: True
+    div V = 2*c ; (V.Da) a + (div V/2) a^2 - div(V a^2)/2 = 0 => int (V.Da) a = -c int a^2
+A3. general omega: Re N^(2q) coefficient - [(V.Da) a - a^2 + q (omega^T DV omega) a^2] = 0
+    weighted: W (V.Da) a - (-c W - V.DW/2) a^2 - div(W V a^2)/2 = 0 => limit ratio -c - 1 + b + q omega^T Sym DV omega (b = -V.D log w)
+    Poisson bracket {W |xi|^(2q), V.xi} - m (2q xi^T DV xi/|xi|^2 - V.D log W) = 0
+    anisotropic q = 2 symbol mu1 xi1^4 + mu2 xi1^2 xi2^2 + mu3 xi2^4, DV(0) = diag(d1, d2), at xi = e2: bracket/m = 4*d2 (= 2q d_y V_y, weights irrelevant at V(0) = 0)
+A4. U symbol at e2: (0, 0) ; |U1| <= |xi1|/|xi| (since |xi2| <= |xi|), |U2| = xi1^2/|xi|^2; on |eta| <= N/2: |xi| >= N/2, so |U1| <= 2|eta1|/N
+A5. g = -4y near 0 (mode sin theta, radial part -4r): Psi = -r^3/2 solves Psi'' + Psi'/r - Psi/r^2 = -4*r ; harmonic remainder A r sin(theta) = A y has zero third derivatives; c[g] = -d_1^2 d_2 psi(0) = 1
+    consistent with the contact term -h_y(0)/4 of c[h] (R1-008): the sin(3 th) kernel annihilates the sin(th) mode, and -g_y(0)/4 = 1
+A6. c = 4076476460239181/2251799813685248 = 1.8103192102000; 9/5 < c < 37/20: True; 2 - c = 0.189681 > 3/20; c - 1 = 0.810319; rate caps c + 1 - q: q = 2: 0.810319, q = 2 + 2^-10: 0.809343, q = 5/2: 0.310319, q = 3: -0.189681
+
+====================================================================================================
+Part B. Origin data of state131 (arb, rigorous balls at the exact point 0)
+====================================================================================================
+    rho  (0) = +0.000000000000000e+00 (radius 0.0e+00)
+    rho_x(0) = +0.000000000000000e+00 (radius 0.0e+00)
+    rho_y(0) = +1.030029489183118e+01 (radius 2.3e-94)
+    u1   (0) = +0.000000000000000e+00 (radius 0.0e+00)
+    u2   (0) = +0.000000000000000e+00 (radius 0.0e+00)
+    u1_x (0) = +8.103192101999981e-01 (radius 2.3e-95)
+    u1_y (0) = +0.000000000000000e+00 (radius 0.0e+00)
+    u2_x (0) = +0.000000000000000e+00 (radius 0.0e+00)
+    u2_y (0) = -8.103192101999981e-01 (radius 2.3e-95)
+B1. normalization residual c + d_y u2(0) - 1 = +7.490682167507517e-96 (radius 2.3e-95) ; d_x u1(0) - (c - 1) = -7.490682167507517e-96 (radius 2.3e-95) ; F_y(0) = rho_y(0) (c + d_y u2(0) - 1) = +7.715623526630857e-95 (radius 2.4e-94)
+B2. a0 = rho_y(0) = 10.300294891831; DV(0) = diag(2c - 1, 1) to the residual above.
+    origin principal matrix M_q(0) = (1 + c) I - q diag(2c - 1, 1) + diag(a0, 0):
+      q =         0: M_q(0) = diag(13.110614, 2.810319); vertical entry c + 1 - q d_yV_y(0) is the smaller one: True
+      q =         2: M_q(0) = diag(7.869337, 0.810319); vertical entry c + 1 - q d_yV_y(0) is the smaller one: True
+      q = 2049/1024: M_q(0) = diag(7.866778, 0.809343); vertical entry c + 1 - q d_yV_y(0) is the smaller one: True
+      q =       5/2: M_q(0) = diag(6.559018, 0.310319); vertical entry c + 1 - q d_yV_y(0) is the smaller one: True
+      q =         3: M_q(0) = diag(5.248699, -0.189681); vertical entry c + 1 - q d_yV_y(0) is the smaller one: True
+    the horizontal entry stays larger while q < a0/(2c - 2) = 6.355702
+    (B5) of transfer_checks/transfer_numbers.out prints diag(7.86904, 0.81032) from the rounded input a0 = 10.30: 3 - 3c + 10.30 = 7.86904; with the exact a0 the (1,1) entry is 7.869337
+
+====================================================================================================
+Part C. FLOAT packet quotients in H^q on a periodic box (not proofs)
+====================================================================================================
+    box [-1, 1)^2, 512^2 points; packets: four disks of radius 0.2 centred at (+-0.3, +-0.3); amplitude averages <d_y V_y> = 1.073498, <d_x V_x> = 2.547140, <rho_y> = 9.971964
+C1. q = 2.0:
+      N =  50: vert T -0.55449 C -3.70e-01 | horiz T +2.17280 C -9.60266
+      N = 100: vert T -0.63651 C -9.12e-02 | horiz T +2.25647 C -9.88097
+      N = 200: vert T -0.65668 C -2.26e-02 | horiz T +2.27714 C -9.94942
+      N = 400: vert T -0.66167 C -5.63e-03 | horiz T +2.28226 C -9.96634
+      Richardson (2 f(400) - f(200)): vertical transport -0.66665 vs (6) -0.66332; horizontal transport +2.28738 vs +2.28396; horizontal coupling -9.98327 vs -<rho_y> -9.97196; vertical coupling at N = 400: -5.63e-03 (-> 0 like 1/N)
+C1. q = 2.5:
+      N =  50: vert T +0.03249 C -4.31e-01 | horiz T +3.39614 C -9.54211
+      N = 100: vert T -0.09159 C -9.49e-02 | horiz T +3.52171 C -9.87723
+      N = 200: vert T -0.11817 C -2.28e-02 | horiz T +3.54890 C -9.94920
+      N = 400: vert T -0.12449 C -5.65e-03 | horiz T +3.55539 C -9.96633
+      Richardson (2 f(400) - f(200)): vertical transport -0.13082 vs (6) -0.12657; horizontal transport +3.56188 vs +3.55753; horizontal coupling -9.98346 vs -<rho_y> -9.97196; vertical coupling at N = 400: -5.65e-03 (-> 0 like 1/N)
+C1. q = 3.0:
+      N =  50: vert T +0.66672 C -5.76e-01 | horiz T +4.57245 C -9.39642
+      N = 100: vert T +0.45534 C -1.02e-01 | horiz T +4.78493 C -9.87034
+      N = 200: vert T +0.42045 C -2.31e-02 | horiz T +4.82057 C -9.94886
+      N = 400: vert T +0.41269 C -5.67e-03 | horiz T +4.82852 C -9.96631
+      Richardson (2 f(400) - f(200)): vertical transport +0.40493 vs (6) +0.41018; horizontal transport +4.83646 vs +4.83110; horizontal coupling -9.98375 vs -<rho_y> -9.97196; vertical coupling at N = 400: -5.67e-03 (-> 0 like 1/N)
+    max |extrapolated - predicted|: vertical 5.24e-03, horizontal 1.18e-02
+    as eps -> 0 the vertical limit tends to q d_yV_y(0) - c - 1 = q - c - 1 (Part B); at eps = 0.3 <d_y V_y> - 1 = +0.0735
+
+====================================================================================================
+Part D. TP-4 map: inf_x lambda_min(M_(q,w)(x)) on state131 (FLOAT grid; arb at the minimizing points)
+====================================================================================================
+    rate cap beta <= inf_x lambda_min(M_(q,w)) (TP-4); far-field limit (1 + c) + p c - q c for power weights; origin value c + 1 - q (T4-060) for q <= 6.356
+    weight                                     | q =        0 | q =        2 | q =  2+2^-10 | q =      5/2 | q =        3
+    unweighted                                 |      +2.7990 @ r=10 | -0.8274 @ r=7.1e+02 | -0.8292 @ r=7.1e+02 | -1.7367 @ r=7.1e+02 | -2.6461 @ r=7.1e+02
+    (1 + r^2/R^2)^(p/2), p = 0.5, R = 1        |       +2.8103 @ r=0 | +0.0723 @ r=4.5e+02 | +0.0705 @ r=4.5e+02 |   -0.8369 @ r=5e+02 |   -1.7462 @ r=5e+02
+    (1 + r^2/R^2)^(p/2), p = 0.5, R = 16       |       +2.8103 @ r=0 |     -0.4190 @ r=6.3 |     -0.4206 @ r=6.3 |     -1.2544 @ r=7.1 |     -2.0936 @ r=7.9
+    (1 + r^2/R^2)^(p/2), p = 0.8, R = 1        |       +2.8103 @ r=0 | +0.6115 @ r=3.5e+02 | +0.6097 @ r=3.5e+02 |   -0.2975 @ r=4e+02 | -1.2066 @ r=4.5e+02
+    (1 + r^2/R^2)^(p/2), p = 0.8, R = 16       |       +2.8103 @ r=0 |       -0.3677 @ r=5 |       -0.3693 @ r=5 |     -1.1936 @ r=5.6 |     -2.0235 @ r=6.3
+    (1 + r^2/R^2)^(p/2), p = 1.0, R = 1        |       +2.8103 @ r=0 |    +0.7477 @ r=0.71 |    +0.7465 @ r=0.71 | +0.0619 @ r=3.5e+02 |   -0.8471 @ r=4e+02
+    (1 + r^2/R^2)^(p/2), p = 1.0, R = 16       |       +2.8103 @ r=0 |       -0.3415 @ r=5 |       -0.3431 @ r=5 |       -1.1622 @ r=5 |     -1.9879 @ r=5.6
+    (1 + r^2/R^2)^(p/2), p = 1.5, R = 1        |       +2.8103 @ r=0 |       +0.8103 @ r=0 |       +0.8093 @ r=0 |    +0.3022 @ r=0.45 |    -0.2837 @ r=0.71
+    (1 + r^2/R^2)^(p/2), p = 1.5, R = 16       |       +2.8103 @ r=0 |       -0.2913 @ r=4 |       -0.2929 @ r=4 |     -1.1026 @ r=4.5 |       -1.9175 @ r=5
+    A2 omega_2 = (1 + 4 r^2)^(2/5)             |       +2.8103 @ r=0 | +0.6115 @ r=3.5e+02 | +0.6097 @ r=3.5e+02 |   -0.2975 @ r=4e+02 | -1.2066 @ r=4.5e+02
+D2. arb re-evaluation of every minimizing grid point (an upper bound on any admissible rate, rigorous given TP-4):
+    unweighted                                 q =        2: point (500.593, 500.593) lambda_min = -8.274222277047673e-01 (radius 6.5e-94)  float agrees: True
+    unweighted                                 q =  2+2^-10: point (500.593, 500.593) lambda_min = -8.291982155015950e-01 (radius 6.5e-94)  float agrees: True
+    (1 + r^2/R^2)^(p/2), p = 0.5, R = 1        q =        0: point (0, 0) lambda_min = +2.810319210199998e+00 (radius 2.3e-94)  float agrees: True
+    (1 + r^2/R^2)^(p/2), p = 0.5, R = 1        q =        2: point (315.853, 315.853) lambda_min = +7.229017339434524e-02 (radius 9.2e-94)  float agrees: True
+    (1 + r^2/R^2)^(p/2), p = 0.5, R = 1        q =  2+2^-10: point (315.853, 315.853) lambda_min = +7.051452868349443e-02 (radius 9.2e-94)  float agrees: True
+    (1 + r^2/R^2)^(p/2), p = 0.5, R = 16       q =        0: point (0, 0) lambda_min = +2.810319210199998e+00 (radius 2.3e-94)  float agrees: True
+    (1 + r^2/R^2)^(p/2), p = 0.5, R = 16       q =        2: point (3.8635e-16, 6.30957) lambda_min = -4.189832807397914e-01 (radius 3.2e-92)  float agrees: True
+    (1 + r^2/R^2)^(p/2), p = 0.5, R = 16       q =  2+2^-10: point (3.8635e-16, 6.30957) lambda_min = -4.206094243667464e-01 (radius 3.2e-92)  float agrees: True
+    (1 + r^2/R^2)^(p/2), p = 0.8, R = 1        q =        0: point (0, 0) lambda_min = +2.810319210199998e+00 (radius 2.3e-94)  float agrees: True
+    (1 + r^2/R^2)^(p/2), p = 0.8, R = 1        q =        2: point (250.891, 250.891) lambda_min = +6.114953579168990e-01 (radius 1.1e-93)  float agrees: True
+    (1 + r^2/R^2)^(p/2), p = 0.8, R = 1        q =  2+2^-10: point (250.891, 250.891) lambda_min = +6.097202648233655e-01 (radius 1.1e-93)  float agrees: True
+    (1 + r^2/R^2)^(p/2), p = 0.8, R = 16       q =        0: point (0, 0) lambda_min = +2.810319210199998e+00 (radius 2.3e-94)  float agrees: True
+    (1 + r^2/R^2)^(p/2), p = 0.8, R = 16       q =        2: point (3.06889e-16, 5.01187) lambda_min = -3.676638779396024e-01 (radius 5.7e-92)  float agrees: True
+    (1 + r^2/R^2)^(p/2), p = 0.8, R = 16       q =  2+2^-10: point (3.06889e-16, 5.01187) lambda_min = -3.692666584903157e-01 (radius 5.7e-92)  float agrees: True
+    (1 + r^2/R^2)^(p/2), p = 1.0, R = 1        q =        0: point (0, 0) lambda_min = +2.810319210199998e+00 (radius 2.3e-94)  float agrees: True
+    (1 + r^2/R^2)^(p/2), p = 1.0, R = 1        q =        2: point (4.33492e-17, 0.707946) lambda_min = +7.476530660957015e-01 (radius 5.1e-86)  float agrees: True
+    (1 + r^2/R^2)^(p/2), p = 1.0, R = 1        q =  2+2^-10: point (4.33492e-17, 0.707946) lambda_min = +7.464694039144090e-01 (radius 5.1e-86)  float agrees: True
+    (1 + r^2/R^2)^(p/2), p = 1.0, R = 16       q =        0: point (0, 0) lambda_min = +2.810319210199998e+00 (radius 2.3e-94)  float agrees: True
+    (1 + r^2/R^2)^(p/2), p = 1.0, R = 16       q =        2: point (3.06889e-16, 5.01187) lambda_min = -3.415360080093116e-01 (radius 5.7e-92)  float agrees: True
+    (1 + r^2/R^2)^(p/2), p = 1.0, R = 16       q =  2+2^-10: point (3.06889e-16, 5.01187) lambda_min = -3.431387885600248e-01 (radius 5.7e-92)  float agrees: True
+    (1 + r^2/R^2)^(p/2), p = 1.5, R = 1        q =        0: point (0, 0) lambda_min = +2.810319210199998e+00 (radius 2.3e-94)  float agrees: True
+    (1 + r^2/R^2)^(p/2), p = 1.5, R = 1        q =        2: point (0, 0) lambda_min = +8.103192101999981e-01 (radius 3.3e-94)  float agrees: True
+    (1 + r^2/R^2)^(p/2), p = 1.5, R = 1        q =  2+2^-10: point (0, 0) lambda_min = +8.093426476999981e-01 (radius 3.3e-94)  float agrees: True
+    (1 + r^2/R^2)^(p/2), p = 1.5, R = 16       q =        0: point (0, 0) lambda_min = +2.810319210199998e+00 (radius 2.3e-94)  float agrees: True
+    (1 + r^2/R^2)^(p/2), p = 1.5, R = 16       q =        2: point (2.4377e-16, 3.98107) lambda_min = -2.913044077289605e-01 (radius 1.8e-91)  float agrees: True
+    (1 + r^2/R^2)^(p/2), p = 1.5, R = 16       q =  2+2^-10: point (2.4377e-16, 3.98107) lambda_min = -2.928794682374711e-01 (radius 1.8e-91)  float agrees: True
+    A2 omega_2 = (1 + 4 r^2)^(2/5)             q =        0: point (0, 0) lambda_min = +2.810319210199998e+00 (radius 2.3e-94)  float agrees: True
+    A2 omega_2 = (1 + 4 r^2)^(2/5)             q =        2: point (250.891, 250.891) lambda_min = +6.115039188528522e-01 (radius 1.1e-93)  float agrees: True
+    A2 omega_2 = (1 + 4 r^2)^(2/5)             q =  2+2^-10: point (250.891, 250.891) lambda_min = +6.097288257593185e-01 (radius 1.1e-93)  float agrees: True
+    float/arb disagreements: 0
+D3. far field (TP-3(a) lemma: Du, D rho -> 0): lambda_min(M_(q,w)) -> 1 + c + p c - q c for power weights:
+    p = 0.0: q = 0: +2.8103, q = 2: -0.8103, q = 2+2^-10: -0.8121, q = 5/2: -1.7155, q = 3: -2.6206
+    p = 0.5: q = 0: +3.7155, q = 2: +0.0948, q = 2+2^-10: +0.0931, q = 5/2: -0.8103, q = 3: -1.7155
+    p = 0.8: q = 0: +4.2586, q = 2: +0.6379, q = 2+2^-10: +0.6362, q = 5/2: -0.2672, q = 3: -1.1724
+    p = 1.0: q = 0: +4.6206, q = 2: +1.0000, q = 2+2^-10: +0.9982, q = 5/2: +0.0948, q = 3: -0.8103
+    p = 1.5: q = 0: +5.5258, q = 2: +1.9052, q = 2+2^-10: +1.9034, q = 5/2: +1.0000, q = 3: +0.0948
+    a positive far-field cap for q = 2 + s needs p > q - 1 - gamma = 1 + s - gamma (0.447611 + s); A2's omega_2 has p = 4/5 (limit 0.637936 at q = 2)
+
+====================================================================================================
+Part E. The A2 energy matrices are the TP-4 packet matrices M_(q,w)
+====================================================================================================
+E1. sympy, generic potential: M_(q,w) - (A2 matrix) = 0 for
+    (B1) M = (2c + 1) I + sym DU + A: True
+    (B4) M_1 = I - sym DU + A: True
+    (B5) M_2 = (1 + c + V.D log omega) I - 2 sym DV + A: True
+    (B6) M_3 = (1 + c + V.D log omega) I - 3 sym DV + A: True
+    P95 M = (2c + 1) I + [[-2 chi22 - chi04, chi31], [chi31, chi22]]: True
+    P95 M_1 = [1 - t(c + e)/5] I + [[-chi04, chi13], [chi13, -chi22]] (W2, k = 1): True
+    P95 M_2 = [1 - c + (16/5) t(c + e)/(1 + 3t)] I + [[chi22 - chi04, (3 chi13 - chi31)/2], [., -2 chi22]]: True
+    i.e. (B1) is q = -1 unweighted (the Hdot^-1 low energy), (B4) q = 1 unweighted, (W2) k = 1 is q = 1 with omega_1, (B5) = (W2) k = 2 is q = 2 with omega, (B6) is q = 3 with omega
+    origin values lambda_min = c + 1 - q (for q <= 6.356): c + 2, c, c, c - 1, c - 2 = 3.810319, 1.810319, 1.810319, 0.810319, -0.189681 (A2 P95: c + 2, c and c - 1 at the center)
+E2. state131, inf over the Part D grid of lambda_min (FLOAT), arb value at the minimizing grid point, A2 floor:
+    (B1) M, q = -1              : inf +3.810319 at r = 0, theta = 0.000; arb +3.810319210199998e+00 (radius 2.8e-94); origin +3.810319; A2 floor +3.8000; packet cap minus floor +0.010319
+    (B4) M_1, q = 1             : inf +0.991150 at r = 708, theta = 0.785; arb +9.911502220050280e-01 (radius 5.3e-94); origin +1.810319; A2 floor +0.9000; packet cap minus floor +0.091150
+    (W2) M_1, q = 1, omega_1    : inf +0.630874 at r = 1e+03, theta = 0.785; arb +6.308743082783564e-01 (radius 4.6e-94); origin +1.810319; A2 floor +0.5000; packet cap minus floor +0.130874
+    (B5) M_2, q = 2, omega      : inf +0.611504 at r = 355, theta = 0.785; arb +6.115039188528522e-01 (radius 1.1e-93); origin +0.810319; A2 floor +0.5000; packet cap minus floor +0.111504
+    (B6) M_3, q = 3, omega      : inf -1.206625 at r = 447, theta = 0.785; arb -1.206625480644113e+00 (radius 1.1e-93); origin -0.189681; A2 floor -1.2500; packet cap minus floor +0.043375
+    A2's certified (B5) cover gives lambda_min(M_2) >= 293619/500000 = 0.587238 on the whole plane (P96); the grid infimum above is consistent with it. P99's M_2 >= 0.620899 I holds only for r >= 10^4 and does not cover r = 355
+total time 10.1 s

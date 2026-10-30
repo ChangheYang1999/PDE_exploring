@@ -1,0 +1,12 @@
+sources {'candidate016.json': 'a0345b4eee060ea8f6b0b6e21719cf606b04174704e0a26f516c645081208f42', 'candidate017.json': '7dc30181e2d29c8c9706cf396a1be2334f53b2a19ca00e4fad756ff98ec59114', 'old_basis.json': 'e0d92557a91310086ac226bd66a1e201e6da7695d60ef788772a191ba80d0c1a'}
+candidate016.json 1922 old shapes, branches 0..7; 252 legqs shapes = {1,2,3} x {9..15} x {0..11}, w 0, Q 4, R0 25
+candidate017.json 1922 old shapes, branches 0..7; 252 legqs shapes = {1,2,3} x {9..15} x {0..11}, w 0, Q 4, R0 50
+old shapes of 016 and 017 identical, and equal to the 1922 shapes of old_basis.json
+p_j: ['1.776194', '1.552389', '1.328583', '1.104778', '0.880972', '0.657166', '0.433361', '0.209555']
+8 nonintegral p_j, 28 nonintegral differences, 8 distinct nonzero fractional parts: ok
+R0 = 25: 84 pole coefficients (1) agree, pole order N + 4 exactly
+R0 = 50: 84 pole coefficients (1) agree, pole order N + 4 exactly
+R0 = 25: sin(17 theta) coefficient of r^17 = -10197.08736 = 4*19*18*(p_1 - 9 - 4/R0^2); no lower term; the sin(19 theta) part is O(r^19)
+R0 = 50: sin(17 theta) coefficient of r^17 = -10190.52096 = 4*19*18*(p_1 - 9 - 4/R0^2); no lower term; the sin(19 theta) part is O(r^19)
+d = 3 + gamma = 3.5523887689892675 < 4; new generators O(r^(2 p_j - 8))
+all checks passed

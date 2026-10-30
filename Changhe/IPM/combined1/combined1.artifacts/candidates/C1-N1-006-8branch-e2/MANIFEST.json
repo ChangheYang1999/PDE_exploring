@@ -1,0 +1,113 @@
+{
+ "id": "C1-N1-006-8branch-e2",
+ "created_utc": "2026-10-28T23:31:37Z",
+ "created_by_lane": "c1-n1",
+ "parent": {
+  "id": "C1-BASE-S131",
+  "path": "source/case4/IPM_case4.artifacts/checkpoints/state131_last_unverified/accepted_00000131.json",
+  "sha256": "7ff9415cbbe66f9d4a105aa4a999704e67157d8376c969b7561a1c01b1de57bc"
+ },
+ "chart": "PRIMARY",
+ "c_l_exact": "4076476460239181/2251799813685248",
+ "theta0": {
+  "reference": "state 131 exact Theta_0 (CONTRACTS section 2), preserved EXACTLY by the 10 leading-moment rows of branch 0",
+  "quarter_norm": 16.57100026302882
+ },
+ "a0": {
+  "value": null,
+  "status": "see sector/diag files"
+ },
+ "B0n_status": "EXACT (center row pivoted exactly; verified in rational arithmetic in finalize_exact)",
+ "basis": {
+  "generator_count": 2140,
+  "n_free": 2140,
+  "n_fixed": 0,
+  "branches": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "angular_max_m": 79,
+  "radial_max_k_canonical": 82,
+  "legqs_multiscale_functions": 0,
+  "radial_max_k_note": "k = largest monomial degree m+h in the canonical form r^(2k)(1+r^2)^(p-k); C1-N1-002..004 manifests wrote 25 (the T1 value) which was wrong for the new blocks (c1-n4 N4-044/N4-048): their correct values are 72 (002), 82 (003), 42 (004)",
+  "description": "LOSS: NORM-A2-E2 proxy squared = 2^18(||F||^2 + (20/21)||rF||^2) + 2^14||grad F||^2 + ||omega D^2 F||^2 on 0.02<=r<=1e4 (radial Gauss 16/panel x midpoint 200), 60 GN steps from C1-N1-003 (FrF-optimized eight-branch candidate), last accepted objective 1.14e9"
+ },
+ "coefficient_files": [
+  {
+   "name": "e2_j7_n4_d012_mid200_fromFrF_exact.json",
+   "sha256": "9a09b1a2b54d08f9edbb21d9c83acc21be67e32e3b5334a9115130df5d7f6d3e",
+   "format": "c1-n1 generator list JSON (m, j, spec, coef exact rational string, coef_float); n_free/n_fixed",
+   "exactness": "all coefficients exact rationals; pivot coefficients solved exactly (flint fmpq_mat), the others binary64 values"
+  }
+ ],
+ "evaluator_code": [
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_exact.py",
+   "sha256": "de23cda3313f4a4e2dede0f20c69911f2fa11bc50de82fa331bfd576eb38470a"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_eval.py",
+   "sha256": "9980c574701ce533057f4df04da7575f672cd858ede7757949c795d214d8b9f4"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_polar.py",
+   "sha256": "f07d09053af9106b87109c39dbc497130bb711d5d71dbd91e2682b6f01bafb15"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_origin.py",
+   "sha256": "134d6bb2530ecc84b4604e726685ac04a3553fed7a79cbacebad983dd629a4a7"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_opt.py",
+   "sha256": "af2c69f2d0fb38de93d3ae7eb57f0d72d853fd5a285585a6dd6aae7518cdc214"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_opt2.py",
+   "sha256": "e0a36811a9b9295a0df3bfa0d70d9223d62c08293026353d91b28840a110a1ac"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_farpart.py",
+   "sha256": "a59cfb28ccaeef3bd75304660152bfffce5e5c84d65e174be3004fef80b331d9"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_hminus1.py",
+   "sha256": "cb01d01d95286b2d3a241a6045b7e8df8590ecfd0ea79e4d3a78a5fabbc4b98b"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_tail.py",
+   "sha256": "68d32f5b818d37470b0632e33307bace0498dd5957bbae9cc1c44ab36cd7a4dc"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/optimization/run_from_d2.py",
+   "sha256": "e01cd03bb00b35a6ad34aa2e6dc8307c06dbf6b2378b762b78b2236d43c23a6c"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/optimization/run_e2.py",
+   "sha256": "12424752a5294354f91f6df01a61efe288a9403e7ab7617d32f20f4c99879dd9"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/optimization/diag2.py",
+   "sha256": "419f9ba9a9ce1026141a6398e487a983ca9d76d067a98c21217dda43bb8639db"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/optimization/candA_setup.py",
+   "sha256": "c0b6950e8ab274043f7e3c95976422b179f99a8b880ad4a144bc3b10dbb24033"
+  }
+ ],
+ "sector_table": {
+  "name": "sector_table.json",
+  "sha256": "a009b68b5b562391659c2389628668dbc7dcc4a6478a4c74203caf4d09341629"
+ },
+ "loss": {
+  "value": 1140000000.0,
+  "definition": "LOSS: NORM-A2-E2 proxy squared = 2^18(||F||^2 + (20/21)||rF||^2) + 2^14||grad F||^2 + ||omega D^2 F||^2 on 0.02<=r<=1e4 (radial Gauss 16/panel x midpoint 200), 60 GN steps from C1-N1-003 (FrF-optimized eight-branch candidate), last accepted objective 1.14e9",
+  "label": "LOSS"
+ },
+ "notes": "Controlled comparison: the state-131-descended eight-branch family (C1-N1-003 basis: 860 T1 generators plus new blocks with 4 Legendre functions, branches 1..7) optimized on the NORM-A2-E2 raw proxy (with ||rF||_2 as the Hardy stand-in for H) for 60 Gauss-Newton steps from the C1-N1-003 coefficients. Exact constraints as C1-N1-003 (center, Theta_0, descendants q=1 of branches 0,1,2 zero, exact stationary leading moments of branches 1..7). EXACT sector table: (h,0) h<=7, (0,1), (1,1), (2,1) zero; first survivor (3,1) at -2.7904 quarter 4562.7 (full 9125.4), then (8,0) 17596.2 (invariant), (4,1) 1.655e5. FLOAT diagnostics (diag2.py; radial Gauss 32/panel x midpoint 200 on 0.02<=r<=8356.47 + exact far parts): G0 17.85, G1 163.96, P2 7461.2, H 10.105 (lowest of all candidates: the slowly decaying sectors are gone), X3 proxy 24076, E2 proxy 24599, sup|F| 20.2; (B-L2): theta_inner 9.25, kappa_inner 14.12 -> fails badly; weak probe pairing 5.676; R_nec(2^-18) 0.144. a0 = 4.664 (moved from 10.300). Assessment: starting from the state-131 family with abruptly imposed stationary moments never recovers a good inner region within affordable step budgets (compare C1-N1-005 from the d2 warm start: G0 1.56, G1 7.7, P2 379, sup|F| 1.5). NOT a closure candidate. || diag2 FLOAT summary (rule radial Gauss 32/panel x midpoint 200, 0.02 <= r <= 8356.47): G0 17.8497 (far part F2 9.28e-08), G1 163.959, P2 7461.24, rF 47.0732, H 10.1053, X3raw 24075.6, sup|F| 20.2; first surviving sector exponent -2.7904449240429297 full-circle 9125.36; (B-L2) theta_inner 9.251, kappa_inner 14.12, margin -22.56."
+}

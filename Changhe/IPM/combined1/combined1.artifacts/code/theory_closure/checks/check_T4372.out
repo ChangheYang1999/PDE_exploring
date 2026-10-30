@@ -1,0 +1,38 @@
+PASS A1 nu = 2 - 4/(a+1)
+PASS A2 1/4 + 1/(2a-2) = (d+4)/(4(d+2))
+PASS A3 1/4 + 1/(a-3) = (d+4)/(4d)
+PASS A4 radial integrals of |h|^2 r and |y h| r at d = 1/2
+PASS A4 radial integrals of |h|^2 r and |y h| r at d = 1824676646553933/4076476460239181
+PASS A4 radial integrals of |h|^2 r and |y h| r at d = 2
+PASS A5 lam^2 b^2 R^4 = H^(4/(d+4)) lam^nu b^nu
+PASS A6 lam b^2 R^4 = H^(4/(d+4)) lam^(d/(d+4)) b^nu
+PASS A7 eliminated moment = Csharp beta^theta H^(1-theta)
+PASS A8 D0 = (d+4)J/(4d) equals (d+2)/d C0 with C0 = (d+4)J/(4(d+2))
+PASS A9 split bound A R^2 + B R^-d: critical point, convexity, min = Csplit beta^theta H^(1-theta)
+PASS A10 int_disk y^2 = pi R^4/4
+PASS A11 int_0^(2pi) |sin| = 4 and int_R^oo r^(2-a) dr = R^-d/d at d = 1/2
+PASS A12 pointwise maximizer on [-M, M] (exact, grid of 801 rational points per case, 3 cases)
+PASS B1 d = 1 - 1/c = 1824676646553933/4076476460239181
+  theta = 1824676646553933/9977629567032295  nu = 19955259134064590/18130582487510657
+  Jnu            in [3.881723940658062035679633, 3.881723940658062035679634], width < 1.87e-60
+  C0             in [1.763392688289059058889597, 1.763392688289059058889598], width < 1.71e-60
+  Csharp         in [9.155134741153639269902061, 9.155134741153639269902062], width < 1.62e-59
+  Csplit         in [9.423825890966201403965220, 9.423825890966201403965221], width < 9.96e-60
+  Csharp/Csplit  in [0.971488103354059961363087, 0.971488103354059961363088], width < 2.88e-60
+PASS B2 Jnu in (3.881723940658062035679, 3.881723940658062035680)
+PASS B3 C0 in (1.763392688289059058889, 1.763392688289059058890)
+PASS B4 Csharp in (9.155134741153639269902, 9.155134741153639269903) (T4-372 digits)
+PASS B5 Csplit in (9.423825890966201403965, 9.423825890966201403966) (T4-371 digits)
+PASS B6 Csharp/Csplit in (0.971488103354059961363, 0.971488103354059961364), so Csharp < Csplit
+PASS B7 Jnu Gamma formula agrees with direct quadrature of |sin|^nu (FLOAT, 1e-20)
+  mu = 8/((d+2)(d+1)d) = 5.044227099069317
+PASS B8 mu < 5.04423 (T4-351 value)
+  d=0.447611 H=1.0 beta=0.001: ||h||^2/beta^2 = 1.0, moment/(Csharp beta^theta H^(1-theta)) = 1.0
+PASS C1 extremizer norm and moment by 2D quadrature at d = 0.447611 (FLOAT, 1e-8)
+  d=0.5 H=3.0 beta=0.2: ||h||^2/beta^2 = 1.0, moment/(Csharp beta^theta H^(1-theta)) = 1.0
+PASS C1 extremizer norm and moment by 2D quadrature at d = 0.5 (FLOAT, 1e-8)
+  d=2.0 H=0.7 beta=1.0: ||h||^2/beta^2 = 1.0, moment/(Csharp beta^theta H^(1-theta)) = 1.0
+PASS C1 extremizer norm and moment by 2D quadrature at d = 2.0 (FLOAT, 1e-8)
+  Gaussian test ratios at the campaign d: ['0.26916745', '0.26916745', '0.26916745', '0.26916745']
+PASS C2 Gaussian test functions satisfy (1) with ratio < 1 (FLOAT diagnostic)
+summary: 26 checks, ALL PASS

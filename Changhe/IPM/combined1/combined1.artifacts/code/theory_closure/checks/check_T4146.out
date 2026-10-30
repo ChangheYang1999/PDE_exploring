@@ -1,0 +1,35 @@
+T4-145 (9): W L0 W^-1 g = -g_u - d0 g_v + (alpha_v + B p(v)) g                 OK
+(D xi).grad_xi = d_u + (2c - 2) d_v in u = log xi_y, v = log(xi_x/xi_y)        OK
+|Jacobian| = exp(2u + v); |xi|^2 = exp(2u)(1 + exp(2v))                        OK
+4 |xi|^(2q) Jacobian = omega^2 (factor 2 for four quadrants)                   OK
+T4-145 (11): -d0 phi' + (alpha_v + B p) phi = sigma phi                        OK
+phi rates: (alpha_v - sigma)/d0 at -oo and (alpha_v + B - sigma)/d0 at +oo     OK
+T4-146 (7): |symbol U|^2 = xi_x^2/|xi|^2 in [0, 1]                             OK
+T4-146 (16): (L h)_y(0) = a0 c[h] with c[h] = d_y U2[h](0)                     OK
+T4-146 (19): critical point polynomial of (d - s)^2 s(1 + s)                   OK
+ceiling slope: d/da (1 + c - c a)/(1 + a) = -(1 + 2c)/(1 + a)^2                OK
+s_star in [0.3095637514930080716254353, 0.3095637514930080716254353]
+H(c - 1) in [1.130235638840663324815776, 1.130235638840663324815776]
+s_star in (0, c - 1) and quadratic changes sign on (0, c - 1) (unique interior maximum) OK
+H(c - 1) < 57/50 (outward)                                                     OK
+grid maximum of (d - s) sqrt(4 pi s(1 + s)) below the formula value            OK
+grid maximum (FLOAT) 1.13023563696336
+input data/T4127_combined_cover.json sha256 bd5a33163064e077c0b145f27837c853762651dfe0f3ab85dedf35dfa6a6e0f1
+A = 1 + 1/c exactly and A < 7/4                                                OK
+cell [l, h], e: ratio with exact H (outward lower end), ratio with 57/50, old ratio with B(l) (sqrt(8 pi) beta^2/(1+l))
+  [0, 1/4], e = 1/4: 1.24494059013953  1.23427738878511  0.0998716
+    cell [0, 1/4] fails the ceiling (ratio > 1, outward)                       OK
+  [1/4, 1/2], e = 1/2: 1.97982465740109  1.96286700565809  0.189313
+    cell [1/4, 1/2] fails the ceiling (ratio > 1, outward)                     OK
+  [1/2, 3/4], e = 3/4: 3.1888173960126  3.16150444449871  0.377353
+    cell [1/2, 3/4] fails the ceiling (ratio > 1, outward)                     OK
+  [3/4, 1], e = 1: 5.36351426896143  5.31757454053565  0.832451
+    cell [3/4, 1] fails the ceiling (ratio > 1, outward)                       OK
+  [1, 5/4], e = 5/4: 9.89821225069578  9.81343179521546  2.23155
+    cell [1, 5/4] fails the ceiling (ratio > 1, outward)                       OK
+  [5/4, 3/2], e = 3/2: 22.8290866817244  22.6335503244453  9.40193
+    cell [5/4, 3/2] fails the ceiling (ratio > 1, outward)                     OK
+  [3/2, A], e = 7/4: 165.639488180384  164.220748018243  393.749
+    cell [3/2, A] fails the ceiling (ratio > 1, outward)                       OK
+minimum ratio (exact H) 1.24494059013953
+all checks PASS (21 of 21)

@@ -1,0 +1,38 @@
+(a) margins d_j - b (lower bounds, rounded down to 6 digits)
+candidate | d_j > | TB-sharp | sharpw | graded
+005 | 0.02436463 | 2.43608e-2 | 2.43617e-2 | 2.39074e-2
+007 | 0.004769166867 | 4.76537e-3 | 4.76631e-3 | 4.31199e-3
+008 | 0.0363233974 | 3.63196e-2 | 3.63205e-2 | 3.58662e-2
+009 | 0.016967603955 | 1.69638e-2 | 1.69647e-2 | 1.65104e-2
+010 | 0.022479506978 | 2.24757e-2 | 2.24766e-2 | 2.20223e-2
+012 | 0.018641021006 | 1.86372e-2 | 1.86381e-2 | 1.81838e-2
+013 | 0.00199234339 | 1.98855e-3 | 1.98949e-3 | 1.53517e-3
+014 | 0.00198301351067 | 1.97922e-3 | 1.98016e-3 | 1.52584e-3
+015 | 0.001232449584356253 | 1.22865e-3 | 1.22959e-3 | 7.75277e-4
+016 | 0.001470360924 | 1.46656e-3 | 1.46751e-3 | 1.01318e-3
+017 | 0.001671830698 | 1.66803e-3 | 1.66898e-3 | 1.21465e-3
+018 | 0.001655825792 | 1.65203e-3 | 1.65297e-3 | 1.19865e-3
+019 | 0.001661806967 | 1.65801e-3 | 1.65895e-3 | 1.20463e-3
+020 | 0.001855374677 | 1.85158e-3 | 1.85252e-3 | 1.39820e-3
+PASS every margin positive
+PASS smallest graded margin is 015: 7.75277e-4 < m < 7.75278e-4
+PASS D_delta = 1 - c(q - delta) equals 5c - 1 exactly
+PASS 1 - c q equals 4c exactly
+(c) beta_cap > b needs r_sep < Rmax(b) and E < Emax(b); upper bounds of the intervals, b rounded down
+  check of T4-351: 85020 r_low^(q+1)/sqrt(-2q-2) < 9.27594793268E-11 (T4-351: < 9.28e-11)
+PASS T4-351 cap below 928/10^13
+  TB-sharp b >= 3.7929e-6   Rmax < 12244.190  Emax < 19.076327  133/Emax > 6.97199
+  sharpw   b >= 2.8495e-6   Rmax < 13761.777  Emax < 20.100578  133/Emax > 6.61672
+  graded   b >= 25/54684    Rmax < 1728.4988  Emax < 7.9416068  133/Emax > 16.7472
+PASS graded: Emax < 7.95
+PASS sharpw: Emax < 20.11
+PASS TB-sharp: Emax < 19.09
+PASS graded: Rmax < 1730
+PASS sharpw: Rmax < 13765
+PASS 85020/sqrt(2 pi) < 33919
+  TB-sharp E H_max < 33919 Emax(b) < 647049.92
+  sharpw   E H_max < 33919 Emax(b) < 681791.50
+  graded   E H_max < 33919 Emax(b) < 269371.36
+PASS 1/33917 < 2.9484e-5
+(d) eta > 16958.5, K < 1/33917 = 2.9483739717545774e-05
+ALL PASS 12 checks

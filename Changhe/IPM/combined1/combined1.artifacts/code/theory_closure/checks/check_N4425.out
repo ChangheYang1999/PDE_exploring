@@ -1,0 +1,84 @@
+PASS generic n=1: div A_Fn = F_n (A_r = 0, no radial flux)
+PASS generic n=1: r^2 Delta psi = (u_yy - n^2 u) sin(n theta), u_y = r u_r
+PASS generic n=1: theta integral of the d integrand
+PASS generic n=1: theta integral of the p integrand
+PASS generic n=1: theta integral of the a integrand
+PASS generic n=1: theta integral of the b integrand
+PASS generic n=1: theta integral of the Q integrand
+PASS generic n=1: theta integral of the A2 integrand
+PASS generic n=1: square expansion of r(F_n + Delta psi)
+PASS generic n=1: r (r u_rr + u_r) = u_yy
+PASS generic n=3: div A_Fn = F_n (A_r = 0, no radial flux)
+PASS generic n=3: r^2 Delta psi = (u_yy - n^2 u) sin(n theta), u_y = r u_r
+PASS generic n=3: theta integral of the d integrand
+PASS generic n=3: theta integral of the p integrand
+PASS generic n=3: theta integral of the a integrand
+PASS generic n=3: theta integral of the b integrand
+PASS generic n=3: theta integral of the Q integrand
+PASS generic n=3: theta integral of the A2 integrand
+PASS generic n=3: square expansion of r(F_n + Delta psi)
+PASS generic n=3: r (r u_rr + u_r) = u_yy
+PASS generic n=5: div A_Fn = F_n (A_r = 0, no radial flux)
+PASS generic n=5: r^2 Delta psi = (u_yy - n^2 u) sin(n theta), u_y = r u_r
+PASS generic n=5: theta integral of the d integrand
+PASS generic n=5: theta integral of the p integrand
+PASS generic n=5: theta integral of the a integrand
+PASS generic n=5: theta integral of the b integrand
+PASS generic n=5: theta integral of the Q integrand
+PASS generic n=5: theta integral of the A2 integrand
+PASS generic n=5: square expansion of r(F_n + Delta psi)
+PASS generic n=5: r (r u_rr + u_r) = u_yy
+PASS n=1: FLOAT Rn^2 = Qn + 2n^2(b-p) + n^2(a+d): 9.1082061098123662483 vs 9.1082061098123662483 (rel diff 0.0)
+PASS n=1: FLOAT ||A_Fn||^2 = Qn/n^2
+PASS n=1: FLOAT ||r Delta psi||^2 = n^2 (a + d) (integration by parts in y)
+PASS n=1: FLOAT int r^2 F_n Delta psi = n^2 (b - p) (no integration by parts)
+PASS n=1: FLOAT quadrature d = pi * exact t-formula 7.1560301481399456731 (rational)
+PASS n=1: FLOAT quadrature a = pi * exact t-formula 2.2155392109266659465 (rational)
+PASS n=1: FLOAT quadrature p = pi * exact t-formula 0.1143796639522423116 (rational)
+PASS n=1: FLOAT quadrature b = pi * exact t-formula -0.020647045151854927393 (rational)
+PASS n=1: FLOAT quadrature Q = pi * exact t-formula 0.0066901689539491066691 (rational)
+PASS n=1: exact Rn^2/pi from the t-formulas is >= 0 and equals the quadrature of ||r(F_n + Delta psi)||^2
+PASS n=3: FLOAT Rn^2 = Qn + 2n^2(b-p) + n^2(a+d): 449.25765205976651053 vs 449.25765205976651053 (rel diff 2.25e-29)
+PASS n=3: FLOAT ||A_Fn||^2 = Qn/n^2
+PASS n=3: FLOAT ||r Delta psi||^2 = n^2 (a + d) (integration by parts in y)
+PASS n=3: FLOAT int r^2 F_n Delta psi = n^2 (b - p) (no integration by parts)
+PASS n=3: FLOAT quadrature d = pi * exact t-formula 48.530953581947040359 (rational)
+PASS n=3: FLOAT quadrature a = pi * exact t-formula 1.3926120838908164098 (rational)
+PASS n=3: FLOAT quadrature p = pi * exact t-formula 0.0035110660293354388666 (rational)
+PASS n=3: FLOAT quadrature b = pi * exact t-formula 0.00048420456621020968043 (rational)
+PASS n=3: FLOAT quadrature Q = pi * exact t-formula 0.000044573562053739870568 (rational)
+PASS n=3: exact Rn^2/pi from the t-formulas is >= 0 and equals the quadrature of ||r(F_n + Delta psi)||^2
+PASS n=5: FLOAT Rn^2 = Qn + 2n^2(b-p) + n^2(a+d): 150.00687416668464613 vs 150.00687416668464613 (rel diff 0.0)
+PASS n=5: FLOAT ||A_Fn||^2 = Qn/n^2
+PASS n=5: FLOAT ||r Delta psi||^2 = n^2 (a + d) (integration by parts in y)
+PASS n=5: FLOAT int r^2 F_n Delta psi = n^2 (b - p) (no integration by parts)
+PASS n=5: FLOAT quadrature d = pi * exact t-formula 5.8774695128806440107 (rational)
+PASS n=5: FLOAT quadrature a = pi * exact t-formula 0.12227811529052602119 (rational)
+PASS n=5: FLOAT quadrature p = pi * exact t-formula -0.00039028615666013920997 (rational)
+PASS n=5: FLOAT quadrature b = pi * exact t-formula -0.00012999117351806118254 (rational)
+PASS n=5: FLOAT quadrature Q = pi * exact t-formula 0.0001687132482914284617 (rational)
+PASS n=5: exact Rn^2/pi from the t-formulas is >= 0 and equals the quadrature of ||r(F_n + Delta psi)||^2
+PASS D: source result.json present, sha256 7e093982... equals the extract
+PASS D: extract fields equal the source result.json
+PASS D: mode_001.json sha256 and residual endpoints equal the extract
+PASS D: mode_003.json sha256 and residual endpoints equal the extract
+PASS D: raw 017 identity 7dc30181...
+PASS D: sixteen distinct odd frequencies 1, 3, ..., 31 (one dual trial each)
+PASS D: every strict quotient floor |p_n|/sqrt(d_n) is positive
+PASS D: sum of the sixteen squared floors equals H_lower_square_exact (formula (1))
+PASS D: H_strict_lower_exact = 307209799380023711068567013529/(5 10^29)
+PASS D: HL^2 < sum, so H(017) > HL by (1)
+PASS D: 0.614419598760 < HL < 0.614419598761
+  H(017) > 0.614419598760047 (rounded down); sum of squared floors in [0.377511443340457, 0.377511443340458]
+PASS D n=1: the mode record dual floor equals the result floor
+PASS D n=1: residual-trial enclosure 0.3759840488468 < H(F_1) < 0.3759983211623 is nonempty
+PASS D n=1: the separate dual-trial floor 0.3759840488468 is below the residual upper (consistency of two valid bounds)
+  n=1: width U - L = 0.000014272315415 (rounded up), relative 0.00003796; dual floor minus residual lower 0.000000000000047364
+PASS D n=3: the mode record dual floor equals the result floor
+PASS D n=3: residual-trial enclosure 0.3718015564841 < H(F_3) < 0.3718071978901 is nonempty
+PASS D n=3: the separate dual-trial floor 0.3718015564842 is below the residual upper (consistency of two valid bounds)
+  n=3: width U - L = 0.000005641405906 (rounded up), relative 0.00001518; dual floor minus residual lower 0.000000000000089788
+PASS D: HL lies inside the T4-484 conditional interval (0.6144195987, 0.6165956396) (consistency)
+PASS D: the source records complete H upper and E2 / 017<007 as OPEN
+checks 79 failures 0
+RESULT PASS

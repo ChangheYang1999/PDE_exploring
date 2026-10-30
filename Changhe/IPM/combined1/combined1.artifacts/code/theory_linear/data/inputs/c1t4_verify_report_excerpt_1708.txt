@@ -1,0 +1,32 @@
+1852	## T4-175: Independent sharp weak span for candidate005
+1853	
+1854	Date: 2026-10-29T02:36:49.127840+00:00.
+1855	Claim: The candidate005,a=6/5 rational span probe gives a weighted correction-distance bound above0.02436463.
+1856	Method: Rebuild fields from canonical potential coefficients through the separate T4 polar loader; combine the general polynomial transport modes before squaring; use exact angular gradient cross terms and rational W-moments, with2048-bit Arb arithmetic. Bound the gradient supremum by a separate dyadic mean-value subdivision.
+1857	Result and verdict: CONFIRMED. Pairing, M and C overlap all peer enclosures. Independent H bound 1999843/100000000, 34 cells, yields strict necessary lower bound 6091157959/250000000000, hence0.02436463. This does not adopt the faulty rounded scalar fields identified in T4-173 and does not certify the other33 rows.
+1858	Output SHA256: 3704c54dae47583889ae23f95454805b1ccd96138e81cccf5f5098ff81890924. Real elapsed time 99.978011s. Reproduction: research/sharp_weak_form_audit/code/reconstruct.py --candidate C1-N1-005 --a 6/5.
+2774	## T4-290: Both Opus reviews of the localized high-row ceiling accepted
+2775	
+2776	Date: 2026-10-29T06:12:17.747866+00:00.
+2777	Claim: T1 R1-032 and T2 REVIEW_T4_277 confirm T4-277 and its scope.
+2778	Method: Read both complete reviews and compare their Plancherel identity, cubic maximum and integer bounds with the frozen proof. Check T2's additional T4L2 remark by maximizing the conditional scalar high-row cap.
+2779	Result and verdict: CONFIRMED; T4-277 is AUDITED. T2's extension is also CONFIRMED under the explicitly unchanged high-row margin and norm-domination hypotheses. It does not establish those hypotheses for a new localized PDE framework. T1's annular decimal truncations are handled in T4-286; the underlying formulas are accepted.
+2780	Evidence: research/localized_high_margin/reviews/ACCEPTANCE.md and MANIFEST.json; T1 review SHA256 423d9f062f9fcfb1b802088a552b4b376d53df3a43a17d0cb7d1c3d01e858055; T2 review SHA256 b0b915ab06b17e558ef0ba0d6b2095b9202a5dc7ba452a17300bfa8b28d278b8. Existing Opus5.5 file collaboration; actual API model identity is unobservable.
+3087	## T4-328: H12 sector specification corrected
+3088	
+3089	Date: 2026-10-29T07:42:48.987342+00:00.
+3090	Claim: THEORY_FINAL draft12 uses global indices e=1-l delta-2q but requires the three nonautomatic cancellations(1,0),(2,0),(3,0).
+3091	Method: Exact exhaustive enumeration at exponents>=-1 and>=-2, plus the radial L2 integrability test. Compare the new definition with the old h-index by l=h+1.
+3092	Result and verdict: REFUTED as an indexed specification. The correct nonautomatic L2 list is(2,0),(3,0),(4,0). The three-versus-seven counts are CONFIRMED. Repair lines77,104,134,189,583,841 of the frozen draft. Existing eleven-sector candidate certificates include all required cancellations, so no exclusion changes.
+3093	Evidence: research/theory_final_h12_audit/PROOF.md SHA256 56730ae0043f5d0b5a00147a8963f0673254bd93d74c11c7319b65f45555a536; exact result SHA256 7e0d7290abec09ac54041c332a3e0d1e7e47f3481cadec77b0c37c23f9034815; source SHA256 5e4f4b003ed15fbed67ba4e6e32bafe2c4dd23b8b48bf4a3b42cddcb8d23daa6.
+4493	## T4-485 | 2026-10-29T16:59:10.529710+00:00 | T2 reciprocal sharpw maximum review and report repair
+4494	
+4495	Claim. T2 CHECK_T4_479_SHARPW_MAX_T2 correctly confirms the fixed-norm self-map maximum and the old-radius improvement identified in T4-479. The current coordinator g=0 repair and007failure factor are valid in that scope.
+4496	
+4497	Method. Read complete review,17-check program/result/log and corrected framework text; freeze six files, including current report raw2248f2c58de2d8b7b635de1ffa649223e72c1665afff5946cd922c4b4c8e3b75. Standalone proof and residual-budget clarification before checker. Bind peer input hashes to frozen16:30report and T2framework. Compare exact polynomial coefficients, optimum and old-radius rates, directed pi bound and contraction square, slope, other-s derivative and complete accepted007forcing factor. No foreign program or candidate integration runs.
+4498	
+4499	Result.57checks pass in0.012183052022010088seconds. Freshstage2026-10-29T16:58:30.601603+00:00 passes14bindings. At fixed s=1/5184,w=(32768,1048576), eta*=40722836401/193491763200000 and r*=201799/149299200 are the unique maximum/radius of r(mu-Ar), subject to the stated nonbinding contraction and slope conditions. Exact c_s r*<.02746 gives contraction<.01373 and slope>.67254. Oldradius1351/1000000 already admits2.1046e-4. The accepted007same-norm forcing lower bound misseseta*by morethan3594606. Currentreportg=0repair accepted.
+4500	
+4501	Verdict. CONFIRMED T2 reciprocal review and finite report repair. The maximum is of this sufficient estimate at fixed weights and s. It is not a largest theorem tolerance across incomparable norms, an optimum true inverse constant, a necessary PDEcondition or a candidate closure. The zero-defect correction g=0 waives no background, origin, hyperplane, range/domain or residual membership hypothesis. The s0=97/496250 arithmetic is correct but belongs to a different norm. Distance exclusions unchanged.
+4502	
+4503	Evidence. PROOFcbf0d53a80d0b33cf833eddafc2bb388792e4cb02f7c88ee4a122d2d04ba2e9a; ERRATA_v01a3f11c869a829e58e2d376a7ffc834d8e3d047f6abeaa4ba9d03d1b89524bf97; result46eeefeaa1fdb35a0e6698c5573decc0550f8ae9de509a4e740a9b0a830cdc05; checker737d53d93179672108e1fb89772c9dc60d0b37ce3b37e17b8626a00a5777c513. Frozen T2reviewdae1f3895fc984cfe32ff0418087eeb988bc0b363b5f088ea346c6d65385b057. Ownpreparationusedincorrectfrozenfilenameandwasarchivedbeforechecker; no numericalfailure. The clarification applies the radius-dependent Lipschitz and slope estimates after the residual self-map budget. Existing Opus5.5collaboration, actualprovideridentityunobservable.

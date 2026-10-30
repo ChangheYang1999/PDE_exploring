@@ -1,0 +1,85 @@
+{
+ "id": "C1-N1-004-4branch-l2fw",
+ "created_utc": "2026-10-28T22:07:50Z",
+ "created_by_lane": "c1-n1",
+ "parent": {
+  "id": "C1-BASE-S131",
+  "path": "source/case4/IPM_case4.artifacts/checkpoints/state131_last_unverified/accepted_00000131.json",
+  "sha256": "7ff9415cbbe66f9d4a105aa4a999704e67157d8376c969b7561a1c01b1de57bc"
+ },
+ "chart": "PRIMARY",
+ "c_l_exact": "4076476460239181/2251799813685248",
+ "theta0": {
+  "reference": "state 131 exact Theta_0; preserved EXACTLY by 10 linear moment constraints",
+  "quarter_norm": 16.57100026302882
+ },
+ "a0": {
+  "value": 16.708459310666832,
+  "status": "FLOAT from exact coefficients; free parameter, moved from 10.300"
+ },
+ "B0n_status": "EXACT (center row pivoted exactly; verified in rational arithmetic)",
+ "basis": {
+  "description": "the 860 case4 T1 generators plus branches 1,2,3 for m = 10..19, 10..29, 10..39 with 4 Legendre radial functions each (four-branch architecture, all harmonics of E_1, E_2, E_3 representable)",
+  "generator_count": 1100,
+  "branches": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "angular_max_m": 39,
+  "radial_max_k": 25
+ },
+ "coefficient_files": [
+  {
+   "name": "x_j3_exact.json",
+   "sha256": "898981d8e2e86fd31a0373cd102afcef8295e2c90e62ebe5bc3a3de34031b528",
+   "format": "c1-n1 generator list JSON",
+   "exactness": "all coefficients exact rationals; 101 pivots solved exactly"
+  }
+ ],
+ "evaluator_code": [
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_exact.py",
+   "sha256": "40e195c165b3252fba7a3b5cdf04c1555c57e361c39dd5f31c91e250f3ae19f7"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_eval.py",
+   "sha256": "5158c9a01dda9b5967427220231fc5e8b79f4553627462762689fa2fc097a8a7"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_polar.py",
+   "sha256": "f07d09053af9106b87109c39dbc497130bb711d5d71dbd91e2682b6f01bafb15"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_origin.py",
+   "sha256": "134d6bb2530ecc84b4604e726685ac04a3553fed7a79cbacebad983dd629a4a7"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_opt.py",
+   "sha256": "d7c8e3f1bb09da2f32bee97b91908c707a939efde5c26728493bdb1f96c4894d"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/lib/ipm_opt2.py",
+   "sha256": "39110a74428d878aad2729a89b0034e5bb019fb190fb764cc16252940b999b75"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/optimization/run_e2.py",
+   "sha256": "12424752a5294354f91f6df01a61efe288a9403e7ab7617d32f20f4c99879dd9"
+  },
+  {
+   "path": "RUN_ROOT/numerics_N1N2/numerics/optimization/candA_setup.py",
+   "sha256": "c0b6950e8ab274043f7e3c95976422b179f99a8b880ad4a144bc3b10dbb24033"
+  }
+ ],
+ "sector_table": {
+  "name": "sector_table.json",
+  "sha256": "5a3b44bbd4441881f2763cf8ed3edee4bb2bf48b4720670b8a63b140347510d3"
+ },
+ "loss": {
+  "value": 17900000000.0,
+  "definition": "LOSS: 2^18 ||F||_2^2 + 2^14 ||grad F||_2^2 + ||omega D^2 F||_2^2 (NORM-A2-E2 without the H term, i.e. the X_s proxy of c1-t4 T4-019) on 0.02 <= r <= 1e4, radial Gauss 32 per unit log panel, angular midpoint 80; 80 Gauss-Newton steps from the min-norm projection of state 131",
+  "label": "LOSS"
+ },
+ "notes": "FOUR-branch candidate for the L^2 framework of c1-t4 T4-019 (c1-coord request 21:34Z). Exact linear constraints (101 rows): center; Theta_0 (10); leading moments of branches 1,2,3 for all m <= 10j+9 equal to the exact stationary potentials C_1, C_2, C_3 (90). No descendant constraints (not needed when only exponents >= -1 are forbidden). EXACT sector table: (1,0), (2,0), (3,0) EXACT-ZERO (all harmonics); first surviving sector (4,0) at exponent -1.2381 with quarter norm 172.84 (the invariant of the four-branch family; it has exponent < -1 so F is in L^2); then (0,1) 2464.9, (5,0) 131.4, (1,1) 48870, (6,0) 289.2, (2,1) 3.42e5, ... (large unconstrained descendants: the optimizer uses them as mid-field freedom). FLOAT (midpoint 80, 0.02 <= r <= 1e4): P2 = 7310.5, G1 = 177.3, G0 = 252.2, rF = 6.28e5, sup|F| = 11.04. G0 is at the four-branch L^2 floor: the (4,0) sector alone gives ||F||_{L^2(r>R)} = 501 R^(-0.238) (exact formula), i.e. 290 from R = 10 on. ANSWER to the request: exact cancellation of (1,0),(2,0),(3,0) with all harmonics is feasible (60 extra blocks, here 240 generators), but the L^2 framework then has a residual floor of order 10^2 from the (4,0) sector; it needs the same enlarged branch structure as the E_2 framework (see numerics_v01 section 3 for the floors with N branches). NOT a closure candidate."
+}

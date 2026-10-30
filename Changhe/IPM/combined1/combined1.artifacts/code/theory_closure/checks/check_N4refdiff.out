@@ -1,0 +1,19 @@
+PASS A1 exact delta = 1824676646553933/4076476460239181: 2/5 < delta < 1/2, so 4-5delta > 2-delta and 1-5delta < -1
+PASS A2 density exponents: 1-l delta > -1 for l <= 4; 1-l delta-2k < -1 when l >= 5 or k >= 1 (l < 40, k < 6)
+PASS A3 u = (-chi_xyy, chi_xxy) = (psi_xy, -psi_xx) with Lap psi = rho; Lap V1 = g_xy, Lap V2 = -g_xx, div V = 0
+PASS A4 symbols (xi1 xi2, -xi1^2)/|xi|^2 = (-R1R2, R1^2); squared vector symbol xi1^2/|xi|^2 <= 1
+PASS A5 (cX+W).grad rho - rho = div((cX+W) rho) - (2c+1) rho for div W = 0
+PASS A6 leading coefficient of five sample generators is 1 for q = 0 and 0 for q > 0 (any m, w, n, R)
+PASS A7 tau_R = t/(1+(R^2-1)v); r dr = dt/(2v^2); r^2 = t/v; poles a = 99, 624, 2499, 9999
+PASS A8 derivative identity behind the J_k recursion
+PASS B1 FLOAT: J_1 = 2F1(1,b+1;b+2;-a)/(b+1) and the recursion to k = 5 (60 digits) match quadrature (40 digits); max rel. diff 1.24e-35
+     forward recursion run at 30 digits: max relative error 2.67e-25 (the recursion is used inside outward balls by c1-n4)
+     ratios f_d r^(1+delta)/(-100 delta (2-delta)^2) and f_1 r^(delta-1)/(-(4-delta)^2(2-delta)) at r = 1e3, 1e5, 1e7:
+       0.999955588643  0.999999902197
+       0.999999995535  0.99999999999
+       1.0  1.0
+PASS B2 FLOAT: difference density decays like r^(-1-delta) (L2), single generator like r^(1-delta) (not L2)
+     ||g||_2^2 = pi int f_d^2 r dr = 22600.390049725876773
+     (P - Pg)/r at r = 0.5, 2, 20, 200: 5.33207122377989e-14, 5.33207122377989e-14, 5.33207122377989e-14, 5.33207122377989e-14
+PASS B3 FLOAT: P - Pg = A r with A = 5.33207122378e-14 (spread 2.22e-29), so V = U[g] in this example
+11 checks, ALL PASS

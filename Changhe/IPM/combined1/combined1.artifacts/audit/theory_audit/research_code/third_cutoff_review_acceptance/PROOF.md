@@ -1,0 +1,11 @@
+# Acceptance of the independent third-cutoff review
+
+This is an acceptance record for the complete standalone argument in ../finite_tail_surgery/PROOF.md, Sections2 and3. Its exact spaces, hypotheses, canonical velocity, cutoff construction and argument remain there. Section1 was already independently audited as Opus R2/R3; it is not being presented as a new review by its author.
+
+T2 read the proof twice and reconstructed the raw sector maps through its independent constructor. The frozen review confirms the changed coefficient after the first cutoff, its preservation by the second, the exact third potential and Poisson stream, the complete residual convolution through the endpoint, and the original leading profile and endpoint coefficient. All three references007,013,014 have only sector(1,2) remaining at or above gamma-4 after the three cutoffs. The first subsequent exponent is(10,0), so epsilon0=epsilon1=9delta-4>0.
+
+The endpoint theorem T4-335 was independently accepted as T4-350. Therefore the previously conditional application T4-339 now has both dependencies audited. Every stationary real S1 C1 correction k of the three-times repaired reference with H_(gamma-4)(k) finite has the stated endpoint expansion and limiting angular coefficient bound. No faster weighted correction can be stationary. These statements concern the repaired reference and the specified weighted class. They are not lower bounds on the whole-plane L2 distance. The cutoff radii and quantitative growth/remainder constants remain uncomputed.
+
+The original proof's historical phrases saying T4-335 is OPEN are superseded by this dated acceptance record; its mathematical formulas are unchanged. Keeping the original immutable avoids invalidating its source-bound computations. T2's new R2-R4 extensions and its numerical remainder discussion are separate claims and are not included in this acceptance. In particular a short list of remainder sectors cannot certify the complete remainder or show which constant limits a quantitative inequality.
+
+Source artifacts and their SHA256 values are in verification/manifest.json. No foreign source was executed. The configured collaborator is Claude Opus5.5 in the existing T2 lane; API model identity is not directly observable here.

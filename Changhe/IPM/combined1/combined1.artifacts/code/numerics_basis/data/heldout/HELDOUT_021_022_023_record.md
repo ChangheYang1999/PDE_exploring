@@ -1,0 +1,7 @@
+# Record of the held-out sets of C1-N1-021, 022, 023 (written 2026-10-29T09:13:13Z, AFTER their launches at 08:32Z (021, 022) and 08:46Z (023); the sets were announced in
+# the N1/N2 numerics worker team notes 08:33Z (021, 022) and numerics_v10 section 4 (023, 08:47:14Z); every held-out probe below belongs to the public 25-pair register or to the
+# N4-160 family (public since 03:5xZ), so no new probe was introduced after launch).
+021 (tag legqs25p50_heldin14_gpu_m16): rows = 67 (as 016) + 14 held-in (19:137 21:138 23:139 25:140 27:141 29:142 31:143 19:521 21:522 23:523 25:524 27:525 29:526 31:527);
+   HELD OUT: the 25 registered probes (19:600 19:900 19:1200 19:1800 19:2400 23:600 23:900 23:1200 23:1800 23:2400 25:600 25:900 25:1200 25:1800 25:2400 29:600 29:900 29:1200 29:1800 29:2400 31:600 31:900 31:1200 31:1800 31:2400 ) and the N4-160 probes n = 19..31 at K0 in {0,8,32} (19:9 19:17 19:41 21:10 21:18 21:42 23:11 23:19 23:43 25:12 25:20 25:44 27:13 27:21 27:45 29:14 29:22 29:46 31:15 31:23 31:47 ).
+022 (tags legqs25_m16to23_gpu_m16_s12, legqs25_m16to23_gpu_m16): rows = 67 (as 016); HELD OUT: the 25 registered probes and the N4-160 probes n = 19..31 at K0 in {0,8,32,128,512} (19:9 19:17 19:41 19:137 19:521 21:10 21:18 21:42 21:138 21:522 23:11 23:19 23:43 23:139 23:523 25:12 25:20 25:44 25:140 25:524 27:13 27:21 27:45 27:141 27:525 29:14 29:22 29:46 29:142 29:526 31:15 31:23 31:47 31:143 31:527 ).
+023 (tags legqs25p100_m9to15_gpu_m16_s12, legqs25p100_m9to15_gpu_m16): rows = 67 (as 016); HELD OUT: as 022.
