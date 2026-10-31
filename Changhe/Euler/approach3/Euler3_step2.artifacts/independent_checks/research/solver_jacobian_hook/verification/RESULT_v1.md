@@ -1,0 +1,16 @@
+# Strategy 2 audit result
+
+
+## V420 | 2026-10-29T19:07:47.348877+00:00 | Strategy 2 correction order, disabled behavior and recorder defects
+
+Claim. The Strategy 2 solver copy applies the complete-Jacobian correction at the intended point, preserves the disabled solver, and records the matrix it actually uses.
+
+Method. Capture both solvers, both workers and the posted diffs. Remove only the declared hook, its timing additions and docstrings, then compare solver abstract syntax. Execute four tiny deterministic CPU fixtures, linear and nonlinear, each with fresh and reused Jacobians, with the hook disabled. Execute one enabled fixture against an independently assembled damped normal solve. Execute the periodic recorder with a fixed nonzero additive correction, following research/solver_jacobian_hook/PROOF.md. No production worker or actual degree-6 smoke is run.
+
+Result. All 30 controls pass, including controls that reproduce defects. Removing the declared additions yields the original solver syntax. The four disabled fixtures have bitwise equal final vectors and equal non-timing output. The enabled hook receives the parameter-column-replaced J_cw before the normal equations, applies one correction, and passes J_c to the solver and recorder. The independently computed and observed next vector is [0.5149965719527623,-0.5884398996944454]; the fixture tolerance is 2e-15. The step is accepted after one trial and the cost is 0.028361109048811887.
+
+The recorder still labels its input J_cw even when that input is J_c. With linearization_complete_periodic=true, lin_every=1 and every_n_records=1, its iteration-1 complete record adds the correction again: for J_c=J_cw+C it records J_cw+2C under the J_c label. The fresh gD_scaling and complete-gradient descriptions also still say J_cw. The published trajectory omits t_jac_post, although full solver history contains it. An unknown step_jacobian string silently selects J_cw. The ordinary final-record path independently rebuilds J_cw and adds C once, so the reproduced double correction is specifically the periodic path. It does not alter the normal step already assembled in this fixture.
+
+Verdict. CONFIRMED for correction ordering, the finite enabled step, the four disabled regression fixtures, and the reproduced metadata and periodic-recording defects. REFUTED for generally correct Strategy 2 matrix labels and periodic complete records in this version. OPEN for actual degree-6 equality, the planned GPU smoke, timings and optimization outcomes. Record the actual Jacobian kind, apply the correction only to J_cw, reject unknown kinds, and retain the correction timing before admitting the Strategy 2 records.
+
+Evidence. artifacts/strategy2_hook_audit_v1/audit.json, SHA256 02e94d8391033ac0c7f0caad7b76a3a4769496f4cb22b839442e6950d6286fff; completed 2026-10-29T19:04:59.255507+00:00, elapsed 1.269362260 seconds. Solver copy SHA256 4f7b99bf2b022ad4cea6857a3d213a28138aa2f6da56831714f7110b7810187c; worker copy SHA256 7d37c21fc42914e8ca06ba47bff38feaaedb57b8b2f937dfa19fba2dfe3e0419. All other captured hashes and fixtures are retained in the artifact. The P2 worker was stopped for 3.214160578 seconds and resumed at 19:04:59.779951Z.

@@ -1,0 +1,138 @@
+{
+ "run": "runs/smk_lagJ_gpu_L6_cl0.4500_om1.0000_free",
+ "checkpoint": {
+  "it": 11,
+  "lam": 0.02985984,
+  "geometry_base": {
+   "c_l": 0.45,
+   "omega": 1.0,
+   "kappa": 2.2222222222222223,
+   "p0": 4.444444444444445
+  },
+  "z_opt_sha256": "bc78a11fe45a77325dbbb621c7ad1ce88a1e387bd686d334e1f798358b5f03e6",
+  "rng_state_present": true,
+  "history_len": 11
+ },
+ "resume_lines": [
+  "2026-10-29T04:57:48Z RESUME from checkpoint: 0 starts completed, current=0, resumed 1x",
+  "2026-10-29T04:57:52Z start 0: resuming at iteration 11 with lam 2.986e-02; geometry base {'c_l': 0.45, 'omega': 1.0, 'kappa': 2.2222222222222223, 'p0': 4.444444444444445}"
+ ],
+ "final": {
+  "file": "start_000.pt",
+  "iterations": 20,
+  "status": "max_iter",
+  "n_records": 20
+ },
+ "record_at_checkpoint_iterate": {
+  "it": 10,
+  "cost": 2.5414697904873424e-07,
+  "lam": 0.02985984,
+  "z_sha256_12": "bc78a11fe45a",
+  "J_age": 0,
+  "J_fresh": true,
+  "rho": 0.9929341759833237
+ },
+ "first_resumed_record": null,
+ "checks": {
+  "z_bitwise": true,
+  "lam_continuity": true,
+  "iteration_counter": false,
+  "J_refreshed_on_resume": false,
+  "geometry_same": true,
+  "O1_at_resume_point_rel_diff": 0.0,
+  "O1_within_1e-12": true
+ },
+ "costs": [
+  2.584969079440978e-07,
+  2.584969079440978e-07,
+  2.5613897635587767e-07,
+  2.5613897635587767e-07,
+  2.5507708536087753e-07,
+  2.5507708536087753e-07,
+  2.54620471153252e-07,
+  2.54620471153252e-07,
+  2.543394743209879e-07,
+  2.543394743209879e-07,
+  2.5414697904873424e-07,
+  2.541026536968846e-07,
+  2.5356665093225096e-07,
+  2.5356665093225096e-07,
+  2.533710514842082e-07,
+  2.533710514842082e-07,
+  2.529509824364654e-07,
+  2.529509824364654e-07,
+  2.526580619345241e-07,
+  2.526580619345241e-07
+ ],
+ "J_ages": [
+  0,
+  1,
+  0,
+  1,
+  0,
+  1,
+  0,
+  1,
+  0,
+  1,
+  0,
+  0,
+  0,
+  1,
+  0,
+  1,
+  0,
+  1,
+  0,
+  1
+ ],
+ "rhos": [
+  0.9225307083059912,
+  null,
+  0.8654803544638461,
+  null,
+  0.949229308863624,
+  null,
+  0.9639026253944117,
+  null,
+  0.9822312698077733,
+  null,
+  0.9929341759833237,
+  0.0990083750894774,
+  0.9715773783418782,
+  null,
+  0.5111821060767809,
+  null,
+  0.7057004317494034,
+  null,
+  0.4651595535705189,
+  null
+ ],
+ "record_fields": {
+  "lag_jacobian": true,
+  "precision_mode": "dd_fp64jac"
+ },
+ "complete_gradient_records": 11,
+ "g_param_phys_example": {
+  "c_l": 0.025430949462261106,
+  "omega": 0.00011496716845333753
+ },
+ "params_prestep_present": true,
+ "initial_costs": [
+  2.724831834536661e-07,
+  2.5414697904873424e-07
+ ],
+ "lm_start_lines": [
+  "2026-10-29T04:52:37Z   LM initial cost 2.72483183453666103e-07 at the start iterate (self-consistent O1; G7 compares it with the checkpointed record on resume)",
+  "2026-10-29T04:57:54Z   LM initial cost 2.54146979048734235e-07 at the start iterate (self-consistent O1; G7 compares it with the checkpointed record on resume)"
+ ],
+ "ledger_resume_rows": [
+  {
+   "completed": 0,
+   "job_id": "smk_lagJ_gpu_L6_cl0.4500_om1.0000_free",
+   "kind": "resume",
+   "resumed": 1,
+   "ts": "2026-10-29T04:57:48Z"
+  }
+ ]
+}

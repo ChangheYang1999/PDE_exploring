@@ -1,0 +1,156 @@
+#!/usr/bin/env python
+"""scripts/refit_start_v2.py v2.2 (2026-10-29T22:5xZ; lead 22:41:03Z item 3 (a) to (c)): NO rescaling of the refit coefficients at construction (an amplitude change is not a symmetry of the quadratic equations; the worker's gauge row handles the amplitude; the explicit F normalization of the worker happens only AFTER optimization, worker_d6.py lines 925 to 931); entry O1 reported for the refit (rcond and rcond2 fits) and for the kept coefficients in two forms (raw vector; exact replay of the worker's fresh-entry path: phase rotation, then the target tail reduction and expansion and the parameter-coordinate conversion with the worker's own functions), each with the gauge-row part reported separately; the rcond2 fit carries the same rows (block energies, largest coefficients, relU per shell, far-field norm, O1); with --control the tool sets usable = false unless relU(refit) <= relU(kept) on every shell AND replayed entry O1(refit) <= O1(kept); no manual admission. v2.1 (59a5e34033d6f464) kept as refit_start_v2.py.v2_1_59a5e340.
+v2.1 (2026-10-29T22:4xZ; V493): (1) usable = block caps AND finite O1; the small-move control conditions (relU per shell <= kept on every shell and O1 <= kept) are a separate recorded flag control_pass, not claimed as enforced for a non-control target; (2) the second-cutoff fit (rcond2) gets the same diagnostics (block energies, relU per shell, far-field norm, O1) and is recorded beside the primary; (3) O1 of the refit and of the kept coefficients is computed on an exact replay of the worker's entry (phase alignment by Problem.phase_align, then the tail-constraint reduce/expand round trip, as lm_solve_free applies to a fresh start) and also on the raw vectors; (4) the worker does NOT F-normalize a fresh start (its entry projection is the phase alignment only; the far-field gauge enters the objective as a weighted row and the exact F-gauge projection is applied to the reported END state), so this tool F-normalizes the fitted coefficients itself before saving (z[:n_coef] /= ||F||), reporting the raw far-field norm and O1 before and after; v2.0 (da7d072d072df9b8) kept as refit_start_v2.py.v2_0_da7d072d.
+v2 (2026-10-29T22:3xZ; after the failed pilot (iii) refit): (a) exactly null columns of the field map are excluded from the fit and set to zero (the v1 division by column norms clamped at 1e-300 turned roundoff into 1e289 coefficients in the dead E l = 1 columns); (b) truncated-SVD regularization at --rcond (default 1e-8) with the dropped rank reported, and a second fit at --rcond2 (default 1e-6) for comparison; (c) sanity rules before writing: every block coefficient energy at most --energy-factor (10) times the source block energy and the largest coefficient at most 10 times the source largest, else the file is written with status UNUSABLE and a .UNUSABLE marker; (d) the self-consistent O1 of the start (Problem.objective_at + commit_aux) for the refit and for the kept coefficients at the target; (e) usable as the small-move control. v1 kept as scripts/refit_start.py.
+Offline REFIT start file (numerics 2026-10-29T21:3xZ note; lead 16:40:13Z item 3 (iii), (v): F2 refit pilots). The worker's param_init_mode 'refit'
+fails for free-parameter models (fit_field fits the two parameter slots as zeros, so TailConstraints.expand sees c_l = 0 and its constraint matrix is
+singular; see status/KNOWN_ISSUES.md). This tool does the refit outside the production worker and writes a start file the worker reads as an ordinary
+fresh start (init_from, keep_coefficients at the file's own parameters):
+  1. load the source start (coefficients z_s at (c_l_s, omega_s)); evaluate U_src = model_src.fields_grid(z_s)['U'] on the common model grid;
+  2. build the target model at (c_l_t, omega_t) with free parameters (same L, Nk, channels, R0); TailConstraints tcf of the target model;
+  3. fit U_src by src.optimization.transfer.fit_field in the tail-constrained coefficient coordinates with the PARAMETERS FIXED at the target:
+     expand_fixed(zr) = tcf.expand(cat(zr, [c_l_t, omega_t]))[:n_coef], n_red = tcf.n_red - 2 (column-scaled truncated-SVD least squares, unchanged);
+  4. report the fit residual, condition estimate, rank, the relative change of U on the training grid and per dyadic shell j = -4..8 (discrete sampling diagnostic: unweighted norms over the training-grid samples, V470), the
+     far-field norm of the fitted state; save z = cat(coefficients, [c_l_t, omega_t]) RAW (the worker applies its phase alignment and F-gauge
+     projection to every fresh start) with config (target parameters, free_params true), meta and the fit record.
+Usage: python scripts/refit_start.py <source start .pt> <c_l_t> <omega_t> <out .pt> [--device cuda:0] [--chunk 256]
+Writes <out .pt> (exclusive create) and <out .pt>.json (the fit record). Label of the pilot that uses it: FREE (the file is an initial condition, not a result)."""
+import os, sys, json, time, math, hashlib, argparse
+ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+sys.path.insert(0, ROOT)
+import torch
+torch.set_default_dtype(torch.float64)
+from src.equations.fields import Model
+from src.optimization.tail_constraints import TailConstraints
+from src.optimization.transfer import fit_field
+sha = lambda p: hashlib.sha256(open(p, "rb").read()).hexdigest()
+now = lambda: time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+DT = torch.float64
+
+
+def build(cfg, c_l, omega, free, dev):
+    return Model(L=cfg["L"], Nk=cfg["Nk"], m_parity=cfg.get("m_parity", "even"), R0=cfg.get("R0", 1.0), Nr=cfg.get("Nr"), c_l=c_l, omega=omega, free_params=free,
+                 channels=cfg.get("channels"), device=dev, extra_r=cfg.get("far_radii"))
+
+
+def fit_regularized(model, U_target, expand, n_red, chunk, rcond, log):
+    """fit_field's column-scaled least squares with (a) exactly null columns excluded and set to zero, (b) truncated SVD at rcond; returns (z, info)."""
+    from src.optimization.lm import jacobian_fwd
+    from src.equations.fields import alpha_of
+    dev = model.r.device
+    def to_full(zc):
+        return torch.cat([expand(zc), torch.tensor([model.c_l0, model.omega0], dtype=DT, device=dev)])
+    def field_flat(zc):
+        return model.fields_grid(to_full(zc), need_vort=False)["U"].reshape(-1)
+    z0 = torch.zeros(n_red, dtype=DT, device=dev)
+    J = jacobian_fwd(field_flat, z0, chunk=chunk)
+    alpha = alpha_of(model.c_l0)
+    w = ((1 + model.rho / model.R0 ** 2) ** alpha)[:, None] * (model.grid.w / (4 * math.pi))[None, :]
+    wv = w.expand(3, -1, -1).reshape(-1).sqrt()
+    Jw = J * wv[:, None]; bw = U_target.reshape(-1) * wv
+    cs = Jw.norm(dim=0); live = cs > 0                                                  # (a) exactly null columns excluded
+    n_null = int((~live).sum()); Jl = Jw[:, live] / cs[live][None, :]
+    sv = torch.linalg.svdvals(Jl.cpu())
+    sol = torch.linalg.lstsq(Jl.cpu(), bw.cpu()[:, None], rcond=rcond, driver="gelsd")   # (b) truncated SVD at rcond
+    zl = sol.solution[:, 0].to(dev) / cs[live]
+    zc = torch.zeros(n_red, dtype=DT, device=dev); zc[live] = zl
+    rank = int(sol.rank.item()) if sol.rank is not None and sol.rank.numel() else None
+    resid = float((Jw @ zc - bw).norm() / bw.norm().clamp_min(1e-300))
+    z = to_full(zc)
+    info = dict(rel_fit_residual=resid, cond_est=float(sv[0] / sv[-1].clamp_min(1e-300)), rank=rank, n_columns=int(n_red), n_live_columns=int(live.sum()), n_null_columns_excluded=n_null, rcond=rcond,
+                dropped_rank=(int(live.sum()) - rank) if rank is not None else None, method="column-scaled truncated-SVD least squares (gelsd) on the live columns; null columns set to zero (v2)")
+    log(f"fit (rcond {rcond:g}): rel residual {resid:.3e}, rank {rank} of {int(live.sum())} live columns ({n_null} null excluded), cond {info['cond_est']:.3e}")
+    del J, Jw, Jl
+    return z, info
+
+
+def main():
+    ap = argparse.ArgumentParser(); ap.add_argument("source"); ap.add_argument("c_l", type=float); ap.add_argument("omega", type=float); ap.add_argument("out"); ap.add_argument("--device", default="cuda:0"); ap.add_argument("--chunk", type=int, default=256); ap.add_argument("--rcond", type=float, default=1e-8); ap.add_argument("--rcond2", type=float, default=1e-6); ap.add_argument("--energy-factor", type=float, default=10.0); ap.add_argument("--control", action="store_true", help="small-move control: usable also requires relU(refit) <= relU(kept) on every shell and replayed entry O1(refit) <= O1(kept)")
+    a = ap.parse_args(); t0 = time.time(); dev = a.device
+    if os.path.exists(a.out):
+        raise FileExistsError(a.out)
+    S = torch.load(a.source, map_location="cpu", weights_only=False); scfg = dict(S["config"]); free_s = bool(S.get("free_params", False)); zs = S["z"].to(dev)
+    c_s, om_s = (float(zs[-2]), float(zs[-1])) if free_s else (float(scfg["c_l"]), float(scfg["omega"]))
+    msrc = build(scfg, c_s, om_s, free_s, dev)
+    with torch.no_grad():
+        U_src = msrc.fields_grid(zs, need_vort=False)["U"]
+    model = build(scfg, a.c_l, a.omega, True, dev); tcf = TailConstraints(model)
+    assert (model.n_coef == msrc.n_coef) and torch.equal(model.r, msrc.r), "the target model has another grid or coefficient count"
+    params = torch.tensor([a.c_l, a.omega], dtype=DT, device=dev); n_coef = model.n_coef
+    expand_fixed = lambda zr: tcf.expand(torch.cat([zr, params]))[:n_coef]
+    log = lambda m: print(time.strftime("%H:%M:%S", time.gmtime()) + " " + m, flush=True)
+    log(f"source {a.source} ({sha(a.source)[:16]}): ({c_s!r}, {om_s!r}), free {free_s}; target ({a.c_l!r}, {a.omega!r}); n_coef {n_coef}, reduced coefficients {tcf.n_red - 2}")
+    zfit_raw, info = fit_regularized(model, U_src, expand_fixed, tcf.n_red - 2, a.chunk, a.rcond, log)
+    zfit2_raw, info2 = fit_regularized(model, U_src, expand_fixed, tcf.n_red - 2, a.chunk, a.rcond2, log)
+    assert zfit_raw.numel() == n_coef + 2 and float(zfit_raw[-2]) == a.c_l and float(zfit_raw[-1]) == a.omega, (zfit_raw.numel(), float(zfit_raw[-2]), float(zfit_raw[-1]))
+    from src.optimization.problem import Problem
+    from validation.gates import PROD
+    prob_t = Problem(model, **PROD)
+    def fnorm(z_):
+        aT_, aS_, c_, o_ = model.unpack(z_); return math.sqrt(max(float(prob_t.tail_norm2(aT_, aS_, c_, o_)), 0.0))
+    zfit, zfit2 = zfit_raw, zfit2_raw                                                      # v2.2 (lead 22:41:03Z item 3 (c)): NO rescaling at construction
+    nF_raw_fit, nF_raw_fit2 = fnorm(zfit), fnorm(zfit2)
+    z_keep = torch.cat([zs[:n_coef], params])
+    def entry_replay(z_):
+        """exact replay of the worker's fresh-start entry: phase alignment, then the tail-constraint reduce/expand round trip (lm_solve_free project_start)."""
+        from src.optimization.param_map import ParamMap
+        pm = ParamMap(free=True); za = prob_t.phase_align(z_); zo = pm.reduce(tcf.reduce(za)); return tcf.expand(pm.expand(zo))
+    def O1_of(z_):
+        """self-consistent O1 = 0.5 |r|^2 with the gauge-row part 0.5 |r_gauge|^2 reported separately (the gauge rows follow the closure block: Problem.row_blocks()[-1])."""
+        prob_t.pivot = prob_t.choose_pivot(z_); prob_t.ensure_geometry(z_); r_, aux_ = prob_t.objective_at(z_); prob_t.commit_aux(aux_)
+        g0 = prob_t.row_blocks()[-1][1]; rg = r_[g0:]
+        return dict(O1=0.5 * float(r_ @ r_), gauge_part=0.5 * float(rg @ rg), n_gauge_rows=int(rg.numel()), O1_without_gauge=0.5 * float(r_[:g0] @ r_[:g0]))
+    O1 = {}
+    for nm, zz in (("refit", zfit), ("refit_rcond2", zfit2), ("keep", z_keep)):
+        try:
+            O1[nm + "_raw"] = O1_of(zz); O1[nm + "_entry_replay"] = O1_of(entry_replay(zz))
+        except Exception as e:
+            O1[nm + "_raw"] = dict(error=repr(e)); O1[nm + "_entry_replay"] = dict(error=repr(e))
+    log("self-consistent O1 at the target (O1 | gauge part): " + ", ".join(f"{k} {v['O1']:.4e} | {v['gauge_part']:.4e}" if isinstance(v, dict) and 'O1' in v else f"{k} {v}" for k, v in O1.items()))
+    info["rcond2_fit"] = info2; info["F_norm_raw_fit"] = nF_raw_fit; info["F_norm_raw_fit_rcond2"] = nF_raw_fit2
+    # (c) sanity rules: per-block energies and largest coefficients against the source
+    dd_s = msrc.unpack_all(torch.cat([zs[:n_coef], torch.tensor([c_s, om_s], dtype=DT, device=dev)]) if zs.numel() == n_coef else zs)
+    def block_check(zz):
+        dd_f = model.unpack_all(zz); bl = {}; ok_all = True
+        for b in ("A", "C", "B", "D", "E"):
+            es = float((dd_s[b] ** 2).sum()); ef = float((dd_f[b] ** 2).sum()); ms = float(dd_s[b].abs().max()) if dd_s[b].numel() else 0.0; mf = float(dd_f[b].abs().max()) if dd_f[b].numel() else 0.0
+            ok = (ef <= a.energy_factor * es + 1e-300) and (mf <= 10.0 * ms + 1e-300); ok_all = ok_all and ok
+            bl[b] = dict(energy_source=es, energy_refit=ef, energy_ratio=(ef / es if es > 0 else None), max_source=ms, max_refit=mf, ok=ok)
+        return bl, ok_all
+    blocks, usable = block_check(zfit); blocks2, usable2 = block_check(zfit2)
+    log("block energies refit/source (rcond %g): " % a.rcond + ", ".join(f"{b} {v['energy_ratio']:.3e}" if v['energy_ratio'] is not None else f"{b} n/a" for b, v in blocks.items()) + f"; caps ok {usable}")
+    log("block energies refit/source (rcond %g): " % a.rcond2 + ", ".join(f"{b} {v['energy_ratio']:.3e}" if v['energy_ratio'] is not None else f"{b} n/a" for b, v in blocks2.items()) + f"; caps ok {usable2}")
+    o_r = O1.get("refit_entry_replay") or {}; o_k = O1.get("keep_entry_replay") or {}
+    usable = usable and ("O1" in o_r) and math.isfinite(o_r["O1"])
+    with torch.no_grad():
+        U_new = model.fields_grid(zfit_raw, need_vort=False)["U"]; relU = float((U_new - U_src).norm() / U_src.norm().clamp_min(1e-300))      # the RAW fit reproduces U_src; the normalized state is the raw one scaled
+        U_new2 = model.fields_grid(zfit2_raw, need_vort=False)["U"]; relU2 = float((U_new2 - U_src).norm() / U_src.norm().clamp_min(1e-300))
+        U_keep = model.fields_grid(z_keep, need_vort=False)["U"]; relU_keep = float((U_keep - U_src).norm() / U_src.norm().clamp_min(1e-300))
+        shells = {}
+        for jj in range(-4, 9):
+            msk = (model.r >= model.R0 * 2.0 ** jj) & (model.r < model.R0 * 2.0 ** (jj + 1))
+            if msk.any():
+                d = (U_new[:, msk] - U_src[:, msk]).norm(); d2 = (U_new2[:, msk] - U_src[:, msk]).norm(); d0 = U_src[:, msk].norm().clamp_min(1e-300); dk = (U_keep[:, msk] - U_src[:, msk]).norm()
+                shells[str(jj)] = dict(rel_change_refit=float(d / d0), rel_change_refit_rcond2=float(d2 / d0), rel_change_keep=float(dk / d0), n_radii=int(msk.sum()))
+    control_pass = bool(all(v["rel_change_refit"] <= v["rel_change_keep"] for v in shells.values()) and ("O1" in o_r) and ("O1" in o_k) and o_r["O1"] <= o_k["O1"])
+    if a.control:
+        usable = usable and control_pass                                                      # v2.2: enforced by the tool for the control run (lead 22:41:03Z item 3 (a), (d))
+    log(f"control conditions (relU per shell <= kept on every shell AND replayed entry O1(refit) <= O1(kept)): {control_pass}; control mode {a.control}; usable {usable}")
+    Fn2 = fnorm(zfit) ** 2
+    log(f"fit: rel residual {info['rel_fit_residual']:.3e}, cond {info['cond_est']:.3e}, rank {info['rank']} of {info['n_live_columns']} live; relU(refit) {relU:.4e} (rcond2 {relU2:.4e}) against relU(keep) {relU_keep:.4e}; far-field norm of the fit {nF_raw_fit:.6f} (rcond2 {nF_raw_fit2:.6f}; kept {fnorm(z_keep):.6f}; not rescaled)")
+    log("per shell j: refit | refit rcond2 | keep: " + "; ".join(f"{j}: {v['rel_change_refit']:.3e} | {v['rel_change_refit_rcond2']:.3e} | {v['rel_change_keep']:.3e}" for j, v in shells.items()))
+    cfg = dict(scfg); cfg.update(c_l=a.c_l, omega=a.omega, free_params=True)
+    meta = dict(family="refit_start", source=os.path.abspath(a.source), source_sha256=sha(a.source), source_c_l=c_s, source_omega=om_s, target_c_l=a.c_l, target_omega=a.omega,
+                fit=info, relU_change_refit=relU, relU_change_keep=relU_keep, relU_by_shell=shells, F_norm2_fitted=Fn2, tool="scripts/refit_start_v2.py", tool_sha256=sha(os.path.abspath(__file__)),
+                blocks=blocks, blocks_rcond2=blocks2, caps_ok_rcond2=usable2, relU_change_refit_rcond2=relU2, usable=usable, control_mode=bool(a.control), control_pass=control_pass, O1_at_target=O1, F_norm_fit=nF_raw_fit, F_norm_fit_rcond2=nF_raw_fit2,
+                note="offline refit (scripts/refit_start_v2.py v2.2: null columns zeroed, truncated SVD at rcond with an rcond2 comparison carrying the same rows, block caps, NO rescaling at construction, O1 raw and on the worker fresh-entry replay with the gauge-row part separate) of the source velocity field into the basis at the target parameters with the tail constraints evaluated at the target parameters; coefficients as fitted, NOT rescaled (the worker's fresh-start entry applies the phase rotation and the tail and parameter maps only; the far-field gauge is a weighted row of the objective during the optimization, and the worker's explicit F normalization happens only AFTER optimization, worker_d6.py lines 925 to 931; V491). relU_change_* and relU_by_shell are DISCRETE SAMPLING diagnostics (unweighted Frobenius norms over the training-grid samples of the shell), not physical-volume L2 norms (V470); the raw fit quality does not establish the quality after the worker F-gauge projection", ts=now(), device=dev, torch=torch.__version__)
+    if not usable:
+        open(a.out + ".UNUSABLE", "w").write("refit start marked UNUSABLE by the sanity rules (block energy or largest coefficient above 10 x the source); do not use as a start\n")
+    torch.save(dict(z=zfit.detach().cpu(), config=cfg, free_params=True, meta=meta, kind=("refit start file (scripts/refit_start_v2.py v2.2; initial condition, not a result; coefficients not rescaled)" if usable else "UNUSABLE refit start (sanity rules failed)"),
+                    spec_diag_holdout=S.get("spec_diag_holdout"), two_family=S.get("two_family")), a.out)
+    rec = dict(meta, out=os.path.abspath(a.out), out_sha256=sha(a.out), seconds=time.time() - t0)
+    json.dump(rec, open(a.out + ".json", "w"), indent=1, default=str); log(f"DONE {a.out} sha256 {rec['out_sha256'][:16]}; usable {usable}; {rec['seconds']:.0f} s")
+
+
+if __name__ == "__main__":
+    main()

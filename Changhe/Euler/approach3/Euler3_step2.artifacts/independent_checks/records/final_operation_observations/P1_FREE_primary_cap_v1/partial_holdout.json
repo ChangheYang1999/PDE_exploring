@@ -1,0 +1,286 @@
+{
+  "started_utc": "2026-10-30T12:25:27.872787+00:00",
+  "complete": false,
+  "scope": "Partial independent momentum diagnostics on fixed full saved coefficients. Normalized volume holdouts, distinct from the training norm. No full Tier gate and no exact Euler solution claim.",
+  "input": "RUN_ROOT/verifier/artifacts/inputs/P1_FREE_segment4_current_v1",
+  "input_sha256": {
+    "BASIS.md": "74aa4cc730e54880b5602cd822235837f8527332e9cd491fbe892425673f8df8",
+    "coeffs.npz": "79a80c296ad985d8462bd27ea9436aba12be4e501c855519f5948f15a8eb0c1f",
+    "meta.json": "642c2e3f30bb4c7c7312a99d549278ccf9a349459a4914724dc2c6a0468d35ff",
+    "saved_full_vector.npz": "6673cfe69b52ac2a82267d68a8698e9b344b7f92fc4ba7069ccf3c650589925d"
+  },
+  "c_l": 0.44814413765532274,
+  "omega": 1.4068972013873298,
+  "R0": 0.3,
+  "leading_degree": 6,
+  "maximum_represented_degree": 15,
+  "coefficient_policy": "exact full exchange coefficients, no projection, refitting, phase alignment or rescaling",
+  "arithmetic": "U, DU, source evaluation and source projection are binary64. Stable linear evaluation and reconstruction of pressure from those binary64 source coefficients use long double (63 explicit mantissa bits). More accurate reconstruction does not bound the source or quadrature error.",
+  "source_sha256": {
+    "scripts/verify_holdout_v7_cpu.py": "c91ff671bc2f38fde920c246748f589c3e7bf00a9a54070e32d39a8265cf2dbd",
+    "independent/src/discrete_weight_derivative.py": "8c260295abcf71d07c430a03db21f69bdab393b8080954dc8f40c90f3c819c2a",
+    "independent/src/extended_grid.py": "d09cc3675ce2010a21122e6f518ae3a03c9d076fd693ac7b22f7b32eb8bd9436",
+    "independent/src/extended_pressure.py": "f8256a9feb2d89a9283f591ed38fe6ca4133a4e769c94ca2dd3008866cb44301",
+    "independent/src/extended_spatial.py": "6d1c2f5f6429700bff65fcf0102138cd5079451fd067b3759975a8b9952e0510",
+    "independent/src/extended_tail_map.py": "f2c2da9d55decd564452ffd7a36da72a1537c22666b0c7df36db6ceff53854e5",
+    "independent/src/free_space_pressure.py": "ebc818af933b8864aea04684f5a83a39410d53ceefe82dd40312d5688cf356af",
+    "independent/src/frozen_discrete_pressure.py": "d261c8988ff6787d3db05a1c813b9080015302bb2f7e1defe2ebfd561fc9fdad",
+    "independent/src/green_edge_grid.py": "3f58899f36bd7c298f7dacb61ddaeaef77af0c1f67c979b5f1b6479fa86a7fc8",
+    "independent/src/holdout_metrics.py": "154d7ba085b9a022d10e581c102806d03131978afa5ec636770a933ca715a777",
+    "independent/src/independent_diagnostics.py": "7e60fe8f9786c66a0239b165d230816ce62355b340b462ddaf6cdc5d3d11f1a6",
+    "independent/src/independent_linear.py": "1c5ac1aa665d4aa4402b7eaeddaa48af027823d81e57637e28f824320c8b5cae",
+    "independent/src/independent_linear_grid.py": "ac871342fb3d9f18f6514c1d5d80913e5cbe972d2a99ce1c26acbc2af24333ab",
+    "independent/src/mp_angular_recurrence.py": "4d52ebf13a6e67b8896c626157f68cf65e9cff00afd92b7a5f27987323ca54df",
+    "independent/src/mp_field.py": "fc98d6fa389066403405415801c1b4da47bfba86fefc23d7b1ea4123b6a6e82c",
+    "independent/src/objective_switches.py": "88be383ecfe402775f8ac8cf10895001a2d51dce8b2d9f6ec2e785eafb5d21fc",
+    "independent/src/origin_safe_green.py": "cf0777e6d2eb4302b601b826a66c115bb9005bb4768ecf2c2218f3fa6c822b78",
+    "independent/src/parameter_field.py": "9fcefa7411b2dd11f32ec95a6eab597850ab892da3c35b207eb98362c3b6aa0b",
+    "independent/src/partial_panel_green.py": "c39843946cf45a2693f468e0575851090e1795169ddc1a074c02d448f11f5ec6",
+    "independent/src/precise_grid_helpers.py": "9cae32a51d355ae0db288b343f71bc21e89b7e32f5a2aa5af0065209775f0a07",
+    "independent/src/pressure_split.py": "20765555d1f81097bf3cd234a6d0473065c7f4f2087eb74f22418a9ae8eb6906",
+    "independent/src/pressure_split_v2.py": "6c37f319d616e6cd50e64e381fd34b95234492cb27c733c4bcb3e590fceb30a1",
+    "independent/src/primary_exchange.py": "5de96b1696383bbdae70dabdcace2d06aacace0e52d70f00b7099bd4d535afca",
+    "independent/src/quadrature.py": "dc280a27bae215eb1854029b33b7fcc77c95b0782e4528404f36d5ad50a3710d",
+    "independent/src/radial_pressure.py": "b9692e1b59507a69250f93accf12c2f6911884b9b619be757bb98d39409793ec",
+    "independent/src/radial_pressure_v2.py": "3134506afc9fe36e348706e0bd7939cb1650da13b45875c4e304d70232752aa3",
+    "independent/src/radial_primary.py": "f0c9b1af2392c8f518d3929c078c3fff66fd1e8f6170920d9065afbbed8920b7",
+    "independent/src/reduced_field.py": "536fa3533128a28d89b1604ef0c19d986cdc3ed511a8d6f8cae9b81cde48685c",
+    "independent/src/solid_harmonics.py": "a4fb0fc356dfcf823d9da26c4acb7d99239aac1e08c8547c79103d20ee0812c8",
+    "independent/src/stable_linear.py": "ea17cd9ffb26209474cc3d53fae341822913e0c7b4d9966f6a96c8132faca710",
+    "independent/src/tensor_grid.py": "8f567addd2047edce7d009cb41b761b10b07ef47374dabe1d985b70993c4cdfe",
+    "independent/src/third_jets.py": "45275e1fb4b454cd3618b0a0f09664f04fb315530e4bf76e2ca7b87f78a25c10",
+    "independent/src/vectorized_jets.py": "17e96225f04db6ae9415ae575b6fa1190a60d7d926cb208cd762bf092626d046",
+    "independent/src/vorticity_grid.py": "c94561cc1c160c98ed92c750bb8abb0e506b9b51dd022a541552fb74badd75d5"
+  },
+  "prerequisites": [
+    {
+      "path": "RUN_ROOT/verifier/artifacts/tensor_grid_v1.json",
+      "sha256": "47b272336f2175298f8cd83c1ddda87b995753cae26284309267811f27cfe863"
+    },
+    {
+      "path": "RUN_ROOT/verifier/artifacts/independent_linear_qualification_v1.json",
+      "sha256": "4238f77abef053d968590b38be22a8cce74745cb77e0332ce77224f754112dc7"
+    },
+    {
+      "path": "RUN_ROOT/verifier/artifacts/precise_grid_helpers_v1.json",
+      "sha256": "46cbbfbee11eb7f0f67cce69e626a0d9b132ed8daf7767fa7a6f50567024893b"
+    },
+    {
+      "path": "RUN_ROOT/verifier/artifacts/holdout_metrics_qualification_v1.json",
+      "sha256": "ff8cd36eaf1320e79c14cc7680149032c17fcb59bc03364687df115f05ba9a27"
+    },
+    {
+      "path": "RUN_ROOT/verifier/artifacts/extended_tail_pressure_v1.json",
+      "sha256": "7287aaaecc1448ce1d6dc98a6bf8e3a11b1cf0adb5236a75d4e148743dc53499",
+      "scope": "Only leading_subtraction=True power and logarithmic branches. The raw logarithmic control failed and is not used by this holdout."
+    },
+    {
+      "path": "RUN_ROOT/verifier/artifacts/cpu_migration_v1.json",
+      "sha256": "c88aa72d85641edd5ec1f81f4d6e101acd3db9b98cade5770e56c5327f2afb8d"
+    }
+  ],
+  "seed": 13485487451393100992,
+  "holdout_angular": {
+    "n_mu": 42,
+    "n_phi": 84,
+    "phase": 0.2186544462666433,
+    "normalized_weight_sum": 1.0
+  },
+  "pressure_phase": 0.12992705140718683,
+  "zero_source_moments_imposed": false,
+  "tail_treatment": "On final interval [T,infinity), s=T/t: subtract the main-main leading power/log source, integrate it analytically, and quadrature the full-source remainder including B/D/E and subleading main terms. No enclosure is claimed for this quadrature remainder.",
+  "radial_refinement_plan": {
+    "path": "research/holdout_quadrature/verification/REFINEMENT_V4_PLAN.md",
+    "sha256": "dcb539271252bd00bc4b8514d56c2d549f7e18d2d24b0fa43e1eaa7aa613d568"
+  },
+  "remaining_full_validation": [
+    "centered-core balls and their refinement",
+    "dedicated axis sets with sin(theta)<0.05",
+    "origin point y=0",
+    "vorticity residual",
+    "origin Taylor audit",
+    "Poisson/source consistency",
+    "at least256 extended-precision far points per checkpoint",
+    "renormalized energy and helicity",
+    "continuous maximum and denominator certification"
+  ],
+  "levels": [],
+  "free_disk_bytes_at_start": 142588870656,
+  "device": "cpu",
+  "storage_policy": {
+    "plan": "research/holdout_quadrature/verification/COMPACT_CPU_V7_PLAN.md",
+    "plan_sha256": "62bb90ef228570f4475b328305a80bbf77201b0a8105f44da813fd9da5df52ed",
+    "parent_driver_sha256": "505bf371994cdb79ed71a447eca1c2c698776089924378fbbd9428b2734d08a9",
+    "serializer_sha256": "f9df782b3afd51aeff869a90fd5025352cab037a53ba71fbef41fee88c63a8c6",
+    "large_raw_arrays_retained": false,
+    "full_array_audit_requires_recomputation": true,
+    "source_batch_disk_cache": false,
+    "angular_disk_cache": false
+  },
+  "cpu_plan": {
+    "path": "research/holdout_quadrature/verification/FRESH_CPU_V6_PLAN.md",
+    "sha256": "89428786a1edbb35de1e4b9302cdadca21d1e5f8f3be7a06735749dfde85c822"
+  },
+  "field_device_provenance": "All field and pressure evaluations in this run use CPU 35 and one thread.",
+  "sampled_core": {
+    "method": "sampled r^3 mean_sphere |Omega|^2, broad log2 grid followed by25-point local log grid",
+    "broad_window": [
+      7.32421875e-05,
+      314572.8
+    ],
+    "broad_nodes": 129,
+    "broad_endpoint_maximum": false,
+    "refined_local_endpoint_maximum": false,
+    "r_core": 0.4494921230630044,
+    "score": 2.072111783033546,
+    "sampled_max_U": 1.5900121902842714,
+    "sampled_max_Omega": 17.87589583770666,
+    "sampled_y_star": [
+      -0.016815408141032134,
+      0.0022539123974422617,
+      0.2995198856970187
+    ],
+    "sampled_a_eff": 0.25158088011403934
+  },
+  "elapsed_seconds": 797.1526741520502,
+  "reference_core_radius": 0.4192773285352348,
+  "reference_core_policy": "externally supplied common radius",
+  "common_physical_reference_R0": 0.3,
+  "common_physical_reference_policy": "external common R0",
+  "radial_nodes_total": 768,
+  "holdout_points_total": 2709504,
+  "n_radial_per_domain": 12,
+  "field_witnesses": {
+    "path": "RUN_ROOT/verifier/artifacts/phase_iv_runs/d6_final_20261030_122331_P1_FREE_primary/holdout_field.npz",
+    "sha256": "65fe4f180e36c548d05d253eab2edbf4d2b94ff039052cd35305c5ceaa8b0a9a",
+    "stored_bytes": 39389,
+    "format": "diagnostic_array_witness_v1",
+    "arrays": {
+      "radii": {
+        "shape": [
+          768
+        ],
+        "dtype": "<f8",
+        "elements": 768,
+        "nbytes": 6144,
+        "C_order_bytes_sha256": "3dd27f930d8f1c5080e2f3d2942c44a7b3e4245492364c6f24b36a2377bf99f6",
+        "full_array_retained": true
+      },
+      "directions": {
+        "shape": [
+          3528,
+          3
+        ],
+        "dtype": "<f8",
+        "elements": 10584,
+        "nbytes": 84672,
+        "C_order_bytes_sha256": "da37b0b849b04ad45456020bc8497645afc3a7b364d2dd09a79498442e8b5862",
+        "full_array_retained": true
+      },
+      "angular_weights": {
+        "shape": [
+          3528
+        ],
+        "dtype": "<f8",
+        "elements": 3528,
+        "nbytes": 28224,
+        "C_order_bytes_sha256": "648333882fd9999c5ad323829ed8e9952f1199d45024b824cab2cf4435218f67",
+        "full_array_retained": true
+      },
+      "U": {
+        "shape": [
+          768,
+          3528,
+          3
+        ],
+        "dtype": "<f8",
+        "elements": 8128512,
+        "nbytes": 65028096,
+        "C_order_bytes_sha256": "ad78285e2b4de9a4627038326bfd23024bd243f091b232f745c574d387d0971c",
+        "full_array_retained": false,
+        "witness_count": 64,
+        "witness_order": "C flattened",
+        "sampling": "unique equally spaced integer indices including endpoints"
+      },
+      "DU": {
+        "shape": [
+          768,
+          3528,
+          3,
+          3
+        ],
+        "dtype": "<f8",
+        "elements": 24385536,
+        "nbytes": 195084288,
+        "C_order_bytes_sha256": "a314929bc2fc06818782d8eff3117fc4937e9d77819cd1e19d7b910ea5794206",
+        "full_array_retained": false,
+        "witness_count": 64,
+        "witness_order": "C flattened",
+        "sampling": "unique equally spaced integer indices including endpoints"
+      },
+      "linear": {
+        "shape": [
+          768,
+          3528,
+          3
+        ],
+        "dtype": "<f16",
+        "elements": 8128512,
+        "nbytes": 130056192,
+        "C_order_bytes_sha256": "ff24113a0c2b1dc392f52690d696c0bef9b707727e96c313ee5736552238905c",
+        "full_array_retained": false,
+        "witness_count": 64,
+        "witness_order": "C flattened",
+        "sampling": "unique equally spaced integer indices including endpoints"
+      },
+      "core_broad_radii": {
+        "shape": [
+          129
+        ],
+        "dtype": "<f8",
+        "elements": 129,
+        "nbytes": 1032,
+        "C_order_bytes_sha256": "504c19e853b5209d5e7266bb861f2fcb0f62edebd1f2a2c89965d6f567c91a42",
+        "full_array_retained": true
+      },
+      "core_broad_score": {
+        "shape": [
+          129
+        ],
+        "dtype": "<f8",
+        "elements": 129,
+        "nbytes": 1032,
+        "C_order_bytes_sha256": "5abdd61c181debbec5b47fefbc98fbc871a2c443547d1c93118d0d185b080b48",
+        "full_array_retained": true
+      },
+      "core_fine_radii": {
+        "shape": [
+          25
+        ],
+        "dtype": "<f8",
+        "elements": 25,
+        "nbytes": 200,
+        "C_order_bytes_sha256": "96e5d6b51e16a8e922d3e8503089e5f9c580715621011024976497d31eb274fc",
+        "full_array_retained": true
+      },
+      "core_fine_score": {
+        "shape": [
+          25
+        ],
+        "dtype": "<f8",
+        "elements": 25,
+        "nbytes": 200,
+        "C_order_bytes_sha256": "6e75d35e726cfd606eb21624d28ae88b0253919fc95c314eb4946d34cd018067",
+        "full_array_retained": true
+      }
+    },
+    "scope": "Large arrays are not retained. Their hashes bind the computed arrays but cannot reconstruct them or independently reproduce their norms. Recompute from preserved inputs and code for a full-array audit."
+  },
+  "partial_level": {
+    "index": 0,
+    "n_r_per_panel": 24,
+    "n_mu": 64,
+    "n_phi": 128,
+    "started_utc": "2026-10-30T12:38:45.025447+00:00"
+  }
+}

@@ -1,0 +1,13 @@
+# Small-move control validation
+
+Prospective validation of the completed S01 control at c=0.451, omega=1.01. This is a numerical observation about a saved initial condition, not an Euler solution or an existence claim. The statement and inactive-coordinate argument in ../PROOF.md apply unchanged.
+
+Freeze the primary checkpoint, source, producer record and current source files; require the record hashes to match before evaluation. Decode all five blocks using only the producer layout. Recompute energies and maximum absolute coefficients in extended arithmetic, compare to the producer rows at relative tolerance 1e-12, and apply the registered factors 10 to energies and largest coefficients. Check the inactive E columns exactly zero.
+
+Independently evaluate the source, raw fitted field and kept coefficients at the target parameters on each shell 0.3*2^j < r < 0.3*2^(j+1), j=-4,...,8, using normalized physical-volume weights. Use rules (4,18,40), phase .271934 and (8,32,64), phase .693157. Record all shell errors and refinement changes; do not identify these norms with the producer's unweighted training-grid norms. Recompute the angular F norm and the gauge contribution 5000*(sqrt(F_norm2)-1)^2. For raw and entry fields, compare gauge rows at relative 1e-9 or absolute 1e-10 to allow coefficient cancellation in the fitted tail.
+
+Replay the coefficient-only fresh-entry phase/tail/parameter operations through the bound worker functions; independently evaluate the resulting angular F norm. This is a check of entry vector operations and the gauge row, not an independent recomputation of the complete pressure-dependent O1. Check that all six reported O1 rows are finite, nonnegative and decompose into gauge plus nongauge at relative 1e-12. The second-cutoff fit has no saved coefficient vector and its actual numerical field and objective remain OPEN.
+
+A violated coefficient cap alone refutes admission under the registered control. No additional fit, optimization or full O1 calculation is required to establish this negative result. All evidence remains immutable, with actual elapsed times and source hashes.
+
+2026-10-29T23:19:58.821366+00:00 Implementation correction before completion: v1 stopped after 6.42 seconds at the KEEP-entry gauge comparison. The temporary ParameterField.coeff was updated but ExtendedGridField consumes ParameterField.arrays. v2 updates both representations and verifies each grid coefficient array against its intended field before evaluation. No tolerance, input, grid or scientific acceptance rule changed. Retain the failed v1 artifact and pause receipt.

@@ -1,0 +1,1 @@
+Evidence: ../../../artifacts/full_mp_fields_v1.json and its summary. Driver: ../../../scripts/verify_mp_fields.py. Reference implementation: ../../../independent/src/mp_field.py. See V010 in ../../../verification record for the verdict and limitations.

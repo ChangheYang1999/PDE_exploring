@@ -1,0 +1,7 @@
+# P1 segment-four curvature-width replay
+
+Prepared before execution. The previously independently computed reduced systems in V436 are the input. This check does not repeat the SVD or strengthen its floating-point accuracy claim. It closes the missing scalar conversion from those systems to the report's model widths.
+
+For each stored cutoff, recover the positive physical scales from D_i = sqrt(S_phys,ii/S_ii), then check the off-diagonal physical conversion and agreement of the scales across cutoffs. Solve the two-by-two reduced system by its explicit determinant formula. Verify its recorded eigenpairs and use sqrt(2 f O1/lambda) for f = 0.01 and 0.1, followed by division by the positive physical scales and the exact logarithmic conversion around the computed minimizer. The derivation and conditions are in ../PROOF.md. Widths concern an unconstrained quadratic model, not nonlinear profile values or a branch confidence region.
+
+Require relative error at most 1e-10 for internal scalar identities, at most 1e-4 when comparing the independently computed quantities with the lead's numerical reduced-system output, and at most 1e-12 for the quadratic rise. All evaluated quantities must be finite, and logarithmic endpoints must be positive or explicitly identified as undefined. Bind the original V436 result by its known hash and capture the lead's current width JSON before interpreting it. Compare the P2-to-P1 and P2-to-F2 stiff logarithmic widths from the completed independent records. No additional field, objective or pressure calculation is included.

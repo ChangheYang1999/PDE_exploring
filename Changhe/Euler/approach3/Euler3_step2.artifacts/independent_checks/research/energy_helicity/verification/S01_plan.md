@@ -1,0 +1,7 @@
+# S01 energy and helicity quadrature plan
+
+Registered 2026-10-29 before running the new integral driver. Evaluate the exact saved S01 coefficient field in long double, with the same parameter values. Integrate over concentric balls of radii R0 times 1, 4, 16, 256, 4096, 65536 and 262144. Use dyadic radial panels from R0/256 through the largest radius, including the origin-to-R0/256 panel. Compare 12 radial nodes per panel and 40x80 angular nodes with 24 radial nodes and 48x96 angular nodes. Angular phases are 0.347 and 0.617.
+
+Compute the represented leading velocity and vorticity at radius one on each angular grid. Keep its actual A=integral |F|^2 and K=integral F dot H. Report E(R)-A R^(3-2alpha)/(3-2alpha), and the separate finite-radius helicity with and without the analytic leading exterior K R^(2-2alpha)/(2alpha-2). Also report the sampled integral of |U dot Omega|. Do not replace A by exactly one. The finite-part correction for a gauge fixed at one is reported separately to expose the difference.
+
+The numerical controls integrate r^2/(1+r^2) on these same radial panels and compare its cumulative integral against R-arctan(R), using a stable finite-part form where appropriate. This primitive follows by writing r^2/(1+r^2)=1-1/(1+r^2). It checks radial weights and the cumulative subtraction. The field integrals are numerical observations, not rigorous error enclosures. The tail assumptions and quantitative bounds are in the parent PROOF.md; no numerical remainder constant is asserted here.

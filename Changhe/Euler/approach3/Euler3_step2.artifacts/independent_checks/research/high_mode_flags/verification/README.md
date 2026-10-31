@@ -1,0 +1,1 @@
+The argument is exact finite algebra. Campaign-specific coefficient and residual data will be recorded separately, with source hashes, in verification record and artifacts. A normalized-coefficient counterexample is not evidence that an actual saved state has unbounded growth.

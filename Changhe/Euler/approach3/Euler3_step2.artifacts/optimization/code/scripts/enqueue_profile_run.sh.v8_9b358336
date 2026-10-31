@@ -1,0 +1,64 @@
+#!/bin/bash
+# PROFILE run enqueue (Phase III, after 08:30:31Z; lead 02:59:34Z item 1, 03:13:16Z items 2 and 3; SPEC 7.3 (d); V601): ONE fixed-parameter run (label PROFILE,
+# FIXED, max_iter 40, 1800 s) at a displaced (c_l, omega) from the common base-state file starts/P1s4_end_base_state.pt (sha256 60df5e72844f8689...; bytes-equal to
+# the P1 s4 checkpoint z_full) through the worker's standard keep path (param_init_mode keep_coefficients; the eliminated tail coefficients follow the parameters at
+# the worker's entry). SHARE GATE (8.3: FIXED-CONTROL + PROFILE <= 15 per cent of the optimization GPU-hours): the run is enqueued only if, with the ledger
+# recomputed at launch (scripts/gpu_hours.py v4.3) and r = the caps of PROFILE/FIXED jobs already pending or running (V601 reservations),
+# v8 (06:1xZ; V655): the job file carries latest_start_utc = 16:30:31Z minus x, enforced by scripts/profile_queue.sh at actual worker admission (a job not running by then is cancelled: not run for time). v7 (06:0xZ; V655): the 16:30:31Z deadline (now + x <= Phase III end) is tested at publication time under the fixed-side lock (exit 9), so no pre-wait gap can admit a late start. v6 (04:0xZ; V614): the lock acquisition is checked (exec and flock return codes; exit 8 before any refresh on failure); the freshness contract is w >= T_REF in whole UTC seconds (the output's written field is not earlier than the second the refresh started); POLICY: this shell is the SOLE fixed-side (PROFILE or FIXED-CONTROL) publisher for the remaining campaign (no other script stages a FIXED-side job), so the fixed-side lock serializes every fixed-side publication. v5 (03:5xZ; lead 03:47:10Z item 3): second test (ii) F / (T_registered + x) >= 0.80 with F = FREE GPU-hours and T_registered the REGISTERED 8.3 denominator (all coefficient optimization of any label, gpu_hours.py v4.6 field denominator_8_3_registered_h); both tests at full precision under the fixed-side lock. v4 (03:5xZ; V611): one fixed-side publication lock (validation/.fixed_side.lock, flock) spans the ledger refresh, the scan of active FIXED-side jobs, the gate and the staging; the refresh fails closed (exit code and freshness of status/gpu_hours.json checked); the gate compares at full precision in python; x must be finite and in (0, 24] h; T = the NARROW 8.3 denominator (gpu_hours.py v4.5 field denominator_8_3_narrow_h; lead 03:37:21Z item 1). v3 (03:4xZ; lead 03:30:46Z item 3): T = the registered 8.3 denominator with the refits of initial states (gpu_hours.py v4.4 field denominator_8_3_registered_h). v2 (03:3xZ; lead 03:23:50Z item 2 (a'), (a''), V601, V606): SERIALIZED: refused (exit 6) if any FIXED-side job (PROFILE or FIXED-CONTROL) is staged, pending, granted or
+# running; gate (B + x) / (T + x) <= 0.15 with B = FIXED-CONTROL + PROFILE and T = optimization GPU-hours of the ledger recomputed at launch (gpu_hours.py v4.3) and
+# x = the run's full charge allowance: 0.80 h (LM 1800 s plus start-up and end battery; the k = 4 pilot charged 0.78 h) until the first PROFILE run's actual charge is
+# in the ledger, then that charge rounded up to 0.05 h (pass it as the 8th argument); otherwise REFUSED (exit 5) and the slot takes a FREE item.
+# Usage: bash scripts/enqueue_profile_run.sh <point name> <c_l> <omega> <gpu> <exclusive 0|1> [max_iter=40] [time_limit=1800] [x_hours=0.80]
+set -u; cd "$(dirname "$0")/.."; PY=python3; P12=python3; export CUDA_VISIBLE_DEVICES=
+NAME=$1; CL=$2; OM=$3; GPU=$4; EXCL=$5; MI=${6:-40}; TL=${7:-1800}; XH=${8:-0.80}
+$P12 -c "import math,sys; x=float(sys.argv[1]); sys.exit(0 if (math.isfinite(x) and 0.0 < x <= 24.0) else 1)" "$XH" || { echo "REFUSED: the charge allowance x must be finite and in (0, 24] h (got $XH)"; exit 4; }
+exec 8>validation/.fixed_side.lock || { echo "REFUSED: cannot open the fixed-side lock file; nothing published"; exit 8; }
+flock -x 8 || { echo "REFUSED: cannot take the fixed-side lock (flock failed); nothing published"; exit 8; }      # v4 (V611) / v6 (V614): the fixed-side publication lock spans refresh, scan, gate and staging; failure exits before any refresh
+echo "$(date -u +%FT%TZ) fixed-side lock taken"
+ST=starts/P1s4_end_base_state.pt; SH=$(sha256sum $ST | cut -c1-16); [ "$SH" = "60df5e72844f8689" ] || { echo "REFUSED: base file sha256 $SH differs from the registered 60df5e72844f8689"; exit 3; }
+# share gate with reservations
+T_REF=$(date -u +%s); $P12 scripts/gpu_hours.py > /dev/null 2>&1 || { echo "REFUSED: the ledger refresh (gpu_hours.py) failed; failing closed"; exit 7; }
+$P12 - "$T_REF" <<'PYEOF' || { echo "REFUSED: status/gpu_hours.json is not fresh or not parseable; failing closed"; exit 7; }
+import json, sys, time, calendar
+d = json.load(open("status/gpu_hours.json")); w = calendar.timegm(time.strptime(d["written"], "%Y-%m-%dT%H:%M:%SZ"))
+assert w >= int(sys.argv[1]), "stale ledger output (written before the refresh started)"      # v6 (V614): w >= T_REF in whole UTC seconds
+assert "denominator_8_3_narrow_h" in d and "gpu_hours_by_label" in d, "missing fields"
+PYEOF
+GATE=$($P12 - "$XH" <<'PYEOF'
+import json, sys, glob, os
+cap = float(sys.argv[1])
+d = json.load(open("status/gpu_hours.json")); by = d["gpu_hours_by_label"]; B = by.get("FIXED-CONTROL", 0.0) + by.get("PROFILE", 0.0); T = d["denominator_8_3_narrow_h"]; F = by.get("FREE", 0.0); T_reg = d["denominator_8_3_registered_h"]   # v4 (lead 03:37:21Z item 1): T = the NARROW 8.3 denominator (FREE + FIXED-CONTROL + PROFILE + DIAG + refits; gpu_hours.py v4.5), the stricter one for the ceiling
+r = 0.0; res = []
+for st in ("staged", "pending", "granted", "running"):
+    for f in glob.glob(f"queue/{st}/*.json"):
+        j = json.load(open(f))
+        if j.get("label") in ("PROFILE", "FIXED-CONTROL"):
+            c = j["config"]; r += float(c.get("time_limit_per_start", 1800.0)) / 3600.0; res.append(os.path.basename(f))
+share = (B + cap) / (T + cap)                      # (a''): r is zero by the serialization rule (a'); active FIXED-side jobs are listed and refused below
+free_share = F / (T_reg + cap)                     # (ii) lead 03:47:10Z item 3: the FREE floor on the registered denominator after this run's allowance
+verdict = "PASS" if (share <= 0.15 and free_share >= 0.80) else ("FAIL_CEILING" if share > 0.15 else "FAIL_FREE_FLOOR")
+print(f"{share!r} {B!r} {T!r} {r!r} {','.join(res) or '-'} {verdict} {free_share!r} {F!r} {T_reg!r}")      # v4 (V611): full precision; the pass/fail decision is taken here in python, not on a rounded print
+PYEOF
+)
+read SHARE B T R RES VERDICT FSHARE F TREG <<< "$GATE"; [ -n "${VERDICT:-}" ] || { echo "REFUSED: the gate computation produced no verdict; failing closed"; exit 7; }
+echo "$(date -u +%FT%TZ) PROFILE share gate: (FIXED-CONTROL+PROFILE $B + x $XH) / (narrow denominator $T + x) = $SHARE (limit 0.15, full precision); active FIXED-side jobs: $RES (caps $R h)"
+[ "$RES" = "-" ] || { echo "REFUSED: a FIXED-side job is active ($RES); PROFILE runs are serialized (lead 03:23:50Z item 2 (a'))"; exit 6; }
+echo "$(date -u +%FT%TZ) PROFILE FREE-floor test (ii): FREE $F / (registered denominator $TREG + x $XH) = $FSHARE (floor 0.80)"
+# v7 (V655; lead 05:47:15Z item 4): the Phase III deadline is tested HERE, at publication time under the lock (not before a wait): the run's allowance x must end by 16:30:31Z
+$P12 -c "import sys,time,calendar; x=float(sys.argv[1]); end=calendar.timegm(time.strptime('2026-10-30T16:30:31Z','%Y-%m-%dT%H:%M:%SZ')); now=int(time.time()); sys.exit(0 if now + int(x*3600) <= end else 1)" "$XH" || { echo "REFUSED: at $(date -u +%FT%TZ) the allowance x = $XH h would end after the Phase III end 16:30:31Z; not run for time (lead 05:47:15Z item 4)"; exit 9; }
+case "$VERDICT" in PASS) ;; FAIL_CEILING) echo "REFUSED: the PROFILE run would take the FIXED-CONTROL + PROFILE share to $SHARE > 0.15 (lead 03:23:50Z item 2 (a'')); the slot takes a FREE item"; exit 5;; *) echo "REFUSED: the registered FREE share after this run would be $FSHARE < 0.80 (lead 03:47:10Z item 3 (ii); SPEC 3.6 (f)); the slot takes a FREE item"; exit 5;; esac
+eval "$(grep '^COMMON=' scripts/release_queue.sh)"; EXTRA="{$COMMON}"
+TAG=prof_P1s4_${NAME}
+$PY scripts/enqueue_d6.py --start $ST --fixed --label PROFILE --tag $TAG --c_l $CL --omega $OM --param_init keep_coefficients --max_iter $MI --time_limit $TL --priority 30 --extra "$EXTRA" --note "SPEC 7.3 (d) PROFILE run (lead 02:59:34Z item 1, 03:13:16Z items 2-3): point $NAME of notes/profile_points_P1s4.json (7ec7de8db803812e), (c_l, omega) = ($CL, $OM); FIXED parameters; start = the P1 s4 segment-end state starts/P1s4_end_base_state.pt (60df5e72844f8689...) through the worker's standard keep path (kept free coordinates; eliminated tail coefficients follow the parameters at entry); max_iter $MI, $TL s; profile value after a fixed budget, not a minimum; share gate at launch $SHARE with x = $XH h (lead 03:23:50Z item 2)" || exit 1
+F=$(ls queue/pending/${TAG}_*.json | head -1); [ -f "$F" ] || { echo "no pending file for $TAG"; exit 1; }
+LATEST=$($P12 -c "import sys,time,calendar; x=float(sys.argv[1]); end=calendar.timegm(time.strptime('2026-10-30T16:30:31Z','%Y-%m-%dT%H:%M:%SZ')); print(time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime(end - int(x*3600))))" "$XH")
+LATEST="$LATEST" $PY - "$F" "$GPU" "$EXCL" <<'PYEOF'
+import json, sys, os, shutil
+p = sys.argv[1]; j = json.load(open(p)); j["objective"] = "O1"; j["exclusive"] = None; j["gpus_allowed"] = None; j["placement"] = "governor"
+j["target"] = dict(gpu=int(sys.argv[2]), exclusive=(sys.argv[3] == "1"))
+j["latest_start_utc"] = os.environ["LATEST"]; j["latest_start_rule"] = "v8 (V655): the worker must START by this time (16:30:31Z minus the charge allowance x); scripts/profile_queue.sh cancels a job still staged, pending or granted after it (not run for time)"
+j["record_label_job"] = "full release under the post-result timing rule 3.6 (m)"; j["g1_label_job"] = "G1 under post-result rules 3.6 (j), (k), (l), (n)"
+j["lineage_history"] = "PROFILE run (fixed parameters) from the P1 s4 segment-end state under the full release of 2026-10-29T16:40:13Z; Phase III; not a continuation of the P1 lineage"
+j["note"] = (j.get("note") or "") + "; placement by the slot governor (SPEC 3.6 (h) (1)); objective O1; launched under the FULL RELEASE of 2026-10-29T16:40:13Z (status/FULL_RELEASE_ACK)"
+json.dump(j, open(p, "w"), indent=1); dst = p.replace("/pending/", "/staged/"); os.makedirs(os.path.dirname(dst), exist_ok=True); shutil.move(p, dst); print("staged", dst)
+PYEOF

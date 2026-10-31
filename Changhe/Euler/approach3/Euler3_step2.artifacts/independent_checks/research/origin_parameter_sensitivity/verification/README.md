@@ -1,0 +1,5 @@
+V164 in the chronological verification record records the four exact interval certificates. The complete set is artifacts/origin_parameter_family_v1_selected/: COMPLETE.json, the four input records, audit.json, qualification.json and controls.json. All paths are relative to the verifier side root.
+
+The constructor is scripts/exact_origin_parameter_family_v1.py; the independent saved-value auditor is scripts/audit_origin_parameter_family_v1.py; corruption controls are scripts/qualify_origin_parameter_family_v1.py. Exact coefficient data are imported from the immutable exchanges listed and hashed in each record. No coefficient table is hardcoded in proof source. The raw full checkpoint and exact reduced family are explicitly distinguished.
+
+The first attempt, artifacts/origin_parameter_family_v1/, is incomplete because the strict decoder rejected the separately formatted manufactured input. It is retained as evidence and does not contribute a completed certificate. The two serialized pauses are recorded alongside these directories. The lead's independent mathematical review is pending.

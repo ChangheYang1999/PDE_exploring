@@ -1,0 +1,1 @@
+The executable reference is scripts/verify_angular_tables.py. It is independent of the production angular recurrence and derivative ladders. Full training-node results and selected direct mpmath checks will be saved when the script is run.

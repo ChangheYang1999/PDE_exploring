@@ -1,0 +1,1 @@
+Numerical application: V454 in ../../../../verification record, recorded 2026-10-29T20:43:55.874090+00:00. Exact data and all thirteen shell lower bounds: ../../../../artifacts/low_pair_field_v1/summary.json. Empirical quadrature only; no interval enclosure.

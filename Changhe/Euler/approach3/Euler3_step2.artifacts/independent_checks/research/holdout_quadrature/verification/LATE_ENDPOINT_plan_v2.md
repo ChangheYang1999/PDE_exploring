@@ -1,0 +1,5 @@
+# Later endpoint queue restart after a qualification timeout
+
+Registered 2026-10-30T01:18:37.705634+00:00. The first queue stopped before executing any endpoint stage because far qualification version 2 timed out. Preserve its status and all records. This second queue waits for the resource-amended far qualification version 3, with a 4000-second upstream wait allowance, and then executes the unchanged LATE_ENDPOINT_plan_v1.md. It keeps exactly the original endpoint names, order, current-state convention, seeds, phases, common core radii, quadrature, source code, per-endpoint limits and scope. The original freeze filenames remain unused and are retained. Output goes to artifacts/late_endpoint_holdouts_v2. The original sampling registration time stays recorded; no sampling choice follows a new endpoint result. This is development work, not the final cohort.
+
+No JavaScript/TypeScript, servers/listeners, RLScience cluster, remote or paid compute, or outside writes. One busy CPU 35 process, one thread, nice 10, hidden GPUs and the existing resource limits.

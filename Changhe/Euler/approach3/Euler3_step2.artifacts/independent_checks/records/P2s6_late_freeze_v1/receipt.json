@@ -1,0 +1,381 @@
+{
+  "complete": true,
+  "completed_utc": "2026-10-30T02:23:19.898783+00:00",
+  "branch": "P2s6",
+  "job_id": "cont2_s6_S09_L6_cl0.4500_om0.3000_free",
+  "iterations": 956,
+  "status": "time_limit",
+  "original_checkpoint": "RUN_ROOT/numerics/degree6_free_parameters_48h/runs/cont2_s6_S09_L6_cl0.4500_om0.3000_free/checkpoint_segment_end.pt",
+  "original_projected_state": "RUN_ROOT/numerics/degree6_free_parameters_48h/runs/cont2_s6_S09_L6_cl0.4500_om0.3000_free/starts/start_000.pt",
+  "original_result_sha256": "04cb330c01e5b4b1d193a3ec6f108a1d727039f5bad157c12ab766d53f827eea",
+  "end_events": [
+    {
+      "cost": 1.0484289575683159e-07,
+      "counters": {
+        "n_acc": 956,
+        "n_rej": 622,
+        "sat_count": 0
+      },
+      "elapsed_lm_s": 7227.126402139664,
+      "it": 956,
+      "job_id": "cont2_s6_S09_L6_cl0.4500_om0.3000_free",
+      "kind": "segment_end",
+      "label": "FREE",
+      "lam": 5.991379592218058e-06,
+      "status": "time_limit",
+      "ts": "2026-10-30T01:55:31Z"
+    }
+  ],
+  "imports": [
+    {
+      "label": "current",
+      "copy": "artifacts/P2s6_late_freeze_v1/current.pt",
+      "sha256": "6a47bbe68968c50ab93a668795f59759c87d34dc8c9161d3fa910f6619607814",
+      "input_directory": "artifacts/inputs/P2s6_late_current_v1",
+      "metadata": {
+        "L_ext": 15,
+        "L_max": 6,
+        "Nk": 16,
+        "R0": 0.3,
+        "alpha": 1.173614822586829,
+        "c_l": 0.46006311219845997,
+        "channels": {
+          "LB": 15,
+          "LD": 14,
+          "LE": 6,
+          "Mch": null,
+          "NkB": 4,
+          "NkD": 4,
+          "NkE": 4,
+          "R1": 0.9999899999999999,
+          "core_damp": 2
+        },
+        "coefficient_operation": "Exact layout decoding only; no gauge normalization, projection, tail elimination, refit or parameter change",
+        "config_parameters": {
+          "c_l": 0.45,
+          "omega": 0.3
+        },
+        "created_utc": "2026-10-30T02:23:15.669301+00:00",
+        "dimensions": {
+          "full_vector": 1798,
+          "matrices": {
+            "A": [
+              16,
+              123
+            ],
+            "B": [
+              4,
+              123
+            ],
+            "C": [
+              16,
+              123
+            ],
+            "D": [
+              4,
+              123
+            ],
+            "E": [
+              4,
+              123
+            ]
+          },
+          "modes": 123
+        },
+        "free_params": true,
+        "import_script_sha256": "45eecf5a2d499ddaeba35710aadb2b6c46ab548f4223b5fc644ec1af8eabab0d",
+        "layout_source_sha256": {
+          "src/bases/solid_harmonics.py": "3f231c9286b79b406d364f58a4b8b7234c7c5629db8dd6636ac5bbd37e1695b3",
+          "src/equations/fields.py": "c68a1fb31fa87d2b998966985c39de8bbafeb6bbf85e5f84378a215ad4af0229"
+        },
+        "m_parity": "even",
+        "omega": 0.3303229685125109,
+        "omega_over_c_l": 0.7179949005996762,
+        "parameter_source": "last two coordinates of saved full vector",
+        "production_layout_root": "RUN_ROOT/verifier/artifacts/production_snapshots/official_gpu_v1p1_20261029T054715Z",
+        "roundtrip_bitwise_equal": true,
+        "source_checkpoint": "RUN_ROOT/verifier/artifacts/P2s6_late_freeze_v1/current.pt",
+        "source_checkpoint_sha256": "6a47bbe68968c50ab93a668795f59759c87d34dc8c9161d3fa910f6619607814",
+        "source_config": {
+          "L": 6,
+          "Nk": 16,
+          "Nr": 48,
+          "R0": 0.3,
+          "c_l": 0.45,
+          "channels": {
+            "LB": 15,
+            "LD": 14,
+            "LE": 6,
+            "NkB": 4,
+            "NkD": 4,
+            "NkE": 4,
+            "R1": 0.9999899999999999,
+            "core_damp": 2
+          },
+          "chunk": 256,
+          "closure_lambda": 0.001,
+          "complete_gradient": true,
+          "complete_gradient_every": 4,
+          "continue_from_run": "RUN_ROOT/numerics/degree6_free_parameters_48h/runs/cont2_s5_S09_L6_cl0.4500_om0.3000_free",
+          "far_lambda": 0.01,
+          "far_radii": [
+            4096.0,
+            16384.0,
+            65536.0
+          ],
+          "formulation": "mom",
+          "free_params": true,
+          "ftol": 1e-07,
+          "g1_label": "G1 under post-result rules 3.6 (j), (k) (S09_own rests on both post-result rules; lead 08:50Z item 1)",
+          "gauge_weight": 100.0,
+          "holdout_per_shell": 6,
+          "init_from": "RUN_ROOT/numerics/degree6_free_parameters_48h/starts/S09_d6w_cl0.45_om0.3_R1.pt",
+          "lag_jacobian": false,
+          "lam0": 0.01,
+          "linearization": true,
+          "linearization_every": 50,
+          "m_parity": "even",
+          "max_iter": 1047,
+          "n_starts": 1,
+          "nl_denominator": "all5far",
+          "nl_weighting": true,
+          "omega": 0.3,
+          "param_init_mode": "keep_coefficients",
+          "param_step_max": 0.5,
+          "perturb": 0.0,
+          "perturb_nonaxi": 0.0,
+          "precision_mode": "dd_fp64jac",
+          "record_label": "pre-verifier",
+          "release_battery": "GPU (v1.13 to v1.18)",
+          "seed": 0,
+          "segment": 6,
+          "snapshot": "gpu_v1p1",
+          "spec_sha256": "ea62503e5948af1104a995a83e79e8f0c0d1b016f90953db11e3c0b73c511507",
+          "spec_version": "v1.18",
+          "tail_constraints": true,
+          "threads": 1,
+          "time_limit_per_start": 7200.0,
+          "xtol": 1e-12
+        },
+        "source_state": {
+          "geometry_base": {
+            "c_l": 0.45,
+            "kappa": 0.6666666666666666,
+            "omega": 0.3,
+            "p0": 4.444444444444445
+          },
+          "idx": 0,
+          "it": 956,
+          "job_id": "cont2_s6_S09_L6_cl0.4500_om0.3000_free",
+          "kind": "current",
+          "label": "FREE",
+          "pivot": {
+            "amp": 0.15957084905628033,
+            "pot": "S",
+            "q": 2
+          },
+          "ts": "2026-10-30T01:55:31Z"
+        },
+        "versions": {
+          "numpy": "2.0.2",
+          "python": "3.9.25 (main, Jul 15 2026, 00:00:00) \n[GCC 11.5.0 20240719 (Red Hat 11.5.0-5)]",
+          "torch": "2.8.0+cu128"
+        }
+      },
+      "command": [
+        "python3",
+        "RUN_ROOT/verifier/scripts/import_checkpoint.py",
+        "--checkpoint",
+        "RUN_ROOT/verifier/artifacts/P2s6_late_freeze_v1/current.pt",
+        "--production-root",
+        "RUN_ROOT/verifier/artifacts/production_snapshots/official_gpu_v1p1_20261029T054715Z",
+        "--state",
+        "current",
+        "--output",
+        "RUN_ROOT/verifier/artifacts/inputs/P2s6_late_current_v1"
+      ]
+    },
+    {
+      "label": "projected",
+      "copy": "artifacts/P2s6_late_freeze_v1/projected.pt",
+      "sha256": "20f534f73d3e43ca306e29271a673b035c58a615f6fd36d7b1b1cc7b3a29a6c9",
+      "input_directory": "artifacts/inputs/P2s6_late_projected_v1",
+      "metadata": {
+        "L_ext": 15,
+        "L_max": 6,
+        "Nk": 16,
+        "R0": 0.3,
+        "alpha": 1.173614822586829,
+        "c_l": 0.46006311219845997,
+        "channels": {
+          "LB": 15,
+          "LD": 14,
+          "LE": 6,
+          "Mch": null,
+          "NkB": 4,
+          "NkD": 4,
+          "NkE": 4,
+          "R1": 0.9999899999999999,
+          "core_damp": 2
+        },
+        "coefficient_operation": "Exact layout decoding only; no gauge normalization, projection, tail elimination, refit or parameter change",
+        "config_parameters": {
+          "c_l": 0.45,
+          "omega": 0.3
+        },
+        "created_utc": "2026-10-30T02:23:18.422126+00:00",
+        "dimensions": {
+          "full_vector": 1798,
+          "matrices": {
+            "A": [
+              16,
+              123
+            ],
+            "B": [
+              4,
+              123
+            ],
+            "C": [
+              16,
+              123
+            ],
+            "D": [
+              4,
+              123
+            ],
+            "E": [
+              4,
+              123
+            ]
+          },
+          "modes": 123
+        },
+        "free_params": true,
+        "import_script_sha256": "45eecf5a2d499ddaeba35710aadb2b6c46ab548f4223b5fc644ec1af8eabab0d",
+        "layout_source_sha256": {
+          "src/bases/solid_harmonics.py": "3f231c9286b79b406d364f58a4b8b7234c7c5629db8dd6636ac5bbd37e1695b3",
+          "src/equations/fields.py": "c68a1fb31fa87d2b998966985c39de8bbafeb6bbf85e5f84378a215ad4af0229"
+        },
+        "m_parity": "even",
+        "omega": 0.3303229685125109,
+        "omega_over_c_l": 0.7179949005996762,
+        "parameter_source": "last two coordinates of saved full vector",
+        "production_layout_root": "RUN_ROOT/verifier/artifacts/production_snapshots/official_gpu_v1p1_20261029T054715Z",
+        "roundtrip_bitwise_equal": true,
+        "source_checkpoint": "RUN_ROOT/verifier/artifacts/P2s6_late_freeze_v1/projected.pt",
+        "source_checkpoint_sha256": "20f534f73d3e43ca306e29271a673b035c58a615f6fd36d7b1b1cc7b3a29a6c9",
+        "source_config": {
+          "L": 6,
+          "Nk": 16,
+          "Nr": 48,
+          "R0": 0.3,
+          "c_l": 0.45,
+          "channels": {
+            "LB": 15,
+            "LD": 14,
+            "LE": 6,
+            "NkB": 4,
+            "NkD": 4,
+            "NkE": 4,
+            "R1": 0.9999899999999999,
+            "core_damp": 2
+          },
+          "chunk": 256,
+          "closure_lambda": 0.001,
+          "complete_gradient": true,
+          "complete_gradient_every": 4,
+          "continue_from_run": "RUN_ROOT/numerics/degree6_free_parameters_48h/runs/cont2_s5_S09_L6_cl0.4500_om0.3000_free",
+          "far_lambda": 0.01,
+          "far_radii": [
+            4096.0,
+            16384.0,
+            65536.0
+          ],
+          "formulation": "mom",
+          "free_params": true,
+          "ftol": 1e-07,
+          "g1_label": "G1 under post-result rules 3.6 (j), (k) (S09_own rests on both post-result rules; lead 08:50Z item 1)",
+          "gauge_weight": 100.0,
+          "holdout_per_shell": 6,
+          "init_from": "RUN_ROOT/numerics/degree6_free_parameters_48h/starts/S09_d6w_cl0.45_om0.3_R1.pt",
+          "lag_jacobian": false,
+          "lam0": 0.01,
+          "linearization": true,
+          "linearization_every": 50,
+          "m_parity": "even",
+          "max_iter": 1047,
+          "n_starts": 1,
+          "nl_denominator": "all5far",
+          "nl_weighting": true,
+          "omega": 0.3,
+          "param_init_mode": "keep_coefficients",
+          "param_step_max": 0.5,
+          "perturb": 0.0,
+          "perturb_nonaxi": 0.0,
+          "precision_mode": "dd_fp64jac",
+          "record_label": "pre-verifier",
+          "release_battery": "GPU (v1.13 to v1.18)",
+          "seed": 0,
+          "segment": 6,
+          "snapshot": "gpu_v1p1",
+          "spec_sha256": "ea62503e5948af1104a995a83e79e8f0c0d1b016f90953db11e3c0b73c511507",
+          "spec_version": "v1.18",
+          "tail_constraints": true,
+          "threads": 1,
+          "time_limit_per_start": 7200.0,
+          "xtol": 1e-12
+        },
+        "source_state": {
+          "kind": "final",
+          "label": "FREE",
+          "pivot": {
+            "amp": 0.15957084905628033,
+            "pot": "S",
+            "q": 2
+          },
+          "status": "time_limit"
+        },
+        "versions": {
+          "numpy": "2.0.2",
+          "python": "3.9.25 (main, Jul 15 2026, 00:00:00) \n[GCC 11.5.0 20240719 (Red Hat 11.5.0-5)]",
+          "torch": "2.8.0+cu128"
+        }
+      },
+      "command": [
+        "python3",
+        "RUN_ROOT/verifier/scripts/import_checkpoint.py",
+        "--checkpoint",
+        "RUN_ROOT/verifier/artifacts/P2s6_late_freeze_v1/projected.pt",
+        "--production-root",
+        "RUN_ROOT/verifier/artifacts/production_snapshots/official_gpu_v1p1_20261029T054715Z",
+        "--state",
+        "final",
+        "--output",
+        "RUN_ROOT/verifier/artifacts/inputs/P2s6_late_projected_v1"
+      ]
+    }
+  ],
+  "parameter_metadata_rounding": [
+    {
+      "parameter": "c_l",
+      "saved_tensor": 0.46006311219845997,
+      "json_reported": 0.46006311219845997,
+      "difference": 0.0,
+      "allowed_maximum_ulp": 5.551115123125783e-17
+    },
+    {
+      "parameter": "omega",
+      "saved_tensor": 0.3303229685125109,
+      "json_reported": 0.3303229685125109,
+      "difference": 0.0,
+      "allowed_maximum_ulp": 5.551115123125783e-17
+    }
+  ],
+  "raw_to_projected_scale": 0.9999999315855951,
+  "relative_scalar_residual": 1.1754254033489344e-16,
+  "source_sha256": {
+    "scripts/freeze_late_endpoints_v1.py": "84865c4c424f76510434d4cd9f6a08909f0da6492bdb1c512e315447171edeb6",
+    "scripts/import_checkpoint.py": "45eecf5a2d499ddaeba35710aadb2b6c46ab548f4223b5fc644ec1af8eabab0d"
+  },
+  "scope": "Two exact saved states. CURRENT is used for development momentum comparisons; the separately saved F-projected state is reserved for the registered field-distance test. No normalization or refit is introduced. Saved tensor parameters are preserved exactly; JSON metadata differences up to one binary64 ULP are separately recorded."
+}

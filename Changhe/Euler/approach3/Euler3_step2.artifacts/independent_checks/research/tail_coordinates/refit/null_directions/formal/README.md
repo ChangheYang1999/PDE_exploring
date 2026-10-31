@@ -1,0 +1,1 @@
+No Lean or Lake execution is authorized in this campaign. The standalone informal proof is in ../PROOF.md. Exact rational controls and source-bound numerical inspections, when completed, are separate verification evidence.

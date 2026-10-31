@@ -1,0 +1,29 @@
+#!/bin/bash
+# Enqueue a job without exceeding four busy computations. v4 (01:1xZ; V547): the exact job id is taken from the enqueue command's own output ("enqueued/staged
+# <path>.json"), its state is looked up in EVERY queue directory, the worker is matched by its exact run-directory argv token (no substring), and the lock is held
+# until that worker is visible or the job is in a terminal directory (failed, cancelled, done) with no active copy; a job whose file disappears without a terminal
+# copy is treated as UNRESOLVED (lock held, warning every 60 s) until it reappears or an operator intervenes; an enqueue that returns no id and leaves no file of the
+# prefix in any state releases with "nothing to reserve". v3 (9f72d692) kept as .v3_9f72d692. Lock: validation/.l_launch.lock (shared with the launchers).
+# Usage: bash scripts/enqueue_under_lock.sh <job id prefix (tag)> <enqueue command ...>
+set -u; cd RUN_ROOT/numerics/degree6_free_parameters_48h; PREFIX=$1; shift; LOCK=validation/.l_launch.lock; . scripts/queue_guard_lib.sh
+exec 9>"$LOCK"; flock -x 9
+t=0; while [ "$(busy)" -gt 3 ]; do sleep 20; t=$((t+20)); [ $t -ge 7200 ] && { echo "enqueue_under_lock: gave up waiting for a slot after $t s (busy $(busy)); nothing enqueued"; flock -u 9; exit 1; }; done
+echo "$(date -u +%FT%TZ) enqueue_under_lock: busy $(busy) <= 3 after $t s; enqueuing: $*"
+OUT=$("$@" 2>&1); rc=$?; echo "$OUT"
+JID=$(id_from_output "$OUT")
+if [ -z "$JID" ]; then
+  for d in staged pending granted running; do for f in queue/$d/${PREFIX}_*.json; do [ -e "$f" ] && JID=$(basename "$f" .json); done; done
+  if [ -z "$JID" ]; then echo "$(date -u +%FT%TZ) enqueue_under_lock: the enqueue printed no job id and no ${PREFIX}_*.json exists in staged/pending/granted/running (exit $rc): nothing to reserve; lock released"; flock -u 9; exec 9>&-; exit $rc; fi
+  echo "$(date -u +%FT%TZ) enqueue_under_lock: no id in the output; using the active file $JID"
+fi
+echo "$(date -u +%FT%TZ) enqueue_under_lock: admitted job $JID (enqueue exit $rc); holding the lock until its worker is visible (states now:$(job_states $JID))"
+t=0; state="pending"
+while true; do
+  st=$(job_states $JID)
+  if worker_visible "$JID"; then state="visible"; break; fi
+  case "$st" in *failed*|*cancelled*|*done*) case "$st" in *staged*|*pending*|*granted*|*running*) ;; *) state="terminal_without_worker:$st"; break;; esac;; esac
+  [ -z "$st" ] && [ $((t % 60)) -eq 0 ] && echo "$(date -u +%FT%TZ) enqueue_under_lock: WARNING $JID has no file in any queue state (transient or lost); lock held"
+  sleep 5; t=$((t+5)); [ $t -ge 900 ] && [ $((t % 60)) -eq 0 ] && echo "$(date -u +%FT%TZ) enqueue_under_lock: WARNING $JID not acknowledged after $t s (states:$st); lock still held"
+done
+echo "$(date -u +%FT%TZ) enqueue_under_lock: $JID state ${state} after $t s (busy $(busy)); lock released"
+flock -u 9; exec 9>&-; exit $rc

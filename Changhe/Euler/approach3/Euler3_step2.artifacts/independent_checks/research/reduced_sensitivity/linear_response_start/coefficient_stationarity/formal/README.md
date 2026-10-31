@@ -1,0 +1,1 @@
+No formal sources or formal build are supplied. The standalone informal proof was written first and checked by direct algebra. Lean and Lake builds are prohibited in this run. Exact rational examples support the arithmetic of the examples, not formal verification of the general theorem.

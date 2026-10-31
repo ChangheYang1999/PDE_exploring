@@ -1,0 +1,37 @@
+{
+ "release_battery": "GPU (v1.13)",
+ "spec_version": "v1.13 (binding v1.14 from 05:22Z; no threshold change)",
+ "spec_sha256_v1_13": "80bf8833be2a91ba6a1d45399d88a5c27934a7c5af565d18fdb19f0e5a339b59",
+ "spec_sha256_v1_14": "1e01acbc8828545d7d8e351cd8b472f99aa2a5b9ac8f947cf8370b8eb3f38eca",
+ "snapshot": "gpu_v1",
+ "table": "status/RELEASE_SNAPSHOT_gpu_v1.md (20261029T051311Z)",
+ "diff": "status/GPU_V1_DIFF.md",
+ "gates_py": "8cb1c9ce7f1b109e (section addendum, status/RELEASE_SNAPSHOT_cpu_v1_addendum_split.md)",
+ "device": "NVIDIA A100-SXM4-80GB",
+ "cuda_visible": "5",
+ "gpu_index_assigned": null,
+ "host": "ip-10-0-18-154.ec2.internal",
+ "torch": "2.8.0+cu128",
+ "precision_mode": "dd_fp64jac",
+ "jacobian_precision": "fp64",
+ "code_sha256_recorded": {
+  "src/optimization/lm.py": "8dec4c55c5f39f6e90b3df2060d6d2d5ab1d78dfd269be6c6781efc98e108e3d",
+  "src/optimization/problem.py": "8dd8fd6d2fbab0eedc422202519d45f55884d79ee23e2675d525330c826bbad2",
+  "src/optimization/param_map.py": "8058ef12032fbb6236fd61cbae2d624a7a60706e03f65b07e1888773803d32d4",
+  "src/equations/fields.py": "c68a1fb31fa87d2b998966985c39de8bbafeb6bbf85e5f84378a215ad4af0229",
+  "src/pressure/poisson_sh.py": "8aefe0f3a5f4a90755dff84db39cdaa742de4d1c6da4d82e4183cb21ce9681ac",
+  "src/equations/residuals.py": "9272f55c0f6a5017e149790ffee8f82af5c0e78239be32a060d1ce9b8c5f3c61",
+  "src/far_field/correction.py": "58418dae31c88266ea1f1a8d1d9974fbf4178f1e5e120d0aa483df0b0428d164",
+  "src/optimization/tail_constraints.py": "2bea58b3056fcbc8f13b9c8b3d0b98431f2c1b7c9a2e32781d670d55c1fc1c70",
+  "src/bases/radial.py": "0c80d93740d63173257a6f4c5f5fde287d3711d25b15f5d20f27cee20f46c2cc",
+  "src/bases/jets.py": "206d9639cb4825c5f25edc11fa0171d8dcf59c8c8f01ddfa945d224d50b4e2d2",
+  "src/bases/solid_harmonics.py": "3f231c9286b79b406d364f58a4b8b7234c7c5629db8dd6636ac5bbd37e1695b3",
+  "validation/gates.py": "5f4079926f1c757b66da88db608ff5ed4ee301dd0e12443d554d2f88d6115a07"
+ },
+ "cases": [
+  "S09_own"
+ ],
+ "partial": true,
+ "written": "2026-10-29T08:14:34Z",
+ "source_file": "validation/gates_gpu_v1_S09_own_G1coef_v5.json"
+}

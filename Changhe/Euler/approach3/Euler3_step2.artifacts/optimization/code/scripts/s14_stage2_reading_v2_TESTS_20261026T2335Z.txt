@@ -1,0 +1,30 @@
+# s14_stage2_reading_v2 tests 20261026T2335Z (v2 sha256 056880a1441df4d0874cb32780ae03892ba78c9c6f3b7aa2e2650d5a00f1f2fb; tests sha256 b4282104eb5067458f36bb5a6aa4ba1fa3490415520625b672941b716a0cedea)
+## positive: --smoke on nest6_L6_cl0.45_om+1.0_fixed_p1_om+1.0s31s0 (L4 -> L6 lineage) against nest6 p0 s43s0
+SMOKE # S14 stage (ii) reading v2: nest6_L6_cl0.45_om+1.0_fixed_p1_om+1.0s31s0 (SMOKE: registered-set check relaxed; c_l 0.45, omega 1.0; L 6 Nk 16 Nr 48 even basis, channels 4/4/4 at degrees 15/14/6, closure 0.001, all5far, max_iter 600, time limit 7200 s)
+SMOKE SOURCE: nest4_L4_cl0.45_om+1.0_fixed_p0_om+1.0s31 start 0 (init_from, seed 0; L 4 Nk 12 even; max_iter after 300 iterations of max_iter 300); holdout std / half 0.0579 / 0.0584
+SMOKE END STATE: ftol after 111 iterations (max_iter 600, time limit 7200 s), LM 1295 s, whole job 2026-10-25T06:31:37Z -> 2026-10-25T07:17:06Z = 2729 s = 0.76 GPU-h
+SMOKE HOLDOUT rho_u^max std / half: 0.0516 / 0.0512; ratio to the L4 start 0.891 / 0.877; V10 7.65e-03; rms_mom 0.09648; rho_nl^max 3.36
+SMOKE COLLAPSE CHECK (S14R-1): N_core L4 0.476 -> L6 0.618 (x1.30); N_F L4 0.387 -> L6 0.41 (x1.06); e_core L4 0.056 -> L6 0.0858 (x1.53); e_F L4 0.037 -> L6 0.0384 (x1.04) -> not collapsing
+SMOKE ODD-M L6: energy all / core / tail 0.000 / 0.000 / 0.000; amplitude U / Omega / DU 0.000 / 0.000 / 0.000 (file oddm_nest6_L6_cl0.45_om+1.0_fixed_p1_om+1.0s31s0_0.json sha 811bcc47caa4)
+SMOKE ODD-M L4 start: energy all / core / tail 0.000 / 0.000 / 0.000; amplitude U / Omega / DU 0.000 / 0.000 / 0.000 (file oddm_nest4_L4_cl0.45_om+1.0_fixed_p0_om+1.0s31_0.json sha 282532f25e3c)
+SMOKE CORE / BALANCES: core resolved True; core-set a_max 1.27, sigma_u 0.51, sigma_Om 0.456, a_eff 0.275; max|U| 1.154, max|Omega| 11.8; E_ren -1.92, H_tot/int|h| -0.788; K_E / K_H ratio n/a / n/a, carried mismatch m 0.466; Q_sw 1.2; tau_F 0.629; rotation content 0.434
+SMOKE COMPARATOR nest6_L6_cl0.45_om+1.0_fixed_p0_om+1.0s43s0 (registered even-class L6 state; arm_reading sha 851be8d137a7, not regenerated; code versions n/a): holdout std / half 0.0460 / 0.0463; ratios target / comparator 1.120 / 1.107
+SMOKE BUDGETS: target max_iter 600, time limit 7200 s, ftol after 111 iterations; comparator max_iter 600, time limit 7200 s, max_iter after 600 iterations
+SMOKE ORDER 7.3b (bound to this call; order_73b.py sha addfa078bd3d, rc 0; order JSON order_73b_nest6_L6_cl0.45_om+1.0_fixed_p1_om+1.0s31s0__vs__nest6_L6_cl0.45_om+1.0_fixed_p0_om+1.0s43s0.json sha ab8b60d411b4; target arm_reading sha 4be05e172c5e): nest6_L6_cl0.45_om+1.0_fixed_p0_om+1.0s43s0 ahead of nest6_L6_cl0.45_om+1.0_fixed_p1_om+1.0s31s0; ratios (target / comparator: holdout std, half, core sigma_u, sigma_Om, core a_max) [1.1197680405504868, 1.106654941860793, 1.1428946285581505, 1.1226306015270349, 2.2857031654127438]; same degree 6, Nk 16, Nr 48: same holdout quadrature; conditional on verified core resolution (core flags primary-reported)
+SMOKE CODE VERSIONS (target): {}
+SMOKE written RUN_ROOT/frozen_euler3/numerics/reports/s14_stage2_reading_v2_nest6_L6_cl0.45_om+1.0_fixed_p1_om+1.0s31s0_SMOKE.json sha256 d87c9492289e1b7aca69138b427ea193136e3e55aa943ae9ae52f20724a06ce7
+smoke exit code 0
+## precondition: the same target WITHOUT --smoke must fail (unregistered id)
+PRECONDITION FAILED: target nest6_L6_cl0.45_om+1.0_fixed_p1_om+1.0s31s0 is not one of the four registered S14 stage (ii) jobs
+exit code 2
+## precondition: a registered but unfinished target must fail closed
+PRECONDITION FAILED: missing file RUN_ROOT/frozen_euler3/numerics/runs/s14b_L6_cl0.45_om+1.0_fixed_p0_om+1.0s5/results.jsonl: the job is not finished or does not exist
+exit code 2
+## precondition: the stopped (0.48, 1) job (no results.jsonl) must fail closed
+PRECONDITION FAILED: missing file RUN_ROOT/frozen_euler3/numerics/runs/s14b_L6_cl0.48_om+1.0_fixed_p0_om+1.0s7/results.jsonl: the job is not finished or does not exist
+exit code 2
+## negative tests on the factored check functions
+PASS | odd-m file missing | returned {"path": "/nonexistent/oddm.json", "bound": false, "reason": "missing", "values": null}
+PASS | sanitize writes non-finite as null | returned {"a": null, "b": [1.0, null], "c": {"d": 2.0}}
+34 passed, 0 failed
+tests exit code 0

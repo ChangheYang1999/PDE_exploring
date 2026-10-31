@@ -1,0 +1,5 @@
+# S01 retained record adapter
+
+Registered 2026-10-29T14:08:31.952193+00:00 before actual array replay. Version4 inherits all V322 arithmetic and decision controls. The S01 adapter admits only optimizer:z_c, exact l_eval SHA25fc32d0e975c13e2b49318acdd2b14c27f5bc371cec4449cea1756d6e382480 and the complete scientific source set of the V278 accepted named record SHA2a9c6c8c004a79aa62c22edff2379f4e992df4a110e50a5cbde6ddd4be3a842f. The frozen1113 and1133 l_eval files are byte-identical. Every source manifest, same-function record and input array remains bound.
+
+The older split can fail. Its failure is retained and must be separated from the full-column comparison, under the prior lead acceptance of full residual differences. For every split decision require a numerical margin outside the fixed1e-12 tolerance after the same pre-registered arithmetic allowance, and require the joint Boolean to agree. No threshold or column rule is relaxed. Jf may pass the split while Jcw/Jc fail. No non-anchor vectors or new pressure metadata are inferred when absent.

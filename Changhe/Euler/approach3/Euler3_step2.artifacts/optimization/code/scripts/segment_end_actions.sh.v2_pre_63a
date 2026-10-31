@@ -1,0 +1,37 @@
+#!/bin/bash
+# Segment-end actions for a FREE continuation lineage (lead 16:40:13Z item 3, 17:18:08Z item 3; SPEC 8.5, 3.6 (g), (o)); v2 (17:3xZ; V384):
+#  1) the O1 fall over the last hour (scripts/segment_rate.py; temporary file inside the lane);
+#  2) the 5.3 saturation flag and the 6.3 (a) exclusion fields of the ended segment's run record (results.jsonl), printed and required clean;
+#  3) if the rate is above 1 per cent per hour, the record is clean and at least 600 s of the lineage's 12 h optimizer budget remain: enqueue the next segment at once
+#     (scripts/enqueue_continuation_v122.sh v4: cfg unchanged except max_iter + 240 and the time limit = min(7200 s, remaining budget); full-release labels at the job level);
+#  4) launch (detached chain) the J_c EVAL v5 (admitted, V370) and segment_report v4.1 of the ended segment on the EVAL GPU through l_launch.sh.
+# Usage: bash scripts/segment_end_actions.sh <ended run dir> <next tag> <lineage gpu> <eval gpu> <reference_core> "<core source text>" <lineage optimizer hours so far>
+set -u; cd "$(dirname "$0")/.."; PY=python3; export CUDA_VISIBLE_DEVICES=
+RUN=$1; TAG=$2; GPU=$3; EGPU=$4; RC=$5; SRC=$6; HOURS=${7:?lineage optimizer hours so far}
+[ -f "$RUN/checkpoint_segment_end.pt" ] || { echo "no checkpoint_segment_end.pt in $RUN (segment not ended?)"; exit 1; }
+[ -f "$RUN/results.jsonl" ] || { echo "no results.jsonl in $RUN yet (the worker's end battery has not finished): run again when it exists"; exit 1; }
+mkdir -p status/tmp; TMP=status/tmp/segrate_$(basename "$RUN")_$(date -u +%H%M%S).txt
+echo "== $(date -u +%FT%TZ) segment end of $RUN"; grep -E "LM finished|end-of-segment|JOB DONE|final linearization" "$RUN/worker.log" | tail -4 | cut -c1-300
+$PY scripts/segment_rate.py "$RUN" 60 | tee "$TMP"
+RATE_OK=no; grep -q "8.5 rule (> 1 per cent per hour over the last hour): MET" "$TMP" && RATE_OK=yes
+GUARD=$($PY scripts/segment_guard.py "$RUN"); echo "5.3 / 6.3 (a) fields of the run record: $GUARD" | cut -c1-700
+OK53=$(echo "$GUARD" | $PY -c "import json, sys; g=json.loads(sys.stdin.read()); print('yes' if g['clean'] else 'no')")
+TL=$($PY -c "import math; rem=(12.0-float('$HOURS'))*3600; print(int(min(7200, max(0, math.floor(rem)))))")
+echo "lineage optimizer time so far $HOURS h; remaining below 12 h: $TL s allowed for the next segment"
+if [ "$RATE_OK" = "yes" ] && [ "$OK53" = "yes" ] && [ "$TL" -ge 600 ]; then
+  echo "8.5 rule MET, record clean of 5.3 / 6.3 (a) flags, $TL s remain: enqueuing the next segment $TAG on GPU $GPU (exclusive), time limit $TL s"
+  bash scripts/enqueue_continuation_v122.sh "$RUN" "$TAG" "$GPU" 1 "$TL"
+else
+  echo "no further segment (rate met: $RATE_OK; record clean: $OK53; remaining s: $TL): the slot goes to the next queue item"
+fi
+JID=$(basename "$RUN"); ABS=$(cd "$RUN" && pwd); SH=validation/l_slot_chain_evals_${JID%%_L6*}.sh
+cat > "$SH" <<EOC
+#!/bin/bash
+cd RUN_ROOT/numerics/degree6_free_parameters_48h; LOG=validation/logs/l_slot_chain.log
+echo "\$(date -u +%FT%TZ) evals chain started for $JID (J_c EVAL v5 + segment_report v4.1)" >> \$LOG
+bash validation/l_launch.sh frozen jceval_v5_${JID%%_L6*}_\$(date -u +%H%M%S) $EGPU jc_eval_state.py $ABS cuda:0 256
+bash validation/l_launch.sh frozen segrep41_${JID%%_L6*}_\$(date -u +%H%M%S) $EGPU segment_report.py $ABS --reference-core $RC --source "$SRC" cuda:0
+echo "\$(date -u +%FT%TZ) evals chain done for $JID" >> \$LOG
+EOC
+chmod +x "$SH"; setsid nohup bash "$SH" > validation/logs/evals_${JID%%_L6*}.out 2>&1 &
+echo "EVAL chain launched ($SH) on GPU $EGPU"

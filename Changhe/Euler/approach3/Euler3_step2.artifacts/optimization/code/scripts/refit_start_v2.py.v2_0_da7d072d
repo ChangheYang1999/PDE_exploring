@@ -1,0 +1,136 @@
+#!/usr/bin/env python
+"""v2 (2026-10-29T22:3xZ; after the failed pilot (iii) refit): (a) exactly null columns of the field map are excluded from the fit and set to zero (the v1 division by column norms clamped at 1e-300 turned roundoff into 1e289 coefficients in the dead E l = 1 columns); (b) truncated-SVD regularization at --rcond (default 1e-8) with the dropped rank reported, and a second fit at --rcond2 (default 1e-6) for comparison; (c) sanity rules before writing: every block coefficient energy at most --energy-factor (10) times the source block energy and the largest coefficient at most 10 times the source largest, else the file is written with status UNUSABLE and a .UNUSABLE marker; (d) the self-consistent O1 of the start (Problem.objective_at + commit_aux) for the refit and for the kept coefficients at the target; (e) usable as the small-move control. v1 kept as scripts/refit_start.py.
+Offline REFIT start file (numerics 2026-10-29T21:3xZ note; lead 16:40:13Z item 3 (iii), (v): F2 refit pilots). The worker's param_init_mode 'refit'
+fails for free-parameter models (fit_field fits the two parameter slots as zeros, so TailConstraints.expand sees c_l = 0 and its constraint matrix is
+singular; see status/KNOWN_ISSUES.md). This tool does the refit outside the production worker and writes a start file the worker reads as an ordinary
+fresh start (init_from, keep_coefficients at the file's own parameters):
+  1. load the source start (coefficients z_s at (c_l_s, omega_s)); evaluate U_src = model_src.fields_grid(z_s)['U'] on the common model grid;
+  2. build the target model at (c_l_t, omega_t) with free parameters (same L, Nk, channels, R0); TailConstraints tcf of the target model;
+  3. fit U_src by src.optimization.transfer.fit_field in the tail-constrained coefficient coordinates with the PARAMETERS FIXED at the target:
+     expand_fixed(zr) = tcf.expand(cat(zr, [c_l_t, omega_t]))[:n_coef], n_red = tcf.n_red - 2 (column-scaled truncated-SVD least squares, unchanged);
+  4. report the fit residual, condition estimate, rank, the relative change of U on the training grid and per dyadic shell j = -4..8 (discrete sampling diagnostic: unweighted norms over the training-grid samples, V470), the
+     far-field norm of the fitted state; save z = cat(coefficients, [c_l_t, omega_t]) RAW (the worker applies its phase alignment and F-gauge
+     projection to every fresh start) with config (target parameters, free_params true), meta and the fit record.
+Usage: python scripts/refit_start.py <source start .pt> <c_l_t> <omega_t> <out .pt> [--device cuda:0] [--chunk 256]
+Writes <out .pt> (exclusive create) and <out .pt>.json (the fit record). Label of the pilot that uses it: FREE (the file is an initial condition, not a result)."""
+import os, sys, json, time, math, hashlib, argparse
+ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+sys.path.insert(0, ROOT)
+import torch
+torch.set_default_dtype(torch.float64)
+from src.equations.fields import Model
+from src.optimization.tail_constraints import TailConstraints
+from src.optimization.transfer import fit_field
+sha = lambda p: hashlib.sha256(open(p, "rb").read()).hexdigest()
+now = lambda: time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+DT = torch.float64
+
+
+def build(cfg, c_l, omega, free, dev):
+    return Model(L=cfg["L"], Nk=cfg["Nk"], m_parity=cfg.get("m_parity", "even"), R0=cfg.get("R0", 1.0), Nr=cfg.get("Nr"), c_l=c_l, omega=omega, free_params=free,
+                 channels=cfg.get("channels"), device=dev, extra_r=cfg.get("far_radii"))
+
+
+def fit_regularized(model, U_target, expand, n_red, chunk, rcond, log):
+    """fit_field's column-scaled least squares with (a) exactly null columns excluded and set to zero, (b) truncated SVD at rcond; returns (z, info)."""
+    from src.optimization.lm import jacobian_fwd
+    from src.equations.fields import alpha_of
+    dev = model.r.device
+    def to_full(zc):
+        return torch.cat([expand(zc), torch.tensor([model.c_l0, model.omega0], dtype=DT, device=dev)])
+    def field_flat(zc):
+        return model.fields_grid(to_full(zc), need_vort=False)["U"].reshape(-1)
+    z0 = torch.zeros(n_red, dtype=DT, device=dev)
+    J = jacobian_fwd(field_flat, z0, chunk=chunk)
+    alpha = alpha_of(model.c_l0)
+    w = ((1 + model.rho / model.R0 ** 2) ** alpha)[:, None] * (model.grid.w / (4 * math.pi))[None, :]
+    wv = w.expand(3, -1, -1).reshape(-1).sqrt()
+    Jw = J * wv[:, None]; bw = U_target.reshape(-1) * wv
+    cs = Jw.norm(dim=0); live = cs > 0                                                  # (a) exactly null columns excluded
+    n_null = int((~live).sum()); Jl = Jw[:, live] / cs[live][None, :]
+    sv = torch.linalg.svdvals(Jl.cpu())
+    sol = torch.linalg.lstsq(Jl.cpu(), bw.cpu()[:, None], rcond=rcond, driver="gelsd")   # (b) truncated SVD at rcond
+    zl = sol.solution[:, 0].to(dev) / cs[live]
+    zc = torch.zeros(n_red, dtype=DT, device=dev); zc[live] = zl
+    rank = int(sol.rank.item()) if sol.rank is not None and sol.rank.numel() else None
+    resid = float((Jw @ zc - bw).norm() / bw.norm().clamp_min(1e-300))
+    z = to_full(zc)
+    info = dict(rel_fit_residual=resid, cond_est=float(sv[0] / sv[-1].clamp_min(1e-300)), rank=rank, n_columns=int(n_red), n_live_columns=int(live.sum()), n_null_columns_excluded=n_null, rcond=rcond,
+                dropped_rank=(int(live.sum()) - rank) if rank is not None else None, method="column-scaled truncated-SVD least squares (gelsd) on the live columns; null columns set to zero (v2)")
+    log(f"fit (rcond {rcond:g}): rel residual {resid:.3e}, rank {rank} of {int(live.sum())} live columns ({n_null} null excluded), cond {info['cond_est']:.3e}")
+    del J, Jw, Jl
+    return z, info
+
+
+def main():
+    ap = argparse.ArgumentParser(); ap.add_argument("source"); ap.add_argument("c_l", type=float); ap.add_argument("omega", type=float); ap.add_argument("out"); ap.add_argument("--device", default="cuda:0"); ap.add_argument("--chunk", type=int, default=256); ap.add_argument("--rcond", type=float, default=1e-8); ap.add_argument("--rcond2", type=float, default=1e-6); ap.add_argument("--energy-factor", type=float, default=10.0)
+    a = ap.parse_args(); t0 = time.time(); dev = a.device
+    if os.path.exists(a.out):
+        raise FileExistsError(a.out)
+    S = torch.load(a.source, map_location="cpu", weights_only=False); scfg = dict(S["config"]); free_s = bool(S.get("free_params", False)); zs = S["z"].to(dev)
+    c_s, om_s = (float(zs[-2]), float(zs[-1])) if free_s else (float(scfg["c_l"]), float(scfg["omega"]))
+    msrc = build(scfg, c_s, om_s, free_s, dev)
+    with torch.no_grad():
+        U_src = msrc.fields_grid(zs, need_vort=False)["U"]
+    model = build(scfg, a.c_l, a.omega, True, dev); tcf = TailConstraints(model)
+    assert (model.n_coef == msrc.n_coef) and torch.equal(model.r, msrc.r), "the target model has another grid or coefficient count"
+    params = torch.tensor([a.c_l, a.omega], dtype=DT, device=dev); n_coef = model.n_coef
+    expand_fixed = lambda zr: tcf.expand(torch.cat([zr, params]))[:n_coef]
+    log = lambda m: print(time.strftime("%H:%M:%S", time.gmtime()) + " " + m, flush=True)
+    log(f"source {a.source} ({sha(a.source)[:16]}): ({c_s!r}, {om_s!r}), free {free_s}; target ({a.c_l!r}, {a.omega!r}); n_coef {n_coef}, reduced coefficients {tcf.n_red - 2}")
+    zfit, info = fit_regularized(model, U_src, expand_fixed, tcf.n_red - 2, a.chunk, a.rcond, log)
+    zfit2, info2 = fit_regularized(model, U_src, expand_fixed, tcf.n_red - 2, a.chunk, a.rcond2, log)
+    info["rcond2_fit"] = info2
+    assert zfit.numel() == n_coef + 2 and float(zfit[-2]) == a.c_l and float(zfit[-1]) == a.omega, (zfit.numel(), float(zfit[-2]), float(zfit[-1]))
+    # (c) sanity rules: per-block energies and largest coefficients against the source
+    dd_s = msrc.unpack_all(torch.cat([zs[:n_coef], torch.tensor([c_s, om_s], dtype=DT, device=dev)]) if zs.numel() == n_coef else zs); dd_f = model.unpack_all(zfit)
+    blocks = {}; usable = True
+    for b in ("A", "C", "B", "D", "E"):
+        es = float((dd_s[b] ** 2).sum()); ef = float((dd_f[b] ** 2).sum()); ms = float(dd_s[b].abs().max()) if dd_s[b].numel() else 0.0; mf = float(dd_f[b].abs().max()) if dd_f[b].numel() else 0.0
+        ok = (ef <= a.energy_factor * es + 1e-300) and (mf <= 10.0 * ms + 1e-300); usable = usable and ok
+        blocks[b] = dict(energy_source=es, energy_refit=ef, energy_ratio=(ef / es if es > 0 else None), max_source=ms, max_refit=mf, ok=ok)
+    log("block energies refit/source: " + ", ".join(f"{b} {v['energy_ratio']:.3e}" if v['energy_ratio'] is not None else f"{b} n/a" for b, v in blocks.items()) + f"; usable {usable}")
+    # (d) self-consistent O1 of the refit start and of the kept coefficients at the target (as the worker computes it)
+    O1 = {}
+    try:
+        from src.optimization.problem import Problem
+        from validation.gates import PROD
+        prob_t = Problem(model, **PROD)
+        for nm, zz in (("refit", zfit), ("keep", torch.cat([zs[:n_coef], params]))):
+            prob_t.pivot = prob_t.choose_pivot(zz); prob_t.ensure_geometry(zz)
+            r_, aux_ = prob_t.objective_at(zz); prob_t.commit_aux(aux_); O1[nm] = 0.5 * float(r_ @ r_)
+        log(f"self-consistent O1 at the target: refit {O1['refit']:.6e}, kept coefficients {O1['keep']:.6e}")
+    except Exception as e:
+        O1 = dict(error=repr(e)); log(f"O1 not computed: {e!r}")
+    with torch.no_grad():
+        U_new = model.fields_grid(zfit, need_vort=False)["U"]; relU = float((U_new - U_src).norm() / U_src.norm().clamp_min(1e-300))
+        U_keep = model.fields_grid(torch.cat([zs[:n_coef], params]), need_vort=False)["U"]; relU_keep = float((U_keep - U_src).norm() / U_src.norm().clamp_min(1e-300))
+        shells = {}
+        for jj in range(-4, 9):
+            msk = (model.r >= model.R0 * 2.0 ** jj) & (model.r < model.R0 * 2.0 ** (jj + 1))
+            if msk.any():
+                d = (U_new[:, msk] - U_src[:, msk]).norm(); d0 = U_src[:, msk].norm().clamp_min(1e-300); dk = (U_keep[:, msk] - U_src[:, msk]).norm()
+                shells[str(jj)] = dict(rel_change_refit=float(d / d0), rel_change_keep=float(dk / d0), n_radii=int(msk.sum()))
+    # far-field norm (F-gauge quantity) of the fitted state, through the production Problem
+    try:
+        from src.optimization.problem import Problem
+        from validation.gates import PROD
+        prob = Problem(model, **PROD); aT, aS, c_l_, om_ = model.unpack(zfit); Fn2 = float(prob.tail_norm2(aT, aS, c_l_, om_))
+    except Exception as e:
+        Fn2 = None; log(f"far-field norm not computed: {e!r}")
+    log(f"fit: rel residual {info['rel_fit_residual']:.3e}, cond {info['cond_est']:.3e}, rank {info['rank']} of {info['n_columns']}; relU(refit) {relU:.4e} against relU(keep) {relU_keep:.4e}; F_norm2 {Fn2}")
+    log("per shell j: refit | keep: " + "; ".join(f"{j}: {v['rel_change_refit']:.3e} | {v['rel_change_keep']:.3e}" for j, v in shells.items()))
+    cfg = dict(scfg); cfg.update(c_l=a.c_l, omega=a.omega, free_params=True)
+    meta = dict(family="refit_start", source=os.path.abspath(a.source), source_sha256=sha(a.source), source_c_l=c_s, source_omega=om_s, target_c_l=a.c_l, target_omega=a.omega,
+                fit=info, relU_change_refit=relU, relU_change_keep=relU_keep, relU_by_shell=shells, F_norm2_fitted=Fn2, tool="scripts/refit_start.py", tool_sha256=sha(os.path.abspath(__file__)),
+                blocks=blocks, usable=usable, O1_at_target=O1, note="offline refit (v2: null columns zeroed, truncated SVD at rcond, sanity rules) of the source velocity field into the basis at the target parameters with the tail constraints evaluated at the target parameters; RAW coefficients (no phase alignment, no F-gauge projection: the worker applies both to a fresh start). relU_change_* and relU_by_shell are DISCRETE SAMPLING diagnostics (unweighted Frobenius norms over the training-grid samples of the shell), not physical-volume L2 norms (V470); the raw fit quality does not establish the quality after the worker F-gauge projection", ts=now(), device=dev, torch=torch.__version__)
+    if not usable:
+        open(a.out + ".UNUSABLE", "w").write("refit start marked UNUSABLE by the sanity rules (block energy or largest coefficient above 10 x the source); do not use as a start\n")
+    torch.save(dict(z=zfit.detach().cpu(), config=cfg, free_params=True, meta=meta, kind=("refit start file (numerics tool v2; initial condition, not a result)" if usable else "UNUSABLE refit start (sanity rules failed)"),
+                    spec_diag_holdout=S.get("spec_diag_holdout"), two_family=S.get("two_family")), a.out)
+    rec = dict(meta, out=os.path.abspath(a.out), out_sha256=sha(a.out), seconds=time.time() - t0)
+    json.dump(rec, open(a.out + ".json", "w"), indent=1, default=str); log(f"DONE {a.out} sha256 {rec['out_sha256'][:16]}; usable {usable}; {rec['seconds']:.0f} s")
+
+
+if __name__ == "__main__":
+    main()

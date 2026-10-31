@@ -1,0 +1,212 @@
+#!/usr/bin/env python
+"""Branch identity (lead 2026-10-29T17:42:37Z item 5, 17:55:21Z item 5, 18:31:20Z item 3; SPEC 6.5, 8.6) for two saved states a and b.
+FIELD PART: d(a, b) = max over j = -4..8 of RMS_j(U_a - U_b) / RMS_j(U_b), both velocity fields in the F-gauge (the saved states carry the gauge
+rows ||F|| = 1; the far-field norm of each state is recomputed and written), unweighted, on the dyadic shells [2^j R0, 2^(j+1) R0) with exact
+normalized-volume Gauss quadrature in r (n_per_shell nodes per shell) and the Gauss angular grid of the holdout family (src/validation/holdout.py).
+Each field is evaluated with its own basis at its own parameters (c_l, omega from z for free-parameter states, from the configuration otherwise) on
+the SAME point set. Agreement if max(d(a, b), d(b, a)) <= 0.10.
+PARAMETER PART (18:31:20Z item 3, exact definitions): from a state's width-tool v6 record (tools/sensitivity.py, lead) at the registered cutoff 1e-12,
+lambda_i = reduced."1e-12".S_eigvals_scaled, w_i = the columns of reduced."1e-12".S_eigvecs_scaled_columns, O1 = the record's O1,
+t_i = sqrt(2 x 0.01 x O1 / lambda_i); from the state's J_c EVAL record, D_p = D at the two parameter columns (optimizer coordinates). Displacement
+Delta s = D_p * (z_b - z_a) componentwise with z = (z_c, z_w), z_c = log(x/(1 - x)), x = (c_l - 0.4)/0.1, z_w = log(omega); c_i = w_i . Delta s.
+Agreement at state x if |c_i| <= t_i(x) for i = 1, 2 using x's records; parameter agreement if it holds at a or at b. A state without both records has
+no parameter part (that side OPEN). Same branch (8.6) if the field agreement and the parameter agreement both hold; OPEN if the parameter part is
+OPEN on both sides. Linear-model widths as registered, labelled. CPU, one process. Numerics, not a proof.
+Usage: python scripts/branch_distance.py <state a .pt> <state b .pt> --tag <tag> [--n-per-shell 6] [--jmin -4 --jmax 8]
+         [--sens-a <v6 json> --jc-a <J_c EVAL npz or its directory>] [--sens-b ... --jc-b ...] [--cutoff 1e-12]
+       state files: the worker's runs/<run>/starts/start_000.pt (free_params True, z with parameters), starts/*.pt (coefficients, parameters in config),
+       or a record_63a start-reference *_state.pt. Output: validation/branch_distance/<tag>.json (never overwritten).
+v3 (2026-10-29T19:0xZ; lead 18:49:47Z item 4, V409, V414): F_norm2 from the coefficients of each state (gauge_defect = F_norm2 - 1), |F_norm2 - 1| > 1e-12 makes the pair OPEN (no normalization); a non-finite or zero shell norm or difference makes the field part OPEN, never agreement; the parameter part requires both records bound to the endpoint (record parameters equal the state parameters to 1e-9, J_c npz parameters likewise), jacobian_kind J_c, optimizer parameter coordinates, finite positive D_p, a valid eigensystem (finite positive lambda, orthonormal 2 x 2 eigenvectors to 1e-8) and O1 equal to the npz cost to 1e-10 relative, else OPEN. v2 (789922f06d889ffe) kept as branch_distance.py.v2_789922f0.
+v2 (2026-10-29T18:4xZ): parameter part added; far-field norms recomputed. v1 (field part only) kept as branch_distance.py.v1_field_only."""
+import sys, os, json, time, math, hashlib, argparse, glob
+ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+sys.path.insert(0, ROOT)
+import numpy as np, torch
+torch.set_default_dtype(torch.float64)
+from src.equations.fields import Model
+from src.validation.holdout import HoldoutGrid
+
+VERSION = "v3"
+
+
+def sha(p):
+    return hashlib.sha256(open(p, "rb").read()).hexdigest()
+
+
+def load_state(path, device):
+    S = torch.load(path, map_location="cpu", weights_only=False); cfg = S["config"]
+    free = bool(S.get("free_params", False))
+    z = S["z"].to(device)
+    if free:
+        c_l, omega = float(z[-2]), float(z[-1])
+    else:
+        c_l, omega = float(cfg["c_l"]), float(cfg["omega"])
+    model = Model(L=cfg["L"], Nk=cfg["Nk"], m_parity=cfg.get("m_parity", "even"), R0=cfg.get("R0", 1.0), Nr=cfg.get("Nr"), c_l=c_l, omega=omega, free_params=free,
+                  channels=cfg.get("channels"), device=device, extra_r=cfg.get("far_radii"))
+    info = dict(path=os.path.abspath(path), sha256=sha(path), free_params=free, c_l=c_l, omega=omega, L=cfg["L"], Nk=cfg["Nk"], R0=cfg.get("R0", 1.0), channels=cfg.get("channels"), n_z=int(z.numel()),
+                job_id=(S.get("job_id") or (S.get("d6fp") or {}).get("job_id") or (S.get("meta") or {}).get("job_id")), iterations=S.get("iterations"), status=S.get("status"), kind=S.get("kind"),
+                F_norm_saved=S.get("F_norm"), d6fp_params_final=(S.get("d6fp") or {}).get("params_final"))
+    return model, z, info
+
+
+F_NORM2_TOL = 1e-12
+
+
+def tail_norm2(model, z):
+    """F_norm2 = int_S2 |F|^2 of the saved state from its coefficients through the production Problem (the F-gauge quantity), on the CPU; None if it fails."""
+    try:
+        from src.optimization.problem import Problem
+        from validation.gates import PROD
+        prob = Problem(model, **PROD)
+        aT, aS, c_l, om = model.unpack(z)
+        v = float(prob.tail_norm2(aT, aS, c_l, om))
+        return v if math.isfinite(v) else None
+    except Exception:
+        return None
+
+
+def opt_coords(c_l, omega):
+    x = (c_l - 0.4) / 0.1
+    return math.log(x / (1.0 - x)), math.log(omega)
+
+
+def load_param_records(sens_path, jc_path, cutoff):
+    """(lambda_i, w_i columns, O1, D_p, provenance) from the width-tool v6 record and the J_c EVAL record of one state."""
+    S = json.load(open(sens_path))
+    red = (S.get("reduced") or {}).get(f"{cutoff:g}") or (S.get("reduced") or {}).get(str(cutoff))
+    if red is None:
+        raise SystemExit(f"REFUSED: the sensitivity record {sens_path} has no reduced block at cutoff {cutoff}")
+    lam = [float(v) for v in red["S_eigvals_scaled"]]; W_cols = red["S_eigvecs_scaled_columns"]
+    W = np.array(W_cols, dtype=float)                        # columns are the eigenvectors w_i (as stored: list of columns)
+    O1 = float(S["O1"])
+    if os.path.isdir(jc_path):
+        cands = sorted(glob.glob(os.path.join(jc_path, "*_eval_complete.npz"))) or sorted(glob.glob(os.path.join(jc_path, "*.npz")))
+        if not cands:
+            raise SystemExit(f"REFUSED: no J_c EVAL npz in {jc_path}")
+        jc_path = cands[0]
+    Z = np.load(jc_path)
+    D = np.asarray(Z["D"], dtype=float); D_p = D[-2:].copy()
+    kind = str(Z["jacobian_kind"]) if "jacobian_kind" in Z.files else None
+    t = [math.sqrt(2.0 * 0.01 * O1 / l) if l > 0 else None for l in lam]
+    prov = dict(sensitivity_record=os.path.abspath(sens_path), sensitivity_sha256=sha(sens_path), sensitivity_version=S.get("version"), cutoff=cutoff, O1=O1, lambda_scaled=lam,
+                eigvecs_scaled_columns=W_cols, half_widths_t=t, jc_record=os.path.abspath(jc_path), jc_sha256=sha(jc_path), jc_jacobian_kind=kind, D_p=D_p.tolist(),
+                jc_params=dict(c_l=float(Z["c_l"]) if "c_l" in Z.files else None, omega=float(Z["omega"]) if "omega" in Z.files else None, it=int(Z["it"]) if "it" in Z.files else None),
+                jc_cost=(float(Z["cost"]) if "cost" in Z.files else None), sens_params=(S.get("record_meta") or {}).get("params_record"), sens_param_coords=(S.get("record_meta") or {}).get("param_coords_in_record"),
+                sens_record_source=(S.get("record_meta") or {}).get("record"))
+    return lam, W, O1, D_p, t, prov
+
+
+def parameter_part(ia, ib, sens, jc, side, cutoff):
+    """agreement test at state `side` ('a' or 'b') with that state's records."""
+    if not sens or not jc:
+        return dict(side=side, status="OPEN: no width-tool record or no J_c EVAL record for this state", agreement=None)
+    lam, W, O1, D_p, t, prov = load_param_records(sens, jc, cutoff)
+    st = ia if side == "a" else ib
+    problems = []
+    rp = prov.get("sens_params") or {}
+    if rp.get("c_l") is None or rp.get("omega") is None or abs(float(rp["c_l"]) - st["c_l"]) > 1e-9 * max(1.0, abs(st["c_l"])) or abs(float(rp["omega"]) - st["omega"]) > 1e-9 * max(1.0, abs(st["omega"])):
+        problems.append("width-tool record parameters do not match the state (1e-9)")
+    jp = prov.get("jc_params") or {}
+    if jp.get("c_l") is None or jp.get("omega") is None or abs(jp["c_l"] - st["c_l"]) > 1e-9 * max(1.0, abs(st["c_l"])) or abs(jp["omega"] - st["omega"]) > 1e-9 * max(1.0, abs(st["omega"])):
+        problems.append("J_c EVAL record parameters do not match the state (1e-9)")
+    if prov.get("jc_jacobian_kind") != "J_c":
+        problems.append(f"J_c EVAL record jacobian_kind is {prov.get('jc_jacobian_kind')!r}, not J_c")
+    if prov.get("sens_param_coords") != "optimizer":
+        problems.append(f"width-tool record parameter coordinates {prov.get('sens_param_coords')!r}, not optimizer")
+    if not (len(D_p) == 2 and all(math.isfinite(float(v)) and float(v) > 0 for v in D_p)):
+        problems.append("D_p not two finite positive values")
+    if not (len(lam) == 2 and all(math.isfinite(l) and l > 0 for l in lam)):
+        problems.append("eigenvalues not two finite positive values")
+    if not (W.shape == (2, 2) and np.all(np.isfinite(W)) and np.abs(W.T @ W - np.eye(2)).max() <= 1e-8):
+        problems.append("eigenvectors not an orthonormal 2 x 2 system (1e-8)")
+    jc_cost = prov.get("jc_cost")
+    if jc_cost is None or not math.isfinite(O1) or O1 <= 0 or abs(jc_cost - O1) > 1e-10 * max(abs(O1), 1e-300):
+        problems.append(f"O1 of the width-tool record ({O1}) and the J_c EVAL cost ({jc_cost}) differ beyond 1e-10 relative or are invalid")
+    if problems:
+        return dict(side=side, status="OPEN: " + "; ".join(problems), agreement=None, provenance=prov)
+    za = np.array(opt_coords(ia["c_l"], ia["omega"])); zb = np.array(opt_coords(ib["c_l"], ib["omega"]))
+    ds = D_p * (zb - za)
+    c = [float(W[:, i] @ ds) for i in range(W.shape[1])]
+    within = [(abs(ci) <= ti) if ti is not None else None for ci, ti in zip(c, t)]
+    agree = all(w is True for w in within) if all(w is not None for w in within) else None
+    cons = dict(record_c_l=rp.get("c_l"), state_c_l=st["c_l"], record_omega=rp.get("omega"), state_omega=st["omega"], jc_c_l=jp.get("c_l"), jc_omega=jp.get("omega"), match=True)
+    return dict(side=side, status=("decided" if agree is not None else "OPEN: a half-width is undefined"), agreement=agree, z_a=za.tolist(), z_b=zb.tolist(), delta_s=ds.tolist(), c=c,
+                c_over_t=[(ci / ti if ti else None) for ci, ti in zip(c, t)], within=within, half_widths_t=t, D_p=D_p.tolist(), record_matches_state=cons, binding="width-tool and J_c EVAL records bound to the endpoint by parameters (1e-9), J_c kind, optimizer coordinates, positive D_p, valid eigensystem, O1 = cost (1e-10)", provenance=prov)
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("a"); ap.add_argument("b"); ap.add_argument("--tag", required=True); ap.add_argument("--n-per-shell", type=int, default=6)
+    ap.add_argument("--jmin", type=int, default=-4); ap.add_argument("--jmax", type=int, default=8); ap.add_argument("--threshold", type=float, default=0.10)
+    ap.add_argument("--sens-a", default=None); ap.add_argument("--jc-a", default=None); ap.add_argument("--sens-b", default=None); ap.add_argument("--jc-b", default=None); ap.add_argument("--cutoff", type=float, default=1e-12)
+    a = ap.parse_args()
+    out_dir = os.path.join(ROOT, "validation", "branch_distance"); os.makedirs(out_dir, exist_ok=True)
+    out_path = os.path.join(out_dir, f"{a.tag}.json")
+    if os.path.exists(out_path):
+        raise FileExistsError(out_path)
+    t0 = time.time(); dev = torch.device("cpu")
+    ma, za, ia = load_state(a.a, dev); mb, zb, ib = load_state(a.b, dev)
+    if (ma.L, ma.Nk, float(ma.R0)) != (mb.L, mb.Nk, float(mb.R0)):
+        raise SystemExit(f"REFUSED: the two states have different degree, radial count or R0: {(ma.L, ma.Nk, ma.R0)} vs {(mb.L, mb.Nk, mb.R0)}")
+    for info, m_, z_ in ((ia, ma, za), (ib, mb, zb)):
+        n2 = tail_norm2(m_, z_); info["F_norm2_from_coefficients"] = n2; info["gauge_defect"] = (n2 - 1.0) if n2 is not None else None
+        info["in_F_gauge"] = (n2 is not None and abs(n2 - 1.0) <= F_NORM2_TOL)
+    gauge_ok = bool(ia["in_F_gauge"] and ib["in_F_gauge"])
+    R0 = float(ma.R0)
+    edges = [(R0 * 2.0 ** j, R0 * 2.0 ** (j + 1)) for j in range(a.jmin, a.jmax + 1)]
+    Ha = HoldoutGrid(ma, r_core=R0, n_per_shell=a.n_per_shell, edges=edges)        # same radii, angles and weights for both (deterministic Gauss rules)
+    Hb = HoldoutGrid(mb, r_core=R0, n_per_shell=a.n_per_shell, edges=edges)
+    assert torch.equal(Ha.model.r, Hb.model.r) and torch.equal(Ha.model.grid.n, Hb.model.grid.n) and torch.equal(Ha.w_vol, Hb.w_vol), "the two evaluation grids differ"
+    with torch.no_grad():
+        Ua = Ha.model.fields_grid(za, need_vort=False)["U"]; Ub = Hb.model.fields_grid(zb, need_vort=False)["U"]
+    rms_a = Ha.rms(Ua); rms_b = Ha.rms(Ub); rms_d = Ha.rms(Ua - Ub)
+    def valid(v):
+        return isinstance(v, float) and math.isfinite(v) and v > 0
+    ratio_ab = [d / b if (valid(b) and isinstance(d, float) and math.isfinite(d)) else None for d, b in zip(rms_d, rms_b)]        # d(a, b): relative to b
+    ratio_ba = [d / x if (valid(x) and isinstance(d, float) and math.isfinite(d)) else None for d, x in zip(rms_d, rms_a)]        # d(b, a): relative to a
+    shells_valid = all(v is not None for v in ratio_ab + ratio_ba)
+    d_ab = max([v for v in ratio_ab if v is not None] or [float("nan")]); d_ba = max([v for v in ratio_ba if v is not None] or [float("nan")])
+    dmax = max(d_ab, d_ba)
+    field_ok = (bool(dmax <= a.threshold) if (shells_valid and gauge_ok and math.isfinite(dmax)) else None)   # V409 / lead 18:49:47Z item 4: invalid shell norms or gauge give OPEN, never agreement
+    field_status = ("decided" if field_ok is not None else ("OPEN: a state is not in the F-gauge within 1e-12 (" + str(ia["gauge_defect"]) + ", " + str(ib["gauge_defect"]) + ")" if not gauge_ok else "OPEN: a shell norm or difference is non-finite or zero"))
+    shells = [dict(j=j, r_lo=e[0], r_hi=e[1], rms_Ua=x, rms_Ub=y, rms_diff=d, ratio_ab=p, ratio_ba=q) for j, e, x, y, d, p, q in zip(range(a.jmin, a.jmax + 1), edges, rms_a, rms_b, rms_d, ratio_ab, ratio_ba)]
+    worst_ab = max(shells, key=lambda s: (s["ratio_ab"] if s["ratio_ab"] is not None else -1)); worst_ba = max(shells, key=lambda s: (s["ratio_ba"] if s["ratio_ba"] is not None else -1))
+    for s_ in shells:
+        s_["valid"] = (s_["ratio_ab"] is not None and s_["ratio_ba"] is not None)
+    pa = parameter_part(ia, ib, a.sens_a, a.jc_a, "a", a.cutoff); pb = parameter_part(ia, ib, a.sens_b, a.jc_b, "b", a.cutoff)
+    sides = [p["agreement"] for p in (pa, pb)]
+    if any(s is True for s in sides):
+        param_ok = True; param_status = "parameter agreement holds at " + ", ".join(p["side"] for p in (pa, pb) if p["agreement"] is True)
+    elif all(s is None for s in sides):
+        param_ok = None; param_status = "OPEN: no parameter part on either side (" + pa["status"] + "; " + pb["status"] + ")"
+    elif any(s is None for s in sides):
+        param_ok = None; param_status = "OPEN: fails at the decided side, undecided at the other (" + pa["status"] + "; " + pb["status"] + ")"
+    else:
+        param_ok = False; param_status = "parameter agreement fails at both states"
+    same = ((field_ok and param_ok) if (param_ok is not None and field_ok is not None) else (False if (field_ok is False or param_ok is False) else None))
+    rec = dict(kind="branch identity (SPEC 6.5 common-domain field distance and 8.6 parameter agreement; lead 17:42:37Z item 5, 18:31:20Z item 3)", version=VERSION, tag=a.tag, a=ia, b=ib,
+               field=dict(d_ab=d_ab, d_ba=d_ba, d_max=dmax, threshold=a.threshold, agreement=field_ok, status=field_status, shells_valid=shells_valid, gauge_ok=gauge_ok, F_norm2_tol=F_NORM2_TOL, worst_shell_ab=worst_ab["j"], worst_shell_ba=worst_ba["j"], shells=shells,
+                          grid=dict(shells="dyadic [2^j R0, 2^(j+1) R0), j = %d..%d" % (a.jmin, a.jmax), R0=R0, n_per_shell=a.n_per_shell, n_radii=int(Ha.model.r.numel()), ntheta=int(Ha.model.ntheta), nphi=int(Ha.model.nphi), n_angles=int(Ha.model.grid.n.shape[0]),
+                                    quadrature="Gauss-Legendre in r per shell with normalized volume weights; Gauss angular grid of the holdout family (phi0 = pi / (2 nphi)); unweighted field RMS"),
+                          definition="d(a, b) = max_j RMS_j(U_a - U_b) / RMS_j(U_b); d(b, a) with the roles exchanged; agreement if max(d(a, b), d(b, a)) <= 0.10; both fields in the F-gauge as saved, each evaluated with its own basis at its own parameters on the same points"),
+               parameters=dict(a=dict(c_l=ia["c_l"], omega=ia["omega"], z=list(opt_coords(ia["c_l"], ia["omega"]))), b=dict(c_l=ib["c_l"], omega=ib["omega"], z=list(opt_coords(ib["c_l"], ib["omega"]))),
+                               d_c_l=ib["c_l"] - ia["c_l"], d_omega=ib["omega"] - ia["omega"], d_log_omega=math.log(ib["omega"] / ia["omega"]), at_a=pa, at_b=pb, agreement=param_ok, status=param_status,
+                               definition="t_i = sqrt(2 x 0.01 x O1 / lambda_i) (scaled half-width along eigenvector w_i of S, cutoff 1e-12, width tool v6 record of the state); Delta s = D_p * (z_b - z_a) in the J_c EVAL record's scaled optimizer coordinates; c_i = w_i . Delta s; agreement at x if |c_i| <= t_i(x) for both i; parameter agreement if it holds at a or at b (linear-model widths as registered)"),
+               same_branch=same, decision=("same branch (field and parameter agreement)" if same is True else ("not the same branch" if same is False else "OPEN: " + ("; ".join(x for x in (field_status if field_ok is None else "", param_status if param_ok is None else "") if x)))),
+               script_sha256=sha(os.path.abspath(__file__)), torch=torch.__version__, seconds=time.time() - t0, ts=time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()))
+    with open(out_path, "x") as fh:
+        json.dump(rec, fh, indent=1, default=str)
+    print(f"{a.tag}: FIELD d(a,b) {d_ab:.4f} (worst shell j={worst_ab['j']}), d(b,a) {d_ba:.4f} (j={worst_ba['j']}), max {dmax:.4f}, agreement (<= {a.threshold}): {field_ok} ({field_status}); "
+          f"a ({ia['c_l']:.6f}, {ia['omega']:.6f}) b ({ib['c_l']:.6f}, {ib['omega']:.6f}); gauge defects {ia['gauge_defect']}, {ib['gauge_defect']}; {rec['seconds']:.0f} s")
+    for p in (pa, pb):
+        if p.get("c") is not None:
+            print(f"  PARAMETERS at {p['side']}: c = {p['c']}, t = {p['half_widths_t']}, c/t = {p['c_over_t']}, within {p['within']}, agreement {p['agreement']}")
+        else:
+            print(f"  PARAMETERS at {p['side']}: {p['status']}")
+    print(f"  parameter part: {param_status}; same branch: {rec['decision']}")
+    print("per shell j: ratio_ab | ratio_ba: " + "; ".join(f"{s['j']}: {s['ratio_ab']:.3e} | {s['ratio_ba']:.3e}" for s in shells))
+    print("DONE", out_path, sha(out_path)[:16])
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,123 @@
+{
+  "completed_utc": "2026-10-29T10:40:34.973600+00:00",
+  "elapsed_seconds": 1.1854646122083068,
+  "complete": true,
+  "all_checks_pass": true,
+  "checks": [
+    {
+      "label": "source direct direction is nonzero",
+      "passed": true
+    },
+    {
+      "label": "source forward rule agrees",
+      "passed": true
+    },
+    {
+      "label": "source first pullback agrees",
+      "passed": true
+    },
+    {
+      "label": "source reverse-over-reverse disconnected",
+      "passed": true
+    },
+    {
+      "label": "source reverse-over-reverse disagrees",
+      "passed": true
+    },
+    {
+      "label": "pressure direct direction is nonzero",
+      "passed": true
+    },
+    {
+      "label": "pressure forward rule agrees",
+      "passed": true
+    },
+    {
+      "label": "pressure first pullback agrees",
+      "passed": true
+    },
+    {
+      "label": "pressure reverse-over-reverse disconnected",
+      "passed": true
+    },
+    {
+      "label": "pressure reverse-over-reverse disagrees",
+      "passed": true
+    }
+  ],
+  "fixtures": [
+    {
+      "label": "source",
+      "direct": [
+        [
+          2.14
+        ]
+      ],
+      "forward": [
+        [
+          2.14
+        ]
+      ],
+      "reverse_over_reverse": [
+        [
+          0.0
+        ]
+      ],
+      "first_pullback": [
+        14.599999999999998,
+        -2.6000000000000005
+      ],
+      "first_pullback_reference": [
+        14.599999999999998,
+        -2.6000000000000005
+      ]
+    },
+    {
+      "label": "pressure",
+      "direct": [
+        0.03056000000000003,
+        -0.06684,
+        0.352,
+        -0.0030000000000000027
+      ],
+      "forward": [
+        0.03056000000000003,
+        -0.06684,
+        0.352,
+        -0.0030000000000000027
+      ],
+      "reverse_over_reverse": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "first_pullback": [
+        2.2600000000000002,
+        2.2600000000000002,
+        1.4484,
+        0.5254,
+        0.142,
+        1.0792,
+        -0.1562
+      ],
+      "first_pullback_reference": [
+        2.2600000000000002,
+        2.2600000000000002,
+        1.4484,
+        0.5254,
+        0.142,
+        1.0792,
+        -0.1562
+      ]
+    }
+  ],
+  "torch_version": "2.8.0+cu128",
+  "sources": {
+    "scripts/audit_reverse_over_reverse_pressure_v1.py": "cfdf21f682a38b7f3db4d8e5f456951b30778715103e5e177934969791e928b1",
+    "artifacts/production_snapshots/official_gpu_v1p1_20261029T054715Z/src/equations/fields_dd.py": "9716d12760994bc58f4b3933d8b872e3e6653f6e667097b1e5bef15931e879a5",
+    "artifacts/production_snapshots/official_gpu_v1p1_20261029T054715Z/src/pressure/poisson_sh.py": "8aefe0f3a5f4a90755dff84db39cdaa742de4d1c6da4d82e4183cb21ce9681ac",
+    "artifacts/production_snapshots/official_gpu_v1p1_20261029T054715Z/src/equations/residuals.py": "9272f55c0f6a5017e149790ffee8f82af5c0e78239be32a060d1ce9b8c5f3c61"
+  },
+  "scope": "Actual frozen custom derivative wrappers with analytic surrogate primal fields and pressure map. Diagnoses differentiability of the pullback, not the Euler fields or numerical pressure accuracy."
+}

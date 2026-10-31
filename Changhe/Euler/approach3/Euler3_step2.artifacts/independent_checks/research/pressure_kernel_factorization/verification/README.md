@@ -1,0 +1,1 @@
+Evidence: ../../../artifacts/pressure_factorization_v1/audit.json with exact source/geometry/proof hashes and timestamps. Reproduce with ../../../scripts/audit_pressure_factorization_v1.py in a fresh output directory. One synthetic geometry, three parameter pairs. Formal and quadrature accuracy claims are excluded.

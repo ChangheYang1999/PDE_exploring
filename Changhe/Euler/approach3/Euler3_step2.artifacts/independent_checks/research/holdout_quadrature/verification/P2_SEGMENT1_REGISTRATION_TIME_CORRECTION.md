@@ -1,0 +1,3 @@
+# Timestamp precision correction
+
+The P2_SEGMENT1_COMPARISON_V1.md header says 2026-10-29T11:33Z. That minute was rounded prematurely. The actual creation occurred after the shell timestamp 2026-10-29T11:32:56Z and before the capture-controller start 2026-10-29T11:32:56.812207+00:00. The file already has a hash bound into the endpoint receipt, so it is preserved unchanged with this explicit correction. No runtime is added. The prospective-design statement and scientific settings are unchanged. This correction was written in the 11:33Z minute; the filesystem and subsequent hash receipt preserve its precise creation time.

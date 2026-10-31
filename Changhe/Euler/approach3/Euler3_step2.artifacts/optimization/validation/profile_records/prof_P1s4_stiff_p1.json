@@ -1,0 +1,292 @@
+{
+ "run": "RUN_ROOT/numerics/degree6_free_parameters_48h/runs/prof_P1s4_stiff_p1_L6_cl0.4481_om1.4746_fixed",
+ "job_id": "prof_P1s4_stiff_p1_L6_cl0.4481_om1.4746_fixed",
+ "label": "PROFILE",
+ "iteration0_blocks_source": "linear-response tool record (same state)",
+ "lrs_iteration0": {
+  "file": "RUN_ROOT/numerics/degree6_free_parameters_48h/validation/lrs/P1s4_profile_stiff_p1.json",
+  "sha256": "5f4a7d19a679c29d8713d258445454c1fdea86d28282293986a0dbe6cb071140",
+  "kept_entry_O1": 0.033275277297684425,
+  "kept_entry_gauge_part": 0.03327507711489514,
+  "kept_entry_O1_without_gauge": 2.0018278925534066e-07,
+  "params": {
+   "c_l": 0.44813928657985364,
+   "omega": 1.4745716458018938
+  },
+  "rel_diff_cost0_vs_lrs": -2.0853000988785436e-16,
+  "note": "measured by scripts/linear_response_start.py v1 for the kept start at the same parameters through the worker's entry path (the same state as this PROFILE run's start)"
+ },
+ "checkpoint": "RUN_ROOT/numerics/degree6_free_parameters_48h/runs/prof_P1s4_stiff_p1_L6_cl0.4481_om1.4746_fixed/checkpoint_segment_end.pt",
+ "checkpoint_sha256": "efbe36e809d57a07f2c3d7d5396cf09a4c4015a55db64883bd3e9dcd21159de5",
+ "params": {
+  "c_l": 0.44813928657985364,
+  "omega": 1.4745716458018938
+ },
+ "free_params": false,
+ "max_iter": 40,
+ "time_limit_s": 1800.0,
+ "stop_reason": "time_limit",
+ "counters": {
+  "n_acc": 10,
+  "n_rej": 10,
+  "sat_count": 0
+ },
+ "accepted_iterations": 10,
+ "lm_seconds": 1919.9423785209656,
+ "O1_iteration0": 0.03327527729768442,
+ "O1_iteration0_without_gauge": 2.0018278927558253e-07,
+ "gauge_iteration0": 0.03327507711489514,
+ "start_blocks": {},
+ "O1_end": 1.6440654607903092e-07,
+ "O1_end_without_gauge": 1.644055527117082e-07,
+ "end_blocks": {
+  "near_origin": 9.229469771077751e-10,
+  "core_intermediate": 1.5897238594424715e-07,
+  "far_momentum": 1.1838219953745106e-10,
+  "far_anchors": 1.0390510967435656e-16,
+  "closure": 4.391837486910745e-09,
+  "gauge": 9.933673227231901e-13,
+  "total": 1.6440654607903092e-07
+ },
+ "rel_fall_last10": null,
+ "rel_fall_last50": null,
+ "v10_last_tenth_rel_decrease": 7.293924422374787e-05,
+ "v10_iterations": 10,
+ "spec74": {
+  "gD_inf_over_r_last": 0.006625881591909022,
+  "gD_2_over_r_last": 0.12859373430631968,
+  "gD_note": "pre-step frozen-model scaled gradient of the last accepted iteration (V727), not a complete scaled gradient",
+  "complete_gradient_new_iterate": {
+   "g_inf": 2.9846225420877045e-05,
+   "g_2": 0.0001007520810594074,
+   "g_inf_over_r": 0.05204929652386275,
+   "g_2_over_r": 0.17570312052890913,
+   "note": "complete gradient at the new iterate without column scaling"
+  },
+  "g_param_scaled": {},
+  "note": "FIXED runs have no parameter columns: parameter gradients empty; (b) eta and the reduced model need the J_c EVAL (lead tool), not written by the worker"
+ },
+ "holdout": {
+  "basis": "worker end battery of the F-normalized end state (V727: not the raw optimizer endpoint)",
+  "rho_u_max_holdout": 0.03740548649953615,
+  "rho_u_max_holdout_half": 0.037008847184322236,
+  "rho_u_max_holdout_both": 0.03740548649953615,
+  "rho_u_max_train": 0.03677875227211881,
+  "tier_S_holdout": false,
+  "tier_S_holdout_half": false,
+  "sigma_u_max": 0.472976078707369,
+  "a_max_core": null,
+  "a_max_core_upper": null,
+  "N_core": 0.9368101279655903,
+  "N_core_holdout": 0.9395465940305853,
+  "r_core_holdout": 0.4576511733082831,
+  "core_resolved": null,
+  "rho_Om_max_holdout": 0.18481815025297,
+  "rms_final": 0.1143531519288176,
+  "cost_final": 1.6440654607903092e-07,
+  "status": "time_limit",
+  "gauge_defect": 6.661338147750939e-16,
+  "note": "flat keys of the worker's start_result row (v2); None = not in the record"
+ },
+ "battery_set": "cheap",
+ "results_jsonl": "RUN_ROOT/numerics/degree6_free_parameters_48h/runs/prof_P1s4_stiff_p1_L6_cl0.4481_om1.4746_fixed/results.jsonl",
+ "results_jsonl_sha256": "f5e604eb70baff6bf4ef1fbff5c2b66485caa6607069eb65c112a004b5ced2e0",
+ "t_battery_s": 680.4605338573456,
+ "t_lm_s": 1957.3694727420807,
+ "trajectory": [
+  {
+   "it": 0,
+   "cost": 0.0010671025843952753,
+   "elapsed": 149.9173400402069,
+   "gauge": 0.001066781911524253
+  },
+  {
+   "it": 1,
+   "cost": 5.291381889453304e-05,
+   "elapsed": 281.95209789276123,
+   "gauge": 5.271036239000801e-05
+  },
+  {
+   "it": 2,
+   "cost": 4.363857452378973e-07,
+   "elapsed": 413.74173760414124,
+   "gauge": 2.636373894256425e-07
+  },
+  {
+   "it": 3,
+   "cost": 1.7804277988747143e-07,
+   "elapsed": 537.1936717033386,
+   "gauge": 1.0748826877331655e-08
+  },
+  {
+   "it": 4,
+   "cost": 1.6961589252338016e-07,
+   "elapsed": 704.9187316894531,
+   "gauge": 4.45364249734711e-09
+  },
+  {
+   "it": 5,
+   "cost": 1.6523870077392578e-07,
+   "elapsed": 995.8099501132965,
+   "gauge": 6.533169843010476e-10
+  },
+  {
+   "it": 6,
+   "cost": 1.6450065681900314e-07,
+   "elapsed": 1254.1098728179932,
+   "gauge": 3.3623321259933495e-11
+  },
+  {
+   "it": 7,
+   "cost": 1.6444108634102725e-07,
+   "elapsed": 1420.5812695026398,
+   "gauge": 1.3760304025130423e-12
+  },
+  {
+   "it": 8,
+   "cost": 1.644185386429759e-07,
+   "elapsed": 1569.4354767799377,
+   "gauge": 4.5875404398685e-12
+  },
+  {
+   "it": 9,
+   "cost": 1.6440654607903092e-07,
+   "elapsed": 1919.9423785209656,
+   "gauge": 9.933673227231901e-13
+  }
+ ],
+ "tool": "scripts/profile_record.py v2.2",
+ "tool_sha256": "9e281e7f06e7c08613eb55b68cd8d2f7c66e6280e8638dcbfae4eb79140c8891",
+ "ts": "2026-10-30T12:07:36Z",
+ "reference": {
+  "run": "RUN_ROOT/numerics/degree6_free_parameters_48h/runs/prof_P1s4_reference_L6_cl0.4481_om1.4069_fixed",
+  "job_id": "prof_P1s4_reference_L6_cl0.4481_om1.4069_fixed",
+  "label": "PROFILE",
+  "iteration0_blocks_source": "linear-response tool record (same state)",
+  "lrs_iteration0": {
+   "file": "RUN_ROOT/numerics/degree6_free_parameters_48h/validation/lrs/P1s4_dp0.json",
+   "sha256": "47ce12605d23dd6b87838e9ea8fcbc65e3805dd365ff10ace6dd72708034d14a",
+   "kept_entry_O1": 1.5615719665039418e-07,
+   "kept_entry_gauge_part": 4.8756846868620646e-09,
+   "kept_entry_O1_without_gauge": 1.512815119635321e-07,
+   "params": {
+    "c_l": 0.44814413765532274,
+    "omega": 1.4068972013873298
+   },
+   "rel_diff_cost0_vs_lrs": 0.0,
+   "note": "measured by scripts/linear_response_start.py v1 for the kept start at the same parameters through the worker's entry path (the same state as this PROFILE run's start)"
+  },
+  "checkpoint": "RUN_ROOT/numerics/degree6_free_parameters_48h/runs/prof_P1s4_reference_L6_cl0.4481_om1.4069_fixed/checkpoint_segment_end.pt",
+  "checkpoint_sha256": "86f5e7bd8d4ae47b461db0092a371abb91f83dd2154148a3a5854b6cf8adbfda",
+  "params": {
+   "c_l": 0.44814413765532274,
+   "omega": 1.4068972013873298
+  },
+  "free_params": false,
+  "max_iter": 40,
+  "time_limit_s": 1800.0,
+  "stop_reason": "time_limit",
+  "counters": {
+   "n_acc": 12,
+   "n_rej": 5,
+   "sat_count": 0
+  },
+  "accepted_iterations": 12,
+  "lm_seconds": 1934.9499881267548,
+  "O1_iteration0": 1.5615719665039418e-07,
+  "O1_iteration0_without_gauge": 1.512815119635321e-07,
+  "gauge_iteration0": 4.8756846868620646e-09,
+  "start_blocks": {},
+  "O1_end": 1.5454849804638304e-07,
+  "O1_end_without_gauge": 1.5454172111486595e-07,
+  "end_blocks": {
+   "near_origin": 9.130077324492621e-10,
+   "core_intermediate": 1.4900625591941957e-07,
+   "far_momentum": 3.187379687000821e-11,
+   "far_anchors": 7.037693136140822e-17,
+   "closure": 4.5905835957501784e-09,
+   "gauge": 6.776931517096325e-12,
+   "total": 1.5454849804638304e-07
+  },
+  "rel_fall_last10": 0.008786041224388905,
+  "rel_fall_last50": null,
+  "v10_last_tenth_rel_decrease": 0.0025967925490825673,
+  "v10_iterations": 12,
+  "spec74": {
+   "gD_inf_over_r_last": 0.04286882977962081,
+   "gD_2_over_r_last": 1.0671207248713197,
+   "gD_note": "pre-step frozen-model scaled gradient of the last accepted iteration (V727), not a complete scaled gradient",
+   "complete_gradient_new_iterate": {
+    "g_inf": 7.813456970366435e-05,
+    "g_2": 0.0002636477471008985,
+    "g_inf_over_r": 0.14053866783640814,
+    "g_2_over_r": 0.4742165125648963,
+    "note": "complete gradient at the new iterate without column scaling"
+   },
+   "g_param_scaled": {},
+   "note": "FIXED runs have no parameter columns: parameter gradients empty; (b) eta and the reduced model need the J_c EVAL (lead tool), not written by the worker"
+  },
+  "holdout": {
+   "basis": "worker end battery of the F-normalized end state (V727: not the raw optimizer endpoint)",
+   "rho_u_max_holdout": 0.03751022564620965,
+   "rho_u_max_holdout_half": 0.03730266060089873,
+   "rho_u_max_holdout_both": 0.03751022564620965,
+   "rho_u_max_train": 0.03685031033638064,
+   "tier_S_holdout": false,
+   "tier_S_holdout_half": false,
+   "sigma_u_max": 0.4664580531643518,
+   "a_max_core": 1.0841956229189458,
+   "a_max_core_upper": 1.483682531818037,
+   "N_core": 0.9327103773017317,
+   "N_core_holdout": 0.9355085228989232,
+   "r_core_holdout": 0.4576511733082831,
+   "core_resolved": true,
+   "rho_Om_max_holdout": 0.18858101989261072,
+   "rms_final": 0.11232570685273649,
+   "cost_final": 1.5454849804638304e-07,
+   "status": "time_limit",
+   "gauge_defect": 2.220446049250313e-16,
+   "note": "flat keys of the worker's start_result row (v2); None = not in the record"
+  },
+  "battery_set": "full",
+  "results_jsonl": "RUN_ROOT/numerics/degree6_free_parameters_48h/runs/prof_P1s4_reference_L6_cl0.4481_om1.4069_fixed/results.jsonl",
+  "results_jsonl_sha256": "fd9aae98f5de4602f04d5c43fac4d7c89b69e5bc216f106edc932d472b5da8f9",
+  "t_battery_s": 4064.3309059143066,
+  "t_lm_s": 1964.2777678966522
+ },
+ "comparison": {
+  "point_O1_end": 1.6440654607903092e-07,
+  "reference_O1_end": 1.5454849804638304e-07,
+  "ratio": 1.0637861134676914,
+  "lower_than_reference": false,
+  "point_O1_end_without_gauge": 1.644055527117082e-07,
+  "reference_O1_end_without_gauge": 1.5454172111486595e-07,
+  "same_budget": true,
+  "accepted_point": 10,
+  "accepted_reference": 12,
+  "equal_count": {
+   "k_star": 10,
+   "point_O1_at_k_star": 1.6440654607903092e-07,
+   "reference_O1_at_k_star": 1.550208893695833e-07,
+   "ratio_at_k_star": 1.0605444643468107,
+   "point_gauge_at_k_star": 9.933673227231901e-13,
+   "reference_gauge_at_k_star": 2.6300779259717854e-12,
+   "point_O1_without_gauge_at_k_star": 1.644055527117082e-07,
+   "reference_O1_without_gauge_at_k_star": 1.5501825929165732e-07,
+   "ratio_without_gauge_at_k_star": 1.0605560497385618,
+   "lower_at_k_star": false,
+   "note": "O1 after the same number k* = min(k, k') of accepted iterations (lead 07:24:37Z item 4); wall times differ under the host load"
+  },
+  "holdout_point": {
+   "std": 0.03740548649953615,
+   "half": 0.037008847184322236,
+   "battery_set": "cheap"
+  },
+  "holdout_reference": {
+   "std": 0.03751022564620965,
+   "half": 0.03730266060089873,
+   "battery_set": "full"
+  },
+  "reading": "not lower than the reference after the same budget (max_iter 40, time limit 1800.0 s; 10 and 12 accepted iterations): possibly budget-limited, not evidence of a minimum (lead 02:59:34Z item 2)"
+ }
+}

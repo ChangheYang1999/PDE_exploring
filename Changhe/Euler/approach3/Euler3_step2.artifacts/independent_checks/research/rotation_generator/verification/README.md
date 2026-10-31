@@ -1,0 +1,1 @@
+The executable check is scripts/verify_rotation_generator.py. It compares the analytic generator with direct rotation differences of the independently reconstructed field, verifies the sign of the explicit omega term, and checks an axisymmetric control. Results will be recorded in artifacts/rotation_generator_v1.json. The test is not yet run.

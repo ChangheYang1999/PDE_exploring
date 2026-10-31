@@ -1,0 +1,11 @@
+# S20 captured-table reuse and missing-reference plan
+
+Registered 2026-10-29T13:41:38.290466+00:00, before the actual comparisons. This supplements ALLM_REFERENCE_plan_v1.md after inspection of the seven-set producer manifest. Thresholds remain those of specification G5(c).
+
+Compare binary64 node bytes and explicit mode triples with the retained V069 all-order records. Reuse main value/gradient/Hessian, pressure value/gradient through degree36, and closure-analysis values only if node bytes are identical and every consumed mode and derivative is present. Compare the captured production values directly with the old production values. Transfer the old measured error against its 70-digit reference by the triangle inequality, using long-double subtraction and conservatively directed binary64 bounds for subsequent arithmetic. Compute the G5(c) denominator with a lower bound derived from the rounded reference, and group its floor by degree and derivative order. These finite numerical computations are not interval certificates of mathematical values.
+
+Check the pressure table at the exact origin directly against the rational polynomial formula and 90-digit normalization. Values above degree0 and gradients above degree1 vanish exactly at this point. Generate a new independent 70-digit polynomial value/gradient/Hessian reference for call06, the924 normalized closure nodes and361 modes through degree18. Reuse that reference for call01 only after exact node-byte identity and explicit mode-subset checks. Keep both nine Hessian entries and their symmetry checks.
+
+Seven synthetic schema/error controls run before actual transfer. The three recorded JVP conversion errors are retained. Passing the seven primal sets cannot establish complete Jacobian consumer coverage; a source-bound supplement must close those three calls separately. All statements about CPU/GPU equality require explicit argument or source evidence.
+
+Run on CPU35, one busy process, one thread; pause the identified serial holdout controller and its scientific child for this bounded audit. No GPU, JavaScript/TypeScript, server, remote compute, cluster, Lean or Lake. Write only in independent verifier. No external NPZ is copied.

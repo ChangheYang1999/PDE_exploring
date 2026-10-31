@@ -1,0 +1,153 @@
+02:31:01 (iii) fixtures: A_params_middle_null_col PASS (max rel err dz 1.09e-14); B_shuffled_others PASS (max rel err dz 9.68e-15); C_zero_displacement PASS (max rel err dz 0.00e+00); D_params_first PASS (max rel err dz 6.37e-14)
+{
+ "tool": "scripts/linear_response_start.py v1",
+ "tool_sha256": "8fc9b1866057f8e924af05b89d6acaceb3c75e4d4c7827605836035fee5f8b71",
+ "fixtures": [
+  {
+   "fixture": "A_params_middle_null_col",
+   "m": 60,
+   "n": 9,
+   "param_idx": [
+    3,
+    7
+   ],
+   "null_col": 5,
+   "perm": [
+    0,
+    1,
+    2,
+    4,
+    5,
+    6,
+    8,
+    3,
+    7
+   ],
+   "perm_is_identity": false,
+   "dz_p": [
+    0.3,
+    -0.7
+   ],
+   "max_rel_err_dz_coefficients": 1.090883134803357e-14,
+   "dz_params_exact": true,
+   "dz_null_col_zero": true,
+   "diff_formula": -0.8602634448434876,
+   "diff_direct_from_factor": -0.8602634448434969,
+   "diff_direct_unscaled": -0.8602634448434969,
+   "M_kept_factor": 68.87775122062402,
+   "M_kept_direct": 68.87775122062402,
+   "zero_displacement_gives_zero_dz": true,
+   "passed": true
+  },
+  {
+   "fixture": "B_shuffled_others",
+   "m": 60,
+   "n": 9,
+   "param_idx": [
+    3,
+    7
+   ],
+   "null_col": 5,
+   "perm": [
+    1,
+    8,
+    2,
+    5,
+    4,
+    0,
+    6,
+    3,
+    7
+   ],
+   "perm_is_identity": false,
+   "dz_p": [
+    -0.05,
+    0.02
+   ],
+   "max_rel_err_dz_coefficients": 9.67727255646352e-15,
+   "dz_params_exact": true,
+   "dz_null_col_zero": true,
+   "diff_formula": 0.17792843500109076,
+   "diff_direct_from_factor": 0.17792843500109257,
+   "diff_direct_unscaled": 0.17792843500109257,
+   "M_kept_factor": 24.24995463208773,
+   "M_kept_direct": 24.24995463208773,
+   "zero_displacement_gives_zero_dz": true,
+   "passed": true
+  },
+  {
+   "fixture": "C_zero_displacement",
+   "m": 60,
+   "n": 9,
+   "param_idx": [
+    3,
+    7
+   ],
+   "null_col": 5,
+   "perm": [
+    5,
+    0,
+    4,
+    1,
+    6,
+    2,
+    8,
+    3,
+    7
+   ],
+   "perm_is_identity": false,
+   "dz_p": [
+    0.0,
+    0.0
+   ],
+   "max_rel_err_dz_coefficients": 0.0,
+   "dz_params_exact": true,
+   "dz_null_col_zero": true,
+   "diff_formula": -0.0,
+   "diff_direct_from_factor": 0.0,
+   "diff_direct_unscaled": 0.0,
+   "M_kept_factor": 16.709754476080185,
+   "M_kept_direct": 16.70975447608019,
+   "zero_displacement_gives_zero_dz": true,
+   "passed": true
+  },
+  {
+   "fixture": "D_params_first",
+   "m": 60,
+   "n": 9,
+   "param_idx": [
+    0,
+    1
+   ],
+   "null_col": 5,
+   "perm": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    0,
+    1
+   ],
+   "perm_is_identity": false,
+   "dz_p": [
+    0.001,
+    0.002
+   ],
+   "max_rel_err_dz_coefficients": 6.372582995154225e-14,
+   "dz_params_exact": true,
+   "dz_null_col_zero": true,
+   "diff_formula": -0.005056993287628965,
+   "diff_direct_from_factor": -0.005056993287631428,
+   "diff_direct_unscaled": -0.005056993287631428,
+   "M_kept_factor": 27.67963499339042,
+   "M_kept_direct": 27.679634993390415,
+   "zero_displacement_gives_zero_dz": true,
+   "passed": true
+  }
+ ],
+ "fixtures_ok": true,
+ "ts": "2026-10-30T02:31:01Z"
+}

@@ -1,0 +1,23 @@
+#!/bin/bash
+# P3 pair end actions (lead 17:18:08Z item 4, 18:49:47Z item 2, 20:11:10Z item 3; SPEC 3.6 (h) pair result; 6.3 (a) records as information): waits until
+# both members have written results.jsonl (the worker's end battery), then on ONE GPU, one at a time through the busy guard: J_c EVAL v5 of the FREE member
+# and of the FIXED-CONTROL member (copied into validation/jc_eval/<job>/ after each EVAL finished), the pair result (scripts/pair_result.py, matched 120 it /
+# 3600 s), the P3 start reference (record_63a start mode) and the FREE end record (--full) against it, then the decision wrapper (information; 'no' until
+# admission). No enqueue: P3 segment 2 only on the lead's word. Usage: bash scripts/p3_end_actions.sh <gpu>
+set -u; cd RUN_ROOT/numerics/degree6_free_parameters_48h; D=$(pwd); PY=python3; export CUDA_VISIBLE_DEVICES=
+GPU=$1; LOG=validation/logs/l_slot_chain.log
+FREE=runs/p3_s1b_S20_L6_cl0.4500_om1.0000_free; FIXED=runs/p3c_s1b_S20_L6_cl0.4500_om1.0000_fixed; JOB=$D/queue/done/p3_s1b_S20_L6_cl0.4500_om1.0000_free.json
+n=0; while [ ! -f $FREE/results.jsonl ] || [ ! -f $FIXED/results.jsonl ] || [ ! -f "$JOB" ]; do sleep 60; n=$((n+1)); [ $n -gt 180 ] && { echo "$(date -u +%FT%TZ) p3_end_actions: gave up waiting for the P3 end batteries"; exit 1; }; done
+echo "$(date -u +%FT%TZ) p3_end_actions on GPU $GPU: both P3 members ended" | tee -a $LOG
+grep -E "LM finished|JOB DONE" $FREE/worker.log | tail -2 | cut -c1-300; grep -E "LM finished|JOB DONE" $FIXED/worker.log | tail -2 | cut -c1-300
+for R in $FREE $FIXED; do
+  JID=$(basename $R); ABS=$D/$R; NAME=jceval_v5_${JID%%_L6*}_$(date -u +%H%M%S)
+  bash validation/l_launch.sh frozen $NAME $GPU jc_eval_state.py $ABS cuda:0 256
+  if [ -d runs_l/$NAME/validation/jc_eval/$JID ]; then mkdir -p validation/jc_eval/$JID; cp -n runs_l/$NAME/validation/jc_eval/$JID/* validation/jc_eval/$JID/; echo "$(date -u +%FT%TZ) J_c EVAL of $JID copied: $(ls -la validation/jc_eval/$JID | tail -n +2 | awk '{print $5, $9}' | tr '\n' ' ')" | tee -a $LOG; else echo "$(date -u +%FT%TZ) NO EVAL output for $JID (see runs_l/$NAME)" | tee -a $LOG; fi
+done
+$PY scripts/pair_result.py P3 $FREE $FIXED --it 120 --wall 3600 --flag "P3 pair (S20_own all-m class), segment 1 only; FREE alone on GPU 6 and FIXED-CONTROL alone on GPU 5 (exclusive targets); launched together 20:09:51Z under the FULL RELEASE of 16:40:13Z (release_queue v9, P3SUF=b)" | tee validation/logs/pair_result_P3.out
+bash scripts/r63a_run.sh $GPU P3_start start $JOB
+bash scripts/r63a_run.sh $GPU p3_s1b_S20_end end $D/$FREE --full --start-ref $D/validation/records_63a/P3_start.json
+DEC=$($PY scripts/r63a_decide.py --end p3_s1b_S20_end --ref P3_start)
+echo "$(date -u +%FT%TZ) 6.3 (a) decision for p3_s1b_S20_end vs P3_start: $DEC" | tee -a $LOG
+echo "$(date -u +%FT%TZ) p3_end_actions done (no enqueue; P3 segment 2 only on the lead's word)" | tee -a $LOG

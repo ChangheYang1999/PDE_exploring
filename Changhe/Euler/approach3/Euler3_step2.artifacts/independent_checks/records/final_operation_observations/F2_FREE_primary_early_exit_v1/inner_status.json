@@ -1,0 +1,53 @@
+{
+  "complete": false,
+  "status": "FAILED",
+  "started_utc": "2026-10-30T14:24:16.709502+00:00",
+  "module_entry_tick": 2494663.855348801,
+  "operation_started_utc": "2026-10-30T14:24:01.052310+00:00",
+  "state_id": "F2m3_FREE",
+  "kind": "primary",
+  "outer_plan_sha256": "6e76fc999df0659a1c1e540e3bb9cfba47e4bbad869c8386c641d91eb4d804ff",
+  "cohort_hashes": {
+    "selection.json": "3a431cc6387c36d285f88d3ec592d4c341043c45d1b108a884d770001bd5a2c5",
+    "source_binding.json": "0d04ecce89ce8f5ede22cabdc83e4379e6369b0597a5e03674eeac362702e2e0",
+    "cohort.json": "c46041b727afe7a154099779d27735be940db3e482db16dd3b3dcb538a6593d2",
+    "sampling.json": "735dc3ad40041435c50fdbcbe5f6c9622fe2fdd8122f2989c38f0bf268c66b94"
+  },
+  "stages": [
+    {
+      "index": 0,
+      "argv": [
+        "python3",
+        "RUN_ROOT/verifier/scripts/verify_holdout_v7_cpu.py",
+        "--input",
+        "RUN_ROOT/verifier/artifacts/inputs/F2m3_late_current_v1",
+        "--output",
+        "RUN_ROOT/verifier/artifacts/phase_iv_runs/d6_final_20261030_122331_F2_FREE_primary/holdout.json",
+        "--n-radial",
+        "12",
+        "--n-mu",
+        "42",
+        "--n-phi",
+        "84",
+        "--pressure-radial",
+        "24,40",
+        "--pressure-mu",
+        "64,80",
+        "--pressure-phase",
+        "0.12992705140718683",
+        "--seed",
+        "13485487451393100992",
+        "--reference-core",
+        "0.4192773285352348",
+        "--reference-R0",
+        "0.3"
+      ],
+      "started_utc": "2026-10-30T14:24:16.710428+00:00",
+      "pid": 2509478
+    }
+  ],
+  "exception": "ValueError",
+  "message": "operation setup/work allowance exhausted",
+  "completed_utc": "2026-10-30T15:03:56.080075+00:00",
+  "elapsed_seconds": 2395.0277853161097
+}

@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+"""5.3 / 6.3 (a) fields of a run record (results.jsonl first line) for the segment-end decision (lead 17:18:08Z item 3 (b)). Prints one JSON line with the
+saturation stop flag (5.3), the monopole flag, the nontriviality and non-axisymmetry guards (6.3 (a): collapse toward zero velocity or axisymmetry, drift to omega 0,
+parameter edges, core outside the sampled region, tail onset), and 'clean' = no flag raised. Reading only. Usage: python scripts/segment_guard.py <run dir>"""
+import json, sys
+rec = json.loads(open(sys.argv[1].rstrip("/") + "/results.jsonl").readline())
+sat = bool(rec.get("saturation_stop")) or bool(rec.get("saturation_flag"))
+cl, om = float(rec.get("c_l", 0.45)), float(rec.get("omega", 1.0))
+flags = dict(saturation_stop=bool(rec.get("saturation_stop")), monopole_flag=rec.get("monopole_flag"), failure=rec.get("failure"),
+             parameter_edge=(cl <= 0.402 or cl >= 0.498 or om <= 1e-3 or om >= 1e3), omega_drift_to_zero=(om < 0.05),
+             axisymmetric_collapse=(float(rec.get("core_nonaxi") or 0) < 1e-3 and float(rec.get("tail_nonaxi") or 0) < 1e-3), zero_velocity_collapse=(float(rec.get("max_U") or 0) < 1e-6),
+             core_outside_sampled=(float(rec.get("r_core") or 0) > 100.0), tail_onset_unbounded=(float(rec.get("r_tail") or 0) > 1e4))
+# v2 (17:4xZ): the monopole flag is the SPEC 2.6 diagnostic of the exterior pressure form, which is OFF in production (exterior_monopole false); every start logs it
+# (S20 4.7e-12, S05 3.1e-13, S01 2.2e-10); it is not an exclusion of 6.3 (a) and is reported, not raised. The 6.3 (a) list: collapse to zero velocity or axisymmetry,
+# drift to omega 0, parameter edges, core outside the sampled region, tail onset unbounded; 5.3: the saturation stop.
+raised = {k: v for k, v in flags.items() if k != "monopole_flag" and (v not in (None, False, 0, 0.0))}
+print(json.dumps(dict(status=rec.get("status"), iterations=rec.get("iterations"), cost_final=rec.get("cost_final"), c_l=cl, omega=om, core_nonaxi=rec.get("core_nonaxi"), tail_nonaxi=rec.get("tail_nonaxi"), rotation_content_rel=rec.get("rotation_content_rel"), max_U=rec.get("max_U"), r_core=rec.get("r_core"), r_tail=rec.get("r_tail"), tier_S=rec.get("tier_S"), flags=flags, raised=raised, clean=(len(raised) == 0))))

@@ -1,0 +1,413 @@
+{
+  "complete": true,
+  "completed_utc": "2026-10-29T19:32:19.697460+00:00",
+  "pair": "P1",
+  "member": "FREE",
+  "job_id": "cont1_s4_S01_L6_cl0.4500_om1.0000_free",
+  "original_checkpoint": "RUN_ROOT/numerics/degree6_free_parameters_48h/runs/cont1_s4_S01_L6_cl0.4500_om1.0000_free/checkpoint_segment_end.pt",
+  "checkpoint_sha256": "1b16c729140f8c205e212c040505b76bd388df9e3592d18e6675508fe023baa3",
+  "copy": "artifacts/P1_segment4_freeze_free_v1/checkpoint_segment_end.pt",
+  "immutable_mode": "0o444",
+  "imported": "artifacts/inputs/P1_FREE_segment4_current_v1",
+  "metadata": {
+    "L_ext": 15,
+    "L_max": 6,
+    "Nk": 16,
+    "R0": 0.3,
+    "alpha": 1.23142492777429,
+    "c_l": 0.44814413765532274,
+    "channels": {
+      "LB": 15,
+      "LD": 14,
+      "LE": 6,
+      "Mch": null,
+      "NkB": 4,
+      "NkD": 4,
+      "NkE": 4,
+      "R1": null,
+      "core_damp": 2
+    },
+    "coefficient_operation": "Exact layout decoding only; no gauge normalization, projection, tail elimination, refit or parameter change",
+    "config_parameters": {
+      "c_l": 0.45,
+      "omega": 1.0
+    },
+    "created_utc": "2026-10-29T19:32:19.384640+00:00",
+    "dimensions": {
+      "full_vector": 1798,
+      "matrices": {
+        "A": [
+          16,
+          123
+        ],
+        "B": [
+          4,
+          123
+        ],
+        "C": [
+          16,
+          123
+        ],
+        "D": [
+          4,
+          123
+        ],
+        "E": [
+          4,
+          123
+        ]
+      },
+      "modes": 123
+    },
+    "free_params": true,
+    "import_script_sha256": "45eecf5a2d499ddaeba35710aadb2b6c46ab548f4223b5fc644ec1af8eabab0d",
+    "layout_source_sha256": {
+      "src/bases/solid_harmonics.py": "3f231c9286b79b406d364f58a4b8b7234c7c5629db8dd6636ac5bbd37e1695b3",
+      "src/equations/fields.py": "c68a1fb31fa87d2b998966985c39de8bbafeb6bbf85e5f84378a215ad4af0229"
+    },
+    "m_parity": "even",
+    "omega": 1.4068972013873298,
+    "omega_over_c_l": 3.139385485991573,
+    "parameter_source": "last two coordinates of saved full vector",
+    "production_layout_root": "RUN_ROOT/verifier/artifacts/production_snapshots/official_gpu_v1p1_20261029T054715Z",
+    "roundtrip_bitwise_equal": true,
+    "source_checkpoint": "RUN_ROOT/verifier/artifacts/P1_segment4_freeze_free_v1/checkpoint_segment_end.pt",
+    "source_checkpoint_sha256": "1b16c729140f8c205e212c040505b76bd388df9e3592d18e6675508fe023baa3",
+    "source_config": {
+      "L": 6,
+      "Nk": 16,
+      "Nr": 48,
+      "R0": 0.3,
+      "c_l": 0.45,
+      "channels": {
+        "LB": 15,
+        "LD": 14,
+        "LE": 6,
+        "NkB": 4,
+        "NkD": 4,
+        "NkE": 4,
+        "core_damp": 2
+      },
+      "chunk": 256,
+      "closure_lambda": 0.001,
+      "complete_gradient": true,
+      "complete_gradient_every": 4,
+      "continue_from_run": "runs/cont1_s3_S01_L6_cl0.4500_om1.0000_free",
+      "far_lambda": 0.01,
+      "far_radii": [
+        4096.0,
+        16384.0,
+        65536.0
+      ],
+      "formulation": "mom",
+      "free_params": true,
+      "ftol": 1e-07,
+      "g1_label": "G1 under post-result rules 3.6 (j), (k) (release-wide label, lead 08:50Z item 1; S01_own itself passes the registered G1 rule)",
+      "gauge_weight": 100.0,
+      "holdout_per_shell": 6,
+      "init_from": "RUN_ROOT/numerics/degree6_free_parameters_48h/starts/S01_nest6_cl0.45_om1.0_p0.pt",
+      "lag_jacobian": false,
+      "lam0": 0.01,
+      "linearization": true,
+      "linearization_every": 50,
+      "m_parity": "even",
+      "max_iter": 649,
+      "n_starts": 1,
+      "nl_denominator": "all5far",
+      "nl_weighting": true,
+      "omega": 1.0,
+      "param_init_mode": "keep_coefficients",
+      "param_step_max": 0.5,
+      "perturb": 0.0,
+      "perturb_nonaxi": 0.0,
+      "precision_mode": "dd_fp64jac",
+      "record_label": "pre-verifier",
+      "release_battery": "GPU (v1.13 to v1.18)",
+      "seed": 0,
+      "segment": 4,
+      "snapshot": "gpu_v1p1",
+      "spec_sha256": "ea62503e5948af1104a995a83e79e8f0c0d1b016f90953db11e3c0b73c511507",
+      "spec_version": "v1.18",
+      "tail_constraints": true,
+      "threads": 1,
+      "time_limit_per_start": 7200.0,
+      "xtol": 1e-12
+    },
+    "source_state": {
+      "geometry_base": {
+        "c_l": 0.45,
+        "kappa": 2.2222222222222223,
+        "omega": 1.0,
+        "p0": 4.444444444444445
+      },
+      "idx": 0,
+      "it": 587,
+      "job_id": "cont1_s4_S01_L6_cl0.4500_om1.0000_free",
+      "kind": "current",
+      "label": "FREE",
+      "pivot": {
+        "amp": 0.1306609448726974,
+        "pot": "S",
+        "q": 5
+      },
+      "ts": "2026-10-29T19:25:22Z"
+    },
+    "versions": {
+      "numpy": "2.0.2",
+      "python": "3.9.25 (main, Jul 15 2026, 00:00:00) \n[GCC 11.5.0 20240719 (Red Hat 11.5.0-5)]",
+      "torch": "2.8.0+cu128"
+    }
+  },
+  "events": [
+    {
+      "counters": {
+        "n_acc": 409,
+        "n_rej": 261,
+        "sat_count": 0
+      },
+      "it": 409,
+      "job_id": "cont1_s4_S01_L6_cl0.4500_om1.0000_free",
+      "kind": "segment_continuation",
+      "label": "FREE",
+      "source_job": "cont1_s3_S01_L6_cl0.4500_om1.0000_free",
+      "source_run": "runs/cont1_s3_S01_L6_cl0.4500_om1.0000_free",
+      "ts": "2026-10-29T17:25:04Z"
+    },
+    {
+      "code_versions": {
+        "scripts/worker_d6.py": {
+          "mtime": "2026-10-29T05:41:38Z",
+          "sha256_12": "cd35acf01f77"
+        },
+        "src/bases/jets.py": {
+          "mtime": "2026-10-24T17:49:01Z",
+          "sha256_12": "206d9639cb48"
+        },
+        "src/bases/radial.py": {
+          "mtime": "2026-10-28T20:57:48Z",
+          "sha256_12": "0c80d93740d6"
+        },
+        "src/bases/solid_harmonics.py": {
+          "mtime": "2026-10-29T00:28:24Z",
+          "sha256_12": "3f231c9286b7"
+        },
+        "src/equations/fields.py": {
+          "mtime": "2026-10-28T22:52:43Z",
+          "sha256_12": "c68a1fb31fa8"
+        },
+        "src/equations/residuals.py": {
+          "mtime": "2026-10-24T17:39:53Z",
+          "sha256_12": "9272f55c0f6a"
+        },
+        "src/far_field/correction.py": {
+          "mtime": "2026-10-29T00:53:37Z",
+          "sha256_12": "58418dae31c8"
+        },
+        "src/optimization/lm.py": {
+          "mtime": "2026-10-29T05:11:07Z",
+          "sha256_12": "8dec4c55c5f3"
+        },
+        "src/optimization/param_map.py": {
+          "mtime": "2026-10-28T20:58:03Z",
+          "sha256_12": "8058ef12032f"
+        },
+        "src/optimization/problem.py": {
+          "mtime": "2026-10-29T02:58:33Z",
+          "sha256_12": "8dd8fd6d2fba"
+        },
+        "src/optimization/tail_constraints.py": {
+          "mtime": "2026-10-25T05:29:16Z",
+          "sha256_12": "2bea58b3056f"
+        },
+        "src/pressure/poisson_sh.py": {
+          "mtime": "2026-10-29T00:47:06Z",
+          "sha256_12": "8aefe0f3a5f4"
+        },
+        "src/pressure/ray_integral.py": {
+          "mtime": "2026-10-28T22:52:43Z",
+          "sha256_12": "688f07490119"
+        },
+        "src/validation/spec_diagnostics.py": {
+          "mtime": "2026-10-25T23:21:12Z",
+          "sha256_12": "e22ed3abb6f8"
+        }
+      },
+      "config_sha256": "72be6b26e13a85a990a49d4d28bf1da879203b4cfd91e23d442fe4557cec2b4d",
+      "job_id": "cont1_s4_S01_L6_cl0.4500_om1.0000_free",
+      "kind": "job_code_versions",
+      "label": "FREE",
+      "retries": 0,
+      "solver_settings": {
+        "acceptance": "self-consistent O1 (objective_at)",
+        "alpha_margin": 0.7,
+        "complete_gradient_every": 4,
+        "exterior_monopole": false,
+        "jacobian_mode": "weights_differentiated",
+        "kappa_margin": 2.0,
+        "linearization_every": 50,
+        "param_map": "c_l = 0.4 + 0.1 sigmoid(z_c), omega = exp(z_w)",
+        "param_scale_pde_rows": true,
+        "param_step_max": 0.5,
+        "stable_linear": true
+      },
+      "ts": "2026-10-29T17:25:04Z"
+    },
+    {
+      "cost": 1.5615719665039034e-07,
+      "counters": {
+        "n_acc": 587,
+        "n_rej": 376,
+        "sat_count": 0
+      },
+      "elapsed_lm_s": 7212.276901960373,
+      "it": 587,
+      "job_id": "cont1_s4_S01_L6_cl0.4500_om1.0000_free",
+      "kind": "segment_end",
+      "label": "FREE",
+      "lam": 1.2241509019972596e-05,
+      "status": "time_limit",
+      "ts": "2026-10-29T19:25:22Z"
+    }
+  ],
+  "end_current": {
+    "iteration": 587,
+    "status": "time_limit",
+    "timestamp": "2026-10-29T19:25:22Z",
+    "counters": {
+      "n_acc": 587,
+      "n_rej": 376,
+      "sat_count": 0
+    },
+    "history_length": 587,
+    "lam": 1.2241509019972596e-05,
+    "last_history": {
+      "it": 177,
+      "cost": 1.5615719665039034e-07,
+      "rms": 8.492734320491669e-07,
+      "lam": 1.2241509019972596e-05,
+      "gnorm": 4.8984420511999534e-05,
+      "D_param_full": {
+        "1467": 235.03117648710145,
+        "1468": 28.088283394196292
+      },
+      "D_param_damping": {
+        "1467": 5.313601626918964e-05,
+        "1468": 5.422053922622088e-05
+      },
+      "gD_inf_over_r": 0.004177049725984815,
+      "gD_scaling": "J_cw column norms at the pre-step point (lagged-closure model scaling, jacobian_kind J_cw; not a section 7.1 quantity)",
+      "gD_2_over_r": 0.1033418364231017,
+      "g_param_opt": {
+        "1467": 3.5484293976048536e-05,
+        "1468": 1.226364869754572e-05
+      },
+      "g_param_scaled": {
+        "1467": 0.004140526710193534,
+        "1468": 0.00413941778647394
+      },
+      "accepted": true,
+      "n_trials": 1,
+      "rejections": [],
+      "t_jac": 27.056101322174072,
+      "t_param_cols": 7.1237030029296875,
+      "t_normal": 0.12407517433166504,
+      "t_solve": 0.003595590591430664,
+      "t_trial": 1.0123629570007324,
+      "t_iter": 35.32079291343689,
+      "elapsed": 7206.681084871292,
+      "J_age": 0,
+      "J_fresh": true,
+      "lag_jacobian": false,
+      "rho": 0.2678284468116989,
+      "gain_ratio": 0.2678284468116989,
+      "step_rel": 0.003300457864250086,
+      "rel_decrease": 0.0005609409509957161,
+      "cost_prev": 1.5624484077996563e-07,
+      "dparam_opt": {
+        "1467": -0.0001776854760667662,
+        "1468": 0.00034483592262668505
+      },
+      "params": {
+        "c_l": 0.44814413765532274,
+        "omega": 1.4068972013873298,
+        "z_c": -0.07426861270170891,
+        "z_w": 0.3413867131939413,
+        "dcl_dzc": 0.02496555774957608,
+        "domega_dzw": 1.4068972013873298
+      },
+      "params_prestep": {
+        "c_l": 0.4481485736869533,
+        "omega": 1.4064121363315831,
+        "z_c": -0.07409092722564214,
+        "z_w": 0.34104187727131463,
+        "dcl_dzc": 0.024965722206073578,
+        "domega_dzw": 1.4064121363315831
+      },
+      "complete_gradient": {
+        "point": "new iterate (after the accepted step of this iteration)",
+        "g_param_opt": {
+          "1467": 0.0003331499396327473,
+          "1468": 0.00011525835413512415
+        },
+        "g_inf": 0.00046155081550974667,
+        "g_2": 0.001593615886254069,
+        "g_inf_over_r": 0.8258925011590994,
+        "g_2_over_r": 2.8515937269694946,
+        "seconds": 2.562797784805298,
+        "scaled_forms": "not recorded: the column norms available here come from the pre-step J_cw (another point); see the J_c records (SPEC 7.0) for D^-1 g",
+        "J_age_at_step": 0,
+        "note": "complete gradient of O1 at the NEW iterate (fresh evaluation, exact closure route); the frozen-model gradient g = J_cw^T r of this record refers to the pre-step point",
+        "g_param_phys": {
+          "c_l": 0.013344382007183646,
+          "omega": 8.19237923150809e-05
+        }
+      },
+      "saturation_flag": false,
+      "counters": {
+        "n_acc": 587,
+        "n_rej": 376,
+        "sat_count": 0
+      },
+      "z_sha256_12": "7b2ce6ba9318",
+      "it_cum": 586,
+      "cost_blocks": {
+        "near_origin": 9.108676043824591e-10,
+        "core_intermediate": 1.5033808678414824e-07,
+        "far_momentum": 3.2557503414501744e-11,
+        "far_anchors": 7.158308637714072e-17,
+        "closure": 4.639674524638312e-09,
+        "gauge": 2.3601016222376003e-10,
+        "total": 1.5615719665039034e-07
+      },
+      "g_param_phys": {
+        "c_l": 0.0014213205483563393,
+        "omega": 8.719811483946393e-06,
+        "chain_point": "pre-step"
+      }
+    }
+  },
+  "source_stable_across_import": true,
+  "command": [
+    "bash",
+    "scripts/python.sh",
+    "scripts/import_checkpoint.py",
+    "--checkpoint",
+    "RUN_ROOT/verifier/artifacts/P1_segment4_freeze_free_v1/checkpoint_segment_end.pt",
+    "--production-root",
+    "RUN_ROOT/verifier/artifacts/production_snapshots/official_gpu_v1p1_20261029T054715Z",
+    "--state",
+    "current",
+    "--output",
+    "RUN_ROOT/verifier/artifacts/inputs/P1_FREE_segment4_current_v1"
+  ],
+  "source_sha256": {
+    "scripts/freeze_segment4_v1.py": "8027c38c9f24fc9e848b998d315a9073d9c0cec783446823ce29bd72ddc32e3a",
+    "scripts/import_checkpoint.py": "45eecf5a2d499ddaeba35710aadb2b6c46ab548f4223b5fc644ec1af8eabab0d"
+  },
+  "ledger": {
+    "capture": "artifacts/P1_segment4_freeze_free_v1/ledger_capture.jsonl.gz",
+    "gzip_sha256": "7610c66db1ab3f28131de591e63535964f7cebd3567d1db9565ae13b07e599e8",
+    "decoded_sha256": "82f1a1856eb5d15650b2787d8df3b9db4d514464727de9252667287e9baa828d"
+  },
+  "scope": "Exact saved endpoint and ledger provenance. This is END CURRENT, not a reconstructed matched-time or matched-iteration coefficient state. No pressure, residual, stationarity or derivative-release verdict."
+}

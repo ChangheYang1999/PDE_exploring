@@ -1,0 +1,53 @@
+{
+ "S01": {
+  "O1": 2.7248318345366864e-07,
+  "closure_block_share": 0.017496928316794454,
+  "closure_block_norm": 9.764854047471259e-05,
+  "gauge_row": 0.0,
+  "t_Jcw": 39.4589958190918,
+  "t_Jc_assembly": 119.20999455451965,
+  "closure_block_param_column_errors": {
+   "z_c:1e-03": 6.774543058699967e-11,
+   "z_c:1e-04": 7.41811559457979e-11,
+   "z_c:1e-05": 2.4784660621016973e-10,
+   "z_c:Jcw_only_error": 0.5044733549941119,
+   "z_w:1e-03": 1.7640101126179094e-11,
+   "z_w:1e-04": 2.5486795810342232e-11,
+   "z_w:1e-05": 1.8485705208679288e-10,
+   "z_w:Jcw_only_error": 0.9999999999999999,
+   "coef_dir_0": 9.267310122443722e-11,
+   "coef_dir_0_Jcw_only": 1.0309551627067173,
+   "coef_dir_1": 8.771224748516721e-11,
+   "coef_dir_1_Jcw_only": 0.9801633236629065,
+   "coef_dir_2": 5.972680746391981e-11,
+   "coef_dir_2_Jcw_only": 1.0079491238284852
+  },
+  "info": {
+   "base_G_rel_check": 5.995638948006117e-16,
+   "n_inputs": 248,
+   "stencil": {
+    "tail_inputs": "centered",
+    "parameter_inputs": "five_point",
+    "h": 0.0001
+   },
+   "dN": "analytic",
+   "dN_analytic_vs_fd_rel": 0.0004423197689941009,
+   "N_check_rel": 1.3669182305296692e-16,
+   "n_closure_rows": 2772,
+   "correction_norm": 0.0022937500003254053,
+   "Jcw_closure_block_norm": 0.00014776318247021204,
+   "pattern_columns_norm": 0.0008428670197515139,
+   "chain_factors": [
+    0.024999999999999994,
+    1.0
+   ],
+   "construction": "J_c = J_cw + target correction (all columns, through to_full) + V(c_l, omega) five-point columns x chain factors on the closure block"
+  }
+ },
+ "S05": {
+  "O1": 3.0962395848606695e-07,
+  "closure_block_share": 0.0204143632354387,
+  "closure_block_norm": 0.00011243465617796823,
+  "gauge_row": -2.220446049250313e-14
+ }
+}

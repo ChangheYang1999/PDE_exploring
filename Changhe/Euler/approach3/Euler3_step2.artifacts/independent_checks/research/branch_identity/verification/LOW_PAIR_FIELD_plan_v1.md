@@ -1,0 +1,11 @@
+# Independent field distance for P2 segment 4 and F1 medium 1
+
+Registered before this independent evaluation. The lead's producer-code results of 2026-10-29T20:39:10Z have already been read. This is a replication and quadrature check, not a blinded discovery test.
+
+Use the exact saved projected endpoints identified in V452: P2 iteration 648, source SHA256 0ff026daff1e3e83b5fcaff0465d5dda3ab47f8a140f7e4fbe0fb31b34a0cfb1; F1 iteration 225, source SHA256 4f4fc691f883b17b3dc3af72b7db7539005a8b1559d7aebb22b832f89a96a2ec. Preserve their actual tensor parameters and coefficients. No normalization, refit or azimuthal alignment is applied. The one-ULP difference between F1's tensor and JSON omega remains recorded by V452.
+
+Reconstruct velocity using the independent normalized solid-harmonic recurrence and extended-precision radial jets in independent/src. The production Model is used solely by the previously checked export decoder. Field values are not read from producer arrays. Evaluate common physical shells [0.3*2^j,0.3*2^(j+1)], j=-4,...,8. Use Gauss-Legendre radial integration with r^2 volume weights and Gauss-mu/equispaced-phi angular integration. Levels (radial,mu,phi,phase fraction) are (6,24,48,0.481217), (12,42,84,0.812349), and (24,64,128,0.193127).
+
+Compute both d(a,b)=max RMS(Ua-Ub)/RMS(Ub) and d(b,a), with every shell retained. The registered field pass requires both <=0.10. Confirm positive finite denominators, positive weights, normalized volume to 1e-15, symmetry, self-distance zero and scale controls d(2U,U)=1 and d(U,2U)=1/2. Compare the velocity-only contraction to the complete independent field routine on a bounded subset, relative tolerance 1e-15. Independently integrate the leading F field at physical radius 1: |integral|F|^2-1| <=2e-12 on all three levels.
+
+For an empirically resolved numerical distance require the last two levels' maxima to differ by <=1e-4 relative, and every shell distance to differ by <=1e-4 relative or 1e-8 absolute. Failure leaves quantitative accuracy OPEN and preserves all outputs; it does not automatically change the endpoint identity decision if a separate bound is available. Refinement differences are empirical, not rigorous error bounds. The exact proof and scope of the criterion are in ../PROOF.md. No Euler existence, stationarity or structural diversity claim follows from this test.

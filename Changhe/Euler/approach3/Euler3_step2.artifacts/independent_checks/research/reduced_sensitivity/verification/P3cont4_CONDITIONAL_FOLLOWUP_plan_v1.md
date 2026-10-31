@@ -1,0 +1,5 @@
+# P3 continuation 4 conditional saved-factor follow-up
+
+Registered 2026-10-30T10:27:08.087259+00:00, after the original largest-singular-value consistency failure and before the diagnostic rerun. Preserve the unchanged 1e-12 tolerance and the failed original audit. Permit only that exact named assertion to fail, require exactly one failed assertion at completion, and mark the endpoint result DIAGNOSTIC_ONLY. Other checks must pass. The conditional sensitivity calculation uses the same qualified source, tolerances and margin filter as the original registered calculation. It accepts only that diagnostic endpoint, and has no effect on final field eligibility. Report full normalized matrix and phase-complement coefficient cutoff margins separately. This follows the V592/V594 scope. No claim of the original full Jacobian accuracy or exact rank follows.
+
+Each job is CPU35, one thread, CUDA hidden, at most one busy computation. Limits: endpoint 300 seconds, sensitivity 360 seconds, no new stage after11:15, hardstop11:25. No JavaScript/TypeScript, server, remote compute, cluster or Lean use.

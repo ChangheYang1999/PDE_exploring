@@ -1,0 +1,39 @@
+#!/bin/bash
+# Offline refit chain (lead 21:39:31Z item 2): on ONE exclusive GPU through the busy guard: (b) CONTROL self-refit of S01 at its own parameters (target = source):
+# every per-shell relU against U_src must be <= 1e-4, else STOP and report; then the refit files for F6 point 0 (S01) and point 1 (S09); then (c) enqueue pilot (iii)
+# f2refit S01_k0 on the same GPU. Usage: bash scripts/refit_chain.sh <gpu>   (log validation/logs/refit_chain.out)
+set -u; cd RUN_ROOT/numerics/degree6_free_parameters_48h; D=$(pwd); PY=python3; GPU=$1; LOG=validation/logs/l_slot_chain.log
+run_fit() { bash validation/l_launch.sh cmd "cd $D && CUDA_VISIBLE_DEVICES=$GPU OMP_NUM_THREADS=1 nice -n 10 taskset -c 31-34 $PY scripts/refit_start.py $1 $2 $3 $4 --device cuda:0 > validation/logs/refit_$(basename $4 .pt).out 2>&1"; }
+echo "$(date -u +%FT%TZ) refit chain on GPU $GPU: tool $(sha256sum scripts/refit_start.py | cut -c1-16)" | tee -a $LOG
+T0=$(date -u +%FT%TZ); run_fit starts/S01_nest6_cl0.45_om1.0_p0.pt 0.45 1.0 starts/F6_control_S01_self_refit.pt; T1=$(date -u +%FT%TZ)
+$PY - "$T0" "$T1" "$GPU" "control self-refit S01" <<'PYEOF'
+import json, sys, datetime as dt
+t0, t1, gpu, what = sys.argv[1:5]; f = lambda s: dt.datetime.strptime(s, "%Y-%m-%dT%H:%M:%SZ")
+open("status/gpu_hours_manual.jsonl", "a").write(json.dumps(dict(kind="gpu_use", what=f"refit_start.py {what}", label="VALIDATION", gpu=int(gpu), start=t0, end=t1, hours=round((f(t1) - f(t0)).total_seconds() / 3600, 4), note="offline refit (lead 21:39:31Z item 2)")) + "\n")
+PYEOF
+OK=$($PY - <<'PYEOF'
+import json, os
+p = "starts/F6_control_S01_self_refit.pt.json"
+if not os.path.isfile(p):
+    print("no record"); raise SystemExit
+d = json.load(open(p)); worst = max(v["rel_change_refit"] for v in d["relU_by_shell"].values())
+print("PASS" if worst <= 1e-4 else "FAIL", f"worst per-shell relU {worst:.3e}; global relU {d['relU_change_refit']:.3e}; fit residual {d['fit']['rel_fit_residual']:.3e}; cond {d['fit']['cond_est']:.3e}; rank {d['fit']['rank']}")
+PYEOF
+)
+echo "$(date -u +%FT%TZ) refit control: $OK" | tee -a $LOG
+case "$OK" in PASS*) ;; *) echo "$(date -u +%FT%TZ) refit chain STOPPED: the control failed or has no record; the refit pilots wait (lead 21:39:31Z item 2 (b))" | tee -a $LOG; exit 1;; esac
+T0=$(date -u +%FT%TZ); run_fit starts/S01_nest6_cl0.45_om1.0_p0.pt 0.459677 1.338884 starts/F6_S01_k0_refit.pt; T1=$(date -u +%FT%TZ)
+$PY - "$T0" "$T1" "$GPU" "S01 at F6 point 0" <<'PYEOF'
+import json, sys, datetime as dt
+t0, t1, gpu, what = sys.argv[1:5]; f = lambda s: dt.datetime.strptime(s, "%Y-%m-%dT%H:%M:%SZ")
+open("status/gpu_hours_manual.jsonl", "a").write(json.dumps(dict(kind="gpu_use", what=f"refit_start.py {what}", label="VALIDATION", gpu=int(gpu), start=t0, end=t1, hours=round((f(t1) - f(t0)).total_seconds() / 3600, 4), note="offline refit (lead 21:39:31Z item 2)")) + "\n")
+PYEOF
+T0=$(date -u +%FT%TZ); run_fit starts/S09_d6w_cl0.45_om0.3_R1.pt 0.42179 0.808573 starts/F6_S09_k1_refit.pt; T1=$(date -u +%FT%TZ)
+$PY - "$T0" "$T1" "$GPU" "S09 at F6 point 1" <<'PYEOF'
+import json, sys, datetime as dt
+t0, t1, gpu, what = sys.argv[1:5]; f = lambda s: dt.datetime.strptime(s, "%Y-%m-%dT%H:%M:%SZ")
+open("status/gpu_hours_manual.jsonl", "a").write(json.dumps(dict(kind="gpu_use", what=f"refit_start.py {what}", label="VALIDATION", gpu=int(gpu), start=t0, end=t1, hours=round((f(t1) - f(t0)).total_seconds() / 3600, 4), note="offline refit (lead 21:39:31Z item 2)")) + "\n")
+PYEOF
+for f in starts/F6_S01_k0_refit.pt starts/F6_S09_k1_refit.pt; do [ -f "$f" ] && echo "$(date -u +%FT%TZ) refit file $f sha256 $(sha256sum $f | cut -c1-16): $(grep -o '"relU_change_refit": [0-9.e+-]*\|"relU_change_keep": [0-9.e+-]*\|"rel_fit_residual": [0-9.e+-]*' $f.json | tr '\n' ' ')" | tee -a $LOG; done
+if [ -f starts/F6_S01_k0_refit.pt ]; then echo "$(date -u +%FT%TZ) enqueue pilot (iii) f2refit S01_k0 on GPU $GPU" | tee -a $LOG; bash scripts/release_queue.sh f2refit S01_k0 $GPU 1 | tee -a $LOG; fi
+echo "$(date -u +%FT%TZ) refit chain done" | tee -a $LOG

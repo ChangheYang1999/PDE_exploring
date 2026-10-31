@@ -1,0 +1,15 @@
+# v3.1 (02:3xZ; V568, lead 01:5xZ item 2): comment-only change (atomic replace; a sourced copy is unaffected). SUPPORTED WORKER ARGV FORMS for the exact-worker predicate (worker_visible) and the busy counter: '<venv>/bin/python scripts/worker_d6.py <job json> <run dir>' and '<venv>/bin/python -u scripts/worker_d6.py ...' (the supervisor launches exactly the first form: PY WORKER <job> <run>). NOT supported (the token after a value-taking option would be read as the script): 'python -W ignore scripts/...', 'python -X dev scripts/...', 'python --check-hash-based-pycs never scripts/...'; the supervisor never emits these. v3 kept as .v3_cd323fa6.
+# v3 (01:3xZ; V561): the script token is the first argv token after the interpreter that is not an option (so python -u worker_d6.py is recognized). v2 kept as .v2_15c0c5a7.
+# Shared helpers of the slot guards (v2, 01:2xZ; V556): v5 of enqueue_under_lock, v3 of enqueue_pair_under_lock. v1 kept as .v1_0e5c9629.
+LANE=RUN_ROOT/numerics
+busy() { n=0; for p in $(ps -eo pid,comm,args | awk '$2 ~ /^python/' | grep -E "venv/bin/python( -u)? [^ ]*(validation/[A-Za-z0-9_]+\.py|scripts/[A-Za-z0-9_]+\.py)" | grep -v grep | grep -v -E "scripts/(supervisor|slot_governor)\.py" | awk '{print $1}'); do case "$(readlink /proc/$p/cwd 2>/dev/null)" in $LANE*) n=$((n+1));; esac; done; echo $n; }
+# exact job id from an enqueue command's output ("enqueued <path>.json" or "staged <path>.json"); empty if none
+id_from_output() { echo "$1" | grep -oE '(enqueued|staged) [^ ]+\.json' | tail -1 | awk '{print $2}' | xargs -r basename | sed 's/\.json$//'; }
+# queue state of an exact job id: lists every directory holding <id>.json
+job_states() { local id=$1 out=""; for d in staged pending granted running failed cancelled done; do [ -e "queue/$d/$id.json" ] && out="$out $d"; done; echo "$out"; }
+# exact worker (v2, V556): a PYTHON process (comm python*) of the lane whose argv script token (the first argument after the interpreter) is scripts/worker_d6.py and
+# whose LAST argv token has the basename <id> exactly; shell helpers that merely mention worker_d6.py are not accepted
+worker_visible() { local id=$1; for p in $(ps -eo pid,comm | awk '$2 ~ /^python/ {print $1}'); do local argv; argv=$( { tr '\0' '\n' < /proc/$p/cmdline; } 2>/dev/null ) || continue; [ -n "$argv" ] || continue; local script=$(echo "$argv" | awk 'NR>1 && $0 !~ /^-/ {print; exit}'); local last=$(echo "$argv" | tail -1); case "$script" in *scripts/worker_d6.py) ;; *) continue;; esac; [ "$(basename "$last")" = "$id" ] || continue; case "$(readlink /proc/$p/cwd 2>/dev/null)" in $LANE*) return 0;; esac; done; return 1; }
+# active and terminal state helpers
+job_active() { local id=$1; for d in staged pending granted running; do [ -e "queue/$d/$id.json" ] && return 0; done; return 1; }
+job_terminal() { local id=$1; for d in failed cancelled done; do [ -e "queue/$d/$id.json" ] && return 0; done; return 1; }

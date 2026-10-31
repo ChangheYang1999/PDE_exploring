@@ -1,0 +1,18 @@
+{
+ "kind": "job_lineage_history_correction",
+ "job_id": "f2_S01_k0_keep_m2_L6_cl0.4597_om1.3389_free",
+ "job_file": "queue/done/f2_S01_k0_keep_m2_L6_cl0.4597_om1.3389_free.json",
+ "job_file_sha256": "c991707ca724091c0cf6d791687c2ef4f2638ded4777edb30d1049805166fd23",
+ "ts": "2026-10-30T06:41:45Z",
+ "original_lineage_history": "segments 1 to 3 run before the full release of 2026-10-29T16:40:13Z (labels pre-verifier, provisional-release continuation for segment 3); the state at the start of this segment comes from them",
+ "correction": "The lineage_history field was written by scripts/enqueue_continuation_v122.sh, whose fixed text describes the P1/P2 lineages ('segments 1 to 3 run before the full release ... labels pre-verifier ...'); it is FALSE for this pilot-promoted lineage: every segment started after the full release of 2026-10-29T16:40:13Z (actual worker START times below). The job file is left unchanged (immutable record); this file is the bound correction (V666; KNOWN_ISSUES 04:2xZ). The other fields (note, segment_source, config) are correct.",
+ "corrected_lineage_history": "F2 (S01 coefficients kept at F6 point 0 (0.459677, 1.338884)): pilot f2_S01_k0_keep and medium segments m1, m2 (this job), m3, all started under the full release of 2026-10-29T16:40:13Z",
+ "actual_worker_start_utc": {
+  "f2_S01_k0_keep_L6_cl0.4597_om1.3389_free": "2026-10-29T16:57:00Z",
+  "f2_S01_k0_keep_m1_L6_cl0.4597_om1.3389_free": "2026-10-29T17:39:44Z",
+  "f2_S01_k0_keep_m2_L6_cl0.4597_om1.3389_free": "2026-10-30T00:34:18Z",
+  "f2_S01_k0_keep_m3_L6_cl0.4597_om1.3389_free": "2026-10-30T03:17:35Z"
+ },
+ "verifier": "V666",
+ "source_fix": "later continuations use scripts/enqueue_free_cont.sh with a caller-supplied lineage text"
+}

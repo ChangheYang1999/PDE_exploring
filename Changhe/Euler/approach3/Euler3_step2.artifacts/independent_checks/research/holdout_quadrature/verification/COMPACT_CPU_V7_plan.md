@@ -1,0 +1,12 @@
+# Storage-limited fresh holdouts
+
+This design changes record storage and removes the optional on-disk source-batch cache. It does not change field evaluation, source projection, radial Green integration, pressure reconstruction, sampling weights, metric functions, or the two pressure-refinement levels of version6. It remains a partial momentum diagnostic. The complete proof and scope are in the topic's PROOF.md; quadrature differences are not rigorous error bounds.
+
+The existing side is close to its10decimalGB quota. A new full raw holdout would produce hundreds of megabytes per state. Version7 will keep input and source hashes, every requested grid and weight, every shell metric and pressure-refinement comparison, complete byte hashes and shapes of computed large arrays, and64 deterministic flattened witnesses from each large array. It will not label witnesses as full raw arrays and will not support field-only resume from a witness file. Repeating a full-array norm audit requires recomputation from the preserved coefficients and parameters. Existing accepted raw data are kept intact, with exact reconstruction where packed.
+
+Use the same fresh42x84 field grid and16/24 radial by48x96/64x128 pressure rules as version6. Seeds, pressure phases and common reference radii for an optimized-state comparison must be frozen before that comparison. Compare FREE and FIXED-CONTROL at the same physical points when comparing reported improvements. Own-core diagnostics may additionally use their explicitly distinguished own sampled radii. A field-only checkpoint that is not retained cannot be called a resumable full-field result.
+
+Implementation qualification will bind the version6 source, verify that the computational statements are unchanged except for the pure source-cache bypass, and test that witness serialization never modifies its input arrays, preserves all requested complete metadata arrays, reports an exact full-array byte hash, and rejects quota overflow before writing. Record the platform-dependent byte representation of long-double values honestly. No tests start servers or run JavaScript. No Euler claim follows from serialization controls.
+
+CPU35 only, one busy computation and one thread, low priority, RAM48decimalGB, side below10decimalGB and filesystem reserve20GiB. No GPU in the CPU version. No JavaScript/TypeScript, servers, RLScience/cluster, remote compute, Lean/Lake. Write only this side.
+Registered: 2026-10-29T09:10:18Z.

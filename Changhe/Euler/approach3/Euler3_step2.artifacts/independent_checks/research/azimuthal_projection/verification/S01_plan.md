@@ -1,0 +1,7 @@
+# Saved-sample S01 projection plan
+
+Registered 2026-10-29 before execution. Use the immutable V118/V107 saved field grid and metadata, together with both saved leading-field grids from the energy/helicity calculation once available. Do not recompute pressure.
+
+At every radius form the corotating Cartesian components Q_{-phi}U, their exact discrete azimuthal mean, nonzero-frequency energy fraction and Fourier derivative. Compare the Fourier derivative norm to the Cartesian generator DU Jy-JU using the saved derivative tensor. Check uniform azimuthal nodes and weights, the complete maximum frequency including correction channels, the positive total energy, and the projection inequalities. Use a relative tolerance of 1e-10 for generator norm agreement and an absolute energy-fraction tolerance of 1e-12 for inequalities and negative-roundoff checks. These are implementation checks, not acceptance thresholds.
+
+Report per-radius results and aggregate both standard and half-offset shell families with their original normalized radial weights. Preserve sampled velocity, vorticity and derivative maxima as sampled quantities. Compute N_F and e_F from each leading field with a Fourier derivative; compare the two angular rules. These data supply baseline non-axisymmetric content. Do not call any inner-domain maximum N_core or e_core until the registered tail onset has been determined. Do not claim that a finite sampled guard check proves a global property.

@@ -1,0 +1,9 @@
+# S01 unit-ball radial refinement
+
+Registered 2026-10-29 before execution. The single volume-coordinate rule in V118 did not resolve the unit-ball integral. This check evaluates the same exact saved coefficients with a composite rule and fresh angular phases.
+
+Use the V118 core radius only to set panel edges: 0, r_core/32, successive doublings, and 1. Use Gauss-Legendre quadrature directly in the radial coordinate on each panel with the exact normalized Jacobian 3r^2 dr. This is the same normalized physical volume integral as in PROOF.md. Compare 12, 24 and 48 radial nodes per panel on a fixed 48x96 sphere rule at phase 0.293. The radial rule integrates constants exactly on every panel, since its Jacobian is quadratic. The test of the unit-ball volume, radial second moment 3/5 and radial fourth moment 3/7 must pass before field evaluation.
+
+Use long-double fields, vorticity and stable linear terms. Compute full-space pressure separately at 16/48x96 and 24/64x128 source quadratures, with source phase 0.677, raw source moments, exact leading-tail subtraction and the full remainder. Radial nodes are rounded to binary64 to match the pressure layout and then promoted for extended field evaluation. Every radial holdout point is an exact pressure panel edge. The source projections are binary64 and the Green sums and synthesis are long double. Report that limitation explicitly. Save field, pressure-coefficient and scalar moment arrays with hashes.
+
+Report the momentum and vorticity ratios and observed radial and pressure changes. Compare against the previous volume-coordinate composite unit-ball value, but do not treat agreement or refinement as a continuum error enclosure. The geometry is the fixed unit ball at the origin; no sampled core center is used in this check. Do not silently identify it with a core-centered ball.

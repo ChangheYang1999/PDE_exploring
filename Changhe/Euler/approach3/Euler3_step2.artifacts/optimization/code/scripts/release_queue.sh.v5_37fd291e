@@ -1,0 +1,88 @@
+#!/bin/bash
+# Release queue of SPEC 3.6 (f), (h), (i) as the lead ordered at 13:56:28Z item 4 (prepared 2026-10-29T14:0xZ, numerics; LAUNCH ONLY AFTER THE LEAD'S FULL RELEASE NOTE).
+# v5 2026-10-29T16:3xZ: SPEC v1.25 stamp and labels; P3 refuses unless the 8.3 mix is >= 80 per cent FREE and the lead's note names it (P3_FORCE=lead); the ORDER of the subcommands is the lead's FULL RELEASE note (draft 15:52:20Z item 4: FREE pilots first), not the comment list below; v4 kept as release_queue.sh.v4_3d3fb8c1.
+# v3 2026-10-29T14:4xZ (lead 14:31:05Z item 2 (a)): SPEC v1.20 (765a6e6034d588e8...) and the label 'full release under the post-result timing rule 3.6 (m)' in every record; v2 kept as release_queue.sh.v2_83b076b5.
+# Guard: this script refuses to run unless status/FULL_RELEASE_ACK exists and contains the timestamp of the lead's FULL RELEASE note (create it by hand after
+# reading that note: echo "<lead note timestamp> FULL RELEASE read by <shift>" > status/FULL_RELEASE_ACK). Every job is enqueued UNPLACED for the slot governor
+# (placement "governor"; the governor grants pairs as a whole, both members together, alone on two clear GPUs or together on one clear GPU) and moved to
+# queue/staged so that the governor exposes it (V217). Records after the release carry "G1 under post-result rules 3.6 (j), (k), (l)" (lead item 4 (7)).
+# Usage: bash scripts/release_queue.sh p3 | cont | f1_S05 | f1_S11 | f2 | f3 | promote <pilot run dir> <tag> | status   (order after the release: p3, cont, then as slots free: promotions of earlier pilots, f1_S05, f1_S11, f2 (eight jobs), f3 (two jobs); lead 14:03:42Z item 6)
+#   p3 [gpu_free gpu_fixed] : P3 pair (S20_own, all-m class): FREE p3_s1_S20 and FIXED-CONTROL p3c_s1_S20, segment 1 max_iter 120, time limit 3600 s (needs the G5 (c) all-m record and the GPU/CPU table identity, lead 13:56:28Z items 1 and 3 (a)).
+#   cont    : FREE continuations of the P1 and P2 FREE members from their segment-2 end checkpoints (240 iterations, 7200 s; reported as unmatched; another segment while O1 falls > 1 per cent per hour, up to 12 h per lineage).
+#   f1_S05  : F1 FREE start from S05 (pilot segment 120 iterations, 3600 s).   f1_S11 : F1 FREE start from S11 (pilot).   f2: the eight F2 pilots (lead 14:03:42Z item 3).   f3: the two F3 pilots (item 4).   promote: medium segment of a pilot (item 5).
+set -u
+cd "$(dirname "$0")/.."; PY=python3; export CUDA_VISIBLE_DEVICES=
+ACK=status/FULL_RELEASE_ACK
+if [ ! -s "$ACK" ]; then echo "REFUSED: $ACK missing or empty: the lead's FULL RELEASE note has not been acknowledged (lead 13:56:28Z item 3 (b))"; exit 2; fi
+COMMON='"lag_jacobian": false, "precision_mode": "dd_fp64jac", "complete_gradient_every": 4, "spec_version": "v1.25", "spec_sha256": "acd5406d92973592c2b45e7c5f3a484e5e80234ba8d2f4e271b509076c941e64", "release_battery": "GPU (v1.13 to v1.25)", "snapshot": "gpu_v1p1", "record_label": "post-release (the FULL RELEASE note of the lead acknowledged in status/FULL_RELEASE_ACK); full release under the post-result rules 3.6 (m), (n), (o), (p)", "g1_label": "G1 under post-result rules 3.6 (j), (k), (l), (n); full release under the post-result rules 3.6 (m), (n), (o), (p)"'
+EXTRA="{$COMMON}"
+govern() { $PY - "$1" <<'PYEOF'
+import json, sys, os, shutil; p = sys.argv[1]; j = json.load(open(p)); j["objective"] = "O1"; j["exclusive"] = None; j["gpus_allowed"] = None; j["placement"] = "governor"
+j["note"] = (j.get("note") or "") + "; placement by the slot governor (SPEC 3.6 (h) (1)); objective O1; launched under the FULL RELEASE (status/FULL_RELEASE_ACK)"
+json.dump(j, open(p, "w"), indent=1); dst = p.replace("/pending/", "/staged/"); os.makedirs(os.path.dirname(dst), exist_ok=True); shutil.move(p, dst); print("staged", dst)
+PYEOF
+}
+case "${1:-status}" in
+  p3)
+    [ -f validation/g5c_allm_gpu_vs_cpu_S20_own.json ] || { echo "REFUSED: no GPU/CPU table identity record for S20 (lead 13:56:28Z item 3 (a))"; exit 3; }
+    CUDA_VISIBLE_DEVICES= $PY scripts/gpu_hours.py > /dev/null 2>&1; MIX=$($PY -c "import json; print(json.load(open('status/gpu_hours.json'))['mix_8_3'].get('FREE', 0))")
+    $PY -c "import sys; sys.exit(0 if float('$MIX') >= 0.80 else 1)" || { echo "REFUSED: the 8.3 mix is FREE $MIX < 0.80 (P3 carries a FIXED-CONTROL member; lead 15:52:20Z item 4 / 16:19:29Z)"; exit 5; }
+    [ "${P3_FORCE:-}" = "lead" ] || { echo "P3 needs the lead's explicit word in the FULL RELEASE note (set P3_FORCE=lead after reading it)"; exit 6; }
+    NOTE="SPEC 3.6 (f)/(h)/(i) pair P3 (S20_own, all-m class), segment s1, GPU, post-release, worker gpu_v1p1; G5 (c) all-m tables: V317/V320/V321 + validation/g5c_allm_gpu_vs_cpu_S20_own.json"
+    $PY scripts/enqueue_d6.py --start starts/S20_s4allm_cl0.45_om1.0.pt --label FREE          --tag p3_s1_S20  --max_iter 120 --time_limit 3600 --priority 40 --extra "$EXTRA" --note "$NOTE"
+    $PY scripts/enqueue_d6.py --start starts/S20_s4allm_cl0.45_om1.0.pt --label FIXED-CONTROL --fixed --tag p3c_s1_S20 --max_iter 120 --time_limit 3600 --priority 39 --extra "$EXTRA" --note "$NOTE"
+    for f in $(ls queue/pending/p3_s1_S20_*.json queue/pending/p3c_s1_S20_*.json); do govern "$f"; done
+    # v4 (2026-10-29T14:47Z): optional exclusive targets 'p3 <gpu for FREE> <gpu for FIXED-CONTROL>' (lead 14:31:05Z item 2 (b)): the S20 memory probe
+    # runs/smk_S20mem_L6_cl0.4500_om1.0000_free (one accepted iteration, production configuration) allocated 39.2 GB at its LM peak, so two members together
+    # (2 x 39.2 + 8 GB > 80 GB) are excluded; with targets the governor starts both members together only when BOTH target GPUs are fully free (alone, exclusive).
+    if [ -n "${2:-}" ] && [ -n "${3:-}" ]; then
+      $PY - "$2" "$3" <<'PYEOF'
+import json, sys, glob
+gf, gc = int(sys.argv[1]), int(sys.argv[2])
+for pat, g in (("queue/staged/p3_s1_S20_*.json", gf), ("queue/staged/p3c_s1_S20_*.json", gc)):
+    for f in glob.glob(pat):
+        j = json.load(open(f)); j["target"] = dict(gpu=g, exclusive=True)
+        j["note"] = (j.get("note") or "") + f"; target: alone on GPU {g} (exclusive), both members started together when both target GPUs are fully free (3.6 (h) (1); memory probe smk_S20mem: 39.2 GB LM peak per member, so together is excluded by 3.6 (c))"
+        json.dump(j, open(f, "w"), indent=1); print("target set", f, g)
+PYEOF
+    fi ;;
+  cont)
+    # enqueue_segment2.sh writes an unplaced continuation (continue_from_run = the given run dir; max_iter = its end iteration + 240; 7200 s) into queue/pending; then staged
+    bash scripts/enqueue_segment2.sh runs/p1_s2_S01_L6_cl0.4500_om1.0000_free p1_s3_S01 6 0 240 7200
+    bash scripts/enqueue_segment2.sh runs/p2_s2_S09_L6_cl0.4500_om0.3000_free p2_s3_S09 4 1 240 7200
+    for f in $(ls queue/pending/p1_s3_S01_*.json queue/pending/p2_s3_S09_*.json 2>/dev/null); do govern "$f"; done ;;
+  f1_S05)
+    $PY scripts/enqueue_d6.py --start starts/S05_nest6_cl0.45_om0.3_p0.pt --label FREE --tag f1_s1_S05 --max_iter 120 --time_limit 3600 --priority 30 --extra "$EXTRA" --note "SPEC 3.6 (f) F1 FREE start from S05, pilot segment, post-release, worker gpu_v1p1"
+    for f in $(ls queue/pending/f1_s1_S05_*.json); do govern "$f"; done ;;
+  f1_S11)
+    $PY scripts/enqueue_d6.py --start starts/S11_nest6_cl0.42_om0.3_p0.pt --label FREE --tag f1_s1_S11 --max_iter 120 --time_limit 3600 --priority 29 --extra "$EXTRA" --note "SPEC 3.6 (f) F1 FREE start from S11, pilot segment, post-release, worker gpu_v1p1"
+    for f in $(ls queue/pending/f1_s1_S11_*.json); do govern "$f"; done ;;
+  f2)
+    # lead 14:03:42Z item 3: design points of the lead's design/sobol16_v1.json (sha256 0d80677af3e2e8f7...): k = 0 (c_l 0.459677, omega 1.338884), k = 1 (c_l 0.42179, omega 0.808573);
+    # order f2_S01_k0_keep, f2_S01_k0_refit, f2_S09_k0_keep, f2_S09_k0_refit, f2_S01_k1_keep, f2_S01_k1_refit, f2_S09_k1_keep, f2_S09_k1_refit; pilot 120 it, 3600 s; FREE; keep_coefficients or refit
+    DSHA=$(sha256sum RUN_ROOT/lead/design/sobol16_v1.json | cut -c1-16); [ "$DSHA" = "0d80677af3e2e8f7" ] || { echo "REFUSED: design file sha256 $DSHA differs from the registered 0d80677af3e2e8f7"; exit 4; }
+    PR=28
+    for k in 0 1; do
+      if [ $k = 0 ]; then CL=0.459677; OM=1.338884; else CL=0.42179; OM=0.808573; fi
+      for S in S01 S09; do
+        if [ $S = S01 ]; then ST=starts/S01_nest6_cl0.45_om1.0_p0.pt; else ST=starts/S09_d6w_cl0.45_om0.3_R1.pt; fi
+        for MODE in keep_coefficients refit; do
+          M2=${MODE%%_*}; TAG=f2_${S}_k${k}_${M2}
+          $PY scripts/enqueue_d6.py --start $ST --label FREE --tag $TAG --c_l $CL --omega $OM --param_init $MODE --max_iter 120 --time_limit 3600 --priority $PR --extra "$EXTRA" --note "SPEC 3.6 (f) F2 FREE start from $S at the registered design point k=$k (design/sobol16_v1.json 0d80677af3e2e8f7; c_l $CL, omega $OM), param_init $MODE, pilot segment, post-release, worker gpu_v1p1; records the relative field change on the common domain (6.5)"
+          PR=$((PR-1))
+        done
+      done
+    done
+    for f in $(ls queue/pending/f2_*.json 2>/dev/null); do govern "$f"; done ;;
+  f3)
+    # lead 14:03:42Z item 4: F3 from S01 at its own parameters, perturb_nonaxi 1e-3 with seed 1, then 1e-1 with seed 2 (field-relative perturbation of the m > 0 coefficients); pilot 120 it, 3600 s; FREE
+    $PY scripts/enqueue_d6.py --start starts/S01_nest6_cl0.45_om1.0_p0.pt --label FREE --tag f3_S01_1e-3_s1 --perturb_nonaxi 1e-3 --seed 1 --max_iter 120 --time_limit 3600 --priority 20 --extra "$EXTRA" --note "SPEC 3.6 (f) F3 FREE start from S01 at its own parameters, perturb_nonaxi 1e-3 seed 1, pilot segment, post-release, worker gpu_v1p1"
+    $PY scripts/enqueue_d6.py --start starts/S01_nest6_cl0.45_om1.0_p0.pt --label FREE --tag f3_S01_1e-1_s2 --perturb_nonaxi 1e-1 --seed 2 --max_iter 120 --time_limit 3600 --priority 19 --extra "$EXTRA" --note "SPEC 3.6 (f) F3 FREE start from S01 at its own parameters, perturb_nonaxi 1e-1 seed 2, pilot segment, post-release, worker gpu_v1p1"
+    for f in $(ls queue/pending/f3_*.json 2>/dev/null); do govern "$f"; done ;;
+  promote)
+    # lead 14:03:42Z item 5: a pilot promoted to a medium segment (240 more iterations, 7200 s) when the three conditions hold (checked by hand: no 6.3 (a)/5.3 rule fired; O1 below 10x the smallest F1 segment-1 end O1; O1 fell > 1 per cent over the last 30 min). Usage: release_queue.sh promote <pilot run dir> <tag>
+    [ -n "${2:-}" ] && [ -n "${3:-}" ] || { echo "usage: release_queue.sh promote <pilot run dir> <tag>"; exit 1; }
+    bash scripts/enqueue_segment2.sh "$2" "$3" 6 0 240 7200; for f in $(ls queue/pending/${3}_*.json 2>/dev/null); do govern "$f"; done ;;
+  status) echo "ACK: $(cat $ACK)"; ls queue/staged queue/pending queue/running 2>/dev/null ;;
+  *) echo "unknown item $1"; exit 1 ;;
+esac

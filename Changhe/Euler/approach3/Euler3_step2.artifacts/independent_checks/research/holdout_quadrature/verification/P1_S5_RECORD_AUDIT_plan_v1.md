@@ -1,0 +1,3 @@
+# P1 segment-five record audit
+
+Bind the actual v10 start reference and full segment-five endpoint, its frozen producer, all named inputs and saved state. Replay stored pressure and spectrum arithmetic at the already used relative tolerance 1e-12, physical metadata at one ULP, and the unmodified admitted predicates and wrapper. Independently check that both weighted core maxima exceed twice the start values while rho decreases. Expect only exclusion (g), no missing applicable checks, and wrapper no even with the exact admission. This is a stored-record and classification audit, not a fresh pressure or field computation. Preserve source and result hashes. No threshold is selected from the result.

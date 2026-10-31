@@ -1,0 +1,72 @@
+{
+  "schema": "d6-phase-iv-common-status-v1",
+  "started_utc": "2026-10-30T12:23:31.257902+00:00",
+  "entry_tick": 2487426.098198517,
+  "complete": false,
+  "execution_complete": true,
+  "preparation": "RUN_ROOT/verifier/artifacts/final_preparation_seals/d6_final_20261030_122331/preparation",
+  "preparation_sha256": "430bde5a1f5d9999ee12b8592a9d03d1e317c78e5ea816e69538f987335f5af3",
+  "planned_freeze_utc": "2026-10-30T12:23:31Z",
+  "stop_utc": "2026-10-30T19:00:31Z",
+  "aggregate_seconds": 23820,
+  "outer_output": "RUN_ROOT/verifier/artifacts/phase_iv_outer_runs/d6_final_20261030_122331_common",
+  "alias_output": "RUN_ROOT/verifier/artifacts/phase_iv_aliases/d6_final_20261030_122331_common",
+  "scope": "Execution and identity accounting only. Unscheduled comparisons and failed operations remain OPEN.",
+  "prelude": {
+    "started_utc": "2026-10-30T12:23:33.000379+00:00",
+    "complete": true,
+    "argv": [
+      "python3",
+      "RUN_ROOT/verifier/scripts/phase_iv_common_prelude_v2.py",
+      "--preparation",
+      "RUN_ROOT/verifier/artifacts/final_preparation_seals/d6_final_20261030_122331/preparation",
+      "--output",
+      "RUN_ROOT/verifier/artifacts/phase_iv_common_runs/d6_final_20261030_122331/prelude"
+    ],
+    "seconds_limit": 180,
+    "pid": 1620340,
+    "peak_sampled_rss_bytes": 624467968,
+    "peak_sampled_virtual_bytes": 5136629760,
+    "peak_sampled_max_process_virtual_bytes": 4817588224,
+    "returncode": 0,
+    "cleanup": {
+      "complete": true,
+      "elapsed_seconds": 0.00047934381291270256,
+      "events": [
+        {
+          "action": "identified",
+          "pid": 1620340,
+          "state": "R",
+          "ppid": 1267619,
+          "start_ticks": "248742969"
+        },
+        {
+          "action": "identified",
+          "pid": 1620623,
+          "state": "R",
+          "ppid": 1620340,
+          "start_ticks": "248743358"
+        }
+      ]
+    },
+    "completed_utc": "2026-10-30T12:23:44.250954+00:00",
+    "elapsed_seconds": 11.250536932144314
+  },
+  "cohort_hashes": {
+    "selection.json": "3a431cc6387c36d285f88d3ec592d4c341043c45d1b108a884d770001bd5a2c5",
+    "source_binding.json": "0d04ecce89ce8f5ede22cabdc83e4379e6369b0597a5e03674eeac362702e2e0",
+    "cohort.json": "c46041b727afe7a154099779d27735be940db3e482db16dd3b3dcb538a6593d2",
+    "sampling.json": "735dc3ad40041435c50fdbcbe5f6c9622fe2fdd8122f2989c38f0bf268c66b94"
+  },
+  "origin_complete": true,
+  "prelude_status_sha256": "96a2d111f683d7ab8c56c15f0b180751958193e06ebe2c0a65f4782a492e22aa",
+  "outer_status_sha256": "190e0689dd03ec65fc6c058c3fc6becb14f9b910dec4746449baffa1a5e3ac05",
+  "outer_complete": false,
+  "alias": {
+    "complete": false,
+    "status": "OPEN",
+    "reason": "outer sequence did not finish safely"
+  },
+  "completed_utc": "2026-10-30T15:04:00.536616+00:00",
+  "elapsed_seconds": 9629.428510160651
+}

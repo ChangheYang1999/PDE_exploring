@@ -1,0 +1,26 @@
+#!/bin/bash
+# Medium-segment end actions (pilot promotions f1_m1, f2_m1; lead 18:31:20Z item 2 (b), 18:49:47Z item 3, 19:35:33Z item 6): on the freed GPU, in one detached
+# chain: J_c EVAL v5 first, then the lineage start-reference record if missing (record_63a start mode), then the end record against every named reference
+# (F2: the F2 start AND the P1/S01 start, lead 18:49:47Z item 3), then the decision by r63a_decide (information: no enqueue, no long continuation here;
+# the lead decides the promotion after an admitted record clears the state). segment_report is NOT run here (no registered reference core for the pilots).
+# Usage: bash scripts/medium_end_actions.sh <ended run dir> <gpu> <start-ref tag> <abs first job json of the lineage> [<second start-ref tag already recorded>]
+set -u; cd "$(dirname "$0")/.."; PY=python3; export CUDA_VISIBLE_DEVICES=
+RUN=$1; GPU=$2; REF=$3; REFJOB=$4; REF2=${5:-}
+[ -f "$RUN/results.jsonl" ] || { echo "no results.jsonl in $RUN yet (the worker's end battery has not finished): run again when it exists"; exit 1; }
+JID=$(basename "$RUN"); ABS=$(cd "$RUN" && pwd); SHORT=${JID%%_L6*}; SH=validation/l_slot_chain_medium_${SHORT}.sh
+echo "== $(date -u +%FT%TZ) medium-segment end of $RUN"; grep -E "LM finished|JOB DONE" "$RUN/worker.log" | tail -2 | cut -c1-300
+$PY scripts/segment_rate.py "$RUN" 60 | tail -1 | cut -c1-300
+cat > "$SH" <<EOC
+#!/bin/bash
+cd RUN_ROOT/numerics/degree6_free_parameters_48h; LOG=validation/logs/l_slot_chain.log; PY=$PY; export CUDA_VISIBLE_DEVICES=
+echo "\$(date -u +%FT%TZ) medium chain started for $JID (J_c EVAL v5, start reference $REF, end record)" >> \$LOG
+bash validation/l_launch.sh frozen jceval_v5_${SHORT}_\$(date -u +%H%M%S) $GPU jc_eval_state.py $ABS cuda:0 256
+if [ ! -f validation/records_63a/$REF.json ]; then bash scripts/r63a_run.sh $GPU $REF start $REFJOB; fi
+REF2OPT=""; if [ -n "$REF2" ] && [ -f validation/records_63a/$REF2.json ]; then REF2OPT="--start-ref \$(pwd)/validation/records_63a/$REF2.json"; fi
+bash scripts/r63a_run.sh $GPU ${SHORT}_end end $ABS --full --start-ref \$(pwd)/validation/records_63a/$REF.json \$REF2OPT
+DEC=\$(\$PY scripts/r63a_decide.py --end ${SHORT}_end --ref $REF $( [ -n "$REF2" ] && echo "--ref $REF2" ))
+echo "\$(date -u +%FT%TZ) 6.3 (a) decision for $JID: \$DEC" >> \$LOG; echo "6.3 (a) decision: \$DEC"
+echo "\$(date -u +%FT%TZ) medium chain done for $JID (no enqueue by this chain; the lead decides the promotion)" >> \$LOG
+EOC
+chmod +x "$SH"; setsid nohup bash "$SH" > validation/logs/medium_${SHORT}.out 2>&1 &
+echo "medium chain launched ($SH) on GPU $GPU: J_c EVAL, start reference $REF (if missing), end record ${SHORT}_end (--full; references $REF ${REF2:+and $REF2}), decision (information); log validation/logs/medium_${SHORT}.out"

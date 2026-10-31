@@ -1,0 +1,91 @@
+{
+ "started": "2026-10-29T03:26:55Z",
+ "precision_mode": "dd_fp64jac",
+ "table_cache": true,
+ "steps": [
+  {
+   "tag": "first at z (hit or miss depending on the Case build)",
+   "seconds": 9.28850957704708,
+   "hits": 1,
+   "misses": 1,
+   "cost": 2.7248318345366663e-07
+  },
+  {
+   "tag": "same z (hit expected)",
+   "seconds": 9.093168473802507,
+   "hits": 2,
+   "misses": 1,
+   "cost": 2.7248318345366663e-07
+  },
+  {
+   "tag": "coefficients moved, parameters unchanged (hit expected)",
+   "seconds": 9.117114836815745,
+   "hits": 3,
+   "misses": 1,
+   "cost": 2.7252853105120397e-07
+  },
+  {
+   "tag": "same, cache off (uncached reference)",
+   "seconds": 67.61912793805823,
+   "hits": 3,
+   "misses": 1,
+   "cost": 2.7252853105120397e-07
+  },
+  {
+   "tag": "parameters moved (miss expected)",
+   "seconds": 77.49772257730365,
+   "hits": 3,
+   "misses": 2,
+   "cost": 0.18815800264334154
+  },
+  {
+   "tag": "back at z (miss, one entry)",
+   "seconds": 68.30739288870245,
+   "hits": 3,
+   "misses": 3,
+   "cost": 2.7248318345366663e-07
+  },
+  {
+   "tag": "cache off at z",
+   "seconds": 67.45297513715923,
+   "hits": 3,
+   "misses": 3,
+   "cost": 2.7248318345366663e-07
+  },
+  {
+   "tag": "after relayout at the same parameters (miss expected)",
+   "seconds": 67.88917366368696,
+   "hits": 3,
+   "misses": 4,
+   "cost": 2.7248318345366663e-07
+  }
+ ],
+ "counts_after_case_build": {
+  "hits": 0,
+  "misses": 1
+ },
+ "param_columns": {
+  "seconds_cache_on": 300.77716894913465,
+  "seconds_cache_off": 303.5686200512573,
+  "bitwise": true
+ },
+ "complete_gradient": {
+  "seconds_cache_on": 186.14833889482543,
+  "seconds_cache_off": 189.42213656799868,
+  "bitwise": true
+ },
+ "hits_total": 3,
+ "misses_total": 4,
+ "checks": {
+  "same_point_hit_bitwise": true,
+  "coefficient_move_hit_bitwise_vs_uncached": true,
+  "parameter_move_miss": true,
+  "return_miss_bitwise": true,
+  "cache_off_bitwise": true,
+  "relayout_same_parameters_miss_and_bitwise": true,
+  "param_columns_bitwise_on_off": true,
+  "complete_gradient_bitwise_on_off": true
+ },
+ "all_pass": true,
+ "finished": "2026-10-29T03:50:34Z"
+}

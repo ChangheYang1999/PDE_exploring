@@ -1,0 +1,5 @@
+The finite-dimensional identities are proved in ../PROOF.md. This does not establish numerical rank, stationarity or parameter identification for an Euler state.
+
+V041 in ../../../verification record confirms the sensitivity-v5 reader and the actual worker QR writer on a seeded 17-by-7 matrix with nonadjacent parameter slots, unequal chain factors and a nonzero phase generator. The checks include a second, nonunit diagonal scaling. All six valid numerical cases passed, and both ambiguous optimizer records without chain factors were rejected. Evidence: ../../../artifacts/worker_record_v3.json and ../../../artifacts/worker_record_v3_nonunit.json. Reader SHA256: 3bcc166900ad67f6b443d9d3ad621c813f166503c7ff6f0a613cb846eefcdad0.
+
+These checks validate the writer-reader coordinate contract. They do not validate the production construction of J_c. Under specification v1.12, section 7 uses of the native worker helper remain pending its independent G1 checks on S01 and S09. A J_cw or J_f record is a labelled partial model and cannot support complete-gradient stationarity claims. Actual saved Euler-state rank and sensitivity results remain pending.

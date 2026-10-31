@@ -1,0 +1,64 @@
+{
+ "A": "runs/segA_L6_cl0.4500_om1.0000_free",
+ "B": "runs/segB_L6_cl0.4500_om1.0000_free",
+ "C": "runs/segC_L6_cl0.4500_om1.0000_free",
+ "A_end": {
+  "it": 3,
+  "counters": {
+   "n_acc": 3,
+   "n_rej": 3,
+   "sat_count": 0
+  },
+  "lam": 0.01728,
+  "z_sha": "7720578485f9d1cc629b05d77bf6ae33d61af4ad730a44a7d6c68eed33d0668c",
+  "status": "max_iter"
+ },
+ "B_first_record": {
+  "it": 0,
+  "it_cum": 3,
+  "counters": {
+   "n_acc": 4,
+   "n_rej": 4,
+   "sat_count": 0
+  },
+  "lam": 0.020736,
+  "accepted": true
+ },
+ "B_n_records": 5,
+ "ledger_kinds": {
+  "A": [
+   "job_code_versions",
+   "job_end",
+   "segment_end",
+   "start_result"
+  ],
+  "B": [
+   "job_code_versions",
+   "job_end",
+   "resume",
+   "segment_continuation",
+   "segment_end",
+   "start_result"
+  ],
+  "C": [
+   "continuation_refused",
+   "job_code_versions",
+   "job_end",
+   "segment_end",
+   "start_result"
+  ]
+ },
+ "checks": {
+  "B_logs_segment_continuation": true,
+  "B_loaded_vector_equals_A_end_bytes": true,
+  "B_first_record_it_cum_equals_A_end_it": true,
+  "B_counters_continue": true,
+  "B_history_prefix_is_A": true,
+  "B_initial_O1_equals_A_end_cost_1e-12": true,
+  "C_refused_and_fresh": true,
+  "ledger_A_segment_end": true,
+  "ledger_B_segment_continuation": true,
+  "ledger_C_continuation_refused": true
+ },
+ "PASS": true
+}

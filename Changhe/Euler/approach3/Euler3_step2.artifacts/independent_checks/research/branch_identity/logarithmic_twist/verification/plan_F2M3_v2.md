@@ -1,0 +1,7 @@
+# P1 s4 versus F2 m3 shell-twist replay
+
+Apply plan_v1.md's scalar checks and tolerances unchanged to the independently evaluated three-grid rotation output artifacts/high_pair_rotation_v2/result.json. Use the exact V647 P1 s4/F2 m3 imports and compare with the lead's lead_P1s4_vs_F2m3_n6_rot.json and _twist.json records. Bind each original source and capture the producer records. A positive active angle has the opposite sign to the producer's coefficient rotation, modulo pi.
+
+Reconstruct all saved squared distances, finite-search lower and upper estimates, per-shell minima and angular increments. Check finest-grid angle agreement within 1e-5 radians modulo pi and distance within 1e-6 absolute or 1e-4 relative. Producer angle agreement uses 1e-5, and producer distance uses 1e-5 absolute or 1e-4 relative. The far-shell angle-law check applies only to endpoints j=5,6,7,8 and uses absolute error 0.005 radians, as registered previously. Report the full increment list rather than silently extending that test to earlier shells.
+
+The conditional mathematical shell-angle law and its limits are proved in ../PROOF.md. An observed matching angle increment does not show equal angular shapes, a continuous Euler family, or an exact profile. The registered branch rule is unchanged. No additional field or pressure evaluation is part of this scalar replay. Use one CPU35 thread and a bounded pressure-controller pause of at most 120 seconds; retain failures.

@@ -1,0 +1,1 @@
+The argument was written before using its degree bound to interpret new angular-refinement results. Independent lead review is pending. Numerical field and angular-table checks are recorded in ../../../verification record. Exact-arithmetic polynomial degree does not imply accurate floating-point pressure.

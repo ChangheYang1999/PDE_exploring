@@ -1,0 +1,11 @@
+# Saved (l) column audit
+
+Registered before reading the saved S05 z_c arrays on 2026-10-29. Exact creation time is the filesystem timestamp and the serial-batch record.
+
+The auditor imports the qualified scalar decision replay with the five registered steps, 1e-3 through 1e-7. A positive fixture and corrupt eligibility, missing-pair, wrong-witness, wrong-decision and nonfinite fixtures precede every actual audit. Independent Decimal arithmetic imports every binary64 high and low word exactly at precision 80; cancellation and surviving-low-word fixtures check this operation.
+
+For each Jcw, Jf and Jc S05 z_c record, bind the manifest, all scientific sources, accepted scope, same-function prerequisite and array hash. Recompute the full derivative norms by row group; replay every saved second-order, five-point and Richardson decision with both the original floors and zero floors. Reconstruct all retained far-anchor stencil and Richardson vectors. The non-named records do not save other stencil vectors; their difference norms remain producer measurements and this limitation must appear in the verdict.
+
+For the three physical residual terms, compare the saved derivative and stencil norms, then independently sum the six high/low words and subtract the full residual's two words. Compare the exact-import Decimal result with the producer's finite double-double sum using the fixed conservative allowance 256 eps64^2 times the sum of term norms divided by the full norm. The term sum is accepted only if that result plus the allowance is below the existing 1e-12 limit. The analytic term sum uses long-double arithmetic and an allowance of 128 eps64 times the sum of term norms divided by the full norm, and must remain below 1e-10. These allowances describe finite arithmetic in this audit; they are not continuum error bounds or changes to the registered decision thresholds.
+
+A passing replay does not independently rerun the full residual and does not supply the elementary-function qualification. The original registered failure remains visible. All failures and versioned repairs are retained. Run serially while the independent holdout worker and controller are paused, then resume them in finally.

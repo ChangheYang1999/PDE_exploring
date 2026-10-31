@@ -1,0 +1,13 @@
+# Independent field distance for P1 segment 4 and F2 medium 1
+
+Registered before this independent evaluation. The lead's producer-code results of 2026-10-29T20:39:10Z have already been read. This is a replication and quadrature check, not a blinded discovery test.
+
+Use the exact saved projected endpoints identified in V452: P1 iteration 587, source SHA256 74586aab17d34400973177032b58ede94ddf2b145cbb9e9a8f968089808a8994; F2 iteration 214, source SHA256 97dd949142d8c537b00b011128f6745b9a1aaa4fff545d08f851c4cca0791384. Preserve their actual tensor parameters and coefficients. No normalization, refit or azimuthal alignment is applied.
+
+Reconstruct velocity using the independent normalized solid-harmonic recurrence and extended-precision radial jets in independent/src. The production Model is used solely by the previously checked export decoder. Field values are not read from producer arrays. Evaluate common physical shells [0.3*2^j,0.3*2^(j+1)], j=-4,...,8. Use Gauss-Legendre radial integration with r^2 volume weights and Gauss-mu/equispaced-phi angular integration. Levels (radial,mu,phi,phase fraction) are (6,24,48,0.481217), (12,42,84,0.812349), and (24,64,128,0.193127).
+
+Compute both d(a,b)=max RMS(Ua-Ub)/RMS(Ub) and d(b,a), with every shell retained. The registered field pass requires both <=0.10. Confirm positive finite denominators, positive weights, normalized volume to 1e-15, symmetry, self-distance zero and scale controls d(2U,U)=1 and d(U,2U)=1/2. Compare the velocity-only contraction to the complete independent field routine on a bounded subset, relative tolerance 1e-15. Independently integrate the leading F field at physical radius 1: |integral|F|^2-1| <=2e-12 on all three levels.
+
+For an empirically resolved numerical distance require the last two levels' maxima to differ by <=1e-4 relative, and every shell distance to differ by <=1e-4 relative or 1e-8 absolute. Failure leaves quantitative accuracy OPEN and preserves all outputs; it does not automatically change the endpoint identity decision if a separate bound is available. Refinement differences are empirical, not rigorous error bounds. The exact proof and scope of the criterion are in ../PROOF.md. No Euler existence, stationarity or structural diversity claim follows from this test.
+
+Registration timestamp: 2026-10-29T20:41:24.927338+00:00. After this check, compare all four cross pairs using the reverse triangle lower bound |RMS(U)-RMS(V)|/min(RMS(U),RMS(V)) on the same finest shell grid. This lower bound can disqualify a pair under the field criterion without evaluating its cross inner product. The normalized shell RMS is invariant under constant spatial rotations in the exact angular integral. State the empirical angular resolution limit separately.

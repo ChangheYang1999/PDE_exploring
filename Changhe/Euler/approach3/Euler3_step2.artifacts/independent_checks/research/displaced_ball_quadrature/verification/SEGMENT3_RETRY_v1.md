@@ -1,0 +1,3 @@
+# Segment-3 P2 restart after storage guard
+
+Registered 2026-10-29T19:01:50.992742+00:00. The original controller stopped the P2 centered worker at 2026-10-29T18:59:03.799672Z because the side reached its unchanged 9.9 GB guard. Retain the partial result, two pressure arrays and original status. Restart the same scientific command with a new output path in artifacts/segment3_centered_retry_v1, then run the existing 394-control auditor. P1 completed earlier and is not repeated. No scientific settings, state, center, radii, thresholds or source arithmetic change. Each attempt has its own actual runtime. The 43-group deduplication preserves every original path and content hash.

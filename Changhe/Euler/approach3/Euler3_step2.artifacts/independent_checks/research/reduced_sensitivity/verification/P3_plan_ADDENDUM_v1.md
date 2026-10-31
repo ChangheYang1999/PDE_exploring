@@ -1,0 +1,3 @@
+# P3 factor audit arithmetic addendum
+
+Registered 2026-10-29T21:24:57.774393+00:00, before reading either published P3 full-joint EVAL or its complete-factor arrays. FREE requires bitwise equality of the EVAL cost and saved trajectory final cost. For FIXED, the full-joint model and the fixed-parameter optimizer may differ in binary64 evaluation order; require relative cost difference <=1e-12 and report both values and the exact difference. This is a consistency tolerance only. It does not identify unequal costs, validate a new residual assembly, or relax endpoint optimizer-coordinate equality. The existing planned sensitivity code already contains this threshold; this addendum makes it explicit before the data are read.

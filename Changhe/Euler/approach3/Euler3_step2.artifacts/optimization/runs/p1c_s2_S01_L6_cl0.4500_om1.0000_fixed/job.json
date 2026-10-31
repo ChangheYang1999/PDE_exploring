@@ -1,0 +1,92 @@
+{
+ "job_id": "p1c_s2_S01_L6_cl0.4500_om1.0000_fixed",
+ "label": "FIXED-CONTROL",
+ "type": "d6fp",
+ "priority": 29,
+ "max_retries": 2,
+ "config": {
+  "L": 6,
+  "Nk": 16,
+  "Nr": 48,
+  "m_parity": "even",
+  "R0": 0.3,
+  "formulation": "mom",
+  "nl_weighting": true,
+  "nl_denominator": "all5far",
+  "far_lambda": 0.01,
+  "far_radii": [
+   4096.0,
+   16384.0,
+   65536.0
+  ],
+  "tail_constraints": true,
+  "channels": {
+   "NkB": 4,
+   "NkD": 4,
+   "NkE": 4,
+   "core_damp": 2,
+   "LB": 15,
+   "LD": 14,
+   "LE": 6
+  },
+  "closure_lambda": 0.001,
+  "gauge_weight": 100.0,
+  "chunk": 256,
+  "threads": 1,
+  "ftol": 1e-07,
+  "xtol": 1e-12,
+  "lam0": 0.01,
+  "param_step_max": 0.5,
+  "complete_gradient": true,
+  "linearization": true,
+  "linearization_every": 50,
+  "holdout_per_shell": 6,
+  "spec_version": "v1.18",
+  "spec_sha256": "ea62503e5948af1104a995a83e79e8f0c0d1b016f90953db11e3c0b73c511507",
+  "release_battery": "GPU (v1.13 to v1.18)",
+  "precision_mode": "dd_fp64jac",
+  "lag_jacobian": false,
+  "init_from": "RUN_ROOT/numerics/degree6_free_parameters_48h/starts/S01_nest6_cl0.45_om1.0_p0.pt",
+  "c_l": 0.45,
+  "omega": 1.0,
+  "param_init_mode": "keep_coefficients",
+  "free_params": false,
+  "perturb": 0.0,
+  "perturb_nonaxi": 0.0,
+  "seed": 0,
+  "n_starts": 1,
+  "max_iter": 360,
+  "time_limit_per_start": 7200.0,
+  "complete_gradient_every": 4,
+  "snapshot": "gpu_v1p1",
+  "record_label": "pre-verifier",
+  "g1_label": "G1 under post-result rules 3.6 (j), (k) (release-wide label, lead 08:50Z item 1; S01_own itself passes the registered G1 rule)",
+  "continue_from_run": "runs/p1c_s1_S01_L6_cl0.4500_om1.0000_fixed",
+  "segment": 2
+ },
+ "exclusive": false,
+ "placement": "governor",
+ "target": {
+  "gpu": 6,
+  "exclusive": false
+ },
+ "created": "2026-10-29T10:54:19Z",
+ "note": "segment 2 continuation of p1c_s1_S01_L6_cl0.4500_om1.0000_fixed (run runs/p1c_s1_S01_L6_cl0.4500_om1.0000_fixed; end state it 120, counters {'n_acc': 120, 'n_rej': 73, 'sat_count': 0}, lm_status max_iter); max_iter 360 = 120 + 240, time limit 7200 s (SPEC v1.15 3.6 (f)); target together with its pair partner on GPU 6 (non-exclusive) = the segment-1 arrangement, unplaced until the slot governor grants the pair; pre-verifier; placed by the slot governor at 2026-10-29T11:02:26Z: together with its pair partner on GPU 6 (non-exclusive) (SPEC 3.6 (h) (1); lead 08:50Z item 4; moved from queue/staged into queue/pending)",
+ "start_sha256": "83aa4c6e9473c8bd76524600ec758fa4202840972ff242f27c5806411101dbcd",
+ "objective": "O1",
+ "gpus_allowed": [
+  6
+ ],
+ "segment_source": {
+  "run": "runs/p1c_s1_S01_L6_cl0.4500_om1.0000_fixed",
+  "job_id": "p1c_s1_S01_L6_cl0.4500_om1.0000_fixed",
+  "it_end": 120,
+  "config_sha256_segment1": "a15662f7ee5fcbf87917b8fbfd8485a43e10bdcd747a54f2d64eee2b81280ab3"
+ },
+ "placement_by_governor": {
+  "ts": "2026-10-29T11:02:26Z",
+  "gpu": 6,
+  "exclusive": false,
+  "moved_from": "queue/staged"
+ }
+}

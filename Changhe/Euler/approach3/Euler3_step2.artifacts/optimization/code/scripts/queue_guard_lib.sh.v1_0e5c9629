@@ -1,0 +1,9 @@
+# Shared helpers of the slot guards (v4 of enqueue_under_lock, v2 of enqueue_pair_under_lock; V547 items 1 to 3).
+LANE=RUN_ROOT/numerics
+busy() { n=0; for p in $(ps -eo pid,comm,args | awk '$2 ~ /^python/' | grep -E "venv/bin/python( -u)? [^ ]*(validation/[A-Za-z0-9_]+\.py|scripts/[A-Za-z0-9_]+\.py)" | grep -v grep | grep -v -E "scripts/(supervisor|slot_governor)\.py" | awk '{print $1}'); do case "$(readlink /proc/$p/cwd 2>/dev/null)" in $LANE*) n=$((n+1));; esac; done; echo $n; }
+# exact job id from an enqueue command's output ("enqueued <path>.json" or "staged <path>.json"); empty if none
+id_from_output() { echo "$1" | grep -oE '(enqueued|staged) [^ ]+\.json' | tail -1 | awk '{print $2}' | xargs -r basename | sed 's/\.json$//'; }
+# queue state of an exact job id: lists every directory holding <id>.json
+job_states() { local id=$1 out=""; for d in staged pending granted running failed cancelled done; do [ -e "queue/$d/$id.json" ] && out="$out $d"; done; echo "$out"; }
+# exact worker: a worker_d6.py process whose LAST argv token is <...>/runs/<id> (exact basename match), cwd in the lane
+worker_visible() { local id=$1; for p in $(ps -eo pid,args | grep '[w]orker_d6.py' | awk '{print $1}'); do local last=$(tr '\0' '\n' < /proc/$p/cmdline 2>/dev/null | tail -1); [ "$(basename "$last")" = "$id" ] && case "$(readlink /proc/$p/cwd 2>/dev/null)" in $LANE*) return 0;; esac; done; return 1; }

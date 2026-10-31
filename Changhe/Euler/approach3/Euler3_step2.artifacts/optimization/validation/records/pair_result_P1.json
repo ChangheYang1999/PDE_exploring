@@ -1,0 +1,279 @@
+{
+ "pair": "P1",
+ "FREE": {
+  "runs": [
+   "runs/p1_s1_S01_L6_cl0.4500_om1.0000_free",
+   "runs/p1_s2_S01_L6_cl0.4500_om1.0000_free"
+  ],
+  "segments": [
+   {
+    "run": "p1_s1_S01_L6_cl0.4500_om1.0000_free",
+    "job_id": "p1_s1_S01_L6_cl0.4500_om1.0000_free",
+    "label": "FREE",
+    "entries": 75,
+    "it_end": 75,
+    "lm_status": "time_limit",
+    "seg_elapsed": 3631.636061668396,
+    "ts": "2026-10-29T10:52:07Z",
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "counters": {
+     "n_acc": 75,
+     "n_rej": 42,
+     "sat_count": 0
+    }
+   },
+   {
+    "run": "p1_s2_S01_L6_cl0.4500_om1.0000_free",
+    "job_id": "p1_s2_S01_L6_cl0.4500_om1.0000_free",
+    "label": "FREE",
+    "entries": 153,
+    "it_end": 228,
+    "lm_status": "time_limit",
+    "seg_elapsed": 7229.269642353058,
+    "ts": "2026-10-29T13:03:26Z",
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "counters": {
+     "n_acc": 228,
+     "n_rej": 141,
+     "sat_count": 0
+    }
+   }
+  ],
+  "final": {
+   "it_cum": 227,
+   "wall": 10860.905704021454,
+   "cost": 2.0761680740372726e-07,
+   "c_l": 0.4489870053700033,
+   "omega": 1.2625881450841698,
+   "blocks": {
+    "near_origin": 9.90858844498113e-10,
+    "core_intermediate": 1.9978619466999838e-07,
+    "far_momentum": 3.614670339647821e-11,
+    "far_anchors": 1.0735068901759033e-16,
+    "closure": 6.4614080729740524e-09,
+    "gauge": 3.421990055095216e-10,
+    "total": 2.0761680740372726e-07
+   },
+   "segment": "p1_s2_S01_L6_cl0.4500_om1.0000_free"
+  }
+ },
+ "FIXED": {
+  "runs": [
+   "runs/p1c_s1_S01_L6_cl0.4500_om1.0000_fixed",
+   "runs/p1c_s2_S01_L6_cl0.4500_om1.0000_fixed"
+  ],
+  "segments": [
+   {
+    "run": "p1c_s1_S01_L6_cl0.4500_om1.0000_fixed",
+    "job_id": "p1c_s1_S01_L6_cl0.4500_om1.0000_fixed",
+    "label": "FIXED-CONTROL",
+    "entries": 120,
+    "it_end": 120,
+    "lm_status": "max_iter",
+    "seg_elapsed": 2333.406866312027,
+    "ts": "2026-10-29T10:30:28Z",
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "counters": {
+     "n_acc": 120,
+     "n_rej": 73,
+     "sat_count": 0
+    }
+   },
+   {
+    "run": "p1c_s2_S01_L6_cl0.4500_om1.0000_fixed",
+    "job_id": "p1c_s2_S01_L6_cl0.4500_om1.0000_fixed",
+    "label": "FIXED-CONTROL",
+    "entries": 240,
+    "it_end": 360,
+    "lm_status": "max_iter",
+    "seg_elapsed": 4698.872074365616,
+    "ts": "2026-10-29T12:21:14Z",
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "counters": {
+     "n_acc": 360,
+     "n_rej": 230,
+     "sat_count": 0
+    }
+   }
+  ],
+  "final": {
+   "it_cum": 359,
+   "wall": 7032.278940677643,
+   "cost": 1.99102231643927e-07,
+   "c_l": 0.45,
+   "omega": 1.0,
+   "blocks": {
+    "near_origin": 1.1222211668911055e-09,
+    "core_intermediate": 1.9075826691829746e-07,
+    "far_momentum": 2.623417734036876e-11,
+    "far_anchors": 1.1047748697907729e-16,
+    "closure": 7.190657742139327e-09,
+    "gauge": 4.851528781264601e-12,
+    "total": 1.99102231643927e-07
+   },
+   "segment": "p1c_s2_S01_L6_cl0.4500_om1.0000_fixed"
+  }
+ },
+ "readings": {
+  "iteration_matched_common": {
+   "kind": "iteration",
+   "at": 227,
+   "available": true,
+   "matched": true,
+   "notes": [],
+   "FREE": {
+    "O1": 2.0761680740372726e-07,
+    "it_cum": 227,
+    "wall": 10860.905704021454,
+    "c_l": 0.4489870053700033,
+    "omega": 1.2625881450841698,
+    "blocks": {
+     "near_origin": 9.90858844498113e-10,
+     "core_intermediate": 1.9978619466999838e-07,
+     "far_momentum": 3.614670339647821e-11,
+     "far_anchors": 1.0735068901759033e-16,
+     "closure": 6.4614080729740524e-09,
+     "gauge": 3.421990055095216e-10,
+     "total": 2.0761680740372726e-07
+    }
+   },
+   "FIXED": {
+    "O1": 2.1423341603881215e-07,
+    "it_cum": 227,
+    "wall": 4446.911037683487,
+    "blocks": {
+     "near_origin": 1.1081886212294412e-09,
+     "core_intermediate": 2.0542583018620402e-07,
+     "far_momentum": 2.439258879303397e-11,
+     "far_anchors": 1.1751935917916612e-16,
+     "closure": 7.605346274099366e-09,
+     "gauge": 6.965825096692452e-11,
+     "total": 2.1423341603881215e-07
+    }
+   },
+   "ratio_FREE_over_FIXED": 0.96911495527903
+  },
+  "wall_matched_common": {
+   "kind": "wall",
+   "at": 7032.278940677643,
+   "available": true,
+   "matched": true,
+   "notes": [],
+   "FREE": {
+    "O1": 2.1972704547681618e-07,
+    "it_cum": 142,
+    "wall": 7025.526035070419,
+    "c_l": 0.44915999279559077,
+    "omega": 1.2102624031221574,
+    "blocks": {
+     "near_origin": 1.0472068151146139e-09,
+     "core_intermediate": 2.1184045204347738e-07,
+     "far_momentum": 3.3175093668834307e-11,
+     "far_anchors": 1.143922580311152e-16,
+     "closure": 6.802469402964148e-09,
+     "gauge": 3.74200719889887e-12,
+     "total": 2.1972704547681618e-07
+    }
+   },
+   "FIXED": {
+    "O1": 1.99102231643927e-07,
+    "it_cum": 359,
+    "wall": 7032.278940677643,
+    "blocks": {
+     "near_origin": 1.1222211668911055e-09,
+     "core_intermediate": 1.9075826691829746e-07,
+     "far_momentum": 2.623417734036876e-11,
+     "far_anchors": 1.1047748697907729e-16,
+     "closure": 7.190657742139327e-09,
+     "gauge": 4.851528781264601e-12,
+     "total": 1.99102231643927e-07
+    }
+   },
+   "ratio_FREE_over_FIXED": 1.103589064083292
+  },
+  "iteration_matched_360": {
+   "kind": "iteration",
+   "at": 360,
+   "available": true,
+   "matched": false,
+   "notes": [
+    "FREE reached only 228 cumulative accepted iterations (< 360): its final state is used; the reading is NOT iteration-matched"
+   ],
+   "FREE": {
+    "O1": 2.0761680740372726e-07,
+    "it_cum": 227,
+    "wall": 10860.905704021454,
+    "c_l": 0.4489870053700033,
+    "omega": 1.2625881450841698,
+    "blocks": {
+     "near_origin": 9.90858844498113e-10,
+     "core_intermediate": 1.9978619466999838e-07,
+     "far_momentum": 3.614670339647821e-11,
+     "far_anchors": 1.0735068901759033e-16,
+     "closure": 6.4614080729740524e-09,
+     "gauge": 3.421990055095216e-10,
+     "total": 2.0761680740372726e-07
+    }
+   },
+   "FIXED": {
+    "O1": 1.99102231643927e-07,
+    "it_cum": 359,
+    "wall": 7032.278940677643,
+    "blocks": {
+     "near_origin": 1.1222211668911055e-09,
+     "core_intermediate": 1.9075826691829746e-07,
+     "far_momentum": 2.623417734036876e-11,
+     "far_anchors": 1.1047748697907729e-16,
+     "closure": 7.190657742139327e-09,
+     "gauge": 4.851528781264601e-12,
+     "total": 1.99102231643927e-07
+    }
+   },
+   "ratio_FREE_over_FIXED": 1.0427648434148526,
+   "at_it_cum_index": 359
+  },
+  "wall_matched_10800s": {
+   "kind": "wall",
+   "at": 10800.0,
+   "available": true,
+   "matched": true,
+   "notes": [
+    "FIXED ended at cumulative wall 7032 s (< 10800 s; last segment lm_status max_iter): its final state is used (no further change within the wall budget)"
+   ],
+   "FREE": {
+    "O1": 2.0785538333157562e-07,
+    "it_cum": 225,
+    "wall": 10775.845502853394,
+    "c_l": 0.4489936907328875,
+    "omega": 1.260484891017672,
+    "blocks": {
+     "near_origin": 9.934722309561824e-10,
+     "core_intermediate": 2.0033957183590157e-07,
+     "far_momentum": 3.597427923700958e-11,
+     "far_anchors": 1.0762225274519104e-16,
+     "closure": 6.473392350417448e-09,
+     "gauge": 1.2972527441154778e-11,
+     "total": 2.0785538333157562e-07
+    }
+   },
+   "FIXED": {
+    "O1": 1.99102231643927e-07,
+    "it_cum": 359,
+    "wall": 7032.278940677643,
+    "blocks": {
+     "near_origin": 1.1222211668911055e-09,
+     "core_intermediate": 1.9075826691829746e-07,
+     "far_momentum": 2.623417734036876e-11,
+     "far_anchors": 1.1047748697907729e-16,
+     "closure": 7.190657742139327e-09,
+     "gauge": 4.851528781264601e-12,
+     "total": 1.99102231643927e-07
+    }
+   },
+   "ratio_FREE_over_FIXED": 1.0439631018466067
+  }
+ },
+ "sharing_condition_flag": "P1 members shared GPU 6 with each other (non-exclusive, together) until the FIXED end 12:31:02Z; from 12:31:25Z the FREE member shared GPU 6 with validation items (chain 7 dd checks and comparisons). The wall-matched reading at the FIXED member's total LM time (7038 s) was reached by the FREE member before 12:31:02Z and is unaffected (lead 12:42:29Z); only statements about the FREE member's own budget end carry the flag.",
+ "definitions": "O1 = history cost at the accepted iterate (self-consistent objective of the worker); it_cum is the 0-based index of the accepted iteration over the segments (it_cum = 359 is the 360th); the named iteration count is 1-based; wall = cumulative LM elapsed over the segments (segment checkpoints and restarts excluded); the iteration-matched reading compares both members at the same cumulative accepted iteration, the wall-matched at the same cumulative wall time",
+ "ts": "2026-10-29T13:19:36Z"
+}

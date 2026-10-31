@@ -1,0 +1,29 @@
+#!/bin/bash
+# Segment-end actions for a FREE continuation lineage (lead 16:40:13Z item 3; SPEC 8.5, 3.6 (g), (o)):
+#  1) the O1 fall over the last hour (scripts/segment_rate.py); 2) if above 1 per cent per hour AND the lineage's optimizer time is below 12 h, enqueue the next segment at once
+#  (scripts/enqueue_continuation_v122.sh v3: cfg unchanged except max_iter + 240 and 7200 s; same GPU, exclusive); 3) launch (detached chain) the J_c EVAL v5 (admitted, V370) and
+#  segment_report v4.1 of the ended segment on the EVAL GPU through l_launch.sh. Reading of the worker's end lines is printed for the note. Nothing is edited in the run.
+# Usage: bash scripts/segment_end_actions.sh <ended run dir> <next tag> <lineage gpu> <eval gpu> <reference_core> "<core source text>" [lineage optimizer hours so far]
+set -u; cd "$(dirname "$0")/.."; PY=python3; export CUDA_VISIBLE_DEVICES=
+RUN=$1; TAG=$2; GPU=$3; EGPU=$4; RC=$5; SRC=$6; HOURS=${7:-0}
+[ -f "$RUN/checkpoint_segment_end.pt" ] || { echo "no checkpoint_segment_end.pt in $RUN (segment not ended?)"; exit 1; }
+echo "== $(date -u +%FT%TZ) segment end of $RUN"; grep -E "LM finished|end-of-segment|JOB DONE|final linearization" "$RUN/worker.log" | tail -4 | cut -c1-300
+$PY scripts/segment_rate.py "$RUN" 60 | tee TMPDIR/segrate_$$.txt
+if grep -q "8.5 rule (> 1 per cent per hour over the last hour): MET" TMPDIR/segrate_$$.txt && $PY -c "import sys; sys.exit(0 if float('$HOURS') < 12.0 else 1)"; then
+  echo "8.5 rule MET and lineage hours $HOURS < 12: enqueuing the next segment $TAG on GPU $GPU (exclusive)"
+  bash scripts/enqueue_continuation_v122.sh "$RUN" "$TAG" "$GPU" 1
+else
+  echo "8.5 rule NOT met (or the 12 h budget is reached): no further segment; the slot goes to the next queue item"
+fi
+rm -f TMPDIR/segrate_$$.txt
+JID=$(basename "$RUN"); ABS=$(cd "$RUN" && pwd)
+cat > validation/l_slot_chain_evals_${JID%%_L6*}.sh <<EOC
+#!/bin/bash
+cd RUN_ROOT/numerics/degree6_free_parameters_48h; LOG=validation/logs/l_slot_chain.log
+echo "\$(date -u +%FT%TZ) evals chain started for $JID (J_c EVAL v5 + segment_report v4.1)" >> \$LOG
+bash validation/l_launch.sh frozen jceval_v5_${JID%%_L6*}_\$(date -u +%H%M%S) $EGPU jc_eval_state.py $ABS cuda:0 256
+bash validation/l_launch.sh frozen segrep41_${JID%%_L6*}_\$(date -u +%H%M%S) $EGPU segment_report.py $ABS --reference-core $RC --source "$SRC" cuda:0
+echo "\$(date -u +%FT%TZ) evals chain done for $JID" >> \$LOG
+EOC
+chmod +x validation/l_slot_chain_evals_${JID%%_L6*}.sh; setsid nohup bash validation/l_slot_chain_evals_${JID%%_L6*}.sh > validation/logs/evals_${JID%%_L6*}.out 2>&1 &
+echo "EVAL chain launched (validation/l_slot_chain_evals_${JID%%_L6*}.sh) on GPU $EGPU"

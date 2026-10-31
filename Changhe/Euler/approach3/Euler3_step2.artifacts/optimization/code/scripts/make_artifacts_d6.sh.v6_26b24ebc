@@ -1,0 +1,81 @@
+#!/bin/bash
+# D6FP: publishable artifacts subset of the degree-6 free-parameter campaign -> ../artifacts (lane-relative; under 40 MB; relative paths).
+# Contents: code (src, scripts, validation scripts, tests, configs), validation records (json), gate logs (text), the job ledger, the queue plan,
+# the start manifest and the small start/end coefficient files (.pt, each under 1 MB), per-job records (job.json, worker.log and stdout.log, gzipped above 300 KB, start_result json)
+# without checkpoints, profiling records, the source-state snapshots, and a README with the one-command resume and independent-validation commands.
+# Usage: bash scripts/make_artifacts_d6.sh   (idempotent: rebuilds ../artifacts from scratch; prints the size and a sha256 manifest)
+set -e
+ROOT=$(cd "$(dirname "$0")/.." && pwd); A=$ROOT/../artifacts; TS=$(date -u +%FT%TZ)
+rm -rf "$A"; mkdir -p "$A"
+cd "$ROOT"
+mkdir -p "$A/code" "$A/validation" "$A/runs" "$A/status" "$A/profiling"
+rsync -a --exclude='__pycache__' --exclude='*.pyc' src scripts tests configs "$A/code/"
+cp -r validation/*.py validation/*.sh validation/*.md "$A/validation/" 2>/dev/null || true
+mkdir -p "$A/validation/records" "$A/validation/logs"
+for f in validation/*.json; do case "$f" in *superseded*|*_v41_*|*_v44_*|*.v1_wording|*.v2b) continue;; esac; [ $(stat -c %s "$f") -le 1000000 ] && cp "$f" "$A/validation/records/"; done   # v2 (16:4xZ): cap 1 MB, superseded copies excluded (40 MB limit)
+find "$A/validation/records" -name "*.json" -size +100k -exec gzip -f {} \;   # v5 (21:4xZ): records above 100 KB gzipped in the published copy (40 MB limit; v4 used 500 KB)
+for f in validation/logs/*.log; do [ $(stat -c %s "$f") -le 2000000 ] && cp "$f" "$A/validation/logs/"; done
+gzip -c status/ledger.jsonl > "$A/status/ledger.jsonl.gz"; cp status/FROZEN_CODE_SHA256.txt status/gpu_hours.json status/gpu_hours_manual.jsonl "$A/status/" 2>/dev/null || true   # v3 (18:2xZ): the ledger is gzipped (4.9 MB plain) to stay under the 40 MB limit
+cp status/RELEASE_SNAPSHOT_*.md "$A/status/" 2>/dev/null || true
+cp QUEUE_PLAN.md "$A/" ; cp starts/MANIFEST.json "$A/starts_MANIFEST.json"
+mkdir -p "$A/starts"; for f in starts/*.pt; do [ $(stat -c %s "$f") -le 1000000 ] && cp "$f" "$A/starts/"; done
+cp -r profiling/*.json profiling/*.md "$A/profiling/" 2>/dev/null || true
+for d in runs/*/; do
+  n=$(basename "$d"); case "$n" in INVALID_*) continue;; esac
+  mkdir -p "$A/runs/$n"
+  for f in job.json worker.log stdout.log; do [ -f "$d/$f" ] && cp "$d/$f" "$A/runs/$n/"; done
+  find "$A/runs/$n" -type f \( -name worker.log -o -name stdout.log \) -size +300k -exec gzip -f {} \; 2>/dev/null   # 04:4xZ: logs above 300 KB gzipped (the artifacts must stay under 40 MB)
+  mkdir -p "$A/runs/$n/starts"
+  case "$n" in s2smoke_*|smk*|g7_*|resume_test_*|segA_*|segB_*|segC_*) SMK=1;; *) SMK=0;; esac   # 04:4xZ: smoke and resume-test runs keep their records but not their state files (size budget)
+  for f in "$d"/starts/*.pt "$d"/starts/*.json; do [ -f "$f" ] && [ $(stat -c %s "$f") -le 1500000 ] && { [ "$SMK" = 1 ] && [[ "$f" == *.pt ]] && continue; cp "$f" "$A/runs/$n/starts/"; }; done
+  for f in "$d"/*.json; do [ -f "$f" ] && [ $(stat -c %s "$f") -le 1500000 ] && cp "$f" "$A/runs/$n/"; done
+done
+cp ../NUM_REPORT.md "$A/NUM_REPORT.md"; cp ../WORKLOG.md "$A/WORKLOG_numerics.md"; cp ../NOTES_FOR_TEAM.md "$A/NOTES_numerics.md" 2>/dev/null || true
+cat > "$A/README.md" <<EOR
+# Degree-6 free-parameter campaign (c_l and omega as unknowns): numerics artifacts, generated $TS
+
+Layout (relative paths): code/ (src, scripts, tests, configs: the production code of the campaign, copied from the frozen Euler3 tree with versioned
+changes; hashes of the production files in status/RELEASE_SNAPSHOT_*.md and status/FROZEN_CODE_SHA256.txt), validation/ (validation scripts; records/ the
+json records: derivative gates, 6.3 (a) records records_63a, J_c EVAL records, smoke comparisons, branch distances; records above 100 KB gzipped; logs/),
+status/ (ledger.jsonl.gz: every job launch and end; gpu_hours.json and gpu_hours_manual.jsonl: the GPU-hours ledger by label; KNOWN_ISSUES.md), starts/ (the
+immutable starting states, each under 1 MB; starts_MANIFEST.json), runs/JOB/ (job.json, worker.log and stdout.log (gzipped when above 300 KB), start_result record and the final state
+starts/start_000.pt = coefficients and parameters when small; checkpoints are not included; checkpoint paths in the original tree: runs/JOB/checkpoint.pt and
+runs/JOB/checkpoint_segment_end.pt), profiling/, QUEUE_PLAN.md, NUM_REPORT.md (the numerics report with the deliverable-A table), WORKLOG_numerics.md,
+NOTES_numerics.md (the notes to the team).
+
+Interpreter: python 3.9 with torch 2.8 CUDA 12.8 (the frozen environment of the previous campaign, read only:
+python3). Resources: GPUs revoked 2026-10-29T00:57:59Z to 02:51:04Z (CPU only),
+GPUs 4,5,6 from 02:51:04Z, GPUs 0 to 6 from 17:09:05Z; the binding limit was four busy host processes (cores 31-34).
+
+One-command resume of a job from its last checkpoint (the worker resumes when runs/JOB/checkpoint.pt exists; same configuration, GPU g):
+  cd code && CUDA_VISIBLE_DEVICES=g OMP_NUM_THREADS=1 python scripts/worker_d6.py ../runs/JOB/job.json ../runs/JOB
+Continuation segment of a FREE lineage from an ended segment (worker resume path; +240 iterations, time limit S seconds; the slot governor places it):
+  bash scripts/enqueue_continuation_v122.sh ABS_ENDED_RUN_DIR TAG GPU 1 S      (only after the admitted 6.3 (a) wrapper answered yes:
+  python scripts/r63a_decide.py --end END_RECORD_TAG --ref START_REFERENCE_TAG; records by validation/record_63a.py through scripts/r63a_run.sh)
+Supervisor and slot governor: bash scripts/start_supervisor.sh (configs/supervisor_gpu456.json) and scripts/slot_governor.py --cfg configs/supervisor_gpu456.json --gpus 0,1,2,3,4,5,6.
+Breadth pilots and pairs: scripts/release_queue.sh (p3 | f1_S05 | f2 WHICH | f2refit WHICH | f3 WHICH | f4 K | promote ...; guarded by status/FULL_RELEASE_ACK).
+Shift-6 tools (2026-10-30): scripts/enqueue_p3_free_cont.sh (P3 FREE-only continuation), scripts/enqueue_bracket_pilot.sh (saved field at a moved omega from the P1 s4 base
+state starts/P1s4_end_base_state.pt, sha256 60df5e72844f8689..., bytes-equal to the P1 s4 checkpoint z_full), scripts/enqueue_profile_run.sh (one SPEC 7.3 (d) PROFILE run,
+FIXED, from the same base file through the worker keep path, with the 8.3 share gate), scripts/p3_free_cont_end.sh (end chain of a single member), every enqueue
+through scripts/enqueue_under_lock.sh (host-slot guard; scripts/queue_guard_lib.sh), every validation launch through validation/l_launch_v6.sh.
+Linear-response PROFILE start candidates from a J_c EVAL factor (diagnostic; not consumed by any run, lead 2026-10-30T02:59:34Z): scripts/linear_response_start.py (v1) and
+scripts/linear_response_start_v2.py (v2.1; receipts and start files in validation/lrs, lrs_v2, lrs_v21): python scripts/linear_response_start_v2.py ABS_RUN_DIR --out PREFIX --dzc X --dzw Y --device cuda:0 ;
+several displacements in one process: python scripts/lrs_multi.py --tool linear_response_start_v2.py cuda:0 --run ABS_RUN_DIR --prefix PREFIX dzc=X,dzw=Y ... ; fixtures only: --fixtures-only.
+Phase III tools (2026-10-30, shift 6): scripts/s2_prod_run.sh (strategy-2 comparison: worker_d6_s2.py with the complete Jacobian J_c as the LM step model, hand-launched on an
+exclusive GPU with an open/closed manual ledger row), scripts/enqueue_perturb_repeat.sh (SPEC 7.4 (e) continued-descent repeat: offline perturbation 1e-3 / 1e-3 of the P1 s4
+end, then a fresh FREE job; provenance-bound reuse), scripts/profile_queue.sh + scripts/enqueue_profile_run.sh (the nine PROFILE runs one at a time with the 8.3 gates:
+narrow ceiling 0.15, registered FREE floor 0.80, fixed-side lock), scripts/profile_record.py (the PROFILE record from the worker's outputs), scripts/enqueue_free_cont.sh
+(generic FREE continuation with a caller-supplied lineage text), status/tmp_*_segfirst_chain_v2.sh (frozen-set segments enqueued at the previous JOB DONE, records after).
+GPU-hours ledger: scripts/gpu_hours.py v4.8 (two 8.3 counts: REGISTERED = all coefficient optimization of any label incl. CPU wall hours and the early 2026-10-28 work of
+status/gpu_hours_early.jsonl; NARROW = FREE + FIXED-CONTROL + PROFILE + DIAG + refits); earlier: v4.3 (launches closed at the first end event of their attempt; smoke probes SMOKE); the defective v4.1 output is kept as status/gpu_hours_v4.1_defective_025821.json.
+Independent validation (derivative gates of SPEC 3; one case, CPU, one thread; writes validation/gates_TAG.json):
+  cd code && CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=1 python ../validation/gates.py --tag check --cases S01_own --device cpu
+6.3 (a) record of an end state (full battery): python validation/record_63a.py end ABS_RUN_DIR --tag TAG --device cuda:0 --full --start-ref ABS_START_RECORD_JSON
+J_c EVAL of an end state: python validation/jc_eval_state.py ABS_RUN_DIR cuda:0 256 ; branch identity of two end states: python scripts/branch_distance.py A_starts/start_000.pt B_starts/start_000.pt --tag TAG [--sens-a ... --jc-a ...]
+Table of every run: python scripts/summary_table.py ; GPU-hours by label: python scripts/gpu_hours.py ; parameter evolution of a lineage: python scripts/param_evolution.py NAME RUN_DIRS...
+Table-cache bitwise regression: python ../validation/test_table_cache.py ; control-flow tests: python ../validation/test_lagJ_flow.py, python ../validation/test_grad_every.py.
+The validation scripts expect the layout of the experiment directory (src/, scripts/, starts/ next to validation/): run them from a copy where code/* and
+starts/ are placed as in the original tree, or from the original tree RUN_ROOT/numerics/degree6_free_parameters_48h.
+EOR
+cd "$A" && find . -type f -exec sha256sum {} \; | sort -k2 > SHA256SUMS.txt
+echo "artifacts written to $A: $(du -sh "$A" | cut -f1), $(find "$A" -type f | wc -l) files"

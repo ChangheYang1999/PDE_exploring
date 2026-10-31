@@ -1,0 +1,130 @@
+{
+ "ts": "2026-10-29T05:19:01Z",
+ "candidate": "validation/lm_cost_compare_ddj_gpu_v1.json (gpu_v1, GPU 6, 05:14:29Z to 05:18:16Z)",
+ "reference": "validation/lm_cost_compare_ddj_cpu_v1_code_0452Z.json (04:48Z record)",
+ "counts": {
+  "ref": [
+   5,
+   5,
+   10
+  ],
+  "gpu_v1": [
+   5,
+   5,
+   10
+  ]
+ },
+ "per_iteration": [
+  {
+   "it": 0,
+   "cost_0448": 2.584969079440978e-07,
+   "cost_gpu_v1": 2.584969079440978e-07,
+   "rel_diff": 0.0,
+   "rel_diff_vs_dd2": 1.6383811976533972e-15,
+   "trials": [
+    2,
+    2
+   ],
+   "accepted": [
+    true,
+    true
+   ],
+   "z_sha": [
+    "504483693ba7",
+    "504483693ba7"
+   ]
+  },
+  {
+   "it": 1,
+   "cost_0448": 2.5613897635587767e-07,
+   "cost_gpu_v1": 2.5613897635587767e-07,
+   "rel_diff": 0.0,
+   "rel_diff_vs_dd2": 5.119536667675474e-12,
+   "trials": [
+    2,
+    2
+   ],
+   "accepted": [
+    true,
+    true
+   ],
+   "z_sha": [
+    "6af7701fc291",
+    "6af7701fc291"
+   ]
+  },
+  {
+   "it": 2,
+   "cost_0448": 2.5507708536087753e-07,
+   "cost_gpu_v1": 2.5507708536087753e-07,
+   "rel_diff": 0.0,
+   "rel_diff_vs_dd2": 1.9625301548278083e-12,
+   "trials": [
+    2,
+    2
+   ],
+   "accepted": [
+    true,
+    true
+   ],
+   "z_sha": [
+    "7720578485f9",
+    "7720578485f9"
+   ]
+  },
+  {
+   "it": 3,
+   "cost_0448": 2.54620471153252e-07,
+   "cost_gpu_v1": 2.54620471153252e-07,
+   "rel_diff": 0.0,
+   "rel_diff_vs_dd2": 6.200042158016645e-13,
+   "trials": [
+    2,
+    2
+   ],
+   "accepted": [
+    true,
+    true
+   ],
+   "z_sha": [
+    "535d7a0a8d73",
+    "535d7a0a8d73"
+   ]
+  },
+  {
+   "it": 4,
+   "cost_0448": 2.543394743209879e-07,
+   "cost_gpu_v1": 2.543394743209879e-07,
+   "rel_diff": 0.0,
+   "rel_diff_vs_dd2": 7.391238628343645e-13,
+   "trials": [
+    2,
+    2
+   ],
+   "accepted": [
+    true,
+    true
+   ],
+   "z_sha": [
+    "e84c3cf843fd",
+    "e84c3cf843fd"
+   ]
+  }
+ ],
+ "max_rel_cost_diff_vs_0448": 0.0,
+ "max_rel_cost_diff_vs_dd2": 5.119536667675474e-12,
+ "iterates_bitwise_vs_0448": true,
+ "wall": {
+  "gpu_v1_s": 216.83807706832886,
+  "ref_0448_s": 238.2305018901825,
+  "mean_t_jac": 29.618426513671874,
+  "mean_t_iter": 40.14935531616211
+ },
+ "peak_GPU_GB": 26.237672448,
+ "criteria": {
+  "same_counts": true,
+  "costs_within_1e-10_of_0448": true,
+  "costs_within_1e-10_of_dd2": true
+ },
+ "PASS": true
+}

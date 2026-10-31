@@ -1,0 +1,43 @@
+#!/bin/bash
+# Segment-end actions for a FREE continuation lineage (lead 16:40:13Z item 3, 17:18:08Z item 3, 17:50:42Z items 3 and 4, 17:55:21Z item 3; SPEC 8.5, 3.6 (g), (o), 6.3 (a)).
+# v4 (19:4xZ): r63a_decide v6 interface (--end, --ref); v3 kept as segment_end_actions.sh.v3_6557d658.
+# v3 (18:3xZ): the next segment is enqueued ONLY after the "6.3 (a) record v1" of the ended segment's end state AND of the lineage start reference exist and
+#              show no exclusion and no open item (lead 17:50:42Z item 4); everything runs in one detached chain on the freed lineage GPU, in the lead's
+#              order: J_c EVAL v5 + segment_report v4.1 first, then the start-reference record if missing, then the end record, then the decision.
+#              v2 (17:3xZ, V384) kept as segment_end_actions.sh.v2_pre_63a; the segment_guard v3 output is still printed (information).
+# Usage: bash scripts/segment_end_actions.sh <ended run dir> <next tag> <lineage gpu> <eval gpu> <reference_core> "<core source text>" <lineage optimizer hours so far> <start-ref tag> <abs start-ref job json>
+set -u; cd "$(dirname "$0")/.."; PY=python3; export CUDA_VISIBLE_DEVICES=
+RUN=$1; TAG=$2; GPU=$3; EGPU=$4; RC=$5; SRC=$6; HOURS=${7:?lineage optimizer hours so far}; REF=${8:?start-reference tag (P1_start, P2_start)}; REFJOB=${9:?abs path of the first job json of the lineage}
+[ -f "$RUN/checkpoint_segment_end.pt" ] || { echo "no checkpoint_segment_end.pt in $RUN (segment not ended?)"; exit 1; }
+[ -f "$RUN/results.jsonl" ] || { echo "no results.jsonl in $RUN yet (the worker's end battery has not finished): run again when it exists"; exit 1; }
+mkdir -p status/tmp; TMP=status/tmp/segrate_$(basename "$RUN")_$(date -u +%H%M%S).txt
+echo "== $(date -u +%FT%TZ) segment end of $RUN"; grep -E "LM finished|end-of-segment|JOB DONE|final linearization" "$RUN/worker.log" | tail -4 | cut -c1-300
+$PY scripts/segment_rate.py "$RUN" 60 | tee "$TMP"
+RATE_OK=no; grep -q "8.5 rule (> 1 per cent per hour over the last hour): MET" "$TMP" && RATE_OK=yes
+GUARD=$($PY scripts/segment_guard.py "$RUN"); echo "segment_guard v3 (information; registered clearance comes from the 6.3 (a) record): $GUARD" | cut -c1-900
+TL=$($PY -c "import math; rem=(12.0-float('$HOURS'))*3600; print(int(min(7200, max(0, math.floor(rem)))))")
+echo "lineage optimizer time so far $HOURS h; remaining below 12 h: $TL s allowed for the next segment; 8.5 rate met: $RATE_OK"
+JID=$(basename "$RUN"); ABS=$(cd "$RUN" && pwd); SHORT=${JID%%_L6*}; SH=validation/l_slot_chain_evals_${SHORT}.sh
+PREV=$($PY -c "
+import torch; d = torch.load('$ABS/checkpoint_segment_end.pt', map_location='cpu', weights_only=False); p = d.get('job_id_segment_source') or ''; print(p.split('_L6')[0] if p else '')")
+cat > "$SH" <<EOC
+#!/bin/bash
+cd RUN_ROOT/numerics/degree6_free_parameters_48h; LOG=validation/logs/l_slot_chain.log; PY=$PY; export CUDA_VISIBLE_DEVICES=
+echo "\$(date -u +%FT%TZ) evals chain started for $JID (J_c EVAL v5 + segment_report v4.1, then 6.3 (a) records, then the decision)" >> \$LOG
+bash validation/l_launch.sh frozen jceval_v5_${SHORT}_\$(date -u +%H%M%S) $EGPU jc_eval_state.py $ABS cuda:0 256
+bash validation/l_launch.sh frozen segrep41_${SHORT}_\$(date -u +%H%M%S) $EGPU segment_report.py $ABS --reference-core $RC --source "$SRC" cuda:0
+if [ ! -f validation/records_63a/$REF.json ]; then bash scripts/r63a_run.sh $EGPU $REF start $REFJOB; fi
+SEGSTART=""; if [ -n "$PREV" ] && [ -f validation/records_63a/${PREV}_end.json ]; then SEGSTART="--segment-start \$(pwd)/validation/records_63a/${PREV}_end.json"; fi
+bash scripts/r63a_run.sh $EGPU ${SHORT}_end end $ABS --start-ref \$(pwd)/validation/records_63a/$REF.json \$SEGSTART
+DEC=\$(\$PY scripts/r63a_decide.py --end ${SHORT}_end --ref $REF)
+echo "\$(date -u +%FT%TZ) 6.3 (a) decision for $JID: \$DEC" >> \$LOG; echo "6.3 (a) decision: \$DEC"
+if [ "$RATE_OK" = "yes" ] && [ "$TL" -ge 600 ] && [ "\${DEC%% |*}" = "yes" ]; then
+  echo "\$(date -u +%FT%TZ) 8.5 rule MET, 6.3 (a) records clear, $TL s remain: enqueuing $TAG on GPU $GPU (exclusive), time limit $TL s" | tee -a \$LOG
+  bash scripts/enqueue_continuation_v122.sh "$ABS" "$TAG" "$GPU" 1 "$TL" | tee -a \$LOG
+else
+  echo "\$(date -u +%FT%TZ) NO next segment for $JID (rate met: $RATE_OK; remaining s: $TL; 6.3 (a): \$DEC): the slot goes to the next queue item" | tee -a \$LOG
+fi
+echo "\$(date -u +%FT%TZ) evals chain done for $JID" >> \$LOG
+EOC
+chmod +x "$SH"; setsid nohup bash "$SH" > validation/logs/evals_${SHORT}.out 2>&1 &
+echo "chain launched ($SH) on GPU $EGPU: J_c EVAL, segment_report, 6.3 (a) records ($REF, ${SHORT}_end; segment start ${PREV:-none}), decision, enqueue of $TAG on GPU $GPU if cleared; log validation/logs/evals_${SHORT}.out"

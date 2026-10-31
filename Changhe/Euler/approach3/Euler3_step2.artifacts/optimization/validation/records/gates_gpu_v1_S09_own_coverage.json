@@ -1,0 +1,461 @@
+{
+ "source": "validation/gates_gpu_v1_S09_own.json",
+ "label": "small-amplitude group, post-result rule (SPEC v1.17 3.6 (j))",
+ "threshold_small_amplitude": 1e-06,
+ "min_coefficient_coverage": 5,
+ "cases": {
+  "S09_own": {
+   "Jf": {
+    "registered": {
+     "parameter_columns": {
+      "optimizer:z_c": "PASS",
+      "optimizer:z_w": "PASS",
+      "physical:c_l": "PASS",
+      "physical:omega": "PASS"
+     },
+     "coefficient_columns": {
+      "41": "INVALID: decision or group decisions missing",
+      "102": "INVALID: decision or group decisions missing",
+      "186": "INVALID: decision or group decisions missing",
+      "189": "INVALID: decision or group decisions missing",
+      "193": "INVALID: decision or group decisions missing",
+      "215": "INVALID: decision or group decisions missing",
+      "585": "INVALID: decision or group decisions missing",
+      "706": "INVALID: decision or group decisions missing",
+      "724": "INVALID: decision or group decisions missing",
+      "793": "INVALID: decision or group decisions missing",
+      "799": "INVALID: decision or group decisions missing",
+      "856": "INVALID: decision or group decisions missing",
+      "873": "INVALID: decision or group decisions missing",
+      "912": "INVALID: decision or group decisions missing",
+      "1035": "INVALID: decision or group decisions missing",
+      "1104": "INVALID: decision or group decisions missing",
+      "1155": "INVALID: decision or group decisions missing",
+      "1354": "INVALID: decision or group decisions missing",
+      "1389": "INVALID: decision or group decisions missing",
+      "1435": "INVALID: decision or group decisions missing"
+     },
+     "n_coefficient_records": 20,
+     "n_distinct_coefficient_columns": 20,
+     "coefficient_count_as_registered": true,
+     "ids_match_drawn": true,
+     "drawn_columns": [
+      41,
+      102,
+      186,
+      189,
+      193,
+      215,
+      585,
+      706,
+      724,
+      793,
+      799,
+      856,
+      873,
+      912,
+      1035,
+      1104,
+      1155,
+      1354,
+      1389,
+      1435
+     ],
+     "missing_parameter_columns": [],
+     "recomputed_decisions": {
+      "optimizer:z_c": {
+       "whole": {
+        "pass_second_order": true,
+        "pass_five_point": true,
+        "richardson": 1.1997862001823254e-11,
+        "PASS": true,
+        "stored_PASS": true,
+        "agrees_with_stored": true
+       },
+       "groups": {
+        "closure": {
+         "pass_second_order": true,
+         "pass_five_point": true,
+         "richardson": 1.0158415552201679e-11,
+         "PASS": true,
+         "stored_PASS": true,
+         "agrees_with_stored": true
+        },
+        "core_intermediate": {
+         "pass_second_order": true,
+         "pass_five_point": true,
+         "richardson": 6.41695468417564e-11,
+         "PASS": true,
+         "stored_PASS": true,
+         "agrees_with_stored": true
+        },
+        "far(r>256R0)": {
+         "pass_second_order": true,
+         "pass_five_point": true,
+         "richardson": 1.2079713833311001e-08,
+         "PASS": true,
+         "stored_PASS": true,
+         "agrees_with_stored": true
+        },
+        "far_anchor_block": {
+         "pass_second_order": true,
+         "pass_five_point": true,
+         "richardson": 2.4579776627978513e-07,
+         "PASS": true,
+         "stored_PASS": true,
+         "agrees_with_stored": true
+        },
+        "gauge": {
+         "pass_second_order": true,
+         "pass_five_point": true,
+         "richardson": 1.199780423509045e-11,
+         "PASS": true,
+         "stored_PASS": true,
+         "agrees_with_stored": true
+        },
+        "near_origin(r<=0.1R0)": {
+         "pass_second_order": true,
+         "pass_five_point": true,
+         "richardson": 2.208939035621713e-09,
+         "PASS": true,
+         "stored_PASS": true,
+         "agrees_with_stored": true
+        }
+       }
+      },
+      "optimizer:z_w": {
+       "whole": {
+        "pass_second_order": true,
+        "pass_five_point": true,
+        "richardson": 5.044437901619349e-11,
+        "PASS": true,
+        "stored_PASS": true,
+        "agrees_with_stored": true
+       },
+       "groups": {
+        "closure": {
+         "pass_second_order": true,
+         "pass_five_point": true,
+         "richardson": 0.0,
+         "PASS": true,
+         "stored_PASS": true,
+         "agrees_with_stored": true
+        },
+        "core_intermediate": {
+         "pass_second_order": true,
+         "pass_five_point": true,
+         "richardson": 1.419290225331958e-11,
+         "PASS": true,
+         "stored_PASS": true,
+         "agrees_with_stored": true
+        },
+        "far(r>256R0)": {
+         "pass_second_order": true,
+         "pass_five_point": true,
+         "richardson": 3.3254651799464124e-10,
+         "PASS": true,
+         "stored_PASS": true,
+         "agrees_with_stored": true
+        },
+        "far_anchor_block": {
+         "pass_second_order": true,
+         "pass_five_point": true,
+         "richardson": 1.5970649990647789e-09,
+         "PASS": true,
+         "stored_PASS": true,
+         "agrees_with_stored": true
+        },
+        "gauge": {
+         "pass_second_order": true,
+         "pass_five_point": true,
+         "richardson": 5.0449052627829716e-11,
+         "PASS": true,
+         "stored_PASS": true,
+         "agrees_with_stored": true
+        },
+        "near_origin(r<=0.1R0)": {
+         "pass_second_order": true,
+         "pass_five_point": true,
+         "richardson": 1.6757773706680198e-10,
+         "PASS": true,
+         "stored_PASS": true,
+         "agrees_with_stored": true
+        }
+       }
+      },
+      "physical:c_l": {
+       "whole": {
+        "pass_second_order": true,
+        "pass_five_point": true,
+        "richardson": 2.2410488095260136e-12,
+        "PASS": true,
+        "stored_PASS": true,
+        "agrees_with_stored": true
+       },
+       "groups": {
+        "closure": {
+         "pass_second_order": true,
+         "pass_five_point": true,
+         "richardson": 3.634580305262209e-13,
+         "PASS": true,
+         "stored_PASS": true,
+         "agrees_with_stored": true
+        },
+        "core_intermediate": {
+         "pass_second_order": true,
+         "pass_five_point": true,
+         "richardson": 3.1416619817400933e-11,
+         "PASS": true,
+         "stored_PASS": true,
+         "agrees_with_stored": true
+        },
+        "far(r>256R0)": {
+         "pass_second_order": true,
+         "pass_five_point": true,
+         "richardson": 3.993773239446892e-09,
+         "PASS": true,
+         "stored_PASS": true,
+         "agrees_with_stored": true
+        },
+        "far_anchor_block": {
+         "pass_second_order": true,
+         "pass_five_point": true,
+         "richardson": 1.0164676041206703e-08,
+         "PASS": true,
+         "stored_PASS": true,
+         "agrees_with_stored": true
+        },
+        "gauge": {
+         "pass_second_order": true,
+         "pass_five_point": true,
+         "richardson": 3.8261577695686353e-14,
+         "PASS": true,
+         "stored_PASS": true,
+         "agrees_with_stored": true
+        },
+        "near_origin(r<=0.1R0)": {
+         "pass_second_order": true,
+         "pass_five_point": true,
+         "richardson": 2.3796897278913415e-11,
+         "PASS": true,
+         "stored_PASS": true,
+         "agrees_with_stored": true
+        }
+       }
+      },
+      "physical:omega": {
+       "whole": {
+        "pass_second_order": true,
+        "pass_five_point": true,
+        "richardson": 1.3732152357751345e-11,
+        "PASS": true,
+        "stored_PASS": true,
+        "agrees_with_stored": true
+       },
+       "groups": {
+        "closure": {
+         "pass_second_order": true,
+         "pass_five_point": true,
+         "richardson": 0.0,
+         "PASS": true,
+         "stored_PASS": true,
+         "agrees_with_stored": true
+        },
+        "core_intermediate": {
+         "pass_second_order": true,
+         "pass_five_point": true,
+         "richardson": 1.4258561663537222e-11,
+         "PASS": true,
+         "stored_PASS": true,
+         "agrees_with_stored": true
+        },
+        "far(r>256R0)": {
+         "pass_second_order": true,
+         "pass_five_point": true,
+         "richardson": 4.962576325962259e-10,
+         "PASS": true,
+         "stored_PASS": true,
+         "agrees_with_stored": true
+        },
+        "far_anchor_block": {
+         "pass_second_order": true,
+         "pass_five_point": true,
+         "richardson": 2.1570498102621173e-09,
+         "PASS": true,
+         "stored_PASS": true,
+         "agrees_with_stored": true
+        },
+        "gauge": {
+         "pass_second_order": true,
+         "pass_five_point": true,
+         "richardson": 1.3732029467197714e-11,
+         "PASS": true,
+         "stored_PASS": true,
+         "agrees_with_stored": true
+        },
+        "near_origin(r<=0.1R0)": {
+         "pass_second_order": true,
+         "pass_five_point": true,
+         "richardson": 1.6808100198116037e-10,
+         "PASS": true,
+         "stored_PASS": true,
+         "agrees_with_stored": true
+        }
+       }
+      }
+     },
+     "physical_omega_rejudgement": {
+      "status": "NOT_APPLICABLE"
+     },
+     "PASS": false,
+     "INVALID": true
+    },
+    "amended": {
+     "status": "RECORDS_INSUFFICIENT",
+     "reason": "compact v1 coefficient records: per-group norms absent"
+    },
+    "label": "small-amplitude group, post-result rule (SPEC v1.17 3.6 (j))"
+   },
+   "Jcw": {
+    "registered": {
+     "parameter_columns": {
+      "optimizer:z_c": "INVALID: raw active-set records or the base record missing",
+      "optimizer:z_w": "INVALID: raw active-set records or the base record missing",
+      "physical:c_l": "INVALID: raw active-set records or the base record missing",
+      "physical:omega": "INVALID: raw active-set records or the base record missing"
+     },
+     "coefficient_columns": {
+      "41": "INVALID: decision or group decisions missing",
+      "102": "INVALID: decision or group decisions missing",
+      "186": "INVALID: decision or group decisions missing",
+      "189": "INVALID: decision or group decisions missing",
+      "193": "INVALID: decision or group decisions missing",
+      "215": "INVALID: decision or group decisions missing",
+      "585": "INVALID: decision or group decisions missing",
+      "706": "INVALID: decision or group decisions missing",
+      "724": "INVALID: decision or group decisions missing",
+      "793": "INVALID: decision or group decisions missing",
+      "799": "INVALID: decision or group decisions missing",
+      "856": "INVALID: decision or group decisions missing",
+      "873": "INVALID: decision or group decisions missing",
+      "912": "INVALID: decision or group decisions missing",
+      "1035": "INVALID: decision or group decisions missing",
+      "1104": "INVALID: decision or group decisions missing",
+      "1155": "INVALID: decision or group decisions missing",
+      "1354": "INVALID: decision or group decisions missing",
+      "1389": "INVALID: decision or group decisions missing",
+      "1435": "INVALID: decision or group decisions missing"
+     },
+     "n_coefficient_records": 20,
+     "n_distinct_coefficient_columns": 20,
+     "coefficient_count_as_registered": true,
+     "ids_match_drawn": true,
+     "drawn_columns": [
+      41,
+      102,
+      186,
+      189,
+      193,
+      215,
+      585,
+      706,
+      724,
+      793,
+      799,
+      856,
+      873,
+      912,
+      1035,
+      1104,
+      1155,
+      1354,
+      1389,
+      1435
+     ],
+     "missing_parameter_columns": [],
+     "recomputed_decisions": {},
+     "physical_omega_rejudgement": {
+      "status": "NOT_APPLICABLE"
+     },
+     "PASS": false,
+     "INVALID": true
+    },
+    "amended": {
+     "status": "RECORDS_INSUFFICIENT",
+     "reason": "compact v1 coefficient records: per-group norms absent"
+    },
+    "label": "small-amplitude group, post-result rule (SPEC v1.17 3.6 (j))"
+   },
+   "Jc": {
+    "registered": {
+     "parameter_columns": {
+      "optimizer:z_c": "INVALID: raw active-set records or the base record missing",
+      "optimizer:z_w": "INVALID: raw active-set records or the base record missing",
+      "physical:c_l": "INVALID: raw active-set records or the base record missing",
+      "physical:omega": "INVALID: raw active-set records or the base record missing"
+     },
+     "coefficient_columns": {
+      "41": "INVALID: decision or group decisions missing",
+      "102": "INVALID: decision or group decisions missing",
+      "186": "INVALID: decision or group decisions missing",
+      "189": "INVALID: decision or group decisions missing",
+      "193": "INVALID: decision or group decisions missing",
+      "215": "INVALID: decision or group decisions missing",
+      "585": "INVALID: decision or group decisions missing",
+      "706": "INVALID: decision or group decisions missing",
+      "724": "INVALID: decision or group decisions missing",
+      "793": "INVALID: decision or group decisions missing",
+      "799": "INVALID: decision or group decisions missing",
+      "856": "INVALID: decision or group decisions missing",
+      "873": "INVALID: decision or group decisions missing",
+      "912": "INVALID: decision or group decisions missing",
+      "1035": "INVALID: decision or group decisions missing",
+      "1104": "INVALID: decision or group decisions missing",
+      "1155": "INVALID: decision or group decisions missing",
+      "1354": "INVALID: decision or group decisions missing",
+      "1389": "INVALID: decision or group decisions missing",
+      "1435": "INVALID: decision or group decisions missing"
+     },
+     "n_coefficient_records": 20,
+     "n_distinct_coefficient_columns": 20,
+     "coefficient_count_as_registered": true,
+     "ids_match_drawn": true,
+     "drawn_columns": [
+      41,
+      102,
+      186,
+      189,
+      193,
+      215,
+      585,
+      706,
+      724,
+      793,
+      799,
+      856,
+      873,
+      912,
+      1035,
+      1104,
+      1155,
+      1354,
+      1389,
+      1435
+     ],
+     "missing_parameter_columns": [],
+     "recomputed_decisions": {},
+     "physical_omega_rejudgement": {
+      "status": "NOT_APPLICABLE"
+     },
+     "PASS": false,
+     "INVALID": true
+    },
+    "amended": {
+     "status": "RECORDS_INSUFFICIENT",
+     "reason": "compact v1 coefficient records: per-group norms absent"
+    },
+    "label": "small-amplitude group, post-result rule (SPEC v1.17 3.6 (j))"
+   }
+  }
+ }
+}

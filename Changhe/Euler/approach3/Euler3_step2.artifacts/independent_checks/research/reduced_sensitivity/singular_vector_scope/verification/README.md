@@ -1,0 +1,5 @@
+The inequalities and counterexamples in PROOF.md were checked algebraically. No floating-point factorization was run for this result.
+
+V737 leaves the report's numerical bounds for the last 20 computed singular vectors OPEN. The proof explains what such bounds could establish if independently verified, including the required coordinate scaling and Gram-matrix control. Existing saved-factor sensitivity checks do not automatically verify parameter content of singular vectors that those checks did not retain.
+
+2026-10-30T12:54:05Z: V740 revises the singular-value paragraph to use A^T A. The v1 wording assumed enough orthonormal left singular vectors even for zero singular values of a wide matrix. The right-singular-vector Gram calculation needs no such assumption and proves the unchanged statement for every rectangular matrix. The original v1 text and its V738 hash are preserved in PROOF_v1.md. Revised PROOF.md SHA256 ebaa941b69981ffd8c44a0cb6211c956aaa5527956bedd7c26b835f417b4302c. No numerical computation or new measurement.

@@ -1,0 +1,23 @@
+{
+ "case": "S01_own",
+ "device": "cuda:0",
+ "chunk": 128,
+ "n_free": 1469,
+ "n_fixed": 1467,
+ "jacobian_free_s": [
+  49.46593117713928,
+  47.72780728340149
+ ],
+ "jacobian_fixed_s": [
+  17.786985397338867,
+  17.77527165412903
+ ],
+ "param_columns_free_s": [
+  7.1752073764801025,
+  7.429158926010132
+ ],
+ "ratio_free_over_fixed": 2.733058768454319,
+ "gpu_shared_with": "other jobs on this GPU: see nvidia-smi at run time",
+ "note": "FREE: residual_vector_wd(to_full_opt(q)) over all N coordinates (parameters live, tables held); FIXED: the same function on a free_params=False model with the same coefficients and parameter values; the difference is the differentiated parameter-dependent construction (basis and twist tables, tail reduction, parameter map, scale_mom, closure patterns) carried in every chunk of the FREE build",
+ "ts": "2026-10-29T14:22:14Z"
+}

@@ -1,0 +1,286 @@
+{
+ "case": "S20_own",
+ "start": "RUN_ROOT/numerics/degree6_free_parameters_48h/starts/S20_s4allm_cl0.45_om1.0.pt",
+ "m_parity": "all",
+ "L": 6,
+ "L_ext": 15,
+ "Nq": 243,
+ "n_opt": 2921,
+ "cost": 2.455257864777353e-07,
+ "pair": [
+  0.45,
+  1.0
+ ],
+ "model_modes_count": 243,
+ "model_modes_odd_m": 120,
+ "model_modes_degrees": [
+  1,
+  15
+ ],
+ "calls_during_build": 9,
+ "calls_during_objective_at": 3,
+ "calls_during_jvp": 3,
+ "jvp_ok": true,
+ "recorder_errors": [
+  {
+   "error": "RuntimeError(\"Cannot access data pointer of Tensor that doesn't have storage\")"
+  },
+  {
+   "error": "RuntimeError(\"Cannot access data pointer of Tensor that doesn't have storage\")"
+  },
+  {
+   "error": "RuntimeError(\"Cannot access data pointer of Tensor that doesn't have storage\")"
+  }
+ ],
+ "distinct_calls": [
+  {
+   "tag": "call00",
+   "key": "5c3df6c8a7278701",
+   "n_points": 2812,
+   "n_modes": 243,
+   "degrees": [
+    1,
+    15
+   ],
+   "n_odd_m_modes": 120,
+   "L": 15,
+   "nderiv": 2,
+   "path": "dd",
+   "callers": [
+    "src.bases.solid_harmonics.angular_matrices"
+   ],
+   "table_shapes": [
+    [
+     2812,
+     243
+    ],
+    [
+     3,
+     2812,
+     243
+    ],
+    [
+     3,
+     3,
+     2812,
+     243
+    ]
+   ],
+   "points_sha256": "b204e72107e71f38951e2ca4bfb194708790093fa7abec94a014093fd232a30e",
+   "modes_sha256": "31145dd108e2a2e8d3d0bc1baf47fe67d0056484689e2822229627dda1a8e1c1"
+  },
+  {
+   "tag": "call01",
+   "key": "6d82150d570d5d9c",
+   "n_points": 924,
+   "n_modes": 243,
+   "degrees": [
+    1,
+    15
+   ],
+   "n_odd_m_modes": 120,
+   "L": 15,
+   "nderiv": 2,
+   "path": "dd",
+   "callers": [
+    "src.far_field.correction.tables"
+   ],
+   "table_shapes": [
+    [
+     924,
+     243
+    ],
+    [
+     3,
+     924,
+     243
+    ],
+    [
+     3,
+     3,
+     924,
+     243
+    ]
+   ],
+   "points_sha256": "cee14dc545a4fe158d25af11537e559f8622edf1c50b993ca5d51cb6378b2c18",
+   "modes_sha256": "31145dd108e2a2e8d3d0bc1baf47fe67d0056484689e2822229627dda1a8e1c1"
+  },
+  {
+   "tag": "call02",
+   "key": "e30233296549ffa2",
+   "n_points": 2812,
+   "n_modes": 1369,
+   "degrees": [
+    0,
+    36
+   ],
+   "n_odd_m_modes": 684,
+   "L": 36,
+   "nderiv": 0,
+   "path": "dd",
+   "callers": [
+    "src.pressure.poisson_sh.__init__"
+   ],
+   "table_shapes": [
+    [
+     2812,
+     1369
+    ],
+    null,
+    null
+   ],
+   "points_sha256": "b204e72107e71f38951e2ca4bfb194708790093fa7abec94a014093fd232a30e",
+   "modes_sha256": "60bf5f0d40acaf561213f114cf86b62408cd6ab3b32e351ab85ad779cef843f7"
+  },
+  {
+   "tag": "call03",
+   "key": "da26564482460819",
+   "n_points": 2812,
+   "n_modes": 1369,
+   "degrees": [
+    0,
+    36
+   ],
+   "n_odd_m_modes": 684,
+   "L": 36,
+   "nderiv": 1,
+   "path": "dd",
+   "callers": [
+    "src.pressure.poisson_sh.__init__"
+   ],
+   "table_shapes": [
+    [
+     2812,
+     1369
+    ],
+    [
+     3,
+     2812,
+     1369
+    ],
+    null
+   ],
+   "points_sha256": "b204e72107e71f38951e2ca4bfb194708790093fa7abec94a014093fd232a30e",
+   "modes_sha256": "60bf5f0d40acaf561213f114cf86b62408cd6ab3b32e351ab85ad779cef843f7"
+  },
+  {
+   "tag": "call04",
+   "key": "14cfc875b615faea",
+   "n_points": 1,
+   "n_modes": 1369,
+   "degrees": [
+    0,
+    36
+   ],
+   "n_odd_m_modes": 684,
+   "L": 36,
+   "nderiv": 1,
+   "path": "dd",
+   "callers": [
+    "src.pressure.poisson_sh.__init__"
+   ],
+   "table_shapes": [
+    [
+     1,
+     1369
+    ],
+    [
+     3,
+     1,
+     1369
+    ],
+    null
+   ],
+   "points_sha256": "9d908ecfb6b256def8b49a7c504e6c889c4b0e41fe6ce3e01863dd7b61a20aa0",
+   "modes_sha256": "60bf5f0d40acaf561213f114cf86b62408cd6ab3b32e351ab85ad779cef843f7"
+  },
+  {
+   "tag": "call05",
+   "key": "1607ed395d4c1750",
+   "n_points": 924,
+   "n_modes": 361,
+   "degrees": [
+    0,
+    18
+   ],
+   "n_odd_m_modes": 180,
+   "L": 18,
+   "nderiv": 0,
+   "path": "dd",
+   "callers": [
+    "src.far_field.correction.first_correction"
+   ],
+   "table_shapes": [
+    [
+     924,
+     361
+    ],
+    null,
+    null
+   ],
+   "points_sha256": "1e981254b67f8b664ef43dd242b10819a4c1a9b26928d7f9b55098ec43636426",
+   "modes_sha256": "93aea9ca5849638e13bd2b3170de588c7c3022721c43736fa0a2f31af60e2af1"
+  },
+  {
+   "tag": "call06",
+   "key": "e4f842d40a127e47",
+   "n_points": 924,
+   "n_modes": 361,
+   "degrees": [
+    0,
+    18
+   ],
+   "n_odd_m_modes": 180,
+   "L": 18,
+   "nderiv": 2,
+   "path": "dd",
+   "callers": [
+    "src.far_field.correction.tables"
+   ],
+   "table_shapes": [
+    [
+     924,
+     361
+    ],
+    [
+     3,
+     924,
+     361
+    ],
+    [
+     3,
+     3,
+     924,
+     361
+    ]
+   ],
+   "points_sha256": "cee14dc545a4fe158d25af11537e559f8622edf1c50b993ca5d51cb6378b2c18",
+   "modes_sha256": "93aea9ca5849638e13bd2b3170de588c7c3022721c43736fa0a2f31af60e2af1"
+  }
+ ],
+ "patched_modules": [
+  "src.equations.fields",
+  "src.pressure.poisson_sh"
+ ],
+ "arrays_npz": "RUN_ROOT/numerics/degree6_free_parameters_48h/validation/g5c_allm_capture_S20_own_arrays.npz",
+ "arrays_sha256": "8ccb35cb6d296a48af8c71e4dbf07f43b5b882e77a18a076d16a0a980309c3e3",
+ "code_sha256": {
+  "src/optimization/lm.py": "8dec4c55c5f39f6e90b3df2060d6d2d5ab1d78dfd269be6c6781efc98e108e3d",
+  "src/optimization/problem.py": "8dd8fd6d2fbab0eedc422202519d45f55884d79ee23e2675d525330c826bbad2",
+  "src/optimization/param_map.py": "8058ef12032fbb6236fd61cbae2d624a7a60706e03f65b07e1888773803d32d4",
+  "src/equations/fields.py": "c68a1fb31fa87d2b998966985c39de8bbafeb6bbf85e5f84378a215ad4af0229",
+  "src/pressure/poisson_sh.py": "8aefe0f3a5f4a90755dff84db39cdaa742de4d1c6da4d82e4183cb21ce9681ac",
+  "src/equations/residuals.py": "9272f55c0f6a5017e149790ffee8f82af5c0e78239be32a060d1ce9b8c5f3c61",
+  "src/far_field/correction.py": "58418dae31c88266ea1f1a8d1d9974fbf4178f1e5e120d0aa483df0b0428d164",
+  "src/optimization/tail_constraints.py": "2bea58b3056fcbc8f13b9c8b3d0b98431f2c1b7c9a2e32781d670d55c1fc1c70",
+  "src/bases/radial.py": "0c80d93740d63173257a6f4c5f5fde287d3711d25b15f5d20f27cee20f46c2cc",
+  "src/bases/jets.py": "206d9639cb4825c5f25edc11fa0171d8dcf59c8c8f01ddfa945d224d50b4e2d2",
+  "src/bases/solid_harmonics.py": "3f231c9286b79b406d364f58a4b8b7234c7c5629db8dd6636ac5bbd37e1695b3",
+  "validation/gates.py": "5f4079926f1c757b66da88db608ff5ed4ee301dd0e12443d554d2f88d6115a07"
+ },
+ "script_sha256": "a6ef4e4479e611bed96fd6825f2b33e819b179c2b08cd12e921875fd54130f26",
+ "device": "cpu",
+ "seconds": 264.29465675354004,
+ "ts": "2026-10-29T13:37:11Z",
+ "note": "capture only (no comparison): node lists, mode lists and the production double-double tables of every distinct angular-table evaluation of the all-m path at this case; the verifier's 70-digit reference at these nodes and modes and the entrywise comparison (G5 (c), <= 1e-13 relative with the floor 1e-13 x the largest entry of the same degree) follow as separate records"
+}

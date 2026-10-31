@@ -1,0 +1,92 @@
+#!/usr/bin/env python
+"""Deliverable A (PROMPT 11.A) numerics table from the worker end records (results.jsonl start_result rows) of every production run: per run and per lineage
+(segments in order). Columns: run, label, initial (c_l, omega), final (c_l, omega), O1 initial and final, rho_u^max on the training grid, the dyadic holdout
+family and the half-offset family, sigma_u^max, a_max_core (both weights), N_core, N_F, accepted iterations (cumulative for lineages), LM seconds, stop reason,
+6.3 (a) record state (validation/records_63a/<tag>.json: exclusions, flags, wrapper decision file). Values are the worker's own (optimizer) values; the
+independently checked values are the verifier's (VERIFY_REPORT). Usage: python scripts/summary_table.py -> validation/summary_runs.json and prints markdown."""
+import os, sys, json, glob, time
+ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+LINEAGES = {
+    "P1 FREE (S01, (0.45, 1.0))": ["p1_s1_S01_L6_cl0.4500_om1.0000_free", "p1_s2_S01_L6_cl0.4500_om1.0000_free", "cont1_s3_S01_L6_cl0.4500_om1.0000_free", "cont1_s4_S01_L6_cl0.4500_om1.0000_free", "cont1_s5_S01_L6_cl0.4500_om1.0000_free"],
+    "P1 FIXED-CONTROL (S01)": ["p1c_s1_S01_L6_cl0.4500_om1.0000_fixed", "p1c_s2_S01_L6_cl0.4500_om1.0000_fixed"],
+    "P2 FREE (S09, (0.45, 0.3))": ["p2_s1_S09_L6_cl0.4500_om0.3000_free", "p2_s2_S09_L6_cl0.4500_om0.3000_free", "cont2_s3_S09_L6_cl0.4500_om0.3000_free", "cont2_s4_S09_L6_cl0.4500_om0.3000_free", "cont2_s5_S09_L6_cl0.4500_om0.3000_free"],
+    "P2 FIXED-CONTROL (S09)": ["p2c_s1_S09_L6_cl0.4500_om0.3000_fixed", "p2c_s2_S09_L6_cl0.4500_om0.3000_fixed"],
+    "P3 FREE (S20 all-m, (0.45, 1.0))": ["p3_s1b_S20_L6_cl0.4500_om1.0000_free"],
+    "P3 FIXED-CONTROL (S20 all-m)": ["p3c_s1b_S20_L6_cl0.4500_om1.0000_fixed"],
+    "F1 FREE (S05, (0.45, 0.3))": ["f1_s1_S05_L6_cl0.4500_om0.3000_free", "f1_S05_m1_L6_cl0.4500_om0.3000_free", "f1_S05_m2_L6_cl0.4500_om0.3000_free"],
+    "F2 FREE (S01 coefficients kept at F6 point 0 (0.459677, 1.338884))": ["f2_S01_k0_keep_L6_cl0.4597_om1.3389_free", "f2_S01_k0_keep_m1_L6_cl0.4597_om1.3389_free", "f2_S01_k0_keep_m2_L6_cl0.4597_om1.3389_free"],
+    "F2 FREE (S09 coefficients kept at F6 point 1 (0.42179, 0.808573))": ["f2_S09_k1_keep_L6_cl0.4218_om0.8086_free", "f2_S09_k1_keep_m1_L6_cl0.4218_om0.8086_free"],
+}
+END_RECORDS = {"cont1_s4_S01_L6_cl0.4500_om1.0000_free": ("cont1_s4_S01_end_v10", "P1_start_v10"), "cont2_s4_S09_L6_cl0.4500_om0.3000_free": ("cont2_s4_S09_end_v10", "P2_start_v10"),
+               "f1_S05_m1_L6_cl0.4500_om0.3000_free": ("f1_S05_m1_end", "f1_start"), "f2_S01_k0_keep_m1_L6_cl0.4597_om1.3389_free": ("f2_S01_k0_keep_m1_end", "f2_start"), "p3_s1b_S20_L6_cl0.4500_om1.0000_free": ("p3_s1b_S20_end", "P3_start")}
+
+
+def last_result(run):
+    p = os.path.join(ROOT, "runs", run, "results.jsonl")
+    if not os.path.isfile(p):
+        return None
+    rows = [json.loads(l) for l in open(p) if l.strip()]; rs = [r for r in rows if r.get("kind") == "start_result"]
+    return rs[-1] if rs else None
+
+
+def running_state(run):
+    """for a run without results: the last accepted iteration from worker.log"""
+    import re
+    p = os.path.join(ROOT, "runs", run, "worker.log")
+    if not os.path.isfile(p):
+        return None
+    last = None
+    for line in open(p):
+        m = re.search(r"LM it\s+(\d+)\s+cost\s+([0-9.eE+-]+).*?c_l\s+([0-9.]+)\s+omega\s+([0-9.]+)", line)
+        if m:
+            last = dict(it=int(m.group(1)), cost=float(m.group(2)), c_l=float(m.group(3)), omega=float(m.group(4)), ts=line[:20])
+    return last
+
+
+def record_state(run):
+    tag = END_RECORDS.get(run)
+    if not tag:
+        return None
+    p = os.path.join(ROOT, "validation", "records_63a", tag[0] + ".json")
+    if not os.path.isfile(p):
+        return dict(tag=tag[0], present=False)
+    d = json.load(open(p)); dec = None
+    dp = os.path.join(ROOT, "validation", "records_63a", tag[0] + ".decision.txt")
+    if os.path.isfile(dp):
+        dec = open(dp).read().strip().splitlines()[-1][:40]
+    return dict(tag=tag[0], reference=tag[1], version=d.get("version"), exclusions=[e["item"][:50] for e in d["exclusions_6_3a"] if e["raised"]], flags=[f["item"][:60] for f in d["flags_6_3b"] if f["raised"]], open=d.get("open"), wrapper=dec)
+
+
+def fmt(v, f="{:.4g}"):
+    return "-" if v is None else (f.format(v) if isinstance(v, (int, float)) else str(v))
+
+
+out = dict(ts=time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), lineages={}, note="worker end-record values (optimizer); independent values are the verifier's")
+md = ["| Lineage / run | label | initial (c_l, omega) | final (c_l, omega) | O1 initial -> final | rho_u^max train / dyadic / half-offset | sigma_u^max | a_max_core (centre / upper) | N_core, N_F | it (cum) | LM h | stop | 6.3 (a) record |", "|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
+for lin, runs in LINEAGES.items():
+    segs = []; cum_it = 0; lm_s = 0.0; first_params = None; first_cost = None
+    for run in runs:
+        r = last_result(run)
+        if r is None:
+            st = running_state(run)
+            if st is None:
+                continue
+            segs.append(dict(run=run, running=True, last=st)); cum_it = st["it"] if st["it"] > cum_it else cum_it
+            md.append(f"| {run} (RUNNING) | FREE | - | ({st['c_l']:.6f}, {st['omega']:.6f}) at it {st['it']} | -> {st['cost']:.4e} | - | - | - | - | {st['it']} | - | running | - |")
+            continue
+        pi = r.get("params_initial") or {}; pf = r.get("params_final") or {}
+        if first_params is None:
+            first_params = (pi.get("c_l", r.get("c_l")), pi.get("omega", r.get("omega"))); first_cost = r.get("cost_initial")
+        it = int(r.get("iterations") or 0); cum_it = it if it > cum_it else cum_it; lm_s += float(r.get("t_lm_s") or r.get("lm_seconds") or 0.0)
+        rec = record_state(run)
+        row = dict(run=run, label=r.get("label"), params_initial=pi, params_final=pf, cost_initial=r.get("cost_initial"), cost_final=r.get("cost_final"), rho_u_max=r.get("rho_u_max"), rho_u_max_holdout=r.get("rho_u_max_holdout"), rho_u_max_holdout_half=r.get("rho_u_max_holdout_half"),
+                   sigma_u_max=r.get("sigma_u_max"), a_max_core=r.get("a_max_core"), a_max_core_upper=r.get("a_max_core_upper"), N_core=r.get("N_core"), N_F=r.get("N_F"), max_U=r.get("max_U"), iterations=it, n_accepted=r.get("n_accepted"), n_rejected=r.get("n_rejected"), t_lm_s=r.get("t_lm_s"), stop=r.get("stop_reason") or r.get("status"),
+                   core_resolved=r.get("core_resolved"), tier_S=r.get("tier_S"), tier_S_holdout=r.get("tier_S_holdout"), v10=r.get("v10_last_tenth_rel_decrease"), record_63a=rec, zfile=r.get("zfile"))
+        segs.append(row)
+        recs = "-" if rec is None else (("v%s %s; excl %d; flags %d; wrapper %s" % (rec.get("version"), rec["tag"], len(rec.get("exclusions") or []), len(rec.get("flags") or []), rec.get("wrapper"))) if rec.get("present", True) else f"{rec['tag']} absent")
+        md.append(f"| {run} | {r.get('label')} | ({fmt(pi.get('c_l', r.get('c_l')), '{:.6f}')}, {fmt(pi.get('omega', r.get('omega')), '{:.6f}')}) | ({fmt(pf.get('c_l', r.get('c_l')), '{:.6f}')}, {fmt(pf.get('omega', r.get('omega')), '{:.6f}')}) | {fmt(r.get('cost_initial'), '{:.4e}')} -> {fmt(r.get('cost_final'), '{:.4e}')} | {fmt(r.get('rho_u_max'))} / {fmt(r.get('rho_u_max_holdout'))} / {fmt(r.get('rho_u_max_holdout_half'))} | {fmt(r.get('sigma_u_max'))} | {fmt(r.get('a_max_core'))} / {fmt(r.get('a_max_core_upper'))} | {fmt(r.get('N_core'), '{:.3f}')}, {fmt(r.get('N_F'), '{:.3f}')} | {it} | {fmt((r.get('t_lm_s') or 0) / 3600, '{:.2f}')} | {r.get('stop_reason') or r.get('status')} | {recs} |")
+    if segs:
+        out["lineages"][lin] = dict(segments=segs, cumulative_iterations=cum_it, lm_hours=lm_s / 3600, first_params=first_params, first_cost=first_cost)
+        md.insert(len(md) - len(segs), f"| **{lin}** | | | | | | | | | **{cum_it}** | **{lm_s / 3600:.2f}** | | |")
+op = os.path.join(ROOT, "validation", "summary_runs.json"); json.dump(out, open(op, "w"), indent=1, default=str)
+print("\n".join(md)); print(f"\nwritten {op}")

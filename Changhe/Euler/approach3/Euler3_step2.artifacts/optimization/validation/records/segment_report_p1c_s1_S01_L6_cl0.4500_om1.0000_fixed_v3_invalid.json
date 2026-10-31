@@ -1,0 +1,96 @@
+{
+ "job_id": "p1c_s1_S01_L6_cl0.4500_om1.0000_fixed",
+ "label": "FIXED-CONTROL",
+ "segment": 1,
+ "start": "start file RUN_ROOT/numerics/degree6_free_parameters_48h/starts/S01_nest6_cl0.45_om1.0_p0.pt",
+ "end_it": 120,
+ "counters": {
+  "n_acc": 120,
+  "n_rej": 73,
+  "sat_count": 0
+ },
+ "lm_status": "max_iter",
+ "balls": {
+  "registered_core_ball": 0.013451097865415625,
+  "origin_ball": 0.0016813872331769531,
+  "core_scale_ball": 0.4304351316933
+ },
+ "reference_core": 0.4304351316933,
+ "reference_core_source": "verifier V235 plan: S01 baseline core radius; registered core ball = reference_core/32 = 0.013451097865415625 (V281)",
+ "device": "cuda:0",
+ "states": {
+  "start": {
+   "O1": 2.724831834536661e-07,
+   "O1_split_half_sq_norm": {
+    "all": 2.724831834536661e-07,
+    "near_origin(r<=0.1R0)": 2.1572126614258453e-10,
+    "core_intermediate": 2.67467032154675e-07,
+    "far(r>256R0)": 3.2811304427633814e-11,
+    "closure": 4.767618728420791e-09,
+    "gauge": 0.0,
+    "far_anchor_block": 9.709967019700804e-17
+   },
+   "c_l": 0.45,
+   "omega": 1.0,
+   "balls": {
+    "registered_core_ball": {
+     "n_nodes": 1,
+     "r_max_in_ball": 0.00981966776243958,
+     "rms_R_u": 0.009029411873059808,
+     "rms_conv": 0.8970858999356128,
+     "rms_U": 0.629241441225598,
+     "ratio_R_over_conv": 0.010065270085850064
+    },
+    "origin_ball": {
+     "n_nodes": 0
+    },
+    "core_scale_ball": {
+     "n_nodes": 17,
+     "r_max_in_ball": 0.4192773285352348,
+     "rms_R_u": 0.09372990380454607,
+     "rms_conv": 0.9719738954103011,
+     "rms_U": 0.5552997069984155,
+     "ratio_R_over_conv": 0.09643253203315681
+    }
+   }
+  },
+  "end": {
+   "O1": 2.3932211461503917e+28,
+   "O1_split_half_sq_norm": {
+    "all": 2.3932211461503917e+28,
+    "near_origin(r<=0.1R0)": 4.028318109225695e+26,
+    "core_intermediate": 1.90170338525005e+28,
+    "far(r>256R0)": 4.512345798080848e+27,
+    "closure": 4.166336345388781e-08,
+    "gauge": 1452005.7804429631,
+    "far_anchor_block": 1.3598263926951556e+26
+   },
+   "c_l": 173.77594699662282,
+   "omega": 27.4806682653921,
+   "balls": {
+    "registered_core_ball": {
+     "n_nodes": 1,
+     "r_max_in_ball": 0.00981966776243958,
+     "rms_R_u": 81933266521293.05,
+     "rms_conv": 0.9770160235448568,
+     "rms_U": 0.62956834711837,
+     "ratio_R_over_conv": 83860719319647.19
+    },
+    "origin_ball": {
+     "n_nodes": 0
+    },
+    "core_scale_ball": {
+     "n_nodes": 17,
+     "r_max_in_ball": 0.4192773285352348,
+     "rms_R_u": 379752578230361.1,
+     "rms_conv": 1982.4680985543012,
+     "rms_U": 11.244742640620753,
+     "ratio_R_over_conv": 191555454792.5854
+    }
+   }
+  }
+ },
+ "seconds": 11.931397199630737,
+ "ts": "2026-10-29T14:35:31Z",
+ "definitions": "balls: registered_core_ball r <= reference_core/32 is the domain of the verifier's core-ball numbers (V281, V304; reference_core pair dependent, value and source recorded); origin_ball r <= reference_core/256; core_scale_ball r <= reference_core is a different domain and is never identified with the verifier's core-ball numbers (lead 12:05:03Z item 2). O1 = 0.5 |r|^2 of the production weighted residual at the state (objective_at, self-consistent weights and closure target); the split gives 0.5 of the squared norm per group (sums to O1); core ball: RMS of the unweighted momentum residual R_u over the production grid points with r <= r_core and the ratio to the RMS of (U . grad) U there; the verifier's holdout values decide what is reported as checked"
+}

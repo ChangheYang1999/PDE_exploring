@@ -1,0 +1,224 @@
+#!/usr/bin/env python
+"""Decision wrapper for segment_end_actions.sh (lead 17:50:42Z item 4, 18:31:20Z item 2 (a), 18:49:47Z item 1 (f), 19:02:50Z item 3, 19:35:33Z item 1 (g) to (j);
+V415, V423). Usage: python scripts/r63a_decide.py --end <end tag> --ref <start-reference tag> [--ref <tag> ...]
+Prints 'yes | ...' only if ALL of the following hold, else 'no | <reasons>':
+  - validation/records_63a/ADMITTED_TOOL.txt exists with the lines '<sha256> record_63a <version> <path relative to the experiment dir>' and
+    '<sha256> r63a_decide <version>'; this script's own sha256 is the admitted one; the producer file at the named path has the admitted sha256 and is loaded
+    from there (its judge()/decide_record() are the decision);
+  - every named record exists, has kind '6.3 (a) record v1', its (script_sha256, version) equal to the admitted record_63a pair, battery, state, nonempty item
+    lists, every 'raised' a genuine boolean, any_exclusion and any_flag genuine booleans equal to any(raised) over their lists, open == [], registered
+    clearance a genuine true;
+  - the end record (--end) has is_start_reference false and the --full provenance string; every --ref record has is_start_reference true, the start-mode
+    provenance string, F_projected true, and the lineage's start file (state.start_file, state.start_file_sha256) present with the matching hash; the end
+    record's start_reference list names exactly the --ref tags (a start-reference record never clears an end state);
+  - provenance matches the named state: state file present with state.state_sha256, vector sha256 recomputed from the file equal to state.z_sha256, the
+    file's parameters (z[-2:] for free-parameter states, the configuration otherwise) equal to state.c_l / state.omega AND to the record's battery c_l / omega
+    exactly, the file's iteration count a genuine integer (not absent, null, bool or float) equal to the record's for end records;
+  - the clearance decision recomputed by the admitted producer's decide_record() on the record's own components (battery, G5, rho_P, spectra, run_path, state)
+    against the --ref records raises nothing and leaves nothing open, and agrees with the record's stored decision;
+  - battery core_resolved is true and |F_norm2_from_coefficients - 1| <= 1e-8 for the end record and every reference.
+Without ADMITTED_TOOL.txt the answer is always 'no'. v7 (2026-10-29T20:0xZ; V435, V437): reference-data validity is separated from end clearance: a --ref record needs
+is_start_reference true, reference_data_valid true, open == [] (its reference-dependent items are listed under open_not_applicable and must all carry a
+reference-dependent prefix), no raised exclusion and every 'raised' a genuine boolean or null only for those inapplicable items; registered_clearance is not
+required of a start reference (it is false by construction). v6 (de872867410fc144) kept as r63a_decide.py.v6_de872867.
+v8 (2026-10-29T20:0xZ; lead 19:57:34Z item 3 (a) to (c), V439): a reference also needs the raw and projected state files with their recorded sha256, c_l and omega
+equal to the segment-1 job's start parameters, F_norm2_projected within 1e-8 of 1, every comparison field (rho_u_max, a_max_core, a_max_core_upper, max_U,
+U_L2_r_lt_1, N_core, N_F, e_core, e_F, a_eff, r_tail) present, finite and non-negative, and its own decision recomputed by the admitted producer
+(decide_record with no reference) with the not-applicable filter applied: no exclusion raised and no applicable OPEN item (its absolute checks: core resolved,
+rho_P ladder, G5, complete battery). The end record's comparison fields are checked the same way. v7 (19aa179dba5ce8f6) kept as r63a_decide.py.v7_19aa179d."""
+import json, os, sys, hashlib, math, argparse, importlib.util
+ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+REC = os.path.join(ROOT, "validation", "records_63a")
+PROV_START = "computed now (full battery of this script, on the F-projected start reference)"
+PROV_FULL = "computed now (--full) and compared with the worker's end-of-run battery (results.jsonl start_result)"
+F_NORM2_TOL = 1e-8
+COMPARISON_FIELDS = ("rho_u_max", "a_max_core", "a_max_core_upper", "max_U", "U_L2_r_lt_1", "N_core", "N_F", "e_core", "e_F", "a_eff", "r_tail", "c_l", "omega", "R0", "F_norm2_from_coefficients")
+
+
+def is_bool(x):
+    return isinstance(x, bool)
+
+
+def is_int(x):
+    return isinstance(x, int) and not isinstance(x, bool)
+
+
+def sha(p):
+    return hashlib.sha256(open(p, "rb").read()).hexdigest()
+
+
+def main():
+    ap = argparse.ArgumentParser(); ap.add_argument("--end", required=True); ap.add_argument("--ref", action="append", default=[])
+    a = ap.parse_args()
+    ok = True; why = []
+    # ---- admission file
+    adm_path = os.path.join(REC, "ADMITTED_TOOL.txt"); prod = None; self_ok = False
+    own_sha = sha(os.path.abspath(__file__))
+    if os.path.isfile(adm_path):
+        for line in open(adm_path).read().splitlines():
+            t = line.split()
+            if len(t) >= 2 and len(t[0]) == 64 and all(c in "0123456789abcdef" for c in t[0]):
+                if t[1] == "record_63a" and len(t) >= 4:
+                    prod = dict(sha=t[0], version=t[2], path=t[3])
+                elif t[1] == "r63a_decide" and t[0] == own_sha:
+                    self_ok = True
+    if prod is None:
+        ok = False; why.append("no admitted record_63a line ('<sha256> record_63a <version> <path>') in validation/records_63a/ADMITTED_TOOL.txt: the answer is no until the verifier's verdict")
+    if not self_ok:
+        ok = False; why.append(f"this wrapper (sha256 {own_sha[:16]}) is not listed as admitted ('<sha256> r63a_decide <version>' line)")
+    M = None
+    if prod is not None:
+        pp = os.path.join(ROOT, prod["path"]) if not os.path.isabs(prod["path"]) else prod["path"]
+        if not os.path.isfile(pp) or sha(pp) != prod["sha"]:
+            ok = False; why.append(f"the producer file {prod['path']} is missing or its sha256 is not the admitted {prod['sha'][:16]}")
+        else:
+            try:
+                spec = importlib.util.spec_from_file_location("record_63a_admitted", pp); M = importlib.util.module_from_spec(spec); spec.loader.exec_module(M)
+                if getattr(M, "VERSION", None) != prod["version"] or not hasattr(M, "decide_record"):
+                    ok = False; why.append(f"the producer file reports VERSION {getattr(M, 'VERSION', None)!r} (admitted {prod['version']!r}) or has no decide_record()"); M = None
+            except Exception as e:
+                ok = False; why.append(f"the producer file could not be loaded ({e!r})"); M = None
+    # ---- records
+    recs = {}
+    for tag in [a.end] + list(a.ref):
+        p = os.path.join(REC, f"{tag}.json")
+        if not os.path.isfile(p):
+            ok = False; why.append(f"{tag}: no record"); continue
+        try:
+            recs[tag] = json.load(open(p))
+        except Exception as e:
+            ok = False; why.append(f"{tag}: unreadable record ({e!r})")
+    if not a.ref:
+        ok = False; why.append("no start-reference tag given (--ref)")
+    REF_DEP = ("(b) ", "(g) ", "N6 radial part", "a_eff decreasing", "r_tail increasing", "omega decreasing monotonically")
+    def check_common(tag, d):
+        nonlocal ok
+        is_ref = d.get("is_start_reference") is True
+        if d.get("kind") != "6.3 (a) record v1" or not isinstance(d.get("battery"), dict) or not d.get("battery") or not isinstance(d.get("state"), dict):
+            ok = False; why.append(f"{tag}: schema not recognized or battery/state missing")
+        if prod is not None and (d.get("script_sha256"), d.get("version")) != (prod["sha"], prod["version"]):
+            ok = False; why.append(f"{tag}: (tool sha256, version) ({str(d.get('script_sha256'))[:16]}, {d.get('version')!r}) is not the admitted pair ({prod['sha'][:16]}, {prod['version']!r})")
+        ex = d.get("exclusions_6_3a"); fl = d.get("flags_6_3b")
+        if not isinstance(ex, list) or not ex or not isinstance(fl, list) or not fl:
+            ok = False; why.append(f"{tag}: exclusion or flag list missing or empty"); return
+        und = [it.get("item") for it in ex + fl if not is_bool(it.get("raised")) and not (is_ref and str(it.get("item")).startswith(REF_DEP))]
+        if und:
+            ok = False; why.append(f"{tag}: undecided items {und[:5]}" + (" ..." if len(und) > 5 else ""))
+        if is_ref:
+            na = d.get("open_not_applicable")
+            if not isinstance(na, list) or any(not str(o).startswith(REF_DEP) for o in na):
+                ok = False; why.append(f"{tag}: open_not_applicable missing or holds an item that is not reference-dependent")
+            if d.get("reference_data_valid") is not True or not is_bool(d.get("reference_data_valid")):
+                ok = False; why.append(f"{tag}: reference_data_valid is not true")
+        raised = [it.get("item") for it in ex if it.get("raised") is True]; fr = [it.get("item") for it in fl if it.get("raised") is True]
+        if raised:
+            ok = False; why.append(f"{tag}: exclusion raised {raised}")
+        if not is_bool(d.get("any_exclusion")) or d["any_exclusion"] != bool(raised) or not is_bool(d.get("any_flag")) or d["any_flag"] != bool(fr):
+            ok = False; why.append(f"{tag}: any_exclusion/any_flag are not genuine booleans equal to any(raised)")
+        if d.get("open") != []:
+            ok = False; why.append(f"{tag}: open items {d.get('open')}")
+        if not is_ref and (d.get("registered_clearance_6_3a") is not True or not is_bool(d.get("registered_clearance_6_3a"))):
+            ok = False; why.append(f"{tag}: registered_clearance_6_3a is {d.get('registered_clearance_6_3a')!r}")
+        if is_ref and d.get("registered_clearance_6_3a") is not False:
+            ok = False; why.append(f"{tag}: a start reference must carry registered_clearance_6_3a false (it is a denominator record)")
+        bat = d["battery"] if isinstance(d.get("battery"), dict) else {}
+        if bat.get("core_resolved") is not True or not is_bool(bat.get("core_resolved")):
+            ok = False; why.append(f"{tag}: core_resolved is not true")
+        badf = [k for k in COMPARISON_FIELDS if not isinstance(bat.get(k), (int, float)) or isinstance(bat.get(k), bool) or not math.isfinite(float(bat.get(k))) or float(bat.get(k)) < 0]
+        if badf:
+            ok = False; why.append(f"{tag}: comparison fields missing, not finite or negative {badf}")
+        f2 = bat.get("F_norm2_from_coefficients")
+        if not isinstance(f2, (int, float)) or isinstance(f2, bool) or not math.isfinite(f2) or abs(f2 - 1.0) > F_NORM2_TOL:
+            ok = False; why.append(f"{tag}: |F_norm2 - 1| not within {F_NORM2_TOL:.0e} ({f2!r})")
+        # state binding
+        st = d.get("state") or {}
+        for k in ("state_file", "state_sha256", "z_sha256", "c_l", "omega"):
+            if st.get(k) in (None, ""):
+                ok = False; why.append(f"{tag}: state.{k} missing")
+        sp = st.get("state_file"); sp = (os.path.join(ROOT, sp) if (sp and not os.path.isabs(sp)) else sp)
+        if sp and os.path.isfile(sp):
+            if sha(sp) != st.get("state_sha256"):
+                ok = False; why.append(f"{tag}: state file sha256 differs from the record")
+            try:
+                import torch
+                S = torch.load(sp, map_location="cpu", weights_only=False); z = S["z"].detach().cpu().double()
+                if hashlib.sha256(z.numpy().tobytes()).hexdigest() != st.get("z_sha256"):
+                    ok = False; why.append(f"{tag}: vector sha256 recomputed from the state file differs from the record")
+                free = bool(S.get("free_params", False)); cfg = S.get("config") or {}
+                c_l, omega = (float(z[-2]), float(z[-1])) if free else (float(cfg.get("c_l")), float(cfg.get("omega")))
+                if c_l != float(st.get("c_l")) or omega != float(st.get("omega")) or c_l != float(bat.get("c_l")) or omega != float(bat.get("omega")):
+                    ok = False; why.append(f"{tag}: parameters of the state file ({c_l}, {omega}) differ from the record's state or battery parameters")
+                if d.get("is_start_reference") is not True:
+                    it_f = S.get("iterations"); it_r = st.get("iterations")
+                    if not is_int(it_f) or not is_int(it_r) or it_f != it_r:
+                        ok = False; why.append(f"{tag}: iteration count not a genuine integer equal between the state file ({it_f!r}) and the record ({it_r!r})")
+            except Exception as e:
+                ok = False; why.append(f"{tag}: state file unreadable ({e!r})")
+        elif sp:
+            ok = False; why.append(f"{tag}: state file {st.get('state_file')} missing")
+    for tag, d in recs.items():
+        check_common(tag, d)
+    # ---- roles (j)
+    end = recs.get(a.end); refs = [recs[t] for t in a.ref if t in recs]
+    if end is not None:
+        if end.get("is_start_reference") is not False and end.get("is_start_reference") is not None or end.get("is_start_reference") is True:
+            ok = False; why.append(f"{a.end}: an end record must not be a start reference")
+        if ((end.get("battery_provenance") or {}).get("source")) != PROV_FULL:
+            ok = False; why.append(f"{a.end}: the end record needs the --full provenance string (lead 18:49:47Z item 1 (f))")
+        named = [r.get("tag") for r in (end.get("start_reference") or [])] if isinstance(end.get("start_reference"), list) else []
+        if sorted(named) != sorted(a.ref):
+            ok = False; why.append(f"{a.end}: the record's start references {named} are not the --ref tags {sorted(a.ref)}")
+    for t in a.ref:
+        r = recs.get(t)
+        if r is None:
+            continue
+        if r.get("is_start_reference") is not True or ((r.get("battery_provenance") or {}).get("source")) != PROV_START or (r.get("state") or {}).get("F_projected") is not True:
+            ok = False; why.append(f"{t}: a start reference needs is_start_reference true, the start-mode provenance string and F_projected true")
+        rst = r.get("state") or {}
+        for key_f, key_s in (("raw_state_file", "raw_state_sha256"), ("state_file", "state_sha256")):
+            fp = rst.get(key_f); fp = (os.path.join(ROOT, fp) if (fp and not os.path.isabs(fp)) else fp)
+            if not fp or not os.path.isfile(fp) or not rst.get(key_s) or sha(fp) != rst.get(key_s):
+                ok = False; why.append(f"{t}: {key_f} missing or its sha256 does not match the record")
+        f2p = rst.get("F_norm2_projected")
+        if not isinstance(f2p, (int, float)) or isinstance(f2p, bool) or not math.isfinite(f2p) or abs(f2p - 1.0) > F_NORM2_TOL:
+            ok = False; why.append(f"{t}: F_norm2_projected not within {F_NORM2_TOL:.0e} of 1 ({f2p!r})")
+        if M is not None:
+            try:
+                ex_r, fl_r, op_r, ae_r, af_r = M.decide_record(r["battery"], r.get("G5"), r.get("rho_P"), r.get("spectra"), r.get("run_path"), [], r.get("state"))
+                op_app = [o for o in op_r if not str(o).startswith(REF_DEP)]
+                if ae_r or op_app:
+                    ok = False; why.append(f"{t}: the reference's own recomputed decision raises {[e['item'] for e in ex_r if e['raised']]} or leaves applicable items open {op_app}")
+            except Exception as e:
+                ok = False; why.append(f"{t}: the reference's recomputed decision failed ({e!r})")
+        stf = rst.get("start_file"); stf_sha = rst.get("start_file_sha256")
+        if not stf or not os.path.isfile(stf) or not stf_sha or sha(stf) != stf_sha:
+            ok = False; why.append(f"{t}: the lineage's start file is missing or its sha256 does not match the record")
+        jf = (r.get("state") or {}).get("source"); jsha = (r.get("state") or {}).get("job_sha256")
+        if not jf or not os.path.isfile(jf) or not jsha or sha(jf) != jsha:
+            ok = False; why.append(f"{t}: the lineage's segment-1 job file is missing or its sha256 does not match the record")
+        else:
+            try:
+                cfg0 = json.load(open(jf)).get("config") or {}
+                if cfg0.get("init_from") != stf:
+                    ok = False; why.append(f"{t}: the start file {stf} is not the init file of the lineage's segment-1 configuration ({cfg0.get('init_from')})")
+                if float(cfg0.get("c_l")) != float(rst.get("c_l")) or float(cfg0.get("omega")) != float(rst.get("omega")) or float(cfg0.get("c_l")) != float((r.get("battery") or {}).get("c_l")) or float(cfg0.get("omega")) != float((r.get("battery") or {}).get("omega")):
+                    ok = False; why.append(f"{t}: the reference's parameters ({rst.get('c_l')}, {rst.get('omega')}) are not the job's start parameters ({cfg0.get('c_l')}, {cfg0.get('omega')})")
+            except Exception as e:
+                ok = False; why.append(f"{t}: job file unreadable ({e!r})")
+    # ---- recomputed decision by the admitted producer (g)
+    if M is not None and end is not None and refs and len(refs) == len(a.ref):
+        try:
+            ex, fl, op, ae, af = M.decide_record(end["battery"], end.get("G5"), end.get("rho_P"), end.get("spectra"), end.get("run_path"), refs, end.get("state"))
+            if ae or op:
+                ok = False; why.append(f"{a.end}: the admitted producer's recomputed decision raises {[e['item'] for e in ex if e['raised']]} / open {op}")
+            if bool(ae) != bool(end.get("any_exclusion")) or bool(op) != bool(end.get("open")) or (not ae and not op) != bool(end.get("registered_clearance_6_3a")):
+                ok = False; why.append(f"{a.end}: the recomputed decision disagrees with the record's stored decision")
+        except Exception as e:
+            ok = False; why.append(f"{a.end}: the recomputed decision failed ({e!r})")
+    elif M is not None and end is not None:
+        ok = False; why.append("recomputed decision not possible (references missing)")
+    print(("yes" if ok else "no") + " | " + ("; ".join(why) if why else "admitted pair, complete bound records, recomputed decision clear, nothing raised, nothing open"))
+
+
+if __name__ == "__main__":
+    main()

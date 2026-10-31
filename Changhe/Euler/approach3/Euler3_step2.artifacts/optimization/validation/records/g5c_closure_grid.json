@@ -1,0 +1,159 @@
+{
+ "started": "2026-10-29T00:46:30Z",
+ "patched_modules": [
+  "src.equations.fields",
+  "src.pressure.poisson_sh"
+ ],
+ "cases": {
+  "S01": {
+   "n_calls": 3,
+   "calls": [
+    {
+     "n_points": 924,
+     "n_modes": 123,
+     "L": 15,
+     "nderiv": 2,
+     "path": "dd",
+     "caller": "tables"
+    },
+    {
+     "n_points": 924,
+     "n_modes": 181,
+     "L": 18,
+     "nderiv": 0,
+     "path": "dd",
+     "caller": "first_correction"
+    },
+    {
+     "n_points": 924,
+     "n_modes": 181,
+     "L": 18,
+     "nderiv": 2,
+     "path": "dd",
+     "caller": "tables"
+    }
+   ],
+   "checks": [
+    {
+     "n_points": 924,
+     "n_modes": 123,
+     "L": 15,
+     "nderiv": 2,
+     "entries": 1477476,
+     "exact_matches": 1477040,
+     "exact_fraction": 0.9997049021439265,
+     "max_normalized_error": 8.543483684187119e-17,
+     "max_abs_error": 1.0778170767460567e-16,
+     "pass_1ulp_normalized": true,
+     "seconds": 16.50115942955017,
+     "caller": "tables"
+    },
+    {
+     "n_points": 924,
+     "n_modes": 181,
+     "L": 18,
+     "nderiv": 0,
+     "entries": 167244,
+     "exact_matches": 167126,
+     "exact_fraction": 0.9992944440458252,
+     "max_normalized_error": 9.235173599672718e-17,
+     "max_abs_error": 5.548372924621402e-17,
+     "pass_1ulp_normalized": true,
+     "seconds": 17.336833953857422,
+     "caller": "first_correction"
+    },
+    {
+     "n_points": 924,
+     "n_modes": 181,
+     "L": 18,
+     "nderiv": 2,
+     "entries": 2174172,
+     "exact_matches": 2173058,
+     "exact_fraction": 0.9994876210345823,
+     "max_normalized_error": 8.543483684187119e-17,
+     "max_abs_error": 1.0778170767460567e-16,
+     "pass_1ulp_normalized": true,
+     "seconds": 29.056968927383423,
+     "caller": "tables"
+    }
+   ],
+   "all_pass": true
+  },
+  "S05": {
+   "n_calls": 3,
+   "calls": [
+    {
+     "n_points": 924,
+     "n_modes": 123,
+     "L": 15,
+     "nderiv": 2,
+     "path": "dd",
+     "caller": "tables"
+    },
+    {
+     "n_points": 924,
+     "n_modes": 181,
+     "L": 18,
+     "nderiv": 0,
+     "path": "dd",
+     "caller": "first_correction"
+    },
+    {
+     "n_points": 924,
+     "n_modes": 181,
+     "L": 18,
+     "nderiv": 2,
+     "path": "dd",
+     "caller": "tables"
+    }
+   ],
+   "checks": [
+    {
+     "n_points": 924,
+     "n_modes": 123,
+     "L": 15,
+     "nderiv": 2,
+     "entries": 1477476,
+     "exact_matches": 1477040,
+     "exact_fraction": 0.9997049021439265,
+     "max_normalized_error": 8.543483684187119e-17,
+     "max_abs_error": 1.0778170767460567e-16,
+     "pass_1ulp_normalized": true,
+     "seconds": 16.648133039474487,
+     "caller": "tables"
+    },
+    {
+     "n_points": 924,
+     "n_modes": 181,
+     "L": 18,
+     "nderiv": 0,
+     "entries": 167244,
+     "exact_matches": 167126,
+     "exact_fraction": 0.9992944440458252,
+     "max_normalized_error": 9.235173599672718e-17,
+     "max_abs_error": 5.548372924621402e-17,
+     "pass_1ulp_normalized": true,
+     "seconds": 17.64067769050598,
+     "caller": "first_correction"
+    },
+    {
+     "n_points": 924,
+     "n_modes": 181,
+     "L": 18,
+     "nderiv": 2,
+     "entries": 2174172,
+     "exact_matches": 2173058,
+     "exact_fraction": 0.9994876210345823,
+     "max_normalized_error": 8.543483684187119e-17,
+     "max_abs_error": 1.0778170767460567e-16,
+     "pass_1ulp_normalized": true,
+     "seconds": 28.96325135231018,
+     "caller": "tables"
+    }
+   ],
+   "all_pass": true
+  }
+ },
+ "all_pass": true,
+ "reference": "d6-ver scripts/verify_angular_tables.py compiled/decimal_values (70-digit Decimal, rational real solid harmonics), read only"
+}

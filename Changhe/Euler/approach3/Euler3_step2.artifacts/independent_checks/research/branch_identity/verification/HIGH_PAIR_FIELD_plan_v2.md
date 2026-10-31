@@ -1,0 +1,11 @@
+# Independent field distance for P1 segment 4 and F2 medium 3
+
+Registered at 2026-10-30T05:35:22.937940+00:00, before computing field distances for this pair. This is a follow-up of the registered branch criterion, not a blinded discovery test. The lead's approximate parameter comparison has been read.
+
+Use exact saved F-projected endpoints: P1 cont1_s4_S01, SHA256 74586aab17d34400973177032b58ede94ddf2b145cbb9e9a8f968089808a8994; F2 f2_S01_k0_keep_m3_L6_cl0.4597_om1.3389_free, SHA256 c6adaba451a74223c3be975c63b59691124898bf8468bbfb25e56083742a1328. Both are starts/start_000.pt exports. Import and retain their actual coefficients and parameters; apply no refit, extra normalization or azimuthal alignment. Source stability is checked before and after evaluation.
+
+Reconstruct velocity with the independent normalized solid-harmonic recurrence and extended-precision radial jets. The previously qualified production decoder is used only to export coefficient coordinates. No producer field array is used. On the thirteen physical shells [0.3*2^j,0.3*2^(j+1)], j=-4,...,8, integrate volume-normalized RMS with Gauss-Legendre radial nodes and r^2 weights, Gauss-mu nodes and equally spaced phi nodes. Resolution levels (radial,mu,phi,phase fraction) are (6,24,48,0.617293), (12,42,84,0.284719), (24,64,128,0.936157).
+
+Compute both max_j RMS(Ua-Ub)/RMS(Ub) and max_j RMS(Ua-Ub)/RMS(Ua), retaining every shell value. The registered field criterion requires both maxima <=0.10. Check strictly positive finite denominators and quadrature weights, normalized volume within 1e-15, difference symmetry, zero self-distance and exact scale examples within 1e-15. Compare direct velocity contraction with the complete independent field routine on a bounded subset to relative tolerance 1e-15. Independently integrate the leading F field, requiring |integral over S2 of |F|^2 - 1| <=2e-12 at each resolution.
+
+An empirically resolved distance requires the final two maxima to agree within 1e-4 relative, and every shell distance within 1e-4 relative or 1e-8 absolute. Any failure preserves the outputs and leaves numerical accuracy OPEN. The proof and limits of the branch criterion are in ../PROOF.md. Quadrature convergence is empirical; this test alone does not classify a mathematical continuation branch or establish an Euler solution or stationarity.

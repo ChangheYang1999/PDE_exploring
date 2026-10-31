@@ -1,0 +1,15 @@
+{
+  "checked_utc": "2026-10-29T03:39:42.849105+00:00",
+  "worker_path": "RUN_ROOT/verifier/artifacts/production_snapshots/official_cpu_v1_20261029T032212Z/release_files/scripts/worker_d6.py",
+  "worker_sha256": "1f33d5c1b7624220412f992ae3b3c85c2d69939478adc866a8f3c6e284a9aba8",
+  "problem_path": "RUN_ROOT/verifier/artifacts/production_snapshots/official_cpu_v1_20261029T032212Z/src/optimization/problem.py",
+  "problem_sha256": "8dd8fd6d2fbab0eedc422202519d45f55884d79ee23e2675d525330c826bbad2",
+  "identity": "H(B) = B + C + E; C and E do not depend on B",
+  "source_checks": [
+    "complete_jacobian_from_Jcw clones J_cw before adding corr to its closure rows",
+    "closure_target_correction accepts no J_cw input and computes corr from z, to_full and z_opt",
+    "closure_pattern_param_columns accepts no J_cw input and is added only to the two parameter columns",
+    "J_cw closure-block norm is diagnostic only and does not affect the returned matrix"
+  ],
+  "verdict": "CONFIRMED for these source hashes"
+}

@@ -1,0 +1,1 @@
+Qualification and production audit: ../../../artifacts/angular_scope_closure_pilot_v1.json and its NPZ arrays; 84 of 84 selected exact-polynomial comparisons pass at relative-to-max(1,abs(value)) tolerance 1e-55. Full-table qualification is a separate task. lead review requested through team notes.

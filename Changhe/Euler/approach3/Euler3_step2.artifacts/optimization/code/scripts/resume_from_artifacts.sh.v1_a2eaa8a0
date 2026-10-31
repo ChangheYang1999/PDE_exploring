@@ -1,0 +1,43 @@
+#!/bin/bash
+# resume_from_artifacts.sh v1 (2026-10-30T11:5xZ; lead 11:43:30Z): one-command resume of a published final state from the ARTIFACTS layout, with relative paths.
+# Run from the artifacts folder (the one that holds code/, final_states/, starts/, runs/):
+#   bash code/scripts/resume_from_artifacts.sh <ROLE__JOB.pt in final_states/> <GPU index or cpu> [extra accepted iterations, default 1] [scratch dir, default ./resume_scratch]
+# What it does (a reader's procedure, no recorded file is modified): (1) builds a scratch ROOT with the published code (code/src, code/scripts, code/configs) and the lineage root
+# starts (starts/); (2) places the final state (the worker's segment-end checkpoint: coefficients, parameters, optimizer state, counters) as runs/<JOB>/checkpoint.pt; (3) writes
+# runs/<JOB>/job.json from the published job file runs/<JOB>/job.json with init_from made relative to the scratch ROOT, max_iter = (checkpoint iteration + extra), the time limit
+# 1800 s and the cheap end battery (the holdout diagnostics only); (4) runs the worker: python scripts/worker_d6.py runs/<JOB>/job.json runs/<JOB>. The worker resumes from the
+# checkpoint by its production resume path (iteration > 0, counters present, same gradient spacing) and re-enters at the recorded end objective; the LM then takes the extra
+# accepted iterations and the cheap battery writes runs/<JOB>/results.jsonl. The label SMOKE marks the run as a software test, not a scientific result.
+set -eu
+A=$(pwd); FS=$1; GPU=${2:-0}; EXTRA=${3:-1}; S=${4:-$A/resume_scratch}
+[ -f "$A/final_states/$FS" ] || { echo "final state $FS not found in $A/final_states/"; exit 2; }
+JOB=${FS#*__}; JOB=${JOB%.pt}; [ -f "$A/runs/$JOB/job.json" ] || { echo "published job file runs/$JOB/job.json not found"; exit 2; }
+PY=${PYTHON:-python}
+mkdir -p "$S/runs/$JOB" "$S/status" "$S/queue/cancel" "$S/starts"
+cp -rn "$A/code/src" "$A/code/scripts" "$A/code/configs" "$S/" 2>/dev/null || true
+cp -n "$A/starts/"*.pt "$S/starts/" 2>/dev/null || true
+cp "$A/final_states/$FS" "$S/runs/$JOB/checkpoint.pt"
+$PY - "$A/runs/$JOB/job.json" "$S/runs/$JOB/job.json" "$S/runs/$JOB/checkpoint.pt" "$EXTRA" <<'PYEOF'
+import json, sys, os
+src, dst, ck, extra = sys.argv[1], sys.argv[2], sys.argv[3], int(sys.argv[4])
+j = json.load(open(src)); cfg = j.get("config", j)
+for k in ("init_from",):
+    v = cfg.get(k)
+    if isinstance(v, str) and os.path.isabs(v):
+        cfg[k] = os.path.join("starts", os.path.basename(v))        # relative to the scratch ROOT; the file comes from the published starts/
+try:
+    import torch
+    cur = torch.load(ck, map_location="cpu", weights_only=False).get("current") or {}
+    it = int(cur.get("it", 0))
+except Exception as e:
+    it = int(cfg.get("max_iter", 0)); print("warning: could not read the checkpoint iteration (%r); max_iter = %d + extra" % (e, it))
+cfg["max_iter"] = it + extra; cfg["time_limit_per_start"] = 1800.0; cfg["battery"] = "cheap"; cfg.pop("continue_from_run", None)
+j["label"] = "SMOKE"; j["note"] = (j.get("note") or "")[:200] + " | RESUME SMOKE from the published artifacts (resume_from_artifacts.sh): checkpoint iteration %d, max_iter %d, cheap battery; not a scientific result" % (it, cfg["max_iter"])
+json.dump(j, open(dst, "w"), indent=1); print("job file written: checkpoint iteration", it, "max_iter", cfg["max_iter"], "init_from", cfg.get("init_from"))
+PYEOF
+cd "$S"
+if [ "$GPU" = "cpu" ]; then export CUDA_VISIBLE_DEVICES=; else export CUDA_VISIBLE_DEVICES=$GPU; fi
+export OMP_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1
+echo "running: (cd $S && CUDA_VISIBLE_DEVICES=$GPU OMP_NUM_THREADS=1 $PY scripts/worker_d6.py runs/$JOB/job.json runs/$JOB)"
+$PY scripts/worker_d6.py "runs/$JOB/job.json" "runs/$JOB"
+echo "done; see $S/runs/$JOB/worker.log and results.jsonl (label SMOKE)"

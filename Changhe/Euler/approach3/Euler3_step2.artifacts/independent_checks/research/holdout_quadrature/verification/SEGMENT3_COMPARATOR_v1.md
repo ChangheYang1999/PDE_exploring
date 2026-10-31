@@ -1,0 +1,7 @@
+# Segment-three comparison qualification
+
+The comparator scripts/compare_segment3_holdouts_v1.py compares the prospectively registered segment-two and segment-three development holdouts on a common grid. It requires the source, seed, angular rotation, radial coordinates, geometry, two pressure rules and scalar schema to agree. All summary scalars and every domain scalar are retained. It reports signed changes and ratios; it does not select only favorable metrics. Pressure refinement changes are observed differences, not error bounds.
+
+Before reading segment-three outcomes, scripts/qualify_segment3_comparison_v1.py replayed the prior accepted P1 and P2 INITIAL-to-FREE comparisons. All summary and per-domain arithmetic agrees exactly. Seed, source, grid, pressure-rule, domain, scalar-schema and nonfinite mutations are refused. Same-state differences are zero; negative denominators and zero-denominator ratios have explicit conventions. The 590 controls passed at 2026-10-29T17:35:05.028710Z in 0.908917 seconds. Qualification evidence: artifacts/segment3_comparison_qualification_v1/audit.json.
+
+The comparison is a descriptive finite-grid development result. It is not an equal-time treatment comparison or a final Phase IV test. Execute the comparator only when both inputs and their compact audits are complete. The underlying pressure and quadrature argument remains in ../PROOF.md; this qualification concerns record compatibility and arithmetic.

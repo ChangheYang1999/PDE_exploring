@@ -1,0 +1,3 @@
+# Hessian symmetry diagnostic
+
+Registered 2026-10-29T13:52:38.800956+00:00. The first entrywise G5(c) comparison passed for call01, then an additional bitwise Hessian symmetry assertion failed. Bitwise symmetry is not required by G5(c); the production recurrence computes mixed partials in different floating operation orders. Version2 preserves the complete entrywise comparison and its threshold, requires symmetric reference high/low words, and reports every mixed-partial disagreement count and maximum absolute difference as a diagnostic. Both orientations remain separately compared against the independent reference. Preserve the failed v1 log and report the diagnostic. No tolerance or reference changes.

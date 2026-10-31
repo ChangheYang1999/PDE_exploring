@@ -1,0 +1,11 @@
+# Fresh CPU holdout, version 6
+
+Registered 2026-10-29T02:05:05.446114+00:00, before executing version 6. This extends version 5 by evaluating its complete field grid on CPU instead of requiring the old S01 GPU checkpoint. All independent field, stable linear, source projection, Green integration, shell and metric functions are unchanged. Version 5 remains preserved. The composite unit ball now caps its first interior panel endpoint at one, to cover states whose sampled core radius exceeds 32.
+
+Use 12 radial volume-coordinate nodes per shell, a fresh 42 by 84 sphere grid, and two pressure rules with 16/24 radial nodes and 48 by 96/64 by 128 angular nodes. Main degree remains six. Retain the raw source moments and analytic leading exterior subtraction with quadrature of the full remainder. Report both standard and half-offset shells, common physical shells using an explicitly recorded reference R0, core and origin balls, composite unit ball and registered far thin shells. These are numerical diagnostics, not Tier acceptance or continuum bounds.
+
+The first planned additional baseline is S09_d6w_cl0.45_om0.3_R1, with seed 10290097 and common R0=0.3. It is distinct from S10_d6t, which is already among the old imported states. Import S09 from the exact start checkpoint using the previously qualified import_checkpoint.py, preserve its full coefficient vector, verify the source hash against the starting-state manifest, and record the roundtrip result. No parameter change or coefficient projection is allowed. Future optimized states must be imported the same way, using the actual saved parameters.
+
+Optional --resume-field reuses only a hash-checked field checkpoint. It requires identical input hashes, independent source hashes, radii, directions and weights. The new report records the original field provenance; no resumed field is relabelled as freshly computed. Pressure is recomputed, with exact content-addressed source-batch caching. Interrupted reports remain incomplete.
+
+Run only with scripts/python.sh, one busy computation on CPU 35, no GPU calls. Do not run while another verifier computation is active. Check disk before launching. No JavaScript/TypeScript, servers, cluster or remote compute.

@@ -1,0 +1,9 @@
+# Fully extended S01 far-field comparison
+
+Registered 2026-10-29 before execution. This supplements the pressure-source precision of the current S01 holdouts and addresses the prior campaign's requirement of at least 256 points per far checkpoint. It is not a full Tier decision.
+
+Use radii r_core times 2^14, 2^17, 2^20 and 2^23, with the fixed r_core from holdout_S01_v2.json. At each radius use 24 Gauss-Legendre polar nodes and 80 azimuthal nodes at phase 0.419, hence 1920 points per checkpoint. Use the same physical radii and directions for the precision comparison, recording any representational rounding difference.
+
+Compare (1) the independent binary64 field, binary64 algebraically stable linear term and binary64 full-space Green sums, (2) that source with long-double Green sums and synthesis plus long-double field and stable linear term, and (3) fully long-double field, source, quadrature, Green sums and synthesis. The comparison separates accumulation error from source precision. Use raw moments in every case; do not enforce analytically vanishing monopoles or dipoles. The leading-tail formula and full-source remainder are retained.
+
+Pressure configurations are 16 radial nodes with 48x96 angular nodes and 24 radial nodes with 64x128 nodes, at phase 0.563. Every target radius is a panel edge. Float64 and long-double quadrature nodes implement the same rules but differ by roundoff; report this as a complete arithmetic-path comparison, not a source-only experiment. Save the source coefficients, pressure coefficients, field arrays and residual arrays for each path. Record rho_nl and pi_nl, the five-term ratio, absolute residuals, and pressure-grid changes. Where the binary64 ratios differ by more than 10 percent, use the extended value under the existing rule, but do not interpret this as a certified pressure error bound.

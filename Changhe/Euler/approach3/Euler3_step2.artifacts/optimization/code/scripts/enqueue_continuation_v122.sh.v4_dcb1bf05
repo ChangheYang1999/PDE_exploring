@@ -1,0 +1,31 @@
+#!/bin/bash
+# FREE continuation of a provisional-release pair member under SPEC v1.22 3.6 (n) (7) (lead 14:44:24Z item 2 (b), 14:52:14Z item 4, 14:54:54Z item 2): segment k+1 of the
+# P1 or P2 FREE lineage from the previous segment's end state through enqueue_segment2.sh (worker resume path; max_iter = end iteration + 240; 7200 s).
+# v4 (17:3xZ): full-release labels at the job level; optional time limit argument (min(7200, remaining below 12 h)).
+# v3 (16:3xZ): job-level SPEC stamp v1.25 (the file name keeps 'v122'); the 8.5 decision is taken from scripts/segment_rate.py at the segment end (> 1 per cent per hour over the last hour).
+# v2 (15:12Z): the worker's continuation rule (a) (SPEC v1.15 3.6 (i); worker_d6.py line 658) accepts ONLY max_iter and time_limit changes against the checkpoint's
+# configuration; v1 added linearization_complete, the v1.22 stamp and the labels to cfg and the worker REFUSED the continuation and ran a FRESH START from the start
+# file (jobs cont_p1_s3_S01 and cont_p2_s3_S09, 15:03Z to 15:1xZ, cancelled, run dirs INVALID_fresh_start_*). v2 leaves cfg untouched and carries the SPEC v1.22 stamp
+# and the labels at the JOB level (fields spec_version_job, spec_sha256_job, record_label_job, g1_label_job, note); the J_c record of the segment end comes from the
+# J_c EVAL (lead 14:44:24Z item 2 (e)) instead of cfg linearization_complete. The tag must NOT match the governor's pair regex ^p\d+. Moved to queue/staged (unplaced;
+# the governor grants it on its exclusive target GPU when fully free).
+# Usage: bash scripts/enqueue_continuation_v122.sh <previous segment run dir> <tag> <target gpu> <exclusive 0|1>
+set -u; cd "$(dirname "$0")/.."; PY=python3; export CUDA_VISIBLE_DEVICES=
+RUN2=$1; TAG=$2; GPU=$3; EXCL=$4; TL=${5:-7200}
+case "$TAG" in p[0-9]*) echo "REFUSED: tag $TAG matches the governor's pair regex"; exit 2;; esac
+bash scripts/enqueue_segment2.sh "$RUN2" "$TAG" "$GPU" "$EXCL" 240 "$TL" || exit 1
+F=$(ls queue/pending/${TAG}_*.json | head -1); [ -f "$F" ] || { echo "no pending file for $TAG"; exit 1; }
+$PY - "$F" <<'PYEOF'
+import json, sys, os, shutil, hashlib
+p = sys.argv[1]; j = json.load(open(p)); c = j["config"]
+j["label"] = "FREE"; j["objective"] = "O1"; j["placement"] = "governor"; j["exclusive"] = None; j["gpus_allowed"] = None
+j["spec_version_job"] = "v1.25"; j["spec_sha256_job"] = "acd5406d92973592c2b45e7c5f3a484e5e80234ba8d2f4e271b509076c941e64"   # v3 (16:3xZ): the current SPEC at enqueue time (v1.25); v1.22/v1.23 stamps on cont1/cont2 stand as written
+j["record_label_job"] = "full release under the post-result timing rule 3.6 (m); provisional-release continuation, post-result order rule 3.6 (n)"    # v4 (lead 16:40:13Z item 2, 17:18:08Z item 3 (d))
+j["g1_label_job"] = "G1 under post-result rules 3.6 (j), (k), (l), (n); provisional-release continuation, post-result order rule 3.6 (n)"
+j["release_note_job"] = "lead 2026-10-29T16:40:13Z FULL RELEASE (labels at the job level; cfg unchanged except max_iter and the time limit)"
+j["jc_record"] = "by EVAL after the segment end (validation/jc_eval_state.py; lead 14:44:24Z item 2 (e)); cfg unchanged by the worker's continuation rule (a)"
+j["note"] = (j.get("note") or "") + "; SPEC v1.22 3.6 (n) (7) FREE continuation under the provisional release; not a pair member (tag outside the pair regex); cfg identical to the previous segment except max_iter and time_limit (worker rule (a)); labels pre-verifier and 'provisional-release continuation, post-result order rule 3.6 (n)' at the job level"
+json.dump(j, open(p, "w"), indent=1)
+dst = p.replace("/pending/", "/staged/"); shutil.move(p, dst)
+print("staged", dst, "job", j["job_id"], "max_iter", c["max_iter"], "time", c["time_limit_per_start"], "target", j.get("target"), "config_sha256", hashlib.sha256(json.dumps(c, sort_keys=True).encode()).hexdigest()[:16])
+PYEOF

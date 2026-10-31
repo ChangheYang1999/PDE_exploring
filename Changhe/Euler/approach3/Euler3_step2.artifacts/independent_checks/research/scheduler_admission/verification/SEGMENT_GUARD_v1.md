@@ -1,0 +1,13 @@
+# Segment-end guard review
+
+The captured segment_guard.py is not an implementation of specification v1.25 sections 5.3 and 6.3(a). The independent audit runs only its captured, read-only source against local JSON fixtures. It never invokes a launcher. All 50 controls pass, including twelve false-clean counterexamples. Source, specification, notes and actual records are preserved in artifacts/segment_guard_audit_v1/inputs.
+
+The nontriviality fields in the registered rule are N_core, N_F, e_core and e_F. The guard instead requires both core_nonaxi and tail_nonaxi to be below 1e-3. It ignores the registered fields. It uses an absolute velocity threshold of 1e-6, not the 0.1 times start comparison. It omits the 0.02 near-edge zone, core_resolved, pressure and G5 checks, and the comparison of relative and absolute residual changes. Its saturation_flag variable is computed but unused. Nonfinite c_l also returns clean. Some synthetic pressure, angular and start-amplitude fields are added explicitly to demonstrate that no interface to those external checks exists; their names are not asserted to be producer record fields.
+
+The two unmodified segment-three records do not even return clean under this source: P1 monopole_flag is 9.8099899208658e-13 and P2 is 7.293544694425513e-13, each above the script's 1e-13 filter. Both return clean=false solely for that field. This refutes the published claim that this script returned clean for these records. It does not identify a registered exclusion: the script's monopole cutoff is not equated here with the registered pressure or angular criteria.
+
+The adjacent helper v2 does fix the previous outside-side temporary path, requires an explicit hours input, and caps the requested next segment at min(7200, remaining seconds). Actual total lineage time remains an external input to verify. Source coverage and actual state clearance are separate. A missing exclusion input must remain OPEN rather than silently becoming a clean result.
+
+The informal counterexample argument is in ../PROOF.md. No formal proof assistant was run. The audit is reproducible with scripts/audit_segment_guard_v1.py in a fresh output directory, CPU35 and CUDA_VISIBLE_DEVICES empty.
+
+Revision checked 2026-10-29T17:49:58.202503+00:00: V393 confirms v2 049830b5c269c344 now returns clean=true for both segment-three records and both pilots and reports the monopole warning without excluding the state. The twelve false-clean controls still pass the guard; registered exclusion coverage remains refuted. Evidence ../../../artifacts/segment_guard_audit_v2/audit.json, dd89ad55f42732ecd0664bacf5705f9583e464bfd8878697ef52aaa089188ecc.

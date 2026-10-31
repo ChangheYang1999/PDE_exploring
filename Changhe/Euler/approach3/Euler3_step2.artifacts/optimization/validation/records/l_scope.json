@@ -1,0 +1,702 @@
+{
+ "ts": "2026-10-29T10:54:20Z",
+ "rule": "lead 09:44:46Z (failing groups decide), 09:43:52Z (fail closed), 10:15:00Z (scope file; accepted by the lead by sha256; unchanged after any (l) outcome)",
+ "always_double_double": [
+  "coefficient contraction B[l] @ a with (hi, lo) tables",
+  "scalar sets, angular contraction, U and DU",
+  "pressure source tr(DU DU)",
+  "pressure chain (production _solve_dd_core) with (hi, lo) outputs",
+  "convection (U . grad) U and the row sum",
+  "row weighting: sqrt(w_node w_ang) exact inputs times scale_mom in double-double",
+  "differences D_h, D4_h formed and divided in double-double, rounded once"
+ ],
+ "screened_classes": {
+  "B[l] radial tables": {
+   "decision": "double-double",
+   "reason": "fail closed: at least one record is OPEN, double-double or absent for this class",
+   "arithmetic_in_copy": "double-double",
+   "screen_records": [
+    {
+     "record": "validation/l_screen_S01_shift_a_optimizer_z_c.json",
+     "sha256": "0554c9b4be325c1a0a5f21a64a7c77ee5894e1d34ad0fda493c54c5d14f20383",
+     "status": "double-double",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jf:all",
+       "Jf:core_intermediate",
+       "Jf:far(r>256R0)",
+       "Jf:far_anchor_block",
+       "Jf:near_origin(r<=0.1R0)",
+       "Jcw:all",
+       "Jcw:core_intermediate",
+       "Jcw:far(r>256R0)",
+       "Jcw:far_anchor_block",
+       "Jcw:near_origin(r<=0.1R0)",
+       "Jc:all",
+       "Jc:core_intermediate",
+       "Jc:far(r>256R0)",
+       "Jc:far_anchor_block",
+       "Jc:near_origin(r<=0.1R0)"
+      ]
+     }
+    },
+    {
+     "record": "validation/l_screen_S05_shift_c_physical_c_l.json",
+     "sha256": "15551d5a56c41547647ca2b79f5173fa5d0329ec259108503290daf674f60199",
+     "status": "double-double",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jf:all",
+       "Jf:core_intermediate",
+       "Jf:far(r>256R0)",
+       "Jf:far_anchor_block",
+       "Jf:near_origin(r<=0.1R0)",
+       "Jcw:all",
+       "Jcw:core_intermediate",
+       "Jcw:far(r>256R0)",
+       "Jcw:far_anchor_block",
+       "Jcw:near_origin(r<=0.1R0)",
+       "Jc:core_intermediate",
+       "Jc:far(r>256R0)",
+       "Jc:far_anchor_block",
+       "Jc:near_origin(r<=0.1R0)"
+      ]
+     }
+    },
+    {
+     "record": "validation/l_screen_S05_shift_c_optimizer_z_c.json",
+     "sha256": "c993d9a4191842965c1c757e633226a3cc3c87ba980746d3d70daab2ac9a8fd6",
+     "status": "double-double",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jf:all",
+       "Jf:core_intermediate",
+       "Jf:far(r>256R0)",
+       "Jf:far_anchor_block",
+       "Jf:near_origin(r<=0.1R0)",
+       "Jcw:all",
+       "Jcw:core_intermediate",
+       "Jcw:far(r>256R0)",
+       "Jcw:far_anchor_block",
+       "Jcw:near_origin(r<=0.1R0)",
+       "Jc:all",
+       "Jc:core_intermediate",
+       "Jc:far(r>256R0)",
+       "Jc:far_anchor_block",
+       "Jc:near_origin(r<=0.1R0)"
+      ]
+     }
+    }
+   ]
+  },
+  "twist tables": {
+   "decision": "double-double",
+   "reason": "fail closed: at least one record is OPEN, double-double or absent for this class",
+   "arithmetic_in_copy": "double-double",
+   "screen_records": [
+    {
+     "record": "validation/l_screen_S01_shift_a_optimizer_z_c.json",
+     "sha256": "0554c9b4be325c1a0a5f21a64a7c77ee5894e1d34ad0fda493c54c5d14f20383",
+     "status": "double-double",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jf:core_intermediate",
+       "Jf:far(r>256R0)",
+       "Jf:far_anchor_block",
+       "Jf:near_origin(r<=0.1R0)",
+       "Jcw:all",
+       "Jcw:core_intermediate",
+       "Jcw:far(r>256R0)",
+       "Jcw:far_anchor_block",
+       "Jcw:near_origin(r<=0.1R0)",
+       "Jc:all",
+       "Jc:core_intermediate",
+       "Jc:far(r>256R0)",
+       "Jc:far_anchor_block",
+       "Jc:near_origin(r<=0.1R0)"
+      ]
+     }
+    },
+    {
+     "record": "validation/l_screen_S05_shift_c_physical_c_l.json",
+     "sha256": "15551d5a56c41547647ca2b79f5173fa5d0329ec259108503290daf674f60199",
+     "status": "double-double",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jf:core_intermediate",
+       "Jf:far(r>256R0)",
+       "Jf:far_anchor_block",
+       "Jf:near_origin(r<=0.1R0)",
+       "Jcw:core_intermediate",
+       "Jcw:far(r>256R0)",
+       "Jcw:far_anchor_block",
+       "Jcw:near_origin(r<=0.1R0)",
+       "Jc:all",
+       "Jc:core_intermediate",
+       "Jc:far(r>256R0)",
+       "Jc:far_anchor_block",
+       "Jc:near_origin(r<=0.1R0)"
+      ]
+     }
+    },
+    {
+     "record": "validation/l_screen_S05_shift_c_optimizer_z_c.json",
+     "sha256": "c993d9a4191842965c1c757e633226a3cc3c87ba980746d3d70daab2ac9a8fd6",
+     "status": "double-double",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jf:all",
+       "Jf:core_intermediate",
+       "Jf:far(r>256R0)",
+       "Jf:far_anchor_block",
+       "Jf:near_origin(r<=0.1R0)",
+       "Jcw:all",
+       "Jcw:core_intermediate",
+       "Jcw:far(r>256R0)",
+       "Jcw:far_anchor_block",
+       "Jcw:near_origin(r<=0.1R0)",
+       "Jc:all",
+       "Jc:core_intermediate",
+       "Jc:far(r>256R0)",
+       "Jc:far_anchor_block",
+       "Jc:near_origin(r<=0.1R0)"
+      ]
+     }
+    }
+   ]
+  },
+  "row scales": {
+   "decision": "float64",
+   "reason": "every screen record decides float64 under the 09:44:46Z rule",
+   "arithmetic_in_copy": "double-double",
+   "screen_records": [
+    {
+     "record": "validation/l_screen_S01_shift_a_optimizer_z_c.json",
+     "sha256": "0554c9b4be325c1a0a5f21a64a7c77ee5894e1d34ad0fda493c54c5d14f20383",
+     "status": "float64",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jf:near_origin(r<=0.1R0)"
+      ]
+     }
+    },
+    {
+     "record": "validation/l_screen_S05_shift_c_physical_c_l.json",
+     "sha256": "15551d5a56c41547647ca2b79f5173fa5d0329ec259108503290daf674f60199",
+     "status": "float64",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jf:near_origin(r<=0.1R0)"
+      ]
+     }
+    },
+    {
+     "record": "validation/l_screen_S05_shift_c_optimizer_z_c.json",
+     "sha256": "c993d9a4191842965c1c757e633226a3cc3c87ba980746d3d70daab2ac9a8fd6",
+     "status": "float64",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jf:near_origin(r<=0.1R0)"
+      ]
+     }
+    }
+   ]
+  },
+  "nonlinear row weights": {
+   "decision": "float64",
+   "reason": "every screen record decides float64 under the 09:44:46Z rule",
+   "arithmetic_in_copy": "float64 (production quantity)",
+   "screen_records": [
+    {
+     "record": "validation/l_screen_S01_shift_a_optimizer_z_c.json",
+     "sha256": "0554c9b4be325c1a0a5f21a64a7c77ee5894e1d34ad0fda493c54c5d14f20383",
+     "status": "float64",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": false,
+      "groups_exceeding": []
+     }
+    },
+    {
+     "record": "validation/l_screen_S05_shift_c_physical_c_l.json",
+     "sha256": "15551d5a56c41547647ca2b79f5173fa5d0329ec259108503290daf674f60199",
+     "status": "float64",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": false,
+      "groups_exceeding": []
+     }
+    },
+    {
+     "record": "validation/l_screen_S05_shift_c_optimizer_z_c.json",
+     "sha256": "c993d9a4191842965c1c757e633226a3cc3c87ba980746d3d70daab2ac9a8fd6",
+     "status": "float64",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": false,
+      "groups_exceeding": []
+     }
+    }
+   ]
+  },
+  "pressure kernel tables": {
+   "decision": "double-double",
+   "reason": "fail closed: at least one record is OPEN, double-double or absent for this class",
+   "arithmetic_in_copy": "double-double",
+   "screen_records": [
+    {
+     "record": "validation/l_screen_S01_shift_a_optimizer_z_c.json",
+     "sha256": "0554c9b4be325c1a0a5f21a64a7c77ee5894e1d34ad0fda493c54c5d14f20383",
+     "status": "double-double",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jf:core_intermediate",
+       "Jf:far(r>256R0)",
+       "Jf:far_anchor_block",
+       "Jf:near_origin(r<=0.1R0)",
+       "Jcw:all",
+       "Jcw:core_intermediate",
+       "Jcw:far(r>256R0)",
+       "Jcw:far_anchor_block",
+       "Jcw:near_origin(r<=0.1R0)",
+       "Jc:core_intermediate",
+       "Jc:far(r>256R0)",
+       "Jc:far_anchor_block",
+       "Jc:near_origin(r<=0.1R0)"
+      ]
+     }
+    },
+    {
+     "record": "validation/l_screen_S05_shift_c_physical_c_l.json",
+     "sha256": "15551d5a56c41547647ca2b79f5173fa5d0329ec259108503290daf674f60199",
+     "status": "double-double",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jf:core_intermediate",
+       "Jf:far(r>256R0)",
+       "Jf:far_anchor_block",
+       "Jf:near_origin(r<=0.1R0)",
+       "Jcw:all",
+       "Jcw:core_intermediate",
+       "Jcw:far(r>256R0)",
+       "Jcw:far_anchor_block",
+       "Jcw:near_origin(r<=0.1R0)",
+       "Jc:core_intermediate",
+       "Jc:far(r>256R0)",
+       "Jc:far_anchor_block",
+       "Jc:near_origin(r<=0.1R0)"
+      ]
+     }
+    },
+    {
+     "record": "validation/l_screen_S05_shift_c_optimizer_z_c.json",
+     "sha256": "c993d9a4191842965c1c757e633226a3cc3c87ba980746d3d70daab2ac9a8fd6",
+     "status": "double-double",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jf:all",
+       "Jf:core_intermediate",
+       "Jf:far(r>256R0)",
+       "Jf:far_anchor_block",
+       "Jf:near_origin(r<=0.1R0)",
+       "Jcw:all",
+       "Jcw:core_intermediate",
+       "Jcw:far(r>256R0)",
+       "Jcw:far_anchor_block",
+       "Jcw:near_origin(r<=0.1R0)",
+       "Jc:all",
+       "Jc:core_intermediate",
+       "Jc:far(r>256R0)",
+       "Jc:far_anchor_block",
+       "Jc:near_origin(r<=0.1R0)"
+      ]
+     }
+    }
+   ]
+  },
+  "stable-linear envelopes": {
+   "decision": "double-double",
+   "reason": "fail closed: at least one record is OPEN, double-double or absent for this class",
+   "arithmetic_in_copy": "double-double",
+   "screen_records": [
+    {
+     "record": "validation/l_screen_S01_shift_a_optimizer_z_c.json",
+     "sha256": "0554c9b4be325c1a0a5f21a64a7c77ee5894e1d34ad0fda493c54c5d14f20383",
+     "status": "double-double",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jf:core_intermediate",
+       "Jf:far(r>256R0)",
+       "Jf:far_anchor_block",
+       "Jf:near_origin(r<=0.1R0)",
+       "Jcw:far(r>256R0)",
+       "Jcw:far_anchor_block",
+       "Jc:far(r>256R0)",
+       "Jc:far_anchor_block"
+      ]
+     }
+    },
+    {
+     "record": "validation/l_screen_S05_shift_c_physical_c_l.json",
+     "sha256": "15551d5a56c41547647ca2b79f5173fa5d0329ec259108503290daf674f60199",
+     "status": "double-double",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jf:far_anchor_block",
+       "Jf:near_origin(r<=0.1R0)",
+       "Jc:far_anchor_block"
+      ]
+     }
+    },
+    {
+     "record": "validation/l_screen_S05_shift_c_optimizer_z_c.json",
+     "sha256": "c993d9a4191842965c1c757e633226a3cc3c87ba980746d3d70daab2ac9a8fd6",
+     "status": "double-double",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jf:far_anchor_block",
+       "Jf:near_origin(r<=0.1R0)",
+       "Jc:far_anchor_block"
+      ]
+     }
+    }
+   ]
+  },
+  "tail amplitudes": {
+   "decision": "float64",
+   "reason": "every screen record decides float64 under the 09:44:46Z rule",
+   "arithmetic_in_copy": "float64 (production quantity)",
+   "screen_records": [
+    {
+     "record": "validation/l_screen_S01_shift_a_optimizer_z_c.json",
+     "sha256": "0554c9b4be325c1a0a5f21a64a7c77ee5894e1d34ad0fda493c54c5d14f20383",
+     "status": "float64",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jf:all",
+       "Jf:gauge",
+       "Jcw:all",
+       "Jcw:gauge",
+       "Jc:all",
+       "Jc:closure",
+       "Jc:gauge"
+      ]
+     }
+    },
+    {
+     "record": "validation/l_screen_S05_shift_c_physical_c_l.json",
+     "sha256": "15551d5a56c41547647ca2b79f5173fa5d0329ec259108503290daf674f60199",
+     "status": "float64",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jf:all",
+       "Jf:gauge",
+       "Jcw:all",
+       "Jcw:gauge",
+       "Jc:all",
+       "Jc:closure",
+       "Jc:gauge"
+      ]
+     }
+    },
+    {
+     "record": "validation/l_screen_S05_shift_c_optimizer_z_c.json",
+     "sha256": "c993d9a4191842965c1c757e633226a3cc3c87ba980746d3d70daab2ac9a8fd6",
+     "status": "float64",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jf:all",
+       "Jf:gauge",
+       "Jcw:all",
+       "Jcw:gauge",
+       "Jc:all",
+       "Jc:closure",
+       "Jc:gauge"
+      ]
+     }
+    }
+   ]
+  },
+  "tail energies": {
+   "decision": "float64",
+   "reason": "every screen record decides float64 under the 09:44:46Z rule",
+   "arithmetic_in_copy": "float64 (production quantity)",
+   "screen_records": [
+    {
+     "record": "validation/l_screen_S01_shift_a_optimizer_z_c.json",
+     "sha256": "0554c9b4be325c1a0a5f21a64a7c77ee5894e1d34ad0fda493c54c5d14f20383",
+     "status": "float64",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jf:all",
+       "Jf:gauge",
+       "Jcw:all",
+       "Jcw:gauge"
+      ]
+     }
+    },
+    {
+     "record": "validation/l_screen_S05_shift_c_physical_c_l.json",
+     "sha256": "15551d5a56c41547647ca2b79f5173fa5d0329ec259108503290daf674f60199",
+     "status": "float64",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jcw:all",
+       "Jcw:gauge"
+      ]
+     }
+    },
+    {
+     "record": "validation/l_screen_S05_shift_c_optimizer_z_c.json",
+     "sha256": "c993d9a4191842965c1c757e633226a3cc3c87ba980746d3d70daab2ac9a8fd6",
+     "status": "float64",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jcw:all",
+       "Jcw:gauge"
+      ]
+     }
+    }
+   ]
+  },
+  "enstrophy and stretching": {
+   "decision": "inactive",
+   "reason": "recorded inactive in every screen record",
+   "arithmetic_in_copy": "inactive",
+   "screen_records": [
+    {
+     "record": "validation/l_screen_S01_shift_a_optimizer_z_c.json",
+     "sha256": "0554c9b4be325c1a0a5f21a64a7c77ee5894e1d34ad0fda493c54c5d14f20383",
+     "status": "inactive",
+     "open_reasons": null,
+     "every_group_reading": null
+    },
+    {
+     "record": "validation/l_screen_S05_shift_c_physical_c_l.json",
+     "sha256": "15551d5a56c41547647ca2b79f5173fa5d0329ec259108503290daf674f60199",
+     "status": "inactive",
+     "open_reasons": null,
+     "every_group_reading": null
+    },
+    {
+     "record": "validation/l_screen_S05_shift_c_optimizer_z_c.json",
+     "sha256": "c993d9a4191842965c1c757e633226a3cc3c87ba980746d3d70daab2ac9a8fd6",
+     "status": "inactive",
+     "open_reasons": null,
+     "every_group_reading": null
+    }
+   ]
+  },
+  "closure patterns": {
+   "decision": "float64",
+   "reason": "every screen record decides float64 under the 09:44:46Z rule",
+   "arithmetic_in_copy": "float64 (production quantity)",
+   "screen_records": [
+    {
+     "record": "validation/l_screen_S01_shift_a_optimizer_z_c.json",
+     "sha256": "0554c9b4be325c1a0a5f21a64a7c77ee5894e1d34ad0fda493c54c5d14f20383",
+     "status": "float64",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jf:closure",
+       "Jcw:closure",
+       "Jc:closure"
+      ]
+     }
+    },
+    {
+     "record": "validation/l_screen_S05_shift_c_physical_c_l.json",
+     "sha256": "15551d5a56c41547647ca2b79f5173fa5d0329ec259108503290daf674f60199",
+     "status": "float64",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jf:closure",
+       "Jcw:closure",
+       "Jc:closure"
+      ]
+     }
+    },
+    {
+     "record": "validation/l_screen_S05_shift_c_optimizer_z_c.json",
+     "sha256": "c993d9a4191842965c1c757e633226a3cc3c87ba980746d3d70daab2ac9a8fd6",
+     "status": "float64",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jf:closure",
+       "Jcw:closure",
+       "Jc:closure"
+      ]
+     }
+    }
+   ]
+  },
+  "closure target": {
+   "decision": "float64",
+   "reason": "every screen record decides float64 under the 09:44:46Z rule",
+   "arithmetic_in_copy": "float64 (production quantity)",
+   "screen_records": [
+    {
+     "record": "validation/l_screen_S01_shift_a_optimizer_z_c.json",
+     "sha256": "0554c9b4be325c1a0a5f21a64a7c77ee5894e1d34ad0fda493c54c5d14f20383",
+     "status": "float64",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jf:closure",
+       "Jcw:closure",
+       "Jc:closure"
+      ]
+     }
+    },
+    {
+     "record": "validation/l_screen_S05_shift_c_physical_c_l.json",
+     "sha256": "15551d5a56c41547647ca2b79f5173fa5d0329ec259108503290daf674f60199",
+     "status": "float64",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jf:closure",
+       "Jcw:closure",
+       "Jc:closure"
+      ]
+     }
+    },
+    {
+     "record": "validation/l_screen_S05_shift_c_optimizer_z_c.json",
+     "sha256": "c993d9a4191842965c1c757e633226a3cc3c87ba980746d3d70daab2ac9a8fd6",
+     "status": "float64",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jf:closure",
+       "Jcw:closure",
+       "Jc:closure"
+      ]
+     }
+    }
+   ]
+  },
+  "tail-reduction solutions": {
+   "decision": "double-double",
+   "reason": "fail closed: at least one record is OPEN, double-double or absent for this class",
+   "arithmetic_in_copy": "double-double",
+   "screen_records": [
+    {
+     "record": "validation/l_screen_S01_shift_a_optimizer_z_c.json",
+     "sha256": "0554c9b4be325c1a0a5f21a64a7c77ee5894e1d34ad0fda493c54c5d14f20383",
+     "status": "double-double",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jf:closure",
+       "Jf:core_intermediate",
+       "Jf:far_anchor_block",
+       "Jf:near_origin(r<=0.1R0)",
+       "Jcw:closure",
+       "Jcw:far_anchor_block",
+       "Jc:closure",
+       "Jc:far_anchor_block"
+      ]
+     }
+    },
+    {
+     "record": "validation/l_screen_S05_shift_c_physical_c_l.json",
+     "sha256": "15551d5a56c41547647ca2b79f5173fa5d0329ec259108503290daf674f60199",
+     "status": "float64",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jf:closure",
+       "Jf:core_intermediate",
+       "Jf:near_origin(r<=0.1R0)",
+       "Jcw:closure",
+       "Jc:closure"
+      ]
+     }
+    },
+    {
+     "record": "validation/l_screen_S05_shift_c_optimizer_z_c.json",
+     "sha256": "c993d9a4191842965c1c757e633226a3cc3c87ba980746d3d70daab2ac9a8fd6",
+     "status": "float64",
+     "open_reasons": [],
+     "every_group_reading": {
+      "double_double": true,
+      "groups_exceeding": [
+       "Jf:closure",
+       "Jf:core_intermediate",
+       "Jf:near_origin(r<=0.1R0)",
+       "Jcw:closure",
+       "Jc:closure"
+      ]
+     }
+    }
+   ]
+  }
+ },
+ "inactive": {
+  "far-row scaling (inline, far_model)": "Problem.far_model is None in the production configuration (asserted at run time by the screen)"
+ },
+ "nonlinear_weights_Jf": "inactive by construction in J_f (weights frozen); decided on J_cw and J_c (lead 10:10:03Z)",
+ "notes": [
+  "arithmetic_in_copy states the arithmetic l_eval uses for each class: every double-double decision is double-double; row scales are double-double in the copy although float64 by the screens (lead 10:51:08Z item 2); the other float64 classes are the production float64 quantities",
+  "the double-double tables are componentwise about 1e-24 relative for the smallest entries (V234), not uniformly double-double",
+  "the tail-reduction class measures the sensitivity to the rounded solved coefficients, not to rounding inside the constraint solve (V236)"
+ ],
+ "writer": {
+  "script": "validation/l_scope_write.py",
+  "sha256": "c60e316ec3a2d2ae316942c09e5f2577ad37426f6535764aceb741269a070340"
+ }
+}

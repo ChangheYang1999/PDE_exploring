@@ -1,0 +1,7 @@
+# Registered S01 pressure consistency check
+
+Registered 2026-10-29 before executing this check. Use the saved S01 coefficients and parameters, unchanged. Take radii R0 times 0.03, 0.3, 3 and 30 and three fixed non-axial directions (1,2,3), (-2,3,1), (3,1,-2), normalized. Use h/R0=max(1,r/R0) times 0.04, 0.02 and 0.01. Include every stencil radius as an exact pressure-panel edge. The fixed point list is independent of training points.
+
+Compute full-space Green pressure at 16 radial nodes with 48x96 angular nodes and at 24 radial nodes with 64x128 nodes, angular phase 0.823. Retain all raw source moments and the full remainder after leading-tail subtraction. Pressure source assembly uses the qualified binary64 independent tensor field; Green reconstruction and angular synthesis use long double. Evaluate DU and the comparison source at the base points with the qualified long-double Cartesian field. Save all pressure coefficients, point arrays, source and difference results.
+
+First check the stencil on exact rational monomials: gradient exact through degree four; Laplacian exact through degree five. No data-driven change of h, points or quadrature is permitted without a separately labelled follow-up. Record absolute defects, defects divided by sum_ij DU_ij^2, gradient differences divided by the analytic gradient norm, refinement changes and observed h ratios. Zero reference norms require absolute reporting. These are consistency diagnostics, not error enclosures or Tier acceptance tests.

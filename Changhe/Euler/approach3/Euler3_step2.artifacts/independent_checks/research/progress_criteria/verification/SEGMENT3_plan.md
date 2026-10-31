@@ -1,0 +1,3 @@
+# Segment-three stored progress check
+
+Registered 2026-10-29T17:48:05.422459+00:00, after the lead last-50 claims were read. Apply the exact binary64-to-Fraction comparison of the proved progress criterion and V381. The required window is 50 accepted transitions, so use 51 recorded endpoints. Also record the 50-endpoint convention without substituting it. Bind the cumulative trajectory, physical parameters, endpoint factor and checkpoint. Failure of the accepted-step conjunct alone decides that 7.4(a) fails; the last-quarter wall-time conjunct is not inferred. The earlier-termination alternative remains false when independent complete-Jacobian eta and predicted decrease fail 7.4(b). No Euler field is reevaluated.

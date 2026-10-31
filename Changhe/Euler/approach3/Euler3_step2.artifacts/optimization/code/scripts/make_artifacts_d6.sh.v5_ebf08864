@@ -1,0 +1,56 @@
+#!/bin/bash
+# D6FP: publishable artifacts subset of the degree-6 free-parameter campaign -> ../artifacts (lane-relative; under 40 MB; relative paths).
+# Contents: code (src, scripts, validation scripts, tests, configs), validation records (json), gate logs (text), the job ledger, the queue plan,
+# the start manifest and the small start/end coefficient files (.pt, each under 1 MB), per-job records (job.json, worker.log, start_result json)
+# without checkpoints, profiling records, the source-state snapshots, and a README with the one-command resume and independent-validation commands.
+# Usage: bash scripts/make_artifacts_d6.sh   (idempotent: rebuilds ../artifacts from scratch; prints the size and a sha256 manifest)
+set -e
+ROOT=$(cd "$(dirname "$0")/.." && pwd); A=$ROOT/../artifacts; TS=$(date -u +%FT%TZ)
+rm -rf "$A"; mkdir -p "$A"
+cd "$ROOT"
+mkdir -p "$A/code" "$A/validation" "$A/runs" "$A/status" "$A/profiling"
+rsync -a --exclude='__pycache__' --exclude='*.pyc' src scripts tests configs "$A/code/"
+cp -r validation/*.py validation/*.sh validation/*.md "$A/validation/" 2>/dev/null || true
+mkdir -p "$A/validation/records" "$A/validation/logs"
+for f in validation/*.json; do case "$f" in *superseded*|*_v41_*|*_v44_*|*.v1_wording|*.v2b) continue;; esac; [ $(stat -c %s "$f") -le 1000000 ] && cp "$f" "$A/validation/records/"; done   # v2 (16:4xZ): cap 1 MB, superseded copies excluded (40 MB limit)
+find "$A/validation/records" -name "*.json" -size +100k -exec gzip -f {} \;   # v5 (21:4xZ): records above 100 KB gzipped in the published copy (40 MB limit; v4 used 500 KB)
+for f in validation/logs/*.log; do [ $(stat -c %s "$f") -le 2000000 ] && cp "$f" "$A/validation/logs/"; done
+gzip -c status/ledger.jsonl > "$A/status/ledger.jsonl.gz"; cp status/FROZEN_CODE_SHA256.txt status/gpu_hours.json status/gpu_hours_manual.jsonl "$A/status/" 2>/dev/null || true   # v3 (18:2xZ): the ledger is gzipped (4.9 MB plain) to stay under the 40 MB limit
+cp status/RELEASE_SNAPSHOT_*.md "$A/status/" 2>/dev/null || true
+cp QUEUE_PLAN.md "$A/" ; cp starts/MANIFEST.json "$A/starts_MANIFEST.json"
+mkdir -p "$A/starts"; for f in starts/*.pt; do [ $(stat -c %s "$f") -le 1000000 ] && cp "$f" "$A/starts/"; done
+cp -r profiling/*.json profiling/*.md "$A/profiling/" 2>/dev/null || true
+for d in runs/*/; do
+  n=$(basename "$d"); case "$n" in INVALID_*) continue;; esac
+  mkdir -p "$A/runs/$n"
+  for f in job.json worker.log stdout.log; do [ -f "$d/$f" ] && cp "$d/$f" "$A/runs/$n/"; done
+  mkdir -p "$A/runs/$n/starts"
+  for f in "$d"/starts/*.pt "$d"/starts/*.json; do [ -f "$f" ] && [ $(stat -c %s "$f") -le 1500000 ] && cp "$f" "$A/runs/$n/starts/"; done
+  for f in "$d"/*.json; do [ -f "$f" ] && [ $(stat -c %s "$f") -le 1500000 ] && cp "$f" "$A/runs/$n/"; done
+done
+cp ../NUM_REPORT.md "$A/NUM_REPORT.md"; cp ../WORKLOG.md "$A/WORKLOG_numerics.md"; cp ../NOTES_FOR_TEAM.md "$A/NOTES_numerics.md" 2>/dev/null || true
+cat > "$A/README.md" <<EOR
+# Degree-6 free-parameter campaign (c_l and omega as unknowns): numerics artifacts, generated $TS
+
+Layout (relative paths): code/ (src, scripts, tests, configs: the production code of the campaign, copied from the frozen Euler3 tree with versioned
+changes; hashes of the production files in status/RELEASE_SNAPSHOT_*.md), validation/ (gate and validation scripts; records/ json results; logs/),
+status/ (ledger.jsonl: every job and record; FROZEN_CODE_SHA256.txt: provenance of the copied code), starts/ (the immutable starting states used,
+each under 1 MB; starts_MANIFEST.json), runs/<job>/ (job.json, worker.log, start_result and final states' coefficients and parameters when small;
+checkpoints are not included), profiling/ (GPU profile before the revocation of 2026-10-29T00:57:59Z and the CPU timing after it), QUEUE_PLAN.md,
+NUM_REPORT.md (the numerics report), WORKLOG_numerics.md, NOTES_numerics.md.
+
+Interpreter: python 3.9 with torch 2.8 (the frozen environment of the previous campaign); CPU only after 2026-10-29T00:57:59Z.
+
+One-command resume of a job from its last checkpoint (the worker resumes when runs/<job>/checkpoint.pt exists):
+  cd code && CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=1 python scripts/worker_d6.py ../runs/<job>/job.json ../runs/<job>
+Production start on GPUs 4,5,6 (after the lead's PROVISIONAL RELEASE; from the original tree): PLACE="4:1 5:1 6:0 6:0" scripts/enqueue_gpu_pairs.sh 120 3600 s1
+  && bash scripts/start_production_gpu456.sh   (slot governor scripts/slot_governor.py + supervisor; unit test: python validation/test_slot_governor.py).
+Segment 2 of a pair member: scripts/enqueue_segment2.sh <segment-1 run dir> <tag> <gpu> <excl 0|1>. G3 add-on summary: python validation/g3_addon_summary.py [--md] validation/g3_addon_gpu_v1_<case>.json
+Independent validation (derivative gates, SPEC 3; one case, CPU, one thread; writes validation/gates_<tag>.json):
+  cd code && CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=1 python ../validation/gates.py --tag check --cases S01_own --device cpu
+Table-cache bitwise regression: python ../validation/test_table_cache.py ; lagJ and gradient-spacing control flow: python ../validation/test_lagJ_flow.py,
+python ../validation/test_grad_every.py (synthetic, seconds). The validation scripts expect the layout of the experiment directory (src/, scripts/,
+starts/ next to validation/): run them from a copy where code/* and starts/ are placed as in the original tree, or use the original tree.
+EOR
+cd "$A" && find . -type f -exec sha256sum {} \; | sort -k2 > SHA256SUMS.txt
+echo "artifacts written to $A: $(du -sh "$A" | cut -f1), $(find "$A" -type f | wc -l) files"

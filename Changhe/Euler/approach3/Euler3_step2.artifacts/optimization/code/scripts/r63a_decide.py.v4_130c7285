@@ -1,0 +1,110 @@
+#!/usr/bin/env python
+"""Decision helper for segment_end_actions.sh v3 (lead 17:50:42Z item 4, 18:31:20Z item 2 (a), 18:49:47Z item 1 (f), 19:02:50Z item 3; V415): prints 'yes | ...' only if
+  - the tag list is nonempty and every named 6.3 (a) record exists in validation/records_63a/,
+  - validation/records_63a/ADMITTED_TOOL.txt exists and holds the sha256 of the tool that made EVERY record (written only after a verifier verdict with no
+    finding against the repaired record_63a.py; the admission covers record_63a.py and this script),
+  - every record has the recognized schema (kind '6.3 (a) record v1', a version in the recognized set, battery, state, nonempty item lists), every 'raised' a
+    genuine boolean (an item with raised null is OPEN), any_exclusion a genuine boolean equal to any(raised) over the exclusion items, any_flag a genuine boolean
+    equal to any(raised) over the flag items, open an empty list, registered_clearance_6_3a a genuine boolean and true,
+  - the battery was recomputed from the saved vector (start mode or --full: battery_provenance.source starts with 'computed now'),
+  - the provenance fields are present and MATCH the named state: tool sha256 present; the state file exists and its sha256 equals state.state_sha256; the vector
+    sha256 recomputed from the file's z equals state.z_sha256; the parameters of the file (z[-2:] for free-parameter states, the configuration otherwise) equal
+    state.c_l / state.omega exactly; the file's iteration count equals state.iterations when both exist,
+  - a start-reference record is marked is_start_reference and F-projected;
+else 'no | <reasons>'. Without ADMITTED_TOOL.txt the answer is always 'no'. v4 (2026-10-29T19:1xZ): provenance matching (lead 19:02:50Z item 3), any_flag
+consistency, recognized versions. Usage: python scripts/r63a_decide.py <tag> [<tag> ...]"""
+import json, os, sys, hashlib
+ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+REC = os.path.join(ROOT, "validation", "records_63a")
+RECOGNIZED_VERSIONS = {"v5", "v6", "v7", "v8", "v9"}          # record_63a versions with the 19:02:50Z rule set (earlier versions are information)
+ok = True; why = []
+tags = sys.argv[1:]
+if not tags:
+    ok = False; why.append("no record tag given")
+adm_path = os.path.join(REC, "ADMITTED_TOOL.txt"); admitted = []
+if os.path.isfile(adm_path):
+    admitted = [t for t in open(adm_path).read().split() if len(t) == 64 and all(c in "0123456789abcdef" for c in t)]
+if not admitted:
+    ok = False; why.append("no admitted record_63a tool (validation/records_63a/ADMITTED_TOOL.txt missing or without a sha256): the answer is no until the verifier's verdict on the repaired tool")
+
+
+def is_bool(x):
+    return isinstance(x, bool)
+
+
+def sha(p):
+    return hashlib.sha256(open(p, "rb").read()).hexdigest()
+
+
+def state_matches(tag, st):
+    """provenance match with the named state file (lead 19:02:50Z item 3)."""
+    probs = []
+    for k in ("state_file", "state_sha256", "z_sha256", "c_l", "omega"):
+        if st.get(k) in (None, ""):
+            probs.append(f"state.{k} missing")
+    if probs:
+        return probs
+    p = os.path.join(ROOT, st["state_file"]) if not os.path.isabs(st["state_file"]) else st["state_file"]
+    if not os.path.isfile(p):
+        return [f"state file {st['state_file']} missing"]
+    if sha(p) != st["state_sha256"]:
+        probs.append("state file sha256 differs from the record")
+    try:
+        import torch, numpy as np
+        S = torch.load(p, map_location="cpu", weights_only=False); z = S["z"].detach().cpu().double()
+        if hashlib.sha256(z.numpy().tobytes()).hexdigest() != st["z_sha256"]:
+            probs.append("vector sha256 recomputed from the state file differs from the record")
+        free = bool(S.get("free_params", False)); cfg = S.get("config") or {}
+        c_l, omega = (float(z[-2]), float(z[-1])) if free else (float(cfg.get("c_l")), float(cfg.get("omega")))
+        if c_l != float(st["c_l"]) or omega != float(st["omega"]):
+            probs.append(f"parameters of the state file ({c_l}, {omega}) differ from the record ({st['c_l']}, {st['omega']})")
+        if S.get("iterations") is not None and st.get("iterations") is not None and int(S["iterations"]) != int(st["iterations"]):
+            probs.append(f"iteration count of the state file ({S['iterations']}) differs from the record ({st['iterations']})")
+    except Exception as e:
+        probs.append(f"state file unreadable ({e!r})")
+    return probs
+
+
+for tag in tags:
+    p = os.path.join(REC, f"{tag}.json")
+    if not os.path.isfile(p):
+        ok = False; why.append(f"{tag}: no record"); continue
+    try:
+        d = json.load(open(p))
+    except Exception as e:
+        ok = False; why.append(f"{tag}: unreadable record ({e!r})"); continue
+    if d.get("kind") != "6.3 (a) record v1" or d.get("version") not in RECOGNIZED_VERSIONS or not isinstance(d.get("battery"), dict) or not d.get("battery") or not isinstance(d.get("state"), dict):
+        ok = False; why.append(f"{tag}: schema not recognized (kind {d.get('kind')!r}, version {d.get('version')!r}) or battery/state missing")
+    if not d.get("script_sha256"):
+        ok = False; why.append(f"{tag}: tool sha256 missing")
+    elif admitted and d.get("script_sha256") not in admitted:
+        ok = False; why.append(f"{tag}: made by tool {str(d.get('script_sha256'))[:16]}, not an admitted tool {[a[:16] for a in admitted]}")
+    ex = d.get("exclusions_6_3a"); fl = d.get("flags_6_3b")
+    if not isinstance(ex, list) or not ex or not isinstance(fl, list) or not fl:
+        ok = False; why.append(f"{tag}: exclusion or flag list missing or empty")
+    else:
+        undecided = [it.get("item") for it in ex + fl if not is_bool(it.get("raised"))]
+        if undecided:
+            ok = False; why.append(f"{tag}: undecided items (raised not a boolean) {undecided[:6]}" + (" ..." if len(undecided) > 6 else ""))
+        raised = [it.get("item") for it in ex if it.get("raised") is True]
+        if raised:
+            ok = False; why.append(f"{tag}: exclusion raised {raised}")
+        if not is_bool(d.get("any_exclusion")) or d.get("any_exclusion") != bool(raised):
+            ok = False; why.append(f"{tag}: any_exclusion {d.get('any_exclusion')!r} is not a boolean equal to any(raised) = {bool(raised)}")
+        fr = [it.get("item") for it in fl if it.get("raised") is True]
+        if not is_bool(d.get("any_flag")) or d.get("any_flag") != bool(fr):
+            ok = False; why.append(f"{tag}: any_flag {d.get('any_flag')!r} is not a boolean equal to any(raised) over the flags = {bool(fr)}")
+    if d.get("open") != []:
+        ok = False; why.append(f"{tag}: open items " + str(d.get("open")))
+    if not is_bool(d.get("registered_clearance_6_3a")) or d.get("registered_clearance_6_3a") is not True:
+        ok = False; why.append(f"{tag}: registered_clearance_6_3a is {d.get('registered_clearance_6_3a')!r}, not true")
+    src = str(((d.get("battery_provenance") or {}).get("source")) or "")
+    if not src.startswith("computed now"):
+        ok = False; why.append(f"{tag}: battery not recomputed from the saved vector (provenance '{src[:60]}'); --full required for a clearance (lead 18:49:47Z item 1 (f))")
+    if isinstance(d.get("state"), dict):
+        probs = state_matches(tag, d["state"])
+        if probs:
+            ok = False; why.append(f"{tag}: provenance does not match the named state: " + "; ".join(probs))
+    if d.get("is_start_reference") is True and ((d.get("state") or {}).get("F_projected") is not True):
+        ok = False; why.append(f"{tag}: start reference not F-projected")
+print(("yes" if ok else "no") + " | " + ("; ".join(why) if why else "complete records by the admitted tool, recomputed batteries, provenance matching the named states, no exclusion raised, nothing open"))

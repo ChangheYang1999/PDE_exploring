@@ -1,0 +1,7 @@
+# F3 initialization fault check
+
+Use the immutable worker cd35acf01f77 source captured before review and extract its exact perturb_nonaxi conditional through Python AST. Evaluate that conditional with the current source Model on a small CPU-only grid, the frozen S01 source coefficients, free parameters at the source pair, seed 1 and size 1e-3. Record each field-evaluation parameter pair. The fault claim requires a direction evaluation at (0,0), a nonfinite field norm and nonfinite resulting state. This test does not instantiate pressure, optimize, or write a production start.
+
+For a corrected construction control, independently draw and mask a coefficient direction across A/C/B/D/E, evaluate that direction at the source physical parameter pair, and add its scaled coefficient increment without changing the physical parameter values. At sizes 1e-3 and 1e-1, require finite values, bitwise unchanged parameters, and relative size within 1e-11 of the requested value on this small grid. Check unweighted and positive manufactured weighted norms separately, and the corresponding linear field identity with relative tolerance 1e-11. These are construction controls on a small grid, not qualification of a production F3 initializer or of any continuum norm.
+
+Record input, exact extracted fragment, relevant loaded producer module hashes, script and proof hashes, real time and limitations. Run within 45 seconds while the active holdout controller and its child are both paused, then resume them. An exception or timeout remains a failed or incomplete check.

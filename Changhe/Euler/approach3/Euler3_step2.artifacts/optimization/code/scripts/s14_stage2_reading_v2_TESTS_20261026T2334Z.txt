@@ -1,0 +1,52 @@
+# s14_stage2_reading_v2 tests 20261026T2334Z (v2 sha256 850ec04c637485a06c091bfdc56373214eb4b2c08f93b24309012244f6976fb0)
+## positive: --smoke on nest6_L6_cl0.45_om+1.0_fixed_p1_om+1.0s31s0 (L4 -> L6 lineage) against nest6 p0 s43s0
+SMOKE PRECONDITION FAILED: target: configuration differs from the registered one: max_iter=600 (registered 300)
+smoke exit code 2
+## precondition: the same smoke target WITHOUT --smoke must fail (unregistered id)
+PRECONDITION FAILED: target nest6_L6_cl0.45_om+1.0_fixed_p1_om+1.0s31s0 is not one of the four registered S14 stage (ii) jobs
+exit code 2
+## precondition: a registered but unfinished target must fail
+Traceback (most recent call last):
+  File "RUN_ROOT/frozen_euler3/numerics/scripts/s14_stage2_reading_v2.py", line 315, in <module>
+    main()
+  File "RUN_ROOT/frozen_euler3/numerics/scripts/s14_stage2_reading_v2.py", line 221, in main
+    rows = [json.loads(l) for l in open(os.path.join(rdir, "results.jsonl")) if l.strip()]
+FileNotFoundError: [Errno 2] No such file or directory: 'RUN_ROOT/frozen_euler3/numerics/runs/s14b_L6_cl0.45_om+1.0_fixed_p0_om+1.0s5/results.jsonl'
+exit code 1
+## negative tests on the factored check functions
+PASS | control: finite inputs -> a verdict (not collapsing) | returned {"values": {"N_core": {"L4": 1.5, "L6": 1.4, "ratio_L6_over_L4": 0.9333333333333332, "collapsing": false, "warning": false}, "N_F": {"L4": 1.2, "L6": 1.1, "rati
+PASS | control: a 3x fall is collapsing | returned {"values": {"N_core": {"L4": 1.5, "L6": 1.4, "ratio_L6_over_L4": 0.9333333333333332, "collapsing": false, "warning": false}, "N_F": {"L4": 1.2, "L6": 1.1, "rati
+PASS | missing guard (L6 e_F absent) | returned {"values": {"N_core": {"L4": 1.5, "L6": 1.4, "ratio_L6_over_L4": 0.9333333333333332, "collapsing": false, "warning": false}, "N_F": {"L4": 1.2, "L6": 1.1, "rati
+PASS | NaN guard (L6 N_core NaN) | returned {"values": {"N_core": {"L4": 1.5, "L6": null, "ratio_L6_over_L4": null, "collapsing": null, "warning": null}, "N_F": {"L4": 1.2, "L6": 1.1, "ratio_L6_over_L4": 
+PASS | zero L4 guard (L4 e_core 0) | returned {"values": {"N_core": {"L4": 1.5, "L6": 1.4, "ratio_L6_over_L4": 0.9333333333333332, "collapsing": false, "warning": false}, "N_F": {"L4": 1.2, "L6": 1.1, "rati
+PASS | negative L4 guard | returned {"values": {"N_core": {"L4": 1.5, "L6": 1.4, "ratio_L6_over_L4": 0.9333333333333332, "collapsing": false, "warning": false}, "N_F": {"L4": -1.0, "L6": 1.1, "rat
+PASS | string guard (TypeError path) | returned {"values": {"N_core": {"L4": 1.5, "L6": 1.4, "ratio_L6_over_L4": 0.9333333333333332, "collapsing": false, "warning": false}, "N_F": {"L4": 1.2, "L6": 1.1, "rati
+PASS | NaN holdout (std) | returned {"std": null, "half": 0.21, "open": "OPEN (missing or non-finite: rho_u_max_holdout)"}
+PASS | missing half holdout | returned {"std": 0.2, "half": null, "open": "OPEN (missing or non-finite: rho_u_max_holdout_half)"}
+PASS | infinite holdout | returned {"std": null, "half": 0.21, "open": "OPEN (missing or non-finite: rho_u_max_holdout)"}
+PASS | comparator at another point | Precondition: comparator nest6_L6_cl0.45_om+0.3_fixed_p0_om+0.3s55s0 is not the registered comparator nest6_L6_cl0.45_om+1.0_fixed_p0_om+1.0s43s0 at (0.45, 1.0)
+PASS | comparator missing where mandatory | Precondition: --comparator is mandatory at (0.42, 0.3); the registered comparator is nest6_L6_cl0.42_om+0.3_fixed_p0_om+0.3s12s0
+PASS | comparator given at the coverage-only point | Precondition: no even-class L6 comparator is registered at (0.48, 1.0); --comparator must be absent (coverage reading only)
+PASS | unregistered point | Precondition: (c_l, omega) = (0.47, 1.0) is not a registered S14 point
+PASS | control: registered comparator accepted | returned "nest6_L6_cl0.45_om+0.3_fixed_p0_om+0.3s55s0"
+PASS | comparator with another representation (channel degrees 11/10/4) | Precondition: comparator: configuration differs from the registered one: channels.LB=11 (registered 15); channels.LD=10 (registered 14); channels.LE=4 (registered 6)
+PASS | comparator with all-m parity | Precondition: comparator: configuration differs from the registered one: m_parity='all' (registered 'even')
+PASS | comparator with closure 0.1 | Precondition: comparator: configuration differs from the registered one: closure_lambda=0.1 (registered 0.001)
+PASS | target with Nk 20 | Precondition: target: configuration differs from the registered one: Nk=20 (registered 16)
+PASS | target with max_iter 150 | Precondition: target: configuration differs from the registered one: max_iter=150 (registered 300)
+PASS | control: registered target configuration accepted | returned "registered configuration"
+PASS | unregistered target id | Precondition: target s14b_L6_cl0.45_om+1.0_fixed_p1_om+1.0s6 is not one of the four registered S14 stage (ii) jobs
+PASS | control: registered target id | returned "registered"
+PASS | source at another point | Precondition: source start: source c_l=0.42 differs from the target's 0.45
+PASS | source with even parity (non-smoke) | Precondition: source start: source m_parity='even' (expected 'all')
+PASS | source at L6 | Precondition: source start: source L=6 (expected 4)
+PASS | failing order call (rc 1) | Precondition: order_73b.py failed with return code 1: simulated order_73b failure
+PASS | order call that writes no JSON | Precondition: order_73b.py wrote no JSON at RUN_ROOT/frozen_euler3/numerics/reports/order_73b_s14b_L6_cl0.45_om+1.0_fixed_p0_om+1.0s5__vs__nest
+PASS | existing target arm_reading JSON | Precondition: the target's arm_reading JSON RUN_ROOT/frozen_euler3/numerics/reports/arm_reading_TESTONLY_s14_stage2_v2.json exists before the c
+PASS | control: absent target arm_reading JSON passes | returned "RUN_ROOT/frozen_euler3/numerics/reports/arm_reading_TESTONLY_absent_s14_stage2_v2.json"
+PASS | odd-m file bound to another start | returned {"path": "TMPDIR/tmph72h45kd/oddm.json", "bound": false, "reason": "unbound: start 'runs/other/starts/start_000.pt' is not 'runs/this/starts/start_000.pt'", "valu
+PASS | odd-m file with another L / Nk | returned {"path": "TMPDIR/tmpapqux5wa/oddm.json", "bound": false, "reason": "unbound: L 4 != 6; Nk 12 != 16", "values": null}
+PASS | odd-m file missing | returned {"path": "/nonexistent/oddm.json", "bound": false, "reason": "missing", "values": null}
+PASS | sanitize writes non-finite as null | returned {"a": null, "b": [1.0, null], "c": {"d": 2.0}}
+34 passed, 0 failed
+tests exit code 0

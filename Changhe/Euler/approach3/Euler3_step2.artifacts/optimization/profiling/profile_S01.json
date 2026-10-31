@@ -1,0 +1,600 @@
+{
+ "ts": "2026-10-28T22:56:49Z",
+ "start": "starts/S01_nest6_cl0.45_om1.0_p0.pt",
+ "gpu": "NVIDIA A100-SXM4-80GB",
+ "physical_gpu": 5,
+ "host": "ip-10-0-18-154.ec2.internal",
+ "cuda_visible": "5",
+ "omp": "1",
+ "affinity": [
+  31,
+  32,
+  33,
+  34
+ ],
+ "chunk": 256,
+ "other_processes_on_gpu": [],
+ "modes": {
+  "free": {
+   "t_model_build": 2.1094849286600947,
+   "t_problem_build": 4.05488404026255,
+   "n_opt": 1469,
+   "n_rows": 433009,
+   "n_quad": 60576,
+   "fields_grid(U,DU)": {
+    "median": 0.24205290526151657,
+    "min": 0.24007425922900438,
+    "max": 0.25487605202943087,
+    "reps": 5
+   },
+   "pressure_source": {
+    "median": 0.0002825693227350712,
+    "min": 0.00027888501062989235,
+    "max": 0.000302228145301342,
+    "reps": 5
+   },
+   "pressure_tables_build(GPU)": {
+    "median": 0.10920316213741899,
+    "min": 0.10886172205209732,
+    "max": 0.1162750250659883,
+    "reps": 5
+   },
+   "pressure_solve(Green integrals, synthesis)": {
+    "median": 0.0008231578394770622,
+    "min": 0.0008137496188282967,
+    "max": 0.000905357301235199,
+    "reps": 5
+   },
+   "pressure_geometry_rebuild(CPU numpy + tables)": {
+    "median": 0.21328825410455465,
+    "min": 0.2124562431126833,
+    "max": 0.21493134694173932,
+    "reps": 3
+   },
+   "residual_vector(frozen weights, base tables)": {
+    "median": 0.3479190059006214,
+    "min": 0.2778720799833536,
+    "max": 0.3636070257052779,
+    "reps": 5
+   },
+   "residual_vector(differentiable tables)": {
+    "median": 0.45238363137468696,
+    "min": 0.40072841523215175,
+    "max": 0.4877601847983897,
+    "reps": 5
+   },
+   "objective_at(self-consistent: tables+weights+closure target)": {
+    "median": 2.4912988990545273,
+    "min": 2.045535699930042,
+    "max": 2.9952276097610593,
+    "reps": 5
+   },
+   "closure_state_at(first_correction + patterns)": {
+    "median": 1.7864547302015126,
+    "min": 1.7188711077906191,
+    "max": 2.220197736285627,
+    "reps": 5
+   },
+   "nl_weights_from_ev": {
+    "median": 0.17412041034549475,
+    "min": 0.17312175082042813,
+    "max": 0.1795762381516397,
+    "reps": 5
+   },
+   "phase_align": {
+    "median": 0.0008973968215286732,
+    "min": 0.0008713388815522194,
+    "max": 0.0009553646668791771,
+    "reps": 5
+   },
+   "jacobian_coefficient_block": {
+    "median": 26.19400180177763,
+    "min": 26.173622181173414,
+    "max": 26.387761131860316,
+    "reps": 3
+   },
+   "jacobian_peak_GB": 24.26614475250244,
+   "jacobian_parameter_columns(2 jvp)": {
+    "median": 7.312295936048031,
+    "min": 7.187119314912707,
+    "max": 7.395168327726424,
+    "reps": 5
+   },
+   "normal_equations(J^T J, J^T r)": {
+    "median": 0.10778370313346386,
+    "min": 0.1068159332498908,
+    "max": 0.10804982110857964,
+    "reps": 5
+   },
+   "cholesky_solve": {
+    "median": 0.0015391414053738117,
+    "min": 0.0015224320814013481,
+    "max": 0.0016256608068943024,
+    "reps": 5
+   },
+   "qr_linearization(geqrf+ormqr)": {
+    "median": 1.5255370459053665,
+    "min": 1.5245483377948403,
+    "max": 1.5265257540158927,
+    "reps": 2
+   },
+   "jacobian_weights_differentiated(J_cw)": {
+    "median": 27.190542185213417,
+    "min": 27.178893671836704,
+    "max": 27.20219069859013,
+    "reps": 2
+   },
+   "closure_target_correction(J_c, FD over tail amplitudes)": {
+    "median": 884.4486810611561,
+    "min": 884.4486810611561,
+    "max": 884.4486810611561,
+    "reps": 1
+   },
+   "complete_gradient(reverse pass + pattern FD)": {
+    "median": 8.213695538695902,
+    "min": 8.15162144228816,
+    "max": 8.386804511304945,
+    "reps": 3
+   },
+   "angular_tables_fp64 field tables (degree L_ext, Hessians)": {
+    "median": 0.12996989814564586,
+    "min": 0.12967490078881383,
+    "max": 0.13072654604911804,
+    "reps": 3
+   },
+   "angular_tables_dd_build field tables (degree L_ext, Hessians)": {
+    "median": 0.6427665213122964,
+    "min": 0.6396193807013333,
+    "max": 0.6627526129595935,
+    "reps": 3
+   },
+   "angular_tables_dd_cached field tables (degree L_ext, Hessians)": {
+    "median": 0.0005108057521283627,
+    "min": 0.0005057398229837418,
+    "max": 0.0005644452758133411,
+    "reps": 3
+   },
+   "angular_tables_fp64 pressure synthesis tables (degree Lf, gradients)": {
+    "median": 0.2658411217853427,
+    "min": 0.26279683923348784,
+    "max": 0.27138475934043527,
+    "reps": 3
+   },
+   "angular_tables_dd_build pressure synthesis tables (degree Lf, gradients)": {
+    "median": 0.8462654449976981,
+    "min": 0.8403062107972801,
+    "max": 0.8558963946998119,
+    "reps": 3
+   },
+   "angular_tables_dd_cached pressure synthesis tables (degree Lf, gradients)": {
+    "median": 0.0005322899669408798,
+    "min": 0.0005248729139566422,
+    "max": 0.0005887080915272236,
+    "reps": 3
+   },
+   "angular_table_paths_this_process": {
+    "counts": {
+     "dd": 550,
+     "fp64": 0
+    },
+    "sites": [
+     {
+      "caller": "first_correction (correction.py:126)",
+      "points": 924,
+      "L": 18,
+      "nderiv": 0,
+      "path": "dd",
+      "calls": 514
+     },
+     {
+      "caller": "__init__ (poisson_sh.py:90)",
+      "points": 2812,
+      "L": 36,
+      "nderiv": 0,
+      "path": "dd",
+      "calls": 5
+     },
+     {
+      "caller": "__init__ (poisson_sh.py:92)",
+      "points": 2812,
+      "L": 36,
+      "nderiv": 1,
+      "path": "dd",
+      "calls": 5
+     },
+     {
+      "caller": "__init__ (poisson_sh.py:177)",
+      "points": 1,
+      "L": 36,
+      "nderiv": 1,
+      "path": "dd",
+      "calls": 5
+     },
+     {
+      "caller": "first_correction_graph (correction.py:369)",
+      "points": 924,
+      "L": 18,
+      "nderiv": 0,
+      "path": "dd",
+      "calls": 4
+     },
+     {
+      "caller": "<lambda> (profile_d6.py:119)",
+      "points": 2812,
+      "L": 15,
+      "nderiv": 2,
+      "path": "dd",
+      "calls": 4
+     },
+     {
+      "caller": "<lambda> (profile_d6.py:120)",
+      "points": 2812,
+      "L": 15,
+      "nderiv": 2,
+      "path": "dd",
+      "calls": 4
+     },
+     {
+      "caller": "<lambda> (profile_d6.py:119)",
+      "points": 2812,
+      "L": 36,
+      "nderiv": 1,
+      "path": "dd",
+      "calls": 4
+     },
+     {
+      "caller": "<lambda> (profile_d6.py:120)",
+      "points": 2812,
+      "L": 36,
+      "nderiv": 1,
+      "path": "dd",
+      "calls": 4
+     },
+     {
+      "caller": "angular_matrices (solid_harmonics.py:226)",
+      "points": 2812,
+      "L": 15,
+      "nderiv": 2,
+      "path": "dd",
+      "calls": 1
+     }
+    ]
+   },
+   "device_to_host_8MB": {
+    "median": 0.006162588018923998,
+    "min": 0.0022900449112057686,
+    "max": 0.009542707819491625,
+    "reps": 5
+   },
+   "host_to_device_8MB": {
+    "median": 0.02571451012045145,
+    "min": 0.02530968515202403,
+    "max": 0.030190073885023594,
+    "reps": 5
+   },
+   "synchronize_only": {
+    "median": 1.09898392111063e-05,
+    "min": 1.0800082236528397e-05,
+    "max": 1.261802390217781e-05,
+    "reps": 10
+   },
+   "item_sync(float(tensor))": {
+    "median": 3.1316885724663734e-05,
+    "min": 3.093108534812927e-05,
+    "max": 3.618607297539711e-05,
+    "reps": 10
+   },
+   "lm_iterations": [
+    {
+     "it": 0,
+     "cost": 2.724831834536667e-07,
+     "accepted": false,
+     "n_trials": 20,
+     "t_jac": 33.69594955444336,
+     "t_param_cols": 9.754677534103394,
+     "t_normal": 0.12380599975585938,
+     "t_solve": 0.04529929161071777,
+     "t_trial": 66.03439021110535,
+     "t_iter": 109.66370749473572,
+     "grad_s": null
+    }
+   ],
+   "lm_seconds_total": 112.30522096995264,
+   "lm_accepted": 0,
+   "accepted_steps_per_hour_estimate": 0.0,
+   "lm_peak_GB": 24.43615436553955,
+   "gpu_utilization_samples": {
+    "n": 151,
+    "util_mean": 19.71523178807947,
+    "util_max": 100.0,
+    "mem_used_max_MiB": 53571.0,
+    "note": "whole-GPU utilization including other processes on the GPU"
+   },
+   "peak_RSS_GB": 1.8187522888183594
+  },
+  "fixed": {
+   "t_model_build": 0.8211617958731949,
+   "t_problem_build": 2.0764883467927575,
+   "n_opt": 1467,
+   "n_rows": 433009,
+   "n_quad": 60576,
+   "fields_grid(U,DU)": {
+    "median": 0.12150274030864239,
+    "min": 0.12039714772254229,
+    "max": 0.12463159020990133,
+    "reps": 5
+   },
+   "pressure_source": {
+    "median": 0.00028035417199134827,
+    "min": 0.00027855299413204193,
+    "max": 0.00030146585777401924,
+    "reps": 5
+   },
+   "pressure_tables_build(GPU)": {
+    "median": 0.10940472222864628,
+    "min": 0.10920207295566797,
+    "max": 0.12103794096037745,
+    "reps": 5
+   },
+   "pressure_solve(Green integrals, synthesis)": {
+    "median": 0.0008255541324615479,
+    "min": 0.000813883263617754,
+    "max": 0.0008492129854857922,
+    "reps": 5
+   },
+   "pressure_geometry_rebuild(CPU numpy + tables)": {
+    "median": 0.1960595240816474,
+    "min": 0.19509612070396543,
+    "max": 0.19711227482184768,
+    "reps": 3
+   },
+   "residual_vector(frozen weights, base tables)": {
+    "median": 0.16986765200272202,
+    "min": 0.167717473115772,
+    "max": 0.18582902289927006,
+    "reps": 5
+   },
+   "objective_at(self-consistent: tables+weights+closure target)": {
+    "median": 1.8642475791275501,
+    "min": 1.8428009310737252,
+    "max": 1.9229806447401643,
+    "reps": 5
+   },
+   "closure_state_at(first_correction + patterns)": {
+    "median": 2.344140371773392,
+    "min": 1.6765165878459811,
+    "max": 3.257349639199674,
+    "reps": 5
+   },
+   "nl_weights_from_ev": {
+    "median": 0.3431769837625325,
+    "min": 0.29599863197654486,
+    "max": 0.3734851321205497,
+    "reps": 5
+   },
+   "phase_align": {
+    "median": 0.0009481790475547314,
+    "min": 0.000936153344810009,
+    "max": 0.0009999573230743408,
+    "reps": 5
+   },
+   "jacobian_coefficient_block": {
+    "median": 12.62110767327249,
+    "min": 11.837215210311115,
+    "max": 12.704305074177682,
+    "reps": 3
+   },
+   "jacobian_peak_GB": 24.341100692749023,
+   "normal_equations(J^T J, J^T r)": {
+    "median": 0.11424678890034556,
+    "min": 0.10559868207201362,
+    "max": 0.1166795645840466,
+    "reps": 5
+   },
+   "cholesky_solve": {
+    "median": 0.0014695851132273674,
+    "min": 0.0014635799452662468,
+    "max": 0.011635304894298315,
+    "reps": 5
+   },
+   "qr_linearization(geqrf+ormqr)": {
+    "median": 1.5243789474479854,
+    "min": 1.5243176301009953,
+    "max": 1.5244402647949755,
+    "reps": 2
+   },
+   "jacobian_weights_differentiated(J_cw)": {
+    "median": 11.995373956626281,
+    "min": 11.995261689182371,
+    "max": 11.995486224070191,
+    "reps": 2
+   },
+   "closure_target_correction(J_c, FD over tail amplitudes)": null,
+   "angular_tables_fp64 field tables (degree L_ext, Hessians)": {
+    "median": 0.1365392473526299,
+    "min": 0.1350378138013184,
+    "max": 0.14039230486378074,
+    "reps": 3
+   },
+   "angular_tables_dd_build field tables (degree L_ext, Hessians)": {
+    "median": 0.5769209400750697,
+    "min": 0.5755379851907492,
+    "max": 0.5784480040892959,
+    "reps": 3
+   },
+   "angular_tables_dd_cached field tables (degree L_ext, Hessians)": {
+    "median": 0.0005005770362913609,
+    "min": 0.0004981649108231068,
+    "max": 0.0005309837870299816,
+    "reps": 3
+   },
+   "angular_tables_fp64 pressure synthesis tables (degree Lf, gradients)": {
+    "median": 0.2661885740235448,
+    "min": 0.26552613684907556,
+    "max": 0.27206431375816464,
+    "reps": 3
+   },
+   "angular_tables_dd_build pressure synthesis tables (degree Lf, gradients)": {
+    "median": 0.8473583329468966,
+    "min": 0.845153066329658,
+    "max": 0.8480411181226373,
+    "reps": 3
+   },
+   "angular_tables_dd_cached pressure synthesis tables (degree Lf, gradients)": {
+    "median": 0.0005269930697977543,
+    "min": 0.0005217529833316803,
+    "max": 0.0005774223245680332,
+    "reps": 3
+   },
+   "angular_table_paths_this_process": {
+    "counts": {
+     "dd": 616,
+     "fp64": 0
+    },
+    "sites": [
+     {
+      "caller": "first_correction (correction.py:126)",
+      "points": 924,
+      "L": 18,
+      "nderiv": 0,
+      "path": "dd",
+      "calls": 548
+     },
+     {
+      "caller": "__init__ (poisson_sh.py:90)",
+      "points": 2812,
+      "L": 36,
+      "nderiv": 0,
+      "path": "dd",
+      "calls": 10
+     },
+     {
+      "caller": "__init__ (poisson_sh.py:92)",
+      "points": 2812,
+      "L": 36,
+      "nderiv": 1,
+      "path": "dd",
+      "calls": 10
+     },
+     {
+      "caller": "__init__ (poisson_sh.py:177)",
+      "points": 1,
+      "L": 36,
+      "nderiv": 1,
+      "path": "dd",
+      "calls": 10
+     },
+     {
+      "caller": "<lambda> (profile_d6.py:119)",
+      "points": 2812,
+      "L": 15,
+      "nderiv": 2,
+      "path": "dd",
+      "calls": 8
+     },
+     {
+      "caller": "<lambda> (profile_d6.py:120)",
+      "points": 2812,
+      "L": 15,
+      "nderiv": 2,
+      "path": "dd",
+      "calls": 8
+     },
+     {
+      "caller": "<lambda> (profile_d6.py:119)",
+      "points": 2812,
+      "L": 36,
+      "nderiv": 1,
+      "path": "dd",
+      "calls": 8
+     },
+     {
+      "caller": "<lambda> (profile_d6.py:120)",
+      "points": 2812,
+      "L": 36,
+      "nderiv": 1,
+      "path": "dd",
+      "calls": 8
+     },
+     {
+      "caller": "first_correction_graph (correction.py:369)",
+      "points": 924,
+      "L": 18,
+      "nderiv": 0,
+      "path": "dd",
+      "calls": 4
+     },
+     {
+      "caller": "angular_matrices (solid_harmonics.py:226)",
+      "points": 2812,
+      "L": 15,
+      "nderiv": 2,
+      "path": "dd",
+      "calls": 2
+     }
+    ]
+   },
+   "device_to_host_8MB": {
+    "median": 0.0016896226443350315,
+    "min": 0.0016867108643054962,
+    "max": 0.0017229830846190453,
+    "reps": 5
+   },
+   "host_to_device_8MB": {
+    "median": 0.025369259994477034,
+    "min": 0.02529075788334012,
+    "max": 0.02561183599755168,
+    "reps": 5
+   },
+   "synchronize_only": {
+    "median": 1.097843050956726e-05,
+    "min": 1.080567017197609e-05,
+    "max": 1.2466218322515488e-05,
+    "reps": 10
+   },
+   "item_sync(float(tensor))": {
+    "median": 3.132619895040989e-05,
+    "min": 3.087380900979042e-05,
+    "max": 3.613391891121864e-05,
+    "reps": 10
+   },
+   "lm_iterations": [
+    {
+     "it": 0,
+     "cost": 2.724831834536667e-07,
+     "accepted": false,
+     "n_trials": 20,
+     "t_jac": 11.696073770523071,
+     "t_param_cols": 3.5762786865234375e-05,
+     "t_normal": 0.10559797286987305,
+     "t_solve": 0.0563960075378418,
+     "t_trial": 54.67609524726868,
+     "t_iter": 66.53711891174316,
+     "grad_s": null
+    }
+   ],
+   "lm_seconds_total": 69.2061768420972,
+   "lm_accepted": 0,
+   "accepted_steps_per_hour_estimate": 0.0,
+   "lm_peak_GB": 24.329322814941406,
+   "gpu_utilization_samples": {
+    "n": 95,
+    "util_mean": 26.221052631578946,
+    "util_max": 100.0,
+    "mem_used_max_MiB": 52135.0,
+    "note": "whole-GPU utilization including other processes on the GPU"
+   },
+   "peak_RSS_GB": 1.8187522888183594
+  }
+ },
+ "comparison": {
+  "extra_time_parameter_columns_s": 7.312295936048031,
+  "jacobian_free_s": 26.19400180177763,
+  "jacobian_fixed_s": 12.62110767327249,
+  "trial_rebuild_free_s": 2.4912988990545273,
+  "trial_rebuild_fixed_s": 1.8642475791275501,
+  "mean_iteration_free_s": 109.66370749473572,
+  "mean_iteration_fixed_s": 66.53711891174316,
+  "complete_gradient_s": 8.213695538695902
+ }
+}

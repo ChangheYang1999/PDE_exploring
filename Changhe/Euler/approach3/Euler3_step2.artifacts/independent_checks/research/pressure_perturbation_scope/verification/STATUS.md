@@ -1,0 +1,1 @@
+The abstract formulas were checked by direct algebra in PROOF.md. No campaign amplification factor or arithmetic enclosure has been computed for this topic. V268 and V271 are numerical and provenance context, not proofs of the missing amplification hypotheses.

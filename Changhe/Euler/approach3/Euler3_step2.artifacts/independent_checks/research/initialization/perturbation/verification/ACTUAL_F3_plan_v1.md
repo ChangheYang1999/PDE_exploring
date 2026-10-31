@@ -1,0 +1,9 @@
+# First actual F3 start check
+
+Freeze the seed-1, size-0.001 S01 perturbation checkpoint, record and source hashes. Use only the producer coefficient layout and entry map. Reconstruct the Gaussian direction independently from the recorded seed, mask all m=0 entries and inactive E degree-1 entries, and compare each saved coefficient with source + recorded_scale * direction. Require an error at most two binary64 ulps of the coefficient scale; report actual bitwise equality separately. Check both numerical and bitwise preservation of the forbidden coordinates and parameter slots.
+
+Evaluate source, perturbed and replayed-entry fields with the independent extended-precision field route. On the producer's declared training geometry, independently compute the unweighted velocity norm, coefficient-only achieved size and all13 shell rows. Tolerance for the nonzero size comparisons is relative1e-8 plus absolute1e-12. This is intentionally the recorded sampling norm; it is not a physical-volume norm.
+
+Also compare the source and raw/entry perturbations on fresh physical-volume rules (4,18,40), phase.413729 and (8,32,64), phase.851397 on the13 shells with R0=.3. The fresh results are numerical observations, not continuum bounds. No requirement that their values equal the training norm is imposed.
+
+Independently compute the angular F norm and the raw, phase-only and complete-entry gauge costs. Gauge comparison with the record has relative tolerance1e-9 or absolute1e-10. Rotation alone must preserve F_norm2 to relative1e-12; the subsequent tail/parameter map may change it. Do not attribute an entry change to phase alone without this separation. Check all four reported O1 decompositions and finiteness but leave independent complete O1 OPEN. No optimizer has been independently validated by this start-file check.

@@ -1,0 +1,274 @@
+{
+ "run": "RUN_ROOT/numerics/degree6_free_parameters_48h/runs/prof_P1s4_stiff_m2_L6_cl0.4482_om1.2715_fixed",
+ "job_id": "prof_P1s4_stiff_m2_L6_cl0.4482_om1.2715_fixed",
+ "label": "PROFILE",
+ "iteration0_blocks_source": "linear-response tool record (same state)",
+ "lrs_iteration0": {
+  "file": "RUN_ROOT/numerics/degree6_free_parameters_48h/validation/lrs/P1s4_profile_stiff_m2.json",
+  "sha256": "c1d82b8abc745d087c3adb802a4a057282e7a908d22a2b1b4b867effb257a90f",
+  "kept_entry_O1": 0.11565182444922975,
+  "kept_entry_gauge_part": 0.11565150414520235,
+  "kept_entry_O1_without_gauge": 3.203040273795181e-07,
+  "params": {
+   "c_l": 0.448153839806261,
+   "omega": 1.2715483125582017
+  },
+  "rel_diff_cost0_vs_lrs": -1.1999627220672768e-16,
+  "note": "measured by scripts/linear_response_start.py v1 for the kept start at the same parameters through the worker's entry path (the same state as this PROFILE run's start)"
+ },
+ "checkpoint": "RUN_ROOT/numerics/degree6_free_parameters_48h/runs/prof_P1s4_stiff_m2_L6_cl0.4482_om1.2715_fixed/checkpoint_segment_end.pt",
+ "checkpoint_sha256": "a72fb4381048e1bf8a2eb5e5ff3ac561a0b50d8fced0ed85d662fe6ff5b5b185",
+ "params": {
+  "c_l": 0.448153839806261,
+  "omega": 1.2715483125582017
+ },
+ "free_params": false,
+ "max_iter": 40,
+ "time_limit_s": 1800.0,
+ "stop_reason": "time_limit",
+ "counters": {
+  "n_acc": 7,
+  "n_rej": 2,
+  "sat_count": 0
+ },
+ "accepted_iterations": 7,
+ "lm_seconds": 1833.7050259113312,
+ "O1_iteration0": 0.11565182444922974,
+ "O1_iteration0_without_gauge": 3.203040273846991e-07,
+ "gauge_iteration0": 0.11565150414520235,
+ "start_blocks": {},
+ "O1_end": 1.719689385061124e-07,
+ "O1_end_without_gauge": 1.71650051938104e-07,
+ "end_blocks": {
+  "near_origin": 1.005347570071912e-09,
+  "core_intermediate": 1.642456404267592e-07,
+  "far_momentum": 2.4558206632923025e-11,
+  "far_anchors": 8.379432426244318e-17,
+  "closure": 6.374505650845613e-09,
+  "gauge": 3.188865680084086e-10,
+  "total": 1.719689385061124e-07
+ },
+ "rel_fall_last10": null,
+ "rel_fall_last50": null,
+ "v10_last_tenth_rel_decrease": 0.01154424293690823,
+ "v10_iterations": 7,
+ "spec74": {
+  "gD_inf_over_r_last": 0.07797384769576154,
+  "gD_2_over_r_last": 1.9771554284785764,
+  "gD_note": "pre-step frozen-model scaled gradient of the last accepted iteration (V727), not a complete scaled gradient",
+  "complete_gradient_new_iterate": {
+   "g_inf": 0.0005369531365315062,
+   "g_2": 0.0017262779117983265,
+   "g_inf_over_r": 0.9155801752701862,
+   "g_2_over_r": 2.943545210032725,
+   "note": "complete gradient at the new iterate without column scaling"
+  },
+  "g_param_scaled": {},
+  "note": "FIXED runs have no parameter columns: parameter gradients empty; (b) eta and the reduced model need the J_c EVAL (lead tool), not written by the worker"
+ },
+ "holdout": {
+  "basis": "worker end battery of the F-normalized end state (V727: not the raw optimizer endpoint)",
+  "rho_u_max_holdout": 0.03870187808053468,
+  "rho_u_max_holdout_half": 0.03873223719795777,
+  "rho_u_max_holdout_both": 0.03873223719795777,
+  "rho_u_max_train": 0.03799871174058799,
+  "tier_S_holdout": false,
+  "tier_S_holdout_half": false,
+  "sigma_u_max": 0.46284126332394,
+  "a_max_core": null,
+  "a_max_core_upper": null,
+  "N_core": 0.9216878320353974,
+  "N_core_holdout": 0.9242039165420646,
+  "r_core_holdout": 0.4576511733082831,
+  "core_resolved": null,
+  "rho_Om_max_holdout": 0.18565628611994314,
+  "rms_final": 0.1110964815203737,
+  "cost_final": 1.719689385061124e-07,
+  "status": "time_limit",
+  "gauge_defect": 2.220446049250313e-16,
+  "note": "flat keys of the worker's start_result row (v2); None = not in the record"
+ },
+ "battery_set": "cheap",
+ "results_jsonl": "RUN_ROOT/numerics/degree6_free_parameters_48h/runs/prof_P1s4_stiff_m2_L6_cl0.4482_om1.2715_fixed/results.jsonl",
+ "results_jsonl_sha256": "9a434c6100376afa016f5f22cd2717ced53c508d976676947635c803bd13ef9d",
+ "t_battery_s": 619.359589099884,
+ "t_lm_s": 1894.106230020523,
+ "trajectory": [
+  {
+   "it": 0,
+   "cost": 0.015112431154431703,
+   "elapsed": 185.85727310180664,
+   "gauge": 0.015111708075253862
+  },
+  {
+   "it": 1,
+   "cost": 1.7856266821093228e-05,
+   "elapsed": 372.9491980075836,
+   "gauge": 1.762520774212434e-05
+  },
+  {
+   "it": 2,
+   "cost": 2.2359202580367195e-07,
+   "elapsed": 593.6540327072144,
+   "gauge": 2.7639500226814404e-08
+  },
+  {
+   "it": 3,
+   "cost": 1.946755432967705e-07,
+   "elapsed": 855.0263588428497,
+   "gauge": 1.377676856058371e-08
+  },
+  {
+   "it": 4,
+   "cost": 1.796118750790602e-07,
+   "elapsed": 1281.7742569446564,
+   "gauge": 4.377547008725282e-09
+  },
+  {
+   "it": 5,
+   "cost": 1.7397737559551274e-07,
+   "elapsed": 1558.6907501220703,
+   "gauge": 1.0500821165536892e-09
+  },
+  {
+   "it": 6,
+   "cost": 1.719689385061124e-07,
+   "elapsed": 1833.7050259113312,
+   "gauge": 3.188865680084086e-10
+  }
+ ],
+ "tool": "scripts/profile_record.py v2.2",
+ "tool_sha256": "9e281e7f06e7c08613eb55b68cd8d2f7c66e6280e8638dcbfae4eb79140c8891",
+ "ts": "2026-10-30T12:55:04Z",
+ "reference": {
+  "run": "RUN_ROOT/numerics/degree6_free_parameters_48h/runs/prof_P1s4_reference_L6_cl0.4481_om1.4069_fixed",
+  "job_id": "prof_P1s4_reference_L6_cl0.4481_om1.4069_fixed",
+  "label": "PROFILE",
+  "iteration0_blocks_source": "linear-response tool record (same state)",
+  "lrs_iteration0": {
+   "file": "RUN_ROOT/numerics/degree6_free_parameters_48h/validation/lrs/P1s4_dp0.json",
+   "sha256": "47ce12605d23dd6b87838e9ea8fcbc65e3805dd365ff10ace6dd72708034d14a",
+   "kept_entry_O1": 1.5615719665039418e-07,
+   "kept_entry_gauge_part": 4.8756846868620646e-09,
+   "kept_entry_O1_without_gauge": 1.512815119635321e-07,
+   "params": {
+    "c_l": 0.44814413765532274,
+    "omega": 1.4068972013873298
+   },
+   "rel_diff_cost0_vs_lrs": 0.0,
+   "note": "measured by scripts/linear_response_start.py v1 for the kept start at the same parameters through the worker's entry path (the same state as this PROFILE run's start)"
+  },
+  "checkpoint": "RUN_ROOT/numerics/degree6_free_parameters_48h/runs/prof_P1s4_reference_L6_cl0.4481_om1.4069_fixed/checkpoint_segment_end.pt",
+  "checkpoint_sha256": "86f5e7bd8d4ae47b461db0092a371abb91f83dd2154148a3a5854b6cf8adbfda",
+  "params": {
+   "c_l": 0.44814413765532274,
+   "omega": 1.4068972013873298
+  },
+  "free_params": false,
+  "max_iter": 40,
+  "time_limit_s": 1800.0,
+  "stop_reason": "time_limit",
+  "counters": {
+   "n_acc": 12,
+   "n_rej": 5,
+   "sat_count": 0
+  },
+  "accepted_iterations": 12,
+  "lm_seconds": 1934.9499881267548,
+  "O1_iteration0": 1.5615719665039418e-07,
+  "O1_iteration0_without_gauge": 1.512815119635321e-07,
+  "gauge_iteration0": 4.8756846868620646e-09,
+  "start_blocks": {},
+  "O1_end": 1.5454849804638304e-07,
+  "O1_end_without_gauge": 1.5454172111486595e-07,
+  "end_blocks": {
+   "near_origin": 9.130077324492621e-10,
+   "core_intermediate": 1.4900625591941957e-07,
+   "far_momentum": 3.187379687000821e-11,
+   "far_anchors": 7.037693136140822e-17,
+   "closure": 4.5905835957501784e-09,
+   "gauge": 6.776931517096325e-12,
+   "total": 1.5454849804638304e-07
+  },
+  "rel_fall_last10": 0.008786041224388905,
+  "rel_fall_last50": null,
+  "v10_last_tenth_rel_decrease": 0.0025967925490825673,
+  "v10_iterations": 12,
+  "spec74": {
+   "gD_inf_over_r_last": 0.04286882977962081,
+   "gD_2_over_r_last": 1.0671207248713197,
+   "gD_note": "pre-step frozen-model scaled gradient of the last accepted iteration (V727), not a complete scaled gradient",
+   "complete_gradient_new_iterate": {
+    "g_inf": 7.813456970366435e-05,
+    "g_2": 0.0002636477471008985,
+    "g_inf_over_r": 0.14053866783640814,
+    "g_2_over_r": 0.4742165125648963,
+    "note": "complete gradient at the new iterate without column scaling"
+   },
+   "g_param_scaled": {},
+   "note": "FIXED runs have no parameter columns: parameter gradients empty; (b) eta and the reduced model need the J_c EVAL (lead tool), not written by the worker"
+  },
+  "holdout": {
+   "basis": "worker end battery of the F-normalized end state (V727: not the raw optimizer endpoint)",
+   "rho_u_max_holdout": 0.03751022564620965,
+   "rho_u_max_holdout_half": 0.03730266060089873,
+   "rho_u_max_holdout_both": 0.03751022564620965,
+   "rho_u_max_train": 0.03685031033638064,
+   "tier_S_holdout": false,
+   "tier_S_holdout_half": false,
+   "sigma_u_max": 0.4664580531643518,
+   "a_max_core": 1.0841956229189458,
+   "a_max_core_upper": 1.483682531818037,
+   "N_core": 0.9327103773017317,
+   "N_core_holdout": 0.9355085228989232,
+   "r_core_holdout": 0.4576511733082831,
+   "core_resolved": true,
+   "rho_Om_max_holdout": 0.18858101989261072,
+   "rms_final": 0.11232570685273649,
+   "cost_final": 1.5454849804638304e-07,
+   "status": "time_limit",
+   "gauge_defect": 2.220446049250313e-16,
+   "note": "flat keys of the worker's start_result row (v2); None = not in the record"
+  },
+  "battery_set": "full",
+  "results_jsonl": "RUN_ROOT/numerics/degree6_free_parameters_48h/runs/prof_P1s4_reference_L6_cl0.4481_om1.4069_fixed/results.jsonl",
+  "results_jsonl_sha256": "fd9aae98f5de4602f04d5c43fac4d7c89b69e5bc216f106edc932d472b5da8f9",
+  "t_battery_s": 4064.3309059143066,
+  "t_lm_s": 1964.2777678966522
+ },
+ "comparison": {
+  "point_O1_end": 1.719689385061124e-07,
+  "reference_O1_end": 1.5454849804638304e-07,
+  "ratio": 1.1127182773041324,
+  "lower_than_reference": false,
+  "point_O1_end_without_gauge": 1.71650051938104e-07,
+  "reference_O1_end_without_gauge": 1.5454172111486595e-07,
+  "same_budget": true,
+  "accepted_point": 7,
+  "accepted_reference": 12,
+  "equal_count": {
+   "k_star": 7,
+   "point_O1_at_k_star": 1.719689385061124e-07,
+   "reference_O1_at_k_star": 1.5543293625657927e-07,
+   "ratio_at_k_star": 1.1063867327465045,
+   "point_gauge_at_k_star": 3.188865680084086e-10,
+   "reference_gauge_at_k_star": 2.3975627813968942e-11,
+   "point_O1_without_gauge_at_k_star": 1.71650051938104e-07,
+   "reference_O1_without_gauge_at_k_star": 1.554089606287653e-07,
+   "ratio_without_gauge_at_k_star": 1.104505501121874,
+   "lower_at_k_star": false,
+   "note": "O1 after the same number k* = min(k, k') of accepted iterations (lead 07:24:37Z item 4); wall times differ under the host load"
+  },
+  "holdout_point": {
+   "std": 0.03870187808053468,
+   "half": 0.03873223719795777,
+   "battery_set": "cheap"
+  },
+  "holdout_reference": {
+   "std": 0.03751022564620965,
+   "half": 0.03730266060089873,
+   "battery_set": "full"
+  },
+  "reading": "not lower than the reference after the same budget (max_iter 40, time limit 1800.0 s; 7 and 12 accepted iterations): possibly budget-limited, not evidence of a minimum (lead 02:59:34Z item 2)"
+ }
+}

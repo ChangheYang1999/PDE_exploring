@@ -1,0 +1,238 @@
+#!/usr/bin/env python
+"""D6FP GPU-hours by label (SPEC v1.13 3.6 (c); 8.3 mix): supervised jobs from status/ledger.jsonl (launch and job_end rows: GPU, wall time, label;
+charged as wall time divided by the number of optimization jobs on the same GPU over that time, computed from the overlapping launch/end intervals),
+plus hand-launched GPU runs from status/gpu_hours_manual.jsonl (start, end, gpu, label, shared_jobs_on_gpu). Writes status/gpu_hours.json and prints
+a markdown table. GPU use before the revocation (2026-10-28T20:30Z to 2026-10-29T00:57:59Z) is listed in NUM_REPORT from the logs and is not in the
+ledger except the SMOKE/resume-test jobs. v4.9 (2026-10-30T15:5xZ; V781/V782, lead 15:28:34Z item 3): launcher-log 'cmd' start/done events are paired by exact full command text (per-identity FIFO only for repeated identical text; unmatched ends listed, open GPU commands charged to now and flagged, open CPU commands listed); v4.8 paired them by global FIFO, which mis-ended concurrent commands (net -1737 s of VALIDATION on the 15:07:46Z snapshot; no optimization share changes). v4.8 (2026-10-30T04:42Z; V627): hand-launched production runs are coefficient optimization by their label (FREE / FIXED-CONTROL / PROFILE, manual rows), an OPEN hand-launched run (status/gpu_hours_open_hand.jsonl) is charged to the as-of time and suppresses its launcher-log cmd item, so the active interval is counted once. v4.7 (2026-10-30T04:08Z; V617): the top-level note describes the two counts (the old denominator text was obsolete); smk_dd0 is recorded as a zero-step evaluation (kind early_non_opt, not counted); profile_S01's end is named as the log-mtime proxy. v4.6 (2026-10-30T03:58Z; V612): the early GPU optimizer work of 2026-10-28 (status/gpu_hours_early.jsonl: resume test, smokes, the profiling attempt, the M3 cost comparisons) is required membership of the REGISTERED count (interval rows unioned by physical GPU, measured-seconds rows direct). v4.5 (2026-10-30T03:50Z; lead 03:37:21Z, V609): every row carries ran_coefficient_optimization and its reason; REGISTERED count = all coefficient optimization of any label (GPU charged hours + CPU wall hours), NARROW count = FREE + FIXED-CONTROL + PROFILE + DIAG + refits (fields mix_8_3_registered / denominator_8_3_registered_h and mix_8_3_narrow / denominator_8_3_narrow_h; the old FREE+FIXED+PROFILE mix is mix_8_3_legacy_FREE_FIXED_PROFILE_only). v4.4 (2026-10-30T03:40Z; lead 03:30:46Z, V603/V606): the three coefficient refits of initial states (manual refit_start.py rows, label VALIDATION) are flagged in_8_3_denominator and enter the REGISTERED 8.3 count; a SECOND count adds every SMOKE job and the CPU coefficient-optimization wall hours of status/cpu_coefficient_optimization.jsonl (3.6 (c)); fields mix_8_3_registered, denominator_8_3_registered_h, mix_second_count. v4.3 (2026-10-30T03:18Z; V597): job_error rows (job path, no job_id) close their attempt at the error time (v4.2 closed them 20 s later at the retry or failure row: 75 s in total). v4.2 (2026-10-30T03:10Z; lead 03:01:03Z): a launch is closed by the first end event of its attempt (job_end, job_done, job_retry, job_failed, job_error), so failed attempts of seconds are no longer charged to now (v4.1 left six such launches open: 8.78 phantom FREE GPU-hours and shared factors up to 4 on GPUs 0 and 5); smoke probes (job ids smk_*) are labelled SMOKE. v4.1 kept as gpu_hours.py.v4.1_*. v4.1 (2026-10-29T22:5xZ): the manual-validation cut is the fixed time 2026-10-29T14:46:46Z (v4 recomputed it from the latest manual VALIDATION row, so the refit fits' manual rows at 22:12Z to 22:22Z made v4 drop every launcher item before 22:22Z; v4 0a8564d970d83a5f kept). v4 (2026-10-29T21:4xZ): validation items from validation/logs/l_slot_chain.log (EVAL / DIAG / VALIDATION; see below; v3.3 2f47ffef8c67a077 kept as gpu_hours.py.v3_3_2f47ffef). v3.3 (2026-10-29T18:0xZ): slot_idle rows of the manual ledger (grant-to-start delays) are listed and summed as idle_slot_hours, charged to no label. Usage: python scripts/gpu_hours.py"""
+import json, os, time, datetime as dt
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+def ts(s):
+    return dt.datetime.strptime(s.replace("+00:00", "Z")[:19], "%Y-%m-%dT%H:%M:%S").replace(tzinfo=dt.timezone.utc)
+rows = []
+led = [json.loads(l) for l in open(os.path.join(ROOT, "status", "ledger.jsonl")) if l.strip()]
+# v3 (15:5xZ, V360 / lead 15:42:01Z item 4): every launch is paired with ITS OWN job_end in ledger order (retries kept as separate attempts); a job_done after a
+# job_end does not duplicate the ended interval; launches still open at the end are explicit running attempts (interval to now, flagged).
+opt_intervals = []     # (gpu, start, end) of optimization jobs (FREE, FIXED-CONTROL, PROFILE) for the sharing denominator
+open_l = {}            # job_id -> list of open launch rows (in order)
+attempt = {}
+for r in led:
+    k = r.get("kind"); jid = r.get("job_id")
+    if jid is None and r.get("job"):
+        jid = os.path.splitext(os.path.basename(str(r["job"])))[0]                                   # v4.3 (V597): job_error rows carry the job PATH, not job_id; resolve its stem so that the attempt closes at the error
+    if k == "launch":
+        open_l.setdefault(jid, []).append(r)
+    elif k in ("job_end", "job_done", "job_retry", "job_failed", "job_error") and open_l.get(jid):      # v4.2 (lead 03:01:03Z): a launch is closed by the FIRST end event of its attempt: job_end, job_done, job_retry, job_failed or job_error (failed attempts were left open and charged to now)
+        L = open_l[jid].pop(0); g = L.get("gpu"); label = L.get("label") or r.get("label") or "?"
+        if str(jid).startswith("smk_"):
+            label = "SMOKE"                                                                                 # v4.2 (lead 03:01:03Z item 2): smoke probes (smk_S20mem carried the launch label PROFILE) are SMOKE, outside the 8.3 denominator
+        if g is None or str(g) == "cpu":
+            continue
+        attempt[jid] = attempt.get(jid, 0) + 1
+        t0 = ts(L["ts"]); t1 = ts(r["ts"]); rows.append(dict(job_id=jid, attempt=attempt[jid], label=label, gpu=int(g), start=L["ts"], end=r["ts"], end_kind=k, wall_h=(t1 - t0).total_seconds() / 3600, source="ledger"))
+        if label in ("FREE", "FIXED-CONTROL", "PROFILE"):
+            opt_intervals.append((int(g), t0, t1))
+AS_OF = dt.datetime.now(dt.timezone.utc)                                 # v3.2 (V365): ONE as-of clock for every open endpoint and every quantity
+now_ = AS_OF
+for jid, Ls in open_l.items():
+    for L in Ls:                                                         # running (or abandoned) attempts: explicit, interval to now
+        g = L.get("gpu"); label = L.get("label") or "?"
+        if str(jid).startswith("smk_"):
+            label = "SMOKE"
+        if g is None or str(g) == "cpu":
+            continue
+        attempt[jid] = attempt.get(jid, 0) + 1
+        t0 = ts(L["ts"]); rows.append(dict(job_id=jid, attempt=attempt[jid], label=label, gpu=int(g), start=L["ts"], end="running", end_kind="open", wall_h=(now_ - t0).total_seconds() / 3600, source="ledger"))
+        if label in ("FREE", "FIXED-CONTROL", "PROFILE"):
+            opt_intervals.append((int(g), t0, now_))
+idle = []
+man = os.path.join(ROOT, "status", "gpu_hours_manual.jsonl")
+# v4.8 (V627): OPEN hand-launched production runs (status/gpu_hours_open_hand.jsonl, written by the hand launcher at the launch and removed at its end): manual rows with end running (to AS_OF), coefficient optimization by label
+openf = os.path.join(ROOT, "status", "gpu_hours_open_hand.jsonl")
+if os.path.exists(openf):
+    for l in open(openf):
+        if not l.strip():
+            continue
+        r = json.loads(l); t0 = ts(r["start"]); t1 = AS_OF
+        rows.append(dict(job_id=r.get("what"), label=r["label"], gpu=int(r["gpu"]), start=r["start"], end="running", wall_h=(t1 - t0).total_seconds() / 3600, shared=r.get("shared_jobs_on_gpu", 1), source="manual_open", open_hand_launched=True, in_8_3_denominator=False, denominator_line=None))
+if os.path.exists(man):
+    for l in open(man):
+        if not l.strip(): continue
+        r = json.loads(l)
+        if r.get("kind") == "slot_idle" and r.get("start") and r.get("end"):   # v3.3 (17:5xZ, lead 17:55:21Z item 4): idle slot time (grant-to-start delays), listed, charged to no label
+            idle.append(dict(what=r.get("what"), gpu=int(r["gpu"]), start=r["start"], end=r["end"], idle_h=(ts(r["end"]) - ts(r["start"])).total_seconds() / 3600, cause=r.get("cause")))
+            continue
+        if r.get("kind") != "gpu_use" or "start" not in r:                     # v2 (15:3xZ): label_note rows (no start/end) are documentation, not GPU use
+            continue
+        t0 = ts(r["start"]); t1 = ts(r["end"]) if r.get("end") else dt.datetime.now(dt.timezone.utc)
+        lab_m = "SMOKE" if str(r.get("what", "")).startswith("smk_") else r["label"]                       # v4.2 (lead 03:01:03Z item 2): smoke probes are SMOKE whatever the manual row says (smk_S20mem was recorded as PROFILE)
+        is_refit = str(r.get("what", "")).startswith("refit_start.py")                                     # v4.4 (lead 03:30:46Z item 1; V603/V606): the three coefficient refits of initial states are in the 8.3 denominator (label unchanged)
+        rows.append(dict(job_id=r.get("what"), label=lab_m, gpu=int(r["gpu"]), in_8_3_denominator=is_refit, denominator_line=("refits of initial states" if is_refit else None), start=r["start"], end=r.get("end") or "running", wall_h=(t1 - t0).total_seconds() / 3600, shared=r.get("shared_jobs_on_gpu", 1), source="manual"))
+# v4 (2026-10-29T21:4xZ): validation runs launched through validation/l_launch.sh (frozen copies and GPU commands) are read from validation/logs/l_slot_chain.log
+# ('l_launch: busy N -> start frozen <name> <gpu> <script> ...' paired with 'l_launch: done frozen <name> exit <rc>'; cmd items with CUDA_VISIBLE_DEVICES=<gpu>),
+# labelled EVAL (jc_eval_state.py), DIAG (trunc_diag_blockC.py, revert_diag_farblocks.py) or VALIDATION (everything else); items that already have a manual
+# gpu_use row (same GPU, overlapping time, e.g. the SMOKE runs) and items that started before the last manual VALIDATION row ended are not added (no double count).
+# Charged as wall time (one validation item per GPU at a time by the launcher's rule; if two overlap on one GPU each is charged in full and the overlap is listed).
+import re
+lsl = os.path.join(ROOT, "validation", "logs", "l_slot_chain.log"); parsed = []
+if os.path.exists(lsl):
+    starts = {}; cmd_starts = []; cmd_unmatched_ends = []
+    for line in open(lsl):
+        line = line.rstrip("\n")
+        m = re.match(r"^(\S+Z) l_launch: busy \d+ -> start frozen (\S+) (\d+) (\S+)(.*)$", line)
+        if m:
+            starts[m.group(2)] = dict(ts=m.group(1), name=m.group(2), gpu=int(m.group(3)), script=m.group(4), args=m.group(5).strip()); continue
+        m = re.match(r"^(\S+Z) l_launch: done frozen (\S+) exit (\S+)$", line)
+        if m and m.group(2) in starts:
+            S = starts.pop(m.group(2)); sc = S["script"]
+            label = "EVAL" if sc.startswith("jc_eval_state") else ("DIAG" if sc.startswith(("trunc_diag", "revert_diag")) else "VALIDATION")
+            parsed.append(dict(job_id=S["name"], label=label, gpu=S["gpu"], start=S["ts"], end=m.group(1), wall_h=(ts(m.group(1)) - ts(S["ts"])).total_seconds() / 3600, source="l_slot_chain.log", script=sc, exit=m.group(3)))
+            continue
+        m = re.match(r"^(\S+Z) l_launch: busy \d+ -> start cmd (.*)$", line)
+        if m:
+            g = re.search(r"CUDA_VISIBLE_DEVICES=(\d+)", m.group(2))
+            cmd_starts.append(dict(ts=m.group(1), gpu=(int(g.group(1)) if g else None), cmd=m.group(2))); continue
+        m = re.match(r"^(\S+Z) l_launch: done cmd (.*?) exit (\S+)$", line)
+        if m:
+            # v4.9 (2026-10-30T15:5xZ; V781/V782, lead 15:28:34Z item 3): a 'done cmd' event is paired with the OLDEST OPEN START OF THE SAME FULL COMMAND TEXT (exact text; per-identity FIFO only for repeated identical text).
+            # v4.8 and earlier paired every done event with the oldest open start of any command (global FIFO), which mis-ended concurrent CPU/GPU commands that finished out of order (three VALIDATION rows of 2026-10-30T02:48Z to 02:57Z were 1769 s too long and a 32-s GPU 3 command was given a 3.6-hour end). An end without an open start of the same text is listed as unmatched and charged to nothing.
+            idx = next((k for k, c in enumerate(cmd_starts) if c["cmd"] == m.group(2)), None)
+            if idx is None:
+                cmd_unmatched_ends.append(dict(ts=m.group(1), cmd=m.group(2)[:160], exit=m.group(3))); continue
+            C = cmd_starts.pop(idx)
+            if C["gpu"] is None:
+                continue                                                                 # CPU command: no GPU use
+            what = "s2 smoke" if "worker_d6_s2" in C["cmd"] or "s2smoke" in C["cmd"] else ("cmd " + C["cmd"][:60])
+            parsed.append(dict(job_id=what, label=("SMOKE" if "smoke" in what else "VALIDATION"), gpu=C["gpu"], start=C["ts"], end=m.group(1), wall_h=(ts(m.group(1)) - ts(C["ts"])).total_seconds() / 3600, source="l_slot_chain.log", script="cmd", exit=m.group(3)))
+    for C in cmd_starts:                                                                   # v4.9: open launcher commands without an end: GPU ones are charged to now (as the frozen items are) and flagged 'running'; CPU ones are listed and charged to nothing
+        if C["gpu"] is None:
+            continue
+        what = "s2 smoke" if "worker_d6_s2" in C["cmd"] or "s2smoke" in C["cmd"] else ("cmd " + C["cmd"][:60])
+        parsed.append(dict(job_id=what, label=("SMOKE" if "smoke" in what else "VALIDATION"), gpu=C["gpu"], start=C["ts"], end="running", wall_h=(AS_OF - ts(C["ts"])).total_seconds() / 3600, source="l_slot_chain.log", script="cmd", exit=None))
+    for S in starts.values():                                                              # still running frozen items: interval to now, flagged
+        sc = S["script"]; label = "EVAL" if sc.startswith("jc_eval_state") else ("DIAG" if sc.startswith(("trunc_diag", "revert_diag")) else "VALIDATION")
+        parsed.append(dict(job_id=S["name"], label=label, gpu=S["gpu"], start=S["ts"], end="running", wall_h=(AS_OF - ts(S["ts"])).total_seconds() / 3600, source="l_slot_chain.log", script=sc, exit=None))
+    man_rows = [r for r in rows if r["source"] in ("manual", "manual_open")]                      # v4.8: open hand-launched rows suppress their launcher-log cmd items too
+    MANUAL_CUT = "2026-10-29T14:46:46Z"                                                   # v4.1: FIXED cut = the end of the last manual VALIDATION row written before the launcher-log accounting (hand-launched gate chains); later manual VALIDATION rows (e.g. the offline refit fits) are handled by the per-GPU overlap test only
+    last_val_end = ts(MANUAL_CUT)
+    def overlaps_manual(r):
+        t0 = ts(r["start"]); t1 = ts(r["end"]) if r["end"] != "running" else AS_OF
+        for m_ in man_rows:
+            if int(m_["gpu"]) != int(r["gpu"]): continue
+            a = ts(m_["start"]); b = ts(m_["end"]) if m_["end"] != "running" else AS_OF
+            if a < t1 and t0 < b: return True
+        return False
+    skipped = 0
+    for r in parsed:
+        if ts(r["start"]) < last_val_end or overlaps_manual(r):
+            skipped += 1; continue
+        r["gpu_hours_charged"] = r["wall_h"]; r["shared"] = 1; rows.append(r)
+    LSL_INFO = dict(parsed=len(parsed), added=len(parsed) - skipped, skipped_before_manual_cut_or_overlapping=skipped, manual_validation_cut=last_val_end.strftime("%Y-%m-%dT%H:%M:%SZ"),
+                    cmd_pairing="v4.9: exact full-command text, per-identity FIFO (v4.8 and earlier: global FIFO, defective for concurrent commands; V781/V782)",
+                    cmd_unmatched_ends=cmd_unmatched_ends, cmd_open_cpu_commands=[dict(ts=c["ts"], cmd=c["cmd"][:160]) for c in cmd_starts if c["gpu"] is None],
+                    cmd_open_gpu_commands_charged_running=[dict(ts=c["ts"], gpu=c["gpu"], cmd=c["cmd"][:160]) for c in cmd_starts if c["gpu"] is not None])
+else:
+    LSL_INFO = dict(parsed=0, note="no l_slot_chain.log")
+# sharing denominator for optimization jobs: number of optimization jobs on the same GPU over the interval (piecewise)
+for r in rows:
+    if r["label"] in ("FREE", "FIXED-CONTROL", "PROFILE") and r["source"] == "ledger":
+        t0 = ts(r["start"]); t1 = ts(r["end"]) if r["end"] != "running" else AS_OF; others = [(a, b) for (g, a, b) in opt_intervals if g == r["gpu"]]   # v3.2: open attempts end at AS_OF
+        pts = sorted(set([t0, t1] + [max(t0, min(t1, x)) for (a, b) in others for x in (a, b)]))
+        charged = 0.0
+        for a, b in zip(pts[:-1], pts[1:]):
+            n = sum(1 for (x, y) in others if x <= a and y >= b); charged += (b - a).total_seconds() / 3600 / max(n, 1)
+        r["gpu_hours_charged"] = charged
+    elif "gpu_hours_charged" not in r:
+        r["gpu_hours_charged"] = r["wall_h"] / max(int(r.get("shared", 1)), 1)
+# v4.5 (lead 03:37:21Z; V609): every row is marked by whether it ran coefficient optimization (LM steps or a least-squares coefficient fit), with the reason.
+def coef_opt(r):
+    src = r.get("source"); lab = r.get("label"); what = str(r.get("job_id", ""))
+    if src == "ledger":
+        return True, f"supervised worker job (label {lab}): LM iterations on coefficients"
+    if lab == "SMOKE":
+        return True, "smoke run of the worker: LM iterations on coefficients"
+    if lab in ("FREE", "FIXED-CONTROL", "PROFILE") and src in ("manual", "manual_open"):
+        return True, f"hand-launched production run (label {lab}; {'open, charged to the as-of time' if src == 'manual_open' else 'closed manual row'}): LM iterations on coefficients (V627)"
+    if r.get("in_8_3_denominator"):
+        return True, "least-squares coefficient refit of an initial state (SPEC 8.2; 8.3 'refits of initial states')"
+    if "lm_cost_compare" in what:
+        return True, "M3 LM trajectory comparison (validation/lm_cost_compare.py): LM steps on coefficients"
+    return False, "validation without LM steps (derivative gates and add-ons, J_c EVAL, 6.3 (a) records, segment reports, Jacobian cost, perturbed-start generation, table qualifications)"
+for r in rows:
+    f, why = coef_opt(r); r["ran_coefficient_optimization"] = f; r["coef_opt_reason"] = why
+by = {}
+for r in rows:
+    by[r["label"]] = by.get(r["label"], 0.0) + r["gpu_hours_charged"]
+opt = sum(v for k, v in by.items() if k in ("FREE", "FIXED-CONTROL", "PROFILE"))
+mix = {k: (v / opt if opt > 0 else None) for k, v in by.items() if k in ("FREE", "FIXED-CONTROL", "PROFILE")}
+refit_h = sum(r["gpu_hours_charged"] for r in rows if r.get("in_8_3_denominator"))
+B = by.get("FIXED-CONTROL", 0.0) + by.get("PROFILE", 0.0); F = by.get("FREE", 0.0); diag_h = sum(r["gpu_hours_charged"] for r in rows if r["label"] == "DIAG" and r["ran_coefficient_optimization"])
+# CPU processes that took LM steps on coefficients (status/cpu_coefficient_optimization.jsonl; 3.6 (c): wall hours)
+cpu_rows = []; cpu_h = 0.0; cpu_notes = []
+cpu_path = os.path.join(ROOT, "status", "cpu_coefficient_optimization.jsonl")
+if os.path.exists(cpu_path):
+    for l in open(cpu_path):
+        if not l.strip():
+            continue
+        r = json.loads(l)
+        if r.get("kind") == "cpu_opt":
+            r = dict(r); r["wall_h"] = float(r["wall_s"]) / 3600.0; cpu_rows.append(r); cpu_h += r["wall_h"]
+        else:
+            cpu_notes.append(r.get("note"))
+# v4.6 (V612): early GPU optimizer work (2026-10-28, before the supervised ledger and the manual rows; status/gpu_hours_early.jsonl): interval rows unioned by
+# physical GPU (no double charge of overlapping jobs), measured-seconds rows (the M3 cost comparisons) charged directly; all of it is REQUIRED membership of the registered count
+early_rows = []; early_measured = []; early_notes = []; early_union_h = {}; early_measured_h = 0.0
+early_path = os.path.join(ROOT, "status", "gpu_hours_early.jsonl")
+if os.path.exists(early_path):
+    for l in open(early_path):
+        if not l.strip():
+            continue
+        r = json.loads(l)
+        if r.get("kind") == "early_gpu_opt":
+            r = dict(r); r["wall_h"] = (ts(r["end"]) - ts(r["start"])).total_seconds() / 3600.0; r["ran_coefficient_optimization"] = True; early_rows.append(r)
+        elif r.get("kind") == "early_gpu_opt_measured":
+            r = dict(r); r["wall_h"] = float(r["wall_s"]) / 3600.0; r["ran_coefficient_optimization"] = True; early_measured.append(r); early_measured_h += r["wall_h"]
+        else:
+            early_notes.append(r.get("note"))
+    for g in sorted(set(int(r["gpu"]) for r in early_rows)):
+        iv = sorted((ts(r["start"]), ts(r["end"])) for r in early_rows if int(r["gpu"]) == g); tot = 0.0; cur_a, cur_b = None, None
+        for a, b in iv:
+            if cur_b is None or a > cur_b:
+                if cur_b is not None:
+                    tot += (cur_b - cur_a).total_seconds()
+                cur_a, cur_b = a, b
+            else:
+                cur_b = max(cur_b, b)
+        if cur_b is not None:
+            tot += (cur_b - cur_a).total_seconds()
+        early_union_h[str(g)] = tot / 3600.0
+early_h = sum(early_union_h.values()) + early_measured_h
+# REGISTERED 8.3 count (lead 03:37:21Z item 1): every GPU row that ran coefficient optimization, any label, plus the CPU wall hours, plus the early GPU optimizer work (V612)
+opt_rows_h = {}
+for r in rows:
+    if r["ran_coefficient_optimization"]:
+        k = ("refits of initial states" if r.get("in_8_3_denominator") else ("VALIDATION with LM steps" if r["label"] == "VALIDATION" else r["label"]))
+        opt_rows_h[k] = opt_rows_h.get(k, 0.0) + r["gpu_hours_charged"]
+D_reg = sum(opt_rows_h.values()) + cpu_h + early_h
+mix_reg = dict(denominator_h=D_reg, FREE=(F / D_reg if D_reg > 0 else None), FIXED_CONTROL_plus_PROFILE=(B / D_reg if D_reg > 0 else None), components_h=dict(opt_rows_h, cpu_coefficient_optimization=cpu_h, early_gpu_optimizer_union_by_gpu=early_union_h, early_gpu_optimizer_union_total=sum(early_union_h.values()), early_cost_comparisons_measured=early_measured_h),
+               early_gpu_rows=early_rows, early_measured_rows=early_measured, early_notes=early_notes, lower_bound_note="the early work is a lower bound (unobserved process tails not charged; smk_jc to its last observed event)",
+               definition="REGISTERED 8.3 count (lead 03:37:21Z, V609): every job or process that ran optimizer iterations or a least-squares coefficient fit on coefficients, any label (FREE, FIXED-CONTROL, PROFILE, DIAG, refits, SMOKE, validation runs with LM steps), GPU rows by their charged GPU-hours and CPU processes at their wall hours (3.6 (c)); the 0.80 FREE floor is tested here",
+               cpu_processes=cpu_rows, cpu_notes=cpu_notes)
+# NARROW count (lead 03:37:21Z item 1): FREE + FIXED-CONTROL + PROFILE + DIAG + refits; the 0.15 FIXED-side ceiling and the PROFILE admission test use it
+D_nar = F + B + diag_h + refit_h
+mix_nar = dict(denominator_h=D_nar, FREE=(F / D_nar if D_nar > 0 else None), FIXED_CONTROL_plus_PROFILE=(B / D_nar if D_nar > 0 else None), DIAG_h=diag_h, refits_h=refit_h,
+               definition="NARROW count (lead 03:37:21Z): FREE + FIXED-CONTROL + PROFILE + DIAG + refits of initial states; the 0.15 FIXED-CONTROL + PROFILE ceiling and the PROFILE admission test (B + r + x) / (T + r + x) <= 0.15 use this denominator (the stricter one for the ceiling)")
+out = dict(written=time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), rows=rows, gpu_hours_by_label=by, optimization_gpu_hours=opt, mix_8_3_legacy_FREE_FIXED_PROFILE_only=mix, mix_8_3_registered=mix_reg, denominator_8_3_registered_h=D_reg, mix_8_3_narrow=mix_nar, denominator_8_3_narrow_h=D_nar, idle_slots=idle, idle_slot_hours=sum(x["idle_h"] for x in idle), l_slot_chain_log=LSL_INFO,
+           note="v4.7 (V617): REGISTERED 8.3 count = every job or process that ran coefficient optimization of any label (mix_8_3_registered; GPU charged hours + CPU wall hours + the early 2026-10-28 GPU optimizer work of status/gpu_hours_early.jsonl); NARROW count = FREE + FIXED-CONTROL + PROFILE + DIAG + refits (mix_8_3_narrow); mix_8_3_legacy_FREE_FIXED_PROFILE_only is the obsolete FREE + FIXED-CONTROL + PROFILE mix kept for continuity")
+json.dump(out, open(os.path.join(ROOT, "status", "gpu_hours.json"), "w"), indent=1)
+print(f"GPU-hours by label (since the restoration unless ledgered earlier), written {out['written']}:\n\n| label | GPU-hours charged |\n|---|---|")
+print(f"| refits of initial states (label VALIDATION; coefficient optimization) | {refit_h:.3f} |")
+print(f"\nREGISTERED 8.3 count (all coefficient optimization, any label, GPU charged hours + CPU wall hours; denominator {D_reg:.3f} h): FREE {mix_reg['FREE']:.4f} (floor 0.80), FIXED-CONTROL + PROFILE {mix_reg['FIXED_CONTROL_plus_PROFILE']:.4f}; components " + ", ".join((f"{k} {v:.3f}" if isinstance(v, (int, float)) else f"{k} {v}") for k, v in mix_reg['components_h'].items()))
+print(f"NARROW count (FREE + FIXED-CONTROL + PROFILE + DIAG + refits; denominator {D_nar:.3f} h): FREE {mix_nar['FREE']:.4f}, FIXED-CONTROL + PROFILE {mix_nar['FIXED_CONTROL_plus_PROFILE']:.4f} (ceiling 0.15; the PROFILE admission test uses this denominator)")
+print(f"  early GPU optimizer work (2026-10-28 to 00:57Z, V612; union by GPU): " + ", ".join(f"GPU {g} {h:.3f} h" for g, h in early_union_h.items()) + f"; M3 cost comparisons measured {early_measured_h:.3f} h; rows: " + "; ".join(r['job'][:38] for r in early_rows + early_measured))
+for r in cpu_rows:
+    print(f"  CPU coefficient optimization: {r['job'][:60]} | {r['label']} | core {r['core']} | {r['start']} to {r['end']} | {r['wall_s']} s | accepted iterations {r['accepted_iterations']} | {r['end_kind'][:80]}")
+for k, v in sorted(by.items()):
+    print(f"| {k} | {v:.3f} |")
+for x in idle:
+    print(f"| idle slot (GPU {x['gpu']}, {x['what']}, {x['start']} to {x['end']}) | {x['idle_h']:.3f} (charged to no label) |")
+print(f"\n8.3 mix over optimization GPU-hours ({opt:.3f} h): " + (json.dumps({k: round(v, 3) for k, v in mix.items() if v is not None}) if opt > 0 else "no optimization job yet"))

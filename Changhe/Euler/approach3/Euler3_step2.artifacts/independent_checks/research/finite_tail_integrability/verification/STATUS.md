@@ -1,0 +1,1 @@
+Written and checked by the verifier before any energy/helicity result was available. lead review requested through team notes. No quantified exterior remainder constants or rigorous quadrature bounds have been computed.

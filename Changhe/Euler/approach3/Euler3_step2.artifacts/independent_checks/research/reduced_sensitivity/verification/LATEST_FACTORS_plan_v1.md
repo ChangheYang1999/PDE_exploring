@@ -1,0 +1,7 @@
+# Latest P2 and P3 saved-factor checks
+
+Registered 2026-10-30T02:54:23.907586+00:00, before these computations. Extend the existing endpoint checks to P2 segments 5 and 6 and P3 segment 2 FREE and FIXED. The full published record must equal its frozen source record. Hash the saved factors, checkpoints, trajectories and source before calculation. Audit one endpoint per invocation. Preserve the 1e-12 largest-singular-value consistency threshold; a failure remains a failure. Preserve the distinct FIXED joint-model and optimization costs.
+
+Use unchanged independent_sensitivity_v1.py and its qualified CPU LAPACK gesvd calculations. Preserve 1e-11 reconstruction, 1e-10 band partition and exact rational final-50/final-49 accepted-transition predicates, with the actual initial state included when necessary. The proofs remain ../PROOF.md and ../../progress_criteria/PROOF.md. Metadata, saved-factor and progress checks do not reconstruct the full Euler residual or Jacobian. Tiny singular values have no certified relative accuracy. Any conditional calculation after a failed endpoint check requires a separate version and explicit scope.
+
+Even-m individual stages have a 120-second limit, all-m stages 240 seconds; each pair runs inside a bounded recursive pause of the active verifier job. One CPU35 computation, one thread, hidden GPU, no JS/TS, servers, RLScience/cluster, remote compute, or outside writes. No new final entropy. The lead's summaries were inspected before computation, and do not set the algorithms or tolerances.

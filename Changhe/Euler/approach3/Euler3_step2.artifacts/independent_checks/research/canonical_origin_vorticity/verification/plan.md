@@ -1,0 +1,3 @@
+# Registered exact-origin check
+
+Registered 2026-10-29 before selected-state arithmetic. Read immutable local exchange inputs for S01, S09, the c_l=0.42/omega=0.3 nest6 state, and d6t. Require even azimuthal orders, main degree six, and core_damp >= 1. Use exact dyadic coefficient sums, a 64-term Machin enclosure and rational square-root bounds at scale 10^60. Run the inherited exact polynomial controls first. Report both absolute axial vorticity residual and signed ratio. No acceptance threshold or global nonexistence conclusion is introduced. Execute only after the active holdout finishes, on CPU35, one thread, empty GPU visibility. No JavaScript/TypeScript, servers, clusters, Lean/Lake, remote compute or other-side writes.

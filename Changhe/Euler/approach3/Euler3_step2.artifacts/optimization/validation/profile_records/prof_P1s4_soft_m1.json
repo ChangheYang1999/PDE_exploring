@@ -1,0 +1,472 @@
+{
+ "run": "RUN_ROOT/numerics/degree6_free_parameters_48h/runs/prof_P1s4_soft_m1_L6_cl0.4674_om1.4435_fixed",
+ "job_id": "prof_P1s4_soft_m1_L6_cl0.4674_om1.4435_fixed",
+ "label": "PROFILE",
+ "iteration0_blocks_source": "linear-response tool record (same state)",
+ "lrs_iteration0": {
+  "file": "RUN_ROOT/numerics/degree6_free_parameters_48h/validation/lrs/P1s4_profile_soft_m1.json",
+  "sha256": "1c5d4e68ff897025fd4c588f03351137c2bd5a7cb2a40ec1b1a0f99a6d053683",
+  "kept_entry_O1": 74.34581317193907,
+  "kept_entry_gauge_part": 74.34579895060055,
+  "kept_entry_O1_without_gauge": 1.4221338505051043e-05,
+  "params": {
+   "c_l": 0.46741414777119605,
+   "omega": 1.443544118687944
+  },
+  "rel_diff_cost0_vs_lrs": 0.0,
+  "note": "measured by scripts/linear_response_start.py v1 for the kept start at the same parameters through the worker's entry path (the same state as this PROFILE run's start)"
+ },
+ "checkpoint": "RUN_ROOT/numerics/degree6_free_parameters_48h/runs/prof_P1s4_soft_m1_L6_cl0.4674_om1.4435_fixed/checkpoint_segment_end.pt",
+ "checkpoint_sha256": "1e8a18526c476b2cc05e0575ec17c89ab4473b133a19eb4ba2d50ad630eb3a80",
+ "params": {
+  "c_l": 0.46741414777119605,
+  "omega": 1.443544118687944
+ },
+ "free_params": false,
+ "max_iter": 40,
+ "time_limit_s": 1800.0,
+ "stop_reason": "max_iter",
+ "counters": {
+  "n_acc": 40,
+  "n_rej": 21,
+  "sat_count": 0
+ },
+ "accepted_iterations": 40,
+ "lm_seconds": 584.6824109554291,
+ "O1_iteration0": 74.34581317193907,
+ "O1_iteration0_without_gauge": 1.4221338517472759e-05,
+ "gauge_iteration0": 74.34579895060055,
+ "start_blocks": {},
+ "O1_end": 19.508515218775024,
+ "O1_end_without_gauge": 0.005543710178965711,
+ "end_blocks": {
+  "near_origin": 1.464315184711648e-06,
+  "core_intermediate": 0.005382364164867425,
+  "far_momentum": 0.0001598493233385985,
+  "far_anchors": 2.360919160225325e-11,
+  "closure": 3.235196785219184e-08,
+  "gauge": 19.502971508596058,
+  "total": 19.508515218775024
+ },
+ "rel_fall_last10": 0.22411875041153032,
+ "rel_fall_last50": null,
+ "v10_last_tenth_rel_decrease": 0.0880792663401279,
+ "v10_iterations": 40,
+ "spec74": {
+  "gD_inf_over_r_last": 0.999972440717953,
+  "gD_2_over_r_last": 22.64008902317556,
+  "gD_note": "pre-step frozen-model scaled gradient of the last accepted iteration (V727), not a complete scaled gradient",
+  "complete_gradient_new_iterate": {
+   "g_inf": 161.79985747905337,
+   "g_2": 505.6192775579018,
+   "g_inf_over_r": 25.90305743515662,
+   "g_2_over_r": 80.94620966276362,
+   "note": "complete gradient at the new iterate without column scaling"
+  },
+  "g_param_scaled": {},
+  "note": "FIXED runs have no parameter columns: parameter gradients empty; (b) eta and the reduced model need the J_c EVAL (lead tool), not written by the worker"
+ },
+ "holdout": {
+  "basis": "worker end battery of the F-normalized end state (V727: not the raw optimizer endpoint)",
+  "rho_u_max_holdout": 0.8004029778681154,
+  "rho_u_max_holdout_half": 0.80485942730517,
+  "rho_u_max_holdout_both": 0.80485942730517,
+  "rho_u_max_train": 0.8282534355423603,
+  "tier_S_holdout": false,
+  "tier_S_holdout_half": false,
+  "sigma_u_max": 33.47845266532416,
+  "a_max_core": null,
+  "a_max_core_upper": null,
+  "N_core": 1.9813799230538496,
+  "N_core_holdout": 1.9520157090481611,
+  "r_core_holdout": 0.4576511733082831,
+  "core_resolved": null,
+  "rho_Om_max_holdout": 0.903925212325761,
+  "rms_final": 11.290273225391234,
+  "cost_final": 19.508515218775024,
+  "status": "max_iter",
+  "gauge_defect": 2.220446049250313e-16,
+  "note": "flat keys of the worker's start_result row (v2); None = not in the record"
+ },
+ "battery_set": "cheap",
+ "results_jsonl": "RUN_ROOT/numerics/degree6_free_parameters_48h/runs/prof_P1s4_soft_m1_L6_cl0.4674_om1.4435_fixed/results.jsonl",
+ "results_jsonl_sha256": "10c6943ea1726ce7c6cbeaf98eb3b9999d305ab4ffae568460aa805be0ae99be",
+ "t_battery_s": 30.040720224380493,
+ "t_lm_s": 586.743780374527,
+ "trajectory": [
+  {
+   "it": 0,
+   "cost": 72.50637928324166,
+   "elapsed": 24.7094886302948,
+   "gauge": 72.5062926464164
+  },
+  {
+   "it": 1,
+   "cost": 65.97464679289867,
+   "elapsed": 38.94941282272339,
+   "gauge": 65.97440156696793
+  },
+  {
+   "it": 2,
+   "cost": 64.9582507909694,
+   "elapsed": 53.10467767715454,
+   "gauge": 64.95769607565704
+  },
+  {
+   "it": 3,
+   "cost": 62.35442033878041,
+   "elapsed": 67.17827296257019,
+   "gauge": 62.35297864833271
+  },
+  {
+   "it": 4,
+   "cost": 61.73245695266007,
+   "elapsed": 82.1069483757019,
+   "gauge": 61.73112328547393
+  },
+  {
+   "it": 5,
+   "cost": 58.74233815001483,
+   "elapsed": 96.33750510215759,
+   "gauge": 58.74089169527213
+  },
+  {
+   "it": 6,
+   "cost": 58.72863740152678,
+   "elapsed": 110.2900128364563,
+   "gauge": 58.72711747382843
+  },
+  {
+   "it": 7,
+   "cost": 55.15917883047962,
+   "elapsed": 125.09008359909058,
+   "gauge": 55.1575532278992
+  },
+  {
+   "it": 8,
+   "cost": 51.36560814841495,
+   "elapsed": 139.0122208595276,
+   "gauge": 51.363859516601885
+  },
+  {
+   "it": 9,
+   "cost": 47.58686215797037,
+   "elapsed": 152.97257590293884,
+   "gauge": 47.585228875685736
+  },
+  {
+   "it": 10,
+   "cost": 43.0543331664498,
+   "elapsed": 167.079247713089,
+   "gauge": 43.05280472986274
+  },
+  {
+   "it": 11,
+   "cost": 40.47654142089141,
+   "elapsed": 182.0924084186554,
+   "gauge": 40.47497568830296
+  },
+  {
+   "it": 12,
+   "cost": 37.26201030762221,
+   "elapsed": 195.99230885505676,
+   "gauge": 37.26037866885112
+  },
+  {
+   "it": 13,
+   "cost": 36.04990587339188,
+   "elapsed": 210.82059693336487,
+   "gauge": 36.048251371238635
+  },
+  {
+   "it": 14,
+   "cost": 34.4714910360541,
+   "elapsed": 224.71892166137695,
+   "gauge": 34.46969793575818
+  },
+  {
+   "it": 15,
+   "cost": 34.224668743537094,
+   "elapsed": 238.62862062454224,
+   "gauge": 34.22282317819004
+  },
+  {
+   "it": 16,
+   "cost": 33.448010782352874,
+   "elapsed": 253.4049642086029,
+   "gauge": 33.446107680364534
+  },
+  {
+   "it": 17,
+   "cost": 32.743315205641245,
+   "elapsed": 267.8103883266449,
+   "gauge": 32.74122423709496
+  },
+  {
+   "it": 18,
+   "cost": 31.36639855336317,
+   "elapsed": 281.9090585708618,
+   "gauge": 31.364009114135516
+  },
+  {
+   "it": 19,
+   "cost": 30.911571155249675,
+   "elapsed": 298.2898118495941,
+   "gauge": 30.909184146975736
+  },
+  {
+   "it": 20,
+   "cost": 30.146367956696984,
+   "elapsed": 312.4682857990265,
+   "gauge": 30.143919423011997
+  },
+  {
+   "it": 21,
+   "cost": 29.26580055266378,
+   "elapsed": 326.76412987709045,
+   "gauge": 29.263174231533146
+  },
+  {
+   "it": 22,
+   "cost": 28.29062180210244,
+   "elapsed": 341.0506286621094,
+   "gauge": 28.28782743594885
+  },
+  {
+   "it": 23,
+   "cost": 27.919015273657813,
+   "elapsed": 355.9817440509796,
+   "gauge": 27.9161314903598
+  },
+  {
+   "it": 24,
+   "cost": 27.454973753595695,
+   "elapsed": 370.10961174964905,
+   "gauge": 27.45191546769601
+  },
+  {
+   "it": 25,
+   "cost": 26.7827797873306,
+   "elapsed": 384.45462703704834,
+   "gauge": 26.779617494117183
+  },
+  {
+   "it": 26,
+   "cost": 26.473640194404688,
+   "elapsed": 399.8018846511841,
+   "gauge": 26.470437402643018
+  },
+  {
+   "it": 27,
+   "cost": 26.099543812877148,
+   "elapsed": 414.12570357322693,
+   "gauge": 26.096304665389386
+  },
+  {
+   "it": 28,
+   "cost": 25.658296752442965,
+   "elapsed": 428.3842239379883,
+   "gauge": 25.654895944783114
+  },
+  {
+   "it": 29,
+   "cost": 25.143686909720287,
+   "elapsed": 442.45391368865967,
+   "gauge": 25.140184782530525
+  },
+  {
+   "it": 30,
+   "cost": 24.783474418288815,
+   "elapsed": 456.7394073009491,
+   "gauge": 24.779727368041396
+  },
+  {
+   "it": 31,
+   "cost": 23.221232051615484,
+   "elapsed": 470.7581961154938,
+   "gauge": 23.217050271066544
+  },
+  {
+   "it": 32,
+   "cost": 22.699150307448136,
+   "elapsed": 485.4832384586334,
+   "gauge": 22.69488535835
+  },
+  {
+   "it": 33,
+   "cost": 22.29374307984855,
+   "elapsed": 499.3309943675995,
+   "gauge": 22.28942583865346
+  },
+  {
+   "it": 34,
+   "cost": 22.271601350076207,
+   "elapsed": 513.1607329845428,
+   "gauge": 22.267243655434175
+  },
+  {
+   "it": 35,
+   "cost": 21.39277515983237,
+   "elapsed": 527.1251997947693,
+   "gauge": 21.38774207065371
+  },
+  {
+   "it": 36,
+   "cost": 21.02517862905321,
+   "elapsed": 541.9740374088287,
+   "gauge": 21.020004669122983
+  },
+  {
+   "it": 37,
+   "cost": 20.421998378728723,
+   "elapsed": 556.02032995224,
+   "gauge": 20.416652263654058
+  },
+  {
+   "it": 38,
+   "cost": 19.840983752349484,
+   "elapsed": 569.9587686061859,
+   "gauge": 19.835416559030882
+  },
+  {
+   "it": 39,
+   "cost": 19.508515218775024,
+   "elapsed": 584.6824109554291,
+   "gauge": 19.502971508596058
+  }
+ ],
+ "tool": "scripts/profile_record.py v2.2",
+ "tool_sha256": "9e281e7f06e7c08613eb55b68cd8d2f7c66e6280e8638dcbfae4eb79140c8891",
+ "ts": "2026-10-30T10:39:50Z",
+ "reference": {
+  "run": "RUN_ROOT/numerics/degree6_free_parameters_48h/runs/prof_P1s4_reference_L6_cl0.4481_om1.4069_fixed",
+  "job_id": "prof_P1s4_reference_L6_cl0.4481_om1.4069_fixed",
+  "label": "PROFILE",
+  "iteration0_blocks_source": "linear-response tool record (same state)",
+  "lrs_iteration0": {
+   "file": "RUN_ROOT/numerics/degree6_free_parameters_48h/validation/lrs/P1s4_dp0.json",
+   "sha256": "47ce12605d23dd6b87838e9ea8fcbc65e3805dd365ff10ace6dd72708034d14a",
+   "kept_entry_O1": 1.5615719665039418e-07,
+   "kept_entry_gauge_part": 4.8756846868620646e-09,
+   "kept_entry_O1_without_gauge": 1.512815119635321e-07,
+   "params": {
+    "c_l": 0.44814413765532274,
+    "omega": 1.4068972013873298
+   },
+   "rel_diff_cost0_vs_lrs": 0.0,
+   "note": "measured by scripts/linear_response_start.py v1 for the kept start at the same parameters through the worker's entry path (the same state as this PROFILE run's start)"
+  },
+  "checkpoint": "RUN_ROOT/numerics/degree6_free_parameters_48h/runs/prof_P1s4_reference_L6_cl0.4481_om1.4069_fixed/checkpoint_segment_end.pt",
+  "checkpoint_sha256": "86f5e7bd8d4ae47b461db0092a371abb91f83dd2154148a3a5854b6cf8adbfda",
+  "params": {
+   "c_l": 0.44814413765532274,
+   "omega": 1.4068972013873298
+  },
+  "free_params": false,
+  "max_iter": 40,
+  "time_limit_s": 1800.0,
+  "stop_reason": "time_limit",
+  "counters": {
+   "n_acc": 12,
+   "n_rej": 5,
+   "sat_count": 0
+  },
+  "accepted_iterations": 12,
+  "lm_seconds": 1934.9499881267548,
+  "O1_iteration0": 1.5615719665039418e-07,
+  "O1_iteration0_without_gauge": 1.512815119635321e-07,
+  "gauge_iteration0": 4.8756846868620646e-09,
+  "start_blocks": {},
+  "O1_end": 1.5454849804638304e-07,
+  "O1_end_without_gauge": 1.5454172111486595e-07,
+  "end_blocks": {
+   "near_origin": 9.130077324492621e-10,
+   "core_intermediate": 1.4900625591941957e-07,
+   "far_momentum": 3.187379687000821e-11,
+   "far_anchors": 7.037693136140822e-17,
+   "closure": 4.5905835957501784e-09,
+   "gauge": 6.776931517096325e-12,
+   "total": 1.5454849804638304e-07
+  },
+  "rel_fall_last10": 0.008786041224388905,
+  "rel_fall_last50": null,
+  "v10_last_tenth_rel_decrease": 0.0025967925490825673,
+  "v10_iterations": 12,
+  "spec74": {
+   "gD_inf_over_r_last": 0.04286882977962081,
+   "gD_2_over_r_last": 1.0671207248713197,
+   "gD_note": "pre-step frozen-model scaled gradient of the last accepted iteration (V727), not a complete scaled gradient",
+   "complete_gradient_new_iterate": {
+    "g_inf": 7.813456970366435e-05,
+    "g_2": 0.0002636477471008985,
+    "g_inf_over_r": 0.14053866783640814,
+    "g_2_over_r": 0.4742165125648963,
+    "note": "complete gradient at the new iterate without column scaling"
+   },
+   "g_param_scaled": {},
+   "note": "FIXED runs have no parameter columns: parameter gradients empty; (b) eta and the reduced model need the J_c EVAL (lead tool), not written by the worker"
+  },
+  "holdout": {
+   "basis": "worker end battery of the F-normalized end state (V727: not the raw optimizer endpoint)",
+   "rho_u_max_holdout": 0.03751022564620965,
+   "rho_u_max_holdout_half": 0.03730266060089873,
+   "rho_u_max_holdout_both": 0.03751022564620965,
+   "rho_u_max_train": 0.03685031033638064,
+   "tier_S_holdout": false,
+   "tier_S_holdout_half": false,
+   "sigma_u_max": 0.4664580531643518,
+   "a_max_core": 1.0841956229189458,
+   "a_max_core_upper": 1.483682531818037,
+   "N_core": 0.9327103773017317,
+   "N_core_holdout": 0.9355085228989232,
+   "r_core_holdout": 0.4576511733082831,
+   "core_resolved": true,
+   "rho_Om_max_holdout": 0.18858101989261072,
+   "rms_final": 0.11232570685273649,
+   "cost_final": 1.5454849804638304e-07,
+   "status": "time_limit",
+   "gauge_defect": 2.220446049250313e-16,
+   "note": "flat keys of the worker's start_result row (v2); None = not in the record"
+  },
+  "battery_set": "full",
+  "results_jsonl": "RUN_ROOT/numerics/degree6_free_parameters_48h/runs/prof_P1s4_reference_L6_cl0.4481_om1.4069_fixed/results.jsonl",
+  "results_jsonl_sha256": "fd9aae98f5de4602f04d5c43fac4d7c89b69e5bc216f106edc932d472b5da8f9",
+  "t_battery_s": 4064.3309059143066,
+  "t_lm_s": 1964.2777678966522
+ },
+ "comparison": {
+  "point_O1_end": 19.508515218775024,
+  "reference_O1_end": 1.5454849804638304e-07,
+  "ratio": 126229083.20286708,
+  "lower_than_reference": false,
+  "point_O1_end_without_gauge": 0.005543710178965711,
+  "reference_O1_end_without_gauge": 1.5454172111486595e-07,
+  "same_budget": true,
+  "accepted_point": 40,
+  "accepted_reference": 12,
+  "equal_count": {
+   "k_star": 12,
+   "point_O1_at_k_star": 40.47654142089141,
+   "reference_O1_at_k_star": 1.5454849804638304e-07,
+   "ratio_at_k_star": 261901875.02659264,
+   "point_gauge_at_k_star": 40.47497568830296,
+   "reference_gauge_at_k_star": 6.776931517096325e-12,
+   "point_O1_without_gauge_at_k_star": 0.001565732588446167,
+   "reference_O1_without_gauge_at_k_star": 1.5454172111486595e-07,
+   "ratio_without_gauge_at_k_star": 10131.455616974834,
+   "lower_at_k_star": false,
+   "note": "O1 after the same number k* = min(k, k') of accepted iterations (lead 07:24:37Z item 4); wall times differ under the host load"
+  },
+  "holdout_point": {
+   "std": 0.8004029778681154,
+   "half": 0.80485942730517,
+   "battery_set": "cheap"
+  },
+  "holdout_reference": {
+   "std": 0.03751022564620965,
+   "half": 0.03730266060089873,
+   "battery_set": "full"
+  },
+  "reading": "not lower than the reference after the same budget (max_iter 40, time limit 1800.0 s; 40 and 12 accepted iterations): possibly budget-limited, not evidence of a minimum (lead 02:59:34Z item 2)"
+ }
+}

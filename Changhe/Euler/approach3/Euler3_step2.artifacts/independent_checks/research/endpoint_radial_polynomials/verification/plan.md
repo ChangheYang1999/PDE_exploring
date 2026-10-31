@@ -1,0 +1,1 @@
+Record source hashes and compare the endpoint implementation against the same 70-digit reference at the original registered nodes and tolerances. Preserve every previous failure. Add both sides of r=256R to check the evaluation switch. Use exact integer polynomial coefficients and exact represented binary input coefficients for the basis conversion. No tolerance relaxation.

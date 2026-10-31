@@ -1,0 +1,7 @@
+# Origin-reader controls prompted by the independent proof review
+
+Registered 2026-10-29T21:59:05.503400+00:00, before running these additional controls. The lead the review at 21:56:04Z agrees with the identity and raises four scope remarks. The earlier proof is preserved as PROOF_before_lead_2156.md, SHA256 9431ea85ad01e19176eb3fa0f27dcc810298601c07dc159845e35d37968bd342. The revised standalone proof changes only the qualification prose and explicit conventions; no formula changes. New proof SHA256 589be3faac865992dd7c58a489a36e25aa0cb6611b64296e4f585b1ac9f7b9e5.
+
+Use the existing manufactured unrestricted d=1 exchange. Create a separate fixture with R1=None in both metadata and the archive, and compare the exact reader with the explicit R1=R0 configuration: every interval and rational sum must agree exactly. Independently compare U, DU, Omega, DOmega and R_Omega at zero with the extended Cartesian field evaluator, with the original relative 2e-12 threshold and max(reference norm,1e-30). Create a d=0 fixture in both metadata and archive; the actual bounded reader must reject it because its hypotheses fail. Preserve all bytes and hashes. The general reader source is unchanged, and earlier qualification results retain their original proof binding.
+
+Run on CPU35 with one thread, low priority and no GPU, under a short owned-controller pause. No JavaScript/TypeScript, servers, RLScience, remote compute or writes outside this side. These controls establish the stated reader behavior, not a result for an actual P3 endpoint.

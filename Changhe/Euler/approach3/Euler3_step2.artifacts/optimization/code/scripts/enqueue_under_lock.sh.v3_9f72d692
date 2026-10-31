@@ -1,0 +1,29 @@
+#!/bin/bash
+# Enqueue a job without exceeding four busy computations. v3 (00:5xZ; V527): the admitted job is identified EXACTLY (the staged file the enqueue command created,
+# newest queue/staged/<prefix>_*.json after the command), existence tests use [ -e ] per exact path (never the exit status of a multi-glob ls), active and terminal
+# states are tested separately, and the lock is held until that exact job's worker is visible (its run directory in a worker_d6.py command line) or the exact job
+# is in a terminal directory with no active copy; an unacknowledged state never releases the lock (warning every 60 s after 900 s).
+# v2 (424c4f74): no silent timeout. v1 (4cf0749d): 150 s timeout (V523). Under the launcher lock validation/.l_launch.lock (the lock l_launch_v4/v5 holds while waiting).
+# Usage: bash scripts/enqueue_under_lock.sh <job id prefix (tag)> <enqueue command ...>
+set -u; cd RUN_ROOT/numerics/degree6_free_parameters_48h; PREFIX=$1; shift; LOCK=validation/.l_launch.lock
+busy() { n=0; for p in $(ps -eo pid,comm,args | awk '$2 ~ /^python/' | grep -E "venv/bin/python( -u)? [^ ]*(validation/[A-Za-z0-9_]+\.py|scripts/[A-Za-z0-9_]+\.py)" | grep -v grep | grep -v -E "scripts/(supervisor|slot_governor)\.py" | awk '{print $1}'); do case "$(readlink /proc/$p/cwd 2>/dev/null)" in RUN_ROOT/numerics*) n=$((n+1));; esac; done; echo $n; }
+exec 9>"$LOCK"; flock -x 9
+t=0; while [ "$(busy)" -gt 3 ]; do sleep 20; t=$((t+20)); [ $t -ge 7200 ] && { echo "enqueue_under_lock: gave up waiting for a slot after $t s (busy $(busy)); nothing enqueued"; flock -u 9; exit 1; }; done
+BEFORE=$(ls -t queue/staged/${PREFIX}_*.json queue/pending/${PREFIX}_*.json 2>/dev/null | head -1)
+echo "$(date -u +%FT%TZ) enqueue_under_lock: busy $(busy) <= 3 after $t s; enqueuing: $*"
+"$@"; rc=$?
+JOBFILE=""; for f in $(ls -t queue/staged/${PREFIX}_*.json queue/pending/${PREFIX}_*.json 2>/dev/null); do [ -e "$f" ] && [ "$f" != "$BEFORE" ] && { JOBFILE=$f; break; }; done
+[ -z "$JOBFILE" ] && [ -n "$BEFORE" ] && [ -e "$BEFORE" ] && JOBFILE=$BEFORE
+if [ -z "$JOBFILE" ]; then echo "$(date -u +%FT%TZ) enqueue_under_lock: no staged or pending file for ${PREFIX} after the enqueue (exit $rc): nothing to reserve; lock released"; flock -u 9; exec 9>&-; exit $rc; fi
+JID=$(basename "$JOBFILE" .json); echo "$(date -u +%FT%TZ) enqueue_under_lock: admitted job $JID (exit $rc); holding the lock until its worker is visible"
+t=0; state="pending"
+while true; do
+  active=0; for d in staged pending granted running; do [ -e "queue/$d/$JID.json" ] && active=1; done
+  terminal=0; for d in failed cancelled done; do [ -e "queue/$d/$JID.json" ] && terminal=1; done
+  if [ -e "queue/running/$JID.json" ] && ps -eo args | grep '[w]orker_d6.py' | grep -q "runs/$JID"; then state="visible"; break; fi
+  if [ $active -eq 0 ] && [ $terminal -eq 1 ]; then state="terminal_without_worker"; break; fi
+  if [ $active -eq 0 ] && [ $terminal -eq 0 ]; then state="vanished"; break; fi
+  sleep 5; t=$((t+5)); [ $t -ge 900 ] && [ $((t % 60)) -eq 0 ] && echo "$(date -u +%FT%TZ) enqueue_under_lock: WARNING $JID not acknowledged after $t s; lock still held"
+done
+echo "$(date -u +%FT%TZ) enqueue_under_lock: $JID state ${state} after $t s (busy $(busy)); lock released"
+flock -u 9; exec 9>&-; exit $rc

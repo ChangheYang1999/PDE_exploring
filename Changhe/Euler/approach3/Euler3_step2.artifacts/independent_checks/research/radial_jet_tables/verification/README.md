@@ -1,0 +1,1 @@
+Evidence: ../../../artifacts/dd_radial_tables_v2/audit.json and captured source. Reproduction script ../../../scripts/audit_dd_radial_tables_v2.py requires a fresh output directory. See audit for finite scope, precision and source hashes. No Euler or(l) finite difference.

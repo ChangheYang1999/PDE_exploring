@@ -1,0 +1,157 @@
+{
+ "job_id": "p1c_s2_S01_L6_cl0.4500_om1.0000_fixed",
+ "run": "RUN_ROOT/numerics/degree6_free_parameters_48h/runs/p1c_s2_S01_L6_cl0.4500_om1.0000_fixed",
+ "label": "FIXED-CONTROL",
+ "fixed_state": true,
+ "kind": "EVAL",
+ "it": 360,
+ "counters": {
+  "n_acc": 360,
+  "n_rej": 230,
+  "sat_count": 0
+ },
+ "lm_status": "max_iter",
+ "checkpoint": {
+  "path": "RUN_ROOT/numerics/degree6_free_parameters_48h/runs/p1c_s2_S01_L6_cl0.4500_om1.0000_fixed/checkpoint_segment_end.pt",
+  "sha256": "7d3bc6eaf11685096769871bee11a004fd0c6a838b39931d352e34260a458312",
+  "z_opt_sha256_field": "90e1d5f73ae584ef0c8797d8288a229b9cf5f21330c3aafefc97f46354cecdb7",
+  "ts": "2026-10-29T12:21:14Z"
+ },
+ "config_sha256": "0ec686e560dacc9af9a884890aafdc614a03c50bb5add3aea4a011481e8966bf",
+ "config_used_for_eval": {
+  "free_params": true,
+  "note": "FIXED-CONTROL checkpoints: the configuration's c_l, omega appended and mapped to optimizer coordinates"
+ },
+ "device": "cuda:0",
+ "chunk": 256,
+ "n_opt": 1469,
+ "n_rows": 433009,
+ "cost": 1.99102231643927e-07,
+ "params": {
+  "c_l": 0.45,
+  "omega": 1.0,
+  "z_c": 0.0,
+  "z_w": 0.0,
+  "dcl_dzc": 0.024999999999999994,
+  "domega_dzw": 1.0
+ },
+ "pivot": {
+  "pot": "S",
+  "q": 5,
+  "amp": 0.1306609448726974
+ },
+ "geometry_base": {
+  "c_l": 0.45,
+  "omega": 1.0,
+  "kappa": 2.2222222222222223,
+  "p0": 4.444444444444445
+ },
+ "J_cw": {
+  "seconds": 35.309717893600464,
+  "record": "linearization_00360_eval_Jcw.npz",
+  "comparison_with_stored_final_record": {
+   "stored_record": null
+  },
+  "column_norm_min": 1e-15,
+  "column_norm_max": 21.880236903190436
+ },
+ "J_c": {
+  "seconds": 65.6176860332489,
+  "record": "linearization_00360_eval_complete.npz",
+  "info": {
+   "base_G_rel_check": 5.1468382699842e-16,
+   "n_inputs": 248,
+   "stencil": {
+    "tail_inputs": "centered",
+    "parameter_inputs": "five_point",
+    "h": 0.0001
+   },
+   "dN": "analytic",
+   "dN_fallback": false,
+   "dN_analytic_vs_fd_rel": 0.0004384519544458371,
+   "N_check_rel": 0.0,
+   "n_closure_rows": 2772,
+   "correction_norm": 0.0024154872103535124,
+   "Jcw_closure_block_norm": 0.0001550544746699505,
+   "pattern_columns_norm": 0.0009027162588560088,
+   "chain_factors": [
+    0.024999999999999994,
+    1.0
+   ],
+   "construction": "J_c = J_cw + target correction (all columns, through to_full) + V(c_l, omega) five-point columns x chain factors on the closure block"
+  },
+  "column_norm_min": 1e-15,
+  "column_norm_max": 21.880236906326623,
+  "scaled_singular_values_smallest_six": [
+   1.8985050874402226e-12,
+   1.2018506963773271e-12,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "scaled_singular_value_largest": 24.583859882152627,
+  "scaling": "columns divided by their norms (no gauge projection yet)"
+ },
+ "code_sha256": {
+  "scripts/worker_d6.py": {
+   "sha256_12": "cd35acf01f77",
+   "mtime": "2026-10-29T15:41:27Z"
+  },
+  "src/optimization/lm.py": {
+   "sha256_12": "8dec4c55c5f3",
+   "mtime": "2026-10-29T15:41:27Z"
+  },
+  "src/optimization/problem.py": {
+   "sha256_12": "8dd8fd6d2fba",
+   "mtime": "2026-10-29T15:41:27Z"
+  },
+  "src/optimization/param_map.py": {
+   "sha256_12": "8058ef12032f",
+   "mtime": "2026-10-29T15:41:27Z"
+  },
+  "src/equations/fields.py": {
+   "sha256_12": "c68a1fb31fa8",
+   "mtime": "2026-10-29T15:41:27Z"
+  },
+  "src/pressure/poisson_sh.py": {
+   "sha256_12": "8aefe0f3a5f4",
+   "mtime": "2026-10-29T15:41:27Z"
+  },
+  "src/equations/residuals.py": {
+   "sha256_12": "9272f55c0f6a",
+   "mtime": "2026-10-29T15:41:27Z"
+  },
+  "src/far_field/correction.py": {
+   "sha256_12": "58418dae31c8",
+   "mtime": "2026-10-29T15:41:27Z"
+  },
+  "src/optimization/tail_constraints.py": {
+   "sha256_12": "2bea58b3056f",
+   "mtime": "2026-10-29T15:41:27Z"
+  },
+  "src/bases/radial.py": {
+   "sha256_12": "0c80d93740d6",
+   "mtime": "2026-10-29T15:41:27Z"
+  },
+  "src/bases/jets.py": {
+   "sha256_12": "206d9639cb48",
+   "mtime": "2026-10-29T15:41:27Z"
+  },
+  "src/bases/solid_harmonics.py": {
+   "sha256_12": "3f231c9286b7",
+   "mtime": "2026-10-29T15:41:27Z"
+  },
+  "src/validation/spec_diagnostics.py": {
+   "sha256_12": "e22ed3abb6f8",
+   "mtime": "2026-10-29T15:41:27Z"
+  },
+  "src/pressure/ray_integral.py": {
+   "sha256_12": "688f07490119",
+   "mtime": "2026-10-29T15:41:27Z"
+  }
+ },
+ "launcher_manifest": "cd35acf01f770dfbc76899c9d002ee8806b231639da6aac5eb9436c61555ad2b  scripts/worker_d6.py\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  src/__init__.py\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  src/bases/__init__.py\n206d9639cb4825c5f25edc11fa0171d8dcf59c8c8f01ddfa945d224d50b4e2d2  src/bases/jets.py\n0c80d93740d63173257a6f4c5f5fde287d3711d25b15f5d20f27cee20f46c2cc  src/bases/radial.py\n3f231c9286b79b406d364f58a4b8b7234c7c5629db8dd6636ac5bbd37e1695b3  src/bases/solid_harmonics.py\nda383a24a54c81593d86b274331e57285233a9a33ae77781fa803febc3b2c55c  src/bases/solid_harmonics_dd.py\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  src/campaign/__init__.py\n61c3f639d644acbdeee811ed2745e94da928703f647153bba5d1b28d38b58c80  src/campaign/checkpoint.py\n884236301e98e8629b92b91262656739b0e08019c0acbf234b81e5528b397492  src/campaign/ledger.py\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  src/equations/__init__.py\nc68a1fb31fa87d2b998966985c39de8bbafeb6bbf85e5f84378a215ad4af0229  src/equations/fields.py\n9716d12760994bc58f4b3933d8b872e3e6653f6e667097b1e5bef15931e879a5  src/equations/fields_dd.py\n5c0905e0afb89184e5a3b57f9417bb9c204edb06a251ac69455a6a677ffd7925  src/equations/linear_stable.py\n9272f55c0f6a5017e149790ffee8f82af5c0e78239be32a060d1ce9b8c5f3c61  src/equations/residuals.py\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  src/far_field/__init__.py\n58418dae31c88266ea1f1a8d1d9974fbf4178f1e5e120d0aa483df0b0428d164  src/far_field/correction.py\n01ccc79ab43839d5f9d413a844ed208aa0c81635deb173eb4d74f2667f96f43d  src/far_field/eigen.py\n81c42a957c1e8634b24c5b2c7d88054c07bae05197e2e767d64a1da7093fec19  src/far_field/ray_functional.py\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  src/optimization/__init__.py\ne1f8ea208e4ac92de9c00a59009141d4866d2cd219c957d3e9f5bb1185b23b27  src/optimization/backward_defect.py\n8dec4c55c5f39f6e90b3df2060d6d2d5ab1d78dfd269be6c6781efc98e108e3d  src/optimization/lm.py\n8058ef12032fbb6236fd61cbae2d624a7a60706e03f65b07e1888773803d32d4  src/optimization/param_map.py\n8dd8fd6d2fbab0eedc422202519d45f55884d79ee23e2675d525330c826bbad2  src/optimization/problem.py\n4e46ee8ee509594b1e104b5be03d1334dc5924b60b88ee1ecf475a124b096960  src/optimization/seeds.py\n2bea58b3056fcbc8f13b9c8b3d0b98431f2c1b7c9a2e32781d670d55c1fc1c70  src/optimization/tail_constraints.py\nc7df63cb2706fdbee74230276681160a7a5ac1414827da7bc4a940032f3f2dfb  src/optimization/transfer.py\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  src/pressure/__init__.py\n83d916071ca66ca7b4b607592e0ec72d3638f2d8ce69c6cd612a56d2d1409455  src/pressure/exact_matmul.py\n8aefe0f3a5f4a90755dff84db39cdaa742de4d1c6da4d82e4183cb21ce9681ac  src/pressure/poisson_sh.py\n688f074901195a08d5d7a232edb334fe8853da189ed68031021b0359bee938f4  src/pressure/ray_integral.py\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  src/validation/__init__.py\n9405874414ba506ce1ee6d1b9b5f705a567f1a4fb16bc5e1357f8ed11efe7c67  src/validation/core_resolution.py\n699fab009ed5d3a1972b4b0c9eb138bcd4c6d654bcf5638ade167b1b186af799  src/validation/critical_points.py\ne89b640633b47a81325efde6a1839826dbb6ddea5dbe6ec07fefe4869e951a7f  src/validation/diagnostics.py\n6c4a4ced1bd105b82593b080cf4cd742ba1bfc1fc8c3608d075e221070959bc4  src/validation/global_balances.py\n7fe534de82b63b1fb10ddf858a87fa409a1a9b94370d0e6b507b39f62bbf3c1b  src/validation/holdout.py\n9bdedff430c01ae2111d99265682422e708a8433f4c5be80cede8576b762e604  src/validation/orbit_averages.py\nc1b1b6bd4c2b30fdfb529bcee5f39d9abb454a5f77b13ba1c85cd72cd9c0553a  src/validation/orbit_checks.py\n3dd8e6cbf38fd4486abc696b4894481e230b7001e94f510963d274c59cc61a87  src/validation/origin_taylor.py\n83c09496487ea8b73439d6489e157c068162c10f4776cd6c235bb05eb6360e08  src/validation/residual_max.py\ne22ed3abb6f8c1e46af42996d92ff42c2d15321dcb97cfd03d96874ce0fe1761  src/validation/spec_diagnostics.py\n25f6fc865e6e607b24ed30062f46cd128286f70295d4538146ef306644cb2c3c  src/validation/strength.py\nf5006253a056e1c6e5187c46a4f7665636a2c5ea3c5516faffc665cd92c234bd  src/validation/viscous.py\n72d60eb1b71342b551c3154b9ac04287a8e992c55db74a71737cddebe8a537cd  validation/dd_chain.py\nd238f584a960b662f07eda94208368a77ff20b8e9bee1133835b3ef754dbfb61  validation/dd_elementary.py\n93949e34918783859915e3ed5e9443c4d60509d3bacf50cd3d86e7e22994e208  validation/dd_pressure.py\n70ae6227e7f9f4f1cd80ffaacd2e5cd97207c65632fa3b63e33fe71d7e84bd8d  validation/dd_tables.py\n26f54476e947177e305b4fb1038b7afaa66c4e88568e9b1b2a2cc70cb64ee99f  validation/g1_coverage_check.py\ne8ea779cf9a84710524ef620cc5e8d28c9fea42ccf1b9665d0b85ab8fc9e575e  validation/g1_step_addon.py\na38e4b83bae0b6eb9389e1d42a2a2f66c0b3b136bd893d63b2b2ee6d4740ebaf  validation/g24_complete.py\n729f11b5ae110defb19035465c4df7cf8a98c8e8d69c35e2ab7435ca8f4cd1f2  validation/g3_addon.py\n27f88f5edcb278a571da62860bdc91f41d4b4d06d7b6e9b337d1e339d86caa19  validation/g3_direction_capture.py\ndef8cadf73940eb8f728af90989ef956254ccbb87d2d94fa180c7c9e46cf8481  validation/g5c_allm_capture.py\n15882759c83d7aea18eeb3f9616d4045b8125226bf8882d0bda5b4e4b54d2c7d  validation/g8_controls.py\n5f4079926f1c757b66da88db608ff5ed4ee301dd0e12443d554d2f88d6115a07  validation/gates.py\nba5d9e0868543aaedf16cc56ae5889b15717140a39772c0d2d3723fd9f613e83  validation/gauge_row_dd.py\nf99decc039e4a4a43d336ad0a4b8d361a30f884144c89cad889a7da787c6eb70  validation/gauge_row_diag.py\n74b4dcca7eb88642e0a7e42793aae4ad70a4ae111906d5e209afeb30860d90bd  validation/jac_cost.py\nb68dc6b077504cc1c06af027d5dc790b203cf501e7f618caf23150b07c41df8b  validation/jc_eval_state.py\n769be1f45f8d23c4e8cdb449d3d7f2cf247b6ea799f13f078a3cb6d8c33b625c  validation/l_eval.py\n6b3fb78864d5f6ed5e681e1cfe7c4269d3bd42f3c1e73c12e838528ebfa5c6c6  validation/l_power.py\n1d93ecc04f6948cd26441ed70a461afc977ee04b5089acae20ff762c21e6a989  validation/l_screen.py\n50300f27c189b65c0d0722419b8be4e466ca7e4199d3977ac966b5f45d4cc792  validation/l_trig_qual.py\n5acf7750f31954827a987dd9a5146db042f981f17a2086a833868524ecc9296c  validation/segment_report.py\n525e451e63a68e9bb478ff2549ca7b5b9cde8288d8c077356048dec96792329c  validation/dd_chain_check_S01_shift_a_optimizer_z_c.json\n851cec7e00e94cd04c9bd9b391a8a571a3e174f56e7cc477192cea365e412773  validation/dd_chain_check_S01_shift_a_physical_c_l.json\na90a0d7fe2d4b65a059fa1c537a044571b4eae1ee4c767c9aec37eb66bf03d79  validation/dd_chain_check_S01_shift_a_physical_omega.json\nd1cfb339cb031391450e1e96c10a0afdccf6a5e52add1f709313f18ffaeabaf4  validation/dd_chain_check_S05_shift_c_optimizer_z_c.json\n5f5e700ab6be88b46d39ad95839081c5d1db1029c4ba20aa5007fcbdc92b984c  validation/dd_chain_check_S05_shift_c_physical_c_l.json\ndcebd1bae8f91836c3bb18f46a8fada0e3696d1a066145e32ed7a9d3cfa97754  validation/gates_gpu_v1_S01_own.json\n883e0406203a9f8df808d1b5c64122f48364bd7031ad4eb4d129e5d06f906196  validation/gates_gpu_v1_S01_own_G1coef_v5.json\n7cd79d45255c81f6cd12bab6c4f79ca09995305976de6cb26722a051b8a925fd  validation/gates_gpu_v1_S01_own_G1coef_v5_coverage.json\n8aeacd3134fc2971bc33ef81c60f95db54db90fef776bc6cfc98223465532bfa  validation/gates_gpu_v1_S01_own_G1coef_v5_coverage_label.json\n933fe14eb450dc19c94fcc1933188a496a200deaa7814f91b79005bdee52a78f  validation/gates_gpu_v1_S01_own_G1coef_v5_label.json\nefe208a9952baa2da81291071adc3e0fd252b2555baefcab1d45de5cfaaedfcc  validation/gates_gpu_v1_S01_own_G1v4.json\n423e82821a4db012811ee9740c9375fc55667fc741551c7bd3dcc1b1a691422c  validation/gates_gpu_v1_S01_own_G1v4_coverage.json\n8003ce85501a2302ac11a043dd9111af4e92270ba25a80c22fef4c4bc9163012  validation/gates_gpu_v1_S01_own_G1v4_coverage_label.json\nc5394f9726d16c9ea986907f1bc0093cd8325c0d3750f070cc93fcb9a2f82cbd  validation/gates_gpu_v1_S01_own_G1v4_label.json\nade208bafb47295f5efb2cc2c780722edcdb76af392891b78ba829d1a82e07d4  validation/gates_gpu_v1_S01_own_coverage.json\nf5761b644500893aad69e3824b1e418eafce72576a8aa82d97b9a08136c232ca  validation/gates_gpu_v1_S01_own_coverage_label.json\naafbe5261f172bec61f199cdbb1fe7c5782134acab5d2d5ea628af68322eb954  validation/gates_gpu_v1_S01_own_label.json\ncb6da0cdf49cf5e3dd891da301cbb5504eeadadcf1e0961a1504224d4c36b664  validation/gates_gpu_v1_S01_shift_a.json\n6a347fc4072c93dbb1c9c8cfacc50e57ca8873616e339a302b26737ebe1ce60c  validation/gates_gpu_v1_S01_shift_a_coverage.json\nde03117d60a1429b87c8d5f09b1cea9d0f218d8e2ae328179b9b0929ff78f216  validation/gates_gpu_v1_S01_shift_a_coverage_v11.json\ncbccbdf797c8fff9cd16f414af5b30492091cfdea3871275ad3960329a117d3d  validation/gates_gpu_v1_S05_own.json\nf765b81af2b868b2154669ad89e7fbf820c38ad04552ae38eb7459e72a223d8c  validation/gates_gpu_v1_S05_own_G1coef_v5.json\na812c071b595514d91c9018efd2361fea1197596ef1ecbd00b8b0ce5feaa0c80  validation/gates_gpu_v1_S05_own_G1coef_v5_coverage.json\nd809d84dd87e3afe4a8cb35f63d9e35c2928b62d124828f4ff6b6415a389b9b9  validation/gates_gpu_v1_S05_own_G1coef_v5_coverage_label.json\n0daa4ab54b998335dcfdc199827230caa9c9f2f5d54732f84ed789027e1ae999  validation/gates_gpu_v1_S05_own_G1coef_v5_label.json\na526ce4f974d394835609c3ea78e26cd5476a74530811b4603906980ce3c78cd  validation/gates_gpu_v1_S05_own_coverage.json\n323d466f7b50f79cda5088bf6a7fb64891ea05c00651587275c17d6f6789b407  validation/gates_gpu_v1_S05_own_coverage_label.json\n2d43e16e3e6b5801bb1615bd8a8ec88e712124bdd970a9d56f002b73ecff5a46  validation/gates_gpu_v1_S05_own_label.json\n2a6ef712df9cd181e85fa8914a3ee5e548ab92e1733db5600931a0ccb1a1f905  validation/gates_gpu_v1_S05_own_oldharness_partial.json\nef064b6ef5b1799dd18a363d83e1aaabd808f6655d2e1d5a7d3bd32ae46104a8  validation/gates_gpu_v1_S05_own_oldharness_partial_label.json\nf6c693cd536a601c30d0a670f7346778cbc45c04d00d5cba934f6f5c6f093fcc  validation/gates_gpu_v1_S05_shift_c.json\n439eb55f9eac893c552ce6095508be2aa793edee11a31987d20ae1ade33c332e  validation/gates_gpu_v1_S05_shift_c_coverage.json\n439eb55f9eac893c552ce6095508be2aa793edee11a31987d20ae1ade33c332e  validation/gates_gpu_v1_S05_shift_c_coverage_v11.json\n2d890dd8df84c062bd0cf4815190d4abbb51bb4f52f402b96ee35086245a41be  validation/gates_gpu_v1_S09_own.json\n3af5024e30c64a4908a254d02fb5217c4063a33355b0d511da7da35a6c69804f  validation/gates_gpu_v1_S09_own_G1coef_v5.json\nc54992edffa98b8ceb9ec15455334d9915743a58fc6e1ed771500a8c7421a84c  validation/gates_gpu_v1_S09_own_G1coef_v5_coverage.json\n801419b95e25b1a68dbe6ba78e0053d6a3f5b66b9fd568b17ad021a92869d70a  validation/gates_gpu_v1_S09_own_G1coef_v5_coverage_label.json\n584dfadd234d36038bddef1b0db725239dda8cde9fdbfcd0be69400112fa8634  validation/gates_gpu_v1_S09_own_G1coef_v5_label.json\n8cb8c5402e2491e5bdf9992dabb3b2f5c1da9a06b307066ef1d18980f216243b  validation/gates_gpu_v1_S09_own_G1v4.json\n356b7747b5e774b9b448b8bbb235048e58a9ca04e59ab3cd926bb1df76fd53a2  validation/gates_gpu_v1_S09_own_G1v4_coverage.json\nc7e8c904e838e59711abb715efbf0a6f30477023ba650bc01ad783309d591071  validation/gates_gpu_v1_S09_own_G1v4_coverage_label.json\ne3e37e9557e09de0a81982500afcd3eeabb64f9ee38671542f52362e6614b860  validation/gates_gpu_v1_S09_own_G1v4_label.json\na2d3298aaae1d64c8d0f23d62103023ff08a5532d12175e9a850ad4c8b8e099a  validation/gates_gpu_v1_S09_own_coverage.json\naa95a37d1477d24b4e493e1b5d80858d9d395fc6f75cf153950f8320fcb47b8b  validation/gates_gpu_v1_S09_own_coverage_label.json\nad7f9cc5e218caea4d3f2171ee4ed213e54e51f3f00ac8d12cb3c7b310cb74b4  validation/gates_gpu_v1_S09_own_label.json\n465e94fd5a8fe6c5a77d9b99208bdacae224cc9425079815745c8ca026e99354  validation/gates_gpu_v1_S11_own.json\n45e22efeac977b1424767a852832862cc4d13226c9e9b687826cacf32f50dc7f  validation/gates_gpu_v1_S11_own_coverage.json\nd4f4ad7ef0c3bce39ea6f8e03a8be035db07ea96687dfa2657f024ce37a02f5a  validation/gates_gpu_v1_S20_own.json\nf1ca95990b646e873c113cfaffe9d0bff2b7a1430eed74f4767fc74d4c570823  validation/gates_gpu_v1_S20_own_coverage.json\n5aa5d466455d0e2715cfeafbac192a3168f7b9ad3ea531ba7191904318acb3ca  validation/gates_gpu_v1_manu_a.json\n4ec1730326e26fee1b12098ce614840e03b5bb9cd675efdb98ff46800d20998a  validation/gates_gpu_v1_manu_a_coverage.json\nc5b163a8ae868d9e4ff6491f06c16318fa8c9d91f879af882215ff546f76c216  validation/gates_gpu_v1_manu_a_coverage.v12_pre_k_addon_superseded.json\n9055342097ee08b5186409364257b6fa09c27581c2dd31542c0ee4d8b495f782  validation/gates_gpu_v1_manu_allm_c.json\nc5973fdb9e1aa1cd8188dca313fd57ad09cc70e8350dfb818c007a6920fc954f  validation/gates_gpu_v1_manu_allm_c_coverage.json\nca24007bdcf919778d9bf65e992fb7d5d5f3d3a084db55cc2e27adb72f7aa963  validation/gates_gpu_v1_manu_allm_c_coverage.v12_pre_k_addon_superseded.json\nb0a5ab11f3c7e0f416fd6fc734970e039d63d62a80c7192f20aca47bc2654411  validation/gates_gpu_v1_manu_large_omega.json\nfcfddae306cb1511db38d4154bee01599a77151824123a85eb0ce63271ede469  validation/gates_gpu_v1_manu_large_omega_G1coef_v5.json\n2c28edfb62beb1d5e3ad80b43e34f35eb3ea50b9c258d4c17296391d07c30af5  validation/gates_gpu_v1_manu_large_omega_G1coef_v5_coverage.json\n2a290b137b23d2aeef6eb1881b934d318ad0ce2428bf576dd1c2e153c6515edc  validation/gates_gpu_v1_manu_large_omega_G1coef_v5_coverage_label.json\nf265adc600840685fa3ee746f1cf676cd768dcca5aa56bd98ac36720bf87ea8c  validation/gates_gpu_v1_manu_large_omega_G1coef_v5_label.json\naa02f8a1ffcc02a9ee9f4f4181f0702260a1764e012e9c8f565c5766c685a420  validation/gates_gpu_v1_manu_large_omega_OOM_partial.json\nb57737ea17843fc2950c08edb49825bd007993aa2147c51ea137eebeeaef3472  validation/gates_gpu_v1_manu_large_omega_OOM_partial_label.json\n1d9c077be9891299ee4efa73e65434bf0907eb2334601759c4922b0f7d3da64f  validation/gates_gpu_v1_manu_large_omega_coverage.json\n3b8947e35cfc8bf6250eec362a3e72c03999812eedfa331d28becb749baa17cf  validation/gates_gpu_v1_manu_large_omega_coverage_label.json\n4e3536e9172ef1ee9691698120dfe1b1d38d333aa20722cb61ca2956dd891428  validation/gates_gpu_v1_manu_large_omega_label.json\n251229463e015a531fa32139fab96c67580b918bc8be57b929cd871902d4d21d  validation/gates_gpu_v1_manu_near_edge.json\n629779a2127f37b4fdb7c6de6f1fb14b425a7a3934a784d1b358aeefa2b10f72  validation/gates_gpu_v1_manu_near_edge_coverage.json\nfc209bcc0874166d50c9dce9c76bb1743c82d2d0a08c17d5bd3ddbc11c79ef35  validation/gates_gpu_v1_manu_small_omega.json\n37a018e74e6631b4411e7e6081c66b6e1a0377c7cbf22726279b2563fe0f18a7  validation/gates_gpu_v1_manu_small_omega_coverage.json\naf5056e50ff501cdfafd6f4e900ee19229d29faf0bfd4ae3592b124ca709f196  validation/gates_gpu_v1_manu_small_omega_coverage_v11.json\nc3d7ca88ab146b3a6f239c22d2a45a384402c61c1fd2c117ae0e17ecf6ae9489  validation/l_scope.json\n",
+ "seconds": 113.47274327278137,
+ "ts": "2026-10-29T15:43:22Z"
+}

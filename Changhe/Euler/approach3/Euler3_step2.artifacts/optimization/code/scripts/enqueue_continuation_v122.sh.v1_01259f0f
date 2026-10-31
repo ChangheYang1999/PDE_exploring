@@ -1,0 +1,26 @@
+#!/bin/bash
+# FREE continuation of a provisional-release pair member under SPEC v1.22 3.6 (n) (7) (lead 14:44:24Z item 2 (b), 14:52:14Z item 4, 14:54:54Z item 2): segment 3 of the
+# P1 or P2 FREE lineage from its segment-2 end state through enqueue_segment2.sh (worker resume path; max_iter = end iteration + 240; 7200 s), then the configuration
+# additions of the lead (before exposure, so no launched configuration is edited): linearization_complete true (a J_c record at every segment end, J_c time recorded),
+# spec_version v1.22 (sha256 b02b566a17b8901104e76ca09657351ca043ab1f3c2a2d30ccaa879ada9aefd3), release_battery, record_label 'pre-verifier; provisional-release
+# continuation, post-result order rule 3.6 (n)'. The tag must NOT match the governor's pair regex ^p\d+ (a lone 'p1_s3' member would wait for a partner forever), so the
+# tags are cont_p1_s3_S01 and cont_p2_s3_S09. The job is then moved to queue/staged (unplaced; the governor grants it on its exclusive target GPU when fully free).
+# Usage: bash scripts/enqueue_continuation_v122.sh <segment-2 run dir> <tag> <target gpu> <exclusive 0|1>
+set -u; cd "$(dirname "$0")/.."; PY=python3; export CUDA_VISIBLE_DEVICES=
+RUN2=$1; TAG=$2; GPU=$3; EXCL=$4
+case "$TAG" in p[0-9]*) echo "REFUSED: tag $TAG matches the governor's pair regex"; exit 2;; esac
+bash scripts/enqueue_segment2.sh "$RUN2" "$TAG" "$GPU" "$EXCL" 240 7200 || exit 1
+F=$(ls queue/pending/${TAG}_*.json | head -1); [ -f "$F" ] || { echo "no pending file for $TAG"; exit 1; }
+$PY - "$F" <<'PYEOF'
+import json, sys, os, shutil, hashlib
+p = sys.argv[1]; j = json.load(open(p)); c = j["config"]
+c["linearization_complete"] = True
+c["spec_version"] = "v1.22"; c["spec_sha256"] = "b02b566a17b8901104e76ca09657351ca043ab1f3c2a2d30ccaa879ada9aefd3"; c["release_battery"] = "GPU (v1.13 to v1.22); provisional release 3.4 (b)"
+c["record_label"] = "pre-verifier; provisional-release continuation, post-result order rule 3.6 (n)"
+c["g1_label"] = (c.get("g1_label") or "G1 under post-result rules 3.6 (j), (k)") + "; provisional-release continuation, post-result order rule 3.6 (n)"
+j["label"] = "FREE"; j["objective"] = "O1"; j["placement"] = "governor"; j["exclusive"] = None; j["gpus_allowed"] = None
+j["note"] = (j.get("note") or "") + "; SPEC v1.22 3.6 (n) (7) FREE continuation (segment 3) under the provisional release; not a pair member (tag outside the pair regex); linearization_complete true; labels pre-verifier and 'provisional-release continuation, post-result order rule 3.6 (n)'"
+json.dump(j, open(p, "w"), indent=1)
+dst = p.replace("/pending/", "/staged/"); shutil.move(p, dst)
+print("staged", dst, "job", j["job_id"], "max_iter", c["max_iter"], "time", c["time_limit_per_start"], "target", j.get("target"), "config_sha256", hashlib.sha256(json.dumps(c, sort_keys=True).encode()).hexdigest()[:16])
+PYEOF

@@ -1,0 +1,9 @@
+# Origin ratio and cohort application plan
+
+Registered before the new ratio implementation and selected-state application. Use the already qualified exact general-mode origin reader without changing it. Check rational interval division for positive and negative denominators, numerator intervals of both signs and crossing zero, and reject every zero-containing denominator. Check the cancellation formula against exact manufactured algebra and the existing even-mode origin routine. Check outward decimal bounds using rational comparisons.
+
+For each actual input, bind its complete exchange manifest and immutable saved checkpoint, including exact saved parameters and source state. Run the existing general reader, retain its complete rational record, then report the quotient enclosure. In the even-mode class also compute the proved cancelled formula and compare the two enclosures. Independently compare U, DU, Omega, DOmega and R_Omega at zero with the Cartesian field route, retaining the existing empirical relative tolerance 2e-12 and floor 1e-30. The exact interval result is not derived from this floating-point comparison.
+
+Development selection: the raw CURRENT endpoints P1 segment4, P2 segment4, F1 medium1 and F2 medium1 already frozen for independent holdouts. Execute after the matched P3 holdouts. This request is from lead 2026-10-29T22:21:01Z. It creates no Phase IV evidence.
+
+Final selection: the same application can run only on a genuine frozen Phase IV cohort whose binding includes this proof, plan, application, ratio helper, qualification result, exact readers and prerequisites before the final entropy draw. Use the qualified Phase IV inspector; reject test cohorts and changed bindings. The application neither chooses states nor redraws entropy. No final cohort has been selected here.

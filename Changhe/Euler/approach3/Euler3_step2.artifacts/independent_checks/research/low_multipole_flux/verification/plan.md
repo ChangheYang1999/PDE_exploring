@@ -1,0 +1,3 @@
+# Prospective implementation checks
+
+No production change has been made. First review the proof independently. Test the boundary formula against direct radial source integrals on a smooth manufactured divergence-free field with known pressure. Then test saved full fields with increased angular and radial quadrature, retaining both versions of the low moments. Check the pressure, its parameter columns, all affected residual blocks and the whole objective on every registered start before any adoption. The boundary route is a different quadrature of the same continuous pressure, so agreement is not presumed to satisfy the existing discrete invariance thresholds.

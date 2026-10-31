@@ -1,0 +1,3 @@
+# In-memory archive reconstruction
+
+Registered 2026-10-29T13:43:25.081324+00:00, before the first successful transfer. The main and pressure NPZ records are preserved in the documented cold-storage format. The reuse audit first binds each receipt, manifest and encoded member, then uses the already qualified cold_npz_v2.reconstruct into a BytesIO stream and requires the original NPZ SHA256. It performs no disk restoration. The reconstructed bytes are passed to the same exact-node/mode transfer described in ALLM_CAPTURE_REUSE_plan_v1.md. Failure of any reconstruction hash stops the audit. Captured source v1 is the preserved g5c_allm_capture.py.v1_a6ef4e44; the active producer driver is now v2. These are adapter repairs only, with unchanged scientific thresholds.

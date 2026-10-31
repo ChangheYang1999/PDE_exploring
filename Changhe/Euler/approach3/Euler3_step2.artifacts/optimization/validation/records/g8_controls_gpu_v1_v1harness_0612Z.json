@@ -1,0 +1,351 @@
+{
+ "ts": "2026-10-29T06:12:50Z",
+ "controls": {
+  "S01_own": {
+   "i_kernel_tables_frozen": {
+    "c_l": {
+     "min_error_all": 1.0007352860158204e-08,
+     "per_group_min": {
+      "all": 1.0007352860158204e-08,
+      "near_origin(r<=0.1R0)": 0.00017650336877796422,
+      "core_intermediate": 2.6318603213352187e-05,
+      "far(r>256R0)": 0.007039694634868493,
+      "closure": 4.115077919412961e-11,
+      "gauge": 4.685544147879942e-11,
+      "far_anchor_block": 0.14695708317812098
+     },
+     "omitted_part_rel_norm": 1.0007235079986486e-08,
+     "fails_G1": true,
+     "expected": "fail",
+     "note": "the exact Green operator is parameter independent; the table dependence is a discretization-level effect"
+    },
+    "omega": {
+     "min_error_all": 4.260642219611148e-07,
+     "per_group_min": {
+      "all": 4.260642219611148e-07,
+      "near_origin(r<=0.1R0)": 2.451508295775478e-07,
+      "core_intermediate": 8.050345370804502e-05,
+      "far(r>256R0)": 0.003993922149733504,
+      "closure": 0.0,
+      "gauge": 1.1567817924134536e-10,
+      "far_anchor_block": 0.029637350098975643
+     },
+     "omitted_part_rel_norm": 4.2606413380624937e-07,
+     "fails_G1": true,
+     "expected": "fail",
+     "note": "the exact Green operator is parameter independent; the table dependence is a discretization-level effect"
+    }
+   },
+   "ii_dE_dp_omitted": {
+    "c_l": {
+     "min_error_all": 3.3884667832781234e-06,
+     "per_group_min": {
+      "all": 3.3884667832781234e-06,
+      "near_origin(r<=0.1R0)": 0.002964928644088193,
+      "core_intermediate": 0.00012247706151270607,
+      "far(r>256R0)": 0.0274280231878693,
+      "closure": 4.115077919412961e-11,
+      "gauge": 3.388174904181809e-06,
+      "far_anchor_block": 0.08861484565038487
+     },
+     "omitted_part_rel_norm": 3.4108690534510087e-06,
+     "fails_G1": true,
+     "expected": "fail",
+     "note": "eliminated top Chebyshev coefficients depend on p = (alpha + l)/2 and q = m kappa/2"
+    },
+    "omega": {
+     "min_error_all": 1.7908995262128537e-06,
+     "per_group_min": {
+      "all": 1.7908995262128537e-06,
+      "near_origin(r<=0.1R0)": 6.329348570153385e-05,
+      "core_intermediate": 0.00026995966317964077,
+      "far(r>256R0)": 0.02634219216621169,
+      "closure": 0.0,
+      "gauge": 8.951023497495765e-10,
+      "far_anchor_block": 0.07420467572494764
+     },
+     "omitted_part_rel_norm": 1.7908991833999183e-06,
+     "fails_G1": true,
+     "expected": "fail",
+     "note": "eliminated top Chebyshev coefficients depend on p = (alpha + l)/2 and q = m kappa/2"
+    }
+   },
+   "iii_far_rows_param_frozen": {
+    "c_l": {
+     "min_error_all": 1.8492107656270648e-09,
+     "per_group_min": {
+      "all": 1.8492107656270648e-09,
+      "near_origin(r<=0.1R0)": 2.920259173489473e-10,
+      "core_intermediate": 2.555127715810407e-10,
+      "far(r>256R0)": 0.002130265272288021,
+      "closure": 4.115077919412961e-11,
+      "gauge": 4.685544147879942e-11,
+      "far_anchor_block": 1.0443939743029294
+     },
+     "omitted_part_rel_norm": 1.8486170499308827e-09,
+     "fails_G1": true,
+     "expected": "fail",
+     "note": "3 far anchor nodes (momentum rows with pressure) at 4096, 16384, 65536 R0"
+    },
+    "omega": {
+     "min_error_all": 1.1236198211127212e-07,
+     "per_group_min": {
+      "all": 1.1236198211127212e-07,
+      "near_origin(r<=0.1R0)": 1.671862413668114e-10,
+      "core_intermediate": 5.887523429878319e-10,
+      "far(r>256R0)": 0.002382047403107974,
+      "closure": 0.0,
+      "gauge": 1.1567817924134536e-10,
+      "far_anchor_block": 1.0124007156394
+     },
+     "omitted_part_rel_norm": 1.1236164346753243e-07,
+     "fails_G1": true,
+     "expected": "fail",
+     "note": "3 far anchor nodes (momentum rows with pressure) at 4096, 16384, 65536 R0"
+    }
+   },
+   "iv_gauge_rows_param_frozen": {
+    "c_l": {
+     "min_error_all": 0.9999965441611227,
+     "per_group_min": {
+      "all": 0.9999965441611227,
+      "near_origin(r<=0.1R0)": 2.920259173489473e-10,
+      "core_intermediate": 2.555127715810407e-10,
+      "far(r>256R0)": 7.596356862857952e-08,
+      "closure": 4.115077919412961e-11,
+      "gauge": 0.9999965894208025,
+      "far_anchor_block": 8.090281427812891e-07
+     },
+     "omitted_part_rel_norm": 0.9999965441611981,
+     "fails_G1": true,
+     "expected": "fail",
+     "note": "F-gauge norm contains alpha and m omega/c_l"
+    },
+    "omega": {
+     "min_error_all": 0.9999887066222749,
+     "per_group_min": {
+      "all": 0.9999887066222749,
+      "near_origin(r<=0.1R0)": 1.671862413668114e-10,
+      "core_intermediate": 5.887523429878319e-10,
+      "far(r>256R0)": 8.785965421253268e-09,
+      "closure": 0.0,
+      "gauge": 1.000000001179395,
+      "far_anchor_block": 2.560725857497341e-07
+     },
+     "omitted_part_rel_norm": 0.9999887066222936,
+     "fails_G1": true,
+     "expected": "fail",
+     "note": "F-gauge norm contains alpha and m omega/c_l"
+    }
+   },
+   "v_pressure_term_omitted": {
+    "c_l": {
+     "min_error_all": 4.685554877141116e-11,
+     "per_group_min": {
+      "all": 4.685554877141116e-11,
+      "near_origin(r<=0.1R0)": 2.920259173489473e-10,
+      "core_intermediate": 2.555127715810407e-10,
+      "far(r>256R0)": 7.596356862857952e-08,
+      "closure": 4.115077919412961e-11,
+      "gauge": 4.685544147879942e-11,
+      "far_anchor_block": 8.090281427812891e-07
+     },
+     "omitted_part_rel_norm": 0.0,
+     "fails_G1": false,
+     "expected": "fail",
+     "note": "grad P_p = full-space pressure of 2 tr(DU DU_p) plus the table dependence"
+    },
+    "omega": {
+     "min_error_all": 2.845468955165965e-10,
+     "per_group_min": {
+      "all": 2.845468955165965e-10,
+      "near_origin(r<=0.1R0)": 1.671862413668114e-10,
+      "core_intermediate": 5.887523429878319e-10,
+      "far(r>256R0)": 8.785965421253268e-09,
+      "closure": 0.0,
+      "gauge": 1.1567817924134536e-10,
+      "far_anchor_block": 2.560725857497341e-07
+     },
+     "omitted_part_rel_norm": 0.0,
+     "fails_G1": false,
+     "expected": "fail",
+     "note": "grad P_p = full-space pressure of 2 tr(DU DU_p) plus the table dependence"
+    }
+   }
+  },
+  "manu_a": {
+   "i_kernel_tables_frozen": {
+    "c_l": {
+     "min_error_all": 1.0101328891864809e-08,
+     "per_group_min": {
+      "all": 1.0101328891864809e-08,
+      "near_origin(r<=0.1R0)": 0.00010567876261087704,
+      "core_intermediate": 2.4509620079646814e-05,
+      "far(r>256R0)": 5.794375294562295e-05,
+      "closure": 1.4310462838178104e-10,
+      "gauge": 2.0368354095459825e-11,
+      "far_anchor_block": 0.002535118097782113
+     },
+     "omitted_part_rel_norm": 1.010149088428287e-08,
+     "fails_G1": true,
+     "expected": "fail",
+     "note": "the exact Green operator is parameter independent; the table dependence is a discretization-level effect"
+    },
+    "omega": {
+     "min_error_all": 5.618477354215701e-08,
+     "per_group_min": {
+      "all": 5.618477354215701e-08,
+      "near_origin(r<=0.1R0)": 2.4285226417521826e-06,
+      "core_intermediate": 1.0484046699068869e-05,
+      "far(r>256R0)": 2.0830135569360373e-05,
+      "closure": 0.0,
+      "gauge": 4.257082592214345e-11,
+      "far_anchor_block": 0.0005667538375305683
+     },
+     "omitted_part_rel_norm": 5.618471395787082e-08,
+     "fails_G1": false,
+     "expected": "fail",
+     "note": "the exact Green operator is parameter independent; the table dependence is a discretization-level effect"
+    }
+   },
+   "ii_dE_dp_omitted": {
+    "c_l": {
+     "min_error_all": 3.5481293186810456e-06,
+     "per_group_min": {
+      "all": 3.5481293186810456e-06,
+      "near_origin(r<=0.1R0)": 0.0012042095300314793,
+      "core_intermediate": 0.00012605414026690872,
+      "far(r>256R0)": 0.000343020714505933,
+      "closure": 1.4310462838178104e-10,
+      "gauge": 3.5477229835257097e-06,
+      "far_anchor_block": 0.00441081816311452
+     },
+     "omitted_part_rel_norm": 3.5687194883949933e-06,
+     "fails_G1": true,
+     "expected": "fail",
+     "note": "eliminated top Chebyshev coefficients depend on p = (alpha + l)/2 and q = m kappa/2"
+    },
+    "omega": {
+     "min_error_all": 3.883373256623713e-07,
+     "per_group_min": {
+      "all": 3.883373256623713e-07,
+      "near_origin(r<=0.1R0)": 0.0038383029122677627,
+      "core_intermediate": 6.904941294543739e-05,
+      "far(r>256R0)": 0.00017338047221151476,
+      "closure": 0.0,
+      "gauge": 2.0138241909285902e-10,
+      "far_anchor_block": 0.002212339321570502
+     },
+     "omitted_part_rel_norm": 3.883372735226303e-07,
+     "fails_G1": true,
+     "expected": "fail",
+     "note": "eliminated top Chebyshev coefficients depend on p = (alpha + l)/2 and q = m kappa/2"
+    }
+   },
+   "iii_far_rows_param_frozen": {
+    "c_l": {
+     "min_error_all": 4.406823604477296e-08,
+     "per_group_min": {
+      "all": 4.406823604477296e-08,
+      "near_origin(r<=0.1R0)": 1.7833688865227716e-10,
+      "core_intermediate": 6.964927181289257e-10,
+      "far(r>256R0)": 0.0005490328890442489,
+      "closure": 1.4310462838178104e-10,
+      "gauge": 2.0368354095459825e-11,
+      "far_anchor_block": 0.9977633295536478
+     },
+     "omitted_part_rel_norm": 4.406823096099749e-08,
+     "fails_G1": true,
+     "expected": "fail",
+     "note": "3 far anchor nodes (momentum rows with pressure) at 4096, 16384, 65536 R0"
+    },
+    "omega": {
+     "min_error_all": 6.139621954005908e-07,
+     "per_group_min": {
+      "all": 6.139621954005908e-07,
+      "near_origin(r<=0.1R0)": 4.1343637024721945e-10,
+      "core_intermediate": 2.870790914590333e-10,
+      "far(r>256R0)": 0.0005539590261891497,
+      "closure": 0.0,
+      "gauge": 4.257082592214345e-11,
+      "far_anchor_block": 1.000641426950008
+     },
+     "omitted_part_rel_norm": 6.139621954749521e-07,
+     "fails_G1": true,
+     "expected": "fail",
+     "note": "3 far anchor nodes (momentum rows with pressure) at 4096, 16384, 65536 R0"
+    }
+   },
+   "iv_gauge_rows_param_frozen": {
+    "c_l": {
+     "min_error_all": 0.9999963617680829,
+     "per_group_min": {
+      "all": 0.9999963617680829,
+      "near_origin(r<=0.1R0)": 1.7833688865227716e-10,
+      "core_intermediate": 6.964927181289257e-10,
+      "far(r>256R0)": 4.63564827038371e-09,
+      "closure": 1.4310462838178104e-10,
+      "gauge": 0.999996431685529,
+      "far_anchor_block": 1.817988541701678e-08
+     },
+     "omitted_part_rel_norm": 0.9999963617681008,
+     "fails_G1": true,
+     "expected": "fail",
+     "note": "F-gauge norm contains alpha and m omega/c_l"
+    },
+    "omega": {
+     "min_error_all": 0.999987450995261,
+     "per_group_min": {
+      "all": 0.999987450995261,
+      "near_origin(r<=0.1R0)": 4.1343637024721945e-10,
+      "core_intermediate": 2.870790914590333e-10,
+      "far(r>256R0)": 1.402195680810911e-10,
+      "closure": 0.0,
+      "gauge": 1.0000000001588116,
+      "far_anchor_block": 6.0564474832422325e-09
+     },
+     "omitted_part_rel_norm": 0.9999874509952638,
+     "fails_G1": true,
+     "expected": "fail",
+     "note": "F-gauge norm contains alpha and m omega/c_l"
+    }
+   },
+   "v_pressure_term_omitted": {
+    "c_l": {
+     "min_error_all": 2.037333902141335e-11,
+     "per_group_min": {
+      "all": 2.037333902141335e-11,
+      "near_origin(r<=0.1R0)": 1.7833688865227716e-10,
+      "core_intermediate": 6.964927181289257e-10,
+      "far(r>256R0)": 4.63564827038371e-09,
+      "closure": 1.4310462838178104e-10,
+      "gauge": 2.0368354095459825e-11,
+      "far_anchor_block": 1.817988541701678e-08
+     },
+     "omitted_part_rel_norm": 0.0,
+     "fails_G1": false,
+     "expected": "fail",
+     "note": "grad P_p = full-space pressure of 2 tr(DU DU_p) plus the table dependence"
+    },
+    "omega": {
+     "min_error_all": 4.279473500641592e-11,
+     "per_group_min": {
+      "all": 4.279473500641592e-11,
+      "near_origin(r<=0.1R0)": 4.1343637024721945e-10,
+      "core_intermediate": 2.870790914590333e-10,
+      "far(r>256R0)": 1.402195680810911e-10,
+      "closure": 0.0,
+      "gauge": 4.257082592214345e-11,
+      "far_anchor_block": 6.0564474832422325e-09
+     },
+     "omitted_part_rel_norm": 0.0,
+     "fails_G1": false,
+     "expected": "fail",
+     "note": "grad P_p = full-space pressure of 2 tr(DU DU_p) plus the table dependence"
+    }
+   }
+  }
+ },
+ "tau": 1e-06,
+ "fail_level": 0.0001
+}

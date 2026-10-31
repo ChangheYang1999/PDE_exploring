@@ -1,0 +1,12 @@
+# Compact holdout storage qualification
+
+ The CPU version7 holdout driver preserves version6 computational statements while changing archival storage and removing the optional source-batch cache.
+
+Method. Source-bound AST comparisons of nine definitions, twelve numerical call sequences and the entire pressure-refinement/metric loop. Serialization controls cover nine array classes including noncontiguous, Fortran-layout, empty, scalar, nonfinite, big-endian, long-double and complex inputs. Verified exact computed C-order byte hashes, input preservation, complete required grid arrays, deterministic sampled witnesses and metadata. Negative controls reject quota overflow before writing, overwrite, object arrays, unknown complete keys, nonlocal paths and zero witness counts. No new Euler field was evaluated.
+
+Result. All87 controls PASS, completed2026-10-29T09:13:37.932144+00:00. Version7 sourceSHA256c91ff671bc2f38fde920c246748f589c3e7bf00a9a54070e32d39a8265cf2dbd and witness helperSHA256f9df782b3afd51aeff869a90fd5025352cab037a53ba71fbef41fee88c63a8c6 are bound to the audit. The qualified driver keeps every grid, weight, shell metric and refinement comparison, plus large-array shapes, hashes and64 deterministic entries per array. It rejects field resume from these witness files. All angular and source cache writes are disabled in this variant. Two earlier qualification failures, an empty-array hash conversion and an auditor AST tuple-target lookup, were repaired with failed code/logs preserved before the successful run.
+
+Verdict. CONFIRMED for serialization controls and the stated unchanged computational source. OPEN for any future optimized-state numerical result. Hashes and samples do not reconstruct unsaved arrays; a complete norm audit requires recomputation from the preserved input coefficients and parameters. Long-double byte hashes bind the representation computed on this platform, with no cross-run byte guarantee. The quota and pressure/holdout precision requirements are unchanged. Future launch plans must bind this qualification and freeze comparison points before evaluation.
+
+Evidence. artifacts/holdout_storage_variant_v3/qualification.json SHA2563497846c113d7214ddee78839b90f3c54f60c7f995f38020a17b3e8a0d2a61a3; source bindings in that file; research/holdout_quadrature/verification/COMPACT_CPU_V7_plan.md. This plan was registered2026-10-29T09:10:18Z before creating the new driver. Existing accepted raw archives remain exactly reconstructible.
+

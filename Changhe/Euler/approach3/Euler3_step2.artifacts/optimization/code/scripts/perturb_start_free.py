@@ -1,0 +1,183 @@
+#!/usr/bin/env python
+"""scripts/perturb_start_free.py v1.1 (2026-10-29T23:0xZ; V503): (1) the coefficient-only achieved size is measured and guarded BEFORE --param-perturb and kept separately (size_achieved_coefficients); the combined field change after the parameter move is reported as size_achieved_combined; (2) the source state's raw and entry-replay O1 rows are required finite as well, computed through the source's own problem and tail maps at its own parameters, with its own far-field norm, also when the parameters change; (3) --size must be finite and positive, --param-perturb finite and non-negative, the physical parameters finite with 0.4 < c_l < 0.5 and omega > 0 before any model is built; reported far-field norms must be finite and positive; the inactive E l = 1 entries and the parameter slots are checked unchanged (bitwise) in the coefficient stage, with the m = 0 coefficients. v1 (0fff26e2a2315b47) kept as perturb_start_free.py.v1_0fff26e2.
+scripts/perturb_start_free.py v1 (2026-10-29T23:0xZ; lead 22:55:42Z item 2 (a) to (f)): offline NON-AXISYMMETRIC coefficient perturbation of a saved FREE or
+fixed start, written as a start file for the worker (keep_coefficients at the file's own parameters). Replaces the worker's F3 path (perturb_nonaxi), which
+evaluates the perturbation field at c_l = omega = 0 for free-parameter models (status/KNOWN_ISSUES.md).
+  (a) direction: Gaussian from the recorded seed (numpy default_rng(seed)), restricted to the coefficients of modes with m != 0 in every block (A, C, B, D, E);
+      the exactly null columns (block E, angular degree l = 1) and the two parameter slots are never touched (set to zero in the direction);
+  (b) no projection onto the kernel of the leading-tail map is applied (option --project-tail is NOT implemented in v1: the record says projection_used false);
+      the m = 0 coefficients are checked unchanged (bitwise) after the perturbation;
+  (c) every field evaluation uses the state's own physical parameters (c_l, omega from the state; the model is built at them);
+  (d) the direction is scaled so that ||U(z + dz) - U(z)|| / ||U(z)|| equals --size in the unweighted training-grid Frobenius norm of the F3 path (U is linear in
+      the coefficients at fixed parameters, so the scale is exact); the achieved size and the per-shell relU on the dyadic shells j = -4..8 are reported
+      (discrete sampling diagnostics over the training-grid samples);
+  (e) --param-perturb EPS (Phase III 7.4 (e) only): after the coefficient perturbation, z_c and z_w are moved by +-EPS with the signs drawn from the same seed
+      (the physical parameters follow the map c_l = 0.4 + 0.1 sigmoid(z_c), omega = exp(z_w)); F3 itself keeps the parameters (default off);
+  (f) entry rows as refit_start_v2.py v2.3: O1 raw and replayed through the worker's fresh-entry path (Problem.phase_align, TailConstraints reduce/expand,
+      ParamMap reduce/expand), each with the gauge-row part separate, for the perturbed and the unperturbed state; the far-field norm; finite-row and
+      all-13-shells guards; usable = false on any failed guard, with the causes listed in the record and in a .UNUSABLE marker.
+Usage: python scripts/perturb_start_free.py <source start .pt> <out .pt> --size 1e-3 --seed 1 [--param-perturb 1e-3] [--device cuda:0]
+Writes <out .pt> (exclusive create; z with the state's parameters, config, free_params true, meta) and <out .pt>.json. The file is an initial condition, not a result."""
+import os, sys, json, time, math, hashlib, argparse
+ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+sys.path.insert(0, ROOT)
+import numpy as np, torch
+torch.set_default_dtype(torch.float64)
+from src.equations.fields import Model
+from src.optimization.tail_constraints import TailConstraints
+from src.optimization.param_map import ParamMap
+sha = lambda p: hashlib.sha256(open(p, "rb").read()).hexdigest()
+now = lambda: time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+DT = torch.float64
+
+
+def build(cfg, c_l, omega, dev):
+    return Model(L=cfg["L"], Nk=cfg["Nk"], m_parity=cfg.get("m_parity", "even"), R0=cfg.get("R0", 1.0), Nr=cfg.get("Nr"), c_l=c_l, omega=omega, free_params=True,
+                 channels=cfg.get("channels"), device=dev, extra_r=cfg.get("far_radii"))
+
+
+def main():
+    ap = argparse.ArgumentParser(); ap.add_argument("source"); ap.add_argument("out"); ap.add_argument("--size", type=float, required=True); ap.add_argument("--seed", type=int, required=True)
+    ap.add_argument("--param-perturb", type=float, default=0.0); ap.add_argument("--device", default="cuda:0")
+    a = ap.parse_args(); t0 = time.time(); dev = a.device
+    if os.path.exists(a.out):
+        raise FileExistsError(a.out)
+    if not (math.isfinite(a.size) and a.size > 0):
+        raise SystemExit(f"REFUSED: --size must be finite and positive ({a.size!r})")
+    if not (math.isfinite(a.param_perturb) and a.param_perturb >= 0):
+        raise SystemExit(f"REFUSED: --param-perturb must be finite and non-negative ({a.param_perturb!r})")
+    log = lambda m: print(time.strftime("%H:%M:%S", time.gmtime()) + " " + m, flush=True)
+    S = torch.load(a.source, map_location="cpu", weights_only=False); cfg = dict(S["config"]); free_s = bool(S.get("free_params", False)); zs = S["z"].to(dev)
+    c_l, omega = (float(zs[-2]), float(zs[-1])) if free_s else (float(cfg["c_l"]), float(cfg["omega"]))
+    if not (math.isfinite(c_l) and math.isfinite(omega) and 0.4 < c_l < 0.5 and omega > 0):
+        raise SystemExit(f"REFUSED: invalid physical parameters of the source ({c_l!r}, {omega!r})")
+    model = build(cfg, c_l, omega, dev); n_coef = model.n_coef
+    z0 = torch.cat([zs[:n_coef], torch.tensor([c_l, omega], dtype=DT, device=dev)])       # the state at its own parameters, free layout
+    pm = ParamMap(free=True); zc0, zw0 = (float(v) for v in pm.reduce(z0)[-2:])
+    log(f"source {a.source} ({sha(a.source)[:16]}): ({c_l!r}, {omega!r}), free {free_s}; n_coef {n_coef}; seed {a.seed}; size {a.size:g}; param perturb {a.param_perturb:g}")
+    # (a) Gaussian direction on m != 0 coefficients of every block; null E l = 1 columns and parameter slots zero
+    rng = np.random.default_rng(a.seed)
+    g = torch.tensor(rng.normal(size=n_coef), dtype=DT, device=dev)
+    dd = model.unpack_all(torch.cat([g, torch.zeros(2, dtype=DT, device=dev)]))
+    m_arr = model.m_arr.to(dev); l_arr = model.l_arr.to(dev)
+    mask_m = (m_arr != 0).to(DT)
+    extra = {}
+    for k in ("B", "D", "E"):
+        if dd[k].numel() > 0:
+            mk = mask_m.clone()
+            if k == "E":
+                mk = mk * (l_arr != 1).to(DT)                                                # the exactly null E l = 1 columns are never touched
+            extra[k] = dd[k] * mk[None, :]
+    dz = model.pack(dd["A"] * mask_m[None, :], dd["C"] * mask_m[None, :], torch.tensor(0.0, dtype=DT, device=dev), torch.tensor(0.0, dtype=DT, device=dev), extra=extra)
+    dz = dz.clone(); dz[-2:] = 0.0
+    n_touched = int((dz[:n_coef] != 0).sum())
+    # (c), (d): fields at the state's own parameters; U linear in the coefficients, so the scale is exact
+    with torch.no_grad():
+        U0 = model.fields_grid(z0, need_vort=False)["U"]; Ud = model.fields_grid(torch.cat([dz[:n_coef], z0[-2:]]), need_vort=False)["U"] - U0 * 0.0
+        # Ud is the field of the direction with the parameters of z0 (the field map is linear in the coefficients at fixed parameters, no constant term)
+        n0 = float(U0.norm()); nd = float(Ud.norm())
+    if not (math.isfinite(n0) and math.isfinite(nd) and nd > 0 and n0 > 0):
+        raise SystemExit(f"REFUSED: non-finite or zero field norms (||U|| {n0}, ||U_dir|| {nd})")
+    scale = a.size * n0 / nd; z1 = z0.clone(); z1[:n_coef] = z0[:n_coef] + scale * dz[:n_coef]
+    # (b) m = 0 coefficients, the inactive E l = 1 entries and the parameter slots unchanged, bitwise (coefficient stage)
+    d0 = model.unpack_all(z0); d1 = model.unpack_all(z1); m0_unchanged = True
+    for k in ("A", "C", "B", "D", "E"):
+        if d0[k].numel() > 0:
+            sel = (m_arr == 0)
+            m0_unchanged = m0_unchanged and bool(torch.equal(d0[k][:, sel], d1[k][:, sel]))
+    e_l1_unchanged = bool(torch.equal(d0["E"][:, l_arr == 1], d1["E"][:, l_arr == 1])) if d0["E"].numel() > 0 else True
+    params_unchanged_coef_stage = bool(torch.equal(z0[-2:], z1[-2:]))
+    with torch.no_grad():
+        U1c = model.fields_grid(z1, need_vort=False)["U"]; achieved_coef = float((U1c - U0).norm() / n0)       # (1) coefficient-only achieved size, before any parameter move
+    size_ok = bool(math.isfinite(achieved_coef) and abs(achieved_coef - a.size) <= 1e-8 * a.size + 1e-12)
+    # (e) optional parameter perturbation (7.4 (e))
+    zc1, zw1 = zc0, zw0; param_signs = None
+    if a.param_perturb > 0:
+        param_signs = [int(v) for v in np.sign(rng.normal(size=2))]; param_signs = [s_ if s_ != 0 else 1 for s_ in param_signs]
+        zc1 = zc0 + param_signs[0] * a.param_perturb; zw1 = zw0 + param_signs[1] * a.param_perturb
+        zo = pm.reduce(z1); zo = zo.clone(); zo[-2] = zc1; zo[-1] = zw1; z1 = pm.expand(zo)
+    c_l1, om1 = float(z1[-2]), float(z1[-1])
+    model1 = build(cfg, c_l1, om1, dev) if (c_l1 != c_l or om1 != omega) else model
+    with torch.no_grad():
+        U1 = model1.fields_grid(z1, need_vort=False)["U"]; achieved = float((U1 - U0).norm() / n0)
+        shells = {}
+        for jj in range(-4, 9):
+            msk = (model.r >= model.R0 * 2.0 ** jj) & (model.r < model.R0 * 2.0 ** (jj + 1))
+            if msk.any():
+                shells[str(jj)] = dict(rel_change=float((U1[:, msk] - U0[:, msk]).norm() / U0[:, msk].norm().clamp_min(1e-300)), n_radii=int(msk.sum()))
+    expected = [str(j) for j in range(-4, 9)]; shells_complete = all(k in shells and shells[k]["n_radii"] > 0 and math.isfinite(shells[k]["rel_change"]) for k in expected)
+    log(f"direction: {n_touched} coefficients touched (m != 0, E l = 1 excluded); scale {scale:.6e}; achieved relU coefficients-only {achieved_coef:.6e} (requested {a.size:g}; size guard {size_ok}), combined after the parameter move {achieved:.6e}; m = 0 unchanged {m0_unchanged}; E l = 1 unchanged {e_l1_unchanged}; parameter slots unchanged in the coefficient stage {params_unchanged_coef_stage}; params ({c_l1!r}, {om1!r})")
+    log("per shell j relU: " + "; ".join(f"{j}: {v['rel_change']:.3e}" for j, v in shells.items()))
+    # (f) entry rows: O1 raw and replayed, gauge part separate, far-field norm
+    from src.optimization.problem import Problem
+    from validation.gates import PROD
+    tcf = TailConstraints(model1); prob = Problem(model1, **PROD)
+    def fnorm(mm, z_):
+        aT_, aS_, c_, o_ = mm.unpack(z_); return math.sqrt(max(float(prob.tail_norm2(aT_, aS_, c_, o_)), 0.0))
+    def entry_replay(z_):
+        za = prob.phase_align(z_); zo = pm.reduce(tcf.reduce(za)); return tcf.expand(pm.expand(zo))
+    def O1_of(z_):
+        prob.pivot = prob.choose_pivot(z_); prob.ensure_geometry(z_); r_, aux_ = prob.objective_at(z_); prob.commit_aux(aux_)
+        g0 = prob.row_blocks()[-1][1]; rg = r_[g0:]
+        return dict(O1=0.5 * float(r_ @ r_), gauge_part=0.5 * float(rg @ rg), n_gauge_rows=int(rg.numel()), O1_without_gauge=0.5 * float(r_[:g0] @ r_[:g0]))
+    O1 = {}
+    for nm, zz in (("perturbed", z1),):
+        try:
+            O1[nm + "_raw"] = O1_of(zz); O1[nm + "_entry_replay"] = O1_of(entry_replay(zz))
+        except Exception as e:
+            O1[nm + "_raw"] = dict(error=repr(e)); O1[nm + "_entry_replay"] = dict(error=repr(e))
+    # (2) the source at ITS parameters through its own problem and tail maps (always; identical objects when the parameters are unchanged)
+    try:
+        prob0 = Problem(model, **PROD) if model1 is not model else prob; tcf0 = TailConstraints(model) if model1 is not model else tcf
+        def O1_src(z_):
+            prob0.pivot = prob0.choose_pivot(z_); prob0.ensure_geometry(z_); r_, aux_ = prob0.objective_at(z_); prob0.commit_aux(aux_); g0 = prob0.row_blocks()[-1][1]
+            return dict(O1=0.5 * float(r_ @ r_), gauge_part=0.5 * float(r_[g0:] @ r_[g0:]), n_gauge_rows=int(r_[g0:].numel()), O1_without_gauge=0.5 * float(r_[:g0] @ r_[:g0]))
+        O1["source_raw"] = O1_src(z0); za0 = prob0.phase_align(z0); O1["source_entry_replay"] = O1_src(tcf0.expand(pm.expand(pm.reduce(tcf0.reduce(za0)))))
+    except Exception as e:
+        O1["source_raw"] = dict(error=repr(e)); O1["source_entry_replay"] = dict(error=repr(e))
+    log("O1 (O1 | gauge part): " + ", ".join(f"{k} {v['O1']:.4e} | {v['gauge_part']:.4e}" if isinstance(v, dict) and 'O1' in v else f"{k} {v}" for k, v in O1.items()))
+    def finite_row(d_):
+        return isinstance(d_, dict) and all(k in d_ and isinstance(d_[k], float) and math.isfinite(d_[k]) for k in ("O1", "gauge_part", "O1_without_gauge"))
+    causes = []
+    for nm_ in ("perturbed_raw", "perturbed_entry_replay", "source_raw", "source_entry_replay"):
+        if not finite_row(O1.get(nm_)):
+            causes.append(f"objective row {nm_} missing or not finite")
+    if not shells_complete:
+        causes.append("not all 13 dyadic shells j = -4..8 have a positive count and a finite relU")
+    if not m0_unchanged:
+        causes.append("an m = 0 coefficient changed")
+    if not e_l1_unchanged:
+        causes.append("an inactive E l = 1 coefficient changed")
+    if not params_unchanged_coef_stage:
+        causes.append("a parameter slot changed in the coefficient stage")
+    if not size_ok:
+        causes.append(f"coefficient-only achieved size {achieved_coef!r} differs from the requested {a.size!r}")
+    if not bool(torch.isfinite(z1).all()):
+        causes.append("non-finite coefficient in the perturbed state")
+    fn1 = fnorm(model1, z1)
+    try:
+        prob_src = Problem(model, **PROD) if model1 is not model else prob
+        aT_, aS_, c_, o_ = model.unpack(z0); fn0 = math.sqrt(max(float(prob_src.tail_norm2(aT_, aS_, c_, o_)), 0.0))
+    except Exception:
+        fn0 = float("nan")
+    for nm_, v_ in (("perturbed", fn1), ("source", fn0)):
+        if not (math.isfinite(v_) and v_ > 0):
+            causes.append(f"far-field norm of the {nm_} state not finite and positive ({v_!r})")
+    usable = not causes
+    log(f"far-field norm perturbed {fn1:.9f} (source {fn0:.9f}); usable {usable}" + ("" if usable else f"; causes {causes}"))
+    cfg1 = dict(cfg); cfg1.update(c_l=c_l1, omega=om1, free_params=True)
+    meta = dict(family="F3_offline_perturbed_start" if a.param_perturb == 0 else "phase3_7_4e_perturbed_start", source=os.path.abspath(a.source), source_sha256=sha(a.source), source_c_l=c_l, source_omega=omega, seed=a.seed, size_requested=a.size, size_achieved_coefficients=achieved_coef, size_guard_ok=size_ok, size_achieved_combined=achieved,
+                scale=scale, n_coefficients_touched=n_touched, direction="Gaussian (numpy default_rng(seed)) on the coefficients of modes with m != 0 in blocks A, C, B, D, E; E l = 1 columns and parameter slots zero", projection_used=False,
+                m0_unchanged_bitwise=m0_unchanged, E_l1_unchanged_bitwise=e_l1_unchanged, parameter_slots_unchanged_coefficient_stage=params_unchanged_coef_stage, relU_by_shell=shells, shells_complete=shells_complete, param_perturb=a.param_perturb, param_signs=param_signs, z_opt_params=dict(before=[zc0, zw0], after=[zc1, zw1]), params_after=dict(c_l=c_l1, omega=om1),
+                O1_at_state=O1, F_norm_perturbed=fn1, F_norm_source=fn0, usable=usable, unusable_causes=causes, tool="scripts/perturb_start_free.py v1.1", tool_sha256=sha(os.path.abspath(__file__)),
+                note="relU values are discrete sampling diagnostics over the training-grid samples (unweighted Frobenius norms), not physical-volume norms; coefficients not rescaled; the worker's fresh-entry path applies the phase rotation and the tail and parameter maps only (its F normalization happens after optimization)", ts=now(), device=dev, torch=torch.__version__)
+    if not usable:
+        open(a.out + ".UNUSABLE", "w").write("perturbed start marked UNUSABLE; causes:\n" + "\n".join(" - " + c for c in causes) + "\n")
+    torch.save(dict(z=z1.detach().cpu(), config=cfg1, free_params=True, meta=meta, kind=("F3 offline perturbed start (scripts/perturb_start_free.py v1.1; initial condition, not a result)" if usable else "UNUSABLE perturbed start"),
+                    spec_diag_holdout=S.get("spec_diag_holdout"), two_family=S.get("two_family")), a.out)
+    rec = dict(meta, out=os.path.abspath(a.out), out_sha256=sha(a.out), seconds=time.time() - t0)
+    json.dump(rec, open(a.out + ".json", "w"), indent=1, default=str); log(f"DONE {a.out} sha256 {rec['out_sha256'][:16]}; usable {usable}; {rec['seconds']:.0f} s")
+
+
+if __name__ == "__main__":
+    main()

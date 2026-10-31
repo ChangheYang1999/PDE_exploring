@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-28T23:57:40.617019+00:00",
+  "scope": "Static weight audit and review of numerics attribution data, not an independent rerun of the corrected helper.",
+  "files": [
+    {
+      "source": "RUN_ROOT/numerics/degree6_free_parameters_48h/validation/attribute_jc_target_fd.json",
+      "copy": "artifacts/closure_norm_attribution_v1/validation/attribute_jc_target_fd.json",
+      "sha256": "3c29954014317da26ab19ab68fcf11eef7d388762556bfdb4401f36ef9abfb1b"
+    },
+    {
+      "source": "RUN_ROOT/numerics/degree6_free_parameters_48h/validation/attribute_jc_target_fd.py",
+      "copy": "artifacts/closure_norm_attribution_v1/validation/attribute_jc_target_fd.py",
+      "sha256": "45854a73672f9bca2edff42d61243a01783b7487e807a1e44cca93050fed1606"
+    },
+    {
+      "source": "RUN_ROOT/numerics/degree6_free_parameters_48h/validation/logs/attribute_jc_target_fd.log",
+      "copy": "artifacts/closure_norm_attribution_v1/validation/logs/attribute_jc_target_fd.log",
+      "sha256": "b20897a80976802de597b3ffc5ccbf3d4091e27379f922e2f0ac52071b70bf10"
+    },
+    {
+      "source": "RUN_ROOT/numerics/degree6_free_parameters_48h/src/optimization/problem.py",
+      "copy": "artifacts/closure_norm_attribution_v1/src/optimization/problem.py",
+      "sha256": "045f6248a9b049b014ec237818c9bdf0ddcb568af47222f296b83bd512066055"
+    },
+    {
+      "source": "RUN_ROOT/numerics/degree6_free_parameters_48h/src/far_field/correction.py",
+      "copy": "artifacts/closure_norm_attribution_v1/src/far_field/correction.py",
+      "sha256": "73b2f79825e973baa101c20df968891812043766e7516ccef062542167dd8856"
+    }
+  ],
+  "norm_formula": "q=grid.w; s=sqrt(q/(4*pi)); dN=sum(q*G*dG)/N",
+  "observed_wrong_norm": 0.7340341145900626,
+  "reported_G_norm": 0.4061044032586187,
+  "incorrect_candidate_original_problem_sha256": "045f6248a9b049b014ec237818c9bdf0ddcb568af47222f296b83bd512066055",
+  "candidate_guard": "analytic derivative selected only if relative base-norm mismatch <=1e-10; this S01 mismatch fails the guard",
+  "proof_sha256": "6e8d82d57028c213cbcf7b2b0212eeb893d5023c67f7956ef392d202c8581855"
+}

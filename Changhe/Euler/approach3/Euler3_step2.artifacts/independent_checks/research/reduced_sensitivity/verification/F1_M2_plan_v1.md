@@ -1,0 +1,9 @@
+# F1 second-medium endpoint: saved factors and progress
+
+Registered 2026-10-30T01:22:45.404692+00:00, before the new numerical calculation. Endpoint: f1_S05_m2_L6_cl0.4500_om0.3000_free, iteration 386. The producer note and endpoint trajectory metadata have been read. The published validation/jc_eval copy is currently absent. Use the complete frozen run runs_l/jceval_v5_f1_S05_m2_004618 directly and record that availability limitation.
+
+Apply the unchanged saved-factor metadata checks from audit_jc_endpoint_F1_medium_v2.py, replacing the published-copy equality checks with the prospectively registered frozen-record and array hashes. Validate the entire frozen source manifest, checkpoint, optimizer vector, original J_cw factor equality, full J_c flags, parameter chains, and one-ULP saved-tensor versus CPU-metadata distinction. Never infer a full Jacobian reconstruction from this audit.
+
+Then use unchanged independent_sensitivity_v1.py and its qualification to calculate the phase-complement Householder reduction, full and coefficient LAPACK SVD, eta bands, scaled gradient and two-parameter Schur quantities at the existing four cutoffs. Keep 1e-11 reconstruction and 1e-10 band-accounting tolerances. Apply exact dyadic-rational accepted-progress predicates to the final 50 and 49 transitions, without changing thresholds. The mathematical statements are in ../PROOF.md and ../../progress_criteria/PROOF.md. No exact-rank, nonlinear error-bound or representation-floor conclusion follows.
+
+Run serially on CPU 35 with one thread and no GPU inside a bounded recursive pause of the active verifier controller. No JavaScript/TypeScript, server, cluster/RLScience, remote compute, outside writes, or live-queue mutation. Preserve failures, source hashes, actual start/end times and computation limits.

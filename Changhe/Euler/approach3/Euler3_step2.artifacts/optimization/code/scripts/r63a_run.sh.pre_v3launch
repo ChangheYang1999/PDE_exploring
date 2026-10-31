@@ -1,0 +1,25 @@
+#!/bin/bash
+# One "6.3 (a) record v1" run (validation/record_63a.py) through the guarded frozen-copy launcher, then the outputs copied (never overwriting) into
+# validation/records_63a/. Blocks until the run is done. Usage:
+#   bash scripts/r63a_run.sh <gpu> <tag> start <abs job json>
+#   bash scripts/r63a_run.sh <gpu> <tag> end <abs run dir> [--start-ref <abs record json>] [--segment-start <abs record json>] [--full]
+# Prints the record path on success; exit 1 if the record was not produced.
+set -u; cd RUN_ROOT/numerics/degree6_free_parameters_48h
+GPU=$1; TAG=$2; MODE=$3; SRC=$4; shift 4
+NAME=r63a_${TAG}_$(date -u +%H%M%S)
+echo "$(date -u +%FT%TZ) r63a_run: $MODE $TAG on GPU $GPU (copy runs_l/$NAME)"
+bash validation/l_launch.sh frozen "$NAME" "$GPU" record_63a.py "$MODE" "$SRC" --tag "$TAG" --device cuda:0 "$@"
+mkdir -p validation/records_63a
+if [ -d "runs_l/$NAME/validation/records_63a" ]; then
+  for f in runs_l/$NAME/validation/records_63a/*; do [ -f "$f" ] && cp -n "$f" validation/records_63a/; done
+fi
+if [ -f "validation/records_63a/$TAG.json" ]; then
+  echo "$(date -u +%FT%TZ) r63a_run: record validation/records_63a/$TAG.json sha256 $(sha256sum validation/records_63a/$TAG.json | cut -c1-16)"
+  python3 - "validation/records_63a/$TAG.json" <<'EOF'
+import json, sys
+d = json.load(open(sys.argv[1]))
+print(f"  exclusions raised: {[e['item'] for e in d['exclusions_6_3a'] if e['raised']]}; flags raised: {[f['item'] for f in d['flags_6_3b'] if f['raised']]}; open: {d['open']}; registered clearance: {d['registered_clearance_6_3a']}; {d['seconds']:.0f} s")
+EOF
+  exit 0
+fi
+echo "$(date -u +%FT%TZ) r63a_run: NO RECORD for $TAG (see runs_l/$NAME and validation/logs/l_slot_chain.log)"; exit 1

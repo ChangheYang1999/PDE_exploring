@@ -1,0 +1,16 @@
+"""First nonlinear B,D coefficient of the independent primary reconstruction."""
+import torch
+from primary_exchange import PrimaryExchangeField,polynomial_harmonics,jet_sum
+from third_jets import BatchJet3
+
+class PrimaryFirstCorrectionField(PrimaryExchangeField):
+    def potentials(self,points,exterior=False):
+        xyz=[BatchJet3.coordinate(points,i) for i in range(3)]
+        rho=sum(v*v for v in xyz)
+        if torch.any(rho.v<=0):raise ValueError('Homogeneous correction is undefined at the origin')
+        rr=rho.power_positive(.5);ratio=rr*(1/self.r0)
+        angle=ratio.log()*(self.omega/self.c_l);h=polynomial_harmonics(points,self.modes)
+        phase=angle*self.ms;twisted=h*phase.cos()+h.select(self.partner)*(phase.sin()*self.sign)
+        t=twisted*ratio.power_positive(-2*self.alpha-1-self.ls)*self.coeff['B'].sum(0)
+        s=twisted*ratio.power_positive(-2*self.alpha-self.ls)*self.coeff['D'].sum(0)
+        return jet_sum(t),jet_sum(s)

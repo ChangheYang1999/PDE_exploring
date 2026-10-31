@@ -1,0 +1,17 @@
+#!/bin/bash
+# D6FP: start (or restart) the campaign supervisor as a detached process (setsid nohup). Safe to re-run: refuses if one is alive.
+ROOT=$(cd "$(dirname "$0")/.." && pwd)
+PY=${D6_PYTHON:-python3}
+HB=$ROOT/status/supervisor_heartbeat.json
+if [ -f "$HB" ]; then
+  pid=$(python3 -c "import json;print(json.load(open('$HB'))['pid'])" 2>/dev/null)
+  if [ -n "$pid" ] && kill -0 "$pid" 2>/dev/null && ps -o cmd= -p "$pid" | grep -q supervisor.py; then
+    echo "supervisor already running (pid $pid)"; exit 0
+  fi
+fi
+rm -f "$ROOT/status/STOP_SUPERVISOR"
+mkdir -p "$ROOT/logs"
+CFG=${D6_SUPERVISOR_CFG:-$ROOT/configs/supervisor_cpu.json}     # CPU-only since the GPU revocation of 2026-10-29T00:57:59Z
+cd "$ROOT" && setsid nohup env CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=1 D6_PYTHON="$PY" D6_SUPERVISOR_CFG="$CFG" nice -n 10 taskset -c 31-34 "$PY" "$ROOT/scripts/supervisor.py" >> "$ROOT/logs/supervisor.out" 2>&1 < /dev/null &
+sleep 2
+echo "supervisor started at $(date -u +%FT%TZ); log: $ROOT/logs/supervisor.log"

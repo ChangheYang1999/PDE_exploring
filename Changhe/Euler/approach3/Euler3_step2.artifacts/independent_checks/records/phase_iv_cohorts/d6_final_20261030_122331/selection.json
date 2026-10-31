@@ -1,0 +1,115 @@
+{
+  "schema": "d6-phase-iv-selection-v1",
+  "cohort_id": "d6_final_20261030_122331",
+  "selected_at_utc": "2026-10-30T12:11:09.471877+00:00",
+  "selection_rationale": "P1s4 fixed by dated lead ruling; F2 and P3 latest eligible exact ends. All open classification flags retained. Final evaluation follows the admitted 397-minute plan.",
+  "eligibility_evidence": {
+    "path": "RUN_ROOT/verifier/artifacts/final_preparation_seals/d6_final_20261030_122331/eligibility.json",
+    "sha256": "841f37eeb35256a764ed55ff0d317387cb0f67b60e5a6104e3d227a5f8d573f6"
+  },
+  "branches": [
+    {
+      "branch_id": "P1",
+      "initialization_id": "S01",
+      "reference_core_radius": 0.4192773285352348,
+      "state_convention": "END_CURRENT",
+      "selection_rationale": "Dated Phase IV capacity decision; latest exact eligible end after the registered clearance root. No total ranking, stationarity or classification-flag clearance is implied.",
+      "reference_core_rationale": "Exact genuine version-ten source-start core radius; shared S01 source for P1 and F2.",
+      "states": [
+        {
+          "state_id": "P1s4_FREE",
+          "role": "FREE",
+          "input_directory": "artifacts/inputs/P1_FREE_segment4_current_v1",
+          "source_state_kind": "current",
+          "checkpoint_sha256": "1b16c729140f8c205e212c040505b76bd388df9e3592d18e6675508fe023baa3",
+          "original_checkpoint": "RUN_ROOT/verifier/artifacts/P1_segment4_freeze_free_v1/checkpoint_segment_end.pt",
+          "state_convention": "END_CURRENT"
+        },
+        {
+          "state_id": "P1_B0",
+          "role": "B0",
+          "input_directory": "artifacts/inputs/S01_original_exact_v1",
+          "source_state_kind": "final",
+          "checkpoint_sha256": "83aa4c6e9473c8bd76524600ec758fa4202840972ff242f27c5806411101dbcd",
+          "original_checkpoint": "RUN_ROOT/verifier/artifacts/starting_records/S01_original_v1/start_000.pt",
+          "state_convention": "END_CURRENT"
+        },
+        {
+          "state_id": "P1_FIXED_s2",
+          "role": "FIXED",
+          "input_directory": "artifacts/inputs/P1_FIXED_segment2_current_v1",
+          "source_state_kind": "current",
+          "checkpoint_sha256": "7d3bc6eaf11685096769871bee11a004fd0c6a838b39931d352e34260a458312",
+          "original_checkpoint": "RUN_ROOT/verifier/artifacts/P1_segment2_freeze_fixed_v1/checkpoint_segment_end.pt",
+          "state_convention": "END_CURRENT"
+        }
+      ]
+    },
+    {
+      "branch_id": "F2",
+      "initialization_id": "S01",
+      "reference_core_radius": 0.4192773285352348,
+      "state_convention": "END_CURRENT",
+      "selection_rationale": "Dated Phase IV capacity decision; latest exact eligible end after the registered clearance root. No total ranking, stationarity or classification-flag clearance is implied.",
+      "reference_core_rationale": "Exact genuine version-ten source-start core radius; shared S01 source for P1 and F2.",
+      "states": [
+        {
+          "state_id": "F2m3_FREE",
+          "role": "FREE",
+          "input_directory": "artifacts/inputs/F2m3_late_current_v1",
+          "source_state_kind": "current",
+          "checkpoint_sha256": "9bc23af72924c82a3353bb74a73206b55b355e872441594435a9fe665e28caa9",
+          "original_checkpoint": "RUN_ROOT/verifier/artifacts/F2m3_late_freeze_v1/current.pt",
+          "state_convention": "END_CURRENT"
+        },
+        {
+          "state_id": "F2_B0",
+          "role": "B0",
+          "input_directory": "artifacts/inputs/S01_original_exact_v1",
+          "source_state_kind": "final",
+          "checkpoint_sha256": "83aa4c6e9473c8bd76524600ec758fa4202840972ff242f27c5806411101dbcd",
+          "original_checkpoint": "RUN_ROOT/verifier/artifacts/starting_records/S01_original_v1/start_000.pt",
+          "state_convention": "END_CURRENT"
+        }
+      ],
+      "missing_fixed_reason": "No separately admitted matched fixed-parameter F2 control. The shared source B0 is retained through an explicit final alias audit."
+    },
+    {
+      "branch_id": "P3",
+      "initialization_id": "S20",
+      "reference_core_radius": 0.4192773285352348,
+      "state_convention": "END_CURRENT",
+      "selection_rationale": "Dated Phase IV capacity decision; latest exact eligible end after the registered clearance root. No total ranking, stationarity or classification-flag clearance is implied.",
+      "reference_core_rationale": "Exact genuine version-ten source-start core radius; shared S01 source for P1 and F2.",
+      "states": [
+        {
+          "state_id": "P3s4_FREE",
+          "role": "FREE",
+          "input_directory": "artifacts/inputs/P3cont4_late_current_v1",
+          "source_state_kind": "current",
+          "checkpoint_sha256": "7bb8add5c36a5998e8746dd831bf43f5449b932aab3201467040ce38159a4152",
+          "original_checkpoint": "RUN_ROOT/verifier/artifacts/P3cont4_late_freeze_v1/current.pt",
+          "state_convention": "END_CURRENT"
+        },
+        {
+          "state_id": "P3_B0",
+          "role": "B0",
+          "input_directory": "artifacts/inputs/P3_INITIAL_raw_v1",
+          "source_state_kind": "final",
+          "checkpoint_sha256": "000bc907fdd59ed3338b0ef682d2257a7044e33447ad0569999550523d0d981a",
+          "original_checkpoint": "RUN_ROOT/verifier/artifacts/P3_matched_freeze_v1/INITIAL_raw.pt",
+          "state_convention": "END_CURRENT"
+        },
+        {
+          "state_id": "P3_FIXED_s2",
+          "role": "FIXED",
+          "input_directory": "artifacts/inputs/P3_FIXED_segment2_current_v1",
+          "source_state_kind": "current",
+          "checkpoint_sha256": "c0a3e638be6fda490cd9e28d1ee118d12c040e0a6a111e2d39f722119694d530",
+          "original_checkpoint": "RUN_ROOT/numerics/degree6_free_parameters_48h/runs/p3c_s2b_S20_L6_cl0.4500_om1.0000_fixed/checkpoint_segment_end.pt",
+          "state_convention": "END_CURRENT"
+        }
+      ]
+    }
+  ]
+}

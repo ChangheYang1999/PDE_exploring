@@ -1,0 +1,5 @@
+# Pre-result test plan
+
+Use NumPy long double with the actual mantissa width recorded. Test Legendre moments through degree 2n-1 for n=8,16,24 with absolute tolerance 3e-17, and angular orthonormality through degree four with tolerance 2e-16. Evaluate the exact pressure from PROOF.md at beta=0.7, eight radii from 1e-4 through 32, and axes plus fresh random directions. Compare against 70-digit scalar formulas, at two radial quadrature orders (16,24). The fine pressure and gradient maximum absolute errors must be below 2e-14; the fine-versus-coarse maximum absolute difference must be below 2e-13. These absolute tests deliberately do not assert a relative far-field accuracy where the exact Gaussian is exponentially small. Preserve the raw exterior algebraic rounding remainder. This qualifies implementation on the manufactured family, not quadrature error for a saved Euler state.
+
+Added before execution at 2026-10-29T00:08:26.047241+00:00, following the lead review: include gamma=0.23 in q so that the same test covers the dipole channel. Original proof and review are preserved beside this plan.

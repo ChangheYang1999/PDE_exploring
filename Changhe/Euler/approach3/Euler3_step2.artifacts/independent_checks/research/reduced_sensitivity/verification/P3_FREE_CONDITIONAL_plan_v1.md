@@ -1,0 +1,13 @@
+# P3 FREE conditional factor calculation
+
+Registered 2026-10-29T22:03:25.234759+00:00, after V472 and the lead's 22:00:53Z note and before the new calculation.
+
+Preserve the original 1e-12 largest-singular-value FAIL. Re-run the unchanged endpoint checks in a diagnostic copy that continues only after that precisely named failure and writes the remaining checks and source bindings. Any other failure stops. The complete diagnostic is not a PASS.
+
+Use the V475 qualified gesdd calculator with unchanged formulas, cutoffs, phase complement and reconstruction checks. Admit only its finite-dimensional arithmetic on the saved factor, explicitly conditional on the failed secondary consistency check and without a new Euler Jacobian. Bind the diagnostic, factor hashes, trajectory and qualification. Compute the original R singular values separately and retain internals of the already-qualified calculation for T and the phase-complement coefficient block A. For t=1e-12,1e-10,1e-8,1e-6, record the nearest absolute cutoff margin divided by that matrix's sigma_max. A margin below 1e-11 is marked not determined under the lead's reporting filter; raw saved-factor counts and dependent calculations remain diagnostic, not admitted stability claims. Zero singular values are included in these margins. No tolerance is changed.
+
+The proof research/reduced_sensitivity/spectral_gap/PROOF.md shows why the observed sigma_max discrepancy is not an upper bound on matrix error and why a retained-count margin alone does not bound sensitivities. Every inference about the unavailable full Jacobian remains conditional, even if a margin exceeds 1e-11. The coefficient block and full factor have different margins and roles. For normalization, V475 shows twelve exact zero stored columns, all other column norms within 1.34e-14 of one; no positive tiny column is amplified.
+
+Run at most one CPU35 child while the owned centered controller and child are paused; nice10, one BLAS thread, CUDA_VISIBLE_DEVICES empty. A single combined audit wrapper has a 180-second cap and resumes finally. Outputs are small; factors are read-only references. No JavaScript/TypeScript, server/listener, RLScience, remote compute, Lean/Lake or other-side writes.
+
+Arithmetic qualification includes the exact 2 by 2 counterexamples and the moving-cutoff bound from the proof, with no actual-state tolerance adjustment. A separate 1e-11 sigma_max consistency tolerance for later all-m EVALs is accepted only as a prospective empirical provenance diagnostic, explicitly chosen after the P3 discrepancies, not a matrix-error certification. Original P3 tests and the existing even-mode tolerance remain unchanged.

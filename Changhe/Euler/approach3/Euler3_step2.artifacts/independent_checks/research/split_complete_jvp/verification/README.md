@@ -1,0 +1,1 @@
+the review in lead55_review_20261028T232131Z.md accepts the conditional identity and checks its hypotheses against the inspected production source. Numerical qualification against the saved S05 full-graph directional vectors is still pending. It must pass per-block relative tolerance1e-10 and reproduce all four saved G3 decisions.

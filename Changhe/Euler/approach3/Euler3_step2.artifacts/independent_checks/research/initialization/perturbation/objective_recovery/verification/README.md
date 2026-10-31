@@ -1,0 +1,1 @@
+The initial F3 checkpoint was independently checked in V509, with raw and worker-entry fields distinguished. The subsequent producer claim of perturbation removal is reviewed in V513. Its first-two-step field distance has not been computed. The exact counterexample in ../PROOF.md addresses the inference from scalar objectives only.

@@ -1,0 +1,46 @@
+# Status words as of 2026-10-30T15:46:10Z (FINAL; shift 8): the Phase IV seal completed 12:11:21Z and the final driver ran 12:23:31Z to 15:04:00Z (verifier V735/V736/V769; the SEALED final set is P1 s4 (cont1_s4), F2 m3 (f2_S01_k0_keep_m3), P3 s4 (cont4free), with the start references S01 and S20 and the P1 FIXED control p1c_s2); the two Phase III ends that finished after the freeze (F1 m4, P3 cont5free) have cleared records and changed nothing in the sealed set; every computation of the lane ended by 15:37:51Z. Status words: frozen = Phase IV frozen state (lead 04:50:45Z, 07:24:37Z item 3 (a)); ended = segment ended, superseded by a later segment of the same lineage or a Phase III end after the freeze (record wording in the note); excluded = 6.3 (a) (g) exclusion raised against S01 (core a_max ratio above 2 while the shell residual fell); diagnostic = Phase III diagnostic end, never a candidate; control = FIXED-CONTROL (matched control); selected = selected end of a branch (lead 07:11:58Z item 2) that is not in the frozen set. No end is an approximate-profile or outcome-A candidate (open far-block flags B, D, E at every end).
+P1 FREE (S01, (0.45, 1.0)) | p1_s1_S01_L6_cl0.4500_om1.0000_free | ended | pilot segment
+P1 FREE (S01, (0.45, 1.0)) | p1_s2_S01_L6_cl0.4500_om1.0000_free | ended | segment 2
+P1 FREE (S01, (0.45, 1.0)) | cont1_s3_S01_L6_cl0.4500_om1.0000_free | ended | segment 3
+P1 FREE (S01, (0.45, 1.0)) | cont1_s4_S01_L6_cl0.4500_om1.0000_free | frozen | P1 FREE frozen state, SEALED 12:11:21Z (V735) and under Phase IV evaluation from 12:23:31Z; record cont1_s4_S01_end_v10 cleared
+P1 FREE (S01, (0.45, 1.0)) | cont1_s5_S01_L6_cl0.4500_om1.0000_free | excluded | 6.3 (a) (g) against S01 (core a_max ratios 2.22 / 2.12); diagnostic path reference for the strategy-2 and perturbation comparisons
+P1 strategy 2 (J_c step model from the P1 s4 end) | s2_P1s4_Jc_L6_cl0.4500_om1.0000_free | diagnostic | worker stall after 44 accepted iterations (cumulative 630), killed 06:56:01Z; it-630 checkpoint is its end; no record; stored-objective comparison only (V674)
+P1 perturbation repeat (SPEC 7.4 (e), 1e-3 of the P1 s4 end) | f3_P1s4_pert_s7_L6_cl0.4481_om1.4083_free | excluded | 7.4 (e) continued-descent repeat (perturbation inducing a relative 1e-3 field change plus 1e-3 in z_c, z_w); ended on its time limit (41 accepted; O1 1.5007e-7 at (0.448039, 1.420300), 3.9 per cent below P1 s4: 7.4 (e) not met, descent continues); v10 record 10:17:05Z raised (g) against S01 at the margin (core ratio 2.0003 / 1.912; nothing against its own start): DIAGNOSTIC, not promoted; path vs P1 s5 at equal accepted count 0.7 to 0.8 per cent above (validation/segpair_PERTvsP1s5.json)
+P1 bracket pilot (saved P1 s4 field at omega 1.80) | f2_P1s4_om1p80_L6_cl0.4481_om1.8000_free | excluded | 6.3 (a) (g) against S01 (2.183 / 2.087, V641)
+P1 FIXED-CONTROL (S01) | p1c_s1_S01_L6_cl0.4500_om1.0000_fixed | ended | control segment 1
+P1 FIXED-CONTROL (S01) | p1c_s2_S01_L6_cl0.4500_om1.0000_fixed | control | P1 FIXED role, SEALED 12:11:21Z (matched control; admitted by retained control evidence, V679/V684; no full end record)
+P1 PROFILE (SPEC 7.3 (d), FIXED runs from the P1 s4 base state) | prof_P1s4_reference_L6_cl0.4481_om1.4069_fixed | diagnostic | PROFILE reference point (fixed (0.448144, 1.406897)); read at equal accepted count k* (lead 07:24:37Z item 4)
+P2 FREE (S09, (0.45, 0.3)) | p2_s1_S09_L6_cl0.4500_om0.3000_free | ended | pilot segment
+P2 FREE (S09, (0.45, 0.3)) | p2_s2_S09_L6_cl0.4500_om0.3000_free | ended | segment 2
+P2 FREE (S09, (0.45, 0.3)) | cont2_s3_S09_L6_cl0.4500_om0.3000_free | ended | segment 3
+P2 FREE (S09, (0.45, 0.3)) | cont2_s4_S09_L6_cl0.4500_om0.3000_free | ended | segment 4 (record cont2_s4_S09_end_v10)
+P2 FREE (S09, (0.45, 0.3)) | cont2_s5_S09_L6_cl0.4500_om0.3000_free | ended | segment 5
+P2 FREE (S09, (0.45, 0.3)) | cont2_s6_S09_L6_cl0.4500_om0.3000_free | selected | P2 selected end (no further optimization: 12-hour lineage budget used); not frozen (no capacity)
+P2 FIXED-CONTROL (S09) | p2c_s1_S09_L6_cl0.4500_om0.3000_fixed | ended | control segment 1
+P2 FIXED-CONTROL (S09) | p2c_s2_S09_L6_cl0.4500_om0.3000_fixed | control | P2 matched control (not in the frozen set)
+P3 FREE (S20 all-m, (0.45, 1.0)) | p3_s1b_S20_L6_cl0.4500_om1.0000_free | ended | pilot segment (all-m class)
+P3 FREE (S20 all-m, (0.45, 1.0)) | p3_s2b_S20_L6_cl0.4500_om1.0000_free | ended | segment 2
+P3 FREE (S20 all-m, (0.45, 1.0)) | cont3free_S20_L6_cl0.4500_om1.0000_free | ended | segment 3 (record cont3free_S20_end cleared 05:39:03Z); superseded as the P3 frozen state by cont4free (record cleared 09:59:28Z, on time)
+P3 FREE (S20 all-m, (0.45, 1.0)) | cont4free_S20_L6_cl0.4500_om1.0000_free | frozen | P3 FREE frozen state (P3 s4), SEALED 12:11:21Z (V735): v10 --full record cont4free_S20_end vs P3_start cleared 09:59:28Z (on time; nothing raised, nothing open; V717)
+P3 FREE (S20 all-m, (0.45, 1.0)) | cont5free_S20_L6_cl0.4500_om1.0000_free | ended | FREE-only continuation (segment 5, 3600 s, GPU 6) enqueued 09:59:28Z by the record-first chain; LM time_limit with 30 accepted in the segment (176 cumulative), O1 2.121088e-7 -> 2.035116e-7 at (0.449775, 1.094937); JOB DONE 14:06:56Z; holdout 0.042794 / 0.042381; a_max_core 2.3967 / 2.7451; v10 --full record cont5free_S20_end vs P3_start with segment start cont4free_S20_end (15:23:34Z, sha256 4e70764df0b969ad): nothing raised, nothing open, registered clearance true, wrapper yes 15:23:38Z; three 6.3 (b) flags as at cont4free (top-two radial coefficients of blocks B, D, E): no candidate; Phase III evidence only, never a frozen candidate (ended after the 12:23:31Z freeze); no cont6
+P3 FIXED-CONTROL (S20 all-m) | p3c_s1b_S20_L6_cl0.4500_om1.0000_fixed | ended | control segment 1
+P3 FIXED-CONTROL (S20 all-m) | p3c_s2b_S20_L6_cl0.4500_om1.0000_fixed | control | P3 FIXED retained control (194 accepted, unscheduled in Phase IV; V684)
+F1 FREE (S05, (0.45, 0.3)) | f1_s1_S05_L6_cl0.4500_om0.3000_free | ended | pilot segment
+F1 FREE (S05, (0.45, 0.3)) | f1_S05_m1_L6_cl0.4500_om0.3000_free | ended | medium segment 1
+F1 FREE (S05, (0.45, 0.3)) | f1_S05_m2_L6_cl0.4500_om0.3000_free | ended | medium segment 2
+F1 FREE (S05, (0.45, 0.3)) | f1_S05_m3_L6_cl0.4500_om0.3000_free | selected | F1 selected end; open 6.3 (b) flags (top-two A and C, N6 A and C): no profile or outcome-A candidate; not frozen
+F1 FREE (S05, (0.45, 0.3)) | f1_S05_m4_L6_cl0.4500_om0.3000_free | ended | medium segment 4 (7200 s; 97 accepted in the segment, 617 cumulative; LM time_limit 11:03:44Z; JOB DONE 13:26:35Z); O1 1.929582e-7 at (0.448169, 0.602807); v10 --full record f1_S05_m4_end vs f1_start (15:07:58Z, sha256 c6c5b98b857cb47e): nothing raised, nothing open, registered clearance true, wrapper yes 15:08:01Z; seven 6.3 (b) flags (top-two radial coefficients of blocks A to E; N6 A and C), as at m3: no profile or outcome-A candidate; Phase III parameter-path evidence (lead 12:31:40Z item 4), after the 07:11:58Z selection (F1 m3 stays the selected end unless the lead rules otherwise); no F1 m5
+F2 FREE (S01 coefficients kept at F6 point 0 (0.459677, 1.338884)) | f2_S01_k0_keep_L6_cl0.4597_om1.3389_free | ended | pilot segment
+F2 FREE (S01 coefficients kept at F6 point 0 (0.459677, 1.338884)) | f2_S01_k0_keep_m1_L6_cl0.4597_om1.3389_free | ended | medium segment 1
+F2 FREE (S01 coefficients kept at F6 point 0 (0.459677, 1.338884)) | f2_S01_k0_keep_m2_L6_cl0.4597_om1.3389_free | ended | medium segment 2
+F2 FREE (S01 coefficients kept at F6 point 0 (0.459677, 1.338884)) | f2_S01_k0_keep_m3_L6_cl0.4597_om1.3389_free | frozen | F2 FREE frozen state, SEALED 12:11:21Z (V735; m4 excluded 09:42:55Z); record f2_S01_k0_keep_m3_end cleared 06:09:43Z (yes)
+F2 FREE (S01 coefficients kept at F6 point 0 (0.459677, 1.338884)) | f2_S01_k0_keep_m4_L6_cl0.4597_om1.3389_free | excluded | 6.3 (a) (g) raised against S01 (P1_start_v10) in its v10 record of 09:42:52Z (rho_u^max 0.03600 below the start 0.04547 while a_max_core 1.1608 / 1.5886 is above 2 x the start 0.55755 / 0.79804); DIAGNOSTIC end (lead 08:54:48Z item 1 (b)); no m5; same branch as P1 s4 by the registered rule (lead 09:31:38Z item 2)
+F2 FREE (S09 coefficients kept at F6 point 1 (0.42179, 0.808573)) | f2_S09_k1_keep_L6_cl0.4218_om0.8086_free | ended | breadth pilot, not promoted
+F2 refit pilots (S01 refit at F6 point 0) | f2_S01_k0_refit_L6_cl0.4597_om1.3389_free | ended | breadth pilot, not promoted
+F2 refit pilots (S01 refit at F6 point 0) | f2_S01_k0_refitoff_L6_cl0.4597_om1.3389_free | ended | breadth pilot, not promoted
+F3 coefficient-perturbation pilots (S01) | f3_S01_1e-3_s1_L6_cl0.4500_om1.0000_free | ended | breadth pilot, not promoted
+F3 coefficient-perturbation pilots (S01) | f3off_S01_1e-3_s1_L6_cl0.4500_om1.0000_free | ended | breadth pilot, not promoted
+F3 coefficient-perturbation pilots (S01) | f3off_S01_1e-1_s2_L6_cl0.4500_om1.0000_free | ended | breadth pilot, not promoted
+F4 random poloidal/toroidal starts | f4_rand_k2_L6_cl0.4282_om7.9773_free | ended | breadth pilot, not promoted
+F4 random poloidal/toroidal starts | f4_rand_k3_L6_cl0.4914_om0.1112_free | ended | breadth pilot, not promoted
+F4 random poloidal/toroidal starts | f4_rand_k4_L6_cl0.4816_om13.5288_free | ended | breadth pilot, not promoted

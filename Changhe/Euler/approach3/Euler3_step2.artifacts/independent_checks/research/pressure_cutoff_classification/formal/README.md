@@ -1,0 +1,1 @@
+No formalization or Lean build is claimed or run. The standalone informal proof is in ../PROOF.md. Numerical scans and their source bindings are kept separately in ../verification and the side artifacts.

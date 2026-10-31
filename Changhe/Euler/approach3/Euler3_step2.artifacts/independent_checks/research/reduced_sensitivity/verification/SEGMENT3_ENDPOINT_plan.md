@@ -1,0 +1,3 @@
+# Segment-three endpoint replay
+
+Registered 2026-10-29T17:52:34.827086+00:00. Adapt the qualified saved-array endpoint audit to the two FREE segment-three states. Require every frozen source-manifest entry to match, including ancillary inputs; bind published and frozen NPZ bytes by SHA256. Replay parameter maps, checkpoint metadata and exact J_cw saved-array equality, and recompute unprojected singular values. Tolerance on the largest singular value remains 1e-12; no relative accuracy assertion for tiny singular values. No full Jacobian or Gram matrix reconstruction. Do not use this as a new Euler residual evaluation.

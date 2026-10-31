@@ -1,0 +1,3 @@
+# Qualifier audit adapter v5
+
+Registered 2026-10-29T13:51:15.288206+00:00. The frozen run omits validation/run_frozen.sh from both its files and manifest. Bind the independently retained reviewed launcher and explicitly leave exact launch provenance open; retain every runtime scientific source and manifest check. Correct the trig count to use Nr source nodes, not Ne evaluation nodes: poisson_sh.py defines log1p_nodes from model.r[:Nr_src], and dd_pressure.py broadcasts this vector over pressure modes. The constructor sets Nr_tab from those same source nodes. For S01, Nr=48 and Ne=51. All other scalar and source tests remain unchanged. The prior V288 preflight count was wrong by 20*(Ne-Nr)*685=41,100; preserve its record and correct the claim in the ledger.

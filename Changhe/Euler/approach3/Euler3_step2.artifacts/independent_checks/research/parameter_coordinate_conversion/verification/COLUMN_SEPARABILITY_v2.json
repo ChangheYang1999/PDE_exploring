@@ -1,0 +1,20 @@
+{
+  "checked_utc": "2026-10-29T06:27:33.431998+00:00",
+  "worker_path": "RUN_ROOT/verifier/artifacts/production_snapshots/official_gpu_v1p1_20261029T054715Z/release_files/scripts/worker_d6.py",
+  "worker_sha256": "cd35acf01f770dfbc76899c9d002ee8806b231639da6aac5eb9436c61555ad2b",
+  "problem_path": "RUN_ROOT/verifier/artifacts/production_snapshots/official_gpu_v1p1_20261029T054715Z/src/optimization/problem.py",
+  "problem_sha256": "8dd8fd6d2fbab0eedc422202519d45f55884d79ee23e2675d525330c826bbad2",
+  "identity": "H(B) = B + C + E; C and E do not depend on B",
+  "source_checks": [
+    "complete_jacobian_from_Jcw clones J_cw before adding corr to its closure rows",
+    "closure_target_correction accepts no J_cw input and computes corr from z, to_full and z_opt",
+    "closure_pattern_param_columns accepts no J_cw input and is added only to the two parameter columns",
+    "J_cw closure-block norm is diagnostic only and does not affect the returned matrix"
+  ],
+  "verdict": "CONFIRMED for these source hashes",
+  "prior_receipt_sha256": "9d46b8af439d0cf2f08f8a01a36993caa6204500819d020d5525f4f24d837fcf",
+  "helper_text_identical": true,
+  "helper_ast_identical": true,
+  "helper_sha256": "764ccceeb9915c106ac11ebe2ae5e51e8dd2c5f13cc882c1f401889e79fffcb4",
+  "source_binding_method": "Identical helper text and AST, identical entire Problem source; applies the existing column-separability proof. Whole worker changed only outside the helper. Numerical derivative validation is separate."
+}

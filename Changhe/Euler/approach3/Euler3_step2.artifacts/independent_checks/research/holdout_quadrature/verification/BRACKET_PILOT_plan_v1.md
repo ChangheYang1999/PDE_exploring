@@ -1,0 +1,11 @@
+# Bracket-pilot development holdout
+
+Registered 2026-10-30T04:09:18.051386+00:00, before independent field or pressure evaluation of this endpoint.
+
+Evaluate the exact completed CURRENT state of f2_P1s4_om1p80_L6_cl0.4481_om1.8000_free. This is the FREE pilot initialized by retaining P1 segment4 coefficients while setting omega=1.80. Freeze both CURRENT and the separately saved F-projected state using the qualified importer. Preserve the end checkpoint, result record and ledger bindings. The numerical evaluation uses CURRENT without rescaling, projection, refit or parameter change. The separate projected copy supports later registered field-distance tests only.
+
+Use the unchanged qualified independent V7 CPU route:12 radial holdout nodes,42x84 angular points; pressure24 and40 radial nodes with64x128 and80x160 angular rules. A fresh development seed2026103004 and pressure phase0.731927 are fixed now. Common physical R0=0.3 and the historical S01 reference core radius0.4304351316933 are fixed before evaluation. Comparisons against prior endpoints use different development nodes and are not common-grid ratios. This is not a final frozen cohort and does not consume final entropy. Report both shell families, fixed-domain physical quantities, absolute residuals and empirical pressure differences, with inherited partial-diagnostic scope. No global bound or profile acceptance follows from quadrature agreement.
+
+Wait for the completed passing outer real replay, then acquire the exclusive phase_iv_execution.lock. Permit120s for exact import,4200s for the numerical holdout,7200s waiting for the completed producer result,4000s for the upstream replay. Source hashes must remain unchanged. Freeze before evaluation; no result-dependent sample selection. The inherited controller reaps failed children and preserves partial outputs. All calculations stop by19:00:31UTC on30October.
+
+One busy CPU35 computation, one BLAS/OMP thread, nice10, hidden GPUs,48GiB child address-space cap. Side storage must remain below9.9GB and filesystem free space at least20GiB before a child starts. No JavaScript/TypeScript or Node, no servers or listeners, no RLScience/cluster or remote/paid computation, no Lean/Lake and no writes outside this side. Record actual elapsed time including explicitly recorded pauses.

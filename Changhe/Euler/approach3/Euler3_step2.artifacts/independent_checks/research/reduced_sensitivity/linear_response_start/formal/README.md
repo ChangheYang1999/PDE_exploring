@@ -1,0 +1,1 @@
+No formal sources were produced. Lean and Lake execution is prohibited for this run. The standalone argument is in ../PROOF.md; exact rational examples are checked by the Python file in ../verification/.

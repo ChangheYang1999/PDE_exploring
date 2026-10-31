@@ -1,0 +1,27 @@
+#!/bin/bash
+# Enqueue a FREE/FIXED-CONTROL PAIR (segment 2 of P3) without exceeding four busy computations (lead 23:42:57Z item 4: both members together, 3600 s each, never one
+# alone). Under the launcher lock: wait until busy <= 2 (two free host slots), enqueue both members (scripts/enqueue_segment2.sh; the governor grants a complete
+# pair as a whole on its two target GPUs), then hold the lock until BOTH workers are visible (exact job ids), or a member is terminal without an active copy
+# (reported; the other member is then stopped by the operator, never left alone). Unacknowledged states keep the lock with warnings after 900 s.
+# Usage: bash scripts/enqueue_pair_under_lock.sh <free run dir> <free tag> <free gpu> <fixed run dir> <fixed tag> <fixed gpu> <iterations> <time limit s>
+set -u; cd RUN_ROOT/numerics/degree6_free_parameters_48h; LOCK=validation/.l_launch.lock
+RF=$1; TF=$2; GF=$3; RX=$4; TX=$5; GX=$6; INC=$7; TL=$8
+busy() { n=0; for p in $(ps -eo pid,comm,args | awk '$2 ~ /^python/' | grep -E "venv/bin/python( -u)? [^ ]*(validation/[A-Za-z0-9_]+\.py|scripts/[A-Za-z0-9_]+\.py)" | grep -v grep | grep -v -E "scripts/(supervisor|slot_governor)\.py" | awk '{print $1}'); do case "$(readlink /proc/$p/cwd 2>/dev/null)" in RUN_ROOT/numerics*) n=$((n+1));; esac; done; echo $n; }
+exec 9>"$LOCK"; flock -x 9
+t=0; while [ "$(busy)" -gt 2 ]; do sleep 20; t=$((t+20)); [ $t -ge 7200 ] && { echo "enqueue_pair_under_lock: gave up waiting for two slots after $t s (busy $(busy)); nothing enqueued"; flock -u 9; exit 1; }; done
+echo "$(date -u +%FT%TZ) enqueue_pair_under_lock: busy $(busy) <= 2 after $t s; enqueuing the pair $TF (GPU $GF) + $TX (GPU $GX), $INC iterations, $TL s"
+bash scripts/enqueue_segment2.sh "$RF" "$TF" "$GF" 1 "$INC" "$TL"; r1=$?
+bash scripts/enqueue_segment2.sh "$RX" "$TX" "$GX" 1 "$INC" "$TL"; r2=$?
+J1=$(ls -t queue/staged/${TF}_*.json queue/pending/${TF}_*.json 2>/dev/null | head -1); J2=$(ls -t queue/staged/${TX}_*.json queue/pending/${TX}_*.json 2>/dev/null | head -1)
+[ -n "$J1" ] && [ -e "$J1" ] && [ -n "$J2" ] && [ -e "$J2" ] || { echo "$(date -u +%FT%TZ) enqueue_pair_under_lock: a member is missing after the enqueue (exit $r1 / $r2; files '$J1' '$J2'); lock released; check queue/ by hand"; flock -u 9; exit 1; }
+I1=$(basename "$J1" .json); I2=$(basename "$J2" .json); echo "$(date -u +%FT%TZ) enqueue_pair_under_lock: pair $I1 + $I2 enqueued; holding the lock until both workers are visible"
+t=0
+while true; do
+  v1=0; v2=0; [ -e "queue/running/$I1.json" ] && ps -eo args | grep '[w]orker_d6.py' | grep -q "runs/$I1" && v1=1; [ -e "queue/running/$I2.json" ] && ps -eo args | grep '[w]orker_d6.py' | grep -q "runs/$I2" && v2=1
+  [ $v1 -eq 1 ] && [ $v2 -eq 1 ] && { state="both_visible"; break; }
+  term=0; for j in $I1 $I2; do a=0; for d in staged pending granted running; do [ -e "queue/$d/$j.json" ] && a=1; done; tt=0; for d in failed cancelled done; do [ -e "queue/$d/$j.json" ] && tt=1; done; [ $a -eq 0 ] && term=1; done
+  [ $term -eq 1 ] && { state="a_member_is_not_active (check queue/; never leave one member running alone)"; break; }
+  sleep 5; t=$((t+5)); [ $t -ge 900 ] && [ $((t % 60)) -eq 0 ] && echo "$(date -u +%FT%TZ) enqueue_pair_under_lock: WARNING pair not acknowledged after $t s; lock still held"
+done
+echo "$(date -u +%FT%TZ) enqueue_pair_under_lock: ${state} after $t s (busy $(busy)); lock released"
+flock -u 9; exec 9>&-

@@ -1,0 +1,113 @@
+{
+ "ts": "2026-10-29T04:54:45Z",
+ "reference": "validation/lm_cost_compare.json (GPU, 2026-10-29T00:26-00:43Z: fp64 and dd2 runs)",
+ "candidate": "validation/lm_cost_compare_ddj.json (GPU 6, 2026-10-29T04:48-04:52Z)",
+ "gpu_candidate": "NVIDIA A100-SXM4-80GB",
+ "gpu_reference": "NVIDIA A100-SXM4-80GB",
+ "counts": {
+  "dd": {
+   "n_iterations": 5,
+   "n_accepted": 5,
+   "n_trials": 10
+  },
+  "ddj": {
+   "n_iterations": 5,
+   "n_accepted": 5,
+   "n_trials": 10
+  }
+ },
+ "per_iteration": [
+  {
+   "it": 0,
+   "cost_dd": 2.5849690794409736e-07,
+   "cost_ddj": 2.584969079440978e-07,
+   "rel_diff": 1.6383811976533972e-15,
+   "accepted_dd": true,
+   "accepted_ddj": true,
+   "trials_dd": 2,
+   "trials_ddj": 2,
+   "step_rel_dd": null,
+   "step_rel_ddj": 0.009260697993797681
+  },
+  {
+   "it": 1,
+   "cost_dd": 2.5613897635456636e-07,
+   "cost_ddj": 2.5613897635587767e-07,
+   "rel_diff": 5.119536667675474e-12,
+   "accepted_dd": true,
+   "accepted_ddj": true,
+   "trials_dd": 2,
+   "trials_ddj": 2,
+   "step_rel_dd": null,
+   "step_rel_ddj": 0.0009021902777148655
+  },
+  {
+   "it": 2,
+   "cost_dd": 2.5507708536137813e-07,
+   "cost_ddj": 2.5507708536087753e-07,
+   "rel_diff": 1.9625301548278083e-12,
+   "accepted_dd": true,
+   "accepted_ddj": true,
+   "trials_dd": 2,
+   "trials_ddj": 2,
+   "step_rel_dd": null,
+   "step_rel_ddj": 0.002154084633452875
+  },
+  {
+   "it": 3,
+   "cost_dd": 2.5462047115340984e-07,
+   "cost_ddj": 2.54620471153252e-07,
+   "rel_diff": 6.200042158016645e-13,
+   "accepted_dd": true,
+   "accepted_ddj": true,
+   "trials_dd": 2,
+   "trials_ddj": 2,
+   "step_rel_dd": null,
+   "step_rel_ddj": 0.002708685201436067
+  },
+  {
+   "it": 4,
+   "cost_dd": 2.543394743207999e-07,
+   "cost_ddj": 2.543394743209879e-07,
+   "rel_diff": 7.391238628343645e-13,
+   "accepted_dd": true,
+   "accepted_ddj": true,
+   "trials_dd": 2,
+   "trials_ddj": 2,
+   "step_rel_dd": null,
+   "step_rel_ddj": 0.002375192142729047
+  }
+ ],
+ "max_rel_cost_diff": 5.119536667675474e-12,
+ "cost_start_rel_diff": 0.0,
+ "cost_end_rel_diff": 7.391238628343645e-13,
+ "wall": {
+  "fp64_s": 228.17160558700562,
+  "dd_s": 777.4752316474915,
+  "ddj_s": 238.2305018901825,
+  "ratio_ddj_over_fp64": 1.0440847855599686,
+  "ratio_dd_over_fp64": 3.4074144749401225,
+  "mean_t_jac": {
+   "fp64": 28.935318374633788,
+   "dd": 130.13406324386597,
+   "ddj": 32.60107069015503
+  },
+  "mean_t_trial": {
+   "fp64": 0.6343469381332397,
+   "dd": 1.0298630475997925,
+   "ddj": 1.2061265230178833
+  }
+ },
+ "peak_GPU_GB": {
+  "fp64": 26.237711872,
+  "dd": 39.865921536,
+  "ddj": 26.237672448
+ },
+ "criteria": {
+  "same_accepted_and_trial_counts": true,
+  "cost_within_1e-10_every_iteration": true,
+  "wall_ratio_at_most_1.5": true
+ },
+ "M3_PASS": true,
+ "note": "the reference runs were on a different physical GPU (same model) with another project's process on it; the wall ratio compares two runs on the same GPU each"
+}

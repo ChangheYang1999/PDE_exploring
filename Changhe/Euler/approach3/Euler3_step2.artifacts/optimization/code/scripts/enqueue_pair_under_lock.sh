@@ -1,0 +1,32 @@
+#!/bin/bash
+# Enqueue a FREE/FIXED-CONTROL PAIR (P3 segment k) without exceeding four busy computations (lead 23:42:57Z item 4: both members together, never one alone).
+# v3 (01:2xZ; V556): the terminal release requires BOTH workers absent (named as a file disposition); worker match by the admitted-computation predicate (queue_guard_lib v2). v2 (20908b4e) kept as .v2_20908b4e.
+# v2 (01:1xZ; V552, V547): exact job ids from the enqueue outputs, every queue state inspected, exact argv-token worker match, and NO release while the admission is
+# unresolved: if one member fails to enqueue or disappears without a terminal copy, the lock is held and a WARNING asks the operator to stop the other member (the
+# pair must not run alone); release only when both workers are visible, or both members are terminal without active copies. v1 (ab95c893) kept as .v1_ab95c893.
+# Usage: bash scripts/enqueue_pair_under_lock.sh <free run dir> <free tag> <free gpu> <fixed run dir> <fixed tag> <fixed gpu> <iterations> <time limit s>
+set -u; cd RUN_ROOT/numerics/degree6_free_parameters_48h; LOCK=validation/.l_launch.lock; . scripts/queue_guard_lib.sh
+RF=$1; TF=$2; GF=$3; RX=$4; TX=$5; GX=$6; INC=$7; TL=$8
+exec 9>"$LOCK"; flock -x 9
+t=0; while [ "$(busy)" -gt 2 ]; do sleep 20; t=$((t+20)); [ $t -ge 7200 ] && { echo "enqueue_pair_under_lock: gave up waiting for two slots after $t s (busy $(busy)); nothing enqueued"; flock -u 9; exit 1; }; done
+echo "$(date -u +%FT%TZ) enqueue_pair_under_lock: busy $(busy) <= 2 after $t s; enqueuing the pair $TF (GPU $GF) + $TX (GPU $GX), $INC iterations, $TL s"
+O1=$(bash scripts/enqueue_segment2.sh "$RF" "$TF" "$GF" 1 "$INC" "$TL" 2>&1); r1=$?; echo "$O1"; I1=$(id_from_output "$O1")
+O2=$(bash scripts/enqueue_segment2.sh "$RX" "$TX" "$GX" 1 "$INC" "$TL" 2>&1); r2=$?; echo "$O2"; I2=$(id_from_output "$O2")
+if [ -z "$I1" ] || [ -z "$I2" ]; then
+  echo "$(date -u +%FT%TZ) enqueue_pair_under_lock: WARNING a member did not return a job id (exit $r1 / $r2; ids '$I1' '$I2'). The lock is HELD. Operator: cancel the other member (move its file from queue/staged|pending to queue/cancelled and stop its worker if any) so that no member runs alone, then stop this guard."
+  t=0; while true; do sleep 60; t=$((t+60)); echo "$(date -u +%FT%TZ) enqueue_pair_under_lock: WARNING unresolved pair admission after $t s; lock held"; done
+fi
+echo "$(date -u +%FT%TZ) enqueue_pair_under_lock: pair $I1 + $I2 enqueued; holding the lock until both workers are visible (states:$(job_states $I1) /$(job_states $I2))"
+t=0
+while true; do
+  v1=0; v2=0; worker_visible "$I1" && v1=1; worker_visible "$I2" && v2=1
+  [ $v1 -eq 1 ] && [ $v2 -eq 1 ] && { state="both_visible"; break; }
+  s1=$(job_states $I1); s2=$(job_states $I2); term1=0; term2=0
+  case "$s1" in *staged*|*pending*|*granted*|*running*) ;; *failed*|*cancelled*|*done*) term1=1;; esac
+  case "$s2" in *staged*|*pending*|*granted*|*running*) ;; *failed*|*cancelled*|*done*) term2=1;; esac
+  [ $term1 -eq 1 ] && [ $term2 -eq 1 ] && [ $v1 -eq 0 ] && [ $v2 -eq 0 ] && { state="both_terminal_files_and_no_worker_visible:$s1 /$s2"; break; }   # v3 (V556): requires both workers absent
+  if [ $term1 -ne $term2 ] || [ -z "$s1" ] || [ -z "$s2" ]; then [ $((t % 60)) -eq 0 ] && echo "$(date -u +%FT%TZ) enqueue_pair_under_lock: WARNING unresolved pair state ($I1:$s1 / $I2:$s2); lock held; a member must not run alone"; fi
+  sleep 5; t=$((t+5)); [ $t -ge 900 ] && [ $((t % 60)) -eq 0 ] && echo "$(date -u +%FT%TZ) enqueue_pair_under_lock: WARNING pair not acknowledged after $t s; lock still held"
+done
+echo "$(date -u +%FT%TZ) enqueue_pair_under_lock: ${state} after $t s (busy $(busy)); lock released"
+flock -u 9; exec 9>&-

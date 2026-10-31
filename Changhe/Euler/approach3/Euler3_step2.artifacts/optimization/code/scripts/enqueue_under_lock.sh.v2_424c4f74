@@ -1,0 +1,22 @@
+#!/bin/bash
+# Enqueue a job without exceeding four busy computations (23:54Z incident: a chain's wait_slot and another chain's l_launch both saw busy 3 before the new worker
+# appeared). Under the launcher's exclusive lock (validation/.l_launch.lock, the same lock l_launch_v3 holds while it waits): wait until busy <= 3, run the enqueue
+# command, then keep the lock until the job's worker is visible in the busy count (or 150 s), so that no other launcher can fill the slot in between.
+# Usage: bash scripts/enqueue_under_lock.sh <job id prefix as it appears in queue/running> <enqueue command ...>
+set -u; cd RUN_ROOT/numerics/degree6_free_parameters_48h; PREFIX=$1; shift; LOCK=validation/.l_launch.lock
+busy() { n=0; for p in $(ps -eo pid,comm,args | awk '$2 ~ /^python/' | grep -E "venv/bin/python( -u)? [^ ]*(validation/[A-Za-z0-9_]+\.py|scripts/[A-Za-z0-9_]+\.py)" | grep -v grep | grep -v -E "scripts/(supervisor|slot_governor)\.py" | awk '{print $1}'); do case "$(readlink /proc/$p/cwd 2>/dev/null)" in RUN_ROOT/numerics*) n=$((n+1));; esac; done; echo $n; }
+exec 9>"$LOCK"; flock -x 9
+t=0; while [ "$(busy)" -gt 3 ]; do sleep 20; t=$((t+20)); [ $t -ge 7200 ] && { echo "enqueue_under_lock: gave up after $t s (busy $(busy))"; flock -u 9; exit 1; }; done
+echo "$(date -u +%FT%TZ) enqueue_under_lock: busy $(busy) <= 3 after $t s; enqueuing: $*"
+"$@"; rc=$?
+# v2 (00:1xZ; V523): the lock is held until the job's worker is VISIBLE, or until the job is verifiably no longer pending (queue/failed, queue/cancelled or queue/done
+# and no staged/pending/running file); an unacknowledged state never releases the slot silently: after 900 s the wait continues with a warning every 60 s.
+t=0; state="pending"
+while true; do
+  if ls queue/running/${PREFIX}*.json >/dev/null 2>&1 && ps -eo args | grep '[w]orker_d6.py' | grep -q "runs/${PREFIX}"; then state="visible"; break; fi
+  if ! ls queue/staged/${PREFIX}*.json queue/pending/${PREFIX}*.json queue/running/${PREFIX}*.json >/dev/null 2>&1 && ls queue/failed/${PREFIX}*.json queue/cancelled/${PREFIX}*.json queue/done/${PREFIX}*.json >/dev/null 2>&1; then state="not_pending"; break; fi
+  [ $rc -ne 0 ] && ! ls queue/staged/${PREFIX}*.json queue/pending/${PREFIX}*.json queue/running/${PREFIX}*.json >/dev/null 2>&1 && { state="enqueue_failed"; break; }
+  sleep 5; t=$((t+5)); [ $((t % 60)) -eq 0 ] && [ $t -ge 900 ] && echo "$(date -u +%FT%TZ) enqueue_under_lock: WARNING ${PREFIX} not acknowledged after $t s; lock still held"
+done
+echo "$(date -u +%FT%TZ) enqueue_under_lock: ${PREFIX} state ${state} after $t s (busy $(busy)); lock released (enqueue exit $rc)"
+flock -u 9; exec 9>&-; exit $rc

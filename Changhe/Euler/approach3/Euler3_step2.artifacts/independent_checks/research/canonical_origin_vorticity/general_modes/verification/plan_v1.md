@@ -1,0 +1,13 @@
+# General-mode exact origin qualification
+
+Registered 2026-10-29T21:34:25.764388+00:00, before implementation or any general-mode saved-state origin evaluation. Proof SHA256 9431ea85ad01e19176eb3fa0f27dcc810298601c07dc159845e35d37968bd342.
+
+First qualify the exact vector identity with direct polynomial curls using rational arithmetic, independent of the closed formula. Use general traceless Hessians, nonaxial degree-one coefficients, radial poloidal terms, degree-three harmonic terms and higher radial powers. Include zero, signed and cancellation cases. Explicit negative controls omit the radial contribution or the rotation contribution and must be detected by fixtures where each is nonzero.
+
+Check the coefficient formula by separately constructing low-order potential polynomials from rational Chebyshev endpoint derivatives and the smooth twist. Check the even-mode reduction against the previously qualified exact scalar formula, including the current F1 and F2 exchanges if complete. Check an unrestricted manufactured field against Cartesian extended-precision evaluation at the origin; relative discrepancies <=2e-12 in each of U, DU, Omega, DOmega and the vorticity residual, using max(reference norm,1e-30), are the numerical cross-check threshold. This threshold is not an interval enclosure of floating-point code.
+
+The exact reader reuses the bounded input decoder without modifications. It requires main degree six, positive R0, nonzero c, positive omega and correction damping at least one. Input paths and bytes, source hashes, exact dyadic coefficient sums and rational interval endpoints are recorded. The arithmetic is exact rational operations plus the existing 64-term Machin pi enclosure and fixed 10^-60 square-root grid. Every component is reported. A component interval excluding zero is an exact obstruction for the canonical finite field; intervals containing zero remain inconclusive. No global residual, neighborhood distance or nonexistence claim follows.
+
+After qualification, apply the reader to immutable, complete raw P3 INITIAL/FREE/FIXED exchanges from the matched freeze. Their results remain development checks, not a substitute for the final frozen cohort. If the P3 exchanges are not yet ready, preserve the qualified reader and wait for the existing serial queue. No premature use of the even-mode scalar formula on P3 is permitted.
+
+One bounded CPU35 process at a time, OMP/BLAS one, low priority. Pause the active owned controller/child for a short qualification or acquire the common execution lock when free. No JavaScript/TypeScript, servers/listeners, RLScience cluster, remote or paid compute, GPU use in this reader, Lean/Lake builds or writes outside this side.

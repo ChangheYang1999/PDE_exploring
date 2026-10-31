@@ -1,0 +1,135 @@
+{
+  "L_ext": 15,
+  "L_max": 6,
+  "Nk": 16,
+  "R0": 0.3,
+  "alpha": 1.2222222222222223,
+  "c_l": 0.45,
+  "channels": {
+    "LB": 15,
+    "LD": 14,
+    "LE": 6,
+    "Mch": null,
+    "NkB": 4,
+    "NkD": 4,
+    "NkE": 4,
+    "R1": null,
+    "core_damp": 2
+  },
+  "coefficient_operation": "Exact layout decoding only; no gauge normalization, projection, tail elimination, refit or parameter change",
+  "config_parameters": {
+    "c_l": 0.45,
+    "omega": 1.0
+  },
+  "created_utc": "2026-10-29T22:13:20.415527+00:00",
+  "dimensions": {
+    "full_vector": 3574,
+    "matrices": {
+      "A": [
+        16,
+        243
+      ],
+      "B": [
+        4,
+        243
+      ],
+      "C": [
+        16,
+        243
+      ],
+      "D": [
+        4,
+        243
+      ],
+      "E": [
+        4,
+        243
+      ]
+    },
+    "modes": 243
+  },
+  "free_params": true,
+  "import_script_sha256": "45eecf5a2d499ddaeba35710aadb2b6c46ab548f4223b5fc644ec1af8eabab0d",
+  "layout_source_sha256": {
+    "src/bases/solid_harmonics.py": "3f231c9286b79b406d364f58a4b8b7234c7c5629db8dd6636ac5bbd37e1695b3",
+    "src/equations/fields.py": "c68a1fb31fa87d2b998966985c39de8bbafeb6bbf85e5f84378a215ad4af0229"
+  },
+  "m_parity": "all",
+  "omega": 1.0,
+  "omega_over_c_l": 2.2222222222222223,
+  "parameter_source": "last two coordinates of saved full vector",
+  "production_layout_root": "RUN_ROOT/verifier/artifacts/production_snapshots/official_gpu_v1p1_20261029T054715Z",
+  "roundtrip_bitwise_equal": true,
+  "source_checkpoint": "RUN_ROOT/verifier/artifacts/P3_matched_freeze_v1/INITIAL_raw.pt",
+  "source_checkpoint_sha256": "000bc907fdd59ed3338b0ef682d2257a7044e33447ad0569999550523d0d981a",
+  "source_config": {
+    "L": 6,
+    "Nk": 16,
+    "Nr": 48,
+    "R0": 0.3,
+    "c_l": 0.45,
+    "channels": {
+      "LB": 15,
+      "LD": 14,
+      "LE": 6,
+      "NkB": 4,
+      "NkD": 4,
+      "NkE": 4,
+      "core_damp": 2
+    },
+    "chunk": 256,
+    "closure_lambda": 0.001,
+    "complete_gradient": true,
+    "complete_gradient_every": 4,
+    "far_lambda": 0.01,
+    "far_radii": [
+      4096.0,
+      16384.0,
+      65536.0
+    ],
+    "formulation": "mom",
+    "free_params": true,
+    "ftol": 1e-07,
+    "g1_label": "G1 under post-result rules 3.6 (j), (k), (l), (n)",
+    "gauge_weight": 100.0,
+    "holdout_per_shell": 6,
+    "init_from": "RUN_ROOT/numerics/degree6_free_parameters_48h/starts/S20_s4allm_cl0.45_om1.0.pt",
+    "lag_jacobian": false,
+    "lam0": 0.01,
+    "linearization": true,
+    "linearization_every": 50,
+    "m_parity": "all",
+    "max_iter": 120,
+    "n_starts": 1,
+    "nl_denominator": "all5far",
+    "nl_weighting": true,
+    "omega": 1.0,
+    "param_init_mode": "keep_coefficients",
+    "param_step_max": 0.5,
+    "perturb": 0.0,
+    "perturb_nonaxi": 0.0,
+    "precision_mode": "dd_fp64jac",
+    "record_label": "full release under the post-result timing rule 3.6 (m)",
+    "release_battery": "GPU (v1.13 to v1.25)",
+    "release_note": "lead 2026-10-29T16:40:13Z FULL RELEASE (SPEC v1.25), acknowledged in status/FULL_RELEASE_ACK",
+    "seed": 0,
+    "snapshot": "gpu_v1p1",
+    "spec_sha256": "acd5406d92973592c2b45e7c5f3a484e5e80234ba8d2f4e271b509076c941e64",
+    "spec_version": "v1.25",
+    "tail_constraints": true,
+    "threads": 1,
+    "time_limit_per_start": 3600.0,
+    "xtol": 1e-12
+  },
+  "source_state": {
+    "kind": "final",
+    "label": null,
+    "pivot": null,
+    "status": null
+  },
+  "versions": {
+    "numpy": "2.0.2",
+    "python": "3.9.25 (main, Jul 15 2026, 00:00:00) \n[GCC 11.5.0 20240719 (Red Hat 11.5.0-5)]",
+    "torch": "2.8.0+cu128"
+  }
+}

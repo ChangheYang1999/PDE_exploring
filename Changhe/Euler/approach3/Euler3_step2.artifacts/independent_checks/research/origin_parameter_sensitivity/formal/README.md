@@ -1,0 +1,1 @@
+No formal sources are present. The campaign prohibits Lean and Lake builds. PROOF.md is the complete informal argument; numerical and independent-review evidence belongs in the adjacent verification directory.

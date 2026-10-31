@@ -1,0 +1,7 @@
+# P1 segment 5 and F2 medium segment 2 saved-factor checks
+
+Registered 2026-10-30T03:29:19.687288+00:00, before this version's computations. These two endpoints extend the existing protocol and proofs in ../PROOF.md and ../../progress_criteria/PROOF.md. P1 segment 5 has a published record. F2 segment 2 currently has only the completed frozen EVAL record; use that registered path directly, record publication availability, and check byte equality if a publication is available at audit time. Missing publication does not imply missing EVAL computation.
+
+Use the unchanged independent_sensitivity_v1.py implementation and its registered qualification. Preserve endpoint largest-singular consistency 1e-12, SVD reconstruction 1e-11, band partition 1e-10, and exact last-50 and last-49 accepted-transition predicates. A failure is retained. Source, input and factor bindings precede computation. Lead F2 estimates were read before this registration; they do not determine tolerances. No independent Euler residual or Jacobian is reconstructed here. Reduced parameter steps are physical (c_l, omega); a log-omega tangent requires division by omega.
+
+One CPU35 computation with one thread, hidden CUDA; each stage at most120 seconds inside recursive paused ownership. No JavaScript/TypeScript, servers, RLScience/cluster, remote compute, Lean builds or outside writes. No new final entropy. Formal proofs are not claimed by saved-factor arithmetic.

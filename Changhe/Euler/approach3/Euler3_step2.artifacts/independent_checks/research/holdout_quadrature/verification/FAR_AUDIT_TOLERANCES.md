@@ -1,0 +1,3 @@
+# Far saved-array audit tolerances
+
+Registered 2026-10-29T01:49Z before the final far-grid result or any audit execution. The independent metric audit uses a relative tolerance of 2e-12, with an absolute floor of 1e-290 solely for numerical underflow. The direct-minus-stable linear diagnostic is exceptional: it measures arithmetic cancellation, so regrouping the matrix contraction changes its value at the roundoff scale. Its absolute audit tolerance is 100 times machine epsilon of the field dtype times the sum of the three individual linear-term norms and the stable linear norm. This tolerance verifies arithmetic compatibility only; it is not an Euler residual tolerance or a pressure accuracy threshold.

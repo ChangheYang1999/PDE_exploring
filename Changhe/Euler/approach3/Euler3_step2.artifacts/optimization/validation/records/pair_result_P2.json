@@ -1,0 +1,279 @@
+{
+ "pair": "P2",
+ "FREE": {
+  "runs": [
+   "runs/p2_s1_S09_L6_cl0.4500_om0.3000_free",
+   "runs/p2_s2_S09_L6_cl0.4500_om0.3000_free"
+  ],
+  "segments": [
+   {
+    "run": "p2_s1_S09_L6_cl0.4500_om0.3000_free",
+    "job_id": "p2_s1_S09_L6_cl0.4500_om0.3000_free",
+    "label": "FREE",
+    "entries": 94,
+    "it_end": 94,
+    "lm_status": "time_limit",
+    "seg_elapsed": 3634.127955198288,
+    "ts": "2026-10-29T11:34:44Z",
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "counters": {
+     "n_acc": 94,
+     "n_rej": 57,
+     "sat_count": 0
+    }
+   },
+   {
+    "run": "p2_s2_S09_L6_cl0.4500_om0.3000_free",
+    "job_id": "p2_s2_S09_L6_cl0.4500_om0.3000_free",
+    "label": "FREE",
+    "entries": 186,
+    "it_end": 280,
+    "lm_status": "time_limit",
+    "seg_elapsed": 7232.29167342186,
+    "ts": "2026-10-29T13:46:54Z",
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "counters": {
+     "n_acc": 280,
+     "n_rej": 175,
+     "sat_count": 0
+    }
+   }
+  ],
+  "final": {
+   "it_cum": 279,
+   "wall": 10866.419628620148,
+   "cost": 1.491074481857586e-07,
+   "c_l": 0.45272851087117016,
+   "omega": 0.3040154299573543,
+   "blocks": {
+    "near_origin": 4.0104350951637636e-10,
+    "core_intermediate": 1.4406308845348605e-07,
+    "far_momentum": 6.929491867317498e-11,
+    "far_anchors": 2.2513204548329553e-16,
+    "closure": 4.571574716614467e-09,
+    "gauge": 2.446362336519478e-12,
+    "total": 1.491074481857586e-07
+   },
+   "segment": "p2_s2_S09_L6_cl0.4500_om0.3000_free"
+  }
+ },
+ "FIXED": {
+  "runs": [
+   "runs/p2c_s1_S09_L6_cl0.4500_om0.3000_fixed",
+   "runs/p2c_s2_S09_L6_cl0.4500_om0.3000_fixed"
+  ],
+  "segments": [
+   {
+    "run": "p2c_s1_S09_L6_cl0.4500_om0.3000_fixed",
+    "job_id": "p2c_s1_S09_L6_cl0.4500_om0.3000_fixed",
+    "label": "FIXED-CONTROL",
+    "entries": 120,
+    "it_end": 120,
+    "lm_status": "max_iter",
+    "seg_elapsed": 1762.8151016235352,
+    "ts": "2026-10-29T11:03:31Z",
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "counters": {
+     "n_acc": 120,
+     "n_rej": 75,
+     "sat_count": 0
+    }
+   },
+   {
+    "run": "p2c_s2_S09_L6_cl0.4500_om0.3000_fixed",
+    "job_id": "p2c_s2_S09_L6_cl0.4500_om0.3000_fixed",
+    "label": "FIXED-CONTROL",
+    "entries": 240,
+    "it_end": 360,
+    "lm_status": "max_iter",
+    "seg_elapsed": 3596.1824514865875,
+    "ts": "2026-10-29T12:46:16Z",
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "counters": {
+     "n_acc": 360,
+     "n_rej": 230,
+     "sat_count": 0
+    }
+   }
+  ],
+  "final": {
+   "it_cum": 359,
+   "wall": 5358.997553110123,
+   "cost": 1.5378513471386733e-07,
+   "c_l": 0.45,
+   "omega": 0.3,
+   "blocks": {
+    "near_origin": 3.870947403646106e-10,
+    "core_intermediate": 1.484169261856674e-07,
+    "far_momentum": 6.651082851992031e-11,
+    "far_anchors": 2.294361384178149e-16,
+    "closure": 4.91382438929e-09,
+    "gauge": 7.783405892604536e-13,
+    "total": 1.5378513471386733e-07
+   },
+   "segment": "p2c_s2_S09_L6_cl0.4500_om0.3000_fixed"
+  }
+ },
+ "readings": {
+  "iteration_matched_common": {
+   "kind": "iteration",
+   "at": 279,
+   "available": true,
+   "matched": true,
+   "notes": [],
+   "FREE": {
+    "O1": 1.491074481857586e-07,
+    "it_cum": 279,
+    "wall": 10866.419628620148,
+    "c_l": 0.45272851087117016,
+    "omega": 0.3040154299573543,
+    "blocks": {
+     "near_origin": 4.0104350951637636e-10,
+     "core_intermediate": 1.4406308845348605e-07,
+     "far_momentum": 6.929491867317498e-11,
+     "far_anchors": 2.2513204548329553e-16,
+     "closure": 4.571574716614467e-09,
+     "gauge": 2.446362336519478e-12,
+     "total": 1.491074481857586e-07
+    }
+   },
+   "FIXED": {
+    "O1": 1.6187671817506178e-07,
+    "it_cum": 279,
+    "wall": 4184.6422345638275,
+    "blocks": {
+     "near_origin": 3.7236424948475086e-10,
+     "core_intermediate": 1.5504272762698693e-07,
+     "far_momentum": 6.298930327763029e-11,
+     "far_anchors": 2.490394686202655e-16,
+     "closure": 6.395157261946799e-09,
+     "gauge": 3.4794843261813526e-12,
+     "total": 1.6187671817506178e-07
+    }
+   },
+   "ratio_FREE_over_FIXED": 0.9211173161078431
+  },
+  "wall_matched_common": {
+   "kind": "wall",
+   "at": 5358.997553110123,
+   "available": true,
+   "matched": true,
+   "notes": [],
+   "FREE": {
+    "O1": 1.766202845550756e-07,
+    "it_cum": 137,
+    "wall": 5349.859045982361,
+    "c_l": 0.4506455409804113,
+    "omega": 0.30294214161984817,
+    "blocks": {
+     "near_origin": 3.451642880569759e-10,
+     "core_intermediate": 1.66102331689468e-07,
+     "far_momentum": 6.269853644545449e-11,
+     "far_anchors": 3.451748435638628e-16,
+     "closure": 1.010735642391169e-08,
+     "gauge": 2.7332720186540853e-12,
+     "total": 1.766202845550756e-07
+    }
+   },
+   "FIXED": {
+    "O1": 1.5378513471386733e-07,
+    "it_cum": 359,
+    "wall": 5358.997553110123,
+    "blocks": {
+     "near_origin": 3.870947403646106e-10,
+     "core_intermediate": 1.484169261856674e-07,
+     "far_momentum": 6.651082851992031e-11,
+     "far_anchors": 2.294361384178149e-16,
+     "closure": 4.91382438929e-09,
+     "gauge": 7.783405892604536e-13,
+     "total": 1.5378513471386733e-07
+    }
+   },
+   "ratio_FREE_over_FIXED": 1.1484873676750054
+  },
+  "iteration_matched_360": {
+   "kind": "iteration",
+   "at": 360,
+   "available": true,
+   "matched": false,
+   "notes": [
+    "FREE reached only 280 cumulative accepted iterations (< 360): its final state is used; the reading is NOT iteration-matched"
+   ],
+   "FREE": {
+    "O1": 1.491074481857586e-07,
+    "it_cum": 279,
+    "wall": 10866.419628620148,
+    "c_l": 0.45272851087117016,
+    "omega": 0.3040154299573543,
+    "blocks": {
+     "near_origin": 4.0104350951637636e-10,
+     "core_intermediate": 1.4406308845348605e-07,
+     "far_momentum": 6.929491867317498e-11,
+     "far_anchors": 2.2513204548329553e-16,
+     "closure": 4.571574716614467e-09,
+     "gauge": 2.446362336519478e-12,
+     "total": 1.491074481857586e-07
+    }
+   },
+   "FIXED": {
+    "O1": 1.5378513471386733e-07,
+    "it_cum": 359,
+    "wall": 5358.997553110123,
+    "blocks": {
+     "near_origin": 3.870947403646106e-10,
+     "core_intermediate": 1.484169261856674e-07,
+     "far_momentum": 6.651082851992031e-11,
+     "far_anchors": 2.294361384178149e-16,
+     "closure": 4.91382438929e-09,
+     "gauge": 7.783405892604536e-13,
+     "total": 1.5378513471386733e-07
+    }
+   },
+   "ratio_FREE_over_FIXED": 0.9695829734336026,
+   "at_it_cum_index": 359
+  },
+  "wall_matched_10800s": {
+   "kind": "wall",
+   "at": 10800.0,
+   "available": true,
+   "matched": true,
+   "notes": [
+    "FIXED ended at cumulative wall 5359 s (< 10800 s; last segment lm_status max_iter): its final state is used (no further change within the wall budget)"
+   ],
+   "FREE": {
+    "O1": 1.4943732922899074e-07,
+    "it_cum": 277,
+    "wall": 10784.39282298088,
+    "c_l": 0.45269281664996547,
+    "omega": 0.3039772544770143,
+    "blocks": {
+     "near_origin": 4.006736759693312e-10,
+     "core_intermediate": 1.443513414713104e-07,
+     "far_momentum": 6.915455511629652e-11,
+     "far_anchors": 2.2558328303909266e-16,
+     "closure": 4.6149056787027595e-09,
+     "gauge": 1.2536223086973863e-12,
+     "total": 1.4943732922899074e-07
+    }
+   },
+   "FIXED": {
+    "O1": 1.5378513471386733e-07,
+    "it_cum": 359,
+    "wall": 5358.997553110123,
+    "blocks": {
+     "near_origin": 3.870947403646106e-10,
+     "core_intermediate": 1.484169261856674e-07,
+     "far_momentum": 6.651082851992031e-11,
+     "far_anchors": 2.294361384178149e-16,
+     "closure": 4.91382438929e-09,
+     "gauge": 7.783405892604536e-13,
+     "total": 1.5378513471386733e-07
+    }
+   },
+   "ratio_FREE_over_FIXED": 0.9717280510046299
+  }
+ },
+ "sharing_condition_flag": "p2c_s2 (FIXED-CONTROL) shared GPU 5 with the S05 c_l (l) comparison from 11:46:55Z to 11:51:25Z (about 4.5 min; lead 11:54:29Z): the iteration-matched readings keep their values and carry this flag; the FIXED member's wall time in that interval is not comparable, so the wall-matched readings carry it too. Both P2 members otherwise ran alone and exclusive on their GPUs (FREE GPU 4, FIXED GPU 5) in segment 2, and together on GPU 4 in segment 1.",
+ "definitions": "O1 = history cost at the accepted iterate (self-consistent objective of the worker); it_cum is the 0-based index of the accepted iteration over the segments (it_cum = 359 is the 360th); the named iteration count is 1-based; wall = cumulative LM elapsed over the segments (segment checkpoints and restarts excluded); the iteration-matched reading compares both members at the same cumulative accepted iteration, the wall-matched at the same cumulative wall time",
+ "ts": "2026-10-29T13:58:13Z"
+}

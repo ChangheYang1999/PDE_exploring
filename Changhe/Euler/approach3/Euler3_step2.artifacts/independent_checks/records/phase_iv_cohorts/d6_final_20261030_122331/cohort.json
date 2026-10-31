@@ -1,0 +1,613 @@
+{
+  "schema": "d6-phase-iv-frozen-cohort-v1",
+  "selection": {
+    "schema": "d6-phase-iv-selection-v1",
+    "cohort_id": "d6_final_20261030_122331",
+    "selected_at_utc": "2026-10-30T12:11:09.471877+00:00",
+    "selection_rationale": "P1s4 fixed by dated lead ruling; F2 and P3 latest eligible exact ends. All open classification flags retained. Final evaluation follows the admitted 397-minute plan.",
+    "eligibility_evidence": {
+      "path": "RUN_ROOT/verifier/artifacts/final_preparation_seals/d6_final_20261030_122331/eligibility.json",
+      "sha256": "841f37eeb35256a764ed55ff0d317387cb0f67b60e5a6104e3d227a5f8d573f6"
+    },
+    "branches": [
+      {
+        "branch_id": "P1",
+        "initialization_id": "S01",
+        "reference_core_radius": 0.4192773285352348,
+        "state_convention": "END_CURRENT",
+        "selection_rationale": "Dated Phase IV capacity decision; latest exact eligible end after the registered clearance root. No total ranking, stationarity or classification-flag clearance is implied.",
+        "reference_core_rationale": "Exact genuine version-ten source-start core radius; shared S01 source for P1 and F2.",
+        "states": [
+          {
+            "state_id": "P1s4_FREE",
+            "role": "FREE",
+            "input_directory": "artifacts/inputs/P1_FREE_segment4_current_v1",
+            "source_state_kind": "current",
+            "checkpoint_sha256": "1b16c729140f8c205e212c040505b76bd388df9e3592d18e6675508fe023baa3",
+            "original_checkpoint": "RUN_ROOT/verifier/artifacts/P1_segment4_freeze_free_v1/checkpoint_segment_end.pt",
+            "state_convention": "END_CURRENT"
+          },
+          {
+            "state_id": "P1_B0",
+            "role": "B0",
+            "input_directory": "artifacts/inputs/S01_original_exact_v1",
+            "source_state_kind": "final",
+            "checkpoint_sha256": "83aa4c6e9473c8bd76524600ec758fa4202840972ff242f27c5806411101dbcd",
+            "original_checkpoint": "RUN_ROOT/verifier/artifacts/starting_records/S01_original_v1/start_000.pt",
+            "state_convention": "END_CURRENT"
+          },
+          {
+            "state_id": "P1_FIXED_s2",
+            "role": "FIXED",
+            "input_directory": "artifacts/inputs/P1_FIXED_segment2_current_v1",
+            "source_state_kind": "current",
+            "checkpoint_sha256": "7d3bc6eaf11685096769871bee11a004fd0c6a838b39931d352e34260a458312",
+            "original_checkpoint": "RUN_ROOT/verifier/artifacts/P1_segment2_freeze_fixed_v1/checkpoint_segment_end.pt",
+            "state_convention": "END_CURRENT"
+          }
+        ]
+      },
+      {
+        "branch_id": "F2",
+        "initialization_id": "S01",
+        "reference_core_radius": 0.4192773285352348,
+        "state_convention": "END_CURRENT",
+        "selection_rationale": "Dated Phase IV capacity decision; latest exact eligible end after the registered clearance root. No total ranking, stationarity or classification-flag clearance is implied.",
+        "reference_core_rationale": "Exact genuine version-ten source-start core radius; shared S01 source for P1 and F2.",
+        "states": [
+          {
+            "state_id": "F2m3_FREE",
+            "role": "FREE",
+            "input_directory": "artifacts/inputs/F2m3_late_current_v1",
+            "source_state_kind": "current",
+            "checkpoint_sha256": "9bc23af72924c82a3353bb74a73206b55b355e872441594435a9fe665e28caa9",
+            "original_checkpoint": "RUN_ROOT/verifier/artifacts/F2m3_late_freeze_v1/current.pt",
+            "state_convention": "END_CURRENT"
+          },
+          {
+            "state_id": "F2_B0",
+            "role": "B0",
+            "input_directory": "artifacts/inputs/S01_original_exact_v1",
+            "source_state_kind": "final",
+            "checkpoint_sha256": "83aa4c6e9473c8bd76524600ec758fa4202840972ff242f27c5806411101dbcd",
+            "original_checkpoint": "RUN_ROOT/verifier/artifacts/starting_records/S01_original_v1/start_000.pt",
+            "state_convention": "END_CURRENT"
+          }
+        ],
+        "missing_fixed_reason": "No separately admitted matched fixed-parameter F2 control. The shared source B0 is retained through an explicit final alias audit."
+      },
+      {
+        "branch_id": "P3",
+        "initialization_id": "S20",
+        "reference_core_radius": 0.4192773285352348,
+        "state_convention": "END_CURRENT",
+        "selection_rationale": "Dated Phase IV capacity decision; latest exact eligible end after the registered clearance root. No total ranking, stationarity or classification-flag clearance is implied.",
+        "reference_core_rationale": "Exact genuine version-ten source-start core radius; shared S01 source for P1 and F2.",
+        "states": [
+          {
+            "state_id": "P3s4_FREE",
+            "role": "FREE",
+            "input_directory": "artifacts/inputs/P3cont4_late_current_v1",
+            "source_state_kind": "current",
+            "checkpoint_sha256": "7bb8add5c36a5998e8746dd831bf43f5449b932aab3201467040ce38159a4152",
+            "original_checkpoint": "RUN_ROOT/verifier/artifacts/P3cont4_late_freeze_v1/current.pt",
+            "state_convention": "END_CURRENT"
+          },
+          {
+            "state_id": "P3_B0",
+            "role": "B0",
+            "input_directory": "artifacts/inputs/P3_INITIAL_raw_v1",
+            "source_state_kind": "final",
+            "checkpoint_sha256": "000bc907fdd59ed3338b0ef682d2257a7044e33447ad0569999550523d0d981a",
+            "original_checkpoint": "RUN_ROOT/verifier/artifacts/P3_matched_freeze_v1/INITIAL_raw.pt",
+            "state_convention": "END_CURRENT"
+          },
+          {
+            "state_id": "P3_FIXED_s2",
+            "role": "FIXED",
+            "input_directory": "artifacts/inputs/P3_FIXED_segment2_current_v1",
+            "source_state_kind": "current",
+            "checkpoint_sha256": "c0a3e638be6fda490cd9e28d1ee118d12c040e0a6a111e2d39f722119694d530",
+            "original_checkpoint": "RUN_ROOT/numerics/degree6_free_parameters_48h/runs/p3c_s2b_S20_L6_cl0.4500_om1.0000_fixed/checkpoint_segment_end.pt",
+            "state_convention": "END_CURRENT"
+          }
+        ]
+      }
+    ]
+  },
+  "selection_sha256": "3a431cc6387c36d285f88d3ec592d4c341043c45d1b108a884d770001bd5a2c5",
+  "source_binding_sha256": "0d04ecce89ce8f5ede22cabdc83e4379e6369b0597a5e03674eeac362702e2e0",
+  "branches": [
+    {
+      "branch_id": "P1",
+      "initialization_id": "S01",
+      "reference_core_radius": 0.4192773285352348,
+      "state_convention": "END_CURRENT",
+      "selection_rationale": "Dated Phase IV capacity decision; latest exact eligible end after the registered clearance root. No total ranking, stationarity or classification-flag clearance is implied.",
+      "reference_core_rationale": "Exact genuine version-ten source-start core radius; shared S01 source for P1 and F2.",
+      "states": [
+        {
+          "state_id": "P1s4_FREE",
+          "role": "FREE",
+          "input_directory": "artifacts/inputs/P1_FREE_segment4_current_v1",
+          "source_state_kind": "current",
+          "checkpoint_sha256": "1b16c729140f8c205e212c040505b76bd388df9e3592d18e6675508fe023baa3",
+          "original_checkpoint": "RUN_ROOT/verifier/artifacts/P1_segment4_freeze_free_v1/checkpoint_segment_end.pt",
+          "state_convention": "END_CURRENT",
+          "input_manifest_sha256": "ae5f0c0bfd6b2ec1aa10e2000d01246b17d9bfdb351ad428ad051a29bae981fc",
+          "input_sha256": {
+            "BASIS.md": "74aa4cc730e54880b5602cd822235837f8527332e9cd491fbe892425673f8df8",
+            "coeffs.npz": "79a80c296ad985d8462bd27ea9436aba12be4e501c855519f5948f15a8eb0c1f",
+            "meta.json": "642c2e3f30bb4c7c7312a99d549278ccf9a349459a4914724dc2c6a0468d35ff",
+            "saved_full_vector.npz": "6673cfe69b52ac2a82267d68a8698e9b344b7f92fc4ba7069ccf3c650589925d"
+          },
+          "field_identity_sha256": "fb8e1fffa2598d082722361beb5f9a25b2f6b03f00af477bfd5b80a8dcb3065f",
+          "physical_parameters": {
+            "c_l": 0.44814413765532274,
+            "omega": 1.4068972013873298,
+            "R0": 0.3
+          },
+          "basis": {
+            "L_max": 6,
+            "L_ext": 15,
+            "Nk": 16,
+            "m_parity": "even",
+            "channels": {
+              "LB": 15,
+              "LD": 14,
+              "LE": 6,
+              "Mch": null,
+              "NkB": 4,
+              "NkD": 4,
+              "NkE": 4,
+              "R1": null,
+              "core_damp": 2
+            },
+            "modes_sha256": "91da0acfb0f283046b05b62f5774d55c92d125bffc69dcb2d67012ba656d7fa9"
+          },
+          "source_state": {
+            "geometry_base": {
+              "c_l": 0.45,
+              "kappa": 2.2222222222222223,
+              "omega": 1.0,
+              "p0": 4.444444444444445
+            },
+            "idx": 0,
+            "it": 587,
+            "job_id": "cont1_s4_S01_L6_cl0.4500_om1.0000_free",
+            "kind": "current",
+            "label": "FREE",
+            "pivot": {
+              "amp": 0.1306609448726974,
+              "pot": "S",
+              "q": 5
+            },
+            "ts": "2026-10-29T19:25:22Z"
+          },
+          "import_script_sha256": "45eecf5a2d499ddaeba35710aadb2b6c46ab548f4223b5fc644ec1af8eabab0d",
+          "import_scope": "Relies on the separately qualified exact importer and its bitwise round-trip record; no new unpack/pack computation here."
+        },
+        {
+          "state_id": "P1_B0",
+          "role": "B0",
+          "input_directory": "artifacts/inputs/S01_original_exact_v1",
+          "source_state_kind": "final",
+          "checkpoint_sha256": "83aa4c6e9473c8bd76524600ec758fa4202840972ff242f27c5806411101dbcd",
+          "original_checkpoint": "RUN_ROOT/verifier/artifacts/starting_records/S01_original_v1/start_000.pt",
+          "state_convention": "END_CURRENT",
+          "input_manifest_sha256": "d51ea14c9eeb067fb850c33ab6dd8028a5e5f3828bb1a70b4020ac96d2ffc976",
+          "input_sha256": {
+            "BASIS.md": "74aa4cc730e54880b5602cd822235837f8527332e9cd491fbe892425673f8df8",
+            "coeffs.npz": "f9382726f3dae0420ae6c750bb339d422a08ffa9064eb08557d1c2afd8070eb6",
+            "meta.json": "6c7cdbc1252a18fb688b76d9aed2c359d8554db50f3c74afa591c94f64b45d4e",
+            "saved_full_vector.npz": "ea49e3c986f310ca1e85741ae710d29b25810e34f6e83205f47b3d0ab5e744bb"
+          },
+          "field_identity_sha256": "4df56b4493af22c83369b59eb2becf2e467155659c6657ab1d354d706650a388",
+          "physical_parameters": {
+            "c_l": 0.45,
+            "omega": 1.0,
+            "R0": 0.3
+          },
+          "basis": {
+            "L_max": 6,
+            "L_ext": 15,
+            "Nk": 16,
+            "m_parity": "even",
+            "channels": {
+              "LB": 15,
+              "LD": 14,
+              "LE": 6,
+              "Mch": null,
+              "NkB": 4,
+              "NkD": 4,
+              "NkE": 4,
+              "R1": null,
+              "core_damp": 2
+            },
+            "modes_sha256": "91da0acfb0f283046b05b62f5774d55c92d125bffc69dcb2d67012ba656d7fa9"
+          },
+          "source_state": {
+            "kind": "final",
+            "label": null,
+            "pivot": {
+              "amp": 0.1254882698393224,
+              "pot": "S",
+              "q": 5
+            },
+            "status": "max_iter"
+          },
+          "import_script_sha256": "45eecf5a2d499ddaeba35710aadb2b6c46ab548f4223b5fc644ec1af8eabab0d",
+          "import_scope": "Relies on the separately qualified exact importer and its bitwise round-trip record; no new unpack/pack computation here."
+        },
+        {
+          "state_id": "P1_FIXED_s2",
+          "role": "FIXED",
+          "input_directory": "artifacts/inputs/P1_FIXED_segment2_current_v1",
+          "source_state_kind": "current",
+          "checkpoint_sha256": "7d3bc6eaf11685096769871bee11a004fd0c6a838b39931d352e34260a458312",
+          "original_checkpoint": "RUN_ROOT/verifier/artifacts/P1_segment2_freeze_fixed_v1/checkpoint_segment_end.pt",
+          "state_convention": "END_CURRENT",
+          "input_manifest_sha256": "4698531012607c41b39e8f540277ca0ed913a5a9c339d84f7ba343b68484569d",
+          "input_sha256": {
+            "BASIS.md": "74aa4cc730e54880b5602cd822235837f8527332e9cd491fbe892425673f8df8",
+            "coeffs.npz": "180a8963fcfedc410ecc717d6ccdf0384f3f9b65e0a2094af6281beff763e847",
+            "meta.json": "33bc38f8e8e5121d3d2ad39af66d61c1c49246312147fa308ba8cac1ea56f190",
+            "saved_full_vector.npz": "3b76bda0daad98cd2cc1c5af3607284669285a306c1503456a4fe9acd809cf10"
+          },
+          "field_identity_sha256": "ca7e6762199550d1150f794b21f82928353f071aab8e2bc467af48cb4b3d00b9",
+          "physical_parameters": {
+            "c_l": 0.45,
+            "omega": 1.0,
+            "R0": 0.3
+          },
+          "basis": {
+            "L_max": 6,
+            "L_ext": 15,
+            "Nk": 16,
+            "m_parity": "even",
+            "channels": {
+              "LB": 15,
+              "LD": 14,
+              "LE": 6,
+              "Mch": null,
+              "NkB": 4,
+              "NkD": 4,
+              "NkE": 4,
+              "R1": null,
+              "core_damp": 2
+            },
+            "modes_sha256": "91da0acfb0f283046b05b62f5774d55c92d125bffc69dcb2d67012ba656d7fa9"
+          },
+          "source_state": {
+            "geometry_base": {
+              "c_l": 0.45,
+              "kappa": 2.2222222222222223,
+              "omega": 1.0,
+              "p0": 4.444444444444445
+            },
+            "idx": 0,
+            "it": 360,
+            "job_id": "p1c_s2_S01_L6_cl0.4500_om1.0000_fixed",
+            "kind": "current",
+            "label": "FIXED-CONTROL",
+            "pivot": {
+              "amp": 0.1306609448726974,
+              "pot": "S",
+              "q": 5
+            },
+            "ts": "2026-10-29T12:21:14Z"
+          },
+          "import_script_sha256": "45eecf5a2d499ddaeba35710aadb2b6c46ab548f4223b5fc644ec1af8eabab0d",
+          "import_scope": "Relies on the separately qualified exact importer and its bitwise round-trip record; no new unpack/pack computation here."
+        }
+      ]
+    },
+    {
+      "branch_id": "F2",
+      "initialization_id": "S01",
+      "reference_core_radius": 0.4192773285352348,
+      "state_convention": "END_CURRENT",
+      "selection_rationale": "Dated Phase IV capacity decision; latest exact eligible end after the registered clearance root. No total ranking, stationarity or classification-flag clearance is implied.",
+      "reference_core_rationale": "Exact genuine version-ten source-start core radius; shared S01 source for P1 and F2.",
+      "missing_fixed_reason": "No separately admitted matched fixed-parameter F2 control. The shared source B0 is retained through an explicit final alias audit.",
+      "states": [
+        {
+          "state_id": "F2m3_FREE",
+          "role": "FREE",
+          "input_directory": "artifacts/inputs/F2m3_late_current_v1",
+          "source_state_kind": "current",
+          "checkpoint_sha256": "9bc23af72924c82a3353bb74a73206b55b355e872441594435a9fe665e28caa9",
+          "original_checkpoint": "RUN_ROOT/verifier/artifacts/F2m3_late_freeze_v1/current.pt",
+          "state_convention": "END_CURRENT",
+          "input_manifest_sha256": "d4eb599dbed4db15d83d7b32d2fc8f8ed67d187087a60d79521b014debb25617",
+          "input_sha256": {
+            "BASIS.md": "74aa4cc730e54880b5602cd822235837f8527332e9cd491fbe892425673f8df8",
+            "coeffs.npz": "2859c1c4fc581d94eafb44c8d7edddf2b1970908b43f469df4ba1ec529f7a772",
+            "meta.json": "3dd1a186d380669845f470762c3c3d97b5e5e4dd93eefdfdc1e173dfda85a3cc",
+            "saved_full_vector.npz": "d7cbfb075737c65b15a98b9f80d4bfce1bdebe245ca2f084c299f586f09673db"
+          },
+          "field_identity_sha256": "2163a7cc84f8f1b91b02f250979058d8ee2631f33a0ef412864328d27ca842a9",
+          "physical_parameters": {
+            "c_l": 0.4472871298844439,
+            "omega": 1.3753116958870304,
+            "R0": 0.3
+          },
+          "basis": {
+            "L_max": 6,
+            "L_ext": 15,
+            "Nk": 16,
+            "m_parity": "even",
+            "channels": {
+              "LB": 15,
+              "LD": 14,
+              "LE": 6,
+              "Mch": null,
+              "NkB": 4,
+              "NkD": 4,
+              "NkE": 4,
+              "R1": null,
+              "core_damp": 2
+            },
+            "modes_sha256": "91da0acfb0f283046b05b62f5774d55c92d125bffc69dcb2d67012ba656d7fa9"
+          },
+          "source_state": {
+            "geometry_base": {
+              "c_l": 0.459677,
+              "kappa": 2.91266258699043,
+              "omega": 1.338884,
+              "p0": 4.350881162207376
+            },
+            "idx": 0,
+            "it": 481,
+            "job_id": "f2_S01_k0_keep_m3_L6_cl0.4597_om1.3389_free",
+            "kind": "current",
+            "label": "FREE",
+            "pivot": {
+              "amp": 0.1659111435741677,
+              "pot": "S",
+              "q": 5
+            },
+            "ts": "2026-10-30T05:19:28Z"
+          },
+          "import_script_sha256": "45eecf5a2d499ddaeba35710aadb2b6c46ab548f4223b5fc644ec1af8eabab0d",
+          "import_scope": "Relies on the separately qualified exact importer and its bitwise round-trip record; no new unpack/pack computation here."
+        },
+        {
+          "state_id": "F2_B0",
+          "role": "B0",
+          "input_directory": "artifacts/inputs/S01_original_exact_v1",
+          "source_state_kind": "final",
+          "checkpoint_sha256": "83aa4c6e9473c8bd76524600ec758fa4202840972ff242f27c5806411101dbcd",
+          "original_checkpoint": "RUN_ROOT/verifier/artifacts/starting_records/S01_original_v1/start_000.pt",
+          "state_convention": "END_CURRENT",
+          "input_manifest_sha256": "d51ea14c9eeb067fb850c33ab6dd8028a5e5f3828bb1a70b4020ac96d2ffc976",
+          "input_sha256": {
+            "BASIS.md": "74aa4cc730e54880b5602cd822235837f8527332e9cd491fbe892425673f8df8",
+            "coeffs.npz": "f9382726f3dae0420ae6c750bb339d422a08ffa9064eb08557d1c2afd8070eb6",
+            "meta.json": "6c7cdbc1252a18fb688b76d9aed2c359d8554db50f3c74afa591c94f64b45d4e",
+            "saved_full_vector.npz": "ea49e3c986f310ca1e85741ae710d29b25810e34f6e83205f47b3d0ab5e744bb"
+          },
+          "field_identity_sha256": "4df56b4493af22c83369b59eb2becf2e467155659c6657ab1d354d706650a388",
+          "physical_parameters": {
+            "c_l": 0.45,
+            "omega": 1.0,
+            "R0": 0.3
+          },
+          "basis": {
+            "L_max": 6,
+            "L_ext": 15,
+            "Nk": 16,
+            "m_parity": "even",
+            "channels": {
+              "LB": 15,
+              "LD": 14,
+              "LE": 6,
+              "Mch": null,
+              "NkB": 4,
+              "NkD": 4,
+              "NkE": 4,
+              "R1": null,
+              "core_damp": 2
+            },
+            "modes_sha256": "91da0acfb0f283046b05b62f5774d55c92d125bffc69dcb2d67012ba656d7fa9"
+          },
+          "source_state": {
+            "kind": "final",
+            "label": null,
+            "pivot": {
+              "amp": 0.1254882698393224,
+              "pot": "S",
+              "q": 5
+            },
+            "status": "max_iter"
+          },
+          "import_script_sha256": "45eecf5a2d499ddaeba35710aadb2b6c46ab548f4223b5fc644ec1af8eabab0d",
+          "import_scope": "Relies on the separately qualified exact importer and its bitwise round-trip record; no new unpack/pack computation here."
+        }
+      ]
+    },
+    {
+      "branch_id": "P3",
+      "initialization_id": "S20",
+      "reference_core_radius": 0.4192773285352348,
+      "state_convention": "END_CURRENT",
+      "selection_rationale": "Dated Phase IV capacity decision; latest exact eligible end after the registered clearance root. No total ranking, stationarity or classification-flag clearance is implied.",
+      "reference_core_rationale": "Exact genuine version-ten source-start core radius; shared S01 source for P1 and F2.",
+      "states": [
+        {
+          "state_id": "P3s4_FREE",
+          "role": "FREE",
+          "input_directory": "artifacts/inputs/P3cont4_late_current_v1",
+          "source_state_kind": "current",
+          "checkpoint_sha256": "7bb8add5c36a5998e8746dd831bf43f5449b932aab3201467040ce38159a4152",
+          "original_checkpoint": "RUN_ROOT/verifier/artifacts/P3cont4_late_freeze_v1/current.pt",
+          "state_convention": "END_CURRENT",
+          "input_manifest_sha256": "360d6e51249e2dc9a4910581fb16ed9aab1c23bdb5475afc711662b10cf019c9",
+          "input_sha256": {
+            "BASIS.md": "74aa4cc730e54880b5602cd822235837f8527332e9cd491fbe892425673f8df8",
+            "coeffs.npz": "03d86fb3a6b8e51a33a63e2bdd727e2f36e355d8bb1f5fdad3d17056f29b2991",
+            "meta.json": "9e629fe2bcf5538633c8498ac14f7593186cc95b1d95750dbedc565bbed7d3ac",
+            "saved_full_vector.npz": "d48265b925f5feee2af57d4786138257657e74a16dd7a97af081f80c3efde3bb"
+          },
+          "field_identity_sha256": "228934dac5538f9effbc0dfbd78d5db245a52fd80877e41ca71c50635a9103a4",
+          "physical_parameters": {
+            "c_l": 0.4497997998526944,
+            "omega": 1.0849456264054813,
+            "R0": 0.3
+          },
+          "basis": {
+            "L_max": 6,
+            "L_ext": 15,
+            "Nk": 16,
+            "m_parity": "all",
+            "channels": {
+              "LB": 15,
+              "LD": 14,
+              "LE": 6,
+              "Mch": null,
+              "NkB": 4,
+              "NkD": 4,
+              "NkE": 4,
+              "R1": null,
+              "core_damp": 2
+            },
+            "modes_sha256": "31145dd108e2a2e8d3d0bc1baf47fe67d0056484689e2822229627dda1a8e1c1"
+          },
+          "source_state": {
+            "geometry_base": {
+              "c_l": 0.45,
+              "kappa": 2.2222222222222223,
+              "omega": 1.0,
+              "p0": 4.444444444444445
+            },
+            "idx": 0,
+            "it": 146,
+            "job_id": "cont4free_S20_L6_cl0.4500_om1.0000_free",
+            "kind": "current",
+            "label": "FREE",
+            "pivot": {
+              "amp": 0.11153782718105067,
+              "pot": "T",
+              "q": 4
+            },
+            "ts": "2026-10-30T06:28:00Z"
+          },
+          "import_script_sha256": "45eecf5a2d499ddaeba35710aadb2b6c46ab548f4223b5fc644ec1af8eabab0d",
+          "import_scope": "Relies on the separately qualified exact importer and its bitwise round-trip record; no new unpack/pack computation here."
+        },
+        {
+          "state_id": "P3_B0",
+          "role": "B0",
+          "input_directory": "artifacts/inputs/P3_INITIAL_raw_v1",
+          "source_state_kind": "final",
+          "checkpoint_sha256": "000bc907fdd59ed3338b0ef682d2257a7044e33447ad0569999550523d0d981a",
+          "original_checkpoint": "RUN_ROOT/verifier/artifacts/P3_matched_freeze_v1/INITIAL_raw.pt",
+          "state_convention": "END_CURRENT",
+          "input_manifest_sha256": "df9b2291c04721700bcc304ba4978f3d524108690723075e97b368b557996aa6",
+          "input_sha256": {
+            "BASIS.md": "74aa4cc730e54880b5602cd822235837f8527332e9cd491fbe892425673f8df8",
+            "coeffs.npz": "fa4a2b950245ea371c23d50a91209e9aa52e10798b60e3148af1c24d54553970",
+            "meta.json": "58dfa398bd3f7972be82179ec2d75af01b4e5a0e99411301c0118032eab97923",
+            "saved_full_vector.npz": "c82bb11e5542801262061ea97e59b8eb9ccec6a6b78421f2496d3516c47e175b"
+          },
+          "field_identity_sha256": "1d4ad194817c9d110156f3ca28ef7e4b5e50b87aa68044e51681304c2d1c01da",
+          "physical_parameters": {
+            "c_l": 0.45,
+            "omega": 1.0,
+            "R0": 0.3
+          },
+          "basis": {
+            "L_max": 6,
+            "L_ext": 15,
+            "Nk": 16,
+            "m_parity": "all",
+            "channels": {
+              "LB": 15,
+              "LD": 14,
+              "LE": 6,
+              "Mch": null,
+              "NkB": 4,
+              "NkD": 4,
+              "NkE": 4,
+              "R1": null,
+              "core_damp": 2
+            },
+            "modes_sha256": "31145dd108e2a2e8d3d0bc1baf47fe67d0056484689e2822229627dda1a8e1c1"
+          },
+          "source_state": {
+            "kind": "final",
+            "label": null,
+            "pivot": null,
+            "status": null
+          },
+          "import_script_sha256": "45eecf5a2d499ddaeba35710aadb2b6c46ab548f4223b5fc644ec1af8eabab0d",
+          "import_scope": "Relies on the separately qualified exact importer and its bitwise round-trip record; no new unpack/pack computation here."
+        },
+        {
+          "state_id": "P3_FIXED_s2",
+          "role": "FIXED",
+          "input_directory": "artifacts/inputs/P3_FIXED_segment2_current_v1",
+          "source_state_kind": "current",
+          "checkpoint_sha256": "c0a3e638be6fda490cd9e28d1ee118d12c040e0a6a111e2d39f722119694d530",
+          "original_checkpoint": "RUN_ROOT/numerics/degree6_free_parameters_48h/runs/p3c_s2b_S20_L6_cl0.4500_om1.0000_fixed/checkpoint_segment_end.pt",
+          "state_convention": "END_CURRENT",
+          "input_manifest_sha256": "cc5adf3e517567a13c4d8c2dff528b977b7d3cc9b6087bb2b58f65eaae7fe79e",
+          "input_sha256": {
+            "BASIS.md": "74aa4cc730e54880b5602cd822235837f8527332e9cd491fbe892425673f8df8",
+            "coeffs.npz": "8ed91affbff325a2e1af7cb31f6ddac5a2a2ef6a625ba6d28f1533dd249de9c5",
+            "meta.json": "1d45459f10caaa888579ec4b6f04cfbd686e65ee842b148ddca2598e8b5c032e",
+            "saved_full_vector.npz": "9ad7154ee195b96a8d841bab85a90a5e28156cd1815cc8e884ed257c71d2fc18"
+          },
+          "field_identity_sha256": "59f5c8e172af1d2ac1048f517ff7a9f6dfdc800ea5446d4e7fdff257a9c01581",
+          "physical_parameters": {
+            "c_l": 0.45,
+            "omega": 1.0,
+            "R0": 0.3
+          },
+          "basis": {
+            "L_max": 6,
+            "L_ext": 15,
+            "Nk": 16,
+            "m_parity": "all",
+            "channels": {
+              "LB": 15,
+              "LD": 14,
+              "LE": 6,
+              "Mch": null,
+              "NkB": 4,
+              "NkD": 4,
+              "NkE": 4,
+              "R1": null,
+              "core_damp": 2
+            },
+            "modes_sha256": "31145dd108e2a2e8d3d0bc1baf47fe67d0056484689e2822229627dda1a8e1c1"
+          },
+          "source_state": {
+            "geometry_base": {
+              "c_l": 0.45,
+              "kappa": 2.2222222222222223,
+              "omega": 1.0,
+              "p0": 4.444444444444445
+            },
+            "idx": 0,
+            "it": 194,
+            "job_id": "p3c_s2b_S20_L6_cl0.4500_om1.0000_fixed",
+            "kind": "current",
+            "label": "FIXED-CONTROL",
+            "pivot": {
+              "amp": 0.11153782718105067,
+              "pot": "T",
+              "q": 4
+            },
+            "ts": "2026-10-30T02:09:17Z"
+          },
+          "import_script_sha256": "45eecf5a2d499ddaeba35710aadb2b6c46ab548f4223b5fc644ec1af8eabab0d",
+          "import_scope": "Relies on the separately qualified exact importer and its bitwise round-trip record; no new unpack/pack computation here."
+        }
+      ]
+    }
+  ],
+  "freeze_started_utc": "2026-10-30T12:23:36.626692+00:00",
+  "freeze_completed_utc": "2026-10-30T12:23:36.718180+00:00",
+  "scope": "Input and source identity only. No final holdout has been run; no candidate or Tier verdict."
+}

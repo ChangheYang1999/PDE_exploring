@@ -1,0 +1,202 @@
+#!/usr/bin/env python
+"""Slot governor (D6FP 2026-10-29T08:4xZ): keeps the lane within FOUR busy host processes when the production supervisor and the
+validation queue run at the same time, without changing the frozen supervisor (snapshot tables): the supervisor re-reads its
+configuration file at every poll (refresh_gpus), so this process rewrites the keys "gpus" and "max_running" of that file.
+
+Rules implemented (SPEC v1.14 3.6 (h); lead notes 05:22Z, 08:24Z item 3):
+ (1) hold: while validation/gate_queue.txt still lists items to launch, no production job starts (3.6 (h) (2));
+ (2) budget = 4 - (lane validation/*.py python processes) - (lane worker_d6.py processes); pending jobs are grouped into pairs by tag
+     (p<N>_... and p<N>c_...); a pair's GPUs are exposed to the supervisor only when the whole pair fits (two slots at once, its GPUs
+     free as its members require: exclusive = no worker on that GPU), so both members start in the same supervisor poll (3.6 (h) (1):
+     same sharing condition, started together); pairs are served strictly in priority order (P1 before P2, 3.6 (h) (2));
+ (3) GPUs with a running worker stay exposed; "max_running" = workers + budget granted, never 0 (0 means unlimited to the supervisor);
+     when nothing may start and no worker runs, "gpus" is written as [] (no slots).
+Usage: python scripts/slot_governor.py --cfg configs/supervisor_gpu456.json --gpus 4,5,6 [--once] [--dry-run] [--poll 20]
+State: status/slot_governor.json; log logs/slot_governor.log. Stop: file status/STOP_SLOT_GOVERNOR.
+"""
+import os, sys, json, time, glob, re, argparse
+import psutil
+
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+LANE = os.path.abspath(os.path.join(ROOT, ".."))
+LIMIT = 4
+VAL_RE = re.compile(r"(^|/)validation/[A-Za-z0-9_]+\.py$")
+WORK_RE = re.compile(r"(^|/)scripts/worker_d6\.py$")
+
+
+def now():
+    return time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+
+
+def lane_procs():
+    """Python processes of this lane (cwd under the lane directory) that count as busy computations."""
+    val, work = [], []
+    for p in psutil.process_iter(["pid", "name", "cmdline"]):
+        try:
+            name = p.info["name"] or ""
+            if not name.startswith("python"):
+                continue
+            cmd = p.info["cmdline"] or []
+            if not cmd or "venv/bin/python" not in cmd[0]:
+                continue
+            cwd = p.cwd()
+            if not cwd.startswith(LANE):
+                continue
+            kind = None
+            for a in cmd[1:]:
+                if VAL_RE.search(a):
+                    kind = "validation"; break
+                if WORK_RE.search(a):
+                    kind = "worker"; break
+            if kind is None:
+                continue
+            gpu = None
+            try:
+                gpu = p.environ().get("CUDA_VISIBLE_DEVICES")
+            except psutil.Error:
+                pass
+            rec = dict(pid=p.pid, gpu=gpu, script=next((a for a in cmd[1:] if a.endswith(".py")), None))
+            (val if kind == "validation" else work).append(rec)
+        except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+            continue
+    return val, work
+
+
+def pending_jobs():
+    out = []
+    for f in glob.glob(os.path.join(ROOT, "queue", "pending", "*.json")):
+        try:
+            j = json.load(open(f))
+        except Exception:
+            continue
+        out.append(dict(job_id=j.get("job_id"), gpus_allowed=j.get("gpus_allowed"), exclusive=bool(j.get("exclusive")), priority=j.get("priority", 0)))
+    return out
+
+
+def hold_count():
+    """Number of validation items not yet launched (lines of validation/gate_queue.txt): while positive, no production job starts."""
+    qfile = os.path.join(ROOT, "validation", "gate_queue.txt")
+    if not os.path.exists(qfile):
+        return 0
+    return sum(1 for ln in open(qfile) if ln.strip())
+
+
+PAIR_RE = re.compile(r"^(p\d+)c?_(.+)$")
+
+
+def pair_key(job_id):
+    """Members of a pair share the key: tags p<N>_<seg>_<start> (FREE) and p<N>c_<seg>_<start> (FIXED-CONTROL) -> 'p<N>_<seg>_<start>...'."""
+    m = PAIR_RE.match(job_id or "")
+    return (m.group(1) + "_" + m.group(2)) if m else (job_id or "")
+
+
+def decide(all_gpus, slots_per_gpu):
+    val, work = lane_procs()
+    n_val, n_work = len(val), len(work)
+    hold_items = hold_count()
+    hold = hold_items > 0
+    budget0 = LIMIT - n_val - n_work
+    budget = budget0
+    workers_on = {g: 0 for g in all_gpus}
+    for w in work:
+        try:
+            g = int(w["gpu"])
+            workers_on[g] = workers_on.get(g, 0) + 1
+        except (TypeError, ValueError):
+            pass
+    expose = [g for g in all_gpus if workers_on.get(g, 0) > 0]
+    granted = 0
+    reasons = []
+    pend = pending_jobs()
+    # SPEC 3.6 (h) (1), (2): the two members of a pair start together (two slots free at once), P1 before P2 (priority order, strict)
+    groups = {}
+    for jb in pend:
+        groups.setdefault(pair_key(jb["job_id"]), []).append(jb)
+    order = sorted(groups.items(), key=lambda kv: -max(j["priority"] for j in kv[1]))
+    if not hold and budget >= 1:
+        for key, members in order:
+            need = len(members)
+            gpus_needed = {}
+            feasible = True
+            for jb in members:
+                ga = jb["gpus_allowed"]
+                cand = [int(x) for x in ga] if ga else list(all_gpus)
+                cand = [g for g in cand if g in all_gpus]
+                if not cand:
+                    feasible = False; reasons.append(f"{jb['job_id']}: no allowed GPU among {all_gpus}"); break
+                g = cand[0]
+                gpus_needed.setdefault(g, []).append(jb)
+            if not feasible:
+                break
+            for g, jobs_g in gpus_needed.items():
+                if any(j["exclusive"] for j in jobs_g):
+                    if workers_on.get(g, 0) > 0 or len(jobs_g) > 1:
+                        feasible = False; reasons.append(f"pair {key}: GPU {g} not fully free for an exclusive member: wait")
+                elif slots_per_gpu - workers_on.get(g, 0) < len(jobs_g):
+                    feasible = False; reasons.append(f"pair {key}: GPU {g} lacks {len(jobs_g)} free slot(s): wait")
+            if not feasible:
+                break
+            if budget < need:
+                reasons.append(f"pair {key}: {need} member(s) need {need} slot(s), budget {budget}: wait"); break
+            for g in gpus_needed:
+                if g not in expose:
+                    expose.append(g)
+            budget -= need; granted += need
+            reasons.append(f"pair {key}: expose GPU(s) {sorted(gpus_needed)} for {need} member(s)")
+            for g, jobs_g in gpus_needed.items():
+                workers_on[g] = workers_on.get(g, 0) + (slots_per_gpu if any(j["exclusive"] for j in jobs_g) else len(jobs_g))
+    if hold:
+        reasons.append(f"hold: {hold_items} validation item(s) not yet launched (3.6 (h) (2))")
+    if granted == 0:
+        if n_work == 0:
+            gpus_out, mr = [], 1
+        else:
+            gpus_out, mr = sorted(expose), n_work
+    else:
+        gpus_out, mr = sorted(expose), n_work + granted
+    return dict(ts=now(), n_validation=n_val, n_workers=n_work, validation=val, workers=work, hold_items=hold_items, budget_before=budget0,
+                granted=granted, gpus=gpus_out, max_running=mr, pending=len(pend), reasons=reasons)
+
+
+def write_cfg(cfg_path, gpus, mr, dry):
+    c = json.load(open(cfg_path))
+    changed = (c.get("gpus") != gpus) or (int(c.get("max_running", 0) or 0) != mr)
+    if changed and not dry:
+        c["gpus"] = gpus; c["max_running"] = mr
+        c["_governor"] = f"gpus and max_running written by scripts/slot_governor.py at {now()}"
+        tmp = cfg_path + ".tmp"
+        json.dump(c, open(tmp, "w"), indent=1); os.replace(tmp, cfg_path)
+    return changed
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--cfg", default=os.path.join(ROOT, "configs", "supervisor_gpu456.json"))
+    ap.add_argument("--gpus", default="4,5,6"); ap.add_argument("--poll", type=float, default=20.0)
+    ap.add_argument("--once", action="store_true"); ap.add_argument("--dry-run", action="store_true")
+    a = ap.parse_args()
+    all_gpus = [int(g) for g in a.gpus.split(",") if g.strip()]
+    base = json.load(open(a.cfg)); spg = int(base.get("slots_per_gpu", 2))
+    os.makedirs(os.path.join(ROOT, "logs"), exist_ok=True)
+    log = open(os.path.join(ROOT, "logs", "slot_governor.log"), "a")
+    last = None
+    while True:
+        if os.path.exists(os.path.join(ROOT, "status", "STOP_SLOT_GOVERNOR")):
+            print(f"{now()} STOP_SLOT_GOVERNOR present; exiting", file=log, flush=True); return
+        d = decide(all_gpus, spg)
+        changed = write_cfg(a.cfg, d["gpus"], d["max_running"], a.dry_run)
+        d["cfg_changed"] = changed; d["dry_run"] = a.dry_run
+        key = (d["n_validation"], d["n_workers"], d["hold_items"], tuple(d["gpus"]), d["max_running"], d["pending"])
+        if key != last or changed:
+            print(f"{d['ts']} val {d['n_validation']} work {d['n_workers']} hold_items {d['hold_items']} budget {d['budget_before']} -> gpus {d['gpus']} max_running {d['max_running']} (pending {d['pending']}; {'WRITTEN' if changed and not a.dry_run else ('would write' if changed else 'unchanged')}) {'; '.join(d['reasons'])}", file=log, flush=True)
+            last = key
+        if not a.dry_run:
+            tmp = os.path.join(ROOT, "status", "slot_governor.json.tmp")
+            json.dump(d, open(tmp, "w"), indent=1); os.replace(tmp, os.path.join(ROOT, "status", "slot_governor.json"))
+        if a.once:
+            print(json.dumps(d, indent=1)); return
+        time.sleep(a.poll)
+
+
+if __name__ == "__main__":
+    main()

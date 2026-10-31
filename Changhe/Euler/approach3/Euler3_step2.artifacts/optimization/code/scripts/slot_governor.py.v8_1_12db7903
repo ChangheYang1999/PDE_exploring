@@ -1,0 +1,531 @@
+#!/usr/bin/env python
+"""Slot governor v6 (D6FP 2026-10-29; v1 08:33Z, v2 08:43Z pair-wise starts, v3 08:48Z after V212, v4 08:52Z pair key after V213,
+v5 08:55Z after the PROVISIONAL RELEASE note 08:50Z item 4 and V214, v6 09:09Z after V217 and the lead's 09:02Z staging rule, v7 09:15Z with the
+acknowledged launch barrier of V220, v8 09:28Z with the persisted closure state of V223 and the sharing-condition label of the lead's 09:23Z item 4; v8.1 09:3xZ startup wait 120 s with a live heartbeat pid): keeps the lane within FOUR busy host processes when the production
+supervisor and the validation queue run at the same time, and places the pairs "as the slots allow", without changing the frozen supervisor
+(snapshot tables): the supervisor re-reads its configuration file at every poll (refresh_gpus), so this process rewrites only the keys
+"gpus" and "max_running" of that file, and the scheduling fields gpus_allowed / exclusive of PENDING job files that ask for governor
+placement (job["placement"] == "governor"; the worker configuration job["config"] is never touched).
+
+Rules (SPEC v1.14 3.6 (h); lead notes 05:22Z, 08:50Z item 4; verifier V212, V213, V214):
+ (1) hold: while validation/gate_queue.txt lists items OR the gate runner (bash validation/gate_queue*.sh) is alive, no production job starts
+     (3.6 (h) (2)); the runner removes a queue line before its python process is visible and exits 60 s after its last launch;
+ (2) busy = lane validation/*.py python processes + lane worker_d6.py processes + battery launch wrappers (bash scripts/run_gpu_battery.sh)
+     whose python child is not yet visible; budget = 4 - busy;
+ (3) pending jobs are grouped into pairs by job id (enqueue_d6.py format <tag>_L6_cl<c_l>_om<omega>_<free|fixed>, tags p<N>_<seg>_<start> and
+     p<N>c_<seg>_<start>); a complete pending pair is granted only as a whole (two slots at once, so the supervisor launches both members in
+     the same poll: 3.6 (h) (1) "started together"); pairs strictly in priority order (P1 before P2, 3.6 (h) (2)); a lone pending member is
+     granted only when its partner is already running or done (retry after a failure), on its partner's sharing condition;
+ (4) placement "as the slots allow" (lead 08:50Z item 4): a GPU is clear when no lane validation process, wrapper or worker uses it; with two or
+     more clear GPUs the members run alone (exclusive, one per GPU: "when a GPU would otherwise stay idle, the members run alone"); with one
+     clear GPU and two free supervisor slots on it they run together (non-exclusive) on that GPU; otherwise the pair waits. Jobs that carry an
+     explicit gpus_allowed keep it; then every GPU of the pair must be free of validation processes (equal sharing, V212) and the exclusive /
+     slot conditions of the supervisor must hold;
+ (4b) staging (lead 09:02Z, V217): pairs other than the first wait in queue/staged, which the supervisor never reads; a staged pair is granted
+     as a whole: its placement is written into the staged files, the files are moved into queue/pending, and only then the configuration
+     exposes its GPUs; at most one pair grant per governor tick (strict order inside a supervisor poll). Unplaced pending jobs carry
+     gpus_allowed [] (the supervisor's allowed() rejects every GPU for them). A job may carry "target": {gpu, exclusive} (segment 2 stays
+     on its segment-1 arrangement, lead 08:53Z item 2); the governor then uses the target instead of the dynamic choice;
+ (4c) launch barrier (V220 item 2, V223): a grant is published only when the supervisor has ACKNOWLEDGED the current closed configuration
+     (gpus [], max_running 1). The closure state (epoch, log offset, acknowledged flag) is persisted in status/slot_governor_state.json across
+     ticks and restarts. Acknowledgment = a supervisor log line written after the closure offset: "GPU list changed: [...] -> []" (the
+     supervisor logs the change when it re-reads the file) or "supervisor started ... \"gpus\": []" (a restarted supervisor read the closed
+     file). A deferred closure keeps its offset and epoch, so the next tick waits for the SAME closure's acknowledgment instead of trusting
+     the closed file. At a governor start with an already closed file and no persisted acknowledgment, the supervisor's cache is unknown:
+     the governor waits until the heartbeat file (pid alive) shows a write later than its start plus 120 s (one poll period plus the longest
+     supervisor iteration, nvidia-smi and du timeouts included) before any publication: that heartbeat is written after the re-read of the same iteration. When
+     the configuration exposes a GPU, publishing first closes it and waits for the acknowledgment; without one the grant is deferred;
+ (5) GPUs with a running worker stay exposed; "max_running" = workers + granted, never 0 (0 means unlimited to the supervisor); when nothing
+     may start and no worker runs, "gpus" is written as [] (no slots). Job files are written (atomically) before the configuration.
+Usage: python scripts/slot_governor.py --cfg configs/supervisor_gpu456.json --gpus 4,5,6 [--once] [--dry-run] [--poll 20]
+State: status/slot_governor.json; log logs/slot_governor.log. Stop: file status/STOP_SLOT_GOVERNOR. Unit test: validation/test_slot_governor.py.
+"""
+import os, sys, json, time, glob, re, argparse
+import psutil
+
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+LANE = os.path.abspath(os.path.join(ROOT, ".."))
+LIMIT = 4
+VAL_RE = re.compile(r"(^|/)validation/[A-Za-z0-9_]+\.py$")
+WORK_RE = re.compile(r"(^|/)scripts/worker_d6\.py$")
+WRAP_RE = re.compile(r"(^|/)scripts/run_gpu_battery\.sh$")
+RUNNER_RE = re.compile(r"(^|/)validation/gate_queue[A-Za-z0-9_]*\.sh$")
+PAIR_RE = re.compile(r"^(p\d+)c?_(.+?)(_(free|fixed))?$")
+
+
+def now():
+    return time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+
+
+def _ancestors(p, depth=6):
+    out = []
+    try:
+        q = p.parent()
+        while q is not None and depth > 0:
+            out.append(q.pid); q = q.parent(); depth -= 1
+    except psutil.Error:
+        pass
+    return out
+
+
+def lane_procs():
+    """(validation python processes, worker python processes, launch wrappers without a visible python child) of this lane.
+    Worker records carry job_id (basename of the run directory argument)."""
+    val, work, wraps = [], [], {}
+    for p in psutil.process_iter(["pid", "name", "cmdline"]):
+        try:
+            name = p.info["name"] or ""
+            cmd = p.info["cmdline"] or []
+            if not cmd:
+                continue
+            if name.startswith("bash") and len(cmd) >= 2 and WRAP_RE.search(cmd[1]):
+                if p.cwd().startswith(LANE):
+                    wraps[p.pid] = dict(pid=p.pid, gpu=(cmd[2] if len(cmd) > 2 else None), script="scripts/run_gpu_battery.sh", covered=False)
+                continue
+            if not name.startswith("python") or "venv/bin/python" not in cmd[0]:
+                continue
+            if not p.cwd().startswith(LANE):
+                continue
+            kind = None
+            for a in cmd[1:]:
+                if VAL_RE.search(a):
+                    kind = "validation"; break
+                if WORK_RE.search(a):
+                    kind = "worker"; break
+            if kind is None:
+                continue
+            gpu = None
+            try:
+                gpu = p.environ().get("CUDA_VISIBLE_DEVICES")
+            except psutil.Error:
+                pass
+            rec = dict(pid=p.pid, gpu=gpu, script=next((a for a in cmd[1:] if a.endswith(".py")), None), ancestors=_ancestors(p))
+            if kind == "worker":
+                rec["job_id"] = os.path.basename(cmd[-1].rstrip("/")) if len(cmd) >= 4 else None
+            (val if kind == "validation" else work).append(rec)
+        except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+            continue
+    for v in val:
+        for a in v.get("ancestors", []):
+            if a in wraps:
+                wraps[a]["covered"] = True
+        v.pop("ancestors", None)
+    for w in work:
+        w.pop("ancestors", None)
+    return val, work, [w for w in wraps.values() if not w["covered"]]
+
+
+def runner_alive():
+    for p in psutil.process_iter(["pid", "name", "cmdline"]):
+        try:
+            cmd = p.info["cmdline"] or []
+            if (p.info["name"] or "").startswith("bash") and len(cmd) >= 2 and RUNNER_RE.search(cmd[1]) and p.cwd().startswith(LANE):
+                return True
+        except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+            continue
+    return False
+
+
+def hold_count():
+    qfile = os.path.join(ROOT, "validation", "gate_queue.txt")
+    if not os.path.exists(qfile):
+        return 0
+    return sum(1 for ln in open(qfile) if ln.strip())
+
+
+def _read_jobs(sub):
+    out = []
+    for f in glob.glob(os.path.join(ROOT, "queue", sub, "*.json")):
+        try:
+            j = json.load(open(f))
+        except Exception:
+            continue
+        out.append(dict(path=f, job_id=j.get("job_id"), gpus_allowed=j.get("gpus_allowed"), exclusive=j.get("exclusive"), priority=j.get("priority", 0),
+                        placement=j.get("placement"), target=j.get("target"), queue=sub))
+    return out
+
+
+def pending_jobs():
+    """Candidates for a grant: queue/pending (the first pair) and queue/staged (every later pair; the supervisor never reads it)."""
+    return _read_jobs("pending") + _read_jobs("staged")
+
+
+def queue_state():
+    """job ids in queue/running and queue/done (partner state for lone pending members)."""
+    return dict(running={j["job_id"]: j for j in _read_jobs("running")}, done={j["job_id"]: j for j in _read_jobs("done")})
+
+
+def pair_key(job_id):
+    """'p1_s1_S01_L6_cl0.4500_om1.0000_free' and 'p1c_s1_S01_L6_cl0.4500_om1.0000_fixed' -> 'p1_s1_S01_L6_cl0.4500_om1.0000' (V213)."""
+    m = PAIR_RE.match(job_id or "")
+    return (m.group(1) + "_" + m.group(2)) if m else (job_id or "")
+
+
+def _gpu_int(x):
+    try:
+        return int(x)
+    except (TypeError, ValueError):
+        return None
+
+
+def decide(all_gpus, slots_per_gpu):
+    val, work, wraps = lane_procs()
+    n_val, n_work, n_wrap = len(val), len(work), len(wraps)
+    hold_items = hold_count()
+    ralive = runner_alive()
+    hold = hold_items > 0 or ralive
+    budget0 = LIMIT - n_val - n_work - n_wrap
+    budget = budget0
+    workers_on = {g: 0 for g in all_gpus}
+    val_on = {g: 0 for g in all_gpus}
+    worker_gpu = {}
+    for w in work:
+        g = _gpu_int(w["gpu"])
+        if g is not None:
+            workers_on[g] = workers_on.get(g, 0) + 1
+        if w.get("job_id"):
+            worker_gpu[w["job_id"]] = g
+    for v in val + wraps:
+        g = _gpu_int(v["gpu"])
+        if g is not None:
+            val_on[g] = val_on.get(g, 0) + 1
+    qs = queue_state()
+    expose = [g for g in all_gpus if workers_on.get(g, 0) > 0]
+    granted = 0
+    reasons = []
+    placements = {}
+    placement_notes = {}
+    pend = pending_jobs()
+    groups = {}
+    for jb in pend:
+        groups.setdefault(pair_key(jb["job_id"]), []).append(jb)
+    order = sorted(groups.items(), key=lambda kv: -max(j["priority"] for j in kv[1]))
+
+    def clear_gpus():
+        return [g for g in all_gpus if val_on.get(g, 0) == 0 and workers_on.get(g, 0) == 0]
+
+    if not hold and budget >= 1:
+        for key, members in order:
+            need = len(members)
+            flexible = all(j.get("placement") == "governor" and not j.get("gpus_allowed") for j in members)
+            plan = {}                      # job_id -> (gpu, exclusive)
+            feasible = True
+            if need == 1 and PAIR_RE.match(members[0]["job_id"] or ""):
+                # lone pending member: its partner must already be running or done (V214); it inherits the partner's sharing condition
+                jb = members[0]
+                partner = [jid for jid in list(qs["running"]) + list(qs["done"]) if pair_key(jid) == key and jid != jb["job_id"]]
+                if not partner:
+                    reasons.append(f"pair {key}: lone pending member {jb['job_id']} without a running or done partner: wait"); break
+                pj = qs["running"].get(partner[0]) or qs["done"].get(partner[0])
+                if flexible:
+                    pg = worker_gpu.get(partner[0])
+                    if partner[0] in qs["running"] and pj.get("exclusive") is False and pg is not None:
+                        if val_on.get(pg, 0) == 0 and slots_per_gpu - workers_on.get(pg, 0) >= 1:
+                            plan[jb["job_id"]] = (pg, False)
+                            placement_notes[jb["job_id"]] = f"retry beside its running partner {partner[0]} on GPU {pg} (same sharing condition)"
+                        else:
+                            feasible = False; reasons.append(f"pair {key}: partner's GPU {pg} has no clear slot for the lone member: wait")
+                    else:
+                        cg = clear_gpus()
+                        if cg:
+                            plan[jb["job_id"]] = (cg[0], True)
+                            placement_notes[jb["job_id"]] = (f"sharing condition differs from partner: this member alone on GPU {cg[0]} (exclusive); partner {partner[0]} "
+                                                             + ("DONE" if partner[0] in qs["done"] else f"running {'exclusive' if pj.get('exclusive') else 'non-exclusive'} on GPU {pg}")
+                                                             + " (lead 09:23Z item 4: every pair comparison using this member reports it)")
+                        else:
+                            feasible = False; reasons.append(f"pair {key}: no clear GPU for the lone member: wait")
+                else:
+                    g = _gpu_int((jb.get("gpus_allowed") or [None])[0])
+                    if g is None or g not in all_gpus:
+                        feasible = False; reasons.append(f"pair {key}: lone member has no allowed GPU among {all_gpus}: wait")
+                    elif val_on.get(g, 0) > 0:
+                        feasible = False; reasons.append(f"pair {key}: GPU {g} has {val_on[g]} validation co-tenant(s): wait")
+                    elif jb.get("exclusive") and workers_on.get(g, 0) > 0:
+                        feasible = False; reasons.append(f"pair {key}: GPU {g} not fully free for the exclusive lone member: wait")
+                    elif not jb.get("exclusive") and slots_per_gpu - workers_on.get(g, 0) < 1:
+                        feasible = False; reasons.append(f"pair {key}: GPU {g} has no free slot: wait")
+                    else:
+                        plan[jb["job_id"]] = (g, bool(jb.get("exclusive")))
+                        if partner[0] in qs["done"] or (pj.get("exclusive") and not jb.get("exclusive")) or (pj.get("exclusive") is False and worker_gpu.get(partner[0]) != g):
+                            placement_notes[jb["job_id"]] = f"sharing condition differs from partner: fixed placement GPU {g} {'exclusive' if jb.get('exclusive') else 'non-exclusive'}; partner {partner[0]} " + ("DONE" if partner[0] in qs["done"] else f"running on GPU {worker_gpu.get(partner[0])} {'exclusive' if pj.get('exclusive') else 'non-exclusive'}")
+            elif flexible and all(isinstance(j.get("target"), dict) for j in members):
+                # segment 2 (or any pair with a recorded target arrangement): the target GPUs must be clear of validation processes and offer the slots
+                tg = {}
+                for jb in members:
+                    g, ex = _gpu_int(jb["target"].get("gpu")), bool(jb["target"].get("exclusive"))
+                    if g is None or g not in all_gpus:
+                        feasible = False; reasons.append(f"pair {key}: target GPU {jb['target'].get('gpu')} not among {all_gpus}: wait"); break
+                    tg.setdefault(g, []).append((jb, ex))
+                if feasible:
+                    if budget < need:
+                        feasible = False; reasons.append(f"pair {key}: {need} member(s) need {need} slot(s), budget {budget}: wait")
+                    for g, lst in (tg.items() if feasible else []):
+                        if val_on.get(g, 0) > 0:
+                            feasible = False; reasons.append(f"pair {key}: target GPU {g} has {val_on[g]} validation co-tenant(s): wait")
+                        elif any(ex for _, ex in lst) and (workers_on.get(g, 0) > 0 or len(lst) > 1):
+                            feasible = False; reasons.append(f"pair {key}: target GPU {g} not fully free for an exclusive member: wait")
+                        elif not any(ex for _, ex in lst) and slots_per_gpu - workers_on.get(g, 0) < len(lst):
+                            feasible = False; reasons.append(f"pair {key}: target GPU {g} lacks {len(lst)} free slot(s): wait")
+                if feasible:
+                    for g, lst in tg.items():
+                        for jb, ex in lst:
+                            plan[jb["job_id"]] = (g, ex)
+                    reasons.append(f"pair {key}: target arrangement {sorted(tg)} (segment continuation)")
+            elif flexible:
+                if need != 2:
+                    feasible = False; reasons.append(f"pair {key}: {need} flexible members (expected 2): wait")
+                else:
+                    cg = clear_gpus()
+                    if budget < 2:
+                        feasible = False; reasons.append(f"pair {key}: 2 members need 2 slots, budget {budget}: wait")
+                    elif len(cg) >= 2:
+                        plan[members[0]["job_id"]] = (cg[0], True); plan[members[1]["job_id"]] = (cg[1], True)
+                        reasons.append(f"pair {key}: two clear GPUs {cg[:2]}: members alone (exclusive), one per GPU")
+                    elif len(cg) == 1 and slots_per_gpu >= 2:
+                        plan[members[0]["job_id"]] = (cg[0], False); plan[members[1]["job_id"]] = (cg[0], False)
+                        reasons.append(f"pair {key}: one clear GPU {cg[0]}: members together (non-exclusive)")
+                    else:
+                        feasible = False; reasons.append(f"pair {key}: no clear GPU: wait")
+            else:
+                gpus_needed = {}
+                for jb in members:
+                    ga = jb["gpus_allowed"]
+                    cand = [int(x) for x in ga] if ga else list(all_gpus)
+                    cand = [g for g in cand if g in all_gpus]
+                    if not cand:
+                        feasible = False; reasons.append(f"{jb['job_id']}: no allowed GPU among {all_gpus}: wait"); break
+                    gpus_needed.setdefault(cand[0], []).append(jb)
+                if feasible:
+                    for g, jobs_g in gpus_needed.items():
+                        if val_on.get(g, 0) > 0:
+                            feasible = False; reasons.append(f"pair {key}: GPU {g} has {val_on[g]} validation co-tenant(s): wait (equal sharing, 3.6 (h) (1))")
+                        elif any(j["exclusive"] for j in jobs_g):
+                            if workers_on.get(g, 0) > 0 or len(jobs_g) > 1:
+                                feasible = False; reasons.append(f"pair {key}: GPU {g} not fully free for an exclusive member: wait")
+                        elif slots_per_gpu - workers_on.get(g, 0) < len(jobs_g):
+                            feasible = False; reasons.append(f"pair {key}: GPU {g} lacks {len(jobs_g)} free slot(s): wait")
+                if feasible:
+                    for g, jobs_g in gpus_needed.items():
+                        for jb in jobs_g:
+                            plan[jb["job_id"]] = (g, bool(jb["exclusive"]))
+            if not feasible:
+                break                       # strict priority order: a later pair never overtakes a blocked earlier one (3.6 (h) (2))
+            if budget < need:
+                reasons.append(f"pair {key}: {need} member(s) need {need} slot(s), budget {budget}: wait"); break
+            for jid, (g, ex) in plan.items():
+                if g not in expose:
+                    expose.append(g)
+                workers_on[g] = workers_on.get(g, 0) + (slots_per_gpu if ex else 1)
+            placements.update(plan)
+            budget -= need; granted += need
+            reasons.append(f"pair {key}: grant {need} member(s): " + ", ".join(f"{jid} -> GPU {g}{' exclusive' if ex else ''}" for jid, (g, ex) in plan.items()))
+            break                           # one pair grant per tick (lead 09:02Z item 1: strict order inside a supervisor poll)
+    if hold:
+        reasons.append(f"hold: {hold_items} validation item(s) not yet launched" + ("; gate runner alive" if ralive else "") + " (3.6 (h) (2))")
+    if granted == 0:
+        gpus_out, mr = ([], 1) if n_work == 0 else (sorted(expose), n_work)
+    else:
+        gpus_out, mr = sorted(expose), n_work + granted
+    return dict(ts=now(), n_validation=n_val, n_workers=n_work, n_wrappers=n_wrap, runner_alive=ralive, validation=val, workers=work, wrappers=wraps,
+                hold_items=hold_items, budget_before=budget0, granted=granted, gpus=gpus_out, max_running=mr, pending=len(pend),
+                placements={k: list(v) for k, v in placements.items()}, placement_notes=placement_notes, reasons=reasons)
+
+
+def apply_placements(placements, pend=None, dry=False, notes=None):
+    """Write gpus_allowed / exclusive into the job files of governor-placed jobs (scheduling fields only; config untouched); a staged file is
+    written in place and then moved into queue/pending (lead 09:02Z item 2). Returns [(job_id, gpu, exclusive, moved_from_staged)]."""
+    pend = pend if pend is not None else pending_jobs()
+    written = []
+    for jb in pend:
+        if jb["job_id"] in placements and jb.get("placement") == "governor":
+            g, ex = placements[jb["job_id"]]
+            staged = (jb.get("queue") == "staged")
+            if jb.get("gpus_allowed") == [g] and jb.get("exclusive") == ex and not staged:
+                continue
+            if dry:
+                written.append((jb["job_id"], g, ex, staged)); continue
+            j = json.load(open(jb["path"]))
+            j["gpus_allowed"] = [int(g)]; j["exclusive"] = bool(ex)
+            j["placement_by_governor"] = dict(ts=now(), gpu=int(g), exclusive=bool(ex), moved_from="queue/staged" if staged else None)
+            j["note"] = (j.get("note") or "") + (f"; placed by the slot governor at {now()}: " + (f"alone on GPU {g} (exclusive)" if ex else f"together with its pair partner on GPU {g} (non-exclusive)") + " (SPEC 3.6 (h) (1); lead 08:50Z item 4" + ("; moved from queue/staged into queue/pending" if staged else "") + ")")
+            if notes and notes.get(jb["job_id"]):
+                j["sharing_condition_note"] = notes[jb["job_id"]]; j["note"] += "; " + notes[jb["job_id"]]
+            tmp = jb["path"] + ".tmp"
+            json.dump(j, open(tmp, "w"), indent=1); os.replace(tmp, jb["path"])
+            if staged:
+                dst = os.path.join(ROOT, "queue", "pending", os.path.basename(jb["path"]))
+                os.rename(jb["path"], dst)
+            written.append((jb["job_id"], g, ex, staged))
+    return written
+
+
+SUP_LOG = os.path.join(ROOT, "logs", "supervisor.log")
+STATE_PATH = os.path.join(ROOT, "status", "slot_governor_state.json")
+HB_PATH = os.path.join(ROOT, "status", "supervisor_heartbeat.json")
+GOV_START = time.time()
+
+
+def cfg_gpus(cfg_path):
+    try:
+        return list(json.load(open(cfg_path)).get("gpus") or [])
+    except Exception:
+        return []
+
+
+def load_state():
+    try:
+        return json.load(open(STATE_PATH))
+    except Exception:
+        return dict(closed=None, closure_epoch=None, log_offset=None, acked=False)
+
+
+def save_state(st):
+    st = dict(st); st["updated"] = now()
+    tmp = STATE_PATH + ".tmp"
+    json.dump(st, open(tmp, "w"), indent=1); os.replace(tmp, STATE_PATH)
+
+
+def _log_size(sup_log):
+    try:
+        return os.path.getsize(sup_log) if os.path.exists(sup_log) else 0
+    except OSError:
+        return 0
+
+
+def ack_in_log(sup_log, offset):
+    """True when a supervisor log line written after `offset` acknowledges a read of the closed configuration."""
+    try:
+        with open(sup_log) as f:
+            f.seek(offset); new = f.read()
+    except OSError:
+        return False, None
+    for ln in new.splitlines():
+        t = ln.rstrip()
+        if ("GPU list changed:" in t and t.endswith("-> []")) or ("supervisor started" in t and '"gpus": []' in t):
+            return True, t[:100]
+    return False, None
+
+
+def heartbeat_epoch(hb_path=None):
+    """Epoch of the supervisor's last heartbeat, 0.0 unless its pid is alive (the heartbeat is written in the same loop iteration as the
+    configuration re-read, after it; the iteration can take up to about 80 s: nvidia-smi 20 s and du 60 s timeouts)."""
+    try:
+        hb = json.load(open(hb_path or HB_PATH))
+        pid = int(hb.get("pid", 0))
+        if pid and not psutil.pid_exists(pid):
+            return 0.0
+        return float(hb.get("epoch", 0.0))
+    except Exception:
+        return 0.0
+
+
+STARTUP_WAIT_S = 120.0     # one poll period (20 s) + the longest supervisor iteration (about 80 s) + margin: a heartbeat later than start + 120 s
+                           # implies a configuration re-read after the governor start
+
+
+def closure_acknowledged(cfg_path, st, sup_log=None, hb_path=None, startup_wait_s=STARTUP_WAIT_S):
+    """Decide whether publishing is safe now; may update st (acked). Returns (ok, detail)."""
+    sup_log = sup_log or SUP_LOG
+    if cfg_gpus(cfg_path):
+        return False, "configuration exposes GPUs: close first"
+    if st.get("acked"):
+        return True, "closure already acknowledged"
+    if st.get("log_offset") is not None:
+        ok, line = ack_in_log(sup_log, int(st["log_offset"]))
+        if ok:
+            st["acked"] = True; return True, f"acknowledged: {line}"
+        return False, "closed, acknowledgment of the current closure not yet in the supervisor log"
+    # closed file found without a recorded closure (governor start): the supervisor's cache is unknown until it has polled after our start
+    hb = heartbeat_epoch(hb_path)
+    if hb > GOV_START + startup_wait_s:
+        st["acked"] = True; return True, f"startup: heartbeat {hb - GOV_START:.0f} s after the governor start shows a poll after the start"
+    return False, f"startup: waiting for a supervisor heartbeat later than the governor start + {startup_wait_s:.0f} s"
+
+
+def barrier_close_and_ack(cfg_path, st=None, timeout_s=90.0, poll_s=2.0, sup_log=None, hb_path=None, dry=False):
+    """Close the configuration if it exposes GPUs (recording epoch and log offset), then wait for the acknowledgment of the CURRENT closure
+    (persisted state: a deferred closure keeps waiting for its own acknowledgment on later calls). Returns (acknowledged, detail)."""
+    sup_log = sup_log or SUP_LOG
+    st = st if st is not None else load_state()
+    if dry:
+        return False, "dry run: barrier not executed"
+    if cfg_gpus(cfg_path):
+        st.update(closed=True, closure_epoch=time.time(), log_offset=_log_size(sup_log), acked=False)
+        write_cfg(cfg_path, [], 1, False); save_state(st)
+    t0 = time.time()
+    while True:
+        ok, detail = closure_acknowledged(cfg_path, st, sup_log=sup_log, hb_path=hb_path)
+        if ok:
+            save_state(st); return True, f"{detail} (after {time.time() - t0:.1f} s)"
+        if time.time() - t0 >= timeout_s:
+            save_state(st); return False, f"no acknowledgment within {timeout_s:.0f} s ({detail}); grant deferred, closure state kept"
+        time.sleep(poll_s)
+
+
+def mark_exposed(st):
+    st.update(closed=False, closure_epoch=None, log_offset=None, acked=False); save_state(st)
+
+
+def write_cfg(cfg_path, gpus, mr, dry):
+    c = json.load(open(cfg_path))
+    changed = (c.get("gpus") != gpus) or (int(c.get("max_running", 0) or 0) != mr)
+    if changed and not dry:
+        c["gpus"] = gpus; c["max_running"] = mr
+        c["_governor"] = f"gpus and max_running written by scripts/slot_governor.py at {now()}"
+        tmp = cfg_path + ".tmp"
+        json.dump(c, open(tmp, "w"), indent=1); os.replace(tmp, cfg_path)
+    return changed
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--cfg", default=os.path.join(ROOT, "configs", "supervisor_gpu456.json"))
+    ap.add_argument("--gpus", default="4,5,6"); ap.add_argument("--poll", type=float, default=20.0)
+    ap.add_argument("--once", action="store_true"); ap.add_argument("--dry-run", action="store_true")
+    a = ap.parse_args()
+    all_gpus = [int(g) for g in a.gpus.split(",") if g.strip()]
+    base = json.load(open(a.cfg)); spg = int(base.get("slots_per_gpu", 2))
+    os.makedirs(os.path.join(ROOT, "logs"), exist_ok=True)
+    log = open(os.path.join(ROOT, "logs", "slot_governor.log"), "a")
+    st = load_state()
+    if cfg_gpus(a.cfg):
+        st.update(closed=False, closure_epoch=None, log_offset=None, acked=False)
+    elif st.get("closed") is None:
+        st.update(closed=True, closure_epoch=None, log_offset=None, acked=False)     # closed file, cache unknown: the startup heartbeat rule applies
+    if not a.dry_run:
+        save_state(st)
+    print(f"{now()} governor start: closure state {st}", file=log, flush=True)
+    last = None
+    while True:
+        if os.path.exists(os.path.join(ROOT, "status", "STOP_SLOT_GOVERNOR")):
+            print(f"{now()} STOP_SLOT_GOVERNOR present; exiting", file=log, flush=True); return
+        d = decide(all_gpus, spg)
+        barrier = None
+        if d["placements"] and not a.dry_run:
+            acked, detail = barrier_close_and_ack(a.cfg, st)                   # V220/V223: publish only after the supervisor acknowledged the current closure
+            barrier = dict(acknowledged=acked, detail=detail)
+            print(f"{now()} barrier before publishing {sorted(d['placements'])}: {detail}", file=log, flush=True)
+            if not acked:
+                d["placements"] = {}; d["gpus"] = []; d["max_running"] = 1; d["granted"] = 0; d["reasons"].append("barrier not acknowledged: grant deferred")
+        placed = apply_placements(d["placements"], dry=a.dry_run, notes=d.get("placement_notes"))   # job files first (staged files moved into pending), then the configuration
+        changed = write_cfg(a.cfg, d["gpus"], d["max_running"], a.dry_run)
+        if not a.dry_run:
+            if d["gpus"]:
+                mark_exposed(st)
+            elif changed and not st.get("closed"):
+                st.update(closed=True, closure_epoch=time.time(), log_offset=_log_size(SUP_LOG), acked=False); save_state(st)
+        d["cfg_changed"] = changed; d["dry_run"] = a.dry_run; d["placed_now"] = placed; d["barrier"] = barrier; d["closure_state"] = dict(st)
+        key = (d["n_validation"], d["n_workers"], d["n_wrappers"], d["runner_alive"], d["hold_items"], tuple(d["gpus"]), d["max_running"], d["pending"])
+        if key != last or changed or placed:
+            print(f"{d['ts']} val {d['n_validation']} wrap {d['n_wrappers']} work {d['n_workers']} runner {int(d['runner_alive'])} hold_items {d['hold_items']} budget {d['budget_before']} -> gpus {d['gpus']} max_running {d['max_running']} (pending {d['pending']}; {'WRITTEN' if changed and not a.dry_run else ('would write' if changed else 'unchanged')}; placed {placed}) {'; '.join(d['reasons'])}", file=log, flush=True)
+            last = key
+        if not a.dry_run:
+            tmp = os.path.join(ROOT, "status", "slot_governor.json.tmp")
+            json.dump(d, open(tmp, "w"), indent=1); os.replace(tmp, os.path.join(ROOT, "status", "slot_governor.json"))
+        if a.once:
+            print(json.dumps(d, indent=1)); return
+        time.sleep(a.poll)
+
+
+if __name__ == "__main__":
+    main()

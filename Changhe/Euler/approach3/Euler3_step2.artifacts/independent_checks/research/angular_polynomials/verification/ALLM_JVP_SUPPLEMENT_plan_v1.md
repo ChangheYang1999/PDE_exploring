@@ -1,0 +1,3 @@
+# Captured Jacobian table-use supplement
+
+Registered 2026-10-29T13:52:49.549627+00:00. Check the exact v2 recorder source, all source hashes, identical primal NPZ bytes and distinct-set metadata, and each of three recorded JVP calls. Require point/mode/degree identity and recorded derivative order at least the requested order, with negative fixtures for missing order, path, identity and error conditions. The producer summary alone omits the derivative-order condition. Source-review the numeric torch.equal witnesses and state that unconverted tensor bytes and JVP tangent values are not independently measured. This finite CPU capture does not automatically cover unobserved GPU coordinates or branches.

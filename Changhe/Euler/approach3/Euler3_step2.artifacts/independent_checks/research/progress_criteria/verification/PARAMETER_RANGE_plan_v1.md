@@ -1,0 +1,3 @@
+# Parameter-window audit
+
+Use the immutable V381/V396 accepted trajectories for the two FREE endpoints in each of segments 2 and 3. Report both 50-transition and 50-endpoint conventions. Compute c_l ranges and all adjacent signs exactly as rational binary64 values. Classify the log-omega range at 1e-3 with the proved rational exponential enclosure; print independently computed 70-digit logarithms. Compare the draft's two-significant-digit claims and monotonicity. This is a post-result audit, not a changed stopping criterion. The required wall-time conjunct is not inferred when this window already fails.

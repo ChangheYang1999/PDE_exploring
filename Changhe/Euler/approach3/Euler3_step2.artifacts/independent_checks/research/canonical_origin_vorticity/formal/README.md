@@ -1,0 +1,1 @@
+No formal source is provided. Lean and Lake execution are prohibited in this campaign. The standalone informal proof is in ../PROOF.md; exact rational reader evidence belongs in ../verification and the side artifacts directory.

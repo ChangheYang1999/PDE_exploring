@@ -1,0 +1,22 @@
+{
+ "kind": "label_correction",
+ "job_id": "cont1_s4_S01_L6_cl0.4500_om1.0000_free",
+ "started": "2026-10-29T17:25:01Z",
+ "ts": "2026-10-29T17:31:46Z",
+ "old_job_level_fields": {
+  "record_label_job": "pre-verifier; provisional-release continuation, post-result order rule 3.6 (n)",
+  "g1_label_job": "G1 under post-result rules 3.6 (j), (k) (release-wide label, lead 08:50Z item 1; S01_own itself passes the registered G1 rule); provisional-release continuation, post-result order rule 3.6 (n)",
+  "lineage_history": null,
+  "release_note_job": null,
+  "note": "segment 4 continuation of cont1_s3_S01_L6_cl0.4500_om1.0000_free (run runs/cont1_s3_S01_L6_cl0.4500_om1.0000_free; end state it 409, counters {'n_acc': 409, 'n_rej': 261, 'sat_count': 0}, lm_status time_limit); max_iter 649 = 409 + 240, time limit 7200 s (SPEC v1.15 3.6 (f)); target alone on GPU 6 (exclusive) = the segment-1 arrangement, unplaced until the slot governor grants the pair; pre-verifier; SPEC v1.22 3.6 (n) (7) FREE continuation under the provisional release; not a pair member (tag outside the pair regex); cfg identical to the previous segment except max_iter and time_limit (worker rule (a)); labels pre-verifier and 'provisional-release continuation, post-result order rule 3.6 (n)' at the job level; placed by the slot governor at 2026-10-29T17:24:43Z: alone on GPU 6 (exclusive) (SPEC 3.6 (h) (1); lead 08:50Z item 4; moved from queue/staged into queue/pending)"
+ },
+ "corrected_job_level_fields": {
+  "record_label_job": "full release under the post-result timing rule 3.6 (m)",
+  "g1_label_job": "G1 under post-result rules 3.6 (j), (k), (l), (n)",
+  "lineage_history": "segments 1 to 3 run before the full release of 2026-10-29T16:40:13Z (labels pre-verifier, provisional-release continuation for segment 3); the state at the start of segment 4 comes from them",
+  "note_replacement": "'under the provisional release' is to be read as 'under the full release of 2026-10-29T16:40:13Z'"
+ },
+ "statement": "The running job and its configuration are not edited (lead 17:23:19Z item 2). The config block (record_label, g1_label inside cfg) is the segment-3 configuration as the resume guard requires; the four job-level fields above apply to this segment; the run counts with the corrected labels. The configuration sha256 of the job file is unchanged.",
+ "config_sha256": "72be6b26e13a85a990a49d4d28bf1da879203b4cfd91e23d442fe4557cec2b4d",
+ "job_file_sha256": "ab6baa2195566004bb08dca1ff5ad0c003a54d90a49a87ed9e3c9c29a4609c79"
+}

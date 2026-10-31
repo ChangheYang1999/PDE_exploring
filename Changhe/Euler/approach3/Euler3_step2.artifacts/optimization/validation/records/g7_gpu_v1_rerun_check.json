@@ -1,0 +1,162 @@
+{
+ "run": "runs/g7_gpu_v1_rerun_L6_cl0.4500_om1.0000_free",
+ "tag": "g7_gpu_v1_rerun",
+ "checkpoint": {
+  "it": 2,
+  "lam": 0.0144,
+  "geometry_base": {
+   "c_l": 0.45,
+   "omega": 1.0,
+   "kappa": 2.2222222222222223,
+   "p0": 4.444444444444445
+  },
+  "counters": {
+   "n_acc": 2,
+   "n_rej": 2,
+   "sat_count": 0
+  },
+  "grad_every": 4,
+  "z_opt_sha256": "6af7701fc29135278ec106db87cb7d4539b5fac90c0aeccc3a1387fca6618cdf",
+  "z_opt_sha256_saved": "6af7701fc29135278ec106db87cb7d4539b5fac90c0aeccc3a1387fca6618cdf",
+  "rng_state_sha256_saved": "96302b4281adc7b1408b3586585707fa7137008bc5d53b0e57a31043ef710231",
+  "history_len": 2,
+  "pre_cost": 2.5613897635587767e-07
+ },
+ "resume_lines": [
+  "2026-10-29T06:06:09Z RESUME from checkpoint: 0 starts completed, current=0, resumed 1x",
+  "2026-10-29T06:06:14Z start 0: resuming at iteration 2 with lam 1.43999999999999996e-02; geometry base {'c_l': 0.45, 'omega': 1.0, 'kappa': 2.2222222222222223, 'p0': 4.444444444444445}; counters {'n_acc': 2, 'n_rej': 2, 'sat_count': 0}; rng_state_sha256 96302b4281adc7b1408b3586585707fa7137008bc5d53b0e57a31043ef710231; resumed vector sha256 6af7701fc29135278ec106db87cb7d4539b5fac90c0aeccc3a1387fca6618cdf (no entry projection on resume, V162)",
+  "2026-10-29T06:06:16Z   LM counters restored from the checkpoint: n_accepted 2, n_rejected 2, saturation streak 0 (gpu_v1 resume path)"
+ ],
+ "resume_rng_sha256": "96302b4281adc7b1408b3586585707fa7137008bc5d53b0e57a31043ef710231",
+ "resume_vector_sha256": "6af7701fc29135278ec106db87cb7d4539b5fac90c0aeccc3a1387fca6618cdf",
+ "resume_geometry_base_str": "{'c_l': 0.45, 'omega': 1.0, 'kappa': 2.2222222222222223, 'p0': 4.444444444444445}",
+ "initial_costs": [
+  2.724831834536661e-07,
+  2.5613897635587767e-07
+ ],
+ "final": {
+  "file": "start_000.pt",
+  "status": "max_iter",
+  "n_records": 8,
+  "iterations": 8
+ },
+ "record_at_checkpoint_iterate": {
+  "it": 1,
+  "it_cum": 1,
+  "cost": 2.5613897635587767e-07,
+  "lam": 0.0144,
+  "z_sha256_12": "6af7701fc291",
+  "counters": {
+   "n_acc": 2,
+   "n_rej": 2,
+   "sat_count": 0
+  },
+  "accepted": true
+ },
+ "first_resumed_record": {
+  "it": 0,
+  "it_cum": 2,
+  "cost": 2.5507708536087753e-07,
+  "lam": 0.01728,
+  "z_sha256_12": "7720578485f9",
+  "counters": {
+   "n_acc": 3,
+   "n_rej": 3,
+   "sat_count": 0
+  },
+  "accepted": true,
+  "n_trials": 2,
+  "t_jac": 37.52166295051575
+ },
+ "accepted_after_resume": 6,
+ "first_resumed_linearization_record": "linearization_00002.npz",
+ "linearization_z_sha256": "6af7701fc29135278ec106db87cb7d4539b5fac90c0aeccc3a1387fca6618cdf",
+ "O1_at_resume_point_rel_diff": 0.0,
+ "eligible_checkpoints_first_run": [
+  {
+   "log_line": 15,
+   "cumulative_it": 2
+  }
+ ],
+ "second_accepted_step_log_line": 13,
+ "first_checkpoint_after_second_accepted": {
+  "log_line": 15,
+  "cumulative_it": 2
+ },
+ "checkpoint_at_kill_sha256": "c3566252e7bb8e3f8bdab75a0c07fc011ea87ba4f2bf0f40b833499dcd52e594",
+ "grad_every": {
+  "checkpoint": 4,
+  "cfg": 4
+ },
+ "fresh_start_equivalence_vs_reference": {
+  "reference": "runs/g7_gpu_v1_L6_cl0.4500_om1.0000_free",
+  "n_compared": 2,
+  "rows": [
+   {
+    "it_cum": 0,
+    "cost_rerun": 2.584969079440978e-07,
+    "cost_ref": 2.584969079440978e-07,
+    "rel_diff": 0.0,
+    "trials": [
+     2,
+     2
+    ],
+    "accepted": [
+     true,
+     true
+    ]
+   },
+   {
+    "it_cum": 1,
+    "cost_rerun": 2.5613897635587767e-07,
+    "cost_ref": 2.5613897635587767e-07,
+    "rel_diff": 0.0,
+    "trials": [
+     2,
+     2
+    ],
+    "accepted": [
+     true,
+     true
+    ]
+   }
+  ],
+  "max_rel_cost_diff": 0.0
+ },
+ "config_sha256_job_json": "aa7a327be794c63f3799edf506bd00b7c4c05d750bc2c07d08b0ec4a19644e0a",
+ "checkpoint_versions": {
+  "torch": "2.8.0+cu128",
+  "numpy": "2.0.2",
+  "python": "3.9.25"
+ },
+ "config_sha256_ledger_launch": [
+  "aa7a327be794c63f3799edf506bd00b7c4c05d750bc2c07d08b0ec4a19644e0a",
+  "aa7a327be794c63f3799edf506bd00b7c4c05d750bc2c07d08b0ec4a19644e0a"
+ ],
+ "ledger_resume_rows": [
+  {
+   "completed": 0,
+   "job_id": "g7_gpu_v1_rerun_L6_cl0.4500_om1.0000_free",
+   "kind": "resume",
+   "resumed": 1,
+   "ts": "2026-10-29T06:06:09Z"
+  }
+ ],
+ "checks": {
+  "vector_bytes_first_resumed_linearization_equals_checkpoint": true,
+  "vector_bytes_resume_log_equals_checkpoint": true,
+  "damping_lam_continuity": true,
+  "counters_continuity": true,
+  "gradient_schedule_continuity": true,
+  "history_continuity": true,
+  "rng_state_before_first_resumed_trial": true,
+  "quadrature_layout_same": true,
+  "O1_at_resume_point_within_1e-12": true,
+  "at_least_three_accepted_after_resume": true,
+  "kill_checkpoint_is_first_after_second_accepted_step": true,
+  "grad_every_checkpoint_equals_cfg": true,
+  "pre_kill_reproduces_reference_counts_and_costs_1e-10": true,
+  "ledger_shows_interruption": true
+ },
+ "G7_PASS": true
+}

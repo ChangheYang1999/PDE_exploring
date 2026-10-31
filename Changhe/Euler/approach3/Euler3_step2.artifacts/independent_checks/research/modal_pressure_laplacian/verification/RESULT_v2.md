@@ -1,0 +1,11 @@
+# Expanded Gaussian test
+
+The eight Gaussian scales added to record_63a v3 cover every production shell and satisfy the registered 1e-4 construction-test threshold.
+
+Method. Follow the preregistered expanded-scale plan and the exact modal proof from V412. Reconstruct the same P1 segment-3 geometry independently, execute only the captured test/geometry functions, and compare source angular RMS values with long-double modal norms. Scales are 0.01875,0.075,0.3,1.2,4.8,19.2,76.8,307.2; steps are 0.001,0.002,0.004.
+
+Result. The source marks only 21 of 23 shells covered. The two uncovered shells are [8192,16384] and [16384,32768], where every tested Gaussian has underflowed in its binary64 evaluation. The source maximum relative error is 1414.2530315635759, from scale 307.2 at step 0.004; at step 0.001 that scale already gives 88.33660024193476. The 10 structural controls pass, but only 332 of 336 finite source/modal comparisons meet the preregistered tolerance. The four disagreements occur in the innermost shells at scales 76.8 and 307.2; their absolute differences range from 4.102007075078689e-9 to 6.290744798512418e-8. The artifact's all_controls_pass field covers structural controls only, not those four comparison failures. The much larger long-double outer maximum is 637926749.26588; it is not the source's reported maximum.
+
+Verdict. REFUTED for complete shell coverage or satisfaction of the accuracy gate at this geometry. CONFIRMED for the observed source outputs and the 332 passing comparisons. OPEN for the four stricter source/modal comparisons, actual Euler pressure consistency and any uniform pressure-error bound. Increasing the Gaussian scale alone aggravates near-harmonic cancellation at small radii. A stable manufactured family or stable evaluation and appropriate steps need separate qualification. This failure leaves pressure clearance OPEN; it does not exclude an Euler candidate.
+
+Evidence. artifacts/lap_code_test_v3/audit.json, SHA256 d57edd04b809d1e9758c25ca27a053bb28917c45ec38fb7048540bceeec85830; completed 2026-10-29T18:56:55.845741+00:00, elapsed 2.561421188 seconds. The serial pause was 4.618428396 seconds and the P2 worker resumed at 18:56:56.209949Z. The first batch setup found the old P1 PID already gone, stopped no process and ran no test.

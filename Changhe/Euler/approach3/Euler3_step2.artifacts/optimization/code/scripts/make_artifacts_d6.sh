@@ -1,0 +1,111 @@
+#!/bin/bash
+# D6FP: publishable artifacts subset of the degree-6 free-parameter campaign -> ../artifacts (lane-relative; under 40 MB; relative paths).
+# Contents: code (src, scripts, validation scripts, tests, configs), validation records (json), gate logs (text), the job ledger, the queue plan,
+# the start manifest and the small start/end coefficient files (.pt, each under 1 MB), per-job records (job.json, worker.log and stdout.log, gzipped above 300 KB, start_result json)
+# without checkpoints, profiling records, the source-state snapshots, and a README with the one-command resume and independent-validation commands.
+# Usage: bash scripts/make_artifacts_d6.sh   (idempotent: rebuilds ../artifacts from scratch; prints the size and a sha256 manifest)
+set -e
+ROOT=$(cd "$(dirname "$0")/.." && pwd); A=$ROOT/../artifacts; TS=$(date -u +%FT%TZ)
+rm -rf "$A"; mkdir -p "$A"
+cd "$ROOT"
+mkdir -p "$A/code" "$A/validation" "$A/runs" "$A/status" "$A/profiling"
+rsync -a --exclude='__pycache__' --exclude='*.pyc' src scripts tests configs "$A/code/"
+cp -r validation/*.py validation/*.sh validation/*.md "$A/validation/" 2>/dev/null || true
+mkdir -p "$A/validation/records" "$A/validation/logs"
+for f in validation/*.json; do case "$f" in *superseded*|*_v41_*|*_v44_*|*.v1_wording|*.v2b) continue;; esac; [ $(stat -c %s "$f") -le 1000000 ] && cp "$f" "$A/validation/records/"; done   # v2 (16:4xZ): cap 1 MB, superseded copies excluded (40 MB limit)
+find "$A/validation/records" -name "*.json" -size +30k -exec gzip -f {} \;   # v7: 30 KB; v5 (21:4xZ): records above 100 KB gzipped in the published copy (40 MB limit; v4 used 500 KB)
+# v7.8 (2026-10-30T14:1xZ, shift 8): the record SUBDIRECTORIES were missing from the published copy although the README named them: 6.3 (a) records, decisions, ADMITTED_TOOL.txt and the small start-state files (validation/records_63a), PROFILE records (validation/profile_records), J_c EVAL json records (validation/jc_eval/<job>/*.json; the npz factors stay in the original tree), linear-response receipts (validation/lrs, lrs_v2, lrs_v21: json only), strategy-2 readings (status/s2_prod); json above 30 KB gzipped.
+for sub in records_63a profile_records lrs lrs_v2 lrs_v21; do [ -d "validation/$sub" ] || continue; mkdir -p "$A/validation/$sub"; find "validation/$sub" -maxdepth 1 -type f \( -name '*.json' -o -name '*.txt' -o -name '*.md' -o \( -name '*.pt' -a -path 'validation/records_63a/*' \) \) -size -1500k -exec cp {} "$A/validation/$sub/" \; 2>/dev/null || true; done
+if [ -d validation/jc_eval ]; then for d in validation/jc_eval/*/; do n=$(basename "$d"); mkdir -p "$A/validation/jc_eval/$n"; find "$d" -maxdepth 1 -type f -name '*.json' -size -1500k -exec cp {} "$A/validation/jc_eval/$n/" \; 2>/dev/null || true; done; fi
+if [ -d status/s2_prod ]; then mkdir -p "$A/status/s2_prod"; cp status/s2_prod/*.json "$A/status/s2_prod/" 2>/dev/null || true; fi
+# v7.9 (14:1xZ): deliverable B tables: validation/param_evolution_<lineage>.csv (scripts/param_evolution.py: accepted iteration, O1, rms, lambda, |gD|/|r|, c_l, omega, omega/c_l per accepted iteration of every FREE lineage); csv above 30 KB gzipped
+mkdir -p "$A/validation/param_evolution"; cp validation/param_evolution_*.csv "$A/validation/param_evolution/" 2>/dev/null || true; find "$A/validation/param_evolution" -name '*.csv' -size +30k -exec gzip -f {} \; 2>/dev/null || true
+find "$A/validation/records_63a" "$A/validation/profile_records" "$A/validation/lrs" "$A/validation/lrs_v2" "$A/validation/lrs_v21" "$A/validation/jc_eval" -type f -name '*.json' -size +30k -exec gzip -f {} \; 2>/dev/null || true
+for f in validation/logs/*.log; do [ $(stat -c %s "$f") -le 2000000 ] && cp "$f" "$A/validation/logs/"; done; find "$A/validation/logs" -type f -size +100k -exec gzip -f {} \;   # v7: logs above 100 KB gzipped
+gzip -c status/ledger.jsonl > "$A/status/ledger.jsonl.gz"; cp status/FROZEN_CODE_SHA256.txt status/gpu_hours.json status/gpu_hours_manual.jsonl "$A/status/" 2>/dev/null || true   # v3 (18:2xZ): the ledger is gzipped (4.9 MB plain) to stay under the 40 MB limit
+cp status/RELEASE_SNAPSHOT_*.md "$A/status/" 2>/dev/null || true
+cp QUEUE_PLAN.md "$A/" ; cp starts/MANIFEST.json "$A/starts_MANIFEST.json"
+mkdir -p "$A/starts"; for f in starts/*.pt; do [ $(stat -c %s "$f") -le 1000000 ] && cp "$f" "$A/starts/"; done; (cd "$A/starts" && for f in *.pt; do echo "$(sha256sum "$f" | cut -c1-64) starts/$f"; done > .sha256_index)   # v7.1: index for the run-start dedup
+cp -r profiling/*.json profiling/*.md "$A/profiling/" 2>/dev/null || true
+for d in runs/*/; do
+  n=$(basename "$d"); case "$n" in INVALID_*) continue;; esac
+  mkdir -p "$A/runs/$n" "$A/runs/$n/starts"
+  for f in job.json worker.log stdout.log; do [ -f "$d/$f" ] && cp "$d/$f" "$A/runs/$n/"; done
+  [ -f "$A/runs/$n/job.json" ] || { for q in queue/done/$n.json queue/running/$n.json queue/cancelled/$n.json; do [ -f "$q" ] && { cp "$q" "$A/runs/$n/job.json"; break; }; done; }   # v7.3 (11:5xZ; lead 11:43:30Z): the job file (configuration) of every run, from the queue when the run dir has none
+  find "$A/runs/$n" -type f \( -name worker.log -o -name stdout.log \) -size +50k -exec gzip -f {} \; 2>/dev/null   # v7 (2026-10-30T08:2xZ): logs above 50 KB gzipped (v6: 300 KB; the artifacts must stay under 40 MB)
+  case "$n" in s2smoke_*|smk*|g7_*|resume_test_*|segA_*|segB_*|segC_*) SMK=1;; cont*|*_s[2-9]_*|*_s[2-9]b_*|*_m[0-9]_*|*_m[0-9][0-9]_*) SMK=1; echo "start state not copied (size budget, v7.2): this is a continuation segment; its start is the end state of the previous segment of the same lineage (runs/PREV/checkpoint_segment_end.pt in the original tree; the selected final states are in final_states/); the lineage root start is in starts/ (job.json init_from)" > "$A/runs/$n/starts/start_000.pt.pointer.txt";; prof_*|f3_P1s4_pert_*) SMK=1; JJ="$d/job.json"; [ -f "$JJ" ] || JJ="queue/done/$n.json"; [ -f "$JJ" ] || JJ="queue/running/$n.json"; python3 -c "import json,sys; d=json.load(open('$JJ')); c=d.get('config',d); print('start state not copied (size budget): the job starts from', c.get('init_from','?').replace('$ROOT/','').replace('RUN_ROOT/numerics/degree6_free_parameters_48h/',''), 'through the worker keep path; see starts/ and job.json')" > "$A/runs/$n/starts/start_000.pt.pointer.txt" 2>/dev/null || true;; *) SMK=0;; esac   # v7.7 (13:3xZ; V750 wording): max_iter requests outer iterations; one-year relative stop; raw saved-iterate objective. v7.6 (13:3xZ): README records the v2 smoke result. v7.5 (13:1xZ; lead 13:01:25Z item 3, V739): helper v2 (fresh scratch, fail-fast copies, LM allowance argument, documented clock-guard patch of the scratch worker copy); README separates the artifact-helper resume (A) from the original-tree resume (B). v7.4 (13:0xZ): README records the tested resume (SMOKE 12:32Z to 12:58Z). v7.3 (11:5xZ): job files for every run and the resume helper scripts/resume_from_artifacts.sh (lead 11:43:30Z). v7.1: PROFILE and perturbation-repeat runs: pointer instead of the start copy; v7.2 (09:1xZ): continuation segments (cont*, _s2.._s9, _m1..) likewise (their starts are the previous segments' ends; about 14 MB)   # 04:4xZ: smoke and resume-test runs keep their records but not their state files (size budget)
+  for f in "$d"/starts/*.pt "$d"/starts/*.json; do [ -f "$f" ] && [ $(stat -c %s "$f") -le 1500000 ] && { [ "$SMK" = 1 ] && [[ "$f" == *.pt ]] && continue; if [[ "$f" == *.pt ]]; then h=$(sha256sum "$f" | cut -c1-64); if grep -q "^$h " "$A/starts/.sha256_index" 2>/dev/null; then echo "$h  $(grep "^$h " "$A/starts/.sha256_index" | head -1 | cut -d' ' -f2-)" > "$A/runs/$n/starts/$(basename "$f").same_as_starts.txt"; continue; fi; fi; cp "$f" "$A/runs/$n/starts/"; }; done   # v7.1: a run start that is bytes-equal to a file in starts/ is replaced by a pointer file (size budget; PROFILE and perturbation runs)
+  for f in "$d"/*.json; do [ -f "$f" ] && [ $(stat -c %s "$f") -le 1500000 ] && cp "$f" "$A/runs/$n/"; done
+done
+cp ../NUM_REPORT.md "$A/NUM_REPORT.md"; cp ../WORKLOG.md "$A/WORKLOG_numerics.md"; cp ../NOTES_FOR_TEAM.md "$A/NOTES_numerics.md" 2>/dev/null || true
+gzip -f "$A/WORKLOG_numerics.md" "$A/NOTES_numerics.md"   # v7: the long notes and worklog are gzipped in the published copy (size budget); NUM_REPORT.md stays plain
+# v7: final states of the selected branches (coefficients and parameters; the worker's segment-end checkpoint, each under 1.5 MB) from configs/final_states_list.txt: lines "ROLE RUN_NAME"
+mkdir -p "$A/final_states"; if [ -f configs/final_states_list.txt ]; then while read -r role run; do case "$role" in ''|'#'*) continue;; esac; f=runs/$run/checkpoint_segment_end.pt; [ -f "$f" ] && [ $(stat -c %s "$f") -le 1500000 ] && cp "$f" "$A/final_states/${role}__${run}.pt"; done < configs/final_states_list.txt; cp configs/final_states_list.txt "$A/final_states/"; fi
+python3 scripts/lineage_status.py > "$A/LINEAGE_STATUS.md" 2>/dev/null || echo "lineage_status.py failed" > "$A/LINEAGE_STATUS.md"   # v7.1
+cat > "$A/README.md" <<EOR
+# Degree-6 free-parameter campaign (c_l and omega as unknowns): numerics artifacts, generated $TS
+
+Layout (relative paths): code/ (src, scripts, tests, configs: the production code of the campaign, copied from the frozen Euler3 tree with versioned
+changes; hashes of the production files in status/RELEASE_SNAPSHOT_*.md and status/FROZEN_CODE_SHA256.txt), validation/ (validation scripts; records/ the top-level
+json records: derivative gates, smoke comparisons, branch distances, pair results, segment reports; records_63a/ the 6.3 (a) records (record_63a.py v10), the wrapper decisions <end>.decision.txt, ADMITTED_TOOL.txt and the small start-state files; profile_records/ the PROFILE records (profile_record.py v2.2); jc_eval/<job>/jc_eval.json the J_c EVAL records (the npz factors stay in the original tree); lrs*/ the linear-response receipts (json); param_evolution/ the deliverable-B tables (c_l, omega, omega/c_l, O1, |gD|/|r| per accepted iteration of every FREE lineage, csv); json and csv above 30 KB gzipped; logs/),
+status/ (ledger.jsonl.gz: every job launch and end; gpu_hours.json and gpu_hours_manual.jsonl: the GPU-hours ledger by label; s2_prod/ the strategy-2 readings (V674); RELEASE_SNAPSHOT_*.md), starts/ (the
+immutable starting states, each under 1 MB; starts_MANIFEST.json), runs/JOB/ (job.json, worker.log and stdout.log (gzipped when above 50 KB), start_result record and the final state
+starts/start_000.pt = coefficients and parameters when small; checkpoints are not included; final_states/ROLE__RUN.pt = the segment-end checkpoint (coefficients, parameters, optimizer state) of each selected branch's final state (v7 of the script; the list is configs/final_states_list.txt; the end records with the per-iteration trajectories are the start_result rows of status/ledger.jsonl.gz and runs/RUN/results.jsonl in the original tree); checkpoint paths in the original tree: runs/JOB/checkpoint.pt and
+runs/JOB/checkpoint_segment_end.pt), profiling/, QUEUE_PLAN.md, NUM_REPORT.md (the numerics report with the deliverable-A table), WORKLOG_numerics.md,
+NOTES_numerics.md (the notes to the team).
+
+Interpreter: python 3.9 with torch 2.8 for CUDA 12.8, the frozen virtual environment of the previous 96-hour campaign (its .venv, read only; no package was
+added). Resources: GPUs revoked 2026-10-29T00:57:59Z to 02:51:04Z (CPU only),
+GPUs 4,5,6 from 02:51:04Z, GPUs 0 to 6 from 17:09:05Z; the binding limit was four busy host processes (cores 31-34).
+
+A. Resume of a published final state FROM THIS FOLDER (artifact helper, relative paths; v7.5): with the frozen environment's python on PATH (or PYTHON=/path/to/python),
+  bash code/scripts/resume_from_artifacts.sh P1_FREE_s4__cont1_s4_S01_L6_cl0.4500_om1.0000_free.pt 0 1 ./resume_scratch_1 1800
+builds the FRESH scratch ROOT ./resume_scratch_1 (an existing directory is refused): code, starts, runs/JOB/checkpoint.pt = the final state, runs/JOB/job.json with init_from made
+relative, max_iter = checkpoint iteration + 1, time_limit_per_start = 1800 s, cheap battery, label SMOKE, and PATCHES THE SCRATCH COPY of scripts/worker_d6.py in one line: the
+frozen worker's campaign clock guard (TEAM_STOP_EPOCH = T0_EPOCH + 47.0 * 3600.0, the team stop 2026-10-30T19:30:31Z) caps every LM segment at max(60 s, time to the team stop
+minus 25 min) and no job-file key overrides it, so after the campaign an unpatched copy would cap the LM at 60 s; the scratch copy gets TEAM_STOP_EPOCH = time.time() + 365 days
+and the original and patched sha256 are written to runs/JOB/WORKER_PATCH_RECORD.txt. Then it runs, inside the scratch ROOT, python scripts/worker_d6.py runs/JOB/job.json runs/JOB
+(GPU 0; "cpu" for CPU). The worker resumes at the raw saved-iterate objective of the final state ("LM initial cost" in worker.log; not a normalized end-diagnostic value) and
+REQUESTS one more LM iteration: max_iter requests outer iterations and does not guarantee accepted increments (damping, counter, stall and stale-Jacobian retry behaviour are the
+worker's own); the LM allowance excludes the initial objective and the end battery and is checked between iterations. The scratch worker copy replaces its fixed campaign stop by
+a one-year relative stop; the min/max budget expression and its 25-min battery reserve are unchanged.
+   TESTED 2026-10-30T12:32Z to 12:58Z with helper v1 (same execution path except the clock-guard patch, which was not needed during the campaign; GPU 4, label SMOKE, 26 min wall
+under a loaded host): the worker resumed at iteration 587 with its counters, re-entered at the raw saved-iterate objective 1.56157196650390341e-07 (the recorded P1 s4 end objective; not a normalized end-diagnostic value) and its one accepted step gave
+O1 1.5581166305866822e-07 at (0.4481412191634962, 1.4072863804978553), the first accepted iterate of the production continuation P1 s5. TESTED AGAIN with this helper v2 (patched scratch worker) 2026-10-30T13:12Z to 13:32Z (GPU 4, label SMOKE, 20 min wall): the same re-entry O1 1.56157196650390341e-07 and the same accepted step 1.5581166305866822e-07 at (0.4481412191634962, 1.4072863804978553); holdout 0.037613 / 0.037350 (cheap battery); patch record written.
+B. Resume INSIDE THE ORIGINAL EXPERIMENT TREE (not from this folder): any run resumes from its last runs/JOB/checkpoint.pt with its own job file queue/done/JOB.json by
+  CUDA_VISIBLE_DEVICES=g OMP_NUM_THREADS=1 python scripts/worker_d6.py queue/done/JOB.json runs/JOB
+(same configuration; the worker checks iteration > 0, counters and the gradient spacing). The published runs/JOB folders hold the job files but no checkpoint.pt, so this form
+does not run from the artifacts; after 2026-10-30T19:05Z it is also subject to the 60-s clock cap described in A.
+runs/JOB/job.json here is the job file (configuration) of every run (from the queue when the run folder has none); its init_from is the absolute path of the original tree.
+Continuation segment of a FREE lineage from an ended segment (worker resume path; +240 iterations, time limit S seconds; the slot governor places it):
+  bash scripts/enqueue_continuation_v122.sh ABS_ENDED_RUN_DIR TAG GPU 1 S      (only after the admitted 6.3 (a) wrapper answered yes:
+  python scripts/r63a_decide.py --end END_RECORD_TAG --ref START_REFERENCE_TAG; records by validation/record_63a.py through scripts/r63a_run.sh)
+Supervisor and slot governor: bash scripts/start_supervisor.sh (configs/supervisor_gpu456.json) and scripts/slot_governor.py --cfg configs/supervisor_gpu456.json --gpus 0,1,2,3,4,5,6.
+Breadth pilots and pairs: scripts/release_queue.sh (p3 | f1_S05 | f2 WHICH | f2refit WHICH | f3 WHICH | f4 K | promote ...; guarded by status/FULL_RELEASE_ACK).
+Shift-6 tools (2026-10-30): scripts/enqueue_p3_free_cont.sh (P3 FREE-only continuation), scripts/enqueue_bracket_pilot.sh (saved field at a moved omega from the P1 s4 base
+state starts/P1s4_end_base_state.pt, sha256 60df5e72844f8689..., bytes-equal to the P1 s4 checkpoint z_full), scripts/enqueue_profile_run.sh (one SPEC 7.3 (d) PROFILE run,
+FIXED, from the same base file through the worker keep path, with the 8.3 share gate), scripts/p3_free_cont_end.sh (end chain of a single member), every enqueue
+through scripts/enqueue_under_lock.sh (host-slot guard; scripts/queue_guard_lib.sh), every validation launch through validation/l_launch_v6.sh.
+Linear-response PROFILE start candidates from a J_c EVAL factor (diagnostic; not consumed by any run, lead 2026-10-30T02:59:34Z): scripts/linear_response_start.py (v1) and
+scripts/linear_response_start_v2.py (v2.1; receipts and start files in validation/lrs, lrs_v2, lrs_v21): python scripts/linear_response_start_v2.py ABS_RUN_DIR --out PREFIX --dzc X --dzw Y --device cuda:0 ;
+several displacements in one process: python scripts/lrs_multi.py --tool linear_response_start_v2.py cuda:0 --run ABS_RUN_DIR --prefix PREFIX dzc=X,dzw=Y ... ; fixtures only: --fixtures-only.
+Phase III tools (2026-10-30, shift 6): scripts/s2_prod_run.sh (strategy-2 comparison: worker_d6_s2.py with the complete Jacobian J_c as the LM step model, hand-launched on an
+exclusive GPU with an open/closed manual ledger row), scripts/enqueue_perturb_repeat.sh (SPEC 7.4 (e) continued-descent repeat: offline perturbation 1e-3 / 1e-3 of the P1 s4
+end, then a fresh FREE job; provenance-bound reuse), scripts/profile_queue.sh + scripts/enqueue_profile_run.sh (the nine PROFILE runs one at a time with the 8.3 gates:
+narrow ceiling 0.15, registered FREE floor 0.80, fixed-side lock), scripts/profile_record.py (the PROFILE record from the worker's outputs), scripts/enqueue_free_cont.sh
+(generic FREE continuation with a caller-supplied lineage text), status/tmp_*_segfirst_chain_v2.sh (frozen-set segments enqueued at the previous JOB DONE, records after).
+GPU-hours ledger: scripts/gpu_hours.py v4.9 (exact full-command pairing of the launcher-log commands, V781/V782; v4.8 kept beside it; two 8.3 counts: REGISTERED = all coefficient optimization of any label incl. CPU wall hours and the early 2026-10-28 work of
+status/gpu_hours_early.jsonl; NARROW = FREE + FIXED-CONTROL + PROFILE + DIAG + refits); earlier: v4.3 (launches closed at the first end event of their attempt; smoke probes SMOKE); the defective v4.1 output is kept as status/gpu_hours_v4.1_defective_025821.json.
+Independent validation (derivative gates of SPEC 3; one case, CPU, one thread; writes validation/gates_TAG.json):
+  cd code && CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=1 python ../validation/gates.py --tag check --cases S01_own --device cpu
+6.3 (a) record of an end state (full battery): python validation/record_63a.py end ABS_RUN_DIR --tag TAG --device cuda:0 --full --start-ref ABS_START_RECORD_JSON
+J_c EVAL of an end state: python validation/jc_eval_state.py ABS_RUN_DIR cuda:0 256 ; branch identity of two end states: python scripts/branch_distance.py A_starts/start_000.pt B_starts/start_000.pt --tag TAG [--sens-a ... --jc-a ...]
+Table of every run: python scripts/summary_table.py ; GPU-hours by label: python scripts/gpu_hours.py ; parameter evolution of a lineage: python scripts/param_evolution.py NAME RUN_DIRS...
+Table-cache bitwise regression: python ../validation/test_table_cache.py ; control-flow tests: python ../validation/test_lagJ_flow.py, python ../validation/test_grad_every.py.
+The validation scripts expect the layout of the experiment directory (src/, scripts/, starts/ next to validation/): run them from a copy where code/* and
+starts/ are placed as in the original tree, or from the original experiment directory degree6_free_parameters_48h in the numerics lane (d6-num).
+LINEAGE_STATUS.md: the final status of every lineage (ended, excluded, frozen, diagnostic; end-state hashes), generated by scripts/lineage_status.py from
+configs/lineage_status.txt and the end records.
+EOR
+cd "$A" && find . -type f -exec sha256sum {} \; | sort -k2 > SHA256SUMS.txt
+echo "artifacts written to $A: $(du -sh "$A" | cut -f1), $(find "$A" -type f | wc -l) files"

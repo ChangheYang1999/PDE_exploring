@@ -1,0 +1,161 @@
+{
+ "written": "2026-10-29T05:16:52Z",
+ "spec": "SPEC v1.13 3.6 (b) profiling addendum: configuration-M timings and peak GPU memory on the production hardware (GPU), jobs per GPU",
+ "base_profile": "profiling/profile_S01.json (GPU 5, 2026-10-28T22:56Z to 23:23Z, fp64, chunk 256, shared GPU)",
+ "configuration_M_record": {
+  "source": "validation/lm_cost_compare_ddj_cpu_v1_code_0452Z.json (GPU 6, alone, 2026-10-29T04:48:13Z to 04:52:26Z, snapshot cpu_v1 code; M3 PASS, validation/m3_check_ddj.json)",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "mode": "dd_fp64jac",
+  "wall_s_5_accepted": 238.2305018901825,
+  "mean_t_iter_s": 43.984716987609865,
+  "mean_t_jac_s": 32.60107069015503,
+  "mean_t_trial_per_trial_s": 1.2061265230178833,
+  "peak_GPU_GB": 26.237672448,
+  "n_accepted": 5,
+  "n_trials": 10,
+  "per_iteration": [
+   {
+    "it": 0,
+    "cost": 2.584969079440978e-07,
+    "accepted": true,
+    "n_trials": 2,
+    "t_jac": 44.918535232543945,
+    "t_param_cols": 12.352861642837524,
+    "t_normal": 0.12445545196533203,
+    "t_solve": 0.01617431640625,
+    "t_trial": 2.9635355472564697,
+    "t_iter": 60.412741899490356,
+    "step_rel": 0.009260697993797681,
+    "dparam_opt": {
+     "1467": -0.000597337678443012,
+     "1468": 0.003236792953344579
+    },
+    "gain_ratio": 0.9225307083059912,
+    "z_norm": 11815054.854948476,
+    "z_sha256_12": "504483693ba7"
+   },
+   {
+    "it": 1,
+    "cost": 2.5613897635587767e-07,
+    "accepted": true,
+    "n_trials": 2,
+    "t_jac": 29.850712299346924,
+    "t_param_cols": 7.809783935546875,
+    "t_normal": 0.12653875350952148,
+    "t_solve": 0.0029680728912353516,
+    "t_trial": 2.4393744468688965,
+    "t_iter": 40.231022357940674,
+    "step_rel": 0.0009021902777148655,
+    "dparam_opt": {
+     "1467": -0.0005827783089398635,
+     "1468": 0.0031543856645306926
+    },
+    "gain_ratio": 0.8654803544638461,
+    "z_norm": 11815054.855058013,
+    "z_sha256_12": "6af7701fc291"
+   },
+   {
+    "it": 2,
+    "cost": 2.5507708536087753e-07,
+    "accepted": true,
+    "n_trials": 2,
+    "t_jac": 29.175521850585938,
+    "t_param_cols": 8.099735975265503,
+    "t_normal": 0.12638163566589355,
+    "t_solve": 0.002975940704345703,
+    "t_trial": 2.1813931465148926,
+    "t_iter": 39.58765435218811,
+    "step_rel": 0.002154084633452875,
+    "dparam_opt": {
+     "1467": -0.0003665247820120738,
+     "1468": 0.0019721227404339544
+    },
+    "gain_ratio": 0.949229308863624,
+    "z_norm": 11815054.85514121,
+    "z_sha256_12": "7720578485f9"
+   },
+   {
+    "it": 3,
+    "cost": 2.54620471153252e-07,
+    "accepted": true,
+    "n_trials": 2,
+    "t_jac": 28.61362314224243,
+    "t_param_cols": 7.714234113693237,
+    "t_normal": 0.12639522552490234,
+    "t_solve": 0.0029587745666503906,
+    "t_trial": 2.2311506271362305,
+    "t_iter": 38.689876079559326,
+    "step_rel": 0.002708685201436067,
+    "dparam_opt": {
+     "1467": -0.0002616879782110792,
+     "1468": 0.0014074711900138193
+    },
+    "gain_ratio": 0.9639026253944117,
+    "z_norm": 11815054.855205897,
+    "z_sha256_12": "535d7a0a8d73"
+   },
+   {
+    "it": 4,
+    "cost": 2.543394743209879e-07,
+    "accepted": true,
+    "n_trials": 2,
+    "t_jac": 30.446960926055908,
+    "t_param_cols": 8.178245067596436,
+    "t_normal": 0.1266918182373047,
+    "t_solve": 0.002981424331665039,
+    "t_trial": 2.2458114624023438,
+    "t_iter": 41.00229024887085,
+    "step_rel": 0.002375192142729047,
+    "dparam_opt": {
+     "1467": -0.0001950340445537283,
+     "1468": 0.0010480809579720193
+    },
+    "gain_ratio": 0.9822312698077733,
+    "z_norm": 11815054.85525717,
+    "z_sha256_12": "e84c3cf843fd"
+   }
+  ]
+ },
+ "fp64_reference": {
+  "source": "validation/lm_cost_compare.json (GPU 5 shared, 00:26Z to 00:43Z)",
+  "wall_s": 228.17160558700562,
+  "mean_t_iter_s": 37.92660694122314,
+  "mean_t_jac_s": 28.935318374633788,
+  "mean_t_trial_per_trial_s": 0.6343469381332397,
+  "peak_GPU_GB": 26.237711872
+ },
+ "dd2_reference": {
+  "wall_s": 777.4752316474915,
+  "mean_t_iter_s": 148.0748863697052,
+  "peak_GPU_GB": 39.865921536
+ },
+ "ratios": {
+  "ddj_over_fp64_wall": 1.0440847855599686,
+  "dd_over_fp64_wall": 3.4074144749401225,
+  "controlled_fp64_run": "pending: lm_cost_compare_fp64_gpu6_controlled.json (GPU 6 alone, after the gpu_v1 M3 reproduction)"
+ },
+ "smoke_samples": {
+  "source": "runs/smk_lagJ_gpu_L6_cl0.4500_om1.0000_free (GPU 6, 04:52:28Z to 05:11:52Z, dd_fp64jac, lagged Jacobian on; cpu_v1 code)",
+  "table": "profiling/smk_lagJ_gpu_samples.md",
+  "fresh_J_iterations": 11,
+  "J_cw_all_columns_median_s": 29.4,
+  "param_columns_median_s": 7.6,
+  "trial_median_s": 1.1,
+  "complete_gradient_median_s": 2.8,
+  "whole_iteration_median_s": "39 to 43",
+  "mean_wall_per_accepted_iteration_s": 42.7,
+  "end_battery_full_s": 581.9,
+  "note": "every reused-J trial was rejected; lagged Jacobian is off in production (3.6 (e))"
+ },
+ "jobs_per_GPU": {
+  "rule": "3.6 (c): a pair's two members on one GPU when peak_FREE + peak_FIXED + 8 GB < 80 GB",
+  "peak_FREE_GB": 26.237672448,
+  "peak_FIXED_GB_estimate": "about the same or less (no parameter columns; frozen profile 24.4 GB)",
+  "decision": "2 jobs per GPU for a pair: 26.2 + 26.2 + 8 = 60.4 GB < 80 GB; the two members start together on the same GPU; a GPU without a pair runs one battery process at a time (host-process limit four)"
+ },
+ "accepted_iterations_per_hour_per_job": {
+  "fp64_alone_estimate": 94.92017056994077,
+  "ddj_alone": 81.84661051733244,
+  "ddj_pair_sharing_a_GPU": "to be measured in segment 1 (two jobs on one GPU)"
+ }
+}
