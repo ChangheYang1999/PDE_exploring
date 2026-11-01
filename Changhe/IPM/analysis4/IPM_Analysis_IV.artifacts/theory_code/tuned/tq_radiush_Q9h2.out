@@ -1,0 +1,18 @@
+Q = 9, h = 2, 5 real roots; k1 = 1, K0 = 10
+KT = 10: D(KT+t): 506 coefficients, all positive after sign normalization; N(KT+t,b): degree 9 in b, 506 t-coefficients
+KT = 24: D(KT+t): 506 coefficients, all positive after sign normalization; N(KT+t,b): degree 9 in b, 506 t-coefficients
+root 1: k_i = 7, sign -1, |sigma_(k_i)| in [8.446749852763774e-09, 8.446749852763774e-09]; finite gaps k=1..9 positive: True (min gap 1.787e-10); tail k>=10 strictly above the target: True (min coefficient margin / D_ell 9.462e-10); certified s_i = 211/25000000000
+root 2: k_i = 4, sign +1, |sigma_(k_i)| in [4.351240062676754e-07, 4.351240062676754e-07]; finite gaps k=1..9 positive: True (min gap 1.550e-07); tail k>=10 strictly above the target: True (min coefficient margin / D_ell 5.516e-07); certified s_i = 87/200000000
+root 3: k_i = 13, sign +1, |sigma_(k_i)| in [2.356952307078237e-07, 2.356952307078237e-07]; finite gaps k=1..23 positive: True (min gap 2.142e-06); tail k>=24 strictly above the target: True (min coefficient margin / D_ell 1.516e-05); certified s_i = 47/200000000
+root 4: k_i = inf (not attained), sign -1, |sigma_(k_i)| in [0.0003967548191810274, 0.0003967548191810274]; finite gaps k=1..9 positive: True (min gap 1.511e-03); tail k>=10 strictly above the target: True (min coefficient margin / D_ell 3.255e-06); certified s_i = 99/250000
+root 5: k_i = 5, sign +1, |sigma_(k_i)| in [4114.009724075142, 4114.009724075142]; finite gaps k=1..9 positive: True (min gap 4.150e+02); tail k>=10 strictly above the target: True (min coefficient margin / D_ell 1.091e+03); certified s_i = 4114
+(A) PASS: for all 5 roots, inf_{k>=1} |sigma_k(b_i)| is attained only at the listed k_i; where k_i = inf it equals |sigma_inf(b_i)| and is attained at no finite k
+root 1: a=107/100, s=211/25000000000, smallest passing q: z0=2^-211: G(z0,2Y0) <= 2Y0: True (max ratio 0.78112); at z0=2^-210: False (max ratio 1.06); radius r > 2^1899/4 |eps|^(9/4)
+root 2: a=29/25, s=87/200000000, smallest passing q: z0=2^-202: G(z0,2Y0) <= 2Y0: True (max ratio 0.75135); at z0=2^-201: False (max ratio 1); radius r > 2^909/2 |eps|^(9/4)
+root 3: a=127/100, s=47/200000000, smallest passing q: z0=2^-206: G(z0,2Y0) <= 2Y0: True (max ratio 0.80101); at z0=2^-205: False (max ratio 1.1); radius r > 2^927/2 |eps|^(9/4)
+root 4: a=143/100, s=99/250000, smallest passing q: z0=2^-188: G(z0,2Y0) <= 2Y0: True (max ratio 0.76483); at z0=2^-187: False (max ratio 1.03); radius r > 2^423 |eps|^(9/4)
+root 5: a=143/50, s=4114, smallest passing q: z0=2^-160: G(z0,2Y0) <= 2Y0: True (max ratio 0.84534); at z0=2^-159: False (max ratio 1.19); radius r > 2^360 |eps|^(9/4)
+common: a=143/50, s=211/25000000000, z0=2^-238: True (max ratio 0.77149); radius r > 2^1071/2 |eps|^(9/4)
+kappa = 230/9
+(B) PASS
+time 1836.4s

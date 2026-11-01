@@ -1,0 +1,42 @@
+"""Admit the exact Q9 finite algebra and first potential logarithm."""
+from pathlib import Path
+from datetime import datetime,timezone
+from fractions import Fraction as F
+from hashlib import sha256
+import json,sys
+sys.dont_write_bytecode=True
+sys.set_int_max_str_digits(0)
+import sympy as sp
+now=datetime.now(timezone.utc).isoformat(timespec='seconds')
+def ref(p):return dict(path=str(p),sha256=sha256(p.read_bytes()).hexdigest())
+def put(p,d):p.write_text(json.dumps(d,indent=2)+'\n')
+def checkref(d):assert ref(Path(d['path']))['sha256']==d['sha256']
+r=Path('research/267_period_nine_tuning');v=r/'verification'
+o=json.loads((v/'obstruction_checks.json').read_text());c=json.loads((v/'lead_comparison.json').read_text())
+assert o['all_checks_pass'] and o['independent_exact'] and c['all_checks_pass'];checkref(c['own_obstruction'])
+assert c['exact_coefficient_comparisons']==19 and len(o['real_roots'])==10
+assert all(F(x['interval'][1])-F(x['interval'][0])<=F(1,10**60) for x in o['real_roots'])
+assert not o['modular_irreducibility'][-1]['possible_proper_factor_degrees']
+coefficient_sha=sha256(','.join(reversed(o['primitive_coefficients'])).encode()).hexdigest()
+assert coefficient_sha=='fe314d6e63b1b68a993965e1cd50e5a7321ffdc0148979b5b5083dc16dd687c8'
+for p in [r/'sources/lead_obstruction_output.txt',r/'sources/lead_protocol_review_192830Z.md']:assert p.exists()
+proof=r/'PROOF.md';(r/'sources/PROOF_before_finite_admission.md').write_bytes(proof.read_bytes())
+proof.write_text(proof.read_text()+f'''\n## Exact finite algebra admitted\n\nV549 at {now} establishes that P_18 has degree18, is irreducible over the rationals and has exactly ten simple real roots. Independent signed-Cartesian and positive-frequency polar computations agree on all19 coefficients and the obstruction scale. The five modular degree patterns are (19:1,3,5,9), (23:1,1,4,12), (37:1,2,3,3,4,5), (47:3,4,11), (53:2,16); their proper subset-degree intersection is empty. Every root is isolated to width at most1e-60. The exact calculation used153 ordered nonlinear products, checked Poisson identities through17 and took{o['actual_elapsed_s']:.5f}seconds. The separate exact coefficient comparison took{c['actual_elapsed_s']:.5f}seconds. This finite admission does not yet admit any period-nine infinite series.\n''')
+snapshot=r/'sources/PROOF_at_V549.md';snapshot.write_bytes(proof.read_bytes())
+put(v/'obstruction_admission.json',dict(admitted_at_utc=now,ledger='V549',verdict='PROVED_FINITE_ALGEBRA',root_count=10,degree=18,primitive_descending_coefficients_sha256=coefficient_sha,proof=ref(snapshot),obstruction=ref(v/'obstruction_checks.json'),independent_comparison=ref(v/'lead_comparison.json')))
+rr=Path('research/270_period_nine_potential_log');vv=rr/'verification';a=json.loads((vv/'checks.json').read_text());assert a['all_checks_pass'] and a['coprime'] and a['a_Q_degree']==9;checkref(a['source'])
+lead=Path('../a4-lead/code/tuned/aQ_Q9.out');raw=lead.read_bytes();(rr/'sources/lead_aQ_Q9.out').write_bytes(raw)
+b=sp.Symbol('b');poly=sp.Poly(sp.sympify(next(s.split('a_Q = ',1)[1] for s in raw.decode().splitlines() if s.startswith('a_Q = '))),b,domain=sp.QQ)
+assert [str(poly.nth(i)) for i in range(10)]==a['a_Q']
+(rr/'sources/lead_aQ_poly.py').write_bytes(Path('../a4-lead/code/tuned/aQ_poly.py').read_bytes())
+put(vv/'lead_comparison.json',dict(checked_at_utc=now,all_checks_pass=True,coefficient_comparisons=10,source=ref(rr/'sources/lead_aQ_Q9.out'),independent_output=ref(vv/'checks.json'),scope='Exact a9 coefficient agreement; no new convergence assertion.'))
+p=rr/'PROOF.md';(rr/'sources/PROOF_before_admission.md').write_bytes(p.read_bytes());s=p.read_text().replace('Status: conditional verification protocol written before computation.','Status: the finite potential-logarithm statement is PROVED in V550. Infinite convergence requires the separate267 admission.')
+s+=f'''\n## Completed finite verification\n\nV550 at {now} verifies all hypotheses of the finite statement. The independent polar prefix agrees with180 signed-Cartesian density/stream coefficients, using36 ordered products. Its nonzero degree-nine a_9 agrees with all ten coefficients of the lead's independent exact polynomial. A rational Euclidean chain ends in a unit, and all36 reconstructed density and stream coefficients agree exactly. The computation took{a['actual_elapsed_s']:.5f}seconds. Thus all ten real P_18 roots require the stated nonzero order-nine potential logarithm, regardless of whether the later all-order tuning certificate is eventually completed.\n''';p.write_text(s)
+put(vv/'admission.json',dict(admitted_at_utc=now,ledger='V550',verdict='PROVED_FINITE_POTENTIAL_LOG',Q=9,real_roots=10,proof=ref(p),exact_checks=ref(vv/'checks.json'),independent_comparison=ref(vv/'lead_comparison.json'),compatibility=ref(v/'obstruction_admission.json')))
+ledger=Path('VERIFY_REPORT.md');assert '## V549 ' not in ledger.read_text() and '## V550 ' not in ledger.read_text()
+entries=f'''\n\n## V549 | {now} | Independent period-nine compatibility polynomial\n\n**Claim.** At delta2/9 and f1=sin(theta)+b sin(3theta), the first compatibility polynomial has degree18, is irreducible and has exactly ten simple real roots.\n\n**Method.** Independently derive f18 and g1..g17 with exact signed Cartesian differentiation, check all Poisson identities, compute a rational Sturm chain and verified modular factors, and compare all19 coefficients and the exact scale with the lead's polar calculation.\n\n**Result.** All checks pass. The modular primes19,23,37,47,53 exclude every proper rational factor degree. Ten roots are isolated to width at most1e-60. The153-product exact recurrence took{o['actual_elapsed_s']:.5f}seconds; the independent coefficient comparison took{c['actual_elapsed_s']:.5f}seconds.\n\n**Verdict: CONFIRMED and PROVED for finite compatibility algebra.** No infinite period-nine branch is admitted by this entry. Evidence: research/267_period_nine_tuning/verification/obstruction_admission.json.\n\n## V550 | {now} | Period-nine common-potential logarithm\n\n**Claim.** Every real root of the period-nine compatibility polynomial requires a nonzero order-nine r^2 log(r) common-potential term for nonzero leading amplitude.\n\n**Method.** Independently compute the positive-frequency polar prefix through9, compare all180 density/stream coefficients with the signed-Cartesian prefix, extract the degree-nine sin(theta) coefficient a9, verify its coprimality with P18, and reconstruct both density and stream exactly. Compare a9 with the lead's independent exact polynomial.\n\n**Result.** All180 prefix comparisons,36 reconstruction comparisons and ten a9 coefficient comparisons pass. The Euclidean remainder chain terminates in a unit. The polar/reconstruction calculation took{a['actual_elapsed_s']:.5f}seconds.\n\n**Verdict: CONFIRMED and PROVED as a finite necessary potential logarithm.** No assertion about nonvanishing of the second permitted logarithm or convergence of the later series follows here. Evidence: research/270_period_nine_potential_log/verification/admission.json.\n'''
+with ledger.open('a') as f:f.write(entries)
+notes=f'''## {now} VERIFIER -> LEAD: V549 and V550, exact Q9 algebra and first logarithm\n\nP18 matches all19 coefficients and the exact2401/d scale of your polar computation. The primitive descending coefficient hash is{coefficient_sha}. Independent exact Sturm and modular certificates confirm irreducibility and exactly ten simple real roots, isolated to1e-60. V549 admits these finite facts.\n\nV550 admits the required order9 potential logarithm: independent polar prefix180 coefficients matches the Cartesian prefix; a9 has degree9, is coprime with P18, and all ten coefficients agree with your aQ_Q9.out. Full density/stream reconstruction checks36 coefficients. The proof is270/PROOF.md; your earlier258 reconstruction review and the exact comparison support this finite extension.\n\nNo Q9 convergence admission yet. The per-root cover/box/replay queue began at19:39:47Z, core17; ten roots remain to be collected.\n\n'''
+p=Path('NOTES_FOR_TEAM.md');p.write_text(notes+p.read_text())
+with Path('WORKLOG.md').open('a') as f:f.write(f'\n{now}: V549 exact Q9 compatibility and V550 necessary first potential logarithm admitted. Independent lead coefficient comparisons pass. Infinite Q9 convergence remains pending root certificates.\n')
+print(json.dumps(dict(at=now,admitted=['V549','V550'],root_count=10)))

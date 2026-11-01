@@ -1,0 +1,14 @@
+Q = 7, h = 2, 3 real roots; k1 = 1, K0 = 8
+KT = 16: D(KT+t): 260 coefficients, all positive after sign normalization; N(KT+t,b): degree 7 in b, 260 t-coefficients
+KT = 24: D(KT+t): 260 coefficients, all positive after sign normalization; N(KT+t,b): degree 7 in b, 260 t-coefficients
+root 1: k_i = 4, sign +1, |sigma_(k_i)| in [3.476389170972534e-07, 3.476389170972534e-07]; finite gaps k=1..15 positive: True (min gap 1.735e-07); tail k>=16 strictly above the target: True (min coefficient margin / D_ell 7.265e-07); certified s_i = 347/1000000000
+root 2: k_i = 8, sign -1, |sigma_(k_i)| in [2.188626011835059e-06, 2.188626011835059e-06]; finite gaps k=1..23 positive: True (min gap 4.472e-06); tail k>=24 strictly above the target: True (min coefficient margin / D_ell 5.327e-05); certified s_i = 109/50000000
+root 3: k_i = 6, sign -1, |sigma_(k_i)| in [47.28120035981708, 47.28120035981708]; finite gaps k=1..15 positive: True (min gap 7.665e-02); tail k>=16 strictly above the target: True (min coefficient margin / D_ell 1.184e+00); certified s_i = 1182/25
+(A) PASS: for all 3 roots, inf_{k>=1} |sigma_k(b_i)| is attained only at the listed k_i; where k_i = inf it equals |sigma_inf(b_i)| and is attained at no finite k
+root 1: a=31/25, s=347/1000000000, smallest passing q: z0=2^-151: G(z0,2Y0) <= 2Y0: True (max ratio 0.86519); at z0=2^-150: False (max ratio 1.23); radius r > 2^1057/4 |eps|^(7/4)
+root 2: a=147/100, s=109/50000000, smallest passing q: z0=2^-149: G(z0,2Y0) <= 2Y0: True (max ratio 0.97507); at z0=2^-148: False (max ratio 1.45); radius r > 2^1043/4 |eps|^(7/4)
+root 3: a=181/50, s=1182/25, smallest passing q: z0=2^-120: G(z0,2Y0) <= 2Y0: True (max ratio 0.90276); at z0=2^-119: False (max ratio 1.31); radius r > 2^210 |eps|^(7/4)
+common: a=181/50, s=347/1000000000, z0=2^-174: True (max ratio 0.91508); radius r > 2^609/2 |eps|^(7/4)
+kappa = 102/7
+(B) PASS
+time 266.2s

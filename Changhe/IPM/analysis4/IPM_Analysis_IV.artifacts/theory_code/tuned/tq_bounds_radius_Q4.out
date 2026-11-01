@@ -1,0 +1,20 @@
+Q = 4, 6 real roots
+D(K0+t): 70 coefficients, all positive after sign normalization
+N(K0+t,b): degree 4 in b, 70 t-coefficients
+root 1: sign(sigma_inf)=+1; k=2..K0-1 |sigma_k| > s: True; tail certificate k>=K0: True; s = 1/32; min over ell of coefficient margin / D_ell = 1.250e-02
+root 2: sign(sigma_inf)=+1; k=2..K0-1 |sigma_k| > s: True; tail certificate k>=K0: True; s = 1/16384; min over ell of coefficient margin / D_ell = 6.309e-04
+root 3: sign(sigma_inf)=+1; k=2..K0-1 |sigma_k| > s: True; tail certificate k>=K0: True; s = 1/32768; min over ell of coefficient margin / D_ell = 1.251e-05
+root 4: sign(sigma_inf)=+1; k=2..K0-1 |sigma_k| > s: True; tail certificate k>=K0: True; s = 1/16384; min over ell of coefficient margin / D_ell = 1.418e-04
+root 5: sign(sigma_inf)=+1; k=2..K0-1 |sigma_k| > s: True; tail certificate k>=K0: True; s = 1/1024; min over ell of coefficient margin / D_ell = 8.757e-04
+root 6: sign(sigma_inf)=+1; k=2..K0-1 |sigma_k| > s: True; tail certificate k>=K0: True; s = 1/512; min over ell of coefficient margin / D_ell = 3.453e-03
+(A) PASS: |sigma_k(b_i)| >= s_i for all k >= 2, all 6 roots
+root 1: a=32/25, s=1/32, smallest passing q: z0=2^-41: G(z0,2Y0) <= 2Y0: True (max ratio 0.76149); at z0=2^-40: False (max ratio 1.02); radius r > 2^82 |eps|^(4/2)
+root 2: a=26/25, s=1/16384, smallest passing q: z0=2^-48: G(z0,2Y0) <= 2Y0: True (max ratio 0.87036); at z0=2^-47: False (max ratio 1.24); radius r > 2^96 |eps|^(4/2)
+root 3: a=27/25, s=1/32768, smallest passing q: z0=2^-49: G(z0,2Y0) <= 2Y0: True (max ratio 0.94728); at z0=2^-48: False (max ratio 1.39); radius r > 2^98 |eps|^(4/2)
+root 4: a=119/100, s=1/16384, smallest passing q: z0=2^-49: G(z0,2Y0) <= 2Y0: True (max ratio 0.86321); at z0=2^-48: False (max ratio 1.23); radius r > 2^98 |eps|^(4/2)
+root 5: a=34/25, s=1/1024, smallest passing q: z0=2^-46: G(z0,2Y0) <= 2Y0: True (max ratio 0.85407); at z0=2^-45: False (max ratio 1.21); radius r > 2^92 |eps|^(4/2)
+root 6: a=163/100, s=1/512, smallest passing q: z0=2^-46: G(z0,2Y0) <= 2Y0: True (max ratio 0.93783); at z0=2^-45: False (max ratio 1.38); radius r > 2^92 |eps|^(4/2)
+common: a=163/100, s=1/32768, z0=2^-52: True (max ratio 0.93783); radius r > 2^104 |eps|^(4/2)
+kappa = 20
+(B) PASS
+time 14.3s

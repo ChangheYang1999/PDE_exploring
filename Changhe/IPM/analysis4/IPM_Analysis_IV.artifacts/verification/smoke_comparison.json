@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-31T23:44:00+00:00",
+  "all_checks_pass": true,
+  "sources": [
+    {
+      "path": "artifacts/reproduction/two_mode_replay.json",
+      "sha256": "c9661fe07ec0614e1f70d29628833e333308258929762f9e351c9f3e62374407"
+    },
+    {
+      "path": "research/01_recurrence/verification/two_mode_c5_3_N4.json",
+      "sha256": "198e6f6e059fab4e84892dd2cc04a47462144d9b45ff13077699e7cc7526d136"
+    },
+    {
+      "path": "artifacts/reproduction/candidate_replay.json",
+      "sha256": "ec58733ea166d5b4fff1cd52f752d2ff95aca7e53d4504e945f9eba841d68b00"
+    },
+    {
+      "path": "research/02_candidate007/data/leading_exact.json",
+      "sha256": "ebb622e7a26854f24c7ed3355ca74b540152fe4241ae3c710753a92e175604a9"
+    }
+  ],
+  "matched_two_mode_orders": 4,
+  "matched_candidate_fields": [
+    "c",
+    "gamma",
+    "delta",
+    "branch_zero_generators",
+    "potential",
+    "density",
+    "stream",
+    "input_sha256",
+    "manifest_sha256",
+    "sector_table_sha256"
+  ],
+  "candidate_orders_directly_checked": 2,
+  "basis_checks_per_run": {
+    "cartesian_basis_cases": 40,
+    "all_exact": true
+  },
+  "actual_recorded_elapsed_s": [
+    0.320752,
+    0.378151
+  ],
+  "scope": "Small execution checks for the reproduction guide. No new all-order result and no full certificate replay."
+}
