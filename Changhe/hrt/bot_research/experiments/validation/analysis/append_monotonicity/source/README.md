@@ -1,0 +1,1 @@
+The authoritative functions are td_game/combat.py::spawn_schedule, combat_tick and simulate_map. They remain unchanged. The reusable positive-count search will live in bots/counters/lethal_threshold.py; it accepts a pure fixed-map damage callback. Verification scripts and JSON declarations are kept in experiments/validation.

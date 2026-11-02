@@ -1,0 +1,17 @@
+{
+  "purpose": "Development test of ignoring turrets with no attack-region intersection with the enemy's current nonterminal route. Both variants retain every physical building and use the same economy15 leak continuation after the cheap guard. Eight declared opponents in both assignments,32 games. Twelve unfiltered games repeat guard-continuation controls. The useful round3 turret tests the limit of a geometry-only filter. No reserved conditions.",
+  "candidates": [
+    {"id":"guard15_normal", "spec":"bot_research.bots.counters.relevant_turret_guard:@make?filter_signal=false"},
+    {"id":"guard15_coverage", "spec":"bot_research.bots.counters.relevant_turret_guard:@make?filter_signal=true"}
+  ],
+  "opponents": [
+    {"id":"economy13", "spec":"bot_research.bots.economy.frozen.v13.econ13:@make"},
+    {"id":"fortress21", "spec":"bot_research.bots.defense.frozen.v21.fortress:@make"},
+    {"id":"lead7", "spec":"bot_research.bots.counters.snapshots.lead_seven_001:@make?big_threat=100&attack_mode=%22robust%22&poke_insurance=false&gun_cap=120"},
+    {"id":"bluff_r3", "spec":"bot_research.bots.counters.feature_bluff:@make?turret_round=3"},
+    {"id":"eco6_t5", "spec":"bot_research.bots.counters.pool:@archetype?name=eco6_t5"},
+    {"id":"guarded_tier4_r8", "spec":"bot_research.bots.counters.guarded_schedule:@make?schedule=%5B%5B1%2C%22tier1%22%2C1%5D%2C%5B8%2C%22tier4%22%2C200%5D%5D"},
+    {"id":"bluff_r2", "spec":"bot_research.bots.counters.feature_bluff:@make?turret_round=2"},
+    {"id":"useful_gun_r3", "spec":"bot_research.bots.counters.feature_bluff:@make?turret_round=3&turret_x=3&turret_y=1"}
+  ]
+}

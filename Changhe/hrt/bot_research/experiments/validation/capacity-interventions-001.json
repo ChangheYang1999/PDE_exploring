@@ -1,0 +1,11 @@
+{
+  "purpose": "Recorded-state diagnostic of the lead's 60-copy attack limit, not a bot-strength evaluation.",
+  "source_probe": "bot_research/runs/validation/lead-capacity-probe-001.json",
+  "candidate_needle": "v15",
+  "tier": "tier5",
+  "selection": "For each recorded match, select the earliest and latest nonterminal pre-action state in which the candidate's map after its recorded construction has splash at least 1500, the opponent's current map has splash below 1500, and the candidate can afford at least 61 tier5 after that construction. Deduplicate coincident rounds.",
+  "interventions": ["cap60", "half_remaining_gold", "all_remaining_gold"],
+  "construction": "Retain all recorded candidate construction, replace its minion and factory purchases, hold the recorded opposing submission fixed.",
+  "predictions": "Compare current-map combat damage with the actual unchanged-engine one-round result after the held opposing submission. Replay every original round to validate source states.",
+  "scope": "The opposing submission is held fixed for the same prior history. This is a legal one-round counterfactual and does not establish the outcome of a full game after histories diverge. No reserved pool."
+}

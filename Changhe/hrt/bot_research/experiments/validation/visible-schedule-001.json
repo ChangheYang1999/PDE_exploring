@@ -1,0 +1,28 @@
+{
+  "registered_utc": "2026-10-31T05:49:57.650379+00:00",
+  "purpose": "Public-model removal test: fixed two-tier1 opening prior, then visible-roster defense only. Rounds5 and8 are previously verified public-schedule controls; rounds9 and10 extend the tier4 timing screen. Four candidate policies, both assignments, standard start. Repeated controls are not independent strength samples.",
+  "candidates": [
+    {
+      "id": "guarded_tier4_r5",
+      "spec": "bot_research.bots.counters.guarded_schedule:@make?schedule=%5B%5B1%2C%22tier1%22%2C1%5D%2C%5B5%2C%22tier4%22%2C200%5D%5D"
+    },
+    {
+      "id": "guarded_tier4_r8",
+      "spec": "bot_research.bots.counters.guarded_schedule:@make?schedule=%5B%5B1%2C%22tier1%22%2C1%5D%2C%5B8%2C%22tier4%22%2C200%5D%5D"
+    },
+    {
+      "id": "guarded_tier4_r9",
+      "spec": "bot_research.bots.counters.guarded_schedule:@make?schedule=%5B%5B1%2C%22tier1%22%2C1%5D%2C%5B9%2C%22tier4%22%2C200%5D%5D"
+    },
+    {
+      "id": "guarded_tier4_r10",
+      "spec": "bot_research.bots.counters.guarded_schedule:@make?schedule=%5B%5B1%2C%22tier1%22%2C1%5D%2C%5B10%2C%22tier4%22%2C200%5D%5D"
+    }
+  ],
+  "opponents": [
+    {
+      "id": "lead_v7_robust_big100_nopoke",
+      "spec": "bot_research.bots.counters.snapshots.lead_seven_001:@make?big_threat=100&attack_mode=%22robust%22&poke_insurance=false&gun_cap=120"
+    }
+  ]
+}

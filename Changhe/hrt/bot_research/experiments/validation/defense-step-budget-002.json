@@ -1,0 +1,38 @@
+{
+  "declared_utc": "2026-10-31T11:07:42.001926+00:00",
+  "result_path": "bot_research/runs/validation/best-v9b-free-scenarios-fullretry450-001/results/case0006.json",
+  "step_budgets": [
+    1,
+    5,
+    15,
+    30,
+    60
+  ],
+  "input_sha256": {
+    "bot_research/experiments/validation/check_defense_step_budget.py": "108993120a1a4e8a85cb8f62019dac589a5ed5d09c02956536bfde6bedb36812",
+    "bot_research/runs/validation/best-v9b-free-scenarios-fullretry450-001/results/case0006.json": "8a2758adbc4d6862efefac8c7d8755a452bb5b8d1efc04152b30db9ffa2857aa",
+    "bot_research/runs/validation/best-v9b-free-scenarios-fullretry450-001/replays/case0006.jsonl": "9d125d57aa8ae4c146c5bed26ac9de67b5cf0d96fdd04c9bb214ff53bd1f78dc",
+    "bot_research/experiments/validation/analysis/defense_step_budget/PROOF.md": "0e4b4fa03bcae9c572573dee9844822f1eaef200a476a0afe2ede5749b199340",
+    "bot_research/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bot_research/bots/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bot_research/bots/defense/__init__.py": "a3c320f4c74a2282c83308b83ccbb7b7e339f6b390ef98b6c914374b96ffe190",
+    "bot_research/bots/defense/frozen/__init__.py": "47f8e50178704217f94551e3be74ccbc8990aaafff5e8bdfc12a396960994bc5",
+    "bot_research/bots/defense/frozen/v15/__init__.py": "a3c320f4c74a2282c83308b83ccbb7b7e339f6b390ef98b6c914374b96ffe190",
+    "bot_research/bots/defense/frozen/v15/fortress.py": "f77e5ea0636b7b5859dd68f83dc7799e3344cee7fd654f534a90d5e8196dc999",
+    "bot_research/bots/defense/frozen/v15/geometry.py": "e995ed072b4d5a206b8d4b8970d65dfc65a498dbd3716afbe751856fd9317b5f",
+    "bot_research/bots/defense/frozen/v15/plan.py": "da07ceb4a02701f1c50e625a3ace7dbd69c33d01a49ef2e55682442db3883133",
+    "bot_research/bots/defense/frozen/v15/simulate.py": "2a0f5d1452f40870302535f38172176934b7c730a2e5d9aef904147b0ce896cc",
+    "bot_research/bots/defense/frozen/v15/templates.py": "68d37b840e40866d8ae9c086e6f29fb67344541fb557b6d17cbd106409167824",
+    "bot_research/harness/__init__.py": "12af74703ffbe8182da6eae684e1aac687595ffcd657b85213e43b2f10ea3301",
+    "bot_research/harness/gamekit.py": "4cd9cde8f0eddfbae3cb38023c215c2af6535f973f4bc233e2cd713da9267763",
+    "td_game/__init__.py": "1a4268eeace53ec3b488ba2868c601c2be879d3ece5d36df3f99d70ac5b4646a",
+    "td_game/combat.py": "17265171d1e2ab4c60b07f9b4f473a19667aef4a2110aeb2c07f1cb39f965228",
+    "td_game/config.py": "ab1ca08d78081382e9f9a4ca7bff4985d101ec7b7621ecddfa48e46418701716",
+    "td_game/pathfinding.py": "5ecce5a8737d43e3add703e4143f28a1d2bb8fb62e84a2d7f29be441749ae8b2",
+    "td_game/state.py": "5d6df44f76a0f84d95d130e080a2e966bad02d06e08824cc818d6b08185b375f"
+  },
+  "purpose": "Test whether the default15-step fallback limitation explains one lethal defense despite abundant gold; no full-game claim.",
+  "supersedes_unexecuted_manifest": "bot_research/experiments/validation/defense-step-budget-001.json",
+  "superseded_manifest_sha256": "89c95d2231a623da66203bc6148bff11617c320a9d1921d1e81695faa8ade0f9",
+  "revision_reason": "Static closure audit found the default, unused private-model factory is dynamically imported by FreeForecast construction. Pin its entire frozen source closure as well."
+}

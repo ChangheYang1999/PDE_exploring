@@ -1,0 +1,151 @@
+{
+  "candidates": [
+    {
+      "id": "visible_timing_tier3_r3",
+      "spec": "bot_research.bots.counters.visible_forecast_v2:@timing?count_cap=1000&tier=%22tier3%22&attack_round=3&attack_share=1.0"
+    },
+    {
+      "id": "visible_timing_tier3_r4",
+      "spec": "bot_research.bots.counters.visible_forecast_v2:@timing?count_cap=1000&tier=%22tier3%22&attack_round=4&attack_share=1.0"
+    },
+    {
+      "id": "visible_timing_tier3_r5",
+      "spec": "bot_research.bots.counters.visible_forecast_v2:@timing?count_cap=1000&tier=%22tier3%22&attack_round=5&attack_share=1.0"
+    },
+    {
+      "id": "visible_timing_tier4_r4",
+      "spec": "bot_research.bots.counters.visible_forecast_v2:@timing?count_cap=1000&tier=%22tier4%22&attack_round=4&attack_share=1.0"
+    },
+    {
+      "id": "visible_timing_tier4_r5",
+      "spec": "bot_research.bots.counters.visible_forecast_v2:@timing?count_cap=1000&tier=%22tier4%22&attack_round=5&attack_share=1.0"
+    },
+    {
+      "id": "visible_timing_tier4_r6",
+      "spec": "bot_research.bots.counters.visible_forecast_v2:@timing?count_cap=1000&tier=%22tier4%22&attack_round=6&attack_share=1.0"
+    },
+    {
+      "id": "visible_timing_tier4_r7",
+      "spec": "bot_research.bots.counters.visible_forecast_v2:@timing?count_cap=1000&tier=%22tier4%22&attack_round=7&attack_share=1.0"
+    },
+    {
+      "id": "visible_opening1_tier4_r4",
+      "spec": "bot_research.bots.counters.visible_forecast_v2:@schedule?count_cap=1000&schedule=%5B%5B1%2C%22tier1%22%2C1%5D%2C%5B4%2C%22tier4%22%2C1000%5D%5D&defense_first=false"
+    },
+    {
+      "id": "visible_opening1_tier4_r5",
+      "spec": "bot_research.bots.counters.visible_forecast_v2:@schedule?count_cap=1000&schedule=%5B%5B1%2C%22tier1%22%2C1%5D%2C%5B5%2C%22tier4%22%2C1000%5D%5D&defense_first=false"
+    },
+    {
+      "id": "visible_opening1_tier4_r6",
+      "spec": "bot_research.bots.counters.visible_forecast_v2:@schedule?count_cap=1000&schedule=%5B%5B1%2C%22tier1%22%2C1%5D%2C%5B6%2C%22tier4%22%2C1000%5D%5D&defense_first=false"
+    },
+    {
+      "id": "visible_tier4_drip_r4_to9",
+      "spec": "bot_research.bots.counters.visible_forecast_v2:@schedule?count_cap=1000&schedule=%5B%5B4%2C%22tier4%22%2C1%5D%2C%5B5%2C%22tier4%22%2C1%5D%2C%5B6%2C%22tier4%22%2C1%5D%2C%5B7%2C%22tier4%22%2C1%5D%2C%5B8%2C%22tier4%22%2C1%5D%2C%5B9%2C%22tier4%22%2C1%5D%5D&defense_first=false"
+    },
+    {
+      "id": "visible_tier3_drip_r3_to8",
+      "spec": "bot_research.bots.counters.visible_forecast_v2:@schedule?count_cap=1000&schedule=%5B%5B3%2C%22tier3%22%2C1%5D%2C%5B4%2C%22tier3%22%2C1%5D%2C%5B5%2C%22tier3%22%2C1%5D%2C%5B6%2C%22tier3%22%2C1%5D%2C%5B7%2C%22tier3%22%2C1%5D%2C%5B8%2C%22tier3%22%2C1%5D%5D&defense_first=false"
+    },
+    {
+      "id": "visible_tier3_r3_tier4_r6",
+      "spec": "bot_research.bots.counters.visible_forecast_v2:@schedule?count_cap=1000&schedule=%5B%5B3%2C%22tier3%22%2C3%5D%2C%5B6%2C%22tier4%22%2C1000%5D%5D&defense_first=false"
+    }
+  ],
+  "comparison_manifest": "bot_research/experiments/validation/lead-fifteen-V4-standard-001.json",
+  "comparison_manifest_sha256": "714919ff753f67d482776e696ca827d5584d8738b4375b52f6858a2815977e7d",
+  "comparisons": [
+    {
+      "exact_id": "timing_tier3_r3",
+      "exact_spec": "bot_research.bots.counters.stateful_public:@timing?model_spec=%22bot_research.bots.counters.snapshots.lead_fifteen_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22gun_cap%22%3A120%2C%22poke_until%22%3A3%2C%22poke_reactive%22%3A%22turret%22%2C%22big_partial%22%3Atrue%2C%22r1_poke%22%3A3%2C%22attack_mode%22%3A%22adaptive%22%2C%22fortress_n%22%3A4%2C%22immune_attack%22%3Atrue%7D&count_cap=1000&tier=%22tier3%22&attack_round=3&attack_share=1.0",
+      "visible_id": "visible_timing_tier3_r3",
+      "visible_spec": "bot_research.bots.counters.visible_forecast_v2:@timing?count_cap=1000&tier=%22tier3%22&attack_round=3&attack_share=1.0"
+    },
+    {
+      "exact_id": "timing_tier3_r4",
+      "exact_spec": "bot_research.bots.counters.stateful_public:@timing?model_spec=%22bot_research.bots.counters.snapshots.lead_fifteen_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22gun_cap%22%3A120%2C%22poke_until%22%3A3%2C%22poke_reactive%22%3A%22turret%22%2C%22big_partial%22%3Atrue%2C%22r1_poke%22%3A3%2C%22attack_mode%22%3A%22adaptive%22%2C%22fortress_n%22%3A4%2C%22immune_attack%22%3Atrue%7D&count_cap=1000&tier=%22tier3%22&attack_round=4&attack_share=1.0",
+      "visible_id": "visible_timing_tier3_r4",
+      "visible_spec": "bot_research.bots.counters.visible_forecast_v2:@timing?count_cap=1000&tier=%22tier3%22&attack_round=4&attack_share=1.0"
+    },
+    {
+      "exact_id": "timing_tier3_r5",
+      "exact_spec": "bot_research.bots.counters.stateful_public:@timing?model_spec=%22bot_research.bots.counters.snapshots.lead_fifteen_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22gun_cap%22%3A120%2C%22poke_until%22%3A3%2C%22poke_reactive%22%3A%22turret%22%2C%22big_partial%22%3Atrue%2C%22r1_poke%22%3A3%2C%22attack_mode%22%3A%22adaptive%22%2C%22fortress_n%22%3A4%2C%22immune_attack%22%3Atrue%7D&count_cap=1000&tier=%22tier3%22&attack_round=5&attack_share=1.0",
+      "visible_id": "visible_timing_tier3_r5",
+      "visible_spec": "bot_research.bots.counters.visible_forecast_v2:@timing?count_cap=1000&tier=%22tier3%22&attack_round=5&attack_share=1.0"
+    },
+    {
+      "exact_id": "timing_tier4_r4",
+      "exact_spec": "bot_research.bots.counters.stateful_public:@timing?model_spec=%22bot_research.bots.counters.snapshots.lead_fifteen_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22gun_cap%22%3A120%2C%22poke_until%22%3A3%2C%22poke_reactive%22%3A%22turret%22%2C%22big_partial%22%3Atrue%2C%22r1_poke%22%3A3%2C%22attack_mode%22%3A%22adaptive%22%2C%22fortress_n%22%3A4%2C%22immune_attack%22%3Atrue%7D&count_cap=1000&tier=%22tier4%22&attack_round=4&attack_share=1.0",
+      "visible_id": "visible_timing_tier4_r4",
+      "visible_spec": "bot_research.bots.counters.visible_forecast_v2:@timing?count_cap=1000&tier=%22tier4%22&attack_round=4&attack_share=1.0"
+    },
+    {
+      "exact_id": "timing_tier4_r5",
+      "exact_spec": "bot_research.bots.counters.stateful_public:@timing?model_spec=%22bot_research.bots.counters.snapshots.lead_fifteen_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22gun_cap%22%3A120%2C%22poke_until%22%3A3%2C%22poke_reactive%22%3A%22turret%22%2C%22big_partial%22%3Atrue%2C%22r1_poke%22%3A3%2C%22attack_mode%22%3A%22adaptive%22%2C%22fortress_n%22%3A4%2C%22immune_attack%22%3Atrue%7D&count_cap=1000&tier=%22tier4%22&attack_round=5&attack_share=1.0",
+      "visible_id": "visible_timing_tier4_r5",
+      "visible_spec": "bot_research.bots.counters.visible_forecast_v2:@timing?count_cap=1000&tier=%22tier4%22&attack_round=5&attack_share=1.0"
+    },
+    {
+      "exact_id": "timing_tier4_r6",
+      "exact_spec": "bot_research.bots.counters.stateful_public:@timing?model_spec=%22bot_research.bots.counters.snapshots.lead_fifteen_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22gun_cap%22%3A120%2C%22poke_until%22%3A3%2C%22poke_reactive%22%3A%22turret%22%2C%22big_partial%22%3Atrue%2C%22r1_poke%22%3A3%2C%22attack_mode%22%3A%22adaptive%22%2C%22fortress_n%22%3A4%2C%22immune_attack%22%3Atrue%7D&count_cap=1000&tier=%22tier4%22&attack_round=6&attack_share=1.0",
+      "visible_id": "visible_timing_tier4_r6",
+      "visible_spec": "bot_research.bots.counters.visible_forecast_v2:@timing?count_cap=1000&tier=%22tier4%22&attack_round=6&attack_share=1.0"
+    },
+    {
+      "exact_id": "timing_tier4_r7",
+      "exact_spec": "bot_research.bots.counters.stateful_public:@timing?model_spec=%22bot_research.bots.counters.snapshots.lead_fifteen_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22gun_cap%22%3A120%2C%22poke_until%22%3A3%2C%22poke_reactive%22%3A%22turret%22%2C%22big_partial%22%3Atrue%2C%22r1_poke%22%3A3%2C%22attack_mode%22%3A%22adaptive%22%2C%22fortress_n%22%3A4%2C%22immune_attack%22%3Atrue%7D&count_cap=1000&tier=%22tier4%22&attack_round=7&attack_share=1.0",
+      "visible_id": "visible_timing_tier4_r7",
+      "visible_spec": "bot_research.bots.counters.visible_forecast_v2:@timing?count_cap=1000&tier=%22tier4%22&attack_round=7&attack_share=1.0"
+    },
+    {
+      "exact_id": "opening1_tier4_r4",
+      "exact_spec": "bot_research.bots.counters.stateful_schedule:@make?model_spec=%22bot_research.bots.counters.snapshots.lead_fifteen_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22gun_cap%22%3A120%2C%22poke_until%22%3A3%2C%22poke_reactive%22%3A%22turret%22%2C%22big_partial%22%3Atrue%2C%22r1_poke%22%3A3%2C%22attack_mode%22%3A%22adaptive%22%2C%22fortress_n%22%3A4%2C%22immune_attack%22%3Atrue%7D&count_cap=1000&schedule=%5B%5B1%2C%22tier1%22%2C1%5D%2C%5B4%2C%22tier4%22%2C1000%5D%5D&defense_first=false",
+      "visible_id": "visible_opening1_tier4_r4",
+      "visible_spec": "bot_research.bots.counters.visible_forecast_v2:@schedule?count_cap=1000&schedule=%5B%5B1%2C%22tier1%22%2C1%5D%2C%5B4%2C%22tier4%22%2C1000%5D%5D&defense_first=false"
+    },
+    {
+      "exact_id": "opening1_tier4_r5",
+      "exact_spec": "bot_research.bots.counters.stateful_schedule:@make?model_spec=%22bot_research.bots.counters.snapshots.lead_fifteen_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22gun_cap%22%3A120%2C%22poke_until%22%3A3%2C%22poke_reactive%22%3A%22turret%22%2C%22big_partial%22%3Atrue%2C%22r1_poke%22%3A3%2C%22attack_mode%22%3A%22adaptive%22%2C%22fortress_n%22%3A4%2C%22immune_attack%22%3Atrue%7D&count_cap=1000&schedule=%5B%5B1%2C%22tier1%22%2C1%5D%2C%5B5%2C%22tier4%22%2C1000%5D%5D&defense_first=false",
+      "visible_id": "visible_opening1_tier4_r5",
+      "visible_spec": "bot_research.bots.counters.visible_forecast_v2:@schedule?count_cap=1000&schedule=%5B%5B1%2C%22tier1%22%2C1%5D%2C%5B5%2C%22tier4%22%2C1000%5D%5D&defense_first=false"
+    },
+    {
+      "exact_id": "opening1_tier4_r6",
+      "exact_spec": "bot_research.bots.counters.stateful_schedule:@make?model_spec=%22bot_research.bots.counters.snapshots.lead_fifteen_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22gun_cap%22%3A120%2C%22poke_until%22%3A3%2C%22poke_reactive%22%3A%22turret%22%2C%22big_partial%22%3Atrue%2C%22r1_poke%22%3A3%2C%22attack_mode%22%3A%22adaptive%22%2C%22fortress_n%22%3A4%2C%22immune_attack%22%3Atrue%7D&count_cap=1000&schedule=%5B%5B1%2C%22tier1%22%2C1%5D%2C%5B6%2C%22tier4%22%2C1000%5D%5D&defense_first=false",
+      "visible_id": "visible_opening1_tier4_r6",
+      "visible_spec": "bot_research.bots.counters.visible_forecast_v2:@schedule?count_cap=1000&schedule=%5B%5B1%2C%22tier1%22%2C1%5D%2C%5B6%2C%22tier4%22%2C1000%5D%5D&defense_first=false"
+    },
+    {
+      "exact_id": "tier4_drip_r4_to9",
+      "exact_spec": "bot_research.bots.counters.stateful_schedule:@make?model_spec=%22bot_research.bots.counters.snapshots.lead_fifteen_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22gun_cap%22%3A120%2C%22poke_until%22%3A3%2C%22poke_reactive%22%3A%22turret%22%2C%22big_partial%22%3Atrue%2C%22r1_poke%22%3A3%2C%22attack_mode%22%3A%22adaptive%22%2C%22fortress_n%22%3A4%2C%22immune_attack%22%3Atrue%7D&count_cap=1000&schedule=%5B%5B4%2C%22tier4%22%2C1%5D%2C%5B5%2C%22tier4%22%2C1%5D%2C%5B6%2C%22tier4%22%2C1%5D%2C%5B7%2C%22tier4%22%2C1%5D%2C%5B8%2C%22tier4%22%2C1%5D%2C%5B9%2C%22tier4%22%2C1%5D%5D&defense_first=false",
+      "visible_id": "visible_tier4_drip_r4_to9",
+      "visible_spec": "bot_research.bots.counters.visible_forecast_v2:@schedule?count_cap=1000&schedule=%5B%5B4%2C%22tier4%22%2C1%5D%2C%5B5%2C%22tier4%22%2C1%5D%2C%5B6%2C%22tier4%22%2C1%5D%2C%5B7%2C%22tier4%22%2C1%5D%2C%5B8%2C%22tier4%22%2C1%5D%2C%5B9%2C%22tier4%22%2C1%5D%5D&defense_first=false"
+    },
+    {
+      "exact_id": "tier3_drip_r3_to8",
+      "exact_spec": "bot_research.bots.counters.stateful_schedule:@make?model_spec=%22bot_research.bots.counters.snapshots.lead_fifteen_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22gun_cap%22%3A120%2C%22poke_until%22%3A3%2C%22poke_reactive%22%3A%22turret%22%2C%22big_partial%22%3Atrue%2C%22r1_poke%22%3A3%2C%22attack_mode%22%3A%22adaptive%22%2C%22fortress_n%22%3A4%2C%22immune_attack%22%3Atrue%7D&count_cap=1000&schedule=%5B%5B3%2C%22tier3%22%2C1%5D%2C%5B4%2C%22tier3%22%2C1%5D%2C%5B5%2C%22tier3%22%2C1%5D%2C%5B6%2C%22tier3%22%2C1%5D%2C%5B7%2C%22tier3%22%2C1%5D%2C%5B8%2C%22tier3%22%2C1%5D%5D&defense_first=false",
+      "visible_id": "visible_tier3_drip_r3_to8",
+      "visible_spec": "bot_research.bots.counters.visible_forecast_v2:@schedule?count_cap=1000&schedule=%5B%5B3%2C%22tier3%22%2C1%5D%2C%5B4%2C%22tier3%22%2C1%5D%2C%5B5%2C%22tier3%22%2C1%5D%2C%5B6%2C%22tier3%22%2C1%5D%2C%5B7%2C%22tier3%22%2C1%5D%2C%5B8%2C%22tier3%22%2C1%5D%5D&defense_first=false"
+    },
+    {
+      "exact_id": "tier3_r3_tier4_r6",
+      "exact_spec": "bot_research.bots.counters.stateful_schedule:@make?model_spec=%22bot_research.bots.counters.snapshots.lead_fifteen_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22gun_cap%22%3A120%2C%22poke_until%22%3A3%2C%22poke_reactive%22%3A%22turret%22%2C%22big_partial%22%3Atrue%2C%22r1_poke%22%3A3%2C%22attack_mode%22%3A%22adaptive%22%2C%22fortress_n%22%3A4%2C%22immune_attack%22%3Atrue%7D&count_cap=1000&schedule=%5B%5B3%2C%22tier3%22%2C3%5D%2C%5B6%2C%22tier4%22%2C1000%5D%5D&defense_first=false",
+      "visible_id": "visible_tier3_r3_tier4_r6",
+      "visible_spec": "bot_research.bots.counters.visible_forecast_v2:@schedule?count_cap=1000&schedule=%5B%5B3%2C%22tier3%22%2C3%5D%2C%5B6%2C%22tier4%22%2C1000%5D%5D&defense_first=false"
+    }
+  ],
+  "declared_utc": "2026-10-31T08:26:51.922140+00:00",
+  "hypothesis": "Some V4 timing and drip counter wins survive without an exact opponent model.",
+  "opponents": [
+    {
+      "id": "lead15_V4",
+      "spec": "bot_research.bots.counters.snapshots.lead_fifteen_001:@make?big_threat=100&gun_cap=120&poke_until=3&poke_reactive=%22turret%22&big_partial=true&r1_poke=3&attack_mode=%22adaptive%22&fortress_n=4&immune_attack=true"
+    }
+  ],
+  "purpose": "Replace the exact stateful V4 forecast by an empty opponent submission while preserving timing and spending rules.",
+  "scope": "26 paired standard-start development conditions; deliberate forecast errors do not invalidate game outcomes. No reserved opponents.",
+  "source_family": "bot_research/experiments/validation/lead-thirteen-fortress4-001.json",
+  "source_family_sha256": "082b6c4f1aeaa95bb489d446ee8841a6090f03ee7cd9aee6890b0818cb91ac78",
+  "target_snapshot_sha256": "1b7485efc6dae9ba3c1409ee4089a79092430c2aa6c61fb21761f1857abed43a"
+}

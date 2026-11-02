@@ -1,0 +1,62 @@
+{
+  "candidates": [
+    {
+      "id": "x3_t1_holdNone",
+      "spec": "bot_research.bots.counters.guard_geometry:@make?roster=%5B%22tier1%22%5D&x=3&y=1&parameters=%7B%22foreign_attack_from%22%3Anull%7D"
+    },
+    {
+      "id": "x9_t1_holdNone",
+      "spec": "bot_research.bots.counters.guard_geometry:@make?roster=%5B%22tier1%22%5D&x=9&y=1&parameters=%7B%22foreign_attack_from%22%3Anull%7D"
+    },
+    {
+      "id": "x10_t1_holdNone",
+      "spec": "bot_research.bots.counters.guard_geometry:@make?roster=%5B%22tier1%22%5D&x=10&y=1&parameters=%7B%22foreign_attack_from%22%3Anull%7D"
+    },
+    {
+      "id": "x9_t1_hold11",
+      "spec": "bot_research.bots.counters.guard_geometry:@make?roster=%5B%22tier1%22%5D&x=9&y=1&parameters=%7B%22foreign_attack_from%22%3A11%7D"
+    },
+    {
+      "id": "x3_t2_holdNone",
+      "spec": "bot_research.bots.counters.guard_geometry:@make?roster=%5B%22tier2%22%5D&x=3&y=1&parameters=%7B%22foreign_attack_from%22%3Anull%7D"
+    },
+    {
+      "id": "x9_t2_holdNone",
+      "spec": "bot_research.bots.counters.guard_geometry:@make?roster=%5B%22tier2%22%5D&x=9&y=1&parameters=%7B%22foreign_attack_from%22%3Anull%7D"
+    },
+    {
+      "id": "x10_t2_holdNone",
+      "spec": "bot_research.bots.counters.guard_geometry:@make?roster=%5B%22tier2%22%5D&x=10&y=1&parameters=%7B%22foreign_attack_from%22%3Anull%7D"
+    },
+    {
+      "id": "x9_t2_hold11",
+      "spec": "bot_research.bots.counters.guard_geometry:@make?roster=%5B%22tier2%22%5D&x=9&y=1&parameters=%7B%22foreign_attack_from%22%3A11%7D"
+    }
+  ],
+  "declared_utc": "2026-10-31T09:20:28.584291+00:00",
+  "hypothesis": "A fresh economy continuation treats the opening gun as foreign, so disabling that attack hold may change the early leak exchanges. The alternative zero-leak opening gun at (9,1) may preserve more useful later defense than (10,1).",
+  "input_sha256": {
+    "bot_research/experiments/validation/guard-geometry-transfer-001.json": "819770d4be71d6757405b4ec8ac606708a47c43f4cff2b558c99365759fecd6b",
+    "bot_research/experiments/validation/lead-seventeen-mid5-standard-001.json": "1cda90c9d6a4d432cbba7d23d920dcc078728a4c9c3fb676f6e4a0ca8b19b51d"
+  },
+  "opponents": [
+    {
+      "id": "lead15_V4",
+      "spec": "bot_research.bots.counters.snapshots.lead_fifteen_001:@make?big_threat=100&gun_cap=120&poke_until=3&poke_reactive=%22turret%22&big_partial=true&r1_poke=3&attack_mode=%22adaptive%22&fortress_n=4&immune_attack=true"
+    },
+    {
+      "id": "economy17",
+      "spec": "bot_research.bots.economy.frozen.v17.econ17:@make?free_fallback=%22zero%22&foreign_attack_from=11"
+    },
+    {
+      "id": "fortress24",
+      "spec": "bot_research.bots.defense.frozen.v24.fortress:@make"
+    }
+  ],
+  "previous_controls": [
+    "bot_research/runs/validation/guard-roster-transfer-002",
+    "bot_research/runs/validation/guard-geometry-transfer-001"
+  ],
+  "purpose": "Separate the guarded opening coordinate and inherited foreign-map attack hold, for one-tier1 and one-tier2 openings against V4, economy17 and fortress24 in both assignments: 48 new development games.",
+  "scope": "Coordinate (9,1) had zero opening damage in the exhaustive one-gun check. Only the two small previously useful rosters are selected. This is development tuning, not a holdout."
+}

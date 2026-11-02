@@ -1,0 +1,191 @@
+{
+  "campaigns": [
+    {
+      "a": "C",
+      "b": "G",
+      "expected": 2,
+      "name": "extended-counter-game-00-001"
+    },
+    {
+      "a": "B",
+      "b": "H",
+      "expected": 2,
+      "name": "extended-counter-game-01-001"
+    },
+    {
+      "a": "C",
+      "b": "H",
+      "expected": 2,
+      "name": "extended-counter-game-02-001"
+    },
+    {
+      "a": "G",
+      "b": "G",
+      "expected": 2,
+      "name": "extended-counter-game-03-001"
+    },
+    {
+      "a": "H",
+      "b": "H",
+      "expected": 2,
+      "name": "extended-counter-game-04-001"
+    }
+  ],
+  "declared_utc": "2026-10-31T18:34:13.857030+00:00",
+  "new_games": 10,
+  "policies": {
+    "B": {
+      "id": "best_v9e",
+      "spec": "bot_research.experiments.lead.frozen.best_v9e:@make"
+    },
+    "C": {
+      "id": "clone_r3_tier2_df0",
+      "spec": "bot_research.bots.counters.stateful_public:@timing?model_spec=%22bot_research.bots.counters.delegated_defense%3A%40make%22&model_parameters=%7B%22delegate%22%3A%22fortress38%22%7D&attack_round=3&tier=%22tier2%22&defense_first=false&attack_share=1&count_cap=200"
+    },
+    "D": {
+      "id": "route_adaptive",
+      "spec": "bot_research.bots.counters.delegated_defense:@make?delegate=%22fortress38%22&mode=%22adaptive%22"
+    },
+    "G": {
+      "id": "early_wall_guard00",
+      "spec": "bot_research.bots.counters.early_wall_guard:@make?witness=%22guard00%22"
+    },
+    "H": {
+      "id": "hp_lead8",
+      "spec": "bot_research.bots.counters.hp_handoff:@make?layout=%22empty%22&growth_rounds=6&bait=%5B%5D&bait_round=2&tier=%22tier5%22&factory_cap=2000&purchase_cap=1000&replan_iters=5000&deadline=12&lead_from=8"
+    }
+  },
+  "receipt_sha256": {
+    "bot_research/experiments/validation/analysis/delegated_transfer/verification/full_games.json": "5dec695a4fa86322ec977762e3eb7c3ca98a8866597786638b1c837be9e7d9a4",
+    "bot_research/experiments/validation/analysis/early_wall_transfer/verification/full_games.json": "f2bdd6901b799cd3cc44c3d1f3182e19364fd5ae93a5c03843175fdaf2a52827",
+    "bot_research/experiments/validation/analysis/latest_counter_game/verification/full_games.json": "d1e8baf6a8f09748e3a8de515c61019c6022186bdb75a055988e1f9b1b728a58"
+  },
+  "receipts": {
+    "delegated": "bot_research/experiments/validation/analysis/delegated_transfer/verification/full_games.json",
+    "latest": "bot_research/experiments/validation/analysis/latest_counter_game/verification/full_games.json",
+    "transfer": "bot_research/experiments/validation/analysis/early_wall_transfer/verification/full_games.json"
+  },
+  "reused": [
+    {
+      "a": "C",
+      "b": "B",
+      "receipt": "latest",
+      "result": "bot_research/runs/validation/latest-counter-game-00-001/results/case0000.json"
+    },
+    {
+      "a": "C",
+      "b": "B",
+      "receipt": "latest",
+      "result": "bot_research/runs/validation/latest-counter-game-00-001/results/case0001.json"
+    },
+    {
+      "a": "B",
+      "b": "B",
+      "receipt": "latest",
+      "result": "bot_research/runs/validation/latest-counter-game-01-001/results/case0000.json"
+    },
+    {
+      "a": "B",
+      "b": "B",
+      "receipt": "latest",
+      "result": "bot_research/runs/validation/latest-counter-game-01-001/results/case0001.json"
+    },
+    {
+      "a": "C",
+      "b": "C",
+      "receipt": "latest",
+      "result": "bot_research/runs/validation/latest-counter-game-02-001/results/case0000.json"
+    },
+    {
+      "a": "C",
+      "b": "C",
+      "receipt": "latest",
+      "result": "bot_research/runs/validation/latest-counter-game-02-001/results/case0001.json"
+    },
+    {
+      "a": "D",
+      "b": "D",
+      "receipt": "latest",
+      "result": "bot_research/runs/validation/latest-counter-game-03-001/results/case0000.json"
+    },
+    {
+      "a": "D",
+      "b": "D",
+      "receipt": "latest",
+      "result": "bot_research/runs/validation/latest-counter-game-03-001/results/case0001.json"
+    },
+    {
+      "a": "C",
+      "b": "D",
+      "receipt": "latest",
+      "result": "bot_research/runs/validation/delegated-forecaster-fortress38-00-002/results/case0000.json"
+    },
+    {
+      "a": "C",
+      "b": "D",
+      "receipt": "latest",
+      "result": "bot_research/runs/validation/delegated-forecaster-fortress38-00-002/results/case0001.json"
+    },
+    {
+      "a": "B",
+      "b": "D",
+      "receipt": "latest",
+      "result": "bot_research/runs/validation/recent-transfer-04-001/results/case0000.json"
+    },
+    {
+      "a": "B",
+      "b": "D",
+      "receipt": "latest",
+      "result": "bot_research/runs/validation/recent-transfer-04-001/results/case0001.json"
+    },
+    {
+      "a": "G",
+      "b": "B",
+      "receipt": "transfer",
+      "result": "bot_research/runs/validation/early-wall-transfer-00-001/results/case0004.json"
+    },
+    {
+      "a": "G",
+      "b": "B",
+      "receipt": "transfer",
+      "result": "bot_research/runs/validation/early-wall-transfer-00-001/results/case0005.json"
+    },
+    {
+      "a": "G",
+      "b": "D",
+      "receipt": "transfer",
+      "result": "bot_research/runs/validation/early-wall-transfer-06-001/results/case0010.json"
+    },
+    {
+      "a": "G",
+      "b": "D",
+      "receipt": "transfer",
+      "result": "bot_research/runs/validation/early-wall-transfer-06-001/results/case0011.json"
+    },
+    {
+      "a": "G",
+      "b": "H",
+      "receipt": "transfer",
+      "result": "bot_research/runs/validation/early-wall-transfer-00-001/results/case0010.json"
+    },
+    {
+      "a": "G",
+      "b": "H",
+      "receipt": "transfer",
+      "result": "bot_research/runs/validation/early-wall-transfer-00-001/results/case0011.json"
+    },
+    {
+      "a": "H",
+      "b": "D",
+      "receipt": "delegated",
+      "result": "bot_research/runs/validation/delegated-transfer-fortress38-00-001/results/case0011.json"
+    },
+    {
+      "a": "H",
+      "b": "D",
+      "receipt": "delegated",
+      "result": "bot_research/runs/validation/delegated-transfer-fortress38-00-001/results/case0010.json"
+    }
+  ],
+  "reused_games": 20
+}

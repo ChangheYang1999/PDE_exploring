@@ -1,0 +1,32 @@
+--- closure001
++++ closure003
+@@ -1,5 +1,5 @@
+ # Bot research report (tower-defense game, bundled balanced rules)
+ 
+-Status: final (last update 2026-11-01T00:01Z), written during the run and updated at each checkpoint. The installed
++Status: final (last update 2026-11-01T00:07Z), written during the run and updated at each checkpoint. The installed
+ bot since 2026-10-31T18:44:53Z is best_v9e (section 5.12), and this selection is final: the last candidate, af2g
+ (best_v9f with its passive rule off), was rejected at 19:50Z by a rule stated at 19:04Z before its gate games (R13,
+@@ -10,5 +10,5 @@
+ report-only terminal pool D finished at 23:26:30Z (26-6-0, 32-0-0 and 28-0-4 on three starts; section 5.17), runs
+ frr7 and frr8 with hrt-w2's af5 finished at 23:41:54Z (section 5.16), and the end-of-run checks (section 9, 23:42Z
+-to 23:43Z) show no change relative to the starting state. hrt-w2's af5 wins more gate conditions than best_v9e and
++to 23:43Z, and a last integrity run at 00:06Z) show no change relative to the starting state. hrt-w2's af5 wins more gate conditions than best_v9e and
+ beats it on the standard start; it is reported, not installed (scope statement). Numbers are
+ from the runs named next to them.
+@@ -1897,6 +1897,7 @@
+   conditions and better on 288, and on the 406 conditions outside g1's four selection pools 384-0-22 (worse 14,
+   better 108). The 290 sweep conditions informed af5's choice, so the gate is not wholly held out for it. On those 290 conditions
+-  (development evidence, notes/economy.md 18.26, 18.36) the wins for attack_from = 2 (V29), 4, 5 (af5), 6 and 7 (g1) are
+-  48, 162, 264, 238 and 228; the lead recounted af4's 162-2-126 from runs/economy/afs4.
++  (development evidence, notes/economy.md 18.26, 18.36, 18.37) the wins for attack_from = 2 (V29), 3, 4, 5 (af5), 6 and
++  7 (g1) are 48, 146, 162, 264, 238 and 228; the lead recounted af3's 146-0-144 and af4's 162-2-126 from
++  runs/economy/afs3 and afs4, and hrt-w3 confirmed the six counts (notes/validation.md 00:05:26Z and 00:06:20Z).
+ 
+ ### 5.16 Final round robins of the finalists (frr1, frr2)
+@@ -2464,2 +2465,5 @@
+   18 run, OK.
+ - The outputs contain no absolute local path.
++- A last integrity run after the final report edits (2026-11-01T00:06:39Z to 00:06:49Z, same command and pinning,
++  `runs/lead/final/integrity_3.json`): `identical_to_baseline` true with no differences, and the file equals
++  `integrity_2.json`; `bots/best.py` and `tests/test_best.py` still have the hashes above.

@@ -1,0 +1,43 @@
+{
+  "purpose": "Registered development challenge of a frozen copy of the current lead v7 robust/big-threat/no-poke setting. Test blind early attacks omitted from the later-timing screen, plus a round-three control. No reserved opponents. Public-model diagnostics recorded.",
+  "candidates": [
+    {
+      "id": "mixed_r1",
+      "spec": "bot_research.bots.counters.public_factory:@mixed?model_spec=%22bot_research.bots.counters.snapshots.lead_seven_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22attack_mode%22%3A%22robust%22%2C%22poke_insurance%22%3Afalse%2C%22gun_cap%22%3A120%7D&attack_round=1&attack_share=1.0&count_cap=200&evaluations=192&seed=0"
+    },
+    {
+      "id": "mixed_r1_defense_first",
+      "spec": "bot_research.bots.counters.public_factory:@mixed?model_spec=%22bot_research.bots.counters.snapshots.lead_seven_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22attack_mode%22%3A%22robust%22%2C%22poke_insurance%22%3Afalse%2C%22gun_cap%22%3A120%7D&attack_round=1&attack_share=1.0&count_cap=200&defense_first=true&evaluations=192&seed=0"
+    },
+    {
+      "id": "t1_r1_full",
+      "spec": "bot_research.bots.counters.public_factory:@timing?model_spec=%22bot_research.bots.counters.snapshots.lead_seven_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22attack_mode%22%3A%22robust%22%2C%22poke_insurance%22%3Afalse%2C%22gun_cap%22%3A120%7D&attack_round=1&attack_share=1.0&count_cap=200&tier=%22tier1%22"
+    },
+    {
+      "id": "t1_r1_45percent",
+      "spec": "bot_research.bots.counters.public_factory:@timing?model_spec=%22bot_research.bots.counters.snapshots.lead_seven_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22attack_mode%22%3A%22robust%22%2C%22poke_insurance%22%3Afalse%2C%22gun_cap%22%3A120%7D&attack_round=1&attack_share=0.45&count_cap=200&tier=%22tier1%22"
+    },
+    {
+      "id": "t1_r1_60percent",
+      "spec": "bot_research.bots.counters.public_factory:@timing?model_spec=%22bot_research.bots.counters.snapshots.lead_seven_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22attack_mode%22%3A%22robust%22%2C%22poke_insurance%22%3Afalse%2C%22gun_cap%22%3A120%7D&attack_round=1&attack_share=0.6&count_cap=200&tier=%22tier1%22"
+    },
+    {
+      "id": "t2_r1",
+      "spec": "bot_research.bots.counters.public_factory:@timing?model_spec=%22bot_research.bots.counters.snapshots.lead_seven_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22attack_mode%22%3A%22robust%22%2C%22poke_insurance%22%3Afalse%2C%22gun_cap%22%3A120%7D&attack_round=1&attack_share=1.0&count_cap=200&tier=%22tier2%22"
+    },
+    {
+      "id": "t3_r1",
+      "spec": "bot_research.bots.counters.public_factory:@timing?model_spec=%22bot_research.bots.counters.snapshots.lead_seven_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22attack_mode%22%3A%22robust%22%2C%22poke_insurance%22%3Afalse%2C%22gun_cap%22%3A120%7D&attack_round=1&attack_share=1.0&count_cap=200&tier=%22tier3%22"
+    },
+    {
+      "id": "t3_r3",
+      "spec": "bot_research.bots.counters.public_factory:@timing?model_spec=%22bot_research.bots.counters.snapshots.lead_seven_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22attack_mode%22%3A%22robust%22%2C%22poke_insurance%22%3Afalse%2C%22gun_cap%22%3A120%7D&attack_round=3&attack_share=1.0&count_cap=200&tier=%22tier3%22"
+    }
+  ],
+  "opponents": [
+    {
+      "id": "lead_v7_robust_big100_nopoke",
+      "spec": "bot_research.bots.counters.snapshots.lead_seven_001:@make?big_threat=100&attack_mode=%22robust%22&poke_insurance=false&gun_cap=120"
+    }
+  ]
+}

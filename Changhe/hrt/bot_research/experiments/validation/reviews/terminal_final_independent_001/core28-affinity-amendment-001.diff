@@ -1,0 +1,33 @@
+--- bot_research/experiments/validation/reviews/terminal_final_independent_001/read_final.py
++++ bot_research/experiments/validation/reviews/terminal_final_independent_001/read_final_core28.py
+@@ -545,8 +545,8 @@
+         p.error('Prepared only: final campaign/post-check authorization and the elapsed gate are required.')
+     if not (args.output_name.replace('-', '').replace('_', '').isalnum() and '/' not in args.output_name):
+         p.error('Use a simple new output directory name.')
+-    if not (sys.dont_write_bytecode and sys.flags.optimize == 0 and os.getpriority(os.PRIO_PROCESS, 0) == 19 and os.sched_getaffinity(0) == {29}):
+-        p.error('Run Python -B without optimization on core29 at nice19.')
++    if not (sys.dont_write_bytecode and sys.flags.optimize == 0 and os.getpriority(os.PRIO_PROCESS, 0) == 19 and os.sched_getaffinity(0) == {28}):
++        p.error('Run Python -B without optimization on core28 at nice19.')
+     if not all(os.environ.get(k) == '1' for k in ('OMP_NUM_THREADS', 'OPENBLAS_NUM_THREADS', 'MKL_NUM_THREADS')):
+         p.error('All numerical thread limits must be one.')
+     if Path(os.environ.get('TMPDIR', '')).resolve() != (Path.cwd() / 'bot_research/tmp').resolve():
+@@ -554,8 +554,8 @@
+     out = HERE / args.output_name
+     require(not out.exists(), 'Preserve existing reader evidence; choose a new output name')
+     r = Reader(); started = now()
+-    prepared = r.read(HERE / 'PREPARED.json')
+-    r.digest(HERE / 'read_final.py', prepared['reader_sha256'])
++    prepared = r.read(HERE / 'PREPARED-core28-001.json')
++    r.digest(HERE / 'read_final_core28.py', prepared['reader_sha256'])
+     identity = r.section('declaration_and_separate_source_supplement', lambda: source_and_selection(r, args))
+     if identity is not None:
+         d, supplement, post = identity
+@@ -571,7 +571,7 @@
+     report = dict(started_utc=started, completed_utc=now(), verdict='CONFIRMED' if passed else 'OPEN',
+         all_required_checks_completed=passed, actual_model='GPT-6 Astra',
+         scope='Supplementary posthoc independent source/JSON reader. Not part of the predeclared D experiment; no new Engine replay or fresh policy generation.',
+-        reader_sha256=r.digest(HERE / 'read_final.py'), preparation_receipt_sha256=r.digest(HERE / 'PREPARED.json'),
++        reader_sha256=r.digest(HERE / 'read_final_core28.py'), preparation_receipt_sha256=r.digest(HERE / 'PREPARED-core28-001.json'),
+         input_sha256=r.inputs, sections=r.sections, issues=r.issues, findings=r.facts,
+         calls=dict(policy_imports=0, policy_constructors=0, policy_decisions=0, Engine_calls=0, replays=0, games=0, checker_calls=0),
+         limits=['Retained checker receipts, source archives and JSON are authenticated. This reader does not independently reproduce game semantics.',

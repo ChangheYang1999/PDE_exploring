@@ -1,0 +1,1 @@
+Implementation: bot_research/bots/counters/guarded_adaptive_continuation.py. Component verification: bot_research/experiments/validation/check_guarded_adaptive_continuation.py. Both are separate from the unchanged parent policies.

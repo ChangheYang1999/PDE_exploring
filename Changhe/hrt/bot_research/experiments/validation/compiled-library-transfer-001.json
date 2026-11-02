@@ -1,0 +1,23 @@
+{
+  "purpose": "Fresh development reproduction of eight compatible catalogue counter trajectories, followed by transfer to six newer or switching opponents. The library and its fallback are fixed before these games; no reserved opponent is used.",
+  "data_files": ["bot_research/bots/counters/plans/catalogue_and_fortress_001.json"],
+  "candidates": [
+    {"id": "compiled_library_fortress15", "spec": "bot_research.bots.counters.compiled_library:@make?data_file=bot_research/bots/counters/plans/catalogue_and_fortress_001.json&data_sha256=8f91ae2567988d828efb4fb6999abbbeab7c2becc8701d04f05cbeac9afe2dbe&fallback=fortress15"}
+  ],
+  "opponents": [
+    {"id": "source_planner", "spec": "bot_research.bots.counters.catalogue_switch:@make?prefix=planner&switch_round=51"},
+    {"id": "source_economy", "spec": "bot_research.bots.counters.catalogue_switch:@make?prefix=economy&switch_round=51"},
+    {"id": "source_economy_guard", "spec": "bot_research.bots.counters.catalogue_switch:@make?prefix=economy_guard&switch_round=51"},
+    {"id": "source_fortress", "spec": "bot_research.bots.counters.catalogue_switch:@make?prefix=fortress&switch_round=51"},
+    {"id": "source_fortress_gun", "spec": "bot_research.bots.counters.catalogue_switch:@make?prefix=fortress_gun&switch_round=51"},
+    {"id": "source_fortress_splash", "spec": "bot_research.bots.counters.catalogue_switch:@make?prefix=fortress_splash&switch_round=51"},
+    {"id": "source_fortress_annealed", "spec": "bot_research.bots.counters.catalogue_switch:@make?prefix=fortress_annealed&switch_round=51"},
+    {"id": "source_lead_four", "spec": "bot_research.bots.counters.catalogue_switch:@make?prefix=lead_four&switch_round=51"},
+    {"id": "fortress15", "spec": "bot_research.bots.defense.frozen.v15.fortress:@make"},
+    {"id": "fortress17", "spec": "bot_research.bots.defense.frozen.v17.fortress:@make"},
+    {"id": "economy9", "spec": "bot_research.bots.economy.frozen.v9.econ9:@make"},
+    {"id": "economy13", "spec": "bot_research.bots.economy.frozen.v13.econ13:@make"},
+    {"id": "eco6_t5", "spec": "bot_research.bots.counters.archetype_factory:@make?name=eco6_t5"},
+    {"id": "alternate3", "spec": "bot_research.bots.counters.catalogue_switch:@make?prefix=economy&after=archetype:eco6_t5&switch_round=7&period=3"}
+  ]
+}

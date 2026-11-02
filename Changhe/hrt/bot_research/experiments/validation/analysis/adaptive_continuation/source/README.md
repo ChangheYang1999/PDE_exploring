@@ -1,0 +1,1 @@
+The implementation is `bot_research/bots/counters/adaptive_continuation.py`. It composes the existing adaptive catalogue and fresh-continuation policies; it does not modify them. Verification receipts are registered in `../verification/`. No proof-assistant source is supplied.

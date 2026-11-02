@@ -1,0 +1,120 @@
+{
+  "attempt_counts": {
+    "valid": 6
+  },
+  "checker_sha256": "d080d05b9a4754fe5523ec3c8846aa0479a3aa74e4e074a024b588c032134e9a",
+  "complete_assignment_pairs": 3,
+  "expected_conditions": 6,
+  "heading": "Early-wall attack ablation",
+  "identical_assignment_pairs": 3,
+  "input_sha256": {
+    "bot_research/runs/validation/early-wall-attack-none-01-001-replay.json": "0026fe64740a538ee51d59989bd38445b96d57ab22b3cef2616afd12b61675e4",
+    "bot_research/runs/validation/early-wall-attack-none-01-001-strict.json": "1cd3fe2d27f797d444c86600217c3fd6f6b9d57bbe47eef249b1779343990aef",
+    "bot_research/runs/validation/early-wall-attack-none-01-001/replays/case0000.jsonl": "ad2c73cfc80ad3c2eb78c17f3bb1bec42442d4e6a0087645d8351615d9e4a35d",
+    "bot_research/runs/validation/early-wall-attack-none-01-001/replays/case0001.jsonl": "8f4196af95168e9794b16494d7c23e33691909f1722ca42eabc71854b65b7012",
+    "bot_research/runs/validation/early-wall-attack-none-01-001/replays/case0002.jsonl": "b205189c6001e46a52caf60ff1016e893032d88a58e087802be0b48af8e64137",
+    "bot_research/runs/validation/early-wall-attack-none-01-001/replays/case0003.jsonl": "13a6a4f7a6a879450796e32633d2c1bcdea272852f15ccfca13753f286b62d60",
+    "bot_research/runs/validation/early-wall-attack-none-01-001/replays/case0004.jsonl": "d9c1a50b23d7e16fc5b7cb4013c007554ea0cdfeea5e3b1e504b97c199ce8f2e",
+    "bot_research/runs/validation/early-wall-attack-none-01-001/replays/case0005.jsonl": "850abd1a5b3f49fc2a139bd7a6dd588fb41a3bfb48298ea49083e54f905dd068",
+    "bot_research/runs/validation/early-wall-attack-none-01-001/results/case0000.json": "cf47044666709e396c625cf8fa400ea980e83b53b7ac0a1de7c6585b86330efb",
+    "bot_research/runs/validation/early-wall-attack-none-01-001/results/case0001.json": "1e7083184ba47ff0b22e03648fcef74accb4253be994ee92ed96788a7ae7fb0a",
+    "bot_research/runs/validation/early-wall-attack-none-01-001/results/case0002.json": "f30dc336599989d127000015ebf014ba764dfe5a2446721323cf69f5ee46c5ae",
+    "bot_research/runs/validation/early-wall-attack-none-01-001/results/case0003.json": "67f112047ab3b462ed61832cb3a15edb604e485cfc40717d9566ef3b41642272",
+    "bot_research/runs/validation/early-wall-attack-none-01-001/results/case0004.json": "cb15d68d139b336199cc479b26bebe76c15b7c929442e846706553083cc6332a",
+    "bot_research/runs/validation/early-wall-attack-none-01-001/results/case0005.json": "e7f3bbce62a438ccc3fa56609bac71e2e7393807c32dc5b3f107e4165fd09a8f"
+  },
+  "outcomes": {
+    "L": 6
+  },
+  "repeat_disagreements": [],
+  "rows": [
+    {
+      "candidate": "none",
+      "opponent": "lead8",
+      "results": [
+        {
+          "hp": [
+            660,
+            788
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/early-wall-attack-none-01-001/results/case0000.json",
+          "rounds": 50,
+          "runtime_seconds": 19.358103935141116,
+          "side": 0
+        },
+        {
+          "hp": [
+            660,
+            788
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/early-wall-attack-none-01-001/results/case0001.json",
+          "rounds": 50,
+          "runtime_seconds": 16.349077994003892,
+          "side": 1
+        }
+      ]
+    },
+    {
+      "candidate": "none",
+      "opponent": "delegated_adaptive",
+      "results": [
+        {
+          "hp": [
+            740,
+            774
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/early-wall-attack-none-01-001/results/case0002.json",
+          "rounds": 50,
+          "runtime_seconds": 14.64201683504507,
+          "side": 0
+        },
+        {
+          "hp": [
+            740,
+            774
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/early-wall-attack-none-01-001/results/case0003.json",
+          "rounds": 50,
+          "runtime_seconds": 14.692367903888226,
+          "side": 1
+        }
+      ]
+    },
+    {
+      "candidate": "none",
+      "opponent": "delegated_early",
+      "results": [
+        {
+          "hp": [
+            740,
+            774
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/early-wall-attack-none-01-001/results/case0004.json",
+          "rounds": 50,
+          "runtime_seconds": 14.223271053284407,
+          "side": 0
+        },
+        {
+          "hp": [
+            740,
+            774
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/early-wall-attack-none-01-001/results/case0005.json",
+          "rounds": 50,
+          "runtime_seconds": 14.29140061698854,
+          "side": 1
+        }
+      ]
+    }
+  ],
+  "scope": "Exact stated development conditions. Assignment pairs and identical reruns are not independent samples. Timeouts are computational failures, never game losses.",
+  "time_utc": "2026-10-31T18:41:48.669634+00:00",
+  "unresolved_conditions": 0,
+  "valid_conditions": 6
+}

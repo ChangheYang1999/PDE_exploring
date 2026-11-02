@@ -1,0 +1,153 @@
+{
+  "attempt_counts": {
+    "valid": 8
+  },
+  "checker_sha256": "d080d05b9a4754fe5523ec3c8846aa0479a3aa74e4e074a024b588c032134e9a",
+  "complete_assignment_pairs": 4,
+  "expected_conditions": 8,
+  "heading": "Screened guard transfer",
+  "identical_assignment_pairs": 4,
+  "input_sha256": {
+    "bot_research/runs/validation/screened-guard-transfer-02-001-replay.json": "644cc7147e549c78500b91bc4e894a76f24d5e3b192f9b05f8018844c511a462",
+    "bot_research/runs/validation/screened-guard-transfer-02-001-strict.json": "e3f98ed69fd089855268cea07321dc7d116a1f68a33927e836ae7ba8a9d0c139",
+    "bot_research/runs/validation/screened-guard-transfer-02-001/replays/case0000.jsonl": "9323f95ff60a8a47463a2a1240761fe3cdc71f5fd2e47c0556ec3c0c7866bc70",
+    "bot_research/runs/validation/screened-guard-transfer-02-001/replays/case0001.jsonl": "2f565228dfa66fc3c93325d12916c64ea7d5767773c0dc3f76d7f97e88d1526a",
+    "bot_research/runs/validation/screened-guard-transfer-02-001/replays/case0002.jsonl": "fd3cfaeebd118ec40dd2449133cee254c52c1c578156408ff70f1b3e9dffb73e",
+    "bot_research/runs/validation/screened-guard-transfer-02-001/replays/case0003.jsonl": "80f677d208124dc14d1406fac058ad7d6f965239b7f6a28430cf63736669bebc",
+    "bot_research/runs/validation/screened-guard-transfer-02-001/replays/case0004.jsonl": "5ed831070220d332cf07f698b20351255ab9185a5a82fb1dbcfccb02988b2d94",
+    "bot_research/runs/validation/screened-guard-transfer-02-001/replays/case0005.jsonl": "f36b5267f1fd1eaab187169ed9df71b0df87602bccecce4e479a109d8f03a468",
+    "bot_research/runs/validation/screened-guard-transfer-02-001/replays/case0006.jsonl": "8b712dfaf790d56cf889548f86662ca03c23590089948bcf629f0a36660dc4db",
+    "bot_research/runs/validation/screened-guard-transfer-02-001/replays/case0007.jsonl": "b1864a43156d9f8e8c784db04bd8e6ccda6454e70172dce09f1fcba120c3b737",
+    "bot_research/runs/validation/screened-guard-transfer-02-001/results/case0000.json": "044ae0b36956cb6c0b4c2f9addfada847cd7aa6beefae2f09ea82fcd349e20b6",
+    "bot_research/runs/validation/screened-guard-transfer-02-001/results/case0001.json": "5b70e6551627a5a599922f455c80ca8024525d960e1a386507c8d1662ef36b5c",
+    "bot_research/runs/validation/screened-guard-transfer-02-001/results/case0002.json": "ca74086ccc29de06fef0584fd06bd006c919d9e46a1273d3f521cd205e5790d0",
+    "bot_research/runs/validation/screened-guard-transfer-02-001/results/case0003.json": "d7913d906d553868f3a10e4074aec802af5b15abe438ee30d2e5e158ed3101b6",
+    "bot_research/runs/validation/screened-guard-transfer-02-001/results/case0004.json": "f7db4c0e8dbbee7edf26440cf9c13eb334825303e76c5738cd3234e779eb8e10",
+    "bot_research/runs/validation/screened-guard-transfer-02-001/results/case0005.json": "003e6a58afcb5cd9c1c826b99243c7df9105e24c73f30b5d02a85590010841d9",
+    "bot_research/runs/validation/screened-guard-transfer-02-001/results/case0006.json": "c110d4582f53ab54e968808bc701a3c1a1c419eddd0e60681c637fcfc7422b4a",
+    "bot_research/runs/validation/screened-guard-transfer-02-001/results/case0007.json": "e7b9ae3559ee55eef2f47855f1b4afa356819c5309d1ff4bb55fcfd3be80b07c"
+  },
+  "outcomes": {
+    "D": 2,
+    "L": 6
+  },
+  "repeat_disagreements": [],
+  "rows": [
+    {
+      "candidate": "guard",
+      "opponent": "V29_g1",
+      "results": [
+        {
+          "hp": [
+            560,
+            800
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/screened-guard-transfer-02-001/results/case0000.json",
+          "rounds": 50,
+          "runtime_seconds": 34.333465261850506,
+          "side": 0
+        },
+        {
+          "hp": [
+            560,
+            800
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/screened-guard-transfer-02-001/results/case0001.json",
+          "rounds": 50,
+          "runtime_seconds": 27.213760832790285,
+          "side": 1
+        }
+      ]
+    },
+    {
+      "candidate": "guard",
+      "opponent": "V29_guard60",
+      "results": [
+        {
+          "hp": [
+            800,
+            800
+          ],
+          "outcome": "D",
+          "result_path": "bot_research/runs/validation/screened-guard-transfer-02-001/results/case0002.json",
+          "rounds": 50,
+          "runtime_seconds": 22.726868614088744,
+          "side": 0
+        },
+        {
+          "hp": [
+            800,
+            800
+          ],
+          "outcome": "D",
+          "result_path": "bot_research/runs/validation/screened-guard-transfer-02-001/results/case0003.json",
+          "rounds": 50,
+          "runtime_seconds": 23.562458562664688,
+          "side": 1
+        }
+      ]
+    },
+    {
+      "candidate": "control",
+      "opponent": "V29_g1",
+      "results": [
+        {
+          "hp": [
+            490,
+            800
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/screened-guard-transfer-02-001/results/case0004.json",
+          "rounds": 50,
+          "runtime_seconds": 22.393046099226922,
+          "side": 0
+        },
+        {
+          "hp": [
+            490,
+            800
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/screened-guard-transfer-02-001/results/case0005.json",
+          "rounds": 50,
+          "runtime_seconds": 23.043064428959042,
+          "side": 1
+        }
+      ]
+    },
+    {
+      "candidate": "control",
+      "opponent": "V29_guard60",
+      "results": [
+        {
+          "hp": [
+            774,
+            800
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/screened-guard-transfer-02-001/results/case0006.json",
+          "rounds": 50,
+          "runtime_seconds": 18.93546688882634,
+          "side": 0
+        },
+        {
+          "hp": [
+            774,
+            800
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/screened-guard-transfer-02-001/results/case0007.json",
+          "rounds": 50,
+          "runtime_seconds": 19.39304227102548,
+          "side": 1
+        }
+      ]
+    }
+  ],
+  "scope": "Exact stated development conditions. Assignment pairs and identical reruns are not independent samples. Timeouts are computational failures, never game losses.",
+  "time_utc": "2026-10-31T20:27:52.331869+00:00",
+  "unresolved_conditions": 0,
+  "valid_conditions": 8
+}

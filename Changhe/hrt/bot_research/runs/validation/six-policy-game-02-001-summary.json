@@ -1,0 +1,56 @@
+{
+  "attempt_counts": {
+    "valid": 2
+  },
+  "checker_sha256": "d080d05b9a4754fe5523ec3c8846aa0479a3aa74e4e074a024b588c032134e9a",
+  "complete_assignment_pairs": 1,
+  "expected_conditions": 2,
+  "heading": "Six fixed policies with one private-model change",
+  "identical_assignment_pairs": 1,
+  "input_sha256": {
+    "bot_research/runs/validation/six-policy-game-02-001-replay.json": "2ce81a727971e7487e683ac3e79606fd3aed4244a2e8a3abf31cc44cec409d17",
+    "bot_research/runs/validation/six-policy-game-02-001-strict.json": "0f317f21725049eb6fc0e7d7a6c46905eeefd209f9d06b77bcd3ef62ac17b9d3",
+    "bot_research/runs/validation/six-policy-game-02-001/replays/case0000.jsonl": "48d53173109a7577115faa623882abde124d34bd31b54b0ca71ec4d5cbde15f5",
+    "bot_research/runs/validation/six-policy-game-02-001/replays/case0001.jsonl": "3a49c727f61b10f4a43d5396d0a51c50bf1e652541595a50718006a2d28ffb44",
+    "bot_research/runs/validation/six-policy-game-02-001/results/case0000.json": "0aee79aef33793e0769ad7385da314798d346c3cf938df4b2063c5be2e5cd3ad",
+    "bot_research/runs/validation/six-policy-game-02-001/results/case0001.json": "1fcad199618c64a5610693930032ccf8942ff97a60ad5d07e2bd6695168373a1"
+  },
+  "outcomes": {
+    "W": 2
+  },
+  "repeat_disagreements": [],
+  "rows": [
+    {
+      "candidate": "hp_model_r3_tier2",
+      "opponent": "route_adaptive",
+      "results": [
+        {
+          "hp": [
+            800,
+            656
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/six-policy-game-02-001/results/case0000.json",
+          "rounds": 50,
+          "runtime_seconds": 15.999192160088569,
+          "side": 0
+        },
+        {
+          "hp": [
+            800,
+            656
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/six-policy-game-02-001/results/case0001.json",
+          "rounds": 50,
+          "runtime_seconds": 16.176020755898207,
+          "side": 1
+        }
+      ]
+    }
+  ],
+  "scope": "Exact stated development conditions. Assignment pairs and identical reruns are not independent samples. Timeouts are computational failures, never game losses.",
+  "time_utc": "2026-10-31T19:07:28.495993+00:00",
+  "unresolved_conditions": 0,
+  "valid_conditions": 2
+}

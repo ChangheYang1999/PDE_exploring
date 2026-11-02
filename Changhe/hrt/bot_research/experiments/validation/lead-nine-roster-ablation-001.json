@@ -1,0 +1,41 @@
+{
+  "registered_utc": "2026-10-31T06:09:25.140583+00:00",
+  "snapshot_sha256": "48c7b707cc01472f07e9516d417a9c4f4dd1695503189ca03e0c3716cc9c28e5",
+  "purpose": "Matched development ablation of lead9 poke_reactive: true (only roster trigger) versus the earlier turret setting. Same frozen source, six counters, two opening-poke sizes and both seats.24 new games, compared with24 completed/ongoing turret-condition games. The round3 turret becomes visible after the until3 cutoff, providing a timing control; no-turret is another control. Separate policy effects from the cost of buying a turret. No reserved conditions.",
+  "candidates": [
+    {
+      "id": "bluff_none",
+      "spec": "bot_research.bots.counters.feature_bluff:@make?turret_round=0"
+    },
+    {
+      "id": "bluff_r1",
+      "spec": "bot_research.bots.counters.feature_bluff:@make?turret_round=1"
+    },
+    {
+      "id": "bluff_r2",
+      "spec": "bot_research.bots.counters.feature_bluff:@make?turret_round=2"
+    },
+    {
+      "id": "bluff_r3",
+      "spec": "bot_research.bots.counters.feature_bluff:@make?turret_round=3"
+    },
+    {
+      "id": "cheap_guard_econ13",
+      "spec": "bot_research.bots.counters.opening_response:@make?opening=%22guard_poke5%22&fallback=%22economy13%22"
+    },
+    {
+      "id": "guarded_tier4_r8",
+      "spec": "bot_research.bots.counters.guarded_schedule:@make?schedule=%5B%5B1%2C%22tier1%22%2C1%5D%2C%5B8%2C%22tier4%22%2C200%5D%5D"
+    }
+  ],
+  "opponents": [
+    {
+      "id": "lead9_roster_poke2",
+      "spec": "bot_research.bots.counters.snapshots.lead_nine_001:@make?big_threat=100&attack_mode=%22robust%22&gun_cap=120&poke_until=3&poke_reactive=true"
+    },
+    {
+      "id": "lead9_roster_poke3",
+      "spec": "bot_research.bots.counters.snapshots.lead_nine_001:@make?big_threat=100&attack_mode=%22robust%22&gun_cap=120&poke_until=3&poke_reactive=true&r1_poke=3"
+    }
+  ]
+}

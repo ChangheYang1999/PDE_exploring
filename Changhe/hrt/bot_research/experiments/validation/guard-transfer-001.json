@@ -1,0 +1,48 @@
+{
+  "registered_utc": "2026-10-31T05:26:07.486100+00:00",
+  "purpose": "Development follow-up to opening-transfer-001: test whether the selected cheap opening guard pays an economic penalty against greedy timing/stacking attacks and compare direct economy13 on the same eight known-development opponents. Both assignments. This is selection-aware exploration, not reserved confirmation.",
+  "candidates": [
+    {
+      "id": "guard_poke5_economy13",
+      "spec": "bot_research.bots.counters.opening_response:@make?opening=%22guard_poke5%22&fallback=%22economy13%22"
+    },
+    {
+      "id": "direct_economy13",
+      "spec": "bot_research.bots.economy.frozen.v13.econ13:@make"
+    }
+  ],
+  "opponents": [
+    {
+      "id": "eco6_t5",
+      "spec": "bot_research.bots.counters.pool:@archetype?name=eco6_t5"
+    },
+    {
+      "id": "poke_lock",
+      "spec": "bot_research.bots.counters.poke_lock:@make?opening_units=1&reserve=0&phi=1.0&saturate_round=20"
+    },
+    {
+      "id": "fortress19",
+      "spec": "bot_research.bots.defense.frozen.v19.fortress:@make"
+    },
+    {
+      "id": "fortress19_robust",
+      "spec": "bot_research.bots.defense.frozen.v19.fortress:@make?big_threat=100&robust_attack=true"
+    },
+    {
+      "id": "rush_t1",
+      "spec": "bot_research.bots.counters.pool:@archetype?name=rush_t1"
+    },
+    {
+      "id": "stacker_default",
+      "spec": "bot_research.bots.counters.pool:@stacker"
+    },
+    {
+      "id": "random130",
+      "spec": "bot_research.bots.counters.pool:@random_legal?seed=130"
+    },
+    {
+      "id": "lead_four",
+      "spec": "bot_research.bots.counters.snapshots.lead_four_001:@make"
+    }
+  ]
+}

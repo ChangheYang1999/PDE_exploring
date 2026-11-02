@@ -1,0 +1,44 @@
+{
+  "declared_utc": "2026-10-31T10:08:17.374401+00:00",
+  "purpose": "Test a fixed corner gun opening with econ19 continuation against frozen development targets, both assignments.",
+  "hypothesis": "Economy19 capacity-race and saturation-reachability heuristics may repair the late losses of corner guards. The whole continuation changes; this is not a single-feature causal ablation.",
+  "scope": "Development only. Frozen fortress26 retains a wall-clock gun-planning bound; paired or repeated histories must be checked rather than assumed identical. Frozen best_v9b is used to avoid locking the live entry point after its current validation.",
+  "candidates": [
+    {
+      "id": "guard9_tier1_econ19_holdNone",
+      "spec": "bot_research.bots.counters.corner_continuation:@make?roster=%5B%22tier1%22%5D&x=9&y=1&version=%22econ19%22&parameters=%7B%22foreign_attack_from%22%3Anull%7D"
+    },
+    {
+      "id": "guard9_tier1_econ19_hold11",
+      "spec": "bot_research.bots.counters.corner_continuation:@make?roster=%5B%22tier1%22%5D&x=9&y=1&version=%22econ19%22&parameters=%7B%22foreign_attack_from%22%3A11%7D"
+    },
+    {
+      "id": "guard9_tier2_econ19_holdNone",
+      "spec": "bot_research.bots.counters.corner_continuation:@make?roster=%5B%22tier2%22%5D&x=9&y=1&version=%22econ19%22&parameters=%7B%22foreign_attack_from%22%3Anull%7D"
+    },
+    {
+      "id": "guard9_tier2_econ19_hold11",
+      "spec": "bot_research.bots.counters.corner_continuation:@make?roster=%5B%22tier2%22%5D&x=9&y=1&version=%22econ19%22&parameters=%7B%22foreign_attack_from%22%3A11%7D"
+    }
+  ],
+  "opponents": [
+    {
+      "id": "frozen_best_v9b",
+      "spec": "bot_research.experiments.lead.frozen.best_v9b:@make"
+    },
+    {
+      "id": "economy17",
+      "spec": "bot_research.bots.economy.frozen.v17.econ17:@make?free_fallback=%22zero%22&foreign_attack_from=11"
+    },
+    {
+      "id": "fortress26",
+      "spec": "bot_research.bots.defense.frozen.v26.fortress:@make"
+    }
+  ],
+  "input_sha256": {
+    "bot_research/bots/economy/frozen/v19/econ19.py": "755ac742b93b87c571b79ebf6fb7e88a51b32dbd7bf62b7e11c7541430ec994a",
+    "bot_research/bots/counters/corner_continuation.py": "da0de97c9c6ac1da20c4a84080c2aedf456f9e33c6de8283491443b650257af0"
+  },
+  "retired_predecessor": "bot_research/experiments/validation/guard-continuation-econ19-001.json",
+  "retirement_reason": "The predecessor overwrote an existing module interface. All its attempts are excluded from strength comparisons. The replacement lives under a distinct module name."
+}

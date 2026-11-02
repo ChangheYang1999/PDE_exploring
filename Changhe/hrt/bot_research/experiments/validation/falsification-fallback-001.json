@@ -1,0 +1,12 @@
+{
+  "purpose": "Development test of a one-way fallback after catalogue falsification. Unknown-opponent runtime and outcome test, with one exact-catalogue regression opponent; no reserved opponents.",
+  "candidates": [
+    {"id": "fallback_economy9", "spec": "bot_research.bots.counters.falsification_fallback:@make?fallback=economy9&opening=factories&saturate_round=12"},
+    {"id": "fallback_fortress13", "spec": "bot_research.bots.counters.falsification_fallback:@make?fallback=fortress13&opening=factories&saturate_round=12"}
+  ],
+  "opponents": [
+    {"id": "eco6_t5", "spec": "bot_research.bots.counters.archetype_factory:@make?name=eco6_t5"},
+    {"id": "alternate3", "spec": "bot_research.bots.counters.catalogue_switch:@make?prefix=economy&after=archetype:eco6_t5&switch_round=7&period=3"},
+    {"id": "lead_four", "spec": "bot_research.bots.counters.snapshots.lead_four_001:@make"}
+  ]
+}

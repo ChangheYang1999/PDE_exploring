@@ -1,0 +1,89 @@
+{
+  "attempt_counts": {
+    "valid": 4
+  },
+  "checker_sha256": "d080d05b9a4754fe5523ec3c8846aa0479a3aa74e4e074a024b588c032134e9a",
+  "complete_assignment_pairs": 2,
+  "expected_conditions": 4,
+  "heading": "Fixed schedule bait removal",
+  "identical_assignment_pairs": 2,
+  "input_sha256": {
+    "bot_research/runs/validation/bait-removal-01-001-replay.json": "c156eed030c5770b25608a90e8ecaead547b9ae51cad815d710f2edeb814bcb0",
+    "bot_research/runs/validation/bait-removal-01-001-strict.json": "969cf7cdb2967b29c8427c33960d72f3e18c6c0b98360bda2a25bd0626842e11",
+    "bot_research/runs/validation/bait-removal-01-001/replays/case0000.jsonl": "0f9fc01e9b8b593f9fead5f67cada9f0ed2393cbf4507c78911d9ca8ecbb24f4",
+    "bot_research/runs/validation/bait-removal-01-001/replays/case0001.jsonl": "e77797181eb2ad7e0104ae4c8b0197da2889a561ad18f647aa82f31ad8e235ac",
+    "bot_research/runs/validation/bait-removal-01-001/replays/case0002.jsonl": "181334ec489c1d0eb22b61bad2bcc6135d45e208ad1c555cdfdc56d82f912723",
+    "bot_research/runs/validation/bait-removal-01-001/replays/case0003.jsonl": "d2ee3602815a3f76c8f8e930f7f4227d8c0f75a4b31eaa5765e5d2e129cd3bbd",
+    "bot_research/runs/validation/bait-removal-01-001/results/case0000.json": "af2afa64a46984ebda068798c662cf15691b7961bf6ce8ac696f12f04b26494b",
+    "bot_research/runs/validation/bait-removal-01-001/results/case0001.json": "6259026e912fe9774aa3dfeaeac778faaeb5cd33c38cbffea4547c9471fd0a1e",
+    "bot_research/runs/validation/bait-removal-01-001/results/case0002.json": "844707fa9edd21babae2ead88f8590d01789826a39bcda91a6262a01fb9d95ce",
+    "bot_research/runs/validation/bait-removal-01-001/results/case0003.json": "a544163a712eaa27501d4ee31840bf004490b2eff61c47e7b6c921757daabe65"
+  },
+  "outcomes": {
+    "L": 2,
+    "W": 2
+  },
+  "repeat_disagreements": [],
+  "rows": [
+    {
+      "candidate": "best_v9e",
+      "opponent": "no_bait_A",
+      "results": [
+        {
+          "hp": [
+            660,
+            542
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/bait-removal-01-001/results/case0000.json",
+          "rounds": 50,
+          "runtime_seconds": 3.315801335964352,
+          "side": 0
+        },
+        {
+          "hp": [
+            660,
+            542
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/bait-removal-01-001/results/case0001.json",
+          "rounds": 50,
+          "runtime_seconds": 3.3306819652207196,
+          "side": 1
+        }
+      ]
+    },
+    {
+      "candidate": "best_v9e",
+      "opponent": "no_bait_B",
+      "results": [
+        {
+          "hp": [
+            660,
+            755
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/bait-removal-01-001/results/case0002.json",
+          "rounds": 50,
+          "runtime_seconds": 3.439875826239586,
+          "side": 0
+        },
+        {
+          "hp": [
+            660,
+            755
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/bait-removal-01-001/results/case0003.json",
+          "rounds": 50,
+          "runtime_seconds": 3.4705964596942067,
+          "side": 1
+        }
+      ]
+    }
+  ],
+  "scope": "Exact stated development conditions. Assignment pairs and identical reruns are not independent samples. Timeouts are computational failures, never game losses.",
+  "time_utc": "2026-10-31T18:33:42.417892+00:00",
+  "unresolved_conditions": 0,
+  "valid_conditions": 4
+}

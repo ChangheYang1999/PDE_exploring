@@ -1,0 +1,1 @@
+No proof-assistant formalization is claimed. The standalone conditional argument is in ../PROOF.md. The executable checker is bot_research/experiments/validation/check_v27_untruncated.py from the project root. Authoritative artifact paths and hashes are recorded in the verification receipt.

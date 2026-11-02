@@ -1,0 +1,44 @@
+{
+  "registered_utc": "2026-10-31T05:45:44.616901+00:00",
+  "purpose": "Development follow-up for the selected cheap guard: spend remaining opening gold on 0,11,13,15 wall prefixes and keep frozen economy13 continuation. Original-engine component checks show the prefixes remain legal and stop two tier1, with route lengths22/24/28/32. Full-game benefits remain unknown. The cap-zero cases are repeat controls, not independent strength evidence.",
+  "candidates": [
+    {
+      "id": "guard_walls_0",
+      "spec": "bot_research.bots.counters.guard_walls:@make?wall_cap=0"
+    },
+    {
+      "id": "guard_walls_11",
+      "spec": "bot_research.bots.counters.guard_walls:@make?wall_cap=11"
+    },
+    {
+      "id": "guard_walls_13",
+      "spec": "bot_research.bots.counters.guard_walls:@make?wall_cap=13"
+    },
+    {
+      "id": "guard_walls_15",
+      "spec": "bot_research.bots.counters.guard_walls:@make?wall_cap=15"
+    }
+  ],
+  "opponents": [
+    {
+      "id": "economy13",
+      "spec": "bot_research.bots.economy.frozen.v13.econ13:@make"
+    },
+    {
+      "id": "bluff_r3",
+      "spec": "bot_research.bots.counters.feature_bluff:@make?turret_round=3"
+    },
+    {
+      "id": "eco6_t5",
+      "spec": "bot_research.bots.counters.pool:@archetype?name=eco6_t5"
+    },
+    {
+      "id": "lead_v7_robust_big100_nopoke",
+      "spec": "bot_research.bots.counters.snapshots.lead_seven_001:@make?big_threat=100&attack_mode=%22robust%22&poke_insurance=false&gun_cap=120"
+    },
+    {
+      "id": "fortress19_robust",
+      "spec": "bot_research.bots.defense.frozen.v19.fortress:@make?big_threat=100&robust_attack=true"
+    }
+  ]
+}

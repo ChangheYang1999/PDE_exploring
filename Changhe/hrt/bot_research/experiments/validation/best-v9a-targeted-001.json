@@ -1,0 +1,20 @@
+{
+  "purpose": "Independent targeted development validation of the frozen published entry point best_v9a. Eleven opponents, both assignments,22 games. Six opponent conditions have earlier lead9-twin trajectories to compare as controls. Distinct from reserved pool A, with no tuning based on its results.",
+  "candidate_sha256": "88a8e42f954cfb06a611eb002fb256a954cdd0984d1b2e1cac47c254bdeb829d",
+  "candidates": [
+    {"id":"best_v9a", "spec":"bot_research.bots.best:decide"}
+  ],
+  "opponents": [
+    {"id":"bluff_none", "spec":"bot_research.bots.counters.feature_bluff:@make?turret_round=0"},
+    {"id":"bluff_r1", "spec":"bot_research.bots.counters.feature_bluff:@make?turret_round=1"},
+    {"id":"bluff_r2", "spec":"bot_research.bots.counters.feature_bluff:@make?turret_round=2"},
+    {"id":"bluff_r3", "spec":"bot_research.bots.counters.feature_bluff:@make?turret_round=3"},
+    {"id":"cheap_guard_econ13", "spec":"bot_research.bots.counters.opening_response:@make?opening=%22guard_poke5%22&fallback=%22economy13%22"},
+    {"id":"guarded_tier4_r8", "spec":"bot_research.bots.counters.guarded_schedule:@make?schedule=%5B%5B1%2C%22tier1%22%2C1%5D%2C%5B8%2C%22tier4%22%2C200%5D%5D"},
+    {"id":"cheap_guard_econ15", "spec":"bot_research.bots.counters.guard_continuation:@make?continuation=%22economy15%22&parameters=%7B%22free_fallback%22%3A%22leak%22%7D"},
+    {"id":"guarded_tier4_r5", "spec":"bot_research.bots.counters.guarded_schedule:@make?schedule=%5B%5B1%2C%22tier1%22%2C1%5D%2C%5B5%2C%22tier4%22%2C200%5D%5D"},
+    {"id":"economy13", "spec":"bot_research.bots.economy.frozen.v13.econ13:@make"},
+    {"id":"fortress21", "spec":"bot_research.bots.defense.frozen.v21.fortress:@make"},
+    {"id":"economy15_leak", "spec":"bot_research.bots.economy.frozen.v15.econ15:@make?free_fallback=%22leak%22"}
+  ]
+}

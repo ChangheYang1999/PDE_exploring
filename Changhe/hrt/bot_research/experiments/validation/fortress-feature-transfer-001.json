@@ -1,0 +1,44 @@
+{
+  "registered_utc": "2026-10-31T05:54:09.614612+00:00",
+  "purpose": "Transfer of fixed visible-roster schedules and turret-feature probes to frozen fortress19 default,20 robust,and21 adaptive. New v21 uses the same public turret-presence feature for response-aware attack. The comparison tests full policies, not an isolated causal intervention. Six candidates, three versions, both assignments:36 development games. No reserved outcomes. Cheap-guard/fortress19 and20 conditions may repeat previous specifications only where the exact factory parameters agree; classify repeats explicitly.",
+  "candidates": [
+    {
+      "id": "guarded_tier4_r5",
+      "spec": "bot_research.bots.counters.guarded_schedule:@make?schedule=%5B%5B1%2C%22tier1%22%2C1%5D%2C%5B5%2C%22tier4%22%2C200%5D%5D"
+    },
+    {
+      "id": "guarded_tier4_r8",
+      "spec": "bot_research.bots.counters.guarded_schedule:@make?schedule=%5B%5B1%2C%22tier1%22%2C1%5D%2C%5B8%2C%22tier4%22%2C200%5D%5D"
+    },
+    {
+      "id": "cheap_guard_econ13",
+      "spec": "bot_research.bots.counters.opening_response:@make?opening=%22guard_poke5%22&fallback=%22economy13%22"
+    },
+    {
+      "id": "bluff_none",
+      "spec": "bot_research.bots.counters.feature_bluff:@make?turret_round=0"
+    },
+    {
+      "id": "bluff_r1",
+      "spec": "bot_research.bots.counters.feature_bluff:@make?turret_round=1"
+    },
+    {
+      "id": "bluff_r3",
+      "spec": "bot_research.bots.counters.feature_bluff:@make?turret_round=3"
+    }
+  ],
+  "opponents": [
+    {
+      "id": "fortress19",
+      "spec": "bot_research.bots.defense.frozen.v19.fortress:@make"
+    },
+    {
+      "id": "fortress20",
+      "spec": "bot_research.bots.defense.frozen.v20.fortress:@make"
+    },
+    {
+      "id": "fortress21",
+      "spec": "bot_research.bots.defense.frozen.v21.fortress:@make"
+    }
+  ]
+}

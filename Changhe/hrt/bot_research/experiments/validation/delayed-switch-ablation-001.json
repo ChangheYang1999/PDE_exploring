@@ -1,0 +1,58 @@
+{
+  "declared_utc": "2026-10-31T11:29:34.042570+00:00",
+  "purpose": "Separate switch-round purchases and later continuation in the observed delayed-switch failures.",
+  "candidates": [
+    {
+      "id": "adaptive_weight4",
+      "spec": "bot_research.bots.counters.adaptive_continuation:@make?attack_weight=4"
+    }
+  ],
+  "opponents": [
+    {
+      "id": "wave_r5",
+      "spec": "bot_research.bots.counters.delayed_switch_ablation:@make?mode=%22wave%22&switch_round=5&tier=%22tier3%22"
+    },
+    {
+      "id": "wave_r9",
+      "spec": "bot_research.bots.counters.delayed_switch_ablation:@make?mode=%22wave%22&switch_round=9&tier=%22tier3%22"
+    },
+    {
+      "id": "wave_r12",
+      "spec": "bot_research.bots.counters.delayed_switch_ablation:@make?mode=%22wave%22&switch_round=12&tier=%22tier3%22"
+    },
+    {
+      "id": "save_r5",
+      "spec": "bot_research.bots.counters.delayed_switch_ablation:@make?mode=%22save%22&switch_round=5&tier=%22tier3%22"
+    },
+    {
+      "id": "save_r9",
+      "spec": "bot_research.bots.counters.delayed_switch_ablation:@make?mode=%22save%22&switch_round=9&tier=%22tier3%22"
+    },
+    {
+      "id": "save_r12",
+      "spec": "bot_research.bots.counters.delayed_switch_ablation:@make?mode=%22save%22&switch_round=12&tier=%22tier3%22"
+    },
+    {
+      "id": "prefix_r5",
+      "spec": "bot_research.bots.counters.delayed_switch_ablation:@make?mode=%22prefix%22&switch_round=5&tier=%22tier3%22"
+    },
+    {
+      "id": "prefix_r9",
+      "spec": "bot_research.bots.counters.delayed_switch_ablation:@make?mode=%22prefix%22&switch_round=9&tier=%22tier3%22"
+    },
+    {
+      "id": "prefix_r12",
+      "spec": "bot_research.bots.counters.delayed_switch_ablation:@make?mode=%22prefix%22&switch_round=12&tier=%22tier3%22"
+    },
+    {
+      "id": "direct_economy20",
+      "spec": "bot_research.bots.economy.frozen.v20.econ20:@make?free_fallback=%22zero%22&foreign_attack_from=11&doom=%22next%22&fac_cap=400&sat_reach=true&replan=true&foreign_sat_from=11"
+    }
+  ],
+  "input_sha256": {
+    "bot_research/bots/counters/delayed_switch_ablation.py": "7b834202bee7b0930013838bf504294b5415e13bf6a6d214d6de4acb8a6237cd",
+    "bot_research/experiments/validation/check_delayed_switch_ablation.py": "5a8807e30a81bb00878be423c30452880e91250b189f57c7aec093e759390c41",
+    "bot_research/experiments/validation/analysis/delayed_policy_switch/ABLATION_HYPOTHESIS.md": "2da15b33361ddd83071f0ac7fc610056dc16ba42f4d89180067d2c4237d30761"
+  },
+  "scope": "Twenty predeclared development control games. Both assignments; three switch rounds; fresh E20 in all switching arms; direct E20 control. Not held-out validation."
+}

@@ -1,0 +1,60 @@
+{
+  "declared_utc": "2026-10-31T06:44:56.411373+00:00",
+  "purpose": "Development test of isolated-copy exposure as a turret signal. Three thresholds1,70,180 damage; ten existing development opponents; both seats. Threshold1 repeats the geometric filter. The higher thresholds are current tier2 and tier3 HP; no stream-defense or strength guarantee follows from the isolated-copy theorem. No reserved conditions.",
+  "candidates": [
+    {
+      "id": "exposure1",
+      "spec": "bot_research.bots.counters.exposure_guard:@make?minimum_hp=1"
+    },
+    {
+      "id": "exposure70",
+      "spec": "bot_research.bots.counters.exposure_guard:@make?minimum_hp=70"
+    },
+    {
+      "id": "exposure180",
+      "spec": "bot_research.bots.counters.exposure_guard:@make?minimum_hp=180"
+    }
+  ],
+  "opponents": [
+    {
+      "id": "economy13",
+      "spec": "bot_research.bots.economy.frozen.v13.econ13:@make"
+    },
+    {
+      "id": "fortress21",
+      "spec": "bot_research.bots.defense.frozen.v21.fortress:@make"
+    },
+    {
+      "id": "lead7",
+      "spec": "bot_research.bots.counters.snapshots.lead_seven_001:@make?big_threat=100&attack_mode=%22robust%22&poke_insurance=false&gun_cap=120"
+    },
+    {
+      "id": "bluff_r3",
+      "spec": "bot_research.bots.counters.feature_bluff:@make?turret_round=3"
+    },
+    {
+      "id": "eco6_t5",
+      "spec": "bot_research.bots.counters.pool:@archetype?name=eco6_t5"
+    },
+    {
+      "id": "guarded_tier4_r8",
+      "spec": "bot_research.bots.counters.guarded_schedule:@make?schedule=%5B%5B1%2C%22tier1%22%2C1%5D%2C%5B8%2C%22tier4%22%2C200%5D%5D"
+    },
+    {
+      "id": "bluff_r2",
+      "spec": "bot_research.bots.counters.feature_bluff:@make?turret_round=2"
+    },
+    {
+      "id": "useful_gun_r3",
+      "spec": "bot_research.bots.counters.feature_bluff:@make?turret_round=3&turret_x=3&turret_y=1"
+    },
+    {
+      "id": "fortress22",
+      "spec": "bot_research.bots.defense.frozen.v22.fortress:@make"
+    },
+    {
+      "id": "best_v9a",
+      "spec": "bot_research.bots.best:@make"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "declared_utc": "2026-10-31T11:12:52.474925+00:00",
+  "purpose": "Compare two prescribed cheap guard openings before adaptive catalogue continuation against the same seven opponents, both assignments: 28 standard-start development games.",
+  "hypothesis": "A cheap guard with one or two tier1 purchases can improve the remaining outside-catalogue losses without sacrificing the known-member wins. The entire opening is the intervention.",
+  "scope": "Development only; all two-by-seven-by-two conditions retained. Existing parent results are matched controls.",
+  "candidates": [
+    {
+      "id": "guard_one",
+      "spec": "bot_research.bots.counters.guarded_adaptive_continuation:@make?roster=%5B%22tier1%22%5D"
+    },
+    {
+      "id": "guard_two",
+      "spec": "bot_research.bots.counters.guarded_adaptive_continuation:@make?roster=%5B%22tier1%22%2C%22tier1%22%5D"
+    }
+  ],
+  "opponents": [
+    {
+      "id": "best_v9b",
+      "spec": "bot_research.experiments.lead.frozen.best_v9b:@make"
+    },
+    {
+      "id": "economy17",
+      "spec": "bot_research.bots.economy.frozen.v17.econ17:@make?free_fallback=%22zero%22&foreign_attack_from=11"
+    },
+    {
+      "id": "economy19",
+      "spec": "bot_research.bots.economy.frozen.v19.econ19:@make?free_fallback=%22zero%22&foreign_attack_from=11&doom=%22next%22&fac_cap=400&sat_reach=true"
+    },
+    {
+      "id": "outside_fortress26",
+      "spec": "bot_research.bots.defense.frozen.v26.fortress:@make"
+    },
+    {
+      "id": "outside_guard_t1",
+      "spec": "bot_research.bots.counters.guard_geometry:@make?roster=%5B%22tier1%22%5D&x=9&y=1&parameters=%7B%22foreign_attack_from%22%3Anull%7D"
+    },
+    {
+      "id": "outside_fortress27",
+      "spec": "bot_research.bots.defense.frozen.v27.fortress:@make"
+    },
+    {
+      "id": "outside_fortress27_memory",
+      "spec": "bot_research.bots.defense.frozen.v27.fortress:@make?response_memory=true"
+    }
+  ],
+  "input_sha256": {
+    "bot_research/bots/counters/guarded_adaptive_continuation.py": "0f1c4070a6b9ceb2e3a219bf6f7869ebe1ddd546bec07fa4e067805657d33193",
+    "bot_research/experiments/validation/check_guarded_adaptive_continuation.py": "f997711fcf0c54c066c730f7e4b8ea648604b6053f1bf93687d8fd8702543e39",
+    "bot_research/experiments/validation/analysis/guarded_adaptive_continuation/PROOF.md": "9623ee5674da7a3798e2e1d7693335c24b67e204a7a864c82066a945bd2cbe37"
+  }
+}

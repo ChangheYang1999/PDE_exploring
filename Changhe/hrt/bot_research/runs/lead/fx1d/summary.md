@@ -1,0 +1,21 @@
+| candidate | opponent | n | W | D | L | mean HP diff | min HP diff | mean end round | cand rejected | cand errors | opp errors | cand decide s/match (max call) |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| bot_research.experiments.lead.v19:@make?big_threat=100&gun_cap=120&poke_until=3&big_partial=true&r1_poke=3&attack_mode="adaptive"&poke_reactive="turret"&fortress_n=4&immune_attack=true&foreign_policy="econ17"&mid_until=5&foreign_target="econ20" | bot_research.bots.defense.frozen.v25.fortress:@make | 8 | 8 | 0 | 0 | 800.4 | 525 | 21.5 | 0 | 0 | 0 | 7.66 (2.13) |
+| bot_research.experiments.lead.v19:@make?big_threat=100&gun_cap=120&poke_until=3&big_partial=true&r1_poke=3&attack_mode="adaptive"&poke_reactive="turret"&fortress_n=4&immune_attack=true&foreign_policy="econ17"&mid_until=5&foreign_target="econ20" | bot_research.bots.defense.frozen.v26.fortress:@make | 8 | 6 | 0 | 2 | 914.2 | -55 | 23.1 | 0 | 0 | 0 | 7.18 (3.07) |
+| bot_research.experiments.lead.v19:@make?big_threat=100&gun_cap=120&poke_until=3&big_partial=true&r1_poke=3&attack_mode="adaptive"&poke_reactive="turret"&fortress_n=4&immune_attack=true&foreign_policy="econ17"&mid_until=5&foreign_target="econ20" | bot_research.bots.economy.frozen.v19.econ19:@make?free_fallback="zero"&foreign_attack_from=11&doom="next"&fac_cap=400&sat_reach=true | 8 | 4 | 0 | 4 | -140.0 | -1810 | 14.8 | 0 | 0 | 0 | 5.50 (2.18) |
+| bot_research.experiments.lead.v19:@make?big_threat=100&gun_cap=120&poke_until=3&big_partial=true&r1_poke=3&attack_mode="adaptive"&poke_reactive="turret"&fortress_n=4&immune_attack=true&foreign_policy="econ17"&mid_until=5&foreign_target="fortress27" | bot_research.bots.defense.frozen.v25.fortress:@make | 8 | 5 | 0 | 3 | -14.5 | -3780 | 33.1 | 0 | 0 | 0 | 12.70 (1.65) |
+| bot_research.experiments.lead.v19:@make?big_threat=100&gun_cap=120&poke_until=3&big_partial=true&r1_poke=3&attack_mode="adaptive"&poke_reactive="turret"&fortress_n=4&immune_attack=true&foreign_policy="econ17"&mid_until=5&foreign_target="fortress27" | bot_research.bots.defense.frozen.v26.fortress:@make | 8 | 1 | 6 | 1 | 70.0 | -3220 | 29.8 | 0 | 0 | 0 | 11.07 (1.61) |
+| bot_research.experiments.lead.v19:@make?big_threat=100&gun_cap=120&poke_until=3&big_partial=true&r1_poke=3&attack_mode="adaptive"&poke_reactive="turret"&fortress_n=4&immune_attack=true&foreign_policy="econ17"&mid_until=5&foreign_target="fortress27" | bot_research.bots.economy.frozen.v19.econ19:@make?free_fallback="zero"&foreign_attack_from=11&doom="next"&fac_cap=400&sat_reach=true | 8 | 2 | 0 | 6 | -401.6 | -1245 | 17.6 | 0 | 0 | 0 | 5.17 (1.20) |
+
+| candidate | matches | W | D | L | score (W + D/2) / n |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| bot_research.experiments.lead.v19:@make?big_threat=100&gun_cap=120&poke_until=3&big_partial=true&r1_poke=3&attack_mode="adaptive"&poke_reactive="turret"&fortress_n=4&immune_attack=true&foreign_policy="econ17"&mid_until=5&foreign_target="econ20" | 24 | 18 | 0 | 6 | 0.750 |
+| bot_research.experiments.lead.v19:@make?big_threat=100&gun_cap=120&poke_until=3&big_partial=true&r1_poke=3&attack_mode="adaptive"&poke_reactive="turret"&fortress_n=4&immune_attack=true&foreign_policy="econ17"&mid_until=5&foreign_target="fortress27" | 24 | 8 | 6 | 10 | 0.458 |
+
+| bot (all matches, both perspectives) | matches | W | D | L | score | mean HP diff |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| bot_research.experiments.lead.v19:@make?big_threat=100&gun_cap=120&poke_until=3&big_partial=true&r1_poke=3&attack_mode="adaptive"&poke_reactive="turret"&fortress_n=4&immune_attack=true&foreign_policy="econ17"&mid_until=5&foreign_target="econ20" | 24 | 18 | 0 | 6 | 0.750 | 524.9 |
+| bot_research.bots.economy.frozen.v19.econ19:@make?free_fallback="zero"&foreign_attack_from=11&doom="next"&fac_cap=400&sat_reach=true | 16 | 10 | 0 | 6 | 0.625 | 270.8 |
+| bot_research.experiments.lead.v19:@make?big_threat=100&gun_cap=120&poke_until=3&big_partial=true&r1_poke=3&attack_mode="adaptive"&poke_reactive="turret"&fortress_n=4&immune_attack=true&foreign_policy="econ17"&mid_until=5&foreign_target="fortress27" | 24 | 8 | 6 | 10 | 0.458 | -115.4 |
+| bot_research.bots.defense.frozen.v26.fortress:@make | 16 | 3 | 6 | 7 | 0.375 | -492.1 |
+| bot_research.bots.defense.frozen.v25.fortress:@make | 16 | 3 | 0 | 13 | 0.188 | -392.9 |

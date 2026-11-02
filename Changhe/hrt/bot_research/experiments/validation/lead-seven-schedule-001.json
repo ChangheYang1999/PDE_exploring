@@ -1,0 +1,60 @@
+{
+  "registered_utc": "2026-10-31T05:22:51.475013+00:00",
+  "purpose": "Development two-wave and three-wave challenge of frozen lead7 robust/big100/no-poke setting, testing whether a small round-one purchase can coexist with a later affordable wave. Fixed schedules may buy ineffective attacks. Both assignments. No reserved conditions.",
+  "candidates": [
+    {
+      "id": "r3_t3_control",
+      "spec": "bot_research.bots.counters.public_schedule:@make?model_spec=%22bot_research.bots.counters.snapshots.lead_seven_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22attack_mode%22%3A%22robust%22%2C%22poke_insurance%22%3Afalse%2C%22gun_cap%22%3A120%7D&schedule=%5B%5B3%2C%22tier3%22%2C200%5D%5D&defense_first=false"
+    },
+    {
+      "id": "r1_t1_1_r3_t3",
+      "spec": "bot_research.bots.counters.public_schedule:@make?model_spec=%22bot_research.bots.counters.snapshots.lead_seven_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22attack_mode%22%3A%22robust%22%2C%22poke_insurance%22%3Afalse%2C%22gun_cap%22%3A120%7D&schedule=%5B%5B1%2C%22tier1%22%2C1%5D%2C%5B3%2C%22tier3%22%2C200%5D%5D&defense_first=false"
+    },
+    {
+      "id": "r1_t1_2_r3_t3",
+      "spec": "bot_research.bots.counters.public_schedule:@make?model_spec=%22bot_research.bots.counters.snapshots.lead_seven_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22attack_mode%22%3A%22robust%22%2C%22poke_insurance%22%3Afalse%2C%22gun_cap%22%3A120%7D&schedule=%5B%5B1%2C%22tier1%22%2C2%5D%2C%5B3%2C%22tier3%22%2C200%5D%5D&defense_first=false"
+    },
+    {
+      "id": "r1_t1_3_r3_t3",
+      "spec": "bot_research.bots.counters.public_schedule:@make?model_spec=%22bot_research.bots.counters.snapshots.lead_seven_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22attack_mode%22%3A%22robust%22%2C%22poke_insurance%22%3Afalse%2C%22gun_cap%22%3A120%7D&schedule=%5B%5B1%2C%22tier1%22%2C3%5D%2C%5B3%2C%22tier3%22%2C200%5D%5D&defense_first=false"
+    },
+    {
+      "id": "r1_t1_4_r3_t3",
+      "spec": "bot_research.bots.counters.public_schedule:@make?model_spec=%22bot_research.bots.counters.snapshots.lead_seven_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22attack_mode%22%3A%22robust%22%2C%22poke_insurance%22%3Afalse%2C%22gun_cap%22%3A120%7D&schedule=%5B%5B1%2C%22tier1%22%2C4%5D%2C%5B3%2C%22tier3%22%2C200%5D%5D&defense_first=false"
+    },
+    {
+      "id": "r1_t2_r3_t3",
+      "spec": "bot_research.bots.counters.public_schedule:@make?model_spec=%22bot_research.bots.counters.snapshots.lead_seven_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22attack_mode%22%3A%22robust%22%2C%22poke_insurance%22%3Afalse%2C%22gun_cap%22%3A120%7D&schedule=%5B%5B1%2C%22tier2%22%2C1%5D%2C%5B3%2C%22tier3%22%2C200%5D%5D&defense_first=false"
+    },
+    {
+      "id": "r1_mixed_r3_t3",
+      "spec": "bot_research.bots.counters.public_schedule:@make?model_spec=%22bot_research.bots.counters.snapshots.lead_seven_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22attack_mode%22%3A%22robust%22%2C%22poke_insurance%22%3Afalse%2C%22gun_cap%22%3A120%7D&schedule=%5B%5B1%2C%22tier1%22%2C4%5D%2C%5B1%2C%22tier2%22%2C1%5D%2C%5B3%2C%22tier3%22%2C200%5D%5D&defense_first=false"
+    },
+    {
+      "id": "defense_first_r1_t1_r3_t3",
+      "spec": "bot_research.bots.counters.public_schedule:@make?model_spec=%22bot_research.bots.counters.snapshots.lead_seven_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22attack_mode%22%3A%22robust%22%2C%22poke_insurance%22%3Afalse%2C%22gun_cap%22%3A120%7D&schedule=%5B%5B1%2C%22tier1%22%2C1%5D%2C%5B3%2C%22tier3%22%2C200%5D%5D&defense_first=true"
+    },
+    {
+      "id": "r1_t1_r3_t3_r5_t4",
+      "spec": "bot_research.bots.counters.public_schedule:@make?model_spec=%22bot_research.bots.counters.snapshots.lead_seven_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22attack_mode%22%3A%22robust%22%2C%22poke_insurance%22%3Afalse%2C%22gun_cap%22%3A120%7D&schedule=%5B%5B1%2C%22tier1%22%2C1%5D%2C%5B3%2C%22tier3%22%2C1%5D%2C%5B5%2C%22tier4%22%2C200%5D%5D&defense_first=false"
+    },
+    {
+      "id": "r1_t1_r4_t3",
+      "spec": "bot_research.bots.counters.public_schedule:@make?model_spec=%22bot_research.bots.counters.snapshots.lead_seven_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22attack_mode%22%3A%22robust%22%2C%22poke_insurance%22%3Afalse%2C%22gun_cap%22%3A120%7D&schedule=%5B%5B1%2C%22tier1%22%2C1%5D%2C%5B4%2C%22tier3%22%2C200%5D%5D&defense_first=false"
+    },
+    {
+      "id": "r1_t1_r5_t4",
+      "spec": "bot_research.bots.counters.public_schedule:@make?model_spec=%22bot_research.bots.counters.snapshots.lead_seven_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22attack_mode%22%3A%22robust%22%2C%22poke_insurance%22%3Afalse%2C%22gun_cap%22%3A120%7D&schedule=%5B%5B1%2C%22tier1%22%2C1%5D%2C%5B5%2C%22tier4%22%2C200%5D%5D&defense_first=false"
+    },
+    {
+      "id": "r1_t1_r3_t3_r7_t5",
+      "spec": "bot_research.bots.counters.public_schedule:@make?model_spec=%22bot_research.bots.counters.snapshots.lead_seven_001%3A%40make%22&model_parameters=%7B%22big_threat%22%3A100%2C%22attack_mode%22%3A%22robust%22%2C%22poke_insurance%22%3Afalse%2C%22gun_cap%22%3A120%7D&schedule=%5B%5B1%2C%22tier1%22%2C1%5D%2C%5B3%2C%22tier3%22%2C1%5D%2C%5B7%2C%22tier5%22%2C200%5D%5D&defense_first=false"
+    }
+  ],
+  "opponents": [
+    {
+      "id": "lead_v7_robust_big100_nopoke",
+      "spec": "bot_research.bots.counters.snapshots.lead_seven_001:@make?big_threat=100&attack_mode=%22robust%22&poke_insurance=false&gun_cap=120"
+    }
+  ]
+}

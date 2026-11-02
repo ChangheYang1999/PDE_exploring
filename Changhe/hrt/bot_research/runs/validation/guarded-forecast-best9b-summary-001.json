@@ -1,0 +1,309 @@
+{
+  "attempt_counts": {
+    "valid": 12
+  },
+  "checker_sha256": "e254dd259ba7c7bace59a07bd3800987a4af0db81d5466ac6db633e31f990b48",
+  "complete_assignment_pairs": 6,
+  "expected_conditions": 12,
+  "heading": "Guard openings followed by exact public-model defense against frozen best_v9b",
+  "identical_assignment_pairs": 6,
+  "input_sha256": {
+    "bot_research/runs/validation/guarded-forecast-best9b-forecasts-001.json": "44d4627a9ddfc67d4bf71f57062254cd2b76a2c89b2f82fe74910d2a1422960a",
+    "bot_research/runs/validation/guarded-forecast-best9b-replay-001.json": "bfd46daa4bab676aa6c7e06e69a6721f12d40564989e69e5c8aeec6d6f8afa31",
+    "bot_research/runs/validation/guarded-forecast-best9b-strict-001.json": "dc5e24b572574e848ad33f4607bfc0264a901882f01ebdf8817fc0a7bddd025a"
+  },
+  "outcomes": {
+    "D": 2,
+    "W": 10
+  },
+  "primary_forecast_rounds": 600,
+  "repeat_disagreements": [],
+  "rows": [
+    {
+      "candidate": "empty",
+      "opponent": "best_v9b",
+      "results": [
+        {
+          "attacks": [],
+          "hp": [
+            800,
+            800
+          ],
+          "outcome": "D",
+          "result_path": "bot_research/runs/validation/guarded-forecast-best9b-001/results/case0000.json",
+          "rounds": 50,
+          "runtime_seconds": 26.56292553897947,
+          "side": 0
+        },
+        {
+          "attacks": [],
+          "hp": [
+            800,
+            800
+          ],
+          "outcome": "D",
+          "result_path": "bot_research/runs/validation/guarded-forecast-best9b-001/results/case0001.json",
+          "rounds": 50,
+          "runtime_seconds": 27.07962985895574,
+          "side": 1
+        }
+      ]
+    },
+    {
+      "candidate": "tier1",
+      "opponent": "best_v9b",
+      "results": [
+        {
+          "attacks": [
+            {
+              "attack_count": 1,
+              "forecast_attack_gain": 5,
+              "round": 1,
+              "selected_sequence": [
+                "tier1"
+              ]
+            }
+          ],
+          "hp": [
+            800,
+            795
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/guarded-forecast-best9b-001/results/case0002.json",
+          "rounds": 50,
+          "runtime_seconds": 26.379551535937935,
+          "side": 0
+        },
+        {
+          "attacks": [
+            {
+              "attack_count": 1,
+              "forecast_attack_gain": 5,
+              "round": 1,
+              "selected_sequence": [
+                "tier1"
+              ]
+            }
+          ],
+          "hp": [
+            800,
+            795
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/guarded-forecast-best9b-001/results/case0003.json",
+          "rounds": 50,
+          "runtime_seconds": 26.80271968105808,
+          "side": 1
+        }
+      ]
+    },
+    {
+      "candidate": "two_tier1",
+      "opponent": "best_v9b",
+      "results": [
+        {
+          "attacks": [
+            {
+              "attack_count": 2,
+              "forecast_attack_gain": 10,
+              "round": 1,
+              "selected_sequence": [
+                "tier1",
+                "tier1"
+              ]
+            }
+          ],
+          "hp": [
+            800,
+            790
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/guarded-forecast-best9b-001/results/case0004.json",
+          "rounds": 50,
+          "runtime_seconds": 19.05560911912471,
+          "side": 0
+        },
+        {
+          "attacks": [
+            {
+              "attack_count": 2,
+              "forecast_attack_gain": 10,
+              "round": 1,
+              "selected_sequence": [
+                "tier1",
+                "tier1"
+              ]
+            }
+          ],
+          "hp": [
+            800,
+            790
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/guarded-forecast-best9b-001/results/case0005.json",
+          "rounds": 50,
+          "runtime_seconds": 19.77577961841598,
+          "side": 1
+        }
+      ]
+    },
+    {
+      "candidate": "tier2",
+      "opponent": "best_v9b",
+      "results": [
+        {
+          "attacks": [
+            {
+              "attack_count": 1,
+              "forecast_attack_gain": 12,
+              "round": 1,
+              "selected_sequence": [
+                "tier2"
+              ]
+            }
+          ],
+          "hp": [
+            800,
+            788
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/guarded-forecast-best9b-001/results/case0006.json",
+          "rounds": 50,
+          "runtime_seconds": 33.86463784566149,
+          "side": 0
+        },
+        {
+          "attacks": [
+            {
+              "attack_count": 1,
+              "forecast_attack_gain": 12,
+              "round": 1,
+              "selected_sequence": [
+                "tier2"
+              ]
+            }
+          ],
+          "hp": [
+            800,
+            788
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/guarded-forecast-best9b-001/results/case0007.json",
+          "rounds": 50,
+          "runtime_seconds": 28.372140808030963,
+          "side": 1
+        }
+      ]
+    },
+    {
+      "candidate": "four_tier1",
+      "opponent": "best_v9b",
+      "results": [
+        {
+          "attacks": [
+            {
+              "attack_count": 4,
+              "forecast_attack_gain": 20,
+              "round": 1,
+              "selected_sequence": [
+                "tier1",
+                "tier1",
+                "tier1",
+                "tier1"
+              ]
+            }
+          ],
+          "hp": [
+            800,
+            780
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/guarded-forecast-best9b-001/results/case0008.json",
+          "rounds": 50,
+          "runtime_seconds": 26.60833559324965,
+          "side": 0
+        },
+        {
+          "attacks": [
+            {
+              "attack_count": 4,
+              "forecast_attack_gain": 20,
+              "round": 1,
+              "selected_sequence": [
+                "tier1",
+                "tier1",
+                "tier1",
+                "tier1"
+              ]
+            }
+          ],
+          "hp": [
+            800,
+            780
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/guarded-forecast-best9b-001/results/case0009.json",
+          "rounds": 50,
+          "runtime_seconds": 26.34259509202093,
+          "side": 1
+        }
+      ]
+    },
+    {
+      "candidate": "two_tier1_tier2",
+      "opponent": "best_v9b",
+      "results": [
+        {
+          "attacks": [
+            {
+              "attack_count": 3,
+              "forecast_attack_gain": 22,
+              "round": 1,
+              "selected_sequence": [
+                "tier1",
+                "tier1",
+                "tier2"
+              ]
+            }
+          ],
+          "hp": [
+            800,
+            778
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/guarded-forecast-best9b-001/results/case0010.json",
+          "rounds": 50,
+          "runtime_seconds": 23.503006014972925,
+          "side": 0
+        },
+        {
+          "attacks": [
+            {
+              "attack_count": 3,
+              "forecast_attack_gain": 22,
+              "round": 1,
+              "selected_sequence": [
+                "tier1",
+                "tier1",
+                "tier2"
+              ]
+            }
+          ],
+          "hp": [
+            800,
+            778
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/guarded-forecast-best9b-001/results/case0011.json",
+          "rounds": 50,
+          "runtime_seconds": 23.17195780389011,
+          "side": 1
+        }
+      ]
+    }
+  ],
+  "scope": "Exact stated development conditions. Both assignments are controls, not independent random samples; known-prefix scenarios are excluded from standard-start strength totals.",
+  "time_utc": "2026-10-31T11:06:56.941144+00:00",
+  "unresolved_conditions": 0,
+  "valid_conditions": 12
+}

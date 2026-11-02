@@ -1,0 +1,1 @@
+bot_research.bots.economy.frozen.v29.econ29:@make?free_fallback="zero"&foreign_attack_from=11&doom="next"&fac_cap=400&sat_reach=true&replan=true&foreign_sat_from=11&replan_gain=400&replan_base=true&own_in_layout="replan"&own_min_s=1200&min_cap=3000&active_cap=4000&fill=true&fill_reserve=true&fill_threat=true&attack_from=3

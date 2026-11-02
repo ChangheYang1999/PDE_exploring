@@ -1,0 +1,120 @@
+{
+  "attempt_counts": {
+    "valid": 6
+  },
+  "checker_sha256": "d080d05b9a4754fe5523ec3c8846aa0479a3aa74e4e074a024b588c032134e9a",
+  "complete_assignment_pairs": 3,
+  "expected_conditions": 6,
+  "heading": "Early-wall attack ablation",
+  "identical_assignment_pairs": 3,
+  "input_sha256": {
+    "bot_research/runs/validation/early-wall-attack-tier3-01-001-replay.json": "f4123e285f708d2100fa367b675d9196b26703f677c42185606ffb3ded160062",
+    "bot_research/runs/validation/early-wall-attack-tier3-01-001-strict.json": "7ce36742022046cf9dec8f6f27864aa1c5dfd812dfaee61ecce7d783c4558354",
+    "bot_research/runs/validation/early-wall-attack-tier3-01-001/replays/case0000.jsonl": "dfce45441baea3789702c2de058603fd037119de3be076b68d1928e2ecf3d1b0",
+    "bot_research/runs/validation/early-wall-attack-tier3-01-001/replays/case0001.jsonl": "146a7da06de0503f10edb67d53d75d3a7ea5e0b75b9dbb1b68f1424fb08e6b5b",
+    "bot_research/runs/validation/early-wall-attack-tier3-01-001/replays/case0002.jsonl": "066bcf549bf5978f2381d1bb3a75808bd3f991185f3cd9c3b4d040bc5dbb8c73",
+    "bot_research/runs/validation/early-wall-attack-tier3-01-001/replays/case0003.jsonl": "aea21c09a853aadef5aaf09b52799ff0b7fbe0d22bf214f44fd9a02ce926d11d",
+    "bot_research/runs/validation/early-wall-attack-tier3-01-001/replays/case0004.jsonl": "193459c758796ca9d6f23813c6ae95b04cb0d8b52b79408bdf30b46039dc91b1",
+    "bot_research/runs/validation/early-wall-attack-tier3-01-001/replays/case0005.jsonl": "e7b4d76f0e35924983312fec70703a247b3cab9a43580b1a5e577186f1a11950",
+    "bot_research/runs/validation/early-wall-attack-tier3-01-001/results/case0000.json": "cac813a4f339c5031930e8839a17703a82f9d2841bc615a2c53921cb5bc6592c",
+    "bot_research/runs/validation/early-wall-attack-tier3-01-001/results/case0001.json": "1d671a283e2a6faa37ed6888496207edaedb19ee164ab152b31517d575a2678e",
+    "bot_research/runs/validation/early-wall-attack-tier3-01-001/results/case0002.json": "3106e3dcb379b67759901d5db7365f6da643c46dd03335833a9bbcc2f7810838",
+    "bot_research/runs/validation/early-wall-attack-tier3-01-001/results/case0003.json": "5f2b0eceae660eca0d24fda8c70e7cc119d804b63ba8d46df2f579920c74f4da",
+    "bot_research/runs/validation/early-wall-attack-tier3-01-001/results/case0004.json": "8e79075fca9775bbf6b489a1924f00f1e380c577368030641adebda14deae85e",
+    "bot_research/runs/validation/early-wall-attack-tier3-01-001/results/case0005.json": "f71cc2dcb1e10fd21b1e861cf6a76d6f2c0e54ab463563500700ce935af1948b"
+  },
+  "outcomes": {
+    "L": 6
+  },
+  "repeat_disagreements": [],
+  "rows": [
+    {
+      "candidate": "tier3",
+      "opponent": "lead8",
+      "results": [
+        {
+          "hp": [
+            520,
+            684
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/early-wall-attack-tier3-01-001/results/case0000.json",
+          "rounds": 50,
+          "runtime_seconds": 14.769822431262583,
+          "side": 0
+        },
+        {
+          "hp": [
+            520,
+            684
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/early-wall-attack-tier3-01-001/results/case0001.json",
+          "rounds": 50,
+          "runtime_seconds": 15.724017424043268,
+          "side": 1
+        }
+      ]
+    },
+    {
+      "candidate": "tier3",
+      "opponent": "delegated_adaptive",
+      "results": [
+        {
+          "hp": [
+            740,
+            774
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/early-wall-attack-tier3-01-001/results/case0002.json",
+          "rounds": 50,
+          "runtime_seconds": 17.375827515032142,
+          "side": 0
+        },
+        {
+          "hp": [
+            740,
+            774
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/early-wall-attack-tier3-01-001/results/case0003.json",
+          "rounds": 50,
+          "runtime_seconds": 14.712881041690707,
+          "side": 1
+        }
+      ]
+    },
+    {
+      "candidate": "tier3",
+      "opponent": "delegated_early",
+      "results": [
+        {
+          "hp": [
+            740,
+            774
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/early-wall-attack-tier3-01-001/results/case0004.json",
+          "rounds": 50,
+          "runtime_seconds": 14.237518968060613,
+          "side": 0
+        },
+        {
+          "hp": [
+            740,
+            774
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/early-wall-attack-tier3-01-001/results/case0005.json",
+          "rounds": 50,
+          "runtime_seconds": 13.879140541888773,
+          "side": 1
+        }
+      ]
+    }
+  ],
+  "scope": "Exact stated development conditions. Assignment pairs and identical reruns are not independent samples. Timeouts are computational failures, never game losses.",
+  "time_utc": "2026-10-31T18:49:23.949679+00:00",
+  "unresolved_conditions": 0,
+  "valid_conditions": 6
+}

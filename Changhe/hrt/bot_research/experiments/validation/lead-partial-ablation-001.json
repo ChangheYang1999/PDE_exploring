@@ -1,0 +1,40 @@
+{
+  "registered_utc": "2026-10-31T05:57:43.835371+00:00",
+  "purpose": "Whole-policy ablation following the round-eight component diagnosis. Enable the existing big_partial flag in frozen lead7; compare with unchanged default on six specified opponents, both seats,24 games. Local845-gold defense stops the recorded six-tier4 wave, but early partial insurance may harm growth. Existing current-policy matchups are explicit reproducibility controls. Development only; no reserved conditions.",
+  "candidates": [
+    {
+      "id": "lead7_current",
+      "spec": "bot_research.bots.counters.snapshots.lead_seven_001:@make?big_threat=100&attack_mode=%22robust%22&poke_insurance=false&gun_cap=120"
+    },
+    {
+      "id": "lead7_partial",
+      "spec": "bot_research.bots.counters.snapshots.lead_seven_001:@make?big_threat=100&attack_mode=%22robust%22&poke_insurance=false&gun_cap=120&big_partial=true"
+    }
+  ],
+  "opponents": [
+    {
+      "id": "guarded_tier4_r5",
+      "spec": "bot_research.bots.counters.guarded_schedule:@make?schedule=%5B%5B1%2C%22tier1%22%2C1%5D%2C%5B5%2C%22tier4%22%2C200%5D%5D"
+    },
+    {
+      "id": "guarded_tier4_r8",
+      "spec": "bot_research.bots.counters.guarded_schedule:@make?schedule=%5B%5B1%2C%22tier1%22%2C1%5D%2C%5B8%2C%22tier4%22%2C200%5D%5D"
+    },
+    {
+      "id": "eco6_t5",
+      "spec": "bot_research.bots.counters.pool:@archetype?name=eco6_t5"
+    },
+    {
+      "id": "cheap_guard_econ13",
+      "spec": "bot_research.bots.counters.opening_response:@make?opening=%22guard_poke5%22&fallback=%22economy13%22"
+    },
+    {
+      "id": "economy13",
+      "spec": "bot_research.bots.economy.frozen.v13.econ13:@make"
+    },
+    {
+      "id": "fortress21",
+      "spec": "bot_research.bots.defense.frozen.v21.fortress:@make"
+    }
+  ]
+}

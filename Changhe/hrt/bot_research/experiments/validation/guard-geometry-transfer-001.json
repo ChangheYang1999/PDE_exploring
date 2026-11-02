@@ -1,0 +1,55 @@
+{
+  "candidates": [
+    {
+      "id": "corner_empty",
+      "spec": "bot_research.bots.counters.guard_geometry:@make?roster=%5B%5D"
+    },
+    {
+      "id": "corner_t1",
+      "spec": "bot_research.bots.counters.guard_geometry:@make?roster=%5B%22tier1%22%5D"
+    },
+    {
+      "id": "corner_2t1",
+      "spec": "bot_research.bots.counters.guard_geometry:@make?roster=%5B%22tier1%22%2C+%22tier1%22%5D"
+    },
+    {
+      "id": "corner_t2",
+      "spec": "bot_research.bots.counters.guard_geometry:@make?roster=%5B%22tier2%22%5D"
+    },
+    {
+      "id": "corner_2t1_t2",
+      "spec": "bot_research.bots.counters.guard_geometry:@make?roster=%5B%22tier1%22%2C+%22tier1%22%2C+%22tier2%22%5D"
+    },
+    {
+      "id": "original_t1_control",
+      "spec": "bot_research.bots.counters.guard_geometry:@make?roster=%5B%22tier1%22%5D&x=3&y=1"
+    }
+  ],
+  "control_campaign": "bot_research/runs/validation/guard-roster-transfer-002",
+  "declared_utc": "2026-10-31T09:02:16.240990+00:00",
+  "hypothesis": "The same-cost corner gun blocks the third opening tier1 and improves full-game results without an extra factory sacrifice.",
+  "opponents": [
+    {
+      "id": "lead15_V4",
+      "spec": "bot_research.bots.counters.snapshots.lead_fifteen_001:@make?big_threat=100&gun_cap=120&poke_until=3&poke_reactive=%22turret%22&big_partial=true&r1_poke=3&attack_mode=%22adaptive%22&fortress_n=4&immune_attack=true"
+    },
+    {
+      "id": "economy17",
+      "spec": "bot_research.bots.economy.frozen.v17.econ17:@make?free_fallback=%22zero%22&foreign_attack_from=11"
+    },
+    {
+      "id": "fortress24",
+      "spec": "bot_research.bots.defense.frozen.v24.fortress:@make"
+    }
+  ],
+  "purpose": "Five opening rosters with a corner gun, plus the original-coordinate one-tier1 control, against V4, economy17 and fortress24 in both seats: 36 development games.",
+  "scope": "Geometry selected from a source argument and original-engine opening enumeration. All five prior rosters retained; no held-out conditions. Fortress24 has a three-second internal cutoff.",
+  "source_sha256": {
+    "bot_research/bots/counters/guard_geometry.py": "c52db764f53b62a4f9086bad59ffc38c8c12bbf60560efca3f3914d9af626d24",
+    "bot_research/experiments/validation/check_guard_geometry.py": "d10fcc9dfc346a2aa07a9e80bf0885f48687ed19d94c06f12dd520c9292f528b",
+    "bot_research/experiments/validation/prepare_guard_geometry.py": "a8ea6c6fc5ca627af3dfe0504c28f2d42eaf5cbbe349a0c9d8d48fc5a62b11de",
+    "bot_research/experiments/validation/search_guard_geometry.py": "c2d83afb2faee54cdc61d4f838d1f8eef3dda44656ab5b824081881e22fc58e3",
+    "bot_research/runs/validation/guard-geometry-component-001.json": "ec8d8c7f2970596b6cf762b9ec5f14c830d3987cdb3e56dacdc59e3a136c90f5",
+    "bot_research/runs/validation/guard-geometry-rosters-001.json": "3653466c27bc281eda92091b5147f9f4ed6ede2239783222b320c6ff2c9e23a9"
+  }
+}

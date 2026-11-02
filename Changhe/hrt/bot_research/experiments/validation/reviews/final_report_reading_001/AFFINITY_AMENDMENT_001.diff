@@ -1,0 +1,13 @@
+--- bot_research/experiments/validation/reviews/final_report_reading_001/seal_inputs.py
++++ bot_research/experiments/validation/reviews/final_report_reading_001/seal_inputs_core30.py
+@@ -40,8 +40,8 @@
+ 
+ 
+ def main() -> None:
+-    if os.sched_getaffinity(0) != {28} or os.getpriority(os.PRIO_PROCESS, 0) != 19:
+-        raise RuntimeError("Expected one permitted core 28 at nice 19")
++    if os.sched_getaffinity(0) != {30} or os.getpriority(os.PRIO_PROCESS, 0) != 19:
++        raise RuntimeError("Expected one permitted core 30 at nice 19")
+     if not sys.dont_write_bytecode or os.environ.get("PYTHONDONTWRITEBYTECODE") != "1":
+         raise RuntimeError("Bytecode must remain disabled")
+     if os.environ.get("TMPDIR") != str(ROOT / "bot_research/tmp"):

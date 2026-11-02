@@ -1,0 +1,88 @@
+{
+  "attempt_counts": {
+    "valid": 4
+  },
+  "checker_sha256": "d080d05b9a4754fe5523ec3c8846aa0479a3aa74e4e074a024b588c032134e9a",
+  "complete_assignment_pairs": 2,
+  "expected_conditions": 4,
+  "heading": "Screened guard transfer",
+  "identical_assignment_pairs": 2,
+  "input_sha256": {
+    "bot_research/runs/validation/screened-continuation-repair-01-001-replay.json": "2da91f8fd5553673645d9423400fb1bbadcaa2e175aedada67d0a12b06410365",
+    "bot_research/runs/validation/screened-continuation-repair-01-001-strict.json": "38ecd74a50d62166e78d72c3bcbce9e9f479e66b1f9405813f91e5120587515b",
+    "bot_research/runs/validation/screened-continuation-repair-01-001/replays/case0000.jsonl": "7d791d04f74dfe727bfde786a2a2a0aa42db768e54052bd92e1a84007bbfb3a6",
+    "bot_research/runs/validation/screened-continuation-repair-01-001/replays/case0001.jsonl": "4f5ec0a0a8e1a59cacac92b205c34ac8bd705f1ad5cb2aee14ec8e1524947452",
+    "bot_research/runs/validation/screened-continuation-repair-01-001/replays/case0002.jsonl": "dd4468664d4f69e3ad3c19d4e72c229ccc992d29e536d2e26b61b4b1ca4f84b1",
+    "bot_research/runs/validation/screened-continuation-repair-01-001/replays/case0003.jsonl": "6304e19ced5e70bb373f8e7e5f08241a3a80c9a1159b1d0d9a7723ef5a3a45cd",
+    "bot_research/runs/validation/screened-continuation-repair-01-001/results/case0000.json": "e846e8d96c59943ab76966329f598eaee3d88c0a45d8ac061d048b3edc024bc5",
+    "bot_research/runs/validation/screened-continuation-repair-01-001/results/case0001.json": "d55989ffe997b0bc60976ad85cd0cb6fb7f41f895e9217351b1d5fdfa6b5846e",
+    "bot_research/runs/validation/screened-continuation-repair-01-001/results/case0002.json": "64bea22d388d1b1e253a4b978095b49396409a51a07f3895e1537e4ddbf9c860",
+    "bot_research/runs/validation/screened-continuation-repair-01-001/results/case0003.json": "68a85749314e1b3f73974e8f0c8a37726236e50e88097dece96cdd961c8dddd7"
+  },
+  "outcomes": {
+    "L": 4
+  },
+  "repeat_disagreements": [],
+  "rows": [
+    {
+      "candidate": "v29_g1",
+      "opponent": "AS1C",
+      "results": [
+        {
+          "hp": [
+            -40,
+            774
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/screened-continuation-repair-01-001/results/case0000.json",
+          "rounds": 11,
+          "runtime_seconds": 1.8979632831178606,
+          "side": 0
+        },
+        {
+          "hp": [
+            -40,
+            774
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/screened-continuation-repair-01-001/results/case0001.json",
+          "rounds": 11,
+          "runtime_seconds": 1.8980311173945665,
+          "side": 1
+        }
+      ]
+    },
+    {
+      "candidate": "v29_g1",
+      "opponent": "best_v9e",
+      "results": [
+        {
+          "hp": [
+            240,
+            774
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/screened-continuation-repair-01-001/results/case0002.json",
+          "rounds": 50,
+          "runtime_seconds": 42.73457360686734,
+          "side": 0
+        },
+        {
+          "hp": [
+            240,
+            774
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/screened-continuation-repair-01-001/results/case0003.json",
+          "rounds": 50,
+          "runtime_seconds": 42.8700733887963,
+          "side": 1
+        }
+      ]
+    }
+  ],
+  "scope": "Exact stated development conditions. Assignment pairs and identical reruns are not independent samples. Timeouts are computational failures, never game losses.",
+  "time_utc": "2026-10-31T20:36:17.116123+00:00",
+  "unresolved_conditions": 0,
+  "valid_conditions": 4
+}

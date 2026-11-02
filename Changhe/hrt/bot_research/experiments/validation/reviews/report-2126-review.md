@@ -1,0 +1,13 @@
+# Report review after the new counter controls
+
+Recorded 2026-10-31T21:26:01.771537+00:00. Reviewed snapshot `report-snapshot-2126.md`, SHA256 `43f90ab6d8d77815ff5975fb590cdceaf80fbee5238b34136d9fa1cc49e72f99`. This is a source-and-evidence review; no new games or policy calls were made. The report remains a changing draft.
+
+1. The early-wall known-failure bullet says guard00 has registered walls in round1 or2 and wins770:740. The actual winning guard00 witness has wall_round1. Protocol154 now measures the explicit round2 alternative P losing740:800 to G and770:800 to B/N; protocol155 restores the B/N wins only after reserving two round3 factories. State round1 for original guard00, and describe the delayed/reserved variant separately if included. Evidence: `analysis/delayed_wall_counter/RESULTS.md`, `analysis/reserved_wall_counter/PQ_CONTROLS.md`.
+
+2. The sampled-roster bullet blends two denominators: eighteen games cover three orders, three continuations and two seats. Only the six games with the selected screened order have four losses and two draws. Write that all eighteen compare the three orders, and that the screened order draws in its two Fortress38 games and loses in its four other-continuation games. The twelve alternative-order games lose. Check `analysis/screened_roster_continuation/RESULTS.md` and its full-game receipt when editing.
+
+3. The runtime discussion omits the now-completed high-factory reproduction. The frozen final candidate spends up to6.717 CPU seconds and6.771 wall seconds on selected retained F44-cap1200 histories. Its round50 sampled-leak component alone takes6.348 CPU seconds while returning0 on an already immune native map. This is not solely construction of the long roster list (that measured about0.027s). Protocol151's worker-only shortcut and152's unpaired check are not installed. Cite `analysis/visible_gold_runtime/RESULTS.md` and `analysis/immune_shortcut_followup/RESULTS.md`, with the selected-history and measurement conditions.
+
+4. A new concrete post-selection failure can be added: Q beats frozen B and AS1C N770:740 at round50 in both assignments. All ten Q target games passed replay and fresh-decision checks. This does not reverse the lead's final selection rule or alter terminal D; it strengthens the counterexample set. Q is a deliberate development counter, not held-out evidence.
+
+The report's existing distinction between engine determinism and deadline-sensitive opponent behavior is appropriate. The new public selectors have conditional source proofs, and their finite certificates must not be presented as general opponent identification or unrestricted equilibria.

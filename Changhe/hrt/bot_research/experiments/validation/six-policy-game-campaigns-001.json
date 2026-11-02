@@ -1,0 +1,274 @@
+{
+  "campaigns": [
+    {
+      "a": "I",
+      "b": "B",
+      "expected": 2,
+      "name": "six-policy-game-00-001"
+    },
+    {
+      "a": "I",
+      "b": "C",
+      "expected": 2,
+      "name": "six-policy-game-01-001"
+    },
+    {
+      "a": "I",
+      "b": "D",
+      "expected": 2,
+      "name": "six-policy-game-02-001"
+    },
+    {
+      "a": "I",
+      "b": "G",
+      "expected": 2,
+      "name": "six-policy-game-03-001"
+    },
+    {
+      "a": "I",
+      "b": "I",
+      "expected": 2,
+      "name": "six-policy-game-04-001"
+    }
+  ],
+  "declared_utc": "2026-10-31T19:03:41.612311+00:00",
+  "model_difference_only": true,
+  "new_games": 10,
+  "policies": {
+    "B": {
+      "id": "best_v9e",
+      "spec": "bot_research.experiments.lead.frozen.best_v9e:@make"
+    },
+    "C": {
+      "id": "clone_r3_tier2_df0",
+      "spec": "bot_research.bots.counters.stateful_public:@timing?model_spec=%22bot_research.bots.counters.delegated_defense%3A%40make%22&model_parameters=%7B%22delegate%22%3A%22fortress38%22%7D&attack_round=3&tier=%22tier2%22&defense_first=false&attack_share=1&count_cap=200"
+    },
+    "D": {
+      "id": "route_adaptive",
+      "spec": "bot_research.bots.counters.delegated_defense:@make?delegate=%22fortress38%22&mode=%22adaptive%22"
+    },
+    "G": {
+      "id": "early_wall_guard00",
+      "spec": "bot_research.bots.counters.early_wall_guard:@make?witness=%22guard00%22"
+    },
+    "H": {
+      "id": "hp_lead8",
+      "spec": "bot_research.bots.counters.hp_handoff:@make?layout=%22empty%22&growth_rounds=6&bait=%5B%5D&bait_round=2&tier=%22tier5%22&factory_cap=2000&purchase_cap=1000&replan_iters=5000&deadline=12&lead_from=8"
+    },
+    "I": {
+      "id": "hp_model_r3_tier2",
+      "spec": "bot_research.bots.counters.stateful_public:@timing?model_spec=%22bot_research.bots.counters.hp_handoff%3A%40make%22&model_parameters=%7B%22layout%22%3A%22empty%22%2C%22growth_rounds%22%3A6%2C%22bait%22%3A%5B%5D%2C%22bait_round%22%3A2%2C%22tier%22%3A%22tier5%22%2C%22factory_cap%22%3A2000%2C%22purchase_cap%22%3A1000%2C%22replan_iters%22%3A5000%2C%22deadline%22%3A12%2C%22lead_from%22%3A8%7D&attack_round=3&tier=%22tier2%22&defense_first=false&attack_share=1&count_cap=200"
+    }
+  },
+  "receipt_sha256": {
+    "bot_research/experiments/validation/analysis/extended_counter_game/verification/full_games.json": "314b229b256267267a7508b0d2774fe158f56ac628cb6f0cca84f13eace8df5a",
+    "bot_research/runs/validation/hp-handoff-forecaster-00-001-data.json": "bc2a4e713f7f7d62746c514a6cec564d3e53074c9ae42a3cc4d0bf28ea2e566c",
+    "bot_research/runs/validation/hp-handoff-forecaster-00-001-fresh.json": "ce4c8b1651b4d1488aef65834c79272ff32f3b9d6fa3f91d291aa119ddd34376",
+    "bot_research/runs/validation/hp-handoff-forecaster-00-001-predictions.json": "33fb42c49b38b332bab787d3f965301f8ed66cf8a8b4569a52bca67c71cd0022",
+    "bot_research/runs/validation/hp-handoff-forecaster-00-001-replay.json": "e4115d3081f05dacdc4774e5a3470d1bbdd4bea25d25201bb234a8e1451d4ccc",
+    "bot_research/runs/validation/hp-handoff-forecaster-00-001-strict.json": "835b1788953e62269327a0f4a99bf0f12b5b7cf2c08a15df2203e6b065ea5dfd"
+  },
+  "receipts": {
+    "five": "bot_research/experiments/validation/analysis/extended_counter_game/verification/full_games.json",
+    "ih_data": "bot_research/runs/validation/hp-handoff-forecaster-00-001-data.json",
+    "ih_fresh": "bot_research/runs/validation/hp-handoff-forecaster-00-001-fresh.json",
+    "ih_predictions": "bot_research/runs/validation/hp-handoff-forecaster-00-001-predictions.json",
+    "ih_replay": "bot_research/runs/validation/hp-handoff-forecaster-00-001-replay.json",
+    "ih_strict": "bot_research/runs/validation/hp-handoff-forecaster-00-001-strict.json"
+  },
+  "reused": [
+    {
+      "a": "C",
+      "b": "B",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/latest-counter-game-00-001/results/case0000.json"
+    },
+    {
+      "a": "C",
+      "b": "B",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/latest-counter-game-00-001/results/case0001.json"
+    },
+    {
+      "a": "B",
+      "b": "B",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/latest-counter-game-01-001/results/case0000.json"
+    },
+    {
+      "a": "B",
+      "b": "B",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/latest-counter-game-01-001/results/case0001.json"
+    },
+    {
+      "a": "C",
+      "b": "C",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/latest-counter-game-02-001/results/case0000.json"
+    },
+    {
+      "a": "C",
+      "b": "C",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/latest-counter-game-02-001/results/case0001.json"
+    },
+    {
+      "a": "D",
+      "b": "D",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/latest-counter-game-03-001/results/case0000.json"
+    },
+    {
+      "a": "D",
+      "b": "D",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/latest-counter-game-03-001/results/case0001.json"
+    },
+    {
+      "a": "C",
+      "b": "D",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/delegated-forecaster-fortress38-00-002/results/case0000.json"
+    },
+    {
+      "a": "C",
+      "b": "D",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/delegated-forecaster-fortress38-00-002/results/case0001.json"
+    },
+    {
+      "a": "B",
+      "b": "D",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/recent-transfer-04-001/results/case0000.json"
+    },
+    {
+      "a": "B",
+      "b": "D",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/recent-transfer-04-001/results/case0001.json"
+    },
+    {
+      "a": "G",
+      "b": "B",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/early-wall-transfer-00-001/results/case0004.json"
+    },
+    {
+      "a": "G",
+      "b": "B",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/early-wall-transfer-00-001/results/case0005.json"
+    },
+    {
+      "a": "G",
+      "b": "D",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/early-wall-transfer-06-001/results/case0010.json"
+    },
+    {
+      "a": "G",
+      "b": "D",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/early-wall-transfer-06-001/results/case0011.json"
+    },
+    {
+      "a": "G",
+      "b": "H",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/early-wall-transfer-00-001/results/case0010.json"
+    },
+    {
+      "a": "G",
+      "b": "H",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/early-wall-transfer-00-001/results/case0011.json"
+    },
+    {
+      "a": "H",
+      "b": "D",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/delegated-transfer-fortress38-00-001/results/case0011.json"
+    },
+    {
+      "a": "H",
+      "b": "D",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/delegated-transfer-fortress38-00-001/results/case0010.json"
+    },
+    {
+      "a": "C",
+      "b": "G",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/extended-counter-game-00-001/results/case0000.json"
+    },
+    {
+      "a": "C",
+      "b": "G",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/extended-counter-game-00-001/results/case0001.json"
+    },
+    {
+      "a": "B",
+      "b": "H",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/extended-counter-game-01-001/results/case0000.json"
+    },
+    {
+      "a": "B",
+      "b": "H",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/extended-counter-game-01-001/results/case0001.json"
+    },
+    {
+      "a": "C",
+      "b": "H",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/extended-counter-game-02-001/results/case0000.json"
+    },
+    {
+      "a": "C",
+      "b": "H",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/extended-counter-game-02-001/results/case0001.json"
+    },
+    {
+      "a": "G",
+      "b": "G",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/extended-counter-game-03-001/results/case0000.json"
+    },
+    {
+      "a": "G",
+      "b": "G",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/extended-counter-game-03-001/results/case0001.json"
+    },
+    {
+      "a": "H",
+      "b": "H",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/extended-counter-game-04-001/results/case0000.json"
+    },
+    {
+      "a": "H",
+      "b": "H",
+      "receipt": "five",
+      "result": "bot_research/runs/validation/extended-counter-game-04-001/results/case0001.json"
+    },
+    {
+      "a": "I",
+      "b": "H",
+      "receipt": "ih",
+      "result": "bot_research/runs/validation/hp-handoff-forecaster-00-001/results/case0000.json"
+    },
+    {
+      "a": "I",
+      "b": "H",
+      "receipt": "ih",
+      "result": "bot_research/runs/validation/hp-handoff-forecaster-00-001/results/case0001.json"
+    }
+  ],
+  "reused_games": 32
+}

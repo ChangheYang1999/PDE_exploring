@@ -1,0 +1,55 @@
+{
+  "purpose": "Development test of delayed departures from known policies, comparing identification plus fallback with the same direct fallback and an extended identifier. Each opponent is deterministic; both assignments are separate conditions, not independent samples.",
+  "candidates": [
+    {
+      "id": "fallback_fortress13",
+      "spec": "bot_research.bots.counters.falsification_fallback:@make?fallback=fortress13&opening=factories&saturate_round=12"
+    },
+    {
+      "id": "direct_fortress13",
+      "spec": "bot_research.bots.defense.frozen.v13.fortress:@make"
+    },
+    {
+      "id": "frontier_identifier",
+      "spec": "bot_research.bots.counters.frontier_identifier:@make?opening=factories&saturate_round=12"
+    }
+  ],
+  "opponents": [
+    {
+      "id": "economy_switch3_rush_t3",
+      "spec": "bot_research.bots.counters.catalogue_switch:@make?prefix=economy&after=archetype:rush_t3&switch_round=3&period=0"
+    },
+    {
+      "id": "economy_switch7_eco6_t5",
+      "spec": "bot_research.bots.counters.catalogue_switch:@make?prefix=economy&after=archetype:eco6_t5&switch_round=7&period=0"
+    },
+    {
+      "id": "economy_switch10_eco6_t5",
+      "spec": "bot_research.bots.counters.catalogue_switch:@make?prefix=economy&after=archetype:eco6_t5&switch_round=10&period=0"
+    },
+    {
+      "id": "fortress_switch3_rush_t3",
+      "spec": "bot_research.bots.counters.catalogue_switch:@make?prefix=fortress&after=archetype:rush_t3&switch_round=3&period=0"
+    },
+    {
+      "id": "fortress_switch7_eco6_t5",
+      "spec": "bot_research.bots.counters.catalogue_switch:@make?prefix=fortress&after=archetype:eco6_t5&switch_round=7&period=0"
+    },
+    {
+      "id": "fortress_switch10_eco6_t5",
+      "spec": "bot_research.bots.counters.catalogue_switch:@make?prefix=fortress&after=archetype:eco6_t5&switch_round=10&period=0"
+    },
+    {
+      "id": "lead_four_switch3_rush_t3",
+      "spec": "bot_research.bots.counters.catalogue_switch:@make?prefix=lead_four&after=archetype:rush_t3&switch_round=3&period=0"
+    },
+    {
+      "id": "lead_four_switch7_eco6_t5",
+      "spec": "bot_research.bots.counters.catalogue_switch:@make?prefix=lead_four&after=archetype:eco6_t5&switch_round=7&period=0"
+    },
+    {
+      "id": "lead_four_switch10_eco6_t5",
+      "spec": "bot_research.bots.counters.catalogue_switch:@make?prefix=lead_four&after=archetype:eco6_t5&switch_round=10&period=0"
+    }
+  ]
+}

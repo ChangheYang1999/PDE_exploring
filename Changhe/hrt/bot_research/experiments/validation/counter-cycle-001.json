@@ -1,0 +1,32 @@
+{
+  "registered_utc": "2026-10-31T05:41:26.506165+00:00",
+  "purpose": "Selected three-policy counter cycle. Fresh full matrix including self-play and both seats. Off-diagonal edges repeat earlier measured controls; this is a reproducibility and finite-game test, not held-out strength evidence.",
+  "candidates": [
+    {
+      "id": "economy13",
+      "spec": "bot_research.bots.economy.frozen.v13.econ13:@make"
+    },
+    {
+      "id": "guard_economy13",
+      "spec": "bot_research.bots.counters.opening_response:@make?opening=%22guard_poke5%22&fallback=%22economy13%22"
+    },
+    {
+      "id": "bluff_r3",
+      "spec": "bot_research.bots.counters.feature_bluff:@make?turret_round=3"
+    }
+  ],
+  "opponents": [
+    {
+      "id": "economy13",
+      "spec": "bot_research.bots.economy.frozen.v13.econ13:@make"
+    },
+    {
+      "id": "guard_economy13",
+      "spec": "bot_research.bots.counters.opening_response:@make?opening=%22guard_poke5%22&fallback=%22economy13%22"
+    },
+    {
+      "id": "bluff_r3",
+      "spec": "bot_research.bots.counters.feature_bluff:@make?turret_round=3"
+    }
+  ]
+}

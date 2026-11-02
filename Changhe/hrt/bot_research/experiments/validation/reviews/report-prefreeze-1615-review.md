@@ -1,0 +1,17 @@
+# Report review before the late freeze
+
+Reviewed 2026-10-31T16:13:20.553395+00:00. Report SHA256 `a812f7091e146a5590fc74e51dd2e0297a6c54f1c56a9cdd6bb55a661c63c868`. This is a review of the current interim draft; only the lead owns the report. The evidence-first guidance from research-storytelling was applied, particularly keeping measured observations beside their artifact and preserving the concrete game mechanisms.
+
+1. If P5TNUBM becomes the final bot, the opening scope statement must change. It currently justifies selection by being at least as good as best_v9b on every shared development pool. The reported TIMING2 data explicitly contain five settings that the revision loses and V18FT draws. Preserve that tradeoff at the beginning rather than inheriting the monotone-improvement description of best_v9e. An accurate description is selection by the stated regression gates and stronger grower performance, with the known early-strike regression.
+
+2. The most recent counter is simpler than the round-five exact-model story alone suggests. A gun1 at (10,1) and one tier4 in round4 cost290 of291 available gold in the checked opening; a public-budget defensive handoff wins755:740 against P4TNUB, P5TNUBM and best_v9e in both seats. No opponent policy clone is used. See analysis/guarded_round4_strike/RESULTS.md and analysis/guarded_round4_transfer/RESULTS.md. The result is targeted: the unchanged counter loses to both fortress versions and both economy targets. Joint wall/turret continuation repairs the fortress losses but not every target. Include this failure and its limited transfer without presenting exact forecasting as necessary.
+
+3. The claim in the lead's RUN_STATUS that every candidate loses growth6/H10 does not hold for the tested P5TNUBM. The forced growth branch in public-selector-a001 finishes target800:counter755 in both seats. The new projection campaign includes another pinned repetition of that control. Keep the historical H10 losses attributed to their actual earlier versions and parameters. Do not list the H10 family as an unqualified current failure until hd2's exact rows are checked.
+
+4. The x158 fortress table has60 rows, split12 standard and48 continuation, not10 and40. Fortress totals are0W6D6L standard and24W0D24L continuation. P5TNUBM standard draws finish785:785 with15 damage on both sides. I replayed all36 retained logs independently;24 continuation-win rows have no saved replay. Use that disclosure if citing the table. See analysis/team_fortress_report_audit/RESULTS.md.
+
+5. The known-failures bullet saying that two tier1 lose to any first-round purchase dealing more than10 HP is a statement about the first-round exchange, not the complete game. Qualify it accordingly. The current bot also opens with three tier1. Preserve the historical two-tier1 statement only under its earlier-version label.
+
+6. In the final consolidation, make section5.2's current-tense best.py assignment historical, retire pending statements about already completed pools, and update the report's status date and final SHA. Keep poolA and poolB attached only to their tested freezes. The new direct-entry preflight establishes best_v9e behavior on12 disclosed histories and358 policy rounds; it is integration evidence, not final held-out validation or proof about a later best.py revision.
+
+No claim here requires a change to the protected engine. PoolC remains unused pending the explicit freeze post.

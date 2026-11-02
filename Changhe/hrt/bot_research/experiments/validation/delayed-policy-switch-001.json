@@ -1,0 +1,71 @@
+{
+  "declared_utc": "2026-10-31T11:26:17.016609+00:00",
+  "purpose": "Targeted delayed policy-switch development test against adaptive catalogue continuation, with null-switch control.",
+  "hypothesis": "At least one delayed switch defeats AdaptiveContinuation, while the same prefix policy without switching loses.",
+  "candidates": [
+    {
+      "id": "adaptive_weight4",
+      "spec": "bot_research.bots.counters.adaptive_continuation:@make?attack_weight=4"
+    }
+  ],
+  "opponents": [
+    {
+      "id": "prefix_control",
+      "spec": "bot_research.bots.counters.delayed_policy_switch:@make?switch_round=null"
+    },
+    {
+      "id": "switch_r3_tier3",
+      "spec": "bot_research.bots.counters.delayed_policy_switch:@make?switch_round=3&tier=%22tier3%22"
+    },
+    {
+      "id": "switch_r3_tier5",
+      "spec": "bot_research.bots.counters.delayed_policy_switch:@make?switch_round=3&tier=%22tier5%22"
+    },
+    {
+      "id": "switch_r5_tier3",
+      "spec": "bot_research.bots.counters.delayed_policy_switch:@make?switch_round=5&tier=%22tier3%22"
+    },
+    {
+      "id": "switch_r5_tier5",
+      "spec": "bot_research.bots.counters.delayed_policy_switch:@make?switch_round=5&tier=%22tier5%22"
+    },
+    {
+      "id": "switch_r7_tier3",
+      "spec": "bot_research.bots.counters.delayed_policy_switch:@make?switch_round=7&tier=%22tier3%22"
+    },
+    {
+      "id": "switch_r7_tier5",
+      "spec": "bot_research.bots.counters.delayed_policy_switch:@make?switch_round=7&tier=%22tier5%22"
+    },
+    {
+      "id": "switch_r9_tier3",
+      "spec": "bot_research.bots.counters.delayed_policy_switch:@make?switch_round=9&tier=%22tier3%22"
+    },
+    {
+      "id": "switch_r9_tier5",
+      "spec": "bot_research.bots.counters.delayed_policy_switch:@make?switch_round=9&tier=%22tier5%22"
+    },
+    {
+      "id": "switch_r12_tier3",
+      "spec": "bot_research.bots.counters.delayed_policy_switch:@make?switch_round=12&tier=%22tier3%22"
+    },
+    {
+      "id": "switch_r12_tier5",
+      "spec": "bot_research.bots.counters.delayed_policy_switch:@make?switch_round=12&tier=%22tier5%22"
+    },
+    {
+      "id": "switch_r20_tier3",
+      "spec": "bot_research.bots.counters.delayed_policy_switch:@make?switch_round=20&tier=%22tier3%22"
+    },
+    {
+      "id": "switch_r20_tier5",
+      "spec": "bot_research.bots.counters.delayed_policy_switch:@make?switch_round=20&tier=%22tier5%22"
+    }
+  ],
+  "input_sha256": {
+    "bot_research/bots/counters/delayed_policy_switch.py": "569a81d4d5175eac04b36d636af1ff1de10c4b458ff8d8f74c5b641a147d8506",
+    "bot_research/experiments/validation/check_delayed_policy_switch.py": "8c1f3f76ac7160725911b98ed38d2d5b0601be528a0b9c9de0d05230bb3e4c50",
+    "bot_research/experiments/validation/analysis/delayed_policy_switch/PROOF.md": "0eba75c524f25170e8b628805feb39b7f516ad851ab7c5ef638305071df6cd58"
+  },
+  "scope": "26 standard-start games, both assignments. Development conditions, not reserved validation. Unreached switches, empty waves and unchanged signatures must remain visible."
+}

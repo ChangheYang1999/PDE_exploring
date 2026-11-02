@@ -1,0 +1,7 @@
+# development cases for g1f = g1 + fill_own (econ31), fixed 2026-10-31T20:52:08Z (hrt-w2): the two gate1 losses that motivated fill_own, two smaller timing losses, econ10 (V29's gate1 loss, not targeted) and one guard counter
+bot_research.bots.economy.timing:@make?attack_round=7&attack_frac=1.0&repeat=true
+bot_research.bots.economy.timing:@make?attack_round=7&attack_frac=0.5&repeat=true
+bot_research.bots.economy.timing:@make
+bot_research.bots.economy.timing:@make?attack_round=4&attack_frac=1.0&repeat=true
+bot_research.bots.economy.frozen.v10.econ10:@make
+bot_research.bots.counters.guard_geometry:@make?roster=["tier1"]

@@ -1,0 +1,39 @@
+{
+  "purpose": "Development extension of the policy catalogue to newer known opponents, with explicit forecast diagnostics. Timed model predictions are heuristic.",
+  "candidates": [
+    {
+      "id": "frontier_factories",
+      "spec": "bot_research.bots.counters.frontier_identifier:@make?opening=factories&saturate_round=12"
+    },
+    {
+      "id": "frontier_robust",
+      "spec": "bot_research.bots.counters.frontier_identifier:@make?opening=robust&saturate_round=12"
+    }
+  ],
+  "opponents": [
+    {
+      "id": "fortress11",
+      "spec": "bot_research.bots.defense.frozen.v11.fortress:@make"
+    },
+    {
+      "id": "fortress11_annealed",
+      "spec": "bot_research.bots.defense.frozen.v11.fortress:@make?layout=annealed25"
+    },
+    {
+      "id": "economy6",
+      "spec": "bot_research.bots.economy.frozen.v6.econ6:@make"
+    },
+    {
+      "id": "economy7",
+      "spec": "bot_research.bots.economy.frozen.v7.econ7:@make"
+    },
+    {
+      "id": "alternate3",
+      "spec": "bot_research.bots.counters.catalogue_switch:@make?prefix=economy&after=archetype:eco6_t5&switch_round=7&period=3"
+    },
+    {
+      "id": "lead_four",
+      "spec": "bot_research.bots.counters.snapshots.lead_four_001:@make"
+    }
+  ]
+}

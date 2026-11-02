@@ -1,0 +1,7 @@
+# Publisher amendment: explicit constructor defaults
+
+Recorded 2026-10-31T20:45:04.233835+00:00, after the 34 games and all their audits completed. The first publisher invocation stopped with an AssertionError in append() at the candidate-spec equality assertion. No RESULTS.md or full_games.json was created by that invocation. Its label normalizer did not insert the screened counter's default continuation. The two reused M versus B records spell continuation="fortress38" explicitly; the declared M and the other records omit it. The pinned ScreenedRosterGuarded constructor sets continuation='fortress38' and make passes its keyword arguments directly to that constructor.
+
+The version-two publisher adds this one default to normalization and explicitly checks the constructor signature and normalization fixtures. All original pins, records, outcomes, hypotheses, arithmetic checks and complete-history requirements remain. The original publisher is retained unchanged. The version-two source and this amendment receive new hashes in the amendment declaration before publication. No new match is needed to establish this literal constructor-default equivalence; the new games already regenerated both policies on every recorded observation.
+
+Verification claim: the parameter maps agree after applying the exact pinned constructor default. This is an interface-normalization correction, not permission to identify arbitrary behaviorally similar policies. Unexpected other differences still fail.

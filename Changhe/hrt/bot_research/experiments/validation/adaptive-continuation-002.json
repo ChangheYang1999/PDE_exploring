@@ -1,0 +1,53 @@
+{
+  "declared_utc": "2026-10-31T10:56:07.300225+00:00",
+  "purpose": "Test adaptive attacks with a fresh economy20 fallback after catalogue rejection, with a disabled-search control; 28 standard-start development games, both assignments.",
+  "hypothesis": "The fresh continuation improves the observed outside-catalogue losses without changing retained-model parent actions. Adaptive opening purchases may alter the success of that continuation.",
+  "scope": "Development only. Seven explicit opponents; both search states retained, no selection from later outcomes.",
+  "candidates": [
+    {
+      "id": "no_attack_economy20",
+      "spec": "bot_research.bots.counters.adaptive_continuation:@make?search_enabled=false"
+    },
+    {
+      "id": "weight4_economy20",
+      "spec": "bot_research.bots.counters.adaptive_continuation:@make?attack_weight=4"
+    }
+  ],
+  "opponents": [
+    {
+      "id": "best_v9b",
+      "spec": "bot_research.experiments.lead.frozen.best_v9b:@make"
+    },
+    {
+      "id": "economy17",
+      "spec": "bot_research.bots.economy.frozen.v17.econ17:@make?free_fallback=%22zero%22&foreign_attack_from=11"
+    },
+    {
+      "id": "economy19",
+      "spec": "bot_research.bots.economy.frozen.v19.econ19:@make?free_fallback=%22zero%22&foreign_attack_from=11&doom=%22next%22&fac_cap=400&sat_reach=true"
+    },
+    {
+      "id": "outside_fortress26",
+      "spec": "bot_research.bots.defense.frozen.v26.fortress:@make"
+    },
+    {
+      "id": "outside_guard_t1",
+      "spec": "bot_research.bots.counters.guard_geometry:@make?roster=%5B%22tier1%22%5D&x=9&y=1&parameters=%7B%22foreign_attack_from%22%3Anull%7D"
+    },
+    {
+      "id": "outside_fortress27",
+      "spec": "bot_research.bots.defense.frozen.v27.fortress:@make"
+    },
+    {
+      "id": "outside_fortress27_memory",
+      "spec": "bot_research.bots.defense.frozen.v27.fortress:@make?response_memory=true"
+    }
+  ],
+  "input_sha256": {
+    "bot_research/bots/counters/adaptive_continuation.py": "5024785fa1145a0ffda9003147bf4b764ea3206912aa3c29ab608f638dfeb634",
+    "bot_research/experiments/validation/analysis/adaptive_continuation/PROOF.md": "32b94c6f47a4cb6328cef3be4e95e5f9fd5f63423d20e27d41c5d4f9d4ac874f",
+    "bot_research/experiments/validation/check_adaptive_continuation_v2.py": "f510474629e248b32c0e75726945a85afcf3fbd7be03a102839a2d8ced84ad68"
+  },
+  "supersedes_unstarted": "bot_research/experiments/validation/adaptive-continuation-001.json",
+  "checker_correction": "Original component failed before any campaign match because opponent parameters shadowed the candidate search parameters. Policy bytes and all 28 match conditions are unchanged."
+}

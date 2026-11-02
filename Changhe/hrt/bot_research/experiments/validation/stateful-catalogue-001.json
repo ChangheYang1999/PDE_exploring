@@ -1,0 +1,46 @@
+{
+  "declared_utc": "2026-10-31T09:55:46.579861+00:00",
+  "purpose": "Test exact monotone identification of three stateful public policies and strength of timing responses, with a singleton-model control and two outside-catalogue opponents, both assignments: 30 games.",
+  "hypothesis": "A public purchase signature may identify the current candidate early enough to retain the known-model timing counter while exposing no opponent identity to the bot. Outside-catalogue fallback has no forecast guarantee.",
+  "scope": "Development only. Standard starts. No hidden state, opponent name or source identity is read by the bot. Fortress26 has a time-bounded planning component and is outside the exact catalogue.",
+  "candidates": [
+    {
+      "id": "ensemble_t3r3",
+      "spec": "bot_research.bots.counters.stateful_catalogue:@make?attack_round=3&tier=%22tier3%22"
+    },
+    {
+      "id": "singleton_best_t3r3",
+      "spec": "bot_research.bots.counters.stateful_catalogue:@make?catalogue_ids=%5B%22best_v9b%22%5D&attack_round=3&tier=%22tier3%22"
+    },
+    {
+      "id": "ensemble_t4r5",
+      "spec": "bot_research.bots.counters.stateful_catalogue:@make?attack_round=5&tier=%22tier4%22"
+    }
+  ],
+  "opponents": [
+    {
+      "id": "best_v9b",
+      "spec": "bot_research.experiments.lead.frozen.best_v9b:@make"
+    },
+    {
+      "id": "economy17",
+      "spec": "bot_research.bots.economy.frozen.v17.econ17:@make?free_fallback=%22zero%22&foreign_attack_from=11"
+    },
+    {
+      "id": "economy19",
+      "spec": "bot_research.bots.economy.frozen.v19.econ19:@make?free_fallback=%22zero%22&foreign_attack_from=11&doom=%22next%22&fac_cap=400&sat_reach=true"
+    },
+    {
+      "id": "outside_fortress26",
+      "spec": "bot_research.bots.defense.frozen.v26.fortress:@make"
+    },
+    {
+      "id": "outside_guard_t1",
+      "spec": "bot_research.bots.counters.guard_geometry:@make?roster=%5B%22tier1%22%5D&x=9&y=1&parameters=%7B%22foreign_attack_from%22%3Anull%7D"
+    }
+  ],
+  "input_sha256": {
+    "bot_research/bots/counters/stateful_catalogue.py": "6f7b2ed4f7426005a32e9b3284cff795e3231c0637a8d030fc211d32399225dd",
+    "bot_research/experiments/validation/analysis/stateful_catalogue/PROOF.md": "aaaaa6332b70db8085bf11dfd35a5cb9787d990a089bee74e976d034a65bb678"
+  }
+}

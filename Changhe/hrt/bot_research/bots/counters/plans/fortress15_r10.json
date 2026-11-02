@@ -1,0 +1,4033 @@
+{
+  "rounds": [
+    {
+      "actions": [
+        {
+          "op": "build_wall",
+          "x": 8,
+          "y": 9
+        },
+        {
+          "op": "build_wall",
+          "x": 9,
+          "y": 9
+        },
+        {
+          "op": "build_wall",
+          "x": 10,
+          "y": 9
+        },
+        {
+          "op": "build_wall",
+          "x": 11,
+          "y": 9
+        },
+        {
+          "op": "build_turret",
+          "type": "gun1",
+          "x": 7,
+          "y": 9
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        }
+      ],
+      "observation": {
+        "players": [
+          {
+            "buildings": [],
+            "gold": 100,
+            "hp": 800,
+            "length_path": 22,
+            "n_factories": 0,
+            "n_turrets": 0,
+            "n_walls": 0,
+            "roster": []
+          },
+          {
+            "buildings": [],
+            "gold": 100,
+            "hp": 800,
+            "length_path": 22,
+            "n_factories": 0,
+            "n_turrets": 0,
+            "n_walls": 0,
+            "roster": []
+          }
+        ],
+        "round": 1,
+        "rules": {
+          "demo": false,
+          "globals": {
+            "base": [
+              11,
+              11
+            ],
+            "base_hit_bounty": 5,
+            "factory_cost": 20,
+            "factory_income": 15,
+            "height": 12,
+            "initial_gold": 100,
+            "initial_hp": 800,
+            "max_rounds": 50,
+            "path_income_per_step": 1,
+            "roster_lifespan": 12,
+            "spawn": [
+              0,
+              0
+            ],
+            "ticks_per_round": 250,
+            "width": 12
+          },
+          "label": "Tower Defense",
+          "minions": {
+            "tier1": {
+              "cost": 15,
+              "damage": 5,
+              "hp": 20,
+              "speed": 1.0
+            },
+            "tier2": {
+              "cost": 40,
+              "damage": 12,
+              "hp": 70,
+              "speed": 1.0
+            },
+            "tier3": {
+              "cost": 100,
+              "damage": 26,
+              "hp": 180,
+              "speed": 1.0
+            },
+            "tier4": {
+              "cost": 260,
+              "damage": 60,
+              "hp": 560,
+              "speed": 1.0
+            },
+            "tier5": {
+              "cost": 650,
+              "damage": 140,
+              "hp": 1500,
+              "speed": 1.0
+            }
+          },
+          "turrets": {
+            "gun1": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 30,
+              "damage": 8,
+              "range": 2.5,
+              "symbol": "1"
+            },
+            "gun2": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 80,
+              "damage": 22,
+              "range": 3.0,
+              "symbol": "2"
+            },
+            "gun3": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 200,
+              "damage": 55,
+              "range": 3.5,
+              "symbol": "3"
+            },
+            "splash": {
+              "aoe": 8,
+              "cooldown": 1,
+              "cost": 60,
+              "damage": 10,
+              "range": 0.0,
+              "symbol": "X"
+            }
+          },
+          "wall_cooldown": 1,
+          "wall_cost": 1,
+          "wall_damage": 0,
+          "wall_range": 0.0
+        }
+      },
+      "round": 1
+    },
+    {
+      "actions": [
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        }
+      ],
+      "observation": {
+        "players": [
+          {
+            "buildings": [
+              {
+                "type": "wall",
+                "x": 8,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 9,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 10,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 11,
+                "y": 9
+              },
+              {
+                "type": "gun1",
+                "x": 7,
+                "y": 9
+              }
+            ],
+            "gold": 73,
+            "hp": 800,
+            "length_path": 22,
+            "n_factories": 3,
+            "n_turrets": 1,
+            "n_walls": 4,
+            "roster": []
+          },
+          {
+            "buildings": [
+              {
+                "type": "wall",
+                "x": 0,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 1,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 2,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 3,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 4,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 5,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 6,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 7,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 8,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 9,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 11,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 10,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 9,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 8,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 7,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 6,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 5,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 4,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 3,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 2,
+                "y": 3
+              }
+            ],
+            "gold": 80,
+            "hp": 800,
+            "length_path": 40,
+            "n_factories": 2,
+            "n_turrets": 0,
+            "n_walls": 20,
+            "roster": [
+              {
+                "bought_round": 1,
+                "expires_after_round": 12,
+                "id": 0,
+                "remaining_rounds": 11,
+                "type": "tier1"
+              },
+              {
+                "bought_round": 1,
+                "expires_after_round": 12,
+                "id": 1,
+                "remaining_rounds": 11,
+                "type": "tier1"
+              }
+            ]
+          }
+        ],
+        "round": 2,
+        "rules": {
+          "demo": false,
+          "globals": {
+            "base": [
+              11,
+              11
+            ],
+            "base_hit_bounty": 5,
+            "factory_cost": 20,
+            "factory_income": 15,
+            "height": 12,
+            "initial_gold": 100,
+            "initial_hp": 800,
+            "max_rounds": 50,
+            "path_income_per_step": 1,
+            "roster_lifespan": 12,
+            "spawn": [
+              0,
+              0
+            ],
+            "ticks_per_round": 250,
+            "width": 12
+          },
+          "label": "Tower Defense",
+          "minions": {
+            "tier1": {
+              "cost": 15,
+              "damage": 5,
+              "hp": 20,
+              "speed": 1.0
+            },
+            "tier2": {
+              "cost": 40,
+              "damage": 12,
+              "hp": 70,
+              "speed": 1.0
+            },
+            "tier3": {
+              "cost": 100,
+              "damage": 26,
+              "hp": 180,
+              "speed": 1.0
+            },
+            "tier4": {
+              "cost": 260,
+              "damage": 60,
+              "hp": 560,
+              "speed": 1.0
+            },
+            "tier5": {
+              "cost": 650,
+              "damage": 140,
+              "hp": 1500,
+              "speed": 1.0
+            }
+          },
+          "turrets": {
+            "gun1": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 30,
+              "damage": 8,
+              "range": 2.5,
+              "symbol": "1"
+            },
+            "gun2": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 80,
+              "damage": 22,
+              "range": 3.0,
+              "symbol": "2"
+            },
+            "gun3": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 200,
+              "damage": 55,
+              "range": 3.5,
+              "symbol": "3"
+            },
+            "splash": {
+              "aoe": 8,
+              "cooldown": 1,
+              "cost": 60,
+              "damage": 10,
+              "range": 0.0,
+              "symbol": "X"
+            }
+          },
+          "wall_cooldown": 1,
+          "wall_cost": 1,
+          "wall_damage": 0,
+          "wall_range": 0.0
+        }
+      },
+      "round": 2
+    },
+    {
+      "actions": [
+        {
+          "op": "build_turret",
+          "type": "gun1",
+          "x": 6,
+          "y": 9
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        }
+      ],
+      "observation": {
+        "players": [
+          {
+            "buildings": [
+              {
+                "type": "wall",
+                "x": 8,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 9,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 10,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 11,
+                "y": 9
+              },
+              {
+                "type": "gun1",
+                "x": 7,
+                "y": 9
+              }
+            ],
+            "gold": 125,
+            "hp": 800,
+            "length_path": 22,
+            "n_factories": 6,
+            "n_turrets": 1,
+            "n_walls": 4,
+            "roster": []
+          },
+          {
+            "buildings": [
+              {
+                "type": "wall",
+                "x": 0,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 1,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 2,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 3,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 4,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 5,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 6,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 7,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 8,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 9,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 11,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 10,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 9,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 8,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 7,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 6,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 5,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 4,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 3,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 2,
+                "y": 3
+              }
+            ],
+            "gold": 130,
+            "hp": 800,
+            "length_path": 40,
+            "n_factories": 6,
+            "n_turrets": 0,
+            "n_walls": 20,
+            "roster": [
+              {
+                "bought_round": 1,
+                "expires_after_round": 12,
+                "id": 0,
+                "remaining_rounds": 10,
+                "type": "tier1"
+              },
+              {
+                "bought_round": 1,
+                "expires_after_round": 12,
+                "id": 1,
+                "remaining_rounds": 10,
+                "type": "tier1"
+              }
+            ]
+          }
+        ],
+        "round": 3,
+        "rules": {
+          "demo": false,
+          "globals": {
+            "base": [
+              11,
+              11
+            ],
+            "base_hit_bounty": 5,
+            "factory_cost": 20,
+            "factory_income": 15,
+            "height": 12,
+            "initial_gold": 100,
+            "initial_hp": 800,
+            "max_rounds": 50,
+            "path_income_per_step": 1,
+            "roster_lifespan": 12,
+            "spawn": [
+              0,
+              0
+            ],
+            "ticks_per_round": 250,
+            "width": 12
+          },
+          "label": "Tower Defense",
+          "minions": {
+            "tier1": {
+              "cost": 15,
+              "damage": 5,
+              "hp": 20,
+              "speed": 1.0
+            },
+            "tier2": {
+              "cost": 40,
+              "damage": 12,
+              "hp": 70,
+              "speed": 1.0
+            },
+            "tier3": {
+              "cost": 100,
+              "damage": 26,
+              "hp": 180,
+              "speed": 1.0
+            },
+            "tier4": {
+              "cost": 260,
+              "damage": 60,
+              "hp": 560,
+              "speed": 1.0
+            },
+            "tier5": {
+              "cost": 650,
+              "damage": 140,
+              "hp": 1500,
+              "speed": 1.0
+            }
+          },
+          "turrets": {
+            "gun1": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 30,
+              "damage": 8,
+              "range": 2.5,
+              "symbol": "1"
+            },
+            "gun2": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 80,
+              "damage": 22,
+              "range": 3.0,
+              "symbol": "2"
+            },
+            "gun3": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 200,
+              "damage": 55,
+              "range": 3.5,
+              "symbol": "3"
+            },
+            "splash": {
+              "aoe": 8,
+              "cooldown": 1,
+              "cost": 60,
+              "damage": 10,
+              "range": 0.0,
+              "symbol": "X"
+            }
+          },
+          "wall_cooldown": 1,
+          "wall_cost": 1,
+          "wall_damage": 0,
+          "wall_range": 0.0
+        }
+      },
+      "round": 3
+    },
+    {
+      "actions": [
+        {
+          "op": "build_turret",
+          "type": "gun1",
+          "x": 5,
+          "y": 9
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        }
+      ],
+      "observation": {
+        "players": [
+          {
+            "buildings": [
+              {
+                "type": "wall",
+                "x": 8,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 9,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 10,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 11,
+                "y": 9
+              },
+              {
+                "type": "gun1",
+                "x": 7,
+                "y": 9
+              },
+              {
+                "type": "gun1",
+                "x": 6,
+                "y": 9
+              }
+            ],
+            "gold": 187,
+            "hp": 800,
+            "length_path": 22,
+            "n_factories": 10,
+            "n_turrets": 2,
+            "n_walls": 4,
+            "roster": []
+          },
+          {
+            "buildings": [
+              {
+                "type": "wall",
+                "x": 0,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 1,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 2,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 3,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 4,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 5,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 6,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 7,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 8,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 9,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 11,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 10,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 9,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 8,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 7,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 6,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 5,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 4,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 3,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 2,
+                "y": 3
+              },
+              {
+                "type": "splash",
+                "x": 1,
+                "y": 3
+              }
+            ],
+            "gold": 157,
+            "hp": 800,
+            "length_path": 42,
+            "n_factories": 7,
+            "n_turrets": 1,
+            "n_walls": 20,
+            "roster": [
+              {
+                "bought_round": 1,
+                "expires_after_round": 12,
+                "id": 0,
+                "remaining_rounds": 9,
+                "type": "tier1"
+              },
+              {
+                "bought_round": 1,
+                "expires_after_round": 12,
+                "id": 1,
+                "remaining_rounds": 9,
+                "type": "tier1"
+              },
+              {
+                "bought_round": 3,
+                "expires_after_round": 14,
+                "id": 2,
+                "remaining_rounds": 11,
+                "type": "tier2"
+              }
+            ]
+          }
+        ],
+        "round": 4,
+        "rules": {
+          "demo": false,
+          "globals": {
+            "base": [
+              11,
+              11
+            ],
+            "base_hit_bounty": 5,
+            "factory_cost": 20,
+            "factory_income": 15,
+            "height": 12,
+            "initial_gold": 100,
+            "initial_hp": 800,
+            "max_rounds": 50,
+            "path_income_per_step": 1,
+            "roster_lifespan": 12,
+            "spawn": [
+              0,
+              0
+            ],
+            "ticks_per_round": 250,
+            "width": 12
+          },
+          "label": "Tower Defense",
+          "minions": {
+            "tier1": {
+              "cost": 15,
+              "damage": 5,
+              "hp": 20,
+              "speed": 1.0
+            },
+            "tier2": {
+              "cost": 40,
+              "damage": 12,
+              "hp": 70,
+              "speed": 1.0
+            },
+            "tier3": {
+              "cost": 100,
+              "damage": 26,
+              "hp": 180,
+              "speed": 1.0
+            },
+            "tier4": {
+              "cost": 260,
+              "damage": 60,
+              "hp": 560,
+              "speed": 1.0
+            },
+            "tier5": {
+              "cost": 650,
+              "damage": 140,
+              "hp": 1500,
+              "speed": 1.0
+            }
+          },
+          "turrets": {
+            "gun1": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 30,
+              "damage": 8,
+              "range": 2.5,
+              "symbol": "1"
+            },
+            "gun2": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 80,
+              "damage": 22,
+              "range": 3.0,
+              "symbol": "2"
+            },
+            "gun3": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 200,
+              "damage": 55,
+              "range": 3.5,
+              "symbol": "3"
+            },
+            "splash": {
+              "aoe": 8,
+              "cooldown": 1,
+              "cost": 60,
+              "damage": 10,
+              "range": 0.0,
+              "symbol": "X"
+            }
+          },
+          "wall_cooldown": 1,
+          "wall_cost": 1,
+          "wall_damage": 0,
+          "wall_range": 0.0
+        }
+      },
+      "round": 4
+    },
+    {
+      "actions": [
+        {
+          "op": "build_wall",
+          "x": 0,
+          "y": 7
+        },
+        {
+          "op": "build_wall",
+          "x": 1,
+          "y": 7
+        },
+        {
+          "op": "build_wall",
+          "x": 2,
+          "y": 7
+        },
+        {
+          "op": "build_wall",
+          "x": 3,
+          "y": 7
+        },
+        {
+          "op": "build_turret",
+          "type": "gun1",
+          "x": 4,
+          "y": 7
+        },
+        {
+          "op": "build_turret",
+          "type": "gun1",
+          "x": 4,
+          "y": 9
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        }
+      ],
+      "observation": {
+        "players": [
+          {
+            "buildings": [
+              {
+                "type": "wall",
+                "x": 8,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 9,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 10,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 11,
+                "y": 9
+              },
+              {
+                "type": "gun1",
+                "x": 7,
+                "y": 9
+              },
+              {
+                "type": "gun1",
+                "x": 6,
+                "y": 9
+              },
+              {
+                "type": "gun1",
+                "x": 5,
+                "y": 9
+              }
+            ],
+            "gold": 294,
+            "hp": 800,
+            "length_path": 22,
+            "n_factories": 17,
+            "n_turrets": 3,
+            "n_walls": 4,
+            "roster": []
+          },
+          {
+            "buildings": [
+              {
+                "type": "wall",
+                "x": 0,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 1,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 2,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 3,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 4,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 5,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 6,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 7,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 8,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 9,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 11,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 10,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 9,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 8,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 7,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 6,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 5,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 4,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 3,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 2,
+                "y": 3
+              },
+              {
+                "type": "splash",
+                "x": 1,
+                "y": 3
+              },
+              {
+                "type": "gun2",
+                "x": 9,
+                "y": 5
+              }
+            ],
+            "gold": 179,
+            "hp": 800,
+            "length_path": 42,
+            "n_factories": 8,
+            "n_turrets": 2,
+            "n_walls": 20,
+            "roster": [
+              {
+                "bought_round": 1,
+                "expires_after_round": 12,
+                "id": 0,
+                "remaining_rounds": 8,
+                "type": "tier1"
+              },
+              {
+                "bought_round": 1,
+                "expires_after_round": 12,
+                "id": 1,
+                "remaining_rounds": 8,
+                "type": "tier1"
+              },
+              {
+                "bought_round": 3,
+                "expires_after_round": 14,
+                "id": 2,
+                "remaining_rounds": 10,
+                "type": "tier2"
+              },
+              {
+                "bought_round": 4,
+                "expires_after_round": 15,
+                "id": 3,
+                "remaining_rounds": 11,
+                "type": "tier2"
+              }
+            ]
+          }
+        ],
+        "round": 5,
+        "rules": {
+          "demo": false,
+          "globals": {
+            "base": [
+              11,
+              11
+            ],
+            "base_hit_bounty": 5,
+            "factory_cost": 20,
+            "factory_income": 15,
+            "height": 12,
+            "initial_gold": 100,
+            "initial_hp": 800,
+            "max_rounds": 50,
+            "path_income_per_step": 1,
+            "roster_lifespan": 12,
+            "spawn": [
+              0,
+              0
+            ],
+            "ticks_per_round": 250,
+            "width": 12
+          },
+          "label": "Tower Defense",
+          "minions": {
+            "tier1": {
+              "cost": 15,
+              "damage": 5,
+              "hp": 20,
+              "speed": 1.0
+            },
+            "tier2": {
+              "cost": 40,
+              "damage": 12,
+              "hp": 70,
+              "speed": 1.0
+            },
+            "tier3": {
+              "cost": 100,
+              "damage": 26,
+              "hp": 180,
+              "speed": 1.0
+            },
+            "tier4": {
+              "cost": 260,
+              "damage": 60,
+              "hp": 560,
+              "speed": 1.0
+            },
+            "tier5": {
+              "cost": 650,
+              "damage": 140,
+              "hp": 1500,
+              "speed": 1.0
+            }
+          },
+          "turrets": {
+            "gun1": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 30,
+              "damage": 8,
+              "range": 2.5,
+              "symbol": "1"
+            },
+            "gun2": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 80,
+              "damage": 22,
+              "range": 3.0,
+              "symbol": "2"
+            },
+            "gun3": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 200,
+              "damage": 55,
+              "range": 3.5,
+              "symbol": "3"
+            },
+            "splash": {
+              "aoe": 8,
+              "cooldown": 1,
+              "cost": 60,
+              "damage": 10,
+              "range": 0.0,
+              "symbol": "X"
+            }
+          },
+          "wall_cooldown": 1,
+          "wall_cost": 1,
+          "wall_damage": 0,
+          "wall_range": 0.0
+        }
+      },
+      "round": 5
+    },
+    {
+      "actions": [
+        {
+          "op": "build_turret",
+          "type": "gun1",
+          "x": 3,
+          "y": 9
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        }
+      ],
+      "observation": {
+        "players": [
+          {
+            "buildings": [
+              {
+                "type": "wall",
+                "x": 8,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 9,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 10,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 11,
+                "y": 9
+              },
+              {
+                "type": "gun1",
+                "x": 7,
+                "y": 9
+              },
+              {
+                "type": "gun1",
+                "x": 6,
+                "y": 9
+              },
+              {
+                "type": "gun1",
+                "x": 5,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 0,
+                "y": 7
+              },
+              {
+                "type": "wall",
+                "x": 1,
+                "y": 7
+              },
+              {
+                "type": "wall",
+                "x": 2,
+                "y": 7
+              },
+              {
+                "type": "wall",
+                "x": 3,
+                "y": 7
+              },
+              {
+                "type": "gun1",
+                "x": 4,
+                "y": 7
+              },
+              {
+                "type": "gun1",
+                "x": 4,
+                "y": 9
+              }
+            ],
+            "gold": 456,
+            "hp": 800,
+            "length_path": 26,
+            "n_factories": 28,
+            "n_turrets": 5,
+            "n_walls": 8,
+            "roster": []
+          },
+          {
+            "buildings": [
+              {
+                "type": "wall",
+                "x": 0,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 1,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 2,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 3,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 4,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 5,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 6,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 7,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 8,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 9,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 11,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 10,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 9,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 8,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 7,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 6,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 5,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 4,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 3,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 2,
+                "y": 3
+              },
+              {
+                "type": "splash",
+                "x": 1,
+                "y": 3
+              },
+              {
+                "type": "gun2",
+                "x": 9,
+                "y": 5
+              }
+            ],
+            "gold": 211,
+            "hp": 800,
+            "length_path": 42,
+            "n_factories": 10,
+            "n_turrets": 2,
+            "n_walls": 20,
+            "roster": [
+              {
+                "bought_round": 1,
+                "expires_after_round": 12,
+                "id": 0,
+                "remaining_rounds": 7,
+                "type": "tier1"
+              },
+              {
+                "bought_round": 1,
+                "expires_after_round": 12,
+                "id": 1,
+                "remaining_rounds": 7,
+                "type": "tier1"
+              },
+              {
+                "bought_round": 3,
+                "expires_after_round": 14,
+                "id": 2,
+                "remaining_rounds": 9,
+                "type": "tier2"
+              },
+              {
+                "bought_round": 4,
+                "expires_after_round": 15,
+                "id": 3,
+                "remaining_rounds": 10,
+                "type": "tier2"
+              },
+              {
+                "bought_round": 5,
+                "expires_after_round": 16,
+                "id": 4,
+                "remaining_rounds": 11,
+                "type": "tier2"
+              },
+              {
+                "bought_round": 5,
+                "expires_after_round": 16,
+                "id": 5,
+                "remaining_rounds": 11,
+                "type": "tier2"
+              },
+              {
+                "bought_round": 5,
+                "expires_after_round": 16,
+                "id": 6,
+                "remaining_rounds": 11,
+                "type": "tier2"
+              }
+            ]
+          }
+        ],
+        "round": 6,
+        "rules": {
+          "demo": false,
+          "globals": {
+            "base": [
+              11,
+              11
+            ],
+            "base_hit_bounty": 5,
+            "factory_cost": 20,
+            "factory_income": 15,
+            "height": 12,
+            "initial_gold": 100,
+            "initial_hp": 800,
+            "max_rounds": 50,
+            "path_income_per_step": 1,
+            "roster_lifespan": 12,
+            "spawn": [
+              0,
+              0
+            ],
+            "ticks_per_round": 250,
+            "width": 12
+          },
+          "label": "Tower Defense",
+          "minions": {
+            "tier1": {
+              "cost": 15,
+              "damage": 5,
+              "hp": 20,
+              "speed": 1.0
+            },
+            "tier2": {
+              "cost": 40,
+              "damage": 12,
+              "hp": 70,
+              "speed": 1.0
+            },
+            "tier3": {
+              "cost": 100,
+              "damage": 26,
+              "hp": 180,
+              "speed": 1.0
+            },
+            "tier4": {
+              "cost": 260,
+              "damage": 60,
+              "hp": 560,
+              "speed": 1.0
+            },
+            "tier5": {
+              "cost": 650,
+              "damage": 140,
+              "hp": 1500,
+              "speed": 1.0
+            }
+          },
+          "turrets": {
+            "gun1": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 30,
+              "damage": 8,
+              "range": 2.5,
+              "symbol": "1"
+            },
+            "gun2": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 80,
+              "damage": 22,
+              "range": 3.0,
+              "symbol": "2"
+            },
+            "gun3": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 200,
+              "damage": 55,
+              "range": 3.5,
+              "symbol": "3"
+            },
+            "splash": {
+              "aoe": 8,
+              "cooldown": 1,
+              "cost": 60,
+              "damage": 10,
+              "range": 0.0,
+              "symbol": "X"
+            }
+          },
+          "wall_cooldown": 1,
+          "wall_cost": 1,
+          "wall_damage": 0,
+          "wall_range": 0.0
+        }
+      },
+      "round": 6
+    },
+    {
+      "actions": [
+        {
+          "op": "build_turret",
+          "type": "gun1",
+          "x": 2,
+          "y": 9
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        }
+      ],
+      "observation": {
+        "players": [
+          {
+            "buildings": [
+              {
+                "type": "wall",
+                "x": 8,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 9,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 10,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 11,
+                "y": 9
+              },
+              {
+                "type": "gun1",
+                "x": 7,
+                "y": 9
+              },
+              {
+                "type": "gun1",
+                "x": 6,
+                "y": 9
+              },
+              {
+                "type": "gun1",
+                "x": 5,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 0,
+                "y": 7
+              },
+              {
+                "type": "wall",
+                "x": 1,
+                "y": 7
+              },
+              {
+                "type": "wall",
+                "x": 2,
+                "y": 7
+              },
+              {
+                "type": "wall",
+                "x": 3,
+                "y": 7
+              },
+              {
+                "type": "gun1",
+                "x": 4,
+                "y": 7
+              },
+              {
+                "type": "gun1",
+                "x": 4,
+                "y": 9
+              },
+              {
+                "type": "gun1",
+                "x": 3,
+                "y": 9
+              }
+            ],
+            "gold": 769,
+            "hp": 800,
+            "length_path": 28,
+            "n_factories": 49,
+            "n_turrets": 6,
+            "n_walls": 8,
+            "roster": []
+          },
+          {
+            "buildings": [
+              {
+                "type": "wall",
+                "x": 0,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 1,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 2,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 3,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 4,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 5,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 6,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 7,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 8,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 9,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 11,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 10,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 9,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 8,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 7,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 6,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 5,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 4,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 3,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 2,
+                "y": 3
+              },
+              {
+                "type": "splash",
+                "x": 1,
+                "y": 3
+              },
+              {
+                "type": "gun2",
+                "x": 9,
+                "y": 5
+              }
+            ],
+            "gold": 278,
+            "hp": 800,
+            "length_path": 42,
+            "n_factories": 15,
+            "n_turrets": 2,
+            "n_walls": 20,
+            "roster": [
+              {
+                "bought_round": 1,
+                "expires_after_round": 12,
+                "id": 0,
+                "remaining_rounds": 6,
+                "type": "tier1"
+              },
+              {
+                "bought_round": 1,
+                "expires_after_round": 12,
+                "id": 1,
+                "remaining_rounds": 6,
+                "type": "tier1"
+              },
+              {
+                "bought_round": 3,
+                "expires_after_round": 14,
+                "id": 2,
+                "remaining_rounds": 8,
+                "type": "tier2"
+              },
+              {
+                "bought_round": 4,
+                "expires_after_round": 15,
+                "id": 3,
+                "remaining_rounds": 9,
+                "type": "tier2"
+              },
+              {
+                "bought_round": 5,
+                "expires_after_round": 16,
+                "id": 4,
+                "remaining_rounds": 10,
+                "type": "tier2"
+              },
+              {
+                "bought_round": 5,
+                "expires_after_round": 16,
+                "id": 5,
+                "remaining_rounds": 10,
+                "type": "tier2"
+              },
+              {
+                "bought_round": 5,
+                "expires_after_round": 16,
+                "id": 6,
+                "remaining_rounds": 10,
+                "type": "tier2"
+              },
+              {
+                "bought_round": 6,
+                "expires_after_round": 17,
+                "id": 7,
+                "remaining_rounds": 11,
+                "type": "tier3"
+              }
+            ]
+          }
+        ],
+        "round": 7,
+        "rules": {
+          "demo": false,
+          "globals": {
+            "base": [
+              11,
+              11
+            ],
+            "base_hit_bounty": 5,
+            "factory_cost": 20,
+            "factory_income": 15,
+            "height": 12,
+            "initial_gold": 100,
+            "initial_hp": 800,
+            "max_rounds": 50,
+            "path_income_per_step": 1,
+            "roster_lifespan": 12,
+            "spawn": [
+              0,
+              0
+            ],
+            "ticks_per_round": 250,
+            "width": 12
+          },
+          "label": "Tower Defense",
+          "minions": {
+            "tier1": {
+              "cost": 15,
+              "damage": 5,
+              "hp": 20,
+              "speed": 1.0
+            },
+            "tier2": {
+              "cost": 40,
+              "damage": 12,
+              "hp": 70,
+              "speed": 1.0
+            },
+            "tier3": {
+              "cost": 100,
+              "damage": 26,
+              "hp": 180,
+              "speed": 1.0
+            },
+            "tier4": {
+              "cost": 260,
+              "damage": 60,
+              "hp": 560,
+              "speed": 1.0
+            },
+            "tier5": {
+              "cost": 650,
+              "damage": 140,
+              "hp": 1500,
+              "speed": 1.0
+            }
+          },
+          "turrets": {
+            "gun1": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 30,
+              "damage": 8,
+              "range": 2.5,
+              "symbol": "1"
+            },
+            "gun2": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 80,
+              "damage": 22,
+              "range": 3.0,
+              "symbol": "2"
+            },
+            "gun3": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 200,
+              "damage": 55,
+              "range": 3.5,
+              "symbol": "3"
+            },
+            "splash": {
+              "aoe": 8,
+              "cooldown": 1,
+              "cost": 60,
+              "damage": 10,
+              "range": 0.0,
+              "symbol": "X"
+            }
+          },
+          "wall_cooldown": 1,
+          "wall_cost": 1,
+          "wall_damage": 0,
+          "wall_range": 0.0
+        }
+      },
+      "round": 7
+    },
+    {
+      "actions": [
+        {
+          "op": "build_turret",
+          "type": "splash",
+          "x": 1,
+          "y": 9
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        }
+      ],
+      "observation": {
+        "players": [
+          {
+            "buildings": [
+              {
+                "type": "wall",
+                "x": 8,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 9,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 10,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 11,
+                "y": 9
+              },
+              {
+                "type": "gun1",
+                "x": 7,
+                "y": 9
+              },
+              {
+                "type": "gun1",
+                "x": 6,
+                "y": 9
+              },
+              {
+                "type": "gun1",
+                "x": 5,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 0,
+                "y": 7
+              },
+              {
+                "type": "wall",
+                "x": 1,
+                "y": 7
+              },
+              {
+                "type": "wall",
+                "x": 2,
+                "y": 7
+              },
+              {
+                "type": "wall",
+                "x": 3,
+                "y": 7
+              },
+              {
+                "type": "gun1",
+                "x": 4,
+                "y": 7
+              },
+              {
+                "type": "gun1",
+                "x": 4,
+                "y": 9
+              },
+              {
+                "type": "gun1",
+                "x": 3,
+                "y": 9
+              },
+              {
+                "type": "gun1",
+                "x": 2,
+                "y": 9
+              }
+            ],
+            "gold": 1324,
+            "hp": 800,
+            "length_path": 30,
+            "n_factories": 85,
+            "n_turrets": 7,
+            "n_walls": 8,
+            "roster": []
+          },
+          {
+            "buildings": [
+              {
+                "type": "wall",
+                "x": 0,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 1,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 2,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 3,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 4,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 5,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 6,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 7,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 8,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 9,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 11,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 10,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 9,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 8,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 7,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 6,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 5,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 4,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 3,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 2,
+                "y": 3
+              },
+              {
+                "type": "splash",
+                "x": 1,
+                "y": 3
+              },
+              {
+                "type": "gun2",
+                "x": 9,
+                "y": 5
+              }
+            ],
+            "gold": 405,
+            "hp": 800,
+            "length_path": 42,
+            "n_factories": 23,
+            "n_turrets": 2,
+            "n_walls": 20,
+            "roster": [
+              {
+                "bought_round": 1,
+                "expires_after_round": 12,
+                "id": 0,
+                "remaining_rounds": 5,
+                "type": "tier1"
+              },
+              {
+                "bought_round": 1,
+                "expires_after_round": 12,
+                "id": 1,
+                "remaining_rounds": 5,
+                "type": "tier1"
+              },
+              {
+                "bought_round": 3,
+                "expires_after_round": 14,
+                "id": 2,
+                "remaining_rounds": 7,
+                "type": "tier2"
+              },
+              {
+                "bought_round": 4,
+                "expires_after_round": 15,
+                "id": 3,
+                "remaining_rounds": 8,
+                "type": "tier2"
+              },
+              {
+                "bought_round": 5,
+                "expires_after_round": 16,
+                "id": 4,
+                "remaining_rounds": 9,
+                "type": "tier2"
+              },
+              {
+                "bought_round": 5,
+                "expires_after_round": 16,
+                "id": 5,
+                "remaining_rounds": 9,
+                "type": "tier2"
+              },
+              {
+                "bought_round": 5,
+                "expires_after_round": 16,
+                "id": 6,
+                "remaining_rounds": 9,
+                "type": "tier2"
+              },
+              {
+                "bought_round": 6,
+                "expires_after_round": 17,
+                "id": 7,
+                "remaining_rounds": 10,
+                "type": "tier3"
+              },
+              {
+                "bought_round": 7,
+                "expires_after_round": 18,
+                "id": 8,
+                "remaining_rounds": 11,
+                "type": "tier3"
+              }
+            ]
+          }
+        ],
+        "round": 8,
+        "rules": {
+          "demo": false,
+          "globals": {
+            "base": [
+              11,
+              11
+            ],
+            "base_hit_bounty": 5,
+            "factory_cost": 20,
+            "factory_income": 15,
+            "height": 12,
+            "initial_gold": 100,
+            "initial_hp": 800,
+            "max_rounds": 50,
+            "path_income_per_step": 1,
+            "roster_lifespan": 12,
+            "spawn": [
+              0,
+              0
+            ],
+            "ticks_per_round": 250,
+            "width": 12
+          },
+          "label": "Tower Defense",
+          "minions": {
+            "tier1": {
+              "cost": 15,
+              "damage": 5,
+              "hp": 20,
+              "speed": 1.0
+            },
+            "tier2": {
+              "cost": 40,
+              "damage": 12,
+              "hp": 70,
+              "speed": 1.0
+            },
+            "tier3": {
+              "cost": 100,
+              "damage": 26,
+              "hp": 180,
+              "speed": 1.0
+            },
+            "tier4": {
+              "cost": 260,
+              "damage": 60,
+              "hp": 560,
+              "speed": 1.0
+            },
+            "tier5": {
+              "cost": 650,
+              "damage": 140,
+              "hp": 1500,
+              "speed": 1.0
+            }
+          },
+          "turrets": {
+            "gun1": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 30,
+              "damage": 8,
+              "range": 2.5,
+              "symbol": "1"
+            },
+            "gun2": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 80,
+              "damage": 22,
+              "range": 3.0,
+              "symbol": "2"
+            },
+            "gun3": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 200,
+              "damage": 55,
+              "range": 3.5,
+              "symbol": "3"
+            },
+            "splash": {
+              "aoe": 8,
+              "cooldown": 1,
+              "cost": 60,
+              "damage": 10,
+              "range": 0.0,
+              "symbol": "X"
+            }
+          },
+          "wall_cooldown": 1,
+          "wall_cost": 1,
+          "wall_damage": 0,
+          "wall_range": 0.0
+        }
+      },
+      "round": 8
+    },
+    {
+      "actions": [
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        }
+      ],
+      "observation": {
+        "players": [
+          {
+            "buildings": [
+              {
+                "type": "wall",
+                "x": 8,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 9,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 10,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 11,
+                "y": 9
+              },
+              {
+                "type": "gun1",
+                "x": 7,
+                "y": 9
+              },
+              {
+                "type": "gun1",
+                "x": 6,
+                "y": 9
+              },
+              {
+                "type": "gun1",
+                "x": 5,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 0,
+                "y": 7
+              },
+              {
+                "type": "wall",
+                "x": 1,
+                "y": 7
+              },
+              {
+                "type": "wall",
+                "x": 2,
+                "y": 7
+              },
+              {
+                "type": "wall",
+                "x": 3,
+                "y": 7
+              },
+              {
+                "type": "gun1",
+                "x": 4,
+                "y": 7
+              },
+              {
+                "type": "gun1",
+                "x": 4,
+                "y": 9
+              },
+              {
+                "type": "gun1",
+                "x": 3,
+                "y": 9
+              },
+              {
+                "type": "gun1",
+                "x": 2,
+                "y": 9
+              },
+              {
+                "type": "splash",
+                "x": 1,
+                "y": 9
+              }
+            ],
+            "gold": 2256,
+            "hp": 800,
+            "length_path": 32,
+            "n_factories": 148,
+            "n_turrets": 8,
+            "n_walls": 8,
+            "roster": []
+          },
+          {
+            "buildings": [
+              {
+                "type": "wall",
+                "x": 0,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 1,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 2,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 3,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 4,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 5,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 6,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 7,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 8,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 9,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 11,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 10,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 9,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 8,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 7,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 6,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 5,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 4,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 3,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 2,
+                "y": 3
+              },
+              {
+                "type": "splash",
+                "x": 1,
+                "y": 3
+              },
+              {
+                "type": "gun2",
+                "x": 9,
+                "y": 5
+              }
+            ],
+            "gold": 542,
+            "hp": 800,
+            "length_path": 42,
+            "n_factories": 33,
+            "n_turrets": 2,
+            "n_walls": 20,
+            "roster": [
+              {
+                "bought_round": 1,
+                "expires_after_round": 12,
+                "id": 0,
+                "remaining_rounds": 4,
+                "type": "tier1"
+              },
+              {
+                "bought_round": 1,
+                "expires_after_round": 12,
+                "id": 1,
+                "remaining_rounds": 4,
+                "type": "tier1"
+              },
+              {
+                "bought_round": 3,
+                "expires_after_round": 14,
+                "id": 2,
+                "remaining_rounds": 6,
+                "type": "tier2"
+              },
+              {
+                "bought_round": 4,
+                "expires_after_round": 15,
+                "id": 3,
+                "remaining_rounds": 7,
+                "type": "tier2"
+              },
+              {
+                "bought_round": 5,
+                "expires_after_round": 16,
+                "id": 4,
+                "remaining_rounds": 8,
+                "type": "tier2"
+              },
+              {
+                "bought_round": 5,
+                "expires_after_round": 16,
+                "id": 5,
+                "remaining_rounds": 8,
+                "type": "tier2"
+              },
+              {
+                "bought_round": 5,
+                "expires_after_round": 16,
+                "id": 6,
+                "remaining_rounds": 8,
+                "type": "tier2"
+              },
+              {
+                "bought_round": 6,
+                "expires_after_round": 17,
+                "id": 7,
+                "remaining_rounds": 9,
+                "type": "tier3"
+              },
+              {
+                "bought_round": 7,
+                "expires_after_round": 18,
+                "id": 8,
+                "remaining_rounds": 10,
+                "type": "tier3"
+              },
+              {
+                "bought_round": 8,
+                "expires_after_round": 19,
+                "id": 9,
+                "remaining_rounds": 11,
+                "type": "tier3"
+              },
+              {
+                "bought_round": 8,
+                "expires_after_round": 19,
+                "id": 10,
+                "remaining_rounds": 11,
+                "type": "tier3"
+              }
+            ]
+          }
+        ],
+        "round": 9,
+        "rules": {
+          "demo": false,
+          "globals": {
+            "base": [
+              11,
+              11
+            ],
+            "base_hit_bounty": 5,
+            "factory_cost": 20,
+            "factory_income": 15,
+            "height": 12,
+            "initial_gold": 100,
+            "initial_hp": 800,
+            "max_rounds": 50,
+            "path_income_per_step": 1,
+            "roster_lifespan": 12,
+            "spawn": [
+              0,
+              0
+            ],
+            "ticks_per_round": 250,
+            "width": 12
+          },
+          "label": "Tower Defense",
+          "minions": {
+            "tier1": {
+              "cost": 15,
+              "damage": 5,
+              "hp": 20,
+              "speed": 1.0
+            },
+            "tier2": {
+              "cost": 40,
+              "damage": 12,
+              "hp": 70,
+              "speed": 1.0
+            },
+            "tier3": {
+              "cost": 100,
+              "damage": 26,
+              "hp": 180,
+              "speed": 1.0
+            },
+            "tier4": {
+              "cost": 260,
+              "damage": 60,
+              "hp": 560,
+              "speed": 1.0
+            },
+            "tier5": {
+              "cost": 650,
+              "damage": 140,
+              "hp": 1500,
+              "speed": 1.0
+            }
+          },
+          "turrets": {
+            "gun1": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 30,
+              "damage": 8,
+              "range": 2.5,
+              "symbol": "1"
+            },
+            "gun2": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 80,
+              "damage": 22,
+              "range": 3.0,
+              "symbol": "2"
+            },
+            "gun3": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 200,
+              "damage": 55,
+              "range": 3.5,
+              "symbol": "3"
+            },
+            "splash": {
+              "aoe": 8,
+              "cooldown": 1,
+              "cost": 60,
+              "damage": 10,
+              "range": 0.0,
+              "symbol": "X"
+            }
+          },
+          "wall_cooldown": 1,
+          "wall_cost": 1,
+          "wall_damage": 0,
+          "wall_range": 0.0
+        }
+      },
+      "round": 9
+    },
+    {
+      "actions": [
+        {
+          "op": "buy_minion",
+          "type": "tier5"
+        },
+        {
+          "op": "buy_minion",
+          "type": "tier5"
+        },
+        {
+          "op": "buy_minion",
+          "type": "tier5"
+        },
+        {
+          "op": "buy_minion",
+          "type": "tier5"
+        },
+        {
+          "op": "buy_minion",
+          "type": "tier5"
+        },
+        {
+          "op": "buy_minion",
+          "type": "tier5"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        }
+      ],
+      "observation": {
+        "players": [
+          {
+            "buildings": [
+              {
+                "type": "wall",
+                "x": 8,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 9,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 10,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 11,
+                "y": 9
+              },
+              {
+                "type": "gun1",
+                "x": 7,
+                "y": 9
+              },
+              {
+                "type": "gun1",
+                "x": 6,
+                "y": 9
+              },
+              {
+                "type": "gun1",
+                "x": 5,
+                "y": 9
+              },
+              {
+                "type": "wall",
+                "x": 0,
+                "y": 7
+              },
+              {
+                "type": "wall",
+                "x": 1,
+                "y": 7
+              },
+              {
+                "type": "wall",
+                "x": 2,
+                "y": 7
+              },
+              {
+                "type": "wall",
+                "x": 3,
+                "y": 7
+              },
+              {
+                "type": "gun1",
+                "x": 4,
+                "y": 7
+              },
+              {
+                "type": "gun1",
+                "x": 4,
+                "y": 9
+              },
+              {
+                "type": "gun1",
+                "x": 3,
+                "y": 9
+              },
+              {
+                "type": "gun1",
+                "x": 2,
+                "y": 9
+              },
+              {
+                "type": "splash",
+                "x": 1,
+                "y": 9
+              }
+            ],
+            "gold": 4108,
+            "hp": 800,
+            "length_path": 32,
+            "n_factories": 228,
+            "n_turrets": 8,
+            "n_walls": 8,
+            "roster": []
+          },
+          {
+            "buildings": [
+              {
+                "type": "wall",
+                "x": 0,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 1,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 2,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 3,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 4,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 5,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 6,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 7,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 8,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 9,
+                "y": 1
+              },
+              {
+                "type": "wall",
+                "x": 11,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 10,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 9,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 8,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 7,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 6,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 5,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 4,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 3,
+                "y": 3
+              },
+              {
+                "type": "wall",
+                "x": 2,
+                "y": 3
+              },
+              {
+                "type": "splash",
+                "x": 1,
+                "y": 3
+              },
+              {
+                "type": "gun2",
+                "x": 9,
+                "y": 5
+              },
+              {
+                "type": "splash",
+                "x": 10,
+                "y": 1
+              },
+              {
+                "type": "splash",
+                "x": 10,
+                "y": 5
+              },
+              {
+                "type": "splash",
+                "x": 2,
+                "y": 5
+              },
+              {
+                "type": "splash",
+                "x": 6,
+                "y": 5
+              },
+              {
+                "type": "splash",
+                "x": 4,
+                "y": 5
+              },
+              {
+                "type": "splash",
+                "x": 8,
+                "y": 5
+              },
+              {
+                "type": "splash",
+                "x": 11,
+                "y": 8
+              },
+              {
+                "type": "splash",
+                "x": 1,
+                "y": 5
+              },
+              {
+                "type": "splash",
+                "x": 3,
+                "y": 5
+              }
+            ],
+            "gold": 541,
+            "hp": 800,
+            "length_path": 44,
+            "n_factories": 33,
+            "n_turrets": 11,
+            "n_walls": 20,
+            "roster": [
+              {
+                "bought_round": 1,
+                "expires_after_round": 12,
+                "id": 0,
+                "remaining_rounds": 3,
+                "type": "tier1"
+              },
+              {
+                "bought_round": 1,
+                "expires_after_round": 12,
+                "id": 1,
+                "remaining_rounds": 3,
+                "type": "tier1"
+              },
+              {
+                "bought_round": 3,
+                "expires_after_round": 14,
+                "id": 2,
+                "remaining_rounds": 5,
+                "type": "tier2"
+              },
+              {
+                "bought_round": 4,
+                "expires_after_round": 15,
+                "id": 3,
+                "remaining_rounds": 6,
+                "type": "tier2"
+              },
+              {
+                "bought_round": 5,
+                "expires_after_round": 16,
+                "id": 4,
+                "remaining_rounds": 7,
+                "type": "tier2"
+              },
+              {
+                "bought_round": 5,
+                "expires_after_round": 16,
+                "id": 5,
+                "remaining_rounds": 7,
+                "type": "tier2"
+              },
+              {
+                "bought_round": 5,
+                "expires_after_round": 16,
+                "id": 6,
+                "remaining_rounds": 7,
+                "type": "tier2"
+              },
+              {
+                "bought_round": 6,
+                "expires_after_round": 17,
+                "id": 7,
+                "remaining_rounds": 8,
+                "type": "tier3"
+              },
+              {
+                "bought_round": 7,
+                "expires_after_round": 18,
+                "id": 8,
+                "remaining_rounds": 9,
+                "type": "tier3"
+              },
+              {
+                "bought_round": 8,
+                "expires_after_round": 19,
+                "id": 9,
+                "remaining_rounds": 10,
+                "type": "tier3"
+              },
+              {
+                "bought_round": 8,
+                "expires_after_round": 19,
+                "id": 10,
+                "remaining_rounds": 10,
+                "type": "tier3"
+              }
+            ]
+          }
+        ],
+        "round": 10,
+        "rules": {
+          "demo": false,
+          "globals": {
+            "base": [
+              11,
+              11
+            ],
+            "base_hit_bounty": 5,
+            "factory_cost": 20,
+            "factory_income": 15,
+            "height": 12,
+            "initial_gold": 100,
+            "initial_hp": 800,
+            "max_rounds": 50,
+            "path_income_per_step": 1,
+            "roster_lifespan": 12,
+            "spawn": [
+              0,
+              0
+            ],
+            "ticks_per_round": 250,
+            "width": 12
+          },
+          "label": "Tower Defense",
+          "minions": {
+            "tier1": {
+              "cost": 15,
+              "damage": 5,
+              "hp": 20,
+              "speed": 1.0
+            },
+            "tier2": {
+              "cost": 40,
+              "damage": 12,
+              "hp": 70,
+              "speed": 1.0
+            },
+            "tier3": {
+              "cost": 100,
+              "damage": 26,
+              "hp": 180,
+              "speed": 1.0
+            },
+            "tier4": {
+              "cost": 260,
+              "damage": 60,
+              "hp": 560,
+              "speed": 1.0
+            },
+            "tier5": {
+              "cost": 650,
+              "damage": 140,
+              "hp": 1500,
+              "speed": 1.0
+            }
+          },
+          "turrets": {
+            "gun1": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 30,
+              "damage": 8,
+              "range": 2.5,
+              "symbol": "1"
+            },
+            "gun2": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 80,
+              "damage": 22,
+              "range": 3.0,
+              "symbol": "2"
+            },
+            "gun3": {
+              "aoe": 0,
+              "cooldown": 1,
+              "cost": 200,
+              "damage": 55,
+              "range": 3.5,
+              "symbol": "3"
+            },
+            "splash": {
+              "aoe": 8,
+              "cooldown": 1,
+              "cost": 60,
+              "damage": 10,
+              "range": 0.0,
+              "symbol": "X"
+            }
+          },
+          "wall_cooldown": 1,
+          "wall_cost": 1,
+          "wall_damage": 0,
+          "wall_range": 0.0
+        }
+      },
+      "round": 10
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Fixed own policy data compiled from one development game. Full observation equality is required before each recorded action list.",
+  "source_audit": {
+    "hp": [
+      800,
+      -40
+    ],
+    "records": 22,
+    "result": {
+      "reason": "base_destroyed",
+      "winner": 0
+    },
+    "rounds": 10,
+    "trajectory_sha256": "6196acba6fd46c9796018c809bc7601adc85998396c4d8b7476ae01783ccb363"
+  },
+  "source_condition": {
+    "candidate_id": "mixed_r10",
+    "candidate_side": 0,
+    "candidate_spec": "bot_research.bots.counters.public_factory:@mixed?attack_round=10&evaluations=192&seed=0&attack_share=1.0&count_cap=200",
+    "engine_seed": null,
+    "initial_state": "standard",
+    "opponent_id": "fortress15",
+    "opponent_spec": "bot_research.bots.defense.frozen.v15.fortress:@make",
+    "pool": "development",
+    "purpose": "Development challenge of frozen fortress15 after finish-rule and foreign-map changes. Forecast mismatches are measured; no exact-policy assumption.",
+    "strength_score_eligible": true
+  },
+  "source_replay": "bot_research/runs/validation/fortress15-forecast-001/replays/case0000.jsonl",
+  "source_replay_sha256": "6196acba6fd46c9796018c809bc7601adc85998396c4d8b7476ae01783ccb363",
+  "source_result": "bot_research/runs/validation/fortress15-forecast-001/results/case0000.json",
+  "source_result_sha256": "e6c4418a08962b5efc9f5e565cae51100b481128b58d46744d30736018df5abd",
+  "time_utc": "2026-10-31T04:48:00.214402+00:00"
+}

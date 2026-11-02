@@ -1,0 +1,46 @@
+{
+  "candidates": [
+    {
+      "id": "visible_turret0_defend1",
+      "spec": "bot_research.bots.counters.visible_grower:@make?turret_round=0&defend_from=1&growth_rounds=6&tier=\"tier5\""
+    },
+    {
+      "id": "visible_turret0_defend4",
+      "spec": "bot_research.bots.counters.visible_grower:@make?turret_round=0&defend_from=4&growth_rounds=6&tier=\"tier5\""
+    },
+    {
+      "id": "visible_turret0_defend6",
+      "spec": "bot_research.bots.counters.visible_grower:@make?turret_round=0&defend_from=6&growth_rounds=6&tier=\"tier5\""
+    },
+    {
+      "id": "visible_turret0_defend8",
+      "spec": "bot_research.bots.counters.visible_grower:@make?turret_round=0&defend_from=8&growth_rounds=6&tier=\"tier5\""
+    },
+    {
+      "id": "visible_turret2_defend1",
+      "spec": "bot_research.bots.counters.visible_grower:@make?turret_round=2&defend_from=1&growth_rounds=6&tier=\"tier5\""
+    },
+    {
+      "id": "visible_turret2_defend4",
+      "spec": "bot_research.bots.counters.visible_grower:@make?turret_round=2&defend_from=4&growth_rounds=6&tier=\"tier5\""
+    },
+    {
+      "id": "visible_turret2_defend6",
+      "spec": "bot_research.bots.counters.visible_grower:@make?turret_round=2&defend_from=6&growth_rounds=6&tier=\"tier5\""
+    },
+    {
+      "id": "visible_turret2_defend8",
+      "spec": "bot_research.bots.counters.visible_grower:@make?turret_round=2&defend_from=8&growth_rounds=6&tier=\"tier5\""
+    }
+  ],
+  "comparison_campaign": "bot_research/experiments/validation/forecast-grower-001.json",
+  "declared_utc": "2026-10-31T07:43:57.130569+00:00",
+  "opponents": [
+    {
+      "id": "lead10_C2_adaptive",
+      "spec": "bot_research.bots.counters.snapshots.lead_ten_001:@make?big_threat=100&gun_cap=120&poke_until=3&poke_reactive=\"turret\"&big_partial=true&r1_poke=3&attack_mode=\"adaptive\""
+    }
+  ],
+  "purpose": "Development information ablation: replace exact model defense with current visible-roster defense, preserving growth and flood spending rules.",
+  "scope": "Sixteen standard-start games, both assignments. The empty predicted action list is an explicitly inexact no-new-purchases assumption; forecast mismatches are expected, not invalid games. No reserved pool."
+}

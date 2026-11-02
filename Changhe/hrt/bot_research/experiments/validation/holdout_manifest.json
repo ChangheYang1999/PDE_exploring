@@ -1,0 +1,221 @@
+{
+  "candidate_freeze": "Hash best.py and imported strategy dependencies before first run. Any revision informed by a holdout retires that pool from confirmatory use.",
+  "created_utc": "2026-10-31T02:02:00Z",
+  "expanded_utc": "2026-10-31T02:13:04.531734+00:00",
+  "interpretation_limit": "Held-out parameter settings, seeds and legal histories, not independent random samples of all possible policies. Opponents share implementations with tuning policies. Both assignments are paired deterministic conditions. Continuation stress tests skip candidate calls in the prescribed prefix and are excluded from standard-opening strength scores. No universal dominance claim follows.",
+  "legal_opening_scenarios": [
+    {
+      "both_players_round_1": [
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        }
+      ],
+      "name": "one_round_factory_prefix"
+    },
+    {
+      "candidate_round_1": [
+        {
+          "op": "build_turret",
+          "type": "splash",
+          "x": 1,
+          "y": 1
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        }
+      ],
+      "name": "asymmetric_splash_prefix",
+      "opponent_round_1": [
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        },
+        {
+          "op": "buy_factory"
+        }
+      ]
+    }
+  ],
+  "pool_A_factory_specs": [
+    "bot_research.bots.counters.pool:@random_legal?seed=2003&attack_bias=0.42&action_cap=31",
+    "bot_research.bots.counters.pool:@mirror?attack_floor=0.22&defense_share=0.45",
+    "bot_research.bots.counters.pool:@stacker?growth_rounds=6&tier=tier2&batch_cap=750",
+    "bot_research.bots.counters.pool:@turtle?kind=gun3&defense_share=0.47&max_towers=23"
+  ],
+  "pool_A_profiles": [
+    {
+      "defense": "splash",
+      "defense_count": 1,
+      "growth_rounds": 2,
+      "keep_investing": 0.2,
+      "roster": [
+        "tier2",
+        "tier1",
+        "tier2",
+        "tier1"
+      ]
+    },
+    {
+      "defense": "gun2",
+      "defense_count": 2,
+      "growth_rounds": 4,
+      "keep_investing": 0.15,
+      "roster": [
+        "tier3",
+        "tier1",
+        "tier1",
+        "tier2"
+      ]
+    },
+    {
+      "defense": "splash",
+      "defense_count": 2,
+      "growth_rounds": 6,
+      "pulse_period": 2,
+      "pulse_phase": 0,
+      "roster": [
+        "tier5",
+        "tier2",
+        "tier2"
+      ]
+    },
+    {
+      "defense": "gun1",
+      "defense_count": 2,
+      "growth_rounds": 3,
+      "pulse_period": 3,
+      "pulse_phase": 1,
+      "roster": [
+        "tier4",
+        "tier1",
+        "tier3"
+      ]
+    },
+    {
+      "defense": "splash",
+      "defense_count": 1,
+      "growth_rounds": 7,
+      "keep_investing": 0.35,
+      "roster": [
+        "tier3",
+        "tier3",
+        "tier1"
+      ]
+    },
+    {
+      "defense": "splash",
+      "defense_count": 1,
+      "growth_rounds": 0,
+      "keep_investing": 0.3,
+      "roster": [
+        "tier1",
+        "tier1",
+        "tier2"
+      ]
+    }
+  ],
+  "pool_B_factory_specs": [
+    "bot_research.bots.counters.pool:@random_legal?seed=4027&attack_bias=0.21&action_cap=43",
+    "bot_research.bots.counters.pool:@mirror?attack_floor=0.07&defense_share=0.55",
+    "bot_research.bots.counters.pool:@stacker?growth_rounds=7&tier=tier3&batch_cap=850",
+    "bot_research.bots.counters.pool:@turtle?kind=splash&defense_share=0.37&max_towers=29"
+  ],
+  "pool_B_reserve_profiles": [
+    {
+      "defense": "splash",
+      "defense_count": 1,
+      "growth_rounds": 1,
+      "keep_investing": 0.25,
+      "roster": [
+        "tier2",
+        "tier2",
+        "tier1"
+      ]
+    },
+    {
+      "defense": "gun3",
+      "defense_count": 1,
+      "growth_rounds": 5,
+      "keep_investing": 0.25,
+      "roster": [
+        "tier4",
+        "tier2",
+        "tier3"
+      ]
+    },
+    {
+      "defense": "splash",
+      "defense_count": 3,
+      "growth_rounds": 8,
+      "pulse_period": 3,
+      "pulse_phase": 2,
+      "roster": [
+        "tier5",
+        "tier3",
+        "tier1"
+      ]
+    },
+    {
+      "defense": "gun2",
+      "defense_count": 1,
+      "growth_rounds": 4,
+      "pulse_period": 2,
+      "pulse_phase": 1,
+      "roster": [
+        "tier2",
+        "tier1",
+        "tier1"
+      ]
+    },
+    {
+      "defense": "splash",
+      "defense_count": 2,
+      "growth_rounds": 6,
+      "keep_investing": 0.4,
+      "roster": [
+        "tier4",
+        "tier4",
+        "tier2"
+      ]
+    },
+    {
+      "defense": "gun1",
+      "defense_count": 1,
+      "growth_rounds": 0,
+      "keep_investing": 0.2,
+      "roster": [
+        "tier3",
+        "tier1",
+        "tier1",
+        "tier1"
+      ]
+    }
+  ],
+  "purpose": "Separate final validation from development tournaments and best-response search.",
+  "standard_opening": "Engine standard initial state; no direct state mutation.",
+  "status": "prospective; no outcomes measured",
+  "unchanged_rules": "td_game.balanced_config() only"
+}

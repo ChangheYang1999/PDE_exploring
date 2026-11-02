@@ -1,0 +1,66 @@
+{
+  "declared_utc": "2026-10-31T08:48:34.407035+00:00",
+  "candidates": [
+    {
+      "id": "budget0.25_tier3_r3",
+      "spec": "bot_research.bots.counters.budget_timing:@make?tier=%22tier3%22&attack_round=3&budget_fraction=0.25"
+    },
+    {
+      "id": "budget0.25_tier3_r5",
+      "spec": "bot_research.bots.counters.budget_timing:@make?tier=%22tier3%22&attack_round=5&budget_fraction=0.25"
+    },
+    {
+      "id": "budget0.25_tier4_r5",
+      "spec": "bot_research.bots.counters.budget_timing:@make?tier=%22tier4%22&attack_round=5&budget_fraction=0.25"
+    },
+    {
+      "id": "budget0.25_tier4_r6",
+      "spec": "bot_research.bots.counters.budget_timing:@make?tier=%22tier4%22&attack_round=6&budget_fraction=0.25"
+    },
+    {
+      "id": "budget0.5_tier3_r3",
+      "spec": "bot_research.bots.counters.budget_timing:@make?tier=%22tier3%22&attack_round=3&budget_fraction=0.5"
+    },
+    {
+      "id": "budget0.5_tier3_r5",
+      "spec": "bot_research.bots.counters.budget_timing:@make?tier=%22tier3%22&attack_round=5&budget_fraction=0.5"
+    },
+    {
+      "id": "budget0.5_tier4_r5",
+      "spec": "bot_research.bots.counters.budget_timing:@make?tier=%22tier4%22&attack_round=5&budget_fraction=0.5"
+    },
+    {
+      "id": "budget0.5_tier4_r6",
+      "spec": "bot_research.bots.counters.budget_timing:@make?tier=%22tier4%22&attack_round=6&budget_fraction=0.5"
+    },
+    {
+      "id": "budget1.0_tier3_r3",
+      "spec": "bot_research.bots.counters.budget_timing:@make?tier=%22tier3%22&attack_round=3&budget_fraction=1.0"
+    },
+    {
+      "id": "budget1.0_tier3_r5",
+      "spec": "bot_research.bots.counters.budget_timing:@make?tier=%22tier3%22&attack_round=5&budget_fraction=1.0"
+    },
+    {
+      "id": "budget1.0_tier4_r5",
+      "spec": "bot_research.bots.counters.budget_timing:@make?tier=%22tier4%22&attack_round=5&budget_fraction=1.0"
+    },
+    {
+      "id": "budget1.0_tier4_r6",
+      "spec": "bot_research.bots.counters.budget_timing:@make?tier=%22tier4%22&attack_round=6&budget_fraction=1.0"
+    }
+  ],
+  "opponents": [
+    {
+      "id": "lead15_V4",
+      "spec": "bot_research.bots.counters.snapshots.lead_fifteen_001:@make?big_threat=100&gun_cap=120&poke_until=3&poke_reactive=%22turret%22&big_partial=true&r1_poke=3&attack_mode=%22adaptive%22&fortress_n=4&immune_attack=true"
+    }
+  ],
+  "purpose": "Replace exact minion forecasts by a sampled affordable-roster envelope, retaining the same four selected timing conditions and both player assignments: 24 development games.",
+  "hypothesis": "Covering packages costing half of visible enemy gold can preserve the positive timed-offense margin without excessive early defensive spending. Quarter and full budget are sensitivity controls.",
+  "scope": "Choices follow the observed exact/minion-only/empty/opening-prior interventions. Finite package sampling is not a universal defense proof. No opponent policy is evaluated by the candidate; no held-out opponents or scenarios are used.",
+  "source_sha256": {
+    "bot_research/bots/counters/budget_timing.py": "8b924b3e7e757241970db2e212d774a13a50e4b43a8e9ac60713e3a12b8ac297",
+    "bot_research/experiments/validation/check_budget_timing.py": "fbb477853ca2d9f45539dbc09e9f8895466dae2bc23f406ef3d025542a182557"
+  }
+}

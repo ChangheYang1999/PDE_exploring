@@ -1,0 +1,22 @@
+{
+  "candidates": [
+    {
+      "id": "turret0_defend51",
+      "spec": "bot_research.bots.counters.forecast_grower:@make?model_spec=\"bot_research.bots.counters.snapshots.lead_ten_001:@make\"&model_parameters={\"big_threat\":100,\"gun_cap\":120,\"poke_until\":3,\"poke_reactive\":\"turret\",\"big_partial\":true,\"r1_poke\":3,\"attack_mode\":\"adaptive\"}&turret_round=0&defend_from=51&growth_rounds=6&tier=\"tier5\""
+    },
+    {
+      "id": "turret2_defend51",
+      "spec": "bot_research.bots.counters.forecast_grower:@make?model_spec=\"bot_research.bots.counters.snapshots.lead_ten_001:@make\"&model_parameters={\"big_threat\":100,\"gun_cap\":120,\"poke_until\":3,\"poke_reactive\":\"turret\",\"big_partial\":true,\"r1_poke\":3,\"attack_mode\":\"adaptive\"}&turret_round=2&defend_from=51&growth_rounds=6&tier=\"tier5\""
+    }
+  ],
+  "comparison_campaign": "bot_research/experiments/validation/forecast-grower-001.json",
+  "declared_utc": "2026-10-31T07:35:03.830663+00:00",
+  "opponents": [
+    {
+      "id": "lead10_C2_adaptive",
+      "spec": "bot_research.bots.counters.snapshots.lead_ten_001:@make?big_threat=100&gun_cap=120&poke_until=3&poke_reactive=\"turret\"&big_partial=true&r1_poke=3&attack_mode=\"adaptive\""
+    }
+  ],
+  "purpose": "Post-result development ablation: disable forecast-based defense while preserving the growth/flood schedule and optional off-route gun. The retained model still computes predictions but they are not used for defense.",
+  "scope": "Four standard-start games, both player assignments. No reserved pool. The absence of a no-defense control was recorded before this declaration."
+}

@@ -1,0 +1,9 @@
+# Terminal launch readiness
+
+Checked 2026-10-31T19:33:44.596234+00:00. This is a static readiness record. It neither declares a candidate nor supplies a D result. The unchanged 96-condition manifest and all its source pins match. The saved prefix-check hash matches. There is no terminal candidate declaration and no reserved-D run directory. No candidate or opponent was called.
+
+The launcher reads the exact final selection record and installed candidate hash. The pipeline enforces the 23:00Z start gate, verifies its pinned sources before every child, and refuses to start a child with fewer than 590 seconds before the worker deadline. Its children have 580-second timeouts. It then requires the two overlap audits, exact input snapshots, strict case accounting, original-engine replay, loss diagnostics, fresh entry-point checks and the final publisher. Prescribed opening turns are accounted separately from actual policy calls.
+
+Use the optional terminal_logged wrapper at launch to redact concrete local paths in all child output, including unexpected tracebacks. It streams bytes, combines both output channels and preserves the pipeline exit code. Its source parses, and three direct filtering checks preserve ordinary relative output while redacting project and home-directory examples. No pipeline execution occurred in these checks. The wrapper source hash is recorded with launch output, and the existing pipeline remains unchanged.
+
+At final selection, first verify that the lead explicitly commits to the chosen installed bytes through every D check. Record the actual selection time and an exact excerpt with declare_terminal_candidate. Start terminal_logged detached on one free assigned core with the required environment. Keep enough disk headroom, retain any failure record, and do not change the candidate in response to D. Finish with protected-file and artifact-path checks. Evidence: verification/readiness_1935.json.

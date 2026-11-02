@@ -1,0 +1,90 @@
+| candidate | opponent | n | W | D | L | mean HP diff | min HP diff | mean end round | cand rejected | cand errors | opp errors | cand decide s/match (max call) |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| bot_research.experiments.lead.frozen.best_v9e:@make | bot_research.experiments.lead.prefix_fork:@make | 2 | 0 | 0 | 2 | -1240.0 | -1240 | 9.0 | 0 | 0 | 0 | 0.83 (0.20) |
+| bot_research.experiments.lead.frozen.best_v9e:@make | bot_research.experiments.lead.prefix_fork:@make?bait=["tier1"] | 2 | 0 | 0 | 2 | -1270.0 | -1270 | 9.0 | 0 | 0 | 0 | 0.82 (0.16) |
+| bot_research.experiments.lead.frozen.best_v9e:@make | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=3&tier="tier1" | 2 | 2 | 0 | 0 | 970.0 | 970 | 12.0 | 0 | 0 | 0 | 0.68 (0.25) |
+| bot_research.experiments.lead.frozen.best_v9e:@make | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=3&tier="tier2" | 2 | 2 | 0 | 0 | 977.0 | 977 | 12.0 | 0 | 0 | 0 | 0.55 (0.24) |
+| bot_research.experiments.lead.frozen.best_v9e:@make | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=3&tier="tier3" | 2 | 2 | 0 | 0 | 1684.0 | 1684 | 13.0 | 0 | 0 | 0 | 0.59 (0.16) |
+| bot_research.experiments.lead.frozen.best_v9e:@make | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier1" | 2 | 2 | 0 | 0 | 1740.0 | 1740 | 15.0 | 0 | 0 | 0 | 0.99 (0.19) |
+| bot_research.experiments.lead.frozen.best_v9e:@make | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier2" | 2 | 2 | 0 | 0 | 1040.0 | 1040 | 13.0 | 0 | 0 | 0 | 0.62 (0.15) |
+| bot_research.experiments.lead.frozen.best_v9e:@make | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier3" | 2 | 2 | 0 | 0 | 2300.0 | 2300 | 15.0 | 0 | 0 | 0 | 0.83 (0.17) |
+| bot_research.experiments.lead.frozen.best_v9e:@make | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier3"&bait=["tier1"] | 2 | 2 | 0 | 0 | 1020.0 | 1020 | 13.0 | 0 | 0 | 0 | 0.75 (0.15) |
+| bot_research.experiments.lead.frozen.best_v9e:@make | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier3"&budget_fraction=0.5 | 2 | 2 | 0 | 0 | 2300.0 | 2300 | 15.0 | 0 | 0 | 0 | 0.96 (0.18) |
+| bot_research.experiments.lead.frozen.best_v9e:@make | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=5&tier="tier3" | 2 | 2 | 0 | 0 | 1335.0 | 1335 | 17.0 | 0 | 0 | 0 | 1.24 (0.23) |
+| bot_research.experiments.lead.frozen.best_v9e:@make | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=5&tier="tier4" | 2 | 2 | 0 | 0 | 1335.0 | 1335 | 17.0 | 0 | 0 | 0 | 1.16 (0.21) |
+| bot_research.experiments.lead.frozen.best_v9f:@make | bot_research.experiments.lead.prefix_fork:@make | 2 | 2 | 0 | 0 | 1040.0 | 1040 | 12.0 | 0 | 0 | 0 | 0.82 (0.23) |
+| bot_research.experiments.lead.frozen.best_v9f:@make | bot_research.experiments.lead.prefix_fork:@make?bait=["tier1"] | 2 | 2 | 0 | 0 | 770.0 | 770 | 13.0 | 0 | 0 | 0 | 1.15 (0.33) |
+| bot_research.experiments.lead.frozen.best_v9f:@make | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=3&tier="tier1" | 2 | 2 | 0 | 0 | 1305.0 | 1305 | 11.0 | 0 | 0 | 0 | 0.29 (0.18) |
+| bot_research.experiments.lead.frozen.best_v9f:@make | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=3&tier="tier2" | 2 | 2 | 0 | 0 | 1305.0 | 1305 | 11.0 | 0 | 0 | 0 | 0.28 (0.18) |
+| bot_research.experiments.lead.frozen.best_v9f:@make | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=3&tier="tier3" | 2 | 2 | 0 | 0 | 1404.0 | 1404 | 13.0 | 0 | 0 | 0 | 0.48 (0.24) |
+| bot_research.experiments.lead.frozen.best_v9f:@make | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier1" | 2 | 2 | 0 | 0 | 1445.0 | 1445 | 13.0 | 0 | 0 | 0 | 0.70 (0.20) |
+| bot_research.experiments.lead.frozen.best_v9f:@make | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier2" | 2 | 2 | 0 | 0 | 1445.0 | 1445 | 13.0 | 0 | 0 | 0 | 0.70 (0.20) |
+| bot_research.experiments.lead.frozen.best_v9f:@make | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier3" | 2 | 2 | 0 | 0 | 1382.0 | 1382 | 13.0 | 0 | 0 | 0 | 0.65 (0.16) |
+| bot_research.experiments.lead.frozen.best_v9f:@make | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier3"&bait=["tier1"] | 2 | 2 | 0 | 0 | 1388.0 | 1388 | 13.0 | 0 | 0 | 0 | 0.86 (0.25) |
+| bot_research.experiments.lead.frozen.best_v9f:@make | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier3"&budget_fraction=0.5 | 2 | 2 | 0 | 0 | 1242.0 | 1242 | 13.0 | 0 | 0 | 0 | 0.65 (0.17) |
+| bot_research.experiments.lead.frozen.best_v9f:@make | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=5&tier="tier3" | 2 | 2 | 0 | 0 | 1055.0 | 1055 | 13.0 | 0 | 0 | 0 | 0.51 (0.16) |
+| bot_research.experiments.lead.frozen.best_v9f:@make | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=5&tier="tier4" | 2 | 2 | 0 | 0 | 1355.0 | 1355 | 13.0 | 0 | 0 | 0 | 0.71 (0.31) |
+| bot_research.experiments.lead.frozen.best_v9f:@make?passive_mid_from=null | bot_research.experiments.lead.prefix_fork:@make | 2 | 2 | 0 | 0 | 760.0 | 760 | 11.0 | 0 | 0 | 0 | 0.77 (0.28) |
+| bot_research.experiments.lead.frozen.best_v9f:@make?passive_mid_from=null | bot_research.experiments.lead.prefix_fork:@make?bait=["tier1"] | 2 | 2 | 0 | 0 | 1000.0 | 1000 | 12.0 | 0 | 0 | 0 | 0.99 (0.31) |
+| bot_research.experiments.lead.frozen.best_v9f:@make?passive_mid_from=null | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=3&tier="tier1" | 2 | 2 | 0 | 0 | 1305.0 | 1305 | 11.0 | 0 | 0 | 0 | 0.30 (0.19) |
+| bot_research.experiments.lead.frozen.best_v9f:@make?passive_mid_from=null | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=3&tier="tier2" | 2 | 2 | 0 | 0 | 1305.0 | 1305 | 11.0 | 0 | 0 | 0 | 0.28 (0.18) |
+| bot_research.experiments.lead.frozen.best_v9f:@make?passive_mid_from=null | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=3&tier="tier3" | 2 | 2 | 0 | 0 | 1404.0 | 1404 | 13.0 | 0 | 0 | 0 | 0.49 (0.24) |
+| bot_research.experiments.lead.frozen.best_v9f:@make?passive_mid_from=null | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier1" | 2 | 2 | 0 | 0 | 1445.0 | 1445 | 12.0 | 0 | 0 | 0 | 0.60 (0.21) |
+| bot_research.experiments.lead.frozen.best_v9f:@make?passive_mid_from=null | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier2" | 2 | 2 | 0 | 0 | 1445.0 | 1445 | 12.0 | 0 | 0 | 0 | 0.61 (0.20) |
+| bot_research.experiments.lead.frozen.best_v9f:@make?passive_mid_from=null | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier3" | 2 | 2 | 0 | 0 | 1382.0 | 1382 | 13.0 | 0 | 0 | 0 | 0.68 (0.19) |
+| bot_research.experiments.lead.frozen.best_v9f:@make?passive_mid_from=null | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier3"&bait=["tier1"] | 2 | 2 | 0 | 0 | 1388.0 | 1388 | 13.0 | 0 | 0 | 0 | 0.81 (0.25) |
+| bot_research.experiments.lead.frozen.best_v9f:@make?passive_mid_from=null | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier3"&budget_fraction=0.5 | 2 | 2 | 0 | 0 | 1242.0 | 1242 | 13.0 | 0 | 0 | 0 | 0.65 (0.17) |
+| bot_research.experiments.lead.frozen.best_v9f:@make?passive_mid_from=null | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=5&tier="tier3" | 2 | 2 | 0 | 0 | 785.0 | 785 | 13.0 | 0 | 0 | 0 | 0.75 (0.35) |
+| bot_research.experiments.lead.frozen.best_v9f:@make?passive_mid_from=null | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=5&tier="tier4" | 2 | 2 | 0 | 0 | 795.0 | 795 | 13.0 | 0 | 0 | 0 | 0.67 (0.33) |
+| bot_research.experiments.lead.frozen.best_v9f:@make?passive_until=null | bot_research.experiments.lead.prefix_fork:@make | 2 | 0 | 0 | 2 | -1240.0 | -1240 | 9.0 | 0 | 0 | 0 | 0.84 (0.20) |
+| bot_research.experiments.lead.frozen.best_v9f:@make?passive_until=null | bot_research.experiments.lead.prefix_fork:@make?bait=["tier1"] | 2 | 2 | 0 | 0 | 870.0 | 870 | 13.0 | 0 | 0 | 0 | 1.29 (0.26) |
+| bot_research.experiments.lead.frozen.best_v9f:@make?passive_until=null | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=3&tier="tier1" | 2 | 2 | 0 | 0 | 970.0 | 970 | 12.0 | 0 | 0 | 0 | 0.68 (0.25) |
+| bot_research.experiments.lead.frozen.best_v9f:@make?passive_until=null | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=3&tier="tier2" | 2 | 2 | 0 | 0 | 977.0 | 977 | 12.0 | 0 | 0 | 0 | 0.57 (0.26) |
+| bot_research.experiments.lead.frozen.best_v9f:@make?passive_until=null | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=3&tier="tier3" | 2 | 2 | 0 | 0 | 1404.0 | 1404 | 12.0 | 0 | 0 | 0 | 0.49 (0.16) |
+| bot_research.experiments.lead.frozen.best_v9f:@make?passive_until=null | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier1" | 2 | 2 | 0 | 0 | 1320.0 | 1320 | 15.0 | 0 | 0 | 0 | 0.91 (0.26) |
+| bot_research.experiments.lead.frozen.best_v9f:@make?passive_until=null | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier2" | 2 | 2 | 0 | 0 | 1040.0 | 1040 | 13.0 | 0 | 0 | 0 | 0.68 (0.23) |
+| bot_research.experiments.lead.frozen.best_v9f:@make?passive_until=null | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier3" | 2 | 2 | 0 | 0 | 1180.0 | 1180 | 13.0 | 0 | 0 | 0 | 0.68 (0.17) |
+| bot_research.experiments.lead.frozen.best_v9f:@make?passive_until=null | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier3"&bait=["tier1"] | 2 | 2 | 0 | 0 | 968.0 | 968 | 12.0 | 0 | 0 | 0 | 0.77 (0.22) |
+| bot_research.experiments.lead.frozen.best_v9f:@make?passive_until=null | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier3"&budget_fraction=0.5 | 2 | 2 | 0 | 0 | 1180.0 | 1180 | 13.0 | 0 | 0 | 0 | 0.69 (0.18) |
+| bot_research.experiments.lead.frozen.best_v9f:@make?passive_until=null | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=5&tier="tier3" | 2 | 2 | 0 | 0 | 1335.0 | 1335 | 17.0 | 0 | 0 | 0 | 1.23 (0.23) |
+| bot_research.experiments.lead.frozen.best_v9f:@make?passive_until=null | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=5&tier="tier4" | 2 | 2 | 0 | 0 | 1335.0 | 1335 | 17.0 | 0 | 0 | 0 | 1.16 (0.21) |
+| bot_research.experiments.lead.v30:@make?passive_until=5&poke_reactive="turret_only"&fail_limit=2&passive_turret=false&robust_k=null&behind_mode="current"&passive_mid_from=5 | bot_research.experiments.lead.prefix_fork:@make | 2 | 2 | 0 | 0 | 800.0 | 800 | 11.0 | 0 | 0 | 0 | 0.91 (0.30) |
+| bot_research.experiments.lead.v30:@make?passive_until=5&poke_reactive="turret_only"&fail_limit=2&passive_turret=false&robust_k=null&behind_mode="current"&passive_mid_from=5 | bot_research.experiments.lead.prefix_fork:@make?bait=["tier1"] | 2 | 2 | 0 | 0 | 620.0 | 620 | 12.0 | 0 | 0 | 0 | 1.19 (0.28) |
+| bot_research.experiments.lead.v30:@make?passive_until=5&poke_reactive="turret_only"&fail_limit=2&passive_turret=false&robust_k=null&behind_mode="current"&passive_mid_from=5 | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=3&tier="tier1" | 2 | 2 | 0 | 0 | 970.0 | 970 | 12.0 | 0 | 0 | 0 | 0.84 (0.47) |
+| bot_research.experiments.lead.v30:@make?passive_until=5&poke_reactive="turret_only"&fail_limit=2&passive_turret=false&robust_k=null&behind_mode="current"&passive_mid_from=5 | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=3&tier="tier2" | 2 | 2 | 0 | 0 | 977.0 | 977 | 12.0 | 0 | 0 | 0 | 0.57 (0.29) |
+| bot_research.experiments.lead.v30:@make?passive_until=5&poke_reactive="turret_only"&fail_limit=2&passive_turret=false&robust_k=null&behind_mode="current"&passive_mid_from=5 | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=3&tier="tier3" | 2 | 2 | 0 | 0 | 1404.0 | 1404 | 12.0 | 0 | 0 | 0 | 0.46 (0.16) |
+| bot_research.experiments.lead.v30:@make?passive_until=5&poke_reactive="turret_only"&fail_limit=2&passive_turret=false&robust_k=null&behind_mode="current"&passive_mid_from=5 | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier1" | 2 | 2 | 0 | 0 | 1220.0 | 1220 | 11.0 | 0 | 0 | 0 | 0.63 (0.23) |
+| bot_research.experiments.lead.v30:@make?passive_until=5&poke_reactive="turret_only"&fail_limit=2&passive_turret=false&robust_k=null&behind_mode="current"&passive_mid_from=5 | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier2" | 2 | 2 | 0 | 0 | 1376.0 | 1376 | 12.0 | 0 | 0 | 0 | 0.54 (0.21) |
+| bot_research.experiments.lead.v30:@make?passive_until=5&poke_reactive="turret_only"&fail_limit=2&passive_turret=false&robust_k=null&behind_mode="current"&passive_mid_from=5 | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier3" | 2 | 2 | 0 | 0 | 1382.0 | 1382 | 12.0 | 0 | 0 | 0 | 0.50 (0.21) |
+| bot_research.experiments.lead.v30:@make?passive_until=5&poke_reactive="turret_only"&fail_limit=2&passive_turret=false&robust_k=null&behind_mode="current"&passive_mid_from=5 | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier3"&bait=["tier1"] | 2 | 2 | 0 | 0 | 968.0 | 968 | 12.0 | 0 | 0 | 0 | 0.70 (0.23) |
+| bot_research.experiments.lead.v30:@make?passive_until=5&poke_reactive="turret_only"&fail_limit=2&passive_turret=false&robust_k=null&behind_mode="current"&passive_mid_from=5 | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier3"&budget_fraction=0.5 | 2 | 2 | 0 | 0 | 1382.0 | 1382 | 13.0 | 0 | 0 | 0 | 0.69 (0.17) |
+| bot_research.experiments.lead.v30:@make?passive_until=5&poke_reactive="turret_only"&fail_limit=2&passive_turret=false&robust_k=null&behind_mode="current"&passive_mid_from=5 | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=5&tier="tier3" | 2 | 2 | 0 | 0 | 1895.0 | 1895 | 14.0 | 0 | 0 | 0 | 0.94 (0.27) |
+| bot_research.experiments.lead.v30:@make?passive_until=5&poke_reactive="turret_only"&fail_limit=2&passive_turret=false&robust_k=null&behind_mode="current"&passive_mid_from=5 | bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=5&tier="tier4" | 2 | 2 | 0 | 0 | 1355.0 | 1355 | 13.0 | 0 | 0 | 0 | 0.61 (0.29) |
+
+| candidate | matches | W | D | L | score (W + D/2) / n |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| bot_research.experiments.lead.frozen.best_v9e:@make | 24 | 20 | 0 | 4 | 0.833 |
+| bot_research.experiments.lead.frozen.best_v9f:@make | 24 | 24 | 0 | 0 | 1.000 |
+| bot_research.experiments.lead.frozen.best_v9f:@make?passive_mid_from=null | 24 | 24 | 0 | 0 | 1.000 |
+| bot_research.experiments.lead.frozen.best_v9f:@make?passive_until=null | 24 | 22 | 0 | 2 | 0.917 |
+| bot_research.experiments.lead.v30:@make?passive_until=5&poke_reactive="turret_only"&fail_limit=2&passive_turret=false&robust_k=null&behind_mode="current"&passive_mid_from=5 | 24 | 24 | 0 | 0 | 1.000 |
+
+| bot (all matches, both perspectives) | matches | W | D | L | score | mean HP diff |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| bot_research.experiments.lead.frozen.best_v9f:@make | 24 | 24 | 0 | 0 | 1.000 | 1261.3 |
+| bot_research.experiments.lead.v30:@make?passive_until=5&poke_reactive="turret_only"&fail_limit=2&passive_turret=false&robust_k=null&behind_mode="current"&passive_mid_from=5 | 24 | 24 | 0 | 0 | 1.000 | 1195.8 |
+| bot_research.experiments.lead.frozen.best_v9f:@make?passive_mid_from=null | 24 | 24 | 0 | 0 | 1.000 | 1188.0 |
+| bot_research.experiments.lead.frozen.best_v9f:@make?passive_until=null | 24 | 22 | 0 | 2 | 0.917 | 944.9 |
+| bot_research.experiments.lead.frozen.best_v9e:@make | 24 | 20 | 0 | 4 | 0.833 | 1015.9 |
+| bot_research.experiments.lead.prefix_fork:@make | 10 | 4 | 0 | 6 | 0.400 | -24.0 |
+| bot_research.experiments.lead.prefix_fork:@make?bait=["tier1"] | 10 | 2 | 0 | 8 | 0.200 | -398.0 |
+| bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier3" | 10 | 0 | 0 | 10 | 0.000 | -1525.2 |
+| bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier3"&budget_fraction=0.5 | 10 | 0 | 0 | 10 | 0.000 | -1469.2 |
+| bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=3&tier="tier1" | 10 | 0 | 0 | 10 | 0.000 | -1104.0 |
+| bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=3&tier="tier2" | 10 | 0 | 0 | 10 | 0.000 | -1108.2 |
+| bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=3&tier="tier3" | 10 | 0 | 0 | 10 | 0.000 | -1460.0 |
+| bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier1" | 10 | 0 | 0 | 10 | 0.000 | -1434.0 |
+| bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier2" | 10 | 0 | 0 | 10 | 0.000 | -1269.2 |
+| bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=5&tier="tier3" | 10 | 0 | 0 | 10 | 0.000 | -1281.0 |
+| bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=5&tier="tier4" | 10 | 0 | 0 | 10 | 0.000 | -1235.0 |
+| bot_research.experiments.lead.prefix_fork:@make?continuation="strike"&fork_round=4&tier="tier3"&bait=["tier1"] | 10 | 0 | 0 | 10 | 0.000 | -1146.4 |

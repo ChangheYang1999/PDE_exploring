@@ -1,0 +1,48 @@
+{
+  "registered_utc": "2026-10-31T06:00:48.079130+00:00",
+  "purpose": "Development transfer of a fixed cheap opening guard to newer frozen continuations. Test economy15 layout-free fallback with two saturation budgets and fortress21. Economy13 repeats are controls, not independent evidence. Six known opponents, both seats,48 games; no reserved conditions.",
+  "candidates": [
+    {
+      "id": "guard_economy13",
+      "spec": "bot_research.bots.counters.guard_continuation:@make?continuation=%22economy13%22"
+    },
+    {
+      "id": "guard_economy15_leak",
+      "spec": "bot_research.bots.counters.guard_continuation:@make?continuation=%22economy15%22&parameters=%7B%22free_fallback%22%3A%22leak%22%7D"
+    },
+    {
+      "id": "guard_economy15_leak_sat25",
+      "spec": "bot_research.bots.counters.guard_continuation:@make?continuation=%22economy15%22&parameters=%7B%22free_fallback%22%3A%22leak%22%2C%22sat_frac%22%3A0.25%7D"
+    },
+    {
+      "id": "guard_fortress21",
+      "spec": "bot_research.bots.counters.guard_continuation:@make?continuation=%22fortress21%22"
+    }
+  ],
+  "opponents": [
+    {
+      "id": "economy13",
+      "spec": "bot_research.bots.economy.frozen.v13.econ13:@make"
+    },
+    {
+      "id": "fortress21",
+      "spec": "bot_research.bots.defense.frozen.v21.fortress:@make"
+    },
+    {
+      "id": "lead7",
+      "spec": "bot_research.bots.counters.snapshots.lead_seven_001:@make?big_threat=100&attack_mode=%22robust%22&poke_insurance=false&gun_cap=120"
+    },
+    {
+      "id": "bluff_r3",
+      "spec": "bot_research.bots.counters.feature_bluff:@make?turret_round=3"
+    },
+    {
+      "id": "eco6_t5",
+      "spec": "bot_research.bots.counters.pool:@archetype?name=eco6_t5"
+    },
+    {
+      "id": "guarded_tier4_r8",
+      "spec": "bot_research.bots.counters.guarded_schedule:@make?schedule=%5B%5B1%2C%22tier1%22%2C1%5D%2C%5B8%2C%22tier4%22%2C200%5D%5D"
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "all_passed": true,
+  "completed_utc": "2026-10-31T23:27:52.558823+00:00",
+  "cpu_affinity": [
+    28
+  ],
+  "input_sha256": {
+    "bot_research/experiments/validation/analysis/artifact_path_audit/verification/redaction.json": "daea2f198a9e0dbb52d3e912c2ae831fb4216d399187704d6c2813a19c899cc4",
+    "bot_research/experiments/validation/analysis/terminal_reserved_validation/verification/dependency_supplement_post_d_001.json": "38daede3a4c81981aeff107cdb91455f0082c5a0e3b621351008919cd18346b8",
+    "bot_research/experiments/validation/analysis/terminal_reserved_validation/verification/final_candidate.json": "c592dbd82ab91b081dc9f49eb125c681df115c5845caae7423aae878287371ae",
+    "bot_research/experiments/validation/post_terminal_checks.py": "7d981bbfbba7a9cccf213adf0f494f6c058ae3e50f0cd7e0af31d5a1c87010c9",
+    "bot_research/runs/validation/artifacts-post-d-001.json": "42d52e6076fb2e8d9c5d9cc91a0c00f85213c08ae4cf9e3b3355c55f4caa0dc3",
+    "bot_research/runs/validation/integrity-post-d-001.json": "efeb5a286037391f7829d9759485a5b96564a4280e7baf28f27b7d5fe17c2951",
+    "bot_research/runs/validation/integrity-start.json": "d671d794701ac69c2ce7657f72cb17fe7cef3184ba0981f112be9bf328a82ffe",
+    "bot_research/runs/validation/post-d-artifacts-001.log": "b3ecad589eedbecf1bf88a722e4d5a8de89d9d2d787227c1e4fde67f61665421",
+    "bot_research/runs/validation/post-d-integrity-001.log": "5387b37f9ae6391c6adacbef73fd1fbb616ef78a8c51e056049dc538920c3fa3",
+    "bot_research/runs/validation/post-d-pins-001.log": "165b517a23e6b5cc85a007d19eb0990bd9f05b9189519e69f59b19d393f7b6f7",
+    "bot_research/runs/validation/post-d-unittest-001.log": "3b4c08fb82187886963181e24c65d4da0dbc9761180a5161f385b9fd32c43f05",
+    "bot_research/runs/validation/reserved-D-final-001-pipeline.log": "b2d19f7aaa7e655c434427e8ec661d106b89b521919c46b5fc31c1c9e3ab4d02"
+  },
+  "nice": 19,
+  "original_tests": {
+    "failed": 0,
+    "run": 59,
+    "skipped": 9
+  },
+  "preexisting_changed_manifest_files": [
+    "td_game/combat.py",
+    "tests/test_engine.py",
+    "tests/test_rules.py"
+  ],
+  "preexisting_missing_manifest_entries": 1002,
+  "scope": "Post-D source pins, original tests, protected-tree baseline equality and owned artifact paths/resources. These checks do not add strength trials.",
+  "started_utc": "2026-10-31T23:26:46.317615+00:00",
+  "steps": [
+    {
+      "command": [
+        ".venv/bin/python",
+        "-B",
+        "-m",
+        "bot_research.experiments.validation.terminal_dependency_supplement",
+        "verify",
+        "--phase",
+        "post-d",
+        "--output",
+        "bot_research/experiments/validation/analysis/terminal_reserved_validation/verification/dependency_supplement_post_d_001.json"
+      ],
+      "completed_utc": "2026-10-31T23:26:46.640781+00:00",
+      "log": "bot_research/runs/validation/post-d-pins-001.log",
+      "log_sha256": "165b517a23e6b5cc85a007d19eb0990bd9f05b9189519e69f59b19d393f7b6f7",
+      "name": "pins",
+      "returncode": 0,
+      "started_utc": "2026-10-31T23:26:46.317679+00:00"
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "completed_utc": "2026-10-31T23:26:49.589555+00:00",
+      "log": "bot_research/runs/validation/post-d-unittest-001.log",
+      "log_sha256": "3b4c08fb82187886963181e24c65d4da0dbc9761180a5161f385b9fd32c43f05",
+      "name": "unittest",
+      "returncode": 0,
+      "started_utc": "2026-10-31T23:26:46.640943+00:00"
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-B",
+        "-m",
+        "bot_research.experiments.validation.integrity",
+        "--output",
+        "bot_research/runs/validation/integrity-post-d-001.json",
+        "--baseline",
+        "bot_research/runs/validation/integrity-start.json"
+      ],
+      "completed_utc": "2026-10-31T23:26:49.805029+00:00",
+      "log": "bot_research/runs/validation/post-d-integrity-001.log",
+      "log_sha256": "5387b37f9ae6391c6adacbef73fd1fbb616ef78a8c51e056049dc538920c3fa3",
+      "name": "integrity",
+      "returncode": 0,
+      "started_utc": "2026-10-31T23:26:49.589898+00:00"
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-B",
+        "-m",
+        "bot_research.experiments.validation.check_owned_artifacts_v2",
+        "--output",
+        "bot_research/runs/validation/artifacts-post-d-001.json",
+        "--guard-receipt",
+        "bot_research/experiments/validation/analysis/artifact_path_audit/verification/redaction.json"
+      ],
+      "completed_utc": "2026-10-31T23:27:52.558565+00:00",
+      "log": "bot_research/runs/validation/post-d-artifacts-001.log",
+      "log_sha256": "b3ecad589eedbecf1bf88a722e4d5a8de89d9d2d787227c1e4fde67f61665421",
+      "name": "artifacts",
+      "returncode": 0,
+      "started_utc": "2026-10-31T23:26:49.807035+00:00"
+    }
+  ],
+  "unchanged_protected_entries": 903
+}

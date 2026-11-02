@@ -1,0 +1,36 @@
+{
+  "registered_utc": "2026-10-31T05:36:52Z",
+  "purpose": "Mechanism follow-up to feature-bluff-001: compare normal cheap-guard economy13 with an explicit policy ablation that ignores the public enemy turret-count feature, and a second ablation disabling its special no-turret mode. Physical building lists and the real engine are unchanged. Normal-mode games repeat known controls; repetitions are not independent evidence.",
+  "candidates": [
+    {
+      "id": "no_turret_eco6",
+      "spec": "bot_research.bots.counters.feature_bluff:@make?turret_round=0"
+    },
+    {
+      "id": "off_route_r1_eco6",
+      "spec": "bot_research.bots.counters.feature_bluff:@make"
+    },
+    {
+      "id": "off_route_r3_eco6",
+      "spec": "bot_research.bots.counters.feature_bluff:@make?turret_round=3"
+    },
+    {
+      "id": "useful_r3_eco6",
+      "spec": "bot_research.bots.counters.feature_bluff:@make?turret_round=3&turret_x=3&turret_y=1"
+    }
+  ],
+  "opponents": [
+    {
+      "id": "guard_normal",
+      "spec": "bot_research.bots.counters.turret_feature_ablation:@make?mode=%22normal%22"
+    },
+    {
+      "id": "guard_ignore_turret_signal",
+      "spec": "bot_research.bots.counters.turret_feature_ablation:@make?mode=%22open%22"
+    },
+    {
+      "id": "guard_disable_open_mode",
+      "spec": "bot_research.bots.counters.turret_feature_ablation:@make?mode=%22closed%22"
+    }
+  ]
+}

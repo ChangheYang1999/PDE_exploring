@@ -1,0 +1,52 @@
+{
+  "declared_utc": "2026-10-31T08:46:34.513125+00:00",
+  "candidates": [
+    {
+      "id": "guard_empty",
+      "spec": "bot_research.bots.counters.guard_roster:@make?roster=%5B%5D"
+    },
+    {
+      "id": "guard_t1",
+      "spec": "bot_research.bots.counters.guard_roster:@make?roster=%5B%22tier1%22%5D"
+    },
+    {
+      "id": "guard_2t1",
+      "spec": "bot_research.bots.counters.guard_roster:@make?roster=%5B%22tier1%22%2C+%22tier1%22%5D"
+    },
+    {
+      "id": "guard_t2",
+      "spec": "bot_research.bots.counters.guard_roster:@make?roster=%5B%22tier2%22%5D"
+    },
+    {
+      "id": "guard_2t1_t2",
+      "spec": "bot_research.bots.counters.guard_roster:@make?roster=%5B%22tier1%22%2C+%22tier1%22%2C+%22tier2%22%5D"
+    },
+    {
+      "id": "direct_economy17",
+      "spec": "bot_research.bots.economy.frozen.v17.econ17:@make?free_fallback=%22zero%22&foreign_attack_from=11"
+    }
+  ],
+  "opponents": [
+    {
+      "id": "lead15_V4",
+      "spec": "bot_research.bots.counters.snapshots.lead_fifteen_001:@make?big_threat=100&gun_cap=120&poke_until=3&poke_reactive=%22turret%22&big_partial=true&r1_poke=3&attack_mode=%22adaptive%22&fortress_n=4&immune_attack=true"
+    },
+    {
+      "id": "economy17",
+      "spec": "bot_research.bots.economy.frozen.v17.econ17:@make?free_fallback=%22zero%22&foreign_attack_from=11"
+    },
+    {
+      "id": "fortress24",
+      "spec": "bot_research.bots.defense.frozen.v24.fortress:@make"
+    }
+  ],
+  "purpose": "Five guarded opening rosters and direct economy17 on three disclosed opponents, both assignments. Test whether a larger blind opening poke survives the loss of early factory investment. No opponent forecasting; 36 standard-start development conditions.",
+  "hypothesis": "A second tier1 in the cheap guarded opening changes an equal later-HP match into a win without an excessive economic loss; larger rosters may fail from lost compounding.",
+  "scope": "Outcome-informed choice of the guarded opening family. All roster alternatives fixed before this matrix. Frozen fortress24 has a three-second internal planner cutoff; measure paired histories rather than assuming equality. Pool B is not used.",
+  "source_sha256": {
+    "bot_research/bots/counters/guard_roster.py": "17c9e8e23158941e4204c1373922d03ca1a7fabb08381ebac5d82013eb806570",
+    "bot_research/experiments/validation/check_guard_roster_v2.py": "db99178df2da481848d8e48eb1620d2f34a473a6e3d8d00abb4c0cbb4739de88"
+  },
+  "supersedes": "bot_research/experiments/validation/guard-roster-transfer-001.json",
+  "preliminary_check": "The original first-round check incorrectly expected zero damage against three tier1. The unchanged gun at (3,1) leaks one tier1 (5 damage), confirmed for all five proposed own rosters. No full games ran under declaration 001. The revised check expects this observed exact damage, without changing any candidate actions."
+}

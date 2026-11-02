@@ -1,0 +1,217 @@
+{
+  "attempt_counts": {
+    "valid": 12
+  },
+  "checker_sha256": "d080d05b9a4754fe5523ec3c8846aa0479a3aa74e4e074a024b588c032134e9a",
+  "complete_assignment_pairs": 6,
+  "expected_conditions": 12,
+  "heading": "Model-free budget forecast after an early tier4 strike",
+  "identical_assignment_pairs": 6,
+  "input_sha256": {
+    "bot_research/runs/validation/budget-handoff-001/replays/case0000.jsonl": "781a200f83a2363a3a9e6618cf4904ff75a12aba0c0101cf426a3164455aa341",
+    "bot_research/runs/validation/budget-handoff-001/replays/case0001.jsonl": "f6d086ea61954100819b3cd1726c584aaad8280a299a8f8919059d172f665fef",
+    "bot_research/runs/validation/budget-handoff-001/replays/case0002.jsonl": "3f907345a6fa378462f36d38d70083091699cf50392d741dbba82239ceea5ccc",
+    "bot_research/runs/validation/budget-handoff-001/replays/case0003.jsonl": "64ee80938cc9622fc0d72f34b7a98b6c0c9d60f752364af9fe2e9d0b25b48f0a",
+    "bot_research/runs/validation/budget-handoff-001/replays/case0004.jsonl": "359175070e779c42b910bdc38b197e532870cbb613baf50b290d8fa8e6d7992b",
+    "bot_research/runs/validation/budget-handoff-001/replays/case0005.jsonl": "8c525d451daba71d8a58390cdbb093622b0f4567ecc73af504f87f10a4d5ac3f",
+    "bot_research/runs/validation/budget-handoff-001/replays/case0006.jsonl": "585c4c73327398eaea4f27f319442be0adb2509eaa5b9690bac33a46b4ef3421",
+    "bot_research/runs/validation/budget-handoff-001/replays/case0007.jsonl": "41a0e88627cc678fdd579f14d922f3012400ae2a21df7212588bd2daaacfcdb9",
+    "bot_research/runs/validation/budget-handoff-001/replays/case0008.jsonl": "ce596fd78280770507b9387d2c79160c73dd6e511666bfbfaa752f3b64042121",
+    "bot_research/runs/validation/budget-handoff-001/replays/case0009.jsonl": "82de9ba3e4febb50696aa5f61ed46fda1a90319587effeb5757979508c795d1a",
+    "bot_research/runs/validation/budget-handoff-001/replays/case0010.jsonl": "ec5d34cd05fb645142d2d2c40919a346732dee645e3605820101c881035814aa",
+    "bot_research/runs/validation/budget-handoff-001/replays/case0011.jsonl": "76a06351bdf8e2ba14919396c075e4e816efb86468536b0ac9f19af1a00656ae",
+    "bot_research/runs/validation/budget-handoff-001/results/case0000.json": "099158bda85dceadb6b0be28f64acea00cf1a7a59bd6206a80f68863f76984b5",
+    "bot_research/runs/validation/budget-handoff-001/results/case0001.json": "a65df754381c9f0de125e050dad8ff5b530b434c27f11ec9325ab794ee4aabda",
+    "bot_research/runs/validation/budget-handoff-001/results/case0002.json": "21a9081d6fa9921d591c5c0b05fb1be88bf2dceb484efdf19e23fee23674ab35",
+    "bot_research/runs/validation/budget-handoff-001/results/case0003.json": "9b2b75664264d376a7f592bf774076e2bde676e4ba75e184260eb27f4441ffd1",
+    "bot_research/runs/validation/budget-handoff-001/results/case0004.json": "4583075fbdd99e322c978480c049abcea27d90622cefe26d3d63df506a38db78",
+    "bot_research/runs/validation/budget-handoff-001/results/case0005.json": "d0c54e1402cb2842de1f4ea95dbe683a1a83b7c6239b4867c7f35846429fc7df",
+    "bot_research/runs/validation/budget-handoff-001/results/case0006.json": "eeb5d6ef8db09260cf1d438d42f01fd39374975a00b172c301ca157fb50fa811",
+    "bot_research/runs/validation/budget-handoff-001/results/case0007.json": "aa88327f375d96ce47fa8eedd72970ed2d5d26fd7129da7d731a570887bdba45",
+    "bot_research/runs/validation/budget-handoff-001/results/case0008.json": "15601d0db7411c49d30df794e137a7fe00c077dc4841527d12d469e3677d8bb8",
+    "bot_research/runs/validation/budget-handoff-001/results/case0009.json": "b28cb545d66a2f7681fbe17b70752f4b191d43d182812ef3cd5bb2ec4ba7a67f",
+    "bot_research/runs/validation/budget-handoff-001/results/case0010.json": "2ab810cc2cb7faa0bdf551336addc2fe3fe631d24610d90a02920146d51a6f0a",
+    "bot_research/runs/validation/budget-handoff-001/results/case0011.json": "1c26ebdf27b9d02ca6185443244783d23cf3c79d7730ea2022400faad5b843a7",
+    "bot_research/runs/validation/budget-handoff-replay-001.json": "69c9998903fe25041854e794d807d5d9c4f8d8a92e2843dd7feed4f63c798f90",
+    "bot_research/runs/validation/budget-handoff-strict-001.json": "c918f5c692c98ec48a988b8c1b36ed93cbf7abd43417140cc38ce92884e57ba4"
+  },
+  "outcomes": {
+    "L": 8,
+    "W": 4
+  },
+  "repeat_disagreements": [],
+  "rows": [
+    {
+      "candidate": "P5TNUBM",
+      "opponent": "budget1of4_handoff6",
+      "results": [
+        {
+          "hp": [
+            740,
+            -285
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/budget-handoff-001/results/case0000.json",
+          "rounds": 16,
+          "runtime_seconds": 3.3514646980911493,
+          "side": 0
+        },
+        {
+          "hp": [
+            740,
+            -285
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/budget-handoff-001/results/case0001.json",
+          "rounds": 16,
+          "runtime_seconds": 3.3970292219892144,
+          "side": 1
+        }
+      ]
+    },
+    {
+      "candidate": "P5TNUBM",
+      "opponent": "budget1of2_handoff6",
+      "results": [
+        {
+          "hp": [
+            740,
+            755
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/budget-handoff-001/results/case0002.json",
+          "rounds": 50,
+          "runtime_seconds": 11.379575559869409,
+          "side": 0
+        },
+        {
+          "hp": [
+            740,
+            755
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/budget-handoff-001/results/case0003.json",
+          "rounds": 50,
+          "runtime_seconds": 11.42498329281807,
+          "side": 1
+        }
+      ]
+    },
+    {
+      "candidate": "P5TNUBM",
+      "opponent": "budget1of1_handoff6",
+      "results": [
+        {
+          "hp": [
+            740,
+            755
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/budget-handoff-001/results/case0004.json",
+          "rounds": 50,
+          "runtime_seconds": 11.155177874024957,
+          "side": 0
+        },
+        {
+          "hp": [
+            740,
+            755
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/budget-handoff-001/results/case0005.json",
+          "rounds": 50,
+          "runtime_seconds": 11.403464840725064,
+          "side": 1
+        }
+      ]
+    },
+    {
+      "candidate": "P5TNUBM",
+      "opponent": "budget1of4_handoff7",
+      "results": [
+        {
+          "hp": [
+            740,
+            -285
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/budget-handoff-001/results/case0006.json",
+          "rounds": 16,
+          "runtime_seconds": 3.930814089253545,
+          "side": 0
+        },
+        {
+          "hp": [
+            740,
+            -285
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/budget-handoff-001/results/case0007.json",
+          "rounds": 16,
+          "runtime_seconds": 3.905963610857725,
+          "side": 1
+        }
+      ]
+    },
+    {
+      "candidate": "P5TNUBM",
+      "opponent": "budget1of2_handoff7",
+      "results": [
+        {
+          "hp": [
+            740,
+            755
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/budget-handoff-001/results/case0008.json",
+          "rounds": 50,
+          "runtime_seconds": 12.396991026122123,
+          "side": 0
+        },
+        {
+          "hp": [
+            740,
+            755
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/budget-handoff-001/results/case0009.json",
+          "rounds": 50,
+          "runtime_seconds": 12.354181578848511,
+          "side": 1
+        }
+      ]
+    },
+    {
+      "candidate": "P5TNUBM",
+      "opponent": "budget1of1_handoff7",
+      "results": [
+        {
+          "hp": [
+            740,
+            755
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/budget-handoff-001/results/case0010.json",
+          "rounds": 50,
+          "runtime_seconds": 11.80397352995351,
+          "side": 0
+        },
+        {
+          "hp": [
+            740,
+            755
+          ],
+          "outcome": "L",
+          "result_path": "bot_research/runs/validation/budget-handoff-001/results/case0011.json",
+          "rounds": 50,
+          "runtime_seconds": 11.858953542076051,
+          "side": 1
+        }
+      ]
+    }
+  ],
+  "scope": "Exact stated development conditions. Assignment pairs and identical reruns are not independent samples. Timeouts are computational failures, never game losses.",
+  "time_utc": "2026-10-31T15:14:56.638057+00:00",
+  "unresolved_conditions": 0,
+  "valid_conditions": 12
+}

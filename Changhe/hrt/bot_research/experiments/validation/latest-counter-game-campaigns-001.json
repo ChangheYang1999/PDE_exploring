@@ -1,0 +1,65 @@
+{
+  "campaigns": [
+    {
+      "a": "C",
+      "b": "B",
+      "expected": 2,
+      "name": "latest-counter-game-00-001"
+    },
+    {
+      "a": "B",
+      "b": "B",
+      "expected": 2,
+      "name": "latest-counter-game-01-001"
+    },
+    {
+      "a": "C",
+      "b": "C",
+      "expected": 2,
+      "name": "latest-counter-game-02-001"
+    },
+    {
+      "a": "D",
+      "b": "D",
+      "expected": 2,
+      "name": "latest-counter-game-03-001"
+    }
+  ],
+  "declared_utc": "2026-10-31T17:33:34.729194+00:00",
+  "new_games": 8,
+  "policies": {
+    "B": {
+      "id": "best_v9e",
+      "spec": "bot_research.experiments.lead.frozen.best_v9e:@make"
+    },
+    "C": {
+      "id": "clone_r3_tier2_df0",
+      "spec": "bot_research.bots.counters.stateful_public:@timing?model_spec=%22bot_research.bots.counters.delegated_defense%3A%40make%22&model_parameters=%7B%22delegate%22%3A%22fortress38%22%7D&attack_round=3&tier=%22tier2%22&defense_first=false&attack_share=1&count_cap=200"
+    },
+    "D": {
+      "id": "route_adaptive",
+      "spec": "bot_research.bots.counters.delegated_defense:@make?delegate=%22fortress38%22&mode=%22adaptive%22"
+    }
+  },
+  "reused": [
+    {
+      "a": "C",
+      "b": "D",
+      "campaign": "delegated-forecaster-fortress38-00-002",
+      "cases": [
+        "case0000",
+        "case0001"
+      ]
+    },
+    {
+      "a": "B",
+      "b": "D",
+      "campaign": "recent-transfer-04-001",
+      "cases": [
+        "case0000",
+        "case0001"
+      ]
+    }
+  ],
+  "reused_games": 4
+}

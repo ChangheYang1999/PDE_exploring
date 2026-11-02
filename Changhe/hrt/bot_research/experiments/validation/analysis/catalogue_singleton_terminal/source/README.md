@@ -1,0 +1,1 @@
+The implementation under review is `bot_research/bots/counters/adaptive_catalogue.py`. Terminal settlement is in `td_game/engine.py`. Their hashes at review time are in `../verification/source-review.json`. No formal proof-assistant source exists for this result.

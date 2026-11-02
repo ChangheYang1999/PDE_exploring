@@ -1,0 +1,216 @@
+{
+  "attempt_counts": {
+    "valid": 12
+  },
+  "checker_sha256": "d080d05b9a4754fe5523ec3c8846aa0479a3aa74e4e074a024b588c032134e9a",
+  "complete_assignment_pairs": 6,
+  "expected_conditions": 12,
+  "heading": "Second-failure guard ladder counter cycle",
+  "identical_assignment_pairs": 6,
+  "input_sha256": {
+    "bot_research/runs/validation/guard-ladder-001/replays/case0000.jsonl": "b89a72e9ef3f170723348c455a42fe041790acb7653f220759d9f7b98dc3a268",
+    "bot_research/runs/validation/guard-ladder-001/replays/case0001.jsonl": "e7196ea4093e996cfd51061b8ae20876ec146291ce11dc1367a1548a2405a509",
+    "bot_research/runs/validation/guard-ladder-001/replays/case0002.jsonl": "50f0e3b8b643fd03f7840efd484cf58a41495056bf6710f61c25ce79b8c07d3a",
+    "bot_research/runs/validation/guard-ladder-001/replays/case0003.jsonl": "c6939cb60557ac80ec03660997e8b12ba002b2e32a9f4ecc9dea7160f16624e5",
+    "bot_research/runs/validation/guard-ladder-001/replays/case0004.jsonl": "da71f6486307232f65b134834698a3e70e2e29d29454e78e6488ef3793071ee8",
+    "bot_research/runs/validation/guard-ladder-001/replays/case0005.jsonl": "51d59481183b08b8f20c4f2209452d56a6d3c0c9162d845b2a837a93a2c62af6",
+    "bot_research/runs/validation/guard-ladder-001/replays/case0006.jsonl": "4072ef1e8cb3166c26c90dadab15d13ab974075001c039dcbbb42c9328acfb6d",
+    "bot_research/runs/validation/guard-ladder-001/replays/case0007.jsonl": "e365643a1e9d41151f55923e84e97607d5e0b475ac704bba31e7cac4146e0535",
+    "bot_research/runs/validation/guard-ladder-001/replays/case0008.jsonl": "e846e04ddc00d4999fe2a5f7f85af3c2912fbedb3b8dfc4d47abafb052b36bb2",
+    "bot_research/runs/validation/guard-ladder-001/replays/case0009.jsonl": "78f1a917f16b74eaba1ca0eaee6121728983f820444c29ee05bd0aa5116c1d8e",
+    "bot_research/runs/validation/guard-ladder-001/replays/case0010.jsonl": "a7b30a94e426a28cb4b9f58250920e98ce27464636098aedb8fb4f4be5b104d1",
+    "bot_research/runs/validation/guard-ladder-001/replays/case0011.jsonl": "7695f6857693b395ddf880a45ea99ca93597a8099240b64cd144d76eb4792c78",
+    "bot_research/runs/validation/guard-ladder-001/results/case0000.json": "ad7a4bfa242c6f6da2ff6e723b11db0c2928befd20093f222da9422b2d39df3e",
+    "bot_research/runs/validation/guard-ladder-001/results/case0001.json": "1bb2764c3e0ffdd56ed237e2be6701c0b30c7c99a540614ab719dd0125f714d3",
+    "bot_research/runs/validation/guard-ladder-001/results/case0002.json": "ec7e2ac88964f57efc5f662f04e63de41e21a939eefe8f4d7bb42b6a0c700ab7",
+    "bot_research/runs/validation/guard-ladder-001/results/case0003.json": "aaac33f1f329351719d993226a83b3fa2268f476340527aa6436f0ac4193efba",
+    "bot_research/runs/validation/guard-ladder-001/results/case0004.json": "2bc7b13bef50427390107731dff805feda51b895c55934ed8cf321b6376310bc",
+    "bot_research/runs/validation/guard-ladder-001/results/case0005.json": "50b7c3ab29d40af00c920fab1028cf9db47573fcfebc9f39f97f40031f12e4d5",
+    "bot_research/runs/validation/guard-ladder-001/results/case0006.json": "f98b49b41592508ca8161df9be6330df1cb1197d78409d76dbd3cc825d6682bf",
+    "bot_research/runs/validation/guard-ladder-001/results/case0007.json": "5cb7754707429b85f76c863d7c90913165341d90885a8252881221010a9f30bd",
+    "bot_research/runs/validation/guard-ladder-001/results/case0008.json": "cc17bb56da7869777e1929b1c0bd9eb5df53f997ee02198cd234c66281264da9",
+    "bot_research/runs/validation/guard-ladder-001/results/case0009.json": "571172c4de4a0eb74ffd9ba378c4ae444fdff1947c7bbdb29b70bf3eca8285e8",
+    "bot_research/runs/validation/guard-ladder-001/results/case0010.json": "8163eb0ba340efdd1c7c8f79cfb3f50131b99fc32bb14388820d6e70d315b95b",
+    "bot_research/runs/validation/guard-ladder-001/results/case0011.json": "abfbebd4776d3b69fbea7d8bb7fceec7fb8070f15ffdab9b39a1320ab5e1e81d",
+    "bot_research/runs/validation/guard-ladder-replay-001.json": "a425583c0ff2008eb01777687ed1d6c904170580260b6e3e13d65211200c06fd",
+    "bot_research/runs/validation/guard-ladder-strict-001.json": "cd236d84e32df74fd4c96a8e27da2ed1b3de71577633e00bfbce0f150460e876"
+  },
+  "outcomes": {
+    "W": 12
+  },
+  "repeat_disagreements": [],
+  "rows": [
+    {
+      "candidate": "P5twoFailures",
+      "opponent": "g6_guard5_r8",
+      "results": [
+        {
+          "hp": [
+            660,
+            -25
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/guard-ladder-001/results/case0000.json",
+          "rounds": 13,
+          "runtime_seconds": 2.4958022013306618,
+          "side": 0
+        },
+        {
+          "hp": [
+            660,
+            -25
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/guard-ladder-001/results/case0001.json",
+          "rounds": 13,
+          "runtime_seconds": 2.528358019888401,
+          "side": 1
+        }
+      ]
+    },
+    {
+      "candidate": "P5twoFailures",
+      "opponent": "g6_guard5_r9",
+      "results": [
+        {
+          "hp": [
+            520,
+            -2885
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/guard-ladder-001/results/case0002.json",
+          "rounds": 21,
+          "runtime_seconds": 13.171806504018605,
+          "side": 0
+        },
+        {
+          "hp": [
+            520,
+            -2885
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/guard-ladder-001/results/case0003.json",
+          "rounds": 21,
+          "runtime_seconds": 12.893851667176932,
+          "side": 1
+        }
+      ]
+    },
+    {
+      "candidate": "P5twoFailures",
+      "opponent": "g6_guard5_r10",
+      "results": [
+        {
+          "hp": [
+            520,
+            -2911
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/guard-ladder-001/results/case0004.json",
+          "rounds": 21,
+          "runtime_seconds": 13.496125548146665,
+          "side": 0
+        },
+        {
+          "hp": [
+            520,
+            -2911
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/guard-ladder-001/results/case0005.json",
+          "rounds": 21,
+          "runtime_seconds": 12.816280387807637,
+          "side": 1
+        }
+      ]
+    },
+    {
+      "candidate": "P5current",
+      "opponent": "g6_guard5_r8",
+      "results": [
+        {
+          "hp": [
+            660,
+            -25
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/guard-ladder-001/results/case0006.json",
+          "rounds": 13,
+          "runtime_seconds": 2.5256370310671628,
+          "side": 0
+        },
+        {
+          "hp": [
+            660,
+            -25
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/guard-ladder-001/results/case0007.json",
+          "rounds": 13,
+          "runtime_seconds": 2.5023400518111885,
+          "side": 1
+        }
+      ]
+    },
+    {
+      "candidate": "P5current",
+      "opponent": "g6_guard5_r9",
+      "results": [
+        {
+          "hp": [
+            520,
+            -505
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/guard-ladder-001/results/case0008.json",
+          "rounds": 14,
+          "runtime_seconds": 2.3185113109648228,
+          "side": 0
+        },
+        {
+          "hp": [
+            520,
+            -505
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/guard-ladder-001/results/case0009.json",
+          "rounds": 14,
+          "runtime_seconds": 2.7451984398066998,
+          "side": 1
+        }
+      ]
+    },
+    {
+      "candidate": "P5current",
+      "opponent": "g6_guard5_r10",
+      "results": [
+        {
+          "hp": [
+            520,
+            -471
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/guard-ladder-001/results/case0010.json",
+          "rounds": 14,
+          "runtime_seconds": 2.693793850019574,
+          "side": 0
+        },
+        {
+          "hp": [
+            520,
+            -471
+          ],
+          "outcome": "W",
+          "result_path": "bot_research/runs/validation/guard-ladder-001/results/case0011.json",
+          "rounds": 14,
+          "runtime_seconds": 2.7518277522176504,
+          "side": 1
+        }
+      ]
+    }
+  ],
+  "scope": "Exact stated development conditions. Assignment pairs and identical reruns are not independent samples. Timeouts are computational failures, never game losses.",
+  "time_utc": "2026-10-31T13:15:58.332878+00:00",
+  "unresolved_conditions": 0,
+  "valid_conditions": 12
+}

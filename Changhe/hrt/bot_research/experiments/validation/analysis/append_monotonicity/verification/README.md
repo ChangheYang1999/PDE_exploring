@@ -1,0 +1,1 @@
+Proof written before implementation at 2026-10-31T11:20:20.663986+00:00. No computation has yet checked the new invariant or helper. Results must name their exact fixture set and original-combat inputs.

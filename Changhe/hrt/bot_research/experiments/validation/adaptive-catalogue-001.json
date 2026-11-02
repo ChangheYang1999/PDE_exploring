@@ -1,0 +1,48 @@
+{
+  "declared_utc": "2026-10-31T10:20:04.935340+00:00",
+  "purpose": "Compare a bounded catalogue-based attack search at two rational weights with the identical no-attack controller against three catalogue members and two outside opponents, both assignments: 30 games.",
+  "hypothesis": "Conditional exact current-action forecasts can support useful attacks selected from a small deterministic ordered-purchase set, without leaking opponent identity.",
+  "scope": "Development only, standard starts. An empty catalogue uses an explicitly unguaranteed visible-state fallback. No universal strength, global purchase optimality or future-value claim.",
+  "candidates": [
+    {
+      "id": "no_attack_control",
+      "spec": "bot_research.bots.counters.adaptive_catalogue:@make?search_enabled=false"
+    },
+    {
+      "id": "adaptive_weight4",
+      "spec": "bot_research.bots.counters.adaptive_catalogue:@make?attack_weight=4"
+    },
+    {
+      "id": "adaptive_weight8",
+      "spec": "bot_research.bots.counters.adaptive_catalogue:@make?attack_weight=8"
+    }
+  ],
+  "opponents": [
+    {
+      "id": "best_v9b",
+      "spec": "bot_research.experiments.lead.frozen.best_v9b:@make"
+    },
+    {
+      "id": "economy17",
+      "spec": "bot_research.bots.economy.frozen.v17.econ17:@make?free_fallback=%22zero%22&foreign_attack_from=11"
+    },
+    {
+      "id": "economy19",
+      "spec": "bot_research.bots.economy.frozen.v19.econ19:@make?free_fallback=%22zero%22&foreign_attack_from=11&doom=%22next%22&fac_cap=400&sat_reach=true"
+    },
+    {
+      "id": "outside_fortress26",
+      "spec": "bot_research.bots.defense.frozen.v26.fortress:@make"
+    },
+    {
+      "id": "outside_guard_t1",
+      "spec": "bot_research.bots.counters.guard_geometry:@make?roster=%5B%22tier1%22%5D&x=9&y=1&parameters=%7B%22foreign_attack_from%22%3Anull%7D"
+    }
+  ],
+  "input_sha256": {
+    "bot_research/bots/counters/adaptive_catalogue.py": "5e5cb701ab80d07ec5b9bad7d5ddaf1cbde2a75294375fda7764e8bd4c2880c9",
+    "bot_research/experiments/validation/check_adaptive_catalogue.py": "a4c715f020cc36d98ff4ce30c6b62896f833c4313bf3c708b02a1cd43b86f347",
+    "bot_research/experiments/validation/audit_adaptive_attacks.py": "e23fbc7927f2e15d12dffebceb47934711b0c9e7d572f71817ae7a8cf738d219",
+    "bot_research/experiments/validation/analysis/catalogue_attack_selection/PROOF.md": "54eb616e82cc691886b4ef3fcb5db79ce8d82729be76eaf424d1b0644332f9eb"
+  }
+}

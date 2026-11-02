@@ -1,0 +1,18 @@
+| candidate | opponent | n | W | D | L | mean HP diff | min HP diff | mean end round | cand rejected | cand errors | opp errors | cand decide s/match (max call) |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| bot_research.bots.defense.fortress:@make?eco_match=true&eco_match_ratio=1.0&race_kill=true&eco_match_insure_cap=200&covered_fix=true&lethal_share=0.3&factory_cap=1200&finish_wrap=true | bot_research.bots.economy.frozen.v29.econ29:@make?free_fallback="zero"&foreign_attack_from=11&doom="next"&fac_cap=400&sat_reach=true&replan=true&foreign_sat_from=11&replan_gain=400&replan_base=true&own_in_layout="replan"&own_min_s=1200&min_cap=3000&active_cap=4000&fill=true&fill_reserve=true&fill_threat=true | 10 | 9 | 0 | 1 | 360.8 | -12974 | 31.1 | 0 | 0 | 0 | 8.58 (1.33) |
+| bot_research.bots.defense.fortress:@make?eco_match=true&eco_match_ratio=1.0&race_kill=true&eco_match_insure_cap=200&covered_fix=true&lethal_share=0.3&factory_cap=1200&finish_wrap=true | bot_research.experiments.lead.frozen.best_v9e:decide | 10 | 6 | 2 | 2 | 1475.2 | -5 | 23.4 | 0 | 0 | 0 | 4.58 (1.22) |
+| bot_research.bots.defense.fortress:@make?eco_match=true&eco_match_ratio=1.0&race_kill=true&eco_match_insure_cap=200&covered_fix=true&lethal_share=0.3&factory_cap=1200&finish_wrap=true&finish_robust_gold=400 | bot_research.bots.economy.frozen.v29.econ29:@make?free_fallback="zero"&foreign_attack_from=11&doom="next"&fac_cap=400&sat_reach=true&replan=true&foreign_sat_from=11&replan_gain=400&replan_base=true&own_in_layout="replan"&own_min_s=1200&min_cap=3000&active_cap=4000&fill=true&fill_reserve=true&fill_threat=true | 10 | 9 | 0 | 1 | 360.8 | -12974 | 31.1 | 0 | 0 | 0 | 8.40 (1.17) |
+| bot_research.bots.defense.fortress:@make?eco_match=true&eco_match_ratio=1.0&race_kill=true&eco_match_insure_cap=200&covered_fix=true&lethal_share=0.3&factory_cap=1200&finish_wrap=true&finish_robust_gold=400 | bot_research.experiments.lead.frozen.best_v9e:decide | 10 | 7 | 1 | 2 | 2175.2 | -5 | 24.2 | 0 | 0 | 0 | 4.83 (1.22) |
+
+| candidate | matches | W | D | L | score (W + D/2) / n |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| bot_research.bots.defense.fortress:@make?eco_match=true&eco_match_ratio=1.0&race_kill=true&eco_match_insure_cap=200&covered_fix=true&lethal_share=0.3&factory_cap=1200&finish_wrap=true | 20 | 15 | 2 | 3 | 0.800 |
+| bot_research.bots.defense.fortress:@make?eco_match=true&eco_match_ratio=1.0&race_kill=true&eco_match_insure_cap=200&covered_fix=true&lethal_share=0.3&factory_cap=1200&finish_wrap=true&finish_robust_gold=400 | 20 | 16 | 1 | 3 | 0.825 |
+
+| bot (all matches, both perspectives) | matches | W | D | L | score | mean HP diff |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| bot_research.bots.defense.fortress:@make?eco_match=true&eco_match_ratio=1.0&race_kill=true&eco_match_insure_cap=200&covered_fix=true&lethal_share=0.3&factory_cap=1200&finish_wrap=true&finish_robust_gold=400 | 20 | 16 | 1 | 3 | 0.825 | 1268.0 |
+| bot_research.bots.defense.fortress:@make?eco_match=true&eco_match_ratio=1.0&race_kill=true&eco_match_insure_cap=200&covered_fix=true&lethal_share=0.3&factory_cap=1200&finish_wrap=true | 20 | 15 | 2 | 3 | 0.800 | 918.0 |
+| bot_research.experiments.lead.frozen.best_v9e:decide | 20 | 4 | 3 | 13 | 0.275 | -1825.2 |
+| bot_research.bots.economy.frozen.v29.econ29:@make?free_fallback="zero"&foreign_attack_from=11&doom="next"&fac_cap=400&sat_reach=true&replan=true&foreign_sat_from=11&replan_gain=400&replan_base=true&own_in_layout="replan"&own_min_s=1200&min_cap=3000&active_cap=4000&fill=true&fill_reserve=true&fill_threat=true | 20 | 2 | 0 | 18 | 0.100 | -360.8 |

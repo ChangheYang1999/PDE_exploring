@@ -1,0 +1,192 @@
+{
+  "families": [
+    {
+      "additional_cost": 30,
+      "count": 1,
+      "examined": 140,
+      "exhausted": true,
+      "kind": "gun1",
+      "splash_prefix": 2
+    },
+    {
+      "additional_cost": 60,
+      "count": 2,
+      "examined": 9541,
+      "exhausted": false,
+      "kind": "gun1",
+      "splash_prefix": 2
+    }
+  ],
+  "input_sha256": {
+    "bot_research/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bot_research/bots/counters/data/staged_guards_001.json": "fdc86066da88290d4d0c82f1c53895174f0ee38250ee18fb29fd425eba8c8398",
+    "bot_research/experiments/validation/artifact_io.py": "f7d7e492405ae9cf875162f69ffe674a962afa359d43add8a287054b4871237c",
+    "bot_research/experiments/validation/search_screened_guard.py": "a6eb9822dd8a50235ad2d8c3f08cb327123d9102691324744978f91492d0c87f",
+    "bot_research/experiments/validation/source_closure.py": "c5c76b3f675e433e550101811c1d8b5266415ec8b0c872e013c92eeca615f2a5",
+    "configs/balanced.json": "2f9a761870c38dc162522fd9fbafe8ff989a1098506fcdc4780047cfa35154b1",
+    "td_game/__init__.py": "1a4268eeace53ec3b488ba2868c601c2be879d3ece5d36df3f99d70ac5b4646a",
+    "td_game/actions.py": "d3b482371c4bf43f3da0028b4425d899be1b949a97a2c786617ee813a15f5f66",
+    "td_game/balanced.json": "2f9a761870c38dc162522fd9fbafe8ff989a1098506fcdc4780047cfa35154b1",
+    "td_game/combat.py": "17265171d1e2ab4c60b07f9b4f473a19667aef4a2110aeb2c07f1cb39f965228",
+    "td_game/config.py": "ab1ca08d78081382e9f9a4ca7bff4985d101ec7b7621ecddfa48e46418701716",
+    "td_game/pathfinding.py": "5ecce5a8737d43e3add703e4143f28a1d2bb8fb62e84a2d7f29be441749ae8b2",
+    "td_game/state.py": "5d6df44f76a0f84d95d130e080a2e966bad02d06e08824cc818d6b08185b375f"
+  },
+  "legal": 9540,
+  "passed_analytic_filter": 12,
+  "runtime_seconds": 8.69979419093579,
+  "scope": "Original complete-roster tests with prefix three tier1 and two tier2 before the new entries. Search stops at the first witness in the declared cost-ordered finite family. Not a full-game result or arbitrary-map optimum.",
+  "tested": 9681,
+  "time_utc": "2026-10-31T13:21:51.470167+00:00",
+  "witnesses": [
+    {
+      "additional_cost": 60,
+      "extra_actions": [
+        {
+          "op": "build_turret",
+          "type": "gun1",
+          "x": 10,
+          "y": 3
+        },
+        {
+          "op": "build_turret",
+          "type": "gun1",
+          "x": 10,
+          "y": 4
+        }
+      ],
+      "lone_potential_damage": 192,
+      "lone_tier3": {
+        "cleared": 0,
+        "damage": 0,
+        "hits": 0,
+        "killed": 6,
+        "spawned": 6
+      },
+      "path": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          9,
+          2
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          11,
+          4
+        ],
+        [
+          11,
+          5
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          7
+        ],
+        [
+          11,
+          8
+        ],
+        [
+          11,
+          9
+        ],
+        [
+          11,
+          10
+        ],
+        [
+          11,
+          11
+        ]
+      ],
+      "rank": [
+        "tier3",
+        "tier4",
+        "tier5"
+      ],
+      "splash_exposure": 80,
+      "splash_prefix": 2,
+      "swarm": {
+        "tier3": {
+          "cleared": 0,
+          "damage": 1534,
+          "hits": 59,
+          "killed": 6,
+          "spawned": 65
+        },
+        "tier4": {
+          "cleared": 0,
+          "damage": 3600,
+          "hits": 60,
+          "killed": 5,
+          "spawned": 65
+        },
+        "tier5": {
+          "cleared": 0,
+          "damage": 8400,
+          "hits": 60,
+          "killed": 5,
+          "spawned": 65
+        }
+      }
+    }
+  ]
+}

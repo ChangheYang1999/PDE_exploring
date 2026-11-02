@@ -1,0 +1,61 @@
+{
+  "actual_candidate_sha256": "dc96ac422078fd2cadafcc72fce10bb1d22bbb50b9c19a4bbe7937a2fba85ee7",
+  "candidates": [
+    {
+      "id": "half_budget_tier3_r3",
+      "spec": "bot_research.bots.counters.budget_timing:@make?tier=%22tier3%22&attack_round=3&budget_fraction=0.5"
+    },
+    {
+      "id": "half_budget_tier3_r5",
+      "spec": "bot_research.bots.counters.budget_timing:@make?tier=%22tier3%22&attack_round=5&budget_fraction=0.5"
+    },
+    {
+      "id": "half_budget_tier4_r5",
+      "spec": "bot_research.bots.counters.budget_timing:@make?tier=%22tier4%22&attack_round=5&budget_fraction=0.5"
+    },
+    {
+      "id": "half_budget_tier4_r6",
+      "spec": "bot_research.bots.counters.budget_timing:@make?tier=%22tier4%22&attack_round=6&budget_fraction=0.5"
+    },
+    {
+      "id": "corner_empty",
+      "spec": "bot_research.bots.counters.guard_geometry:@make?roster=%5B%5D"
+    },
+    {
+      "id": "corner_t1",
+      "spec": "bot_research.bots.counters.guard_geometry:@make?roster=%5B%22tier1%22%5D"
+    },
+    {
+      "id": "corner_2t1",
+      "spec": "bot_research.bots.counters.guard_geometry:@make?roster=%5B%22tier1%22%2C+%22tier1%22%5D"
+    },
+    {
+      "id": "corner_t2",
+      "spec": "bot_research.bots.counters.guard_geometry:@make?roster=%5B%22tier2%22%5D"
+    },
+    {
+      "id": "corner_2t1_t2",
+      "spec": "bot_research.bots.counters.guard_geometry:@make?roster=%5B%22tier1%22%2C+%22tier1%22%2C+%22tier2%22%5D"
+    },
+    {
+      "id": "direct_economy17",
+      "spec": "bot_research.bots.economy.frozen.v17.econ17:@make?free_fallback=%22zero%22&foreign_attack_from=11"
+    }
+  ],
+  "declared_utc": "2026-10-31T09:38:04.843559+00:00",
+  "hypothesis": "The actual frozen entry point reproduces the complete trajectories of its development twin under the same counter policies.",
+  "inherited_manifest": "bot_research/experiments/validation/lead-seventeen-model-free-001.json",
+  "inherited_manifest_sha256": "eafe359086c6888ae2e4496558386f609f11a978f48fa4194aff7b5abd583527",
+  "input_sha256": {
+    "bot_research/experiments/validation/guard-geometry-transfer-001.json": "819770d4be71d6757405b4ec8ac606708a47c43f4cff2b558c99365759fecd6b",
+    "bot_research/experiments/validation/lead-seventeen-mid5-standard-001.json": "1cda90c9d6a4d432cbba7d23d920dcc078728a4c9c3fb676f6e4a0ca8b19b51d"
+  },
+  "opponents": [
+    {
+      "id": "actual_best_v9b",
+      "spec": "bot_research.bots.best:decide"
+    }
+  ],
+  "purpose": "Transfer all previously declared model-free counters from the Lead17 development twin to the actual frozen best_v9b entry point, both assignments.",
+  "scope": "Development equivalence and targeted counter evaluation, not an additional held-out pool. All counter settings were declared before pool B began; no settings are selected using pool B outcomes."
+}

@@ -1,0 +1,13 @@
+{
+  "purpose": "Development saturation-timing ablation after the observed round-19 alternating-policy failure; no reserved opponents.",
+  "candidates": [
+    {"id": "identify_sat10", "spec": "bot_research.bots.counters.identifying_counter:@make?saturate_round=10"},
+    {"id": "identify_sat12", "spec": "bot_research.bots.counters.identifying_counter:@make?saturate_round=12"},
+    {"id": "identify_sat15", "spec": "bot_research.bots.counters.identifying_counter:@make?saturate_round=15"}
+  ],
+  "opponents": [
+    {"id": "alternate3", "spec": "bot_research.bots.counters.catalogue_switch:@make?prefix=economy&after=archetype:eco6_t5&switch_round=7&period=3"},
+    {"id": "alternate2", "spec": "bot_research.bots.counters.catalogue_switch:@make?prefix=economy&after=archetype:eco6_t5&switch_round=7&period=2"},
+    {"id": "alternate4", "spec": "bot_research.bots.counters.catalogue_switch:@make?prefix=economy&after=archetype:eco6_t5&switch_round=7&period=4"}
+  ]
+}

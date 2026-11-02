@@ -1,0 +1,47 @@
+{
+  "declared_utc": "2026-10-31T10:28:16.801891+00:00",
+  "purpose": "Test a one-way economy20 continuation after the public catalogue is rejected, retaining the original timing counter while a member survives; fourteen development games, both assignments.",
+  "hypothesis": "A foreign-map continuation can repair the visible-only fallback against fortress policies without changing trajectories against a true retained catalogue member.",
+  "scope": "Standard-start development. Three known catalogue targets, two matched outside controls, and two newer fortress settings. No held-out or global strength claim.",
+  "candidates": [
+    {
+      "id": "catalogue_economy20_continuation",
+      "spec": "bot_research.bots.counters.catalogue_continuation:@make"
+    }
+  ],
+  "opponents": [
+    {
+      "id": "best_v9b",
+      "spec": "bot_research.experiments.lead.frozen.best_v9b:@make"
+    },
+    {
+      "id": "economy17",
+      "spec": "bot_research.bots.economy.frozen.v17.econ17:@make?free_fallback=%22zero%22&foreign_attack_from=11"
+    },
+    {
+      "id": "economy19",
+      "spec": "bot_research.bots.economy.frozen.v19.econ19:@make?free_fallback=%22zero%22&foreign_attack_from=11&doom=%22next%22&fac_cap=400&sat_reach=true"
+    },
+    {
+      "id": "outside_fortress26",
+      "spec": "bot_research.bots.defense.frozen.v26.fortress:@make"
+    },
+    {
+      "id": "outside_guard_t1",
+      "spec": "bot_research.bots.counters.guard_geometry:@make?roster=%5B%22tier1%22%5D&x=9&y=1&parameters=%7B%22foreign_attack_from%22%3Anull%7D"
+    },
+    {
+      "id": "outside_fortress27",
+      "spec": "bot_research.bots.defense.frozen.v27.fortress:@make"
+    },
+    {
+      "id": "outside_fortress27_memory",
+      "spec": "bot_research.bots.defense.frozen.v27.fortress:@make?response_memory=true"
+    }
+  ],
+  "input_sha256": {
+    "bot_research/bots/counters/catalogue_continuation.py": "cb850195e6f31e18fcd2a2b54135d65d6c7f6e61831752e57bb9d05538090620",
+    "bot_research/experiments/validation/check_catalogue_continuation.py": "191ed05957f9a0dba9180cb90dcf860749a6e9ac89cde625402017cd1c4973e4",
+    "bot_research/experiments/validation/analysis/catalogue_continuation/PROOF.md": "b0c2af182fc7e476e77aca20eb83d5b1fc243bf5a7b886f077355173d949f85b"
+  }
+}

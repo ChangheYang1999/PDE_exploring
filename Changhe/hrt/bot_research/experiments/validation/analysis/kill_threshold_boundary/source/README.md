@@ -1,0 +1,1 @@
+The reviewed helper is the unmodified `_kill_threshold` in `bot_research/bots/defense/frozen/v28/fortress.py`. The checker imports it directly. Its verification receipt binds the helper, original engine, configuration and checker sources. No copied engine or patched policy is used.

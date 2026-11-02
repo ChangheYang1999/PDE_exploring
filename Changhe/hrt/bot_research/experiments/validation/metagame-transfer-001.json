@@ -1,0 +1,52 @@
+{
+  "purpose": "Development test of out-of-table opponents against each component of the exact c2rr1 policy mixture. Each candidate is fixed before knowing which component it faces; report rationally weighted payoffs, both seats, and source-version qualifications. Not reserved validation.",
+  "certificate": "bot_research/runs/validation/metagame-certificate-001.json",
+  "candidates": [
+    {
+      "id": "fallback_fortress13",
+      "spec": "bot_research.bots.counters.falsification_fallback:@make?fallback=fortress13&opening=factories&saturate_round=12"
+    },
+    {
+      "id": "direct_fortress15",
+      "spec": "bot_research.bots.defense.frozen.v15.fortress:@make"
+    },
+    {
+      "id": "direct_economy9",
+      "spec": "bot_research.bots.economy.frozen.v9.econ9:@make"
+    }
+  ],
+  "opponents": [
+    {
+      "id": "poke_lock",
+      "spec": "bot_research.bots.counters.poke_lock:@make?opening_units=1&reserve=0&phi=1.0&saturate_round=20",
+      "probability": {
+        "denominator": 3,
+        "numerator": 1
+      }
+    },
+    {
+      "id": "eco6_t5",
+      "spec": "bot_research.bots.counters.pool:@archetype?name=\"eco6_t5\"",
+      "probability": {
+        "denominator": 3,
+        "numerator": 1
+      }
+    },
+    {
+      "id": "fortress4_attack",
+      "spec": "bot_research.bots.defense.frozen.v4.fortress:@make?attack_from=6&attack_share=0.5",
+      "probability": {
+        "denominator": 6,
+        "numerator": 1
+      }
+    },
+    {
+      "id": "timing",
+      "spec": "bot_research.bots.economy.timing:@make",
+      "probability": {
+        "denominator": 6,
+        "numerator": 1
+      }
+    }
+  ]
+}

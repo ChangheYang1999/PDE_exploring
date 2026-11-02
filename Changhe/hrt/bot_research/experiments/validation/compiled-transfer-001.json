@@ -1,0 +1,18 @@
+{
+  "purpose": "Fresh development games for an observation-guarded policy compiled from the fortress15 round-ten counter win. Compare permanent fortress15 fallback and idle fallback with direct fortress15. First target games test trajectory reproduction; other opponents test transfer. Not reserved validation.",
+  "data_files": ["bot_research/bots/counters/plans/fortress15_r10.json"],
+  "candidates": [
+    {"id": "compiled_fortress15", "spec": "bot_research.bots.counters.compiled_plan:@make?plan_file=bot_research/bots/counters/plans/fortress15_r10.json&plan_sha256=a8dd92f89079c516b5a516b8fe22049b32fff26a679836b0a06fcd9c5c2c8720&fallback=fortress15"},
+    {"id": "compiled_idle", "spec": "bot_research.bots.counters.compiled_plan:@make?plan_file=bot_research/bots/counters/plans/fortress15_r10.json&plan_sha256=a8dd92f89079c516b5a516b8fe22049b32fff26a679836b0a06fcd9c5c2c8720&fallback=idle"},
+    {"id": "direct_fortress15", "spec": "bot_research.bots.defense.frozen.v15.fortress:@make"}
+  ],
+  "opponents": [
+    {"id": "fortress15", "spec": "bot_research.bots.defense.frozen.v15.fortress:@make"},
+    {"id": "fortress13", "spec": "bot_research.bots.defense.frozen.v13.fortress:@make"},
+    {"id": "economy9", "spec": "bot_research.bots.economy.frozen.v9.econ9:@make"},
+    {"id": "frontier_identifier", "spec": "bot_research.bots.counters.frontier_identifier:@make?opening=factories&saturate_round=12"},
+    {"id": "eco6_t5", "spec": "bot_research.bots.counters.pool:@archetype?name=eco6_t5"},
+    {"id": "poke_lock", "spec": "bot_research.bots.counters.poke_lock:@make?opening_units=1&reserve=0&phi=1.0&saturate_round=20"},
+    {"id": "lead_four", "spec": "bot_research.bots.counters.snapshots.lead_four_001:@make"}
+  ]
+}

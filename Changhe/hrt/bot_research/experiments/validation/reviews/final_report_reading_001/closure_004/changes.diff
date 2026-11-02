@@ -1,0 +1,41 @@
+--- closure003
++++ closure004
+@@ -1,6 +1,6 @@
+ # Bot research report (tower-defense game, bundled balanced rules)
+ 
+-Status: final (last update 2026-11-01T00:07Z), written during the run and updated at each checkpoint. The installed
++Status: final (last update 2026-11-01T00:10Z), written during the run and updated at each checkpoint. The installed
+ bot since 2026-10-31T18:44:53Z is best_v9e (section 5.12), and this selection is final: the last candidate, af2g
+ (best_v9f with its passive rule off), was rejected at 19:50Z by a rule stated at 19:04Z before its gate games (R13,
+ section 5.14), because it loses one GUARDED_MAZE opponent that best_v9e beats. The selection note to hrt-w3 was
+@@ -28,7 +28,10 @@
+ memberships, 764 against 504 on the distinct conditions; worse on 30 distinct conditions) and beats best_v9e by 410
+ in both seats on the standard start (section 5.16); it was found after best_v9e's hash had been pinned for pool D,
+ has a worse outcome than best_v9e on 30 gate conditions, and has no reserved-pool validation, so it was not
+-installed. Of the policies whose results on the whole gate are reported here (best_v9e, af2g, AS1C, g0, g1, V29 and
++installed. The reading rule stated before H14 (section 5.14: outcome at least best_v9e's on all 846 gate
++memberships, 0 rejected actions, 0 bot errors, no call of 3 s or more) does not name it as the next revision
++either: it is worse on 32 memberships, and 3 of its 804 gate games (all in afs5) contain a call of 3 s or more
++(slowest 3.77 s; recounted by the lead from runs/economy/afs5 and afg5); hrt-w2 reaches the same reading. Of the policies whose results on the whole gate are reported here (best_v9e, af2g, AS1C, g0, g1, V29 and
+ af5), af5 wins the most conditions;
+ best_v9e is the installed bot because of the pre-stated rules and the held-out checks, not because it wins most
+ conditions. In the standard-start round robin of ten finalists (section 5.16) it is 8-6-4, behind hrt-w3's counter
+@@ -2088,7 +2091,8 @@
+ three lead bots; margins corrected after hrt-w3's check, notes/validation.md 23:42:10Z); it beats v41 in both seats (+2218, +3215) and loses to v48 in both (-9822 in seat 0, -2385 in seat 1). Every one of
+ the 20 games against the five bots other than V29 and g1 has V29's and g1's winner, HP difference and length in
+ frr2 and frr6, and the 8 games against V29 and g1 have the results of g1 against V29 in the same seat
+-(`tmp/cmp_af5_v29.py`). On these two starts attack_from=5 therefore changes no recorded game, as hrt-w2 found
++(`tmp/cmp_af5_v29.py`). On these two starts attack_from=5 therefore changes no recorded result (winner, HP difference
++and length; this comparison does not compare action histories), as hrt-w2 found
+ for attack_from=7 (g1) on every scenario start it tested (notes/economy.md 18.8, 18.19, 18.31). Slowest calls: af5
+ 8.62 s, V29 3.52 s, g1 3.38 s, best_v9f 2.39 s, best_v9e 2.34 s, AS1C 2.19 s, v41 1.30 s, v48 1.19 s.
+ 
+@@ -2214,7 +2218,7 @@
+ - Round-2 blind strikes (best_v9e and the earlier tested variants V18FT, P4TNUB, P5TNUBM and af2g). budget_timing
+   with tier1 or tier2 in round 2 (half budget) wins by 20 and 12 (TIMING2, tm2). Round-2 purchases are not visible
+   when we decide round 2, but that alone does not decide these games: AS1C, g0, g1, V29 and af5 win all 40 TIMING2
+-  conditions (sections 5.13, 5.15; hrt-w3, notes/validation.md 23:52:32Z).
++  conditions (sections 5.14, 5.15; hrt-w3, notes/validation.md 23:52:32Z).
+ - Disclosed counters that beat best_v9e (hrt-w3, section 5.11): the growth 6 grower with a defender from round 10 or
+   12 (H10, H12: 520:755; P5TNU and P5TNUB also lose H10, P5TNUBM wins it), the growth handoff without strike at round
+   8 (755:660) and the guarded round-4 strike (gun1 at (10,1) plus one tier4, 755:740). Each of them loses to other targets, and in hrt-w3's four-policy

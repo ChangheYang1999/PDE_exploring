@@ -1,0 +1,103 @@
+--- bot_research/bots/defense/frozen/v46/fortress.py
++++ bot_research/bots/defense/frozen/v48/fortress.py
+@@ -198,8 +198,9 @@
+ def _single_gun_stops(obs, types, opp_hp, rules, top):
+     """Option finish_gun_check (astra review 11): for a flood too large for the planner's gun pass (the response check then
+     considers splashes and walls only), test the opponent's cheapest decisive answer explicitly: one gun3 on each of the `top`
+-    legal cells with the most route cells in range (the route after the placement), exact simulation of my active roster plus
+-    `types`. True if any single gun3 the opponent can afford keeps the damage below opp_hp (x209b game 00125 round 15: 250 tier1
++    legal cells with the most route cells in range (coverage ranked on the current route; the combat is simulated on the route
++    after the placement), exact simulation of my active roster plus `types`. A counterexample test, not a certificate: a
++    stopping gun outside the top cells is missed (astra review 12 constructed two such states; none in the x209/x222 logs). True if any single gun3 the opponent can afford keeps the damage below opp_hp (x209b game 00125 round 15: 250 tier1
+     + 52 tier5, 37,550 gold, predicted 5600, stopped completely by one gun3 at (2,3))."""
+     opp = obs["players"][1 - obs["player"]]
+     g3 = rules.turrets.get("gun3")
+@@ -241,7 +242,7 @@
+     return False
+ 
+ 
+-def _find_kill(obs, left, opp_hp, rules, mass, layout, wrap=False, robust_gold=None, gun_check=None, cache=None):
++def _find_kill(obs, left, opp_hp, rules, mass, layout, wrap=False, robust_gold=None, gun_check=None, cache=None, minimal=False):
+     """Cheapest found (cost, ordered type list) whose exact simulation on the opponent's current map deals >= opp_hp
+     (a sampled search over flood sizes, not a proof of minimality); n <= 60 unless mass is True, then n grows
+     geometrically up to all the gold (the capacity regime: both maps below immunity, a flood of a few hundred copies
+@@ -271,8 +272,11 @@
+             cache[key] = P.robust_leak(obs, types, layout=layout, fraction=1.0)
+         return cache[key]
+ 
++    n_active = len(gk.active_types(obs["players"][obs["player"]]["roster"], obs["round"]))
++
+     def gun_ok(types):
+-        if gun_check is None or len(types) <= P.GUN_PASS_MAX_ENTITIES:
++        # the planner's gun-pass cutoff counts the active roster plus the purchases (astra review 12), so does this gate
++        if gun_check is None or n_active + len(types) <= P.GUN_PASS_MAX_ENTITIES:
+             return True
+         key = ("gun", tuple(types))
+         if key not in cache:
+@@ -335,6 +339,22 @@
+             if not gun_ok(types):
+                 continue
+             kill = (cost, types)
++            if minimal:
++                # the smallest number of heavy copies on the same padding that still passes every check (binary search, the checks
++                # assumed monotone in the count): used only to size the reserve of finish_defend_first, the kill bought keeps every
++                # affordable copy (the response model is a heuristic bound, so the margin is kept)
++                pad = [t for t in types if t != heavy]
++                lo, hi = 1, len(types) - len(pad)
++                while lo < hi:
++                    mid = (lo + hi) // 2
++                    cand = pad + [heavy] * mid
++                    ok = leak(cand)[1] >= opp_hp and robust(cand)[1] >= opp_hp and gun_ok(cand)
++                    if ok:
++                        hi = mid
++                    else:
++                        lo = mid + 1
++                cand = pad + [heavy] * lo
++                kill = (_cost_of([{"op": "buy_minion", "type": x} for x in cand], rules), cand)
+     return kill
+ 
+ 
+@@ -426,6 +446,7 @@
+         gold = min(me["gold"], 10 ** 9)      # guard: absurd gold must not overflow float products
+         rnd = obs["round"]
+         kill_cache = {}                       # per decision: finish simulations shared by the two _find_kill callers
++        reserve = 0                           # gold held back for a known finish during the defence steps (finish_defend_first)
+         actions = []
+         left = gold
+         # 0. layout walls first (1 gold each); every defence plan below is made on the resulting route,
+@@ -505,8 +526,13 @@
+                     if finish_defend_first and dead_anyway:
+                         # option: the planner found no saving defence, but the capacity rule (2c) may still (x222 round 15: 5 splash +
+                         # 7 gun3 stopped the actual 12-tier5 flood); fall through to the defence steps and let the attack step's
+-                        # finish rule buy the kill with the remaining gold (the same kill when the map is full and nothing is bought)
++                        # finish rule buy the kill with the remaining gold. The kill's cost is RESERVED through the defence steps
++                        # (astra review 12: without the reserve, 1700 of capacity guns removed a 10,495 kill and a draw became a loss)
+                         safe = False
++                        kmin = _find_kill(obs, left, opp_hp, rules, mass_finish, layout, wrap=finish_wrap, robust_gold=finish_robust_gold,
++                                          gun_check=finish_gun_check, cache=kill_cache, minimal=True)
++                        reserve = kmin[0] if kmin is not None else kill[0]
++                        left -= reserve
+                     else:
+                         safe = dead_anyway
+                 if safe:
+@@ -649,6 +675,10 @@
+                         danger = danger or surplus > 0
+             if danger:
+                 budget_c = max(int(left * capacity_share), surplus)
++                if reserve:
++                    # finish_defend_first: the kill is reserved, so the whole slack is defence money (astra check 13: with the share the
++                    # saving 1700-gold defence got 850 and a win became a same-round draw)
++                    budget_c = left
+                 bought_c = []
+                 path_c = gk.route(my_blocked)
+                 for c in layout.splash_cells:
+@@ -696,6 +726,9 @@
+                 left -= cost
+                 o2 = _with_buildings(obs, actions, left)
+         # 4. attack
++        if reserve:
++            left += reserve                   # the finish reserved in step 0b is available again (the finish rule below re-finds it)
++            reserve = 0
+         if attack != "none" and rnd >= attack_from and left > 0 and not dying and not (matching and not eco_match_pokes):
+             budget = int(left * attack_share)
+             bought = []

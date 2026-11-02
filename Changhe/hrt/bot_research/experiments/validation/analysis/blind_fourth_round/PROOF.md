@@ -1,0 +1,104 @@
+# An unconditional fourth-round L4 continuation
+
+Written 2026-10-31T22:04:50Z from local source and retained-record inspection. This standalone informal proof defines a prospective control U and establishes its first four rounds against exact H and S. No U implementation, constructor, policy call, game or engine replay existed or ran when this proof was written. Full-game results are OPEN. The exact source deductions below are conditional results, not empirical observations of U.
+
+Source-reviewed 2026-10-31T22:05:48Z before writing U implementation: the two-party round-four conclusion and source identity formatting were clarified. No policy or engine execution accompanied this review.
+
+Read the policy and hypotheses first, then Claims 1 through 3, followed by the experimental scope and dependency list. The adjacent INDEX.md is the reading-order index. No formal proof or general simulator-equivalence theorem is claimed.
+
+## Exact policies, notation and hypotheses
+
+G is `EarlyWallGuard(witness='guard00')`. L4 is constructed as a fresh `WallSignalRepair()`, then only its `attack_round` field is changed to integer 4 before its first call. L4 retains tier='tier2', attack_share=1, count_cap=200, defense_first=False, saturate_round=20 and max_factories=80. Its persistent private H model and every other constructor default are unchanged. U is a new composite, not standalone L4 with a different initial observation.
+
+U constructs fresh G and L4 in that order. On actual decisions one, two and three it advances G and then L4 exactly once each on separate deep copies of the current observation, retains both private states, and submits only G's complete ordered action list. It discards L4's proposal even if that list differs. At decision four it commits permanently to the already advanced L4 before member calls; it calls only L4 on that and every later decision and returns its complete list. Opponent buildings, roster and other presence signals cannot change this commitment. U has consecutive-round bookkeeping beginning at one and a fixed physical player index in {0,1}. Failure during a member call ends supported use of that instance, since a partial transition is not rolled back. The unused G receives exactly three successful calls if decision four is reached. No member is reconstructed at commitment.
+
+T is the separately specified `ThirdRoundWait` in `analysis/third_round_wait/PROOF.md`. It has the same G-then-L4 construction and uncommitted call order, and always submits G through round three. It commits to G before member calls on the earliest presence signal at decision two, three or four, where presence means any opponent building or roster entry. If no such signal occurs, it commits to L4 at decision four. Selection is permanent, and the unused member stops on the commitment decision. The only intended treatment difference between T and U on the two displayed openings is T's round-four choice when S's completed construction becomes visible.
+
+H is `HPHandoff` with these exact parameters:
+
+    layout='empty', growth_rounds=6, bait=[], bait_round=2,
+    tier='tier5', factory_cap=2000, purchase_cap=1000,
+    replan_iters=5000, deadline=12, lead_from=8.
+
+All other defaults remain unchanged: lead_margin=0, panic_hp=None and panic_from=2. Its opening fixes splash guard rounds (4,6) and upgrade_round=9. Its frozen Fortress34 defender uses attack='none', round1_poke=0 and replan_iters=5000. L4's private persistent opponent is this same H specification. S is `LateReservedWallGuard()` with no parameters.
+
+Use the unchanged bundled standard 12 by 12 engine and both balanced rule JSON copies. Initial gold is100 and HP800. A wall costs1. A factory costs20 and earns15 per round. Path income is one per edge; each outgoing hit earns5. Splash costs60, deals10 to every copy on any of its eight neighboring cells, and blocks its own grid cell. Tier2 costs40, has70 HP and deals12 base damage. Tier4 costs260, has560 HP and deals60 base damage. A round has250 ticks, roster lifespan12 and maximum duration50 rounds. Both combats and incomes settle before the outcome is checked. All source/data inputs are fixed, all member calls succeed, and no external code mutates owned state. Modified rules and midgame initialization are excluded.
+
+Write F for one factory purchase, X for splash(1,3), Y for splash(10,1), and W for the ordered20 guard00 walls: (0,1),(1,1), then (x,1),(x,3) for x=2 through9, then (10,3),(11,3). F^k means k successive factory actions. W has a40-edge route; W+X has42. Closing gold includes income. A decision-r observation contains completed round r-1 state and neither pending round-r action list. Descriptions of U/H and U/S below are separate games.
+
+The exact early branches used here do not invoke time-limited planners. Statements about arbitrary full-game equality additionally require equal corresponding decision-relevant inputs, private state, random/shared external state and time-cutoff behavior. Normalize policy snapshot names consistently or prove the called branches ignore their differences. These early G/H/S branches do ignore names. Later G and H planning uses elapsed-time cutoffs, so successful calls alone do not prove unconditional equality of independent executions.
+
+## Public information and the shared prefix
+
+**Claim 1. U is a valid public-observation composite with a persistently advanced H model. Against exact H and S it agrees with T through the observation at decision four, and both private members receive the same actual input history through decision three.**
+
+Proof. U's commitment rule depends only on the current round and prior commitment. Each member receives a separate copy of the public observation, and U has no reference to a live opponent object or pending submission. L4's ForecastTiming.predict copies the observation, changes player to the opponent index, calls its own persistent H once, and applies that forecast list to a privately reconstructed opponent snapshot. This forecast accesses public state and fixed source knowledge only.
+
+PersistentFactoryModel constructs one H policy, requires consecutive calls from round one for a fixed opponent player index, and updates its last_round after each successful call. U calls L4 once on every actual decision. Its WallSignalTiming and WallSignalRepair wrappers may replace or discard a proposal, but neither makes another H decision or rolls its state back. Thus L4.model.last_round becomes3 after the third call and4 after the fourth. Its actual own gold, buildings, factories and roster on decision four come from the real observation. They do not come from an imagined engine that purchased its discarded round-three factories.
+
+For the displayed H and S, both opponents submit F^5 then F^4. They end the first two rounds with gold97/factories5 and gold174/factories9, on empty maps with empty rosters. Consequently neither T presence test at decision two or three can commit early. T and U both call G and then L4 on the same corresponding actual observations, and both submit G.
+
+At round one G submits W F^4, spends100, and closes with40+4*15=100 gold, four factories and path40. At round two it buys F^5, leaving0 and closing with40+9*15=175 gold and nine factories. At round three G submits X F^5, leaving175-60-100=15 and closing with15+42+14*15=267 gold and fourteen factories. L4 at round three does not attack, since attack_round is4. Its H model forecasts factories only, so incoming threat and defense expenditure are zero. From the actual175 gold it proposes F^8. Both composites retain this private transition and discard its proposal. Neither buys those eight factories.
+
+H's round-three F^8 gives gold174-160+22+17*15=291 and seventeen factories on an empty map. S's round-three reservation returns W X F^2. Its nonfactory cost80 leaves94 gold. With k new factories its closing balance is94-20k+42+15*(9+k)=271-5k. The greatest affordable k preserving the260 tier4 target is2, giving261 gold and eleven factories. S now has W+X and an empty roster. All rosters on both sides remain empty through round three, so HP stays800, there are no bounties or early terminal results, and round four is reached.
+
+This proves the shared actual prefix and private-call equality for both displayed opponents. It also shows why the decision-four observation distinguishes S from H: S has21 buildings, while H still has no buildings or roster. U ignores that distinction for its commitment. T uses it. For an arbitrary opponent, a claimed corresponding G prefix still needs the matching-input and deadline coupling specified above. This proves the claim.
+
+| Closing round | U gold / factories / path | H gold / factories / path | S gold / factories / path |
+| --- | --- | --- | --- |
+| 1 | 100 / 4 / 40 | 97 / 5 / 22 | 97 / 5 / 22 |
+| 2 | 175 / 9 / 40 | 174 / 9 / 22 | 174 / 9 / 22 |
+| 3 | 267 / 14 / 42 | 291 / 17 / 22 | 261 / 11 / 42 |
+
+## The H control
+
+**Claim 2. Under exact U/H, round four submits six tier2 purchases and one factory for U, and Y F^11 for H. Closing U/H gold is304/453, factories15/28 and HP800/728. These actions and states equal T/H's opening. Complete U/H and T/H histories are equal under the stated full-game coupling hypotheses, but independent complete-history agreement remains an empirical hypothesis.**
+
+Proof. At decision four H has no presence, so T and U both commit to their already advanced L4 before calls and both call only L4. Claim 1 gives equal L4 logical state and actual public inputs up to that decision. The private H and actual H have made the same early deterministic growth transitions; neither can hand off before round eight. Both compute the round-four opening from actual H's291 gold and seventeen factories. StagedGuardMaze prepends Y for60 gold and filters the parent factory proposal down to eleven affordable purchases, leaving11 gold and28 factories.
+
+The empty map plus Y has the right-first shortest path along row zero to(11,0), then down column eleven. Its22 edges include exactly five attackable cells adjacent to Y: (9,0),(10,0),(11,0),(11,1),(11,2). Each tier2 loses50 of70 HP and survives. Six copies spawn on ticks zero through five and arrive on ticks22 through27, each dealing12 damage. Splash attacks all adjacent copies, so no target competition changes this calculation. Both the frozen simulator's displayed splash accumulation and the original combat loop give six hits and72 damage for this specific path and wave. The empty baseline gives0.
+
+L4 starts from U's actual267 gold, so floor(267/40)=6. Positive forecast gain retains all six purchases, leaving27 gold. The predicted H has no active roster, so defense and repair add nothing, and saturation is inactive. One factory leaves7 gold and raises U's factory count to15. All six real copies hit H; H sends none. U closes with7+42+15*15+6*5=304 gold and HP800. H closes with11+22+28*15=453 gold and HP728. U retains six tier2 roster entries bought in round four, expiring after round fifteen; H retains an empty roster. U's W+X and H's Y are the complete maps.
+
+This is the same source calculation as T's round-four L4 branch. Thereafter T and U make the same L4-only call schedule. If corresponding observations, L4 and H state and every decision-relevant external input continue to agree, their actions agree and the unchanged engine yields equal next states. Induction proves conditional complete-history equality. Different elapsed-time cutoff realizations later in H or the inherited planners can break the premises, so the theorem does not assert that every independently scheduled pair of runs has equal histories. This proves the claim.
+
+## The S mechanism contrast
+
+**Claim 3. Under exact U/S, U submits F^13 at round four, with no attack or construction. S submits one tier4 purchase. Closing U/S gold is454/213, factories27/11 and HP740/800. U keeps W+X and an empty roster; S keeps W+X and one tier4 entry. This differs from T/S's fourth submission and state. It does not determine either full-game payoff.**
+
+Proof. U chooses L4 at decision four even though actual S now has W+X. Its private H was advanced on the actual observations of rounds one through three. It does not carry an imagined291-gold/seventeen-factory S economy forward from its discarded third forecast. ForecastTiming.predict reconstructs S from the actual261-gold/eleven-factory snapshot before applying the next model proposal. H remains in its opening at round four, and its empty-layout guard list first proposes Y. That cell is unoccupied and legally extends this map. MazeGrower's parent computes thirteen affordable factories from261 gold. StagedGuardMaze prepends Y for60, then retains ten affordable factories from the remaining201 gold. The resulting forecast list is exactly Y F^10. The imagined state has1 gold,21 factories, W+X+Y and no roster. This is the model's forecast, not S's simultaneous action.
+
+On W+X+Y, row one is blocked at x=0 through10 and row three is blocked at x=1 through11. The only crossing of row one is x=11 and of row three is x=0. The fixed BFS order right, down, left, up therefore selects the44-edge route consisting of these straight segments:
+
+    (0,0) -> (11,0) -> (11,2) -> (0,2)
+          -> (0,4) -> (11,4) -> (11,11).
+
+Every route must make the first two row crossings at those respective ends. These segments attain the resulting minimum length. Below row three, right-first expansion chooses the displayed rightward segment among equal-length continuations. The seven cells adjacent to Y on this route, in route order, are (9,0),(10,0),(11,0),(11,1),(11,2),(10,2),(9,2). Y alone gives seven hits of10 damage before arrival and kills a70-HP tier2 by(9,2). X can only add damage; it cannot restore HP. There is no gun or other effect that lets another copy avoid these splash hits. Six hypothetical copies spawn on ticks zero through five, and all die before reaching the base.
+
+The frozen MapModel calls the original shortest_path and sums splash damage at each attackable path index. Its simulate loop removes entries whose HP becomes nonpositive before arrival. The original combat loop independently applies the same seven splash exposures in the same route order for this wave. Thus the frozen forecast gain is exactly0 rather than merely an unverified simulator estimate. The initial candidate count is6, but ForecastTiming's gain<=0 branch resets attack_count to0, retaining forecast_attack_gain=0. No purchases are appended.
+
+The predicted incoming roster is empty. With threat_gold=0, defend's packages contain only the empty wave; its worst damage is0 and it returns no construction. Saturation begins at round twenty. All267 actual gold therefore remains available for factories. The factory count is min(80,floor(267/20))=13, giving the complete list F^13. WallSignalRepair applies that list to a private actual-own snapshot and recomputes damage from the same empty predicted roster as0. It neither invokes free_plan nor replaces this list. U closes purchases with7 gold and27 factories. Its map remains W+X with path42.
+
+Actual S follows its fixed round-four G branch, buying one tier4 for260 and no factory from261 gold. U's only splash cannot deal more than80 damage along a simple route, so that560-HP tier4 survives and arrives within250 ticks, dealing60 to U and earning S one bounty. U sends no copies and has no outgoing hits. U's closing gold is7+42+27*15=454, and its HP is740. S's closing gold is1+42+11*15+5=213, and its HP stays800. Its tier4 entry was bought in round four and expires after round fifteen. Neither base is destroyed at the end of round four. This proves the claim.
+
+In the corresponding T/S opening, T selects G and both sides buy one tier4. T/S closes with gold264/213, factories14/11 and HP740/740. U therefore changes the mechanism visibly at round four: thirteen additional factories replace T's one tier4 purchase, and S takes no damage that round. U also has190 more closing gold than T at that point. These advantages and disadvantages do not establish a later loss, draw or win. On its next observation U sees S's actual tier4 and can enter a different defensive or repair branch. Its model can hand off later under HP or deadline conditions. No full-game conclusion follows from the first damage difference.
+
+## What a prospective comparison can establish
+
+A four-game U/H and U/S comparison, one game in each physical seat, can test whether U/H reproduces the matching T/H complete histories and whether Claim 3's exact U/S opening occurs. Matching T games must be declared and completed independently; their result, replay, job, freeze, source archive and audit identities must be pinned before U calls. H and S are disclosed development opponents. They are not held-out adversaries, and these four conditions do not estimate unrestricted strength.
+
+Separate hypotheses can ask whether T's payoff is at least U's in each matched opponent/seat, and whether T strictly improves on U against S in both seats. The latter would show an empirical benefit for T's observation-based choice on this particular pair. If U/S instead draws or wins, the intended strict-improvement hypothesis fails or remains unproved, even though the round-four mechanism proof still holds. In particular, the phrase unconditional L4 continuation must not be read as unconditional tier2 attack: Claim 3 proves that L4 cancels that attack against the modeled S map.
+
+The first three actual G submissions, all full member proposals, the discarded F^8 at round three, member call order, L4's persistent H state, commitment before the round-four call and absence of resets require source-pinned audits on actual observations. Compare independent reference members only when they receive the same actual call schedule. Do not fabricate engine trajectories from discarded proposals or claim baseline-L/L4 private-state equivalence. Inputs, captured proposals, discarded snapshots, submitted trace lists and returned lists must be independent deep copies in a future implementation.
+
+Keep audit completion separate from hypothesis truth. Full-game equality requires complete canonical histories, not only WDL. Preserve all failures and first divergences. All hypotheses about complete U/H history, U/S payoff or T versus U payoff remain OPEN here. No policy execution, runtime timing, held-out result, implementation validation or general planner correctness is asserted by this document.
+
+## Dependencies and retained evidence
+
+The complete argument reads `td_game/{engine,actions,combat,pathfinding,state,config}.py` and the two balanced rule JSON copies. Counter dependencies are `{early_wall_guard,late_reserved_wall_guard,reserved_wall_guard,delayed_wall_guard,wall_signal_repair,wall_signal_timing,stateful_public,public_factory,forecast_timing,shared_prefix_selector,hp_handoff,screened_guard_maze,staged_guard_maze,maze_grower,visible_search}.py`; frozen economy v2 `{defense_plan,fastsim,threat}.py`; and the constructor/repair and later planner dependencies listed in the T proof. Relevant fixed data are early_wall_guard_001.json, maze_layouts_001.json, screened_guard_001.json, screened_roster_guard_001.json and staged_guards_001.json. A prospective runtime declaration must capture the full transitive closure, including the inherited Planner constructed and then replaced by StatefulPublicTiming, even though no late planner is used in this opening proof.
+
+The prior G/H records at `bot_research/runs/validation/early-wall-transfer-00-001/results/case0010.json` and `case0011.json`, and the S/G records at `bot_research/runs/validation/late-reserved-wall-counter-00-001/results/case0004.json` and `case0005.json`, were already read through completed round four during the T source review. They support the disclosed G/H/S prefix arithmetic. They contain no U decisions and are not U outcomes. No fresh engine replay or policy call was made while preparing this proof.
+
+The independent T source proof is `bot_research/experiments/validation/analysis/third_round_wait/PROOF.md`, SHA256 7a14fb1e7b062493555761a72aca55e8d21a88393fcb09d65364c98705468ca9. Its implemented transition source is `bot_research/bots/counters/third_round_wait.py`, SHA256 25e84fb1ec28ece5e2e8b9d32be2f1d962794069a1b3c8ac6b824afb5a3b7cc2. Its source-reviewed prospective protocol is SHA256 3238d307ccd4f3ff574c68024b27f20c68292f372484a446a5cb053644d075e7. Those files remain unchanged by this separate U work. The proof body above gives the needed opening reasoning without depending on unobserved T game results.
+
+No JavaScript/TypeScript, server/listener, RLScience or other cluster, remote compute, GPU, Lean/lake, protected write, git commit/push or online posting is used or authorized. This source review makes no changes to best.py or reserved final-validation inputs.
