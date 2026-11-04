@@ -1,0 +1,1 @@
+The standalone informal proof is PROOF.md. No Lean or Lake execution is authorized. The independent exact rational audit is code/check_v01.py; retained inputs and actual evidence are in verification/.

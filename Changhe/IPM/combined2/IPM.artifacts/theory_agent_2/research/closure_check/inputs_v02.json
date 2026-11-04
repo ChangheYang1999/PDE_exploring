@@ -1,0 +1,353 @@
+{
+ "title": "closure_check inputs, version 02 (c2-t2): every input of the final 013 closure check as a named parameter",
+ "conventions": {
+  "value": "an exact rational p/q or a finite decimal string; read exactly as a Fraction",
+  "sense": "upper: the true quantity is <= value; lower: >= value; exact: equal; choice: a free parameter of the construction",
+  "status": "CONFIRMED (audited as stated in cite), STANDIN-FLOAT (a FLOAT number used in place of an open certified bound), STANDIN-TARGET (a cover target used in place of an open global certificate), CHOICE"
+ },
+ "fixed": {
+  "q": {
+   "value": "21/10",
+   "sense": "exact",
+   "status": "CONFIRMED",
+   "cite": "P-S1"
+  },
+  "sigma": {
+   "value": "1",
+   "sense": "exact",
+   "status": "CONFIRMED",
+   "cite": "P-S1"
+  },
+  "r0": {
+   "value": "1/2",
+   "sense": "exact",
+   "status": "CONFIRMED",
+   "cite": "P-S1"
+  },
+  "c": {
+   "value": "4076476460239181/2251799813685248",
+   "sense": "exact",
+   "status": "CONFIRMED",
+   "cite": "the fixed reference value; Candidate 007 unchanged"
+  },
+  "c_W": {
+   "value": "9619/5000",
+   "sense": "upper",
+   "status": "CONFIRMED",
+   "cite": "AT-170 (c_W(21/10) at P-S1)"
+  }
+ },
+ "source": {
+  "f": {
+   "value": "7961206656880281/10000000000000000000000",
+   "sense": "upper",
+   "status": "CONFIRMED",
+   "cite": "||F_*||_2 <= 7.961206656880281e-7, AT-1413 (ledger v11 rows G1, L)"
+  },
+  "n": {
+   "value": "0.0055545729030073655758",
+   "sense": "upper",
+   "status": "CONFIRMED",
+   "cite": "N_(21/10)(F_*) <= 0.0055545729030073655758, AT-1430, AT-1431"
+  }
+ },
+ "background": {
+  "beta0": {
+   "value": "200215453/100000000",
+   "sense": "lower",
+   "status": "CONFIRMED",
+   "cite": "base L^2 rate beta_0 > 2.00215453, AN-010 (strict; the lower is used as >=)"
+  },
+  "beta_star": {
+   "value": "3/5",
+   "sense": "lower",
+   "status": "STANDIN-TARGET",
+   "cite": "cover target N_q* <= -beta_* I (chain item 3); regional only, see regions"
+  },
+  "g_star": {
+   "value": "1/4",
+   "sense": "upper",
+   "status": "STANDIN-TARGET",
+   "cite": "cover target |grad h_*| <= 1/4 (chain item 3)"
+  },
+  "s_star": {
+   "value": "137/125",
+   "sense": "upper",
+   "status": "STANDIN-TARGET",
+   "cite": "cover target ||Sym Du||_op <= 137/125 (route F-a strain input)"
+  },
+  "regions_cutoff": "2026-11-04T07:30Z (unchanged at 2026-11-04T07:55Z: no new union or root certificate)",
+  "regions": [
+   {
+    "r2_lo": "0",
+    "r2_hi": "57/71",
+    "status": "CONFIRMED",
+    "cite": "both-auditor union at m = 56: c2-an AN637, c2-at AT2240, AT2241 (roots 0 to 56)"
+   },
+   {
+    "r2_lo": "57/71",
+    "r2_hi": "29/35",
+    "status": "CONFIRMED-NO-UNION",
+    "cite": "root 57: AT2243, AT2244 (no executed union at the cutoff)"
+   },
+   {
+    "r2_lo": "29/35",
+    "r2_hi": "59/69",
+    "status": "CONFIRMED-NO-UNION",
+    "cite": "root 58: AT2252, AT2253 (no executed union at the cutoff)"
+   },
+   {
+    "r2_lo": "59/69",
+    "r2_hi": "15/17",
+    "status": "CONFIRMED-NO-UNION",
+    "cite": "root 59: AT2268, AT2269 (no executed union at the cutoff)"
+   },
+   {
+    "r2_lo": "49/15",
+    "r2_hi": "inf",
+    "status": "CONFIRMED",
+    "cite": "both-auditor union at m = 56 (roots 98 to 127): AN637, AT2240, AT2241"
+   }
+  ]
+ },
+ "far_Fa": {
+  "SC_plus": {
+   "value": "4194197216881219/9007199254740992",
+   "sense": "upper",
+   "status": "CONFIRMED",
+   "cite": "SC(a_W) at Rw = Ww = 200, AT1366, AT1367"
+  },
+  "AE_plus": {
+   "value": "5915921936389617/4503599627370496",
+   "sense": "upper",
+   "status": "CONFIRMED",
+   "cite": "A_E^+(a_W), AT1891 (premises of AE-CS kept)"
+  },
+  "SW_plus": {
+   "value": "537734762519297/9007199254740992",
+   "sense": "upper",
+   "status": "CONFIRMED",
+   "cite": "S_W^+, AT1928, AT1929"
+  },
+  "OMF_plus": {
+   "value": "513586856047295/4503599627370496",
+   "sense": "upper",
+   "status": "CONFIRMED",
+   "cite": "OMF^+(a_t), AT-1336 to AT-1338, AT-1341"
+  }
+ },
+ "kb": {
+  "Rbar": {
+   "value": "17/8750000",
+   "sense": "exact",
+   "status": "CONFIRMED",
+   "cite": "Lemma KB rectangle, AT-772 (chain item 7)"
+  },
+  "Mbar": {
+   "value": "1/2",
+   "sense": "exact",
+   "status": "CONFIRMED",
+   "cite": "Lemma KB rectangle, AT-772"
+  },
+  "loss_KB": {
+   "value": "152070/1000000",
+   "sense": "upper",
+   "status": "CONFIRMED",
+   "cite": "reference-ball matrix loss < 0.152070 on the rectangle, AT-772 (under the center matrix premise)"
+  }
+ },
+ "near": {
+  "nu": {
+   "value": "1/40",
+   "sense": "choice",
+   "status": "CHOICE",
+   "cite": "plan of record; 2 nu <= mu"
+  },
+  "t": {
+   "value": "1/10",
+   "sense": "choice",
+   "status": "CHOICE",
+   "cite": "plan of record; t in (0, 1)"
+  },
+  "Lambda_plus": {
+   "value": "20.862082",
+   "sense": "upper",
+   "status": "STANDIN-FLOAT",
+   "cite": "FLOAT Lambda_+(a_n) (c2-t2 11:32Z); below the certified lower 8 (2c - 1) of AT-575, so the program uses max(FLOAT, 8 (2c - 1)); no upper exists"
+  },
+  "L1_plus": {
+   "value": "4.0442822",
+   "sense": "upper",
+   "status": "STANDIN-FLOAT",
+   "cite": "||(a_n)_+||_1, FLOAT (c2-t2 11:32Z)"
+  },
+  "D4_an": {
+   "value": "444.194",
+   "sense": "upper",
+   "status": "STANDIN-FLOAT",
+   "cite": "||D^4 a_n||_2, FLOAT (theory_v15 V15-4 (b) 3)"
+  },
+  "D5_an": {
+   "value": "4186.35",
+   "sense": "upper",
+   "status": "STANDIN-FLOAT",
+   "cite": "||D^5 a_n||_2, FLOAT"
+  },
+  "D6_an": {
+   "value": "63050.4",
+   "sense": "upper",
+   "status": "STANDIN-FLOAT",
+   "cite": "||D^6 a_n||_2, FLOAT; certified lower 62748 (ledger v11 row G3)"
+  },
+  "sup_abs_an_W2": {
+   "value": "8.6524467",
+   "sense": "upper",
+   "status": "STANDIN-FLOAT",
+   "cite": "sup(|a_n| W^2) = max(sup((a_n)_- W^2), sup((a_n)_+ W^2)), FLOAT (c2-t2 11:32Z)"
+  },
+  "sup_pos_an_W2": {
+   "value": "8.5262260",
+   "sense": "upper",
+   "status": "STANDIN-FLOAT",
+   "cite": "sup((a_n)_+ W^2), FLOAT (c2-t2 11:32Z)"
+  },
+  "C_D": {
+   "value": "80127/40000",
+   "sense": "exact",
+   "status": "CONFIRMED",
+   "cite": "AT-428"
+  },
+  "K_LB": {
+   "4": "7716296798651/50000000",
+   "5": "701148547241569/50000000",
+   "6": "93161147644159911/50000000",
+   "status": "CONFIRMED",
+   "cite": "AT-1453, AT-1454 (endpoints of K_m)"
+  },
+  "K_UB": {
+   "4": "9958486957/12500000000",
+   "5": "20680828134801/1000000000000",
+   "6": "65383366747743/62500000000",
+   "status": "CONFIRMED",
+   "cite": "AT-1453, AT-1454"
+  }
+ },
+ "rest": {
+  "eps_rest": {
+   "value": "0",
+   "sense": "upper",
+   "status": "STANDIN-FLOAT",
+   "cite": "e-part of T_IS, C_tr, C_vs1 to C_vs3 of D_rem^n in NE form (T2_H4_v01 NE-lo, NE-vs); no 013 bound exists"
+  },
+  "C_rest": {
+   "value": "0",
+   "sense": "upper",
+   "status": "STANDIN-FLOAT",
+   "cite": "C_N of the same pieces; no 013 bound exists"
+  }
+ },
+ "ce": {
+  "beta0_star": {
+   "value": "7/4",
+   "sense": "lower",
+   "status": "DERIVED",
+   "cite": "beta_0* = beta_0 - g_* >= 7/4 needs g_* <= 1/4 (checked in block A)"
+  },
+  "weight": {
+   "sigma": "1",
+   "r0": "1/2",
+   "c_W": "9619/5000"
+  }
+ },
+ "cases": [
+  {
+   "label": "plan of record",
+   "b0": {
+    "value": "11/20",
+    "sense": "choice",
+    "status": "CHOICE",
+    "cite": "plan of record (theory_v15 V15-4 (b))"
+   },
+   "mu": {
+    "value": "72",
+    "sense": "choice",
+    "status": "CHOICE",
+    "cite": "plan of record"
+   },
+   "kappa_0": {
+    "value": "3.20696761",
+    "sense": "upper",
+    "status": "CONFIRMED",
+    "cite": "mu 72, AT-1491, AT-1492"
+   },
+   "kappa_2q": {
+    "value": "1059792560",
+    "sense": "upper",
+    "status": "CONFIRMED",
+    "cite": "mu 72, AT-1491, AT-1492"
+   },
+   "kappa_j": {
+    "value": "37912",
+    "sense": "upper",
+    "status": "CONFIRMED",
+    "cite": "j = 1, 2, mu 72, nu 1/40, lambda_k 256/25, AT-1491, AT-1492"
+   }
+  },
+  {
+   "label": "registered fallback",
+   "b0": {
+    "value": "103/200",
+    "sense": "choice",
+    "status": "CHOICE",
+    "cite": "registered fallback (c2-t1 note 83; NEAR_CHECK_v01 section 4)"
+   },
+   "mu": {
+    "value": "68",
+    "sense": "choice",
+    "status": "CHOICE",
+    "cite": "registered fallback"
+   },
+   "kappa_0": {
+    "value": "3.2126528",
+    "sense": "upper",
+    "status": "STANDIN-FLOAT",
+    "cite": "mu 68, c2-t1 research/kernel_n6 arb runs, UNAUDITED (near_params_v01.json)"
+   },
+   "kappa_2q": {
+    "value": "836515933",
+    "sense": "upper",
+    "status": "STANDIN-FLOAT",
+    "cite": "mu 68, UNAUDITED (near_params_v01.json)"
+   },
+   "kappa_j": {
+    "value": "33926.469",
+    "sense": "upper",
+    "status": "STANDIN-FLOAT",
+    "cite": "mu 68, nu 1/40, lam_k 256/25, UNAUDITED (near_params_v01.json)"
+   }
+  }
+ ],
+ "near_binding": {
+  "dir": "nearcopy_v02",
+  "note": "c2-t1 research/closure_check NEAR_CHECK_v02, frozen 07:50Z (c2-t1 note 87; replaces v01 after AT2298, AT2299, AT2307 to AT2309); copied unchanged into nearcopy_v02/; SHA256SUMS_v02 checked",
+  "result": "near_check_v02.result.json",
+  "program": "near_check_v02.py",
+  "params": "near_params_v01.json",
+  "sha256": {
+   "NEAR_CHECK_v02.md": "f5be0cb0278fa0e809a6899e29e855e57cc04340121ede21d9a58d438cf4e980",
+   "near_check_v02.py": "0170560ec8ff6952e2c3458c35ec0a1f7ce639ef096200a186e297f6832f298b",
+   "near_params_v01.json": "1b5d87bddfa9ff69b3fb173d9590530919feac4c84e5d3fdb9ff513b8126f0b2",
+   "near_check_v02.out": "65b1ad8bbbec05cd796bf82c85a625cd95dd21d72e9f60d9f657d25958c2819b",
+   "near_check_v02.result.json": "2d4cffce6b60b12546da88c5348b4f16b4286db0562b177835f211a9e1aa319f"
+  }
+ },
+ "h4_reading": {
+  "value": "undecided",
+  "choices": [
+   "i",
+   "ii",
+   "undecided"
+  ],
+  "cite": "H4-COMP: (i) near e-term charged against c + 1 - q - b0 (V10-4 (a); NEAR_CHECK_v01 H4); (ii) against beta_* - eps_R - b0 (Theorem H4-R, AT-364; AT1687). The verdict needs an accepted reading."
+ }
+}

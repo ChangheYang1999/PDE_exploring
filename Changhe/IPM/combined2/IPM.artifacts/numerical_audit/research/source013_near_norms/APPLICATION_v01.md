@@ -1,0 +1,13 @@
+# Freezing the complete near-norm application
+
+This argument precedes the metadata freezer. It applies [PROOF.md](PROOF.md), including its fixed source, cutoff, partition, Fourier convention and exact constants. It adds no analytic premise or numerical estimate.
+
+Assume that all five original near owners have completed their exact assignments successfully; that each of the 71 chunks has a successful matching finite execution and an adopted independent actual review; that the five complete block assemblies have those same properties; and that the two endpoint pairs retain their independently adopted actual reviews. Every record and every executable dependency must have the hash selected in the concrete request. In particular, a completed primary stage from a rejected endpoint request is used only with the accepted stage-specific review. The rejected whole request remains rejected.
+
+The freezer selects the five block descriptors in the order n0 to n4 and the fixed origin and exterior descriptors. It checks the accepted actual method, exact source identity, successful block receipts, actual block and chunk reviews, and their current dependency bytes. Its application mapping is exactly the accepted method's files together with that method manifest and its actual review. Its enclosing finite request additionally retains the selected physical inputs, actual reviews, receipts, independent audit dependencies and the freezer itself.
+
+Under these conditions the unchanged consumer `code/assemble_v02.py` checks the complete original owners, chunk identities, exact partition, local containing intersections, endpoint evidence and exact regional sums. The theorem in PROOF.md then applies to the seven regions. Its rational square and tenth-power comparisons produce containing D4, D5, D6, M4 and Fourier-tail inputs.
+
+The freezer itself proves none of those quantities. A concrete independent request review is required before its one finite application; a successful execution and a separate actual-result review are required before any resulting whole-plane quantity is certified. Missing data, failed receipts or altered hashes stop the application. A completed near-norm result would still leave the other near-price terms, global background gap, far constants, inverse, invariant ball and existence theorem to their separate obligations.
+
+All writes remain in this agent. Execution is restricted to core50, nice19 and one thread under the accepted finite gate. No JavaScript or TypeScript, servers or listeners, RLScience or other clusters, remote or paid compute, GPU, Lean or Lake, foreign writes or signals, commits, pushes or online posts are authorized.

@@ -1,0 +1,63 @@
+{
+  "status": "PASS_DIRECT_NEAR_TUPLE_ARITHMETIC",
+  "started_utc": "2026-11-04T14:16:05.988725+00:00",
+  "finished_utc": "2026-11-04T14:16:06.125984+00:00",
+  "elapsed_seconds": 0.1372620710171759,
+  "checks": 107,
+  "binding_checks": 28,
+  "precision_bits": 768,
+  "params_sha256": "96f0638805f1cf992830ea8aa35402994d5af62654bff9fef90d7bbd46d84360",
+  "result_sha256": "fd6836f9b7f87fd130ec98220896337da30a01b7156382ec813615b47330104f",
+  "near_actual_adoption_sha256": "f45787fc1fc268b2299fb588406f408374a6c54d8440769f16d7987013029fd6",
+  "cases": [
+    {
+      "label": "plan of record",
+      "e_up": "1.52627111489e-1",
+      "budget_margin_lower": "7.69209871099e-3",
+      "h4_rate_margin_lower": "2.32869401800e-3",
+      "C_N_upper": "1.13428316345e11",
+      "D_lower": "1.22000000000e11",
+      "room_D_minus_P_lower": "8.57168365500e9",
+      "inputs_not_certified": [
+        "eps_rest"
+      ],
+      "status": "DRY RUN: proves nothing"
+    },
+    {
+      "label": "registered fallback",
+      "e_up": "1.80101237602e-1",
+      "budget_margin_lower": "1.52179725979e-2",
+      "h4_rate_margin_lower": "9.85456790500e-3",
+      "C_N_upper": "9.02397335558e10",
+      "D_lower": "9.86935000000e10",
+      "room_D_minus_P_lower": "8.45376644420e9",
+      "inputs_not_certified": [
+        "D_allow[registered fallback]",
+        "eps_rest",
+        "kappa_0[registered fallback]",
+        "kappa_2q[registered fallback]",
+        "kappa_j[registered fallback]"
+      ],
+      "status": "DRY RUN: proves nothing"
+    }
+  ],
+  "own_bindings": {
+    "research/near_direct_tuple_audit/PROOF.md": "08386446d104263fac06efa39443a4ba2dc65481675f55dbcd84199585e5c4a8",
+    "research/near_direct_tuple_audit/code/check_v01.py": "3a270e7fd25372e6e79a00f9189cbf276d8d5da69fdcd46cff165bd1a98c8fd5",
+    "research/near_direct_tuple_audit/formal/README.md": "d723be9015ae318e285184dd2f0c58fe07606dc9a927f68e89ab1567b53eabba",
+    "research/near_direct_tuple_audit/source/actual_params_v01.json": "96f0638805f1cf992830ea8aa35402994d5af62654bff9fef90d7bbd46d84360",
+    "research/near_direct_tuple_audit/source/actual_result_v01.json": "fd6836f9b7f87fd130ec98220896337da30a01b7156382ec813615b47330104f",
+    "research/near_direct_tuple_audit/source/near_check_v04.py": "10fea8ceca9bc086aed92eb721aa733cf3cc9846f83a4485485882186af27dbb",
+    "research/near_direct_tuple_audit/source/near_params_v05.json": "87966f8d12ca936b1a10850477b68b11e32411d3ba3c32e36078eb21d2a1c291",
+    "research/near_tuple_actual_audit/verification/check_v01.json": "e8fe1c3b3c9c31728863da6ca74f747dd2e69410ab96fef68bfe63d6e12e38c5",
+    "research/source013_near_norms/verification/wholeplane_v02/actual_review_v01.json": "f45787fc1fc268b2299fb588406f408374a6c54d8440769f16d7987013029fd6",
+    "research/source013_near_norms/verification/wholeplane_v02/result.json": "786152508b369ca05d5ddc739fa1481cd2c5b3fdf24da70e67da29c4cfe1cfe6",
+    "scripts/campaign_bindings_v01.py": "1a06b7838eb4839ee664be344d42e82eb5d40ef7f28a2e2d4c68ff402daaf071"
+  },
+  "external_dependencies": {
+    "../c2-t1/research/closure_check/near_check_v04.py": "10fea8ceca9bc086aed92eb721aa733cf3cc9846f83a4485485882186af27dbb",
+    "../c2-t1/research/closure_check/near_check_v09.result.json": "fd6836f9b7f87fd130ec98220896337da30a01b7156382ec813615b47330104f",
+    "../c2-t1/research/closure_check/near_params_v06.json": "96f0638805f1cf992830ea8aa35402994d5af62654bff9fef90d7bbd46d84360"
+  },
+  "scope": "Direct minimum moment bound, conditional scalar arithmetic and exact adopted norm inputs only. eps_rest remains OPEN and fallback kernel and allowance inputs remain UNAUDITED. No full near theorem, H4 remainder, inverse or invariant-ball conclusion."
+}

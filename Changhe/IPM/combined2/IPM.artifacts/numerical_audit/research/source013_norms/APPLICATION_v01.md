@@ -1,0 +1,9 @@
+# Application to the complete source013 residual
+
+The exact statement, hypotheses, notation and proof are in PROOF.md. This application retains its fixed source013 field, Candidate007 reference and c=4076476460239181/2251799813685248.
+
+Before execution, the origin disk, all six annulus blocks, their complete114-panel assembly, the complete zeroth exterior and the complete exterior derivative admission must each have their actual independent reviews and successful original and local execution records. Every exact source and coefficient file must retain its registered hash. The whole-plane weighted calculation uses the ordered tensor energies of g=sqrt(1+4r^2)F on the three adjacent regions. The unweighted calculation uses the full analytic reciprocal of1+4r^2 on every finite annulus panel, with the complete analytic remainder, and the admitted endpoint inequalities. It does not substitute a partial-region upper bound or an observed floating residual.
+
+The proposed six serial stages compute weighted primary and reduction records, publish their verified intersection, then compute and publish the corresponding unweighted pair. The independent methods and exact square and twentieth-power checks are those already reviewed in PROOF.md. Each stage has a120-second limit. A failed stage leaves its records and stops the request; no later successful consumer is inferred from a failed finite receipt.
+
+The metadata freezer authenticates the actual regional reviews and their complete own-agent bindings before producing the concrete request. The emitted request requires an independent execution review before launch through the existing serial gate. Actual results require a separate independent review of the successful receipt, full input chain, arithmetic and displayed endpoints before they are reported as certified. No global background, inverse, invariant ball or stationary existence statement follows solely from these residual norms.

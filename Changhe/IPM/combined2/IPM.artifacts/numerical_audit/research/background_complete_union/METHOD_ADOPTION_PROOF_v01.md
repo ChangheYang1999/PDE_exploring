@@ -1,0 +1,7 @@
+# Authenticating the complete-union method review
+
+Fix the exact source and numerical interfaces of PROOF.md and CONSUMER_PROTOCOL_v01.md. The proposed method manifest is verification/manifest_v01.json, SHA256 de2d1b15b1b62ab10943c9c78f9b6cc46b7baccb9b0a4b11086984de17eed36f. The distinct method review AT2505 to AT2507 is conditional: it confirms the finite assembly and actual-adoption interface, not a computed global bound.
+
+The local adoption checks that the explicit BOUND review names this manifest, that its successful finite test names the same manifest, that the test precedes the review, and that its independent execution completes successfully within its declared limit. Every file in the review's self_dependencies and external_dependencies maps and the check's files map is authenticated. The local manifest's files are resolved relative to this topic directory. The helper's two-parent relative path refers to the same own-agent file and is not a permission to write outside this agent. All hashes are checked again before the adoption record is written.
+
+Consequently the adopted review applies to the exact current consumer, proof and protocol. This only discharges the method-review premise. The separate complete host-field and host-matrix actual adoptions must still exist before execution. After execution a distinct actual union review remains necessary. No mathematical bound is inferred from the method test itself.

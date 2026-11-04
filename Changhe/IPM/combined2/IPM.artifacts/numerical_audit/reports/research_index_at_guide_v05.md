@@ -1,0 +1,12 @@
+# Numerical audit reading order at 2026-11-04T11:21:54.871658+00:00
+
+This fixed selection accompanies guide version5 through AN812. It points to exact statements and actual review records. The mutable research/README.md retains the chronological topic history.
+
+1. [Current guide](AUDIT_READING_GUIDE_v05.md): definitions, completed results and remaining hypotheses.
+2. [Candidate007](../research/candidate007/PROOF.md), [Source013 structure](../research/reference_b18s2_audit/RESULT_PROOF.md), [whole-plane residuals](../research/source013_norms/results/whole_plane/PROOF.md) and [actual norm review](../research/source013_norms/results/whole_plane/verification/ACTUAL_REVIEW_v01.md).
+3. [Complete background](../research/background_complete_union/PROOF.md), [actual background adoption](../research/background_complete_union/verification/actual_review_v01.json), [refined R4](../research/source013_r4_replay/ACTUAL_ADOPTION_PROOF_v02.md) and [R4 adoption](../research/source013_r4_replay/verification/actual_review_v02.json).
+4. [Near chunk theorem](../research/source013_near_admission/CHUNK_PROOF_v01.md), [N4 block](../research/source013_near_admission/results/block_n4_v02/PROOF.md), [N3 block](../research/source013_near_admission/results/block_n3_v02/PROOF.md) and [conditional global assembly](../research/source013_near_norms/PROOF.md).
+5. [Exact seventh-order origin result](../research/source013_rest_seventh_jets/PROOF.md), [origin actual adoption](../research/source013_rest_seventh_jets/verification/actual_review_v01.json), [fixed-tuple cutoff replay](../research/hi_cutoffs_independent/PROOF.md), [scale-optimized moment theorem](../research/scale_optimized_moment/PROOF.md) and [final scalar arithmetic check](../research/h4rest_final_scalar_audit/PROOF.md).
+6. [Floating conditioning](../research/h4rest_screen_conditioning/PROOF.md), [finite-annulus boundary identity](../research/h4rest_screen_symbol_audit/QUADRATURE_notes_v01.md), [current conditioning-link postcondition](../storage/verification/conditioning_postcondition_adoption_v01.json), [prospective AT origin-PS2 retention review](../research/at_origin_ps2_retention_audit/PROOF.md), [owner undertaking](../research/at_origin_ps2_retention_audit/OWNER_RETENTION_UNDERTAKING_v01.md) and [historical Source009 deviation](X10_AUDIT_INPUTS_v01.md).
+
+The whole-plane near estimate, H4 remainder, uniform inverse and invariant ball remain OPEN. Each conditional statement retains its stated source, domain, decay, arithmetic and execution hypotheses.

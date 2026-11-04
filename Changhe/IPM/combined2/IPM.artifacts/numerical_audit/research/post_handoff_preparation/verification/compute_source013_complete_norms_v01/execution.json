@@ -1,0 +1,148 @@
+{
+  "schema": "post-handoff-preparation-execution-v1",
+  "status": "COMPLETED",
+  "started_utc": "2026-11-03T17:49:42.359820Z",
+  "finished_utc": "2026-11-03T17:51:35.331365Z",
+  "elapsed_seconds": 112.97152602858841,
+  "request": "research/wait_stage_preparation/verification/preparation_request_v75.json",
+  "request_sha256": "bfb72d99c1fbbddf7b772f4e3938db3fe2c1b8b56e63de18d2ff42f9fd043c7c",
+  "method_manifest_sha256": "490d4b6407a69fda73b0b466f61c780506b5a18c5d6034da6e3f87d4ec5ad6ce",
+  "method_review_sha256": "efa0057cfb2a0009f7e73e552f01aeea2d20fb43306cb07134df40ed45e2bfbd",
+  "execution_review_sha256": "ebf1a2ff4a62573b5e4727ad3b2e4fbe22b0e189f76df48a1c7841f00a40e180",
+  "code_sha256": "bf93c6765cb69980a0129e40f223de400f10c2b8873aace13685c90f39700ec1",
+  "quiescence": {
+    "handoff_execution_sha256": "80b48c2e535f138868ce2e00a769efeebbfca459e4d6ae39288a5b73855e7c10",
+    "controller_state": "absent",
+    "final_child_group": 807757,
+    "retired_pids": [
+      254523,
+      256515,
+      256524,
+      586374,
+      2664646,
+      3372594,
+      3512742,
+      3999270
+    ],
+    "active_lane_python_scan": "PASS"
+  },
+  "old_process_signals": 0,
+  "reason": null,
+  "stages": [
+    {
+      "argv": [
+        "-B",
+        "research/source013_norms/code/compute_v01.py",
+        "--kind",
+        "weighted",
+        "--mode",
+        "primary",
+        "--manifest-sha256",
+        "55bbbee074de66aab59fd80aed97aec4a531ce8955f68f118f91534bc7ed7979",
+        "--review-sha256",
+        "f477b08200c72b21e0cbebeaa5b523bcafd973805ef83b9190cb57f2f07edbbd"
+      ],
+      "started_utc": "2026-11-03T17:49:44.437065Z",
+      "finished_utc": "2026-11-03T17:50:01.563152Z",
+      "elapsed_seconds": 17.126087649725378,
+      "exit_code": 0,
+      "log": "research/post_handoff_preparation/verification/compute_source013_complete_norms_v01/stage_0.log"
+    },
+    {
+      "argv": [
+        "-B",
+        "research/source013_norms/code/compute_v01.py",
+        "--kind",
+        "weighted",
+        "--mode",
+        "reduction",
+        "--manifest-sha256",
+        "55bbbee074de66aab59fd80aed97aec4a531ce8955f68f118f91534bc7ed7979",
+        "--review-sha256",
+        "f477b08200c72b21e0cbebeaa5b523bcafd973805ef83b9190cb57f2f07edbbd"
+      ],
+      "started_utc": "2026-11-03T17:50:06.544097Z",
+      "finished_utc": "2026-11-03T17:50:23.059539Z",
+      "elapsed_seconds": 16.51543317269534,
+      "exit_code": 0,
+      "log": "research/post_handoff_preparation/verification/compute_source013_complete_norms_v01/stage_1.log"
+    },
+    {
+      "argv": [
+        "-B",
+        "research/source013_norms/code/publish_v01.py",
+        "--kind",
+        "weighted",
+        "--manifest-sha256",
+        "55bbbee074de66aab59fd80aed97aec4a531ce8955f68f118f91534bc7ed7979",
+        "--review-sha256",
+        "f477b08200c72b21e0cbebeaa5b523bcafd973805ef83b9190cb57f2f07edbbd"
+      ],
+      "started_utc": "2026-11-03T17:50:27.167214Z",
+      "finished_utc": "2026-11-03T17:50:43.495652Z",
+      "elapsed_seconds": 16.3284300272353,
+      "exit_code": 0,
+      "log": "research/post_handoff_preparation/verification/compute_source013_complete_norms_v01/stage_2.log"
+    },
+    {
+      "argv": [
+        "-B",
+        "research/source013_norms/code/compute_v01.py",
+        "--kind",
+        "unweighted",
+        "--mode",
+        "primary",
+        "--manifest-sha256",
+        "55bbbee074de66aab59fd80aed97aec4a531ce8955f68f118f91534bc7ed7979",
+        "--review-sha256",
+        "f477b08200c72b21e0cbebeaa5b523bcafd973805ef83b9190cb57f2f07edbbd"
+      ],
+      "started_utc": "2026-11-03T17:50:46.200931Z",
+      "finished_utc": "2026-11-03T17:51:02.089090Z",
+      "elapsed_seconds": 15.888165679294616,
+      "exit_code": 0,
+      "log": "research/post_handoff_preparation/verification/compute_source013_complete_norms_v01/stage_3.log"
+    },
+    {
+      "argv": [
+        "-B",
+        "research/source013_norms/code/compute_v01.py",
+        "--kind",
+        "unweighted",
+        "--mode",
+        "reduction",
+        "--manifest-sha256",
+        "55bbbee074de66aab59fd80aed97aec4a531ce8955f68f118f91534bc7ed7979",
+        "--review-sha256",
+        "f477b08200c72b21e0cbebeaa5b523bcafd973805ef83b9190cb57f2f07edbbd"
+      ],
+      "started_utc": "2026-11-03T17:51:05.081243Z",
+      "finished_utc": "2026-11-03T17:51:17.172423Z",
+      "elapsed_seconds": 12.091182143893093,
+      "exit_code": 0,
+      "log": "research/post_handoff_preparation/verification/compute_source013_complete_norms_v01/stage_4.log"
+    },
+    {
+      "argv": [
+        "-B",
+        "research/source013_norms/code/publish_v01.py",
+        "--kind",
+        "unweighted",
+        "--manifest-sha256",
+        "55bbbee074de66aab59fd80aed97aec4a531ce8955f68f118f91534bc7ed7979",
+        "--review-sha256",
+        "f477b08200c72b21e0cbebeaa5b523bcafd973805ef83b9190cb57f2f07edbbd"
+      ],
+      "started_utc": "2026-11-03T17:51:19.892962Z",
+      "finished_utc": "2026-11-03T17:51:32.381534Z",
+      "elapsed_seconds": 12.488576864823699,
+      "exit_code": 0,
+      "log": "research/post_handoff_preparation/verification/compute_source013_complete_norms_v01/stage_5.log"
+    }
+  ],
+  "resources_before": {
+    "lane_bytes": 2362725415,
+    "filesystem_free_bytes": 134642511872
+  },
+  "scope": "Serial execution only; numerical output requires separate admission."
+}

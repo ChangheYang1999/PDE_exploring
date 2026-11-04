@@ -1,0 +1,177 @@
+closure_check (c2-t2, 2026-11-04, version 03): the final closure check of c2-at's SOURCE013_CHAIN_CONDITIONS_v01,
+items 8 and 9, as a conditional program (c2-coord 07:08Z item 3(a)). Text: notes/T2_CLOSURE_CHECK_v03.md.
+Version 03 follows c2-at AT2352 to AT2357 and AT2333 to AT2336: H4 reading (ii) (AT2333), same-input transcription
+(row N4, AT2354), the combined criterion at the original rate (row J1) kept apart from the companion (row G5, AT2356),
+and, after AT2364 to AT2366, row T1: an upper stand-in must not lie below a certified lower of the same quantity.
+It binds c2-t1's near part NEAR_CHECK_v02 (c2-t1 note 87; copied unchanged into nearcopy_v02/, hashes pinned in the
+inputs), uses its printed tuple, and recomputes its two near quantities independently as a transcription check.
+Interface (after AT2307 to AT2309, which apply to version 01 of this program as well): every value that enters a
+decision is an exact rational. e_up and C_N are the printed uppers of NEAR_CHECK_v02; C0 = C_rest + C_N; D_out is a
+decimal certified <= the arb ball of D; margins are exact and displayed rounded down; room = D_out - C0 rounded down;
+C0/D_out rounded up; the beta_* needed is exact and displayed rounded up. Arb balls are used only inside the CE cell
+and the transcription checks.
+Rows and input changes (AT2354): no row is claimed monotone under a change of inputs. N2 and N3 compare this
+program with NEAR_CHECK_v02 and mean something only at identical inputs, which row N4 checks; they are kept apart from
+the sufficient inequalities (E2, G4, J1). When a certified bound becomes available for a stand-in, the rule is the
+conservative witness: if the certified bound is at least as good as the stand-in value (an upper at most the value,
+a lower at least the value), the input keeps its value, the stand-in value is itself certified and only its status
+changes, so every computed row is unchanged. Any other use of a new value (a smaller upper, a larger lower, a value
+outside the stand-in) is a new input set: it needs a new same-input NEAR_CHECK for the near inputs and a new run of
+this program, whose rows decide.
+Every input is a named parameter of inputs_v03.json with a sense (upper, lower, exact, choice) and a status. Arithmetic
+is exact (Fraction) or outward arb (python-flint, 200 bits). Each check is reported as
+  PASS       it holds, and every input it uses is CONFIRMED (or a choice);
+  PASS-COND  it holds at the given values, but some input is a stand-in (STANDIN-FLOAT or STANDIN-TARGET),
+             so the check proves nothing;
+  FAIL       it does not hold at the given values (a failed sufficient test; it excludes nothing);
+  OPEN       a premise that no computation here supplies.
+The closure statement (block I) follows only if, for one case, every check of H4 reading (ii) is PASS and
+every named hypothesis of block H is supplied by an accepted certificate. The CE part (block G) is c2-t1's
+budget_013h code (ps1copy/), used unchanged.
+Usage: python3 -B closure_check_v03.py [inputs.json]   (writes closure_check_v03.json next to this file)
+inputs: inputs_v03.json (SHA256 af696f5ae3748b917d1b54a21bd1510f66e5b833f0d12db7e31087022693763f)
+cap = c + 1 - q >= 0.710319210199998 (exact 7997483325927041/11258999068426240); H4 reading: ii
+
+== Block N. Binding of NEAR_CHECK_v02 (c2-t1 notes 83, 84, 87)
+[N] PASS N1: the bound near files match the pinned SHA256 and the result file names the pinned program and parameters | mismatch: none
+[N] PASS N4: same inputs (AT2354): every near input here equals the parameter of NEAR_CHECK_v02 (near_params_v01.json) that N2 and N3 compare against (22 values, exact) | differ: none
+      N2 and N3 are transcription rows at these identical inputs; with N4 FAIL they are FAIL by definition and say nothing about the sufficient inequalities
+
+== Block A. Background (chain item 3; RC-5, T2.7, Lemma KB, AT-211)
+[A] OPEN A1: the both-auditor union of regional certificates covers r^2 in [0, inf) (whole-plane premise of beta_*, g_*, s_*) | open r^2 gaps of the union: (57/71, 49/15); with the certified roots that have no union: (15/17, 49/15)
+      cutoff 2026-11-04T07:30Z (unchanged at 2026-11-04T07:55Z: no new union or root certificate). Until the gap is closed, beta_* >= 3/5, g_* <= 1/4 and s_* <= 137/125 are cover targets (STANDIN-TARGET).
+[A] PASS-COND A2: beta_0* = beta_0 - g_* >= beta0_star = 7/4 (T2.7 full L^2 inverse; g_* < beta_0) | beta_0 - g_* >= 1.752154530000000 | stand-ins: g_star
+[A] PASS-COND A4: betaK_* = beta_* - loss_KB > 0 on the reference ball (Lemma KB, chain item 7) | beta_* - loss_KB >= 44793/100000 | stand-ins: beta_star
+[A] PASS-COND A5: beta_* <= c + 1 - q (consistency with the upper of AT-211 for normalized backgrounds) | stand-ins: beta_star
+
+== Block B. Far route F-a at Rw = Ww = 200 (NR-26; FG1 with Proposition FG, AT-513)
+[B] PASS-COND B1: max(SC^+, A_E^+) + S_W^+ + OMF^+ <= G = q (c - s_*) | lhs 13396752347393121/9007199254740992, G 4222322644155391629/2814749767106560000, exact margin 71675071190082633/5629499534213120000 (>= 0.012732050292300) | stand-ins: s_star
+[B] PASS-COND B2: s_* <= s_max = c - lhs/q (any certified whole-plane strain bound up to s_max serves; zero far slack at equality) | s_max >= 1.102062881091 | stand-ins: s_star
+[B] PASS-COND B3: s_* < c (the free gain of Proposition DR and FG needs s_* < c) | stand-ins: s_star
+
+== Blocks C and D. Source (ledger rows G1, L) and the reference ball (Lemma KB rectangle)
+[C] PASS C1: certified ||F_*||_2 <= f and N(F_*) <= n | f = 0.0000007961206656880281, n = 0.0055545729030073655758
+[D] PASS-COND D1: R_* = f/beta_0* <= Rbar = 17/8750000 | R_* <= 0.000000454926094679 | stand-ins: beta0_star
+
+== Block T. Feasibility of the upper stand-ins: no upper target below a certified lower of the same quantity
+  Lambda_plus: stand-in upper 20.862082, certified lower 2950576553396557/140737488355328 >= 20.965107363 (Lambda_+(a_n) >= lambda_max Hess a_n(0) = 8 (2c - 1), Hess a_n(0) = diag(8 (2c - 1), 8) (AT-575; AT2364)): gap 226555169588423861/2199023255552000000 (exact), a same-or-better certified upper is impossible (AT2365)
+  D6_an: stand-in upper 63050.4, certified lower 62748 (D_6(a_n) >= 62748 (AT1467; ledger v11 row G3)): feasible
+[T] FAIL T1: every upper stand-in with a known certified lower is at least that lower (else no certificate can replace it at its value) | infeasible: Lambda_plus
+      the arithmetic of block E uses max(Lambda_plus, 8 (2c - 1)) = 8 (2c - 1); that is an upper only with a proof that the global supremum of the positive Hessian of a_n equals its origin value (AT2366 OPEN). A revised target needs a new NEAR_CHECK and a new run
+
+######## case plan of record: b0 = 11/20, mu = 72
+[A] PASS-COND A3[11/20,72]: b0 <= beta_* (necessary, HF-NEC, AT-211; rate premise RC-5) | beta_* - b0 = 1/20 | stand-ins: beta_star
+== Block E. (R1) (HF1-NEAR, AT-691; tail B, AT-757; quartic cut e term, AT-1094, AT-1134; core split a_n = -a_c + a_r, a_r = a_n + a_c, NR-25, NR-30 Remark 5, AT2299; K_m, AT-1453, AT-1454; NR-32, AT-1512, AT-1513)
+[E] PASS-COND E0[11/20,72]: HF1-NEAR conditions mu >= 1, 0 < 2 nu <= mu, 0 < t < 1; D_m(a_n)^2 > K_m (m = 4, 5, 6); NR-32: mu/2 > 2q + 1 | stand-ins: D4_an, D5_an, D6_an
+  terms (uppers): Lambda 0.0109395478 | M4 0.00767826924 [M4^+(a_r) <= 1440.10701; D_m(a_r) <= 207.323830, 1871.51705, 45957.9268] | tail_B(a_c) 0.00000334435221 | tail_B(a_r) 0.134135442 | low cut 0.00126049623
+  Lambda_+ used: max(input 20.862082, 8 (2c - 1) = 20.965107363); the second is a certified LOWER bound (AT-575, AT2364), so the value used is an upper only if the global supremum equals it (AT2366 OPEN; row T1)
+[N] PASS N2[11/20,72]: transcription at the inputs of N4: this program's independent e_HF ball lies below the printed NEAR_CHECK_v02 e_up, within 1e-10 | here <= 0.154017099351, NEAR_CHECK_v02 1.54017099351e-1
+  e_up used: the printed NEAR_CHECK_v02 value 1.54017099351e-1 (exact rational)
+[E] PASS-COND E1[11/20,72]: information only (reading (i), the cap budget; AT2334 REFUTED it as a deduction of the rate): e_up + eps_rest <= c + 1 - q - b0 | margin >= 0.0063021108 | stand-ins: Lambda_plus, L1_plus, D4_an, D5_an, D6_an, eps_rest
+[E] FAIL E2[11/20,72]: (R1), reading (ii), the rate budget of H4 [Theorem H4-R slack, AT-364; AT1687; AT2333]: e_up + eps_rest <= beta_* - b0 | margin <= -0.10401709 | stand-ins: Lambda_plus, L1_plus, D4_an, D5_an, D6_an, eps_rest, beta_star
+      E2 holds iff beta_* >= b0 + eps_rest + e_up = 704017099351/1000000000000 (exact; <= 0.704017100; AT2335); E1 is E2 at beta_* = c + 1 - q, which is not a certified rate
+== Block F. C^opt(b0) <= C_N + P_HF + C_rest (Theorem H4-R, AT-364; Proposition FG, AT-513; HF1-NEAR, AT-691)
+[N] PASS N3[11/20,72]: transcription at the inputs of N4: this program's independent P_HF ball lies below the printed NEAR_CHECK_v02 C_N_upper, within 1 | here <= 113280774321.4, NEAR_CHECK_v02 1.13280774322e11
+[F] PASS-COND F1[11/20,72]: C0 = C_rest + C_N_upper, C_N_upper >= P_HF = 2^sigma [sup(|a_n| W^2) kappa_0 kappa_2q + (1-t)^-1 sup((a_n)_+ W^2) (kappa_1^2 + kappa_2^2)] | C0 = 113280774322 (exact) | stand-ins: sup_abs_an_W2, sup_pos_an_W2, C_rest
+== Block G. Theorem B (AT-273), direct test at R_* = f/beta_0* with the certified f and n (CE code of budget_013h)
+  cell: M 387/1000, (B, A) = (13/25, 18959/1000), rho = 1/125, 1/125, Kbar 77716808953/200000000000 (Kbar/M <= 1.004094), L_B <= 0.36516900, b' >= 0.18483100, Z >= 0.0255323, D = Z/R_*^2 >= 123369792300
+  NEAR_CHECK_v02 D_lower (stipulated inputs beta_0 = 7/4, ||F_*||_2 <= 7.97e-7, N(F_*) <= 0.006): 1.22000000000e11
+[G] PASS-COND G1[11/20,72]: Kbar certified for Corollary CE-B at (R_*, M): Kbar - M - E(R_*, Kbar) > 0 in arb, or Kbar = c_W M | stand-ins: beta0_star
+[G] PASS-COND G2[11/20,72]: H5': B > 1/2 and b' = b0 - L_B(R_*, Kbar) > 0 | stand-ins: beta0_star
+[G] PASS-COND G3[11/20,72]: 0 < M <= Mbar = 1/2 (Lemma KB rectangle; E-v11-1) | stand-ins: beta0_star
+[G] PASS-COND G4[11/20,72]: direct test (chain item 8): C0 R_*^2 <= M [(b0 - L_B) M - n], i.e. C0 <= D_out <= D | D_out = 123369792300, C0/D_out <= 0.91822133, room D_out - C0 >= 10089017000 | stand-ins: beta0_star, sup_abs_an_W2, sup_pos_an_W2, C_rest, Lambda_plus, L1_plus, D4_an, D5_an, D6_an
+      G4 does not contain beta_* and does not depend on the H4 reading (AT2356)
+  reading (ii) companion at b0 = 11/25 (largest on the 1/100 grid with (R1) at beta_*): D_out 59354136770, C0/D_out <= 1.9085574, M 153/500, B 13/25
+[G] FAIL G5[11/20,72]: companion at the lowered rate (information only): E2 and the direct test together at b0 = 11/25, mu 72 | E2 at the companion: margin >= 0.0059829006 (holds); direct test at the companion: C0/D_out <= 1.9085574 (fails) | stand-ins: beta0_star, sup_abs_an_W2, sup_pos_an_W2, C_rest, Lambda_plus, L1_plus, D4_an, D5_an, D6_an, beta_star, eps_rest
+[J] FAIL J1[11/20,72]: combined sufficient criterion at the original rate b0 = 11/20 (AT2353): E2 and G4 together | E2 FAIL, G4 PASS-COND; companion G5 FAIL | stand-ins: beta0_star, sup_abs_an_W2, sup_pos_an_W2, C_rest, Lambda_plus, L1_plus, D4_an, D5_an, D6_an, beta_star, eps_rest
+      the failing part at the original rate is E2 (rate budget); at the companion it is the direct test (AT2356); a failed sufficient test excludes nothing
+
+######## case registered fallback: b0 = 103/200, mu = 68
+[A] PASS-COND A3[103/200,68]: b0 <= beta_* (necessary, HF-NEC, AT-211; rate premise RC-5) | beta_* - b0 = 17/200 | stand-ins: beta_star
+== Block E. (R1) (HF1-NEAR, AT-691; tail B, AT-757; quartic cut e term, AT-1094, AT-1134; core split a_n = -a_c + a_r, a_r = a_n + a_c, NR-25, NR-30 Remark 5, AT2299; K_m, AT-1453, AT-1454; NR-32, AT-1512, AT-1513)
+[E] PASS-COND E0[103/200,68]: HF1-NEAR conditions mu >= 1, 0 < 2 nu <= mu, 0 < t < 1; D_m(a_n)^2 > K_m (m = 4, 5, 6); NR-32: mu/2 > 2q + 1 | stand-ins: D4_an, D5_an, D6_an
+  terms (uppers): Lambda 0.0122644065 | M4 0.00965067458 [M4^+(a_r) <= 1440.10701; D_m(a_r) <= 207.323830, 1871.51705, 45957.9268] | tail_B(a_c) 0.00000916101164 | tail_B(a_r) 0.158666923 | low cut 0.00126049623
+  Lambda_+ used: max(input 20.862082, 8 (2c - 1) = 20.965107363); the second is a certified LOWER bound (AT-575, AT2364), so the value used is an upper only if the global supremum equals it (AT2366 OPEN; row T1)
+[N] PASS N2[103/200,68]: transcription at the inputs of N4: this program's independent e_HF ball lies below the printed NEAR_CHECK_v02 e_up, within 1e-10 | here <= 0.181851660741, NEAR_CHECK_v02 1.81851660742e-1
+  e_up used: the printed NEAR_CHECK_v02 value 1.81851660742e-1 (exact rational)
+[E] PASS-COND E1[103/200,68]: information only (reading (i), the cap budget; AT2334 REFUTED it as a deduction of the rate): e_up + eps_rest <= c + 1 - q - b0 | margin >= 0.013467549 | stand-ins: Lambda_plus, L1_plus, D4_an, D5_an, D6_an, eps_rest
+[E] FAIL E2[103/200,68]: (R1), reading (ii), the rate budget of H4 [Theorem H4-R slack, AT-364; AT1687; AT2333]: e_up + eps_rest <= beta_* - b0 | margin <= -0.096851660 | stand-ins: Lambda_plus, L1_plus, D4_an, D5_an, D6_an, eps_rest, beta_star
+      E2 holds iff beta_* >= b0 + eps_rest + e_up = 348425830371/500000000000 (exact; <= 0.696851661; AT2335); E1 is E2 at beta_* = c + 1 - q, which is not a certified rate
+== Block F. C^opt(b0) <= C_N + P_HF + C_rest (Theorem H4-R, AT-364; Proposition FG, AT-513; HF1-NEAR, AT-691)
+[N] PASS N3[103/200,68]: transcription at the inputs of N4: this program's independent P_HF ball lies below the printed NEAR_CHECK_v02 C_N_upper, within 1 | here <= 90122364173.79, NEAR_CHECK_v02 9.01223641738e10
+[F] PASS-COND F1[103/200,68]: C0 = C_rest + C_N_upper, C_N_upper >= P_HF = 2^sigma [sup(|a_n| W^2) kappa_0 kappa_2q + (1-t)^-1 sup((a_n)_+ W^2) (kappa_1^2 + kappa_2^2)] | C0 = 450611820869/5 (exact) | stand-ins: sup_abs_an_W2, sup_pos_an_W2, kappa_0, kappa_2q, kappa_j, C_rest
+== Block G. Theorem B (AT-273), direct test at R_* = f/beta_0* with the certified f and n (CE code of budget_013h)
+  cell: M 361/1000, (B, A) = (13/25, 18959/1000), rho = 1/125, 1/125, Kbar 362527621449/1000000000000 (Kbar/M <= 1.004232), L_B <= 0.34129108, b' >= 0.17370892, Z >= 0.0206327, D = Z/R_*^2 >= 99695324090
+  NEAR_CHECK_v02 D_lower (stipulated inputs beta_0 = 7/4, ||F_*||_2 <= 7.97e-7, N(F_*) <= 0.006): 9.86935000000e10
+[G] PASS-COND G1[103/200,68]: Kbar certified for Corollary CE-B at (R_*, M): Kbar - M - E(R_*, Kbar) > 0 in arb, or Kbar = c_W M | stand-ins: beta0_star
+[G] PASS-COND G2[103/200,68]: H5': B > 1/2 and b' = b0 - L_B(R_*, Kbar) > 0 | stand-ins: beta0_star
+[G] PASS-COND G3[103/200,68]: 0 < M <= Mbar = 1/2 (Lemma KB rectangle; E-v11-1) | stand-ins: beta0_star
+[G] PASS-COND G4[103/200,68]: direct test (chain item 8): C0 R_*^2 <= M [(b0 - L_B) M - n], i.e. C0 <= D_out <= D | D_out = 99695324090, C0/D_out <= 0.90397785, room D_out - C0 >= 9572959900 | stand-ins: beta0_star, sup_abs_an_W2, sup_pos_an_W2, kappa_0, kappa_2q, kappa_j, C_rest, Lambda_plus, L1_plus, D4_an, D5_an, D6_an
+      G4 does not contain beta_* and does not depend on the H4 reading (AT2356)
+  reading (ii) companion at b0 = 41/100 (largest on the 1/100 grid with (R1) at beta_*): D_out 46849591720, C0/D_out <= 1.9236532, M 141/500, B 11/20
+[G] FAIL G5[103/200,68]: companion at the lowered rate (information only): E2 and the direct test together at b0 = 41/100, mu 68 | E2 at the companion: margin >= 0.0081483392 (holds); direct test at the companion: C0/D_out <= 1.9236532 (fails) | stand-ins: beta0_star, sup_abs_an_W2, sup_pos_an_W2, kappa_0, kappa_2q, kappa_j, C_rest, Lambda_plus, L1_plus, D4_an, D5_an, D6_an, beta_star, eps_rest
+[J] FAIL J1[103/200,68]: combined sufficient criterion at the original rate b0 = 103/200 (AT2353): E2 and G4 together | E2 FAIL, G4 PASS-COND; companion G5 FAIL | stand-ins: beta0_star, sup_abs_an_W2, sup_pos_an_W2, kappa_0, kappa_2q, kappa_j, C_rest, Lambda_plus, L1_plus, D4_an, D5_an, D6_an, beta_star, eps_rest
+      the failing part at the original rate is E2 (rate budget); at the companion it is the direct test (AT2356); a failed sufficient test excludes nothing
+
+== Block H. Named hypotheses (premises of T2.7, Lemma KB, Theorem B, H4-R, Proposition FG, HF1-NEAR, route F-a)
+[H] OPEN H-B: whole-plane background: lambda_max H <= -beta_*, |grad h_*| <= g_*, ||Sym Du||_op <= s_* on R^2 (chain item 3; N0 of H4-R; RC-5) | block A1
+[H] OPEN H-RC: RC-1 to RC-10 of V11-2 (a) for h_* (structural: the exact-potential class, AT-674, AT-675; quantitative: chain items 2, 3) | through H-B
+[H] OPEN H1: actual generator: closed generator, core, weighted semigroup and graph comparison on a reference ball containing K(R_*, M) (AT-237 bridge) | conditionally reduced (AT-600; Lemma KB, AT-772, AT-832) to H-B and the source bounds
+[H] OPEN H2: full L^2 inverse of L_* + U[k].grad with rate beta_0* on the ball (T2.7, AT-123; E-v11-2); ||z||_2 <= R_* for z = T(k) | through H-B (g_* <= 1/4) and H1
+[H] retained H3: (R3/R5) of Theorem B and N(F_*) < infinity | N(F_*) <= n CONFIRMED; R3/R5 imported with their hypotheses
+[H] OPEN H-BALL: the reference ball is the full real S1 ball B(Rbar, Mbar), no ell restriction, with the center matrix premise of Lemma KB | rectangle and loss CONFIRMED (AT-772); the center matrix premise is H-B
+[H] supplied as an implication (reading ii) H4-COMP: the join of the near form with H4-R and the far form (NEAR_CHECK_v02 H4): E(g) <= -b0 ||g||^2 + C0 ||h||^2 from P0 + DR, FG with the far rule (AT-513, AT-624) and HF1-NEAR for (TII + C_aw)[a_n]; reading (i) charges e_up to c + 1 - q - b0, reading (ii) to beta_* - eps_R - b0 | AT2333 CONFIRMED: the common-domain principal, near, far and rest estimates imply H4 when e_up + eps_rest <= beta_* - b0 (row E2); AT2334 REFUTED reading (i); c2-t1 note 88. The estimates themselves are H-N1, H-NEARU, H4-REST, H-FA
+[H] OPEN H4-REST: the other pieces of D_rem^n, T_IS, C_tr and C_vs1 to C_vs3, in NE form with eps_rest and C_rest (T2_H4_v01 NE-lo, NE-vs), or charged to the far slack G - A_far under FG | no 013 bound; stand-ins eps_rest = C_rest = 0
+[H] OPEN H-N1: NEAR_CHECK_v02 H1 to H3: N1 for the actual a_n, the whole-plane core split a_n = -a_c + a_r (a_r = a_n + a_c; NR-30 Remark 5, AT2299) and c2-at condition 4 for the erflog cut | c2-t1 NEAR_CHECK_v02 section 3
+[H] supplied H-N3: N3 at mu 72, nu 1/40: certified kernel uppers | AT-1491, AT-1492 (mu 72 only)
+[H] OPEN H-NEARU: certified uppers of Lambda_+(a_n), ||(a_n)_+||_1, sup((a_n)_- W^2), sup((a_n)_+ W^2) and D4, D5, D6 of a_n on R^2 | FLOAT stand-ins in blocks E and F; ledger row G3; the Lambda_+ target 20.862082 is infeasible (AT2364, AT2365; row T1)
+[H] supplied H-TAIL: NR-25 (i), (iii), NR-30, the radial identity with K_m, NR-32 | AT-1344 to AT-1346, AT-1453, AT-1454, AT-1512, AT-1513
+[H] retained H-FA: analytic premises of route F-a: AE-CS (AT-1698), Corollary CS-W and Proposition DW, HSB (AT-695), the source013 calculus, tail-table certificate, Leibniz and Faa di Bruno estimates, singleton repair, CS-W homogeneity | the far scalar inequality is CONFIRMED conditional on them
+[H] OPEN H-REG: V11-2 (d), stronger Hoelder regularity, with its own premises: route T1.3 (weight sigma_9 > sigma, R9.4 at sigma_9, mu_R > 0 not evaluated for 013) or route R6.4 (alpha/(2c - 2) < delta < 1 and 1 < nu < 2; delta > 0.0617041 at alpha = 1/10). The Hoelder nu of R6.4 is not the near cut nu = 1/40 of HF1-NEAR | chain item 9; theory_v19 V11-2 (d); not needed for (a), (b)
+
+== Block I. Verdict
+  H4 reading: ii (H4-COMP DECIDED as reading (ii): the near e-term and eps_rest are charged against the principal rate, e_up + eps_rest <= beta_* - b0 (c2-at AT2333 CONFIRMED, AT2334 REFUTED the cap budget of reading (i), AT2335 CONFIRMED, exchange v715, 2026-11-04T07:55:47Z; c2-t1 note 88, 2026-11-04T07:55Z, withdraws reading (i) as general). Reading (i) is kept as an information row only.)
+  required per case for reading (ii): A3, E0, N2, N3, E2, F1, G1, G2, G3, G4, J1; E1 and G5 are information only; common rows N1, N4, A1, A2, A4, A5, B1 to B3, C1, D1, T1
+  N1                           PASS
+  N4                           PASS
+  A1                           OPEN
+  A2                           PASS-COND
+  A4                           PASS-COND
+  A5                           PASS-COND
+  B1                           PASS-COND
+  B2                           PASS-COND
+  B3                           PASS-COND
+  C1                           PASS
+  D1                           PASS-COND
+  T1                           FAIL
+  A3[11/20,72]                 PASS-COND
+  E0[11/20,72]                 PASS-COND
+  N2[11/20,72]                 PASS
+  E1[11/20,72]                 PASS-COND
+  E2[11/20,72]                 FAIL
+  N3[11/20,72]                 PASS
+  F1[11/20,72]                 PASS-COND
+  G1[11/20,72]                 PASS-COND
+  G2[11/20,72]                 PASS-COND
+  G3[11/20,72]                 PASS-COND
+  G4[11/20,72]                 PASS-COND
+  G5[11/20,72]                 FAIL
+  J1[11/20,72]                 FAIL
+  A3[103/200,68]               PASS-COND
+  E0[103/200,68]               PASS-COND
+  N2[103/200,68]               PASS
+  E1[103/200,68]               PASS-COND
+  E2[103/200,68]               FAIL
+  N3[103/200,68]               PASS
+  F1[103/200,68]               PASS-COND
+  G1[103/200,68]               PASS-COND
+  G2[103/200,68]               PASS-COND
+  G3[103/200,68]               PASS-COND
+  G4[103/200,68]               PASS-COND
+  G5[103/200,68]               FAIL
+  J1[103/200,68]               FAIL
+stand-in inputs used: C_rest, D4_an, D5_an, D6_an, L1_plus, Lambda_plus, beta0_star, beta_star, eps_rest, g_star, kappa_0, kappa_2q, kappa_j, s_star, sup_abs_an_W2, sup_pos_an_W2
+open hypotheses: H-B, H-RC, H1, H2, H-BALL, H4-REST, H-N1, H-NEARU, H-REG
+VERDICT: CLOSURE OPEN. The dry run uses stand-ins and open hypotheses and proves nothing.
+Statement that would follow (V11-2 (a), (b) with E-v11-1, E-v11-2; Theorem B): there is a stationary solution h = h_* + k of the 013 profile problem with k real and S1, k in K(R_*, M) inside B(Rbar, M): ||k||_2 <= R_* <= 0.000000454926094679 <= Rbar = 17/8750000 and ||J^(21/10)(W k)||_2 <= M (M = 387/1000 in the plan-of-record cell, M <= 1/2); L_* + U[k].grad has the full L^2 inverse of T2.7 with rate beta_0* >= 7/4 and the weighted estimate of V11-2 (a); and <X> h is in C^(1,1/10)(R^2) (V11-2 (b)). V11-2 (d) stays OPEN.
+wrote closure_check_v03.json (5.3 s)

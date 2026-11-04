@@ -1,0 +1,128 @@
+{
+ "program": "near_check_v03.py",
+ "params": "near_params_v03.json",
+ "params_sha256": "ccd0f57f5c5f8376f8ff4e12ea380282f573803877e6a577c19a8a00b02ca765",
+ "program_sha256": "264858463e52094d5fd5fde90764d12e38af0cdc585905298ca6aca5b08dc313",
+ "interface": "every decimal is an exact rational; e_up >= the sum of the displayed term uppers; budget_margin_lower <= (c + 1 - q - b0) - e_up; C_N_upper >= P_HF; D_lower <= D; room_D_minus_P_lower <= D_lower - C_N_upper; P_over_D_upper >= C_N_upper/D_lower; budget_pass iff budget_margin_lower >= 0; price_pass iff C_N_upper <= D_lower; h4_rate_margin_lower <= (beta_* - b0 - eps_rest) - e_up; h4_rate_pass iff h4_rate_margin_lower >= 0",
+ "lambda_contract": {
+  "floor_8_2c_minus_1": "2950576553396557/140737488355328",
+  "Lambda_plus_value": "5901153228680477/281474976710656",
+  "value_at_least_floor": true
+ },
+ "beta_star_lower": "704955805507/1000000000000",
+ "eps_rest_upper": "0",
+ "cases": [
+  {
+   "label": "plan of record",
+   "b0": "11/20",
+   "mu": "72",
+   "side_conditions": {
+    "mu >= 1": true,
+    "2 nu <= mu": true,
+    "mu/2 > 2q + 1 (NR-32)": true,
+    "0 < b0 < c + 1 - q": true,
+    "b0 > 0.152070 (loss of Lemma KB, AT1688)": true
+   },
+   "D_m_a_r_upper": {
+    "D4": "2.07323829653e2",
+    "D5": "1.87151704735e3",
+    "D6": "4.59579267746e4"
+   },
+   "e_terms_upper": {
+    "Lambda term (1 + q^2) max(Lambda_+, 8 (2c - 1))/(2 mu^2)": "1.09395479531e-2",
+    "M4 term A4c (1024 c + M4^+(a_r))/mu^4": "7.67826923156e-3",
+    "tail_B(a_c) (NR-32)": "3.34435220884e-6",
+    "tail_B(a_r) (NR-25 (i), m = 6)": "1.34135441818e-1",
+    "e_nu term t^-1 ||(a_n)_+||_1 nu^2/(8 sqrt(2 pi))": "1.27363546618e-3"
+   },
+   "e_up": "1.54030238822e-1",
+   "cap_minus_b0_exact": "1805033838292609/11258999068426240",
+   "budget_margin_lower": "6.28897137799e-3",
+   "budget_pass": true,
+   "C_N_upper": "1.13428316345e11",
+   "D_lower": "1.22000000000e11",
+   "P_over_D_upper": "9.29740297910e-1",
+   "room_D_minus_P_lower": "8.57168365500e9",
+   "price_pass": true,
+   "R1_threshold_D6_an": "323117/5",
+   "h4_rate_margin_lower": "9.25566685000e-4",
+   "h4_rate_pass": true,
+   "h4_threshold_D6_an": "316399/5",
+   "Lambda_threshold_cap_level": "33017/1000",
+   "Lambda_threshold_h4_rate": "11369/500",
+   "inputs_not_certified": [
+    "D4_an",
+    "D5_an",
+    "D6_an",
+    "L1_pos",
+    "Lambda_plus",
+    "beta_star",
+    "eps_rest",
+    "sup_neg_aW2",
+    "sup_pos_aW2"
+   ],
+   "conditions": [
+    "CE budget at stipulated inputs: beta_0 = 7/4, ||F_*||_2 <= 7.97e-7, N(F_*) <= 0.006 (budget_013g)"
+   ],
+   "status": "DRY RUN: proves nothing"
+  },
+  {
+   "label": "registered fallback",
+   "b0": "103/200",
+   "mu": "68",
+   "side_conditions": {
+    "mu >= 1": true,
+    "2 nu <= mu": true,
+    "mu/2 > 2q + 1 (NR-32)": true,
+    "0 < b0 < c + 1 - q": true,
+    "b0 > 0.152070 (loss of Lemma KB, AT1688)": true
+   },
+   "D_m_a_r_upper": {
+    "D4": "2.07323829653e2",
+    "D5": "1.87151704735e3",
+    "D6": "4.59579267746e4"
+   },
+   "e_terms_upper": {
+    "Lambda term (1 + q^2) max(Lambda_+, 8 (2c - 1))/(2 mu^2)": "1.22644067018e-2",
+    "M4 term A4c (1024 c + M4^+(a_r))/mu^4": "9.65067457109e-3",
+    "tail_B(a_c) (NR-32)": "9.16101163103e-6",
+    "tail_B(a_r) (NR-25 (i), m = 6)": "1.58666922489e-1",
+    "e_nu term t^-1 ||(a_n)_+||_1 nu^2/(8 sqrt(2 pi))": "1.27363546618e-3"
+   },
+   "e_up": "1.81864800240e-1",
+   "cap_minus_b0_exact": "10995494028437637/56294995342131200",
+   "budget_margin_lower": "1.34544099599e-2",
+   "budget_pass": true,
+   "C_N_upper": "9.02397335558e10",
+   "D_lower": "9.86935000000e10",
+   "P_over_D_upper": "9.14343229857e-1",
+   "room_D_minus_P_lower": "8.45376644420e9",
+   "price_pass": true,
+   "R1_threshold_D6_an": "65917",
+   "h4_rate_margin_lower": "8.09100526700e-3",
+   "h4_rate_pass": true,
+   "h4_threshold_D6_an": "323809/5",
+   "Lambda_threshold_cap_level": "10991/250",
+   "Lambda_threshold_h4_rate": "8699/250",
+   "inputs_not_certified": [
+    "D4_an",
+    "D5_an",
+    "D6_an",
+    "D_allow[registered fallback]",
+    "L1_pos",
+    "Lambda_plus",
+    "beta_star",
+    "eps_rest",
+    "kappa_0[registered fallback]",
+    "kappa_2q[registered fallback]",
+    "kappa_j[registered fallback]",
+    "sup_neg_aW2",
+    "sup_pos_aW2"
+   ],
+   "conditions": [
+    "CE budget at stipulated inputs: beta_0 = 7/4, ||F_*||_2 <= 7.97e-7, N(F_*) <= 0.006"
+   ],
+   "status": "DRY RUN: proves nothing"
+  }
+ ]
+}

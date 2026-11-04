@@ -1,0 +1,962 @@
+{
+ "version": "closure_check v02",
+ "interface": "every decision value is an exact rational; e_up and C_N_upper are the printed NEAR_CHECK_v02 uppers; C0 = C_rest + C_N_upper; D_out <= D (arb ball); margin_i, margin_ii and room are exact values rounded down; C0_over_D_out and beta_star_needed_ii are exact values rounded up; G4 passes iff C0 <= D_out",
+ "inputs": "inputs_v02.json",
+ "inputs_sha256": "cf67e521da43d8d8ede76ce47eb73f2bef590f1aede6a6b7f000ef0129980da9",
+ "program_sha256": "011f67dc84055321f2263c3057304fd2bfdf44ade9cd676931bd2a925a834ddc",
+ "h4_reading": "undecided",
+ "verdict": "CLOSURE OPEN",
+ "results": [
+  {
+   "block": "N",
+   "name": "N1",
+   "statement": "the bound near files match the pinned SHA256 and the result file names the pinned program and parameters",
+   "status": "PASS",
+   "value": "mismatch: none",
+   "inputs": [],
+   "standins": [],
+   "note": ""
+  },
+  {
+   "block": "A",
+   "name": "A1",
+   "statement": "the both-auditor union of regional certificates covers r^2 in [0, inf) (whole-plane premise of beta_*, g_*, s_*)",
+   "status": "OPEN",
+   "value": "open r^2 gaps of the union: (57/71, 49/15); with the certified roots that have no union: (15/17, 49/15)",
+   "inputs": [],
+   "standins": [],
+   "note": "cutoff 2026-11-04T07:30Z (unchanged at 2026-11-04T07:55Z: no new union or root certificate). Until the gap is closed, beta_* >= 3/5, g_* <= 1/4 and s_* <= 137/125 are cover targets (STANDIN-TARGET)."
+  },
+  {
+   "block": "A",
+   "name": "A2",
+   "statement": "beta_0* = beta_0 - g_* >= beta0_star = 7/4 (T2.7 full L^2 inverse; g_* < beta_0)",
+   "status": "PASS-COND",
+   "value": "beta_0 - g_* >= 1.752154530000000",
+   "inputs": [
+    "beta0",
+    "g_star"
+   ],
+   "standins": [
+    "g_star"
+   ],
+   "note": ""
+  },
+  {
+   "block": "A",
+   "name": "A4",
+   "statement": "betaK_* = beta_* - loss_KB > 0 on the reference ball (Lemma KB, chain item 7)",
+   "status": "PASS-COND",
+   "value": "beta_* - loss_KB >= 44793/100000",
+   "inputs": [
+    "beta_star",
+    "loss_KB"
+   ],
+   "standins": [
+    "beta_star"
+   ],
+   "note": ""
+  },
+  {
+   "block": "A",
+   "name": "A5",
+   "statement": "beta_* <= c + 1 - q (consistency with the upper of AT-211 for normalized backgrounds)",
+   "status": "PASS-COND",
+   "value": "",
+   "inputs": [
+    "beta_star"
+   ],
+   "standins": [
+    "beta_star"
+   ],
+   "note": ""
+  },
+  {
+   "block": "B",
+   "name": "B1",
+   "statement": "max(SC^+, A_E^+) + S_W^+ + OMF^+ <= G = q (c - s_*)",
+   "status": "PASS-COND",
+   "value": "lhs 13396752347393121/9007199254740992, G 4222322644155391629/2814749767106560000, exact margin 71675071190082633/5629499534213120000 (>= 0.012732050292300)",
+   "inputs": [
+    "SC_plus",
+    "AE_plus",
+    "SW_plus",
+    "OMF_plus",
+    "s_star"
+   ],
+   "standins": [
+    "s_star"
+   ],
+   "note": ""
+  },
+  {
+   "block": "B",
+   "name": "B2",
+   "statement": "s_* <= s_max = c - lhs/q (any certified whole-plane strain bound up to s_max serves; zero far slack at equality)",
+   "status": "PASS-COND",
+   "value": "s_max >= 1.102062881091",
+   "inputs": [
+    "SC_plus",
+    "AE_plus",
+    "SW_plus",
+    "OMF_plus",
+    "s_star"
+   ],
+   "standins": [
+    "s_star"
+   ],
+   "note": ""
+  },
+  {
+   "block": "B",
+   "name": "B3",
+   "statement": "s_* < c (the free gain of Proposition DR and FG needs s_* < c)",
+   "status": "PASS-COND",
+   "value": "",
+   "inputs": [
+    "s_star"
+   ],
+   "standins": [
+    "s_star"
+   ],
+   "note": ""
+  },
+  {
+   "block": "C",
+   "name": "C1",
+   "statement": "certified ||F_*||_2 <= f and N(F_*) <= n",
+   "status": "PASS",
+   "value": "f = 0.0000007961206656880281, n = 0.0055545729030073655758",
+   "inputs": [
+    "f",
+    "n"
+   ],
+   "standins": [],
+   "note": ""
+  },
+  {
+   "block": "D",
+   "name": "D1",
+   "statement": "R_* = f/beta_0* <= Rbar = 17/8750000",
+   "status": "PASS-COND",
+   "value": "R_* <= 0.000000454926094679",
+   "inputs": [
+    "f",
+    "beta0_star",
+    "Rbar"
+   ],
+   "standins": [
+    "beta0_star"
+   ],
+   "note": ""
+  },
+  {
+   "block": "A",
+   "name": "A3[11/20,72]",
+   "statement": "b0 <= beta_* (necessary, HF-NEC, AT-211; rate premise RC-5)",
+   "status": "PASS-COND",
+   "value": "beta_* - b0 = 1/20",
+   "inputs": [
+    "b0",
+    "beta_star"
+   ],
+   "standins": [
+    "beta_star"
+   ],
+   "note": ""
+  },
+  {
+   "block": "E",
+   "name": "E0[11/20,72]",
+   "statement": "HF1-NEAR conditions mu >= 1, 0 < 2 nu <= mu, 0 < t < 1; D_m(a_n)^2 > K_m (m = 4, 5, 6); NR-32: mu/2 > 2q + 1",
+   "status": "PASS-COND",
+   "value": "",
+   "inputs": [
+    "mu",
+    "nu",
+    "t",
+    "D4_an",
+    "D5_an",
+    "D6_an"
+   ],
+   "standins": [
+    "D4_an",
+    "D5_an",
+    "D6_an"
+   ],
+   "note": ""
+  },
+  {
+   "block": "N",
+   "name": "N2[11/20,72]",
+   "statement": "transcription: this program's independent e_HF ball lies below the printed NEAR_CHECK_v02 e_up, within 1e-10",
+   "status": "PASS",
+   "value": "here <= 0.154017099351, NEAR_CHECK_v02 1.54017099351e-1",
+   "inputs": [],
+   "standins": [],
+   "note": ""
+  },
+  {
+   "block": "E",
+   "name": "E1[11/20,72]",
+   "statement": "(R1), reading (i) [V10-4 (a); NEAR_CHECK_v02 (a)]: e_up + eps_rest <= c + 1 - q - b0",
+   "status": "PASS-COND",
+   "value": "margin >= 0.0063021108",
+   "inputs": [
+    "Lambda_plus",
+    "L1_plus",
+    "D4_an",
+    "D5_an",
+    "D6_an",
+    "b0",
+    "mu",
+    "nu",
+    "t",
+    "C_D",
+    "eps_rest"
+   ],
+   "standins": [
+    "Lambda_plus",
+    "L1_plus",
+    "D4_an",
+    "D5_an",
+    "D6_an",
+    "eps_rest"
+   ],
+   "note": ""
+  },
+  {
+   "block": "E",
+   "name": "E2[11/20,72]",
+   "statement": "(R1), reading (ii) [Theorem H4-R slack, AT-364; AT1687]: e_up + eps_rest <= beta_* - b0",
+   "status": "FAIL",
+   "value": "margin <= -0.10401709",
+   "inputs": [
+    "Lambda_plus",
+    "L1_plus",
+    "D4_an",
+    "D5_an",
+    "D6_an",
+    "b0",
+    "mu",
+    "nu",
+    "t",
+    "C_D",
+    "eps_rest",
+    "beta_star"
+   ],
+   "standins": [
+    "Lambda_plus",
+    "L1_plus",
+    "D4_an",
+    "D5_an",
+    "D6_an",
+    "eps_rest",
+    "beta_star"
+   ],
+   "note": "reading (ii) holds iff beta_* >= b0 + eps_rest + e_up = 704017099351/1000000000000 (exact; <= 0.704017100); reading (i) is reading (ii) at beta_* = c + 1 - q"
+  },
+  {
+   "block": "N",
+   "name": "N3[11/20,72]",
+   "statement": "transcription: this program's independent P_HF ball lies below the printed NEAR_CHECK_v02 C_N_upper, within 1",
+   "status": "PASS",
+   "value": "here <= 113280774321.4, NEAR_CHECK_v02 1.13280774322e11",
+   "inputs": [],
+   "standins": [],
+   "note": ""
+  },
+  {
+   "block": "F",
+   "name": "F1[11/20,72]",
+   "statement": "C0 = C_rest + C_N_upper, C_N_upper >= P_HF = 2^sigma [sup(|a_n| W^2) kappa_0 kappa_2q + (1-t)^-1 sup((a_n)_+ W^2) (kappa_1^2 + kappa_2^2)]",
+   "status": "PASS-COND",
+   "value": "C0 = 113280774322 (exact)",
+   "inputs": [
+    "sup_abs_an_W2",
+    "sup_pos_an_W2",
+    "kappa_0",
+    "kappa_2q",
+    "kappa_j",
+    "t",
+    "C_rest"
+   ],
+   "standins": [
+    "sup_abs_an_W2",
+    "sup_pos_an_W2",
+    "C_rest"
+   ],
+   "note": ""
+  },
+  {
+   "block": "G",
+   "name": "G1[11/20,72]",
+   "statement": "Kbar certified for Corollary CE-B at (R_*, M): Kbar - M - E(R_*, Kbar) > 0 in arb, or Kbar = c_W M",
+   "status": "PASS-COND",
+   "value": "",
+   "inputs": [
+    "f",
+    "n",
+    "beta0_star",
+    "b0",
+    "Mbar"
+   ],
+   "standins": [
+    "beta0_star"
+   ],
+   "note": ""
+  },
+  {
+   "block": "G",
+   "name": "G2[11/20,72]",
+   "statement": "H5': B > 1/2 and b' = b0 - L_B(R_*, Kbar) > 0",
+   "status": "PASS-COND",
+   "value": "",
+   "inputs": [
+    "f",
+    "n",
+    "beta0_star",
+    "b0",
+    "Mbar"
+   ],
+   "standins": [
+    "beta0_star"
+   ],
+   "note": ""
+  },
+  {
+   "block": "G",
+   "name": "G3[11/20,72]",
+   "statement": "0 < M <= Mbar = 1/2 (Lemma KB rectangle; E-v11-1)",
+   "status": "PASS-COND",
+   "value": "",
+   "inputs": [
+    "f",
+    "n",
+    "beta0_star",
+    "b0",
+    "Mbar"
+   ],
+   "standins": [
+    "beta0_star"
+   ],
+   "note": ""
+  },
+  {
+   "block": "G",
+   "name": "G4[11/20,72]",
+   "statement": "direct test (chain item 8): C0 R_*^2 <= M [(b0 - L_B) M - n], i.e. C0 <= D_out <= D",
+   "status": "PASS-COND",
+   "value": "D_out = 123369792300, C0/D_out <= 0.91822133, room D_out - C0 >= 10089017000",
+   "inputs": [
+    "f",
+    "n",
+    "beta0_star",
+    "b0",
+    "Mbar",
+    "sup_abs_an_W2",
+    "sup_pos_an_W2",
+    "kappa_0",
+    "kappa_2q",
+    "kappa_j",
+    "t",
+    "C_rest",
+    "Lambda_plus",
+    "L1_plus",
+    "D4_an",
+    "D5_an",
+    "D6_an",
+    "b0",
+    "mu",
+    "nu",
+    "t",
+    "C_D"
+   ],
+   "standins": [
+    "beta0_star",
+    "sup_abs_an_W2",
+    "sup_pos_an_W2",
+    "C_rest",
+    "Lambda_plus",
+    "L1_plus",
+    "D4_an",
+    "D5_an",
+    "D6_an"
+   ],
+   "note": ""
+  },
+  {
+   "block": "G",
+   "name": "G5[11/20,72]",
+   "statement": "reading (ii) companion (information only): (R1) at beta_* and the direct test at b0 = 11/25, mu 72",
+   "status": "FAIL",
+   "value": "",
+   "inputs": [
+    "f",
+    "n",
+    "beta0_star",
+    "b0",
+    "Mbar",
+    "sup_abs_an_W2",
+    "sup_pos_an_W2",
+    "kappa_0",
+    "kappa_2q",
+    "kappa_j",
+    "t",
+    "C_rest",
+    "Lambda_plus",
+    "L1_plus",
+    "D4_an",
+    "D5_an",
+    "D6_an",
+    "b0",
+    "mu",
+    "nu",
+    "t",
+    "C_D",
+    "beta_star",
+    "eps_rest"
+   ],
+   "standins": [
+    "beta0_star",
+    "sup_abs_an_W2",
+    "sup_pos_an_W2",
+    "C_rest",
+    "Lambda_plus",
+    "L1_plus",
+    "D4_an",
+    "D5_an",
+    "D6_an",
+    "beta_star",
+    "eps_rest"
+   ],
+   "note": ""
+  },
+  {
+   "block": "A",
+   "name": "A3[103/200,68]",
+   "statement": "b0 <= beta_* (necessary, HF-NEC, AT-211; rate premise RC-5)",
+   "status": "PASS-COND",
+   "value": "beta_* - b0 = 17/200",
+   "inputs": [
+    "b0",
+    "beta_star"
+   ],
+   "standins": [
+    "beta_star"
+   ],
+   "note": ""
+  },
+  {
+   "block": "E",
+   "name": "E0[103/200,68]",
+   "statement": "HF1-NEAR conditions mu >= 1, 0 < 2 nu <= mu, 0 < t < 1; D_m(a_n)^2 > K_m (m = 4, 5, 6); NR-32: mu/2 > 2q + 1",
+   "status": "PASS-COND",
+   "value": "",
+   "inputs": [
+    "mu",
+    "nu",
+    "t",
+    "D4_an",
+    "D5_an",
+    "D6_an"
+   ],
+   "standins": [
+    "D4_an",
+    "D5_an",
+    "D6_an"
+   ],
+   "note": ""
+  },
+  {
+   "block": "N",
+   "name": "N2[103/200,68]",
+   "statement": "transcription: this program's independent e_HF ball lies below the printed NEAR_CHECK_v02 e_up, within 1e-10",
+   "status": "PASS",
+   "value": "here <= 0.181851660741, NEAR_CHECK_v02 1.81851660742e-1",
+   "inputs": [],
+   "standins": [],
+   "note": ""
+  },
+  {
+   "block": "E",
+   "name": "E1[103/200,68]",
+   "statement": "(R1), reading (i) [V10-4 (a); NEAR_CHECK_v02 (a)]: e_up + eps_rest <= c + 1 - q - b0",
+   "status": "PASS-COND",
+   "value": "margin >= 0.013467549",
+   "inputs": [
+    "Lambda_plus",
+    "L1_plus",
+    "D4_an",
+    "D5_an",
+    "D6_an",
+    "b0",
+    "mu",
+    "nu",
+    "t",
+    "C_D",
+    "eps_rest"
+   ],
+   "standins": [
+    "Lambda_plus",
+    "L1_plus",
+    "D4_an",
+    "D5_an",
+    "D6_an",
+    "eps_rest"
+   ],
+   "note": ""
+  },
+  {
+   "block": "E",
+   "name": "E2[103/200,68]",
+   "statement": "(R1), reading (ii) [Theorem H4-R slack, AT-364; AT1687]: e_up + eps_rest <= beta_* - b0",
+   "status": "FAIL",
+   "value": "margin <= -0.096851660",
+   "inputs": [
+    "Lambda_plus",
+    "L1_plus",
+    "D4_an",
+    "D5_an",
+    "D6_an",
+    "b0",
+    "mu",
+    "nu",
+    "t",
+    "C_D",
+    "eps_rest",
+    "beta_star"
+   ],
+   "standins": [
+    "Lambda_plus",
+    "L1_plus",
+    "D4_an",
+    "D5_an",
+    "D6_an",
+    "eps_rest",
+    "beta_star"
+   ],
+   "note": "reading (ii) holds iff beta_* >= b0 + eps_rest + e_up = 348425830371/500000000000 (exact; <= 0.696851661); reading (i) is reading (ii) at beta_* = c + 1 - q"
+  },
+  {
+   "block": "N",
+   "name": "N3[103/200,68]",
+   "statement": "transcription: this program's independent P_HF ball lies below the printed NEAR_CHECK_v02 C_N_upper, within 1",
+   "status": "PASS",
+   "value": "here <= 90122364173.79, NEAR_CHECK_v02 9.01223641738e10",
+   "inputs": [],
+   "standins": [],
+   "note": ""
+  },
+  {
+   "block": "F",
+   "name": "F1[103/200,68]",
+   "statement": "C0 = C_rest + C_N_upper, C_N_upper >= P_HF = 2^sigma [sup(|a_n| W^2) kappa_0 kappa_2q + (1-t)^-1 sup((a_n)_+ W^2) (kappa_1^2 + kappa_2^2)]",
+   "status": "PASS-COND",
+   "value": "C0 = 450611820869/5 (exact)",
+   "inputs": [
+    "sup_abs_an_W2",
+    "sup_pos_an_W2",
+    "kappa_0",
+    "kappa_2q",
+    "kappa_j",
+    "t",
+    "C_rest"
+   ],
+   "standins": [
+    "sup_abs_an_W2",
+    "sup_pos_an_W2",
+    "kappa_0",
+    "kappa_2q",
+    "kappa_j",
+    "C_rest"
+   ],
+   "note": ""
+  },
+  {
+   "block": "G",
+   "name": "G1[103/200,68]",
+   "statement": "Kbar certified for Corollary CE-B at (R_*, M): Kbar - M - E(R_*, Kbar) > 0 in arb, or Kbar = c_W M",
+   "status": "PASS-COND",
+   "value": "",
+   "inputs": [
+    "f",
+    "n",
+    "beta0_star",
+    "b0",
+    "Mbar"
+   ],
+   "standins": [
+    "beta0_star"
+   ],
+   "note": ""
+  },
+  {
+   "block": "G",
+   "name": "G2[103/200,68]",
+   "statement": "H5': B > 1/2 and b' = b0 - L_B(R_*, Kbar) > 0",
+   "status": "PASS-COND",
+   "value": "",
+   "inputs": [
+    "f",
+    "n",
+    "beta0_star",
+    "b0",
+    "Mbar"
+   ],
+   "standins": [
+    "beta0_star"
+   ],
+   "note": ""
+  },
+  {
+   "block": "G",
+   "name": "G3[103/200,68]",
+   "statement": "0 < M <= Mbar = 1/2 (Lemma KB rectangle; E-v11-1)",
+   "status": "PASS-COND",
+   "value": "",
+   "inputs": [
+    "f",
+    "n",
+    "beta0_star",
+    "b0",
+    "Mbar"
+   ],
+   "standins": [
+    "beta0_star"
+   ],
+   "note": ""
+  },
+  {
+   "block": "G",
+   "name": "G4[103/200,68]",
+   "statement": "direct test (chain item 8): C0 R_*^2 <= M [(b0 - L_B) M - n], i.e. C0 <= D_out <= D",
+   "status": "PASS-COND",
+   "value": "D_out = 99695324090, C0/D_out <= 0.90397785, room D_out - C0 >= 9572959900",
+   "inputs": [
+    "f",
+    "n",
+    "beta0_star",
+    "b0",
+    "Mbar",
+    "sup_abs_an_W2",
+    "sup_pos_an_W2",
+    "kappa_0",
+    "kappa_2q",
+    "kappa_j",
+    "t",
+    "C_rest",
+    "Lambda_plus",
+    "L1_plus",
+    "D4_an",
+    "D5_an",
+    "D6_an",
+    "b0",
+    "mu",
+    "nu",
+    "t",
+    "C_D"
+   ],
+   "standins": [
+    "beta0_star",
+    "sup_abs_an_W2",
+    "sup_pos_an_W2",
+    "kappa_0",
+    "kappa_2q",
+    "kappa_j",
+    "C_rest",
+    "Lambda_plus",
+    "L1_plus",
+    "D4_an",
+    "D5_an",
+    "D6_an"
+   ],
+   "note": ""
+  },
+  {
+   "block": "G",
+   "name": "G5[103/200,68]",
+   "statement": "reading (ii) companion (information only): (R1) at beta_* and the direct test at b0 = 41/100, mu 68",
+   "status": "FAIL",
+   "value": "",
+   "inputs": [
+    "f",
+    "n",
+    "beta0_star",
+    "b0",
+    "Mbar",
+    "sup_abs_an_W2",
+    "sup_pos_an_W2",
+    "kappa_0",
+    "kappa_2q",
+    "kappa_j",
+    "t",
+    "C_rest",
+    "Lambda_plus",
+    "L1_plus",
+    "D4_an",
+    "D5_an",
+    "D6_an",
+    "b0",
+    "mu",
+    "nu",
+    "t",
+    "C_D",
+    "beta_star",
+    "eps_rest"
+   ],
+   "standins": [
+    "beta0_star",
+    "sup_abs_an_W2",
+    "sup_pos_an_W2",
+    "kappa_0",
+    "kappa_2q",
+    "kappa_j",
+    "C_rest",
+    "Lambda_plus",
+    "L1_plus",
+    "D4_an",
+    "D5_an",
+    "D6_an",
+    "beta_star",
+    "eps_rest"
+   ],
+   "note": ""
+  },
+  {
+   "block": "H",
+   "name": "H-B",
+   "statement": "whole-plane background: lambda_max H <= -beta_*, |grad h_*| <= g_*, ||Sym Du||_op <= s_* on R^2 (chain item 3; N0 of H4-R; RC-5)",
+   "status": "OPEN",
+   "value": "",
+   "inputs": [],
+   "standins": [],
+   "note": "block A1"
+  },
+  {
+   "block": "H",
+   "name": "H-RC",
+   "statement": "RC-1 to RC-10 of V11-2 (a) for h_* (structural: the exact-potential class, AT-674, AT-675; quantitative: chain items 2, 3)",
+   "status": "OPEN",
+   "value": "",
+   "inputs": [],
+   "standins": [],
+   "note": "through H-B"
+  },
+  {
+   "block": "H",
+   "name": "H1",
+   "statement": "actual generator: closed generator, core, weighted semigroup and graph comparison on a reference ball containing K(R_*, M) (AT-237 bridge)",
+   "status": "OPEN",
+   "value": "",
+   "inputs": [],
+   "standins": [],
+   "note": "conditionally reduced (AT-600; Lemma KB, AT-772, AT-832) to H-B and the source bounds"
+  },
+  {
+   "block": "H",
+   "name": "H2",
+   "statement": "full L^2 inverse of L_* + U[k].grad with rate beta_0* on the ball (T2.7, AT-123; E-v11-2); ||z||_2 <= R_* for z = T(k)",
+   "status": "OPEN",
+   "value": "",
+   "inputs": [],
+   "standins": [],
+   "note": "through H-B (g_* <= 1/4) and H1"
+  },
+  {
+   "block": "H",
+   "name": "H3",
+   "statement": "(R3/R5) of Theorem B and N(F_*) < infinity",
+   "status": "retained",
+   "value": "",
+   "inputs": [],
+   "standins": [],
+   "note": "N(F_*) <= n CONFIRMED; R3/R5 imported with their hypotheses"
+  },
+  {
+   "block": "H",
+   "name": "H-BALL",
+   "statement": "the reference ball is the full real S1 ball B(Rbar, Mbar), no ell restriction, with the center matrix premise of Lemma KB",
+   "status": "OPEN",
+   "value": "",
+   "inputs": [],
+   "standins": [],
+   "note": "rectangle and loss CONFIRMED (AT-772); the center matrix premise is H-B"
+  },
+  {
+   "block": "H",
+   "name": "H4-COMP",
+   "statement": "the join of the near form with H4-R and the far form (NEAR_CHECK_v02 H4): E(g) <= -b0 ||g||^2 + C0 ||h||^2 from P0 + DR, FG with the far rule (AT-513, AT-624) and HF1-NEAR for (TII + C_aw)[a_n]; reading (i) charges e_up to c + 1 - q - b0, reading (ii) to beta_* - eps_R - b0",
+   "status": "OPEN",
+   "value": "",
+   "inputs": [],
+   "standins": [],
+   "note": "Theorem H4-R as stated gives (ii); (i) is (ii) at beta_* = c + 1 - q; c2-at and c2-t1 are asked which implication is accepted"
+  },
+  {
+   "block": "H",
+   "name": "H4-REST",
+   "statement": "the other pieces of D_rem^n, T_IS, C_tr and C_vs1 to C_vs3, in NE form with eps_rest and C_rest (T2_H4_v01 NE-lo, NE-vs), or charged to the far slack G - A_far under FG",
+   "status": "OPEN",
+   "value": "",
+   "inputs": [],
+   "standins": [],
+   "note": "no 013 bound; stand-ins eps_rest = C_rest = 0"
+  },
+  {
+   "block": "H",
+   "name": "H-N1",
+   "statement": "NEAR_CHECK_v02 H1 to H3: N1 for the actual a_n, the whole-plane core split a_n = -a_c + a_r (a_r = a_n + a_c; NR-30 Remark 5, AT2299) and c2-at condition 4 for the erflog cut",
+   "status": "OPEN",
+   "value": "",
+   "inputs": [],
+   "standins": [],
+   "note": "c2-t1 NEAR_CHECK_v02 section 3"
+  },
+  {
+   "block": "H",
+   "name": "H-N3",
+   "statement": "N3 at mu 72, nu 1/40: certified kernel uppers",
+   "status": "supplied",
+   "value": "",
+   "inputs": [],
+   "standins": [],
+   "note": "AT-1491, AT-1492 (mu 72 only)"
+  },
+  {
+   "block": "H",
+   "name": "H-NEARU",
+   "statement": "certified uppers of Lambda_+(a_n), ||(a_n)_+||_1, sup((a_n)_- W^2), sup((a_n)_+ W^2) and D4, D5, D6 of a_n on R^2",
+   "status": "OPEN",
+   "value": "",
+   "inputs": [],
+   "standins": [],
+   "note": "FLOAT stand-ins in blocks E and F; ledger row G3"
+  },
+  {
+   "block": "H",
+   "name": "H-TAIL",
+   "statement": "NR-25 (i), (iii), NR-30, the radial identity with K_m, NR-32",
+   "status": "supplied",
+   "value": "",
+   "inputs": [],
+   "standins": [],
+   "note": "AT-1344 to AT-1346, AT-1453, AT-1454, AT-1512, AT-1513"
+  },
+  {
+   "block": "H",
+   "name": "H-FA",
+   "statement": "analytic premises of route F-a: AE-CS (AT-1698), Corollary CS-W and Proposition DW, HSB (AT-695), the source013 calculus, tail-table certificate, Leibniz and Faa di Bruno estimates, singleton repair, CS-W homogeneity",
+   "status": "retained",
+   "value": "",
+   "inputs": [],
+   "standins": [],
+   "note": "the far scalar inequality is CONFIRMED conditional on them"
+  },
+  {
+   "block": "H",
+   "name": "H-REG",
+   "statement": "V11-2 (d), stronger Hoelder regularity: its own premises, delta > alpha/(2c - 2)",
+   "status": "OPEN",
+   "value": "",
+   "inputs": [],
+   "standins": [],
+   "note": "chain item 9; not needed for (a), (b)"
+  }
+ ],
+ "cases": {
+  "plan of record": {
+   "tag": "[11/20,72]",
+   "b0": "11/20",
+   "mu": "72",
+   "e_up": "154017099351/1000000000000",
+   "margin_i": "0.0063021108",
+   "margin_ii": "upper -0.10401709",
+   "beta_star_needed_ii": "0.704017100",
+   "beta_star_needed_ii_exact": "704017099351/1000000000000",
+   "C0": "113280774322",
+   "D_out": "123369792300",
+   "Z": "0.025532334",
+   "C0_over_D_out": "0.91822133",
+   "room": "10089017000",
+   "M": "387/1000",
+   "B": "13/25",
+   "A": "18959/1000",
+   "Kbar": "77716808953/200000000000",
+   "loss": "0.3651689966",
+   "bprime": "0.1848310034",
+   "companion_ii": {
+    "b0": "11/25",
+    "D_out": "59354136770",
+    "C0_over_D_out": "1.9085574",
+    "M": "153/500",
+    "B": "13/25"
+   },
+   "checks": {
+    "A3[11/20,72]": "PASS-COND",
+    "E0[11/20,72]": "PASS-COND",
+    "N2[11/20,72]": "PASS",
+    "E1[11/20,72]": "PASS-COND",
+    "E2[11/20,72]": "FAIL",
+    "N3[11/20,72]": "PASS",
+    "F1[11/20,72]": "PASS-COND",
+    "G1[11/20,72]": "PASS-COND",
+    "G2[11/20,72]": "PASS-COND",
+    "G3[11/20,72]": "PASS-COND",
+    "G4[11/20,72]": "PASS-COND",
+    "G5[11/20,72]": "FAIL"
+   }
+  },
+  "registered fallback": {
+   "tag": "[103/200,68]",
+   "b0": "103/200",
+   "mu": "68",
+   "e_up": "90925830371/500000000000",
+   "margin_i": "0.013467549",
+   "margin_ii": "upper -0.096851660",
+   "beta_star_needed_ii": "0.696851661",
+   "beta_star_needed_ii_exact": "348425830371/500000000000",
+   "C0": "450611820869/5",
+   "D_out": "99695324090",
+   "Z": "0.020632720",
+   "C0_over_D_out": "0.90397785",
+   "room": "9572959900",
+   "M": "361/1000",
+   "B": "13/25",
+   "A": "18959/1000",
+   "Kbar": "362527621449/1000000000000",
+   "loss": "0.3412910741",
+   "bprime": "0.1737089259",
+   "companion_ii": {
+    "b0": "41/100",
+    "D_out": "46849591720",
+    "C0_over_D_out": "1.9236532",
+    "M": "141/500",
+    "B": "11/20"
+   },
+   "checks": {
+    "A3[103/200,68]": "PASS-COND",
+    "E0[103/200,68]": "PASS-COND",
+    "N2[103/200,68]": "PASS",
+    "E1[103/200,68]": "PASS-COND",
+    "E2[103/200,68]": "FAIL",
+    "N3[103/200,68]": "PASS",
+    "F1[103/200,68]": "PASS-COND",
+    "G1[103/200,68]": "PASS-COND",
+    "G2[103/200,68]": "PASS-COND",
+    "G3[103/200,68]": "PASS-COND",
+    "G4[103/200,68]": "PASS-COND",
+    "G5[103/200,68]": "FAIL"
+   }
+  }
+ },
+ "common": {
+  "cap": "7997483325927041/11258999068426240",
+  "far_margin": "71675071190082633/5629499534213120000",
+  "s_max_lower": "1.102062881091",
+  "R_star_upper": "0.000000454926094679",
+  "cover_gaps_union": "(57/71, 49/15)",
+  "cover_gaps_with_roots": "(15/17, 49/15)"
+ },
+ "seconds": 4.71
+}

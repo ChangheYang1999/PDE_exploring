@@ -1,0 +1,116 @@
+{
+ "program": "near_check_v04.py",
+ "params": "near_params_v06.json",
+ "params_sha256": "96f0638805f1cf992830ea8aa35402994d5af62654bff9fef90d7bbd46d84360",
+ "program_sha256": "10fea8ceca9bc086aed92eb721aa733cf3cc9846f83a4485485882186af27dbb",
+ "interface": "every decimal is an exact rational; e_up >= the sum of the displayed term uppers; budget_margin_lower <= (c + 1 - q - b0) - e_up; C_N_upper >= P_HF; D_lower <= D; room_D_minus_P_lower <= D_lower - C_N_upper; P_over_D_upper >= C_N_upper/D_lower; budget_pass iff budget_margin_lower >= 0; price_pass iff C_N_upper <= D_lower; h4_rate_margin_lower <= (beta_* - b0 - eps_rest) - e_up; h4_rate_pass iff h4_rate_margin_lower >= 0",
+ "lambda_contract": {
+  "floor_8_2c_minus_1": "2950576553396557/140737488355328",
+  "Lambda_plus_value": "5901153228680477/281474976710656",
+  "value_at_least_floor": true
+ },
+ "beta_star_lower": "704955805507/1000000000000",
+ "eps_rest_upper": "0",
+ "cases": [
+  {
+   "label": "plan of record",
+   "b0": "11/20",
+   "mu": "72",
+   "side_conditions": {
+    "mu >= 1": true,
+    "2 nu <= mu": true,
+    "mu/2 > 2q + 1 (NR-32)": true,
+    "0 < b0 < c + 1 - q": true,
+    "b0 > 0.152070 (loss of Lemma KB, AT1688)": true
+   },
+   "D_m_a_r_upper": {
+    "D4": "2.07324187994e2",
+    "D5": "1.87152172729e3",
+    "D6": "4.59579168015e4"
+   },
+   "M4_split_upper": "3.29387563990e3",
+   "M4_direct_upper": "2.69196367334e3",
+   "e_terms_upper": {
+    "Lambda term (1 + q^2) max(Lambda_+, 8 (2c - 1))/(2 mu^2)": "1.09395479531e-2",
+    "M4 term A4c min(1024 c + M4^+(a_r), M4^+(a_n))/mu^4": "6.27517100611e-3",
+    "tail_B(a_c) (NR-32)": "3.34435220884e-6",
+    "tail_B(a_r) (NR-25 (i), m = 6)": "1.34135412711e-1",
+    "e_nu term t^-1 ||(a_n)_+||_1 nu^2/(8 sqrt(2 pi))": "1.27363546618e-3"
+   },
+   "e_up": "1.52627111489e-1",
+   "cap_minus_b0_exact": "1805033838292609/11258999068426240",
+   "budget_margin_lower": "7.69209871099e-3",
+   "budget_pass": true,
+   "C_N_upper": "1.13428316345e11",
+   "D_lower": "1.22000000000e11",
+   "P_over_D_upper": "9.29740297910e-1",
+   "room_D_minus_P_lower": "8.57168365500e9",
+   "price_pass": true,
+   "R1_threshold_D6_an": "324907/5",
+   "h4_rate_margin_lower": "2.32869401800e-3",
+   "h4_rate_pass": true,
+   "h4_threshold_D6_an": "318149/5",
+   "Lambda_threshold_cap_level": "17853/500",
+   "Lambda_threshold_h4_rate": "25427/1000",
+   "inputs_not_certified": [
+    "eps_rest"
+   ],
+   "conditions": [
+    "CE budget at stipulated inputs: beta_0 = 7/4, ||F_*||_2 <= 7.97e-7, N(F_*) <= 0.006 (budget_013g)"
+   ],
+   "status": "DRY RUN: proves nothing"
+  },
+  {
+   "label": "registered fallback",
+   "b0": "103/200",
+   "mu": "68",
+   "side_conditions": {
+    "mu >= 1": true,
+    "2 nu <= mu": true,
+    "mu/2 > 2q + 1 (NR-32)": true,
+    "0 < b0 < c + 1 - q": true,
+    "b0 > 0.152070 (loss of Lemma KB, AT1688)": true
+   },
+   "D_m_a_r_upper": {
+    "D4": "2.07324187994e2",
+    "D5": "1.87152172729e3",
+    "D6": "4.59579168015e4"
+   },
+   "M4_split_upper": "3.29387563990e3",
+   "M4_direct_upper": "2.69196367334e3",
+   "e_terms_upper": {
+    "Lambda term (1 + q^2) max(Lambda_+, 8 (2c - 1))/(2 mu^2)": "1.22644067018e-2",
+    "M4 term A4c min(1024 c + M4^+(a_r), M4^+(a_n))/mu^4": "7.88714636483e-3",
+    "tail_B(a_c) (NR-32)": "9.16101163103e-6",
+    "tail_B(a_r) (NR-25 (i), m = 6)": "1.58666888057e-1",
+    "e_nu term t^-1 ||(a_n)_+||_1 nu^2/(8 sqrt(2 pi))": "1.27363546618e-3"
+   },
+   "e_up": "1.80101237602e-1",
+   "cap_minus_b0_exact": "10995494028437637/56294995342131200",
+   "budget_margin_lower": "1.52179725979e-2",
+   "budget_pass": true,
+   "C_N_upper": "9.02397335558e10",
+   "D_lower": "9.86935000000e10",
+   "P_over_D_upper": "9.14343229857e-1",
+   "room_D_minus_P_lower": "8.45376644420e9",
+   "price_pass": true,
+   "R1_threshold_D6_an": "663047/10",
+   "h4_rate_margin_lower": "9.85456790500e-3",
+   "h4_rate_pass": true,
+   "h4_threshold_D6_an": "651429/10",
+   "Lambda_threshold_cap_level": "46979/1000",
+   "Lambda_threshold_h4_rate": "3781/100",
+   "inputs_not_certified": [
+    "D_allow[registered fallback]",
+    "eps_rest",
+    "kappa_0[registered fallback]",
+    "kappa_2q[registered fallback]",
+    "kappa_j[registered fallback]"
+   ],
+   "conditions": [
+    "CE budget at stipulated inputs: beta_0 = 7/4, ||F_*||_2 <= 7.97e-7, N(F_*) <= 0.006"
+   ],
+   "status": "DRY RUN: proves nothing"
+  }
+ ]
+}

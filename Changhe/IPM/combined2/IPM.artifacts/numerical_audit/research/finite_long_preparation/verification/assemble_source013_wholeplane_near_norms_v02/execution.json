@@ -1,0 +1,53 @@
+{
+  "schema": "finite-long-preparation-execution-v1",
+  "status": "COMPLETED",
+  "started_utc": "2026-11-04T13:35:28.727211Z",
+  "finished_utc": "2026-11-04T13:37:07.410154Z",
+  "elapsed_seconds": 98.68293763231486,
+  "request": "research/wait_stage_preparation/verification/preparation_request_v314.json",
+  "request_sha256": "6cf4d2ef12c2ae7d7b447889daf1f616692e72aa931656c970bed41202ce29fb",
+  "method_manifest_sha256": "4bb8d2adf05b2a16ad09067e88cf1c24e714e6529222746985e12183895d99bb",
+  "method_review_sha256": "b45103ffd8b6a5f86d80fde7ad709e6873f395465fb6ad94f0114eaef3a2bfd2",
+  "execution_review_sha256": "20445d69b2f51609287987834f2ebc72e107353126b18585c25055f47f004c88",
+  "code_sha256": "41546205fef8a5f68dc9566f7b601974ac91d1009129b7dbddba761dadc8dfb9",
+  "quiescence": {
+    "handoff_execution_sha256": "80b48c2e535f138868ce2e00a769efeebbfca459e4d6ae39288a5b73855e7c10",
+    "controller_state": "absent",
+    "final_child_group": 807757,
+    "retired_pids": [
+      254523,
+      256515,
+      256524,
+      586374,
+      2664646,
+      3372594,
+      3512742,
+      3999270
+    ],
+    "active_lane_python_scan": "PASS"
+  },
+  "old_process_signals": 0,
+  "reason": null,
+  "stages": [
+    {
+      "argv": [
+        "-B",
+        "research/source013_near_norms/code/assemble_v03.py",
+        "--request",
+        "research/source013_near_norms/verification/application_request_v02.json",
+        "--request-sha256",
+        "0fdac8bf7865f867fa2df7320ea3e0e306549da68ed2d2c75a90724109bdfc1b"
+      ],
+      "started_utc": "2026-11-04T13:35:30.823978Z",
+      "finished_utc": "2026-11-04T13:37:03.563235Z",
+      "elapsed_seconds": 92.73927116999403,
+      "exit_code": 0,
+      "log": "research/finite_long_preparation/verification/assemble_source013_wholeplane_near_norms_v02/stage_0.log"
+    }
+  ],
+  "resources_before": {
+    "lane_bytes": 2908131931,
+    "filesystem_free_bytes": 116223508480
+  },
+  "scope": "Serial execution only; numerical output requires separate admission."
+}

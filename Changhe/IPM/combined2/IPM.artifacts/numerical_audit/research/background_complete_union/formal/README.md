@@ -1,0 +1,1 @@
+No Lean or Lake build is authorized or claimed. The standalone informal proof is ../PROOF.md. Exact execution and independent-review evidence, when available, belongs in ../verification/. A prepared proof is not evidence that its numerical premises have been discharged.

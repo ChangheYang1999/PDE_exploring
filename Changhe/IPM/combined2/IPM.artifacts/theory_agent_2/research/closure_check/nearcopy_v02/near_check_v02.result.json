@@ -1,0 +1,107 @@
+{
+ "program": "near_check_v02.py",
+ "params": "near_params_v01.json",
+ "params_sha256": "1b5d87bddfa9ff69b3fb173d9590530919feac4c84e5d3fdb9ff513b8126f0b2",
+ "program_sha256": "0170560ec8ff6952e2c3458c35ec0a1f7ce639ef096200a186e297f6832f298b",
+ "interface": "every decimal is an exact rational; e_up >= the sum of the displayed term uppers; budget_margin_lower <= (c + 1 - q - b0) - e_up; C_N_upper >= P_HF; D_lower <= D; room_D_minus_P_lower <= D_lower - C_N_upper; P_over_D_upper >= C_N_upper/D_lower; budget_pass iff budget_margin_lower >= 0; price_pass iff C_N_upper <= D_lower",
+ "cases": [
+  {
+   "label": "plan of record",
+   "b0": "11/20",
+   "mu": "72",
+   "side_conditions": {
+    "mu >= 1": true,
+    "2 nu <= mu": true,
+    "mu/2 > 2q + 1 (NR-32)": true,
+    "0 < b0 < c + 1 - q": true,
+    "b0 > 0.152070 (loss of Lemma KB, AT1688)": true
+   },
+   "D_m_a_r_upper": {
+    "D4": "2.07323829653e2",
+    "D5": "1.87151704735e3",
+    "D6": "4.59579267746e4"
+   },
+   "e_terms_upper": {
+    "Lambda term (1 + q^2) max(Lambda_+, 8 (2c - 1))/(2 mu^2)": "1.09395477272e-2",
+    "M4 term A4c (1024 c + M4^+(a_r))/mu^4": "7.67826923156e-3",
+    "tail_B(a_c) (NR-32)": "3.34435220884e-6",
+    "tail_B(a_r) (NR-25 (i), m = 6)": "1.34135441818e-1",
+    "e_nu term t^-1 ||(a_n)_+||_1 nu^2/(8 sqrt(2 pi))": "1.26049622145e-3"
+   },
+   "e_up": "1.54017099351e-1",
+   "cap_minus_b0_exact": "1805033838292609/11258999068426240",
+   "budget_margin_lower": "6.30211084899e-3",
+   "budget_pass": true,
+   "C_N_upper": "1.13280774322e11",
+   "D_lower": "1.22000000000e11",
+   "P_over_D_upper": "9.28530937066e-1",
+   "room_D_minus_P_lower": "8.71922567800e9",
+   "price_pass": true,
+   "R1_threshold_D6_an": "646267/10",
+   "inputs_not_certified": [
+    "D4_an",
+    "D5_an",
+    "D6_an",
+    "L1_pos",
+    "Lambda_plus",
+    "sup_neg_aW2",
+    "sup_pos_aW2"
+   ],
+   "conditions": [
+    "CE budget at stipulated inputs: beta_0 = 7/4, ||F_*||_2 <= 7.97e-7, N(F_*) <= 0.006 (budget_013g)"
+   ],
+   "status": "DRY RUN: proves nothing"
+  },
+  {
+   "label": "registered fallback",
+   "b0": "103/200",
+   "mu": "68",
+   "side_conditions": {
+    "mu >= 1": true,
+    "2 nu <= mu": true,
+    "mu/2 > 2q + 1 (NR-32)": true,
+    "0 < b0 < c + 1 - q": true,
+    "b0 > 0.152070 (loss of Lemma KB, AT1688)": true
+   },
+   "D_m_a_r_upper": {
+    "D4": "2.07323829653e2",
+    "D5": "1.87151704735e3",
+    "D6": "4.59579267746e4"
+   },
+   "e_terms_upper": {
+    "Lambda term (1 + q^2) max(Lambda_+, 8 (2c - 1))/(2 mu^2)": "1.22644064485e-2",
+    "M4 term A4c (1024 c + M4^+(a_r))/mu^4": "9.65067457109e-3",
+    "tail_B(a_c) (NR-32)": "9.16101163103e-6",
+    "tail_B(a_r) (NR-25 (i), m = 6)": "1.58666922489e-1",
+    "e_nu term t^-1 ||(a_n)_+||_1 nu^2/(8 sqrt(2 pi))": "1.26049622145e-3"
+   },
+   "e_up": "1.81851660742e-1",
+   "cap_minus_b0_exact": "10995494028437637/56294995342131200",
+   "budget_margin_lower": "1.34675494579e-2",
+   "budget_pass": true,
+   "C_N_upper": "9.01223641738e10",
+   "D_lower": "9.86935000000e10",
+   "P_over_D_upper": "9.13153998732e-1",
+   "room_D_minus_P_lower": "8.57113582620e9",
+   "price_pass": true,
+   "R1_threshold_D6_an": "659199/10",
+   "inputs_not_certified": [
+    "D4_an",
+    "D5_an",
+    "D6_an",
+    "D_allow[registered fallback]",
+    "L1_pos",
+    "Lambda_plus",
+    "kappa_0[registered fallback]",
+    "kappa_2q[registered fallback]",
+    "kappa_j[registered fallback]",
+    "sup_neg_aW2",
+    "sup_pos_aW2"
+   ],
+   "conditions": [
+    "CE budget at stipulated inputs: beta_0 = 7/4, ||F_*||_2 <= 7.97e-7, N(F_*) <= 0.006"
+   ],
+   "status": "DRY RUN: proves nothing"
+  }
+ ]
+}

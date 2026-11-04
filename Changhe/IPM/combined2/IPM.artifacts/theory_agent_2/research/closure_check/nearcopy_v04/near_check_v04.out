@@ -1,0 +1,108 @@
+near_check_v03 (c2-t1, 2026-11-04 shift 7): the near part of the final closure check of c2-coord 07:08Z item
+3(a) (c2-t1 note 83). A conditional program: every input is a named parameter of the parameter file with a
+direction, a status and a source; the arithmetic is outward (python-flint arb, 256 bits).
+
+Changes against near_check_v02.py (c2-at audit_v715, AT2333 to AT2336, and audit_v724, AT2364 to AT2366):
+- Lambda contract. Lambda_+(a_n) >= 8 (2c - 1), its origin value (AT2364), so the former FLOAT target 20.862082 has
+  no certified replacement (AT2365) and max(FLOAT, floor) is not an upper (AT2366). The parameter Lambda_plus must
+  now be a certified global upper U >= 8 (2c - 1); the program states whether the parameter value meets the floor
+  and prints the largest U (grid 1/1000) at which each budget test passes. The formula is unchanged: at U >= the
+  floor the maximum below equals U.
+- H4 rate test (reading (ii), AT2333): besides the cap-level test (a), the program decides
+  e_up + eps_rest <= beta_* - b0 with beta_* (lower) and eps_rest (upper) named parameters, through the same
+  interface, and prints the D6(a_n) and Lambda thresholds for it.
+The printed values of e_up, the price and the allowance are unchanged from v02 at the same inputs.
+
+Changes of near_check_v02.py against near_check_v01.py (c2-at audit_v704 and audit_v707):
+- the core split is a_n = a_r - a_c with a_r = a_n + a_c, a_c = c/(1 + 4|x|^2), since a_n(0) = -c (NR-30 Remark 5;
+  AT-1343, AT2299). The radial identity bounds D_m(a_n + a_c)^2 <= D_m(a_n)^2 - K_m (AT-1344 to AT-1346,
+  AT-1454); v01 named the remainder a_n - a_c, for which this subtraction is false (AT2298 REFUTED). The scalar
+  formulas are unchanged.
+- the output is one consistent tuple of exact rationals (AT2307, AT2308 REFUTED; repair AT2309): each term of e_up
+  is rounded up; e_up is the upward rounding of the exact sum of the displayed terms; the budget margin is the
+  downward rounding of the exact c + 1 - q - b0 minus the displayed e_up; C_N_upper is the upward rounding of the
+  price ball; D_lower is the downward rounding of the allowance ball; the remaining allowance is the downward
+  rounding of D_lower - C_N_upper; P_over_D_upper is the upward rounding of C_N_upper/D_lower. Every pass is decided
+  by exact rational comparison of displayed values, and every later consumer should use the same tuple.
+
+For each case (b0, mu) it evaluates
+  (a) the budget inequality (R1) of HF1-NEAR (AT-691) with tail B (AT-757), the quartic low cut (NR-27; AT-1094,
+      AT-1134) and the core split a_n = a_r - a_c (NR-25, NR-30 Remark 5, NR-32):
+        e_up = (1 + q^2) max(Lambda_+, 8 (2c - 1))/(2 mu^2) + A4c (1024 c + M4^+(a_r))/mu^4
+               + tail_B(a_c) + tail_B(a_r) + t^-1 ||(a_n)_+||_1 nu^2/(8 sqrt(2 pi))  <=  c + 1 - q - b0,
+      A4c = pi^2 (1 + c_aw/2) + C_D/2, c_aw = 2 q^2 (sinh(x0)/x0)^2, x0 = (q/2) log 2,
+      M4(a_n) <= M4(a_c) + M4(a_r) and T_q(a_n; v) <= T_q(a_c; v) + T_q(a_r; v) (absolute Fourier moments and tails
+      are invariant under an overall sign and subadditive), M4(a_c) <= 1024 c,
+      M4^+(a_r) = ((D4 D6 + D5^2)/(2 pi))^(1/2) at D_m = D_m(a_r), D_m(a_r)^2 <= D_m(a_n)^2 - K_m,
+      tail_B(a) = (4/3)^q T_q(a; 3 mu/4) + (8/mu)^q T_q(a; mu/2),
+      T_q(a_c; v) <= U_q(v) = c pi^(1/2) v^(q + 3/2) e^(-v/2)/(2 (v - 2q - 1))      (NR-32, v > 2q + 1),
+      T_q(a_r; v) <= v^(q - 5) D6(a_r)/(4 pi (5 - q))^(1/2)                          (NR-25 (i), m = 6);
+  (b) the near price P_HF = 2^sigma [sup(|a_n| W^2) kappa_0 kappa_2q + (1 - t)^-1 sup((a_n)_+ W^2) 2 kappa_j^2],
+      with sup(|a_n| W^2) = max(sup((a_n)_- W^2), sup((a_n)_+ W^2)), an upper for the near constant C_N, and its
+      comparison with the allowance D (the remaining allowance D - P_HF is what is left for the far and remainder
+      charges of H4-R);
+  (c) the (R1) threshold: the largest D6(a_n) upper, on a grid of 1/10, at which (a) passes with the other inputs
+      (each probe uses the same rational interface);
+  (a') the H4 rate test e_up + eps_rest <= beta_* - b0 (AT2333), with its D6(a_n) threshold;
+  (d) the Lambda thresholds: the largest U on a grid of 1/1000, U >= 8 (2c - 1), at which (a), and (a'), pass.
+Every term is nondecreasing in each upper and nonincreasing in each lower (K_m, D), so the conclusions hold for any
+certified bounds that are at least as good as the parameter values.
+
+What follows if (a) and (b) pass with every input certified and the hypotheses H1 to H4 of NEAR_CHECK_v02.md hold:
+for every h with g = J^q W h in L^2, (TII + C_aw)[a_n](g) <= (c + 1 - q - b0) ||g||^2 + P ||h||^2 with P the printed
+C_N_upper, so C_N <= P <= D at that (b0, mu). The far charges, H4-R, Theorem B and Lemma KB are c2-t2's part.
+With FLOAT or UNAUDITED inputs the output is a dry run and proves nothing.
+
+Usage: python3 -B near_check_v03.py [params.json] > near_check_v03.out; writes near_check_v03.result.json.
+The default parameter file is near_params_v02.json.
+Parameter file near_params_v03.json (SHA256 ccd0f57f5c5f8376f8ff4e12ea380282f573803877e6a577c19a8a00b02ca765)
+Constants (balls): cap = c + 1 - q = [0.710319210200 +/- 1.94e-15]; 8 (2c - 1) = [20.9651073632 +/- 3.3e-14]; c_aw = [10.4915653561 +/- 1.50e-12]; A4c = [62.6449917075 +/- 3.74e-11]; 1024 c = [1853.76687124 +/- 4.80e-9]
+K_m (exact rationals, decimal): K4 [154325.139294063 +/- 4.41e-10], K5 [14022950.2640032 +/- 4.52e-8], K6 [1863221906.74933 +/- 2.57e-7]
+Lambda contract: floor 8 (2c - 1) = 2950576553396557/140737488355328 = 2.09651073631999e1 (AT2364); parameter Lambda_plus = 5901153228680477/281474976710656; value >= floor: yes
+H4 rate parameters: beta_* lower 704955805507/1000000000000 = 7.04955805507e-1; eps_rest upper 0
+
+Case plan of record: b0 = 11/20, mu = 72
+  side conditions: mu >= 1 yes; 2 nu <= mu yes; mu/2 > 2q + 1 (NR-32) yes; 0 < b0 < c + 1 - q yes; b0 > 0.152070 (loss of Lemma KB, AT1688) yes
+  D_m(a_r) uppers, a_r = a_n + a_c, from the radial identity: D4 2.07323830e2, D5 1.87151705e3, D6 4.59579268e4
+  | term of e_up | upper |
+  |---|---:|
+  | Lambda term (1 + q^2) max(Lambda_+, 8 (2c - 1))/(2 mu^2) | 1.09395479531e-2 |
+  | M4 term A4c (1024 c + M4^+(a_r))/mu^4 | 7.67826923156e-3 |
+  | tail_B(a_c) (NR-32) | 3.34435220884e-6 |
+  | tail_B(a_r) (NR-25 (i), m = 6) | 1.34135441818e-1 |
+  | e_nu term t^-1 ||(a_n)_+||_1 nu^2/(8 sqrt(2 pi)) | 1.27363546618e-3 |
+  | e_up (upward rounding of the sum of the displayed terms) | 1.54030238822e-1 |
+  | c + 1 - q - b0 (exact) | 1805033838292609/11258999068426240 = 1.60319210199998e-1 |
+  (a) cap-level budget margin (c + 1 - q - b0) - e_up >= 6.28897137799e-3: PASS
+  (a') H4 rate margin (beta_* - b0 - eps_rest) - e_up >= 9.25566685000e-4: PASS
+  (b) C_N_upper 1.13428316345e11 (kappa_0 kappa_2q part 5.889210e10, kappa_j part 5.453622e10); D_lower 1.22000000000e11; C_N_upper/D_lower <= 9.29740297910e-1; remaining allowance D_lower - C_N_upper >= 8.57168365500e9: PASS
+  (c) (R1) threshold: (a) passes for every D6(a_n) upper <= 64623.4 at the other inputs
+  (c') D6 threshold of (a'): (a') passes for every D6(a_n) upper <= 63279.8 at the other inputs
+  (d) Lambda thresholds: for a certified global upper U >= 8 (2c - 1) of Lambda_+(a_n), (a) passes for U <= 33.017 and (a') for U <= 22.738 at the other inputs
+  inputs that are not certified: D4_an (FLOAT), D5_an (FLOAT), D6_an (FLOAT), L1_pos (UNAUDITED), Lambda_plus (UNAUDITED), beta_star (REGIONAL), eps_rest (OPEN), sup_neg_aW2 (UNAUDITED), sup_pos_aW2 (UNAUDITED)
+  conditions of the certified inputs: CE budget at stipulated inputs: beta_0 = 7/4, ||F_*||_2 <= 7.97e-7, N(F_*) <= 0.006 (budget_013g)
+  status: DRY RUN: proves nothing
+
+Case registered fallback: b0 = 103/200, mu = 68
+  side conditions: mu >= 1 yes; 2 nu <= mu yes; mu/2 > 2q + 1 (NR-32) yes; 0 < b0 < c + 1 - q yes; b0 > 0.152070 (loss of Lemma KB, AT1688) yes
+  D_m(a_r) uppers, a_r = a_n + a_c, from the radial identity: D4 2.07323830e2, D5 1.87151705e3, D6 4.59579268e4
+  | term of e_up | upper |
+  |---|---:|
+  | Lambda term (1 + q^2) max(Lambda_+, 8 (2c - 1))/(2 mu^2) | 1.22644067018e-2 |
+  | M4 term A4c (1024 c + M4^+(a_r))/mu^4 | 9.65067457109e-3 |
+  | tail_B(a_c) (NR-32) | 9.16101163103e-6 |
+  | tail_B(a_r) (NR-25 (i), m = 6) | 1.58666922489e-1 |
+  | e_nu term t^-1 ||(a_n)_+||_1 nu^2/(8 sqrt(2 pi)) | 1.27363546618e-3 |
+  | e_up (upward rounding of the sum of the displayed terms) | 1.81864800240e-1 |
+  | c + 1 - q - b0 (exact) | 10995494028437637/56294995342131200 = 1.95319210199998e-1 |
+  (a) cap-level budget margin (c + 1 - q - b0) - e_up >= 1.34544099599e-2: PASS
+  (a') H4 rate margin (beta_* - b0 - eps_rest) - e_up >= 8.09100526700e-3: PASS
+  (b) C_N_upper 9.02397335558e10 (kappa_0 kappa_2q part 4.656715e10, kappa_j part 4.367260e10); D_lower 9.86935000000e10; C_N_upper/D_lower <= 9.14343229857e-1; remaining allowance D_lower - C_N_upper >= 8.45376644420e9: PASS
+  (c) (R1) threshold: (a) passes for every D6(a_n) upper <= 65917.0 at the other inputs
+  (c') D6 threshold of (a'): (a') passes for every D6(a_n) upper <= 64761.8 at the other inputs
+  (d) Lambda thresholds: for a certified global upper U >= 8 (2c - 1) of Lambda_+(a_n), (a) passes for U <= 43.964 and (a') for U <= 34.796 at the other inputs
+  inputs that are not certified: D4_an (FLOAT), D5_an (FLOAT), D6_an (FLOAT), D_allow[registered fallback] (UNAUDITED), L1_pos (UNAUDITED), Lambda_plus (UNAUDITED), beta_star (REGIONAL), eps_rest (OPEN), kappa_0[registered fallback] (UNAUDITED), kappa_2q[registered fallback] (UNAUDITED), kappa_j[registered fallback] (UNAUDITED), sup_neg_aW2 (UNAUDITED), sup_pos_aW2 (UNAUDITED)
+  conditions of the certified inputs: CE budget at stipulated inputs: beta_0 = 7/4, ||F_*||_2 <= 7.97e-7, N(F_*) <= 0.006
+  status: DRY RUN: proves nothing
+
+wrote near_check_v03.result.json

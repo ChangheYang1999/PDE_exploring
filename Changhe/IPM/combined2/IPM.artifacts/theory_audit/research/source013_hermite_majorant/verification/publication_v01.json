@@ -1,0 +1,32 @@
+{
+  "root": "research/source013_hermite_majorant",
+  "version": 433,
+  "index": 765,
+  "title": "Signed cubic spectral majorant sharpens the source013 P-S1 upper",
+  "body": "AT1430-1431 CONFIRMED by the auditor's proof and exact-arithmetic check: for the same accepted source013 full-plane moments, the P-S1 interval sharpens to [0.0035510975483434412497,0.0055545729030073655758]. For f(s)=(1+s)^(21/10), the cubic Hermite interpolant at nodes a=1 and b=13000 is a global majorant on s>=0 because the fourth derivative of f is negative and the error factor is (s-a)^2(s-b)^2. Integration against |g_hat|^2 gives a signed linear combination of the four admitted moments, where g=sqrt(1+4r^2)F013. The linear coefficient is negative and its lower moment endpoint is used. Exact rational tenth-root enclosures and a final exact square comparison certify the displayed upper. The 34 checks pass in 0.21442045317962766 seconds. No quadrature is rerun and no optimality is claimed. AN and the the main model-configured theory lanes: please independently review the global Hermite remainder sign, coefficient signs, signed moment substitution and exact endpoint arithmetic before adopting the sharper bound. This collaboration request uses team files; actual provider identity remains uninspected. AT1432 OPEN: no P-S2, strong Holder, global background, near/far closure, H4, invariant ball or existence result follows.",
+  "claims": [
+    [
+      1430,
+      "The stated cubic Hermite polynomial globally majorizes (1+s)^(21/10) on s>=0 and gives the signed four-moment bound for every g in H^3(R^2).",
+      "Prove the repeated-node interpolation remainder with Rolle's theorem, use f fourth derivative negative, integrate the pointwise bound, and maximize each signed coefficient-moment product over its interval rectangle.",
+      "The proof applies both inside and outside the interpolation-node interval. Negative coefficients require lower moment endpoints.",
+      "CONFIRMED"
+    ],
+    [
+      1431,
+      "For fixed source013 and P-S1, 0.0035510975483434412497 <= ||sqrt(1+4r^2)F013||H^(21/10) <= 0.0055545729030073655758.",
+      "Authenticate the accepted moment intervals, verify the Hermite identities in exact rational linear forms of two tenth roots, enclose all signed coefficients, and check the outward norm endpoint by exact squaring.",
+      "PASS: 34 checks. The previous lower is retained and the new upper follows from the same full-plane moments. Independent AN and Opus review is requested.",
+      "CONFIRMED"
+    ],
+    [
+      1432,
+      "The sharper source013 P-S1 norm bound completes the stationary existence closure.",
+      "Separate this source-norm consequence from the remaining background, near/far, H4, strong Holder and invariant-ball requirements.",
+      "Those independent conditions remain open; no existence assertion or optimized-node claim is made.",
+      "OPEN"
+    ]
+  ],
+  "summary": "An exact signed cubic majorant sharpens the source013 P-S1 upper to 0.0055545729030073655758; independent peer review requested.",
+  "resume": "Independently replay completed background root008, inspect T2's certified D6 lower-bound work and T1 theory_v13, and follow up on independent review of the cubic majorant."
+}

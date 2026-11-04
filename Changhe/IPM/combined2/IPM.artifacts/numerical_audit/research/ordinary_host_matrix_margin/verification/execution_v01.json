@@ -1,0 +1,75 @@
+{
+  "status": "COMPLETED",
+  "stage": "matrix",
+  "started_utc": "2026-11-04T09:50:09.455913+00:00",
+  "finished_utc": "2026-11-04T09:51:32.351072+00:00",
+  "elapsed_seconds": 82.89515593275428,
+  "limit_seconds": 600,
+  "stop_at": "2026-11-04T16:45:00+00:00",
+  "cpu": 50,
+  "nice": 19,
+  "threads": 1,
+  "memory_limit_bytes": 28000000000,
+  "argv": [
+    "research/ordinary_host_matrix_margin/code/check_v01.py",
+    "--recount",
+    "research/ordinary_slabs_host_method/verification/recount_v01.json",
+    "--recount-sha256",
+    "3a019e2eeabe8cf7172cdfcf27a292abd6783e8edc959178e690910c47d2960e",
+    "--output",
+    "research/ordinary_host_matrix_margin/verification/check_v01.json"
+  ],
+  "exit_code": 0,
+  "reason": null,
+  "bindings": {
+    "../c2-n2/source_host_049/ordinary_v01/execution_v01.json": "8a76e09848275e6b2b7524cb2d2ffd4e45324bce907bb2f3914acfd4d37adf56",
+    "research/ordinary_host_matrix_margin/code/check_v01.py": "4aace33e6f96c19c25d137b337cf82a1dbc0d58161295d511541066dcf963ef5",
+    "research/ordinary_slabs_host_method/code/run_local_recount_v01.py": "da18412b427c4bb6c29a87055ef6d744119f9aede32a7b70af79d1ccb442340d",
+    "research/ordinary_slabs_host_method/verification/recount_v01.json": "3a019e2eeabe8cf7172cdfcf27a292abd6783e8edc959178e690910c47d2960e"
+  },
+  "inputs_unchanged": true,
+  "old_process_signals": 0,
+  "own_child_signals": [],
+  "resource_samples": [
+    {
+      "utc": "2026-11-04T09:50:09.455913+00:00",
+      "lane_allocated_bytes": 2901196800,
+      "filesystem_free_bytes": 120343207936
+    },
+    {
+      "utc": "2026-11-04T09:50:25.586147+00:00",
+      "lane_allocated_bytes": 2901209088,
+      "filesystem_free_bytes": 120343232512
+    },
+    {
+      "utc": "2026-11-04T09:50:41.742107+00:00",
+      "lane_allocated_bytes": 2901217280,
+      "filesystem_free_bytes": 120343166976
+    },
+    {
+      "utc": "2026-11-04T09:50:57.868362+00:00",
+      "lane_allocated_bytes": 2901217280,
+      "filesystem_free_bytes": 120346411008
+    },
+    {
+      "utc": "2026-11-04T09:51:14.217584+00:00",
+      "lane_allocated_bytes": 2901221376,
+      "filesystem_free_bytes": 120344035328
+    },
+    {
+      "utc": "2026-11-04T09:51:30.347165+00:00",
+      "lane_allocated_bytes": 2901221376,
+      "filesystem_free_bytes": 120343924736
+    }
+  ],
+  "final_storage": {
+    "lane_allocated_bytes": 2901286912,
+    "filesystem_free_bytes": 120343896064
+  },
+  "log": "research/ordinary_host_matrix_margin/verification/local_recount_v01.log",
+  "log_sha256": "3cf069a08a073334d0be012f4af5d33ed7e05c11e9957548567781a8ed7a3b81",
+  "log_redacted": false,
+  "output": "research/ordinary_host_matrix_margin/verification/check_v01.json",
+  "output_sha256": "5f2f607e740fd29115ea46b5354601c74064e585347090c3f75dd7f1b6b7eea9",
+  "scope": "Bounded local execution only. A distinct actual review and adoption are still required."
+}

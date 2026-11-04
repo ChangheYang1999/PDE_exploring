@@ -1,0 +1,29 @@
+lambda_tolerance (c2-t2, 2026-11-04, version 01): exact arithmetic for the Lambda_+ revision of AT2364 to AT2366.
+NEAR_CHECK_v02 program and result match the pinned SHA256; parameter file near_params_v01.json matches the result
+F = 8(2c - 1) = 2950576553396557/140737488355328 (exact) = 20.9651073632...; the parameter Lambda_plus = 20.862082 lies below F by 226555169588423861/2199023255552000000 (exact; AT2365)
+
+Case plan of record (b0, mu) = (11/20, 72): printed e_up = 1.54017099351e-1; Lambda coefficient (1 + q^2)/(2 mu^2) = 541/1036800 = 0.000521797839506
+  rate needed at Lam = F: b0 + e_up + eps_rest = 704017099351/1000000000000 (exact) <= 0.704017099351
+  beta_reg = 704955805507/10^12 (AT2373, regional; hypothetical whole-plane): room beta - b0 - e_up - eps_rest = 234676539/250000000000 (exact) >= 0.000938706156; Lam tolerance F + room/coeff = 16926120627785056985257201/743544738283520000000000 (exact) >= 22.76409173, i.e. Lam - F <= 1.798984366
+  cap = c + 1 - q (AT-211; no whole-plane rate exceeds it): room beta - b0 - e_up - eps_rest = 3464622079003337241437/549755813888000000000000 (exact) >= 0.006302110848; Lam tolerance F + room/coeff = 24568795696233069436445329/743544738283520000000000 (exact) >= 33.0427941, i.e. Lam - F <= 12.07768674
+    certified Lambda_+ <= 21: e_up <= 0.1540353063, rate needed 0.7040353063 (rounded up); below the regional value, below the cap
+    certified Lambda_+ <= 22: e_up <= 0.1545571041, rate needed 0.7045571041 (rounded up); below the regional value, below the cap
+    certified Lambda_+ <= 23: e_up <= 0.155078902, rate needed 0.705078902 (rounded up); ABOVE the regional value, below the cap
+    certified Lambda_+ <= 25: e_up <= 0.1561224977, rate needed 0.7061224977 (rounded up); ABOVE the regional value, below the cap
+    certified Lambda_+ <= 30: e_up <= 0.1587314869, rate needed 0.7087314869 (rounded up); ABOVE the regional value, below the cap
+    certified Lambda_+ <= 35: e_up <= 0.1613404761, rate needed 0.7113404761 (rounded up); ABOVE the regional value, ABOVE the cap
+    certified Lambda_+ <= 40: e_up <= 0.1639494653, rate needed 0.7139494653 (rounded up); ABOVE the regional value, ABOVE the cap
+
+Case registered fallback (b0, mu) = (103/200, 68): printed e_up = 1.81851660742e-1; Lambda coefficient (1 + q^2)/(2 mu^2) = 541/924800 = 0.000584991349481
+  rate needed at Lam = F: b0 + e_up + eps_rest = 348425830371/500000000000 (exact) <= 0.696851660742
+  beta_reg = 704955805507/10^12 (AT2373, regional; hypothetical whole-plane): room beta - b0 - e_up - eps_rest = 1620828953/200000000000 (exact) >= 0.008104144765; Lam tolerance F + room/coeff = 5177830097702465628426493/148708947656704000000000 (exact) >= 34.81855113, i.e. Lam - F <= 13.85344376
+  cap = c + 1 - q (AT-211; no whole-plane rate exceeds it): room beta - b0 - e_up - eps_rest = 7403863613358630843229/549755813888000000000000 (exact) >= 0.01346754945; Lam tolerance F + room/coeff = 32706227941541573816186073/743544738283520000000000 (exact) >= 43.98689985, i.e. Lam - F <= 23.02179249
+    certified Lambda_+ <= 21: e_up <= 0.1818720727, rate needed 0.6968720727 (rounded up); below the regional value, below the cap
+    certified Lambda_+ <= 22: e_up <= 0.182457064, rate needed 0.697457064 (rounded up); below the regional value, below the cap
+    certified Lambda_+ <= 23: e_up <= 0.1830420554, rate needed 0.6980420554 (rounded up); below the regional value, below the cap
+    certified Lambda_+ <= 25: e_up <= 0.1842120381, rate needed 0.6992120381 (rounded up); below the regional value, below the cap
+    certified Lambda_+ <= 30: e_up <= 0.1871369948, rate needed 0.7021369948 (rounded up); below the regional value, below the cap
+    certified Lambda_+ <= 35: e_up <= 0.1900619516, rate needed 0.7050619516 (rounded up); ABOVE the regional value, below the cap
+    certified Lambda_+ <= 40: e_up <= 0.1929869083, rate needed 0.7079869083 (rounded up); ABOVE the regional value, below the cap
+
+wrote lambda_tolerance_v01.json (0.00 s). Exact arithmetic on frozen inputs; it certifies no near input.

@@ -1,0 +1,39 @@
+{
+  "version": "near_params_v01",
+  "written": "2026-11-04 shift 7 (c2-t1)",
+  "use": "Input file of near_check_v01.py. kind: upper (a certified replacement must be at most this value), lower (at least this value), exact or fixed. status: FIXED (a choice of the construction), EXACT, CONFIRMED (certified by the cited audit, possibly under the listed conditions), FLOAT (a numerical stand-in, no bound), UNAUDITED (an outward computation of this lane that no audit covers).",
+  "fixed": {
+    "q": {"value": "21/10", "kind": "exact", "status": "FIXED", "source": "P-S1"},
+    "sigma": {"value": "1", "kind": "exact", "status": "FIXED", "source": "P-S1"},
+    "r0": {"value": "1/2", "kind": "exact", "status": "FIXED", "source": "P-S1"},
+    "c": {"value": "4076476460239181/2251799813685248", "kind": "exact", "status": "EXACT", "source": "the binary64 reference value c of Candidate 007"},
+    "C_D": {"value": "80127/40000", "kind": "exact", "status": "EXACT", "source": "AT-428 (constant of the localization lemma)"},
+    "t": {"value": "1/10", "kind": "exact", "status": "FIXED", "source": "free parameter t in (0, 1) of HF1-NEAR"},
+    "nu": {"value": "1/40", "kind": "exact", "status": "FIXED", "source": "low cut scale; quartic cut psi = exp(-|xi|^4), (2 pi)^-2 ||psi||_2^2 = 1/(8 sqrt(2 pi)) (NR-27; AT-1094, AT-1134)"},
+    "lam_k": {"value": "256/25", "kind": "exact", "status": "FIXED", "source": "split point of the kappa_j uppers (theory_v12 V12-1 (f) 1)"}
+  },
+  "global": {
+    "D4_an": {"value": "444.194", "kind": "upper", "status": "FLOAT", "source": "c2-t2 NOTES 2026-11-03T17:59Z, FLOAT D_4(a_n); (R1)"},
+    "D5_an": {"value": "4186.35", "kind": "upper", "status": "FLOAT", "source": "c2-t2 NOTES 2026-11-03T17:59Z, FLOAT D_5(a_n); (R1)"},
+    "D6_an": {"value": "63050.4", "kind": "upper", "status": "FLOAT", "source": "c2-t2 NOTES 2026-11-03T17:59Z, FLOAT D_6(a_n); (R1). A certified lower is D_6(a_n) >= 62748 (AT-1467)"},
+    "K4": {"value": "7716296798651/50000000 - 9958486957/12500000000", "kind": "lower", "status": "CONFIRMED", "source": "K_m = lower E_m(b a_c) - upper E_m((1 - b) a_c), radial identity (AT-1344 to AT-1346) with the endpoints of AT-1453, AT-1454"},
+    "K5": {"value": "701148547241569/50000000 - 20680828134801/1000000000000", "kind": "lower", "status": "CONFIRMED", "source": "as K4"},
+    "K6": {"value": "93161147644159911/50000000 - 65383366747743/62500000000", "kind": "lower", "status": "CONFIRMED", "source": "as K4 (K_6 = 1863221906.74933, AT-1454)"},
+    "sup_neg_aW2": {"value": "8.6524467", "kind": "upper", "status": "FLOAT", "source": "sup((a_n)_- W^2), split erflog 8, rho 1 (c2-t2 2026-11-03 11:32Z item 2); (R4)"},
+    "sup_pos_aW2": {"value": "8.5262260", "kind": "upper", "status": "FLOAT", "source": "sup((a_n)_+ W^2), same file; (R4)"},
+    "L1_pos": {"value": "4.0442822", "kind": "upper", "status": "FLOAT", "source": "||(a_n)_+||_1, same file; (R4)"},
+    "Lambda_plus": {"value": "20.862082", "kind": "upper", "status": "FLOAT", "source": "Lambda_+(a_n) = sup max(0, lambda_max Hess a_n), same file; (R4). The program uses max(Lambda_plus, 8 (2c - 1)), which is again an upper"}
+  },
+  "cases": [
+    {"label": "plan of record", "b0": "11/20", "mu": "72",
+     "kappa_0": {"value": "3.20696761", "kind": "upper", "status": "CONFIRMED", "source": "kappa_0^Psi(72), AT-1491, AT-1492; (R2)"},
+     "kappa_2q": {"value": "1059792560", "kind": "upper", "status": "CONFIRMED", "source": "kappa_2q^Psi(72), AT-1491, AT-1492; (R2)"},
+     "kappa_j": {"value": "37912", "kind": "upper", "status": "CONFIRMED", "source": "kappa_j^Psi(1/40, 72) for j = 1 and, by rotation, j = 2, lam_k 256/25, quartic cut, AT-1491, AT-1492; (R2)"},
+     "D_allow": {"value": "1.22e11", "kind": "lower", "status": "CONFIRMED", "conditions": "CE budget at stipulated inputs: beta_0 = 7/4, ||F_*||_2 <= 7.97e-7, N(F_*) <= 0.006 (budget_013g)", "source": "AT-831; c2-t2 T2_O2O3_FINAL_v02 section 0 item 3"}},
+    {"label": "registered fallback", "b0": "103/200", "mu": "68",
+     "kappa_0": {"value": "3.2126528", "kind": "upper", "status": "UNAUDITED", "source": "research/kernel_n6 runs split_ub_mu68_R16 and kappa_ub_mu68 (outward arb, 3.212652799 rounded up), same method as AT-1491 at mu 72"},
+     "kappa_2q": {"value": "836515933", "kind": "upper", "status": "UNAUDITED", "source": "as kappa_0 (836515932.3 rounded up)"},
+     "kappa_j": {"value": "33926.469", "kind": "upper", "status": "UNAUDITED", "source": "research/kernel_n6 runs kappa_ub_g_mu68_nu1_40_lam256_25, kappa_ub_mu68, split_ub1_mu68_lo256_25_R16 (33926.46819 rounded up)"},
+     "D_allow": {"value": "9.86935e10", "kind": "lower", "status": "UNAUDITED", "conditions": "CE budget at stipulated inputs: beta_0 = 7/4, ||F_*||_2 <= 7.97e-7, N(F_*) <= 0.006", "source": "research/kernel_n6/b0scan/budget_b0scan3.out, b0 0.515 (six-digit lower decimal of the budget_013g method)"}}
+  ]
+}

@@ -1,0 +1,63 @@
+{
+ "background_pt": "numerics/optimization/phi_bg/selftest_007quot_mid8_ang60.pt",
+ "base_id": "selftest",
+ "target_modes": "numerics/h0_data/H0C_007_600x80_inner2_converged_h_modes.npy",
+ "target_s": "numerics/h0_data/H0C_007_600x80_inner2_s_coarse.npy",
+ "tag": "smoke_b10s",
+ "steps": 1,
+ "tmax": 2.0,
+ "method": "svd",
+ "start": "zero",
+ "dmax_h": 3,
+ "wL2": 1.0,
+ "extra_l2_weights": [
+  [
+   1.4,
+   1.0,
+   1.0
+  ]
+ ],
+ "sobolev": {
+  "P-S1": 0.0,
+  "P-S2": 1.0
+ },
+ "sobolev_rmax": 4.0,
+ "groups": [
+  {
+   "leg": true,
+   "modes": [
+    1,
+    3,
+    5,
+    7
+   ],
+   "k_mu": [
+    0
+   ],
+   "t": [
+    "1/2",
+    "9"
+   ],
+   "K": 4,
+   "Qextra": 0
+  },
+  {
+   "modes": [
+    1,
+    3,
+    5,
+    7
+   ],
+   "k_mu": [
+    0
+   ],
+   "k_harm": [],
+   "h": [
+    0
+   ],
+   "d": [
+    0
+   ]
+  }
+ ]
+}

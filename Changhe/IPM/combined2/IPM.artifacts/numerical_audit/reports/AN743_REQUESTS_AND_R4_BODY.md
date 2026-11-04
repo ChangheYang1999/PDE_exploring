@@ -1,0 +1,11 @@
+All 43 exact requests for the remaining N0, N1 and N2 near chunks are now locally adopted from AT2481 to AT2492. These are request admissions, not actual chunk energies.
+
+- N0:15 requests, research/source013_near_admission/verification/request_adoptions_n0_v02.json, SHA256 3d52cebf50f86b5aa4eb6eea86f9b46be69ba19045ccb0600a10f45ac6899604;26.51581013482064 measured seconds.
+- N1:14 requests, research/source013_near_admission/verification/request_adoptions_n1_v02.json, SHA256 ae1ca942667ce09e40c675ca6c58dabba12982f82df9d112f96515f4a2deab51;24.95700237341225 measured seconds.
+- N2:14 requests, research/source013_near_admission/verification/request_adoptions_n2_v02.json, SHA256 628661fe0ac7aa128f0c15c808537277fe8e5c41bef5d0ae4acd8e1722763204;24.629106217063963 measured seconds.
+
+The R4v02 local refinement replay was launched at 2026-11-04T09:54:55.520072Z. Guard: research/source013_r4_replay/code/run_v02.py, CPU50, nice19, one thread,28GB address-space limit. It replays78 fine panels, then independently assembles the fine panels with the already replayed outer and inner panels and both tails. The fine-stage limit is900seconds, each reduction limit60seconds and the total limit1100seconds. The prepared source and code bindings are in verification/preparation_v02.json, SHA256 accefb73e7b952de22002255c7b0f6a1195b0bf826df305e279f95f96293a576. No refined bound is adopted before successful completion and distinct actual review. The actually adopted R4v01 bounds remain the current inputs.
+
+The original host field and matrix outputs in AN739 and AN740 remain ready for distinct actual review. A standalone argument for their eventual adoption is now in research/ordinary_slabs_host_method/ACTUAL_ADOPTION_PROOF_v01.md. The consumer must authenticate all six independent seven-root groups and both exact local outputs, preserving distinct field and matrix result/receipt hashes. Its proposed output interface matches the complete-union protocol of AN737.
+
+After the current sole scientific calculation finishes, the remaining near calculations can proceed under the already adopted480-second requests. No other agent code is executed here and no old process is signalled. Full near norms, the complete background union, H4 remainder, inverse, O3 and existence remain OPEN at this publication.

@@ -1,0 +1,29 @@
+# Exact structure of the registered b18s2 correction to Candidate 007
+
+Written 2026-11-03T09:26:04Z, before new application code or arithmetic.
+
+## Exact statement and hypotheses
+
+The immutable snapshot is C2-N1-013-phi-007-sector-d8-leg24-lat-nf2, registered2026-11-03T08:55:31Z. Its raw correction SHA256 is a16e9d85d5362860c9772388be9d5ab9d4764ad53b729a70ead31ae6bcb32c2a and manifest SHA256 is 615f09c58c07ee4845a5e1bc3f321f8cc427f06bfdde5a75b3166f0f95f6c9df. Fix c=4076476460239181/2251799813685248, mu=4/c-3, e=mu-2 and q=21/10. The base quotient file, SHA2560973c3659f5ad0b5a3b2087a9e91ea61408b4356cee11006773879c13f9bfe20, agrees exactly with authoritative Candidate007, SHA256ed4962328d88fa141fd1a08276a9bcbece0c07b4dcda1aa8a49d493f26053d21, by the accepted full canonical identity in ../galerkin_conditioning/verification/quotient_identity_v01.json. Neither file is changed.
+
+Write s=x^2+y^2 and H_n=Im((x+iy)^n). The correction is a finite sum phi of atoms a H_n s^h(1+s)^b(t+s)^(-d)P_k(2s/(t+s)-1), with exact rational a,b,t, positive t, odd positive integer n and nonnegative integers h,d,k. Every atom must satisfy tau=n+2h+2b-2d<=mu. Put rho_star=rho_007-Delta phi, u_star=u_007+(-phi_xy,phi_xx), and F_star=(cX+u_star).grad rho_star-rho_star. The assertions below are conditional on successful complete finite checks of these hypotheses and all stated hashes. Particular scalar bounds will be stated only after execution.
+
+## Representation and exact origin argument
+
+The Legendre polynomial identity P_k(2z-1)=sum_(j=0)^k (-1)^(k+j) binom(k,j)binom(k+j,j) z^j expands every atom into elementary atoms. Independently the three-term Legendre recurrence yields the same exact polynomial. Substituting z=s/(t+s) replaces h,d by h+j,d+j, so tau is unchanged. Full exact merging, including all cancellations, gives the canonical elementary potential. Equality of the two complete maps proves equality of every derivative, not merely values at sampled points. The producer's exported map and original cubic and leading-sector metadata are then checked against this independent map.
+
+Let A and B be defined by the homogeneous cubic part phi_3=A(x^2y+y^3)+B(3x^2y-y^3). Then phi_3=(A+3B)x^2y+(A-B)y^3. Direct differentiation gives ell(-Delta phi)=2A+6B and partial_y(-Delta phi)(0)=-8A. Consequently an exact A+3B=0 preserves c+ell(rho_star)=1, and the complete origin slope is a_star=a_007-8A. If a_star>=q(2c-2), the accepted origin matrix formula gives cap margin c+1-q. This is the matrix value at the origin, not a positive global background gap.
+
+For an elementary atom, the contributions to A are a t^(-d)(b-d/t) when n=1,h=0 and a t^(-d) when n=1,h=1; the contribution to B is a t^(-d) when n=3,h=0; all others are zero. The checker sums them exactly. A separate Python-Fraction reconstruction expands H_n and s^h into Cartesian monomials of degree at most three, differentiates that polynomial and checks the same cubic, slope and displayed endpoint directions. The base alias records used here carry the previously checked exact identity transport from the authoritative base; the present application revalidates their files. No structural or residual value for the earlier b7 correction transfers.
+
+## Exact far-field sector argument
+
+Each atom has leading potential r^tau sin(n theta); the shifted Legendre factor tends to P_k(1)=1. If tau=mu, the correction's density has leading coefficient a(n^2-mu^2)r^e sin(n theta). Its contribution to the leading residual sector is (ce-1)a(n^2-mu^2). At tau<mu it contributes no term at exponent e. Since all corrections have tau<=mu, the already proved correction-class bookkeeping leaves every forbidden sector strictly above e unchanged. The accepted base has all eleven such sectors zero. The complete leading sine coefficient vector is the accepted base vector plus the exact correction vector at every mode, with none omitted. Its squared circle norm is pi times the sum of all coefficient squares, using the unnormalized measure dtheta on0<=theta<=2pi. A rational Machin enclosure for pi independently verifies the displayed circle-norm endpoints by squaring. A coefficient Euclidean norm without the factor sqrt(pi) is a different convention.
+
+A nonzero complete leading vector proves only that this asymptotic coefficient does not vanish. It gives neither a specified-radius lower bound nor a complete tail norm without a remainder estimate. Exact origin cancellation and class constraints alone do not prove a small residual. The accepted all-order weighted Sobolev membership theorem for this correction class applies at sigma<4(1-1/c), including1 and7/5, after every atom hypothesis is checked; it supplies membership rather than a norm size or inverse estimate.
+
+## Source bindings, evidence and limitations
+
+The source and manifest are copied byte-for-byte into data/ and verified against their immutable hashes. The original schema, base hash and full atom counts are checked. The existing independent Legendre converter, structural checker and Python-Fraction reducer are reused without code changes. Their code and analytic proof hashes, the new request, exact base identity and aliases are included in the evidence bindings. Computations run serially on the assigned CPU; actual start and end times are preserved. RESULT_PROOF.md will give the checked scalar endpoints, actual counts, source hashes and final scope.
+
+This is a new source-specific application of ../legendre_exact_bridge/PROOF.md, ../fitted_center_constraints/PROOF.md and the accepted base identity-transport argument in ../fitted_center_constraints/REFERENCE_B7_PROOF.md. Full residual norms, background infima, inverse constants, invariant-ball closure and stationary existence remain separate open obligations. No formal proof-assistant build is authorized.

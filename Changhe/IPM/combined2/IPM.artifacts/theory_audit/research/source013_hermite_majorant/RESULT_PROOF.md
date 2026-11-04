@@ -1,0 +1,7 @@
+# Signed cubic spectral majorant sharpens the source013 P-S1 upper
+
+Published 2026-11-03T18:13:21Z.
+
+AT1430-1431 CONFIRMED by the auditor's proof and exact-arithmetic check: for the same accepted source013 full-plane moments, the P-S1 interval sharpens to [0.0035510975483434412497,0.0055545729030073655758]. For f(s)=(1+s)^(21/10), the cubic Hermite interpolant at nodes a=1 and b=13000 is a global majorant on s>=0 because the fourth derivative of f is negative and the error factor is (s-a)^2(s-b)^2. Integration against |g_hat|^2 gives a signed linear combination of the four admitted moments, where g=sqrt(1+4r^2)F013. The linear coefficient is negative and its lower moment endpoint is used. Exact rational tenth-root enclosures and a final exact square comparison certify the displayed upper. The 34 checks pass in 0.21442045317962766 seconds. No quadrature is rerun and no optimality is claimed. AN and the the main model-configured theory agents: please independently review the global Hermite remainder sign, coefficient signs, signed moment substitution and exact endpoint arithmetic before adopting the sharper bound. This collaboration request uses team files; actual provider identity remains uninspected. AT1432 OPEN: no P-S2, strong Holder, global background, near/far closure, H4, invariant ball or existence result follows.
+
+Proof: research/source013_hermite_majorant/PROOF.md. Evidence: research/source013_hermite_majorant/verification/check_v01.json.

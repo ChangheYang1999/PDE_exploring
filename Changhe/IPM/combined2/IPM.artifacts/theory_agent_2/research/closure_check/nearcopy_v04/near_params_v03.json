@@ -1,0 +1,191 @@
+{
+ "version": "near_params_v03",
+ "written": "2026-11-04 shift 8 (c2-t1); replaces near_params_v02 (unchanged and frozen) for near_check_v03.py. Against near_params_v02 only the four (R4) entries (values of notes/T2_NEAR_R4_v02.md of lane c2-t2, as in its near_params_r4_v02.json) and the sources of beta_star change",
+ "use": "Input file of near_check_v03.py. kind: upper (a certified replacement must be at most this value), lower (at least this value), exact or fixed. status: FIXED (a choice of the construction), EXACT, CONFIRMED (certified by the cited audit, possibly under the listed conditions), FLOAT (a numerical stand-in, no bound), UNAUDITED (an outward computation of a team lane that no audit covers yet), TARGET (a value that a certified replacement must meet; no bound at this value is known), REGIONAL (certified on a stated region only, not where the program needs it), OPEN (no bound is known). Only FIXED, EXACT and CONFIRMED count as certified.",
+ "fixed": {
+  "q": {
+   "value": "21/10",
+   "kind": "exact",
+   "status": "FIXED",
+   "source": "P-S1"
+  },
+  "sigma": {
+   "value": "1",
+   "kind": "exact",
+   "status": "FIXED",
+   "source": "P-S1"
+  },
+  "r0": {
+   "value": "1/2",
+   "kind": "exact",
+   "status": "FIXED",
+   "source": "P-S1"
+  },
+  "c": {
+   "value": "4076476460239181/2251799813685248",
+   "kind": "exact",
+   "status": "EXACT",
+   "source": "the binary64 reference value c of Candidate 007"
+  },
+  "C_D": {
+   "value": "80127/40000",
+   "kind": "exact",
+   "status": "EXACT",
+   "source": "AT-428 (constant of the localization lemma)"
+  },
+  "t": {
+   "value": "1/10",
+   "kind": "exact",
+   "status": "FIXED",
+   "source": "free parameter t in (0, 1) of HF1-NEAR"
+  },
+  "nu": {
+   "value": "1/40",
+   "kind": "exact",
+   "status": "FIXED",
+   "source": "low cut scale; quartic cut psi = exp(-|xi|^4), (2 pi)^-2 ||psi||_2^2 = 1/(8 sqrt(2 pi)) (NR-27; AT-1094, AT-1134)"
+  },
+  "lam_k": {
+   "value": "256/25",
+   "kind": "exact",
+   "status": "FIXED",
+   "source": "split point of the kappa_j uppers (theory_v12 V12-1 (f) 1)"
+  }
+ },
+ "global": {
+  "D4_an": {
+   "value": "444.194",
+   "kind": "upper",
+   "status": "FLOAT",
+   "source": "c2-t2 NOTES 2026-11-03T17:59Z, FLOAT D_4(a_n); (R1)"
+  },
+  "D5_an": {
+   "value": "4186.35",
+   "kind": "upper",
+   "status": "FLOAT",
+   "source": "c2-t2 NOTES 2026-11-03T17:59Z, FLOAT D_5(a_n); (R1)"
+  },
+  "D6_an": {
+   "value": "63050.4",
+   "kind": "upper",
+   "status": "FLOAT",
+   "source": "c2-t2 NOTES 2026-11-03T17:59Z, FLOAT D_6(a_n); (R1). A certified lower is D_6(a_n) >= 62748 (AT-1467)"
+  },
+  "K4": {
+   "value": "7716296798651/50000000 - 9958486957/12500000000",
+   "kind": "lower",
+   "status": "CONFIRMED",
+   "source": "K_m = lower E_m(b a_c) - upper E_m((1 - b) a_c), radial identity (AT-1344 to AT-1346) with the endpoints of AT-1453, AT-1454"
+  },
+  "K5": {
+   "value": "701148547241569/50000000 - 20680828134801/1000000000000",
+   "kind": "lower",
+   "status": "CONFIRMED",
+   "source": "as K4"
+  },
+  "K6": {
+   "value": "93161147644159911/50000000 - 65383366747743/62500000000",
+   "kind": "lower",
+   "status": "CONFIRMED",
+   "source": "as K4 (K_6 = 1863221906.74933, AT-1454)"
+  },
+  "sup_neg_aW2": {
+   "value": "4877321332131611/562949953421312",
+   "kind": "upper",
+   "status": "UNAUDITED",
+   "source": "upper of sup((a_n)_- W^2), W^2 = 1 + 4|x|^2; c2-t2 notes/T2_NEAR_R4_v02.md, Proposition R4 (CLAIMED; outward ball arithmetic with the Taylor-model panel engine of Theorem C1, AT-1230 to AT-1234, and the near cut factor; files listed in research/near_r4/SHA256SUMS_near_r4_v02 of lane c2-t2); UNAUDITED until c2-at's audit and c2-an's replay; (R4)"
+  },
+  "sup_pos_aW2": {
+   "value": "4806001960566741/562949953421312",
+   "kind": "upper",
+   "status": "UNAUDITED",
+   "source": "upper of sup((a_n)_+ W^2); c2-t2 notes/T2_NEAR_R4_v02.md, Proposition R4 (CLAIMED; outward ball arithmetic with the Taylor-model panel engine of Theorem C1, AT-1230 to AT-1234, and the near cut factor; files listed in research/near_r4/SHA256SUMS_near_r4_v02 of lane c2-t2); UNAUDITED until c2-at's audit and c2-an's replay; (R4)"
+  },
+  "L1_pos": {
+   "value": "4.086439259",
+   "kind": "upper",
+   "status": "UNAUDITED",
+   "source": "upper of ||(a_n)_+||_1 (decimal rounded up); c2-t2 notes/T2_NEAR_R4_v02.md, Proposition R4 (CLAIMED; outward ball arithmetic with the Taylor-model panel engine of Theorem C1, AT-1230 to AT-1234, and the near cut factor; files listed in research/near_r4/SHA256SUMS_near_r4_v02 of lane c2-t2); UNAUDITED until c2-at's audit and c2-an's replay; (R4)"
+  },
+  "Lambda_plus": {
+   "value": "5901153228680477/281474976710656",
+   "kind": "upper",
+   "status": "UNAUDITED",
+   "source": "outward upper U of Lambda_+(a_n) = sup max(0, lambda_max Hess a_n), with 0 <= U - F <= 4.330309019e-7; F = 8(2c - 1) = 2950576553396557/140737488355328, about 20.9651073632, is the origin value and a lower (AT2364). The FLOAT 20.862082 of near_params_v01 is below F and has no certified replacement (AT2365); its maximum with F is not a certified upper (AT2366, AT2432), and the value F of near_params_v02 was the uncertified target U = F. c2-t2 notes/T2_NEAR_R4_v02.md, Proposition R4 (CLAIMED; outward ball arithmetic with the Taylor-model panel engine of Theorem C1, AT-1230 to AT-1234, and the near cut factor; files listed in research/near_r4/SHA256SUMS_near_r4_v02 of lane c2-t2); UNAUDITED until c2-at's audit and c2-an's replay; (R4)"
+  },
+  "beta_star": {
+   "value": "704955805507/1000000000000",
+   "kind": "lower",
+   "status": "REGIONAL",
+   "source": "the whole-plane matrix rate of the H4 join (AT2333). Both auditors certify M >= (704955805507/10^12) I on 0 <= r^2 <= 61/67, that is t = r^2/(1 + r^2) in [0, 61/128], the roots 000 to 060 (c2-an AN695, AN700, AN706; c2-at AT2372, AT2373, AT2384 to AT2386), and M >= (761272835221/10^12) I on r^2 >= 49/15 (AT2400 to AT2402; c2-an AN717). The gap 61/67 < r^2 < 49/15 is not recounted, so this value is not a whole-plane lower (AT2374, AT2403 OPEN); there the certified level is 3/5 on the certified roots and some roots have no certificate"
+  },
+  "eps_rest": {
+   "value": "0",
+   "kind": "upper",
+   "status": "OPEN",
+   "source": "every other full-L^2 loss of the H4 join, from the remainder pieces T_IS, C_tr and C_vs1 to C_vs3 of H4-R (H4-REST); no 013 bound. The value 0 is a stand-in"
+  }
+ },
+ "cases": [
+  {
+   "label": "plan of record",
+   "b0": "11/20",
+   "mu": "72",
+   "kappa_0": {
+    "value": "3.20696761",
+    "kind": "upper",
+    "status": "CONFIRMED",
+    "source": "kappa_0^Psi(72), AT-1491, AT-1492; (R2)"
+   },
+   "kappa_2q": {
+    "value": "1059792560",
+    "kind": "upper",
+    "status": "CONFIRMED",
+    "source": "kappa_2q^Psi(72), AT-1491, AT-1492; (R2)"
+   },
+   "kappa_j": {
+    "value": "37912",
+    "kind": "upper",
+    "status": "CONFIRMED",
+    "source": "kappa_j^Psi(1/40, 72) for j = 1 and, by rotation, j = 2, lam_k 256/25, quartic cut, AT-1491, AT-1492; (R2)"
+   },
+   "D_allow": {
+    "value": "1.22e11",
+    "kind": "lower",
+    "status": "CONFIRMED",
+    "conditions": "CE budget at stipulated inputs: beta_0 = 7/4, ||F_*||_2 <= 7.97e-7, N(F_*) <= 0.006 (budget_013g)",
+    "source": "AT-831; c2-t2 T2_O2O3_FINAL_v02 section 0 item 3"
+   }
+  },
+  {
+   "label": "registered fallback",
+   "b0": "103/200",
+   "mu": "68",
+   "kappa_0": {
+    "value": "3.2126528",
+    "kind": "upper",
+    "status": "UNAUDITED",
+    "source": "research/kernel_n6 runs split_ub_mu68_R16 and kappa_ub_mu68 (outward arb, 3.212652799 rounded up), same method as AT-1491 at mu 72"
+   },
+   "kappa_2q": {
+    "value": "836515933",
+    "kind": "upper",
+    "status": "UNAUDITED",
+    "source": "as kappa_0 (836515932.3 rounded up)"
+   },
+   "kappa_j": {
+    "value": "33926.469",
+    "kind": "upper",
+    "status": "UNAUDITED",
+    "source": "research/kernel_n6 runs kappa_ub_g_mu68_nu1_40_lam256_25, kappa_ub_mu68, split_ub1_mu68_lo256_25_R16 (33926.46819 rounded up)"
+   },
+   "D_allow": {
+    "value": "9.86935e10",
+    "kind": "lower",
+    "status": "UNAUDITED",
+    "conditions": "CE budget at stipulated inputs: beta_0 = 7/4, ||F_*||_2 <= 7.97e-7, N(F_*) <= 0.006",
+    "source": "research/kernel_n6/b0scan/budget_b0scan3.out, b0 0.515 (six-digit lower decimal of the budget_013g method)"
+   }
+  }
+ ]
+}

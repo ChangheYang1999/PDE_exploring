@@ -1,0 +1,71 @@
+near_check_v01 (c2-t1, 2026-11-04 shift 7): the near part of the final closure check of c2-coord 07:08Z item
+3(a) (c2-t1 note 83). A conditional program: every input is a named parameter of near_params_v01.json with a
+direction, a status and a source; the arithmetic is outward (python-flint arb, 256 bits), and every comparison is
+decided only when the whole ball lies on one side.
+
+For each case (b0, mu) it evaluates
+  (a) the budget inequality (R1) of HF1-NEAR (AT-691) with tail B (AT-757), the quartic low cut (NR-27; AT-1094,
+      AT-1134) and the core split a_n = a_c + a_r (NR-25, NR-30, NR-32):
+        e_up = (1 + q^2) max(Lambda_+, 8 (2c - 1))/(2 mu^2) + A4c (1024 c + M4^+(a_r))/mu^4
+               + tail_B(a_c) + tail_B(a_r) + t^-1 ||(a_n)_+||_1 nu^2/(8 sqrt(2 pi))  <=  c + 1 - q - b0,
+      A4c = pi^2 (1 + c_aw/2) + C_D/2, c_aw = 2 q^2 (sinh(x0)/x0)^2, x0 = (q/2) log 2,
+      M4^+(a_r) = ((D4 D6 + D5^2)/(2 pi))^(1/2) at D_m = D_m(a_r), D_m(a_r)^2 <= D_m(a_n)^2 - K_m,
+      tail_B(a) = (4/3)^q T_q(a; 3 mu/4) + (8/mu)^q T_q(a; mu/2),
+      T_q(a_c; v) <= U_q(v) = c pi^(1/2) v^(q + 3/2) e^(-v/2)/(2 (v - 2q - 1))      (NR-32, v > 2q + 1),
+      T_q(a_r; v) <= v^(q - 5) D6(a_r)/(4 pi (5 - q))^(1/2)                          (NR-25 (i), m = 6);
+  (b) the near price P_HF = 2^sigma [sup(|a_n| W^2) kappa_0 kappa_2q + (1 - t)^-1 sup((a_n)_+ W^2) 2 kappa_j^2],
+      with sup(|a_n| W^2) = max(sup((a_n)_- W^2), sup((a_n)_+ W^2)), an upper for the near constant C_N, and its
+      comparison with the allowance D (the room D - P_HF is what is left for the far and remainder charges of H4-R);
+  (c) the (R1) threshold: the largest D6(a_n) upper, on a grid of 1/10, at which (a) passes with the other inputs.
+Every term is nondecreasing in each upper and nonincreasing in each lower (K_m, D), so the conclusions hold for any
+certified bounds that are at least as good as the parameter values.
+
+What follows if (a) and (b) pass with every input certified and the hypotheses H1 to H4 of NEAR_CHECK_v01.md hold:
+for every h with g = J^q W h in L^2, (TII + C_aw)[a_n](g) <= (c + 1 - q - b0) ||g||^2 + P ||h||^2 with P the printed
+upper, so C_N <= P <= D at that (b0, mu). The far charges, H4-R, Theorem B and Lemma KB are c2-t2's part.
+With FLOAT or UNAUDITED inputs the output is a dry run and proves nothing.
+
+Usage: python3 -B near_check_v01.py [params.json] > near_check_v01.out; writes near_check_v01.result.json.
+Parameter file near_params_v01.json (SHA256 1b5d87bddfa9ff69b3fb173d9590530919feac4c84e5d3fdb9ff513b8126f0b2)
+Constants (balls): cap = c + 1 - q = [0.710319210200 +/- 1.94e-15]; 8 (2c - 1) = [20.9651073632 +/- 3.3e-14]; c_aw = [10.4915653561 +/- 1.50e-12]; A4c = [62.6449917075 +/- 3.74e-11]; 1024 c = [1853.76687124 +/- 4.80e-9]
+K_m (exact rationals, decimal): K4 [154325.139294063 +/- 4.41e-10], K5 [14022950.2640032 +/- 4.52e-8], K6 [1863221906.74933 +/- 2.57e-7]
+
+Case plan of record: b0 = 11/20, mu = 72
+  side conditions: mu >= 1 yes; 2 nu <= mu yes; mu/2 > 2q + 1 (NR-32) yes; 0 < b0 < c + 1 - q yes; b0 > 0.152070 (loss of Lemma KB, AT1688) yes
+  D_m(a_r) uppers from the radial identity: D4 2.07323830e2, D5 1.87151705e3, D6 4.59579268e4
+  | term of e_up | upper |
+  |---|---:|
+  | Lambda term (1 + q^2) max(Lambda_+, 8 (2c - 1))/(2 mu^2) | 1.09395478e-2 |
+  | M4 term A4c (1024 c + M4^+(a_r))/mu^4 | 7.67826924e-3 |
+  | tail_B(a_c) (NR-32) | 3.34435221e-6 |
+  | tail_B(a_r) (NR-25 (i), m = 6) | 1.34135442e-1 |
+  | e_nu term t^-1 ||(a_n)_+||_1 nu^2/(8 sqrt(2 pi)) | 1.26049623e-3 |
+  | e_up | 1.54017100e-1 |
+  | c + 1 - q - b0 | [0.160319210200 +/- 1.94e-15] (ball) |
+  (a) budget margin c + 1 - q - b0 - e_up >= 6.30211084e-3: PASS
+  (b) P_HF <= 1.13280775e11 (kappa_0 kappa_2q part 5.881450e10, kappa_j part 5.446628e10); D >= 1.22000000e11; P_HF/D <= 9.285310e-1; room D - P_HF >= 8.719225e9: PASS
+  (c) (R1) threshold: (a) passes for every D6(a_n) upper <= 64626.7 at the other inputs
+  inputs that are not certified: D4_an (FLOAT), D5_an (FLOAT), D6_an (FLOAT), L1_pos (FLOAT), Lambda_plus (FLOAT), sup_neg_aW2 (FLOAT), sup_pos_aW2 (FLOAT)
+  conditions of the certified inputs: CE budget at stipulated inputs: beta_0 = 7/4, ||F_*||_2 <= 7.97e-7, N(F_*) <= 0.006 (budget_013g)
+  status: DRY RUN: proves nothing
+
+Case registered fallback: b0 = 103/200, mu = 68
+  side conditions: mu >= 1 yes; 2 nu <= mu yes; mu/2 > 2q + 1 (NR-32) yes; 0 < b0 < c + 1 - q yes; b0 > 0.152070 (loss of Lemma KB, AT1688) yes
+  D_m(a_r) uppers from the radial identity: D4 2.07323830e2, D5 1.87151705e3, D6 4.59579268e4
+  | term of e_up | upper |
+  |---|---:|
+  | Lambda term (1 + q^2) max(Lambda_+, 8 (2c - 1))/(2 mu^2) | 1.22644065e-2 |
+  | M4 term A4c (1024 c + M4^+(a_r))/mu^4 | 9.65067458e-3 |
+  | tail_B(a_c) (NR-32) | 9.16101164e-6 |
+  | tail_B(a_r) (NR-25 (i), m = 6) | 1.58666923e-1 |
+  | e_nu term t^-1 ||(a_n)_+||_1 nu^2/(8 sqrt(2 pi)) | 1.26049623e-3 |
+  | e_up | 1.81851661e-1 |
+  | c + 1 - q - b0 | [0.195319210200 +/- 1.94e-15] (ball) |
+  (a) budget margin c + 1 - q - b0 - e_up >= 1.34675494e-2: PASS
+  (b) P_HF <= 9.01223642e10 (kappa_0 kappa_2q part 4.650579e10, kappa_j part 4.361659e10); D >= 9.86935000e10; P_HF/D <= 9.131540e-1; room D - P_HF >= 8.571135e9: PASS
+  (c) (R1) threshold: (a) passes for every D6(a_n) upper <= 65919.9 at the other inputs
+  inputs that are not certified: D4_an (FLOAT), D5_an (FLOAT), D6_an (FLOAT), D_allow[registered fallback] (UNAUDITED), L1_pos (FLOAT), Lambda_plus (FLOAT), kappa_0[registered fallback] (UNAUDITED), kappa_2q[registered fallback] (UNAUDITED), kappa_j[registered fallback] (UNAUDITED), sup_neg_aW2 (FLOAT), sup_pos_aW2 (FLOAT)
+  conditions of the certified inputs: CE budget at stipulated inputs: beta_0 = 7/4, ||F_*||_2 <= 7.97e-7, N(F_*) <= 0.006
+  status: DRY RUN: proves nothing
+
+wrote near_check_v01.result.json

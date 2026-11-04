@@ -1,0 +1,30 @@
+# X6 theory audit status
+
+Recorded 2026-11-03T17:45:11.833322+00:00. This report freezes only results already reviewed through AT1401. Later completions require a dated addendum. The exact evidence bindings are in X6_THEORY_AUDIT_v01.json. Reading-order index: ../research/README.md. Chronological claim decisions: ../AUDIT_LEDGER.md.
+
+The campaign has no complete stationary existence certificate. Candidate007, exact c=4076476460239181/2251799813685248 and correction013 remain fixed. The conditional inverse and invariant-ball reductions retain their full hypotheses; the source-specific closure inputs are incomplete.
+
+| Item | Current audit decision | Scope and evidence |
+|---|---|---|
+| Source013 whole-plane unweighted residual upper | CONFIRMED | Integral of squared residual <=1.5722970904e-12, hence norm <=1.2540e-6. AT1390-1393 and independent AN296. All114 annular panels and both endpoint regions are included. |
+| Complete annular derivative energies | CONFIRMED | AT1399-1401 verifies actual request71, all114 panels, six regional actual reviews and exact sums of full ordered tensor energies of W F through order3. W=sqrt(1+4r^2), 1/50<=r<=10000. |
+| Source013 weighted H^(21/10) and sharper two-sided unweighted norm | OPEN | The complete-annulus review is published. The subsequent six-stage norm consumer still needs its concrete request and actual-output reviews. A method or request review is not an actual numerical bound. |
+| Source013 global background | OPEN | Complete2048-bit local replays confirm roots000,002,004: M>=(3/5)I, gradient <=71/500, strain <=137/125 at the fixed tuple. Root006 is running. These nonadjacent slabs do not form a global certificate. All128 roots, original full-owner successes and global assembly remain required. |
+| Far coefficient physical-space inputs | CONFIRMED within their stated source and containing-arithmetic hypotheses | C1, full-tail oscillation and moment uppers, and SC-W are available. AT1336-1342 replayed all392 moment panels and analytic exterior remainders. AT1366-1369 confirms the windowed Hessian bound for all six windows. |
+| Full far operator bound | OPEN | The Fourier-band bound or the route F-a absolute-Fourier majorant and Schur bound remain uncertified. The physical-space results do not close those gaps. The required global strain bound is also open. |
+| Near coefficient whole-plane numerical bounds | OPEN | The exact source, origin/exterior certificates, two local benchmarks and consumer methods are checked. Five original561-panel cover assignments remain unfinished. No whole-plane near derivative norm follows from their partial outputs. |
+| Signed radial core reduction | CONFIRMED | NR30 with the stated L2 Fourier convention; the correct remainder is f+C, C=c/(1+4r^2), since f(0)=-c. Exact angular orthogonality gives E_m(f+C)=E_m(f)-E_m(Cb)+E_m(C(1-b)) on each concentric region for the implemented Laplacian energies m=4,5,6. AT1328-1332, AT1343-1350, AT1363-1365. Actual remainder bounds remain open. |
+| Strong residual norm S_F | OPEN | AT1381-1386 confirms the repaired sharp Hessian constant and exponent endpoint bound. Existing squared-energy archives do not supply signed modewise jets for a supremum certificate. |
+| Actual generator inverse, H4 and invariant ball | OPEN as a source-specific closure | Conditional results remain available, including the complete generator/domain and reference-ball hypotheses. No full inverse is inferred from a frozen-coefficient estimate. |
+
+The newly certified far-tail charge at Rw=200, Ww=200 is OMF<=0.11404. The windowed Hessian quantity obeys SC<=4194197216881219/9007199254740992. Route F-a still requires an upper for max(SC,A_E)+S+OMF: the certified SC and OMF do not bound the missing A_E or S. The original whole-tail moment replay is an independent AT computation; AN explicitly has not replayed that full computation. Do not describe it as two auditor numerical replays.
+
+The partial-to-whole residual improvement is real, but no ratio to a heuristic witness is a certified closure ratio. T1 note50b's displayed second witness ratio >=2.52 is false at its displayed inputs; >=2.518 is valid. The3.88 display is valid. The report must retain the HEURISTIC label for both witnesses.
+
+For any use of the conditional closure, retain delta>alpha/(2c-2), strictly, together with its upper restriction and all weight and regularity assumptions. Retain a full real-space reference ball, positive radius, the fixed-k actual inverse, H4, the forcing norm and every loss term. The perturbed frozen linear map omits the derivative term U[.] dot grad k and cannot be substituted for the Frechet derivative. No source009 norm is transferred to source013 without a proved same-source comparison.
+
+The core-remainder diagnostic remains FLOAT. Its first attempt failed on a list/array multiplication; the corrected owner source is running and its source repair has an independent AN check. A complete FLOAT table and resolution check precede any scalar certificate request, as instructed by the coordinator. No runtime or feasibility claim is inferred from its unfinished run.
+
+Work order after this checkpoint: concrete whole-plane norm request and actual output; serial local background actual reviews; new theory claims and the forthcoming theory_v13 integration. Review future near-cover outputs only after the complete prescribed receipts and bindings exist. Preserve failed attempts and publish new versions for repairs.
+
+Model collaboration continues through the the main model-configured theory and coordinator agents, including the core sign, tensor convention, outward-rounding and strong-norm corrections. Their provider model identity has not been independently inspected; no substitute remote model was used. This agent uses only its own directory, core40 or41, one busy computation and one numerical thread. No JavaScript/TypeScript, servers, clusters, remote or paid compute, Lean/Lake, foreign writes or signals, commits/pushes or online posts.
