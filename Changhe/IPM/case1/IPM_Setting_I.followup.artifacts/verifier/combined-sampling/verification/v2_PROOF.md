@@ -55,4 +55,4 @@ The code verifies matching frozen-state and ordered-direction hashes across the 
 
 ## Protocol revision record
 
-The first actual Claude Opus5.5 review ended at22:20:50Z with max_tokens, after confirming the mathematics and identifying provenance/convention gaps. This revision records and repairs those gaps before any mixed arrays or results exist. The original proof, code and plan are retained under verification/v1_*. The sampling weights, states, spaces, gradient choices and matrix definitions have not changed. The review's optional interpolation observations are not needed here.
+The first actual the main model review ended at22:20:50Z with max_tokens, after confirming the mathematics and identifying provenance/convention gaps. This revision records and repairs those gaps before any mixed arrays or results exist. The original proof, code and plan are retained under verification/v1_*. The sampling weights, states, spaces, gradient choices and matrix definitions have not changed. The review's optional interpolation observations are not needed here.

@@ -4,8 +4,8 @@
   "start_utc": "2026-10-22T05:44:38.982488+00:00",
   "utc": "2026-10-22T05:44:42.083252+00:00",
   "status": "PASS_SYMBOLIC_POLARIZATION_AND_FINITE_PROJECTION_FIXTURES",
-  "proof_sha256": "5938f6fb1e1d96d44cce1e962cb24fc94fd2367d3dca5449a6646174da6de3c6",
-  "code_sha256": "7f397ce03a4ad3058abaeea80a813b641dd41d77760174e8c4a85bd38f1c454a",
+  "proof_sha256": "31fd7b87c27f079284ce6a6d415275262d2aea30313cdb76f54b33f80694f92c",
+  "code_sha256": "bcaf45565225c79e0cd6addb801f06a91e84b2ad549f16fb69b984125d68a40e",
   "parent_pin_count": 2069,
   "symbolic_identities": {
     "polarization_unsymmetric": "0",
@@ -533,8 +533,8 @@
     "start_utc": "2026-10-22T05:44:42.410705+00:00",
     "utc": "2026-10-22T05:44:45.356588+00:00",
     "status": "PASS_INDEPENDENT_FMPQ_POLYNOMIAL_AND_ROW_ELIMINATION_CHECKS",
-    "proof_sha256": "5938f6fb1e1d96d44cce1e962cb24fc94fd2367d3dca5449a6646174da6de3c6",
-    "code_sha256": "505e22d441746b1bf5fdc8cf3ff6565cf4a4ce7c39467069aaad56671325ec76",
+    "proof_sha256": "31fd7b87c27f079284ce6a6d415275262d2aea30313cdb76f54b33f80694f92c",
+    "code_sha256": "919a3a87eb81d2010085659b214b98924280451552338e35350404545070e901",
     "check_sha256": "9f5823900f93b014ce539c9916d34835f5f4c9bf19989c55c7121c023c7fd7fd",
     "parent_pin_count": 2069,
     "ring_checks": {

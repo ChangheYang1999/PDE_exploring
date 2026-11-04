@@ -234,7 +234,7 @@ the general compatibility and whole-plane integration statements above.
 This acceptance reads its complete proof and exact verification code,
 checks the stated hypotheses against the original theorem, and freezes
 the review, code and output. The reviewer is configured as
-us.anthropic.claude-opus-5-5; its actual provider identity cannot be
+the main model; its actual provider identity cannot be
 observed from this lane. No replacement model or remote call is used.
 
 The analytic arguments for all indices use monotonicity in ell and k,

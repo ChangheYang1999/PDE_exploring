@@ -125,5 +125,5 @@ It does not rule out a sharper estimate on solutions of the stationary
 equation, on a restricted tail subspace, or under additional quantitative
 hypotheses. It proves no inverse, existence result or new candidate
 exclusion. Model collaboration used the existing independent theory
-lane configured for Claude Opus5.5; provider identity is not independently
+lane configured for the main model; provider identity is not independently
 observable from these files.

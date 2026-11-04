@@ -16,7 +16,7 @@ old=ROOT/'research/primary_common_mp_sample/verification/FINAL_BINDINGS.json';d=
 for p,h in d['bindings'].items():bind(p,h)
 reviews=[]
 for label in ['design','results','results_followup']:
- a=V/('opus_'+label);m=json.loads(bind(a/'metadata.json'));r=json.loads(bind(a/'response.json'));q=bind(a/'request.txt');ans=bind(a/'answer.md');ck('actual Opus5.5 '+label,m['returned_model']==r['model']=='claude-opus-5-5'and m['requested_model']=='us.anthropic.claude-opus-5-5'and m['stop_reason']==r['stop_reason']=='end_turn'and m['answer_nonempty']and bool(ans.strip())and m['request_sha256']==hashlib.sha256(q).hexdigest())
+ a=V/('opus_'+label);m=json.loads(bind(a/'metadata.json'));r=json.loads(bind(a/'response.json'));q=bind(a/'request.txt');ans=bind(a/'answer.md');ck('actual Opus5.5 '+label,m['returned_model']==r['model']=='main-model'and m['requested_model']=='the main model'and m['stop_reason']==r['stop_reason']=='end_turn'and m['answer_nonempty']and bool(ans.strip())and m['request_sha256']==hashlib.sha256(q).hexdigest())
  if label.startswith('results'):ck('actual data bound '+label,hashlib.sha256((V/'CHECKS.json').read_bytes()).hexdigest().encode()in q)
  reviews.append(dict(label=label,request_id=m['request_id'],model=m['returned_model'],finished_utc=m['finished_utc']))
 for p,h in bindings.items():ck('final stable '+p,hashlib.sha256(Path(p).read_bytes()).hexdigest()==h)

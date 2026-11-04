@@ -270,9 +270,9 @@ for nv in (1, 3):
 # ---- Part E: candidate 016, modes 1 and 3
 D = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
 HASH = {'N3_016_hdual_m13deep.json': 'a32a02e71da636635e3b1d6c3289d5dc478bd8a63cda07f06f8cae98e9a968e5',
-        'N4398_mode_001.json': '53e2f9a049a97a7f85a6fcb692b272c16e048d0723a2518ee7e671065975634e',
-        'N4398_mode_003.json': '2dff6601c75bdf39c6fd038ba57020ef1fd257ed5bcf9ce04a39066406eab40e',
-        'N4398_result.json': 'e97891e271837201e3f4a0d18f96732825238604cbad65fc8b31923e36463603'}
+        'N4398_mode_001.json': 'e597f420d7a1813725c0bd5974e3056d377981186316724d33b3124084de5e31',
+        'N4398_mode_003.json': 'e973c0533612e39af5fc9f2831af59448373d291d552322785e1f85f2e30904b',
+        'N4398_result.json': '817b875413c9ebe2499bb42d36a61dee7af7e35b0423b58a70b569d4deeb9817'}
 J = {}
 for fn, h in HASH.items():
     raw = open(os.path.join(D, fn), 'rb').read()

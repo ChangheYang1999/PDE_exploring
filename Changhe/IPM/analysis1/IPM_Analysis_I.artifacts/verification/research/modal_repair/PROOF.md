@@ -1,6 +1,6 @@
 # A consistent exactification of the finite modal trial
 
-Date: 2026-10-20. Status: CONFIRMED within the stated scalar and exactification scope, after two completed interval calculations, source audit, and actual Claude Opus 5.5 review. This produces a normalized kinematically admissible trial, not a stationary solution.
+Date: 2026-10-20. Status: CONFIRMED within the stated scalar and exactification scope, after two completed interval calculations, source audit, and actual the main model review. This produces a normalized kinematically admissible trial, not a stationary solution.
 
 ## Exact inputs and convention
 
@@ -104,4 +104,4 @@ Both interval calculations imply c0 in [15.7260878319246786225638146971829, 15.7
 
 The two implementations differ in endpoint-jet reconstruction, middle integral evaluation, and interval engines. They share the exact input and the analytic join, slope, outer and inner integral, and cost formulas. Agreement tests those implementations and arithmetic; the shared formulas rely on the proofs above. The second script compares scalar outputs, not every individual join coefficient. Python integer and Fraction arithmetic and the outward arithmetic implementations of python-flint/Arb and mpmath.iv are trusted computational dependencies. No formal verification of either numerical library is claimed.
 
-Actual Claude Opus 5.5 accepted the formulas and Gaussian remainder, after follow-up on the exact-real dependent coefficients. Its qualifications about shared formulas, extra input checks and arithmetic trust were verified and incorporated. No transport residual, linear inverse, closing inequality or existence verdict follows.
+Actual the main model accepted the formulas and Gaussian remainder, after follow-up on the exact-real dependent coefficients. Its qualifications about shared formulas, extra input checks and arithmetic trust were verified and incorporated. No transport residual, linear inverse, closing inequality or existence verdict follows.

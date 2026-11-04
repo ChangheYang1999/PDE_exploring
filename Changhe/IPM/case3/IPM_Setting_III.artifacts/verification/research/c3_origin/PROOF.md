@@ -1,6 +1,6 @@
 # Cubic origin relations for an exact C3 profile
 
-Status: CONFIRMED after independent derivation and the completed Opus 5.5 review at ../../evidence/opus_review_09/answer.md. Date: 2026-10-20. The actual returned model was claude-opus-5-5; all proposed clarifications were independently checked.
+Status: CONFIRMED after independent derivation and the completed Opus 5.5 review at ../../evidence/opus_review_09/answer.md. Date: 2026-10-20. The actual returned model was main-model; all proposed clarifications were independently checked.
 
 ## Exact statement and scope
 

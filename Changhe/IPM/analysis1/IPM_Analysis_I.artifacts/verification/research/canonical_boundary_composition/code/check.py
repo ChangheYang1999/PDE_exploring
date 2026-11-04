@@ -49,7 +49,7 @@ def ai(x):x=F(x);return arb(x.numerator)/arb(x.denominator)
 def ae(x):return [qf(x.lower().fmpq()),qf(x.upper().fmpq())]
 def review_gate(v,tag,r,post):
  m=load(B/'notes/reviews'/f'{tag}_metadata.json');raw=load(B/'notes/reviews'/f'{tag}_response.json');text=(B/'notes/reviews'/f'{tag}_response.md').read_text();req=B/'notes/reviews'/f'{tag}_request.txt'
- need(m['actual_response_model']==raw['model']=='claude-opus-5-5' and m['requested_model']=='us.anthropic.claude-opus-5-5' and m['stop_reason']==raw['stop_reason']=='end_turn','actual accepted dependency model')
+ need(m['actual_response_model']==raw['model']=='main-model' and m['requested_model']=='the main model' and m['stop_reason']==raw['stop_reason']=='end_turn','actual accepted dependency model')
  need(m['request_id']==r['request_id'] and m['input_sha256']==r['input_sha256']==sha(req),'actual dependency request binding');need(text=='\n\n'.join(c['text'] for c in raw['content'] if c['type']=='text')+'\n','full raw response');need(datetime.fromisoformat(m['end_utc'])<datetime.fromisoformat(post['utc'])<datetime.fromisoformat(v['utc']),'actual later dependency disposition')
  need(post['review_request_id']==m['request_id'] and post['review_input_sha256']==m['input_sha256'] and post['review_response_sha256']==sha(B/'notes/reviews'/f'{tag}_response.json'),'actual disposition identity')
  return {k:m[k] for k in ['request_id','input_sha256','actual_response_model','stop_reason','start_utc','end_utc']}
@@ -94,7 +94,7 @@ def main():
  need({v['topic']:v['verdict_sha256'] for v in z['dependency_verdicts']}==EDGES,'exact93/98/99 direct edges')
  for topic,h in EDGES.items():need(z['files']['research/'+topic+'/evidence/verdict.json']==h,'actual inherited157 verdict pin')
  reviews={'98':review_gate(x,'full_green_actual_complete',x['actual_output_review'],x['postreview_record']),'156':review_gate(y,'canonical_archive_second_actual',y['actual_output_review'],load(B/'research/canonical_archive_second/evidence/postreview_record.json')),'157':review_gate(z,'canonical_three_cell_actual_v2',z['actual_output_review'],z['postreview_record'])}
- for n,h in [(SOURCE,SSHA),(ARCHIVE,ASHA),(ZPATH,ZSHA),(PART,PSHA),(GREEN,GSHA),('research/modal_repair/PROOF.md','9f97fa684956c47bb5b9547f0fe8fabe1df51f036e312dd7022873f8cec37843'),('research/modal_repair/evidence/audit_verdict.json','c17c7f4dfbc86ac789838d59d846f5641cae59577dd8e62987edd31904dab6b8')]:pin(pins,n,h)
+ for n,h in [(SOURCE,SSHA),(ARCHIVE,ASHA),(ZPATH,ZSHA),(PART,PSHA),(GREEN,GSHA),('research/modal_repair/PROOF.md','1cc6a63c3439ce81b497c17b30f88dc84bd5d6044134105051777f052fa4d472'),('research/modal_repair/evidence/audit_verdict.json','c17c7f4dfbc86ac789838d59d846f5641cae59577dd8e62987edd31904dab6b8')]:pin(pins,n,h)
  for d in [x,z]:
   need(d['files'][SOURCE]==SSHA and d['files'][ARCHIVE]==ASHA and d['files'][PART]==PSHA,'same whole-box archive and source')
   if ZPATH in d['files']:need(d['files'][ZPATH]==ZSHA,'same directly present normalization slot')

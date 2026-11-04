@@ -1,6 +1,6 @@
 # Independent adjudication for the higher order tail repair
 
-The initial actual Claude Opus 5.5 proof review (request
+The initial actual the main model proof review (request
 cf55ec59-b77c-44c0-9fb1-c77cc07bbc7b, ended
 2026-10-21T05:56:46.750507Z) accepted the qualitative construction subject
 to exact input checks. The unchanged proof-first file predates all new

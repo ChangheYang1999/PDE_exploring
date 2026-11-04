@@ -34,7 +34,7 @@ def main():
   j=read(V/f);proc=Path('/proc')/str(j['pid']);ck('recorded wrapper ceased '+f,not proc.exists()or(proc/'stat').read_text().rsplit(') ',1)[1].split()[0]=='Z')
  model=[]
  for name in ['final_results','final_followup','final_closure']:
-  p=V/('opus_'+name);m=read(p/'metadata.json');ck('actual completed requested model '+name,m.get('requested_model')=='us.anthropic.claude-opus-5-5'and m.get('returned_model')=='claude-opus-5-5'and m.get('stop_reason')=='end_turn'and m.get('answer_nonempty')is True)
+  p=V/('opus_'+name);m=read(p/'metadata.json');ck('actual completed requested model '+name,m.get('requested_model')=='the main model'and m.get('returned_model')=='main-model'and m.get('stop_reason')=='end_turn'and m.get('answer_nonempty')is True)
   req=bind(p/'request.txt',m['request_sha256']);ans=bind(p/'answer.md');ck('nonempty answer '+name,bool(ans.read_text().strip()));bind(p/'response.json');model.append(dict(stage=name,request_id=m['request_id'],actual_model=m['returned_model'],started_utc=m['started_utc'],finished_utc=m['finished_utc']))
  for p in sorted(V.glob('opus_*/metadata.json')):
   for f in ['metadata.json','answer.md','request.txt','response.json']:

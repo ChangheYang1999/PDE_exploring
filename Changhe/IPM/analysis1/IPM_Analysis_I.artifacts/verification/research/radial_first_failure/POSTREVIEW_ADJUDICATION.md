@@ -2,7 +2,7 @@
 
 2026-10-21T19:25:53.247286+00:00
 
-I read both actual Opus5.5 responses in full. The authenticated API metadata and raw response fields agree on claude-opus-5-5 and end_turn; the first response's uncertainty about its self-identification is not an availability limitation. The final response accepts this isolated claim, subject to direct source inspection. I performed that inspection.
+I read both actual Opus5.5 responses in full. The authenticated API metadata and raw response fields agree on main-model and end_turn; the first response's uncertainty about its self-identification is not an availability limitation. The final response accepts this isolated claim, subject to direct source inspection. I performed that inspection.
 
 From the ODE initial values, R_0=(B-A)/(2E^2). Since b0-a1>0 and0<e0<e1, the extrema are attained at (Amax,Bmin,Emax) and (Amin,Bmax,Emin). Thus the rational range is exact for the independent boxes. The direct-NPY fmpq auditor re-read all six input elements and independently proved both strict margins, including min_margin/candidate_radius>1/100000. I checked its offset arithmetic and sign-sensitive monotonicity myself. The unchanged candidate interval therefore contains this coefficient's full input-box range.
 

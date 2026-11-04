@@ -52,7 +52,7 @@ After actual full completion, the final result may explicitly discharge the cent
 
 ## Acceptance and scope
 
-Read and check this proof before implementing it. Obtain actual Claude Opus5.5 collaboration before computation and again for actual output; authenticate the actual model/end condition, complete request/response bytes, scoped verdict and full code/evidence bundle. Independently read its full response, resolve substantive objections, then create a separately later own adjudication. Pin all accepted dependencies and unchanged targets; no fake or partial record can count as complete. Every result requires full actual output, not a time budget or apparent numerical agreement.
+Read and check this proof before implementing it. Obtain actual the main model collaboration before computation and again for actual output; authenticate the actual model/end condition, complete request/response bytes, scoped verdict and full code/evidence bundle. Independently read its full response, resolve substantive objections, then create a separately later own adjudication. Pin all accepted dependencies and unchanged targets; no fake or partial record can count as complete. Every result requires full actual output, not a time budget or apparent numerical agreement.
 
 No global derivative cover, physical maximum location, full forcing norm, global inverse, X3 distance, nonlinear closure or IPM endpoint follows. No original endpoint archive or historical producer array identity is inferred from these centers.
 

@@ -3,7 +3,7 @@ from common import *
 
 def review(tag):
  root=B/'notes/reviews';m=load(root/(tag+'_metadata.json'));raw=load(root/(tag+'_response.json'));request=(root/(tag+'_request.txt')).read_text();text=(root/(tag+'_response.md')).read_text()
- assert m['requested_model']=='us.anthropic.claude-opus-5-5' and m['actual_response_model']==raw['model']=='claude-opus-5-5'
+ assert m['requested_model']=='the main model' and m['actual_response_model']==raw['model']=='main-model'
  assert m['stop_reason']==raw['stop_reason']=='end_turn' and m['input_sha256']==hashlib.sha256(request.encode()).hexdigest()
  assert text=='\n\n'.join(v['text'] for v in raw['content'] if v['type']=='text')+'\n'
  for phrase in ('no JavaScript/TypeScript','no servers/listeners/tunnels','no RLScience cluster'):assert phrase in request

@@ -21,7 +21,7 @@ for stem,proof in [('data_structure','DATA_STRUCTURE.md'),('r2_certificate_condi
 reviews={};historical_supplied_versions=[]
 for tag in ['localized_forcing_analytic','localized_forcing_product_followup','localized_forcing_finite_closure']:
  m=read(R/(tag+'_metadata.json'));raw=read(R/(tag+'_response.json'));req=(R/(tag+'_request.txt')).read_text()
- assert m['actual_response_model']==raw['model']=='claude-opus-5-5' and m['stop_reason']==raw['stop_reason']=='end_turn'
+ assert m['actual_response_model']==raw['model']=='main-model' and m['stop_reason']==raw['stop_reason']=='end_turn'
  assert hashlib.sha256(req.encode()).hexdigest()==m['input_sha256']
  pos=req.index('\n\nFILE ')+2
  for i,f in enumerate(m['files']):

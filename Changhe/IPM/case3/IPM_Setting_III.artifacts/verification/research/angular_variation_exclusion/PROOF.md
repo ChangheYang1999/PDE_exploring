@@ -188,4 +188,4 @@ For either polynomial pair rho=a(y-H_n), psi=-Dxy+phi_(n+1), Poisson is exact, w
 
 ## Verification scope
 
-The exact computations independently verify the recurrence boundary, angular constants, partial fraction identity, cubic and quintic equations, and nonzero full polynomial residuals. High precision quadrature checks the Gaussian center and the small-variation integral. They support the preceding proof and do not certify any numerical candidate. No producer code or lead checking code was used. The lead's actual model is Claude Opus5.5; its QLE1 requests were treated as claims to audit, not as evidence.
+The exact computations independently verify the recurrence boundary, angular constants, partial fraction identity, cubic and quintic equations, and nonzero full polynomial residuals. High precision quadrature checks the Gaussian center and the small-variation integral. They support the preceding proof and do not certify any numerical candidate. No producer code or lead checking code was used. The lead's actual model is the main model; its QLE1 requests were treated as claims to audit, not as evidence.

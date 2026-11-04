@@ -1,6 +1,6 @@
 # A nonzero thermal jet forces a compatibility obstruction
 
-Status: complete informal proof, written before implementation. Independent exact controls passed; written actual claude-opus-5-5 review193 CONFIRMED the stronger beta>2 extension under hypotheses already present and repeated below. Calls191/192 returned no written audit and are not counted as endorsements. This is a criterion for a prescribed stream, not a nonexistence theorem for B2.
+Status: complete informal proof, written before implementation. Independent exact controls passed; written actual main-model review193 CONFIRMED the stronger beta>2 extension under hypotheses already present and repeated below. Calls191/192 returned no written audit and are not counted as endorsements. This is a criterion for a prescribed stream, not a nonexistence theorem for B2.
 
 ## Exact statement and notation
 

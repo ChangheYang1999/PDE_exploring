@@ -416,4 +416,4 @@ Strict signs for \(w''(P)\) and \(g(P)-2\), derived from the full coupled proble
 
 The standalone proof and verification records are indexed in [INDEX.md](INDEX.md).
 
-Claude Opus 5.5 consultation was unavailable: the cached AWS credentials had expired and network policy blocked the credential provider. No model request was made, and no other model was substituted.
+the main model consultation was unavailable: the cached AWS credentials had expired and network policy blocked the credential provider. No model request was made, and no other model was substituted.

@@ -23,7 +23,7 @@ for p in sorted(V.glob('INTERRUPTIONS*')):
  if p.is_file():bind(p)
 for stage in ['interruption','interruption_followup']:
  d=V/('opus_'+stage);m=json.loads(bind(d/'metadata.json'));r=json.loads(bind(d/'response.json'));answer=bind(d/'answer.md').decode();req=bind(d/'request.txt')
- ck('actual Opus5.5 '+stage,m['requested_model']=='us.anthropic.claude-opus-5-5'and m['returned_model']==r['model']=='claude-opus-5-5'and m['stop_reason']==r['stop_reason']=='end_turn'and m['answer_nonempty']and bool(answer.strip()))
+ ck('actual Opus5.5 '+stage,m['requested_model']=='the main model'and m['returned_model']==r['model']=='main-model'and m['stop_reason']==r['stop_reason']=='end_turn'and m['answer_nonempty']and bool(answer.strip()))
  body='\n'.join(x['text']for x in r['content']if x.get('type')=='text')
  ck('matching actual answer '+stage,body.strip()==answer.strip())
  ck('matching actual request '+stage,hashlib.sha256(req).hexdigest()==m['request_sha256'])

@@ -34,4 +34,4 @@ at 180 decimal digits with an independent interval complex recurrence.
 They separately enclose the same exact real scalar normalization repair,
 using its independently audited brackets. Each method must establish each
 printed bound. The exact output/source audit and an authenticated actual
-Claude Opus 5.5 closure review are required before a FINAL verdict.
+the main model closure review are required before a FINAL verdict.

@@ -84,7 +84,7 @@ def run():
   fields=[f.strip()for f in line.split('|')[1:-1]];ck('table identity '+fields[0]+' '+fields[1],fields[:3]==[state['tag'],reg['region'],str(reg['count'])])
   for text,m in zip(fields[3:],['absR','Rf','Rv']):ck('rounded table '+state['tag']+' '+reg['region']+' '+m,decimal_contains(text,reg['metrics'][m]['value']))
  for p in [__file__,ROOT/'FINAL_REPAIR_PROOF.md',V/'opus_final/answer.md',V/'opus_final/metadata.json',V/'opus_final/response.json',V/'opus_final/request.txt']:read(p)
- meta=json.loads(read(V/'opus_final/metadata.json'));ck('actual completed final model',meta['returned_model']=='claude-opus-5-5'and meta['stop_reason']=='end_turn')
+ meta=json.loads(read(V/'opus_final/metadata.json'));ck('actual completed final model',meta['returned_model']=='main-model'and meta['stop_reason']=='end_turn')
  return dict(status='PASS_NEW_EXPORT_FINAL_SUPPLEMENT_REQUIRES_MODEL_REVIEW',utc=now(),count=len(checks),manufacture_entries=mc,checks=checks,bindings=bindings,candidate_count_qualification=counts,comparisons=comparisons,scope='Post-design export identity closure and finite table checks only; no independent all-node inverse or historical authenticity.')
 if __name__=='__main__':
  try:

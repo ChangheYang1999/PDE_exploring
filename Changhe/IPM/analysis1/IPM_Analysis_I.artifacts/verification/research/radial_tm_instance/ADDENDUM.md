@@ -1,6 +1,6 @@
 # Implementation clarifications after the initial review
 
-The initial actual Claude Opus 5.5 review at 2026-10-21T02:23:24Z accepted
+The initial actual the main model review at 2026-10-21T02:23:24Z accepted
 this as a sufficient finite criterion. The following details govern its
 implementation and narrow several statements in that review.
 

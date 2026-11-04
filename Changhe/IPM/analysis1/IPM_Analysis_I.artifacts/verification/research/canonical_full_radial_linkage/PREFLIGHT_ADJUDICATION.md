@@ -1,6 +1,6 @@
 # Independent preparation adjudication
 
-Written 2026-10-21T20:34:18.802775+00:00, after reading the complete actual Claude Opus5.5 response, request08923302-b552-4eb2-95b0-f094ad01f376, input SHA0568752dcccb75269c44bafd7fd0931f84ff21659951a3b84711e7142fcacce8, raw response SHA712810b16732dc368528aa9ea636ef137aafb00a36da12dab6323f34efa8d23b, ended2026-10-21T20:33:15.262834+00:00 with end_turn.
+Written 2026-10-21T20:34:18.802775+00:00, after reading the complete actual the main model response, request08923302-b552-4eb2-95b0-f094ad01f376, input SHA0568752dcccb75269c44bafd7fd0931f84ff21659951a3b84711e7142fcacce8, raw response SHA712810b16732dc368528aa9ea636ef137aafb00a36da12dab6323f34efa8d23b, ended2026-10-21T20:33:15.262834+00:00 with end_turn.
 
 I independently rederived the A/B sum and difference identities and both scaled q equations. The source-normalization factors agree with the corrected166formula and162. Forcing membership follows from the exact collected T map and whole-input-box quantifier, so correlations of actual canonical inputs do not add an assumption. The overhang is confined to the polynomial model; actual child endpoints cover the intended finite annulus exactly.
 

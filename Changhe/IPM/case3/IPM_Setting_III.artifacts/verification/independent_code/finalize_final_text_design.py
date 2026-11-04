@@ -17,7 +17,7 @@ ck('test actually pinned','32a2e7b5c9ba72938b694a94128fa7cd91da58f2c688699319671
 reviews=[]
 for name,rid in [('text_design','2eb030de-3430-4ec3-9025-7a94a9ffff24'),('text_followup','082f4537-c450-44c9-9734-2c2c6bd32c2e'),('text_pin_closure','8fedd6cc-40c0-458c-9e88-b5888833969c')]:
  d=V/('opus_'+name);m=json.loads(bind(d/'metadata.json'));response=json.loads(bind(d/'response.json'));request=bind(d/'request.txt');answer=bind(d/'answer.md')
- ck('actual reviewed model '+name,m['requested_model']=='us.anthropic.claude-opus-5-5'and m['returned_model']==response['model']=='claude-opus-5-5'and m['stop_reason']==response['stop_reason']=='end_turn'and m['request_id']==rid and m['answer_nonempty']and bool(answer.strip())and m['request_sha256']==hashlib.sha256(request).hexdigest())
+ ck('actual reviewed model '+name,m['requested_model']=='the main model'and m['returned_model']==response['model']=='main-model'and m['stop_reason']==response['stop_reason']=='end_turn'and m['request_id']==rid and m['answer_nonempty']and bool(answer.strip())and m['request_sha256']==hashlib.sha256(request).hexdigest())
  reviews.append(dict(request_id=rid,actual_model=m['returned_model'],finished_utc=m['finished_utc']))
 for name in ['FINAL_TEXT_REPAIR_RECORD.json','FINAL_TEXT_TEST_PIN_REPAIR_RECORD.json','FINAL_TEXT_v3_FAILURE.json']:
  j=json.loads(bind(V/name))

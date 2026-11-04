@@ -2,7 +2,7 @@
 
 Status: CONFIRMED after independent derivation, exact rational tests of 18 even-degree examples, and a completed Opus 5.5 review. Date: 2026-10-20.
 
-Verification: ../../evidence/opus_review_09/answer.md and verification/exact_examples.json. The actual returned model was claude-opus-5-5. Its clarifications were checked and incorporated below.
+Verification: ../../evidence/opus_review_09/answer.md and verification/exact_examples.json. The actual returned model was main-model. Its clarifications were checked and incorporated below.
 
 ## Statement
 

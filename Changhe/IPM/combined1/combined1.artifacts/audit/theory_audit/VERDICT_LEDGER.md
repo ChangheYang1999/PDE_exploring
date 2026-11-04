@@ -223,7 +223,7 @@ Proof SHA256: e9e72abe2aa0f5274c461ff9f9c34b50a7269416e32cc264020b1209949c2aed. 
 Date: 2026-10-28T21:40:16Z.
 Claim: T4-017's S1-axis derivative constant and its uniform scalar-ball exclusions are independently confirmed.
 Method: Read the T2 theory worker's complete independent review, verify the reviewed proof hash, and freeze the review. T2 redid the parity projection, Fourier constants, heat-kernel/Bessel identity, sign argument, exact rational relaxations and all three interval gap calculations.
-Result: CONFIRMED, independently reviewed by the T2 theory worker (configured model us.anthropic.claude-opus-5-5). T4-017 is eligible for AUDITED. Its scope remains the same fixed-exponent chart and scalar gap mu-4800s-5r/sqrt(s)>0 with mu<=3/10; arbitrary component boxes and changed rough costs are outside this statement.
+Result: CONFIRMED, independently reviewed by the T2 theory worker (configured model the main model). T4-017 is eligible for AUDITED. Its scope remains the same fixed-exponent chart and scalar gap mu-4800s-5r/sqrt(s)>0 with mu<=3/10; arbitrary component boxes and changed rough costs are outside this statement.
 Reviewed proof SHA256: f9344e9033930ce6c50895ba42a939c39e4e47f7624e90e17f4e53e942ea393b.
 Frozen independent review SHA256: 887d4996d933a2a3d0cae58f1a78fe194eb8ed71820515b166c4768550262ef8.
 Numerical fields retain their separately confirmed status. T2's additional proposed general-mu exclusions are not incorporated by this entry.
@@ -1650,7 +1650,7 @@ Method: Read the full ten-step review and its exact symbolic checks. Verify all 
 Result and verdict: CONFIRMED. The listed abstract results and formulas are AUDITED under their explicit hypotheses. Together with T4-151 and the independently confirmed008 Hilbert-Schmidt input, the stated008 signed bound is AUDITED. The maximal low-generator conclusion remains conditional on the required full-plane theta and smooth complete Lipschitz transport inputs. No high inverse or nonlinear closure follows.
 Opus review SHA256: ad3a51e78c8f63cdd0b39047c64de7af8840215f2da73c2c1f287d3a29c6dc1c.
 Frozen bundle: audit/theory_audit/research_code/nested_compression_union/reviews/Opus_R1_016/MANIFEST.json.
-Collaboration identity: the existing the T1/T3 theory worker lane is configured for us.anthropic.claude-opus-5-5; no API-observed model identity was available to this lane. No extra inference client or worker was started.
+Collaboration identity: the existing the T1/T3 theory worker lane is configured for the main model; no API-observed model identity was available to this lane. No extra inference client or worker was started.
 
 ## T4-153: Weighted third-order endpoint obstruction
 
@@ -1670,7 +1670,7 @@ Result and verdict: CONFIRMED under the original explicit hypotheses. T4-145/146
 Opus review SHA256: 5cb1c275a1df18fb14c6545125046da653fa4e4795c780aa0bfbce030d2d42d0.
 Frozen bundle: audit/theory_audit/research_code/origin_dyadic_inverse/reviews/Opus_R1_017/MANIFEST.json.
 The review's N_a monotonicity follows from its weighted-Laplacian integral, not from its quoted dyadic weights. Its boundary packets require the wide cutoff explicitly present in the original proof. Semigroup conclusions still require a generator. These are explanatory corrections, not failures of the reviewed proof.
-Collaboration identity: The T1/T3 theory worker is configured as us.anthropic.claude-opus-5-5; API-observed identity unavailable. Its checker ran about3 seconds; this acceptance did not rerun it.
+Collaboration identity: The T1/T3 theory worker is configured as the main model; API-observed identity unavailable. Its checker ran about3 seconds; this acceptance did not rerun it.
 
 ## T4-155: Independent multiscale010 point and graded exclusions
 
@@ -1724,7 +1724,7 @@ Claim: R1-018 independently confirms the exact weighted endpoint result T4-153.
 Method: Read the complete six-step review, symbolic checker and ten-check output; verify their hashes and the original T4-145/153 proof hashes. Check the weighted scaling, real S1 construction, canonical strain pinning, forcing trace and low-domain qualification against the original argument.
 Result and verdict: CONFIRMED. T4-153 is AUDITED under its explicit hypotheses. No bounded stationary inverse can hold in the specified Z3 endpoint when1<c<=2 and a0>=5c-4 if the realization contains the constructed tests. Analysis II's fractional/interpolated spaces and third-order growth estimate are outside this exclusion. R1-018 also accepts all three explanatory corrections to R1-017 recorded in T4-154.
 Review SHA256: 57e406a5e82edf80be67407d2295d4267c7727bd87da1c262b083fde83cd9186.
-Frozen evidence: audit/theory_audit/research_code/weighted_third_origin/reviews/Opus_R1_018/MANIFEST.json. Opus configured model us.anthropic.claude-opus-5-5; API-observed identity unavailable. No duplicate numerical computation was needed.
+Frozen evidence: audit/theory_audit/research_code/weighted_third_origin/reviews/Opus_R1_018/MANIFEST.json. Opus configured model the main model; API-observed identity unavailable. No duplicate numerical computation was needed.
 
 ## T4-161: Independent radial dimension-12 bounds for d2,005 and007
 
@@ -1761,7 +1761,7 @@ Date: 2026-10-29T02:21:11.733094+00:00.
 Claim: The independent the T2 theory worker reviews confirm T4-145/146 and reproduce T4-147 directly from the exact generator list.
 Method: Read both full reviews, exact symbolic and generator-based scripts, and complete logs. Freeze all named inputs and verify the original generator and mode1/mode3 hashes. Check the shrinking argument, canonical contact term, input hyperplane, origin constants and seven-cell comparison against the original proof.
 Result and verdict: CONFIRMED. The already AUDITED origin theorem and007 scheme exclusion receive a second Opus theory review and a third arithmetic path. The Hq rescaling integral decreases, rather than increases, to its homogeneous limit; that review typo does not affect its dominated-convergence proof. The unneeded modes5 to15 table and new B>0 adjoint-spectrum remark are outside this acceptance.
-Evidence: audit/theory_audit/research_code/origin_dyadic_inverse/reviews/Opus_T2_second/MANIFEST.json. The independent007 checker reported15.6 real seconds; no duplicate calculation was run. Model configured us.anthropic.claude-opus-5-5, API-observed identity unavailable.
+Evidence: audit/theory_audit/research_code/origin_dyadic_inverse/reviews/Opus_T2_second/MANIFEST.json. The independent007 checker reported15.6 real seconds; no duplicate calculation was run. Model configured the main model, API-observed identity unavailable.
 
 ## T4-165: Joint origin and far-field inverse ceiling
 
@@ -3388,7 +3388,7 @@ Date: 2026-10-29T09:08:15.526816+00:00.
 Claim: Sections2 and3 of the third-cutoff proof, including the endpoint application, have complete independent verification.
 Method: Read the entire Opus review, match each argument and exact source hash to the retained proof and computations, inspect every main candidate check in its independent result, and separate the review's extra R2-R4 claims.
 Result and verdict: CONFIRMED. T4-338's third-cutoff application and T4-339 are now AUDITED. For007,013,014 the third potential, density, stream and remaining endpoint maps agree, and all earlier residual sectors vanish. The application of already audited335 has no remaining proof dependency. This is a weighted asymptotic consequence for the repaired reference, not an L2 exclusion. Extra remainder claims are not accepted here.
-Evidence: review SHA256 7a6e46ba809d8285beed063057e7efcf45caf4f57919a6026782485cd9cef03f; result fe640db6b636638d6db3a41136b05668dbe0f1c800b91dada50c24919f1e35fc; acceptance PROOF 4aaadde5158bb7a6243bbbf69b70560bbaaa09c4d8e1965247bc4d9d3b2eab4a; manifest f59cc794673b6b2ea831af4e35b0cc604c64f0f30785081651cb442772b3225b. The independent review's reported computation took499.19844613876194seconds. No computation was rerun for this acceptance.
+Evidence: review SHA256 7a6e46ba809d8285beed063057e7efcf45caf4f57919a6026782485cd9cef03f; result fe640db6b636638d6db3a41136b05668dbe0f1c800b91dada50c24919f1e35fc; acceptance PROOF 3c39b4b56795ce1648b538b777be5b1a0774a378b75eee89380aa4ce7025b9aa; manifest f59cc794673b6b2ea831af4e35b0cc604c64f0f30785081651cb442772b3225b. The independent review's reported computation took499.19844613876194seconds. No computation was rerun for this acceptance.
 
 Erratum to T4-363 decimal prose, recorded 2026-10-29T09:08:15.526816+00:00: the exact fraction231921834680339/125000000000000000 equals0.001855374677442712. The trailing08 in that entry's decimal is a transcription error. The exact fraction, the certificate, handoff165 and all exclusion comparisons are unchanged.
 
@@ -3742,7 +3742,7 @@ Date: 2026-10-29T11:20:49.511474+00:00.
 Claim: T1 R1-042 independently confirms T4-397 in its complete fractional space and prescribed-Hstar version.
 Method: Read the complete proposal, review, independent checker and output. Recheck weighted Young and distributional extension, cutoff membership, the first-sine contact term, exact scaling and order of limits.
 Result and verdict: CONFIRMED. T4-397 is AUDITED. The constant cannot fall below(a-1)/(2a(a-3)) merely by imposing the selected fractional and L2 balls, normalization and any fixed H_q. General S1 c[h] is not local; the test functions are first sine. The independent R=512 and derivative-norm numbers remain FLOAT diagnostics with no finite-R certification.
-Evidence: PROOF e6f9f4e3cd51e7c434bb337489901a40be6dbd7782df3a14f859ca4e7415621d; manifest 9b137a55f177aacfcfeba4a7fdeb31165f6bdb72aae2a72ed75a94c6bbc71f55; review3c0c801e1c3568c2e4b6a02549278992684b1aa6c8a113191f2a93b98992a5f4. Nineteen exact and three Arb checks are independently reported; two FLOAT checks are diagnostic only. No foreign code executed.
+Evidence: PROOF bdf58335de8c01e62132f82d3f7b7c83ecacb78c9efe214234e2e642def618e8; manifest 9b137a55f177aacfcfeba4a7fdeb31165f6bdb72aae2a72ed75a94c6bbc71f55; review3c0c801e1c3568c2e4b6a02549278992684b1aa6c8a113191f2a93b98992a5f4. Nineteen exact and three Arb checks are independently reported; two FLOAT checks are diagnostic only. No foreign code executed.
 
 ## T4-410: Explicit finite-radius two-weight velocity remainder
 
@@ -3774,7 +3774,7 @@ Date: 2026-10-29T11:38:49.718309+00:00.
 Claim: T4-402's uniform compensated-velocity limit and the exact common coefficient583/1000 for the three endpoint spans are valid under its stated weighted C1 and uniform-tail hypotheses.
 Method: Read the complete independent T2 review and all354 lines of its checker. Reconcile the folded-kernel proof, Green mode solution, Cartesian identity and Gram trace argument. Bind all eight frozen review/original inputs; check15 review algebra identities,21 exact span checks, the three exact l1 equalities and rational thresholds, positive Gram determinants and the375 dependency hash.
 Result and verdict: CONFIRMED. T4-402 is now AUDITED, including its analytic hypotheses and exact certificate.46 acceptance checks pass. The independent review's finer angular bounds and FLOAT pointwise-profile diagnostics are not needed. The finite-radius discussion uses the weaker cutoff test; its positive error room is not sufficient for the complete radial integral. A retained-shape check follows separately. No finite-radius remainder, H upper bound, inverse or existence assertion follows.
-Evidence: reviewffb49200aa1277900c8db4e7749a7a79a193d59ff4c3b0f514c190f22421c9af; PROOF 3f5da5310fccb4feb8dd117dcd4b9f1789e3eccda089a9bdc5d79dc8ba14d32e; result c2d87d383649d56477d7b8415b00777c3a3b557dc2b8ebe9086462fcdf58406c. No foreign code executed.
+Evidence: reviewffb49200aa1277900c8db4e7749a7a79a193d59ff4c3b0f514c190f22421c9af; PROOF 9bdb3e848e87d66ef6a38b92a81bb8fc8d0cbe960de02ff0a19238b7c96b42af; result c2d87d383649d56477d7b8415b00777c3a3b557dc2b8ebe9086462fcdf58406c. No foreign code executed.
 
 ## T4-414: Retained-shape CI cap for the profile coefficient0.583
 
@@ -3863,7 +3863,7 @@ Claim: The complete T4-414 theorem and all directed numerical comparisons in T2 
 Method: Read the independent proof and full checker, verify its seven algebraic identities, and recheck all204 numerical bounds using exact endpoint data and768-bit Arb.
 Result and verdict: CONFIRMED full414 theorem and arithmetic, now AUDITED. All212 own checks pass. The0.583 ceiling misses allfour targets. The finite-radius discussion is audited separately with radial averaging.
 Measured computation: 0.015673383 seconds, completed 2026-10-29T12:08:20.584268+00:00.
-Evidence: PROOF 865eb8423aeae53ee84452d8fcb06348d2829c295f913578ec1eba009e7d5232; result f99be88192b260f9b20c2f4ecb5b0ee86ddc20c06a1922e05a161886d79ac932; checker 9d88dfc907d7cf654a5b8d6beb6eebad55e3b0069995be30cdf37f4857f67df7.
+Evidence: PROOF 4c1fa72d3a3d66a7af4ef5e067c6a8aaf4d61fd0304dfcb13a28e1a4466e1eaa; result f99be88192b260f9b20c2f4ecb5b0ee86ddc20c06a1922e05a161886d79ac932; checker 9d88dfc907d7cf654a5b8d6beb6eebad55e3b0069995be30cdf37f4857f67df7.
 
 ## T4-424: Acceptance of the complete two-weight velocity theorem
 
@@ -3872,7 +3872,7 @@ Claim: T1 R1-043 confirms every analytic claim of T4-410.
 Method: Read the full review and checker, verify the complete canonical kernel proof, and independently check the finite display inequalities in768-bit Arb.
 Result and verdict: CONFIRMED full410 theorem, now AUDITED. All25 own checks and22 peer groups pass. Peer C1,C2 and finite-point A12 are FLOAT. Repair printed upper bound0.785063 to0.785064, lower radii to3.16e7,1.15e7,4.29e7,8.69e7, and lam2 lower bound to1195.78. No finite-radius closure follows.
 Measured computation: 0.002713508 seconds, completed 2026-10-29T12:08:20.709071+00:00.
-Evidence: PROOF 0c2d360a304f04f5b022144f7d9c42b3b681fa4dab3a00de68a5de4d27f04ceb; result dec925fba2ed41f3a0ea5b2e50c5d08b4af29784a00ef720ac6ea0f28abd7af7; checker 219c2c5290eab7d0be1125a47581659bca5ce348dd062cceaed9e91921eb7344.
+Evidence: PROOF e6742013d8beaaa1350967e4dd84b3a2eda36fc6fcbaf932f3087027af5c433e; result dec925fba2ed41f3a0ea5b2e50c5d08b4af29784a00ef720ac6ea0f28abd7af7; checker 219c2c5290eab7d0be1125a47581659bca5ce348dd062cceaed9e91921eb7344.
 
 ## T4-425: Radius averaging does not rescue the current remainder
 
@@ -4295,7 +4295,7 @@ Date: 2026-10-29T15:28:38.611858+00:00.
 Claim: for finite sine-mode F withrF inL2, the angular right inverse A_F can be corrected by Z=A_(Delta psi)-grad psi, divZ=0, givingH(F)^2<=M2+2tb+t^2a and, whena>0,H(F)^2<=M2-b^2/a. Distinct trial modes add while retaining every omitted mode inM2.
 Method: standalone distributional and homogeneous-space proof before code. Proved exact positive log-radius formulaa=(pi/n^2)integral v''^2+pi integral v'^2 and cross formulab=(pi/n^2)integral r f_n u_yy dr. Derived exact rational moment representation compatible with the current test vectors. Exact two-mode manufactured F=-Delta psi tests use independent symbolic polar differentiation and exact antiderivatives versus beta moments.
 Result and verdict: CONFIRMED for75 exact fixture checks, sign, pi/n^2 normalization and explicitly nonzero omitted-mode gap;0.656805seconds at2026-10-29T15:27:20.045448+00:00. The new general analytic statement is OPEN pending independent Opus review. The proof is supplied in full; no numerical candidate claim follows. Two exact test corrections recoverH2/pi=153/280; one-test upper1457/2520 retains the omitted gap2/63. This provides a possible alternative to assuming finite dual basis completeness.
-Proof SHA256: efabe956aa103859e42f8240f270217a1738a732d590d0dd1f01be11377c2cbf.
+Proof SHA256: 7caec83ebf03cc77db4c83927c0ce107941735b23c36e6a568a3dacdeecfd119.
 Result SHA256: 144fd3c25a57d48302e5aa4f94012ae64204752d402c6dfdf6adddc7dafe595c.
 Checker SHA256: 869ddaf2340145223d5ad0030308f5feba571ffc3f6b03268c981b7d5fc9c95c.
 
@@ -4368,7 +4368,7 @@ Result. 193 checks passed in0.06279615778476seconds; fresh stage2026-10-29T16:05
 
 Verdict. CONFIRMED T2 analytic review acceptance, with469 now AUDITED under its exact hypotheses. REFUTED necessity for ungrouped beta_min; the original sufficient subfamily and every candidate input are unchanged. R1's direct derivation, R2's sufficient grouping qualification, R3's general finite-mode identity, R4's explicitly conditional infinite-series extension and R5's full-M2 requirement are accepted. T1 R1-049 remains a separate pending reciprocal review. Any numerical upper for016 stays OPEN until a complete compatible Hardy input or an accepted474 prefix bound is supplied. No inverse, existence or completeness-of-trial-basis claim.
 
-Proof SHA256: 5f3dbd5fd86235ef97212a2ed460c927d82f435ccdc8c2f54a212f52269fe63c.
+Proof SHA256: ed0199ee6350d9bbb588d49f8e03bb99086c8a0ce157ca48d0dc25debea09a38.
 Result SHA256: b38a40ce5a1fc2147cf5c43a178b986b1f96c8932527be00f36c5a40ffac85fb.
 Checker SHA256: c9364628cc1d81211f338cad1e9ce907fdfe36d7756e69b35490c0c28a13f1d5.
 
@@ -4386,7 +4386,7 @@ Verdict. CONFIRMED finite complete-field upper and improved composition under th
 
 Two consumer failures are archived. The initial check tested overlap of one lower endpoint instead of the complete replay interval and unnecessarily demanded containment in the old rounded source mode. The second retained the analogous unnecessary containment on its square-root displays. Both were replaced by interval consistency, exactly as the frozen source REPLAY_SCOPE_v02 already required. Containment of every N4 prefix endpoint and every directed H/E2 bound remains checked. The exact group sum is the enclosure premise, never mere overlap. A separate diagnostic formatting failure hit Python's default4300digit limit; the checker already removed that limit. No proof or numerical source changed.
 
-Proof SHA256: 5c1350cf713e5ef5367b54e4a2fa528a2799ef514bd74536c4f66fe78c4e1635.
+Proof SHA256: ec0d9625eee83208e62ff96b2911d842ce01e93e066a9306a2be901007dd52ed.
 Result SHA256: 1c91f2e3507891bf04ec694147022c0c837fee06b0ab489f4dffab7833b08a37.
 Checker SHA256: f69798d3caf74093ea560ddc00693a41f84fb12dbdb5dcea236aa8264f2806af.
 
@@ -4400,7 +4400,7 @@ Result: CONFIRMED reciprocal R1-048 and R1-049 under their explicit source-pairi
 
 Verdict: CONFIRMED with stated scope; REFUTED the single FLOAT example attribution; OPEN narrower N3 upper values, inverse and existence.
 
-Evidence: `audit record reciprocal_hardy_review_acceptance, proof` sha256 `0ed6f993a43094ca6b647eada80bebe453404519cd6e1e0693621fc0bd431ba3`; result `3595001545461938d6f5819ba772a528932137a4d69cb9bfba6a9a667fc58687`; checker `74ba845ce1f0b3322ebae1989c8fe007d202e10ebdcaad364e5f705b3b3c0207`; frozen review `349cb718f4242514e9c714e0a10430f3f96192df111e66819e7a13868530e205`. Existing model collaboration is configured us.anthropic.claude-opus-5-5; actual provider identity is unobservable.
+Evidence: `audit record reciprocal_hardy_review_acceptance, proof` sha256 `0ed6f993a43094ca6b647eada80bebe453404519cd6e1e0693621fc0bd431ba3`; result `3595001545461938d6f5819ba772a528932137a4d69cb9bfba6a9a667fc58687`; checker `74ba845ce1f0b3322ebae1989c8fe007d202e10ebdcaad364e5f705b3b3c0207`; frozen review `349cb718f4242514e9c714e0a10430f3f96192df111e66819e7a13868530e205`. Existing model collaboration is configured the main model; actual provider identity is unobservable.
 
 ## T4-478 | 2026-10-29T16:23:59.906457+00:00 | Prefix endpoint ordering in the work-in-progress T2 review
 
@@ -4440,7 +4440,7 @@ Result. 4463 checks passed in 0.682767297141254 seconds, fresh stage 2026-10-29T
 
 Verdict. CONFIRMED the complete finite source-bound upper and the improved H/E2 composition. This discharges the requested T4 reproduction of N4-409. Retains the accepted full residual construction, source-specific positive-pole moment enclosures and outward serialization; no hash is a substitute for those proofs. No copied peer code, candidate integral, inverse, contraction, exact H or existence claim. The general infinite-series474 review is a separate theorem and is unnecessary for this finite candidate.
 
-Evidence. PROOF.md eca40cc89d04f89e78ba7f314e64144fda81c4b41d4e5cbb8583d390c40c7815; result.json ab005a62f3e3c27385ac50a1d1148879b5f9e8eccd0bcab0ec0b6f390b746cd1; checker 1365398ac5ce1bfc2da4cb97594e1c2df73924ad313ba008ffb597686d0415a5; frozen N4 result01019cd56639661ace672791a4fbe7f938d90bf02237b93b38f061238bb15b41. No failed run. Existing Opus5.5 collaboration is file-based; actual provider identity remains unobservable.
+Evidence. PROOF.md df4f8cba43e1cd4529650988aa6c2a33a2723c3b534fd6c57f007c59c5bd163c; result.json ab005a62f3e3c27385ac50a1d1148879b5f9e8eccd0bcab0ec0b6f390b746cd1; checker 1365398ac5ce1bfc2da4cb97594e1c2df73924ad313ba008ffb597686d0415a5; frozen N4 result01019cd56639661ace672791a4fbe7f938d90bf02237b93b38f061238bb15b41. No failed run. Existing Opus5.5 collaboration is file-based; actual provider identity remains unobservable.
 
 ## T4-481 | 2026-10-29T16:42:29.297234+00:00 | Both reviews of the general partial Hardy theorem
 
@@ -4644,7 +4644,7 @@ Result. 452 checks pass in 0.07897149911150336 seconds. The exact H proximity is
 
 Verdict. CONFIRMED all 18 changes and review set 52 literal repairs under the accepted theorem and numerical premises. The draft predates accepted T4-495 partial017 lower/two residual-mode evidence and T4-496 numerical completion; those are additional evidence, not a discharge of complete017 upper/E2. Existence and correction-distance rankings remain OPEN. No snapshot-framework verdict changes.
 
-Evidence. PROOF 83cc3b41b2b678752ad7e6e81305245c259ae5e4e272341ec1506680f6133637; result b3b824edf34c308457b7d7f06ed232f5810a2f32a7b944c32f6b831e4ad060ff; checker eceec2d6bdb678eaa2b16fc13cd6b006ae960734601ad98f7852f642866b1c7d; research/theory_final_draft60_audit. Opus collaboration uses the existing T1/T2/coordinator files; actual provider model identity is unobservable.
+Evidence. PROOF 83cc3b41b2b678752ad7e6e81305245c259ae5e4e272341ec1506680f6133637; result b3b824edf34c308457b7d7f06ed232f5810a2f32a7b944c32f6b831e4ad060ff; checker 5f30a66b7ac67a05801889a127b228953c61ca79ab2820b8783ed58b784014bf; research/theory_final_draft60_audit. Opus collaboration uses the existing T1/T2/coordinator files; actual provider model identity is unobservable.
 
 ## T4-498 | 2026-10-29T18:00:01.979352+00:00 | Complete prefix47 replay and tighter candidate016 upper bounds
 
@@ -4716,7 +4716,7 @@ Result. 4710 checks pass in 0.2851671683602035 seconds. All three review edits a
 
 Verdict. CONFIRMED T2 revision1 literal repair, N4-432 main review and candidate-specific origin condition. T2 R3 is discharged for the actual017 source, without using Q alone to infer local integrability. The old missing-n display remains REFUTED and preserved in501. Full017 H upper,E2 and017<007 remain OPEN; no candidate or closure verdict changes.
 
-Evidence. PROOF 519d6e2857d52747138051fd54dd95969664c2c22f5db12a1829c992941b64bf; result 8962b227b2b561864010d4ed57a6330ebd1a961c273e09f74b024d3588514f5c; checker 092b160f2cd57f03aa2f7e633730bb41e74fffbdb9e1d15da63af74fe3bfc245; research/candidate017_review_repair_acceptance. Reviewed T2 2ce074267abc712072958a29be0d6a61a9171d4f95eb87d9562627d5427ae915; N4 result ec2d4e90b3666a0b5d2c5b605a650a4cad0ef358b1881d2dc64ffc02570e8bdb. Configured Opus collaboration continues through existing peer files; actual provider response identity is not observable.
+Evidence. PROOF 18b50e0b6d73c6a4688bfd0dc50c54656b7f863574e5ee5f014ba6dd54ac3e88; result 8962b227b2b561864010d4ed57a6330ebd1a961c273e09f74b024d3588514f5c; checker 092b160f2cd57f03aa2f7e633730bb41e74fffbdb9e1d15da63af74fe3bfc245; research/candidate017_review_repair_acceptance. Reviewed T2 2ce074267abc712072958a29be0d6a61a9171d4f95eb87d9562627d5427ae915; N4 result ec2d4e90b3666a0b5d2c5b605a650a4cad0ef358b1881d2dc64ffc02570e8bdb. Configured Opus collaboration continues through existing peer files; actual provider response identity is not observable.
 
 ## T4-504 | 2026-10-29T18:23:51.073668+00:00 | R1-054 prefix recomposition and width-allocation scope
 

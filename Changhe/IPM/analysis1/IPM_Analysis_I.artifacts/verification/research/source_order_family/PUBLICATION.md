@@ -15,7 +15,7 @@ by multiaffinity and8 are extra at3.06. The fresh audit passes92 exact
 and high-precision checks. The387 dependency file pins establish file
 identity, not a reproof of those earlier certificates.
 
-Both text reviews returned actual model claude-opus-5-5 and end_turn.
+Both text reviews returned actual model main-model and end_turn.
 The closure explicitly retracts the inward0.31375 hand ceiling. Its minor
 beta-label suggestion is not adopted: the recorded quantity is correctly
 named beta_s and actually equals[2sqrt(pi(s-1)(s-2))]^(-1). It is the raw

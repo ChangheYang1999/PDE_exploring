@@ -85,7 +85,7 @@ Indeed0<=exp(-z)-1+z<=z2/2 for z>=0, by two integrations of0<=exp(-z)<=1. Apply 
 
 ## Dependencies and evidence
 
-The auxiliary inverse and parity conventions are derived here and in result327 PROOF.md. The saved representation and Cartesian smoothness are derived in the independent_hydrostatic_evaluator proof and the Cartesian evaluator. Verification consists of exact polynomial kernel identities, an independent integral evaluation of the primitive, the Gaussian closed formula at increased precision, and actual Claude Opus5.5 review followed by independent resolution. No Lean build is permitted in this run. Until these checks finish the new result remains OPEN.
+The auxiliary inverse and parity conventions are derived here and in result327 PROOF.md. The saved representation and Cartesian smoothness are derived in the independent_hydrostatic_evaluator proof and the Cartesian evaluator. Verification consists of exact polynomial kernel identities, an independent integral evaluation of the primitive, the Gaussian closed formula at increased precision, and actual the main model review followed by independent resolution. No Lean build is permitted in this run. Until these checks finish the new result remains OPEN.
 
 ## An explicit Gaussian constant
 

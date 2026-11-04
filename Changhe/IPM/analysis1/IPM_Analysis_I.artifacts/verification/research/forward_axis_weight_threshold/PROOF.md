@@ -1,6 +1,6 @@
 # Forward-decay thresholds and the axis-mapping obstruction
 
-Date 2026-10-22T03:15:17.947834+00:00. Written before the new exact checks. Status OPEN pending complete actual Claude Opus5.5 review and later independent adjudication. This checks the lead's2026-10-22T03:12 note, with an essential distinction between forward decay and invertibility in either time direction.
+Date 2026-10-22T03:15:17.947834+00:00. Written before the new exact checks. Status OPEN pending complete actual the main model review and later independent adjudication. This checks the lead's2026-10-22T03:12 note, with an essential distinction between forward decay and invertibility in either time direction.
 
 ## Statement, parameters and dependencies
 

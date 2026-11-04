@@ -323,8 +323,8 @@ All computations are single-threaded, with an address-space cap below
 2 GB. The scripts use no JavaScript, GPU, server or RLScience resource.
 The two prescribed input files are not modified.
 
-The requested Claude Opus 5.5 consultation was attempted through the
-existing Bedrock profile, requesting us.anthropic.claude-opus-5-5.
+The requested the main model consultation was attempted through the
+existing Bedrock profile, requesting the main model.
 Credential retrieval failed before model invocation. No model answered,
 no substitute model was used, and no second-model endorsement is claimed.
 The exact limitation is recorded in opus_unavailable.json.

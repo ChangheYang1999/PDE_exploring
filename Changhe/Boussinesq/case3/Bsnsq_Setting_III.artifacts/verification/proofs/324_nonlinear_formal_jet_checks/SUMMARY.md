@@ -15,6 +15,6 @@ Every Poisson check tests a defining construction/update identity and is not ind
 
 The final source, range and precision comparison passes176/176. Exact constants and finalized overlapping coefficients agree across widths100/160/190. The version2/version4 C=2 stage2 constants also agree. Original 40-check and intermediate comparison code are retained; the final file supersedes their counts.
 
-The longest run started2026-10-22T09:05:35.013337Z and completed2026-10-22T09:13:19.996150Z, elapsed464.982813s. All other run times and hashes are in their JSON records. Actual Claude Opus5.5 reviews563,564,567 progressively checked the sources and reporting; follow-up567 found no remaining material defect. Reporting repairs and rejected model remarks are in verification/model_adjudication.md.
+The longest run started2026-10-22T09:05:35.013337Z and completed2026-10-22T09:13:19.996150Z, elapsed464.982813s. All other run times and hashes are in their JSON records. Actual the main model reviews563,564,567 progressively checked the sources and reporting; follow-up567 found no remaining material defect. Reporting repairs and rejected model remarks are in verification/model_adjudication.md.
 
 Growth in the transverse index, convergence of the formal series, an actual local PDE solution and a full-plane B2 endpoint are OPEN. Large finite constants prove neither convergence nor divergence. No heavy process remains.

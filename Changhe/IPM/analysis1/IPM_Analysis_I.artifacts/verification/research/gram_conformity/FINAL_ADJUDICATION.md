@@ -23,7 +23,7 @@ The two independent current calculations agree: expanded polynomials and
 logarithmic exponents versus a metric pullback, physical radial exponents,
 and antiderivative recurrence. Both rechecked all40 inherited127 pins.
 
-The first actual Claude Opus5.5 response stopped at max_tokens and is not
+The first actual the main model response stopped at max_tokens and is not
 acceptance. The completed follow-up accepted the restricted statement,
 finished the truncated conformity objection, and checked both repairs.
 Its optional remark on point capacity is not used: the explicit vanishing

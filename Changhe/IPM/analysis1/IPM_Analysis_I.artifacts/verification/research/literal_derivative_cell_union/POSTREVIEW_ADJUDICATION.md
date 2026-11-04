@@ -1,6 +1,6 @@
 # Independent adjudication of the actual complete geometry review
 
-2026-10-21T17:35:49.528272+00:00. Actual model:claude-opus-5-5, stop:end_turn, request70470554-ab8b-4c91-b013-caa938c06b28, input SHAe8c9a913935ccc82ce2d5d08c703207693ce9935f5f43a1ee76bc63bb162c0be, raw response SHA97b8f93a360513c57c6f05ae829437155d911614372f81e67c60fd68fb10b08e. I read the entire actual response and independently inspected the complete source algorithms and outputs.
+2026-10-21T17:35:49.528272+00:00. Actual model:main-model, stop:end_turn, request70470554-ab8b-4c91-b013-caa938c06b28, input SHAe8c9a913935ccc82ce2d5d08c703207693ce9935f5f43a1ee76bc63bb162c0be, raw response SHA97b8f93a360513c57c6f05ae829437155d911614372f81e67c60fd68fb10b08e. I read the entire actual response and independently inspected the complete source algorithms and outputs.
 
 The review confirms the limited exact union claim. Its text-only scope does not authenticate local hashes or recompute the complete lists; my two independent arithmetic runs and third exact decimal-token check do that, and the finalizer rechecks their complete source and output binding. The merge uses rational endpoint maxima. The sweep uses an integer lattice with denominator2^67 and neither imports the merge code nor trusts its interval list. Every original geometry token has a separate exact Decimal rounding-cell check against both neighboring binary64 values, then manual-bit equality with the frozen topic152 export. The zero-segment separation proof is explicit.
 

@@ -4,7 +4,7 @@ Date: 2026-10-28T17:28:38.220803+00:00. **23 CONFIRMED, 0 REFUTED, 3 OPEN.** Out
 
 Installed FINAL_REPORT.md SHA256: **265785a994c740a0bd22da156afd0dfa909cf3f55facf3f9f38b5afec58099ca**. This review carries forward the complete fr18-to-fr19 reading and independently reads every actual fr19-to-fr19h change. Full snapshots, both deltas, input values, source builders and actual lead replies are preserved in this directory. The normalized final text equals the prior text with exactly the requested units, allocation-scope and installation-stamp substitutions. All 36 mathematical items and the acceptance section are unchanged from the confirmed fr19 text.
 
-The actual Claude Opus 5.5 lead, model us.anthropic.claude-opus-5-5, accepted both counterarguments in note VG after checking the RSS source. Its revised output was then verified independently. No scientific computation, primary implementation or report builder was executed in this lane.
+The actual the main model lead, model the main model, accepted both counterarguments in note VG after checking the RSS source. Its revised output was then verified independently. No scientific computation, primary implementation or report builder was executed in this lane.
 
 | Check | Method | Result | Verdict | Date |
 |---|---|---|---|---|

@@ -15,7 +15,7 @@ V='research/saved_vector_external_constraints/sources/c2gram2_M16_s16_p4_H1m_NJ1
 PARENTS={'156':('research/canonical_archive_second/evidence/verdict.json','5e5a0879c90afca49df5586e8c602c3b8a990dbea61a5280918646fddb68e75f','CONFIRMED_COMPLETE_CANONICAL_MOMENT_ARCHIVE'),'172':('research/scaling_tail_obstruction/evidence/verdict.json','ad2ad78915ee17d084fb55f2179fdfde21f425d7e3974120773b5a340f4bbfc6','CONFIRMED_EXPLICIT_STORED_TAIL_OBSTRUCTION')}
 EXTERNAL={str(B.parent/'ipmA-num/data/trial_v2_h0.008.npz'):'a069d85d102e17340778042f85c003705716ba799c0f68873d10c1c582ea4874'}
 OWN=['PROOF.md','evidence/proof_first.json','PROOF_ADJUDICATION.md','evidence/PROOF_ADJUDICATION.json','code/common.py','code/check.py','code/extract.py','code/launch_actual.py','code/finalize.py','proof_files.json','proof_question.txt','actual_files.json','actual_question.txt','SOURCE_SCOPE.md']
-PREFIX='You are Claude Opus 5.5 collaborating with GPT-6, reviewing a mathematical computer-assisted IPM proof. Restrictions on this delegated task: no JavaScript/TypeScript development or execution; no servers/listeners/tunnels; no RLScience cluster; no Lean/Lake builds; no outside writes; no people contact. Pure text review only. Return a concise substantive FINAL ANSWER, not just internal reasoning. Reconstruct claims and reject gaps. '
+PREFIX='You are the main model collaborating with GPT-6, reviewing a mathematical computer-assisted IPM proof. Restrictions on this delegated task: no JavaScript/TypeScript development or execution; no servers/listeners/tunnels; no RLScience cluster; no Lean/Lake builds; no outside writes; no people contact. Pure text review only. Return a concise substantive FINAL ANSWER, not just internal reasoning. Reconstruct claims and reject gaps. '
 def now():return datetime.now(timezone.utc).isoformat()
 def when(x):
  t=datetime.fromisoformat(x);need(t.tzinfo is not None,'UTC-aware timestamp');return t
@@ -33,7 +33,7 @@ def rehash(p):
  for n,h in p.items():need(sha(B/n)==h,'unchanged final '+n)
 def auth(p,tag,verdict,files,question):
  m=load(R/(tag+'_metadata.json'));r=load(R/(tag+'_response.json'));text=(R/(tag+'_response.md')).read_text();request=(R/(tag+'_request.txt')).read_text()
- need(m['requested_model']=='us.anthropic.claude-opus-5-5' and m['actual_response_model']==r['model']=='claude-opus-5-5' and m['stop_reason']==r['stop_reason']=='end_turn' and 'availability_error' not in m,'actual complete Opus5.5')
+ need(m['requested_model']=='the main model' and m['actual_response_model']==r['model']=='main-model' and m['stop_reason']==r['stop_reason']=='end_turn' and 'availability_error' not in m,'actual complete Opus5.5')
  need(m['files']==files and len(files)==len(set(files)),'exact fixed complete review list')
  expected=PREFIX+(D/question).read_text()+'\n\n'+'\n\n'.join('FILE '+n+'\n'+(B/n).read_text() for n in files)
  need(request==expected and hashlib.sha256(request.encode()).hexdigest()==m['input_sha256'],'entire actual request identity')
@@ -53,7 +53,7 @@ def base():
   pin(p,n,h);v=load(B/n);need(v['status']==status and len(v['files'])==({'156':64,'172':31}[label]),'actual parent verdict');parents[label]={'path':n,'sha256':h,'utc':v['utc'],'status':status,'pins':len(v['files'])}
   for x,z in v['files'].items():pin(p,x,z)
  for n,h in [(S,SH),(Z,ZH),(V,VH)]:pin(p,n,h)
- a=load(B/'research/modal_repair/evidence/audit_verdict.json');need(a['verdict']=='CONFIRMED' and a['actual_second_model']=='claude-opus-5-5','accepted normalization definition')
+ a=load(B/'research/modal_repair/evidence/audit_verdict.json');need(a['verdict']=='CONFIRMED' and a['actual_second_model']=='main-model','accepted normalization definition')
  for n,h in a['source_and_evidence_sha256'].items():pin(p,n,h)
  proof=load(E/'proof_first.json');need(proof['sha256']==sha(D/'PROOF.md'),'immutable proof first');r=auth(p,PTAG,PSCOPE,load(D/'proof_files.json'),'proof_question.txt');po=post(p,PTAG,r,'PROOF_ADJUDICATION');fr=load(E/'source_freeze.json');expected={str((D/n).relative_to(B)):sha(D/n) for n in OWN}
  need(fr['files']==dict(sorted(expected.items())) and when(proof['utc'])<when(r['start_utc'])<when(r['end_utc'])<when(po['utc'])<when(fr['utc'])<datetime.now(timezone.utc),'proof, review, later own disposition and frozen implementation')

@@ -51,4 +51,4 @@ This receipt is by GPT-6 Astra. It does not certify a separate Opus 5.5 review; 
 | verification/full_games.json | `1d200095e79e23b5179ccca59911ea2eb878835ab479b67c2e6b0e92d7f92aa8` |
 | RESULTS.md | `0701f656d404f085bc044be2c021e8e359207b5309098b895744a0edf82b5ef9` |
 | V policy | `ed9643a908e634f7e369f5dd1f9946dcfe0c723b2e5e952082db015ebf5f9315` |
-| Narrative amendment | `c4ea633e3832bd60b5e81d04e1590e82ef1bbb2fc0e7259eb969a28404b354c1` |
+| Narrative amendment | `5f4447d33c2da5262bbef5605ff3452d7f618ec12b4af0acf0b949ce5d3bafc3` |

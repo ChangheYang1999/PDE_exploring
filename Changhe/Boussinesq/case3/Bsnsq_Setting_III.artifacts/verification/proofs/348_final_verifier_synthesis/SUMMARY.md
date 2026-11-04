@@ -8,6 +8,6 @@ The first run passed 29616/29740. All 124 failures came from my incorrect assump
 
 The control source hash is 11c6781913d99d2d000023dd4c032a247e6afd5fa792aa245083184925ae6311. The checked proof hash is 75b1abbfca7462c6895eca977b643f6292f5045b56315f012b86d3098380f8ea. The source checks establish finite import properties, not historical authorship. Prior packets provide the actual independently implemented inverse computations and their precise coverage.
 
-Actual Claude Opus 5.5 requests 610, 611 and 612 reviewed the mathematical identities and scope. Request 610 was truncated; follow-ups resolved its unsupported observer objection. I independently caught the plus-sign curl error in 611, and 612 confirmed the minus sign and closed the scoped review. The model did not execute the numerical checker or certify these numbers. See verification/model_adjudication.md.
+Actual the main model requests 610, 611 and 612 reviewed the mathematical identities and scope. Request 610 was truncated; follow-ups resolved its unsupported observer objection. I independently caught the plus-sign curl error in 611, and 612 confirmed the minus sign and closed the scoped review. The model did not execute the numerical checker or certify these numbers. See verification/model_adjudication.md.
 
 Dependencies and limitations are stated in PROOF.md. Final report writing, archive readback and actual T_end remain future actions at this timestamp. The root FINAL_VERIFIER_SUMMARY.md is an interim reading guide, not a new theorem.

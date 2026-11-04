@@ -29,7 +29,7 @@ class Collector:
   if 'admission_path'in d:self.bind(d['admission_path'],d['admission_sha256'])
  def review(self,label):
   folder=self.V/('opus_'+label);m=self.read(folder/'metadata.json');resp=self.read(folder/'response.json');req=self.bind(folder/'request.txt',m['request_sha256']);answer=self.bind(folder/'answer.md').read_text()
-  self.ck('actual completed model '+label,m['returned_model']==resp['model']=='claude-opus-5-5' and m['stop_reason']==resp['stop_reason']=='end_turn' and m['answer_nonempty'] and bool(answer.strip()))
+  self.ck('actual completed model '+label,m['returned_model']==resp['model']=='main-model' and m['stop_reason']==resp['stop_reason']=='end_turn' and m['answer_nonempty'] and bool(answer.strip()))
   self.ck('answer is actual returned text '+label,answer.strip()=='\n\n'.join(z['text']for z in resp['content']if z['type']=='text').strip())
   self.reviews.append({k:m[k]for k in ['requested_model','returned_model','request_id','started_utc','finished_utc','stop_reason']})
  def finish(self,status,report,filename):
@@ -47,7 +47,7 @@ def main320():
  for p,h in link['bindings'].items():a.ck('mechanical source linkage equals final audit '+p,normalized[str(Path(p).resolve())]==h);a.bind(p,h)
  for label in ['final_results','final_resolution','final_closure']:a.review(label)
  s=(r/'RESULTS_DRAFT3.md').read_text();s=s.replace('# Independent accurate-map audit: revised results awaiting final review','# Independent accurate-map audit: CONFIRMED finite results')
- s=s.replace('Actual model review and the interpretation decision are still pending.','Three actual claude-opus-5-5 result reviews completed at07:52:58,08:04:45 and08:08:03 UTC. Their objections were independently resolved as recorded in the resolution files; the final binding collector mechanically checked the source-linkage hashes against FINAL_CHECKS.json.')
+ s=s.replace('Actual model review and the interpretation decision are still pending.','Three actual main-model result reviews completed at07:52:58,08:04:45 and08:08:03 UTC. Their objections were independently resolved as recorded in the resolution files; the final binding collector mechanically checked the source-linkage hashes against FINAL_CHECKS.json.')
  s=s.replace('This report requires the actual final results review and a binding manifest before its verdict can be CONFIRMED.','The final limited verdict is CONFIRMED, with verification/FINAL_BINDINGS.json recording the completed identity and review gates.')
  s=s.replace('This draft resolves its substantive issues independently; actual follow-up and final binding are pending.','That second draft was followed by two actual reviews and the independent resolutions recorded here.')
  s=s.replace('final source-linkage and counting evidence are in verification/FINAL_SOURCE_LINKAGE.json.','source-linkage and counting evidence are in verification/FINAL_SOURCE_LINKAGE.json. Its scope is static linkage and finite counting, not re-execution of the full final checker; the final collector separately performed the mechanical hash comparison requested by the model.')
@@ -55,7 +55,7 @@ def main320():
  report=r/'RESULTS.md';report.write_text(s)
  (r/'FINAL_CLOSURE_RESOLUTION.md').write_text('''# Final independent closure
 
-The third actual model was claude-opus-5-5, request dec0c018-4374-4ef7-87b2-4be02535357c, completed08:08:03UTC. Its remaining mechanical hash comparison is performed explicitly by finalize_320_324.py against the bound FINAL_CHECKS.json entries and the current bytes. Its stale-opening and static-scope presentation edits are applied in RESULTS.md. The by-hand model could not recompute hashes; the verifier did. Its confirmation of the interpolation counterargument is accepted, while no additional optional causal or historical lower-bound claim is added. All three original drafts and actual reviews remain preserved. No accepted numerical code, inverse rule or criterion changed.
+The third actual model was main-model, request dec0c018-4374-4ef7-87b2-4be02535357c, completed08:08:03UTC. Its remaining mechanical hash comparison is performed explicitly by finalize_320_324.py against the bound FINAL_CHECKS.json entries and the current bytes. Its stale-opening and static-scope presentation edits are applied in RESULTS.md. The by-hand model could not recompute hashes; the verifier did. Its confirmation of the interpolation counterargument is accepted, while no additional optional causal or historical lower-bound claim is added. All three original drafts and actual reviews remain preserved. No accepted numerical code, inverse rule or criterion changed.
 
 The result is CONFIRMED within the report's finite auxiliary scope. The cause of31 versus6, inverse accuracy, continuum convergence and every primary IPM endpoint remain OPEN or UNRESOLVED as stated. Completing this audit is not an early-stop endpoint.
 ''')
@@ -67,13 +67,13 @@ def main324():
  for p in ['independent_code/check_selected_tail_final.py','independent_code/check_selected_tail_final_v2.py','independent_code/check_selected_tail_review.py','independent_code/check_tail_rule_provenance.py']:a.bind(p)
  for label in ['selected_final','selected_closure','selected_confirm']:a.review(label)
  s=(r/'SELECTED_RESULTS_DRAFT3.md').read_text().replace('# Selected analytic-derivative tails: revised final review pending','# Selected analytic-derivative tails: CONFIRMED finite diagnostic')
- s=s.replace('Final closure and binding are pending.','The final actual claude-opus-5-5 review, request ecd1fbfe-c86f-4323-99e7-304af215529f, completed08:08:34UTC and accepted the two counterarguments with no blocking defect. The final collector binds both original and revised checker sources, their outputs, all three drafts and all three actual result reviews.')
+ s=s.replace('Final closure and binding are pending.','The final actual main-model review, request ecd1fbfe-c86f-4323-99e7-304af215529f, completed08:08:34UTC and accepted the two counterarguments with no blocking defect. The final collector binds both original and revised checker sources, their outputs, all three drafts and all three actual result reviews.')
  for x,y in [('0 or1','0 or 1'),('and0,1 or2','and 0, 1 or 2'),('of12','of 12'),('completed08:04:49UTC','completed 08:04:49 UTC')]:s=s.replace(x,y)
  s+='\nFinalized '+now()+'. Verdict CONFIRMED within the finite selected-tail scope. verification/SELECTED_FINAL_BINDINGS.json contains the completed gates. Neither the tail integrands nor exact integrals were independently replayed by the final algebra checkers; their finite difference arithmetic was independently reconstructed. Primary IPM remains UNRESOLVED and T_end has not been reached.\n'
  report=r/'SELECTED_RESULTS.md';report.write_text(s)
  (r/'SELECTED_FINAL_CLOSURE_RESOLUTION.md').write_text('''# Final independent selected-tail closure
 
-The actual third model was claude-opus-5-5, request ecd1fbfe-c86f-4323-99e7-304af215529f, completed08:08:34UTC. It accepted both independent counterarguments: the reported finite-sum argmax is determined while its exact-integral counterpart is not, and the actual cwd is precisely the verifier lane. The final collector directly binds both checker sources and outputs and all three drafts, satisfying the two remaining provenance notes. The earlier inline diagnostics and the later durable reproduction remain distinct. The final text removes stale pending status and clarifies spacing.
+The actual third model was main-model, request ecd1fbfe-c86f-4323-99e7-304af215529f, completed08:08:34UTC. It accepted both independent counterarguments: the reported finite-sum argmax is determined while its exact-integral counterpart is not, and the actual cwd is precisely the verifier lane. The final collector directly binds both checker sources and outputs and all three drafts, satisfying the two remaining provenance notes. The earlier inline diagnostics and the later durable reproduction remain distinct. The final text removes stale pending status and clarifies spacing.
 
 The model's phrase that derivative-tail sums were reproduced exactly must be read with the report's explicit scope: the final checkers independently reconstructed finite-sum difference algebra, not the candidate tail integrands. No exact integral, error enclosure, convergence rate or historical cause is established. The finite diagnostic is CONFIRMED; the primary IPM endpoint remains UNRESOLVED. This is not an early-stop endpoint.
 ''')

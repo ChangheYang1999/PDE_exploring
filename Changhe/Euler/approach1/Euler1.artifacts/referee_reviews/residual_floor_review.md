@@ -340,4 +340,4 @@ The accepted input is L1 and its proof in `THEORY_NOTES.md`, section 2, version 
 
 Exact symbolic algebra additionally checked (20), (22), \(G\Omega=S\Omega\), and the Poisson-kernel Hessian coefficient \(15\) in (17). The compactness and dynamical arguments remain informal mathematical proofs.
 
-The requested Claude Opus 5.5 collaboration could not be performed: the configured Python/Bedrock client failed to obtain credentials. No response from that model was obtained or substituted. This report is an independent mathematical check, not a machine-checked formal proof.
+The requested the main model collaboration could not be performed: the configured Python/Bedrock client failed to obtain credentials. No response from that model was obtained or substituted. This report is an independent mathematical check, not a machine-checked formal proof.

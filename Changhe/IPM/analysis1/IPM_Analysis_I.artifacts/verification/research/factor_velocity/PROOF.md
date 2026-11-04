@@ -1,6 +1,6 @@
 # The weighted factor supremum does not control interior velocity
 
-Date: 2026-10-20. Status: CONFIRMED after independent derivation and actual Claude Opus 5.5 review. This restricts the choice of a low norm in a possible iteration. It neither excludes a profile nor refutes stronger norms.
+Date: 2026-10-20. Status: CONFIRMED after independent derivation and actual the main model review. This restricts the choice of a low norm in a possible iteration. It neither excludes a profile nor refutes stronger norms.
 
 ## Statement and notation
 
@@ -91,4 +91,4 @@ can hold for all such e and u. Substitute e=h_delta. The left side grows without
 
 The counterexample uses an exact angular integral and explicit bounds for all reflected patches and for the canonical scalar functional. There is no fitted coefficient input, limiting exchange in the PDE, or numerical enclosure assumption. Each h_delta has the required kinematic correction properties individually. Its high derivatives are allowed to grow as delta tends to zero; the assertion being refuted imposes only the low factor norm on e. No unproved uniform high-norm claim is made.
 
-Actual Claude Opus 5.5 rederived the support, parity, angular integral, reflected-patch bound and scalar-kernel sign and accepted the counterexample. The forcing-space consequence applies to a supremum norm or essential-supremum norm with nonzero local weight, because these coincide on continuous functions. It does not by itself refute any finite-L^p forcing norm or a logarithmic estimate using an additional high norm of e. The latter norm diverges for the constructed sequence.
+Actual the main model rederived the support, parity, angular integral, reflected-patch bound and scalar-kernel sign and accepted the counterexample. The forcing-space consequence applies to a supremum norm or essential-supremum norm with nonzero local weight, because these coincide on continuous functions. It does not by itself refute any finite-L^p forcing norm or a logarithmic estimate using an additional high norm of e. The latter norm diverges for the constructed sequence.

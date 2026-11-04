@@ -1,6 +1,6 @@
 # Nonanalytic strong unstable germs with the same beta-two local equations
 
-Status: complete informal proof, independently checked by exact algebra and numerical flow controls. Actual Claude Opus 5.5 reviewed the argument conditional on dependencies156 and158; its derivative-dependency point is supplied explicitly below. This constructs nonprofiles only. The vorticity equation is not imposed on the outgoing basin.
+Status: complete informal proof, independently checked by exact algebra and numerical flow controls. Actual the main model reviewed the argument conditional on dependencies156 and158; its derivative-dependency point is supplied explicitly below. This constructs nonprofiles only. The vorticity equation is not imposed on the outgoing basin.
 
 ## 1. Statement and dependencies
 

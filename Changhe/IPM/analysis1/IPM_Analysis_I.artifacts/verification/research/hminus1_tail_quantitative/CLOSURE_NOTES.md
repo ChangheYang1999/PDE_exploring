@@ -21,13 +21,13 @@ are explicit. The collected quotient inverse and exact strain cancellation
 are proved there. The audit closes input-source and inherited-constant
 obligations; the original normalization uncertainty is retained.
 
-The first actual claude-opus-5-5 review was analytic only and listed six
+The first actual main-model review was analytic only and listed six
 obligations. It also mistakenly asserted a negative range for a1+1. The
 correct value is2k in(0,1/2). The closure review explicitly retracted that
 range, checked the corrections and accepted the published scope. It ended
 at2026-10-21T07:16:22.306850+00:00, request
 cbc6bf65-d981-4578-9b84-a6996f699e1c, with actual_response_model
-claude-opus-5-5 and stop_reason=end_turn. The whole13-file request hash is
+main-model and stop_reason=end_turn. The whole13-file request hash is
 8a9a594bf12cda1c6978e81fb046f2bb69596b7dbee1801974703ad05403682d.
 The current request bundle, raw response and actual model metadata are
 checked again by the finalizer. The review was text-only and did not rerun

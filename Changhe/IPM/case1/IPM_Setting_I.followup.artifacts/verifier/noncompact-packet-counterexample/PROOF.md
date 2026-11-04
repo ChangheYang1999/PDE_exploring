@@ -1,6 +1,6 @@
 # A noncompact packet with a smooth nonzero first trace
 
-Date: 2026-10-21. Status: CONFIRMED by independent derivation, exact checks and completed Claude Opus 5.5 review. This is a counterexample to deleting compact support from the scalar trace rigidity statement in ../complex-packet-rigidity/PROOF.md. It is not a counterexample to that correctly qualified theorem or a coupled IPM profile.
+Date: 2026-10-21. Status: CONFIRMED by independent derivation, exact checks and completed the main model review. This is a counterexample to deleting compact support from the scalar trace rigidity statement in ../complex-packet-rigidity/PROOF.md. It is not a counterexample to that correctly qualified theorem or a coupled IPM profile.
 
 ## Exact statement
 

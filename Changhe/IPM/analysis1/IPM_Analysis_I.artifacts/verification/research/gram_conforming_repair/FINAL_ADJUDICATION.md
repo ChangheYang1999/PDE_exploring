@@ -31,7 +31,7 @@ every exact repair record and both engines' bounds. The X weight and
 polar identity are stated explicitly in REVIEW_RESOLUTIONS; the exact
 weight exponents are additionally checked against the frozen definition.
 
-Two authenticated actual Claude Opus 5.5 reviews completed with end_turn.
+Two authenticated actual the main model reviews completed with end_turn.
 The follow-up independently resolved the norm dependency. Its incidental
 uncertainty about the integration domain is removed by the full-plane
 convention above. No remaining objection refutes the restricted theorem.

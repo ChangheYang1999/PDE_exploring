@@ -1,6 +1,6 @@
 # P300: next local vorticity jet
 
-UTC 2026-10-22T07:00:57.430030+00:00. Verdict CONFIRMED,72/72independentcontrols; actualOpus518 returnedclaude-opus-5-5 andacceptedthenewproofconditionalonP299. NoB2endpoint.
+UTC 2026-10-22T07:00:57.430030+00:00. Verdict CONFIRMED,72/72independentcontrols; actualOpus518 returnedmain-model andacceptedthenewproofconditionalonP299. NoB2endpoint.
 
 Every P299localanalyticconstruction extends through the nextvorticity equation b gamma_y+(6beta+1-3b_y)gamma=D+2v_y eta-6v eta_y. An analyticgammaoforderatleast6-q existsuniquelyinthatorderclass. Its scalarhomogeneousexponentis5-3/(3beta+2)<5, belowtheforcingorder6-q>=5;anexplicitconvergentseries provesexistence. Thus allprescribedextendedlimits ofAI2 persistthroughthisadditionalnecessaryrelation.
 

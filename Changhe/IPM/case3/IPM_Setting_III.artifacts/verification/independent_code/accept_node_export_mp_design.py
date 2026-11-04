@@ -17,7 +17,7 @@ for name,status,count in [('MP_STAGE_MANUFACTURES.json','PASS_MP_GEOMETRY_MOMENT
 for label in ['mp_design','mp_followup','mp_final_design']:
  p=V/('opus_'+label)
  for n in ['request.txt','response.json','metadata.json','answer.md']:bind(p/n)
- m=json.loads((p/'metadata.json').read_text());ck('actual completed Opus5.5 '+label,m['returned_model']=='claude-opus-5-5'and m['stop_reason']=='end_turn'and m['answer_nonempty'],request_id=m['request_id'])
+ m=json.loads((p/'metadata.json').read_text());ck('actual completed Opus5.5 '+label,m['returned_model']=='main-model'and m['stop_reason']=='end_turn'and m['answer_nonempty'],request_id=m['request_id'])
 for p in [__file__,R/'MP_DESIGN_ACCEPTANCE_PROOF.md']:bind(p)
 ck('residual column identity',RESIDUAL_COLUMNS==['R','Nf','Nv','Rf','Rv'])
 for i,(x,y)in enumerate([(0.,0.),(.1,.2),(-.1,.2),(.1,-.2),(-.1,-.2),(1e6,1e-8),(1e-8,1e6),(3.125,7.75)]):

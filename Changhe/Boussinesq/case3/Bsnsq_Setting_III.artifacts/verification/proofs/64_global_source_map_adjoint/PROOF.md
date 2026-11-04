@@ -172,6 +172,6 @@ No unproved integration by parts turning Theta_x M into -Theta M_x is used. Such
 
 The source draft was the lead's notes/g_map.md, independently read and copied with its hash to opus_reviews/64_global_map_audit/lead_source.md. Its centering omission, global generating-function claim, and unqualified far-field scaling require the repairs stated here or in a subsequent precise asymptotic theorem. The core pullback, shear and linearization identities were derived directly.
 
-Actual model request64 used the existing permitted Python Bedrock client and returned model claude-opus-5-5, HTTP200, stop_reason refusal, with no audit text. This is an availability limitation for that exchange and is not an endorsement. The earlier inverse review exchanges62 and63 did return written audits and were independently checked. No model was substituted.
+Actual model request64 used the existing permitted Python Bedrock client and returned model main-model, HTTP200, stop_reason refusal, with no audit text. This is an availability limitation for that exchange and is not an endorsement. The earlier inverse review exchanges62 and63 did return written audits and were independently checked. No model was substituted.
 
 This packet constructs no admissible profile and excludes no member of G. Its map equivalence is conditional on the already established smooth linearizable coordinate case; its adjoint identity covers all of G, including the triangular resonance. No numerical or formal proof assistant computation is treated as proof of the PDE.

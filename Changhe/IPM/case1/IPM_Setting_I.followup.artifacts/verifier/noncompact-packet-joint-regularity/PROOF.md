@@ -1,6 +1,6 @@
 # A smooth scalar packet trace without joint C1 regularity
 
-Date: 2026-10-21. Status: CONFIRMED by independent proof, exact scaling checks and completed actual Claude Opus5.5 review.
+Date: 2026-10-21. Status: CONFIRMED by independent proof, exact scaling checks and completed actual the main model review.
 
 ## Statement, notation and scope
 

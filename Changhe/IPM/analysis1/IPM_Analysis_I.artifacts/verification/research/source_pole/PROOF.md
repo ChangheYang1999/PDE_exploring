@@ -1,6 +1,6 @@
 # Coupled source inversion without a resonance pole
 
-Date:2026-10-20. Status: CONFIRMED as a conditional frozen-model theorem, after actual Claude Opus 5.5 review and follow-up. This is an exact frozen-operator counterexample to an inference from the small transport coefficient mu-1. It is not an inverse theorem for the full variable-coefficient IPM linearization.
+Date:2026-10-20. Status: CONFIRMED as a conditional frozen-model theorem, after actual the main model review and follow-up. This is an exact frozen-operator counterexample to an inference from the small transport coefficient mu-1. It is not an inverse theorem for the full variable-coefficient IPM linearization.
 
 ## Statement
 
@@ -90,4 +90,4 @@ Dependencies: the Fourier transform, elementary integration, the explicitly prov
 
 ## Verification record
 
-Actual review model: claude-opus-5-5, recorded by Bedrock response metadata. The first review requested a global distributional stitching argument across the Fourier axes and an explicit reconstruction of the IPM multiplier sign. Both were added. The final review accepted the complete theorem at2026-10-20T16:25:33.166800+00:00; see notes/reviews/source_pole_closure_response.md and its metadata at the lane root. Exact rational arithmetic checked all eight parameter corners in code/check_margins.py. The separate code/check_membership.py checked the rational endpoints of the already independently confirmed modal source result SHA256 51f283cd4ea7145f633e5449236cdd0bc2879b9ccf922d9fbadb6a609afa4691 against the displayed box. The theorem itself has no numerical dependency; that input is used only for modal-trial association.
+Actual review model: main-model, recorded by Bedrock response metadata. The first review requested a global distributional stitching argument across the Fourier axes and an explicit reconstruction of the IPM multiplier sign. Both were added. The final review accepted the complete theorem at2026-10-20T16:25:33.166800+00:00; see notes/reviews/source_pole_closure_response.md and its metadata at the lane root. Exact rational arithmetic checked all eight parameter corners in code/check_margins.py. The separate code/check_membership.py checked the rational endpoints of the already independently confirmed modal source result SHA256 51f283cd4ea7145f633e5449236cdd0bc2879b9ccf922d9fbadb6a609afa4691 against the displayed box. The theorem itself has no numerical dependency; that input is used only for modal-trial association.

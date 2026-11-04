@@ -41,9 +41,9 @@ def dec_dn(z, k):
 sha = lambda b: hashlib.sha256(b).hexdigest()
 hx = lambda z: sha(str(z).encode())
 D = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
-HASH = {'N4427_extract.json': '611a8febe1f823f04fd32047bba49f647452f713349f3aa0cb34898465427cac',
-        'N4418_result_v01.json': '8eec600612f7719a1c0cbcb408d1665659b8d2c06d861f032a102651953c3728',
-        'N4417_result_v03.json': '285dac39d93e32574c214d00cef9764087c0718c19b4042398c7ec728b530840',
+HASH = {'N4427_extract.json': '8f392b6e71e8fd5064b95aee2e408dfe0487de55bcab2665bd7fdc441be00c31',
+        'N4418_result_v01.json': '928c05b95385bc7e5ecafd8187e15897e79ec3127551847a3d53137f7c36f117',
+        'N4417_result_v03.json': '898e15d71bbf6a0be7e3676fb6f7b025807c527aa5f883518b37ef06c01429d1',
         'N4392_comparison.json': 'a2f68954828f60a7dc8983ecb69e8e30ddcd8e868ec0d1b58ce56faa27eeaedc',
         'N4252_result.json': 'd94473eb11c0708e25a9529f00b49576628023066e626ed9170bf29b62e22e7c'}
 J = {}

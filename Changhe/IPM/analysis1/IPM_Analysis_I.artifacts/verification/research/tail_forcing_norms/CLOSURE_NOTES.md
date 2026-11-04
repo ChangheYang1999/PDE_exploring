@@ -17,7 +17,7 @@ and mpmath.iv arithmetic are trusted dependencies, not formally verified
 libraries. No Lean or Lake build is used.
 
 The initial max_tokens Opus response is unavailable as an acceptance.
-The follow-up actual claude-opus-5-5 end_turn proof review is authenticated
+The follow-up actual main-model end_turn proof review is authenticated
 against its complete original request. Its optional citation requests are
 addressed in ADDENDUM. The unexplained mention of a1+1 is not adopted as
 a substitute for canonical spatial growth. Closure must examine all

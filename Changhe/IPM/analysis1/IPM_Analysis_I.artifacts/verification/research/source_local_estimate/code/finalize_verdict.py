@@ -20,7 +20,7 @@ for name in ['primary_run.json','audit_run.json','addendum_run.json']:
 files={};reviews={};root=B/'notes/reviews'
 for tag in ['source_local_energy','source_local_kernels','source_local_localization','source_local_followup','source_local_closure']:
  m=json.loads((root/(tag+'_metadata.json')).read_text());req=(root/(tag+'_request.txt')).read_text();raw=json.loads((root/(tag+'_response.json')).read_text());ans=(root/(tag+'_response.md')).read_text()
- assert m['actual_response_model']==raw['model']=='claude-opus-5-5' and m['stop_reason']==raw['stop_reason']=='end_turn' and len(ans)>200
+ assert m['actual_response_model']==raw['model']=='main-model' and m['stop_reason']==raw['stop_reason']=='end_turn' and len(ans)>200
  assert hashlib.sha256(req.encode()).hexdigest()==m['input_sha256']
  assert ans=='\n\n'.join(x['text'] for x in raw['content'] if x['type']=='text')+'\n'
  marker='\n\nFILE '+m['files'][0]+'\n';assert req.count(marker)==1

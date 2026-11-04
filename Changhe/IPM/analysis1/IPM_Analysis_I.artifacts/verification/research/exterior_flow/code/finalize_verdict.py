@@ -30,7 +30,7 @@ def main():
   else:assert F(row['joint_lower_exact'])>F(row['strict_public_lower_exact'])
  paths={B/p for p in fixed}|{Path(__file__),E/'final_serialized_run.json',E/'final_check_run.log'};review={}
  for tag in ['exterior_flow_review','exterior_flow_closure']:
-  m=json.loads((B/f'notes/reviews/{tag}_metadata.json').read_text());req=(B/f'notes/reviews/{tag}_request.txt').read_text();assert m['actual_response_model']=='claude-opus-5-5' and m['stop_reason']=='end_turn' and hashlib.sha256(req.encode()).hexdigest()==m['input_sha256']
+  m=json.loads((B/f'notes/reviews/{tag}_metadata.json').read_text());req=(B/f'notes/reviews/{tag}_request.txt').read_text();assert m['actual_response_model']=='main-model' and m['stop_reason']=='end_turn' and hashlib.sha256(req.encode()).hexdigest()==m['input_sha256']
   if tag.endswith('closure'):
    for p in m['files']:assert req.split('\n\nFILE '+p+'\n',1)[1].split('\n\nFILE ',1)[0]==(B/p).read_text()
    assert datetime.fromisoformat(run['utc_resume'])<datetime.fromisoformat(m['start_utc'])

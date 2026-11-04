@@ -221,7 +221,7 @@ was independently rederived before comparison with lead astra/auditL.
 No fitting-lane code or numerical inference is used.
 
 Audit29 provenance: the permitted Python Bedrock request returned model
-claude-opus-5-5, completed2026-10-20T16:42:51Z in153.265218s.
+main-model, completed2026-10-20T16:42:51Z in153.265218s.
 Its detailed positive audit was checked against every displayed estimate.
 The four requested nonblocking clarifications (divergence cancellation,
 exterior radius, finite exit bound, and exponent choice) are adopted above.

@@ -8,7 +8,7 @@ import sympy as S
 from flint import arb,fmpq,ctx
 ctx.prec=512;ctx.threads=1
 R=Path(__file__).resolve().parents[3];D=R/'research/logarithmic_strain_functional';E=D/'evidence';sys.path.insert(0,str(R/'research/full_derivative_norm_bound_v2/code'));import protocol as p
-start=p.now();pf=p.load(E/'proof_first.json');assert p.sha(D/'PROOF.md')==pf['proof_sha256']=='d4284c845df4c9717c4618916e7972b84e6a57cd1b5dd4da271062d375616115'
+start=p.now();pf=p.load(E/'proof_first.json');assert p.sha(D/'PROOF.md')==pf['proof_sha256']=='9fa121da555659a9332116a0f47bd3b3740078e3e4a06f2425f0f2e177e67387'
 parent='research/canonical_residual_weak_axis_membership/evidence/verdict.json';pv=p.load(R/parent);pins=dict(pv['files']);p.pin(pins,parent,'c7bac166b33be55d4a95ed02ebc28e16dd497c447b082ef499fd4efce45bdb9f');p.rehash(pins)
 raw=R/'research/modal_exactification/evidence/trial_v2_h0.008.npz';assert p.sha(raw)=='a069d85d102e17340778042f85c003705716ba799c0f68873d10c1c582ea4874'
 with np.load(raw,allow_pickle=False) as z:k=F.from_float(float(z['k'].item()))

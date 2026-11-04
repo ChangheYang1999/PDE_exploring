@@ -24,7 +24,7 @@ def main():
  paths={B/p for p in c['files']}|{Path(__file__),E/'primary_completion_checks.json',E/'completion_checks_run.json',E/'completion_checks.log'};reviews={}
  for tag in ['middle_primary_assembly','middle_primary_closure']:
   meta=load(B/f'notes/reviews/{tag}_metadata.json');resp=load(B/f'notes/reviews/{tag}_response.json');req=(B/f'notes/reviews/{tag}_request.txt').read_text();text=(B/f'notes/reviews/{tag}_response.md').read_text()
-  assert meta['actual_response_model']==resp['model']=='claude-opus-5-5' and meta['stop_reason']==resp['stop_reason']=='end_turn' and 'ACCEPT_PRIMARY' in text
+  assert meta['actual_response_model']==resp['model']=='main-model' and meta['stop_reason']==resp['stop_reason']=='end_turn' and 'ACCEPT_PRIMARY' in text
   assert sha(B/f'notes/reviews/{tag}_request.txt')==meta['input_sha256']
   assert text=='\n\n'.join(x['text'] for x in resp['content'] if x['type']=='text')+'\n'
   if tag.endswith('closure'):

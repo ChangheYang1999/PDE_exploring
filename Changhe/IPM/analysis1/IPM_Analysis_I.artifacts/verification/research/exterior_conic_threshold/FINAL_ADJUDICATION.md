@@ -26,7 +26,7 @@ Informational values are R~506529.193332153,T upper~-0.226329833538,
 s lower~5.573491090564,vi lower~5.571292813927. The public bounds use
 exact endpoint comparisons, not these rounded displays.
 
-Two authenticated actual claude-opus-5-5/end_turn exchanges reviewed the
+Two authenticated actual main-model/end_turn exchanges reviewed the
 proof and the completed calculation. The first requested explicit T=1
 row certification, axis continuity and finite-range scope. The addendum
 and completed source/output bundle resolve all three. The final response

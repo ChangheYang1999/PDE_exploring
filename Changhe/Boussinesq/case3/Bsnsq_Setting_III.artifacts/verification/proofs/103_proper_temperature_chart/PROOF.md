@@ -1,7 +1,7 @@
 # A proper canonical chart from a certified exponent-three temperature
 
 Written UTC: 2026-10-21T01:37:56.522827+00:00
-Status: CONFIRMED by independent proof and numerical tests; actual claude-opus-5-5 review128 completed. Updated 2026-10-21T01:46:56.407222+00:00.
+Status: CONFIRMED by independent proof and numerical tests; actual main-model review128 completed. Updated 2026-10-21T01:46:56.407222+00:00.
 This constructs coordinates and, optionally, a transport-exact auxiliary field. It does not solve the vorticity equation or identify the canonical inverse.
 
 ## Statement and hypotheses

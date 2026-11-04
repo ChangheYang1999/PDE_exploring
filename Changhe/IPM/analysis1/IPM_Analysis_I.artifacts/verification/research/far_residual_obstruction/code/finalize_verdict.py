@@ -25,13 +25,13 @@ reviews={}
 # Keep and authenticate the superseded closure record; the current closure must
 # cover the repaired files. Its former ACCEPT did not authorize finalization.
 r1='far_residual_obstruction_closure_r1';m1=load(R/(r1+'_metadata.json'));raw1=load(R/(r1+'_response.json'));req1=(R/(r1+'_request.txt')).read_text()
-assert m1['actual_response_model']==raw1['model']=='claude-opus-5-5' and m1['stop_reason']==raw1['stop_reason']=='end_turn'
+assert m1['actual_response_model']==raw1['model']=='main-model' and m1['stop_reason']==raw1['stop_reason']=='end_turn'
 assert hashlib.sha256(req1.encode()).hexdigest()==m1['input_sha256']
 for suffix in ('_metadata.json','_request.txt','_response.md','_response.json'):
  f=R/(r1+suffix);files[str(f.relative_to(B))]=sha(f)
 for kind in ('proof','closure'):
  tag='far_residual_obstruction_'+kind;m=load(R/(tag+'_metadata.json'));raw=load(R/(tag+'_response.json'));req=(R/(tag+'_request.txt')).read_text();ans=(R/(tag+'_response.md')).read_text()
- assert m['requested_model']=='us.anthropic.claude-opus-5-5' and m['actual_response_model']==raw['model']=='claude-opus-5-5'
+ assert m['requested_model']=='the main model' and m['actual_response_model']==raw['model']=='main-model'
  assert m['stop_reason']==raw['stop_reason']=='end_turn' and hashlib.sha256(req.encode()).hexdigest()==m['input_sha256']
  assert ans=='\n\n'.join(x['text'] for x in raw['content'] if x['type']=='text')+'\n'
  for phrase in ('no JavaScript/TypeScript','no servers/listeners/tunnels','no RLScience cluster','no Lean/Lake builds'):assert phrase in req

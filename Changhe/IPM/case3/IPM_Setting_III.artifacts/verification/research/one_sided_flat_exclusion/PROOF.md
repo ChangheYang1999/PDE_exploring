@@ -1,6 +1,6 @@
 # A one-sided affine defect cannot be flat
 
-Status: CONFIRMED. Independently derived complete informal proof; actual Claude Opus 5.5 lead hand audit at 2026-10-20T21:00Z found no gap. The additional external audit is pending. Date: 2026-10-20.
+Status: CONFIRMED. Independently derived complete informal proof; actual the main model lead hand audit at 2026-10-20T21:00Z found no gap. The additional external audit is pending. Date: 2026-10-20.
 
 ## Statement
 

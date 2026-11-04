@@ -70,7 +70,7 @@ for pp in [Fraction(1,2),Fraction(2,3),Fraction(1,3)]:
 reviews={}
 for name,complete in [('opus_review',False),('opus_followup',False),('opus_dictionary_review',True),('opus_dictionary_clarification',True)]:
     d=V/name;m=json.loads((d/'metadata.json').read_text());payload=json.loads((d/'response.json').read_text())
-    ck(name+'actual model',m['returned_model']==payload['model']=='claude-opus-5-5',True)
+    ck(name+'actual model',m['returned_model']==payload['model']=='main-model',True)
     ck(name+'completion',m['stop_reason']=='end_turn',complete)
     reviews[name]={p.name:sha(p) for p in d.iterdir() if p.is_file()}
 out=dict(status='PASS'if all(z['passed'] for z in checks)else'FAIL',utc=datetime.now(timezone.utc).isoformat(),count=len(checks),checks=checks,reviews=reviews,proof_sha256=sha(R/'PROOF.md'),addendum_sha256=sha(R/'DICTIONARY_ADDENDUM.md'),module_sha256=sha(Path('independent_code/negative_slope_dictionary.py')),driver_sha256=sha(Path(__file__)))

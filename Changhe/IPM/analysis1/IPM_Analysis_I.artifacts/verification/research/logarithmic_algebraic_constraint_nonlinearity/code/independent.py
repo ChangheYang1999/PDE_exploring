@@ -7,7 +7,7 @@ R=Path(__file__).resolve().parents[3];D=R/'research/logarithmic_algebraic_constr
 def now():return datetime.now(timezone.utc).isoformat()
 def sha(path):
  with path.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
-start=now();a=json.loads((E/'check.json').read_text());assert sha(D/'PROOF.md')==a['proof_sha256']=='989c8c8eebeecf3a85b346b2acede286ad2d86d8ad05f1769221e9693963cc02'
+start=now();a=json.loads((E/'check.json').read_text());assert sha(D/'PROOF.md')==a['proof_sha256']=='0f6cdea01e3732da91219ed42eece5b3f16908dcd1bca4112465cb09705fb7dc'
 for name,h in a['parent_files'].items():assert sha(R/name)==h,name
 # Independent sparse commutative polynomial algebra over fmpq. No Sympy
 # or primary implementation is imported. Variables are u,v,c,d,a,b,e,f,t,w1,w2,l.

@@ -25,7 +25,7 @@ coefficients and3 rounded widths, independently of native floating powers.
 The two scalar NPY headers and IEEE payloads are checked against prior pins.
 Only the isolated source function was executed, not the numerical application.
 
-Two actual Claude Opus5.5 exchanges completed end_turn. The final response,
+Two actual the main model exchanges completed end_turn. The final response,
 request71bc4506-eadc-4eb7-82be-e2325fd8ecdd, accepts the scoped result and
 withdraws two imprecise phrases: the oriented outside-minus-inside jump is
 negative, and a generic value repair gives C0, not C4. PROOF.md, ADDENDUM.md

@@ -66,10 +66,10 @@ the stated constants, so this limitation does not alter the conclusion.
 The lead reconstructed the Green cancellation, compensation, scaling,
 Cartesian derivatives and source identity, and accepts the claims with
 this center correction. The lead identifies its model as Opus5.5 and its
-launch log configures us.anthropic.claude-opus-5-5. No raw actual provider
+launch log configures the main model. No raw actual provider
 response metadata for that team process is available. The additional
 Astra referee is GPT6. Its own Opus attempt failed before invocation.
-The direct request from this lane returned actual claude-opus-5-5 metadata
+The direct request from this lane returned actual main-model metadata
 with a refusal and no mathematical text. That is an unavailable review,
 not acceptance; it remains archived unchanged. No substitute is asserted.
 

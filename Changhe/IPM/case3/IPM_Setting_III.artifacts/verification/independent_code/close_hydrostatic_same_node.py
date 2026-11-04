@@ -45,7 +45,7 @@ ck('absolute Fmax unchanged',B['producer_nodes_Fmax_absolute']==3.93085375083313
 models=[]
 for label in ['design','followup','results','closure']:
  p=V/('opus_'+label);m=json.loads(bind(p/'metadata.json').read_text());resp=json.loads(bind(p/'response.json').read_text());a=bind(p/'answer.md').read_text();bind(p/'request.txt',m['request_sha256']);bind(V/('OPUS_'+label.upper()+'_REQUEST.txt'),m['request_sha256'])
- ck('actual Opus5.5 '+label,m['requested_model']=='us.anthropic.claude-opus-5-5' and m['returned_model']==resp['model']=='claude-opus-5-5')
+ ck('actual Opus5.5 '+label,m['requested_model']=='the main model' and m['returned_model']==resp['model']=='main-model')
  ck('completed model '+label,m['answer_nonempty'] and m['stop_reason']=='end_turn')
  ck('response text matches '+label,a.strip()=='\n\n'.join(z['text'] for z in resp['content'] if z['type']=='text').strip())
  models.append(dict(label=label,model=m['returned_model'],request_id=m['request_id'],started_utc=m['started_utc'],finished_utc=m['finished_utc']))

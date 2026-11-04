@@ -1,6 +1,6 @@
 # Exact vertical-axis coefficient of the canonical modal residual
 
-Date 2026-10-22T02:59:40.356713+00:00. Proof written before new scalar enclosures. Status OPEN pending two independent arithmetic paths, complete actual Claude Opus5.5 review and later own adjudication. This is a forcing-space obstruction for one exact trial, not an exclusion of an exact profile near X3.
+Date 2026-10-22T02:59:40.356713+00:00. Proof written before new scalar enclosures. Status OPEN pending two independent arithmetic paths, complete actual the main model review and later own adjudication. This is a forcing-space obstruction for one exact trial, not an exclusion of an exact profile near X3.
 
 ## Definition and statement
 

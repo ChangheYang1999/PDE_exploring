@@ -33,7 +33,7 @@ def main():
  for topic,h in dependencies.items():
   j=read(R/'research'/topic/'verification/result.json',h);accepted[topic]=j;ck('accepted:'+topic,all(j['checks'].values()))
   for rel,hh in j['inputs'].items():bind(R/rel,hh)
- lib=bind(R/'research/candidate016_upper_opus_primary/code/check_v02.py','ae63d919f60b458b074df764cf7f94e35109a13e9828fe8949c0ccbb29b30eeb')
+ lib=bind(R/'research/candidate016_upper_opus_primary/code/check_v02.py','3c1b76898202e9e657372edc5c952db23df2311e20e3d49be7ba8fcdbcabe12d')
  spec=importlib.util.spec_from_file_location('own404',lib);M=importlib.util.module_from_spec(spec);spec.loader.exec_module(M)
  vals={}
  for ns,f in par['fixtures'].items():
@@ -100,7 +100,7 @@ def main():
  ck('strict_E2_lower',0<ef and ef*ef<e2 and e2==Q(dual['E2_lower_square_exact']) and ef==Q(peer['E2_lower_exact']))
  ck('same_E2_order',ef-base==Q(dual['strict_E2_separation_exact'])==Q(peer['strict_E2_gap']) and ef>base)
  for rel,h in inputs.items():assert sha(R/rel)==h
- out={'utc':datetime.now(timezone.utc).isoformat(),'inputs':inputs,'check_count':len(checks),'checks':checks,'fixtures_over_pi':{str(n):{k:str(v) for k,v in row.items()} for n,row in vals.items()},'H_strict_lower_exact':str(hf),'E2_strict_lower_exact':str(ef),'strict_E2_gap_exact':str(ef-base),'improvement_sum_strict_lower_exact':str(jtotal),'both_general_Opus_reviews_accepted':True,'separate_tail_review_still_pending':True,'refuted_prose_exponent':par['exponent_description'],'actual_script_exponent':str(exponent),'configured_peer_model':'us.anthropic.claude-opus-5-5','actual_provider_response_identity_observable':False,'peer_code_executed':False,'candidate_integrals_repeated':False,'elapsed_seconds':time.monotonic()-start,'verdict':'CONFIRMED reciprocal analytic reviews and exact candidate lower/cross composition; REFUTED only FLOAT exponent attribution. Final prefix-tail upper acceptance is separate.'}
+ out={'utc':datetime.now(timezone.utc).isoformat(),'inputs':inputs,'check_count':len(checks),'checks':checks,'fixtures_over_pi':{str(n):{k:str(v) for k,v in row.items()} for n,row in vals.items()},'H_strict_lower_exact':str(hf),'E2_strict_lower_exact':str(ef),'strict_E2_gap_exact':str(ef-base),'improvement_sum_strict_lower_exact':str(jtotal),'both_general_Opus_reviews_accepted':True,'separate_tail_review_still_pending':True,'refuted_prose_exponent':par['exponent_description'],'actual_script_exponent':str(exponent),'configured_peer_model':'the main model','actual_provider_response_identity_observable':False,'peer_code_executed':False,'candidate_integrals_repeated':False,'elapsed_seconds':time.monotonic()-start,'verdict':'CONFIRMED reciprocal analytic reviews and exact candidate lower/cross composition; REFUTED only FLOAT exponent attribution. Final prefix-tail upper acceptance is separate.'}
  p=B/'verification/result.json'
  with p.open('x') as f:json.dump(out,f,indent=2);f.write('\n')
  print(out['utc'],len(checks),'checks',len(inputs),'bindings',sha(p),'seconds',out['elapsed_seconds'],flush=True)

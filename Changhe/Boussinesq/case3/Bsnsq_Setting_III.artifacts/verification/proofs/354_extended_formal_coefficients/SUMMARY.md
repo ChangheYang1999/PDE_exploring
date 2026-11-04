@@ -6,6 +6,6 @@ The requested order16/width300 computation ended under its 75-minute timeout wit
 
 These are shared-recurrence and shared exact-Fraction arithmetic controls, not a separately derived PDE evaluator or an all-width truncation theorem. The Poisson updates are definitional. Requested order16 was NOT completed. No convergence or profile follows.
 
-Actual Opus624 returned claude-opus-5-5 but exhausted its output budget without public audit text, so it supplies no endorsement. Opus627 returned claude-opus-5-5 and accepted the stated finite-evidence scope, emphasizing the same limitations. Its closing shorthand “through stage11” is not adopted as cross-width coverage: the compared final order is10.
+Actual Opus624 returned main-model but exhausted its output budget without public audit text, so it supplies no endorsement. Opus627 returned main-model and accepted the stated finite-evidence scope, emphasizing the same limitations. Its closing shorthand “through stage11” is not adopted as cross-width coverage: the compared final order is10.
 
 General B2 remains OPEN.

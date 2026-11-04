@@ -3,7 +3,7 @@ import sys,json
 sys.dont_write_bytecode=True
 from flint import fmpq as Q
 R=Path(__file__).resolve().parents[3];D=R/'research/logarithmic_full_graph_nonlinearity';E=D/'evidence';sys.path.insert(0,str(R/'research/full_derivative_norm_bound_v2/code'));import protocol as p
-start=p.now();a0=p.load(E/'check.json');p.rehash(a0['parent_files']);assert p.sha(D/'PROOF.md')==a0['proof_sha256']=='3ecda23dfa05f97bb7aedb762506b6d21e5a40e6918d6c9fc69d3b893cce4f32'
+start=p.now();a0=p.load(E/'check.json');p.rehash(a0['parent_files']);assert p.sha(D/'PROOF.md')==a0['proof_sha256']=='d45a012ee6a1e52309aa6a65d673328a1a124ba4c69155e282fa52d0549553c6'
 assert a0['parent_files']['research/logarithmic_full_graph_center_trace/evidence/verdict.json']=='a23396a208ea81bacceb01c17ed90f371f0cf8e7a27a0b02e2471a6a61459f3f'
 raw=R/'data_exact/modal_v2.json';assert p.sha(raw)=='57f67a53c1ee5c8fd5ede8480428f1a5584123ac4e54b6d3530d091ea2a67ca6';raw=p.load(raw)
 def hx(t):

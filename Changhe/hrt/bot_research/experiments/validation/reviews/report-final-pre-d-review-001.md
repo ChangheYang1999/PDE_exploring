@@ -1,6 +1,6 @@
 # Final report consistency review before reserved D
 
-Recorded 2026-10-31T22:35:52.501941+00:00. Actual model: GPT-6 Astra. Role: hrt-w3 independent report reviewer. The actual Claude Opus 5.5 collaboration is through the lead's dated notes/report and economy notes; this review is not attributed to Opus. The inspected report identifies itself as the draft last updated22:33Z. Its exact byte identity is pinned below.
+Recorded 2026-10-31T22:35:52.501941+00:00. Actual model: GPT-6 Astra. Role: hrt-w3 independent report reviewer. The actual the main model collaboration is through the lead's dated notes/report and economy notes; this review is not attributed to Opus. The inspected report identifies itself as the draft last updated22:33Z. Its exact byte identity is pinned below.
 
 Verdict: three publication corrections remain. The completed worker evidence confirms the arithmetic and exact frr1 theorem; the remaining issues concern counting conventions, the unmeasured diagonal and stale final-version wording. D is correctly reported as pending. Earlier ab15 and fresh56 construction-bias corrections are incorporated and are not repeated as recommendations.
 
@@ -84,7 +84,7 @@ Input identities at review time:
 | `bot_research/experiments/validation/reviews/economy-gate-846-review-001.archive-addendum.md` | `0a2f5ba226566a160eba85c8e78d36c2e74d30f2d8325460e9ecee1af3f90171` |
 | `bot_research/experiments/validation/reviews/economy-gate-846-review-001.archive-recheck.json` | `5d642288f04f21921718e11b98c0c90f7027cee3bdba4aa5fb83f0915eee24ef` |
 | `bot_research/experiments/validation/reviews/economy-gate-846-review-001.root-archive-check.json` | `9da3a852525aa4cb069466223d10d2f27795685048981443fa476fd3a3f5c5be` |
-| `bot_research/experiments/validation/reviews/frr1-equilibrium-review-001.md` | `558fdf02434067cf66de4de37e984ed684740a2d5ff4c088260cf9f796885704` |
+| `bot_research/experiments/validation/reviews/frr1-equilibrium-review-001.md` | `8ca45ebc57a6a269ab36e153ffe9cd2bc3d9461b8d1d12d6ae1cbcd381a3951d` |
 | `bot_research/experiments/validation/analysis/frr1_equilibrium/PROOF.md` | `e6656f1850ba2cf85deea5170edfcd5a73ab7a53db3830bcb34a7dbcdefd035d` |
 | `bot_research/experiments/validation/analysis/frr1_equilibrium/verification/independent_audit_001.json` | `118f08bc7d87f3ff536368a60c51e6879bf273c6bd7e5c431d56ad1a2fbbd08d` |
 | `bot_research/experiments/validation/analysis/delayed_signal_ambiguity/RESULTS.md` | `20feaf108399703f70ba82b09ee8d38d757801702e92f7ba73f19282fe6d1d88` |

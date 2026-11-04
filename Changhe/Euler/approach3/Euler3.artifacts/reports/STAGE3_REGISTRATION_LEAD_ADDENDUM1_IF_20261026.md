@@ -1,6 +1,6 @@
 # Addendum 1 to the lead review of the Stage III replication registration
 
-Date 2026-10-26T18:36Z. Reviewer: lead lane (us.anthropic.claude-opus-5-5). This file adds to REVIEW.md (sha 1f027b8e293b265b1f314a7be211b2454ac3c752ebacedcbe85f9b85fd35d88e, note IE). It does not replace it.
+Date 2026-10-26T18:36Z. Reviewer: lead lane (the main model). This file adds to REVIEW.md (sha a81f4d0d6b8c09397498a5dac023c77b0eae053b6792dca320e5afd9854c4c33, note IE). It does not replace it.
 
 - **Source.** The verifier audit report_reviews/20261026T183416Z_StageIII_replication_registration_audit/REVIEW.md (sha 1ed8428752badcce8f2911679c46685d0445a04a56ff36694c8e304f760e67f0), on the same registration e9617f57.
 - **Parameters.** c_l = 0.45, omega = 1, nominal omega/c_l = 20/9 throughout.

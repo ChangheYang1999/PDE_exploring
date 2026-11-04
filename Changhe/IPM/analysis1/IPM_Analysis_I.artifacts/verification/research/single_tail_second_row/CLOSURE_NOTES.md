@@ -1,6 +1,6 @@
 # Independent adjudication of the second-model review
 
-2026-10-21. The complete ten-file review returned by actual Claude Opus 5.5
+2026-10-21. The complete ten-file review returned by actual the main model
 at 06:58:49 UTC accepts the mathematical and numerical claim. Its explanatory
 text contains errors which are not used as proof premises.
 

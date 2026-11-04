@@ -1,6 +1,6 @@
 # Frozen Sobolev coercivity and the scope of cusp thresholds
 
-Date: 2026-10-20. Status: CONFIRMED analytic frozen-model theorem after actual Claude Opus 5.5 review; its detected arithmetic error is corrected and recorded. This addresses the frozen whole-plane operator only and audits a specific assertion of SPEC v2. It does not settle any variable-coefficient Fredholm index.
+Date: 2026-10-20. Status: CONFIRMED analytic frozen-model theorem after actual the main model review; its detected arithmetic error is corrected and recorded. This addresses the frozen whole-plane operator only and audits a specific assertion of SPEC v2. It does not settle any variable-coefficient Fredholm index.
 
 ## Statement and spaces
 

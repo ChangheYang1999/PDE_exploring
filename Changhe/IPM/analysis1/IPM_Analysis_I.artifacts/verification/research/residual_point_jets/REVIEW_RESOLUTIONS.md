@@ -1,6 +1,6 @@
 # Review resolutions and completed output scope
 
-The original proof and the mandatory ADDENDUM are unchanged after their preparation review. Actual Claude Opus 5.5 completed the proof review at14:42:48Z and the follow-up at14:51:09Z on2026-10-21. The API envelopes identify claude-opus-5-5 and end_turn. The review's self-identity caveat is appropriate from the text-only reviewer's perspective; the caller retains the actual response metadata separately.
+The original proof and the mandatory ADDENDUM are unchanged after their preparation review. Actual the main model completed the proof review at14:42:48Z and the follow-up at14:51:09Z on2026-10-21. The API envelopes identify main-model and end_turn. The review's self-identity caveat is appropriate from the text-only reviewer's perspective; the caller retains the actual response metadata separately.
 
 The follow-up accepts the preparation and both implementations. It correctly notes that the12 generic Leibniz identities alone are not a verification of the entire residual formula. That formula is established in PROOF.md, checked there through the two ODE representations, then evaluated independently by physical Green jets with Arb and density moments with mpmath.iv and exact integer Laurent multiplication. The exact polynomial preparation checks all27,248 local density coefficients against the exact modal trial. Moment validity remains inherited from topic28, so the derivative result is conditional on those canonical input certificates.
 

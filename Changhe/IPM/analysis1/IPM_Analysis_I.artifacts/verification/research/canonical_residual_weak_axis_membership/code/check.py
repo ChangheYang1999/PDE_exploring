@@ -8,7 +8,7 @@ import sympy as S
 from flint import arb,arb_poly,fmpq,ctx
 ctx.prec=384;ctx.threads=1
 R=Path(__file__).resolve().parents[3];D=R/'research/canonical_residual_weak_axis_membership';E=D/'evidence';sys.path.insert(0,str(R/'research/full_derivative_norm_bound_v2/code'));import protocol as p
-start=p.now();clock=time.monotonic();pf=p.load(E/'proof_first.json');assert p.sha(D/'PROOF.md')==pf['proof_sha256']=='b13a5c23f5deb1779caaca192324f98f3565627aa86fe29ba08a7a547a2f33d3'
+start=p.now();clock=time.monotonic();pf=p.load(E/'proof_first.json');assert p.sha(D/'PROOF.md')==pf['proof_sha256']=='4c9e2813c8c0c588cdeb29e97a394f157de0a818610cd9b1d6f87810f74d7a9e'
 parent='research/weak_axis_compact_mapping/evidence/verdict.json';pv=p.load(R/parent);assert p.sha(R/parent)=='5b636a2d455238f70bfdf8db0875ec719c8f467ce123d4aec06a7a5c5eb4b529';assert pv['status'].startswith('CONFIRMED');pins=dict(pv['files']);p.pin(pins,parent);p.rehash(pins)
 npz=R/'research/modal_exactification/evidence/trial_v2_h0.008.npz';assert p.sha(npz)=='a069d85d102e17340778042f85c003705716ba799c0f68873d10c1c582ea4874'
 with np.load(npz,allow_pickle=False) as data:

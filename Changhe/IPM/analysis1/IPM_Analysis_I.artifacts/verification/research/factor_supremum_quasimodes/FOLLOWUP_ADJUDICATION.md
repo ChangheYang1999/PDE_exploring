@@ -1,6 +1,6 @@
 # Follow-up adjudication
 
-Written 2026-10-22T09:30:10.435966+00:00 after complete reading of actual Claude Opus5.5/end_turn request 10e0ffd7-e2c0-4240-8d12-132923db5fe9, ended 2026-10-22T09:28:48.795824+00:00, raw response SHA256 de4ab9028e66ce5cdca47d1b105c51a6e7a95c94900b724d75495e97235a97d4.
+Written 2026-10-22T09:30:10.435966+00:00 after complete reading of actual the main model request 10e0ffd7-e2c0-4240-8d12-132923db5fe9, ended 2026-10-22T09:28:48.795824+00:00, raw response SHA256 de4ab9028e66ce5cdca47d1b105c51a6e7a95c94900b724d75495e97235a97d4.
 
 The follow-up explicitly accepts the required linearity repair and withdraws the irrelevant original-X3 regularity rationale. Own reasoning agrees: a nonlinear compact norm map is a counterexample to the unrestricted formulation, while bounded linear compact maps send this weak-null sequence to zero in norm. The finite modal factor has the stated qualitative bounds from its actual finite inner and outer formulas.
 

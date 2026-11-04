@@ -272,6 +272,6 @@ changes no mathematical statement. The frozen source diff is retained.
 
 The complete425 theorem is now AUDITED, and the R1 outer extension
 is independently confirmed here. Collaboration used the existing
-lane configured for Claude Opus5.5; actual provider identity remains
+lane configured for the main model; actual provider identity remains
 unobservable. No new remote client, foreign executable or server is
 used for this acceptance.

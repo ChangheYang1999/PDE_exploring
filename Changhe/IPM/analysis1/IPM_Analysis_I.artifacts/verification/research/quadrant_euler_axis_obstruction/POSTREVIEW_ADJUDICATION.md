@@ -2,7 +2,7 @@
 
 Date 2026-10-22T03:08:32.189563+00:00. Verdict CONFIRMED for the exact norm defined in PROOF.md and the canonical background application. This is the lead's requested03:00 corollary and is not a PDE endpoint.
 
-I read the complete actual claude-opus-5-5/end_turn review0e352abb-17b7-4958-8964-4cc13320cf3f. The saved request reconstructs from current reviewed bytes and the actual model identity and terminal verdict are checked. The following adjudication is later and independently verifies the short argument.
+I read the complete actual main-model/end_turn review0e352abb-17b7-4958-8964-4cc13320cf3f. The saved request reconstructs from current reviewed bytes and the actual model identity and terminal verdict are checked. The following adjudication is later and independently verifies the short argument.
 
 For every integer m>=0, the Euler-derivative norm contains its zeroth weighted square integral. On a fixed positive interval y1<=y<=y2, y^(-2b) has positive lower bound min(y1^(-2b),y2^(-2b)) for every finite real b. Restricting a nonnegative integral to the parent's rectangle therefore preserves a lower bound. The actual pointwise bound g=Lh>=c x^2 gives integral x^(4-2a), which diverges exactly at a>=5/2. The working a129/20 has exponent-89/10, and b307/100 changes only the positive constant. No derivative of g beyond the parent's construction is assumed: zeroth-order failure is already exclusion from the space.
 

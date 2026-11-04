@@ -15,7 +15,7 @@ def main():
  reviews={}
  for tag in ('tail_local_modes_proof','tail_local_modes_closure'):
   R=B/'notes/reviews';m=read(R/(tag+'_metadata.json'));raw=read(R/(tag+'_response.json'));req=(R/(tag+'_request.txt')).read_text()
-  assert m['actual_response_model']==raw['model']=='claude-opus-5-5' and m['stop_reason']==raw['stop_reason']=='end_turn'
+  assert m['actual_response_model']==raw['model']=='main-model' and m['stop_reason']==raw['stop_reason']=='end_turn'
   assert hashlib.sha256(req.encode()).hexdigest()==m['input_sha256']
   supplied=req[req.index('\n\nFILE ')+2:];current='\n\n'.join('FILE '+p+'\n'+(B/p).read_text() for p in m['files']);assert supplied==current,tag
   text='\n\n'.join(c['text'] for c in raw['content'] if c['type']=='text')+'\n';assert text==(R/(tag+'_response.md')).read_text()

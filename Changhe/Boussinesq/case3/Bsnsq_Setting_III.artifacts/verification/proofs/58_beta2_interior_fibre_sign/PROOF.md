@@ -242,7 +242,7 @@ and verified divW, the first integral, the slow orbit and the nonzero
 vorticity defect. Its reusable source is
 ../../code_independent/interior_phase_manufacture.py.
 
-Actual reviewer53 returned model claude-opus-5-5, end_turn, after
+Actual reviewer53 returned model main-model, end_turn, after
 89.241508519 seconds (18:32:52.802831 to18:34:22.044527 UTC).
 The full written answer was read and checked. It confirms the main proof
 and manufacture. Its axis-invariance, side-exit and packet56 hypothesis
@@ -250,7 +250,7 @@ clarifiers are incorporated above. Its aside allowing the material center
 as this interior fibre's backward limit is unnecessary: the axis fibre
 through the center is invariant and is not the selected open-right orbit.
 Section5 was added after that request and is not covered by reviewer53.
-Actual reviewer57 later returned claude-opus-5-5, end_turn, after
+Actual reviewer57 later returned main-model, end_turn, after
 51.672291424 seconds and confirmed that corollary. Its full answer was
 read. Smoothness at0, endpoint continuity and temperature-preserving
 reflection are explicit above. The reviewer used a global fibre-angle

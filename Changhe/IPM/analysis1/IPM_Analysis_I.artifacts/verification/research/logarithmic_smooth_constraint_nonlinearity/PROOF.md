@@ -1,6 +1,6 @@
 # Smooth finite constraints and quadratic discontinuity
 
-This informal proof is written before the new checks. Its status is OPEN until independent verification, actual Claude Opus 5.5 review and a later adjudication. It extends result211 from linear constraints to regular finite nonlinear constraints. It asserts no decisive PDE endpoint.
+This informal proof is written before the new checks. Its status is OPEN until independent verification, actual the main model review and a later adjudication. It extends result211 from linear constraints to regular finite nonlinear constraints. It asserts no decisive PDE endpoint.
 
 ## Statement and notation
 

@@ -34,7 +34,7 @@ def run(prepare):
  digest=load(E/'output_digest.json');assert digest['constant_result_sha256']==sha(rp) and digest['cases']==rows and digest['strict_rational_publication_checks']==92
  reviews=[];paths=[src,proof,snap,rp,E/'serialized_audit_v2.json',E/'output_digest.json',Path(__file__).resolve(),B/'research/edge_velocity/evidence/verdict.json']
  for tag in ['collar_theorem_extended','collar_code_focus','collar_final_closure']:
-  meta=B/'notes/reviews'/f'{tag}_metadata.json';reply=B/'notes/reviews'/f'{tag}_response.md';m=load(meta);assert m['actual_response_model']=='claude-opus-5-5' and m['stop_reason']=='end_turn' and reply.stat().st_size>0
+  meta=B/'notes/reviews'/f'{tag}_metadata.json';reply=B/'notes/reviews'/f'{tag}_response.md';m=load(meta);assert m['actual_response_model']=='main-model' and m['stop_reason']=='end_turn' and reply.stat().st_size>0
   reviews.append({'tag':tag,'actual_model':m['actual_response_model'],'end_utc':m['end_utc']});paths.extend([meta,reply])
  out.update(status='CONFIRMED',reviews=reviews,files={str(p.relative_to(B)):sha(p) for p in paths},scope='Local collar mapping and forcing theorem with x1>2d, 5/2<b<7/2, 0<g<2, separate finite raw strain and H^(b-3/2) regularity of the cutoff edge coefficient when that target is claimed. No corner, conic summation, source transition, global inverse, derivative residual certificate or decisive endpoint.')
  (E/'verdict.json').write_text(json.dumps(out,indent=2)+'\n')

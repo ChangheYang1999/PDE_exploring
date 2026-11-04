@@ -50,7 +50,7 @@ positive and is attained by the iv reference, cell7808, angular node
 (12800,12801,7), T0 lower endpoint. Its approximate size1.9473e-14 is
 informational only; the verdict uses the exact rational number.
 
-Three actual responses were authenticated as claude-opus-5-5 with end_turn,
+Three actual responses were authenticated as main-model with end_turn,
 including the raw model data, rendered text, current file bundle and request
 SHA. The second accepts the completed restricted result. The third accepts
 final archival and resolves the width disagreement. Every accepted numerical

@@ -1,6 +1,6 @@
 # Application binding and response to the first review
 
-The first actual Claude Opus5.5 review accepted the Hilbert-space proof
+The first actual the main model review accepted the Hilbert-space proof
 and both scalar calculations, and requested explicit support and common
 partition binding. The supplemental checker verifies all2216 piece
 records, agreeing between topic132's two independent engines. Every

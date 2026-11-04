@@ -2,7 +2,7 @@
 
 Date 2026-10-22T01:29:16.167509+00:00. Verdict CONFIRMED for the conditional integration theorem and scalar arithmetic audit. The physical application remains OPEN. Particular inward endpoint labels and the displayed sum inequality are REFUTED as specified below.
 
-Both Python Bedrock calls returned recorded model claude-opus-5-5 and end_turn. I read each complete response, checked the requests against the retained input bytes, and independently resolved the first review's cover concern with the actual source. Recorded model identity and file consistency are established; no provider digital-signature authentication is asserted.
+Both Python Bedrock calls returned recorded model main-model and end_turn. I read each complete response, checked the requests against the retained input bytes, and independently resolved the first review's cover concern with the actual source. Recorded model identity and file consistency are established; no provider digital-signature authentication is asserted.
 
 Request 17094aa1-660b-4d2f-bb9f-6c15b349dfaa; input SHA256 229dda2d8769a64342b6d4d0c89fdccee46f4ea0dfac3c140b3d2a61f9b1c7bd; raw response SHA256 94617e2c860e77624e7b5cbc29d89debf83eca9b0956ea356570642a1bffb143.
 Request 5c0fc53f-30b2-43dd-a67e-fd42d826f338; input SHA256 7e6c0b22ed997b2e7e78bffa8649d1655c4a23131c161f721f813e5831940a0d; raw response SHA256 46b2de1c42344ae27b869ba07cbdd967f322b6791c8afc8ca5ac6d2e9d0a7cf2.

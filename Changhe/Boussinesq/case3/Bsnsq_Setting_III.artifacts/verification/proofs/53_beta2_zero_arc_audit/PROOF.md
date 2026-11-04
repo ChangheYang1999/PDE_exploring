@@ -305,11 +305,11 @@ critical, inverse, resonance and axis formulas will be audited in a
 separate packet. This remains a partial result, not an endpoint.
 
 Actual Opus42 returned no written audit after213.909803330seconds
-on2026-10-20T17:52:23Z (claude-opus-5-5, output budget exhausted).
+on2026-10-20T17:52:23Z (main-model, output budget exhausted).
 It supplies no endorsement. The final endpoint argument above uses
 only two local invariant curves and scalar estimates, replacing the
 strong-foliation input in the version submitted to that unavailable review.
 
-Actual claude-opus-5-5 review46 returned a usable audit in60.017312447seconds at18:02:37Z. It confirmed the two-curve basin calculation and holomorphic reflection argument, under the explicitly supplied smoothness and local-manifold inputs. Its review did not cover the global circle partition. The verifier checked every suggestion, disambiguated the repeated equation number, and retains its own proof of the remaining statements.
+Actual main-model review46 returned a usable audit in60.017312447seconds at18:02:37Z. It confirmed the two-curve basin calculation and holomorphic reflection argument, under the explicitly supplied smoothness and local-manifold inputs. Its review did not cover the global circle partition. The verifier checked every suggestion, disambiguated the repeated equation number, and retains its own proof of the remaining statements.
 
 The chosen center graph contains nearby equilibria by the direct eta equation above. Exact finite-regularity source statements were actually downloaded and read at18:31Z: Wiggins Section10.1 Theorem5 and preceding local-stable statement, and Deng Lecture Note7 Theorems2-3. See verification/INVARIANT_MANIFOLD_SOURCES.md for files, hashes, exact application and the Deng TLS limitation. Earlier unsupported web-retrieval claims remain withdrawn. These are explicit standard theorem dependencies, now checked against source text.

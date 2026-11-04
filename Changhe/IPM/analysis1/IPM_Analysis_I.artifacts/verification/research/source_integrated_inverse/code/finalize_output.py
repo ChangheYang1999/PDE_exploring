@@ -36,7 +36,7 @@ assert F(c['best_of_81_scales']['uniform']['N_inverse']['upper_exact'])<922
 reviews={}
 for kind in ('proof','closure','final'):
  tag='source_integrated_inverse_'+kind;m=json.loads((R/(tag+'_metadata.json')).read_text());raw=json.loads((R/(tag+'_response.json')).read_text());req=(R/(tag+'_request.txt')).read_text();ans=(R/(tag+'_response.md')).read_text()
- assert m['requested_model']=='us.anthropic.claude-opus-5-5' and m['actual_response_model']==raw['model']=='claude-opus-5-5'
+ assert m['requested_model']=='the main model' and m['actual_response_model']==raw['model']=='main-model'
  assert m['stop_reason']==raw['stop_reason']=='end_turn' and hashlib.sha256(req.encode()).hexdigest()==m['input_sha256']
  assert ans=='\n\n'.join(x['text'] for x in raw['content'] if x['type']=='text')+'\n'
  marker='\n\nFILE '+m['files'][0]+'\n';assert req.count(marker)==1

@@ -6,6 +6,6 @@ The comparison to width300 covers finalized theta<=11, omega<=10, v<=11. All1661
 
 Both runs share the verifier's recurrence source and exact Fraction arithmetic. This proves equality at the two tested widths on the finite shared ranges, not width-independence at all truncations, an independent derivation of the PDE, or a convergence theorem. Poisson updates are definitional consistency controls. No full-plane profile or endpoint follows.
 
-Actual Opus631 returned claude-opus-5-5 and reviewed the reporting scope. Its proposed shorthand about ruling out width-dependent truncation is restricted here to the two observed widths. Its compressed sentinel/process wording is not adopted; the exact counts and observed event are stated above. General B2 remains OPEN.
+Actual Opus631 returned main-model and reviewed the reporting scope. Its proposed shorthand about ruling out width-dependent truncation is restricted here to the two observed widths. Its compressed sentinel/process wording is not adopted; the exact counts and observed event are stated above. General B2 remains OPEN.
 
 Evidence: [standalone proof](PROOF.md), [checks](verification/checks.json), [freeze and hashes](verification/freeze.json).

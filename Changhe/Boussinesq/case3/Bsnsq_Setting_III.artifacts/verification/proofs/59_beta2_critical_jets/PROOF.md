@@ -324,8 +324,8 @@ contradiction: a smooth nonnegative function can have a flat zero.
 
 ## 11. Actual collaboration record
 
-Requests54,56 and59 requested us.anthropic.claude-opus-5-5 and each returned
-actual model claude-opus-5-5. Request54 exhausted12000 output tokens without
+Requests54,56 and59 requested the main model and each returned
+actual model main-model. Request54 exhausted12000 output tokens without
 any written audit (110.483370776seconds). Requests56 and59 returned no text
 with stop_reason refusal (7.683126154 and5.078431171seconds). Their raw
 responses label the refusal category cyber, despite the mathematical

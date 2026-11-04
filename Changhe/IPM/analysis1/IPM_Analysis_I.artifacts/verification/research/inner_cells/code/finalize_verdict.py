@@ -93,7 +93,7 @@ def run(tag,review_tag,preview):
  reviews=[]
  for tag1 in tags:
   meta=B/'notes/reviews'/f'{tag1}_metadata.json'; reply=B/'notes/reviews'/f'{tag1}_response.md'; v=load(meta)
-  assert v['actual_response_model']=='claude-opus-5-5' and v['stop_reason']=='end_turn' and reply.exists()
+  assert v['actual_response_model']=='main-model' and v['stop_reason']=='end_turn' and reply.exists()
   reviews.append({'tag':tag1,'actual_model':v['actual_response_model'],'end_utc':v['end_utc'],'metadata_sha256':sha(meta),'response_sha256':sha(reply)})
   pinned.update([str(meta.relative_to(B)),str(reply.relative_to(B))])
  pinned.update(str(p.relative_to(B)) for p in paths.values())

@@ -48,7 +48,7 @@ for N in [3,5,9,33]:
    need(f'E10equality{N}/{loose}/{widths}',(S==P)==(not widths))
 # Exactly reproduce the 13 then 20 cumulative comparisons in check_v50.
 a0=len(checks);prefix=read('../candidate016_prefix31_hardy_audit/source/N4_prefix_v02.json')
-need('Ahashprefix',sha(B/'../candidate016_prefix31_hardy_audit/source/N4_prefix_v02.json')=='01019cd56639661ace672791a4fbe7f938d90bf02237b93b38f061238bb15b41')
+need('Ahashprefix',sha(B/'../candidate016_prefix31_hardy_audit/source/N4_prefix_v02.json')=='7b36cb71d1514598f99a2f5720c5dad69d050cd6912e9be1f550e3b015332156')
 need('Ahashcomponents',sha(B/'../candidate016_dual_replay_audit/source/components.json')=='a2f68954828f60a7dc8983ecb69e8e30ddcd8e868ec0d1b58ce56faa27eeaedc')
 need('Aprefixmodes',[int(z['n']) for z in prefix['modes']]==list(range(1,32,2)))
 QL=sum(Q(z['q_lower_exact']) for z in prefix['modes']);QU=sum(Q(z['q_upper_exact']) for z in prefix['modes']);RL=Q(prefix['full_rF_square_lower_exact']);RU=Q(prefix['full_rF_square_upper_exact'])

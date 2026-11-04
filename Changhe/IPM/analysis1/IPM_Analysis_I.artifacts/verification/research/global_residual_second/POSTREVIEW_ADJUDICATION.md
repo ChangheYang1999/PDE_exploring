@@ -1,6 +1,6 @@
 # Independent post-review adjudication
 
-Recorded 2026-10-21T16:24:23.406920+00:00, after reading the complete actual Opus5.5 response ending 2026-10-21T16:20:02.616841+00:00, request 30703317-90e1-4722-8bd4-66160e7ae157. The actual response model is claude-opus-5-5, stop_reason end_turn. The earlier complete-output attempt ended max_tokens and remains history only. Its partial response is not acceptance. The accepted retry read the current finalize_v4.py and the complete numerical extract.
+Recorded 2026-10-21T16:24:23.406920+00:00, after reading the complete actual Opus5.5 response ending 2026-10-21T16:20:02.616841+00:00, request 30703317-90e1-4722-8bd4-66160e7ae157. The actual response model is main-model, stop_reason end_turn. The earlier complete-output attempt ended max_tokens and remains history only. Its partial response is not acceptance. The accepted retry read the current finalize_v4.py and the complete numerical extract.
 
 I independently checked the central implications against PROOF.md and both scalar programs. The finite sine-mode triangle inequality supplies the pointwise majorant. The three closed regions cover the plane with identical exact trial, parameters and canonical velocity. Shared circles have zero area, so squared regional norms add. The residual O(r^5) and m asymptotic r^3 give a continuous zero quotient at the origin. The inherited exterior exponent yields k-1+d<0 for d<=1/2 and 2k-1<0 for the absolute residual. These are conditional uses of the accepted regional construction, not consequences of saved scalar arithmetic.
 

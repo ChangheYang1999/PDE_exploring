@@ -31,4 +31,4 @@ These are local conditional exclusions around rational traces, not an exclusion 
 * [Source inventory](verification/sources.json).
 * Each result has its own complete informal argument. No formal proof-assistant sources or formal verification are claimed.
 
-Claude Opus 5.5 could not be consulted: the existing Python/Bedrock configuration failed during credential retrieval, before discovery or invocation. No model was invoked and no substitute was used.
+the main model could not be consulted: the existing Python/Bedrock configuration failed during credential retrieval, before discovery or invocation. No model was invoked and no substitute was used.

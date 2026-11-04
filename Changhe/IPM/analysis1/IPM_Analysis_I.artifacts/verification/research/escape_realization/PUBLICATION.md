@@ -1,6 +1,6 @@
 # Published scope
 
-The seven-section result is CONFIRMED with PROOF.md, ADDENDUM.md, CLARIFICATIONS.md and REVIEW_RESPONSE.md read together. This supersedes the initial pending-status sentence. The actual Claude Opus5.5 whole review and follow-up are complete. The follow-up retracted its assumed skew-Riesz convention and its angular-average explanation. The first truncated review and unsupported disabled-thinking request are retained as incomplete/failed attempts, never counted as acceptance.
+The seven-section result is CONFIRMED with PROOF.md, ADDENDUM.md, CLARIFICATIONS.md and REVIEW_RESPONSE.md read together. This supersedes the initial pending-status sentence. The actual the main model whole review and follow-up are complete. The follow-up retracted its assumed skew-Riesz convention and its angular-average explanation. The first truncated review and unsupported disabled-thinking request are retained as incomplete/failed attempts, never counted as acceptance.
 
 The result contains generic realization counterexamples, exact model noncompactness, conditional cutoff and Fourier estimates, and a certified scalar Beta bound. It constructs no actual global escape weight, no weighted fractional estimate, no equivalence for the unspecified A_s, and no global inverse. Source base-point hypotheses are conditional in this topic. Topic89 is checking their actual instance separately.
 

@@ -1,6 +1,6 @@
 # A compact residual detected without boundary terms
 
-Status: complete informal argument before implementation. Generic symbolic controls passed; written actual claude-opus-5-5 review188 CONFIRMED the initial theorem. Review189 CONFIRMED(8) and the corollary subject to exact thermal transport, which135 supplies globally. This dependency is explicit below and checked directly against135. Closing request190 returned actual claude-opus-5-5 but no written audit (refusal); it is not counted as confirmation. This is a detector for fixed configurations, not a B2 nonexistence theorem.
+Status: complete informal argument before implementation. Generic symbolic controls passed; written actual main-model review188 CONFIRMED the initial theorem. Review189 CONFIRMED(8) and the corollary subject to exact thermal transport, which135 supplies globally. This dependency is explicit below and checked directly against135. Closing request190 returned actual main-model but no written audit (refusal); it is not counted as confirmation. This is a detector for fixed configurations, not a B2 nonexistence theorem.
 
 ## Exact statement
 

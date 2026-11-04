@@ -1,6 +1,6 @@
 # Horizontal offsets of the exact primitive
 
-Status: complete informal argument, written before implementation. All controls passed. Written actual claude-opus-5-5 reviews186 and187 CONFIRMED formulas(1)-(10) and the full-function extension(11), respectively. The extension was written before its implementation. This is a necessary condition and a certificate for particular finite represented fields, not a nonexistence theorem for B2.
+Status: complete informal argument, written before implementation. All controls passed. Written actual main-model reviews186 and187 CONFIRMED formulas(1)-(10) and the full-function extension(11), respectively. The extension was written before its implementation. This is a necessary condition and a certificate for particular finite represented fields, not a nonexistence theorem for B2.
 
 ## Statement and hypotheses
 

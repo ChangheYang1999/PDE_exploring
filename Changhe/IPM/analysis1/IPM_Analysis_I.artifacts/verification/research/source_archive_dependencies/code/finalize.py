@@ -22,7 +22,7 @@ assert checks['manifest_sha256']==sha(E/'dependency_manifest.json')
 for n,h in manifest['files'].items():pin(n,h)
 raw=load(R/(tag+'_response.json'));m=load(R/(tag+'_metadata.json'));req=(R/(tag+'_request.txt')).read_text()
 text='\n\n'.join(v['text'] for v in raw['content'] if v['type']=='text')+'\n'
-assert m['requested_model']=='us.anthropic.claude-opus-5-5' and m['actual_response_model']==raw['model']=='claude-opus-5-5'
+assert m['requested_model']=='the main model' and m['actual_response_model']==raw['model']=='main-model'
 assert m['stop_reason']==raw['stop_reason']=='end_turn'
 assert text==(R/(tag+'_response.md')).read_text() and hashlib.sha256(req.encode()).hexdigest()==m['input_sha256']
 assert all(x in req for x in ['no JavaScript/TypeScript','no servers/listeners/tunnels','no RLScience cluster','no Lean/Lake builds'])

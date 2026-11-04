@@ -1,6 +1,6 @@
 # The scalar transverse-zero kernel is not realized by its cubic-x stream family
 
-Status: independently derived informal proof, 2026-10-21. Own21 exact checks and four polynomial controls passed. Actual claude-opus-5-5 review203 confirms the algebra and contradiction; its requested compatibility dependencies are derived explicitly below. This is a local exclusion for one prescribed stream form at beta=2. It does not settle general compatibility sufficiency or either global B2 branch.
+Status: independently derived informal proof, 2026-10-21. Own21 exact checks and four polynomial controls passed. Actual main-model review203 confirms the algebra and contradiction; its requested compatibility dependencies are derived explicitly below. This is a local exclusion for one prescribed stream form at beta=2. It does not settle general compatibility sufficiency or either global B2 branch.
 
 ## Exact statement
 

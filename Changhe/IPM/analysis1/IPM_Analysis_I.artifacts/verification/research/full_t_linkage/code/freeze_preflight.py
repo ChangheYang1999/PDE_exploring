@@ -12,7 +12,7 @@ def load(p):return json.loads(Path(p).read_text())
 reviews=[];files=set()
 for tag in ('full_t_linkage_proof','full_t_linkage_preflight'):
  base=B/'notes/reviews';meta=load(base/(tag+'_metadata.json'));raw=load(base/(tag+'_response.json'));text=(base/(tag+'_response.md')).read_text();request=(base/(tag+'_request.txt')).read_text()
- assert meta['requested_model']=='us.anthropic.claude-opus-5-5' and meta['actual_response_model']==raw['model']=='claude-opus-5-5'
+ assert meta['requested_model']=='the main model' and meta['actual_response_model']==raw['model']=='main-model'
  assert meta['stop_reason']==raw['stop_reason']=='end_turn' and meta['input_sha256']==hashlib.sha256(request.encode()).hexdigest()
  assert text=='\n\n'.join(c['text'] for c in raw['content'] if c['type']=='text')+'\n'
  suffix='\n\n'+'\n\n'.join('FILE '+f+'\n'+(B/f).read_text() for f in meta['files']);assert request.endswith(suffix),('current whole bundle mismatch',tag)

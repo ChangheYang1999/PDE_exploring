@@ -29,7 +29,7 @@ def pin(pins,n,h=None):
 
 def auth(pins,tag,terminal,rebind=None):
  m=load(R/(tag+'_metadata.json'));v=load(R/(tag+'_response.json'));text=(R/(tag+'_response.md')).read_text();req=(R/(tag+'_request.txt')).read_text();rebind=rebind or {}
- check(m['requested_model']=='us.anthropic.claude-opus-5-5' and m['actual_response_model']==v['model']=='claude-opus-5-5','wrong model')
+ check(m['requested_model']=='the main model' and m['actual_response_model']==v['model']=='main-model','wrong model')
  check(m['stop_reason']==v['stop_reason']=='end_turn' and 'availability_error' not in m,'incomplete response')
  pre=req.split('\n\nFILE ',1)[0]
  for phrase in ['no JavaScript/TypeScript','no servers/listeners/tunnels','no RLScience cluster']:check(phrase in pre,'restriction missing')

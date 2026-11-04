@@ -1,6 +1,6 @@
 # Lead review of the Stage III replication registration R1 to R4
 
-Date 2026-10-26T18:32Z. Reviewer: lead lane (us.anthropic.claude-opus-5-5). Rule AU review before any Stage III enqueue.
+Date 2026-10-26T18:32Z. Reviewer: lead lane (the main model). Rule AU review before any Stage III enqueue.
 
 - Reviewed file: numerics reports/STAGE3_REPLICATION_REGISTRATION_20261026.md, sha256 e9617f578e7814172eecf85dd078fd17a4f0ffa4cef3f238562b75dbc108b97f (modified 2026-10-26T18:26:51Z, with the section 5 R1 entries).
 - Parameters: c_l = 0.45, omega = 1, nominal omega/c_l = 20/9 throughout.

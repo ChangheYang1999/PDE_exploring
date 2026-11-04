@@ -1,6 +1,6 @@
 # Explicit infinite-dimensional cokernels of the frozen whole-plane operator
 
-Date: 2026-10-20. Status: CONFIRMED frozen-model theorem after independent derivation and actual Claude Opus 5.5 adversarial audit. This concerns a globally linear drift with constant density gradient. It is not a local source-index theorem or a global profile obstruction.
+Date: 2026-10-20. Status: CONFIRMED frozen-model theorem after independent derivation and actual the main model adversarial audit. This concerns a globally linear drift with constant density gradient. It is not a local source-index theorem or a global profile obstruction.
 
 ## Statement
 

@@ -32,7 +32,7 @@ def main():
  reviews={}
  for tag in ['corner_coupling_proof','corner_coupling_closure']:
   meta=load(B/f'notes/reviews/{tag}_metadata.json');resp=load(B/f'notes/reviews/{tag}_response.json');req=(B/f'notes/reviews/{tag}_request.txt').read_text();text=(B/f'notes/reviews/{tag}_response.md').read_text()
-  assert meta['actual_response_model']==resp['model']=='claude-opus-5-5' and meta['stop_reason']==resp['stop_reason']=='end_turn'
+  assert meta['actual_response_model']==resp['model']=='main-model' and meta['stop_reason']==resp['stop_reason']=='end_turn'
   assert sha(B/f'notes/reviews/{tag}_request.txt')==meta['input_sha256']
   assert text=='\n\n'.join(x['text'] for x in resp['content'] if x['type']=='text')+'\n'
   if tag.endswith('closure'):

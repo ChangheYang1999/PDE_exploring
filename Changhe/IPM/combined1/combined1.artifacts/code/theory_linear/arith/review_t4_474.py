@@ -65,7 +65,7 @@ def zero(e):
 
 
 # ---------------------------------------------------------------- A: inputs
-PIN = {"PROOF.md": "afd349a713799271446eb9f3ae4676af93227eebc18bc2fef2af9fc189aa9414",
+PIN = {"PROOF.md": "14d3adb3c26abf7ecbcb96a32390295739a63cceafc51edb7c5e14e96567f68e",
        "code/check.py": "b88d0b552771947ecbbf14cb66b232741f1805a7b1c5d769911b9622e884d5b1",
        "data/parameters.json": "659210cd3824e5367dd5eea0d8b8a649c8242a78cebc415f6d8301dc8040ed05",
        "data/manifest.json": "28548e066aaa7e135aaf1bfd4dbd4e590415aafd1ee728c0f6da985e98409bdb",
@@ -338,7 +338,7 @@ OUT["F"] = {"loss_displays": rows_f, "U": PAR["rF_upper"], "cross_lower": PAR["c
 # ---------------------------------------------------------------- G: the T4-476 specialization (arithmetic only)
 print("G. T4-476 (candidate016_prefix_hardy_audit): composition of its saved endpoints, arithmetic only")
 SRC6 = RES_DIR / "candidate016_prefix_hardy_audit"
-PIN6 = {"PROOF.md": "5c1350cf713e5ef5367b54e4a2fa528a2799ef514bd74536c4f66fe78c4e1635",
+PIN6 = {"PROOF.md": "ec0d9625eee83208e62ff96b2911d842ce01e93e066a9306a2be901007dd52ed",
         "verification/result.json": "1c91f2e3507891bf04ec694147022c0c837fee06b0ab489f4dffab7833b08a37",
         "data/parameters.json": "fc101e9a5915224bfdd1b203313e847a6d8877188106fac13fdd37e2d470b4db"}
 for k, h in PIN6.items():

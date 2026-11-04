@@ -1,6 +1,6 @@
 # Own response to the first actual proof review
 
-The complete actual claude-opus-5-5/end_turn response21c952a4-3dbf-4e6a-a634-c2cc4be1c57c has been read. I accept the request to make annular velocity regularity explicit. It can be proved directly by the finite radial mode equations, without invoking any global regularity beyond what was established.
+The complete actual main-model/end_turn response21c952a4-3dbf-4e6a-a634-c2cc4be1c57c has been read. I accept the request to make annular velocity regularity explicit. It can be proved directly by the finite radial mode equations, without invoking any global regularity beyond what was established.
 
 Fix a compact annulus in r>0. The exact density is C6 there: the middle degree-seven spline has simple knots and the two endpoint joins match through order6. Angular differentiation is harmless because the mode set is finite. Hence every source mode f_n of partial_x rho is C5 in r, including across all radial joins. The Green formula gives a C1 stream mode, and its radial equation
 

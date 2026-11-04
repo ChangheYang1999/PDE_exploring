@@ -147,6 +147,6 @@ valid. Both analytic reviews remain CONFIRMED with these qualifications.
 Evidence and source maps bind the exact reviewed474/476 files and
 previously accepted numerical inputs. The complete peer scripts and
 logs are inspected, not executed. Existing Opus5.5 lanes provide
-collaboration, configured us.anthropic.claude-opus-5-5; actual provider
+collaboration, configured the main model; actual provider
 identity is unobservable. No new model call, server, JavaScript,
 cluster, candidate integration or existence proof occurs here.

@@ -1,6 +1,6 @@
 # Slow-tail circulation in a fixed sector away from the axis
 
-Status: new verifier extension of research/17. The beta=2 regular-level lemma has been independently confirmed by actual claude-opus-5-5; the complete sector transfer is recorded for lead review. It strengthens a restricted-class mass estimate, not the full B2 endpoint.
+Status: new verifier extension of research/17. The beta=2 regular-level lemma has been independently confirmed by actual main-model; the complete sector transfer is recorded for lead review. It strengthens a restricted-class mass estimate, not the full B2 endpoint.
 
 ## Statement
 
@@ -84,4 +84,4 @@ This result concerns the actual component weight and one sign of vorticity, not 
 
 Dependencies: research/17's exact integrated circulation formula, Sard's theorem for a smooth real-valued function on the plane, one-dimensional flow on a regular level, elementary ODE uniqueness and divergence theorem, and the independently derived angular flux Jacobian in research/14. No numerical evidence is used as proof.
 
-Audit 2026-10-20T14:35:55.776456+00:00: opus_reviews/10_regular_level/answer.md, returned model claude-opus-5-5, confirms the regular-value topology, tangent eigenvalue, escape on a proper line, Sard with dense critical values, and the compact-rectangle argument. Its requested clarification that the velocity asymptotic is at infinity, and the direct properness argument for escape, are incorporated above.
+Audit 2026-10-20T14:35:55.776456+00:00: opus_reviews/10_regular_level/answer.md, returned model main-model, confirms the regular-value topology, tangent eigenvalue, escape on a proper line, Sard with dense critical values, and the compact-rectangle argument. Its requested clarification that the velocity asymptotic is at infinity, and the direct properness argument for escape, are incorporated above.

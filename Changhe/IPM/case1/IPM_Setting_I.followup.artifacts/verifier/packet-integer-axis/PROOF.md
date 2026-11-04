@@ -1,6 +1,6 @@
 # Integer axis exponents of the frozen Fourier packet
 
-Date: 2026-10-20. Status: CONFIRMED after independent reconstruction and an actual Claude Opus5.5 review. This is a statement about an explicit solution of the frozen model, not a coupled IPM profile.
+Date: 2026-10-20. Status: CONFIRMED after independent reconstruction and an actual the main model review. This is a statement about an explicit solution of the frozen model, not a coupled IPM profile.
 
 ## Exact statement and notation
 
@@ -150,4 +150,4 @@ The density convention agrees with the independently checked packet in ../packet
 
 This is an integer axis theorem for a specified frozen packet. It neither constructs nor excludes a coupled admissible profile, establishes a full linearized kernel, gives a nonlinear family, nor changes either task endpoint. Review records and any exact checks belong in verification/. No numerical experiment is a proof of the asymptotic.
 
-Actual Claude Opus5.5 completed its full review at2026-10-20T23:43:53.887480+00:00 with end_turn. It found no mathematical gap or factor/sign error. This verifier checked its reconstruction and added the optional explicit odd-m subtraction identity and parity qualification above. Its complete response and model metadata are saved under ../model-review/verification/packet_integer_axis_*. The exact checks and finite moment illustrations are separate evidence, not the proof.
+Actual the main model completed its full review at2026-10-20T23:43:53.887480+00:00 with end_turn. It found no mathematical gap or factor/sign error. This verifier checked its reconstruction and added the optional explicit odd-m subtraction identity and parity qualification above. Its complete response and model metadata are saved under ../model-review/verification/packet_integer_axis_*. The exact checks and finite moment illustrations are separate evidence, not the proof.

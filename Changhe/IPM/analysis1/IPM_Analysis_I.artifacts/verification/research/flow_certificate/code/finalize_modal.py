@@ -17,7 +17,7 @@ assert 'return f_terms, R_terms' in src
 paths={Path(__file__),B/'research/flow_certificate/PROOF.md',B/'research/flow_certificate/code/audit_modal_integer.py',B/'research/flow_certificate/code/check_modal_maps.py',E/'source/cert_resid.py',E/'source/cert_flow.py',E/'source/midrad.py'}|{E/n for n in ['modal_integer_full.json','modal_integer_full_run.json','modal_integer_full.log','modal_review_summary.json','modal_benchmark.json','modal_integer_benchmark.json','modal_stress.json']};reviews={}
 for tag in ['flow_modal_exact_review','flow_modal_exact_closure']:
  m=load(B/f'notes/reviews/{tag}_metadata.json');resp=load(B/f'notes/reviews/{tag}_response.json');req=(B/f'notes/reviews/{tag}_request.txt').read_text();text=(B/f'notes/reviews/{tag}_response.md').read_text()
- assert m['actual_response_model']==resp['model']=='claude-opus-5-5' and m['stop_reason']==resp['stop_reason']=='end_turn'
+ assert m['actual_response_model']==resp['model']=='main-model' and m['stop_reason']==resp['stop_reason']=='end_turn'
  assert sha(B/f'notes/reviews/{tag}_request.txt')==m['input_sha256'] and text=='\n\n'.join(x['text'] for x in resp['content'] if x['type']=='text')+'\n'
  if tag.endswith('closure'):
   assert 'ACCEPT_FINITE_MODAL_RESULT' in text and datetime.fromisoformat(run['end_utc'])<datetime.fromisoformat(m['start_utc'])

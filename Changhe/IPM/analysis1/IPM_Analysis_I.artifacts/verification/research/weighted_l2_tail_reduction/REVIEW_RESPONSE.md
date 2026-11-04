@@ -1,6 +1,6 @@
 # Response to the complete first actual review
 
-The first review returned claude-opus-5-5/end_turn, request 17094aa1-660b-4d2f-bb9f-6c15b349dfaa. This note follows a complete reading and independent examination of its concerns. Original sources, proof and numerical outputs are unchanged.
+The first review returned main-model/end_turn, request 17094aa1-660b-4d2f-bb9f-6c15b349dfaa. This note follows a complete reading and independent examination of its concerns. Original sources, proof and numerical outputs are unchanged.
 
 ## Finite-cover qualification
 

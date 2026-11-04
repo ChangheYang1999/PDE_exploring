@@ -7,7 +7,7 @@ for key,path in [('proof_sha256',R/'PROOF.md'),('certificate_sha256',V/'certific
 check('204 checks passed',j['status']=='PASS'and j['count']==204 and len(j['checks'])==204 and all(x['passed']for x in j['checks']))
 for name in ['opus_review','opus_followup']:
  m=json.loads((V/name/'metadata.json').read_text());q=(V/name/'request.txt').read_text()
- check(name+' actual model',m['requested_model']=='us.anthropic.claude-opus-5-5'and m['returned_model']=='claude-opus-5-5')
+ check(name+' actual model',m['requested_model']=='the main model'and m['returned_model']=='main-model')
  check(name+' complete',m['stop_reason']=='end_turn'and m['answer_nonempty'])
  check(name+' restrictions',('noJS/TS/Node'in q or 'noJavaScript/TypeScript/Node'in q)and all(s in q for s in ['no servers/listeners/tunnels','noRLSciencecluster','noLean/Lake']))
  if name=='opus_followup':
@@ -22,7 +22,7 @@ assert all(x['passed']for x in checks),[x for x in checks if not x['passed']]
 
 Result267, {now}. The proof and exact certificate are unchanged from the reviewed versions. The pure-Python checker executed at18:07:08Z, with204 passing checks; {len(checks)} additional checks bind the proof, certificate, driver and actual-model reviews to those files. No lead or numerics code is imported.
 
-Both responses returned claude-opus-5-5, requested as us.anthropic.claude-opus-5-5. The initial review ran18:00:07 to18:01:39Z. It checked the reductions, supplied the general quadratic discriminant, and requested denominator and positivity checks. We independently expanded the discriminant. Case(iii) uses complete primitive numerators and never divides by t+s. Case(i) now has a positive quartic formula for real n>=1; case(iv) has21 positive coefficients after the exact binomial shift n=1+x.
+Both responses returned main-model, requested as the main model. The initial review ran18:00:07 to18:01:39Z. It checked the reductions, supplied the general quadratic discriminant, and requested denominator and positivity checks. We independently expanded the discriminant. Case(iii) uses complete primitive numerators and never divides by t+s. Case(i) now has a positive quartic formula for real n>=1; case(iv) has21 positive coefficients after the exact binomial shift n=1+x.
 
 The follow-up ran18:07:36 to18:08:24Z and returned CORRECT for the finite auxiliary obstruction. It rederived the clearing formulas and checked degree bounds, the interpolation implication, partitions and denominator branches. It did not execute code or verify hashes; those were checked locally. Bareiss and Gaussian algorithms share the Sylvester matrix construction, whose validity is proved in the informal argument. Results258,261,264 are explicit previously audited dependencies.
 
@@ -36,7 +36,7 @@ text=f'''# Result267: degree15 obstruction with exact certificates
 
 The e=2 pattern gives pi'(z)=(15n^4+250n^3+1227n^2+1440n-200)/(8n^2(n+7)^2)>0. The two-class e=3 pattern has a strictly negative quadratic discriminant. For the other e=3 pattern the full-numerator Sylvester determinant is409600 n^9(2n+15)^12 F24(n), all25 coefficients of F24 positive. For e=4 it is-13107200 n^6(n+7)^12 F20(n), all21 coefficients of F20(1+x) positive. Exact lists are in verification/certificate.json. The independent checker reconstructs the integer numerators and verifies determinant identities with degree bounds60 and38 at61 and39 exact points, plus sentinels and separate rational Gaussian checks. All25 multiplicity partitions are enumerated. No unchecked variable factor is divided out.
 
-Actual claude-opus-5-5 completed an initial review and a follow-up, with concerns resolved by executed independent checks. It did not execute code. See REVIEW_ADDENDUM.md. Proof SHA256{j['proof_sha256']}; certificate SHA256{j['certificate_sha256']}.
+Actual main-model completed an initial review and a follow-up, with concerns resolved by executed independent checks. It did not execute code. See REVIEW_ADDENDUM.md. Proof SHA256{j['proof_sha256']}; certificate SHA256{j['certificate_sha256']}.
 
 This excludes only the stated finite auxiliary class. Remaining degrees, nonpolynomial limits and full-plane SettingIII remain **OPEN**. Team **UNRESOLVED**, T_end not reached, no early finish.
 '''

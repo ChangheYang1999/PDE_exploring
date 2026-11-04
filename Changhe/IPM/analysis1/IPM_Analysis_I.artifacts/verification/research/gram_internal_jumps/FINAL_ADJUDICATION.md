@@ -20,7 +20,7 @@ byte-identical, and the absent M16 raw matrices leave their historical
 scalar linkage OPEN. The M24 tmin/t0 members were extracted, frozen and
 independently reread; only those members, not the whole matrix, are pinned.
 
-Actual Claude Opus5.5 accepted the restricted result in a completed
+Actual the main model accepted the restricted result in a completed
 end_turn follow-up after asking for stronger source binding. The complete
 constraint and endpoint-evaluator ASTs, section selectors and scalar
 bindings were checked. Its final lexical-scoping caveat was then checked

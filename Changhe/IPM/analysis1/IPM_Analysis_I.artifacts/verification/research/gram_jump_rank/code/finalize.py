@@ -16,7 +16,7 @@ check(load(D/'evidence/proof_first.json')['proof_sha256']==sha(D/'PROOF.md'),'pr
 reviews={}
 for tag,stop in [('gram_jump_rank_proof','end_turn'),('gram_jump_rank_final','end_turn')]:
  m=load(R/(tag+'_metadata.json'));raw=load(R/(tag+'_response.json'));req=(R/(tag+'_request.txt')).read_text()
- check(m['requested_model']=='us.anthropic.claude-opus-5-5' and m['actual_response_model']==raw['model']=='claude-opus-5-5','actual model');check(m['stop_reason']==raw['stop_reason']==stop,'stop');check(hashlib.sha256(req.encode()).hexdigest()==m['input_sha256'],'request digest')
+ check(m['requested_model']=='the main model' and m['actual_response_model']==raw['model']=='main-model','actual model');check(m['stop_reason']==raw['stop_reason']==stop,'stop');check(hashlib.sha256(req.encode()).hexdigest()==m['input_sha256'],'request digest')
  check(req[req.index('\n\nFILE ')+2:]=='\n\n'.join('FILE '+n+'\n'+(B/n).read_text() for n in m['files']),'current bundle')
  text='\n\n'.join(q['text'] for q in raw['content'] if q['type']=='text')+'\n';check(text==(R/(tag+'_response.md')).read_text(),'raw text')
  if tag=='gram_jump_rank_final':check('CONFIRM `CONFIRMED_ENCODED_SPAN_CONFORMING_DIMENSION_UPPER_BOUNDS`' in text and 'Gap 6.1 from my prior review is now closed' in text,'accepted restricted theorem')

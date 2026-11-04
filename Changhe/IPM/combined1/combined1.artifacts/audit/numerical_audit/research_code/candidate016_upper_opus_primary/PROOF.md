@@ -39,7 +39,7 @@ actual candidate application.
 Freeze the T2 primary review of T4-469, its exact fixture output, its
 checker as text, and its log. Bind every target proof, supplement,
 fixture and source hash. T2 is the existing theory lane configured for
-us.anthropic.claude-opus-5-5. Its provider response identity cannot be
+the main model. Its provider response identity cannot be
 observed here. No replacement model, remote client or peer program is
 executed. A hash binding is provenance, not a new numerical integration.
 

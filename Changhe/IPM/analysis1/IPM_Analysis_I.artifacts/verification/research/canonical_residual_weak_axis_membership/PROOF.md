@@ -1,6 +1,6 @@
 # Exact weak-axis membership range for the canonical trial residual
 
-This standalone proof is written before new validation computations. Its application remains OPEN until the strict scalar enclosure, independent checks, complete actual Claude Opus 5.5 review and later own adjudication. The object is the exactly joined and normalized modal_v2 trial, not an exact stationary profile or the literal unjoined stored field.
+This standalone proof is written before new validation computations. Its application remains OPEN until the strict scalar enclosure, independent checks, complete actual the main model review and later own adjudication. The object is the exactly joined and normalized modal_v2 trial, not an exact stationary profile or the literal unjoined stored field.
 
 ## Statement and definitions
 

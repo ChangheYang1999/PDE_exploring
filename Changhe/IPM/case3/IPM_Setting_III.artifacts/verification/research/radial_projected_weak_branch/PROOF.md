@@ -1,6 +1,6 @@
 # A finite-regularity radial pair with zero first residual projection
 
-Date: 2026-10-20. Status: independent construction and proof below; supporting exact arithmetic checks PASS on 2026-10-20; actual Claude Opus 5.5 independent review CONFIRMED on 2026-10-21 at00:17Z; the amendments below expand its moment-scope proof and clarify notation. Scope: canonical non-profiles with a specified finite regularity at the origin. No exact transport profile or smooth primary-class candidate is constructed.
+Date: 2026-10-20. Status: independent construction and proof below; supporting exact arithmetic checks PASS on 2026-10-20; actual the main model independent review CONFIRMED on 2026-10-21 at00:17Z; the amendments below expand its moment-scope proof and clarify notation. Scope: canonical non-profiles with a specified finite regularity at the origin. No exact transport profile or smooth primary-class candidate is constructed.
 
 ## 1. Statement and notation
 

@@ -76,7 +76,7 @@ V652 closes reading coverage for all 135 current standalone proofs linked in the
 
 [REPRODUCTION.md](REPRODUCTION.md) gives executed low-order commands and explains the archive manifests. V646 confirms exact agreement of both final smoke replays. [PUBLICATION_INDEX.md](PUBLICATION_INDEX.md) records the finite file checks, operational exclusions and four publication projections of raw diagnostic transcripts. V648 rejects a faulty prototype path scan; V649 confirms the corrected expanded scan. These are provenance and text checks, not mathematical proofs.
 
-The lead lane is configured for Claude Opus 5.5; the actual service model identity was not independently attested. Findings and counterarguments were exchanged through team files throughout the campaign. No Lean verification is claimed. Some independent implementations share an exact arithmetic library; the affected receipts state that limit.
+The lead lane is configured for the main model; the actual service model identity was not independently attested. Findings and counterarguments were exchanged through team files throughout the campaign. No Lean verification is claimed. Some independent implementations share an exact arithmetic library; the affected receipts state that limit.
 
 Canonical rational logarithmic convergence, compatibility at Candidate 007's stored parameter, necessity of the Brjuno condition, sharp convergence radii and a global stationary extension remain open.
 ''')
@@ -109,7 +109,7 @@ Updated {now}. Shift 4 began 2026-10-31T19:49:25Z. Team cutoff is 2026-11-01T00:
 
 At a new shift run date -u, read PROMPT.md fully, then this file and the peers' RUN_STATUS.md, NOTES_FOR_TEAM.md and reports. The prompt was reread in full in this shift, most recently at 00:25Z. Write only this lane. Never ask. No JavaScript/TypeScript, servers or listeners, remote or paid compute, RLScience or other clusters, GPU, Lean/lake, commits, pushes or posts. Use cores 17/18 at nice 19, at most two busy jobs, with one library thread. Heavy jobs use scratch/core17.lock or core18.lock. Each command finishes within ten minutes. Evidence paths stay relative.
 
-The lead is configured for Claude Opus 5.5. Actual service model identity is not independently attested. Collaboration is through team files.
+The lead is configured for the main model. Actual service model identity is not independently attested. Collaboration is through team files.
 
 ## Final state and resumption
 

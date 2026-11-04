@@ -31,7 +31,7 @@ def main():
  assert actual['input_audit_sha256']==fixed['research/modal_source/evidence/output_audit.json'] and actual['input_result_sha256']==fixed['research/modal_source/evidence/source_result.json']
  paths={B/p for p in fixed}|{Path(__file__),proof,code,ep,E/'lead_global_flow_v1.md',E/'planar_dependency.md',E/'planar_fetch.json'};reviews={}
  for tag in ['global_flow_repaired','global_flow_closure']:
-  mp=B/f'notes/reviews/{tag}_metadata.json';m=json.loads(mp.read_text());rq=(B/f'notes/reviews/{tag}_request.txt').read_text();assert m['actual_response_model']=='claude-opus-5-5' and m['stop_reason']=='end_turn' and hashlib.sha256(rq.encode()).hexdigest()==m['input_sha256']
+  mp=B/f'notes/reviews/{tag}_metadata.json';m=json.loads(mp.read_text());rq=(B/f'notes/reviews/{tag}_request.txt').read_text();assert m['actual_response_model']=='main-model' and m['stop_reason']=='end_turn' and hashlib.sha256(rq.encode()).hexdigest()==m['input_sha256']
   if tag.endswith('closure'):
    for p in [proof,code,ep,E/'planar_dependency.md',E/'planar_fetch.json']:
     marker='\n\nFILE '+str(p.relative_to(B))+'\n';assert rq.split(marker,1)[1].split('\n\nFILE ',1)[0]==p.read_text()

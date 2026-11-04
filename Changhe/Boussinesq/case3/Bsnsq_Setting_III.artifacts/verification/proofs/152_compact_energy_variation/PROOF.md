@@ -142,4 +142,4 @@ Written UTC 2026-10-21T09:49:55.071066+00:00.
 
 Independent scope refinement 2026-10-21T09:52:32.326401+00:00: canonical inverse existence is an explicit base assumption, retained by a compact potential correction; positivity persistence requires supports away from the axis. Neither issue changes the tested identities or the intended polynomial-patch application.
 
-Final audit UTC 2026-10-21T09:59:38.274344+00:00: independent exact and finite-deformation controls passed; actual Claude Opus5.5 reviews233 and234 returned written confirmations, with the stated dependency limitation. The canonical operator properties and attribution refinements requested in234 are explicit above.
+Final audit UTC 2026-10-21T09:59:38.274344+00:00: independent exact and finite-deformation controls passed; actual the main model reviews233 and234 returned written confirmations, with the stated dependency limitation. The canonical operator properties and attribution refinements requested in234 are explicit above.

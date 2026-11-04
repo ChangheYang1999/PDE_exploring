@@ -2,7 +2,7 @@
 
 Date 2026-10-22T02:45:14.840451+00:00. Verdict CONFIRMED for the stated frozen operator and exact canonical central parameters. This gives no inverse for the full IPM linearization.
 
-I read the complete actual claude-opus-5-5/end_turn response, request7c376ba0-798a-4aee-96a4-d56aa81d469b, and checked its reconstructed saved input and unchanged file hashes. No model substitution or incomplete response is accepted. Recorded model provenance is checked; this is not provider digital-signature attestation.
+I read the complete actual main-model/end_turn response, request7c376ba0-798a-4aee-96a4-d56aa81d469b, and checked its reconstructed saved input and unchanged file hashes. No model substitution or incomplete response is accepted. Recorded model provenance is checked; this is not provider digital-signature attestation.
 
 The change z=log x and g=exp((1/2-a)z)h(exp(z),y) gives exactly the weighted square integral integral x^(-2a)|h|^2 dxdy. Conjugation sends alpha x partial_x+beta y partial_y-1 to P=alpha partial_z+beta y partial_y+c, c=alpha(a-1/2)-1. Its explicit semigroup e^(ct)g(z+alpha t,e^(beta t)y) has Fourier amplitude e^((c-beta)t) and frequency dilation e^(-beta t). The squared norm after the frequency change has prefactor e^((2c-beta)t). For every real s>=0, the nonnegative Fourier weight grows by at most e^(2s beta t). This proves norm at most e^(delta t) with delta=c+beta(s-1/2), without differentiating a fractional derivative or assuming integral s. For Schwartz inputs the full Fourier formula gives continuity by domination; density and the locally uniform bound extend it to H^s.
 

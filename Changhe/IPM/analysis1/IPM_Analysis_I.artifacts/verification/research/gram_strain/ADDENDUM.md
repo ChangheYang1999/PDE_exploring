@@ -1,6 +1,6 @@
 # Scope and review resolutions
 
-The first actual Claude Opus5.5 response ended at max_tokens and is not
+The first actual the main model response ended at max_tokens and is not
 acceptance. Its visible calculations agree with both independent methods.
 The following points are explicit parts of the final statement.
 

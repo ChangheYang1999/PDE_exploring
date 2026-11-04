@@ -1,6 +1,6 @@
 # Independent review of the frr1 equilibrium characterization
 
-Recorded at 2026-10-31T22:20:47.936610+00:00. Finalized at 2026-10-31T22:21:36.764457+00:00. Reviewer model: GPT-6 Astra, hrt-w3 counters and independent validation. Actual Claude Opus 5.5 collaboration is through the lead's dated notes and report; this review independently reconstructs the data and checks the lead's argument. No external model client was invoked for this audit.
+Recorded at 2026-10-31T22:20:47.936610+00:00. Finalized at 2026-10-31T22:21:36.764457+00:00. Reviewer model: GPT-6 Astra, hrt-w3 counters and independent validation. Actual the main model collaboration is through the lead's dated notes and report; this review independently reconstructs the data and checks the lead's argument. No external model client was invoked for this audit.
 
 Verdict: **CONFIRMED for the explicitly defined recorded matrix.** The equilibrium set, necessity argument and weak-dominance claims in report section 5.16 are correct. The only proposed qualification is to state that the ten diagonal zeros are imposed by convention, since the 90-game tournament contains no self-play observations.
 

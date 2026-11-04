@@ -1,6 +1,6 @@
 # A general symbol inverse and the cascade from a finite leading far field
 
-Written 2026-10-21 before the new supporting checks. Status: complete informal proof, 8392 exact supporting checks passed 04:19Z, and actual lead Claude Opus5.5 hand review confirmed 04:28Z. Three wording repairs from that review were applied at the time recorded in the audit JSON; the frozen review and earlier proof are in verification/opus_20261021T0428. This gives necessary conditions and quantitative approximation obstructions. It does not prove primary existence or nonexistence.
+Written 2026-10-21 before the new supporting checks. Status: complete informal proof, 8392 exact supporting checks passed 04:19Z, and actual lead the main model hand review confirmed 04:28Z. Three wording repairs from that review were applied at the time recorded in the audit JSON; the frozen review and earlier proof are in verification/opus_20261021T0428. This gives necessary conditions and quantitative approximation obstructions. It does not prove primary existence or nonexistence.
 
 ## 1. Statement, notation and dependencies
 

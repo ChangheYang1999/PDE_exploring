@@ -5,7 +5,7 @@ import sys,json
 sys.dont_write_bytecode=True
 from flint import fmpq
 R=Path(__file__).resolve().parents[3];D=R/'research/logarithmic_scaling_rank_one';E=D/'evidence';sys.path.insert(0,str(R/'research/full_derivative_norm_bound_v2/code'));import protocol as p
-start=p.now();A=p.load(E/'check.json');p.rehash(A['parent_files']);assert p.sha(D/'PROOF.md')==A['proof_sha256']=='99cbccd132ab68569fdfdcd438b36fca0ceaa82740f3ff822c84ac13121813a1'
+start=p.now();A=p.load(E/'check.json');p.rehash(A['parent_files']);assert p.sha(D/'PROOF.md')==A['proof_sha256']=='c0b0a2d6461270de1bafbe9ea5ec0eb449b9296663369695d31eaacd157562d8'
 raw=R/'data_exact/modal_v2.json';assert p.sha(raw)=='57f67a53c1ee5c8fd5ede8480428f1a5584123ac4e54b6d3530d091ea2a67ca6';raw=p.load(raw)
 def hx(t):
  sign=-1 if t.startswith('-') else 1;t=t.lstrip('+-');m,e=t.split('p');whole,frac=m[2:].split('.');return fmpq(sign*int(whole+frac,16))*fmpq(2)**(int(e)-4*len(frac))

@@ -1,6 +1,6 @@
 # Smoothness of the escape conjugacy away from the trapped set
 
-Date:2026-10-20. Status: CONFIRMED after independent proof and actual Claude Opus 5.5 review.
+Date:2026-10-20. Status: CONFIRMED after independent proof and actual the main model review.
 This is a regularity corollary of the already proved local continuation
 estimates. It is not an existence or nonexistence endpoint.
 
@@ -122,7 +122,7 @@ The informal argument was written directly from the exact rescaling
 identity and independently checked derivative equations. No numerical
 test, formal proof assistant or numerics-lane implementation is required.
 Actual Bedrock review opus_reviews/60_smooth_scattering returned
-claude-opus-5-5 on 2026-10-20T19:02:02.642807Z after 37.029313 seconds.
+main-model on 2026-10-20T19:02:02.642807Z after 37.029313 seconds.
 It checked the rescaled ODE, localization, spatial derivative induction,
 determinant and inverse, and found no substantive gap. Its requested
 explicit div V=0 hypothesis has been added from the defining B2 equation;

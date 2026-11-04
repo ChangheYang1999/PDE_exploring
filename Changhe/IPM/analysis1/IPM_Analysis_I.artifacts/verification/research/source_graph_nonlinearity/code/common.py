@@ -11,7 +11,7 @@ PTAG='source_graph_nonlinearity_proof';ATAG='source_graph_nonlinearity_actual'
 PSCOPE='CONFIRM_SOURCE_GRAPH_NONLINEARITY_PROOF_ONLY';ASCOPE='CONFIRM_WEAK_SOURCE_GRAPH_NONLINEAR_DISCONTINUITY'
 OWN=['PROOF.md','ADDENDUM.md','evidence/proof_birth.json','PROOF_ADJUDICATION.md','evidence/PROOF_ADJUDICATION.json','code/common.py','code/check.py','code/extract.py','code/launch_actual.py','code/finalize.py','proof_files.json','proof_question.txt','actual_files.json','actual_question.txt','parents.json','PROTOCOL.md']
 EXTERNAL={str(B.parent/'ipmA-num/data/cert_green.npz'):'c2c2e4f73f5ac6ee49fd0052b81700fc88ee68d01a5a526691cf03c2b82c2ef1'}
-PREFIX='You are Claude Opus 5.5 collaborating with GPT-6, reviewing a mathematical computer-assisted IPM proof. Restrictions on this delegated task: no JavaScript/TypeScript development or execution; no servers/listeners/tunnels; no RLScience cluster; no Lean/Lake builds; no outside writes; no people contact. Pure text review only. Return a concise substantive FINAL ANSWER, not just internal reasoning. Reconstruct claims and reject gaps. '
+PREFIX='You are the main model collaborating with GPT-6, reviewing a mathematical computer-assisted IPM proof. Restrictions on this delegated task: no JavaScript/TypeScript development or execution; no servers/listeners/tunnels; no RLScience cluster; no Lean/Lake builds; no outside writes; no people contact. Pure text review only. Return a concise substantive FINAL ANSWER, not just internal reasoning. Reconstruct claims and reject gaps. '
 def now():return datetime.now(timezone.utc).isoformat()
 def when(x):
  t=datetime.fromisoformat(x);need(t.tzinfo is not None,'UTC-aware timestamp');return t
@@ -29,7 +29,7 @@ def rehash(p):
  for n,h in p.items():need(sha(B/n)==h,'unchanged final '+n)
 def auth(p,tag,verdict,files,question):
  m=load(R/(tag+'_metadata.json'));r=load(R/(tag+'_response.json'));text=(R/(tag+'_response.md')).read_text();request=(R/(tag+'_request.txt')).read_text()
- need(m['requested_model']=='us.anthropic.claude-opus-5-5' and m['actual_response_model']==r['model']=='claude-opus-5-5' and m['stop_reason']==r['stop_reason']=='end_turn' and 'availability_error' not in m,'actual complete Opus5.5')
+ need(m['requested_model']=='the main model' and m['actual_response_model']==r['model']=='main-model' and m['stop_reason']==r['stop_reason']=='end_turn' and 'availability_error' not in m,'actual complete Opus5.5')
  need(m['files']==files and len(files)==len(set(files)),'exact fixed complete review list')
  expected=PREFIX+(D/question).read_text()+'\n\n'+'\n\n'.join('FILE '+n+'\n'+(B/n).read_text() for n in files)
  need(request==expected and hashlib.sha256(request.encode()).hexdigest()==m['input_sha256'],'entire actual request identity')

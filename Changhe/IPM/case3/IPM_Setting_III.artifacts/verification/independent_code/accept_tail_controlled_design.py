@@ -21,7 +21,7 @@ for p in [__file__,*R.glob('CONTROLLED*.md'),*V.glob('before_controlled*'),V/'CO
 reviews=[]
 for lab in ['controlled_design','controlled_design_followup','controlled_design_closure']:
  v=V/('opus_'+lab);d=json.loads(bind(v/'metadata.json').read_text())
- if d['requested_model']!='us.anthropic.claude-opus-5-5'or d['returned_model']!='claude-opus-5-5'or d['stop_reason']!='end_turn'or not d['answer_nonempty']:raise ValueError('actual completed review '+lab)
+ if d['requested_model']!='the main model'or d['returned_model']!='main-model'or d['stop_reason']!='end_turn'or not d['answer_nonempty']:raise ValueError('actual completed review '+lab)
  for name in ['request.txt','response.json','answer.md']:bind(v/name)
  reviews.append(dict(label=lab,metadata=d))
 for p,h in list(bindings.items()):bind(p,h)

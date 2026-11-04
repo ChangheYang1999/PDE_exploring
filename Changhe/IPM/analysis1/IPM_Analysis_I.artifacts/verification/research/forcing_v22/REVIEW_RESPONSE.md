@@ -2,7 +2,7 @@
 
 Written 2026-10-21T09:43:01.050623+00:00. The response from request
 f4b7c98b-0755-4a00-b5a7-12f6f5d49848 used actual model
-claude-opus-5-5 and stopped at max_tokens. Its partial response is retained
+main-model and stopped at max_tokens. Its partial response is retained
 and is not counted as an acceptance. Followup is required.
 
 F1. The geometry proof is about a fixed canonical partition. The new

@@ -1,6 +1,6 @@
 # The inherited delta0 is a norm ratio
 
-The second actual Claude Opus5.5/end_turn review accepted all other parts but withheld its final verdict because the old JSON field name contains the word energy. Its request for semantic binding is justified: a field name alone is not a definition. The numerical estimate itself is unchanged.
+The second actual the main model review accepted all other parts but withheld its final verdict because the old JSON field name contains the word energy. Its request for semantic binding is justified: a field name alone is not a definition. The numerical estimate itself is unchanged.
 
 Topic132's mandatory FINAL_ADJUDICATION explicitly states that its relative bounds apply to the square root of the energy integral. Its PROOF derives the ratio by taking sqrt(U/V), and its REVIEW_RESOLUTIONS states the full-plane norm definition. These existing pinned files are included in the new review bundle. The original field name is preserved to avoid changing authenticated historical data.
 

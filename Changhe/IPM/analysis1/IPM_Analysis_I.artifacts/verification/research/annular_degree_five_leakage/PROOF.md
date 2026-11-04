@@ -1,6 +1,6 @@
 # A degree-five center term produced by a compact zero-strain perturbation
 
-Date 2026-10-22T02:33:26.426477+00:00. The proof is written before the new symbolic checks. The theorem and canonical-trial application remain OPEN pending those checks, an actual Claude Opus5.5 review and later own adjudication.
+Date 2026-10-22T02:33:26.426477+00:00. The proof is written before the new symbolic checks. The theorem and canonical-trial application remain OPEN pending those checks, an actual the main model review and later own adjudication.
 
 ## Exact statement
 

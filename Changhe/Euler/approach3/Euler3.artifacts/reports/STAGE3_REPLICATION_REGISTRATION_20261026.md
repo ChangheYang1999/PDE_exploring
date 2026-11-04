@@ -89,7 +89,7 @@ the chosen pair's amplitude over the next largest pair's (choose_pivot criterion
 | 3e-2 | 31002 | r1v2_cont150_3e-2_s31002.pt | 866f41a6f8f1b001e0f410833b9f932bf586bfa15f099439b6b7a232aff7a3db | 1.6724e-03 | 3.0000e-02 / 1.5772e-02 | 2.1e-16 / 1.1e-16 / 4.4e-16 | 1.2541 -> 1.2594 | {'pot': 'S', 'q': 5, 'amp': 0.13053049186301127} -> {'pot': 'S', 'q': 5, 'amp': 0.13053049186301127}; margin 1.203 | all 8 pass |
 | 1e-1 | 31003 | r1v2_cont150_1e-1_s31003.pt | d75cfcbf27b996079c047cb640b209a58cef96c1d49d25ec8ba54432758a01d6 | 9.0838e-03 | 1.0000e-01 / 6.0558e-02 | 1.9e-16 / 1.1e-16 / 0.0e+00 | 1.2541 -> 1.2996 | {'pot': 'S', 'q': 5, 'amp': 0.13053049186301127} -> {'pot': 'S', 'q': 5, 'amp': 0.13053049186301127}; margin 1.203 | all 8 pass |
 
-## 6. Lead review d128 IE (2026-10-26T18:33:18Z): ACCEPTED WITH CONDITIONS S3-1 to S3-12 (review copied byte-identically to reports/STAGE3_REGISTRATION_LEAD_REVIEW_IE_20261026.md, sha 1f027b8e293b265b1f314a7be211b2454ac3c752ebacedcbe85f9b85fd35d88e); how each condition is met (2026-10-26T18:36Z)
+## 6. Lead review d128 IE (2026-10-26T18:33:18Z): ACCEPTED WITH CONDITIONS S3-1 to S3-12 (review copied byte-identically to reports/STAGE3_REGISTRATION_LEAD_REVIEW_IE_20261026.md, sha a81f4d0d6b8c09397498a5dac023c77b0eae053b6792dca320e5afd9854c4c33); how each condition is met (2026-10-26T18:36Z)
 - S3-1 Z0 record for every job, the control included: before enqueue, scripts/block_costs.py --phase_align on the exact start file with the exact job JSON; required: the worker's pivot equal to
   the start's saved pivot, rel_change_z <= 1e-12, the phase-aligned frozen-closure total equal to the after_closure_refresh total to relative 1e-6; after launch the worker's logged start cost
   (the 'projected warm start' line: pde + non-pde blocks) must equal that total to relative 1e-6; a mismatch = tooling failure (stopped, recorded, not read); the record's sha goes into
@@ -121,7 +121,7 @@ the chosen pair's amplitude over the next largest pair's (choose_pivot criterion
 - Launch order at II.4 (lead) [amended by lead d128 LI, 2026-10-27T02:04:53Z: see the section 'Lead amendment d128 LI' below]: R1 (three GPUs, to about 20:35Z), R3 (the fourth, to about 22:40Z), then R2a to R2d, then R4 if its conditions hold. Each job gets a dated enqueue line in
   NUM_REPORT with its S3-1 record sha.
 
-## 7. Lead addendum d128 IF (2026-10-26T18:36:37Z; after the verifier's audit RIII-1 to RIII-11): conditions S3-13 to S3-20 and how they are met (2026-10-26T18:38Z; addendum copied byte-identically to reports/STAGE3_REGISTRATION_LEAD_ADDENDUM1_IF_20261026.md, sha daf76601be6595a8bbdcb6ac00ada6a97c8a2df2671ad4cc4cfe547a1bf075c0)
+## 7. Lead addendum d128 IF (2026-10-26T18:36:37Z; after the verifier's audit RIII-1 to RIII-11): conditions S3-13 to S3-20 and how they are met (2026-10-26T18:38Z; addendum copied byte-identically to reports/STAGE3_REGISTRATION_LEAD_ADDENDUM1_IF_20261026.md, sha 8d3ee2bbabb58b98913c810e1f75bde4ded07274d2149ec1e9830d58050fd1a6)
 - IA withdrawn: the supervisor has no whole-job cap (time_limit_per_start bounds the LM only); the R0 windows stand (launch by 2026-10-27T06:00Z, end by 10:00Z, readings by 12:00Z), the
   operator stops jobs by hand at their absolute ends if needed and records the occupied seconds. The S3-3 caps (3.4 GPU-h, R2a 4.6, R3 8) are planning figures until S3-14 exists; the equal
   time limits stand.

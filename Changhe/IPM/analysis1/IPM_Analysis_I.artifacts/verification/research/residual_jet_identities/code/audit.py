@@ -29,7 +29,7 @@ assert pairs==68121 and identities==136242 and coeffs==2*68121*523==71254566
 # Authenticate first model request and raw response; this is an initial
 # identity review, not acceptance of the subsequently implemented checks.
 R=B/'notes/reviews';tag='residual_jets_first';m=read(R/(tag+'_metadata.json'));req=(R/(tag+'_request.txt')).read_text();raw=read(R/(tag+'_response.json'))
-assert m['requested_model']=='us.anthropic.claude-opus-5-5' and m['actual_response_model']==raw['model']=='claude-opus-5-5' and m['stop_reason']==raw['stop_reason']=='end_turn'
+assert m['requested_model']=='the main model' and m['actual_response_model']==raw['model']=='main-model' and m['stop_reason']==raw['stop_reason']=='end_turn'
 assert hashlib.sha256(req.encode()).hexdigest()==m['input_sha256']=='d5ac226428f91738b79d396bf05d1b8237481bda621e621a8c7a34abb0c57e41'
 assert req[req.index('\n\nFILE ')+2:]=='\n\n'.join('FILE '+f+'\n'+(B/f).read_text() for f in m['files'])
 assert '\n\n'.join(c['text'] for c in raw['content'] if c['type']=='text')+'\n'==(R/(tag+'_response.md')).read_text()

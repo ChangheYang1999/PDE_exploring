@@ -23,7 +23,7 @@ loading matrix entries. All50992 stored pieces have the local regularity
 required for value traces. Only captured tiny members/headers are pinned,
 not a full historical raw matrix. M16 historical raw linkage stays OPEN.
 
-Actual Claude Opus5.5 accepted the result in both completed end_turn
+Actual the main model accepted the result in both completed end_turn
 exchanges, after a follow-up closed selector-membership and current M24
 count links. Its first response mixed section labels with NJ values;
 the correct mapping is stated in REVIEW_RESOLUTIONS and the follow-up.

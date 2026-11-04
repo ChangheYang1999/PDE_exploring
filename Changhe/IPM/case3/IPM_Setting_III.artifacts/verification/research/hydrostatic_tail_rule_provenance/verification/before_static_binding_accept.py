@@ -24,7 +24,7 @@ for row in json.loads((V/'SOURCE_INPUTS.json').read_text())['files']:bind(row['f
 reviews=[]
 for lab in ['design','design_followup','design_closure']:
  v=V/('opus_'+lab);d=json.loads(bind(v/'metadata.json').read_text())
- if d['returned_model']!='claude-opus-5-5'or d['stop_reason']!='end_turn'or not d['answer_nonempty']:raise ValueError('actual completed Opus5.5 review '+lab)
+ if d['returned_model']!='main-model'or d['stop_reason']!='end_turn'or not d['answer_nonempty']:raise ValueError('actual completed Opus5.5 review '+lab)
  for name in ['request.txt','response.json','answer.md']:bind(v/name)
  reviews.append(dict(label=lab,metadata=d))
 for p,h in list(bindings.items()):bind(p,h)

@@ -6,6 +6,6 @@ The source-defined regional counter checks passed5146/5146 from11:35:24.003333Z 
 
 The generated catalog includes every current direct topic directory, each with a nonempty PROOF.md, and resolves local links in the four designated navigation files. See verification/checks.json for the final count, timestamps and hashes. This is file existence and linkage, not a judgment that all proofs are complete.
 
-The root FINAL_VERIFIER_SUMMARY now specifies the observer convention, exact represented whole-plane tail closure, 20-map-call budget, masked/global counter distinction, bounded-temperature proof and unachieved prompt checks. Models616-618 were actual Claude Opus5.5; advice was checked and two substantive objections retracted after counterarguments. Their reviews endorse no unseen numerical value. Read verification/model_adjudication.md and scope_checks.json.
+The root FINAL_VERIFIER_SUMMARY now specifies the observer convention, exact represented whole-plane tail closure, 20-map-call budget, masked/global counter distinction, bounded-temperature proof and unachieved prompt checks. Models616-618 were actual the main model; advice was checked and two substantive objections retracted after counterarguments. Their reviews endorse no unseen numerical value. Read verification/model_adjudication.md and scope_checks.json.
 
 The summary preserves OPEN: no accepted full B2 YES or NO. Final report/archive readback and actual T_end remain pending.

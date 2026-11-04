@@ -187,7 +187,7 @@ with a separately implemented Cartesian full-plane inverse. The saved
 checks and numerical limitations are in verification/SUMMARY.md. They
 are checks on the exact derivation, not interval certificates.
 
-Actual Opus35 (claude-opus-5-5,130.373100seconds) confirmed the algebra
+Actual Opus35 (main-model,130.373100seconds) confirmed the algebra
 but initially substituted the opposite curl convention. The verifier
 rejected that sign objection and sent the exact prompt equations.
 Actual Opus36 (same model,67.102282seconds) independently rederived the

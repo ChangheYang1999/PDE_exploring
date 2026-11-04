@@ -6,7 +6,7 @@ for n in ['OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS']:os.environ
 import numpy as np
 import sympy as S
 R=Path(__file__).resolve().parents[3];D=R/'research/logarithmic_scaling_rank_one';E=D/'evidence';sys.path.insert(0,str(R/'research/full_derivative_norm_bound_v2/code'));import protocol as p
-start=p.now();pf=p.load(E/'proof_first.json');assert p.sha(D/'PROOF.md')==pf['proof_sha256']=='99cbccd132ab68569fdfdcd438b36fca0ceaa82740f3ff822c84ac13121813a1'
+start=p.now();pf=p.load(E/'proof_first.json');assert p.sha(D/'PROOF.md')==pf['proof_sha256']=='c0b0a2d6461270de1bafbe9ea5ec0eb449b9296663369695d31eaacd157562d8'
 parent='research/weak_axis_compact_higher_orders/evidence/verdict.json';pv=p.load(R/parent);pins=dict(pv['files']);p.pin(pins,parent,'391cd45cbabe7d3540327fe38a9ecb079ff3d80f982f21749b79f55200ae2710');p.rehash(pins)
 raw=R/'research/modal_exactification/evidence/trial_v2_h0.008.npz';assert p.sha(raw)=='a069d85d102e17340778042f85c003705716ba799c0f68873d10c1c582ea4874'
 with np.load(raw,allow_pickle=False) as z:

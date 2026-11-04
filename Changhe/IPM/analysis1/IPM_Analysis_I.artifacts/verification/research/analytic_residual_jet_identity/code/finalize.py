@@ -7,7 +7,7 @@ reviews=[]
 expected=[('analytic_residual_jets_complete','b069641d-9e51-484f-b47d-d9297d0e0d57','91ed3a38c5dcb4bb793ad6ebb9076c1960070f07d52c1b1f68fb5f2d73da232a'),('analytic_residual_jets_followup','50b23fc3-c603-4b79-8e5e-a41caa332dce','0b80ae103430356c3cbc3a71bb580a6425fb14280be6be95934e5fb0d276f0e7')]
 for tag,rid,digest in expected:
  m=json.loads((BASE/f'notes/reviews/{tag}_metadata.json').read_text());raw=json.loads((BASE/f'notes/reviews/{tag}_response.json').read_text());text=(BASE/f'notes/reviews/{tag}_response.md').read_text();req=BASE/f'notes/reviews/{tag}_request.txt'
- assert m['requested_model']=='us.anthropic.claude-opus-5-5' and m['actual_response_model']==raw['model']=='claude-opus-5-5'
+ assert m['requested_model']=='the main model' and m['actual_response_model']==raw['model']=='main-model'
  assert m['stop_reason']==raw['stop_reason']=='end_turn' and m['request_id']==rid
  assert sha(req)==m['input_sha256']==digest
  assert text=='\n\n'.join(c['text'] for c in raw['content'] if c['type']=='text')+'\n'

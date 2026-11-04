@@ -18,7 +18,7 @@ check(load(D/'evidence/proof_first.json')['proof_sha256']==sha(D/'PROOF.md'),'pr
 reviews={}
 for tag,expected,stop in [('gram_reference_proof','45fcd509008784a20963599823fa1d8192836cd78ec9898ec091def4427bd0cb','max_tokens'),('gram_reference_complete','7d8d45b922ea73fc3a65393b888115e917a51729adeb6bfb6ec1c9bfc23c5c9f','end_turn'),('gram_reference_scope',None,'end_turn')]:
  m=load(R/(tag+'_metadata.json'));raw=load(R/(tag+'_response.json'));req=(R/(tag+'_request.txt')).read_text()
- check(m['requested_model']=='us.anthropic.claude-opus-5-5' and m['actual_response_model']==raw['model']=='claude-opus-5-5' and m['stop_reason']==raw['stop_reason']==stop,'actual model')
+ check(m['requested_model']=='the main model' and m['actual_response_model']==raw['model']=='main-model' and m['stop_reason']==raw['stop_reason']==stop,'actual model')
  check(hashlib.sha256(req.encode()).hexdigest()==m['input_sha256'] and (expected is None or expected==m['input_sha256']),'request digest')
  check(req[req.index('\n\nFILE ')+2:]=='\n\n'.join('FILE '+f+'\n'+(B/f).read_text() for f in m['files']),'current bundle')
  text='\n\n'.join(q['text'] for q in raw['content'] if q['type']=='text')+'\n';check(text==(R/(tag+'_response.md')).read_text(),'raw text')

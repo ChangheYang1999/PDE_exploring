@@ -1,6 +1,6 @@
 # Why the proved far-field limits do not yet control derivatives
 
-Status: independently derived and checked; external review unavailable. Date: 2026-10-20. Review 12 returned actual claude-opus-5-5 with stop_reason=refusal and no mathematical answer. No model acceptance is inferred. Metadata is in ../../evidence/opus_review_12/metadata.json.
+Status: independently derived and checked; external review unavailable. Date: 2026-10-20. Review 12 returned actual main-model with stop_reason=refusal and no mathematical answer. No model acceptance is inferred. Metadata is in ../../evidence/opus_review_12/metadata.json.
 
 ## Statement and exact scope
 

@@ -11,7 +11,7 @@ all165audit dependencies pass. The subsequent selected-expression replay
 checks all33995suprema,195r2values and the frequency/factor tables against the
 frozen producer expressions. It rehashes all165prior dependencies first.
 
-Two actual Claude Opus5.5responses were read in full, with the request,
+Two actual the main modelresponses were read in full, with the request,
 raw response and model metadata retained. The first ended08:40:10.823335UTC,
 request4e7199fd-0fe5-45a5-9269-4679ea6f024b, and accepted the theorem subject
 to making frozen-expression correspondence explicit. The second ended

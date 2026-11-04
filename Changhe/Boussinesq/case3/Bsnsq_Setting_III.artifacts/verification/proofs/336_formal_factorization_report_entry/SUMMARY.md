@@ -10,4 +10,4 @@ Nine separate exact placeholder controls pass at2026-10-22T10:15:15.965871+00:00
 
 W1 corrects the Scope's axis exception. W2 replaces an incomplete fraction-field uniqueness sentence by direct division on the formal graph. W3 updates the local notation toL_1. W4 says no off-axis zero curve in the new timeline entry. Every repair is checked as an exact token substitution. No prior timeline entry is changed.
 
-Actual API model claude-opus-5-5, requested us.anthropic.claude-opus-5-5, reviewed in587/588/589. The final exchange closes D1-D6 and the timeline interpretation. A176's own credential retrieval failed before inference, retained separately and not represented as model review. GeneralB2 and actual finalization remain OPEN. No T_end is declared.
+Actual API model main-model, requested the main model, reviewed in587/588/589. The final exchange closes D1-D6 and the timeline interpretation. A176's own credential retrieval failed before inference, retained separately and not represented as model review. GeneralB2 and actual finalization remain OPEN. No T_end is declared.

@@ -1,6 +1,6 @@
 # Review resolutions
 
-The actual claude-opus-5-5 proof review ended normally at2026-10-21T15:22:47.920946Z. Its requests about exact input interpretation, the fixed precision and partition, per-cell tail scaling and the shared Bernstein conversion were resolved in ADDENDUM.md before the range computations.
+The actual main-model proof review ended normally at2026-10-21T15:22:47.920946Z. Its requests about exact input interpretation, the fixed precision and partition, per-cell tail scaling and the shared Bernstein conversion were resolved in ADDENDUM.md before the range computations.
 
 The code review ended normally at2026-10-21T15:27:42.519142Z, request9f03b8d1-0777-41fb-8aa2-d0c1809c67bb. It accepted the mathematics and code, with input and dimension hardening requested. I checked its points against the actual sources and plan rather than assuming the evidence files were absent or adequate.
 

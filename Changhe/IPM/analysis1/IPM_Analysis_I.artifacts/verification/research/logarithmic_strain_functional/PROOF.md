@@ -1,6 +1,6 @@
 # The canonical strain functional in logarithmic Sobolev spaces
 
-This proof is written before new numerical computations. Its numerical application remains OPEN until both interval paths, complete actual Claude Opus5.5 review and later own adjudication. It concerns a linear functional, not the full IPM inverse.
+This proof is written before new numerical computations. Its numerical application remains OPEN until both interval paths, complete actual the main model review and later own adjudication. It concerns a linear functional, not the full IPM inverse.
 
 ## Statement, domain and normalization
 

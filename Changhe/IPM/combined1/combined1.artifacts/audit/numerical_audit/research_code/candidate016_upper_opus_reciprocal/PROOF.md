@@ -88,7 +88,7 @@ No accuracy conclusion follows from an interval merely containing zero.
 ## Domains, collaboration and remaining gates
 
 The general divergence-free theorem is now reviewed by both existing
-Opus5.5 lanes. Configured identity is us.anthropic.claude-opus-5-5;
+Opus5.5 lanes. Configured identity is the main model;
 actual provider response is unobservable. No model substitute or remote
 client is used. T1's separate R1-050 on the prefix-tail proof is still
 pending in its announced scope. Own403/407 already verify the finite

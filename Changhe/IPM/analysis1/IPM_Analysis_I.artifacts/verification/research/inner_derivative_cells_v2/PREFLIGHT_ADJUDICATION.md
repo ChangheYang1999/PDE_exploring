@@ -1,6 +1,6 @@
 # Inner derivative preparation: own adjudication
 
-Date 2026-10-22T10:29:22.929428+00:00. CONFIRMED for preparation only. Request f599e46f-da93-4169-8c07-403e6fb6ed65; exact request SHA256 730f3e167a3b7de1520a077cec38dc4b3a84201a38e15d3e7db91a927d42f462; raw response SHA256 fcc7aa960c900dc962edd9355f58c5968af6b6464aead26e1799332a0b3ea0b3. The complete response and retained request were read and byte-checked; the actual returned model was claude-opus-5-5 with end_turn. This establishes local recorded correspondence, not a provider signature.
+Date 2026-10-22T10:29:22.929428+00:00. CONFIRMED for preparation only. Request f599e46f-da93-4169-8c07-403e6fb6ed65; exact request SHA256 730f3e167a3b7de1520a077cec38dc4b3a84201a38e15d3e7db91a927d42f462; raw response SHA256 fcc7aa960c900dc962edd9355f58c5968af6b6464aead26e1799332a0b3ea0b3. The complete response and retained request were read and byte-checked; the actual returned model was main-model with end_turn. This establishes local recorded correspondence, not a provider signature.
 
 The three smoke cells 0, 15, 43, their complete saved-output audit and all three replay pieces pass. They are separated cells, not an inner cover. The strict partial-sum ceilings 0.000002274249 and 0.000036253194 incorporate the accepted infinite inner tail, but omit 41 finite cells. No complete inner norm is inferred. The source freeze remains af8b8a89c07e1357da11d8a2c92e57c22f3f229728d6a776e8d8179c1c12643d.
 

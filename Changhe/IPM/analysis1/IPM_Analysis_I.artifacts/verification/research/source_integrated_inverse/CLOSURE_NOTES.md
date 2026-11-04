@@ -1,6 +1,6 @@
 # Final scope and mechanical closure
 
-Both actual Claude Opus5.5 reviews accept the mathematical argument. The
+Both actual the main model reviews accept the mathematical argument. The
 closure review raises three points, resolved here without changing the
 frozen producer or its already audited output.
 

@@ -7,7 +7,7 @@ R=Path(__file__).resolve().parents[3];D=R/'research/logarithmic_smooth_constrain
 def now():return datetime.now(timezone.utc).isoformat()
 def sha(path):
  with path.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
-start=now();a=json.loads((E/'check.json').read_text());assert sha(D/'PROOF.md')==a['proof_sha256']=='935abeef7acbb87346ccf8471b9e87e5ecc1d337af0a54db99cb0a6e4ec0e701'
+start=now();a=json.loads((E/'check.json').read_text());assert sha(D/'PROOF.md')==a['proof_sha256']=='877903dcd69be7645801393ceed0d0d42e607e7a8925dc27482a070b9e7fdc31'
 for name,h in a['parent_files'].items():assert sha(R/name)==h,name
 # Sparse fmpq ring adapted from211. No Sympy or primary evaluator import.
 NVAR=12

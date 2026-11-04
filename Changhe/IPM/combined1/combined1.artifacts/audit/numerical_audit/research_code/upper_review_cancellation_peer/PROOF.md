@@ -63,6 +63,6 @@ particular improved numerical H upper still has its own assembly and
 reciprocal Opus review gate. No inverse, contraction, stationary solution,
 trial completeness or correction-distance ordering is asserted. Existing
 Opus5.5 theory lanes supply collaboration; configured identity is
-us.anthropic.claude-opus-5-5, actual provider response unobservable.
+the main model, actual provider response unobservable.
 No peer program, remote client, JavaScript/TypeScript, server or cluster
 is executed. Exact JSON inputs and proof hashes are build dependencies.

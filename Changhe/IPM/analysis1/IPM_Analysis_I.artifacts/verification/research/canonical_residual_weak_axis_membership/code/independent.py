@@ -7,7 +7,7 @@ from flint import fmpq
 from mpmath import iv
 iv.dps=150
 R=Path(__file__).resolve().parents[3];D=R/'research/canonical_residual_weak_axis_membership';E=D/'evidence';sys.path.insert(0,str(R/'research/full_derivative_norm_bound_v2/code'));import protocol as p
-start=p.now();clock=time.monotonic();A=p.load(E/'check.json');assert A['proof_sha256']==p.sha(D/'PROOF.md')=='b13a5c23f5deb1779caaca192324f98f3565627aa86fe29ba08a7a547a2f33d3';assert A['code_sha256']==p.sha(D/'code/check.py');p.rehash(A['parent_files'])
+start=p.now();clock=time.monotonic();A=p.load(E/'check.json');assert A['proof_sha256']==p.sha(D/'PROOF.md')=='4c9e2813c8c0c588cdeb29e97a394f157de0a818610cd9b1d6f87810f74d7a9e';assert A['code_sha256']==p.sha(D/'code/check.py');p.rehash(A['parent_files'])
 path=R/'data_exact/modal_v2.json';assert p.sha(path)=='57f67a53c1ee5c8fd5ede8480428f1a5584123ac4e54b6d3530d091ea2a67ca6';raw=p.load(path)
 def hx(t):
  sign=-1 if t.startswith('-') else 1;t=t.lstrip('+-');m,e=t.split('p');a,b=m[2:].split('.');return fmpq(sign*int(a+b,16))*fmpq(2)**(int(e)-4*len(b))

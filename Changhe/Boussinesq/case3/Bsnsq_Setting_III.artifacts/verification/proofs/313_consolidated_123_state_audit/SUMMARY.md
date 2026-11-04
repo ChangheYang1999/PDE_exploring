@@ -51,6 +51,6 @@ These comparisons concern the saved sampled maxima. Evaluation sets differ betwe
 
 The main reduction ran08:06:45.792281 to08:06:52.587884 UTC (6.795635s), the scope comparison08:10:00.943488 to08:10:01.037138 (0.093640s), and the final wording check08:17:17.650715 to08:17:17.700014 (0.049306s). Frozen CSV9367a7e4, artifact Markdown db3fcb81 and NUM_REPORT85f1c358 identify the inputs. Full SHA-256 records, checks and approved-text hashes accompany this report.
 
-Actual Opus546/547 both returned claude-opus-5-5 and completed review and follow-up of the criterion and inference. Their requested scope, duplicate and grid clarifications were independently checked. See verification/model_adjudication.md. They did not inspect the raw arrays or reverify antecedent certificates.
+Actual Opus546/547 both returned main-model and completed review and follow-up of the criterion and inference. Their requested scope, duplicate and grid clarifications were independently checked. See verification/model_adjudication.md. They did not inspect the raw arrays or reverify antecedent certificates.
 
 This packet does not rerun the independent whole-plane inverse or PDE evaluator. Those computations and exact literal-state rejection certificates remain in the individual source packets. No new universal certificate-coverage claim is inferred from this consolidation. Neither rejection of stored states nor sampled residual floors excludes nearby exact solutions or proves nonexistence in the whole B2 class.

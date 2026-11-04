@@ -35,7 +35,7 @@ dependency pins. The audit manifest contains154 files. An incorrect
 hand-written draft bound for b_d was rejected by exact arithmetic and
 archived, then replaced before acceptance of any finite result.
 
-Actual Claude Opus5.5 was requested twice. Both actual-model responses
+Actual the main model was requested twice. Both actual-model responses
 returned stop_reason=refusal, cyber category, with no mathematical text.
 These are unavailable reviews, not acceptance or rejection of the
 mathematics. Their request IDs are

@@ -11,7 +11,7 @@ assert sha(B/'data_exact/modal_v2.json')==r['input_sha256']
 assert sha(B/'research/modal_exactification/evidence/trial_v2_h0.008.npz')==r['original_npz_sha256']
 assert r['residual_highest_frequency']==523 and r['density_positive_modes']==261 and r['residual_positive_modes']==262
 review=B/'notes/reviews/center_obstruction_closure_metadata.json';m=json.loads(review.read_text())
-assert m['actual_response_model']=='claude-opus-5-5' and m['stop_reason']=='end_turn'
+assert m['actual_response_model']=='main-model' and m['stop_reason']=='end_turn'
 assert sha(B/'notes/reviews/center_obstruction_closure_request.txt')==m['input_sha256']
 assert 'CLOSED and accepted' in (B/'notes/reviews/center_obstruction_closure_response.md').read_text()
 da=json.loads((E/'dependency_audit.json').read_text());count=0

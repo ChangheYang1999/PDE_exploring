@@ -11,7 +11,7 @@ assert F(a['exact_defect_lower_margin'])>F('6.7015e-7')
 pins=dict(a['pins'])
 for f,h in pins.items():assert sha(B/f)==h,f
 tag='row_one_local_closure';m=json.loads((R/(tag+'_metadata.json')).read_text());raw=json.loads((R/(tag+'_response.json')).read_text());req=(R/(tag+'_request.txt')).read_text()
-assert m['actual_response_model']==raw['model']=='claude-opus-5-5' and m['stop_reason']==raw['stop_reason']=='end_turn'
+assert m['actual_response_model']==raw['model']=='main-model' and m['stop_reason']==raw['stop_reason']=='end_turn'
 assert hashlib.sha256(req.encode()).hexdigest()==m['input_sha256']
 assert req[req.index('\n\nFILE ')+2:]=='\n\n'.join('FILE '+f+'\n'+(B/f).read_text() for f in m['files'])
 text='\n\n'.join(c['text'] for c in raw['content'] if c['type']=='text')+'\n';assert text==(R/(tag+'_response.md')).read_text() and '**ACCEPT.**' in text

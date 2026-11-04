@@ -13,7 +13,7 @@ for k in ['ROW','TL','AUDIT_A','VER_A']:
 ck('exact_only_string_substitutions',norm(filled)==expected)
 ck('no_unfilled_new_tokens',not re.search(r'\b(MM|NN|PZZZ|HH:MM)\b',norm(filled)))
 parts=[('math_checks.json',252),('entry_checks.json',64),('referee_polynomial_checks.json',55),('referee_sign_checks.json',162)]; ck('primary_533',all((lambda a:a['total']==a['passed']==n)(json.loads((v/f).read_text()))for f,n in parts) and sum(n for _,n in parts)==533)
-ck('no_model_names_in_strings',not re.search(r'Opus|Claude|GPT|astra',json.dumps(new),re.I))
+ck('no_model_names_in_strings',not re.search(r'Opus|the main model|GPT|astra',json.dumps(new),re.I))
 ck('exact_recorded_interval',('complete-entry verification 10:27 to '+end+' (P342, 533 controls)')in new['TL'])
 ck('no_placeholder_clock_or_three_digit_minutes',not re.search(r'HH:|\b[0-9]{2}:[0-9]{3}\b',filled))
 bad=old['TL'].replace('MM','533').replace('HH:MM to HH:MM','10:27 to 10:42')

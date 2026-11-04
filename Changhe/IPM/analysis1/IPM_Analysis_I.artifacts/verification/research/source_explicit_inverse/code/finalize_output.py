@@ -31,8 +31,8 @@ for name in ['source_semigroup','source_order_family','n8_density_hessian','n8_v
 reviews={}
 for kind in ('proof','closure','final'):
  tag='explicit_source_inverse_'+kind;m=json.loads((R/(tag+'_metadata.json')).read_text());raw=json.loads((R/(tag+'_response.json')).read_text());req=(R/(tag+'_request.txt')).read_text();ans=(R/(tag+'_response.md')).read_text()
- assert m['requested_model']=='us.anthropic.claude-opus-5-5'
- assert m['actual_response_model']==raw['model']=='claude-opus-5-5' and m['stop_reason']==raw['stop_reason']=='end_turn'
+ assert m['requested_model']=='the main model'
+ assert m['actual_response_model']==raw['model']=='main-model' and m['stop_reason']==raw['stop_reason']=='end_turn'
  assert hashlib.sha256(req.encode()).hexdigest()==m['input_sha256']
  assert ans=='\n\n'.join(t['text'] for t in raw['content'] if t['type']=='text')+'\n'
  marker='\n\nFILE '+m['files'][0]+'\n';assert req.count(marker)==1

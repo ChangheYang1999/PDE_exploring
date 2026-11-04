@@ -2,7 +2,7 @@
 
 2026-10-21T18:19:45.336790+00:00
 
-I read the complete actual Claude Opus5.5/end_turn response, request 13fb77e4-997d-41fa-9f7b-e4afb6000eac, raw response SHA256 64ea6688753b3883647c5ed30d51d36f3e19f61fd09798675bcf8be0e54939c2. Its result is preparation-only acceptance. No full second moment propagation has run.
+I read the complete actual the main model response, request 13fb77e4-997d-41fa-9f7b-e4afb6000eac, raw response SHA256 64ea6688753b3883647c5ed30d51d36f3e19f61fd09798675bcf8be0e54939c2. Its result is preparation-only acceptance. No full second moment propagation has run.
 
 I independently rechecked the source Cox factors, angular cancellations, endpoint factorials, complete inner/outer integrals and reversed J sign. With u=(b-t)/h, J_u=(4-m)h J+h H_n(b-hu), so both the sign and n=2 polynomial-primitive branch are correct. The particular coefficient equation is (k+1)q_(k+1)-zeta q_k=hP_k. Exact rational q construction prevents cancellation in those coefficient calculations; evaluation of q(1)+exp(zeta)(y-q(0)) still occurs in outward intervals and can lose accuracy. The review's wording that cancellation occurs in exact arithmetic must not be read as eliminating this interval cancellation. A failed containment remains a failed sufficient test until its witness is examined.
 

@@ -28,7 +28,7 @@ Multiplying M2=0 by lambda gives the real quadratic
 Its discriminant is exactly
  Delta=-8A^2 lambda^2-48A lambda^2-96A lambda^2 z-32A lambda z
        -576lambda^2 z^2+(256-384lambda)z^2.
-Here A>0,z>0 and lambda>=1: for A=1,lambda=n; for A=3,lambda=15+3n. Every displayed term is strictly negative except that the last is a single combined term, which is also strictly negative since256-384lambda<0. Hence Delta<0, and no real p exists. This proof uses only M1,M2 and the two derivative equations. It independently rechecks the degree13 pattern and proves the degree15 case(ii). The simplified discriminant argument was proposed in the actual Claude Opus5.5 review and is verified coefficient by coefficient in the independent checker.
+Here A>0,z>0 and lambda>=1: for A=1,lambda=n; for A=3,lambda=15+3n. Every displayed term is strictly negative except that the last is a single combined term, which is also strictly negative since256-384lambda<0. Hence Delta<0, and no real p exists. This proof uses only M1,M2 and the two derivative equations. It independently rechecks the degree13 pattern and proves the degree15 case(ii). The simplified discriminant argument was proposed in the actual the main model review and is verified coefficient by coefficient in the independent checker.
 
 Case(iii). Let a be the weight6 node and b the weight4 node, each real, and W(v)=v^2-hv+j the weight2 pair. Define t=z/(z-a) and s=z/(z-b). Both are finite and nonzero. The derivative equations imply 2t+s=-n. Hence s=-n-2t, a=z(1-1/t) and b=z(1-1/s); all divisions are permitted because t and s are nonzero. The first moments give
  h=-1/2-3a-2b,

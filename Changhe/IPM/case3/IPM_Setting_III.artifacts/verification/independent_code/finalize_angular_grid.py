@@ -19,7 +19,7 @@ for name,status,n in [('CHECKS.json','PASS_COMPLETE_FINITE_ANGULAR_QUADRATURE_AU
 reviews=[]
 for label in ['design','design_followup','results','results_followup_retry','final']:
  f=V/('opus_'+label);m=json.loads(bind(f/'metadata.json'));resp=json.loads(bind(f/'response.json'));q=bind(f/'request.txt');a=bind(f/'answer.md').decode()
- ck('actual model '+label,m['requested_model']=='us.anthropic.claude-opus-5-5'and m['returned_model']==resp['model']=='claude-opus-5-5')
+ ck('actual model '+label,m['requested_model']=='the main model'and m['returned_model']==resp['model']=='main-model')
  ck('complete answer '+label,m['stop_reason']==resp['stop_reason']=='end_turn'and m['answer_nonempty'])
  ck('request identity '+label,hashlib.sha256(q).hexdigest()==m['request_sha256'])
  ck('answer identity '+label,'\n\n'.join(z['text']for z in resp['content']if z['type']=='text').strip()==a.strip())

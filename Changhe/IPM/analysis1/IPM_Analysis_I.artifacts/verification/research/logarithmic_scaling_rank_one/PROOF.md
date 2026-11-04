@@ -1,6 +1,6 @@
 # The scaling term in logarithmic Sobolev spaces
 
-This proof is written before the new data check. Its application remains OPEN until independent checking, complete actual Claude Opus 5.5 review and later own adjudication. It concerns the canonical trial and compact test images. It does not construct an IPM inverse.
+This proof is written before the new data check. Its application remains OPEN until independent checking, complete actual the main model review and later own adjudication. It concerns the canonical trial and compact test images. It does not construct an IPM inverse.
 
 ## Statement and definitions
 

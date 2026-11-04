@@ -66,7 +66,7 @@ The R4 saved values satisfy both local class-(i) conditions: perturbed/control h
 
 The latest audited installed report is [fr18](report_reviews/20261028T062616Z_FINAL_fr18_delta/REVIEW.md), 987a2c039c7ee9398aa4317f11eb13164352d364668ae31517f17bc702289047: 27 CONFIRMED, 0 REFUTED, 3 OPEN. All six changed blocks were checked against accepted fr17. The R4 paragraph and exact-normalization statement retain their required limitations. Actual UI at 06:29:40 UTC acknowledges the audit without correction; its receipt is [here](report_reviews/20261028T063149Z_UI_fr18_acknowledgment/REVIEW.md). Every later installed version needs its own delta audit.
 
-Read accepted [disposition v7](verification_stage3/final_disposition_20261028/DRAFT_v7.md), [coverage v7](verification_stage3/final_disposition_20261028/STAGEIII_REQUIREMENT_COVERAGE_v7.md), and the [42-claim matrix](report_reviews/20261028T023632Z_TC_TD_navigation/MATRIX.md). [Actual UW](report_reviews/20261028T081902Z_UW_disposition_v7_acceptance/REVIEW.md) accepts v7 as prose and coverage with no remark, after review by Claude Opus 5.5. Its 23 requirement verdicts remain 6 CONFIRMED, 1 REFUTED and 16 OPEN. D6-1 is applied. D6-2 still requires the report actually installed at the 16:30 UTC sign-off, its full hash and audit, followed by a separate audit of any later freeze revision. V6 is preserved as the previous accepted version; v5 remains unaccepted. The [guide](verification_stage3/guide_20261027/VERIFICATION_GUIDE_v5.md) and [addition](verification_stage3/guide_20261027/VERIFICATION_ADDENDUM_20261028.md) preserve methods and limitations.
+Read accepted [disposition v7](verification_stage3/final_disposition_20261028/DRAFT_v7.md), [coverage v7](verification_stage3/final_disposition_20261028/STAGEIII_REQUIREMENT_COVERAGE_v7.md), and the [42-claim matrix](report_reviews/20261028T023632Z_TC_TD_navigation/MATRIX.md). [Actual UW](report_reviews/20261028T081902Z_UW_disposition_v7_acceptance/REVIEW.md) accepts v7 as prose and coverage with no remark, after review by the main model. Its 23 requirement verdicts remain 6 CONFIRMED, 1 REFUTED and 16 OPEN. D6-1 is applied. D6-2 still requires the report actually installed at the 16:30 UTC sign-off, its full hash and audit, followed by a separate audit of any later freeze revision. V6 is preserved as the previous accepted version; v5 remains unaccepted. The [guide](verification_stage3/guide_20261027/VERIFICATION_GUIDE_v5.md) and [addition](verification_stage3/guide_20261027/VERIFICATION_ADDENDUM_20261028.md) preserve methods and limitations.
 
 The [complete reading of all 36 mathematical report items](report_reviews/20261028T080532Z_all36_mathematical_item_index/REVIEW.md), with its [accepted-amendments addendum](report_reviews/20261028T080532Z_all36_mathematical_item_index/ACCEPTED_AMENDMENTS_ADDENDUM.md), records 32 CONFIRMED, 2 REFUTED and 2 OPEN for the literal installed items. Items 14(b) and 18 require correction; items 24(d) and 28 require scope clarification. A fifth amendment qualifies the Table B swirl diagnostic as global versus sampled. All five are accepted in [future builder g](report_reviews/20261028T080626Z_UV_fr19g_static_review/REVIEW.md), not installed. The fr18 six-block delta audit does not clear these later findings elsewhere in that file. A fallback to f or e would leave some accepted corrections out; the actual final output must be checked.
 
@@ -82,7 +82,7 @@ Of the five [TI-released closing commands](report_reviews/20261028T033641Z_TI_CL
 
 The shift-17 du -sh at 08:32 UTC was 22G, below the 30 GB ceiling. The [accepted deduplication](report_reviews/20261028T042333Z_TQ_archive_dedup_execution/REVIEW.md) retained all 32 paths and bytes, releasing 322146304 duplicate allocated bytes. Never write those 16 shared inodes in place. The closing guard measures lane size but cannot stop CPU 61 workers; the accepted launch checks and 302-second timeout remain necessary. Production balances are 23585.447677477728466 core-seconds and 14674.801569550763 GPU-seconds; recovery balance is 152598. These are balances, not measured consumption. R4 bookkeeping changed none of them.
 
-Only this lane is writable. Use taskset -c 61 nice -n 19, serial work and one numerical-library thread. No JavaScript/TypeScript, Node, servers/listeners, remote or paid compute, RLScience or any cluster, Lean/lake builds, commits, pushes or online posting. Actual collaboration is with Claude Opus 5.5, model us.anthropic.claude-opus-5-5, through lane files. Earlier dated entries retain their historical cutoffs. Current execution guidance is in [RUN_STATUS](RUN_STATUS.md).
+Only this lane is writable. Use taskset -c 61 nice -n 19, serial work and one numerical-library thread. No JavaScript/TypeScript, Node, servers/listeners, remote or paid compute, RLScience or any cluster, Lean/lake builds, commits, pushes or online posting. Actual collaboration is with the main model, model the main model, through lane files. Earlier dated entries retain their historical cutoffs. Current execution guidance is in [RUN_STATUS](RUN_STATUS.md).
 
 
 Navigation refreshed at 2026-10-28T08:25:37.595947+00:00; the [previous leading text](report_reviews/20261028T082537Z_accepted_v7_navigation_refresh/VERIFY_REPORT_header_before.md) is preserved. Historical entries below retain their own dates and scopes.
@@ -151,7 +151,7 @@ Current update 2026-10-27T17:56:10.350474+00:00: source_R3_002 launched17:55:00Z
 
 Outcome C remains provisional. No accepted strong numerical candidate, exact rotating Euler profile or general obstruction has been established. The selected primary approximation has c_l = 0.45, omega = 1 and nominal omega/c_l = 20/9. D10 has c_l = 0.45, omega = 0.3 and nominal omega/c_l = 2/3; its stored binary64 ratio is 5404319552844595/8106479329266893.
 
-Method: read actual lead QL and QM, inspect the bound guard-replacement records, and compare the current source request, ledger and preserved result scopes. The actual collaboration is with Claude Opus 5.5, us.anthropic.claude-opus-5-5, confirmed in the lead's MODEL file. The authoritative live execution navigation is RUN_STATUS.md.
+Method: read actual lead QL and QM, inspect the bound guard-replacement records, and compare the current source request, ledger and preserved result scopes. The actual collaboration is with the main model, the main model, confirmed in the lead's MODEL file. The authoritative live execution navigation is RUN_STATUS.md.
 
 CONFIRMED: QL accepted the finite v4 disk control and released one guard replacement. The new guard, PID70469 / start ticks224747729, passed GA-6 and the post-launch identity/environment check. Its source is unchanged and only PATH changed. The original guard and delayed fallback have exited. The initial command-comparison error stopped before any signal; its failed entry and the corrected21/0 entry are retained. Source_R3_002 remains unallocated pending actual release of report_reviews/20261027T174522Z_QL_SOURCE_R3_002_actual_request. Its 237 frozen bindings rehash, and no reuse of partial source001 rows is assumed.
 
@@ -227,7 +227,7 @@ The Newton cross-registration gap is confirmed. Actual PT identified missing con
 
 Still OPEN are selected-state Newton agreement and 50/80-digit reconstruction, full SPEC momentum and Poisson evaluation, complete tail and error controls, numerical integral identities, gauge-aligned refinement stability, global maxima and three meaningful refinements. No finite consistency check closes those obligations. FINAL_REPORT.md fr5 at hash a68b2407230d09cc81364f05bc6c9d45b42a44cdd499cb8bcef1d0a8642d25a9 is the last audited version. Its delta has 275 CONFIRMED, 0 REFUTED and 5 OPEN rows with 96 bound inputs. All new 6.8 numbers and qualifiers are supported. R3 and control training momentum use the same sampled measure; this does not establish pressure accuracy. Actual PX accepts this delta audit; the copied lead review is5478ec17 in the16:02:56Z receipt.
 
-Actual collaboration is with Claude Opus 5.5, us.anthropic.claude-opus-5-5, through the lead lane's dated files. All writes remain in the independent route. No JavaScript/TypeScript, servers/listeners, RLScience or other cluster, remote/paid compute, Lean/lake, commits or posts are permitted.
+Actual collaboration is with the main model, the main model, through the lead lane's dated files. All writes remain in the independent route. No JavaScript/TypeScript, servers/listeners, RLScience or other cluster, remote/paid compute, Lean/lake, commits or posts are permitted.
 
 ## Initial inspection, 2026-10-24, retained as history
 
@@ -735,7 +735,7 @@ Verdict: CONFIRMED for the known-root construction and its Jacobian. OPEN for V1
 
 Method: read lead derivations d23 and d24 against the original helicity, momentum-bound and raw-null proofs. Result: the exact identities and signs agree, including the minus sign of Psi in the finite-ball momentum identity. The helicity proof now explicitly notes that the complete coefficient of r^-2alpha in B includes (c_l n-omega Jn).G. The running exterior calculation uses the declared leading fields only and has no remainder certificate. Its tanh bins do not vanish identically near B=0, so the strengthened exterior-free statement cannot be applied to them.
 
-Verdict: CONFIRMED for the stated proofs and leading-model qualification. REFUTED for treating a tanh bin as compactly supported because it rounds to zero. Lead model recorded as us.anthropic.claude-opus-5-5; the review is an actual model exchange through lane files.
+Verdict: CONFIRMED for the stated proofs and leading-model qualification. REFUTED for treating a tanh bin as compactly supported because it rounds to zero. Lead model recorded as the main model; the review is an actual model exchange through lane files.
 
 ## 2026-10-24T22:42:16.264824+00:00: first nonlinear coefficient missing from primary d6t_L6
 
@@ -769,7 +769,7 @@ Method: compare a tensor-product assembly of the same pressure harmonic coeffici
 
 Method: evaluate the released D2 approximation on standard and half-offset volume shells with a single shared radial Green partition. Compare the standard-family result with its completed original evaluation and check the tensor pressure assembler at 48 selected points against the independent pointwise assembler. Result: standard rho_u changes by -1.39e-17, standard rho_nl by 2.78e-17, and the pressure-gradient relative difference is 3.79e-16. At this coarse calibration (n_r=3, n_mu=10), standard rho_u is 0.11333887873026707 and half-offset rho_u is 0.11521692096122423. Verdict: CONFIRMED for this implementation regression. These coarse numbers do not replace the refined D2 result. Evidence: independent/reports/paired_momentum_calibration_d2/regression_tests.json. New holdout jobs now save both families and sampled single-sphere diagnostics; older frozen jobs remain reproducible.
 
-Method: read Opus 5.5 lead review d27 against the absent-rate proof and independently inspect the expansion. Result: both expansions contain all integer increments alpha+j, including odd j, while alpha+1 is noninteger. The stated A/C-only conclusion is unchanged. The proof now makes the odd powers explicit. Verdict: CONFIRMED for this conditional representation statement. The lead's sample-based far-field ratio approaches the independently computed coefficient ratio 0.399640; that numerical agreement is not a certified lower bound or a target-class obstruction. Actual collaborating model: us.anthropic.claude-opus-5-5.
+Method: read Opus 5.5 lead review d27 against the absent-rate proof and independently inspect the expansion. Result: both expansions contain all integer increments alpha+j, including odd j, while alpha+1 is noninteger. The stated A/C-only conclusion is unchanged. The proof now makes the odd powers explicit. Verdict: CONFIRMED for this conditional representation statement. The lead's sample-based far-field ratio approaches the independently computed coefficient ratio 0.399640; that numerical agreement is not a certified lower bound or a target-class obstruction. Actual collaborating model: the main model.
 
 ## 2026-10-24T23:09:43.444364+00:00: Newton pressure manufacture; separate GN experiment
 
@@ -988,7 +988,7 @@ The forced manufactured tests use matrix-exponential trajectories and independen
 
 ## 2026-10-25T00:21:40.427550+00:00: angular review and saved-source check
 
-Method: read the lead's actual Claude Opus 5.5 review d35, independently checked its poloidal closed form and degree refinement, and incorporated the clarifications in theory/angular_quadrature/PROOF.md. The global radial representation, effective degree max(L_S,L_T-1,0), and unused-source-harmonic projection condition are explicit. Verdict: CONFIRMED for these algebraic refinements. The review is preserved in verification/opus_d35_review.md.
+Method: read the lead's actual the main model review d35, independently checked its poloidal closed form and degree refinement, and incorporated the clarifications in theory/angular_quadrature/PROOF.md. The global radial representation, effective degree max(L_S,L_T-1,0), and unused-source-harmonic projection condition are explicit. Verdict: CONFIRMED for these algebraic refinements. The review is preserved in verification/opus_d35_review.md.
 
 Applied the proved source degree K=2d+2 to 27 retained pressure-source arrays. Every rule satisfies the exact projection condition through its retained degree. The largest finite-volume high-degree relative L2 norm is 1.77401710217e-14; the largest relative value on resolved individual source spheres is 1.98782356535e-13. Verdict: CONFIRMED for this finite floating-point angular implementation check. Evidence: theory/angular_quadrature/verification/saved_source_bandlimit/summary.json. The final tail-subtracted interval is excluded. This supplies no bound on radial integration, lower harmonics, omitted exterior, or candidate error.
 
@@ -1212,7 +1212,7 @@ CONFIRMED: backward residual accounting is fourth-order consistent; finest max c
 
 # Independent review of d41 and FINAL_REPORT 2b
 
-Date 2026-10-25T01:54:26.053009+00:00. Method: check the source sphere identities, flux scaling, cutoff limits, distributional stream-function pairing and every subclass proof, then write the standalone argument in ../PROOF.md. No computation or external theorem is needed for those implications. Actual collaborating lead model: us.anthropic.claude-opus-5-5.
+Date 2026-10-25T01:54:26.053009+00:00. Method: check the source sphere identities, flux scaling, cutoff limits, distributional stream-function pairing and every subclass proof, then write the standalone argument in ../PROOF.md. No computation or external theorem is needed for those implications. Actual collaborating lead model: the main model.
 
 CONFIRMED: the two signed flux measures vanish, h is nonnegative with zeros for any nonzero field, the integrability closure is valid, and Beltrami, irrotational, tangential, zero-radial-vorticity and axisymmetric fields are excluded in the stated smooth homogeneous class. The pressure constant is fixed by momentum and homogeneity.
 
@@ -1515,7 +1515,7 @@ Method: fresh CPU coefficient evaluation, independent long-double cylindrical co
 
 Method: independent long-double reconstruction of retained transfer arrays and a separate 60/90-digit potential-jet implementation at six points. Result: transfer Green and Newton refinement guards PASS, but original 2561-check arithmetic guard FAILs at 3.83261e-10 against 1e-11. The high-precision controls and selected points PASS and confirm finite-precision evaluation differences. Verdict: CONFIRMED original readout failure and finite-point diagnosis; an unqualified arithmetic PASS is REFUTED. Pressure enclosures, uniform roundoff bounds and exact-profile conclusions remain OPEN. Evidence theory/cartesian_floating_point/verification/REPORT.md and independent/reports/transferred_momentum_comparison/INDEPENDENT_READOUT.md.
 
-Method: strengthen the complete radial derivative proof using the attained normalized maximum and its zero directional derivative. Result: A>alpha in the C1 uniformly decaying normalized class. Independent 85-digit boundary-constant calculations PASS. Verdict: CONFIRMED strict necessary range and algebraic constants. An attained smallest pair A=alpha,B=1 is REFUTED. Constants at the excluded boundary are only algebraic comparisons, not an existence statement. Evidence theory/constructive_mean_bound/PROOF.md and verification/boundary_constants.json. Actual Claude Opus5.5 follow-up requested through the shared lane notes; no remote client or substitute model used.
+Method: strengthen the complete radial derivative proof using the attained normalized maximum and its zero directional derivative. Result: A>alpha in the C1 uniformly decaying normalized class. Independent 85-digit boundary-constant calculations PASS. Verdict: CONFIRMED strict necessary range and algebraic constants. An attained smallest pair A=alpha,B=1 is REFUTED. Constants at the excluded boundary are only algebraic comparisons, not an existence statement. Evidence theory/constructive_mean_bound/PROOF.md and verification/boundary_constants.json. Actual the main model follow-up requested through the shared lane notes; no remote client or substitute model used.
 
 ## 2026-10-25T05:23:19.600510+00:00: viscosity and report delta audit
 
@@ -1723,7 +1723,7 @@ A fresh Cartesian pressure check is registered in independent/experiments/pressu
 
 The updated section 6.6(c) now includes the independently evaluated nest6 p0 asymptotic ratio -8.98 and correctly distinguishes the coefficient ratio from a finite-radius quotient. Section 2b(6)(d) still said its direct coefficient was unevaluated in an immediately preceding version; keep these locations consistent. The completed common-grid and finite-part sets now contain nine states, so section 6.4 and the scope count in 8(ii) need the two new named states, or an explicit cutoff date. Their negative finite-part values extend the observed range to -1.02124, beyond the old seven-state interval.
 
-Actual collaborating model: the lead is Claude Opus 5.5, model identifier us.anthropic.claude-opus-5-5. Its d69 review rederived the local curl identity, the characteristic rotation signs, and the nonzero-helicity tail control exactly. I checked its proof and log against the local statement. Verdict: CONFIRMED agreement on the C^2 local lemma and the leading helicity-flux coefficient (c_l/2) H_F R^(2-2alpha). The previous generic R^(1-3alpha) rate was incorrect when H_F is nonzero. This closes the pending second-model review. It is not an obstruction to the whole target class.
+Actual collaborating model: the lead is the main model, model identifier the main model. Its d69 review rederived the local curl identity, the characteristic rotation signs, and the nonzero-helicity tail control exactly. I checked its proof and log against the local statement. Verdict: CONFIRMED agreement on the C^2 local lemma and the leading helicity-flux coefficient (c_l/2) H_F R^(2-2alpha). The previous generic R^(1-3alpha) rate was incorrect when H_F is nonzero. This closes the pending second-model review. It is not an obstruction to the whole target class.
 
 ## 2026-10-25T06:59:53.862517+00:00: nine-state finite-ball energy audit complete
 
@@ -1771,7 +1771,7 @@ Method: a proof written before implementation reduces the leading angular energy
 
 Sixty-one exact rational arithmetic, power and phase controls pass, together with16 high-precision numerical power comparisons. Eighteen fresh Cartesian angular checks pass, maximum2.11061e-14 against1e-10. Two manufactured wrong helicity twist signs give error1.118 and are correctly rejected. A separate120-digit vector-harmonic reader imports no producing helper and reproduces all56 intervals numerically. Evidence: independent/experiments/primary_leading_moments/REPORT.md, manifest.json and theory/primary_leading_moments/verification. Verdict: CONFIRMED controls and arithmetic; the leading-moment proof is internally checked with actual Opus 5.5 review pending.
 
-The actual collaborating lead model, Claude Opus 5.5 (us.anthropic.claude-opus-5-5), has accepted the earlier primary-tail-bound proof in d70. I checked the review against the statement and its independently assembled controls, and froze it in theory/primary_tail_bounds/verification/opus_d70. This closes that proof's pending model review. Its small nonzero endpoint q_prime(1) values are now recorded by exact Fraction arithmetic: the largest complex norm is1.73364297738e-11 (d6w_L8); nest6 is1.35697009185e-13. These values were retained in the original bound. No rate was strengthened.
+The actual collaborating lead model, the main model (the main model), has accepted the earlier primary-tail-bound proof in d70. I checked the review against the statement and its independently assembled controls, and froze it in theory/primary_tail_bounds/verification/opus_d70. This closes that proof's pending model review. Its small nonzero endpoint q_prime(1) values are now recorded by exact Fraction arithmetic: the largest complex norm is1.73364297738e-11 (d6w_L8); nest6 is1.35697009185e-13. These values were retained in the original bound. No rate was strengthened.
 
 The leading moments and exterior remainder bounds do not enclose finite quadrature, differential floating-point evaluation, pressure or the leading absolute-helicity angular integral. Nonzero H0 does not violate an exact-profile identity on its own. There is still no accepted candidate and no label D obstruction.
 
@@ -1948,7 +1948,7 @@ Method: inspected the fresh three-rule field evaluation and the independent save
 
 ## 2026-10-25T08:19:46.546391+00:00: actual Opus d75 review and fixture scope
 
-Method: archived actual lead model us.anthropic.claude-opus-5-5 review, inspected its log, checked the actual frozen residual rows, and recomputed node membership after pi/2. Result:51 PASS lines including6 not-applicable controls, plus ALL PASS; claimed52 individual checks REFUTED. Training8, pressure20 and audit48 azimuthal grids are permuted; the14-node coordinate-tail design is exact for degree-at-most6 quadratic field products. Only invariant Sigma_Z and e_F continuation rows supplement momentum rows. Explicit div U=0 hypothesis added to primary_core_common. Verdict CONFIRMED for the reviewed mathematical statements and nonzero-pivot fixture scope. Generic-angle untransported maxima, global zero-pivot repair and production deployment remain OPEN. Evidence theory/transported_phase_frame/verification/opus_d75.
+Method: archived actual lead model the main model review, inspected its log, checked the actual frozen residual rows, and recomputed node membership after pi/2. Result:51 PASS lines including6 not-applicable controls, plus ALL PASS; claimed52 individual checks REFUTED. Training8, pressure20 and audit48 azimuthal grids are permuted; the14-node coordinate-tail design is exact for degree-at-most6 quadratic field products. Only invariant Sigma_Z and e_F continuation rows supplement momentum rows. Explicit div U=0 hypothesis added to primary_core_common. Verdict CONFIRMED for the reviewed mathematical statements and nonzero-pivot fixture scope. Generic-angle untransported maxima, global zero-pivot repair and production deployment remain OPEN. Evidence theory/transported_phase_frame/verification/opus_d75.
 
 ## 2026-10-25T08:24:28.493001+00:00: lead report delta audit and p1 registration
 
@@ -2001,7 +2001,7 @@ Method: a separately registered manual derivative of the normalized pressure obj
 
 Method: three-rule Gaussian Gram/coupling integration, constrained minimum-norm construction, fresh160x48x96 localized-difference integral and independent Decimal80 solve/reassembly. Result: selected toroidal widths0.5,1,2 timesR0, coefficients[1.2839616247994088,-0.4392720099299431,0.13958255702879363], addedL2squared1.0776679196. Difference-plus-prior-baseline H=3.56e-14 and E_ren=5.49e-15;259 scalar checks pass, maximum3.55e-15. Verdict CONFIRMED numerical initializer and scalar arithmetic; OPEN whole-field enclosed H/E, core guard preservation and Euler residual improvement. Coefficient SHA25677c65b6e6a9b583be94ae3bffb5cda14d1dbd10701b9e44b711b98507a497861. Evidence: independent/experiments/joint_localized_balances/REPORT.md.
 
-Actual Claude Opus5.5 collaboration: lead08:59:04 reviews localized_helicity_seed (d76,23checks), joint_localized_balances (d77,12checks), general_phase_commit and the StageII plan as correct within stated scope. Independent review artifacts archived in report_reviews/20261025T0902Z_opus_reviews; their claims will be checked before any promotion. Opus independently supports the coarse-step truncation diagnosis. Its nest6 omega0.3 joint seed is a different baseline, not a discrepancy with the verifier's own D4 baseline.
+Actual the main model collaboration: lead08:59:04 reviews localized_helicity_seed (d76,23checks), joint_localized_balances (d77,12checks), general_phase_commit and the StageII plan as correct within stated scope. Independent review artifacts archived in report_reviews/20261025T0902Z_opus_reviews; their claims will be checked before any promotion. Opus independently supports the coarse-step truncation diagnosis. Its nest6 omega0.3 joint seed is a different baseline, not a discrepancy with the verifier's own D4 baseline.
 
 New prospective experiment localized_helicity_pair_small_steps frozen2026-10-25T09:02:02.764386+00:00,84files manifestf306acfb6afdfbf6c78eb572ecec40f007e646c380cf535c6655a8863490f9ee. Same chart, seeds, objective, optimizer and physical gauge thresholds; only tested smaller steps and remaining30minute arm caps change. Master2600488; separate pressure/core/E validator2600524 and whole-H waiter2600527. Launch is not a result; all candidate verdicts OPEN.
 
@@ -2053,7 +2053,7 @@ Verdict: CONFIRMED for the saved-state finite gauge and tail measurements and th
 
 ## 2026-10-25T09:32:47.851875+00:00: Opus follow-up received and experiment coverage reconciled
 
-Method: read and archive actual Claude Opus 5.5 review d80 and its eight-check log, together with d78 and the current dense-swirl log. Actual model us.anthropic.claude-opus-5-5; local shared-file collaboration only. Result: Opus confirms the core-scaling identities, stable whole-helicity subtraction, normalized-pressure derivative, and the core-fraction counterexample. The d76/d77 unconditional decrease claim is corrected. Verdict CONFIRMED resolution of that disagreement. New far-helicity identity d78 and its numbers remain OPEN pending this lane's direct derivation and coefficient evaluation. Archive: report_reviews/20261025T093247Z_opus_d80.
+Method: read and archive actual the main model review d80 and its eight-check log, together with d78 and the current dense-swirl log. Actual model the main model; local shared-file collaboration only. Result: Opus confirms the core-scaling identities, stable whole-helicity subtraction, normalized-pressure derivative, and the core-fraction counterexample. The d76/d77 unconditional decrease claim is corrected. Verdict CONFIRMED resolution of that disagreement. New far-helicity identity d78 and its numbers remain OPEN pending this lane's direct derivation and coefficient evaluation. Archive: report_reviews/20261025T093247Z_opus_d80.
 
 The historical completed-optimizer registry has540 experiments, now36 with fresh-volume evidence (30 both shell families,6 standard-only),440 cached thin-radius holdouts and64 training-only. Two completed400-step localized optimizer arms live outside that registry. independent/reports/SUPPLEMENTAL_REVIEW_COVERAGE.json hashes both disjoint registries and records542 completed experiments in total. These are not542 distinct random starts. Failed preflights, input copies and validation-only calculations are excluded. Verdict CONFIRMED accounting scope; no acceptance or ordering follows.
 
@@ -2063,13 +2063,13 @@ The disk monitor records use but does not enforce a cap. Source inspection confi
 
 Method: direct vector identities and the exact-profile helicity flux equation, written before any coefficient calculation. Verdict CONFIRMED d78(I), its homogeneous coefficient formula(K), and the exact-profile sphere expansion under report item30(b)'s leading C1 remainder plus its proved full-space pressure estimate. The naive substitution of U=U0+U1+O(r^-4) alone would not justify differentiating that remainder. The gap is resolved without an extra derivative hypothesis: H'(r)=-(1/c_l)r^(2alpha-2)T'(r), T(r)=r^(1-3alpha)Psi_F+O(r^(-alpha-2)); integration by parts yields H-H_F=(1-3alpha)Psi_F r^(-alpha-1)+O(r^(alpha-4)). All steps are in theory/far_helicity_coefficient/PROOF.md. A separate bilinear annulus identity gives a direct coefficient check without differentiating the required nonlinear term. Numerical d78 coefficients remainOPEN until the freshly registered direct computation.
 
-To actual Claude Opus5.5: please review this weaker-hypothesis flux-ODE proof on your next shift and incorporate its justification in d78 if useful. The model collaboration is by local shared files only. No JavaScript/TypeScript, no servers/listeners, no RLScience/cluster, no remote compute, no writes outside the own lane. The physical-tail/gauge proof of09:25 remains another pending review.
+To actual the main model: please review this weaker-hypothesis flux-ODE proof on your next shift and incorporate its justification in d78 if useful. The model collaboration is by local shared files only. No JavaScript/TypeScript, no servers/listeners, no RLScience/cluster, no remote compute, no writes outside the own lane. The physical-tail/gauge proof of09:25 remains another pending review.
 
 ## 2026-10-25T09:38:58.973741+00:00: omega = 1 p0 mean-swirl maximum and disk guard
 
 Method: independent coefficient reconstruction, product-jet and directional checks, three radial/polar/azimuthal grids, 24 local searches, doubled azimuthal rules, and a separate 70-digit scalar reader. c_l = 0.45, omega = 1, omega/c_l = 20/9. Result: Q_sw = 0.6693778773530203, max|Gamma| = 0.23081877920071725, max|S| = 0.03448258256061048, max|e| = 0.046645492800056. All 24 searches converge; the separate scalar discrepancy is 1.735e-18 and the largest doubled-angle change is 1.203e-15. The final radial/polar grid changes are 0.001153%, 10.1500%, and 4.8594%, respectively. The 10.15% change in the source maximum is retained explicitly. Evidence: independent/reports/nest6_omega1_mean_swirl_sup/REPORT.md and its frozen-state subfolder. Completed at 09:30:04Z; independently reassembled at 09:30:09Z.
 
-Verdict: CONFIRMED finite coefficient evaluations and scalar assembly; OPEN global supremum enclosure and any one-sided interpretation of Q_sw. A ratio of finite lower estimates has no guaranteed direction. This is not an exact-profile test result or an acceptance. The omega = 1 p1 worker has started; S9b is being registered behind it as requested by actual Claude Opus 5.5.
+Verdict: CONFIRMED finite coefficient evaluations and scalar assembly; OPEN global supremum enclosure and any one-sided interpretation of Q_sw. A ratio of finite lower estimates has no guaranteed direction. This is not an exact-profile test result or an acceptance. The omega = 1 p1 worker has started; S9b is being registered behind it as requested by actual the main model.
 
 Administrative guard environment/disk_guard_v1 is active, PID2821145. It measures allocated lane bytes every30 seconds and stops only identified own low-priority Python workers at24,000,000,000 bytes, with a subsequent forced stop if needed. It deletes no files and changes no scientific thresholds, budgets, or queue priorities. Seven process-selection fixtures pass; actual signal delivery is not tested because the threshold has not been reached. Last measured use is below6.6GB. The user cap remains30,000,000,000 bytes.
 
@@ -2114,7 +2114,7 @@ Method and full source hashes are in summary.json and inputs/. The original fail
 
 ## 2026-10-25T09:52:23.771770+00:00: actual Opus follow-up and 09:48 report audit
 
-Method: independent proof comparison, retained Opus reviews d81/d82 and a line-by-line report delta. Verdict CONFIRMED the exact-profile far-helicity remainder argument and the physical tail/gauge formulas. Actual model us.anthropic.claude-opus-5-5 confirms both (seven and eight checks PASS). The coefficient vector defect remains stronger than its two scalar projections. The earlier report corrections are applied, and the withdrawn elapsed-time objection remains withdrawn. Evidence: report_reviews/20261025T095106Z_opus_d81_d82/REVIEW.md.
+Method: independent proof comparison, retained Opus reviews d81/d82 and a line-by-line report delta. Verdict CONFIRMED the exact-profile far-helicity remainder argument and the physical tail/gauge formulas. Actual model the main model confirms both (seven and eight checks PASS). The coefficient vector defect remains stronger than its two scalar projections. The earlier report corrections are applied, and the withdrawn elapsed-time objection remains withdrawn. Evidence: report_reviews/20261025T095106Z_opus_d81_d82/REVIEW.md.
 
 The09:48 report still calls the S9b precursor unit-ball refinement pending; the later combined supplement already confirms R10(d), inconclusive, at finite fixed-field scope. Please adopt independent/experiments/s9b_R10_unit_ball_supplement/REPORT.md, keeping the original failed guard intact. The four-row direct far-helicity source calculation is done; its80-digit reader is running. The remaining four report rows, including d6w_L6, are frozen in far_helicity_d78_remaining with new phases.337/.673/.947, unchanged guards, master2969159. Numerical eight-row confirmation remainsOPEN until both readouts pass.
 
@@ -2148,7 +2148,7 @@ Method: checked the only remaining predecessor's exact command, device and pinne
 
 Result: new D8 master 3094483 uses the fresh frozen runtime and signature, unchanged three-phase numerical protocol on GPU7/CPU60, and the original56GiB/three-poll/exclusive-device gate. Only the GPU6-only sigma-momentum-stretching predecessor was removed. The launch disk guard is now24,000,000,000bytes. Lane size before launch 6927486976bytes. All other predecessor gates, validation workers and holdout watcher151664 continue.
 
-Verdict: CONFIRMED scheduling provenance and narrower resource guard. D8 build/derivative preflight/optimization/holdout remain OPEN. Original allocation was reviewed with actual Claude Opus5.5; this amendment's follow-up review is pending while the lead is between shifts. No waiting-for-permission claim is made.
+Verdict: CONFIRMED scheduling provenance and narrower resource guard. D8 build/derivative preflight/optimization/holdout remain OPEN. Original allocation was reviewed with actual the main model; this amendment's follow-up review is pending while the lead is between shifts. No waiting-for-permission claim is made.
 
 
 ## 2026-10-25T10:13:35.543417+00:00: stable tail-basis primitive check
@@ -2174,7 +2174,7 @@ Actual Opus5.5's d83 review was read and archived in report_reviews/20261025T101
 
 ## 2026-10-25T10:19:30.499576+00:00: Opus reviews d85, d86 and d87
 
-Method: read the actual Claude Opus 5.5 reviews, checked their arguments against the standalone proofs and our frozen manufactured fixtures, and inspected the D8 launch records and live processes. Model confirmed as us.anthropic.claude-opus-5-5. The review archive is report_reviews/20261025T101930Z_opus_d85_d86_d87.
+Method: read the actual the main model reviews, checked their arguments against the standalone proofs and our frozen manufactured fixtures, and inspected the D8 launch records and live processes. Model confirmed as the main model. The review archive is report_reviews/20261025T101930Z_opus_d85_d86_d87.
 
 Result: d85 confirms normalized quadratic gradients, Hessian actions, the analytic control and the lack of an Euler converse; its 14 reported checks agree with our 233 passing checks. d87 confirms the stable column subtraction, including axis points; its six reported checks agree with our 177 passing checks. Its caveat about cancellation near a zero of a polynomial difference is accepted: absolute or column-scale errors are the appropriate test there. Derivative stability is supported by the separate 80-digit spatial-derivative fixture, not by the algebra alone.
 
@@ -2188,7 +2188,7 @@ Method: independent analytic manufactured integrals, three split-radius quadratu
 
 The actual 218-coordinate radius selection is independently reduced by 439 Decimal80 checks, maximum relative discrepancy 4.279e-79. The predetermined choice is R=2^80, with exact omitted-tail operator bounds whose display values are E<=1.35837e-17 and H<=1.17551e-40. Those bounds exclude finite quadrature and roundoff. Normalized state bounds require ||z||^2/q.
 
-Actual Opus 5.5, model us.anthropic.claude-opus-5-5, confirms the projection proof (d88) and all matrix formulas including the ordered-flux and operator-bound extensions (d89, 18 reported checks). The independent arguments and references agree. Archive: report_reviews/20261025T103055Z_opus_d88_d89. The original polynomial-zero and quadrature limitations remain explicit.
+Actual Opus 5.5, model the main model, confirms the projection proof (d88) and all matrix formulas including the ordered-flux and operator-bound extensions (d89, 18 reported checks). The independent arguments and references agree. Archive: report_reviews/20261025T103055Z_opus_d88_d89. The original polynomial-zero and quadrature limitations remain explicit.
 
 Verdict: **CONFIRMED** for the stated finite controls and analytic formulas. The actual-basis matrix calculation remains **OPEN**. Its registration at 10:27:51 freezes three rules, 8100 seconds of cumulative integration, a 24 GB disk guard and unchanged acceptance conditions. Preflight passes seven CPU/GPU, cached-mass and saved-state mass checks; master 3246548 is integrating rule 0 on GPU 6. No new optimizer arm has been launched.
 
@@ -2239,7 +2239,7 @@ Result: baseline_projected_initial at R = 2^24 has E_ren approximately -0.706070
 
 A separate stable exterior extension was proved and registered at 10:47Z, before integration. It evaluates 2 W dot D + |D|^2 and W dot curl D + D dot curl W + D dot curl D, with D computed by the independent stable grouped-field formula. Endpoint selection used exact coefficient bounds before sampling. At R = 2^40 the cancelled best state's energy bound was 1.349840560e-7, above the design target 1e-8. The first common endpoint passing that target is R = 2^48, whose four energy bounds are 1.457187048e-12, 8.856961833e-13, 1.457187636e-12 and 3.295509180e-11. The new extension retains the original numerical tolerances and does not replace the original failed verdict. Finite quadrature, parameter rounding and floating field evaluations remain unenclosed. Verdict: OPEN while the extension and matrix comparison run. Evidence: theory/physical_balance_exterior_extension/PROOF.md and independent/experiments/physical_balance_exterior_extension.
 
-Actual Claude Opus 5.5 reviewed physical_balance_scalar_comparison in d90, with 29 fixture checks reported passing. I checked the finite-part identity, exact discrete subtraction, and his scaling concern directly: U(y) -> mu U(y/mu) sends E_ren to mu^5 E_ren and tail mass to mu^(2+2alpha) M, so E_ren/M is not dilation invariant. Our comparison uses the actual normalized coefficient field and its saved mass, without that incorrect conversion. His cancellation warning is relevant: summing saved full-field angular energies at R = 2^24 is not a stable field-difference evaluation. The separate extension avoids further cancellation beyond that radius but does not by itself bound roundoff inherited from the earlier samples. No continuum or rounding enclosure is claimed. The d90 review and live report are archived in report_reviews/20261025T105348Z_swirl_and_physical_balance_review.
+Actual the main model reviewed physical_balance_scalar_comparison in d90, with 29 fixture checks reported passing. I checked the finite-part identity, exact discrete subtraction, and his scaling concern directly: U(y) -> mu U(y/mu) sends E_ren to mu^5 E_ren and tail mass to mu^(2+2alpha) M, so E_ren/M is not dilation invariant. Our comparison uses the actual normalized coefficient field and its saved mass, without that incorrect conversion. His cancellation warning is relevant: summing saved full-field angular energies at R = 2^24 is not a stable field-difference evaluation. The separate extension avoids further cancellation beyond that radius but does not by itself bound roundoff inherited from the earlier samples. No continuum or rounding enclosure is claimed. The d90 review and live report are archived in report_reviews/20261025T105348Z_swirl_and_physical_balance_review.
 
 ## 2026-10-25T11:00:43.370282+00:00: completed S9b swirl, fitted L8 pressure, and shared-normalization controls
 
@@ -2295,7 +2295,7 @@ Archive: `report_reviews/20261025T113036Z_lead_scope_and_binding_d94`. Method: d
 - OPEN: Capturing 70-80 percent of residual square makes a field a lambda-U-forced solution to that percentage. Use the projection statement directly. The remainder is nonzero. The approximate field exactly solves an equation with its full residual as forcing, not an equation forced only by lambda U.
 - OPEN: One Nk16 to Nk24 run establishes that the L6 residual floor is not radial-resolution-limited. The one run supports no improvement at Nk24 under the tested optimizer and budget. It does not isolate radial truncation from optimization and other representation limits. Keep the pending Nk32 and convergence study explicit.
 
-The actual lead model is us.anthropic.claude-opus-5-5. Its d94 review confirms the v1 loader as stated and identifies missing evidence-to-form and mass bindings. These remarks are accepted. The v1 preparation watcher was retired before any bundle release, with its registration, status and PID evidence preserved. The strengthened v2 proof precedes code; its first 37 manufactured checks passed, including the actual frozen ProjectedProblem.normalized method and derivative actions. A subsequent source-link fixture now follows the real comparison registration layout; its result is pending. No optimizer is registered or launched.
+The actual lead model is the main model. Its d94 review confirms the v1 loader as stated and identifies missing evidence-to-form and mass bindings. These remarks are accepted. The v1 preparation watcher was retired before any bundle release, with its registration, status and PID evidence preserved. The strengthened v2 proof precedes code; its first 37 manufactured checks passed, including the actual frozen ProjectedProblem.normalized method and derivative actions. A subsequent source-link fixture now follows the real comparison registration layout; its result is pending. No optimizer is registered or launched.
 
 ## 2026-10-25T11:36:51.739224+00:00: independent helicity projection, standard family; balance binding v2
 
@@ -2414,7 +2414,7 @@ CONFIRMED registration only; numerical result OPEN. independent/experiments/nest
 
 ## 2026-10-25T12:21:18.500872+00:00: Opus d97/d98 closed; current-summary ranking correction
 
-Method: script/log/proof review and preserved report snapshot. Actual model us.anthropic.claude-opus-5-5 confirmed. Verdict: CONFIRMED for d97 frozen-parameter tail cost, d98 local helicity and finite-ball identities, and all four 11:58 scope repairs. d97's 37 and d98's 21 tests pass at their stated finite scope; d98 sampled exterior constants are not uniform bounds. Evidence: `report_reviews/20261025T122118Z_opus_d97_d98_and_summary_scope/REVIEW.md`.
+Method: script/log/proof review and preserved report snapshot. Actual model the main model confirmed. Verdict: CONFIRMED for d97 frozen-parameter tail cost, d98 local helicity and finite-ball identities, and all four 11:58 scope repairs. d97's 37 and d98's 21 tests pass at their stated finite scope; d98 sampled exterior constants are not uniform bounds. Evidence: `report_reviews/20261025T122118Z_opus_d97_d98_and_summary_scope/REVIEW.md`.
 
 A separate correction is required in FINAL_REPORT Summary item2 and section7: the blanket smallest independently evaluated standard rho_u^max = 0.0574 is REFUTED by the already completed d6t_L8 independent volume evaluation, 0.0455613427022 standard / 0.0554040013352 offset (c_l = 0.45, omega = 0.3, omega/c_l = 2/3; 1996 scalar checks PASS at05:22Z). Scope 0.0574/0.0541 to the independent discovery route's released degree6 state. Do not transfer this validation to d6w_L8 0.0442 or nest6 omega1 0.0460. A global ranking remains OPEN where gauges, maxima and current single-term diagnostics differ. The historical section8 record may remain explicitly historical. No change to provisional C or any acceptance decision. Also refresh cl = 0.42 whole balances from the12:14 note; Q_sw remains pending.
 
@@ -2438,7 +2438,7 @@ CONFIRMED: the separate longdouble-forward quadratic implementation passes all 2
 
 REFUTED: the earlier stable wrapper passed, or v2 released a validated bundle. Its two original 1e-10 failures remain in the immutable records. Improved scalar arithmetic does not change that historical outcome. A new release would require separately registered evidence for the changed evaluator and its connection to the physical checks.
 
-CONFIRMED WITH QUALIFICATIONS: actual Claude Opus 5.5 reviewed the finite evidence-binding construction in d99. Its 110 checks pass in both the initial Python3.9 stand-in and the actual Python3.12 module cross-check. The review tests wrong forms, charts, normalizer masses, implementation identities, failed wrappers, source links, loss labels and path changes. It correctly identifies that the registered manifest and trusted preparer anchor the chain; the loader cannot prove that a producer computed its claimed arrays. It also identifies a useful accidental-mismatch guard: check owner.coordinate_sha256 and owner.basis_config, rather than only caller-supplied copies. Executing-code mutation and a malicious internally consistent rewrite remain outside the declared protocol. Loss normalization is a checked convention at the caller, not inferable from an arbitrary scalar J_0.
+CONFIRMED WITH QUALIFICATIONS: actual the main model reviewed the finite evidence-binding construction in d99. Its 110 checks pass in both the initial Python3.9 stand-in and the actual Python3.12 module cross-check. The review tests wrong forms, charts, normalizer masses, implementation identities, failed wrappers, source links, loss labels and path changes. It correctly identifies that the registered manifest and trusted preparer anchor the chain; the loader cannot prove that a producer computed its claimed arrays. It also identifies a useful accidental-mismatch guard: check owner.coordinate_sha256 and owner.basis_config, rather than only caller-supplied copies. Executing-code mutation and a malicious internally consistent rewrite remain outside the declared protocol. Loss normalization is a checked convention at the caller, not inferable from an arbitrary scalar J_0.
 
 OPEN: an arithmetic-aware bundle and a production optimizer using it. No optimizer was run or registered by these checks. Matrix entry roundoff, continuum quadrature error and profile existence remain unenclosed. c_l=0.45, omega=0.3 and omega/c_l=2/3 throughout the actual-matrix tests.
 
@@ -2695,7 +2695,7 @@ Result: 88 producer checks PASS. All three constructed trajectories cross their 
 
 The separate Decimal80 reader gives 1041/1041 PASS. Maximum reconstructed descent-identity discrepancy is 1.65671832933e-18; normalized-step collinearity error 8.31073562576e-17; displayed scalar change 4.21884749358e-15; phase-relative error 1.29216767219e-13; recorded physical tail-energy error 4.67403893367e-14. Original tolerances were unchanged. The reader independently reassembles saved scalars and process records; it does not regenerate pressure, gradients or full phase fields.
 
-Verdict: **CONFIRMED** actual finite projected-gradient descent across a pivot, three owned-worker SIGKILLs and exact serialized replay for these prescribed inputs and runtime. **OPEN** production T12, other optimizers and devices, independent full pressure/gradient evaluation of these fixtures, complete pressure-table fingerprint coverage, and profile acceptance. The saved static fingerprints cover T,A,coordinate_map,G,U,DU,L; they do not list every internal pressure table. Source/configuration binding and deterministic replay are additional controls, not a substitute for that missing table audit. This fixture has no momentum or quasi-Newton history. The tested states are constructed implementation probes; their objective decreases are not Euler evidence. The actual collaborator remains us.anthropic.claude-opus-5-5; review of the new descent implementation is pending through lane notes.
+Verdict: **CONFIRMED** actual finite projected-gradient descent across a pivot, three owned-worker SIGKILLs and exact serialized replay for these prescribed inputs and runtime. **OPEN** production T12, other optimizers and devices, independent full pressure/gradient evaluation of these fixtures, complete pressure-table fingerprint coverage, and profile acceptance. The saved static fingerprints cover T,A,coordinate_map,G,U,DU,L; they do not list every internal pressure table. Source/configuration binding and deterministic replay are additional controls, not a substitute for that missing table audit. This fixture has no momentum or quasi-Newton history. The tested states are constructed implementation probes; their objective decreases are not Euler evidence. The actual collaborator remains the main model; review of the new descent implementation is pending through lane notes.
 
 Evidence: report_reviews/20261025T141231Z_full_orbit_actual_restart, 157 archived source and result hashes; source independent/experiments/full_orbit_phase_restart/independent_readout/REPORT.md.
 
@@ -2710,7 +2710,7 @@ Date 2026-10-25T14:13:05.101973+00:00. Every changed line is compared with the 1
 | Restated ordering Eren,Htot,ratio in section8 | Agrees with the independent finest row. | CONFIRMED |
 | Complete independent battery and cross-route order | Whole balances and backward pressure companion are complete, common/core worker2992934 is still running. Complete SPEC7.3b has not been established. The nearby unchanged sentence describing the independent evaluation as queued is stale as a description of all its parts. | OPEN complete battery/order |
 
-No new universal obstruction, exact profile or label change appears in this delta. d101b is still a live log without a final reviewed report at this timestamp, so no new release decision is inferred from it. Actual collaborator model remains the previously confirmed us.anthropic.claude-opus-5-5.
+No new universal obstruction, exact profile or label change appears in this delta. d101b is still a live log without a final reviewed report at this timestamp, so no new release decision is inferred from it. Actual collaborator model remains the previously confirmed the main model.
 
 Evidence: report_reviews/20261025T141241Z_report_delta.
 
@@ -2776,7 +2776,7 @@ Evidence: report_reviews/20261025T144959Z_balance_penalty_gradient_controls/MANI
 
 # Opus theory follow-up reviews
 
-Date 2026-10-25T14:49:59.241734+00:00. Actual model is the previously confirmed lead us.anthropic.claude-opus-5-5. d105 has 30 PASS and reviews the two stated half-turn proofs. Their SHA256 values agree with our originals. Verdict CONFIRMED under the stated hypotheses: even axial character support and N/gcd(N,2)>2M give exact scalar azimuthal averaging. Assembled fixed fields, discrete pressure covariance and retained-space covariance remain implementation obligations. This is no radial, polar, tail or profile accuracy claim. Our nine-node experiment is separate evidence and was not reviewed in d105.
+Date 2026-10-25T14:49:59.241734+00:00. Actual model is the previously confirmed lead the main model. d105 has 30 PASS and reviews the two stated half-turn proofs. Their SHA256 values agree with our originals. Verdict CONFIRMED under the stated hypotheses: even axial character support and N/gcd(N,2)>2M give exact scalar azimuthal averaging. Assembled fixed fields, discrete pressure covariance and retained-space covariance remain implementation obligations. This is no radial, polar, tail or profile accuracy claim. Our nine-node experiment is separate evidence and was not reviewed in d105.
 
 d101c has five checks and accepts both exact Adam counterexamples. Its replacement Cauchy bound agrees algebraically with our proof: the finite sum of (beta_1^2/beta_2)^k is the geometric factor. Equality at epsilon=0 follows when sqrt(beta_2)^k g_(t-k) is proportional to (beta_1/sqrt(beta_2))^k, giving the stated history. Its B_t expression requires either beta_1^2 != beta_2 or the limiting interpretation; our finite-sum expression covers equality directly. Verdict CONFIRMED for the corrected statements at the specified beta values. A varying common factor can change historical Adam directions, and a positive epsilon can do so on the first step. The earlier universal statements remain REFUTED. No optimizer release or Euler conclusion follows.
 
@@ -2805,7 +2805,7 @@ Verdict: CONFIRMED for the recorded finite arithmetic comparisons. Production in
 
 ## 2026-10-25T15:03:06.277240+00:00: d104 review and degree-8 released state
 
-Method: read Opus d104 source, log and report against the frozen frame.py, common.py and PROOF.md; read the separate released-state longdouble reassembly. Actual collaborator remains us.anthropic.claude-opus-5-5.
+Method: read Opus d104 source, log and report against the frozen frame.py, common.py and PROOF.md; read the separate released-state longdouble reassembly. Actual collaborator remains the main model.
 
 D104 result: 99 PASS, 1 FAIL, 29 NOTE in the Opus review. The strict Armijo implementation and three actual GPU killed/restarted trajectories remain CONFIRMED. The 1e-12 retained-pivot phase check rejects numerically usable small relative pivots; the original threshold/guard combination is REFUTED as a robust domain guarantee. Resume validation omits previous-step/history consistency, full environment and 10 pressure-table tensors. General replay safety and production T12 remain OPEN. The exact theorem already implies strict decrease since sigma*t*q > 0; a floating test needs the separate v < F condition, which the worker uses. No claim that the exact theorem permits v=F is adopted. CPU regenerated objectives/gradients from d104 are additional reviewer evidence, not an independent replay by this lane.
 
@@ -2902,7 +2902,7 @@ GPU wrapper plus actualEuler preflight launched as independent/experiments/runti
 
 Independent N8 cont150 at c_l=0.45, omega=1, omega/c_l=20/9 completed six volume rules and the separate Cartesian group audit. Its unchanged reader gives2287PASS54FAIL of2341 at1e-11, maximum1.8758442e-9. Failures are nonlinear-scaled far-shell rho_nl/pi_nl/a_center/a_upper on shells15-18; aggregate rho_u, term RMS, pressure reductions, gauge and Cartesian group rho_u tests pass. Report: independent/experiments/nest8_structured_volume_queue/nest8_L8_cl0.45_om1.0_p0_cont150/REPORT.md. Whole-run strict agreement REFUTED; far cancellation diagnosis OPEN. Queue stopped and evidence is retained. A separately registered continuation will run the other three exports and record reader failures without weakening tests.
 
-Runtime_guard_v6 actual Euler CPU/GPU preflight completed39PASS in89.3s, peak1.734GB; two fixed states, same tables, no optimizer. Separate retained-data reader pending. d109/d110 are read; reproductions are running from copied Opus scripts. A new v7 wrapper will check all24 import origins and reject wrapper bytecode before loading; register exact isolated interpreter and library versions. No source in v6 is changed. Actual collaborating model remains us.anthropic.claude-opus-5-5. Your source/pressure and restart review availability limit is recorded; these checks remain locally scoped.
+Runtime_guard_v6 actual Euler CPU/GPU preflight completed39PASS in89.3s, peak1.734GB; two fixed states, same tables, no optimizer. Separate retained-data reader pending. d109/d110 are read; reproductions are running from copied Opus scripts. A new v7 wrapper will check all24 import origins and reject wrapper bytecode before loading; register exact isolated interpreter and library versions. No source in v6 is changed. Actual collaborating model remains the main model. Your source/pressure and restart review availability limit is recorded; these checks remain locally scoped.
 
 ## 2026-10-25T15:51:36.704535+00:00: guarded Euler composition and Opus counterreviews
 
@@ -2916,7 +2916,7 @@ Verdict: CONFIRMED for these finite value/first-reverse and retained-array check
 
 Opus d109/d109b/d110 were reproduced from byte-identical copied scripts in report_reviews/20261025T154752Z_d109_d110_counterreview. d110:8PASS. d109b:24 local closure modules, no stated name collisions. d109 initially7PASS1FAIL3NOTE under lane PYTHONNOUSERSITE=1: its environment-difference assertion is false when the user site is already disabled. A second registered run removes that variable only and gives8PASS3NOTE, reproducing the review. The first outcome is preserved. Origin and stale-bytecode controls agree in both environments. The review's conclusions are CONFIRMED with this environment qualification. The registered version7 addresses the recommended closure and pre-wrapper cache gaps and is under test.
 
-Actual collaborating model: us.anthropic.claude-opus-5-5. The lead has not scheduled source/pressure or complete-restart reviews before the gate; their local checks are not described as Opus reviewed. The exact-penalty proofs are confirmed within their finite scope, but that backend is not substituted for S13.
+Actual collaborating model: the main model. The lead has not scheduled source/pressure or complete-restart reviews before the gate; their local checks are not described as Opus reviewed. The exact-penalty proofs are confirmed within their finite scope, but that backend is not substituted for S13.
 
 
 ## 2026-10-25T15:55:17.388572+00:00: import closure, far-shell diagnosis and mean-swirl readout
@@ -2927,7 +2927,7 @@ Far-shell diagnosis:744PASS on the N8 omega1 cont150 fixed arrays. Binary64 reas
 
 Mean-swirl characteristics:1182 separate readerPASS across all3 completed states. None is numerically resolved: both D6 states fail closure and refinement, N4 fails refinement. D6wL8 closure0.00163468 and last-integral changes0.01059/0.01693. Late-time guards pass, but no infinite-time or global dynamics conclusion follows. Reports in independent/experiments/mean_swirl_characteristics_readout_v2.
 
-Archive report_reviews/20261025T155517Z_guard_v7_far_and_characteristics. Actual Opus collaboration us.anthropic.claude-opus-5-5. Opus: please review the version7 closure proof/guards and the finite far-shell causal interpretation when available. No JavaScript/TypeScript, servers/listeners, RLScience/cluster, remote/paid compute or Lean/lake; read-only source review, replies in your own lane.
+Archive report_reviews/20261025T155517Z_guard_v7_far_and_characteristics. Actual Opus collaboration the main model. Opus: please review the version7 closure proof/guards and the finite far-shell causal interpretation when available. No JavaScript/TypeScript, servers/listeners, RLScience/cluster, remote/paid compute or Lean/lake; read-only source review, replies in your own lane.
 
 ## 2026-10-25T15:57:03.872987+00:00: report delta audit
 
@@ -2945,7 +2945,7 @@ Method: reproduce Opus d111 on frozen finite arrays and a recorded wrapper-shado
 
 ## 2026-10-25T16:23:07.213411+00:00: report delta and d111 resolution
 
-Date 2026-10-25T16:23:07.213411+00:00. The archived report is the lead's 2026-10-25 16:20 UTC revision. This audit compares it with the retained 15:57 UTC snapshot and checks the new claims against local evidence. The collaborating lead model is the previously confirmed us.anthropic.claude-opus-5-5.
+Date 2026-10-25T16:23:07.213411+00:00. The archived report is the lead's 2026-10-25 16:20 UTC revision. This audit compares it with the retained 15:57 UTC snapshot and checks the new claims against local evidence. The collaborating lead model is the previously confirmed the main model.
 
 | Claim | Method and result | Verdict |
 | --- | --- | --- |
@@ -2997,7 +2997,7 @@ The 47 original failures are retained. Exact rational point checks treat the sav
 
 # Opus normalization proof reviews and local replay
 
-Date 2026-10-25T16:29:49.270776+00:00. Actual collaborating lead model: us.anthropic.claude-opus-5-5, as previously recorded. The three reviewed scripts were copied without modification from the lead lane, inspected, hashed and run locally on CPU60, one thread and no GPU. No JavaScript/TypeScript, server, cluster or remote compute was used.
+Date 2026-10-25T16:29:49.270776+00:00. Actual collaborating lead model: the main model, as previously recorded. The three reviewed scripts were copied without modification from the lead lane, inspected, hashed and run locally on CPU60, one thread and no GPU. No JavaScript/TypeScript, server, cluster or remote compute was used.
 
 Verdict CONFIRMED for the stated proof checks: d112 gives 9 PASS, d113 gives 9 PASS and d114 gives 6 PASS. The lead note called d112 ten checks; its actual script prints nine. This is an accounting correction, not a mathematical discrepancy. Finite replay supports the review; the informal proofs supply the general arguments.
 
@@ -3063,7 +3063,7 @@ All four S13 starts fail the unchanged physical tail-mass guard. No optimizer ra
 
 Requested a-e table is S13_GATE_EVIDENCE.md. The a-e rows have finite preparation evidence, but mandatory physical admission and actual Euler restart prevent readiness. Original S13 remains registered and gated, backend/thresholds unchanged. Total preparation charge including first legacy-RNG failure is 223.797521559 seconds, 0.062165978 GPU-hours. Details: independent/experiments/s13_runtime_preparation_v2/REPORT.md; s13_start_phase_diagnosis/REPORT.md; s13_start_checks_readout/REPORT.md.
 
-Review status OPEN. Opus 5.5 follow-up requested through the lead: review this exact failure and table; retain S13 as gated unless a separately registered change is explicitly released. Existing once-rounded normalization is a separate prototype and is not silently substituted. Confirming the derivative checks does not repair the mass failure. Continue existing restrictions: write only your own lane, no JavaScript/TypeScript, servers/listeners, remote or paid compute, RLScience/any cluster, Lean/lake, commits/pushes or online posts. Actual collaborating lead model remains us.anthropic.claude-opus-5-5.
+Review status OPEN. Opus 5.5 follow-up requested through the lead: review this exact failure and table; retain S13 as gated unless a separately registered change is explicitly released. Existing once-rounded normalization is a separate prototype and is not silently substituted. Confirming the derivative checks does not repair the mass failure. Continue existing restrictions: write only your own lane, no JavaScript/TypeScript, servers/listeners, remote or paid compute, RLScience/any cluster, Lean/lake, commits/pushes or online posts. Actual collaborating lead model remains the main model.
 
 ## 2026-10-25T17:00:00.071271+00:00: gate corrections and S13 decision accepted
 
@@ -3139,7 +3139,7 @@ The 20:00Z response is written: independent/reports/gate_I4_cost_response/REPORT
 
 New CPU dry preflight160.060s and independent integer/chart audit30PASS: dense D10/radial5 raw2130 rank740 requires86.874GB static,96.384GB modeled total and FAILS70GiB. Do not launch it. D8/radial7 raw1715 rank557 models54.232GB, belowgate but measured allocation/gradient and strict gauge checks remainOPEN. These are estimate decisions, not GPU measurements. OriginalD8 worker3.462h,peakallocation45.328GB; two-statewholebalance3.628processh. S13remainsNOTREADY; its8hnotredistributed. CONFIRMEDfinitecosts/counts,REFUTEDdenseD10admission,OPENchangedlayoutthroughput/profile.
 
-Please review these concrete cap and memory findings with the earlier pressure/pin counterarguments through the file channel. Actual collaborating model us.anthropic.claude-opus-5-5 confirmed. Restrictions remain explicit: no JavaScript/TypeScript, servers/listeners, RLScience/any cluster, remote/paid compute, Lean/lake, commits/pushes or online posts; each lane writes only its own directory and uses only assigned hardware.
+Please review these concrete cap and memory findings with the earlier pressure/pin counterarguments through the file channel. Actual collaborating model the main model confirmed. Restrictions remain explicit: no JavaScript/TypeScript, servers/listeners, RLScience/any cluster, remote/paid compute, Lean/lake, commits/pushes or online posts; each lane writes only its own directory and uses only assigned hardware.
 
 ## 2026-10-25T17:43:22.828833+00:00: c_l = 0.42 direct pressure comparison
 
@@ -3302,7 +3302,7 @@ Source-moment method: independently proved the divergence-theorem monopole/dipol
 
 # Scope corrections to d124 and pressure reductions
 
-Date 2026-10-25T19:10:50.483625+00:00. Method: inspect the frozen source files in MANIFEST.json, the existing coefficient-rounding proof, the pressure Green kernels, and SPEC 7.3a/b. Collaborating lead model is us.anthropic.claude-opus-5-5, as previously confirmed. These corrections retain the reported finite observations.
+Date 2026-10-25T19:10:50.483625+00:00. Method: inspect the frozen source files in MANIFEST.json, the existing coefficient-rounding proof, the pressure Green kernels, and SPEC 7.3a/b. Collaborating lead model is the main model, as previously confirmed. These corrections retain the reported finite observations.
 
 1. REFUTED as a causal inference: d124 A.2 attributes the smaller kappa_1 on two even-mode embedded vectors to a better chart Gram form and calls physical normalization the natural remedy for the old all-m failures. For the same exact raw vector, kappa_1 is scale invariant, by theory/coefficient_rounding_condition/PROOF.md. Scalar physical normalization cannot reduce it. A chart change leaving the exact raw vector unchanged also leaves this raw-coordinate kappa_1 unchanged. Different vectors, bases and symmetry classes confound the displayed comparison. The old all-m continuation already used exact physical normalization and its third arm stopped on the physical-mass guard. The displayed small kappa_1 values are CONFIRMED at the two embedded states; a matched reparameterization or basis change is OPEN as a remedy. Reducing coordinate cancellation by a different raw basis is a distinct possible change, requiring its own tests.
 
@@ -3478,7 +3478,7 @@ OPEN: the separate exact-coordinate readout until completion; phase/covariance t
 
 # Monopole report delta and actual Opus5.5 follow-up
 
-Date 2026-10-25T19:39:50.357439+00:00. Read and independently reduced the inputs listed in SOURCES.json. The lead is the actual collaborating model us.anthropic.claude-opus-5-5. This is a post hoc claim audit, not a newly registered acceptance test.
+Date 2026-10-25T19:39:50.357439+00:00. Read and independently reduced the inputs listed in SOURCES.json. The lead is the actual collaborating model the main model. This is a post hoc claim audit, not a newly registered acceptance test.
 
 CONFIRMED: d127 re-derivation of P0=(M/r+K1)/(4 pi), gradient=-M n/(4 pi r^2), the exterior split, angular RMS convention, and endpoint exponents. The two boundary derivative terms cancel. The radial source decays with p=40/9, so both integrals converge.
 
@@ -3530,7 +3530,7 @@ Date: 2026-10-25T19:51:42.650056+00:00.
 
 Method: preserve the lead d128 revision, lead notes and primary 60-node JSON with hashes. Compare d128 E to the already independently checked producer, exact reader and scalar readout. Derive the even-class character refinement separately in theory/even_axial_character_bound/PROOF.md.
 
-CONFIRMED: actual collaborating model us.anthropic.claude-opus-5-5 accepts the 484-check exact reader with its saved-input limitation, the corrected radius range and the corrected finite-difference step range. All five d124 B items are closed in their stated fixed-state scopes. The raw gradient remains supplied data in the exact reader.
+CONFIRMED: actual collaborating model the main model accepts the 484-check exact reader with its saved-input limitation, the corrected radius range and the corrected finite-difference step range. All five d124 B items are closed in their stated fixed-state scopes. The raw gradient remains supplied data in the exact reader.
 
 CONFIRMED, conditional exact-arithmetic statement: the full raw even D10 class has vector characters at most 10, and squared residual frequencies at most 40, under the stated exact pressure-projection hypotheses. Therefore the 34-point rule has a possible +/-34 alias channel. An actual nonzero alias is OPEN until measured. The finer rules meet the sufficient character and polar bounds.
 
@@ -3600,7 +3600,7 @@ Method: independently checked the saved angular comparisons and the geometric-se
 
 Method: immutable independent Cartesian-source pressure reassembly, source18and24 at fixed26x52/lmax24, samec/onefamily. Result:27 cumulativePASS,0FAIL;18-to24gradP unit-floor4.4379871886420145e-15, producer18-tofresh24 5.609122696755871e-15, against1e-11. Objective 0.00016879231495308243. Verdict: CONFIRMED as a finite comparison. Source36 and pressure-direction refinement remain OPEN. See independent/experiments/d10_exact_state_pressure_refinement/REVIEW_LEVEL24.md.
 
-Method: independent re-derivation and actual us.anthropic.claude-opus-5-5 exchange (lead notes20:05:52Z and20:08:40Z). Result: quotient-rule pressure derivative and its polarized source moments agreed; phase-slice noninvariance distinguished from passive raw display. Verdict: CONFIRMED under the proofs' explicit hypotheses. Finite passive rotation and retained-space measurements remain OPEN.
+Method: independent re-derivation and actual the main model exchange (lead notes20:05:52Z and20:08:40Z). Result: quotient-rule pressure derivative and its polarized source moments agreed; phase-slice noninvariance distinguished from passive raw display. Verdict: CONFIRMED under the proofs' explicit hypotheses. Finite passive rotation and retained-space measurements remain OPEN.
 
 
 ## 2026-10-25T20:14:57.925449+00:00: retained phase quotient check
@@ -3764,7 +3764,7 @@ N6 method: fresh source36 on fixed48x96 angles and new radial panels, independen
 
 # Review of d128 Z and the report delta
 
-Date: 2026-10-25T21:31:21.375850+00:00. Actual collaborator: us.anthropic.claude-opus-5-5 in the lead lane. Inputs are frozen alongside this review.
+Date: 2026-10-25T21:31:21.375850+00:00. Actual collaborator: the main model in the lead lane. Inputs are frozen alongside this review.
 
 The substantive reading is CONFIRMED: the c_l = 0.42, omega = 0.3, omega/c_l = 5/7 continuation fails the five per cent test, preserves 63 strict scalar failures, and is not an improvement in every diagnostic. The fixed D8/radial7 schedule amendment and partial D10/N6 findings have the agreed finite scope. Source36 D10 and source48 N6 remain open.
 
@@ -3781,7 +3781,7 @@ These corrections do not change the failed five per cent test, pressure guard fa
 
 # Posted Stage I gate review
 
-Date: 2026-10-25T21:35:14.564121+00:00. The gate was posted at21:33:29Z and is effective23:09:12Z. The lead's actual model is us.anthropic.claude-opus-5-5. This review is a delta against the previously audited gate draft; it does not revalidate every historical primary scalar.
+Date: 2026-10-25T21:35:14.564121+00:00. The gate was posted at21:33:29Z and is effective23:09:12Z. The lead's actual model is the main model. This review is a delta against the previously audited gate draft; it does not revalidate every historical primary scalar.
 
 | Check | Method | Result | Verdict |
 |---|---|---|---|
@@ -3815,7 +3815,7 @@ Evidence: RESULTS.json SHA256 75e0216d6d72c609e38c64104ee641ea1a1387a3f565e88dfa
 
 ## 2026-10-25T21:47:49.215245+00:00: Opus AB and resource accounting preparation
 
-Date: 2026-10-25T21:47:49.215245+00:00. Actual collaborator: us.anthropic.claude-opus-5-5, lead lane. c_l=0.45, omega=0.3, omega/c_l=2/3.
+Date: 2026-10-25T21:47:49.215245+00:00. Actual collaborator: the main model, lead lane. c_l=0.45, omega=0.3, omega/c_l=2/3.
 
 Method: freeze the lead note and independently divide every saved finite-difference error by h squared. Result: direction0 ranges8.13796357 to8.53228319; direction1 ranges40.63964283 to44.38707161. The qualitative finite-step scaling is consistent with quadratic truncation. It does not establish that the error is purely truncation or exclude rounding contributions, particularly at the smallest step. Verdict: CONFIRMED for the numerical ranges and two multistep rules; OPEN for a pure-error-mechanism attribution. All five large-step per-sample failures remain. Producer83PASS0top-levelFAIL is confirmed in its narrow scope; exact reader and retained phase are still pending.
 
@@ -4004,7 +4004,7 @@ Method: frozen 12-step baseline and fresh-process replay from accepted step6, fo
 
 ## 2026-10-25T23:59:43.175823+00:00: D10 actual-model review and bounded follow-up launches
 
-Method: read actual us.anthropic.claude-opus-5-5 AQ/AR/AS dated23:57:14Z, snapshot their text, verify 177 frozen source files and all bound inputs, check live GPUs and disk, then start each authorized watcher once. Result: AQ confirms the 12-step smoke and six-step replay as machinery evidence only, consistent with our37PASS saved-result review. AR and AS release the D8 radial-phase smoke and D10 fresh starting battery respectively. Both source watchers launched at23:59:19Z with reader watchers awaiting completion. Verdict: CONFIRMED for machinery scope and launch authorization; scientific battery findings and long-solve release OPEN. c_l=0.45, omega=0.3, omega/c_l=2/3. No profile or ranking claim. Evidence: report_reviews/20261025T235913Z_d128_AQ_AR_AS, source RELEASE.json and WATCH_LAUNCH.json files.
+Method: read actual the main model AQ/AR/AS dated23:57:14Z, snapshot their text, verify 177 frozen source files and all bound inputs, check live GPUs and disk, then start each authorized watcher once. Result: AQ confirms the 12-step smoke and six-step replay as machinery evidence only, consistent with our37PASS saved-result review. AR and AS release the D8 radial-phase smoke and D10 fresh starting battery respectively. Both source watchers launched at23:59:19Z with reader watchers awaiting completion. Verdict: CONFIRMED for machinery scope and launch authorization; scientific battery findings and long-solve release OPEN. c_l=0.45, omega=0.3, omega/c_l=2/3. No profile or ranking claim. Evidence: report_reviews/20261025T235913Z_d128_AQ_AR_AS, source RELEASE.json and WATCH_LAUNCH.json files.
 
 ## 2026-10-26T00:00:26.655210+00:00: D10 fresh battery startup failure, original preserved, correction in preparation
 
@@ -4078,7 +4078,7 @@ No outcome upgrade. Method: literal snapshot diff, existing independent evidence
 
 # AW report correction review
 
-Date: 2026-10-26T00:28:01.789242+00:00. Actual second model: us.anthropic.claude-opus-5-5 in the lead lane, note AW dated2026-10-26T00:23:50Z. This is a review of the changed passages in FINAL_REPORT snapshot cf5a7e9c9e4d39a606bff8d0e73adebad55a1bb5813e6e330053a6ee8ddea608, against the prior audited snapshot and saved run evidence.
+Date: 2026-10-26T00:28:01.789242+00:00. Actual second model: the main model in the lead lane, note AW dated2026-10-26T00:23:50Z. This is a review of the changed passages in FINAL_REPORT snapshot cf5a7e9c9e4d39a606bff8d0e73adebad55a1bb5813e6e330053a6ee8ddea608, against the prior audited snapshot and saved run evidence.
 
 CONFIRMED: the revised header's31.3h is the one-decimal elapsed time from2026-10-24T17:09:12Z to2026-10-26T00:26Z. The future00:30Z correction stamp has been replaced by00:20Z, recorded at the earlier snapshot. Historical records may now be corrected by later entries. D10 smoke launch22:29:44Z, eight committed baseline steps before23:09:12Z, and baseline/replay completion23:55:28Z agree with the saved artifacts already audited. AW also withdraws AU's erroneous description of2^-52*kappa_1 as a pairing error. The two actual pair errors remain2.584856789949815e-18 and4.899974946503542e-18.
 
@@ -4118,7 +4118,7 @@ Method: read archived lead draft, PROMPTIII.1to4/8 and SPEC5.1,7.2,7.5,8,9. Resu
 
 ## 2026-10-26T00:48:32.717050+00:00: Stage III protocol accepted as prospective scope
 
-Method: rehashed PROTOCOL.md and copied actual lead d128 BA review by us.anthropic.claude-opus-5-5 to `report_reviews/20261026T004832Z_d128_BA/BA.md`. Result: protocol hash f82f8eb7 matches; BA accepts the revised scope and confirms the stated finite-ball energy sign and leading helicity exterior. Operational B reading: recompute Tier S and factor-3 agreement using each pressure refinement; any changed verdict leaves B OPEN. Two-level agreement is not a proved bound. The frozen 1e-7 pressure guard is retained as a diagnostic, not added to SPEC. Verdict: CONFIRMED for prospective scope only; no Stage III execution release or candidate claim. See verification_stage3/REVIEW_BA.md.
+Method: rehashed PROTOCOL.md and copied actual lead d128 BA review by the main model to `report_reviews/20261026T004832Z_d128_BA/BA.md`. Result: protocol hash f82f8eb7 matches; BA accepts the revised scope and confirms the stated finite-ball energy sign and leading helicity exterior. Operational B reading: recompute Tier S and factor-3 agreement using each pressure refinement; any changed verdict leaves B OPEN. Two-level agreement is not a proved bound. The frozen 1e-7 pressure guard is retained as a diagnostic, not added to SPEC. Verdict: CONFIRMED for prospective scope only; no Stage III execution release or candidate claim. See verification_stage3/REVIEW_BA.md.
 
 ## 2026-10-26T00:53:38.113839+00:00: all-mode bounded continuation prepared
 
@@ -4128,7 +4128,7 @@ Method: standalone proof before implementation, reuse of own frozen all-mode smo
 
 All six ran once, sequentially on CPU 57, nice 19, one thread, CUDA_VISIBLE_DEVICES=-1, under the BB release. Smoke source controls: 120 PASS / 0 FAIL each. Saved-state reader controls: 21 PASS / 0 FAIL each. Bounded continuation controls: 165 PASS / 0 FAIL each. Total 612 PASS / 0 FAIL; durations were 5.42, 5.29, 0.13, 0.16, 5.04 and 4.79 seconds. Hashes, timestamps and counts are recorded in report_reviews/20261026T005642Z_all_m_six_controls/REVIEW.json. CUDA stayed uninitialized. The owned-kill call was intercepted; no process was killed. These are manufactured and structural checks only. GPU preflight, smoke, fresh baseline, preparation and continuation remain unreleased.
 
-BB's actual us.anthropic.claude-opus-5-5 review accepts both all-mode informal proofs within their stated finite-objective and conditional durability scope. Proof review is CONFIRMED as a recorded independent review, not an Euler existence claim. Terminal continuation reader and fresh starting/terminal batteries are still being prepared. No change to c_l = 0.45, omega = 0.3 or 1, omega/c_l = 2/3 or 20/9.
+BB's actual the main model review accepts both all-mode informal proofs within their stated finite-objective and conditional durability scope. Proof review is CONFIRMED as a recorded independent review, not an Euler existence claim. Terminal continuation reader and fresh starting/terminal batteries are still being prepared. No change to c_l = 0.45, omega = 0.3 or 1, omega/c_l = 2/3 or 20/9.
 
 Restrictions remain: own lane writes only; no JavaScript/TypeScript, servers/listeners, RLScience or any cluster, remote/paid compute, Lean/lake, commits/push/posts.
 
@@ -4240,7 +4240,7 @@ Method: saved status/PID inspection and recomputed release/registration hashes. 
 
 **Scope.** These are verification preparations. They do not improve any residual, establish a candidate, remove a retained pressure failure, or support an Euler obstruction. c_l=0.45, omega=0.3 and omega/c_l=2/3 describe the prospective saved-D8 pilot, whose input coefficient hash352a8395 remains unchanged. No state pilot is currently released. The eight original CPU controls and the two BI additions remain queued while D8 and its existing reader run.
 
-Actual review evidence: report_reviews/20261026T020729Z_d128_BI/BI.md SHA95ddd9e15883576be3e69ca5d322205cdbd8a0c39d4fac36c2478581e934a7e0. The confirmed actual collaborator is us.anthropic.claude-opus-5-5.
+Actual review evidence: report_reviews/20261026T020729Z_d128_BI/BI.md SHA95ddd9e15883576be3e69ca5d322205cdbd8a0c39d4fac36c2478581e934a7e0. The confirmed actual collaborator is the main model.
 
 ## 2026-10-26T02:11:40.561241+00:00: tensor-pressure mathematical review
 
@@ -4342,7 +4342,7 @@ CONFIRMED as control output: 21 PASS, 0 FAIL in 0.121734 s, returncode 0. Separa
 
 ## 2026-10-26T03:12:11.920098+00:00: D8 completed battery scientific reading
 
-Report report_reviews/20261026T031211Z_d8_fresh_scientific/REVIEW.md. CONFIRMED finest rho_u=0.06195898635 standard/0.06883852032 offset, sigma_u including core2.303044792, a_max4.051960842, no Tier S. Fixed-state quadratures are not three profile refinements. Unit-ball momentum changes9.0104percent under doubling; sampled pi rises. Pressure variants agree within their registered budgets, without an independent-method or rigorous error claim. Carried G mismatch0.0427024721; global totals use unenclosed leading exterior corrections. Small residual-corrected energy-identity error does not imply zero Euler residual. Scalar30638PASS/57FAIL retained;114 sensitivity checks do not erase failures or establish cause. Actual us.anthropic.claude-opus-5-5 lead review requested. This follows the evidence-first and precise-scope techniques in the research-storytelling reference shelf. No JavaScript/TypeScript/Node, servers/listeners, RLScience/other cluster, remote/paid compute, Lean/lake, commits/pushes/posts; write only the independent route.
+Report report_reviews/20261026T031211Z_d8_fresh_scientific/REVIEW.md. CONFIRMED finest rho_u=0.06195898635 standard/0.06883852032 offset, sigma_u including core2.303044792, a_max4.051960842, no Tier S. Fixed-state quadratures are not three profile refinements. Unit-ball momentum changes9.0104percent under doubling; sampled pi rises. Pressure variants agree within their registered budgets, without an independent-method or rigorous error claim. Carried G mismatch0.0427024721; global totals use unenclosed leading exterior corrections. Small residual-corrected energy-identity error does not imply zero Euler residual. Scalar30638PASS/57FAIL retained;114 sensitivity checks do not erase failures or establish cause. Actual the main model lead review requested. This follows the evidence-first and precise-scope techniques in the research-storytelling reference shelf. No JavaScript/TypeScript/Node, servers/listeners, RLScience/other cluster, remote/paid compute, Lean/lake, commits/pushes/posts; write only the independent route.
 
 ## 2026-10-26T03:16:40.481552+00:00 Queue9 precision pressure control complete, actual result read requested
 
@@ -4380,7 +4380,7 @@ Full923-line draft and835-line corr1.diff read. New report report_reviews/202610
 
 ## 2026-10-26T03:37:33.048388+00:00: actual BT read; compiled-source v1.1 frozen for review
 
-Archived actual us.anthropic.claude-opus-5-5 BT and installed report delta at report_reviews/20261026T033733Z_d128_BT. BT accepts all five preliminary report corrections and seven scope items. Addendum1 at03:36:24 supplies additional acceptance and table-domain corrections; it is still to be read. The new installed long report and source check are now under audit, not yet approved.
+Archived actual the main model BT and installed report delta at report_reviews/20261026T033733Z_d128_BT. BT accepts all five preliminary report corrections and seven scope items. Addendum1 at03:36:24 supplies additional acceptance and table-domain corrections; it is still to be read. The new installed long report and source check are now under audit, not yet approved.
 
 Compiled-source v1.1 is frozen at verification_stage3/compiled_precision_source_v1_1; REGafbdd98900b8ea13baa88065d2371460be42fc83c8c5f92491fc2966bc0dfe94, diff6c5b7f993620ca5ff6f7748d60e19a89bde1a0f7c74291836fd3590c0ad6b9d2. V1 is preserved, uncompiled and unexecuted. All pre-start release/hash/prerequisite/environment/absent-attempt checks and exclusive STARTED creation are outside the handler; all JSON writes including FAILURE are exclusive; -I -B is in the registered invocation. Compile time enters DETAILS. Added AD/polynomial count checks, per-component50/100comparison and the rotation-axis far point(0,0,4915.2); fixed only the two misleading-indentation line layouts in source.cpp. AST checked only, no import, compile or control attempt. Same CPU57/180s including90scompile,2GiB,200MBfinalfolder cap. Enginebb9c76c4 and source-only0f10575a remain prerequisites. Actual lead review of the v1-to-v1.1 diff is the next step; no release inferred.
 
@@ -4408,7 +4408,7 @@ Actual BU/BV/BW/BX/BY/BZ read. Review files: report_reviews/20261026T035110Z_d12
 
 BZ correction accepted: the bound S11 export has no D2U. Any separate supplement will first be compared on shared U, DU and pressure nodes under a frozen registration. BY one-attempt refusal finding is accepted; primary_precision_extension v1 remains unexecuted, and a plumbing-only v1.1 is being prepared. No new execution is authorized by this note.
 
-Review/work restrictions: own-lane writes only; no JavaScript/TypeScript or Node, no servers/listeners, no RLScience or other cluster, no paid or remote compute, no Lean/lake, commits/push/posts or foreign process actions. Use assigned local resources at nice19 and one thread. Actual model collaboration is with us.anthropic.claude-opus-5-5.
+Review/work restrictions: own-lane writes only; no JavaScript/TypeScript or Node, no servers/listeners, no RLScience or other cluster, no paid or remote compute, no Lean/lake, commits/push/posts or foreign process actions. Use assigned local resources at nice19 and one thread. Actual model collaboration is with the main model.
 
 ## 2026-10-26T04:11:48.885526+00:00: S11 independent common package
 
@@ -4442,7 +4442,7 @@ Method: released CF rotation_readout_v1 on CPU57, saved D8 sphere-ring interpola
 
 report_reviews/20261026T042459Z_allmode_completion/PRODUCER_REVIEW.md records the complete producer307PASS/3FAIL (240 inherited,67 new passes/3 new failures). RESULTS SHA d2a7934b0012a3d3d1936731ea99fa01c4cf9cc3d55a35c2e67a4b017dbca61b, WATCH_RESULTS 7435ae9d7d6e70abc24a9bd1554b9ed3b705490c07b8021d8d7b554c98be0319. Worker1256.263s, watcher1258.812s. Central and two directional source-band guards fail at1e-10, shared relative discrepancies2.90237e-4,3.37135e-4,3.72614e-4; retained modes aboveL12 ratios1.31200e-4,1.52856e-4,2.27299e-4. Cause OPEN. All other new guards pass. No changing-state or third-attempt release. V5 remains failed. GPU7free. Please review the actual complete evidence and release the registered CPU57 saved-data reader if appropriate, retaining all three failures; S11v1.1 may start on GPU7 only after its own actual review/release.
 
-Actual collaboration model requested: us.anthropic.claude-opus-5-5. Review writes only your lane; no JavaScript/TypeScript or Node, no servers/listeners, no remote/paid compute or RLScience/other cluster, no Lean/lake, no commits/pushes/posts or human contact. Assigned resources only, nice19, single thread, do not touch foreign processes. Every command under10minutes. Provisional C.
+Actual collaboration model requested: the main model. Review writes only your lane; no JavaScript/TypeScript or Node, no servers/listeners, no remote/paid compute or RLScience/other cluster, no Lean/lake, no commits/pushes/posts or human contact. Assigned resources only, nice19, single thread, do not touch foreign processes. Every command under10minutes. Provisional C.
 
 ## 2026-10-26T04:25:28.323935+00:00: D8 spherical source precision pilot frozen, actual review requested
 
@@ -4450,13 +4450,13 @@ Package verification_stage3/d8_spherical_source_precision_v1 is frozen, unreleas
 
 Prerequisites843/0compiled,314/0D8fourpointpilot,82/0manufacturedpressure are bound and complete. CPU57/600s, alarm590,child150,2GiB,100MBfolder, one attempt only after actual Opus5.5 review. Preflight includes-I/-B/nooptimization, no unexpected files, exact release/hash/resources; every write exclusive; childgroup killed on exit; corefiles disabled. Saved-data readers have priority. Full angular cost is currently unknown, and completion under600s is not promised. No radial integration, pressure, residual or global-candidate claim. Please review the proof and package before any release.
 
-Actual model requested us.anthropic.claude-opus-5-5. Review writes only your lane. No JavaScript/TypeScript/Node, servers/listeners, remote/paid compute, RLScience/othercluster, Lean/lake, commits/pushes/posts or human contact. Assigned resources, one thread/nice19, no foreign-process changes, every command under10minutes. Provisional C.
+Actual model requested the main model. Review writes only your lane. No JavaScript/TypeScript/Node, servers/listeners, remote/paid compute, RLScience/othercluster, Lean/lake, commits/pushes/posts or human contact. Assigned resources, one thread/nice19, no foreign-process changes, every command under10minutes. Provisional C.
 
 ## 2026-10-26T04:28:00.004614+00:00: source-band conditioning diagnostic frozen, no execution
 
 The three all-mode failures divide discrepancies by the norm after leading exterior subtraction. The exact finite-vector conditioning proof is theory/source_subtraction_conditioning/PROOF.md, SHA 053e75772fa210545479750deea41ca2d7c77276ad8498bce18a49adf21be44c. This supplies a possible explanation, not an attribution. No source-array numerical diagnosis has run.
 
-Frozen package verification_stage3/allmode_source_band_diagnostic_v1: REG 13d4e28121d286633f2943a8a4c1890bba6f02a45c5aba172b00789b518b087b, read.py cf4f619ed9e4db1bbb491a286b4237e0bcb7cc5daa5b0e12ff04a885a1e3469e. Proposed CPU57,180s,2GiB,5MB, one attempt after actual review; saved-data reader first. It binds producer307/3 and both full source tables, verifies all raw blocks, reproduces original ratios/decisions, separates raw and subtracted norms and reports every failed radius. At most9 deterministic extreme radii get50/100-digit exponent/subtraction from exact binary64 inputs. No fresh field/source, no pressure and no enclosure. The original1e-10 failures remain regardless of new raw-band diagnostics. Please review with actual us.anthropic.claude-opus-5-5 before a separate release.
+Frozen package verification_stage3/allmode_source_band_diagnostic_v1: REG 13d4e28121d286633f2943a8a4c1890bba6f02a45c5aba172b00789b518b087b, read.py cf4f619ed9e4db1bbb491a286b4237e0bcb7cc5daa5b0e12ff04a885a1e3469e. Proposed CPU57,180s,2GiB,5MB, one attempt after actual review; saved-data reader first. It binds producer307/3 and both full source tables, verifies all raw blocks, reproduces original ratios/decisions, separates raw and subtracted norms and reports every failed radius. At most9 deterministic extreme radii get50/100-digit exponent/subtraction from exact binary64 inputs. No fresh field/source, no pressure and no enclosure. The original1e-10 failures remain regardless of new raw-band diagnostics. Please review with actual the main model before a separate release.
 
 Review restrictions: own-lane writes only; no JavaScript/TypeScript/Node, no servers/listeners, no remote/paid compute or RLScience/othercluster, no Lean/lake, no commits/pushes/posts or contacting people. Assigned resources, nice19, one thread, no foreign-process changes, commands under10minutes. Provisional C.
 
@@ -4470,7 +4470,7 @@ No JavaScript/TypeScript/Node, servers/listeners, paid or remote compute, RLScie
 
 ## 2026-10-26T04:39:12.493967+00:00: Stable source-difference control frozen, actual review pending
 
-The proof theory/stable_pressure_source_difference/PROOF.md precedes the new package verification_stage3/stable_source_difference_v1. REG 0385a75ee3e40fc027743f94a872366bcc266b61bc9f0cf12c40cc9ce99190b3; control 2601cdb52e67db7a0d11959b35936b5ebbe8e94ea60e5435f5345081d931bf48; source 7304953eafeecd8097df8fedeeec0421737e0412ced89bffb020914af998c4b0; proof b0acbb6216e5bdf5ab59ebaa1e35f5fa848d76813aac4c4fe450748ed37f5906. Formula f(U)-f(W)=2 trace(DW D(U-W))+trace(D(U-W)^2), with its physical-coefficient derivative. The existing potential-increment code supplies U-W. Manufactured exact Fraction matrices, 50/100-digit independent Taylor-jet point checks on the original central/two directions, and two angular rules at radii64 and1e8 are frozen. CPU57/600s, no GPU or subprocess, saved readers first. The numerical cause of the original three failures remains OPEN; all307/3 retained. Actual us.anthropic.claude-opus-5-5 review/release requested after the pending readers and diagnostics; no execution yet. Review tasks inherit no JavaScript/TypeScript/Node, no servers/listeners, no RLScience/cluster, no paid/remote compute, no Lean/lake, no posts/commits and own-lane-only writes.
+The proof theory/stable_pressure_source_difference/PROOF.md precedes the new package verification_stage3/stable_source_difference_v1. REG 0385a75ee3e40fc027743f94a872366bcc266b61bc9f0cf12c40cc9ce99190b3; control 2601cdb52e67db7a0d11959b35936b5ebbe8e94ea60e5435f5345081d931bf48; source 7304953eafeecd8097df8fedeeec0421737e0412ced89bffb020914af998c4b0; proof b0acbb6216e5bdf5ab59ebaa1e35f5fa848d76813aac4c4fe450748ed37f5906. Formula f(U)-f(W)=2 trace(DW D(U-W))+trace(D(U-W)^2), with its physical-coefficient derivative. The existing potential-increment code supplies U-W. Manufactured exact Fraction matrices, 50/100-digit independent Taylor-jet point checks on the original central/two directions, and two angular rules at radii64 and1e8 are frozen. CPU57/600s, no GPU or subprocess, saved readers first. The numerical cause of the original three failures remains OPEN; all307/3 retained. Actual the main model review/release requested after the pending readers and diagnostics; no execution yet. Review tasks inherit no JavaScript/TypeScript/Node, no servers/listeners, no RLScience/cluster, no paid/remote compute, no Lean/lake, no posts/commits and own-lane-only writes.
 
 Method: direct trace expansion, coefficient differentiation and Frobenius Cauchy-Schwarz. Verdict: CONFIRMED exact algebra, OPEN numerical accuracy and failure attribution. No acceptance or obstruction claim.
 
@@ -4550,7 +4550,7 @@ Method: derived the scalar amplitude transport law from the rotating vorticity r
 
 D10 V4 reached its registered alarm without any extension. WorkerFAILURE1b44df0ff55f2f72de61333bde22f23fd9f3e7ca5a5a08988d9cd3508d79f20b at05:08:05.271685Z; WATCH_FAILURE4026f398a16b77dc0210d9e6158268a44dd18d15cfcf2a9ce404209c90ee7215 at05:08:09.623033Z, elapsed6747.522429761s. Pids4148536/4148612 are absent. Source18 and36, standard volumes0/1/2 and half-offset0 completed. Half-offset1 reached28672/205504points before the alarm, with no complete saved field; half-offset2 and core/energy were not reached. Full battery and comparison remain OPEN. The frozen D10 timing pilot is now eligible for actual review against this terminal binding, not yet released. REG5246697f0d1a2b7d6441a8c82848205004e7a5eeffb72aa1292e9f336a0c7005; one600sGPU6/CPU60pilot only.
 
-CP stable source-difference control completed at2026-10-26T05:08:13.482283+00:00,98PASS/0FAIL in9.594270965s. RESULTS88116529d568c3fc818a1ddb9fc43fab9cc151222ed729e9e34149c53a919b94; RELEASE3bb2d24f7d10c8e5ee394bb6e0508a9cef2746fe8c9174ed6a55229ecdbe1ec6; actualreview9c5acfe069da498dbf1a6d164ae9d0e4a5c2215bdb888a402441cc5ff201850f archivedreport_reviews/20261026T050653Z_d128_CP/FINDINGS.md. CPU57free. Source/derivative/Fraction/angular checks passed; direct far subtraction still loses relative accuracy0.86to1.37 at1e8. Originalproducer307/3retained. Both stable-source and exponent-coherence informal proofs are CONFIRMED in their stated scope by actualmodelus.anthropic.claude-opus-5-5; no pressureaddback, optimizer or candidate released. I will read the producer's exponent convention before attributing the existing failures. c_l=0.45,omega=0.3,omega/c_l=2/3.
+CP stable source-difference control completed at2026-10-26T05:08:13.482283+00:00,98PASS/0FAIL in9.594270965s. RESULTS88116529d568c3fc818a1ddb9fc43fab9cc151222ed729e9e34149c53a919b94; RELEASE3bb2d24f7d10c8e5ee394bb6e0508a9cef2746fe8c9174ed6a55229ecdbe1ec6; actualreview9c5acfe069da498dbf1a6d164ae9d0e4a5c2215bdb888a402441cc5ff201850f archivedreport_reviews/20261026T050653Z_d128_CP/FINDINGS.md. CPU57free. Source/derivative/Fraction/angular checks passed; direct far subtraction still loses relative accuracy0.86to1.37 at1e8. Originalproducer307/3retained. Both stable-source and exponent-coherence informal proofs are CONFIRMED in their stated scope by actualmodelthe main model; no pressureaddback, optimizer or candidate released. I will read the producer's exponent convention before attributing the existing failures. c_l=0.45,omega=0.3,omega/c_l=2/3.
 
 Review restrictions: own-lane writes only; no JavaScript/TypeScript/Node, servers/listeners, remote/paidcompute, RLScience/anycluster, Lean/lake, gitcommit/push, onlineposts/contactingpeople; assignedresourcesonly.
 
@@ -4572,11 +4572,11 @@ Review restrictions: own-lane writes only; no JavaScript/TypeScript/Node, server
 
 ## 2026-10-26T05:17:54.631457+00:00: D10 GPU timing complete, 175 PASS / 0 FAIL
 
-Actual CQ one-attempt release was launched at05:14:59Z onGPU6/CPU60 and completed at05:16:22Z (worker83.447944s, watcher85.133136s). RESULTS 340cc7b1f71de71e5ffe54dd1f946ce6d4b3a9063b4fbcd386d12d66acef9561; WATCH_RESULTS 7a83f549910f7eeff9d3e2bad44db5ce65ce3ebe8cf43c0c79c9c1f36ba376b3. Slower all_values rates128/1024/4096 =345.358/2653.036/9987.360points/s. CQ conservative faster128-over-slower-k timing gains are7.568345211 and28.491050011, both above2. PeakGPU2632024576bytes. All CPU/GPU, chunk/repeat and hash checks pass at their registered unit-floor tolerances. The radius1e8 controls do not establish far relative accuracy. Method: reviewed selected-point pilot and metadata arithmetic; verdict CONFIRMED only for this scope. No pressure or whole-battery timing bound, continuation or retry follows. Original V4 timeout and incomplete battery remain OPEN. I am preparing a separately registered completion using the tested chunk4096 and immutable completed source tables. No new launch yet. Review arithmetic report_reviews/20261026T051754Z_d10_timing_result/REVIEW.json. Actual collaborator us.anthropic.claude-opus-5-5. No JavaScript/TypeScript, no servers/listeners, no RLScience/cluster/remote compute; own lane writes only.
+Actual CQ one-attempt release was launched at05:14:59Z onGPU6/CPU60 and completed at05:16:22Z (worker83.447944s, watcher85.133136s). RESULTS 340cc7b1f71de71e5ffe54dd1f946ce6d4b3a9063b4fbcd386d12d66acef9561; WATCH_RESULTS 7a83f549910f7eeff9d3e2bad44db5ce65ce3ebe8cf43c0c79c9c1f36ba376b3. Slower all_values rates128/1024/4096 =345.358/2653.036/9987.360points/s. CQ conservative faster128-over-slower-k timing gains are7.568345211 and28.491050011, both above2. PeakGPU2632024576bytes. All CPU/GPU, chunk/repeat and hash checks pass at their registered unit-floor tolerances. The radius1e8 controls do not establish far relative accuracy. Method: reviewed selected-point pilot and metadata arithmetic; verdict CONFIRMED only for this scope. No pressure or whole-battery timing bound, continuation or retry follows. Original V4 timeout and incomplete battery remain OPEN. I am preparing a separately registered completion using the tested chunk4096 and immutable completed source tables. No new launch yet. Review arithmetic report_reviews/20261026T051754Z_d10_timing_result/REVIEW.json. Actual collaborator the main model. No JavaScript/TypeScript, no servers/listeners, no RLScience/cluster/remote compute; own lane writes only.
 
 ## 2026-10-26T05:20:57.391401+00:00: actual CS and CT proof reviews read and archived
 
-Mixed-power pressure and vorticity-amplitude proofs CONFIRMED in exact stated scope. Actual collaborator us.anthropic.claude-opus-5-5. Full reviews archived report_reviews/20261026T052057Z_d128_CS_CT, with adjacent theory verification/OPUS_REVIEW.json bindings. Mixed-power source cutoff must coincide with a panel boundary; near resonance use expm1 form, retain whole-source moments. Amplitude identities require continuum maxima or exact integrals for their rigorous consequences; a sampled strain value is not a continuum maximum value. Neither proof supplies labelD or clears any failure.
+Mixed-power pressure and vorticity-amplitude proofs CONFIRMED in exact stated scope. Actual collaborator the main model. Full reviews archived report_reviews/20261026T052057Z_d128_CS_CT, with adjacent theory verification/OPUS_REVIEW.json bindings. Mixed-power source cutoff must coincide with a panel boundary; near resonance use expm1 form, retain whole-source moments. Amplitude identities require continuum maxima or exact integrals for their rigorous consequences; a sampled strain value is not a continuum maximum value. Neither proof supplies labelD or clears any failure.
 
 Pending review reminder: D8 full-space precision V1.1 was frozen05:15:23 and is UNEXECUTED. verification_stage3/d8_full_space_precision_v1_1/REGISTRATION.json SHA48ddf1b9e55841166e4e73a18d60d5c9faa6537ee7bbe44df1a71e539a712f84; see earlier05:15 note and report_reviews/20261026T0516_fullspace_precision_freeze. It uses completedCM106/0 sphere-pilot evidence, with21600sCPU57total/21480worker and separate900sreader. D10pilot175/0 results340cc7b1f71de71e5ffe54dd1f946ce6d4b3a9063b4fbcd386d12d66acef9561 also landed05:16:22, conservative4096gain28.491050; no rerun. D10completionV5 underpreparation, no registration frozen or executionyet. CPU57currentlyfree. NoJS/TS, no servers/listeners, noRLScience/cluster/remotecompute; ownlanewritesonly.
 
@@ -4590,7 +4590,7 @@ Firstgate: actualCPU57/180soneattempt releasefor recovery_control.py. Standardli
 
 Secondgateafteractualcontrolresults: separateproducer release GPU6/CPU60,total10800worker10680, NEWprospectivethreehourangularshare, notremainingV4allowance. Watchinvocation independent/.venv/bin/python -I -B independent/experiments/d10_fresh_refinement_battery_v5_completion/watch.py (noarguments); boundedownchildonly. Releaseprotocol in support.py bindsactualreview,control,timingreview,allocation,inputs. Projection6990.047361s *1.5=10485.071041<10680. Knownrates+conditionalCPUallowances; assumesfullD10core/energycost<=2.1*D8, unmeasuredandexplicitlynotbound. D8timestampbasisforcoreend is immutableownfilemtime, labeled; otherstampsJSON. Noextension/retryoromittedchecks. Folder1.4GB,12GiBGPU,16GiBRSS,24soft30hardlane. Separate600sCPUreader aftercompletedproducerandactualreview.
 
-Reviewpriority: D8fullspaceprecisionV1.1 alreadyqueued, thenthis180sCPUcontrol beforelongCPUproducerifavailable; CPU57freeatthisnote. Bothunreleased. Allrestrictionsapply: ownlanewritesonly, noJavaScript/TypeScript/Node, no servers/listeners, noRLScience/cluster/paidremotecompute, noLean/lake, noonlineposts/contactpeople; assignedGPUs6/7andCPUs55/57/60,nice19,one thread. Actualcollaboratorus.anthropic.claude-opus-5-5.
+Reviewpriority: D8fullspaceprecisionV1.1 alreadyqueued, thenthis180sCPUcontrol beforelongCPUproducerifavailable; CPU57freeatthisnote. Bothunreleased. Allrestrictionsapply: ownlanewritesonly, noJavaScript/TypeScript/Node, no servers/listeners, noRLScience/cluster/paidremotecompute, noLean/lake, noonlineposts/contactpeople; assignedGPUs6/7andCPUs55/57/60,nice19,one thread. Actualcollaboratorthe main model.
 
 ### 2026-10-26T05:30:46.442184+00:00: prospective stable exterior regeneration
 
@@ -4598,7 +4598,7 @@ Method: AST and hash audit of verification_stage3/allmode_stable_exterior_v1, RE
 
 ## 2026-10-26T05:34:17.869847+00:00: CV primary interpretation corrections checked
 
-Method: read-only primary JSON and optimizer-source audit, archived in report_reviews/20261026T053417Z_d128_CV. The actual collaborating lead model is us.anthropic.claude-opus-5-5. Result: ftol is a relative accepted-step cost change, and G_required is detached; stationarity is not established. S12 Q_sw, rho_nl and rho_lin fall; raw weighted training momentum RMS rises while the normalized holdout ratios fall. Both S12 arms hit the iteration cap. Verdicts: CONFIRMED for CV's corrected reading; REFUTED for stationarity, worsening Q_sw, all-diagnostics-worsened and established core-balance claims. The measured S11 correction match excludes no unmeasured far modes or higher orders. Independent S11 and mechanism attribution remain OPEN. Existing dated entries quoting BY/CO/CR are historical and superseded on these points. Parameters and exact row values are in the archived review. No candidate or ordering follows.
+Method: read-only primary JSON and optimizer-source audit, archived in report_reviews/20261026T053417Z_d128_CV. The actual collaborating lead model is the main model. Result: ftol is a relative accepted-step cost change, and G_required is detached; stationarity is not established. S12 Q_sw, rho_nl and rho_lin fall; raw weighted training momentum RMS rises while the normalized holdout ratios fall. Both S12 arms hit the iteration cap. Verdicts: CONFIRMED for CV's corrected reading; REFUTED for stationarity, worsening Q_sw, all-diagnostics-worsened and established core-balance claims. The measured S11 correction match excludes no unmeasured far modes or higher orders. Independent S11 and mechanism attribution remain OPEN. Existing dated entries quoting BY/CO/CR are historical and superseded on these points. Parameters and exact row values are in the archived review. No candidate or ordering follows.
 
 ## 2026-10-26T05:39:16.526205+00:00: smooth vorticity bins frozen, review queued after current releases
 
@@ -4637,15 +4637,15 @@ Actual Opus 5.5 review report_reviews/20261026T060316Z_d128_CY/FINDINGS.md (dc6f
 
 ## 2026-10-26T06:05:55.113619+00:00: urgent S11 v1.3 RSS stop, earlier running status withdrawn
 
-The S11 v1.3 watch stopped the worker at05:46:30.723635Z, elapsed2537.728467911016s, RSS above its 8 GiB cap, return -15. WATCH_FAILURE SHA 29850074dafe6843247d9ec788ada4c62d97356f586fcf97413e658f72015524. Both owned PIDs are absent. GPU7/CPU55 are free. I incorrectly read stale progress as current running status in the05:51 update and have corrected RUN_STATUS and INDEPENDENT_VALIDATION. The export, far, source and export-pressure stages completed; common quadrature reached the unit_ball of the fine grid, with translated targets pending. No RESULTS, no completed validation, and no reader release. Evidence: report_reviews/20261026T060555Z_s11_memory_stop. No retry or cap increase is being executed. I am inspecting the bulk pressure-target evaluation for memory amplification and will submit a concrete recovery version for actual us.anthropic.claude-opus-5-5 review. D10 V5 producer review stays next; D8 CPU57 producer is alive and will not be interrupted. All work stays in this lane; no JS/TS, servers, RLScience/cluster, remote compute, Lean/lake or foreign process actions.
+The S11 v1.3 watch stopped the worker at05:46:30.723635Z, elapsed2537.728467911016s, RSS above its 8 GiB cap, return -15. WATCH_FAILURE SHA 29850074dafe6843247d9ec788ada4c62d97356f586fcf97413e658f72015524. Both owned PIDs are absent. GPU7/CPU55 are free. I incorrectly read stale progress as current running status in the05:51 update and have corrected RUN_STATUS and INDEPENDENT_VALIDATION. The export, far, source and export-pressure stages completed; common quadrature reached the unit_ball of the fine grid, with translated targets pending. No RESULTS, no completed validation, and no reader release. Evidence: report_reviews/20261026T060555Z_s11_memory_stop. No retry or cap increase is being executed. I am inspecting the bulk pressure-target evaluation for memory amplification and will submit a concrete recovery version for actual the main model review. D10 V5 producer review stays next; D8 CPU57 producer is alive and will not be interrupted. All work stays in this lane; no JS/TS, servers, RLScience/cluster, remote compute, Lean/lake or foreign process actions.
 
 ## 2026-10-26T06:07:53.324990+00:00: S11 v1.4 bounded-pressure-target repair frozen, actual producer review requested
 
-The v1.3 stop has a concrete allocation cause: two204800x1369 complex128 coefficient arrays require8971878400 bytes before the existing angular batch, exceeding the8GiB RSS cap. New package independent/experiments/s11_common_independent_v1_4 batches translated targets in groups<=1024 before invoking the unchanged kernel (those arrays total44859392 bytes per batch). Both pressure orders are compared against the old whole-target call on2052 points with batches17/1024 and strict1e-12 consistency checks inside the producer, before common work. No numerical execution yet. REG cd4c3008944567e5b5ef1d057d6a17440c5ffa8cff097243a1641830ed5d6b83; CODE 7b8ddd2e430687dc666344784e72188aa8d6425eaea9e5694c054387af6039a0; complete diff 9d993dafd9bf699ef3f57eddff77ea41780fe78988ca85b73b7fda97d268bfa0. Scalar reader and69 old runtime sources unchanged; grids, pressure source, gauge, physics and scientific tolerances unchanged. Fresh regeneration avoids importing an incomplete check list or changing the fresh-pressure sample set during partial resumption. Total33440s/worker33320s, sameGPU7CPU55RSS8GiB/GPU16GiB/folder3GB caps. Prior two attempts plusnewcap=35988.095440780s<36000s. Empiricalprojection7118.832386s;1.5factor10678.248579s. D8CPU57 producer remains undisturbed. Please review as actual us.anthropic.claude-opus-5-5 after D10V5; no release is inferred. Restrictions apply to review and any delegated work: own-lane writes only, no JS/TS, no servers, no RLScience/cluster, no remote/paidcompute, no Lean/lake, no posts or foreign process actions.
+The v1.3 stop has a concrete allocation cause: two204800x1369 complex128 coefficient arrays require8971878400 bytes before the existing angular batch, exceeding the8GiB RSS cap. New package independent/experiments/s11_common_independent_v1_4 batches translated targets in groups<=1024 before invoking the unchanged kernel (those arrays total44859392 bytes per batch). Both pressure orders are compared against the old whole-target call on2052 points with batches17/1024 and strict1e-12 consistency checks inside the producer, before common work. No numerical execution yet. REG cd4c3008944567e5b5ef1d057d6a17440c5ffa8cff097243a1641830ed5d6b83; CODE 7b8ddd2e430687dc666344784e72188aa8d6425eaea9e5694c054387af6039a0; complete diff 9d993dafd9bf699ef3f57eddff77ea41780fe78988ca85b73b7fda97d268bfa0. Scalar reader and69 old runtime sources unchanged; grids, pressure source, gauge, physics and scientific tolerances unchanged. Fresh regeneration avoids importing an incomplete check list or changing the fresh-pressure sample set during partial resumption. Total33440s/worker33320s, sameGPU7CPU55RSS8GiB/GPU16GiB/folder3GB caps. Prior two attempts plusnewcap=35988.095440780s<36000s. Empiricalprojection7118.832386s;1.5factor10678.248579s. D8CPU57 producer remains undisturbed. Please review as actual the main model after D10V5; no release is inferred. Restrictions apply to review and any delegated work: own-lane writes only, no JS/TS, no servers, no RLScience/cluster, no remote/paidcompute, no Lean/lake, no posts or foreign process actions.
 
 ## 2026-10-26T06:09:50.155315+00:00: CZ exact-package D10V5 producer authorization, parameter prose correction
 
-Actual us.anthropic.claude-opus-5-5 CZ review archived atreport_reviews/20261026T060950Z_d128_CZ/FINDINGS_PRODUCER.md, SHAfb46bdb705981fdee2c1ecc8971ed110b1193ec10d83a6b20f7b40e6d44ef1ff. Its registration, code, input, recovery and completed132/0control hashes all match. The review prose says omega=1; the immutable registration and input case actually have c_l=.45, omega=.3, omega/c_l=2/3. That prose is REFUTED. I treat the explicit hash-bound package release as authorization for this actual(.45,.3) package and record the parameters explicitly in RELEASE.json (94d62992b6daf9c225b12a8271cdb252f33c2a133696c4945a8e8c188943577e). Lead should correct CZ's parameter label. No source or coefficient change. Launching onceGPU6CPU60total10800worker10680, ledger bound to the immutable06:08:11 snapshot. Mechanical output still needs a separately released reader; every failure remains. S11V1.4awaitsreview, D8CPU57continues. All standing restrictions retained.
+Actual the main model CZ review archived atreport_reviews/20261026T060950Z_d128_CZ/FINDINGS_PRODUCER.md, SHAfb46bdb705981fdee2c1ecc8971ed110b1193ec10d83a6b20f7b40e6d44ef1ff. Its registration, code, input, recovery and completed132/0control hashes all match. The review prose says omega=1; the immutable registration and input case actually have c_l=.45, omega=.3, omega/c_l=2/3. That prose is REFUTED. I treat the explicit hash-bound package release as authorization for this actual(.45,.3) package and record the parameters explicitly in RELEASE.json (94d62992b6daf9c225b12a8271cdb252f33c2a133696c4945a8e8c188943577e). Lead should correct CZ's parameter label. No source or coefficient change. Launching onceGPU6CPU60total10800worker10680, ledger bound to the immutable06:08:11 snapshot. Mechanical output still needs a separately released reader; every failure remains. S11V1.4awaitsreview, D8CPU57continues. All standing restrictions retained.
 
 ## 2026-10-26T06:10:15.072740+00:00: S11 v1.4 memory evidence supplement to CZ
 
@@ -4657,7 +4657,7 @@ RSS_PROJECTION_V2.json (aa1b2df53e08eab23c0bd271bc91e3b11204137db0ae64f5aedb4bc3
 
 ## 2026-10-26T06:14:16.869283+00:00: DA release and parameter audit
 
-Method: archive full actual us.anthropic.claude-opus-5-5 review; hash all33registered files and read the immutable parameters; inspect own process identities separately. Result: exact bins-v1.1 authorization and bindings CONFIRMED. Review prose omega=1, omega/c_l=20/9 REFUTED; actual c_l=.45, omega=.3, omega/c_l=2/3. Own control/read scientific outputs OPEN, no execution. CONTROL_RELEASE is written and queued. R1 and retained failures are unchanged. Review receipt report_reviews/20261026T061416Z_d128_DA/RECEIPT.json. D10V5 and D8 are active by exact /proc identities; S11v1.3 is failed by terminal artifact and absent process identities, not running.
+Method: archive full actual the main model review; hash all33registered files and read the immutable parameters; inspect own process identities separately. Result: exact bins-v1.1 authorization and bindings CONFIRMED. Review prose omega=1, omega/c_l=20/9 REFUTED; actual c_l=.45, omega=.3, omega/c_l=2/3. Own control/read scientific outputs OPEN, no execution. CONTROL_RELEASE is written and queued. R1 and retained failures are unchanged. Review receipt report_reviews/20261026T061416Z_d128_DA/RECEIPT.json. D10V5 and D8 are active by exact /proc identities; S11v1.3 is failed by terminal artifact and absent process identities, not running.
 
 ## 2026-10-26T06:15:22.622272+00:00: static mathematical re-audit of report items29,30,31,33,34
 
@@ -4666,7 +4666,7 @@ Method: full proof reads and independent hand derivations of energy integration,
 
 ## 2026-10-26T06:18:34.841086+00:00: actual Opus DB parameter errata and DC proof reviews
 
-Method: read all four review/erratum files in full; recompute their SHA256 and the two unchanged proof hashes; archive byte-identical copies in report_reviews/20261026T061834Z_d128_DB_DC. Actual review model is us.anthropic.claude-opus-5-5. No numerical computation was performed for this receipt.
+Method: read all four review/erratum files in full; recompute their SHA256 and the two unchanged proof hashes; archive byte-identical copies in report_reviews/20261026T061834Z_d128_DB_DC. Actual review model is the main model. No numerical computation was performed for this receipt.
 
 Result and verdict: CONFIRMED. DB corrects D10 V5 and smooth bins to c_l=0.45, omega=0.3, omega/c_l=2/3 and explicitly accepts both hash-bound releases. Their original bound review files remain unchanged and are cited with the erratum. DC confirms the backward-hyperbolic-measure proof in its exact conditional scope and formulas (1)-(6) of the low-multipole tensor-pressure proof. Individual scopes and bindings are in the proof-specific verification/OPUS_REVIEW_RECEIPT.json files. Hyperbolicity requires a compact invariant subset of G; the measure conclusion asserts only a top backward exponent at least 1-2 c_l. It does not assert positive entropy or a physical measure. The pressure formulas give no error enclosure and no higher-harmonic statement; reusing field values is not independent evaluation. Neither result is a numerical-state validation or an obstruction, and the implementation proposal remains unreleased.
 
@@ -4686,7 +4686,7 @@ Result: informal argument complete without computation. Verdict OPEN pending act
 
 ## 2026-10-26T06:30:52.894290+00:00: D10 CPU60 scalar scope and conditional release
 
-Method: archive actual us.anthropic.claude-opus-5-5 DF review and rehash all9bindings; read the complete scalar code without executing it. Result: two-line affinity/folder change and conditional authorization CONFIRMED, record report_reviews/20261026T063052Z_d128_DF/RECEIPT.json. Execution remains OPEN until successful producer completion. Reader covers saved volumes, cores and finite-ball energy identities; separate renormalized-energy tail integrals are outside this read and remain OPEN for independent reduction. No scalar results or numerical tolerance have been changed.
+Method: archive actual the main model DF review and rehash all9bindings; read the complete scalar code without executing it. Result: two-line affinity/folder change and conditional authorization CONFIRMED, record report_reviews/20261026T063052Z_d128_DF/RECEIPT.json. Execution remains OPEN until successful producer completion. Reader covers saved volumes, cores and finite-ball energy identities; separate renormalized-energy tail integrals are outside this read and remain OPEN for independent reduction. No scalar results or numerical tolerance have been changed.
 
 ## 2026-10-26T06:31:54.339685+00:00: local vorticity-zero exclusion theorem, review OPEN
 
@@ -4698,12 +4698,12 @@ Method: direct complete-flow argument, bounded radial test, invariant expectatio
 
 ## 2026-10-26T06:38:05.071929+00:00: report items 10, 16 and 17 mathematical re-audit
 
-Evidence: report_reviews/20261026T063805Z_math_items_10_16_17/REVIEW.md, with exact statement/proof hashes in AUDIT.json. Eight checks CONFIRMED within the standalone proof hypotheses. The current corr6 changed during the first guard; no stale-source audit was written, and these items were verified byte-identical to corr5 before this record. Suggested item16 clarification: retain a fixed lambda_*>3/8, rather than a margin that can tend to zero. The new compact-support lemma for every invariant probability remains in the actual review queue. No numerical computation or candidate/D. Corr6 DG table/S12 changes are being audited next. Actual collaborator us.anthropic.claude-opus-5-5. Restrictions: own-lane writes only; no JavaScript/TypeScript, servers/listeners, RLScience/cluster/remote or paid compute, Lean/lake, commits/pushes, online posts or contact with people.
+Evidence: report_reviews/20261026T063805Z_math_items_10_16_17/REVIEW.md, with exact statement/proof hashes in AUDIT.json. Eight checks CONFIRMED within the standalone proof hypotheses. The current corr6 changed during the first guard; no stale-source audit was written, and these items were verified byte-identical to corr5 before this record. Suggested item16 clarification: retain a fixed lambda_*>3/8, rather than a margin that can tend to zero. The new compact-support lemma for every invariant probability remains in the actual review queue. No numerical computation or candidate/D. Corr6 DG table/S12 changes are being audited next. Actual collaborator the main model. Restrictions: own-lane writes only; no JavaScript/TypeScript, servers/listeners, RLScience/cluster/remote or paid compute, Lean/lake, commits/pushes, online posts or contact with people.
 
 
 ## 2026-10-26T06:44:30.309253+00:00: FINAL corr6/corr7 change audit and DH theorem reconciliation
 
-Method: static source/proof review, exact saved-record reads, input hashes and scalar rounding. Record [report_reviews/20261026T064254Z_corr6_corr7/REVIEW.md](report_reviews/20261026T064254Z_corr6_corr7/REVIEW.md), SHA256 571bc612386d20a4989c488613c2492308b207ec746cf373a8bbd06fc3fed675. Result:106 provenance/arithmetic checks CONFIRMED; Table D bounds/state bindings, dipole correction, S12 values/no-ordering and theory items10/35 CONFIRMED in scope. S12 causal claim OPEN. Unqualified zero-denominator quotient and empty regular-level average in36 REFUTED as written, exact corrections given. Item10 final antecedent requires clarification. Actual model us.anthropic.claude-opus-5-5, DH review f5002acc... reconciled, three proof receipts stored. Whole-report approval OPEN; no candidate or D. Date and all source hashes in the audit.
+Method: static source/proof review, exact saved-record reads, input hashes and scalar rounding. Record [report_reviews/20261026T064254Z_corr6_corr7/REVIEW.md](report_reviews/20261026T064254Z_corr6_corr7/REVIEW.md), SHA256 571bc612386d20a4989c488613c2492308b207ec746cf373a8bbd06fc3fed675. Result:106 provenance/arithmetic checks CONFIRMED; Table D bounds/state bindings, dipole correction, S12 values/no-ordering and theory items10/35 CONFIRMED in scope. S12 causal claim OPEN. Unqualified zero-denominator quotient and empty regular-level average in36 REFUTED as written, exact corrections given. Item10 final antecedent requires clarification. Actual model the main model, DH review f5002acc... reconciled, three proof receipts stored. Whole-report approval OPEN; no candidate or D. Date and all source hashes in the audit.
 
 ## 2026-10-26T06:47:41.213292+00:00: DJ condensed v2.5 incremental review
 
@@ -4743,15 +4743,15 @@ report_reviews/20261026T070339Z_corr9_condensed_v2_7_DN/REVIEW.md SHA ff593a9c6b
 
 ## 2026-10-26T07:07:33.511679+00:00: Item5 literature audit, source qualifications and one bibliographic correction
 
-report_reviews/20261026T070733Z_math_item_5_literature/REVIEW.md SHA 1b6d8465985658fa60c06e695c8678d61b2c8e7c27ac28b247251eb02f2724f2. Chae-Tsai and Xue hypothesis mappings reconfirmed against actual statements; Elgindi Hypothesis6.7 now read directly in arXiv2511.16254v2, SHA46df62b9d4fe873b08cb11a9050bf26d7f2261233bfdfc6fafe2b1e469d17efa. Correct A.Pineau to Ben Pineau, as the cited PDF states. CIV Theorem2.1 assumes no ansatz, whereas its stationary profile results are non-rotating. Retain the explicit (3.8)/(3.5) scope of Theorems3.9/4.5, and the C3/full-space-pressure hypothesis for the condensed Xue sentence. R3 full theorem remains OPEN. No D, no independent numerical validation added. Actual collaborator us.anthropic.claude-opus-5-5; no JS/TS, servers, RLScience/cluster, remote/paid compute, Lean/lake, commits or online posts; own-lane writes only.
+report_reviews/20261026T070733Z_math_item_5_literature/REVIEW.md SHA 1b6d8465985658fa60c06e695c8678d61b2c8e7c27ac28b247251eb02f2724f2. Chae-Tsai and Xue hypothesis mappings reconfirmed against actual statements; Elgindi Hypothesis6.7 now read directly in arXiv2511.16254v2, SHA46df62b9d4fe873b08cb11a9050bf26d7f2261233bfdfc6fafe2b1e469d17efa. Correct A.Pineau to Ben Pineau, as the cited PDF states. CIV Theorem2.1 assumes no ansatz, whereas its stationary profile results are non-rotating. Retain the explicit (3.8)/(3.5) scope of Theorems3.9/4.5, and the C3/full-space-pressure hypothesis for the condensed Xue sentence. R3 full theorem remains OPEN. No D, no independent numerical validation added. Actual collaborator the main model; no JS/TS, servers, RLScience/cluster, remote/paid compute, Lean/lake, commits or online posts; own-lane writes only.
 
 ## 2026-10-26T07:09:55.237696+00:00: Condensed mathematical scope, including two additional qualifications
 
-report_reviews/20261026T070955Z_condensed_math_scope/REVIEW.md SHAb334fd49dc4f3901917dc85a00cbeea6770a103794a7c7e5b11a74b8b116e81d. Long16(d) and condensed16(c) require 'after passing to a subsequence, locally in C2'; the standaloneproof states that, but whole-sequence convergence is unproved. This qualification was missed in the06:38audit. Condensed1.2's 'nothing depends on L2' must retain the explicit conditional16(c) distinction used by the long report. Condensed24(d)'s any-background claim is REFUTED without a nonzero stagnation-point premise: zero background and compact steady copy give G R_u=U exactly, delta_G=1 on any nonzero-denominator ball. Earlier positive-denominator/level and tail-radius qualifications apply to condensed forms too. No numerical job or new D. Actual collaborator us.anthropic.claude-opus-5-5; own-lane writes only, no JS/TS, servers, RLScience/cluster, remote/paid compute, Lean/lake, commits or online posts.
+report_reviews/20261026T070955Z_condensed_math_scope/REVIEW.md SHAb334fd49dc4f3901917dc85a00cbeea6770a103794a7c7e5b11a74b8b116e81d. Long16(d) and condensed16(c) require 'after passing to a subsequence, locally in C2'; the standaloneproof states that, but whole-sequence convergence is unproved. This qualification was missed in the06:38audit. Condensed1.2's 'nothing depends on L2' must retain the explicit conditional16(c) distinction used by the long report. Condensed24(d)'s any-background claim is REFUTED without a nonzero stagnation-point premise: zero background and compact steady copy give G R_u=U exactly, delta_G=1 on any nonzero-denominator ball. Earlier positive-denominator/level and tail-radius qualifications apply to condensed forms too. No numerical job or new D. Actual collaborator the main model; own-lane writes only, no JS/TS, servers, RLScience/cluster, remote/paid compute, Lean/lake, commits or online posts.
 
 ## 2026-10-26T07:12:50.173449+00:00: DP corrections and DQ proof review archived
 
-report_reviews/20261026T071250Z_corr10_corr11_condensed_v2_8_DQ/REVIEW.md SHA68cbaef432eb458222be58f02b6614e3005dc03eaf8a50242b8d8d0afbd0cd5d. Fourteen changed-statement/format checks CONFIRMED; DQ proof and handcheck hashes all match. Actual us.anthropic.claude-opus-5-5 confirms finite_energy_exclusion and leading_tail_hodge, and proof-specific receipts now record the reconciled scope. No L2-class exclusion extends to the natural infinite-energy tail. Hodge completeness concerns smooth leading tails, not finite-basis completeness or a global profile. Our07:09:55 audit's long file was corr11, correctly hashed but mislabeled corr9; an erratum retains the original and acknowledges long24(f) was already repaired. Condensedv2.8 now fixes24(d). S12 long weighted wording was already present, as DP correctly notes. Slow-rotation subsequence, conditional-L2 wording and the literature qualifications remain pending. No numerical execution or candidate/D. Follow-up restrictions: own-lane writes only; no JS/TS, servers/listeners, RLScience/cluster, remote/paid compute, Lean/lake, commits/pushes or online posts.
+report_reviews/20261026T071250Z_corr10_corr11_condensed_v2_8_DQ/REVIEW.md SHA68cbaef432eb458222be58f02b6614e3005dc03eaf8a50242b8d8d0afbd0cd5d. Fourteen changed-statement/format checks CONFIRMED; DQ proof and handcheck hashes all match. Actual the main model confirms finite_energy_exclusion and leading_tail_hodge, and proof-specific receipts now record the reconciled scope. No L2-class exclusion extends to the natural infinite-energy tail. Hodge completeness concerns smooth leading tails, not finite-basis completeness or a global profile. Our07:09:55 audit's long file was corr11, correctly hashed but mislabeled corr9; an erratum retains the original and acknowledges long24(f) was already repaired. Condensedv2.8 now fixes24(d). S12 long weighted wording was already present, as DP correctly notes. Slow-rotation subsequence, conditional-L2 wording and the literature qualifications remain pending. No numerical execution or candidate/D. Follow-up restrictions: own-lane writes only; no JS/TS, servers/listeners, RLScience/cluster, remote/paid compute, Lean/lake, commits/pushes or online posts.
 
 
 ## 2026-10-26T07:17:12.516044+00:00: corr12, condensed v2.9 and remaining method scope
@@ -4825,7 +4825,7 @@ Evidence: independent/reports/s11_v1_4_completion_20261026T073607Z/COMPLETION.js
 
 ## 2026-10-26T07:42:57.041245+00:00: DU reader release and handoff
 
-Method: read the actual us.anthropic.claude-opus-5-5 review and DU instructions, independently rehash all 90 code files, 44 inputs, both producer terminal records and the unchanged reader, then bind the release. Result: every hash matches. Verdict: CONFIRMED for release provenance. Evidence: report_reviews/20261026T074136Z_d128_DU/REVIEW.md and RECEIPT.json. S11 READER_RELEASE SHA256 is 7828314e98d55b52b10cc01d03c053a3a8c2eb72439ad059fbb7864a4adc6faf. Case: c_l = 0.45, omega = 1, omega/c_l = 20/9. The reader is unstarted and first in the CPU57 queue after D8 has its own terminal record and its owned processes have exited. Its single attempt has a900-second cap; every failure remains.
+Method: read the actual the main model review and DU instructions, independently rehash all 90 code files, 44 inputs, both producer terminal records and the unchanged reader, then bind the release. Result: every hash matches. Verdict: CONFIRMED for release provenance. Evidence: report_reviews/20261026T074136Z_d128_DU/REVIEW.md and RECEIPT.json. S11 READER_RELEASE SHA256 is 7828314e98d55b52b10cc01d03c053a3a8c2eb72439ad059fbb7864a4adc6faf. Case: c_l = 0.45, omega = 1, omega/c_l = 20/9. The reader is unstarted and first in the CPU57 queue after D8 has its own terminal record and its owned processes have exited. Its single attempt has a900-second cap; every failure remains.
 
 The S11 producer's 21/86 pressure guards remain failed. Its scalar reconstruction, R12 decision and state ordering are OPEN. The D10 corrected CPU gate is CONFIRMED in the DT scope, but its mandatory preparation, owned kill and separate resume remain OPEN and unexecuted. The next shift should launch D10 under the existing release, without repeating the CPU gate.
 
@@ -4971,7 +4971,7 @@ Read-only Decimal product comparison: 528 CONFIRMED, 0 REFUTED, six source/code 
 
 ## 2026-10-26T08:56:26.453267+00:00: actual EG D8 precision reader launch
 
-Actual us.anthropic.claude-opus-5-5 review 72c5cdd2 read and checked in full, archived at report_reviews/20261026T085626Z_d128_EG. All 30 registration bindings match; old owned CPU57 workers are absent. One unchanged CPU57/900s reader launched with venv -I -B, nice19, CUDA hidden and one thread. PID 1906243, start ticks 212940144. READER_RELEASE SHA ea640557b8adba6f66b0bd44e7d7bc0935e5e361672b6eb4898993d76de47277. Saved-source replay only; all 38 radial failures remain, no source regeneration, quadrature bound, candidate or outcome change. No retry or repair is released.
+Actual the main model review 72c5cdd2 read and checked in full, archived at report_reviews/20261026T085626Z_d128_EG. All 30 registration bindings match; old owned CPU57 workers are absent. One unchanged CPU57/900s reader launched with venv -I -B, nice19, CUDA hidden and one thread. PID 1906243, start ticks 212940144. READER_RELEASE SHA ea640557b8adba6f66b0bd44e7d7bc0935e5e361672b6eb4898993d76de47277. Saved-source replay only; all 38 radial failures remain, no source regeneration, quadrature bound, candidate or outcome change. No retry or repair is released.
 
 ## 2026-10-26T08:56:43.617283+00:00: condensed section 8 status correction
 
@@ -5059,7 +5059,7 @@ APPROVED FOR STAGE II REPORT SWITCH: condensedv2.17 SHA2373f1a08ec557b122e8cfcdd
 
 Date: 2026-10-26T09:40:06.599365+00:00.
 
-Method: read both report diffs and all three builder sources without executing the builders. Compare the normalized report bodies against the preceding audited snapshots. Recheck the saved scalar records, the 78 all-mode input bindings, every producer and reader check record against the lead's saved mirror, and the actual dated review by us.anthropic.claude-opus-5-5. No numerical producer, reader or mirror was rerun. CHECKS.json records 102 CONFIRMED and 1 REFUTED items.
+Method: read both report diffs and all three builder sources without executing the builders. Compare the normalized report bodies against the preceding audited snapshots. Recheck the saved scalar records, the 78 all-mode input bindings, every producer and reader check record against the lead's saved mirror, and the actual dated review by the main model. No numerical producer, reader or mirror was rerun. CHECKS.json records 102 CONFIRMED and 1 REFUTED items.
 
 ## Report deltas
 
@@ -5165,7 +5165,7 @@ Method: static diff and proof application. CONFIRMED: two code files differ,84id
 
 Date: 2026-10-26T10:39:33.975201+00:00. Case c_l = 0.45, omega = 0.3, omega/c_l = 2/3, degree 10, even m.
 
-Method: independently match the actual lead's FA review to the frozen package, producer registration, code, proof dependencies and certificates. Parse all three Python files without execution. Inspect process command lines before the one released CPU 57 control. The actual collaborator is us.anthropic.claude-opus-5-5, with the dated review retained byte for byte in FINDINGS.md.
+Method: independently match the actual lead's FA review to the frozen package, producer registration, code, proof dependencies and certificates. Parse all three Python files without execution. Inspect process command lines before the one released CPU 57 control. The actual collaborator is the main model, with the dated review retained byte for byte in FINDINGS.md.
 
 Result: HASH_AUDIT.json has 26 CONFIRMED and 0 REFUTED checks. The single control completed with 34 PASS and 0 FAIL in 0.480200 seconds. It used CUDA hidden, CPU 57, one numerical thread, nice 19 and the registered 8e9-byte address-space limit. Control result SHA256 b90022d77208a808656fcdff36c7f8a6bbdfbdf3b1b3f81b44963bd0dfebd3a8. CONTROL_RELEASE SHA256 7f24b73bc17b8b5b0dd8d8b785e8f4b17ac3f9c3e7f54cf6b0cef99653f651da.
 
@@ -5225,7 +5225,7 @@ Method: copied actual FH artifacts; checked six raw-result hashes, all 55 paired
 
 # Maximum-search core control and FJ review
 
-Date: 2026-10-26T11:17:53.685313+00:00. Actual model consulted through the dated lead review: us.anthropic.claude-opus-5-5. Case of the polynomial fixture: c_l = 0.45, omega = 0.3, omega/c_l = 2/3.
+Date: 2026-10-26T11:17:53.685313+00:00. Actual model consulted through the dated lead review: the main model. Case of the polynomial fixture: c_l = 0.45, omega = 0.3, omega/c_l = 2/3.
 
 | Check | Method and result | Verdict |
 | --- | --- | --- |
@@ -5244,7 +5244,7 @@ The 66-check lead dry run is prior review evidence, separate from this 67-check 
 
 # V5 result addendum and erratum audit
 
-Date: 2026-10-26T11:18:15.107843+00:00. Actual reviewer model: us.anthropic.claude-opus-5-5.
+Date: 2026-10-26T11:18:15.107843+00:00. Actual reviewer model: the main model.
 
 | Check | Method and result | Verdict |
 | --- | --- | --- |
@@ -5483,17 +5483,17 @@ Producer and watch001 are complete, worker0, and the watch binds the producer re
 
 D10 long ended at the existing soft allocation cap with 429 accepted steps, no new allocation and no target-reached claim. Producer RESULTS 78b7daca742c5203f973f5d069bd9e6b9662c933186a33f2f36760ae3bee0833, watch execution001 RESULTS 46586573a9e7722f2bfb5eac74b48e82f513712d2af043d5a5f1e2a6499a11b1. Saved-data reader RESULTS a549b221973d277f1c2df8134905a7a2d7e9c05e5a0691d3f3dd20705e09c424, WATCH_RESULTS 75d34b8f25e6f77ecdf990d16a71f8e2bd9cb70bba2027157fe7cb3a40eb671e: complete, returncode0, 17996 passed / 0 failed, 108.6042s reader / 109.3447s watch, peak RSS694407168B. Independent byte audit report_reviews/20261026T132548Z_d10_terminal_reader_result/AUDIT.json checks all3053 bound inputs and completion/count/schema metadata: {'CONFIRMED': 3060, 'REFUTED': 0}.
 
-Actual us.anthropic.claude-opus-5-5 result review requested under AU, including whether the released fresh battery may now be separately authorized. Only three saved Cartesian reductions are independently reduced: initial fine, terminal coarse and terminal fine. Histories, Armijo values and gradients are producer consistency evidence, not freshly evaluated trajectories; no pressure, gradient, field or cache rebuild occurs. Terminal values remain unavailable for scientific report use until that review. Provisional C; no candidate or Tier S. CPU57 is free and GJ saved-scalar audit is next, before GO control.
+Actual the main model result review requested under AU, including whether the released fresh battery may now be separately authorized. Only three saved Cartesian reductions are independently reduced: initial fine, terminal coarse and terminal fine. Histories, Armijo values and gradients are producer consistency evidence, not freshly evaluated trajectories; no pressure, gradient, field or cache rebuild occurs. Terminal values remain unavailable for scientific report use until that review. Provisional C; no candidate or Tier S. CPU57 is free and GJ saved-scalar audit is next, before GO control.
 
 ## 2026-10-26T13:26:17.551483+00:00: GJ ten-state saved-scalar audit complete
 
-report_reviews/20261026_s9d_ten_state_audit/REPORT.md and AUDIT.json f81a3d6f1b672563621b382b11850300726640a7753c6026e386d68e787e6bfa: 764 CONFIRMED, 0 REFUTED, 6 OPEN, 1.75s CPU57. All requested scalars agree for all ten saved states with both tables, arm rows, job records and the frozen ledger. The six OPEN checks are omitted historical rms_mom displays only (Z0/kappa0.1/kappa1 in both chains); their underlying saved rms_mom rows all agree. Full state shas and per-row verdicts retained. No field reevaluation or primary code import. Actual us.anthropic.claude-opus-5-5 review requested. D10 reader handoff already posted; CPU57 now free for released GO control. Provisional C.
+report_reviews/20261026_s9d_ten_state_audit/REPORT.md and AUDIT.json f81a3d6f1b672563621b382b11850300726640a7753c6026e386d68e787e6bfa: 764 CONFIRMED, 0 REFUTED, 6 OPEN, 1.75s CPU57. All requested scalars agree for all ten saved states with both tables, arm rows, job records and the frozen ledger. The six OPEN checks are omitted historical rms_mom displays only (Z0/kappa0.1/kappa1 in both chains); their underlying saved rms_mom rows all agree. Full state shas and per-row verdicts retained. No field reevaluation or primary code import. Actual the main model review requested. D10 reader handoff already posted; CPU57 now free for released GO control. Provisional C.
 
 ## 2026-10-26T13:27:17.978041+00:00: GO third-derivative control completed, actual result review requested
 
 verification_stage3/compiled_precision_third_v1 CONTROL_RESULTS 142abdd729f34409bcbb8e0ae5e3d0f88c81977cced4c687dafb87d701b6dbed and WATCH_RESULTS 91b8db487d0ee5f2330bd0cf4cdebdf25ee5648cf88b129afec946466763b8d3:1375 passed/0 failed,18.5630s control,19.1054s watch; compile7.6475s. RELEASEed6e9b17e689df4fd69b1b3ff4f03b0906cb93321a229ab8acf8cfaf0481a91e, binary77f6ee63324352f3b959b0229767afa729148c8a6d94227f86abc0eaaa0133b2. All registered inputs/outputs and binary binding audited in report_reviews/20261026T132717Z_GO_control_result/AUDIT.json: {'CONFIRMED': 147, 'REFUTED': 0}. Lead dry-run comparison: {'available': True, 'result_sha256': '4736621eee4e5e5cabcdff18bd5eba47d9256826d9d939bd74637817fbae81cd', 'differing_raw_records': ['d100_AD1.out', 'd100_AD2.out', 'd100_AD3.out', 'd100_field0_leading.out', 'd100_field0_regular.out', 'd100_field1_leading.out', 'd100_field1_regular.out', 'd100_field2_leading.out', 'd100_field2_regular.out', 'd100_field3_leading.out', 'd100_field3_regular.out', 'd100_new_regression1.out', 'd100_new_regression2.out', 'd100_old_regression1.out', 'd100_old_regression2.out', 'd100_polynomial0.out', 'd100_polynomial1.out', 'd100_polynomial2.out', 'd50_AD1.out', 'd50_AD2.out', 'd50_AD3.out', 'd50_field0_leading.out', 'd50_field0_regular.out', 'd50_field1_leading.out', 'd50_field1_regular.out', 'd50_field2_leading.out', 'd50_field2_regular.out', 'd50_field3_leading.out', 'd50_field3_regular.out', 'd50_new_regression1.out', 'd50_new_regression2.out', 'd50_old_regression1.out', 'd50_old_regression2.out', 'd50_polynomial0.out', 'd50_polynomial1.out', 'd50_polynomial2.out']}.
 
-Please perform actual us.anthropic.claude-opus-5-5 result review before use. Scope is manufactured third derivatives, stable order-two potential, leading zero and lower-order regression only. No saved state, pressure/source-extent accuracy, final seed or candidate claim. CPU57 free. No retry or second compilation. Provisional C.
+Please perform actual the main model result review before use. Scope is manufactured third derivatives, stable order-two potential, leading zero and lower-order regression only. No saved state, pressure/source-extent accuracy, final seed or candidate claim. CPU57 free. No retry or second compilation. Provisional C.
 
 ## 2026-10-26T13:30:31.727628+00:00: GQ streaming-reader control launched once
 
@@ -5505,7 +5505,7 @@ One attempt completed: verification_stage3/maximum_search_stream_reader_v1/CONTR
 
 ## 2026-10-26T13:40:23.091227+00:00: GR accepted; D10 terminal battery v2 launched once
 
-Actual model: us.anthropic.claude-opus-5-5. Lead GR FINDINGS a6a9e17d6ea8d0f75ea42d2dce08038bdfd6eb9cb3144b79977ef9c7d9797380 copied unchanged at report_reviews/20261026T133902Z_d128_GR/ACTUAL_OPUS_REVIEW.md. Own audit304 CONFIRMED,0 REFUTED. All source pins, runtime, proof and code hashes checked; terminal coefficient bytes4bb97660d0467e271283870028c8e6443848a0e200fe2d467fac6c1291029708. Producer7516/0 and saved-data reader17996/0 accepted in the exact GR scope. c_l=0.45, omega=0.3, omega/c_l=2/3; degree10radial5,2130coefficients,terminal step429.
+Actual model: the main model. Lead GR FINDINGS a6a9e17d6ea8d0f75ea42d2dce08038bdfd6eb9cb3144b79977ef9c7d9797380 copied unchanged at report_reviews/20261026T133902Z_d128_GR/ACTUAL_OPUS_REVIEW.md. Own audit304 CONFIRMED,0 REFUTED. All source pins, runtime, proof and code hashes checked; terminal coefficient bytes4bb97660d0467e271283870028c8e6443848a0e200fe2d467fac6c1291029708. Producer7516/0 and saved-data reader17996/0 accepted in the exact GR scope. c_l=0.45, omega=0.3, omega/c_l=2/3; degree10radial5,2130coefficients,terminal step429.
 
 The reader recomputed the objective and shell ratios only from the three saved field archives; trajectory objectives and gradients are replayed producer values. Target-family rho_u max0.06183831750823032 and rho_nl max0.07153000157050896 are not holdout values or a ranking. Finite descent stopped at soft_wall_cap,target_reachedfalse. No candidate, Tier S, A/B/D or obstruction.
 
@@ -5519,7 +5519,7 @@ Method and exact initial/terminal target-family values are in report_reviews/202
 
 ## 2026-10-26T13:47:31.087980+00:00: GS and GT accepted in scope; Gate II.4 draft terminology correction
 
-Actual collaborator us.anthropic.claude-opus-5-5. Reviews copied and pinned in report_reviews/20261026T134800Z_GS_GT_and_gate_draft: GS46305e5a, GO result febd1c0a, GQ result d4225650. GS accepts the ten-state saved-scalar audit764 CONFIRMED,0 REFUTED,6 OPEN. The six historical display omissions remain OPEN. GO1375/0 and GQ5843/0 accepted as manufactured development controls only; own saved-result audits147/0 and90/0 already retained. No new execution released. Parent result prerequisites are now met for reviewing stream v1.1. Scalar source-extent control and v21 ledger remain unexecuted pending actual review. D10 battery reader600s remains held.
+Actual collaborator the main model. Reviews copied and pinned in report_reviews/20261026T134800Z_GS_GT_and_gate_draft: GS46305e5a, GO result febd1c0a, GQ result d4225650. GS accepts the ten-state saved-scalar audit764 CONFIRMED,0 REFUTED,6 OPEN. The six historical display omissions remain OPEN. GO1375/0 and GQ5843/0 accepted as manufactured development controls only; own saved-result audits147/0 and90/0 already retained. No new execution released. Parent result prerequisites are now met for reviewing stream v1.1. Scalar source-extent control and v21 ledger remain unexecuted pending actual review. D10 battery reader600s remains held.
 
 REFUTED, frozen gate draft section4(e): 'pointwise holdout rho_u^max and rho_nl^max'. SPEC7.2 defines rho as shell RMS ratios; pointwise maxima use pi_u/pi_nl. Please replace 'pointwise holdout' by 'shellwise holdout' and explain that pointwise concentration tests are separate. The small-ball counterexample does not turn an RMS numerator into a maximum. OPEN wording: 'recomputation from saved archives is exact' should say agrees to reported digits, retaining saved-data scope. The draft randomized-continuation placeholder still needs an actual randomized arm or an explicit not-performed entry at assembly.
 
@@ -5531,7 +5531,7 @@ Full PROMPT reread at shift start; Stage II through2026-10-27T17:09:12Z, protect
 
 CONFIRMED: NUM_REPORT now says aboutten times Z0 deviation and prints9.96/9.76/9.96. This closes the current GC wording issue; the original incorrect claim remains in the historical audit. FINAL_REPORT still matches64668c15, its prior audited bytes. REFUTED remains for gate draft section4(e) calling shell RMS rho pointwise. Exact-arithmetic wording and randomized-continuation placeholder remain OPEN. No new numerical result is accepted.
 
-Actual collaborator remains us.anthropic.claude-opus-5-5 through the lead's dated reviews. Streamv1.1, scalar extent control, source-extent plan, ledgerV21 and D10scalarreader remain pending. No new release. Only the independent route writes; noJavaScript/TypeScript, servers/listeners, RLScience/cluster, paid/remotecompute, Lean/lake, commits/push/posts.
+Actual collaborator remains the main model through the lead's dated reviews. Streamv1.1, scalar extent control, source-extent plan, ledgerV21 and D10scalarreader remain pending. No new release. Only the independent route writes; noJavaScript/TypeScript, servers/listeners, RLScience/cluster, paid/remotecompute, Lean/lake, commits/push/posts.
 
 ### 2026-10-26T13:53:59.741099+00:00: primary L10 omega0.3 import
 
@@ -5637,7 +5637,7 @@ Method: standalone informal proof followed by local source preparation, byte bin
 
 ## 2026-10-26T14:49:31.595739+00:00: HC actual result accepted; D10 terminal battery ended early
 
-Actual model us.anthropic.claude-opus-5-5, HC result review e52d5920d2e889bfa7aaa86c6410015c42ec1aa9495e530fc7194e85c69e33ad read in full and retained at report_reviews/20261026T144931Z_HC_acceptance_and_battery_terminal/ACTUAL_OPUS_HC.md. Reader d0af226f131fd18972c7b9f693109bbe1f7c09a8672a9f093b3fb95c405e1434, watch a390a537c247e1af7ec76d7387c2adb5d15d53d6c8bd63b4d89467eada2e0bb4, 522 passed, 0 failed are accepted for saved-data consistency and conditional pair arithmetic at c_l = 0.45, omega = 0.3, omega/c_l = 2/3. Same-quadrature and fresh-field/core-resolution checks remain OPEN. Method: actual review, prior leaf comparison and byte binding. Verdict CONFIRMED within that scope. The omega = 1 sibling may now be registered, with no inherited HA ordering exception.
+Actual model the main model, HC result review e52d5920d2e889bfa7aaa86c6410015c42ec1aa9495e530fc7194e85c69e33ad read in full and retained at report_reviews/20261026T144931Z_HC_acceptance_and_battery_terminal/ACTUAL_OPUS_HC.md. Reader d0af226f131fd18972c7b9f693109bbe1f7c09a8672a9f093b3fb95c405e1434, watch a390a537c247e1af7ec76d7387c2adb5d15d53d6c8bd63b4d89467eada2e0bb4, 522 passed, 0 failed are accepted for saved-data consistency and conditional pair arithmetic at c_l = 0.45, omega = 0.3, omega/c_l = 2/3. Same-quadrature and fresh-field/core-resolution checks remain OPEN. Method: actual review, prior leaf comparison and byte binding. Verdict CONFIRMED within that scope. The omega = 1 sibling may now be registered, with no inherited HA ordering exception.
 
 D10 battery v2 ended early at 14:49:01Z, worker 4149.389 s, watch 4154.652 s. RESULTS c447659d066a400e1fa8ad866c280861c32700ea9237688250ca1093e55b789c, WATCH f8ed1241f4eed7dc6171d4b63fb82ba882f46939f78bad9eea5cecb03a3266e2: complete, 2667 passed, 1 failed, worker return code 0. Method: saved JSON/header binding and failed-row count only. Verdict CONFIRMED on completion, OPEN on independent readings, scientific claims and result review. The failure is retained in BATTERY_TERMINAL_SAVED_HEADER.json. The registered battery scalar reader now has priority; actual review and release remain absent. Request report_reviews/20261026T134140Z_D10_reader_request/REQUEST.md. No retry or new battery allocation.
 
@@ -5715,7 +5715,7 @@ Method: one authorized watch and exact saved-JSON comparison. Result: 741 passed
 
 ## 2026-10-26T15:29:18.686023+00:00: HG D10 battery result accepted and independently audited
 
-Method: actual Opus review, six archive hashes, static contraction inspection and independent saved-scalar Decimal recomposition. Verdict CONFIRMED in finite-quadrature and saved-field consistency scope. Evidence report_reviews/20261026T152918Z_HG_battery_result_receipt/REVIEW.md. The unit-ball shell recomposition gives RMS(R_u) 0.3943614409, radial change 0.0005044989. O1 is closed by the lead saved-array recomputation, independently inspected and bound here. All one battery and 58 reader failures remain. Full core resolution, independent pressure accuracy and full-space domain coverage remain OPEN. Fresh D10 rho_u 0.06192260116030778 / 0.06898282106733258 and rho_nl 0.07164956709689789 / 0.09142191219520301 meet no tier. c_l = 0.45, omega = 0.3, omega/c_l = 2/3. Gate draft e0b69f6ef010982d63da99d0c65250428fac2c396452355c5daadd53e168aedd audited; FINAL unchanged. Actual model us.anthropic.claude-opus-5-5.
+Method: actual Opus review, six archive hashes, static contraction inspection and independent saved-scalar Decimal recomposition. Verdict CONFIRMED in finite-quadrature and saved-field consistency scope. Evidence report_reviews/20261026T152918Z_HG_battery_result_receipt/REVIEW.md. The unit-ball shell recomposition gives RMS(R_u) 0.3943614409, radial change 0.0005044989. O1 is closed by the lead saved-array recomputation, independently inspected and bound here. All one battery and 58 reader failures remain. Full core resolution, independent pressure accuracy and full-space domain coverage remain OPEN. Fresh D10 rho_u 0.06192260116030778 / 0.06898282106733258 and rho_nl 0.07164956709689789 / 0.09142191219520301 meet no tier. c_l = 0.45, omega = 0.3, omega/c_l = 2/3. Gate draft e0b69f6ef010982d63da99d0c65250428fac2c396452355c5daadd53e168aedd audited; FINAL unchanged. Actual model the main model.
 
 
 ## 2026-10-26T15:31:55.344263+00:00: HG reading guide brought current
@@ -5834,14 +5834,14 @@ HN E4's 1.10 ratio and less-than-1-percent changes are saved separately as arith
 
 If released, this is one CPU55/GPU7 attempt with one thread and nice19, behind ready II.4 readers. The frozen watch and worker are the only launch path. No downstream item waits for this package. No discovery solve or protected Stage III allocation.
 
-Only the independent route is writable. No JavaScript/TypeScript, servers/listeners, RLScience or other cluster, paid/remote compute, Lean/lake, commits/pushes or online posts. Actual collaborator must be us.anthropic.claude-opus-5-5.
+Only the independent route is writable. No JavaScript/TypeScript, servers/listeners, RLScience or other cluster, paid/remote compute, Lean/lake, commits/pushes or online posts. Actual collaborator must be the main model.
 
 Receipt: report_reviews/20261026T161824Z_common_enstrophy_registration. Lane 20925091744 bytes, shared free 36388462592 bytes.
 
 
 ## 2026-10-26T16:21:35.051641+00:00: HO received, ledger v21 executed once, R1 erratum posted
 
-Date 2026-10-26T16:21:35.051249+00:00. Actual collaborator: us.anthropic.claude-opus-5-5. Method: read the three actual HO reviews fully, verify 21 SHA bindings, check the algebra independently, and run the approved v21 administrative updater exactly once. The updater imports no scientific code.
+Date 2026-10-26T16:21:35.051249+00:00. Actual collaborator: the main model. Method: read the three actual HO reviews fully, verify 21 SHA bindings, check the algebra independently, and run the approved v21 administrative updater exactly once. The updater imports no scientific code.
 
 | Check | Result | Verdict |
 | --- | --- | --- |
@@ -5862,7 +5862,7 @@ Evidence: report_reviews/20261026T162134Z_HO_receipt_ledger_erratum. Please revi
 
 # Common enstrophy saved-array reader registration
 
-Date 2026-10-26T16:25:14.421233+00:00. Actual us.anthropic.claude-opus-5-5 review requested under AU. Package independent/experiments/common_enstrophy_omega1_reader_v1. REG 4e43294d6261f3d1711e35887b63f5e4ca9d25a9a0e1381c1c557a6372ff69fc, CODE b4bd7ac517d1c6f4fe27ecee7b82c144c59bcf4eb59533cd4a5d0ec0f95a0ac5, FREEZE 5b8f799cbfc0113bba6021f09064fbc1a68e509072d7583294a70cdc450bfd54. All20static byte bindings match. FourPythonmodules AST parsed only, no import or execution. Producer remains separately unexecuted and pending actual release.
+Date 2026-10-26T16:25:14.421233+00:00. Actual the main model review requested under AU. Package independent/experiments/common_enstrophy_omega1_reader_v1. REG 4e43294d6261f3d1711e35887b63f5e4ca9d25a9a0e1381c1c557a6372ff69fc, CODE b4bd7ac517d1c6f4fe27ecee7b82c144c59bcf4eb59533cd4a5d0ec0f95a0ac5, FREEZE 5b8f799cbfc0113bba6021f09064fbc1a68e509072d7583294a70cdc450bfd54. All20static byte bindings match. FourPythonmodules AST parsed only, no import or execution. Producer remains separately unexecuted and pending actual release.
 
 Expected 5425 required checks in24categories, all listed inREG. Reader makes no field call and imports no producer numerical module. It independently reconstructs literal common points/weights, checks the saved Gauss-Legendre moments, reduces the276sets using math.fsum, reproduces72angular control integrals, reconstructs global finite-domain sigma_Om, E4 and primary comparisons, and keeps all producer failures. It reads518NPZartifacts and276regionalJSONs. Critical prerequisite: producer1772checks/32diagnostics and496passedcontrols; incomplete producer is not readable as a complete pair.
 
@@ -5870,7 +5870,7 @@ The code is frozen before any outcome. After producer completion, its794array/re
 
 CPU57, no GPU,540/600s,AS3GiB,RSS2GiB,output64MiB,1thread,nice19; three locks and fresh priority hand check. Completion beforeOct2712. No source/pressure/core/maximum/ordering/candidate claim. Parameters c_l=.45, omega=1, nominal omega/c_l=20/9.
 
-Own lane writes only; no JavaScript/TypeScript, servers/listeners, RLScience or other cluster, paid/remote compute, Lean/lake, commits/pushes/posts or contacts with people; actual collaborator us.anthropic.claude-opus-5-5.
+Own lane writes only; no JavaScript/TypeScript, servers/listeners, RLScience or other cluster, paid/remote compute, Lean/lake, commits/pushes/posts or contacts with people; actual collaborator the main model.
 
 Verdict OPEN pending actual code and later input-binding reviews.
 
@@ -5881,7 +5881,7 @@ Verdict OPEN pending actual code and later input-binding reviews.
 
 Date 2026-10-26T16:28:33.155734+00:00. Method: read the complete hashed plan and protocol, PROMPT III and section8, SPEC6/7.3b/v1.21, and the accepted omega1 saved-reader summary. Recompute only saved scalar ratios and the explicitly hypothetical constant-rate extrapolation. No field evaluation, numerical package execution, new acceptance criterion or protected-stage allocation.
 
-Actual collaborating model in the lead lane is us.anthropic.claude-opus-5-5. The request is HP16:21:57Z. Plan SHA 8ca4e2a8fe1224633bfb6af19dbdd4e2297e4b469632c2ed9a90479afe3e6c3c; protocol SHA f82f8eb7a18e48e8fa49d61d7efab94e1f039e4897eda011feddb749d6639078. Copies and all six bindings are retained here. This audit is earlier than the requested Oct2706 deadline and follows completion of the currently released II.4 readers.
+Actual collaborating model in the lead lane is the main model. The request is HP16:21:57Z. Plan SHA 8ca4e2a8fe1224633bfb6af19dbdd4e2297e4b469632c2ed9a90479afe3e6c3c; protocol SHA f82f8eb7a18e48e8fa49d61d7efab94e1f039e4897eda011feddb749d6639078. Copies and all six bindings are retained here. This audit is earlier than the requested Oct2706 deadline and follows completion of the currently released II.4 readers.
 
 | Check | Method and result | Verdict |
 | --- | --- | --- |
@@ -5930,7 +5930,7 @@ Evidence: report_reviews/20261026T163422Z_HQ_report_and_R1_audit/REVIEW.md, SHA 
 | HQ11: Primary-reported diagnostics remain attributed | The frozen NUM_REPORT degree-10 entries report 300 iterations, max_iter, V10 0.0084 / 0.0052, E_ren -1.719 / -1.570, helicity ratio -0.876 / -0.699, mismatch 0.0406 / 0.0563 and channel last coefficients 0.13 to 0.59. The report marks these primary-reported. The rounded E_ren and helicity changes are within 1.3 per cent of the reported parent values. This confirms attribution, not independent numerical validation. | CONFIRMED | 2026-10-26T16:34:22.262410+00:00 |
 | HQ12: Representation and Stage II chronology | Frozen input metadata and the timing constructor have LB23, LD22, LE10 and leading degree10; the phrase channels to degree23 at degree10 is supported. Both saved summaries record 300 iterations and max_iter. The new text removes the running-degree10 claim without treating the earlier smoke run as a reading. | CONFIRMED | 2026-10-26T16:34:22.262410+00:00 |
 | HQ13: Label and untested continuations | The new values remain above 1e-2 on both families. The text retains provisional C, describes planned Stage III jobs as replication and leaves more functions, more budget and another optimizer untested. It makes no rigorous obstruction or exact-profile claim. | CONFIRMED | 2026-10-26T16:34:22.262410+00:00 |
-| HQ14: Erratum R1 actual review | Read the complete actual us.anthropic.claude-opus-5-5 review 36198fdacfbad5e57c87917329c2e80588b458002ff6bcacf379152fab377f25 and rechecked the two square expansions. The source degree2D+2 and gradient degree2D+3 remain valid, as do the existing D10 L24 / 26 by52 registrations. Frobenius square cannot substitute for tr((DU)^2). The frozen parent side remark remains REFUTED, with this accepted erratum alongside it. | CONFIRMED | 2026-10-26T16:34:22.262410+00:00 |
+| HQ14: Erratum R1 actual review | Read the complete actual the main model review 36198fdacfbad5e57c87917329c2e80588b458002ff6bcacf379152fab377f25 and rechecked the two square expansions. The source degree2D+2 and gradient degree2D+3 remain valid, as do the existing D10 L24 / 26 by52 registrations. Frobenius square cannot substitute for tr((DU)^2). The frozen parent side remark remains REFUTED, with this accepted erratum alongside it. | CONFIRMED | 2026-10-26T16:34:22.262410+00:00 |
 | HQ15: Report updates beyond this degree-10 batch | The old independent D10 bounded-continuation paragraph and other running-arm entries remain stale relative to subsequent accepted results. This batch audit does not clear them. The complete Stage III final-report audit must refresh them and all new candidate or ordering claims. | OPEN | 2026-10-26T16:34:22.262410+00:00 |
 
 ## 2026-10-26T16:39:55.495399+00:00: pressure batching proof and cost registration
@@ -6034,7 +6034,7 @@ Method: exact substitution along n perpendicular to a. Result: r^alpha |U| tends
 
 # HT receipt and independent audit
 
-Date 2026-10-26T17:19:42.233288+00:00. Actual model us.anthropic.claude-opus-5-5, identified in the lead's full review. Methods: exact file copies and SHA checks, saved JSON scalar arithmetic, hand comparison of proofs, and full diff cef349c7 to e86ff8ae. No numerical modules imported or executed.
+Date 2026-10-26T17:19:42.233288+00:00. Actual model the main model, identified in the lead's full review. Methods: exact file copies and SHA checks, saved JSON scalar arithmetic, hand comparison of proofs, and full diff cef349c7 to e86ff8ae. No numerical modules imported or executed.
 
 | Check | Result | Verdict |
 |---|---|---|
@@ -6070,7 +6070,7 @@ report_reviews/20261026T173102Z_R0_failure_safeguard_receipt/REVIEW.md SHA f39bd
 | Package confinement and byte freeze | SHA256 and static AST only | Four modules and95 bindings match;207 prospective checks. No execution or actual approval. | CONFIRMED | 2026-10-26T17:38:54.369577+00:00 |
 | Primary geometry and core refinement | Frozen adapter-cost scope inspection | No radial maximum or local search is run. No r_core, a_eff, y_* or L2/L3 result follows. Full evaluation remains pending. | OPEN | 2026-10-26T17:38:54.369577+00:00 |
 
-Request and static evidence: report_reviews/20261026T173854Z_primary_geometry_adapter_cost_v1. Parameters c_l=0.45,omega=1,omega/c_l=20/9. Actual us.anthropic.claude-opus-5-5 review and a separate one-attempt release are required before execution; actual result review is required before use.
+Request and static evidence: report_reviews/20261026T173854Z_primary_geometry_adapter_cost_v1. Parameters c_l=0.45,omega=1,omega/c_l=20/9. Actual the main model review and a separate one-attempt release are required before execution; actual result review is required before use.
 
 | 2026-10-26T17:41:46.267831+00:00 | HV pressurepilot v2 release and proofs | Static91bindings/freeze/environment/resource audit and actual Opus HV review; report_reviews/20261026T174144Z_HV_pressure_release/REVIEW.md | CONFIRMED release conditions and stated mathematical proofs; numerical result and pressure capacity OPEN. Actual ratio-review timestamp inconsistency OPEN. |
 
@@ -6084,7 +6084,7 @@ Method: static AST, exact byte bindings, comparison of adapter diffs with this l
 
 # HW report batch 5 audit
 
-Date 2026-10-26T17:53:11.314858+00:00. Snapshot FINAL_REPORT.md 1f18397bf4946b80cf1bf40efbee9559587e4cd876d82dbc79f75c1bddc4985f, parent b5058019c58d3f8094e0e03f0466c908a203a9510fbc73fa63eca5d0c7702c89. Actual collaborator is the lead lane's us.anthropic.claude-opus-5-5. This receipt requests its follow-up on two remaining corrections. No field, pressure, solver or numerical control was executed.
+Date 2026-10-26T17:53:11.314858+00:00. Snapshot FINAL_REPORT.md 1f18397bf4946b80cf1bf40efbee9559587e4cd876d82dbc79f75c1bddc4985f, parent b5058019c58d3f8094e0e03f0466c908a203a9510fbc73fa63eca5d0c7702c89. Actual collaborator is the lead lane's the main model. This receipt requests its follow-up on two remaining corrections. No field, pressure, solver or numerical control was executed.
 
 The nine changed hunks are reproduced byte for byte by diff of the frozen snapshots. All new arithmetic below uses saved finite JSON scalars or the explicitly rounded values in the report. The historical pilot lookup checks state identities and retained byte hashes. It does not repeat a numerical evaluation.
 
@@ -6122,7 +6122,7 @@ Please confirm the recovered pilot lineage and scope before installing the new v
 
 # HX R0 start scope and R1 smoke provenance
 
-Date 2026-10-26T17:58:08.850442+00:00. Static source and saved scalar audit only. No numerics implementation was imported or executed. Sources and unchanged snapshots are in BINDINGS.json. Actual collaborator is us.anthropic.claude-opus-5-5 through the lead lane; follow-up review is requested before new conclusions are used. c_l=0.45; R0 St-A uses omega=1 and omega/c_l=20/9, St-B uses omega=0.3 and omega/c_l=2/3. The R1 smoke is cont150 with omega=1 and omega/c_l=20/9.
+Date 2026-10-26T17:58:08.850442+00:00. Static source and saved scalar audit only. No numerics implementation was imported or executed. Sources and unchanged snapshots are in BINDINGS.json. Actual collaborator is the main model through the lead lane; follow-up review is requested before new conclusions are used. c_l=0.45; R0 St-A uses omega=1 and omega/c_l=20/9, St-B uses omega=0.3 and omega/c_l=2/3. The R1 smoke is cont150 with omega=1 and omega/c_l=20/9.
 
 | Check | Method and result | Verdict |
 |---|---|---|
@@ -6154,7 +6154,7 @@ Method: Python search-path ordering and complete source inspection. Result: impo
 
 # HY pressure result and correction receipt
 
-Date: 2026-10-26T18:09:49.578812+00:00. Actual collaborator: us.anthropic.claude-opus-5-5, as identified in the lead's dated review. State nest10, c_l = 0.45, omega = 1, nominal omega/c_l = 20/9. Method: complete source inspection, SHA256 byte binding, and saved JSON scalar arithmetic. The lead's numerical recheck is independently authored and was run on its own permitted CPU. It was not run here. Ten sources are snapshotted and bound.
+Date: 2026-10-26T18:09:49.578812+00:00. Actual collaborator: the main model, as identified in the lead's dated review. State nest10, c_l = 0.45, omega = 1, nominal omega/c_l = 20/9. Method: complete source inspection, SHA256 byte binding, and saved JSON scalar arithmetic. The lead's numerical recheck is independently authored and was run on its own permitted CPU. It was not run here. Ten sources are snapshotted and bound.
 
 | Check | Method and result | Verdict |
 | --- | --- | --- |
@@ -6178,7 +6178,7 @@ Evidence: report_reviews/20261026T180949Z_HY_pressure_and_corrections_receipt/RE
 
 # HZ report batch 6 audit
 
-Date: 2026-10-26T18:10:28.573064+00:00. Actual lead collaborator us.anthropic.claude-opus-5-5. Method: independent normal-diff data reconstruction, current SHA256 bindings and comparison with the already accepted HW evidence. No mathematical worker, external builder, array evaluation or solver was executed.
+Date: 2026-10-26T18:10:28.573064+00:00. Actual lead collaborator the main model. Method: independent normal-diff data reconstruction, current SHA256 bindings and comparison with the already accepted HW evidence. No mathematical worker, external builder, array evaluation or solver was executed.
 
 FINAL_REPORT 9a802310f23fcc666aea616de0d0fb7a4e5628c662439a771cdacae5d6b69c0b equals parent 1f18397bf4946b80cf1bf40efbee9559587e4cd876d82dbc79f75c1bddc4985f with precisely the four hunks in diff 485141716af37f991e972b3a91e35b2724a03a7fff7fe9c60e95382c92fa2f7e. Nine source snapshots are retained. MATHEMATICAL_FORMULATION remains a2a8d43d.
 
@@ -6197,7 +6197,7 @@ Evidence: report_reviews/20261026T181028Z_HZ_report_batch6_audit/REVIEW.md, SHA2
 
 # IA errata and R0 budget audit
 
-Date 2026-10-26T18:19:05.701995+00:00. Actual collaborator: us.anthropic.claude-opus-5-5 in the lead lane. Pressure state has c_l = 0.45, omega = 1, omega/c_l = 20/9 nominally. R0 variants have c_l = 0.45 and omega = 1 or 0.3, with omega/c_l = 20/9 or 2/3 nominally. No new numerical field evaluation here. This audit does not release a worker.
+Date 2026-10-26T18:19:05.701995+00:00. Actual collaborator: the main model in the lead lane. Pressure state has c_l = 0.45, omega = 1, omega/c_l = 20/9 nominally. R0 variants have c_l = 0.45 and omega = 1 or 0.3, with omega/c_l = 20/9 or 2/3 nominally. No new numerical field evaluation here. This audit does not release a worker.
 
 | Check | Method and result | Verdict |
 | --- | --- | --- |
@@ -6222,7 +6222,7 @@ Method: independently checked the 2-by-2 linear counterexample in actual IB and 
 
 ## 2026-10-26T18:24:42.851415+00:00: primary degree-8 omega = 0.3 closure saved-scalar audit
 
-Date 2026-10-26T18:24:42.851415+00:00. State nest8_L8_cl0.45_om+0.3_fixed_cl1, c_l = 0.45, omega = 0.3, nominal omega/c_l = 2/3. Fourteen byte snapshots are bound in BINDINGS.json. This audit reads JSON, log text, configuration and SPEC, and recomputes saved scalar arithmetic. It does not deserialize the PT state or evaluate fields, pressure, derivatives, quadratures or a solver. Actual collaborator is the lead lane's us.anthropic.claude-opus-5-5. Follow-up on this receipt is pending.
+Date 2026-10-26T18:24:42.851415+00:00. State nest8_L8_cl0.45_om+0.3_fixed_cl1, c_l = 0.45, omega = 0.3, nominal omega/c_l = 2/3. Fourteen byte snapshots are bound in BINDINGS.json. This audit reads JSON, log text, configuration and SPEC, and recomputes saved scalar arithmetic. It does not deserialize the PT state or evaluate fields, pressure, derivatives, quadratures or a solver. Actual collaborator is the lead lane's the main model. Follow-up on this receipt is pending.
 
 The two primary holdout values are 0.037394409028872866 and 0.039402987795257506. They exceed the Tier S shell threshold by 3.7394409028872866 and 3.9402987795257506. Both are lower than all four named comparators, but the new state's core-set a_max is 1.4351468231974367. Its a_max ratios are 1.20643234393836 against its S11 degree-6 closure start, 1.3923071738811152 against degree-8 p0, 1.3695802514929418 against degree-8 p0 cont150, and 1.2810054977671745 against degree-10 p0. Every ratio exceeds the 1.10 guard. Thus the scalar inequalities do not order this state ahead of any named comparator. Its sigma_u core and sigma_Omega ratios remain below 1.10 in these four comparisons; this differs from the omega = 1 sibling, whose core sigma_u also fails. No candidate or label change follows.
 
@@ -6368,7 +6368,7 @@ Receipt report_reviews/20261026T191433Z_pivot_smoke_saved_bytes_and_R3_config/RE
 
 # IP and IQ actual review receipt and reader launch
 
-Date 2026-10-26T19:18:38.430057+00:00. Actual collaborator us.anthropic.claude-opus-5-5, byte-identical reviews copied here. c_l = 0.45, omega = 1, nominal omega/c_l = 20/9.
+Date 2026-10-26T19:18:38.430057+00:00. Actual collaborator the main model, byte-identical reviews copied here. c_l = 0.45, omega = 1, nominal omega/c_l = 20/9.
 
 CONFIRMED: IP ab56ce52 confirms the cap-watcher refutation and accepts the endpoint-continuity counterexample b6930a9e. W1-W10 and S3-25(e) are binding prospective revision conditions. The original watcher e4e3a5aa does not establish caps or occupied time. No new watcher was run here. The unconditional linearity-only Green claim remains refuted; the endpoint-continuous form is confirmed.
 
@@ -6387,7 +6387,7 @@ Receipt report_reviews/20261026T191835Z_IP_IQ_receipt_and_common_reader_release/
 
 # Cap watcher v2: independent static review
 
-Date 2026-10-26T19:19:27.338533+00:00. Source SHA 0a550cad9b31fb7b691fde04f55f059e7bfb4145159710403e54890137d69448. Actual prior collaborator us.anthropic.claude-opus-5-5 review IP ab56ce52 supplies W1-W10; actual follow-up requested. Campaign context c_l = 0.45, omega = 1, nominal omega/c_l = 20/9. Source, smoke driver and any already present records are copied byte-identically here; Python AST parses. No watcher, fake process, GPU query or numerical code was executed by this audit.
+Date 2026-10-26T19:19:27.338533+00:00. Source SHA 0a550cad9b31fb7b691fde04f55f059e7bfb4145159710403e54890137d69448. Actual prior collaborator the main model review IP ab56ce52 supplies W1-W10; actual follow-up requested. Campaign context c_l = 0.45, omega = 1, nominal omega/c_l = 20/9. Source, smoke driver and any already present records are copied byte-identically here; Python AST parses. No watcher, fake process, GPU query or numerical code was executed by this audit.
 
 V2-1 CONFIRMED improvement: source now records pid/start ticks/argv, compares all three before both signals, derives process start from btime and ticks, checks max_retries, catches ProcessLookupError, and continues after queue/running disappears. The old watcher remains rejected. These improvements do not establish the remaining cap requirements.
 
@@ -6412,7 +6412,7 @@ Receipt report_reviews/20261026T191927Z_cap_watcher_v2_static_audit/REVIEW.md SH
 
 # Common enstrophy reader v3 completion receipt and actual result request
 
-Date 2026-10-26T19:20:11.434294+00:00. One IQ-released attempt at c_l = 0.45, omega = 1, nominal omega/c_l = 20/9. Actual collaborator us.anthropic.claude-opus-5-5 via lead lane files. This receipt independently checks bytes, JSON structure, counts and saved scalar fields only. No numerical module was imported or run beyond the already released reader.
+Date 2026-10-26T19:20:11.434294+00:00. One IQ-released attempt at c_l = 0.45, omega = 1, nominal omega/c_l = 20/9. Actual collaborator the main model via lead lane files. This receipt independently checks bytes, JSON structure, counts and saved scalar fields only. No numerical module was imported or run beyond the already released reader.
 
 CONFIRMED mechanical completion: RESULTS 7558c5f888b6c40f972cd2f7034455218084fcbc6e1acd3661278bb6b969d490, READINGS f556f4088a3501ab64a2a787b766536c0e77a5132859e7f0baae3bff16881488, WATCH_RESULTS 1578fdd81c0e1c8f3fc8d37e385752e2a868e59c39a5c02ba89a826ac133e537. Worker25.298100552seconds, watch26.749092280seconds, peakRSS51,777,536bytes. All5425 registered checks pass,0fail, in24categories. Complete276region records,48independent angular residual comparisons and all four original r11 failures are retained byte-for-byte as JSON data. No Rule R exception was needed. Watch755423 and worker755723 are absent at this receipt.
 
@@ -6431,7 +6431,7 @@ Receipt report_reviews/20261026T192009Z_common_omega1_reader_v3_result_receipt/R
 
 # Displaced-maximum proof acceptance and control requirements
 
-Date 2026-10-26T19:25:18.262961+00:00. Actual collaborator us.anthropic.claude-opus-5-5 via lead files. Campaign c_l = 0.45, omega = 1, nominal omega/c_l = 20/9. Method: line-by-line comparison of proof98cd0a0d and actual IS2add7ed4, byte bindings, and direct algebraic checking of the additional stationary-point argument. No numerical module or symbolic script was executed here.
+Date 2026-10-26T19:25:18.262961+00:00. Actual collaborator the main model via lead files. Campaign c_l = 0.45, omega = 1, nominal omega/c_l = 20/9. Method: line-by-line comparison of proof98cd0a0d and actual IS2add7ed4, byte bindings, and direct algebraic checking of the additional stationary-point argument. No numerical module or symbolic script was executed here.
 
 CONFIRMED: actual IS accepts the exact field, Jacobians, curl, divergence, displaced maximizing sets, a_eff, objective chain rule and scope. The exact vorticity maximum is uniquely at b, the velocity maximizers form a circle, and the origin seed has nonzero vorticity gradient. The field has an r^-1 velocity tail and is outside the target exponent alpha = 11/9. Translation adds DU(c_l b-omega J b) to the self-similar momentum residual. This is a manufactured reference, not a profile or translation invariance claim.
 
@@ -6450,7 +6450,7 @@ Receipt report_reviews/20261026T192518Z_IS_displaced_proof_acceptance/REVIEW.md 
 
 # Strict per-seed cap proof and source draft request
 
-Date 2026-10-26T19:26:44.116936+00:00. Actual collaborator requested: us.anthropic.claude-opus-5-5 through lead files. Context c_l = 0.45, omega = 1, nominal omega/c_l = 20/9. No execution release is requested by this draft-only receipt.
+Date 2026-10-26T19:26:44.116936+00:00. Actual collaborator requested: the main model through lead files. Context c_l = 0.45, omega = 1, nominal omega/c_l = 20/9. No execution release is requested by this draft-only receipt.
 
 CONFIRMED source preparation and syntax only: a standalone informal accounting proof was written first at theory/per_seed_bounded_search/PROOF.md, SHA d9610dc842be8f7b62d13ed446eca7e1648d2ec0dfb3827a01f8466701001f73. The independently written wrapper is verification_stage3/core_geometry_control_v2_draft/bounded_objective.py, SHA ad551e18de1a7bf2fa584c230055bc1b9d820c7d704ebe779befc77ef4c5d63d. DESIGN.md SHA eee219325063ed7f9bdd2d519925e6d2bc53ad78c08da092a595faaff8d301f6 supplies integration and proposed control coverage. The one Python file passes an AST parse. No numerical module was imported, no test ran and the parent locator was neither copied nor reused while K6 remains pending.
 
@@ -6467,7 +6467,7 @@ Receipt report_reviews/20261026T192644Z_strict_seed_cap_proof_draft_request/REVI
 
 # Common enstrophy reader result acceptance and independent saved-share audit
 
-Date 2026-10-26T19:30:36.998109+00:00. Actual collaborator us.anthropic.claude-opus-5-5 via lead files. Context c_l = 0.45, omega = 1, nominal omega/c_l = 20/9. Method: actual IT result-review receipt and independent80-digit Decimal reductions of the already accepted JSON region integrals. No numerical field module, producer, reader or lead script was imported or run here.
+Date 2026-10-26T19:30:36.998109+00:00. Actual collaborator the main model via lead files. Context c_l = 0.45, omega = 1, nominal omega/c_l = 20/9. Method: actual IT result-review receipt and independent80-digit Decimal reductions of the already accepted JSON region integrals. No numerical field module, producer, reader or lead script was imported or run here.
 
 CONFIRMED actual L7 acceptance: IT FINDINGS bed7ba5cc1e154851b9e21967590e3566f83536c82a28523e3148bb1dc9df931 accepts reader RESULTS7558c5f8 and READINGSf556f408 as a finite-domain saved-array reading. All5425 registered reader checks pass. The actual collaborator independently reduced the raw arrays for all276regions and reproduced all seven integrals and volume bitwise. Its source and output copies are bound here. This discharges the pending L7 result condition. It does not reevaluate fields, bound floating error or clear the four original r11 relative failures, the90P8withheld sets or the conditional-allowance limitations.
 
@@ -6490,7 +6490,7 @@ Receipt report_reviews/20261026T193013Z_IT_reader_acceptance_and_saved_shares/RE
 
 # Strict-cap displaced geometry control v2 freeze and actual review request
 
-Date 2026-10-26T19:35:09.181762+00:00. Actual collaborator requested: us.anthropic.claude-opus-5-5 through lead files. c_l = 0.45, omega = 1, nominal omega/c_l = 20/9 is campaign context only.
+Date 2026-10-26T19:35:09.181762+00:00. Actual collaborator requested: the main model through lead files. c_l = 0.45, omega = 1, nominal omega/c_l = 20/9 is campaign context only.
 
 CONFIRMED static preparation and integrity: verification_stage3/core_geometry_control_v2 is frozen and unexecuted. REGISTRATION 8cc081b15a9ad899d81308d9e9dc1c558dd34bb22c479412364b13f807149690; CODE_REGISTRATION 37625d59235b2034add48e12727a9bceff9eb59f502e3aec2bd5c805a34ee7fd; FREEZE 48778cf86c9381bc9a7c0058044f45ebea4feb28b8c15df6f1da032e9a08fc23. All18registered input bindings and13frozen file bindings match. Eight local Python sources pass AST parsing. None was imported or executed. There is no RELEASE, STARTED or numerical output. The complete14file package is copied in this receipt.
 
@@ -6511,7 +6511,7 @@ Receipt report_reviews/20261026T193509Z_strict_cap_displaced_control_v2_freeze_r
 
 # Actual cap-watcher v2 rejection and S3-22 worker v2 static audit
 
-Date 2026-10-26T19:36:34.951523+00:00. Actual collaborator us.anthropic.claude-opus-5-5 via lead files. c_l = 0.45, omega = 1, nominal omega/c_l = 20/9. Method: exact source copies, AST comparison and control-flow inspection. No worker, watcher, smoke, GPU query or numerical module was executed here.
+Date 2026-10-26T19:36:34.951523+00:00. Actual collaborator the main model via lead files. c_l = 0.45, omega = 1, nominal omega/c_l = 20/9. Method: exact source copies, AST comparison and control-flow inspection. No worker, watcher, smoke, GPU query or numerical module was executed here.
 
 CONFIRMED actual IU32e961bc rejection of cap watcher baf27bc4. Our19:19audit was of0a550cad, which must remain distinguished. Actual IU rechecked V2-2 through V2-8 on baf27bc4 and adopted C1-C8. Copies of that exact source, actual review and its read-only GPU-presence evidence are bound here. The GPU query positive control shows visibility of worker PIDs at the recorded time; it does not fix a failed-query-as-clear bug or certify any worker's termination. StageIII caps remain manual under S3-14(b). No watcher is accepted.
 
@@ -6540,7 +6540,7 @@ Receipt report_reviews/20261026T193634Z_IU_receipt_logger_v2_static_audit/REVIEW
 
 # IV report and logger scope audit
 
-Date 2026-10-26T19:40:38.426688+00:00. Context c_l = 0.45, omega = 1, nominal omega/c_l = 20/9. Actual collaborator: us.anthropic.claude-opus-5-5 in the lead lane. Method: full three-hunk report diff, saved accepted reader findings, source inspection and AST, and scalar comparisons of saved primary JSON. No numerical worker, unapproved module import, state loading or field evaluation was run. Bindings and source copies accompany this review.
+Date 2026-10-26T19:40:38.426688+00:00. Context c_l = 0.45, omega = 1, nominal omega/c_l = 20/9. Actual collaborator: the main model in the lead lane. Method: full three-hunk report diff, saved accepted reader findings, source inspection and AST, and scalar comparisons of saved primary JSON. No numerical worker, unapproved module import, state loading or field evaluation was run. Bindings and source copies accompany this review.
 
 IV-1 CONFIRMED. Actual C9 addendum 71a3717ef850b17d7e41d1726a545815fd41a046671bc41d2d22cd639a1eff06 keeps cap watcher baf27bc4 NOT ACCEPTED. Its default ROOT/status/supervisor.log differs from supervisor LOGS=ROOT/logs; the error is swallowed. The required repair includes the correct path, explicit unreadable status, exact launch token and refusal to bind a mismatched launch-line pid. This supplements C1-C8, not a release. Caps remain manual under S3-14(b).
 
@@ -6580,7 +6580,7 @@ Receipt report_reviews/20261026T194313Z_R3_corrected_start_header_audit/REVIEW.m
 
 # Cap watcher v3 static audit
 
-Date 2026-10-26T19:46:30.599541+00:00. Source SHA 6850a82ad443ef641cb62b009022f153385bd80059f504d3bd380e252ec5ce43. Actual model collaboration continues with us.anthropic.claude-opus-5-5 via lead files. Context c_l = 0.45, omega = 1, omega/c_l = 20/9. Method: complete source and control-flow inspection with AST parse only. No watcher, worker, smoke, process signal or numerical calculation was executed.
+Date 2026-10-26T19:46:30.599541+00:00. Source SHA 6850a82ad443ef641cb62b009022f153385bd80059f504d3bd380e252ec5ce43. Actual model collaboration continues with the main model via lead files. Context c_l = 0.45, omega = 1, omega/c_l = 20/9. Method: complete source and control-flow inspection with AST parse only. No watcher, worker, smoke, process signal or numerical calculation was executed.
 
 CW3-1 REFUTED: identity is not required before every signal. Lines275-280 explicitly send SIGKILL for c == 'unreadable'. That means /proc did not establish the same start ticks. This contradicts W1 and the source header. Kill only after a fresh complete alive_ok identity check; an unreadable identity is unverified and requires the manual-action outcome. A bounded wait may retry, but cannot turn unavailable identity evidence into ownership.
 
@@ -6636,7 +6636,7 @@ Review path: report_reviews/20261026T195151Z_sgcont150b_StB_saved_scalar_audit/R
 
 # Finite-beta v2 completion and manufactured-geometry acceptance
 
-Date 2026-10-26T20:01:04.818142+00:00. Actual model collaboration: us.anthropic.claude-opus-5-5 through lead files. Method: saved JSON and SHA-256 binding checks only, with Decimal arithmetic on saved error/tolerance values. No numerical module was imported or rerun. Context c_l = 0.45, omega = 0.3 and 1, nominal omega/c_l = 2/3 and 20/9.
+Date 2026-10-26T20:01:04.818142+00:00. Actual model collaboration: the main model through lead files. Method: saved JSON and SHA-256 binding checks only, with Decimal arithmetic on saved error/tolerance values. No numerical module was imported or rerun. Context c_l = 0.45, omega = 0.3 and 1, nominal omega/c_l = 2/3 and 20/9.
 
 FB2-1 CONFIRMED mechanical completion. The one authorized finite-beta v2 attempt completed at 2026-10-26T19:58:29.589463+00:00 with 1119 passing rows and 0 failures, worker 29.549789540935308 s, watch 30.419091193936765 s and peak RSS 39354368 bytes. CONTROL_RESULTS SHA 31594e0bd8cda7f2bd07de5b2ec561933ce8f79f269ef03a44349e4a2c6acc3c; WATCH_RESULTS SHA a6546dc0eaff075ccc34daf16a9c231b63357598ca9b5200fe2b1ffe6f21276d. All 40 REG/CODE/FREEZE bindings, the readings hash and exact-table hash match. Both recorded processes are absent. The 526 readings are manufactured-field evaluations. Saved comparison to the lead dry run is recorded in MECHANICAL_AUDIT.json.
 
@@ -6686,7 +6686,7 @@ Additional byte/JSON audit in report_reviews/20261026T200104Z_finite_beta_v2_res
 
 # Actual cap-watcher review received
 
-Date 2026-10-26T20:07:01.865393+00:00. Actual collaborator: us.anthropic.claude-opus-5-5 in the lead lane. Method: byte binding of the dated source review and comparison with our existing static audits. No watcher, fixture or numerical implementation was executed.
+Date 2026-10-26T20:07:01.865393+00:00. Actual collaborator: the main model in the lead lane. Method: byte binding of the dated source review and comparison with our existing static audits. No watcher, fixture or numerical implementation was executed.
 
 IY-1 CONFIRMED. Actual review a954f98280216fce47523d95bda74c8979be574097a6072b70d5a5144434a991 rejects production use of cap_watcher_v3.py 2cddfebe9cbed281061ded60464e14a4ee04a1821cb3d485c5aa0a9a9448f9c8. It agrees with CW3-1, CW3-3, CW3-4, CW3-5 and CW3-6. Its production launch-record requirement also confirms the incomplete C9 repair in our 20:02 follow-up eb83ac6b. Missing, unreadable or unparsable launch records must refuse binding, rather than merely qualify it.
 
@@ -6715,7 +6715,7 @@ IZ-5 OPEN: SL6 exception isolation is not exercised by the recorded E hook. The 
 
 IZ-6 OPEN additional GPU memory lifetime in SR1. Renaming _ to model2 and deleting both model2/prob2 removes the identified large-model reference. The source also retains r_ref, r_fro, r_guard, z_proj, r2 and r_after in the worker function after finally. These are live CUDA tensors on a GPU run; empty_cache does not delete live objects. Whether SR3's before/after allocation equality can pass depends on the exact measurement boundary and what else is cleared. Put the probe in a function whose tensors leave scope, or explicitly release all probe-only tensors before the after reading. Record the boundary precisely and retain peak allocated memory. This is static lifetime analysis, not an observed allocation or leak size.
 
-Actual us.anthropic.claude-opus-5-5 follow-up is requested on IZ-2 through IZ-6 before limiting the v2.1 diff to SR1/SR2 or claiming SL1-SL6 complete. The extra projected guard and provenance label are small changes within the logging block. If the intended decision is a narrower exception for the current draft configurations, record that exception explicitly against the original requirements and retain these limitations. Until actual acceptance, no deployment and the S3-22 post-launch equality qualifier remain.
+Actual the main model follow-up is requested on IZ-2 through IZ-6 before limiting the v2.1 diff to SR1/SR2 or claiming SL1-SL6 complete. The extra projected guard and provenance label are small changes within the logging block. If the intended decision is a narrower exception for the current draft configurations, record that exception explicitly against the original requirements and retain these limitations. Until actual acceptance, no deployment and the S3-22 post-launch equality qualifier remain.
 
 Context c_l = 0.45, omega = 1, omega/c_l = 20/9. This is tooling evidence only, not a field or pressure result. Only the independent route is writable. No JavaScript/TypeScript, servers/listeners, cluster/remote compute, Lean/lake, online posting or contacts.
 
@@ -6741,7 +6741,7 @@ Receipt report_reviews/20261026T201205Z_JA_final_report_three_hunk_audit/REVIEW.
 
 # Actual JB receipt and cap watcher v4 static audit
 
-Date 2026-10-26T20:17:01.973159+00:00. Method: read the dated actual lead addendum, bind source bytes, parse the source AST, and inspect all decision and signal paths. No source import, selftest, smoke or process-control execution was performed here. Source copies and hashes are in BINDINGS.json. The inspected v4 is c5b46cb2a712f71fc5ff5d1ec389080729058fd013c00fd2d6b4052a147a0731. Actual reviewer is us.anthropic.claude-opus-5-5.
+Date 2026-10-26T20:17:01.973159+00:00. Method: read the dated actual lead addendum, bind source bytes, parse the source AST, and inspect all decision and signal paths. No source import, selftest, smoke or process-control execution was performed here. Source copies and hashes are in BINDINGS.json. The inspected v4 is c5b46cb2a712f71fc5ff5d1ec389080729058fd013c00fd2d6b4052a147a0731. Actual reviewer is the main model.
 
 JB-1 CONFIRMED: actual addendum 9bdc0038438d1d7982ce06665419b6612a9bc7b6c2122467d40c97b466aaca9c explicitly agrees with our SV2 and IZ findings and withdraws the claim that SL1 through SL6 were fully met. It preserves design acceptance but no release. SR5 through SR10 require the missing projected-state guard, provenance label, scalar-row refusal, after-refresh exception control, complete tensor release and one exclusive record write. It also identifies Sigma_Z rows, in addition to the balance rows in our receipt. v2.1 is allowed only as a memory diagnostic; it is not a release smoke. Follow-up resolved the review disagreement. No production reading changes.
 
@@ -6775,7 +6775,7 @@ Date 2026-10-26T20:17:40.698887+00:00. In CW4-5 of receipt1a26e8e, the incorrect
 
 # Actual F7 finite-beta result receipt
 
-Date 2026-10-26T20:19:08.626083+00:00. Actual us.anthropic.claude-opus-5-5 review327ffacdb6d5ad0a210c1aef94a97ed82e01f7b6b234fa3543b8dd73d07e6a15 is copied alongside this receipt; its bytes match. Method: read the full dated review and compare its cited frozen artifacts and result scopes to our completed launch receipt557f2e5a. No new numerical execution.
+Date 2026-10-26T20:19:08.626083+00:00. Actual the main model review327ffacdb6d5ad0a210c1aef94a97ed82e01f7b6b234fa3543b8dd73d07e6a15 is copied alongside this receipt; its bytes match. Method: read the full dated review and compare its cited frozen artifacts and result scopes to our completed launch receipt557f2e5a. No new numerical execution.
 
 JC-1 CONFIRMED: finite_beta_pressure_control_v2 is accepted as a manufactured control. Its1119 checks passed and0 failed; all526 reading values and3 exact source tables reproduce the actual lead dry run, with dates/timings as the stated differences. This resolves FB2-2 OPEN in our prior receipt. The12-mutant sensitivity battery belongs to the lead dry run, not this attempt. Worker29.54978954seconds, watch30.41909119seconds and peak RSS39,354,368bytes remain measured records. The attempt is consumed.
 
@@ -6856,7 +6856,7 @@ JF-4 OPEN mathematical preparation, WITHDRAWN execution chain. I cannot responsi
 
 JF-5 CONFIRMED review priorities received. The S3-22 v2.2 release set and II.4 inputs come first, selected-state verification and FINAL_REPORT next, then cap watcher v4.1 under the stated convergence rule. Our previous logger audit copied diff5f2d0233 before its regeneration; the current diff8855c2b8 is a later artifact. Earlier smoke evidence stays bound to its recorded worker, not retrospectively to the final sha.
 
-Actual collaborator: us.anthropic.claude-opus-5-5 through lead files. Provisional C. Approximate states, training losses and manufactured controls are not exact Euler profiles. Only the independent route is writable. No JavaScript/TypeScript, servers/listeners, RLScience or other cluster, paid/remote compute, Lean/lake, commits/pushes/posts, contacts or subagents.
+Actual collaborator: the main model through lead files. Provisional C. Approximate states, training losses and manufactured controls are not exact Euler profiles. Only the independent route is writable. No JavaScript/TypeScript, servers/listeners, RLScience or other cluster, paid/remote compute, Lean/lake, commits/pushes/posts, contacts or subagents.
 
 Receipt: report_reviews/20261026T203455Z_JF_receipt_geometry_budget_and_pressure_priority/REVIEW.md, SHA 0a3a8fc11b459c56e2e533ee37f6d419c75fa6b41fff624a9687f1294f6c3f63.
 
@@ -6871,7 +6871,7 @@ The requested single CPU57 attempt has worker540/watch600seconds, noGPU, one thr
 
 The concrete next use is primary_omega1_core_geometry_v1 for nest10 and cont150. The revised sizing is4864calls,9229.497seconds with factor3+600pad, proposed10740worker/10800watch. I am updating that package in parallel as source work, with actual release conditional on this control's result acceptance. Neither package delays II.4 or selected-state validation. The origin-beta chain has been withdrawn; this is the existing core-locator chain required by JD/JF, not a new pressure-control chain.
 
-No primary maximum, r_core, a_eff, core-resolution result, exact profile or obstruction. ProvisionalC. Actual reviewer must be us.anthropic.claude-opus-5-5. Only the independent route is writable. NoJavaScript/TypeScript, servers/listeners, RLScience or othercluster, paid/remotecompute, Lean/lake, commits/pushes/posts, contacts orsubagents.
+No primary maximum, r_core, a_eff, core-resolution result, exact profile or obstruction. ProvisionalC. Actual reviewer must be the main model. Only the independent route is writable. NoJavaScript/TypeScript, servers/listeners, RLScience or othercluster, paid/remotecompute, Lean/lake, commits/pushes/posts, contacts orsubagents.
 
 Request: report_reviews/20261026T203918Z_heldout_core_geometry_v3_freeze_request/REQUEST.md; SHA 65e4f2370d1a8e495cb0c523591d0e196330b2fef4b21d5220f83e9e16f1a402.
 
@@ -6913,7 +6913,7 @@ Request report_reviews/20261026T205657Z_primary_geometry_freeze_request/REQUEST.
 
 # R3 rebinding receipt and exact key-set clarification
 
-Date 2026-10-26T20:57:20.222083+00:00. Actual collaborator us.anthropic.claude-opus-5-5, review 4d500ebd82638df3f44cab65b7637f722e6edffcbdbda657bc7633a429d81e7d dated20:53:48 and noteJK20:54:08. Method: review/source/header inspection and set arithmetic, no field or model execution. State c_l = 0.45, omega = 1, omega/c_l = 20/9.
+Date 2026-10-26T20:57:20.222083+00:00. Actual collaborator the main model, review 4d500ebd82638df3f44cab65b7637f722e6edffcbdbda657bc7633a429d81e7d dated20:53:48 and noteJK20:54:08. Method: review/source/header inspection and set arithmetic, no field or model execution. State c_l = 0.45, omega = 1, omega/c_l = 20/9.
 
 JKR-1 CONFIRMED within the earlier R3H header audit. Header repair by itself does not validate the perturbation. A rebound file must preserve z/config, place inherited diagnostics under source_history, correct the source attribution and saved pivot, and supply the actual worker-embedding check before it is accepted as the preferred route. The original and wrong-config files remain immutable. R3H-4 support, gauge/tail invariants and odd-fraction verification remain OPEN. The numerical consistency 0.1/sqrt(1.01) is not an independent perturbation check.
 
@@ -6978,7 +6978,7 @@ report_reviews/20261026T211709Z_S322_v24_F1_F5_records/REVIEW.md, shaf17742a06f6
 
 # St-A R0 = 0.15 saved-reading audit
 
-Date 2026-10-26T21:26:48.897871+00:00. Actual collaborator us.anthropic.claude-opus-5-5, dated JP review copied beside this audit. c_l = 0.45, omega = 1, nominal omega/c_l = 20/9. Approximate states only; provisional C.
+Date 2026-10-26T21:26:48.897871+00:00. Actual collaborator the main model, dated JP review copied beside this audit. c_l = 0.45, omega = 1, nominal omega/c_l = 20/9. Approximate states only; provisional C.
 
 Method: Decimal arithmetic on the saved robustness JSON, byte hashes of the control and variant states, and comparison with the dated actual review. No field evaluation. RESULT.json has 78 passed checks and 0 failed checks. Reading sha bdfc23d053a417fdb7dd389c06f63f740405f427539c210c43611551067dc8ce; actual review sha a9f575fabf8471afb516cf1ab51e6cf7cf922226cdf5a9a2d5ed4c3c00b0d79d.
 
@@ -7003,7 +7003,7 @@ Numerical histories match, not their timing fields. This check establishes the s
 
 # R3 independent spherical norm, proof/source review request
 
-Date 2026-10-26T21:28:39.688391+00:00. Actual review by us.anthropic.claude-opus-5-5 required. This package is FROZEN, UNIMPORTED and UNEXECUTED. No numerical output exists. c_l = 0.45, omega = 1, nominal omega/c_l = 20/9.
+Date 2026-10-26T21:28:39.688391+00:00. Actual review by the main model required. This package is FROZEN, UNIMPORTED and UNEXECUTED. No numerical output exists. c_l = 0.45, omega = 1, nominal omega/c_l = 20/9.
 
 Package verification_stage3/r3_spherical_norm_v1: REG19c223e3f61b41bfbf80e6dadeb2484c72f0db355ec9a9ffce66fec09351acab; CODEb6f21f8765aa6f43b5098eff7194c0f1948cea61f8b678ed5f3428c45ca11839; FREEZE7ee3eac04380e4180550df75917e661f700d8d821ea14b41ce7fb572ef440053. Mathematical proof21ab159591c26a29d0fbad6806020845e418b7d2b8e9ba52e0f99d266cb788e6; resource corollaryc8270988356f3cfcbef4b424c4b0da0feff3b901124ee1bd25575e64244a925c.
 
@@ -7016,7 +7016,7 @@ The analytic identity and derivative proof are standalone and preceded the imple
 
 # JQ primary geometry release receipt
 
-Date 2026-10-26T21:30:52.094501+00:00. Actual us.anthropic.claude-opus-5-5 review8290302a explicitly accepts source, integration proof and cost scaling under H1-H8. The package is unchanged. c_l = 0.45, omega = 1, nominal omega/c_l = 20/9, nest10 and cont150.
+Date 2026-10-26T21:30:52.094501+00:00. Actual the main model review8290302a explicitly accepts source, integration proof and cost scaling under H1-H8. The package is unchanged. c_l = 0.45, omega = 1, nominal omega/c_l = 20/9, nest10 and cont150.
 
 All frozen bindings are checked. RELEASE.json sha 2a3f8fb4b0053862b3ebedbfe8e7ec9804366c74a4a9c54cc3f2beabf0c31585 binds all12roles. strict_cap_proof_review uses the actual JM review8905e8a6 of the72/80corollary, the cap needed here; the manufactured v1 result uses K6 and the held-outv3 result uses JOc4543ad6 with the8205aa81/b9748531data. A fresh priority audit records no waiting higher-priority CPU60/GPU6work, noGPU6computeprocess, lane21737258037bytes,free248491438080bytes and free locks. II.4 and StageIIIplan audits continue on CPU55.
 
@@ -7036,7 +7036,7 @@ Primary geometry continues under JQ onCPU60/GPU6; no result used. No new executi
 
 # JR exact serialized audit launch
 
-Date 2026-10-26T21:36:22.927040+00:00. Actual us.anthropic.claude-opus-5-5 JR review 7c7ba78fb15e469d9ab70a88a65dc5673227f1d3d883161c812abbd7057fad9d, bound for both source and proof roles. Every frozen binding is unchanged. Release 94ec690478f759e3ac06fb1fcb913ce81518326c82f514b625ff052e593114de. One attempt launched CPU57, hidden CUDA, one thread, nice19 under530s alarm and540s external timeout plus5s kill. Priority audit 2026-10-26T21:36:22.923365+00:00; all three locks free, no CPU57 numerical process, lane21750845148bytes andfree247852232704bytes.
+Date 2026-10-26T21:36:22.927040+00:00. Actual the main model JR review 7c7ba78fb15e469d9ab70a88a65dc5673227f1d3d883161c812abbd7057fad9d, bound for both source and proof roles. Every frozen binding is unchanged. Release 94ec690478f759e3ac06fb1fcb913ce81518326c82f514b625ff052e593114de. One attempt launched CPU57, hidden CUDA, one thread, nice19 under530s alarm and540s external timeout plus5s kill. Priority audit 2026-10-26T21:36:22.923365+00:00; all three locks free, no CPU57 numerical process, lane21750845148bytes andfree247852232704bytes.
 
 K1-K6 and M1-M4 govern. In particular second-moment expressions require their first-moment hypothesis; exact nonzero even leakage is retained. Coefficient algebra does not establish worker embedding, training norm, field odd fraction or absolute tail gauge. Actual result review is required before use. No retry.
 
@@ -7045,7 +7045,7 @@ Files: report_reviews/20261026T213622Z_JR_R3_serialized_v2_actual_release.
 
 # R3 exact serialized coefficient audit v2: result review requested
 
-Date 2026-10-26T21:39:06.675603+00:00. Actual collaborator us.anthropic.claude-opus-5-5. Source/proof release JR 7c7ba78fb15e469d9ab70a88a65dc5673227f1d3d883161c812abbd7057fad9d; release 94ec690478f759e3ac06fb1fcb913ce81518326c82f514b625ff052e593114de. Request a dated actual result review under K5. No numerical result is promoted before that review.
+Date 2026-10-26T21:39:06.675603+00:00. Actual collaborator the main model. Source/proof release JR 7c7ba78fb15e469d9ab70a88a65dc5673227f1d3d883161c812abbd7057fad9d; release 94ec690478f759e3ac06fb1fcb913ce81518326c82f514b625ff052e593114de. Request a dated actual result review under K5. No numerical result is promoted before that review.
 
 ## Method and completion
 
@@ -7091,7 +7091,7 @@ Files: report_reviews/20261026T213906Z_R3_serialized_v2_actual_result_request.
 
 # JS gate-draft correction receipt
 
-Date 2026-10-26T21:39:46.029325+00:00. Method: read the complete delta f1c73048 to0d0f9a4863cc5d5c1b750c66986b230b885ef837e1c05bbfdefef59f419b993d and actual us.anthropic.claude-opus-5-5 note JS dated21:37:07Z. No numerical execution.
+Date 2026-10-26T21:39:46.029325+00:00. Method: read the complete delta f1c73048 to0d0f9a4863cc5d5c1b750c66986b230b885ef837e1c05bbfdefef59f419b993d and actual the main model note JS dated21:37:07Z. No numerical execution.
 
 II4-E4 **CONFIRMED**, text correction installed. The St-B placeholder now states both holdout ratios <=1.1 plus distance <=control standard holdout for R0-1, both ratios <=1.1 plus distance above that holdout for R0-2, and either ratio >1.1 for R0-3. Start distance, control drift and V10 readings are required. The St-A R0=0.15 row states last-tenth decreases0.035859 and0.029960, both above0.001, so neither endpoint is operationally stationary. Its parameters remain c_l=0.45, omega=1, omega/c_l=20/9; St-B remains c_l=0.45, omega=0.3, omega/c_l=2/3. The L8 OptionB limitation remains.
 
@@ -7192,7 +7192,7 @@ Date 2026-10-26T22:47:34.033546+00:00. 103 source checks pass, 0 fail. Method: s
 - SOL-4 OPEN for a complete per-state historical process lineage and a formal campaign-wide exclusion of every divergence-penalty formulation. The present manifest check covers D10. The inspected independent formulations use solenoidal coordinates; a keyword search alone does not prove the broader negative claim.
 - SOL-5 REFUTED as an inference: analytic solenoidality alone does not show that every computed divergence is solely rounding. Implementation and approximation consistency remain separate. The strict saved-value correction KCD-4 is unchanged. No Euler equation or candidate claim follows.
 
-Actual us.anthropic.claude-opus-5-5 review is requested before report use of the new proof. No numerical execution is proposed by this audit.
+Actual the main model review is requested before report use of the new proof. No numerical execution is proposed by this audit.
 
 ## 2026-10-26T22:56:49.444487+00:00: L8C-4
 
@@ -7204,7 +7204,7 @@ Method: saved scalar and source/hash audit530/0. FA-1/2 CONFIRMED; FA-3 CONFIRME
 
 ## 2026-10-26T23:06:26.346391+00:00: extended L8C-4 five-arm audit, 206/0
 
-report_reviews/20261026T230537Z_L8C4_extended_five_arm_order/REVIEW.md sha 19c249c2f4b725af5293ba61967b594345503a0501918946368f87037c1c32a3; RESULT 753a8ae2974c487a334bd9f381ac6fe5e4a1d57c185e7f89706f9e36019bd7a6; AUDIT 8d4834b32135d0b64a07ed833a40eab16fa67050a3a4177bae71262909564e9d. Five frozen arm readings, fifty ratios and all ten relations checked by independent binary64/exact-rational arithmetic. Two directed/eight unordered: nest10 aheadcontrol conditionalsigmaOm acrossdegrees, cl1 aheadNk8cont150. Reverse continuation/cl1sigmaOm1.10002189856 is above1.10 but is not the guard in the accepted direction. Literal independent core/quadrature leg OPEN; no field execution. KH selection/StC/R1unchanged. Actual result review requested from us.anthropic.claude-opus-5-5.
+report_reviews/20261026T230537Z_L8C4_extended_five_arm_order/REVIEW.md sha 19c249c2f4b725af5293ba61967b594345503a0501918946368f87037c1c32a3; RESULT 753a8ae2974c487a334bd9f381ac6fe5e4a1d57c185e7f89706f9e36019bd7a6; AUDIT 8d4834b32135d0b64a07ed833a40eab16fa67050a3a4177bae71262909564e9d. Five frozen arm readings, fifty ratios and all ten relations checked by independent binary64/exact-rational arithmetic. Two directed/eight unordered: nest10 aheadcontrol conditionalsigmaOm acrossdegrees, cl1 aheadNk8cont150. Reverse continuation/cl1sigmaOm1.10002189856 is above1.10 but is not the guard in the accepted direction. Literal independent core/quadrature leg OPEN; no field execution. KH selection/StC/R1unchanged. Actual result review requested from the main model.
 
 ## 2026-10-26T23:07:37.241826+00:00: KH/KI receipts and readiness corrected
 
@@ -7232,7 +7232,7 @@ Method: full reading and frozen copies of actual Opus5.5 result review81d5881c a
 
 ## 2026-10-26T23:20:37.527833+00:00: KM corrections and extended L8C-4 acceptance recorded
 
-[Receipt](report_reviews/20261026T232037Z_KM_S14_and_L8C4_actual_acceptance/REVIEW.md). Actual us.anthropic.claude-opus-5-5 acceptance of the 206/0 extended order audit is preserved with its conditional scope. S14 original cap failure is retained; weighted-qualification invariance is withdrawn and the finite counterexample accepted. Actual weighted S14 fractions remain OPEN. R2d requires a complete six-iteration pair by October 27 at 12:00 UTC plus actual review before gate assembly. No numerical execution. Provisional C unchanged.
+[Receipt](report_reviews/20261026T232037Z_KM_S14_and_L8C4_actual_acceptance/REVIEW.md). Actual the main model acceptance of the 206/0 extended order audit is preserved with its conditional scope. S14 original cap failure is retained; weighted-qualification invariance is withdrawn and the finite counterexample accepted. Actual weighted S14 fractions remain OPEN. R2d requires a complete six-iteration pair by October 27 at 12:00 UTC plus actual review before gate assembly. No numerical execution. Provisional C unchanged.
 
 ## 2026-10-26T23:22:19.911063+00:00: S14 stage (ii) reader needs input and subprocess guards
 
@@ -7280,7 +7280,7 @@ Method: source inspection and complete hand-checked rational argument in theory/
 
 ## 2026-10-26T23:46:02.536390+00:00: R2d GPU pair complete, registered replay equality fails (36/1)
 
-report_reviews/20261026T234511Z_R2d_completed_GPU_pair/REVIEW.md e780458b690b960dfc63cb45238b2fddcc3b7eb633738586ff6adf94f10b4ae2; RESULT.json e54b9f3634a224fde201af3c5b7201253ff21b20e080a6a7a32270a6fdc2380a. A and B each completed six max_iter iterations, exit0, end23:36:05Z/23:43:59Z; wrapperdone23:44:01Z. All six full-precision ledger costs differ at .6e printed precision. Maximum relative discrepancy2.556656661134833e-4 (iteration5), first6.211501047387294e-7. RG1/2/4/5 CONFIRMED; RG3 equality REFUTED; mechanism and any R2d release OPEN. Actual us.anthropic.claude-opus-5-5 result review requested. No reinterpretation of the preregistered rule. c_l=.45, omega=1, omega/c_l=20/9.
+report_reviews/20261026T234511Z_R2d_completed_GPU_pair/REVIEW.md e780458b690b960dfc63cb45238b2fddcc3b7eb633738586ff6adf94f10b4ae2; RESULT.json e54b9f3634a224fde201af3c5b7201253ff21b20e080a6a7a32270a6fdc2380a. A and B each completed six max_iter iterations, exit0, end23:36:05Z/23:43:59Z; wrapperdone23:44:01Z. All six full-precision ledger costs differ at .6e printed precision. Maximum relative discrepancy2.556656661134833e-4 (iteration5), first6.211501047387294e-7. RG1/2/4/5 CONFIRMED; RG3 equality REFUTED; mechanism and any R2d release OPEN. Actual the main model result review requested. No reinterpretation of the preregistered rule. c_l=.45, omega=1, omega/c_l=20/9.
 
 Original compare_replay completion requires six logged keys but lm.py logs only0,5 in these completed six-step runs. Ledger+exit+done establishes completion. Diagonal-damping proof6d7225fb is a possible generic mechanism only. Rounded lambdas do not identify failure counts. No primary code execution or state load by verifier.
 
@@ -7310,7 +7310,7 @@ Method: exact inspection of the logged cost contract and the saved ledger indexi
 
 Date: 2026-10-26T23:54:37.133865+00:00. Method: read the actual dated lead review, both scope corrections, the full exact-rational check source and its saved output. Recounted 28 PASS and zero FAIL lines without executing the check. Re-read the complete local informal proof and checked the matrix argument and both rational examples by inspection. Input bytes and full hashes are frozen in INPUT_MANIFEST.json.
 
-The actual collaborator is us.anthropic.claude-opus-5-5 through the lead lane. Its review is dated 2026-10-26T23:52:06Z. No model was substituted. No numerical model, primary reader or proof program was executed for this receipt.
+The actual collaborator is the main model through the lead lane. Its review is dated 2026-10-26T23:52:06Z. No model was substituted. No numerical model, primary reader or proof program was executed for this receipt.
 
 | Check | Result | Verdict |
 |---|---|---|
@@ -7335,7 +7335,7 @@ Evidence directory: report_reviews/20261026T235437Z_KV_Marquardt_and_process_cor
 
 Date 2026-10-26T23:58:22.773448+00:00. Capture date 2026-10-26T23:57:44.315251+00:00. Method: read the three named queue configurations, their logged START/version rows, the fixed promoted source rows, historical comparator rows and configurations; hash the six source/comparator state files without deserializing them. Freeze exact input bytes and live log prefixes. Compare the source hashes with the earlier stage (i) audit and the START strings with the 23:39 audit. The saved metadata/equality checks give 196 CONFIRMED and 0 REFUTED. No primary code, state pickle, numerical library, field evaluator or test was executed.
 
-The target/comparator pairs were fixed before this audit. This is a provenance check, not a new selection rule. Actual us.anthropic.claude-opus-5-5 result review is pending.
+The target/comparator pairs were fixed before this audit. This is a provenance check, not a new selection rule. Actual the main model result review is pending.
 
 | Check | Result | Verdict |
 |---|---|---|
@@ -7661,7 +7661,7 @@ Method: byte-copy and SHA256 validation of actual lead reviews, and reading the 
 
 Date: 2026-10-27T03:08:31.281963+00:00.
 
-Method: checked all 20 frozen bindings, the exact ordered 95 names, saved boolean outcomes and error thresholds, worker/watcher agreement, artifact SHA-256 values, NPZ container integrity, timing and disk caps. No field evaluator or numerical oracle was rerun for this receipt. The actual source release is LQ, 1a6869c8a682d4a0cc4361e1ba065922f7a5d3f861ab19679ba374b27198b3d0, from Claude Opus 5.5, us.anthropic.claude-opus-5-5.
+Method: checked all 20 frozen bindings, the exact ordered 95 names, saved boolean outcomes and error thresholds, worker/watcher agreement, artifact SHA-256 values, NPZ container integrity, timing and disk caps. No field evaluator or numerical oracle was rerun for this receipt. The actual source release is LQ, 1a6869c8a682d4a0cc4361e1ba065922f7a5d3f861ab19679ba374b27198b3d0, from the main model, the main model.
 
 CONFIRMED: one authorized attempt completed at 03:06:22Z with 95 PASS, 0 FAIL; watcher time 6.940060 s, worker time 6.474858 s, peak RSS 541503488 bytes. The 36 receipt checks passed. Largest recorded binary64 relative error is 1.4694835940514427e-11 for low/96/leading_jets, below the unchanged 2e-10 threshold. Largest recorded source error is 2.413202236934292e-12. The high-degree raw evaluator rejects the far-radius range, while the normalized evaluator remains finite on the registered fixtures.
 
@@ -7673,7 +7673,7 @@ Evidence: AUDIT.json and the original immutable artifacts in verification_stage3
 
 Date: 2026-10-27T03:10:55.951909+00:00.
 
-CONFIRMED: the actual Claude Opus 5.5 result review fc4ce43d84774483a3a3ce5916c9bf2e60e776e77be186a6958c59029203efc0 accepts normalized exterior control95/0 within its manufactured scope. The lead recomputed the independent oracle at100 and180 digits for all24 points, checked binary64 references and recorded errors, and inspected the release and resource records. This closes the actual result-review OPEN item in receipt385fc71e; selected constructors, source projection, pressure and maxima remain OPEN. The permitted numerical statement retains c_l=0.45, omega=1, omega/c_l=20/9, finite manufactured fixtures and the unchanged2e-10 tolerance.
+CONFIRMED: the actual the main model result review fc4ce43d84774483a3a3ce5916c9bf2e60e776e77be186a6958c59029203efc0 accepts normalized exterior control95/0 within its manufactured scope. The lead recomputed the independent oracle at100 and180 digits for all24 points, checked binary64 references and recorded errors, and inspected the release and resource records. This closes the actual result-review OPEN item in receipt385fc71e; selected constructors, source projection, pressure and maxima remain OPEN. The permitted numerical statement retains c_l=0.45, omega=1, omega/c_l=20/9, finite manufactured fixtures and the unchanged2e-10 tolerance.
 
 CONFIRMED: gate a57edf92d5ee692f2a04bac98a3b4746c4f245a14a1269a9777e362f1c7cff6d to3f654003fbe89f1d5238961990f345998d88596633945ba450df6ea08d2702f4 changes only line113. It names shortlist_v3.py (9fbdbf7a0379b50a8affacff9e836b220edc670fa22ba391aca8215fea56e467) and the already reviewed v2/v3 lineage, and preserves descriptor bins rather than asserting distinct branches. Every other line is identical. This is a delta audit, not the final15:30Z gate audit.
 
@@ -7701,7 +7701,7 @@ Method: savedJSON and immutablehash inspection. Result:95/0exit0,24freezebinding
 
 # LV result and LU clarification receipt
 
-Date 2026-10-27T03:41:39.214875+00:00. Method: full reading of actual lead review and notes, copied review hashes and frozen-file inspection. Actual collaborator: us.anthropic.claude-opus-5-5. No numerical regeneration.
+Date 2026-10-27T03:41:39.214875+00:00. Method: full reading of actual lead review and notes, copied review hashes and frozen-file inspection. Actual collaborator: the main model. No numerical regeneration.
 
 CONFIRMED: actual LV review 41aa716d accepts physical-source projector v1, 95 PASS / 0 FAIL, only on finite manufactured spherical-source and exchange-constructor fixtures at c_l=0.45, omega=1, omega/c_l=20/9 nominal. The recorded parameters are binary64. All24 bound files still match. The result does not evaluate a selected field or release pressure. PR2 bookkeeping, PR3 origin finiteness only, and PR4 coupling obligations remain.
 
@@ -7732,7 +7732,7 @@ Prospective plan amendment 38a1d1060fabfe26118f12bc0644e8b367376b432e37eb9b9c48d
 
 ## 2026-10-27T04:14:36.868974+00:00: source storage and composition prepared, unexecuted
 
-Method: read existing independent source and Green interfaces, write standalone informal arguments before implementation, and check Python syntax as AST and frozen dependency file hashes without imports or numerical execution. Source-row storage request5f9d72cd/FREEZE9f777865 and composition requeste0efc05a/FREEZE848e8ede are posted for actual Claude Opus5.5 source review.
+Method: read existing independent source and Green interfaces, write standalone informal arguments before implementation, and check Python syntax as AST and frozen dependency file hashes without imports or numerical execution. Source-row storage request5f9d72cd/FREEZE9f777865 and composition requeste0efc05a/FREEZE848e8ede are posted for actual the main model source review.
 
 CONFIRMED: the storage source distinguishes full, remainder and leading kinds and compares exact radius bits and identity; committed mismatches raise. The composition source uses one immutable source for its constrained and unconstrained models, retains actual target coordinates and performs no extra radial coefficient interpolation. These are static implementation observations.
 
@@ -7825,7 +7825,7 @@ Evidence: [standalone proof](theory/translated_newton_quadrature/PROOF.md), SHA2
 
 ## 2026-10-27T05:54:28.303092+00:00: actual MP driver review and separate correction
 
-Actual Claude Opus 5.5 review bc3bcdd2 accepts the four helper proofs/sources as dependencies but requires driver corrections. MP-1 CONFIRMED: missing exact-domain adapter blocks every operation; the old static metadata audit did not test import closure. MP-2 CONFIRMED: K2 device identity, K3 panel-edge reporting and K4 origin requirement are missing. K5-K8 are adopted for the separate unexecuted successor; K9/K10 remain allocation/timing obligations. Original source and snapshot are untouched; CURRENT_MP_RECEIPT_PATH locates the receipt. Provisional C, no numerical launch.
+Actual the main model review bc3bcdd2 accepts the four helper proofs/sources as dependencies but requires driver corrections. MP-1 CONFIRMED: missing exact-domain adapter blocks every operation; the old static metadata audit did not test import closure. MP-2 CONFIRMED: K2 device identity, K3 panel-edge reporting and K4 origin requirement are missing. K5-K8 are adopted for the separate unexecuted successor; K9/K10 remain allocation/timing obligations. Original source and snapshot are untouched; CURRENT_MP_RECEIPT_PATH locates the receipt. Provisional C, no numerical launch.
 
 ## 2026-10-27T06:01:28.942639+00:00: selected-pressure v1.1 source submitted after MP
 
@@ -7864,7 +7864,7 @@ Method: complete informal geometry argument and direct reading of unchanged kern
 
 ## 2026-10-27T06:16:24.847601+00:00: Actual MU accepted v1.2 source; M1 template correction submitted
 
-Method: read full actual MU review713a6bba; preserve it in report_reviews/20261027T061527Z_MU_driver_source_receipt; compare old and corrected templates and run a fresh AST/hash traversal against each template's own evaluator map. Actual collaborator is Claude Opus5.5 us.anthropic.claude-opus-5-5 through lead files. No numerical import or execution.
+Method: read full actual MU review713a6bba; preserve it in report_reviews/20261027T061527Z_MU_driver_source_receipt; compare old and corrected templates and run a fresh AST/hash traversal against each template's own evaluator map. Actual collaborator is the main model the main model through lead files. No numerical import or execution.
 
 CONFIRMED: MU accepts source common19f885ab/worker d35dc8da/watch6266ff17, resolving L1/L2 in source. REFUTED: old v1.2 template coverage; it still names v1.1, and the previous adjusted-path closure did not check that map. Correction verification_stage3/selected_pressure_v1_2_registration_correction/REGISTRATION.template.json 91203fd0 changes exactly3 evaluator paths/hashes and binds full actual MU review. Fresh direct audit49CONF/0REF:40map entries rehash,29literal modules,0missing/changed. Old-template negative control detects3missing. Attempt1's incorrect authorized-key assertion is retained; corrected approved:false check passes.
 
@@ -7992,7 +7992,7 @@ Method: exact-array argument checked before code, AST and dependency hashing. Re
 
 # NI call-source receipt and B1 binding correction
 
-Date 2026-10-27T08:00:56.330947+00:00. Actual reviewer is lead Claude Opus 5.5, us.anthropic.claude-opus-5-5, through the shared files. The actual source review 2ca25370f3929e89f9db82c3135159704da91dc50d87c9b16fa40ddf9bf085bf was read in full, copied and rehashed. The unchanged call.py f35a4c75 is accepted as source for coordinate agreement, permanent failure handling, progress accounting and value pass-through. No execution is released.
+Date 2026-10-27T08:00:56.330947+00:00. Actual reviewer is lead the main model, the main model, through the shared files. The actual source review 2ca25370f3929e89f9db82c3135159704da91dc50d87c9b16fa40ddf9bf085bf was read in full, copied and rehashed. The unchanged call.py f35a4c75 is accepted as source for coordinate agreement, permanent failure handling, progress accounting and value pass-through. No execution is released.
 
 The metadata delta applies B1: PARENT_BINDINGS.json now names coordinate proof 661428ff and translated-core proof d06b0bba. The old metadata and the exact diffs are retained here. SOURCE_MANIFEST.json binds the current source and all parents. PROTOCOL.md now states C1 beside the required payload accounting: the weight hashes belong to the adapter's regenerated rule; kernel weights are not observable and coordinate agreement does not establish weight identity. O1 is confirmed by integer arithmetic, 67,072 retained bytes against the 49,920 direction/radius cap in the example. No call implementation changed.
 
@@ -8020,7 +8020,7 @@ Actual interpreter file/spec inspection confirms system NumPy2.5.0 and no thread
 
 ## NK review receipt
 
-Date 2026-10-27T08:27:39.474898+00:00. Actual collaborator: Claude Opus 5.5, us.anthropic.claude-opus-5-5, through the lead lane's files.
+Date 2026-10-27T08:27:39.474898+00:00. Actual collaborator: the main model, the main model, through the lead lane's files.
 
 Both dated reviews were read in full and copied byte for byte. The static receipt records 76 CONFIRMED and 0 REFUTED checks in CHECKS.json. No evaluator was imported or executed.
 
@@ -8209,7 +8209,7 @@ report_reviews/20261027T104547Z_verification_overview_reconciliation/REVIEW.md r
 
 # II.4 revised gate r1 audit
 
-Date 2026-10-27T10:51:23.684871+00:00. Gate: `5c1fc7e4378a328efc896649388811af9a156b1500f2092ea9f74074e0fa6499`, lead revision dated 2026-10-27T10:44:15Z and actual request OC at 10:45:21Z. The actual collaborator is Claude Opus 5.5, model `us.anthropic.claude-opus-5-5`, through the shared lane files. This is a source and saved-record audit. No numerical producer, field evaluator, checkpoint deserializer, numerical package or lead script was imported or executed.
+Date 2026-10-27T10:51:23.684871+00:00. Gate: `5c1fc7e4378a328efc896649388811af9a156b1500f2092ea9f74074e0fa6499`, lead revision dated 2026-10-27T10:44:15Z and actual request OC at 10:45:21Z. The actual collaborator is the main model, model `the main model`, through the shared lane files. This is a source and saved-record audit. No numerical producer, field evaluator, checkpoint deserializer, numerical package or lead script was imported or executed.
 
 The selection and provisional label C remain supported within the already stated approximate-field scope. Revision r1 is OPEN as a complete gate text pending the three local corrections below. The original five issues have been addressed at their targeted passages, including the explicit lead decision that the five-ratio reader supplies this gate's 7.3b relation. A repeated closure sentence, the use of the excluded row in two new census statements, and the scope of one D10 error figure remain inconsistent. None promotes a state or changes a threshold.
 
@@ -8267,7 +8267,7 @@ CURRENT_TARGET_PREPARATION_RESULT_PATH -> report_reviews/20261027T1106Z_target_p
 
 ## 2026-10-27T11:07:35.895767+00:00: gate II.4 r2 re-audit complete, three text corrections closed
 
-CURRENT_II4_R2_GATE_AUDIT_PATH -> report_reviews/20261027T1107Z_II4_gate_r2_audit. REVIEW SHA256 7d6aa577dd584699d06c4f2a2a75b381e442938862ebd261cb824bcadb4bf4a5; gate061baa3d. Saved audit96CONF/0REF: exacttenreplacement byte reconstruction, allpriorhashrefs and61savedreadinghashes retained; eligible60/642/51/0, froms7cahead20/behind3; closureKH-five scope fixed inallthree sections; D10fraction-error qualifierfixed. CONFIRMED corrected text/saved-record scope, no newfield orpressure validation; finalgate17:09andselectedpermitsstillpending. Initial95/1 wascheckerwordingneedle, retained. Selection/provisionalCunchanged.
+CURRENT_II4_R2_GATE_AUDIT_PATH -> report_reviews/20261027T1107Z_II4_gate_r2_audit. REVIEW SHA256 7eb7f3e0b3783580d68b35038716e080f8ab27fb0cfd93c2d28340dfd34d0d81; gate061baa3d. Saved audit96CONF/0REF: exacttenreplacement byte reconstruction, allpriorhashrefs and61savedreadinghashes retained; eligible60/642/51/0, froms7cahead20/behind3; closureKH-five scope fixed inallthree sections; D10fraction-error qualifierfixed. CONFIRMED corrected text/saved-record scope, no newfield orpressure validation; finalgate17:09andselectedpermitsstillpending. Initial95/1 wascheckerwordingneedle, retained. Selection/provisionalCunchanged.
 
 
 ## 2026-10-27T11:10:35.866932+00:00: Target preparation actual result review
@@ -8328,7 +8328,7 @@ report_reviews/20261027T112950Z_FINAL_REPORT_d3bdc7d6_delta/REVIEW.md sha256 3c7
 
 ## 2026-10-27T11:40:43.530860+00:00: R1 saved-distance audit completed; five reading repairs, conditional partition confirmed
 
-CURRENT_R1_DISTANCE_SAVED_AUDIT_PATH -> report_reviews/20261027T114017Z_R1_distance_saved_audit. REVIEW.md 6e3bdf8b4934d1fa803b2883ec26dbce38cb02d8c5826c903c266fcd0fcab5cb. Saved arithmetic: 138 CONFIRMED, 5 REFUTED, 2 OPEN; no numerical evaluator imported. Both small perturbations satisfy S3-20 on the saved data; the large perturbation fails both holdout bounds. Before citation repair RD1 near-identity angles, RD2 estimated phase minimum, RD3 all three size measures, RD4 endpoint normalization and optimizer/projected defects, RD5 watcher-based resource accounting and operative 12240 s per-job cap. Exact nF is not explicitly saved by worker.py; the numerics registration conflates it with the projected squared norm. Watch total31422.729897737503 s versus rounded worker31371 s. The primary fields remain unvalidated. Actual Claude Opus5.5 follow-up pending. Critical target-validation release93d7302e remains the priority.
+CURRENT_R1_DISTANCE_SAVED_AUDIT_PATH -> report_reviews/20261027T114017Z_R1_distance_saved_audit. REVIEW.md 6e3bdf8b4934d1fa803b2883ec26dbce38cb02d8c5826c903c266fcd0fcab5cb. Saved arithmetic: 138 CONFIRMED, 5 REFUTED, 2 OPEN; no numerical evaluator imported. Both small perturbations satisfy S3-20 on the saved data; the large perturbation fails both holdout bounds. Before citation repair RD1 near-identity angles, RD2 estimated phase minimum, RD3 all three size measures, RD4 endpoint normalization and optimizer/projected defects, RD5 watcher-based resource accounting and operative 12240 s per-job cap. Exact nF is not explicitly saved by worker.py; the numerics registration conflates it with the projected squared norm. Watch total31422.729897737503 s versus rounded worker31371 s. The primary fields remain unvalidated. Actual the main model follow-up pending. Critical target-validation release93d7302e remains the priority.
 
 ## 2026-10-27T11:41:17.399097+00:00: actual OK target release accepted, prelaunch checks passed
 
@@ -8468,7 +8468,7 @@ Please accept this reader result and the completed pressure/native record before
 
 ## 2026-10-27T13:11:53.779044+00:00 diagnostics launch failed before worker
 
-Date: 2026-10-27T13:11:53.779044+00:00. To lead Claude Opus 5.5. c_l = 0.45, omega = 1, omega/c_l = 20/9. Method: inline stdlib metadata, source-order and hash inspection, no numerical execution.
+Date: 2026-10-27T13:11:53.779044+00:00. To lead the main model. c_l = 0.45, omega = 1, omega/c_l = 20/9. Method: inline stdlib metadata, source-order and hash inspection, no numerical execution.
 
 CONFIRMED: diagnostics_R0_local32_001 failed at13:09:53.833709Z before creating a worker. The watcher rejected KMP_DUPLICATE_LIB_OK before imports/accounting. It reported0.193029292 seconds, returncode null, and wrote only WATCH_FAILURE.json (2d8121ef23f485c64160a5a4295247d00cbe9ee494a0b67f8d32f2bd0f596bee). There is no worker, result, native-runtime record or accounting entry. The watch PID3219975 exited. All237frozen bindings rehash. The permit af6a5186 matches the released draft in all unpermitted fields. The reader and source are unchanged.
 
@@ -8523,7 +8523,7 @@ Method: saved JSON, text and hash audit, scalar ratios and source-only diagnosti
 
 ## 2026-10-27T13:34:19.392862+00:00: PE closure of R0 diagnostic reviews and cache dispute
 
-Method: read actual Claude Opus 5.5 note PE and its diagnostic review9af7b5c0. Result: lead22/0 confirms the released477/0 reader and unchanged291inputs. Verdict: CONFIRMED for saved R0 local diagnostics under D2-C1 to C4. The denominator is the sum of four velocity-term RMS values and pressure-gradient RMS. Shared-model agreement is sensitivity only; no SPEC comparison or pressure-error claim.
+Method: read actual the main model note PE and its diagnostic review9af7b5c0. Result: lead22/0 confirms the released477/0 reader and unchanged291inputs. Verdict: CONFIRMED for saved R0 local diagnostics under D2-C1 to C4. The denominator is the sum of four velocity-term RMS values and pressure-gradient RMS. Shared-model agreement is sensitivity only; no SPEC comparison or pressure-error claim.
 
 PE withdrew the PC cache refutation and PD v3 requirements after accepting the actual runtime-bound identities. Snapshot v2 is SOURCE OK for all legs, subject to individual result reviews and releases. The prepared v3 source remains unimported/unrun and its request is withdrawn. Source convergence and pressure accuracy remain OPEN.
 
@@ -8537,7 +8537,7 @@ R2b saved audit report_reviews/20261027T134007Z_R2b_saved_scope_audit/REVIEW.md 
 
 # R2 repair extension
 
-Date: 2026-10-27T13:45:07.602635+00:00. Method: saved text and hash checks only on CPU 60, nice 19. Actual collaborator: Claude Opus 5.5, us.anthropic.claude-opus-5-5, through actual PG and its review files.
+Date: 2026-10-27T13:45:07.602635+00:00. Method: saved text and hash checks only on CPU 60, nice 19. Actual collaborator: the main model, the main model, through actual PG and its review files.
 
 Result: {'CONFIRMED': 35, 'OPEN': 1}. R2b PF-C1 to C6 are now recorded in NUM_REPORT at 13:40:59Z. The original saved audit inputs rehash unchanged. R2b can be cited within that audit's primary-reported scope, with the opposite holdout signs and 0.994 bound fraction. No accuracy or convergence claim follows.
 
@@ -8547,7 +8547,7 @@ No compute was allocated. R1 source continues under its existing permit.
 
 # Independent saved-record review of R2a
 
-Date: 2026-10-27T13:46:17.847264+00:00. Method: standard-library SHA256, JSON, source-text and scalar arithmetic on CPU 60, nice 19. No primary numerical code was imported or rerun. Actual model exchange is with Claude Opus 5.5, us.anthropic.claude-opus-5-5, through PG and its saved result review.
+Date: 2026-10-27T13:46:17.847264+00:00. Method: standard-library SHA256, JSON, source-text and scalar arithmetic on CPU 60, nice 19. No primary numerical code was imported or rerun. Actual model exchange is with the main model, the main model, through PG and its saved result review.
 
 Verdict: {'CONFIRMED': 132, 'OPEN': 7}. All 31 bound files remained unchanged. This confirms the recorded endpoint-rule classification within the primary-reported proxy scope, subject to PG R2a-C1 to C5. It does not establish independent PDE accuracy or convergence.
 
@@ -8565,7 +8565,7 @@ A dated NUM repair applying R2a-C1 to C5 remains to be checked. Outcome C remain
 
 # R2a and R2c dated correction audit
 
-Date: 2026-10-27T13:48:54.872338+00:00. Result: {'CONFIRMED': 51}. Method: saved text, hashes and scalar rounding only. Actual lead authority is PG13:43:19Z from Claude Opus 5.5, us.anthropic.claude-opus-5-5.
+Date: 2026-10-27T13:48:54.872338+00:00. Result: {'CONFIRMED': 51}. Method: saved text, hashes and scalar rounding only. Actual lead authority is PG13:43:19Z from the main model, the main model.
 
 NUM_REPORT records both repairs at13:45:08Z. R2a applies C1 to C5. R2c withdraws the unrestricted every-scalar sentence; all20 named remaining scalar values agree with both saved readers at the stated printed precision. Changed-weight rotation content, training momentum RMS and terminal cost are expressly excluded from the comparison. The original refuted statements remain in history and are repaired for citation.
 
@@ -8622,7 +8622,7 @@ Date: 2026-10-27T14:12:25.326088+00:00.
 
 Method: read the actual PL note and full lead result review, compare their counts and conditions with the saved verifier audit, and rehash all 171 original input bindings. No numerical or control code was imported or rerun.
 
-Verdict: CONFIRMED. The independent verifier audit389/0 and actual Claude Opus5.5 review51/0 plus11/0 agree: partition32, call62 and comparison72 completed once each with every registered row passing, exit0, empty logs and warnings, and no failure record. The actual review hash is ba7488c58e1742d524ef3cd00d0814d0246e5168e6c35eb5ddb7df184f949f4f. The new rehash audit has 173 confirmations and no refutation. The full180core-second release charge remains; recovery is156180coreseconds and GPU charge is0.
+Verdict: CONFIRMED. The independent verifier audit389/0 and actual the main model review51/0 plus11/0 agree: partition32, call62 and comparison72 completed once each with every registered row passing, exit0, empty logs and warnings, and no failure record. The actual review hash is ba7488c58e1742d524ef3cd00d0814d0246e5168e6c35eb5ddb7df184f949f4f. The new rehash audit has 173 confirmations and no refutation. The full180core-second release charge remains; recovery is156180coreseconds and GPU charge is0.
 
 Scope: finite manufactured controls. Cite the four-file software binding, scalar-only finite probes, warnings recorded rather than gated, limits and output totals checked after execution, and interpreter startup .pth hooks. Neither the probes nor the tested paths establish persistent arithmetic behaviour. No selected-state Newton agreement, source or pressure accuracy, Euler profile or label claim follows.
 
@@ -8692,7 +8692,7 @@ Navigation and prior status bytes are archived in report_reviews/20261027T143450
 
 # R1 pressure completion and concrete saved-reader request
 
-Date 2026-10-27T14:38:30.720788+00:00. To lead Claude Opus5.5, us.anthropic.claude-opus-5-5. c_l = 0.45, omega = 1, omega/c_l = 20/9 nominal.
+Date 2026-10-27T14:38:30.720788+00:00. To lead the main model, the main model. c_l = 0.45, omega = 1, omega/c_l = 20/9 nominal.
 
 Pressure R1 completed 2026-10-27T14:36:03.886760+00:00, exit0, watch 16.43677483871579s, accounted 16.437969540711492coreseconds/0GPU. Worker 14.416146676056087s, peakRSS 930664448bytes, missingRSS0. Both owned PIDs have exited. RESULTS f4eb2e1aa83532263e3cf04f135e33a7efc7923d1155e9c06d48cb3863c4796a, WATCH 3a0be7c88c9c0bdd8a26627eb4f21c7d7965271218abbaf056adef57d17da511, PRESSURE_RESULT a42c458a58a4d8faa5cb59b80c1f3739b8e5330677f6f078cd1580d3808e8f9d. Actual PN release and unchanged permit are bound.
 
@@ -8709,7 +8709,7 @@ Pressure and derivative accuracy, source/quadrature convergence, M1/M2, eligibil
 
 # Newton comparison cannot cross the frozen registration as currently written
 
-Date: 2026-10-27T14:40:40.293479+00:00. Actual collaborator: lead Claude Opus 5.5, us.anthropic.claude-opus-5-5. Parameters: c_l = 0.45, omega = 1, omega/c_l = 20/9 nominal.
+Date: 2026-10-27T14:40:40.293479+00:00. Actual collaborator: lead the main model, the main model. Parameters: c_l = 0.45, omega = 1, omega/c_l = 20/9 nominal.
 
 **CONFIRMED: an additional integration step is necessary.** The existing registration 5a37faf9 has null Newton plans and resources. A separately reviewed Newton registration can enable fresh Newton generation, but the current comparison worker rejects the completed spherical producers from the old registration. `load_task` requires the result, watch and permit to share the consumer's registration hash and run directory. `newton_comparisons_task` applies that same loader to fields, moments, every spherical pressure leg and every Newton leg. Nine static checks pass. The exact inspected function bodies and source hashes are retained beside this note.
 
@@ -9092,7 +9092,7 @@ Method: derive the rational modal ratios and their gauge covariance, then inspec
 
 # RI, RJ and RK receipt
 
-Date 2026-10-27T20:27:10.377166+00:00. The actual lead is us.anthropic.claude-opus-5-5, Claude Opus 5.5, through its saved reviews and notes. Copies and hashes are in INPUT_BINDINGS.json.
+Date 2026-10-27T20:27:10.377166+00:00. The actual lead is the main model, the main model, through its saved reviews and notes. Copies and hashes are in INPUT_BINDINGS.json.
 
 RI accepts the five-lock correction dated 19:55:26Z and the RF/RG receipt. The original R3 reader request incorrectly said seven locks; its dated correction remains part of the evidence. RI also clarifies that RL-8 does not itself require full-cap charging on a guard stop. This verifier chooses the stricter full-cap charge on a failed R4 source, subject to recording it in the actual result request. No refund is claimed now.
 
@@ -9280,7 +9280,7 @@ Record: report_reviews/20261027T223714Z_R4_terminal_archive_planning_note/REVIEW
 
 Fifteen CONFIRMED, zero REFUTED and three OPEN in this receipt. CHECKS.json records the method, result, verdict and date of each check. INPUT_BINDINGS.json preserves exact hashes; the actual lead reviews and outputs are copied here. No other lane code was run.
 
-Actual Claude Opus 5.5 accepts the transfer proof fa11126c with its Jacobian notation addendum 81719280. PT12 closes. Together with SG, separate review of all three defect proofs is complete. The reviewer correctly qualifies that F=E+Jac(U_t-U_c) needs differentiable U_t, whereas the supplied-matrix momentum identity itself uses only a continuous U_t. The mass and supremum bounds must be inserted in their nondecreasing m,M expressions, not by independently increasing a. No selected-state envelopes or numerical pressure bound follow.
+Actual the main model accepts the transfer proof fa11126c with its Jacobian notation addendum 81719280. PT12 closes. Together with SG, separate review of all three defect proofs is complete. The reviewer correctly qualifies that F=E+Jac(U_t-U_c) needs differentiable U_t, whereas the supplied-matrix momentum identity itself uses only a continuous U_t. The mass and supremum bounds must be inserted in their nondecreasing m,M expressions, not by independently increasing a. No selected-state envelopes or numerical pressure bound follow.
 
 The moments review corrections SG07 and SG13 are accepted in the actual dated erratum add631b2. Their original REFUTED rows remain part of the record. The transfer check's v1 output retains 21 PASS and one failed exterior quadrature predicate; v2 retains 18 PASS and no FAIL. Source inspection and saved-output counts were checked here without rerunning either.
 
@@ -9387,7 +9387,7 @@ Actual SP LEAD_FINAL5a6e84d6 is copied in report_reviews/20261028T001013Z_SP_R4_
 
 ## 2026-10-28T00:18:12.021643+00:00: shift 15 start and SQ exact-table acceptance
 
-PROMPT.md read in full; lead and numerics status and current reports inspected. Lane disk is 23G. Actual SQ review accepts the fresh-table result; receipt report_reviews/20261028T001812Z_SQ_exact_table_acceptance/RECEIPT.md, 9 CONFIRMED / 0 REFUTED / 2 OPEN. Lead model is Claude Opus 5.5; numerics MODEL names Claude Fable 5.1. Moments release and fr9 repairs remain pending. No numerical execution or allocation in this step.
+PROMPT.md read in full; lead and numerics status and current reports inspected. Lane disk is 23G. Actual SQ review accepts the fresh-table result; receipt report_reviews/20261028T001812Z_SQ_exact_table_acceptance/RECEIPT.md, 9 CONFIRMED / 0 REFUTED / 2 OPEN. Lead model is the main model; numerics MODEL names the main model. Moments release and fr9 repairs remain pending. No numerical execution or allocation in this step.
 
 ## 2026-10-28T00:22:20.818255+00:00: Current evidence synthesis, no new execution
 
@@ -9491,7 +9491,7 @@ The [23-row coverage v2](verification_stage3/final_disposition_20261028/STAGEIII
 
 Date: 2026-10-28T03:23:06.901457+00:00. Method: complete reading of the six bound standalone proofs, independent hand derivation of their critical identities and limiting arguments, comparison to the bound fr12 statements, and rechecking the actual Opus review of item 35. No numerical field, root finder, observer or other-lane source was executed. This is a mathematical and source-scope review, not an additional acceptance test.
 
-The lead's recorded model is Claude Opus 5.5, `us.anthropic.claude-opus-5-5`. The actual DH review is bound and the three reviewed vorticity proof hashes still match. This review agrees with that review after independently checking its arguments; it introduces no replacement model and no newly claimed Opus response.
+The lead's recorded model is the main model, `the main model`. The actual DH review is bound and the three reviewed vorticity proof hashes still match. This review agrees with that review after independently checking its arguments; it introduces no replacement model and no newly claimed Opus response.
 
 All exact-profile conclusions retain their own hypotheses. In particular the global flow arguments use uniform sublinearity and positive c_l; the report and bound proofs apply them in the specified target range. The selected approximation has c_l = 0.45, omega = 1, nominal omega/c_l = 20/9. The independent D10 approximation has c_l = 0.45, omega = 0.3, nominal omega/c_l = 2/3. Neither approximation is turned into an exact profile by this review.
 
@@ -9818,7 +9818,7 @@ Method: text-only update of the three leading indexes, preserving historical evi
 
 ## 2026-10-28T06:54:41.946656+00:00: Independent proof audit of fr18 items 30 and 34
 
-report_reviews/20261028T065441Z_far_coefficients_items30_34/REVIEW.md (SHA256 d846f36e7a681cd09ffe1a83f591e7b9427952a1f9b8b8fc5795d2f4eba22209) records 24 CONFIRMED, 0 REFUTED, 4 OPEN; AUDIT.json SHA256 d2f375473c26f8367cd89f24cae1f0b826575bea788392a78db614b9e68673c7. No correction. The pressure cutoff and low moments, outward characteristic, weak-C1 helicity flux argument and projection limitations were independently checked. The ten symbolic criteria were read as saved records, not rerun; their original runtime provenance remains open. No selected-state continuum enclosure, quantitative transition radius, exact profile or outcome D follows. No numerical computation ran. Actual collaborator is Claude Opus 5.5.
+report_reviews/20261028T065441Z_far_coefficients_items30_34/REVIEW.md (SHA256 d846f36e7a681cd09ffe1a83f591e7b9427952a1f9b8b8fc5795d2f4eba22209) records 24 CONFIRMED, 0 REFUTED, 4 OPEN; AUDIT.json SHA256 d2f375473c26f8367cd89f24cae1f0b826575bea788392a78db614b9e68673c7. No correction. The pressure cutoff and low moments, outward characteristic, weak-C1 helicity flux argument and projection limitations were independently checked. The ten symbolic criteria were read as saved records, not rerun; their original runtime provenance remains open. No selected-state continuum enclosure, quantitative transition radius, exact profile or outcome D follows. No numerical computation ran. Actual collaborator is the main model.
 
 ## 2026-10-28T06:59:35.800217+00:00: Actual UM accepts disposition and coverage v6
 
@@ -9888,7 +9888,7 @@ report_reviews/20261028T075318Z_dynamics_outgoing_items8_10_12_15_17/REVIEW.md S
 
 # Item 18: scope of the saved angular-degree check
 
-Date: 2026-10-28T08:00:11.620787+00:00. Actual collaborator: us.anthropic.claude-opus-5-5. No computation was run.
+Date: 2026-10-28T08:00:11.620787+00:00. Actual collaborator: the main model. No computation was run.
 
 The analytic theorem is confirmed. The description of its saved supporting computation needs correction: harmonic degree is detected numerically and the script does not construct the correction G or its potential. Replace the two sentences beginning "Both routes derived this" and ending "attains every bound" by:
 
@@ -9910,7 +9910,7 @@ Full hashes are recorded in AUDIT.json. This provenance correction does not weak
 
 # Identities, formal tails and finite-shell noncoercivity
 
-Date: 2026-10-28T08:03:04.235522+00:00. Items 1, 2, 4, 5, 9, 11 and 18-20 of installed fr18 were checked. This completes the current-shift independent reading of all 36 mathematical items when combined with the earlier topic audits. The actual collaborator is Claude Opus 5.5, as bound by MODEL and the listed review records.
+Date: 2026-10-28T08:03:04.235522+00:00. Items 1, 2, 4, 5, 9, 11 and 18-20 of installed fr18 were checked. This completes the current-shift independent reading of all 36 mathematical items when combined with the earlier topic audits. The actual collaborator is the main model, as bound by MODEL and the listed review records.
 
 The only new report correction in this group is the already requested item-18 distinction between exact derivatives, numerical harmonic projection and the analytic attainment proof. Item 20 is correct as written about maximum-over-RMS ratios. The RMS self-similar ratios can tend to zero in the concentration construction while their maximum analogues grow.
 
@@ -9969,7 +9969,7 @@ No program was executed. Complete proofs and the named current control source/ou
 | GI49 | Compact steady-flow source provenance. Read the source manifest and earlier complete-source audit; do not infer from an abstract. The used ingredients are Gavrilov arXiv:1810.08020v1 and Constantin-La-Vicol arXiv:1903.11699v1. The earlier 1906.07465 citation was the wrong ingredient and is preserved as a correction. Compact pressure follows after subtracting the exterior constant and Newton uniqueness. | CONFIRMED | 2026-10-28T08:03:04.235522+00:00 |
 | GI50 | Literature scope. Read the standalone map and bind the completed current-shift primary-text re-audit. R1 integrability and L2 exclusions do not cover the differentiated nonzero natural tail. Xue Theorem 1.1(1) gives the compatible ball-energy alternative when its additional C3 and full-space-pressure hypotheses hold. It does not exclude the rotating target. | CONFIRMED | 2026-10-28T08:03:04.235522+00:00 |
 | GI51 | Companion L2 scope. Read the nonrotating-scope proof and the previously checked report location. The inspected source is Changhe/Euler/approach1/Euler1.report.md. Its nonrotating conclusion and explicit rotating exclusion cannot be extended by replacing V with W: the added omega(1-2 c_l)Jy term is not a gradient. This is a scope audit, not a new independent proof of every L2 dynamical step. | CONFIRMED | 2026-10-28T08:03:04.235522+00:00 |
-| GI52 | Actual model collaboration and unchanged reviewed proof. Compare MODEL, the actual source reviews and the retained concentration receipt. The collaborator is us.anthropic.claude-opus-5-5. The current concentration proof SHA256 equals its retained reviewed binding 470cac09755f008c902ab9a9856edcec86b29e0133d841a38952f67f8f1aed30. Actual d18,d23,d24,d37,d39 findings were compared with the independent derivations. | CONFIRMED | 2026-10-28T08:03:04.235522+00:00 |
+| GI52 | Actual model collaboration and unchanged reviewed proof. Compare MODEL, the actual source reviews and the retained concentration receipt. The collaborator is the main model. The current concentration proof SHA256 equals its retained reviewed binding 470cac09755f008c902ab9a9856edcec86b29e0133d841a38952f67f8f1aed30. Actual d18,d23,d24,d37,d39 findings were compared with the independent derivations. | CONFIRMED | 2026-10-28T08:03:04.235522+00:00 |
 | GI53 | Report scope after the current correction request. Read literal items 1,2,4,5,9,11,18,19,20 against the proofs. No additional mathematical correction is needed for these items beyond the item-18 supporting-check provenance. In particular item 20 is consistent with the shrinking-family maximum ratios. All statements retain their exact, conditional, formal or continuum scope. | CONFIRMED | 2026-10-28T08:03:04.235522+00:00 |
 | GI54 | R3 applicability. Retain the unsuccessful full-text retrieval status. The precise hypotheses of the 2023 Chae paper remain unassessed. Metadata and unsuccessful navigation are not a theorem source. | OPEN | 2026-10-28T08:03:04.235522+00:00 |
 | GI55 | Item-18 correction accepted and installed. Request current actual-model review of AS04. Lead acceptance and the eventual installed replacement are pending at the time of this record. No future builder result is presumed. | OPEN | 2026-10-28T08:03:04.235522+00:00 |
@@ -9981,7 +9981,7 @@ All complete input hashes are in AUDIT.json. No supplied numerical state becomes
 
 # Actual UU: outgoing proof accepted and fr19f statically reviewed
 
-Date: 2026-10-28T08:04:05.704674+00:00. The actual collaborator is Claude Opus 5.5. The outgoing proof and replacement are accepted by both lanes. Builder f is accepted for the future freeze at source scope. No builder or symbolic control ran here.
+Date: 2026-10-28T08:04:05.704674+00:00. The actual collaborator is the main model. The outgoing proof and replacement are accepted by both lanes. Builder f is accepted for the future freeze at source scope. No builder or symbolic control ran here.
 
 Counts: 13 CONFIRMED, 3 OPEN.
 
@@ -10057,7 +10057,7 @@ Actual current-model review remains required for the item-18 replacement. The la
 
 # Actual UV: item 18 correction and fr19g source acceptance
 
-Date: 2026-10-28T08:06:26.681074+00:00. The actual collaborator is Claude Opus 5.5. The revised item-18 text is accepted, including its explicit attaining example. The mathematical theorem remains confirmed. The installed text still awaits correction.
+Date: 2026-10-28T08:06:26.681074+00:00. The actual collaborator is the main model. The revised item-18 text is accepted, including its explicit attaining example. The mathematical theorem remains confirmed. The installed text still awaits correction.
 
 Counts: 11 CONFIRMED, 0 REFUTED, 3 OPEN. No computation or builder was run.
 
@@ -10120,7 +10120,7 @@ report_reviews/20261028T090705Z_VB_versions_of_record_acceptance/REVIEW.md, SHA2
 
 ## 2026-10-28T09:14:18Z: actual VC accepts the installed-report status clarification
 
-[report_reviews/20261028T091149Z_shift18_installed_report_status/VC_ACCEPTANCE_ADDENDUM.md](report_reviews/20261028T091149Z_shift18_installed_report_status/VC_ACCEPTANCE_ADDENDUM.md), SHA256 71a47e1135498a9655cb9296d858b0ea6048f676a8cd6436d79da942da60e04e: 3 CONFIRMED, 0 REFUTED, 1 OPEN. Actual Claude Opus 5.5 review 56388def accepts HS18-02; the amended handover now distinguishes agreed corrections from installed fr18. The report, builder g and disposition v7 remain byte-identical. No further reply is needed. Actual installation and all closing checks remain pending; no new computation or release.
+[report_reviews/20261028T091149Z_shift18_installed_report_status/VC_ACCEPTANCE_ADDENDUM.md](report_reviews/20261028T091149Z_shift18_installed_report_status/VC_ACCEPTANCE_ADDENDUM.md), SHA256 71a47e1135498a9655cb9296d858b0ea6048f676a8cd6436d79da942da60e04e: 3 CONFIRMED, 0 REFUTED, 1 OPEN. Actual the main model review 56388def accepts HS18-02; the amended handover now distinguishes agreed corrections from installed fr18. The report, builder g and disposition v7 remain byte-identical. No further reply is needed. Actual installation and all closing checks remain pending; no new computation or release.
 
 
 ## 2026-10-28T09:52:25Z: shift 21 startup and resume-record maintenance
@@ -10147,7 +10147,7 @@ Method: local-file reading and SHA256 comparison against shift 23. Result: ten g
 
 ## 2026-10-28T11:41:14Z: shift 25 VD/VE operational receipt and handoff
 
-Read the full prompt, own and team records, CPU_LIMIT.md, CPUS, and CL-1 release/commands. Actual collaborator is Claude Opus 5.5 through lane files. Eight governing identities are unchanged; new VD/VE and numerics item Q/receipt were read. [report_reviews/20261028T113952Z_VE_disk_ruling_receipt/REVIEW.md](report_reviews/20261028T113952Z_VE_disk_ruling_receipt/REVIEW.md), SHA256 02a96e081131b837aaf87f5305b8c8a1cb59c45e6011710af4794535b83ed420, records 6 CONFIRMED, 0 REFUTED, 2 OPEN. The reserve proposal is withdrawn. Only the numerics chain/assembly gain a 1e9 free-byte exception; verifier CL-1 stays at 20e9. Both named reserve paths are absent at sampled reads. Saved df reports 101,349,670,912 free bytes at 2026-10-28T11:40:27.904921+00:00; history and future capacity remain open. A metadata heading-matcher failure is preserved and corrected, with no scientific rerun. No scientific program, CL-1 command, timer or signal ran. Startup du -sh 22G, affinity [61]. Source record shifts/shift25_startup_20261028T114114Z.json (b1a16c6bf8dd73b8acfaa5dda41f8a529b78c3e3fd02b5a2c946f91b938c2d1a); handoff shifts/shift25_handoff_20261028T114114Z.md (6eb76037948410f9262fba74a06e6111ff36404583df0e8b2f2616c41c4e9152). All five closing invocations remain UNRUN; next start 14:40 to 14:41 UTC. Provisional C and installed-report dispositions are unchanged.
+Read the full prompt, own and team records, CPU_LIMIT.md, CPUS, and CL-1 release/commands. Actual collaborator is the main model through lane files. Eight governing identities are unchanged; new VD/VE and numerics item Q/receipt were read. [report_reviews/20261028T113952Z_VE_disk_ruling_receipt/REVIEW.md](report_reviews/20261028T113952Z_VE_disk_ruling_receipt/REVIEW.md), SHA256 02a96e081131b837aaf87f5305b8c8a1cb59c45e6011710af4794535b83ed420, records 6 CONFIRMED, 0 REFUTED, 2 OPEN. The reserve proposal is withdrawn. Only the numerics chain/assembly gain a 1e9 free-byte exception; verifier CL-1 stays at 20e9. Both named reserve paths are absent at sampled reads. Saved df reports 101,349,670,912 free bytes at 2026-10-28T11:40:27.904921+00:00; history and future capacity remain open. A metadata heading-matcher failure is preserved and corrected, with no scientific rerun. No scientific program, CL-1 command, timer or signal ran. Startup du -sh 22G, affinity [61]. Source record shifts/shift25_startup_20261028T114114Z.json (b1a16c6bf8dd73b8acfaa5dda41f8a529b78c3e3fd02b5a2c946f91b938c2d1a); handoff shifts/shift25_handoff_20261028T114114Z.md (6eb76037948410f9262fba74a06e6111ff36404583df0e8b2f2616c41c4e9152). All five closing invocations remain UNRUN; next start 14:40 to 14:41 UTC. Provisional C and installed-report dispositions are unchanged.
 
 | Check | Verdict | Method | Result |
 | --- | --- | --- | --- |
@@ -10163,7 +10163,7 @@ Read the full prompt, own and team records, CPU_LIMIT.md, CPUS, and CL-1 release
 
 ## 2026-10-28T12:13:25Z: shift 26 startup and handoff
 
-Read full PROMPT.md, current own/team records, CPU_LIMIT.md, CPUS, and CL-1 release/commands. 10 of twelve source identities are unchanged, including all eight governing sources; only team status files changed. Lead status 2026-10-28T11:52:17Z, numerics status 2026-10-28T11:56:43Z, latest lead VE and numerics report 2026-10-28T11:38:28Z. Actual collaborator is Claude Opus 5.5 through lane files. Startup du -sh 22G; affinity [61]. Team resource and liveness claims were not independently remeasured. No new request, scientific evaluation, closing command, timer or signal. Source record [shifts/shift26_startup_20261028T121325Z.json](shifts/shift26_startup_20261028T121325Z.json) (b8c5a3972bdc52cf21d1330c5a96d6e513f10cc7190a8e8460bc8b3efaf05e87); handoff [shifts/shift26_handoff_20261028T121325Z.md](shifts/shift26_handoff_20261028T121325Z.md) (f83baf68f8d3350ae83c55d14dc70aa1d97b195c11a9df30edd7811fb2496285). All five CL-1 invocations remain UNRUN; next start 14:40 to 14:41 UTC. The 30-minute restart-gap warning remains. Provisional C and installed-report dispositions are unchanged. Pending work returns to the shift loop without idle padding.
+Read full PROMPT.md, current own/team records, CPU_LIMIT.md, CPUS, and CL-1 release/commands. 10 of twelve source identities are unchanged, including all eight governing sources; only team status files changed. Lead status 2026-10-28T11:52:17Z, numerics status 2026-10-28T11:56:43Z, latest lead VE and numerics report 2026-10-28T11:38:28Z. Actual collaborator is the main model through lane files. Startup du -sh 22G; affinity [61]. Team resource and liveness claims were not independently remeasured. No new request, scientific evaluation, closing command, timer or signal. Source record [shifts/shift26_startup_20261028T121325Z.json](shifts/shift26_startup_20261028T121325Z.json) (b8c5a3972bdc52cf21d1330c5a96d6e513f10cc7190a8e8460bc8b3efaf05e87); handoff [shifts/shift26_handoff_20261028T121325Z.md](shifts/shift26_handoff_20261028T121325Z.md) (f83baf68f8d3350ae83c55d14dc70aa1d97b195c11a9df30edd7811fb2496285). All five CL-1 invocations remain UNRUN; next start 14:40 to 14:41 UTC. The 30-minute restart-gap warning remains. Provisional C and installed-report dispositions are unchanged. Pending work returns to the shift loop without idle padding.
 
 | Check | Date UTC | Method | Result | Verdict |
 | --- | --- | --- | --- | --- |
@@ -10183,7 +10183,7 @@ Review: report_reviews/20261028T144151Z_CL1_pre_final_result/REVIEW.md, SHA256 1
 
 ## 2026-10-28T15:36:53Z: shift 35 startup and handoff
 
-Read PROMPT.md in full, current own and team status/report passages, lead notes/worklog, CPU restrictions, and the released CL-1 commands. Twelve startup source identities and three closing-template identities match shift 34. This confirms file identity only; no new scientific verdict or claim validation. Record shifts/shift35_startup_20261028T153653Z.json, SHA256 b1a481269d0637d7892dfb3d4fbaa14c2e2b963d6b808103685a1d1afc46b58b. Actual collaborator remains Claude Opus 5.5 through lane files. Startup du -sh 22G; writer affinity [61], nice 19. No numerical program, CL-1 invocation, process scan, GPU/free-space measurement, timer, signal or remote client ran. Pre-final pair remains SKIPPED. Closing producer/reader, stop, and final installed-output review remain pending. Handoff shifts/shift35_handoff_20261028T153653Z.md, SHA256 540828d216cf5d50b8ce947fa156306604d9123fcea51bf433435baeb95c4e5b. Campaign is not complete.
+Read PROMPT.md in full, current own and team status/report passages, lead notes/worklog, CPU restrictions, and the released CL-1 commands. Twelve startup source identities and three closing-template identities match shift 34. This confirms file identity only; no new scientific verdict or claim validation. Record shifts/shift35_startup_20261028T153653Z.json, SHA256 b1a481269d0637d7892dfb3d4fbaa14c2e2b963d6b808103685a1d1afc46b58b. Actual collaborator remains the main model through lane files. Startup du -sh 22G; writer affinity [61], nice 19. No numerical program, CL-1 invocation, process scan, GPU/free-space measurement, timer, signal or remote client ran. Pre-final pair remains SKIPPED. Closing producer/reader, stop, and final installed-output review remain pending. Handoff shifts/shift35_handoff_20261028T153653Z.md, SHA256 540828d216cf5d50b8ce947fa156306604d9123fcea51bf433435baeb95c4e5b. Campaign is not complete.
 
 # Closing resource result review
 
@@ -10291,7 +10291,7 @@ Result: The stop wrapper has not yet run and campaign end has not occurred. This
 
 Method: Check actual model collaboration on this newly created closing review.
 
-Result: The prior V6 definitions and difference proofs were reviewed by Claude Opus 5.5 through the lead lane. Actual lead reading of this new result is pending its quiet window ending at 16:45:30 UTC.
+Result: The prior V6 definitions and difference proofs were reviewed by the main model through the lead lane. Actual lead reading of this new result is pending its quiet window ending at 16:45:30 UTC.
 
 Evidence and binding records: report_reviews/20261028T163258Z_CL1_closing_result/AUDIT.json. Table C wording: report_reviews/20261028T163258Z_CL1_closing_result/TABLE_C_WORDING.md.
 
@@ -10365,7 +10365,7 @@ Result: Physical exclusivity and activity between scans are not established. The
 
 Method: Check actual collaborator reading of this new result.
 
-Result: Claude Opus5.5 in the lead lane has not yet reviewed this newly saved receipt. Its quiet window ends16:45:30 UTC.
+Result: the main model in the lead lane has not yet reviewed this newly saved receipt. Its quiet window ends16:45:30 UTC.
 
 Evidence: report_reviews/20261028T164300Z_CL1_stop_result/AUDIT.json.
 
@@ -10379,7 +10379,7 @@ The resource and stop receipts are accepted by the actual lead. One narrow sourc
 
 Method: Read the actual lead V2 block and compare its bound receipt and saved summary values.
 
-Result: Claude Opus 5.5 accepted the closing receipt and separately reproduced all three Decimal differences. CL30-17 is closed at this receipt scope.
+Result: the main model accepted the closing receipt and separately reproduced all three Decimal differences. CL30-17 is closed at this receipt scope.
 
 ## LR36-02: CONFIRMED
 
@@ -10415,7 +10415,7 @@ Result: The hour-72 source is audit_stage_resources.py (ba5eb20e); closing uses 
 
 Method: Read MODEL and actual V5 part1.
 
-Result: The collaborator is us.anthropic.claude-opus-5-5. V5 distinguishes accounting and observation commands from scientific runs, and the guard absence bound from an exact exit instant.
+Result: The collaborator is the main model. V5 distinguishes accounting and observation commands from scientific runs, and the guard absence bound from an exact exit instant.
 
 ## LR36-08: OPEN
 
@@ -10470,7 +10470,7 @@ Method: Check for an application to the saved approximations or the entire exist
 
 Result: The argument requires the exact bracket. It does not certify numerical vortex trajectories, prove the absence of homoclinic closures through zeros, or imply outcome D. No such application is added.
 
-The complete proof remains in theory/vorticity_flow_rigidity/PROOF.md. Earlier actual Claude Opus5.5 acceptance DH and the F35 audit remain the governing evidence. The present review addresses only the lead's final scope question.
+The complete proof remains in theory/vorticity_flow_rigidity/PROOF.md. Earlier actual the main model acceptance DH and the F35 audit remain the governing evidence. The present review addresses only the lead's final scope question.
 
 ## 2026-10-28T16:57:30.545442+00:00: R9 reproduced-diagnostic comparison scope
 
@@ -10506,4 +10506,4 @@ report_reviews/20261028_final_installation/REVIEW_fr19.md (SHA256 8e38691378f56f
 
 ## 2026-10-28T17:28:38.220803+00:00: final installed fr19h accepted, label C confirmed
 
-report_reviews/20261028_final_installation/REVIEW_fr19h.md (SHA256 ebc5ad5759c58ad1243e00ee1321cc6d35a2498635b6eda831f6739cc2ee8771) records **23 CONFIRMED, 0 REFUTED, 3 OPEN** for actual FINAL_REPORT.md fr19h 265785a994c740a0bd22da156afd0dfa909cf3f55facf3f9f38b5afec58099ca. Both RU36 corrections are installed. Every word change from fr19 was checked, together with the builder change, actual values and live parent hash. All five mathematical amendments remain present; ALL36_FINAL.md records 36 CONFIRMED under their hypotheses. LABEL_C_VALIDATION_fr19h.md (SHA256 6497bacc5dc75e469126995ec5645fdc67ebed972ac6cef4b8da4cbe57547e4d) independently CONFIRMS final label C in the documented finite-search scope. The three OPEN rows concern complete physical resource use/global shutdown, wider candidate validation and the separately pending canonical primary documents. They are not outstanding literal-text refutations. No scientific threshold or scope is relaxed. This supplies the requested final delta audit and label validation; actual primary daily/summary output review follows when written.
+report_reviews/20261028_final_installation/REVIEW_fr19h.md (SHA256 451a66c61f5c960686336ad811236cee01b422c3b755a78a9578d3668e9b5562) records **23 CONFIRMED, 0 REFUTED, 3 OPEN** for actual FINAL_REPORT.md fr19h 265785a994c740a0bd22da156afd0dfa909cf3f55facf3f9f38b5afec58099ca. Both RU36 corrections are installed. Every word change from fr19 was checked, together with the builder change, actual values and live parent hash. All five mathematical amendments remain present; ALL36_FINAL.md records 36 CONFIRMED under their hypotheses. LABEL_C_VALIDATION_fr19h.md (SHA256 6497bacc5dc75e469126995ec5645fdc67ebed972ac6cef4b8da4cbe57547e4d) independently CONFIRMS final label C in the documented finite-search scope. The three OPEN rows concern complete physical resource use/global shutdown, wider candidate validation and the separately pending canonical primary documents. They are not outstanding literal-text refutations. No scientific threshold or scope is relaxed. This supplies the requested final delta audit and label validation; actual primary daily/summary output review follows when written.

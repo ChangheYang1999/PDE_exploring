@@ -1,6 +1,6 @@
 # Preflight review gate and closure obligations
 
-Actual Claude Opus5.5 completed the preflight review at
+Actual the main model completed the preflight review at
 2026-10-21T04:02:29.479045+00:00, request78301dba-dfe9-4920-98c8-98b782c5e060.
 It accepted readiness to queue, conditional on the preflight manifest pinning
 the producer, independent auditor, replay, stage runner, shell wait, all three

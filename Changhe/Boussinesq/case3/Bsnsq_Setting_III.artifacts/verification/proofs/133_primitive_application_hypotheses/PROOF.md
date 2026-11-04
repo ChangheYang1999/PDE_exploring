@@ -1,6 +1,6 @@
 # Axis normalization and a conditional primitive-tail obstruction
 
-Status: independent informal proof answering the lead's 05:53 questions. Actual claude-opus-5-5 review 179 confirmed the conditional conclusions; its requests for explicit PDEs, a standalone primitive argument and support for the source-only limitation are incorporated below. Written follow-up 181 by the actual claude-opus-5-5 model confirmed the revisions and found no mathematical error. No full B2 existence or exclusion claim.
+Status: independent informal proof answering the lead's 05:53 questions. Actual main-model review 179 confirmed the conditional conclusions; its requests for explicit PDEs, a standalone primitive argument and support for the source-only limitation are incorporated below. Written follow-up 181 by the actual main-model model confirmed the revisions and found no mathematical error. No full B2 existence or exclusion claim.
 
 ## Statement A: axis normalization under a zero-free axis drift
 

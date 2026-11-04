@@ -1,6 +1,6 @@
 # Sectorial mass and the absolute center-velocity integral
 
-Status: verifier consequence of the derivative-free angular temperature limit, independently confirmed by actual claude-opus-5-5. A complete informal proof is given here. It removes the velocity derivative assumption from the absolute-component exclusion in the power-sublinear class. It is not a full B2 nonexistence theorem.
+Status: verifier consequence of the derivative-free angular temperature limit, independently confirmed by actual main-model. A complete informal proof is given here. It removes the velocity derivative assumption from the absolute-component exclusion in the power-sublinear class. It is not a full B2 nonexistence theorem.
 
 ## Statement
 
@@ -64,4 +64,4 @@ No DV decay, vorticity sign, finite enstrophy, bounded vorticity or assumed angu
 
 Dependencies: the fully stated angular-limit theorem in research/14, the conservative form of the exact PDE, distributional derivatives of a continuous function, compactly supported testing, and change of variables. No numerical evidence is used as proof.
 
-Audit 2026-10-20T14:26:06.569409+00:00: actual claude-opus-5-5 confirmed the compact-test scaling, absence of any vorticity upper-bound requirement, the critical geometric-annulus argument, and the weighted extension in opus_reviews/06_sector_only/answer.md. This review assumes the angular-limit theorem, whose separate proof is in research/14.
+Audit 2026-10-20T14:26:06.569409+00:00: actual main-model confirmed the compact-test scaling, absence of any vorticity upper-bound requirement, the critical geometric-annulus argument, and the weighted extension in opus_reviews/06_sector_only/answer.md. This review assumes the angular-limit theorem, whose separate proof is in research/14.

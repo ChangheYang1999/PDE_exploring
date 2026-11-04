@@ -1,6 +1,6 @@
 # Independent actual boundary-composition adjudication
 
-Written 2026-10-21T21:54:19.584248+00:00, after reading the complete actual Claude Opus5.5 response. Request 6ac3c19a-fcd4-4025-8a4e-b572e8c41fbf, input SHA d142628675c5a88c77e9840ad4c9be4b3ca0c11d31253c5aa32675730977bb8b, raw response SHA b93ea5b870f15b02f385309926a563e274b113478baf5d05f605b3b2cd0704b4, ended 2026-10-21T21:52:12.004695+00:00 with end_turn. This disposition is outside that request bundle.
+Written 2026-10-21T21:54:19.584248+00:00, after reading the complete actual the main model response. Request 6ac3c19a-fcd4-4025-8a4e-b572e8c41fbf, input SHA d142628675c5a88c77e9840ad4c9be4b3ca0c11d31253c5aa32675730977bb8b, raw response SHA b93ea5b870f15b02f385309926a563e274b113478baf5d05f605b3b2cd0704b4, ended 2026-10-21T21:52:12.004695+00:00 with end_turn. This disposition is outside that request bundle.
 
 I rederived the I/J equations, A'=-mA+e^(4t)F, B'=mB-e^(4t)F, A+B=2m psi, and B-A=2r psi_r from psi=r^4(J-I)/2. Division by r^2 gives both q equations and P=m psi/r^2, R=psi_r/r. No zero-rate division occurs at n=2. The two q equations are algebraic consequences, not independent mathematical tests. The new Fraction/fmpq constructions check9396 scalar coefficients each. The physical polar derivation of F is inherited from98/157/modal_green; this checker encodes that same F without repeating the angular projection.
 

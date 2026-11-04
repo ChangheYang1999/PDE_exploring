@@ -1,6 +1,6 @@
 # Input, order-five and Laurent-encoding clarifications
 
-The proof review ended at 2026-10-21T14:42:48Z using actual Claude Opus 5.5. It confirmed the Green signs and factors, the two velocity representations, the highest possible mode and the convolution radius. The following specifications close its implementation questions.
+The proof review ended at 2026-10-21T14:42:48Z using actual the main model. It confirmed the Green signs and factors, the two velocity representations, the highest possible mode and the convolution radius. The following specifications close its implementation questions.
 
 The input polynomials are Taylor polynomials H_j(t_c + s) = sum_a C_ja s^a in the local variable s = t - t_c. They represent only the middle spline branch, so the exponential factor in the density is exactly exp(3t), with no extra alpha. The preparation check reconstructs each entire polynomial from the exact trial knot vector and spline coefficients by a local Cox recurrence in the polynomial ring Q[s]. It checks strict interior membership in the identified original span and containment of all eight exact coefficients in every imported box. This independently binds the derivative inputs, beyond the original value check.
 

@@ -11,7 +11,7 @@ def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def load(p):return json.loads(Path(p).read_text())
 def reviewed(tag,paths):
  meta=load(BASE/f'notes/reviews/{tag}_metadata.json')
- assert meta['actual_response_model']=='claude-opus-5-5' and meta['stop_reason']=='end_turn'
+ assert meta['actual_response_model']=='main-model' and meta['stop_reason']=='end_turn'
  request=(BASE/f'notes/reviews/{tag}_request.txt').read_text();assert hashlib.sha256(request.encode()).hexdigest()==meta['input_sha256']
  for name in paths:
   marker='\n\nFILE '+name+'\n';assert request.count(marker)==1

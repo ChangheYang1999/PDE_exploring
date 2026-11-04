@@ -29,8 +29,8 @@ and a conforming subspace. This finding alone does not reject the floating
 SVD on the intended continuous combinations. It proves nothing adverse
 about a stronger final inverse space.
 
-The first actual Claude Opus5.5 response exhausted its token budget and
-is not an acceptance. Two subsequent authenticated actual claude-opus-5-5
+The first actual the main model response exhausted its token budget and
+is not an acceptance. Two subsequent authenticated actual main-model
 responses ended end_turn and accepted the restricted result. The final
 exchange withdrew the review's unproved density assertion and its blanket
 wording about every kind. Spline endpoint traces and exact conformity of

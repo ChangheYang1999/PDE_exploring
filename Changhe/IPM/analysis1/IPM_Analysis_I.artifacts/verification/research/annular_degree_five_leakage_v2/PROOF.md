@@ -1,6 +1,6 @@
 # A degree-five center term produced by a compact zero-strain perturbation
 
-Date 2026-10-22T02:39:11.650300+00:00. This finite-regularity version is written before its new symbolic checks. It supersedes the original version's unnecessarily strong smoothness hypothesis on compact annuli. The theorem and canonical-trial application remain OPEN pending those checks, an actual Claude Opus5.5 review and later own adjudication.
+Date 2026-10-22T02:39:11.650300+00:00. This finite-regularity version is written before its new symbolic checks. It supersedes the original version's unnecessarily strong smoothness hypothesis on compact annuli. The theorem and canonical-trial application remain OPEN pending those checks, an actual the main model review and later own adjudication.
 
 ## Exact statement
 

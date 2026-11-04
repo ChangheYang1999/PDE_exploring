@@ -1,6 +1,6 @@
 # No nonzero profile with finitely many physical angular modes
 
-Date: 2026-10-20. Status: proved for the restricted class below. Reviewed independently by the lead Claude Opus 5.5 on 2026-10-20 at 15:30Z, with exact symbolic checks N=1,3,5,7; report draft audited in AV31. This is not a nonexistence theorem for general angular functions.
+Date: 2026-10-20. Status: proved for the restricted class below. Reviewed independently by the lead the main model on 2026-10-20 at 15:30Z, with exact symbolic checks N=1,3,5,7; report draft audited in AV31. This is not a nonexistence theorem for general angular functions.
 
 ## Statement
 

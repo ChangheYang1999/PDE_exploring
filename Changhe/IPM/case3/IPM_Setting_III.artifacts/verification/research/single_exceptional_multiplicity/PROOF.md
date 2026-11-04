@@ -137,6 +137,6 @@ Finally eta>1 gives D>109 and hence 1<z<109/108. The counterconfiguration lies s
 
 ## Verification and remaining gaps
 
-The proof precedes its checker. The checker independently derives the weighted identity, (1), formal coefficients, exact partition lists, (3), the extra moment, and the rational logarithmic derivative. Source files and the result 258 gates are frozen with SHA256 hashes. The lead, whose actual model is Claude Opus 5.5, separately hand-checked the proposed lemma before this reconstruction. A direct follow-up review will be recorded with its actual provider model if one is obtained; it is not assumed here.
+The proof precedes its checker. The checker independently derives the weighted identity, (1), formal coefficients, exact partition lists, (3), the extra moment, and the rational logarithmic derivative. Source files and the result 258 gates are frozen with SHA256 hashes. The lead, whose actual model is the main model, separately hand-checked the proposed lemma before this reconstruction. A direct follow-up review will be recorded with its actual provider model if one is obtained; it is not assumed here.
 
 The conclusion is only a necessary condition in a finite auxiliary class. Odd degrees at least 13, nonpolynomial H, limiting sequences, and the full Setting III problem remain OPEN. These results cannot authorize a NO endpoint or an early finish.

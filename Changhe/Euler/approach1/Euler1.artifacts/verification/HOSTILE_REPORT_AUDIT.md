@@ -1,6 +1,6 @@
 # Reconciliation of the hostile report review
 
-Date: 2026-10-23T08:19:19.271321+00:00. Read all 476 lines of `snapshots/rep1-report-review-fa91f903467c781b.md`, SHA256 fa91f903467c781b7ac28432a21e37682943edc1c1e35d977fe88f68b5cb9e5e. That review concerns the older report SHA prefix b252ead9 and the 49-checkpoint snapshot. Its findings were checked against the final 77-checkpoint evidence and the complete report revision chain through 31a5340a363a09c9. It is not an approval of any later file; REPORT_AUDIT.md gives the exact approved version.
+Date: 2026-10-23T08:19:19.271321+00:00. Read all 476 lines of `snapshots/rep1-report-review-fa91f903467c781b.md`, SHA256 fd74cc6bdac9a8a3eca7475618b1ed6443cf1f9fe3df163383b3a07b67526f69. That review concerns the older report SHA prefix b252ead9 and the 49-checkpoint snapshot. Its findings were checked against the final 77-checkpoint evidence and the complete report revision chain through 31a5340a363a09c9. It is not an approval of any later file; REPORT_AUDIT.md gives the exact approved version.
 
 | Finding | Resolution and evidence scope |
 |---|---|
@@ -20,6 +20,6 @@ Date: 2026-10-23T08:19:19.271321+00:00. Read all 476 lines of `snapshots/rep1-re
 | Internal naming and paths | Scientific prose no longer uses lane or model role names. The relative bin/resume.sh artifact entry is retained as a concrete reproduction instruction. |
 | Stopping scope | The primary exact class is excluded under the checked theorem. The endpoint, larger exponents and required long numerical campaign remain unfinished; 96 hours are explicitly not claimed. |
 
-The referee independently confirmed the central obstruction and the fixed-class, nonquantitative absolute residual floor. The final report does not infer either result from a numerical loss. The referee recorded that a fresh Opus consultation was unavailable because of credentials. No substituted model is represented as Opus. This lane collaborated with the actual lead us.anthropic.claude-opus-5-5 through equations, proofs, counterarguments and repeated report repairs, as recorded in THEORY_V3_AUDIT.md and NOTES_FOR_TEAM.md.
+The referee independently confirmed the central obstruction and the fixed-class, nonquantitative absolute residual floor. The final report does not infer either result from a numerical loss. The referee recorded that a fresh Opus consultation was unavailable because of credentials. No substituted model is represented as Opus. This lane collaborated with the actual lead the main model through equations, proofs, counterarguments and repeated report repairs, as recorded in THEORY_V3_AUDIT.md and NOTES_FOR_TEAM.md.
 
 Final update 2026-10-23T08:22:15.545722+00:00: the accounting opening is repaired in report d5563816c676650b01b289be534a6911291125e51dea442cda276bf5e14873f7. Its exact-version audit is FINAL STATUS VALIDATED. The earlier wording concern is closed.

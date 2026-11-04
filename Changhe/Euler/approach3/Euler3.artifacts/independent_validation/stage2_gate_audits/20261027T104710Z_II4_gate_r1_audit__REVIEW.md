@@ -1,6 +1,6 @@
 # II.4 revised gate r1 audit
 
-Date 2026-10-27T10:51:23.684871+00:00. Gate: `5c1fc7e4378a328efc896649388811af9a156b1500f2092ea9f74074e0fa6499`, lead revision dated 2026-10-27T10:44:15Z and actual request OC at 10:45:21Z. The actual collaborator is Claude Opus 5.5, model `us.anthropic.claude-opus-5-5`, through the shared lane files. This is a source and saved-record audit. No numerical producer, field evaluator, checkpoint deserializer, numerical package or lead script was imported or executed.
+Date 2026-10-27T10:51:23.684871+00:00. Gate: `5c1fc7e4378a328efc896649388811af9a156b1500f2092ea9f74074e0fa6499`, lead revision dated 2026-10-27T10:44:15Z and actual request OC at 10:45:21Z. The actual collaborator is the main model, model `the main model`, through the shared lane files. This is a source and saved-record audit. No numerical producer, field evaluator, checkpoint deserializer, numerical package or lead script was imported or executed.
 
 The selection and provisional label C remain supported within the already stated approximate-field scope. Revision r1 is OPEN as a complete gate text pending the three local corrections below. The original five issues have been addressed at their targeted passages, including the explicit lead decision that the five-ratio reader supplies this gate's 7.3b relation. A repeated closure sentence, the use of the excluded row in two new census statements, and the scope of one D10 error figure remain inconsistent. None promotes a state or changes a threshold.
 

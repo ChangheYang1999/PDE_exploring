@@ -1,7 +1,7 @@
 # Final adjudication
 
 The final direct review finished2026-10-21T07:31:59.713174Z using actual
-claude-opus-5-5, stop_reason=end_turn, request
+main-model, stop_reason=end_turn, request
 84c3cd65-5413-4269-ae15-59161611217b. It accepts the exact scope and closes
 all four provenance/admissibility obligations from the first review.
 The request contained13 complete current files, including both exact

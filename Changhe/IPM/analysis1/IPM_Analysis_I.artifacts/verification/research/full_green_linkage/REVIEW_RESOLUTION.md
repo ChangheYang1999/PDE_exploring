@@ -1,6 +1,6 @@
 # Implementation review and corrections before the whole run
 
-The first implementation review used actual Claude Opus5.5 and ended
+The first implementation review used actual the main model and ended
 2026-10-21T03:29:24Z. It independently reconstructed and accepted all
 propagation signs, indices, tail denominators and comparisons. Its
 statement that no artifact run existed described the submitted bundle;

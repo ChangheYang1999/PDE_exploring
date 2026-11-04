@@ -1,6 +1,6 @@
 # A convergent third-order source solution on a left cone
 
-Date: 2026-10-20. Status: complete informal proof, independently checked and reviewed by actual lead Claude Opus5.5 at17:13:34Z. Exact coefficient and independent Bessel checks passed. This is a cone theorem. It does not give a solution on a neighborhood of the source or a global canonical profile.
+Date: 2026-10-20. Status: complete informal proof, independently checked and reviewed by actual lead the main model at17:13:34Z. Exact coefficient and independent Bessel checks passed. This is a cone theorem. It does not give a solution on a neighborhood of the source or a global canonical profile.
 
 ## Statement and notation
 

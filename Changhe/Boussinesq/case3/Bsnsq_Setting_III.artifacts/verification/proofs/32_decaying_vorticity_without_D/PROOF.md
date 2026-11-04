@@ -152,4 +152,4 @@ The proof uses only explicit smooth cutoffs, elementary Fourier orthogonality an
 
 ## External audit and independent checks
 
-The actual returned model in opus_reviews/18_decay_without_D was claude-opus-5-5. Its detailed review confirmed the source support, exact Poisson-kernel normalization, finite window error, fourth-moment identity, cross-block bound and orbit integral. These steps were rechecked here. Its scope warning is incorporated: DU itself is unbounded and only axis trajectories were used. Suggested stronger velocity decay is not needed and is not adopted as an additional theorem. No numerical or formal certificate is claimed.
+The actual returned model in opus_reviews/18_decay_without_D was main-model. Its detailed review confirmed the source support, exact Poisson-kernel normalization, finite window error, fourth-moment identity, cross-block bound and orbit integral. These steps were rechecked here. Its scope warning is incorporated: DU itself is unbounded and only axis trajectories were used. Suggested stronger velocity decay is not needed and is not adopted as an additional theorem. No numerical or formal certificate is claimed.

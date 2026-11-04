@@ -1,6 +1,6 @@
 # Independent verifier verification record
 
-Start: 2026-10-20T13:06:38Z. The earlier verifier shifts were Claude Opus 5.5.
+Start: 2026-10-20T13:06:38Z. The earlier verifier shifts were the main model.
 This directory records new the verifier work and distinguishes it from inherited lane evidence.
 
 For the final synthesis, read [FINAL_VERIFIER_FINDINGS.md](FINAL_VERIFIER_FINDINGS.md). [EVIDENCE_MAP.md](EVIDENCE_MAP.md) maps the requested verifier checks to their proofs and current scope.

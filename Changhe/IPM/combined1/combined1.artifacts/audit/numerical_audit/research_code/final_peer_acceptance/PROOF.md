@@ -105,4 +105,4 @@ acceptance under already accepted analytic and source-specific integration
 premises. It does not promote hashes to mathematical proofs. Full017 H upper,
 E2 and017<007 remain OPEN. There is no inverse, stationary correction or
 existence certificate. Opus collaboration used the existing T1/T2 files,
-configuredus.anthropic.claude-opus-5-5; actual provider response is unobservable.
+configuredthe main model; actual provider response is unobservable.

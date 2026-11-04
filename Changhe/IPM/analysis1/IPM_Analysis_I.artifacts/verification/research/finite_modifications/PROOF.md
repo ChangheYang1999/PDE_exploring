@@ -1,6 +1,6 @@
 # Finite modifications cannot repair a non-Fredholm operator
 
-Date: 2026-10-20. Status: CONFIRMED after actual Claude Opus5.5 review and follow-up, with the conditional application limits below. This is a conditional functional-analytic statement, not a claim that the full IPM operator satisfies its premises.
+Date: 2026-10-20. Status: CONFIRMED after actual the main model review and follow-up, with the conditional application limits below. This is a conditional functional-analytic statement, not a claim that the full IPM operator satisfies its premises.
 
 ## Statement and notation
 
@@ -59,4 +59,4 @@ The proof uses elementary Banach-space quotients, Hahn-Banach, the bounded inver
 
 ## Verification record
 
-The first actual claude-opus-5-5 review identified that boundedness of the finite-rank K was used by the proof but had not been explicit in the theorem statement. This was repaired, together with a single scalar-field convention and continuous linear domain conditions. The final review accepted the theorem at2026-10-20T16:36:01.252181+00:00, while requesting an explicit bounded scalar coefficient in the H^s normalization application; that premise is now stated. See notes/reviews/finite_modifications_response.md and finite_modifications_closure_response.md at the lane root, with actual-model metadata. No numerical calculation is involved.
+The first actual main-model review identified that boundedness of the finite-rank K was used by the proof but had not been explicit in the theorem statement. This was repaired, together with a single scalar-field convention and continuous linear domain conditions. The final review accepted the theorem at2026-10-20T16:36:01.252181+00:00, while requesting an explicit bounded scalar coefficient in the H^s normalization application; that premise is now stated. See notes/reviews/finite_modifications_response.md and finite_modifications_closure_response.md at the lane root, with actual-model metadata. No numerical calculation is involved.

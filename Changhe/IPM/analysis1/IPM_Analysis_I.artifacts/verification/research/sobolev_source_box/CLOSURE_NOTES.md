@@ -31,7 +31,7 @@ those arguments. Full current-bundle closure, including the finalizer,
 is required before the narrowly scoped verdict is issued.
 
 The complete first closure review ended2026-10-21T05:03:39.621384+00:00,
-request23935861-8f26-477b-afdf-c4cbc60a6bc4, actual claude-opus-5-5/end_turn.
+request23935861-8f26-477b-afdf-c4cbc60a6bc4, actual main-model/end_turn.
 It accepted the precise PUBLICATION and explicitly withdrew the L2-only
 uniqueness shortcut. The raw response and current bundle were authenticated
 and preserved under source/closure_round1 before the finalizer repair.

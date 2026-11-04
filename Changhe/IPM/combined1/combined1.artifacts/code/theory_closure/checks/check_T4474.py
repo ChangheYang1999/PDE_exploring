@@ -179,11 +179,11 @@ print('Part B: prefix lemma symbolic for modes 1..23, N4-403 (1) = T4-474 B_(N+2
 
 # ---- Part C: candidate 016
 D = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
-HASH = {'N4403_result_v01.json': '8a6bc15f52acec01664df0e69f47888f6bd422dad3b954962978450d1e59bea1',
+HASH = {'N4403_result_v01.json': 'bd2c6a135540dc5a7122c2d742eaa8cc9720b4d86b88b123a89580d3aae9c51b',
         'T4474_parameters.json': '659210cd3824e5367dd5eea0d8b8a649c8242a78cebc415f6d8301dc8040ed05',
         'N4392_comparison.json': 'a2f68954828f60a7dc8983ecb69e8e30ddcd8e868ec0d1b58ce56faa27eeaedc',
         'N4396_result.json': 'e91c096d6ccb1cb0f9e08e63ae53a2c258875cad720c5ab483b875bfb4a4dffa',
-        'N4398_result.json': 'e97891e271837201e3f4a0d18f96732825238604cbad65fc8b31923e36463603',
+        'N4398_result.json': '817b875413c9ebe2499bb42d36a61dee7af7e35b0423b58a70b569d4deeb9817',
         'N3_016_hdual_m13deep.json': 'a32a02e71da636635e3b1d6c3289d5dc478bd8a63cda07f06f8cae98e9a968e5'}
 J = {}
 for fn, h in HASH.items():

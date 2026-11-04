@@ -411,4 +411,4 @@ Two previously audited passages also need repair:
 
 The report and verification evidence are saved in [PROOF.md](PROOF.md) and [INDEX.md](INDEX.md). All machine restrictions were observed.
 
-The configured Opus target was `us.anthropic.claude-opus-5-5`, but the permitted Python Bedrock invocation failed because AWS credentials were unavailable. No Opus response or actual-model confirmation was obtained, and no other model was substituted.
+The configured Opus target was `the main model`, but the permitted Python Bedrock invocation failed because AWS credentials were unavailable. No Opus response or actual-model confirmation was obtained, and no other model was substituted.

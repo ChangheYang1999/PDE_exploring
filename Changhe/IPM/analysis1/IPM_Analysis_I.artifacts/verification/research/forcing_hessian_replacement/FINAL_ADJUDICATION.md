@@ -21,7 +21,7 @@ the conditional mathematics subject to explicitly stating the axis center
 and the scope of independence. Both are now explicit in ADDENDUM.md.
 The follow-up, requestc340898e-9d4e-4c08-aa59-bc3bbb57cffa, ended
 08:31:26.292898Z and accepted PROOF with that mandatory addendum.
-Both responses report actual model claude-opus-5-5 and end_turn. Their
+Both responses report actual model main-model and end_turn. Their
 complete requests, actual responses and current supplied files are
 independently authenticated by finalize.py.
 

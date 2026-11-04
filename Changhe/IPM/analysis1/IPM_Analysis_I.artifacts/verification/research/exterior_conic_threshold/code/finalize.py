@@ -27,7 +27,7 @@ for method,rows in ex['positive_40decimal_rational_lower_margins'].items():
 reviews={}
 for tag,expected in [('exterior_conic_proof','718d8c3a098eb72c42d9d06d2c1151f62daf0aa3ce580bbd7dd5ef6d37ed6ed2'),('exterior_conic_complete','4d3f046fcd90c77ec4b179e756e3d2b79f84b2daa012c3974b4cda5eb5dbe5e1')]:
  m=load(R/(tag+'_metadata.json'));raw=load(R/(tag+'_response.json'));req=(R/(tag+'_request.txt')).read_text()
- require(m['requested_model']=='us.anthropic.claude-opus-5-5' and m['actual_response_model']==raw['model']=='claude-opus-5-5' and m['stop_reason']==raw['stop_reason']=='end_turn','actual model')
+ require(m['requested_model']=='the main model' and m['actual_response_model']==raw['model']=='main-model' and m['stop_reason']==raw['stop_reason']=='end_turn','actual model')
  require(hashlib.sha256(req.encode()).hexdigest()==m['input_sha256']==expected,'request digest')
  require(req[req.index('\n\nFILE ')+2:]=='\n\n'.join('FILE '+f+'\n'+(B/f).read_text() for f in m['files']),'current bundle')
  text='\n\n'.join(q['text'] for q in raw['content'] if q['type']=='text')+'\n';require(text==(R/(tag+'_response.md')).read_text(),'raw text')

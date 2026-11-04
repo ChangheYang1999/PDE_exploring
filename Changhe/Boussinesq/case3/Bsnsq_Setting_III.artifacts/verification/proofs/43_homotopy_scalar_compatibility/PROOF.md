@@ -141,4 +141,4 @@ that would require its own analysis, absent from the challenged claim.
 The actual Opus33 call returned no audit text (stop reason refusal),
 so it supplies no endorsement. This algebra was derived and checked
 independently. The follow-up Opus34 also returned no audit text (stop
-reason refusal, actual claude-opus-5-5,7.980720s); it is not an endorsement.
+reason refusal, actual main-model,7.980720s); it is not an endorsement.

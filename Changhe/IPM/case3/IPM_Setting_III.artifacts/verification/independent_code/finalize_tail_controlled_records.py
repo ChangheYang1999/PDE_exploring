@@ -19,7 +19,7 @@ for p,h in a['bindings'].items():bind(p,h)
 for name,status in [('CONTROLLED_RECORD_MANUFACTURES.json','PASS_CONTROLLED_RECORD_MANUFACTURES'),('CONTROLLED_PREFLIGHT.json','PASS_323_RELATIVE_SCHEMA_AND_ACCEPTED_HEADERS'),('CONTROLLED_RECORD_CHECKS.json','CONFIRMED_CONTROLLED_PRINTED_RECORD_EQUALITIES_REQUIRES_REVIEW')]:gate(name,status)
 reviews=[]
 for lab in ['controlled_design','controlled_design_followup','controlled_design_closure','controlled_final','controlled_final_closure']:
- v=V/('opus_'+lab);m=json.loads(bind(v/'metadata.json').read_text());ck('actual completed model '+lab,m['requested_model']=='us.anthropic.claude-opus-5-5'and m['returned_model']=='claude-opus-5-5'and m['stop_reason']=='end_turn'and m['answer_nonempty']);bind(v/'request.txt',m['request_sha256'])
+ v=V/('opus_'+lab);m=json.loads(bind(v/'metadata.json').read_text());ck('actual completed model '+lab,m['requested_model']=='the main model'and m['returned_model']=='main-model'and m['stop_reason']=='end_turn'and m['answer_nonempty']);bind(v/'request.txt',m['request_sha256'])
  for n in ['response.json','answer.md']:bind(v/n)
  reviews.append(dict(label=lab,metadata=m))
 for p in [__file__,*R.glob('CONTROLLED*.md'),V/'CONTROLLED_NOTE_SOURCE.json',V/'producer_note176_176a.txt',V/'before_controlled_final_timestamp.md']:bind(p)

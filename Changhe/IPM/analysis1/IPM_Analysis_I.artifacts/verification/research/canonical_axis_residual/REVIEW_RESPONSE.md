@@ -1,6 +1,6 @@
 # Response to the actual axis-residual review
 
-Date 2026-10-22T03:06:49.148992+00:00. The first completed actual claude-opus-5-5 review, requestfb9b9027-b64c-4d43-921a-9435f56a0ac8, supports the theorem but contains a factor-two error in its own n2 paragraph. That error is not in the proof or either implementation. A follow-up must resolve it before FINAL.
+Date 2026-10-22T03:06:49.148992+00:00. The first completed actual main-model review, requestfb9b9027-b64c-4d43-921a-9435f56a0ac8, supports the theorem but contains a factor-two error in its own n2 paragraph. That error is not in the proof or either implementation. A follow-up must resolve it before FINAL.
 
 The review section2 says the upper n2 source-Green piece is sigma*r^2-r^4/8 and concludes psi2=sigma*r^2-r^4/12. Both occurrences of sigma*r^2 should be (sigma/2)*r^2. With sigma=psi_xy(0), a coefficient G*r^2*sin2theta gives sigma=2G. The exact source-Green prefactor for n2 is1/4. If J2=integral_0^infinity t^(-1)f2(t)dt, then sigma=J2/2, so J2=2sigma. The upper source piece is therefore (1/4)r^2[2sigma-r^2/2+O(r^4)]=(sigma/2)r^2-r^4/8+O(r^6). Adding the lower r^4/24 yields psi2=(sigma/2)r^2-r^4/12+O(r^6), exactly as the proof states. This equals sigma*xy for the strain part after multiplying by sin2theta. The review later uses this correct Cartesian strain in its velocity calculation. Its contrary n2 paragraph must not enter the accepted record without correction.
 

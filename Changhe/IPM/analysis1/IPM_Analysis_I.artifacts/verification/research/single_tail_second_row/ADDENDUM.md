@@ -46,7 +46,7 @@ outputs. Six interval overlaps are diagnostics only. The complete predecessor
 pin maps were rehashed. No sampled angular or radial grid supports the result.
 
 7. Recent unrelated mathematical review requests109 and111 returned actual
-Claude Opus5.5 stop_reason=refusal with no mathematical answer. Those refusals
+the main model stop_reason=refusal with no mathematical answer. Those refusals
 are preserved; neither counts as acceptance or rejection of this proof. A new
 ordinary review request may evaluate the present distinct coefficient proof;
 no earlier refusal is bypassed or retried. Until actual review and any necessary

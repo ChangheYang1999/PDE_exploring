@@ -147,7 +147,7 @@ metadata and any corrections are recorded in verification/audit.json.
 No formal verification is claimed; formal/README.md records the restriction.
 
 Actual Opus41 returned a written CONFIRMED audit on2026-10-20T17:47:10Z,
-model claude-opus-5-5, elapsed61.206223751seconds. Its sign, endpoint
+model main-model, elapsed61.206223751seconds. Its sign, endpoint
 and fixed-shift calculations were checked against the proof. The harmless
 radius-comparability clarification was adopted. Its suggestion that the
 beta2 argument only needs continuity is understood after the angular PDE

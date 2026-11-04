@@ -14,7 +14,7 @@ g=json.loads(bind(V/'CHECKS.json').read_text());ck('240 finite arithmetic checks
 for p,h in g['bindings'].items():bind(p,h)
 for name in ['request.txt','response.json','metadata.json','answer.md']:bind(V/'opus_scope'/name)
 m=json.loads((V/'opus_scope/metadata.json').read_text());r=json.loads((V/'opus_scope/response.json').read_text());a=(V/'opus_scope/answer.md').read_text();q=(V/'opus_scope/request.txt').read_text()
-ck('actual Opus5.5 completed',m['returned_model']==r['model']=='claude-opus-5-5'and m['stop_reason']==r['stop_reason']=='end_turn'and m['answer_nonempty'])
+ck('actual Opus5.5 completed',m['returned_model']==r['model']=='main-model'and m['stop_reason']==r['stop_reason']=='end_turn'and m['answer_nonempty'])
 ck('answer matches returned payload',a.strip()=='\n\n'.join(c['text']for c in r['content']if c['type']=='text').strip());ck('request bound',hashlib.sha256(q.encode()).hexdigest()==m['request_sha256'])
 ck('review proof exact', (R/'PROOF.md').read_text()in q);ck('model mathematical conclusion','I found no false mathematical statement'in a)
 for M in [1,2,3,4,5,7,8,16,24,32,40,48,56,64]:

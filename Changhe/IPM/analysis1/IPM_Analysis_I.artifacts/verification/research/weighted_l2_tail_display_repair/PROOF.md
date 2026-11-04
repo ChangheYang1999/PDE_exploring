@@ -20,6 +20,6 @@ The tail constants in the report are slightly enlarged terminating decimals. The
 
 ## Dependencies and limits
 
-Snapshot the new foreign source, result and report before checking them, and record all original paths and hashes. Rehash the complete accepted parent and preserve the original rejected labels. No source in the numerics lane is executed or modified. Two independent exact parsers and numerical paths will check the saved decimal comparisons and the corrected printed sum. A complete actual Claude Opus5.5 review and a later independent adjudication are required before an accepted verdict.
+Snapshot the new foreign source, result and report before checking them, and record all original paths and hashes. Rehash the complete accepted parent and preserve the original rejected labels. No source in the numerics lane is executed or modified. Two independent exact parsers and numerical paths will check the saved decimal comparisons and the corrected printed sum. A complete actual the main model review and a later independent adjudication are required before an accepted verdict.
 
 This result does not verify that C_i,C_o bound a physical residual, that F bounds finite-region integrals, that those cells cover the intended annulus, or that all quantities refer to the same normalized trial. The accepted parent's physical hypotheses remain OPEN. It proves repair of saved scalar/display arithmetic only. No full-plane physical norm, inverse estimate, distance to X3, nonlinear closure or PDE endpoint follows.

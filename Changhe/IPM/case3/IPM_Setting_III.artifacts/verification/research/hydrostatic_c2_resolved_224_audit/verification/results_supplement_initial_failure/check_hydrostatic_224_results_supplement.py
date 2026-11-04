@@ -45,6 +45,6 @@ h=json.loads((V/'HANDOFF.json').read_text());step=h['stages'][0];bind(V/'HANDOFF
 reviews=[]
 for folder in ['opus_results_shift7_archive','opus_results']:
  for name in ['request.txt','response.json','answer.md','metadata.json']:bind(V/folder/name)
- meta=json.loads((V/folder/'metadata.json').read_text());response=json.loads((V/folder/'response.json').read_text());ck('actual requested Opus5.5 '+folder,meta['requested_model']=='us.anthropic.claude-opus-5-5');ck('actual returned Opus5.5 '+folder,response['model']=='claude-opus-5-5');reviews.append(dict(folder=folder,metadata=meta,returned_model=response['model']))
+ meta=json.loads((V/folder/'metadata.json').read_text());response=json.loads((V/folder/'response.json').read_text());ck('actual requested Opus5.5 '+folder,meta['requested_model']=='the main model');ck('actual returned Opus5.5 '+folder,response['model']=='main-model');reviews.append(dict(folder=folder,metadata=meta,returned_model=response['model']))
 out=dict(utc=datetime.now(timezone.utc).isoformat(),status='PASS_FINITE_RESULTS_SUPPLEMENT',count=len(checks),checks=checks,bindings=bindings,exact={n:reportq(x)for n,x in exact.items()},witness_mapping=mapping,local_MP_precisions=working,axis_MP_precisions=[270,315],summary_elapsed_seconds=elapsed,reviews=reviews,scope='Exact leading-coefficient and center arithmetic; finite witnesses and presentation. True inverse error and principal full-plane endpoint remain OPEN.')
 (V/'RESULTS_SUPPLEMENT.json').write_text(json.dumps(out,indent=2)+'\n');print(out['status'],out['count'],out['utc'])

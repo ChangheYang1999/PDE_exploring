@@ -1,6 +1,6 @@
 # Compact zero-strain tests map into the weak axis spaces
 
-This proof is written before new computations. Its theorem and application remain OPEN until independent checks, complete actual Claude Opus5.5 review and later own adjudication. It concerns mapping of a smooth test class, not boundedness on a completed graph domain.
+This proof is written before new computations. Its theorem and application remain OPEN until independent checks, complete actual the main model review and later own adjudication. It concerns mapping of a smooth test class, not boundedness on a completed graph domain.
 
 ## Statement and hypotheses
 

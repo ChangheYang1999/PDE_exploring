@@ -1,6 +1,6 @@
 # Holder control and a canonical velocity limit at infinity
 
-Status: independently derived, reviewed by the actual claude-opus-5-5 endpoint, and checked again by the verifier. This strengthens the continuous angular-limit theorem by using the gradient bound in the primary class. It does not assert smooth angular data or a second asymptotic coefficient.
+Status: independently derived, reviewed by the actual main-model endpoint, and checked again by the verifier. This strengthens the continuous angular-limit theorem by using the gradient bound in the primary class. It does not assert smooth angular data or a second asymptotic coefficient.
 
 ## Statement and notation
 

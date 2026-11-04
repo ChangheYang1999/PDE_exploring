@@ -1,6 +1,6 @@
 # Proof-review disposition and dependency contract
 
-Written 2026-10-21T21:24:34.367717+00:00. I read the complete actual claude-opus-5-5/end_turn proof review172930f2-20d1-44a2-bc6f-4458ab656ff5. Its conditional verdict is accepted only for the implication, not an executed application.
+Written 2026-10-21T21:24:34.367717+00:00. I read the complete actual main-model/end_turn proof review172930f2-20d1-44a2-bc6f-4458ab656ff5. Its conditional verdict is accepted only for the implication, not an executed application.
 
 1. The theorem does not assert that the archive premise is the only open obligation in all the original analysis. It discharges precisely that premise and retains all other original hypotheses. The full regional certificates are assumed as proved dependencies, including their canonical inverse interpretation, analytic density tails, interval arithmetic and complete coverage. There is no new proof of any global inverse or derivative forcing estimate.
 2. Each displayed W inequality means its full-plane supremum bound (equivalently the uniform pointwise bound). The limits at infinity refer to the pointwise functions W, epsilon and the stated weighted modal majorants, never to the single scalar N2.

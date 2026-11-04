@@ -121,5 +121,5 @@ original414 theorem and all its arithmetic are unaffected. No
 claim here equates a sufficient coefficient with the actual
 velocity, and the zero-remainder assumption remains explicit.
 
-Collaboration used the theory lane configured for Claude Opus5.5;
+Collaboration used the theory lane configured for the main model;
 actual provider identity is not observable here.

@@ -2,7 +2,7 @@
 
 2026-10-21T19:27:24.808477+00:00
 
-I read all four actual Opus5.5 responses in full and verified their advice against the proof, complete exact-data outputs and frozen source. The latest response closes its previous source-binding objection. The actual API metadata and raw responses all identify claude-opus-5-5 and end_turn.
+I read all four actual Opus5.5 responses in full and verified their advice against the proof, complete exact-data outputs and frozen source. The latest response closes its previous source-binding objection. The actual API metadata and raw responses all identify main-model and end_turn.
 
 I independently reconstructed the three contiguous rational partitions, their shared endpoints and the positive widths. The first Fraction/NumPy/MR/Arb128 checker and the direct-ZIP/IEEE/fmpq auditor each checked all19389 rows and19392 nodes. The auditor compares every exact offset and width slack, emulates every current MR width by integer round-to-nearest-even and successor, and independently matches the exported starts. These finite comparisons, not agreement of their maxima alone, establish the geometry.
 

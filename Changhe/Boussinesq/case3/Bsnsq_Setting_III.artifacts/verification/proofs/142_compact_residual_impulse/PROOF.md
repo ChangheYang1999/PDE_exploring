@@ -1,6 +1,6 @@
 # Residual impulse identities for perturbations with fixed exterior fields
 
-Status: CONFIRMED by independent informal proof, 11 exact controls, 15 compact quadrature controls, and a written actual Claude Opus 5.5 audit, 2026-10-21. This is a conditional identity and compact-repair obstruction, not nonexistence for the broad B2 class.
+Status: CONFIRMED by independent informal proof, 11 exact controls, 15 compact quadrature controls, and a written actual the main model audit, 2026-10-21. This is a conditional identity and compact-repair obstruction, not nonexistence for the broad B2 class.
 
 ## Exact statement
 

@@ -275,7 +275,7 @@ The independent verifier checked the fixed-time differentiation, both exterior
 resolvent pieces, the axis integrating factors, the strip top/bottom flux,
 the finite-time spatial integration by parts and the exact second variational
 equation. Actual Opus39 was requested but returned no written audit on
-2026-10-20T17:39:03Z, after25.347409639seconds, model claude-opus-5-5.
+2026-10-20T17:39:03Z, after25.347409639seconds, model main-model.
 This unavailable review supplies no agreement. Lead auditO separately
 checks the global gradient and scalar-resolvent estimates; its conclusions
 were compared against the explicit derivations above, not taken on trust.

@@ -1,6 +1,6 @@
 # Response to actual-model review
 
-Date 2026-10-22T03:26:45.118261+00:00. Full response09ddc926-bc77-4578-8571-94cd7a9312d6 read. Actual modelclaude-opus-5-5, end_turn. One algebraic typo in the review must be withdrawn before acceptance.
+Date 2026-10-22T03:26:45.118261+00:00. Full response09ddc926-bc77-4578-8571-94cd7a9312d6 read. Actual modelmain-model, end_turn. One algebraic typo in the review must be withdrawn before acceptance.
 
 Its section2 writes W^2=(1+xi^2)^((1+s)/2)exp(tau)(1+exp(2tau))^s. From the unchanged proof definition W^2=|eta|(1+xi^2+eta^2)^s and eta=sign*sqrt(1+xi^2)exp(tau), the correct exponent is s+1/2, not (1+s)/2. This factor is constant along tau. It cancels in W(tau)/W(tau-Dt), so neither generator, domain, potential, adjoint, packet, norm nor spectrum formula changes. The unitary norm identity follows directly from W's original definition and Jacobian |eta|. The proof never contains the review's expanded incorrect expression. The primary check omits only the tau-independent factor when differentiating logW; the independent chain numerator does likewise. Neither asserts that its shortened logW equals the full unitary weight. This is a review typo, not a change to proof or code.
 

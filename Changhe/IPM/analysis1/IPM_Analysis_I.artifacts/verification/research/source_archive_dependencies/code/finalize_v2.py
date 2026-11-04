@@ -22,7 +22,7 @@ assert checks['manifest_sha256']==sha(E/'dependency_manifest.json')
 for n,h in manifest['files'].items():pin(n,h)
 raw=load(R/(tag+'_response.json'));m=load(R/(tag+'_metadata.json'));req=(R/(tag+'_request.txt')).read_text()
 text='\n\n'.join(v['text'] for v in raw['content'] if v['type']=='text')+'\n'
-assert m['requested_model']=='us.anthropic.claude-opus-5-5' and m['actual_response_model']==raw['model']=='claude-opus-5-5'
+assert m['requested_model']=='the main model' and m['actual_response_model']==raw['model']=='main-model'
 assert m['stop_reason']==raw['stop_reason']=='end_turn'
 assert text==(R/(tag+'_response.md')).read_text() and hashlib.sha256(req.encode()).hexdigest()==m['input_sha256']
 assert all(x in req for x in ['no JavaScript/TypeScript','no servers/listeners/tunnels','no RLScience cluster','no Lean/Lake builds'])
@@ -33,7 +33,7 @@ initial='source_archive_dependencies'
 i=load(R/(initial+'_metadata.json'));rawi=load(R/(initial+'_response.json'));qi=(R/(initial+'_request.txt')).read_text()
 ti='\n\n'.join(v['text'] for v in rawi['content'] if v['type']=='text')+'\n'
 assert i['request_id']=='82103615-86d5-4942-b33f-54481405b1e9' and i['input_sha256']=='081311d850e28d0a7ff5d8d339d09862ab20a3ebba46e43b2f38877225d2beb0'
-assert i['requested_model']=='us.anthropic.claude-opus-5-5' and i['actual_response_model']==rawi['model']=='claude-opus-5-5' and i['stop_reason']==rawi['stop_reason']=='end_turn'
+assert i['requested_model']=='the main model' and i['actual_response_model']==rawi['model']=='main-model' and i['stop_reason']==rawi['stop_reason']=='end_turn'
 assert ti==(R/(initial+'_response.md')).read_text() and hashlib.sha256(qi.encode()).hexdigest()==i['input_sha256']
 assert i['files']==load(D/'review_files.json') and all(str((D/n).relative_to(B)) in i['files'] for n in ['PROOF.md','TABLE.md','code/check.py','evidence/checks.json'])
 assert qi[qi.index('\n\nFILE ')+2:]=='\n\n'.join('FILE '+n+'\n'+(B/n).read_text() for n in i['files'])

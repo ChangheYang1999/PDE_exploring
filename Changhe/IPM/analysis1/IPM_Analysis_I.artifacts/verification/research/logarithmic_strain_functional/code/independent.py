@@ -6,7 +6,7 @@ from flint import fmpq
 from mpmath import iv
 iv.dps=150
 R=Path(__file__).resolve().parents[3];D=R/'research/logarithmic_strain_functional';E=D/'evidence';sys.path.insert(0,str(R/'research/full_derivative_norm_bound_v2/code'));import protocol as p
-start=p.now();a=p.load(E/'check.json');p.rehash(a['parent_files']);assert p.sha(D/'PROOF.md')==a['proof_sha256']=='d4284c845df4c9717c4618916e7972b84e6a57cd1b5dd4da271062d375616115'
+start=p.now();a=p.load(E/'check.json');p.rehash(a['parent_files']);assert p.sha(D/'PROOF.md')==a['proof_sha256']=='9fa121da555659a9332116a0f47bd3b3740078e3e4a06f2425f0f2e177e67387'
 raw=R/'data_exact/modal_v2.json';assert p.sha(raw)=='57f67a53c1ee5c8fd5ede8480428f1a5584123ac4e54b6d3530d091ea2a67ca6'
 def hx(t):
  sign=-1 if t.startswith('-') else 1;t=t.lstrip('+-');man,e=t.split('p');whole,frac=man[2:].split('.');return fmpq(sign*int(whole+frac,16))*fmpq(2)**(int(e)-4*len(frac))

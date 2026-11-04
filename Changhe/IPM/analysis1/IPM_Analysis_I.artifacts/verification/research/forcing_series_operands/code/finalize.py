@@ -18,7 +18,7 @@ assert len(read(D/'evidence/runtime_bindings.json')['functions'])==9
 reviews={}
 for tag,h in [('forcing_series_operands','73033bd088b25b289b75d63c330336a73e188eed91d03a4385199b3fcba92428'),('forcing_series_followup','71d26bd4c2b990ce68ae486a9b1a47af0c491d03bedf6d105380d4e83e52e5f8'),('forcing_series_closure','feba2c4e44f27618c056ed95bd35bc4381d30351993cd01a0be8de1c8b4d468c')]:
  m=read(R/(tag+'_metadata.json'));raw=read(R/(tag+'_response.json'));request=(R/(tag+'_request.txt')).read_text();text=(R/(tag+'_response.md')).read_text()
- assert m['actual_response_model']==raw['model']=='claude-opus-5-5' and m['stop_reason']==raw['stop_reason']=='end_turn';assert hashlib.sha256(request.encode()).hexdigest()==m['input_sha256']==h
+ assert m['actual_response_model']==raw['model']=='main-model' and m['stop_reason']==raw['stop_reason']=='end_turn';assert hashlib.sha256(request.encode()).hexdigest()==m['input_sha256']==h
  assert request[request.index('\n\nFILE ')+2:]=='\n\n'.join('FILE '+f+'\n'+(B/f).read_text() for f in m['files'])
  assert text=='\n\n'.join(c['text'] for c in raw['content'] if c['type']=='text')+'\n'
  if tag.endswith('closure'):assert 'Once the binding checks pass' in text and 'No mathematical gap remains' in text

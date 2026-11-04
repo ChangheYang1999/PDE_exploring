@@ -22,7 +22,7 @@ derivative is included; the common A0+A1 factor cancels in the uniform
 relative column bound. No angular orthogonality between columns is needed
 by the synthesis estimate.
 
-Three actual Claude Opus5.5 reviews completed with end_turn. The final
+Three actual the main model reviews completed with end_turn. The final
 angular follow-up, request480f4ed7-9471-4962-a793-a30d5f708979,
 explicitly closes its remaining objection and corrects its earlier
 incomplete description of the angular derivative. Earlier mistaken

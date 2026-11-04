@@ -77,7 +77,7 @@ def main():
  ck('looser_rational_does_not_refute_tighter_bound',Q(25,54684)>Q('4.57e-4'))
  ck('scalar3_8e_minus6',Q(3793,10**9)<Q('3.8e-6'))
  ck('line163_literal','||h||_2 < 4.57e-4' in report.splitlines()[162])
- upper=read(R/'research/candidate016_reviewed_upper/verification/result.json','d50ef2bb8868b2eb505933a488e91df979146c269b5b788dad928dfcab7bb7d0')
+ upper=read(R/'research/candidate016_reviewed_upper/verification/result.json','56a67b479f33071e7f0c4c5351dd1b7b7909dc172175126e881a6484d6a246f9')
  ck('accepted410',all(upper['checks'].values()))
  for rel,h in upper['inputs'].items():bind(R/rel,h)
  ck('E2_strict_gap',Q('608.392385921614')-Q('606.820219')>Q('1.572166921613'))

@@ -6,4 +6,4 @@ CONFIRMED: the revised source labels a report cutoff separately from actual sess
 
 REFUTED: equality with cap labelled after, and the whole-second display described as unrounded. The record's SSZ.ffffff layout is recoverable by a custom parser but is not standard ISO UTC. Exact repairs are given in PROOF.md and NOTES_FOR_TEAM. No foreign source was run. The initial stale-source draft and intermediate checks are preserved.
 
-Actual Claude Opus5.5 rounds621-623 were consulted, challenged and closed. See verification/model_adjudication.md. OPEN: actual further source repairs, final APPLY and matching-hash readback, manual logs, actual session end, and general B2.
+Actual the main model rounds621-623 were consulted, challenged and closed. See verification/model_adjudication.md. OPEN: actual further source repairs, final APPLY and matching-hash readback, manual logs, actual session end, and general B2.

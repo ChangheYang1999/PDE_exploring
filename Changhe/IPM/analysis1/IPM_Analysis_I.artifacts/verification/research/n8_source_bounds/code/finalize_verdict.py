@@ -18,7 +18,7 @@ assert F('3.374')-F(9317,10000)==F(24423,10000)>F(100,41)
 reviews={};files={}
 for tag in ['n8_metadata','n8_metadata_followup']:
  m=json.loads((R/(tag+'_metadata.json')).read_text());req=(R/(tag+'_request.txt')).read_text();raw=json.loads((R/(tag+'_response.json')).read_text());ans=(R/(tag+'_response.md')).read_text()
- assert m['actual_response_model']==raw['model']=='claude-opus-5-5'
+ assert m['actual_response_model']==raw['model']=='main-model'
  assert m['stop_reason']==raw['stop_reason']=='end_turn' and len(ans)>200
  assert hashlib.sha256(req.encode()).hexdigest()==m['input_sha256']
  assert ans=='\n\n'.join(x['text'] for x in raw['content'] if x['type']=='text')+'\n'

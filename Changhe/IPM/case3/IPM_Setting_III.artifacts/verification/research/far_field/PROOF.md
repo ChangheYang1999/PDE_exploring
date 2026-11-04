@@ -1,6 +1,6 @@
 # A continuous angular far-field limit
 
-Status: independently derived; adversarially reviewed by the actual claude-opus-5-5 endpoint, then checked again by the verifier. The argument below proves a continuous leading angular limit. A smooth expansion with a second term is stated only conditionally.
+Status: independently derived; adversarially reviewed by the actual main-model endpoint, then checked again by the verifier. The argument below proves a continuous leading angular limit. A smooth expansion with a second term is stated only conditionally.
 
 ## Statement
 

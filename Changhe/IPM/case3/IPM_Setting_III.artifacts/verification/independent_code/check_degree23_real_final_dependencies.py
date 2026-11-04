@@ -46,7 +46,7 @@ try:
  for p,d in finite['bindings'].items():ck('consequence dependency '+p,sha(p)==d);bindings[p]=d
  for name in ['request.txt','response.json','answer.md','metadata.json']:
   p=V/'opus_final'/name;bindings[str(p)]=sha(p)
- meta=json.loads((V/'opus_final/metadata.json').read_text());ck('actual final Opus5.5 endturn',meta['returned_model']=='claude-opus-5-5'and meta['stop_reason']=='end_turn'and meta['answer_nonempty'])
+ meta=json.loads((V/'opus_final/metadata.json').read_text());ck('actual final Opus5.5 endturn',meta['returned_model']=='main-model'and meta['stop_reason']=='end_turn'and meta['answer_nonempty'])
  for p,d in bindings.items():ck('unchanged '+p,sha(p)==d)
  status='PASS_PENDING_DEPENDENCY_FOLLOWUP_REVIEW'
 except BaseException:

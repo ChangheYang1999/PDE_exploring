@@ -60,12 +60,12 @@ def sqrt_dn(z, k):
 
 # displays: uppers rounded up and lowers rounded down from the exact values (dec_up, sqrt_up, dec_dn, sqrt_dn)
 D = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
-HASH = {'N4418_result_v01.json': '8eec600612f7719a1c0cbcb408d1665659b8d2c06d861f032a102651953c3728',
-        'N4417_result_v03.json': '285dac39d93e32574c214d00cef9764087c0718c19b4042398c7ec728b530840',
-        'N4409_result_v02.json': '01019cd56639661ace672791a4fbe7f938d90bf02237b93b38f061238bb15b41',
-        'N4410_result.json': 'd50ef2bb8868b2eb505933a488e91df979146c269b5b788dad928dfcab7bb7d0',
+HASH = {'N4418_result_v01.json': '928c05b95385bc7e5ecafd8187e15897e79ec3127551847a3d53137f7c36f117',
+        'N4417_result_v03.json': '898e15d71bbf6a0be7e3676fb6f7b025807c527aa5f883518b37ef06c01429d1',
+        'N4409_result_v02.json': '7b36cb71d1514598f99a2f5720c5dad69d050cd6912e9be1f550e3b015332156',
+        'N4410_result.json': '56a67b479f33071e7f0c4c5351dd1b7b7909dc172175126e881a6484d6a246f9',
         'N4392_comparison.json': 'a2f68954828f60a7dc8983ecb69e8e30ddcd8e868ec0d1b58ce56faa27eeaedc',
-        'N4398_result.json': 'e97891e271837201e3f4a0d18f96732825238604cbad65fc8b31923e36463603',
+        'N4398_result.json': '817b875413c9ebe2499bb42d36a61dee7af7e35b0423b58a70b569d4deeb9817',
         'N4252_result.json': 'd94473eb11c0708e25a9529f00b49576628023066e626ed9170bf29b62e22e7c'}
 J = {}
 for fn, h in HASH.items():

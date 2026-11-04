@@ -1,6 +1,6 @@
 # No exact profile with finite angular Fourier support
 
-Status: independently derived, reviewed by the actual claude-opus-5-5 endpoint, and checked again by the verifier. This is a restricted nonexistence result, not a NO endpoint for the primary problem.
+Status: independently derived, reviewed by the actual main-model endpoint, and checked again by the verifier. This is a restricted nonexistence result, not a NO endpoint for the primary problem.
 
 ## Statement
 

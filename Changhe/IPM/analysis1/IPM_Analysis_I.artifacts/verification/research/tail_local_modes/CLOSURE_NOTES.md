@@ -1,6 +1,6 @@
 # Review adjudication and numerical certificate boundary
 
-The first direct model response is actual claude-opus-5-5, end_turn,
+The first direct model response is actual main-model, end_turn,
 request c6aa7c5d-4281-4c65-97dc-a9cbf9b6dd00, ended2026-10-21T07:29:45Z.
 It independently reconstructed and accepted the analytic identities and
 both implementations. It deliberately did not certify numerical closure

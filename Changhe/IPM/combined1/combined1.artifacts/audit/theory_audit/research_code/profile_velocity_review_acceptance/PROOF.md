@@ -88,4 +88,4 @@ a bound on H, or any new candidate exclusion. Additional stationary
 hypotheses are needed to identify b with (A+tP)/(4c).
 
 Collaboration uses the existing independent theory lane configured for
-Claude Opus5.5; the actual provider identity is not observable here.
+the main model; the actual provider identity is not observable here.

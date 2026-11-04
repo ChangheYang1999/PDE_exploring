@@ -353,4 +353,4 @@ Far-field checks on 513 angles at \(r=10^4,10^5,10^6\) were consistent with the 
 
 The standalone argument and reproducible checks are saved in [PROOF.md](PROOF.md) and [spot_checks.json](spot_checks.json).
 
-The configured collaboration target was `us.anthropic.claude-opus-5-5`, but Bedrock connectivity was unavailable. No Opus review was obtained, and no substitute model was used.
+The configured collaboration target was `the main model`, but Bedrock connectivity was unavailable. No Opus review was obtained, and no substitute model was used.

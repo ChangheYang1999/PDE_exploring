@@ -50,7 +50,7 @@ for sp in spans:
    for q in [env['qa'],env['qi']]:
     l,u=ends(env[hull](a,b,q));need(l<=a<=b<=u,'legacy outward input hull');checks+=1
 # Synthetic gate cases cannot produce an application: they only exercise rejection.
-base={'status':'CONFIRMED_COMPLETE_CANONICAL_MOMENT_ARCHIVE','counts':c.EXPECTED,'moment_targets':813276,'exact_H_coefficients':3265568,'independent_exact_anchors':783,'files':{c.ARCHIVE:c.ASHA,c.SOURCE:c.SSHA,c.ZPATH:c.ZSHA},'actual_output_review':{'actual_response_model':'claude-opus-5-5','stop_reason':'end_turn','end_utc':'2026-10-20T12:00:00Z'},'utc':'2026-10-20T12:01:00Z'}
+base={'status':'CONFIRMED_COMPLETE_CANONICAL_MOMENT_ARCHIVE','counts':c.EXPECTED,'moment_targets':813276,'exact_H_coefficients':3265568,'independent_exact_anchors':783,'files':{c.ARCHIVE:c.ASHA,c.SOURCE:c.SSHA,c.ZPATH:c.ZSHA},'actual_output_review':{'actual_response_model':'main-model','stop_reason':'end_turn','end_utc':'2026-10-20T12:00:00Z'},'utc':'2026-10-20T12:01:00Z'}
 mutations=[]
 for key,value in [('status','OPEN'),('moment_targets',813275),('exact_H_coefficients',3265567),('independent_exact_anchors',782),('utc','2026-10-20T11:59:00Z')]:
  x=copy.deepcopy(base);x[key]=value;mutations.append((key,x))

@@ -100,14 +100,14 @@ Every failed attempt is preserved with its limited scope.
 
 ## Independent model exchange
 
-The first actual Claude Opus5.5 response, request
+The first actual the main model response, request
 f4b7c98b-0755-4a00-b5a7-12f6f5d49848, ended09:38:36Z with max_tokens.
 Its partial objections were useful, but that response was not acceptance.
 A later request with thinking disabled was rejected by the provider's
 configuration validation before any model execution. That failed request
 and its metadata are retained; no substitute model was used.
 
-The complete adaptive follow-up used actual claude-opus-5-5, request
+The complete adaptive follow-up used actual main-model, request
 5538c439-4092-46aa-96be-2d8cbb75f73a, input hash
 8125e83370fe50b8c6e1caca79092b05392a670f061c6e629e59763476ccf323,
 and ended2026-10-21T09:56:15.009566Z with end_turn. It accepted the restricted

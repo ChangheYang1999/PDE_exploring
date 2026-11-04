@@ -2,7 +2,7 @@
 
 Written 2026-10-21T23:14:48.605415+00:00, after reading the complete actual response and the exact checker and outputs.
 
-Actual request bc836f74-3a9c-4eda-90fc-561721e0d68d; input SHA256 1b0291a302a3f4f6ffe79636cc30b29febe0d44f9ae0413f8a596041bd0cf60a; raw response SHA256 ccdbe067c2073fa06981c8903654c7ca4ea53ffd0f2456a12b62e2bfcba0d165. The metadata and raw response identify claude-opus-5-5 with end_turn. The request ended 2026-10-21T23:11:20.733667+00:00. No substitute model or truncated response is being accepted.
+Actual request bc836f74-3a9c-4eda-90fc-561721e0d68d; input SHA256 1b0291a302a3f4f6ffe79636cc30b29febe0d44f9ae0413f8a596041bd0cf60a; raw response SHA256 ccdbe067c2073fa06981c8903654c7ca4ea53ffd0f2456a12b62e2bfcba0d165. The metadata and raw response identify main-model with end_turn. The request ended 2026-10-21T23:11:20.733667+00:00. No substitute model or truncated response is being accepted.
 
 Verdict: CONFIRMED for the exact two exterior classes in PROOF.md only.
 

@@ -28,7 +28,7 @@ Primary exact arithmetic and Arb512/iv180 checks verify329 inherited pins,
 Gamma-ratio integrals and exact reciprocal comparisons give45 checks.
 The failed initial fresh k1 audit is preserved; it had a factor2 coding
 error which did not affect the primary calculation or the proof.
-Actual Claude Opus5.5 proof and whole-closure reviews are bound. The closure
+Actual the main model proof and whole-closure reviews are bound. The closure
 retracted its cutoff-scale objection and its inward rounded E decimals.
 Every auxiliary inverse norm, rank-one denominator, outer matching,
 full IPM inverse and decisive endpoint remains OPEN.

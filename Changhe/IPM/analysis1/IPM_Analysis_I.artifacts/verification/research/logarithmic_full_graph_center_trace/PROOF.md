@@ -1,6 +1,6 @@
 # Center normalization in the full linearized logarithmic graph norm
 
-This standalone argument is written before new finite checks. Its status is OPEN until independent verification, actual Claude Opus5.5 review, resolution of objections and later own adjudication. It strengthens the frozen-graph result207 for orders below4. It does not give an inverse or a PDE exclusion.
+This standalone argument is written before new finite checks. Its status is OPEN until independent verification, actual the main model review, resolution of objections and later own adjudication. It strengthens the frozen-graph result207 for orders below4. It does not give an inverse or a PDE exclusion.
 
 ## Exact statement
 

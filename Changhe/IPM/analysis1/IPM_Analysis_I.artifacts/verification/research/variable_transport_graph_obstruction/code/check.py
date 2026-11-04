@@ -10,7 +10,7 @@ from flint import arb,fmpq,ctx
 ctx.prec=512;ctx.threads=1
 R=Path(__file__).resolve().parents[3];P=R/'research/variable_transport_graph_obstruction';E=P/'evidence'
 sys.path.insert(0,str(R/'research/full_derivative_norm_bound_v2/code'));import protocol as p
-assert p.sha(R/'research/full_derivative_norm_bound_v2/code/protocol.py')=='b57406959b9857d3acf994d7c1067fe4f534fa3b2362d2ddc3ed785be2cdcdcf'
+assert p.sha(R/'research/full_derivative_norm_bound_v2/code/protocol.py')=='b3bb1f089eaddd540e4b478f4c4108271172cb12550eb82dae3845744be0fd0f'
 start=p.now();pf=p.load(E/'proof_first.json');assert p.sha(P/'PROOF.md')==pf['proof_sha256']=='5f6216563558ba2bbf28709c1a24bb2772b792d19f9fa75ee87eb033763202a4'
 parents={'moving_source':'dbe8a4e8794275a1524c9879c0bbfe949eb931bb3acc1014c7f30c9e90d83e11','annular_degree_five_leakage_v2':'e278d00ef75c8622235c16e9064d9cbd9be810f42e47f4eff28de8b077a88d25','logarithmic_frozen_range_inverse':'a5cce5f36cf56efdd512eb8ef5274f0b8708151342f4a16ec93892006601c3d7','source_instance':'be3a8ee307d1ed499af009c767be40b5e5982a1230fc51518355e77fee43516d','n8_velocity_hessian':'8a35f9cb43b241bd7a880b03aa8fcfdc01806a2517f50dbea99530e03a2455d5','n8_density_hessian':'c590ba0d354b26595bd1131f68ca87bbc9875c9d248b4cf5fdf71344ef6e01ca','canonical_full_radial_linkage':'4d91f313ec6dc475fc85a075f4154f6f302081112a0b5f7d77f7a172414eed1e'}
 mapping=p.load(R/'research/full_derivative_norm_bound_v2/external_rebindings.json');pins={};deps={}

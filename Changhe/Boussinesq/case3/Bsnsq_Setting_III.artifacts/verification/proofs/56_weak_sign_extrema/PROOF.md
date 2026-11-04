@@ -154,4 +154,4 @@ Lean and Lake builds are prohibited. General sign-changing profiles, and
 weak-sign profiles with only degenerate interior critical values, remain
 open. This partial result cannot authorize an early finish.
 
-Actual claude-opus-5-5 review47 returned in88.410596138seconds at18:14:49Z and confirmed the proof under its stated dependencies. The verifier read and checked the entire response, adopted the precompact-orbit wording and explicit scattering/parity hypotheses, and retained the full Hessian argument. The reviewer’s broader parity wording was not used: Omega and Psi oddness are separately stipulated hypotheses, not consequences of Theta evenness alone. No full endpoint follows.
+Actual main-model review47 returned in88.410596138seconds at18:14:49Z and confirmed the proof under its stated dependencies. The verifier read and checked the entire response, adopted the precompact-orbit wording and explicit scattering/parity hypotheses, and retained the full Hessian argument. The reviewer’s broader parity wording was not used: Omega and Psi oddness are separately stipulated hypotheses, not consequences of Theta evenness alone. No full endpoint follows.

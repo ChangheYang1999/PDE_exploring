@@ -16,7 +16,7 @@ for p,h in pins.items():assert sha(B/p)==h,p
 reviews={}
 for tag in ['forcing_angular_reduction_closure','forcing_angular_reduction_followup']:
  m=read(R/(tag+'_metadata.json'));raw=read(R/(tag+'_response.json'));req=(R/(tag+'_request.txt')).read_text()
- assert m['actual_response_model']==raw['model']=='claude-opus-5-5' and m['stop_reason']==raw['stop_reason']=='end_turn'
+ assert m['actual_response_model']==raw['model']=='main-model' and m['stop_reason']==raw['stop_reason']=='end_turn'
  assert hashlib.sha256(req.encode()).hexdigest()==m['input_sha256']
  assert req[req.index('\n\nFILE ')+2:]=='\n\n'.join('FILE '+f+'\n'+(B/f).read_text() for f in m['files'])
  txt='\n\n'.join(c['text'] for c in raw['content'] if c['type']=='text')+'\n';assert txt==(R/(tag+'_response.md')).read_text() and 'ACCEPT' in txt[:200]

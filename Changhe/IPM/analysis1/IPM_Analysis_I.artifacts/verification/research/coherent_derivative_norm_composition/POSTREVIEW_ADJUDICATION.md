@@ -2,7 +2,7 @@
 
 Written 2026-10-21T19:57:47.141373+00:00, after reading the complete actual Opus5.5 follow-up, its metadata and raw response.
 
-Verdict: CONFIRMED conditional norm composition only. The completed review request4db18d82-d248-4b11-a899-45d46595d3a6 returned actual model claude-opus-5-5 and end_turn at19:57:04.224287Z. The earlier requesta2a5695b-ebe5-489d-a68f-f3b83fa46d1b ended at max_tokens and is preserved as incomplete, not treated as an accepted review.
+Verdict: CONFIRMED conditional norm composition only. The completed review request4db18d82-d248-4b11-a899-45d46595d3a6 returned actual model main-model and end_turn at19:57:04.224287Z. The earlier requesta2a5695b-ebe5-489d-a68f-f3b83fa46d1b ended at max_tokens and is preserved as incomplete, not treated as an accepted review.
 
 I independently expanded m^-2, used r dr=exp(2t)dt and r^2|grad f|^2=f_t^2+f_theta^2, and checked the factor pi from full-circle orthogonality. For f-f_t its radial derivative is f_t-f_tt and its angular derivative is the frequency times f_N-f_Nprime. This gives exactly the two positive row expressions audited in152. The coherent partition uses identical parameters and all seven identical saved fields, as proved for all19389 rows by both current methods. The exact displacement and width inequalities give the factor exp(4delta) for squared norms. Both positive cross-multiplied rational slacks agree with the primary inequalities, and each directed interval engine places exp(2delta) times the accepted old ceilings strictly below the new ceilings.
 

@@ -16,7 +16,7 @@ assert a['fresh_constant_containments']==6 and a['fresh_frequency_containments']
 paths={Path(__file__),B/'research/jet_extension/PROOF.md',B/'research/jet_extension/code/check_extension.py',B/'research/jet_extension/code/audit_output.py',B/'research/jet_extension/code/diagnose_extension.py'}|{E/f for f in ['checks.json','output_audit.json','local_run.json','audit_run.json','proof_first.json','review_repairs.json','failed_first_check.log','failed_first_local_run.json','failed_first_check_extension.py.txt','diagnostic.log','diagnostic_run.json']};reviews={}
 for tag in ['jet_extension_proof','jet_extension_closure']:
  m=load(B/f'notes/reviews/{tag}_metadata.json');resp=load(B/f'notes/reviews/{tag}_response.json');req=(B/f'notes/reviews/{tag}_request.txt').read_text();text=(B/f'notes/reviews/{tag}_response.md').read_text()
- assert m['actual_response_model']==resp['model']=='claude-opus-5-5' and m['stop_reason']==resp['stop_reason']=='end_turn'
+ assert m['actual_response_model']==resp['model']=='main-model' and m['stop_reason']==resp['stop_reason']=='end_turn'
  assert sha(B/f'notes/reviews/{tag}_request.txt')==m['input_sha256'] and text=='\n\n'.join(x['text'] for x in resp['content'] if x['type']=='text')+'\n'
  if tag.endswith('closure'):
   assert 'ACCEPT_STATED_SCOPE' in text and 'That remark was wrong' in text and datetime.fromisoformat(arun['end_utc'])<datetime.fromisoformat(m['start_utc'])

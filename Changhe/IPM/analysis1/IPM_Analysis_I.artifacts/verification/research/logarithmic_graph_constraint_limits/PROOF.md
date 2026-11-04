@@ -1,6 +1,6 @@
 # Linear normalization and finite continuous constraints in the full IPM graph norm
 
-This standalone proof is written before its finite checks. Its status is OPEN until independent checks, actual Claude Opus 5.5 review, resolution of objections and later own adjudication. It proves consequences of the accepted full graph results 208 and 209. No inverse estimate or PDE exclusion is asserted.
+This standalone proof is written before its finite checks. Its status is OPEN until independent checks, actual the main model review, resolution of objections and later own adjudication. It proves consequences of the accepted full graph results 208 and 209. No inverse estimate or PDE exclusion is asserted.
 
 ## Exact background, spaces and claims
 

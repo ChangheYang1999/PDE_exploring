@@ -9,7 +9,7 @@ from flint import fmpq
 from mpmath import iv
 iv.dps=100
 R=Path(__file__).resolve().parents[3];D=R/'research/weak_axis_compact_mapping';E=D/'evidence';sys.path.insert(0,str(R/'research/full_derivative_norm_bound_v2/code'));import protocol as p
-start=p.now();A=p.load(E/'check.json');assert A['proof_sha256']==p.sha(D/'PROOF.md')=='3bd85b7a29499ddd57fc3e13335bb8571c54f2aefcfec1fd93ba306c3a6de6a7';p.rehash(A['parent_files'])
+start=p.now();A=p.load(E/'check.json');assert A['proof_sha256']==p.sha(D/'PROOF.md')=='0a812be3f4653b8d124d0483e616f055131296204e0acf3613d93fbbca1454dd';p.rehash(A['parent_files'])
 raw=p.load(R/'data_exact/modal_v2.json');assert p.sha(R/'data_exact/modal_v2.json')=='57f67a53c1ee5c8fd5ede8480428f1a5584123ac4e54b6d3530d091ea2a67ca6'
 def hx(t):
  sg=-1 if t.startswith('-') else 1;t=t.lstrip('+-');m,e=t.split('p');a,b=m[2:].split('.');return fmpq(sg*int(a+b,16))*fmpq(2)**(int(e)-4*len(b))

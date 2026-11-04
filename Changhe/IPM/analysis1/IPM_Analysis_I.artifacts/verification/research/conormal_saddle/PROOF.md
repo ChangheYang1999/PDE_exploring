@@ -1,6 +1,6 @@
 # The weighted saddle inverse and a sufficient exit-trace condition
 
-Date: 2026-10-20. Status: local model statements CONFIRMED by independent reconstruction, exact rational arithmetic with interval cross-check, and actual Claude Opus5.5 focused follow-ups. Global realization remains OPEN. This addresses only the local model statements in the pinned lead `conormal_framework.md` revision2. It does not construct the proposed global edge/corner space.
+Date: 2026-10-20. Status: local model statements CONFIRMED by independent reconstruction, exact rational arithmetic with interval cross-check, and actual the main model focused follow-ups. Global realization remains OPEN. This addresses only the local model statements in the pinned lead `conormal_framework.md` revision2. It does not construct the proposed global edge/corner space.
 
 ## Weighted maximal-domain inverse
 

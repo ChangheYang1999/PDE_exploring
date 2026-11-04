@@ -26,7 +26,7 @@ for s in p['source_archives'].values():assert sha(Path(s['path']))==s['sha256']
 reviews={}
 for kind in ('proof','closure'):
  tag='far_profile_distance_'+kind;m=load(R/(tag+'_metadata.json'));raw=load(R/(tag+'_response.json'));req=(R/(tag+'_request.txt')).read_text();ans=(R/(tag+'_response.md')).read_text()
- assert m['requested_model']=='us.anthropic.claude-opus-5-5' and m['actual_response_model']==raw['model']=='claude-opus-5-5'
+ assert m['requested_model']=='the main model' and m['actual_response_model']==raw['model']=='main-model'
  assert m['stop_reason']==raw['stop_reason']=='end_turn' and hashlib.sha256(req.encode()).hexdigest()==m['input_sha256']
  assert ans=='\n\n'.join(x['text'] for x in raw['content'] if x['type']=='text')+'\n'
  for phrase in ('no JavaScript/TypeScript','no servers/listeners/tunnels','no RLScience cluster'):assert phrase in req

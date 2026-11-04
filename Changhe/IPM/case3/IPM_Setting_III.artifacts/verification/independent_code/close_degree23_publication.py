@@ -23,7 +23,7 @@ def reviews():
   q=V/('opus_'+label)
   for name in ['request.txt','response.json','answer.md','metadata.json']:bindings[str(q/name)]=sha(q/name)
   meta=json.loads((q/'metadata.json').read_text());response=json.loads((q/'response.json').read_text());answer='\n\n'.join(z.get('text','')for z in response['content']if z.get('type')=='text')+'\n'
-  ck(label+' actual model',meta['requested_model']=='us.anthropic.claude-opus-5-5'and meta['returned_model']==response['model']=='claude-opus-5-5')
+  ck(label+' actual model',meta['requested_model']=='the main model'and meta['returned_model']==response['model']=='main-model')
   ck(label+' completed response',meta['stop_reason']==response['stop_reason']=='end_turn'and meta['answer_nonempty']and answer.strip()!='')
   ck(label+' response text exact',answer==(q/'answer.md').read_text())
   ck(label+' request binding',meta['request_sha256']==sha(q/'request.txt'))

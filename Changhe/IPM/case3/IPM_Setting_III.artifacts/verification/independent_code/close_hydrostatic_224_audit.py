@@ -28,7 +28,7 @@ bind(V/'hsG_c2.0_N224_log.json',pipe['states'][0]['result_sha256']);raw=json.loa
 h=json.loads((V/'HANDOFF.json').read_text());bind(V/'HANDOFF.json');ck('only completed summary claimed',h['stages'][0]['status']=='PASS'and h['stages'][0]['returncode']==0);bind(V/'SUMMARY.json',h['stages'][0]['output_sha256']);t=json.loads((V/'summary_timeout_60.json').read_text());ck('preserved failedtimeout',t['returncode']==124)
 reviews=[]
 for folder in ['opus_design','opus_followup','opus_third','opus_results_shift7_archive','opus_results','opus_results_followup','opus_results_closure','opus_final']:
- d=V/folder;m=json.loads((d/'metadata.json').read_text());resp=json.loads((d/'response.json').read_text());ck('actualmodel '+folder,m['requested_model']=='us.anthropic.claude-opus-5-5'and m['returned_model']==resp['model']=='claude-opus-5-5');
+ d=V/folder;m=json.loads((d/'metadata.json').read_text());resp=json.loads((d/'response.json').read_text());ck('actualmodel '+folder,m['requested_model']=='the main model'and m['returned_model']==resp['model']=='main-model');
  if folder in ['opus_design','opus_followup']:
   ck('legacy proofhash '+folder,sha(R/'PROOF.md')==m['proof_sha256']);ck('legacy full proof in request '+folder,(R/'PROOF.md').read_text().strip()in(d/'request.txt').read_text())
  else:ck('requesthash '+folder,sha(d/'request.txt')==m['request_sha256'])

@@ -1,6 +1,6 @@
 # Acceptance details following the proof review
 
-The actual Claude Opus5.5 proof review completed 2026-10-21T03:48:08Z,
+The actual the main model proof review completed 2026-10-21T03:48:08Z,
 request ed9ffa84-9f88-4c12-bf8a-69c613551d12. Its angular reconstruction,
 counts and interpolation checks agree with the independent derivation.
 Its acceptance is conditional only. The following clarifications apply.

@@ -54,7 +54,7 @@ def run(tag,review_tag):
  public['L2']={'strict_upper_decimal':bound,'authoritative_upper_exact':str(hi)}
  tags=['outer_cells_theorem','outer_cells_source','outer_cells_assembly','outer_cells_pin_closure','outer_cells_final_output',review_tag];reviews=[];paths=set(a['pins'])
  for t in tags:
-  meta=B/'notes/reviews'/f'{t}_metadata.json';reply=B/'notes/reviews'/f'{t}_response.md';v=load(meta);assert v['actual_response_model']=='claude-opus-5-5' and v['stop_reason']=='end_turn' and reply.exists()
+  meta=B/'notes/reviews'/f'{t}_metadata.json';reply=B/'notes/reviews'/f'{t}_response.md';v=load(meta);assert v['actual_response_model']=='main-model' and v['stop_reason']=='end_turn' and reply.exists()
   reviews.append({'tag':t,'actual_model':v['actual_response_model'],'end_utc':v['end_utc'],'metadata_sha256':sha(meta),'response_sha256':sha(reply)});paths.update([str(meta.relative_to(B)),str(reply.relative_to(B))])
  for suffix in ['audit.json','summary.json','manifest.json','cells.jsonl','tail_l2.json']:paths.add('research/outer_cells/evidence/'+tag+'_'+suffix)
  paths.update(['research/outer_cells/evidence/full_serialized_run.json','research/outer_cells/evidence/full_runtime_provenance.json','research/outer_cells/evidence/full_serialized_covering_start_snapshot.json','research/outer_cells/code/serialize_full.py','research/outer_cells/code/finalize_verdict.py','research/outer_leading_cancellation/evidence/verdict.json'])

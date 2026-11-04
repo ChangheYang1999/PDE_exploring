@@ -11,7 +11,7 @@ for name,count,status,h in [('FINAL_SUMMARY_CHECKS.json',60871,'PASS_FINITE_RECO
  for p,hh in d['bindings'].items():bind(p,hh)
 for stem,reqid in [('final','8909e38f-be19-4a58-b718-2db62657a945'),('final_followup','1b5c8c75-5cd4-463d-89b1-d4f4c6341602')]:
  p=V/('opus_'+stem);m=json.loads(bind(p/'metadata.json').read_text());r=json.loads(bind(p/'response.json').read_text());ans=bind(p/'answer.md').read_text();bind(p/'request.txt',m['request_sha256']);bind(V/('OPUS_'+stem.upper()+'_REQUEST.txt'),m['request_sha256'])
- ck('actual returned model '+stem,m['requested_model']=='us.anthropic.claude-opus-5-5'and m['returned_model']==r['model']=='claude-opus-5-5'and m['request_id']==reqid)
+ ck('actual returned model '+stem,m['requested_model']=='the main model'and m['returned_model']==r['model']=='main-model'and m['request_id']==reqid)
  ck('completed actual review '+stem,m['stop_reason']==r['stop_reason']=='end_turn'and m['answer_nonempty']and ans.strip()=='\n\n'.join(x.get('text','')for x in r['content']if x['type']=='text').strip())
  ck('review timing '+stem,datetime.fromisoformat(m['started_utc'])<datetime.fromisoformat(m['finished_utc'])<=datetime.now(timezone.utc))
  ck('request context contains exact draft '+stem,(R/('RESULTS_REPAIRED_DRAFT.md'if stem.endswith('followup')else'RESULTS_DRAFT.md')).read_text()in(p/'request.txt').read_text())

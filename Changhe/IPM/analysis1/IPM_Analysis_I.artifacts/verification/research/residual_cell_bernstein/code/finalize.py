@@ -18,7 +18,7 @@ for obj in [a,g,e]:
 reviews={}
 for tag in ['residual_cell_bernstein_proof','residual_cell_bernstein_code','residual_cell_bernstein_complete']:
  m=load(R/(tag+'_metadata.json'));raw=load(R/(tag+'_response.json'));request=(R/(tag+'_request.txt')).read_text();text='\n\n'.join(c['text'] for c in raw['content'] if c['type']=='text')+'\n'
- check(m['requested_model']=='us.anthropic.claude-opus-5-5' and m['actual_response_model']==raw['model']=='claude-opus-5-5','actual model');check(m['stop_reason']==raw['stop_reason']=='end_turn','completed review');check(hashlib.sha256(request.encode()).hexdigest()==m['input_sha256'],'request digest');check(text==(R/(tag+'_response.md')).read_text(),'raw review text');check(request[request.index('\n\nFILE ')+2:]=='\n\n'.join('FILE '+n+'\n'+(B/n).read_text() for n in m['files']),'current review bundle')
+ check(m['requested_model']=='the main model' and m['actual_response_model']==raw['model']=='main-model','actual model');check(m['stop_reason']==raw['stop_reason']=='end_turn','completed review');check(hashlib.sha256(request.encode()).hexdigest()==m['input_sha256'],'request digest');check(text==(R/(tag+'_response.md')).read_text(),'raw review text');check(request[request.index('\n\nFILE ')+2:]=='\n\n'.join('FILE '+n+'\n'+(B/n).read_text() for n in m['files']),'current review bundle')
  lines=[v.strip().strip('*').strip() for v in text.splitlines()];verdicts=[v for v in lines if v.startswith('VERDICT: ')]
  if tag=='residual_cell_bernstein_code':check(verdicts==['VERDICT: CONFIRM_BERNSTEIN_PROOF_AND_CODE_ONLY'],'code-only review')
  if tag=='residual_cell_bernstein_complete':

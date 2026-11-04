@@ -1113,7 +1113,7 @@ Paths are relative to working file r6 (not published) Hashes were computed at pu
 - 1dc8284fc54d24ed1fff21d3c4349aee7731d87247e5d1ca815cf47547880e19
   working file DISTANCE_PROOF_v02.md (not published)
 - 2ce3839dd7db7d2ca351e53243bd3a6e9bf1d05e55b3a436c96dd1e0281b2f5a working file PROOF_v02.md (not published)
-- 5ff46adee1191da1c3809e920f3ca13dffc5670a38d2f74c86a53a2805e7d3b7 working file PROOF.md (not published)
+- 42a5a74b5d93532a5257359eae695c9fabf746dfb65f20b79d31a6ed17bd7d36 working file PROOF.md (not published)
 - af2715bfbf2369e02e6f1818bdc167de0f82a852c6584a2d707f8a662b0f7dab working file PROOF.md (not published)
 - 1bca5f408ed60fc274cb98b067e6a925cba2dd927048ad5f9ef511c372f4aee8 working file PROOF.md (not published)
 - fbb936cbf9dd27aa5b7cfa11c8fc9416893089f94a7268c29c590d982cf71f78 working file PROOF.md (not published)
@@ -1190,7 +1190,7 @@ Paths are relative to working file r6 (not published) Hashes were computed at pu
 - 042beeb993874daf236c7423c1a1546b7c57c307555c9fe252c189a93932bfd8 working file PROOF.md (not published)
 - 45e743dd2ef7ac929a5a4f8b5ec89c8e0dfb0c480e8ae164f909ae8c10840037
   working file ERRATA_v01.md (not published)
-- efabe956aa103859e42f8240f270217a1738a732d590d0dd1f01be11377c2cbf
+- 7caec83ebf03cc77db4c83927c0ce107941735b23c36e6a568a3dacdeecfd119
   working file PROOF.md (not published)
 - 85e01f1bfab61b078138120f3ec6011b76ace5cd45d7436d7cdd5ca35251fc34 working file PROOF.md (not published)
 - 88b0ac35e46072242a94e57b198470d16b100a8bd77b744bf626e18f8d35c4f6
@@ -1201,7 +1201,7 @@ Paths are relative to working file r6 (not published) Hashes were computed at pu
 - e72bc63bf849a60c5d7df86317d012c78c57a5f2f984f79c65809fb0fa874426 working file PROOF.md (not published)
 - 9afe571d5720f1bc304c712c8fb4331ca148f83bcc55f842f06abc4943ae2330
   working file PROOF.md (not published)
-- e6f9f4e3cd51e7c434bb337489901a40be6dbd7782df3a14f859ca4e7415621d
+- bdf58335de8c01e62132f82d3f7b7c83ecacb78c9efe214234e2e642def618e8
   working file PROOF.md (not published)
 - 353fc1575bccca1927be976d646b9ff886ee5fb87c99a090c8fce0c0b3d9f650 working file PROOF.md (not published)
 - 4daf08a6a8b3e769fee56cc450d5a5490693ce2c12c829033b4cf1ca82e29d6f working file PROOF.md (not published)
@@ -1215,10 +1215,10 @@ Paths are relative to working file r6 (not published) Hashes were computed at pu
 - 8848da16d556cb0089a56a3fb41d09f9b98dc3a2e0d4985843f59300e0075674
   working file PROOF.md (not published)
 - 57110fd5b3c62f0fa06b6e6194c53e6d9cf1fac091e89a8a3cd514f38ac9fab6 working file PROOF.md (not published)
-- 865eb8423aeae53ee84452d8fcb06348d2829c295f913578ec1eba009e7d5232
+- 4c1fa72d3a3d66a7af4ef5e067c6a8aaf4d61fd0304dfcb13a28e1a4466e1eaa
   working file PROOF.md (not published)
 - a98e64b04a4ab8f8e46f311c028d55138e9483f761d84e140ed550066e5ab3d9 working file PROOF.md (not published)
-- 3f5da5310fccb4feb8dd117dcd4b9f1789e3eccda089a9bdc5d79dc8ba14d32e
+- 9bdb3e848e87d66ef6a38b92a81bb8fc8d0cbe960de02ff0a19238b7c96b42af
   working file PROOF.md (not published)
 - 0e0f608d167b2c3453568d06ccc4ba8319e67e5c2d066e4c4ee6854c8fb3a66b working file PROOF.md (not published)
 - 5720a3c058165143cbc622f7de0806c95a44860979da73bc3a611d7af4b37304 working file PROOF.md (not published)
@@ -1235,7 +1235,7 @@ Paths are relative to working file r6 (not published) Hashes were computed at pu
 - 0eb9308dea16756f9896dff4c1ea5b438c9075517adf35b1d9742778372f1ca0 working file PROOF.md (not published)
 - 8c1b6532cf66d1c05fe5a919c92dfe8b3233e1ba37697816c0b2222c6ab8ea07 working file PROOF.md (not published)
 - 93f001802c42ef67be3f4ddfdd599b299dec0c57d8637a86d6c6e7f289e317a9 working file PROOF.md (not published)
-- 0c2d360a304f04f5b022144f7d9c42b3b681fa4dab3a00de68a5de4d27f04ceb working file PROOF.md (not published)
+- e6742013d8beaaa1350967e4dd84b3a2eda36fc6fcbaf932f3087027af5c433e working file PROOF.md (not published)
 - cd2e6f18fb4b9255503e988e220709cb258338a8b4829080910ca8a11797bde6 working file PROOF.md (not published)
 - ca0e008a1bfb7868fb1242af0a0eeb1897552a574dc27f7b1a9ad36e1a0b30b9 working file PROOF.md (not published)
 - 3c871d7f9ef82ba6b6fb925cf73a31cda678805cadc2c8a91f9659b2e2f3030c working file PROOF.md (not published)

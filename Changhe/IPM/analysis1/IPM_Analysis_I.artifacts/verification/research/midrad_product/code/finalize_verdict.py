@@ -14,7 +14,7 @@ files={};reviews={}
 for p,h in checks['source_pins'].items():assert sha(B/p)==h;files[p]=h
 for tag in ['midrad_product_proof','midrad_product_closure']:
  m=json.loads((B/f'notes/reviews/{tag}_metadata.json').read_text());req=(B/f'notes/reviews/{tag}_request.txt').read_text();ans=(B/f'notes/reviews/{tag}_response.md').read_text()
- assert m['actual_response_model']=='claude-opus-5-5' and m['stop_reason']=='end_turn' and len(ans)>200
+ assert m['actual_response_model']=='main-model' and m['stop_reason']=='end_turn' and len(ans)>200
  assert hashlib.sha256(req.encode()).hexdigest()==m['input_sha256']
  for f in m['files']:
   part=req.split('FILE '+f+'\n',1)[1].split('\n\nFILE ',1)[0]

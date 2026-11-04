@@ -8,7 +8,7 @@ assert not sys.flags.optimize
 for name in ['OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','NUMEXPR_NUM_THREADS']:os.environ[name]='1'
 ROOT=Path(__file__).resolve().parents[3];D=ROOT/'research/scaling_norm_lower_bound';E=D/'evidence';REV=ROOT/'notes/reviews'
 UP=ROOT/'research/full_derivative_norm_bound_v2/code/protocol.py'
-assert hashlib.sha256(UP.read_bytes()).hexdigest()=='b57406959b9857d3acf994d7c1067fe4f534fa3b2362d2ddc3ed785be2cdcdcf'
+assert hashlib.sha256(UP.read_bytes()).hexdigest()=='b3bb1f089eaddd540e4b478f4c4108271172cb12550eb82dae3845744be0fd0f'
 spec=importlib.util.spec_from_file_location('scaling184_protocol',UP);u=importlib.util.module_from_spec(spec);spec.loader.exec_module(u)
 load,sha,write,pin,rehash,auth,when,now=u.load,u.sha,u.write,u.pin,u.rehash,u.auth,u.when,u.now
 FIXED=['PROOF.md','THEOREM_ADJUDICATION.md','evidence/THEOREM_ADJUDICATION.json','evidence/proof_first.json','evidence/constants.json','evidence/input_manifest.json','code/cox_monomial.py','code/deboor_legendre.py','code/weights.py','code/selfcheck.py','evidence/selfcheck.json','code/common.py','code/run.py','code/audit.py','code/replay.py','code/gate.py','code/queue.sh','review_files.json','workflow_question.txt','preparation_question.txt','actual_question.txt']

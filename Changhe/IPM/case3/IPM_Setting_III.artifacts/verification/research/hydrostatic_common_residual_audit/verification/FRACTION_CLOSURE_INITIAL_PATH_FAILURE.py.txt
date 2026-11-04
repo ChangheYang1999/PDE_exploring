@@ -30,7 +30,7 @@ for g in fixed['groups']:
 reviews=[]
 for name in ['rational','rational_followup','rational_recheck','rational_final','rational_closure']:
  p=V/('opus_'+name);meta=json.loads(bind(p/'metadata.json').read_text());bind(p/'request.txt',meta['request_sha256']);bind(p/'response.json');bind(p/'answer.md')
- ck(name+' actual model',meta['requested_model']=='us.anthropic.claude-opus-5-5'and meta['returned_model']=='claude-opus-5-5')
+ ck(name+' actual model',meta['requested_model']=='the main model'and meta['returned_model']=='main-model')
  if name=='rational_followup':ck('refusal not counted as review',not meta['answer_nonempty']and meta['stop_reason']=='refusal')
  else:ck(name+' substantive complete review',meta['answer_nonempty']and meta['stop_reason']=='end_turn')
  reviews.append({k:meta[k]for k in ['started_utc','finished_utc','request_id','returned_model','stop_reason','answer_nonempty']})
@@ -43,7 +43,7 @@ now=datetime.now(timezone.utc).isoformat();out=dict(utc=now,status='PASS',count=
 (V/'FRACTION_REVIEW_BINDINGS.json').write_text(json.dumps(out,indent=2)+'\n')
 (R/'FRACTION_REVIEW_COMPLETION.md').write_text('''# Fixed arithmetic supplement completed
 
-UTC '''+now+'''. CONFIRMED within its finite scope:173 outer assertions,6993 represented-point rows over21 arrays and164724 scalar conditions;14 replayable output/context tests. All recorded input and code hashes were rebound in '''+str(len(checks))+''' closure checks. Four substantive actualClaude Opus5.5 rounds are preserved; one intervening request returned refusal without text and is not counted as approval. The last substantive review explicitly resolves the fixed-mode concerns. Identical current checker and arithmetic-module hashes appear in the fixed and IO gates.
+UTC '''+now+'''. CONFIRMED within its finite scope:173 outer assertions,6993 represented-point rows over21 arrays and164724 scalar conditions;14 replayable output/context tests. All recorded input and code hashes were rebound in '''+str(len(checks))+''' closure checks. Four substantive actualthe main model rounds are preserved; one intervening request returned refusal without text and is not counted as approval. The last substantive review explicitly resolves the fixed-mode concerns. Identical current checker and arithmetic-module hashes appear in the fixed and IO gates.
 
 Nf and Nv are reconstructed exactly from binary64 input values, and the stored residuals/denominators/ratios are compared using exact rational inequalities and the stated1024eps uncancelled budgets. The Euclidean denominator uses an exact squared comparison with a justified sign guard. Exact horizontal-axis denominator zeros have undefined Rf/Rv and are preserved as such. The777 horizontal points and6216 other points account independently for all164724 conditions. No uniform residual, derivative accuracy or inverse accuracy follows.
 

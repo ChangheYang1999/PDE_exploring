@@ -1,6 +1,6 @@
 # Vorticity mass and finite-integrability obstructions
 
-Status: complete informal derivation. The power-growth mass argument independently audits the lead's referee result. The critical finite-enstrophy extension in Sections 6-7 is a verifier argument independently audited by the actual Claude Opus 5.5 model on 2026-10-20; minor bookkeeping clarifications were incorporated. These are restricted exclusions, not a full NO.
+Status: complete informal derivation. The power-growth mass argument independently audits the lead's referee result. The critical finite-enstrophy extension in Sections 6-7 is a verifier argument independently audited by the actual the main model model on 2026-10-20; minor bookkeeping clarifications were incorporated. These are restricted exclusions, not a full NO.
 
 ## Statement and hypotheses
 
@@ -154,6 +154,6 @@ Combining Sections 5 and 7 proves item 3 for 1<=p<=beta. If Omega is bounded and
 
 ## Audit scope and remaining gap
 
-The mixed identity and exact mass exponent under a power velocity bound independently confirm Proposition 2 in the lead's referee answer. The radial weighted consequence removes the derivative-decay hypothesis from that part of the scattering-based restricted theorem. Sections 6-7 and the unrestricted L^p conclusion are verifier extensions. The actual Claude Opus 5.5 model independently confirmed Sections 6-7; its report and model metadata are in opus_reviews/02_critical_enstrophy. The minor clarifications about Fourier restriction, early-time radii and an open box have been incorporated and checked. The physical B2 equations in PROMPT.md impose exactly U=o(r), the stated axis condition and the temperature transport sign used here. The signed scaling has a separate complete proof in research/07_reconstruction_scaling. No conclusion excludes L^p when p>beta.
+The mixed identity and exact mass exponent under a power velocity bound independently confirm Proposition 2 in the lead's referee answer. The radial weighted consequence removes the derivative-decay hypothesis from that part of the scattering-based restricted theorem. Sections 6-7 and the unrestricted L^p conclusion are verifier extensions. The actual the main model model independently confirmed Sections 6-7; its report and model metadata are in opus_reviews/02_critical_enstrophy. The minor clarifications about Fourier restriction, early-time radii and an open box have been incorporated and checked. The physical B2 equations in PROMPT.md impose exactly U=o(r), the stated axis condition and the temperature transport sign used here. The signed scaling has a separate complete proof in research/07_reconstruction_scaling. No conclusion excludes L^p when p>beta.
 
 No sign of Omega, global sign of Theta, global source basin, angular asymptotic expansion, finite box, or vanishing boundary flux at infinity is assumed. The estimates never establish a full NO for smooth profiles with nonintegrable vorticity tails. They leave that main branch open.

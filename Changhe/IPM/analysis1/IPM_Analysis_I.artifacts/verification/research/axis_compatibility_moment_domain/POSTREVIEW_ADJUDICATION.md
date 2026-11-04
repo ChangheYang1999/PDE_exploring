@@ -2,7 +2,7 @@
 
 Date 2026-10-22T02:57:13.496652+00:00. Verdict CONFIRMED for the stated restriction of the full graph domain to compact annular zero-strain tests, including the exactly joined canonical modal background. No full inverse or PDE endpoint follows.
 
-I read the complete actual claude-opus-5-5/end_turn response, request01cd1419-c9a0-4865-a72e-a31dc32a7e17. The saved request reconstructs from current reviewed bytes, with the recorded input hash and model identity. This is evidence authentication, not a provider digital-signature claim. My following analytic adjudication is later than that completed response.
+I read the complete actual main-model/end_turn response, request01cd1419-c9a0-4865-a72e-a31dc32a7e17. The saved request reconstructs from current reviewed bytes, with the recorded input hash and model identity. This is evidence authentication, not a provider digital-signature claim. My following analytic adjudication is later than that completed response.
 
 For h supported in1<r<2 with Sigma=0, the full image near0 is exactly U[h].grad rho. On x=0, setting b=rho_xx/2 and u=U2[h] and using divergence freedom gives g_xx/2=-2bu'+b'u. All discarded terms vanish by the background axis trace and parity, not by approximation. The C3 differentiated remainder gives b=y+O(y^3), b'=1+O(y^2), and b>0 on a positive interval. If the coefficient were nonzero at any point, continuity and the two zero x traces would yield a fixed rectangle with |g|>=c x^2. The weighted square integral diverges for a>=5/2. Thus image membership forces the exact ODE, whose solution u=C sqrt(b) is incompatible with odd smooth u=O(y) unless C=0.
 

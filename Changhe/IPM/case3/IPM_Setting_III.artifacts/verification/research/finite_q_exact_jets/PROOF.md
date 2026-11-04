@@ -1,6 +1,6 @@
 # Exact canonical center jets and axis-gradient witnesses for finite Q data
 
-Status: CONFIRMED. Informal proof preceded the independent checker. Manufactured arithmetic checks passed at 21:00:59Z; actual Claude Opus 5.5 lead hand review and a separate 30-digit integral check confirmed formulas (1)-(6) at 21:03Z. Date: 2026-10-20.
+Status: CONFIRMED. Informal proof preceded the independent checker. Manufactured arithmetic checks passed at 21:00:59Z; actual the main model lead hand review and a separate 30-digit integral check confirmed formulas (1)-(6) at 21:03Z. Date: 2026-10-20.
 
 ## Statement, hypotheses and notation
 

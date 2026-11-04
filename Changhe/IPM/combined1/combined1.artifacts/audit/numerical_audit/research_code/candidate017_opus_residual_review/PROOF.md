@@ -132,6 +132,6 @@ listed finite checks, with the auxiliary typo explicitly repaired.
 The complete candidate017 H upper bound, E2 and ordering with007
 remain OPEN, including158other Hardy inputs,14residual trials and
 G0,G1,P2. No inverse, correction radius or existence is obtained.
-Both Opus peers are configured as us.anthropic.claude-opus-5-5 in this
+Both Opus peers are configured as the main model in this
 run; the actual provider response is not observable to this lane.
 No replacement model or remote client is used.

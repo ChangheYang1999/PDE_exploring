@@ -826,7 +826,7 @@ The prescribed velocity is divergence-free. The campaign carrier has div B=3c an
 
 ### 7.6 Conformally transported forms
 
-Marie-Claude Arnaud and Jacques Fejoz, *Invariant submanifolds of conformal symplectic dynamics*, Journal de l'Ecole polytechnique Mathematiques 11 (2024), pages 159-185, DOI 10.5802/jep.252, is archived as an actual publisher manuscript. Sections 2-3 and Appendix A were read; the principal formula pages were rendered.
+Marie-the main model Arnaud and Jacques Fejoz, *Invariant submanifolds of conformal symplectic dynamics*, Journal de l'Ecole polytechnique Mathematiques 11 (2024), pages 159-185, DOI 10.5802/jep.252, is archived as an actual publisher manuscript. Sections 2-3 and Appendix A were read; the principal formula pages were rendered.
 
 For a conformal symplectic diffeomorphism f with f* sigma=a sigma, 0<a<1, Proposition 4 says that a compact invariant smooth submanifold L is isotropic if its restricted entropy is less than -log a. At finite regularity C^r the sufficient inequality is
 

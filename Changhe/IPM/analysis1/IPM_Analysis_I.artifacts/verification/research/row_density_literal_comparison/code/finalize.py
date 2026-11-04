@@ -5,7 +5,7 @@ ROOT=Path(__file__).resolve().parents[1];BASE=ROOT.parents[1];TAG='row_density_l
 sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 meta=json.loads((BASE/f'notes/reviews/{TAG}_metadata.json').read_text());rawpath=BASE/f'notes/reviews/{TAG}_response.json';raw=json.loads(rawpath.read_text())
 request=BASE/f'notes/reviews/{TAG}_request.txt';text=(BASE/f'notes/reviews/{TAG}_response.md').read_text()
-assert meta['requested_model']=='us.anthropic.claude-opus-5-5' and meta['actual_response_model']==raw['model']=='claude-opus-5-5'
+assert meta['requested_model']=='the main model' and meta['actual_response_model']==raw['model']=='main-model'
 assert meta['stop_reason']==raw['stop_reason']=='end_turn' and meta['request_id']=='15380932-e7a0-4cc4-8220-db8ff2768f82'
 assert sha(request)==meta['input_sha256']=='ead11bc1f5a9e8474669b6bc9c6b04f52dbdd79cd0ca9f1f0d49ef4a43fea79a'
 assert text=='\n\n'.join(c['text'] for c in raw['content'] if c['type']=='text')+'\n'

@@ -12,7 +12,7 @@ def now():return datetime.now(timezone.utc).isoformat()
 def sha(p):
  with Path(p).open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
 def load(p):return json.loads(Path(p).read_text())
-start=now();pf=load(E/'proof_first.json');assert pf['proof_sha256']==sha(P/'PROOF.md')=='14827c0b6cf6ca602e73a8ac5ed29cea56040a10d02fac37787c44e41d7c9ada'
+start=now();pf=load(E/'proof_first.json');assert pf['proof_sha256']==sha(P/'PROOF.md')=='0cc246a8dec76a2895b7277cc522e0b0a1489bc0efaf9a2cda05def5b2f7edfa'
 rel='research/forward_axis_weight_threshold/evidence/verdict.json';assert sha(R/rel)=='6525af41c5435d37868b79a8a0dd1532129685225c7d1b2b17a82838c9a547b2';parent=load(R/rel);pins=dict(parent['files']);pins[rel]=sha(R/rel)
 for n,h in pins.items():assert sha(R/n)==h,n
 # Arbitrary-parameter symbolic differential reconstruction.

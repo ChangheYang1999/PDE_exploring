@@ -229,5 +229,5 @@ the proved410 theorem or the campaign obstruction.
 The proof's long-lived source status for402 is superseded by413.
 This acceptance concerns the theorem and its explicit constants;
 it does not assert a finite-radius CI closure. Collaboration used
-the theory lane configured for Claude Opus5.5, with actual provider
+the theory lane configured for the main model, with actual provider
 identity unobservable here.

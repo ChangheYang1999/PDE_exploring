@@ -26,7 +26,7 @@ for n,h in pins.items():require(sha(B/n)==h,'data hash '+n)
 reviews={}
 for tag,expected in [('flow_composition_proof','4fd6497cd013d23054b0a7b139e4c75fa78978d6b24954f953fcdd5b1f113f41'),('flow_composition_complete','37ceefa950e69ec1d7d4d89546517632e9e7cb4068d6c92b762ce430aa1daccc'),('flow_composition_final_details','cad3799a88d8782e3fc12d9510cfa2c331d38e3bc69c2890486fba7133328e3d')]:
  m=load(R/(tag+'_metadata.json'));raw=load(R/(tag+'_response.json'));req=(R/(tag+'_request.txt')).read_text()
- require(m['requested_model']=='us.anthropic.claude-opus-5-5' and m['actual_response_model']==raw['model']=='claude-opus-5-5' and m['stop_reason']==raw['stop_reason']=='end_turn','actual model/stop')
+ require(m['requested_model']=='the main model' and m['actual_response_model']==raw['model']=='main-model' and m['stop_reason']==raw['stop_reason']=='end_turn','actual model/stop')
  require(hashlib.sha256(req.encode()).hexdigest()==m['input_sha256']==expected,'request digest')
  require(req[req.index('\n\nFILE ')+2:]=='\n\n'.join('FILE '+s+'\n'+(B/s).read_text() for s in m['files']),'current review bundle')
  text='\n\n'.join(q['text'] for q in raw['content'] if q['type']=='text')+'\n';require(text==(R/(tag+'_response.md')).read_text(),'raw text')

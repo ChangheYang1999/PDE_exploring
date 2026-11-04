@@ -271,13 +271,13 @@ Packet102 now has archive-linked exact global certificates for lambda.97 and.96 
 
 129. [Smooth angular horizontal primitive](129_horizontal_primitive_angular_compatibility/PROOF.md): Proof, actualOpus174 and independent radial/angular manufactured controls CONFIRMED. No B2 endpoint.
 
-130. [Two exact tail moments and center-preserving repair](130_exact_primitive_tail_cancellation/PROOF.md): Informal proof, exact/Cartesian and nonlinear chart controls complete. Actual claude-opus-5-5 written review182 CONFIRMED after unsuccessful175/176/177/180 calls. Sign and scope comments independently checked. No B2 endpoint.
+130. [Two exact tail moments and center-preserving repair](130_exact_primitive_tail_cancellation/PROOF.md): Informal proof, exact/Cartesian and nonlinear chart controls complete. Actual main-model written review182 CONFIRMED after unsuccessful175/176/177/180 calls. Sign and scope comments independently checked. No B2 endpoint.
 
 131. [Exact primitive center certificate](131_exact_primitive_center_certificate/PROOF.md): Proof and independent symbolic controls CONFIRMED; all eighteen primitive fields rejected exactly by rational degree-four thermal coefficients. No B2 endpoint.
 
-132. [Triangular local primitive repair](132_primitive_local_residual_projection/PROOF.md): explicit decaying corrections annul every thermal coefficient through degree four while retaining both leading tail moments. Exact symbolic and twelve rational controls plus actual claude-opus-5-5 written review183 CONFIRMED.
+132. [Triangular local primitive repair](132_primitive_local_residual_projection/PROOF.md): explicit decaying corrections annul every thermal coefficient through degree four while retaining both leading tail moments. Exact symbolic and twelve rational controls plus actual main-model written review183 CONFIRMED.
 
-133. [Axis normalization and conditional tail application](133_primitive_application_hypotheses/PROOF.md): zero-free axis propagation, a flat scalar-ODE counterexample, and integrable angular transport giving the C1 limit needed for both primitive moments to vanish. Independent proof and actual claude-opus-5-5 written reviews179/181 CONFIRMED; full stated hypotheses are essential.
+133. [Axis normalization and conditional tail application](133_primitive_application_hypotheses/PROOF.md): zero-free axis propagation, a flat scalar-ODE counterexample, and integrable angular transport giving the C1 limit needed for both primitive moments to vanish. Independent proof and actual main-model written reviews179/181 CONFIRMED; full stated hypotheses are essential.
 
 134. [Joint center and tail primitive chart](134_joint_primitive_center_tail_chart/PROOF.md): exact center, degree-four thermal jets and two leading moments; controls and written Opus182/183 CONFIRMED. Eighteen-state constrained search complete, all literal fields rejected by exact degree5 thermal coefficients; all six finest horizontal offsets are nonzero. No endpoint.
 

@@ -12,7 +12,7 @@ def now():return datetime.now(timezone.utc).isoformat()
 def sha(p):
  with Path(p).open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
 def load(p):return json.loads(Path(p).read_text())
-start=now();pf=load(E/'proof_first.json');assert pf['proof_sha256']==sha(P/'PROOF.md')=='e4ac31efdbd4e846c5d4765033cb6b5a7b71e209458b4dcc9153742d6abf753d'
+start=now();pf=load(E/'proof_first.json');assert pf['proof_sha256']==sha(P/'PROOF.md')=='93e7ea97d1737068a8e14d3e706ecb85050dba5bd903084847b9a3ddbb76d7b4'
 rel='research/logarithmic_frozen_spectrum/evidence/verdict.json';assert sha(R/rel)=='eda22fba890eeb985df010d272895e436f06460972cfec584ac576f85d7e664f';parent=load(R/rel);pins=dict(parent['files']);pins[rel]=sha(R/rel)
 for n,h in pins.items():assert sha(R/n)==h,n
 u,v,D,r,tau=S.symbols('u v D r tau',positive=True);s=S.symbols('s',real=True);c,A,xi=S.symbols('c A xi',real=True);B,eta=S.symbols('B eta',positive=True)

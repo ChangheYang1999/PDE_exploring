@@ -677,7 +677,7 @@ for a, b in [('forstate', 'for state '), ('forMpen2', 'for Mpen2'), ('radiusr0',
               'The independent review of section P105 accepts its complete d2 reference contract.')]:
     text = text.replace(a, b)
 open(OUT, 'w').write(text)
-sus = re.findall(r'.{0,30}\b(?:lead|verifier|numerics|lane|astra|codex|Opus|Opus\d[\d.]*|GPT|Claude|Ledger|team|teammates?|[Tt]opics?\d*|V\d\d\d|s1-\w+|/mnt|research/|\.\./|[A-Z_0-9]+_PROOF\.md|PROOF\.md)\b.{0,30}', text)
+sus = re.findall(r'.{0,30}\b(?:lead|verifier|numerics|lane|astra|codex|Opus|Opus\d[\d.]*|GPT|the main model|Ledger|team|teammates?|[Tt]opics?\d*|V\d\d\d|s1-\w+|/mnt|research/|\.\./|[A-Z_0-9]+_PROOF\.md|PROOF\.md)\b.{0,30}', text)
 print(f"wrote {OUT}: {len(text)} chars; suspicious tokens: {len(sus)}")
 for s in sus[:60]:
     print('  ', s.replace('\n', ' '))

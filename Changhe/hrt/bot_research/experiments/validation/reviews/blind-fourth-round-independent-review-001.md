@@ -1,6 +1,6 @@
 # Independent source review of protocol 162
 
-Recorded 2026-10-31T22:14:39.603996+00:00. Actual reviewer model: GPT-6 Astra. Role: independent source reviewer in lane hrt-w3. Actual Claude Opus 5.5 collaboration remains separately through the lead and economy lanes; this review is not attributed to Opus.
+Recorded 2026-10-31T22:14:39.603996+00:00. Actual reviewer model: GPT-6 Astra. Role: independent source reviewer in lane hrt-w3. Actual the main model collaboration remains separately through the lead and economy lanes; this review is not attributed to Opus.
 
 Verdict: READY for prospective declaration on the identities below. No unresolved source defect was found in the U policy, its conditional opening proof, or the proposed four-condition comparison. Runtime completion and all empirical U hypotheses remain OPEN. The coordinating lane must still obtain the complete protocol161 control evidence required by the declaration before any U policy work.
 
@@ -73,4 +73,4 @@ All seven U inputs below match the authors' final source-only handoffs. The seal
 | `bot_research/experiments/validation/analysis/blind_fourth_round/verification/source_review.json` | `4252a5c1d442940f7e6aa9909dc2f8ad3cba169849857a57293c6e8936f809db` |
 | `bot_research/experiments/validation/blind_fourth_round_check.py` | `393a1371e15551694adb14d9de274a89cfc20d05b80949617ddf0111c43cc6c8` |
 | `bot_research/experiments/validation/blind_fourth_round_pipeline.py` | `3be3adc81fd964b95694665404939d7e63afb4e7dafdb78d9dc1931e9fc060c0` |
-| `bot_research/experiments/validation/reviews/third-round-wait-independent-review-001.md` | `c398b808066eb31b82af64929d8763b7cd71aa05e188ab5bd2a73feab182e23c` |
+| `bot_research/experiments/validation/reviews/third-round-wait-independent-review-001.md` | `acda45330db3ea1e0ccb4f031ce47571807e8af85fe42c48ef55c0ec301d8554` |

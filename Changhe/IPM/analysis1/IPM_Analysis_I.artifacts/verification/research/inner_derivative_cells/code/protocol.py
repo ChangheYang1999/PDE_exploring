@@ -8,7 +8,7 @@ assert not sys.flags.optimize
 for k in ['OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','NUMEXPR_NUM_THREADS']:os.environ[k]='1'
 ROOT=Path(__file__).resolve().parents[3];DIR=ROOT/'research/inner_derivative_cells';OUT=DIR/'evidence';REV=ROOT/'notes/reviews'
 UP=ROOT/'research/full_derivative_norm_bound_v2/code/protocol.py'
-assert hashlib.sha256(UP.read_bytes()).hexdigest()=='b57406959b9857d3acf994d7c1067fe4f534fa3b2362d2ddc3ed785be2cdcdcf'
+assert hashlib.sha256(UP.read_bytes()).hexdigest()=='b3bb1f089eaddd540e4b478f4c4108271172cb12550eb82dae3845744be0fd0f'
 sp=importlib.util.spec_from_file_location('review181_parent_util',UP);u=importlib.util.module_from_spec(sp);sp.loader.exec_module(u)
 load,sha,write,pin,rehash,auth,when,now,parse=u.load,u.sha,u.write,u.pin,u.rehash,u.auth,u.when,u.now,u.parse
 PREP=ROOT/'research/full_derivative_norm_bound_v2/evidence/preparation_acceptance.json'
@@ -53,7 +53,7 @@ def prior_reviews(p):
  assert r['request_id'] in md.read_text() and rh in md.read_text() and str(md.relative_to(ROOT)) not in load(REV/(tag+'_metadata.json'))['files']
  pin(p,md);pin(p,OUT/'proof_adjudication.json')
  z=load(OUT/'ENGINE_ADJUDICATION.json');md=DIR/'ENGINE_ADJUDICATION.md'
- assert z['status']=='CONFIRMED_DRAFT_SOURCE_REVIEW_PENDING_EXECUTION' and z['actual_model']=='claude-opus-5-5' and z['source_sha256']==ENGINE_HASHES and z['adjudication_sha256']==sha(md) and z['all_source_review_objections_resolved'] is True and z['numerical_cells_executed']==0 and z['numerical_verdict']=='OPEN'
+ assert z['status']=='CONFIRMED_DRAFT_SOURCE_REVIEW_PENDING_EXECUTION' and z['actual_model']=='main-model' and z['source_sha256']==ENGINE_HASHES and z['adjudication_sha256']==sha(md) and z['all_source_review_objections_resolved'] is True and z['numerical_cells_executed']==0 and z['numerical_verdict']=='OPEN'
  tags=[('inner_derivative_cells_engines_draft','CONFIRM_DRAFT_INNER_DERIVATIVE_ENGINES_PENDING_EXECUTION'),('inner_derivative_cells_engines_precision','CONFIRM_ANGULAR_ENCODING_PRECISION_NOTE'),('inner_derivative_cells_engines_precision_resolved','CONFIRM_PRECISION_AND_EXTERNAL_ALGEBRA_EVIDENCE')]
  assert [v['tag'] for v in z['reviews']]==[t for t,v in tags]
  for (tag,verdict),rec in zip(tags,z['reviews']):

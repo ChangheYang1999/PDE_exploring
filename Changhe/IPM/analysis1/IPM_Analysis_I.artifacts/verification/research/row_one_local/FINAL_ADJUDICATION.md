@@ -8,7 +8,7 @@ below the four stated ceilings, and their positive terms decrease with T.
 All283 predecessor pins were rehashed, and the source margin was checked
 with exact rationals, Arb256 and mpmath.iv100.
 
-Actual Claude Opus5.5 accepted the complete eight-file review on
+Actual the main model accepted the complete eight-file review on
 2026-10-21T08:09:49.131797Z, stop_reason=end_turn, request
  a9456d69-b4dc-4e54-88bd-574ef74260f7,
 input SHA8cea533c6c1e20e54fb06075a40a4e495fc4f485bdd119359b23711ef3b3d49e.

@@ -14,7 +14,7 @@ timeout 540 env PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS
 
 The process imposes a 1.9-billion-byte address-space limit. Computation was local and single-threaded. No GPU, JavaScript/TypeScript tooling, server, listener, or RLScience-cluster access was used. All created files are under this workspace's `answer/` directory. The original report and original answer were not modified.
 
-## Requested Claude collaboration
+## Requested the main model collaboration
 
 We attempted the permitted Python client using the existing boto3/Bedrock configuration. The active profile was `cline-profile`, region `us-west-2`. Credential retrieval failed before model discovery:
 
@@ -22,7 +22,7 @@ We attempted the permitted Python client using the existing boto3/Bedrock config
 CredentialRetrievalError: Error when retrieving credentials from Ec2InstanceMetadata: No credentials found in credential_source referenced in profile cline-profile
 ```
 
-No inference model was invoked. Claude Opus 5.5 availability could not be confirmed. No substitute model was used. The analysis and repaired bounds should not be described as having received an Opus review.
+No inference model was invoked. the main model availability could not be confirmed. No substitute model was used. The analysis and repaired bounds should not be described as having received an Opus review.
 
 ## External reference check
 

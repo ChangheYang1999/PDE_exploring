@@ -1,6 +1,6 @@
 # The homogeneous far field cannot be stationary
 
-Date: 2026-10-20. Status: independently derived complete informal proof; exact checks and actual Claude Opus 5.5 follow-up audit agree with the stated scope. This is a necessary far-field condition, not an existence or nonexistence endpoint.
+Date: 2026-10-20. Status: independently derived complete informal proof; exact checks and actual the main model follow-up audit agree with the stated scope. This is a necessary far-field condition, not an existence or nonexistence endpoint.
 
 ## 1. Statement and dependencies
 

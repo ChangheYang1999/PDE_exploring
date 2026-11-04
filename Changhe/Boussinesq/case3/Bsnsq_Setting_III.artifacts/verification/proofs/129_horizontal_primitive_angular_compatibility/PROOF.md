@@ -1,6 +1,6 @@
 # Smooth angular tails of a horizontal primitive
 
-Status: proved criterion, independently audited by actual claude-opus-5-5; numerical controls pending. This is not a B2 exclusion. Written before implementing the criterion.
+Status: proved criterion, independently audited by actual main-model; numerical controls pending. This is not a B2 exclusion. Written before implementing the criterion.
 
 ## Exact statement and hypotheses
 

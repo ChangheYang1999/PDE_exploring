@@ -3335,7 +3335,7 @@ Date: 2026-10-28T16:24:57.177314+00:00. Claim: the actual T alone has infinite a
 - Claim: V261/proof 236 proves its exact Z3 space, complete coupling and tail, actual residual membership, closed maximal domains, nonclosable cubic jet and uniform exterior auxiliary inverse.
 - Method: Read the complete independent audit b807939f..., checked all nine findings against the original divided column, origin expansion, dyadic norm, time change and maximal-domain formulas. The formerly pending proof 234 lemmas are independently CONFIRMED by V265. No computation was run.
 - Result: The full gradient of M0/x^2 is controlled at every angle and near the origin; the binding sidecar states the precise formulas and all added references. Both weighted exterior regimes and the terminal identity hold. The discrepancy identity is explicitly restricted to Omega_R; no nonlocal interior vanishing is inferred. The original proof hash is unchanged.
-- Evidence: proofs/236_joint_cofactor_holder_space/AUDIT_CLARIFICATIONS.md SHA256 70e23e8d0307f37cb315baec5bc2b8fcbdb77d752b82a585180d673d802026e8; evidence/audit_record.json SHA256 b916a9903fb69bb92f3abf03b5ea321eb8582bb8523ea91d045dd9b7f23dc5ad; independent audit SHA256 b807939fc23a4d9765a9123e644859b901868da902d862dc11c7d7cd73c69106. Actual model a separate model instance.
+- Evidence: proofs/236_joint_cofactor_holder_space/AUDIT_CLARIFICATIONS.md SHA256 70e23e8d0307f37cb315baec5bc2b8fcbdb77d752b82a585180d673d802026e8; evidence/audit_record.json SHA256 e180d295d7aca7897ac52dcfcb8a09e5cc02716a04542069ebc900f73cc051d1; independent audit SHA256 b807939fc23a4d9765a9123e644859b901868da902d862dc11c7d7cd73c69106. Actual model a separate model instance.
 - Verdict: CONFIRMED after independent audit. Global inverse, closed normalization, F0-range and nonlinear existence remain OPEN. This audit does not cover topics237 or238.
 
 
@@ -3491,7 +3491,7 @@ Date: 2026-10-28T17:06:40.768170+00:00. Claim: V273/proof 241 gives an exact c=1
 - Claim: current final audit records retain their explicitly hashed proof and dependency files, and the reading guides resolve to saved files.
 - Method: read-only Python path/hash checks of present audit_record.json, final_audit.json and derivation.json records; check current proof and clarification hashes and typed dependency dictionaries. Independently enumerate topic folders and parse the three handoff/index Markdown link lists. No code from proofs is executed.
 - Result: all246 topic folders contain PROOF.md. All197 checked hash relations in20 audit manifests match. All320 handoff/index links resolve. This is a bounded-format check, not a parser of all historical hashes in prose or a new proof audit. The later proof 246 audit is not yet present and is outside this snapshot.
-- Evidence: certificates/audit_dependency_identity.json, SHA256 f2052bce75f9310f2f7681cd60bd585d81c807b15865ab30a5218157c8275081; code/check_audit_dependencies.py. Actual run finished 2026-10-28T17:16:41.268722+00:00 in0.141942 seconds.
+- Evidence: certificates/audit_dependency_identity.json, SHA256 5bb76e5ea761bee30805b0dca347be506b6cd849bf8fba2cab11bca56dd4e2ad; code/check_audit_dependencies.py. Actual run finished 2026-10-28T17:16:41.268722+00:00 in0.141942 seconds.
 - Verdict: CONFIRMED file-identity and link check at this snapshot only. Mathematical status remains that of each individual ledger entry.
 
 
@@ -3571,7 +3571,7 @@ Date: 2026-10-28T17:06:40.768170+00:00. Claim: V273/proof 241 gives an exact c=1
 - Claim: proof 247 with its binding correction gives the exact axis formula axis(R_h)=w f'-2w'f+lambda_h f for the stated zero-cofactor tests on the zero-cutoff disk; the Gaussian has b=-g''.
 - Method: read the complete actual independent audit, its correction addendum and both exact scratch scripts. Independently verify every coefficient, the actual chi_infinity cutoff, both meanings of zeta in the dependencies, C1 regularity sufficiency, the central cancellation and the Gaussian correction. Recheck all original dependency hashes.
 - Result: original binding finding B1 is resolved by the correction. The follow-up explicitly passes every corrected claim. AUDIT_ADOPTION.md answers all remaining remarks, specifies r_chi=1 for the actual chart and keeps o(y) separate from the Gaussian O(y^3). Original proof, clarification and correction hashes are unchanged. The archived audit retains its original FAIL and updated PASS WITH REMARKS.
-- Evidence: proof 247/evidence/audit_record.json, SHA256 83cc9133f7f14d99171f9c5e8c5bec5360715f420b37b58bfa2fd88d6cb59616; full audit/addendum SHA256 db1d824fbfec36f8bacbe3f3c8e3f3d2ea52f7dd6adea27753995beedac53c3b. Actual collaboration model a separate model instance. No numerical calculation.
+- Evidence: proof 247/evidence/audit_record.json, SHA256 d0f4a03c02e1ec25fdccc8042ab1be40cb9454c24310183cfae7006d28ad17ea; full audit/addendum SHA256 db1d824fbfec36f8bacbe3f3c8e3f3d2ea52f7dd6adea27753995beedac53c3b. Actual collaboration model a separate model instance. No numerical calculation.
 - Verdict: CONFIRMED corrected local axis identity after independent audit and follow-up. V294's refutation of the uncorrected Gaussian formula stands. High-norm bounds, full inverse and profile conclusions remain OPEN.
 
 
@@ -3621,7 +3621,7 @@ Date: 2026-10-28T17:06:40.768170+00:00. Claim: V273/proof 241 gives an exact c=1
 - Claim: proof 248's full axis, transition and outer identities hold with the actual chart density derivative and corrected Gaussian trace.
 - Method: read the full actual independent audit and exact scratch script; independently recheck every coefficient, both signs of y, the exact ell0 k=1 cancellation, both cutoff endpoints, and every regularity and notation remark. Recheck every original dependency hash before adoption.
 - Result: the audit has no binding finding. AUDIT_ADOPTION.md supplies the precise imported finite-join and chart-velocity regularity and resolves remarksR1-R5. The original proof4497829f and derivation record are preserved. Both continuous-axis and outer formulas are adopted; no cutoff term is dropped. The Gaussian trace remains-g''.
-- Evidence: proof 248/evidence/audit_record.json SHA256 22102080a39dd5ce7a02420d7c4bfd4a0c74c102301ca15634473d5ccbe2a231; full audit SHA256 f356f998199b9a29a728e63eeaed756571e0fe0d99b75853a3a91c0b83f3bc7c. Actual collaboration model a separate model instance. No numerical computation in this check.
+- Evidence: proof 248/evidence/audit_record.json SHA256 eb1509d7005c4d8e26e37bd01a01416b2c6f79400e2b130c3bfb816157b02748; full audit SHA256 f356f998199b9a29a728e63eeaed756571e0fe0d99b75853a3a91c0b83f3bc7c. Actual collaboration model a separate model instance. No numerical computation in this check.
 - Verdict: CONFIRMED the exact global pointwise identity after independent audit. High norm, inequality violation, inverse, complement and profile conclusions remain OPEN.
 
 

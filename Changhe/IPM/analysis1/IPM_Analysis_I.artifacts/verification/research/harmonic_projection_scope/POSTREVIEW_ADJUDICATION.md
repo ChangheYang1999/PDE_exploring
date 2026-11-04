@@ -1,6 +1,6 @@
 # Post-review adjudication, topic149
 
-Written 2026-10-21T16:42:40.338602+00:00, after reading the full actual follow-up response. Actual model claude-opus-5-5, end_turn, request 8c22ecd4-35cd-4f45-93b8-1b7ec1d683a4, response JSON SHA256 7caae7f10dee05fc50dfcd2e6b6c78af0b3557f63d3e6ad2cc68b1aa0d17a4e0, input SHA256 ca850ffaf0ea22a42ad2e42d83d87234e906366d02f3d3326da079ca93be8cf7. The earlier complete review and the follow-up are separate; the follow-up explicitly withdraws its pseudoinverse assertion and accepts the corrected scope.
+Written 2026-10-21T16:42:40.338602+00:00, after reading the full actual follow-up response. Actual model main-model, end_turn, request 8c22ecd4-35cd-4f45-93b8-1b7ec1d683a4, response JSON SHA256 7caae7f10dee05fc50dfcd2e6b6c78af0b3557f63d3e6ad2cc68b1aa0d17a4e0, input SHA256 ca850ffaf0ea22a42ad2e42d83d87234e906366d02f3d3326da079ca93be8cf7. The earlier complete review and the follow-up are separate; the follow-up explicitly withdraws its pseudoinverse assertion and accepts the corrected scope.
 
 I independently checked the projection proof. The angular sine and differentiated cosine products are diagonal under the same radial inner product; the Phi_0 identity places its radial column span in frequencies1,3. Projection contraction gives the claimed nesting. This also applies to positive quadrature after quotienting null jets. It says nothing about distributional derivatives of discontinuous columns.
 

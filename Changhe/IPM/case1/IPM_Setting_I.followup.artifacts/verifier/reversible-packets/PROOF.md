@@ -1,6 +1,6 @@
 # Reversible transport does not bound the high source derivatives
 
-Date: 2026-10-20. Status: independent verification of the lead's external fred42 construction. This is an exact counterexample for transport and constant divergence. It violates curl and is not an IPM profile. The actual lead model, Claude Opus 5.5, has checked the coordinate identities; this lane independently checks them and the regularity and large-derivative estimates.
+Date: 2026-10-20. Status: independent verification of the lead's external fred42 construction. This is an exact counterexample for transport and constant divergence. It violates curl and is not an IPM profile. The actual lead model, the main model, has checked the coordinate identities; this lane independently checks them and the regularity and large-derivative estimates.
 
 ## Statement and notation
 

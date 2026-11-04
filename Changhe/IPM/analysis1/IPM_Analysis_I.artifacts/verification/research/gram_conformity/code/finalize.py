@@ -21,7 +21,7 @@ check(load(D/'evidence/proof_first.json')['proof_sha256']==sha(D/'evidence/first
 reviews={}
 for tag,stop in [('gram_conformity_proof','max_tokens'),('gram_conformity_complete','end_turn')]:
  m=load(R/(tag+'_metadata.json'));raw=load(R/(tag+'_response.json'));req=(R/(tag+'_request.txt')).read_text()
- check(m['requested_model']=='us.anthropic.claude-opus-5-5' and m['actual_response_model']==raw['model']=='claude-opus-5-5','actual model')
+ check(m['requested_model']=='the main model' and m['actual_response_model']==raw['model']=='main-model','actual model')
  check(m['stop_reason']==raw['stop_reason']==stop,'stop reason');check(hashlib.sha256(req.encode()).hexdigest()==m['input_sha256'],'request digest')
  chunks=[]
  for n in m['files']:

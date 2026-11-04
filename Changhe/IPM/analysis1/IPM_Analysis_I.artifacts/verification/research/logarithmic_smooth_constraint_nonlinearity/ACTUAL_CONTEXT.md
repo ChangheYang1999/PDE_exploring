@@ -4,8 +4,8 @@
   "start_utc": "2026-10-22T06:03:55.533644+00:00",
   "utc": "2026-10-22T06:04:00.024805+00:00",
   "status": "PASS_QUADRATIC_CORRECTION_ALGEBRA_AND_FINITE_SCALAR_FIXTURES",
-  "proof_sha256": "935abeef7acbb87346ccf8471b9e87e5ecc1d337af0a54db99cb0a6e4ec0e701",
-  "code_sha256": "ab676a4c2ba982dfb6efb4396bd1c6a68d81d3bc0ee2f28b183fe8e45dc6803a",
+  "proof_sha256": "877903dcd69be7645801393ceed0d0d42e607e7a8925dc27482a070b9e7fdc31",
+  "code_sha256": "895197880991f6e95ae79f36aa6686f2eaf4835d1c93af5ac518a404c8198956",
   "parent_pin_count": 2114,
   "symbolic_identities": {
     "quadratic_perturbation": "0",
@@ -317,8 +317,8 @@
     "start_utc": "2026-10-22T06:04:00.741745+00:00",
     "utc": "2026-10-22T06:04:07.668770+00:00",
     "status": "PASS_INDEPENDENT_FMPQ_CORRECTION_IDENTITIES_AND_INTEGER_POWER_FIXTURES",
-    "proof_sha256": "935abeef7acbb87346ccf8471b9e87e5ecc1d337af0a54db99cb0a6e4ec0e701",
-    "code_sha256": "edf6d6e756d441f5492e1cd6089fa89320000a0bab57d5b7202340a5239d6070",
+    "proof_sha256": "877903dcd69be7645801393ceed0d0d42e607e7a8925dc27482a070b9e7fdc31",
+    "code_sha256": "0cbd8680809e51cf546d7c226eea77f97f8ee4427b96e7a6b5eb3430ed0c0b4e",
     "check_sha256": "67840af461c24a540c6892016389645c464337b8f3bf4ae27a08866db9c68802",
     "parent_pin_count": 2114,
     "ring_checks": {

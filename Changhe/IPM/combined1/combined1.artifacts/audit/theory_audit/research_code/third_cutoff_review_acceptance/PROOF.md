@@ -8,4 +8,4 @@ The endpoint theorem T4-335 was independently accepted as T4-350. Therefore the 
 
 The original proof's historical phrases saying T4-335 is OPEN are superseded by this dated acceptance record; its mathematical formulas are unchanged. Keeping the original immutable avoids invalidating its source-bound computations. T2's new R2-R4 extensions and its numerical remainder discussion are separate claims and are not included in this acceptance. In particular a short list of remainder sectors cannot certify the complete remainder or show which constant limits a quantitative inequality.
 
-Source artifacts and their SHA256 values are in verification/manifest.json. No foreign source was executed. The configured collaborator is Claude Opus5.5 in the existing T2 lane; API model identity is not directly observable here.
+Source artifacts and their SHA256 values are in verification/manifest.json. No foreign source was executed. The configured collaborator is the main model in the existing T2 lane; API model identity is not directly observable here.

@@ -7,7 +7,7 @@ for n in ['OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS']:os.environ
 import numpy as np
 import sympy as S
 R=Path(__file__).resolve().parents[3];D=R/'research/weak_axis_compact_higher_orders';E=D/'evidence';sys.path.insert(0,str(R/'research/full_derivative_norm_bound_v2/code'));import protocol as p
-start=p.now();pf=p.load(E/'proof_first.json');assert p.sha(D/'PROOF.md')==pf['proof_sha256']=='0dcddf0f8356c434242ffc63986a74079e578d70acb7c32acc76975018730f4f'
+start=p.now();pf=p.load(E/'proof_first.json');assert p.sha(D/'PROOF.md')==pf['proof_sha256']=='e32c2a36e378706c5b621fab79c23a189fe6b9af2294a972a0c6a4231c552733'
 parent='research/logarithmic_strain_functional/evidence/verdict.json';pv=p.load(R/parent);pins=dict(pv['files']);p.pin(pins,parent,'06eb106433266f45cbdab9669a8c7fc71aa8c7c85794c25c7a27a7500135a62b');p.rehash(pins)
 raw=R/'research/modal_exactification/evidence/trial_v2_h0.008.npz';assert p.sha(raw)=='a069d85d102e17340778042f85c003705716ba799c0f68873d10c1c582ea4874'
 with np.load(raw,allow_pickle=False) as z:

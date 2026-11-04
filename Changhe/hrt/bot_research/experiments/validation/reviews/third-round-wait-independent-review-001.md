@@ -1,6 +1,6 @@
 # Independent source review of protocol 161
 
-Recorded 2026-10-31T22:10:36.137764+00:00. Actual reviewer model: GPT-6 Astra. Role: independent source reviewer in lane hrt-w3. Actual Claude Opus 5.5 collaboration remains separately through the lead and economy lanes; this review is not attributed to Opus.
+Recorded 2026-10-31T22:10:36.137764+00:00. Actual reviewer model: GPT-6 Astra. Role: independent source reviewer in lane hrt-w3. Actual the main model collaboration remains separately through the lead and economy lanes; this review is not attributed to Opus.
 
 Verdict: READY for prospective declaration on the identities below. No unresolved source defect was found that invalidates the specified opening or the proposed four-condition audit. This is a source-review verdict. T's full-game hypotheses and runtime verification remain OPEN until the declared work produces evidence.
 

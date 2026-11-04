@@ -1,6 +1,6 @@
 # Independent evidence review of protocol164
 
-Reviewed UTC: 2026-10-31T22:41:14.800777+00:00. Actual reviewer model: GPT-6 Astra. I reviewed the checker before declaration and independently inspected its completed application here. I also authored predecessor protocol162/163 checkers; this is therefore an independent implementation/evidence pass on protocol164, not a claim that every ancestral checker has an unrelated author. Claude Opus collaboration continues through the coordinating research team. No project module, policy or Engine was imported or invoked by this review.
+Reviewed UTC: 2026-10-31T22:41:14.800777+00:00. Actual reviewer model: GPT-6 Astra. I reviewed the checker before declaration and independently inspected its completed application here. I also authored predecessor protocol162/163 checkers; this is therefore an independent implementation/evidence pass on protocol164, not a claim that every ancestral checker has an unrelated author. the main model collaboration continues through the coordinating research team. No project module, policy or Engine was imported or invoked by this review.
 
 Verdict: CONFIRMED for the eight retained measured conditions, their fixed-seat common public prefixes, accounting and exact conditional matrix application. No substantive discrepancy or unresolved artifact defect was found. Universal full-continuation coupling remains OPEN and is an assumption of the theorem. This review does not turn its conditional value into an unrestricted game value or a tested randomized-selector result.
 
@@ -14,7 +14,7 @@ Verdict: CONFIRMED for the eight retained measured conditions, their fixed-seat 
 | `bot_research/experiments/validation/analysis/fourth_round_ambiguity/PROTOCOL.md` | `8d4706449b35bcb212ea56bd4124722417559ec38329a2dbb80be49bb32ca76b` |
 | `bot_research/experiments/validation/analysis/fourth_round_ambiguity/verification/full_check.json` | `5d60a0586075e25682e48dea3636e8fc56043d48f552325cea029713e1b8ae2b` |
 | `bot_research/experiments/validation/analysis/fourth_round_ambiguity/RESULTS.md` | `a152644a7d2a2f620578449ca54977dc110e83b9f0d5a4f917eefc306e568c12` |
-| `bot_research/experiments/validation/reviews/fourth-round-ambiguity-checker-review-001.md` | `bc4cd39146a640d4a48c3739b293d5d97f887b0e39d5206b3d0c3928fe254006` |
+| `bot_research/experiments/validation/reviews/fourth-round-ambiguity-checker-review-001.md` | `da4f0fb6d2ec3e24376514f4f125073eab403c4ed43e961a31a8b146382a5f4f` |
 
 The source review was sealed at22:38:22.623164Z. Declaration records22:38:54.019244Z and the completed check records22:39:14.240550Z, with13.909718168899417 seconds measured inside check. These are actual retained timestamps, not padded runtime. The declaration binds the reviewed final checker, proof, protocol and review. The full receipt binds the declaration and readable result hash.
 

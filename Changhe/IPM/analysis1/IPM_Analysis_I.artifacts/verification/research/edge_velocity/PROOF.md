@@ -1,6 +1,6 @@
 # Taylor subtraction for the face velocity, and its low-frequency limitation
 
-Date: 2026-10-20. Status: analytic face estimate and low-frequency obstruction CONFIRMED after independent derivation and actual Claude Opus5.5 review; independent Arb/iv constants audit passed17:07:02Z. Final notation clarifications recorded below. This audits the pinned lead note in `evidence/lead_weighted_velocity.md`. It proves a face estimate; it does not close the full IPM coupling, the corner, or a global inverse.
+Date: 2026-10-20. Status: analytic face estimate and low-frequency obstruction CONFIRMED after independent derivation and actual the main model review; independent Arb/iv constants audit passed17:07:02Z. Final notation clarifications recorded below. This audits the pinned lead note in `evidence/lead_weighted_velocity.md`. It proves a face estimate; it does not close the full IPM coupling, the corner, or a global inverse.
 
 ## Exact statement
 
@@ -176,4 +176,4 @@ This proof uses the fundamental solution identity, Fourier Plancherel, elementar
 
 At N=3,b=13/5, the two constants satisfy C<78.798713938733 and C_prime<82.260031194549. At N=3,b=17/5, C<151.060134903140 and C_prime<156.124040371967. The corrected N=0,b=-1/4 constant is below2.863906001713. Every displayed decimal is strictly above an exact rational interval endpoint in `evidence/constants_audit.json`. The primary computation uses Arb256 on the simplified formulas; a separate mpmath.iv160 calculation assembles the double integrals in their integration order and the Cauchy-Schwarz gamma integral. Every primary interval contains its independent counterpart. This checks arithmetic, not the infinite-dimensional estimate by numerical sampling.
 
-Actual Claude Opus5.5 reconstructed the constants, b-derivative argument, extension, endpoints and symmetric strain obstruction, accepting the stated face scope at17:07:53Z. Its request to distinguish the empty N=0 polynomial sum was incorporated. The regional lower-bound counterexample above concerns only the even kernel; no claim about the odd restricted kernel follows from its whole-line Fourier multiplier norm.
+Actual the main model reconstructed the constants, b-derivative argument, extension, endpoints and symmetric strain obstruction, accepting the stated face scope at17:07:53Z. Its request to distinguish the empty N=0 polynomial sum was incorporated. The regional lower-bound counterexample above concerns only the even kernel; no claim about the odd restricted kernel follows from its whole-line Fourier multiplier norm.

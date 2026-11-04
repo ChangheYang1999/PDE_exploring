@@ -246,7 +246,7 @@ claim is involved in this argument.
 
 ## 9. Review and manufactured verification
 
-Actual Opus38 (claude-opus-5-5,219.372655seconds,completed17:34:50Z)
+Actual Opus38 (main-model,219.372655seconds,completed17:34:50Z)
 confirmed every stated identity and the extension beyond G. The verifier
 checked the response and made velocity parity explicit. Packets33,36,40
 were separately reread: they do include beta2, and in that case no

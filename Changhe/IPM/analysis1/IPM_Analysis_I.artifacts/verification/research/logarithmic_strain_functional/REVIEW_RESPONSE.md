@@ -1,6 +1,6 @@
 # Response to the proof review
 
-2026-10-22. I read the complete actual claude-opus-5-5/end_turn response d6dce397-690a-4fc3-8730-402ac70d4c0a. It found no gap and requested that J be defined locally. Here J(h)=partial_xxy h(0)/2, the coefficient of x²y in the center Taylor expansion. This is the same convention as the inherited weak_axis_compact_mapping proof and variable_transport_graph_obstruction proof. Every counterexample vanishes on a neighborhood of0, so J and all its other center jets are exactly zero. Sigma is not required to vanish for this functional obstruction.
+2026-10-22. I read the complete actual main-model/end_turn response d6dce397-690a-4fc3-8730-402ac70d4c0a. It found no gap and requested that J be defined locally. Here J(h)=partial_xxy h(0)/2, the coefficient of x²y in the center Taylor expansion. This is the same convention as the inherited weak_axis_compact_mapping proof and variable_transport_graph_obstruction proof. Every counterexample vanishes on a neighborhood of0, so J and all its other center jets are exactly zero. Sigma is not required to vanish for this functional obstruction.
 
 For completeness, the angle branch used in Machin's identity has a direct integral justification independent of the numerical pi computation. Since atan t=integral_0^t(1+u²)^(-1)du, atan(1/5)>5/26 and atan(1/239)<1/239. Therefore4atan(1/5)-atan(1/239)>20/26-1/239>0. It is also less than4/5<1. Finally pi/2=2atan1>1, again from the integral. Thus this angle is strictly in(0,pi/2); its tangent1 makes it pi/4.
 

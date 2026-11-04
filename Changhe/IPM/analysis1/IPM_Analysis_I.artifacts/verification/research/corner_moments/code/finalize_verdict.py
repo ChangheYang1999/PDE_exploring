@@ -36,7 +36,7 @@ def main():
  paths={Path(__file__),source,proof,ep};reviews={}
  for tag in ['corner_moments_review','corner_moments_closure']:
   mp=BASE/f'notes/reviews/{tag}_metadata.json';m=json.loads(mp.read_text());request=(BASE/f'notes/reviews/{tag}_request.txt').read_text()
-  assert m['actual_response_model']=='claude-opus-5-5' and m['stop_reason']=='end_turn' and hashlib.sha256(request.encode()).hexdigest()==m['input_sha256']
+  assert m['actual_response_model']=='main-model' and m['stop_reason']=='end_turn' and hashlib.sha256(request.encode()).hexdigest()==m['input_sha256']
   if tag.endswith('closure'):
    for p in [source,proof,ep]:
     marker='\n\nFILE '+str(p.relative_to(BASE))+'\n';assert request.split(marker,1)[1].split('\n\nFILE ',1)[0]==p.read_text()

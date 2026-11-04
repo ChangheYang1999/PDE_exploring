@@ -180,7 +180,7 @@ Every result states its hypotheses and dependencies. Verification subfolders con
 
 69. [Low-slope third-moment bounds](low_slope_moment/PROOF.md). Three exact consequences of J=a/4-D, with normalized angular mode and radial absolute convergence. CONFIRMED analytically; no principal exclusion.
 
-70. [One-sided flat-defect exclusion without a cap](one_sided_flat_exclusion/PROOF.md). Positive moment concentration at the innermost support extends68 to the extra condition rho/(a y)<=1, without a strain or radial cap. CONFIRMED by the complete independent proof, actual Claude Opus5.5 lead hand review, and the separate flat1s audit. Includes an exactly affine open core.
+70. [One-sided flat-defect exclusion without a cap](one_sided_flat_exclusion/PROOF.md). Positive moment concentration at the innermost support extends68 to the extra condition rho/(a y)<=1, without a strain or radial cap. CONFIRMED by the complete independent proof, actual the main model lead hand review, and the separate flat1s audit. Includes an exactly affine open core.
 
 71. endpoint_regimes/PROOF.md: explicit near-one exclusion with amplitude and strain bounds, actual large-ell limit class and counterexamples, zero-slope ell=1 rigidity, and failure of a uniformly bounded all-radius slow hierarchy.
 

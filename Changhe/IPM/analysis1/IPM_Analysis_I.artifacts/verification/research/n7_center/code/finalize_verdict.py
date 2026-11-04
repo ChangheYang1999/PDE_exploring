@@ -24,7 +24,7 @@ for p,h in inputs['source_files'].items():assert sha(p)==h
 reviews={};R=B/'notes/reviews'
 for tag in ['n7_center_proof','n7_center_corrected','n7_center_closure']:
  m=json.loads((R/(tag+'_metadata.json')).read_text());req=(R/(tag+'_request.txt')).read_text();raw=json.loads((R/(tag+'_response.json')).read_text());ans=(R/(tag+'_response.md')).read_text()
- assert m['actual_response_model']==raw['model']=='claude-opus-5-5' and m['stop_reason']==raw['stop_reason']=='end_turn' and len(ans)>200
+ assert m['actual_response_model']==raw['model']=='main-model' and m['stop_reason']==raw['stop_reason']=='end_turn' and len(ans)>200
  assert hashlib.sha256(req.encode()).hexdigest()==m['input_sha256']
  assert ans=='\n\n'.join(x['text'] for x in raw['content'] if x['type']=='text')+'\n'
  marker='\n\nFILE '+m['files'][0]+'\n';assert req.count(marker)==1

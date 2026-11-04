@@ -1,6 +1,6 @@
 # A triangular repair of the primitive thermal residual through degree four
 
-Status: standalone informal argument written before implementation; symbolic Cartesian and rational controls passed. Written review183 by actual claude-opus-5-5 CONFIRMED the local algebra and triangular repair. Earlier178 and180 supplied no written audit. Restricted local trial-space construction only.
+Status: standalone informal argument written before implementation; symbolic Cartesian and rational controls passed. Written review183 by actual main-model CONFIRMED the local algebra and triangular repair. Earlier178 and180 supplied no written audit. Restricted local trial-space construction only.
 
 ## Statement
 

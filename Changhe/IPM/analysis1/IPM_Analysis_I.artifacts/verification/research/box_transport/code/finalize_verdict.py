@@ -34,7 +34,7 @@ def main():
  paths={B/p for p in fixed}|{Path(__file__),E/'final_serialized_run.json',E/'final_check_run.log'};reviews={}
  for tag in ['box_transport_review','box_transport_closure','box_transport_final']:
   m=json.loads((B/f'notes/reviews/{tag}_metadata.json').read_text());req=(B/f'notes/reviews/{tag}_request.txt').read_text();res=json.loads((B/f'notes/reviews/{tag}_response.json').read_text());answer=(B/f'notes/reviews/{tag}_response.md').read_text()
-  assert m['actual_response_model']==res['model']=='claude-opus-5-5' and sha(B/f'notes/reviews/{tag}_request.txt')==m['input_sha256']
+  assert m['actual_response_model']==res['model']=='main-model' and sha(B/f'notes/reviews/{tag}_request.txt')==m['input_sha256']
   assert res['stop_reason']==m['stop_reason']
   assert answer=='\n\n'.join(c['text'] for c in res['content'] if c['type']=='text')+'\n'
   if tag=='box_transport_closure':assert m['stop_reason']=='max_tokens'

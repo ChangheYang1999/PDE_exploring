@@ -1,6 +1,6 @@
 # Center normalization is not a closed trace in the weak logarithmic topology
 
-This proof is written before the new finite checks. Its verification status remains OPEN until independent checking, complete actual Claude Opus5.5 review and later own adjudication. It concerns the topology of a center coefficient. It is not a PDE exclusion or a statement about the full linearized graph norm.
+This proof is written before the new finite checks. Its verification status remains OPEN until independent checking, complete actual the main model review and later own adjudication. It concerns the topology of a center coefficient. It is not a PDE exclusion or a statement about the full linearized graph norm.
 
 ## Statement
 

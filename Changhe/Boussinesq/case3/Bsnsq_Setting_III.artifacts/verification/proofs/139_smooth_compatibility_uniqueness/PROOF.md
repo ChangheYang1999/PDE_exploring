@@ -1,6 +1,6 @@
 # Smooth local sufficiency of the compatibility equation
 
-Status: CONFIRMED by independent proof,190 exact controls,9 finite-point smooth-flat controls, and written actual claude-opus-5-5 audits196 and197, 2026-10-21. The informal proof was written before implementation. This is a local criterion for prescribed fields, not an existence or nonexistence theorem for B2.
+Status: CONFIRMED by independent proof,190 exact controls,9 finite-point smooth-flat controls, and written actual main-model audits196 and197, 2026-10-21. The informal proof was written before implementation. This is a local criterion for prescribed fields, not an existence or nonexistence theorem for B2.
 
 ## Statement and notation
 
@@ -114,11 +114,11 @@ Indeed J t_y has x-order at least m>ell; the x-derivatives of V and V_y through 
 
 The scalar lemma gives u_ell=0 near0 and ordinary uniqueness propagates zero through the same interval on either side of b's sole zero. Thus (11) holds. There are only m steps, so one common rectangle suffices. Taylor's formula with integral remainder now gives h=x^m tau for smooth tau, hence B=h/J=tau/j extends smoothly. The remainder of the main proof, equations(4)-(7), applies without change and proves t=0.
 
-This extension includes only streams whose Psi_xx has the exact uniform factorization(9). It does not cover arbitrary nonflat J with extra zeros approaching the center, or a flat J. It provides no global B2 endpoint. The argument was written before its additional100 exact coefficient controls and actual claude-opus-5-5 audit197, both of which confirm the stated extension.
+This extension includes only streams whose Psi_xx has the exact uniform factorization(9). It does not cover arbitrary nonflat J with extra zeros approaching the center, or a flat J. It provides no global B2 endpoint. The argument was written before its additional100 exact coefficient controls and actual main-model audit197, both of which confirm the stated extension.
 
 ## A scalar counterexample when the uniform order is dropped
 
-The weaker scalar assertion with merely nonflat J is false at k=0. This is a limitation of the scalar argument, not a counterexample to the constrained B2 compatibility implication. The following calculation was checked in writing by actual claude-opus-5-5 audit198; independent symbolic controls are recorded separately.
+The weaker scalar assertion with merely nonflat J is false at k=0. This is a limitation of the scalar argument, not a counterexample to the constrained B2 compatibility implication. The following calculation was checked in writing by actual main-model audit198; independent symbolic controls are recorded separately.
 
 Fix a>0 and q real. On a sufficiently small rectangle set
 

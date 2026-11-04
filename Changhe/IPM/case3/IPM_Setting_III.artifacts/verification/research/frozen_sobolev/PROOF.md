@@ -1,6 +1,6 @@
 # Exact Sobolev energy for the frozen source operator
 
-Status: CONFIRMED after independent derivation/checking and completed Opus 5.5 review 11. Date: 2026-10-20. The actual returned model was claude-opus-5-5; the review is in ../../evidence/opus_review_11/answer.md. Its suggestions were independently checked.
+Status: CONFIRMED after independent derivation/checking and completed Opus 5.5 review 11. Date: 2026-10-20. The actual returned model was main-model; the review is in ../../evidence/opus_review_11/answer.md. Its suggestions were independently checked.
 
 ## Statement
 

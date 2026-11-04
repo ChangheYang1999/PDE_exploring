@@ -1,6 +1,6 @@
 # Renormalized energy: the cubic boundary term and its precise scope
 
-Status: CONFIRMED for the statements and hypotheses below. The argument was written before its independent controls. There are181 passing exact controls and two complete written reviews returned by Claude Opus5.5; their dependency limits are recorded in verification/SUMMARY.md. No B2 endpoint is asserted.
+Status: CONFIRMED for the statements and hypotheses below. The argument was written before its independent controls. There are181 passing exact controls and two complete written reviews returned by the main model; their dependency limits are recorded in verification/SUMMARY.md. No B2 endpoint is asserted.
 
 ## 1. Statement and notation
 

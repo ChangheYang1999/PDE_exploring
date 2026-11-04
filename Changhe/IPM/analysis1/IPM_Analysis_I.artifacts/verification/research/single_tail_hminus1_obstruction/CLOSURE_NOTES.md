@@ -33,12 +33,12 @@ on that value, and its two cases remain an independent proof.
 The lead's mathematical review is saved in evidence/lead_review_20261021T0652Z.
 It accepts claims(a),(b),(c) with the finite-class restriction, after separate
 hand reconstruction and code. The lead identifies its running model as
-Claude Opus5.5; its launch log configures us.anthropic.claude-opus-5-5. These
+the main model; its launch log configures the main model. These
 are the available model provenance records for this team lane. There is no
 raw provider response metadata independently attesting that lead process.
 The additional Astra referee is GPT6 and is identified separately.
 
-The two direct requests from this lane did return actual claude-opus-5-5
+The two direct requests from this lane did return actual main-model
 metadata, but both refused without mathematical text. They remain recorded
 as unavailable reviews, never as acceptance. The additional referee's own
 Opus consultation failed during credential retrieval before a model ran.

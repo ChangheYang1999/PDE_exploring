@@ -1,6 +1,6 @@
 # Scope and completion after the first review
 
-The first actual Claude Opus5.5 response ended with stop_reason=max_tokens midway through section4. It is an incomplete review, not an acceptance of all seven sections. Its metadata and raw output are retained, and a whole-bundle completion is required.
+The first actual the main model response ended with stop_reason=max_tokens midway through section4. It is an incomplete review, not an acceptance of all seven sections. Its metadata and raw output are retained, and a whole-bundle completion is required.
 
 The axis derivation uses joint smoothness in x and y, as stated at the start of section1. No theorem is asserted from six x derivatives alone without the mixed/y regularity needed by the displayed B derivatives. The example kernel integrand is nonnegative everywhere and positive on an open subset with v!=0; the review's phrase strictly positive throughout the support is too strong at v=0.
 

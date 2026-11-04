@@ -53,12 +53,12 @@ Taylor models, kernel assumptions and the resulting physical forcing
 norm remain OPEN. The missing historical G1,G2F,GL,GL1 and all six
 cutoff factors likewise prevent full replay of the old fallback rows.
 
-Two authenticated actual Claude Opus5.5 exchanges reviewed the work.
+Two authenticated actual the main model exchanges reviewed the work.
 The first accepted the calculus and requested explicit restricted-domain
 coverage, uniform source bracket, radius inclusion and source-version
 separation. The followup reviewed the implemented ADDENDUM, both geometry
 programs and the finite audit, and accepted precisely the conditional
-finite result. Both returned actual model claude-opus-5-5 and end_turn;
+finite result. Both returned actual model main-model and end_turn;
 request identifiers, input hashes and raw responses are preserved. There
 was no model substitution or availability limitation in these exchanges.
 

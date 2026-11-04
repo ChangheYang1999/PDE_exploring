@@ -1,6 +1,6 @@
 # A canonical compact extension of the analytic local solution
 
-Date: 2026-10-20. Status: proved manufactured-field construction, not a stationary full-plane profile. Lead Claude Opus 5.5 reviewed the proof and independently checked its identities at15:37Z; AV33 confirms the proposed report text. It strengthens the local example in the lead's section6.3.1(c) by imposing the canonical inverse globally.
+Date: 2026-10-20. Status: proved manufactured-field construction, not a stationary full-plane profile. Lead the main model reviewed the proof and independently checked its identities at15:37Z; AV33 confirms the proposed report text. It strengthens the local example in the lead's section6.3.1(c) by imposing the canonical inverse globally.
 
 ## Statement
 

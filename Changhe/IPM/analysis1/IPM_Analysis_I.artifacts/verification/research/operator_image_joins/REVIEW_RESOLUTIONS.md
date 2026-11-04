@@ -1,6 +1,6 @@
 # First review and explicit dependencies
 
-The first authenticated Claude Opus 5.5 review completed with end_turn and confirmed the local join theorem under its stated hypotheses. It correctly left the finite derivative trace claim open until calculation. Both exact engines have now checked every stated trace. Its remaining questions are resolved or scoped as follows.
+The first authenticated the main model review completed with end_turn and confirmed the local join theorem under its stated hypotheses. It correctly left the finite derivative trace claim open until calculation. Both exact engines have now checked every stated trace. Its remaining questions are resolved or scoped as follows.
 
 The stream convention is U=(-partial_y psi,partial_x psi) and -Delta psi=partial_x h. Fourier transformation gives psihat=i xi_1 hhat/|xi|^2 and the displayed velocity multiplier. For compact h supported away from the origin one may define psi by convolution with the differentiated two-dimensional Poisson kernel, up to an additive constant. Its local derivatives at the origin are smooth. In particular Sigma=partial_xy psi(0) is finite. The proof uses only that Sigma is a finite scalar, and does not depend on its sign or magnitude.
 

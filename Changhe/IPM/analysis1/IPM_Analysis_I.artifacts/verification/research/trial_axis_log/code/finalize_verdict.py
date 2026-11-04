@@ -17,7 +17,7 @@ times=[run['start_utc'],r['utc'],run['end_utc'],arun['start_utc'],a['utc'],arun[
 paths={Path(__file__),B/'research/trial_axis_log/PROOF.md',B/'research/trial_axis_log/code/check_log.py',B/'research/trial_axis_log/code/audit_output.py',B/'data_exact/modal_v2.json',B/'research/modal_exactification/evidence/trial_v2_h0.008.npz'}|{E/f for f in ['checks.json','exact_modes.json','output_audit.json','local_run.json','audit_run.json','proof_first.json','review_repairs.json','lead_pinf_B3.md','first_check_failure.log','first_check_failure_run.json','check_repair.json']};reviews={}
 for tag in ['trial_axis_log_proof','trial_axis_log_closure']:
  m=load(B/f'notes/reviews/{tag}_metadata.json');resp=load(B/f'notes/reviews/{tag}_response.json');req=(B/f'notes/reviews/{tag}_request.txt').read_text();text=(B/f'notes/reviews/{tag}_response.md').read_text()
- assert m['actual_response_model']==resp['model']=='claude-opus-5-5' and m['stop_reason']==resp['stop_reason']=='end_turn'
+ assert m['actual_response_model']==resp['model']=='main-model' and m['stop_reason']==resp['stop_reason']=='end_turn'
  assert sha(B/f'notes/reviews/{tag}_request.txt')==m['input_sha256'] and text=='\n\n'.join(x['text'] for x in resp['content'] if x['type']=='text')+'\n'
  if tag.endswith('closure'):
   assert 'ACCEPT_STATED_SCOPE' in text and datetime.fromisoformat(arun['end_utc'])<datetime.fromisoformat(m['start_utc'])

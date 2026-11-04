@@ -1,6 +1,6 @@
 # An exact conjugation for the full frozen source operator
 
-Date: 2026-10-20. Status: CONFIRMED analytic model theorem after independent derivation and two actual Claude Opus 5.5 reviews. This is a whole-space constant-gradient, linear-drift model result. It is not an inverse for the variable-coefficient profile operator, nor an admissible P_2 correction-space theorem.
+Date: 2026-10-20. Status: CONFIRMED analytic model theorem after independent derivation and two actual the main model reviews. This is a whole-space constant-gradient, linear-drift model result. It is not an inverse for the variable-coefficient profile operator, nor an admissible P_2 correction-space theorem.
 
 ## Statement
 

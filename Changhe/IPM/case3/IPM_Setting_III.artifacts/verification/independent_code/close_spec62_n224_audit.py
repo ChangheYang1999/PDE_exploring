@@ -13,7 +13,7 @@ for n,c in [('CHECKS.json',102),('REVIEW_SUPPLEMENT.json',133)]:
 p=Path('research/hydrostatic_c2_resolved_192_audit/verification/INPUTS.json');bind(p);row=json.loads(p.read_text())['states'][0];bind(row['frozen'],row['sha256']);ck('192manifest exact admitted source',row['sha256']=='5177b5ae4c8a480353f7d855e27cfb735accab264c56f53c1f54881476d737a0')
 reviews=[]
 for name in ['opus_review','opus_followup']:
- p=V/name;m=json.loads((p/'metadata.json').read_text());r=json.loads((p/'response.json').read_text());ck('actual model '+name,m['requested_model']=='us.anthropic.claude-opus-5-5'and m['returned_model']==r['model']=='claude-opus-5-5');ck('completed actual review '+name,m['stop_reason']==r['stop_reason']=='end_turn'and m['answer_nonempty']);bind(p/'request.txt',m['request_sha256']);ck('complete review text '+name,'\n\n'.join(z.get('text','')for z in r['content']if z['type']=='text').strip()==(p/'answer.md').read_text().strip())
+ p=V/name;m=json.loads((p/'metadata.json').read_text());r=json.loads((p/'response.json').read_text());ck('actual model '+name,m['requested_model']=='the main model'and m['returned_model']==r['model']=='main-model');ck('completed actual review '+name,m['stop_reason']==r['stop_reason']=='end_turn'and m['answer_nonempty']);bind(p/'request.txt',m['request_sha256']);ck('complete review text '+name,'\n\n'.join(z.get('text','')for z in r['content']if z['type']=='text').strip()==(p/'answer.md').read_text().strip())
  for n in ['answer.md','metadata.json','response.json']:bind(p/n)
  reviews.append(m)
 for p in [Path(__file__),R/'PROOF.md',R/'REVIEW_RESOLUTION_PROOF.md',R/'FINAL_MODEL_RESOLUTION.md',R/'RESULTS.md',R/'CLOSURE_PROOF.md',V/'REQUEST_BUILD_FAILURE.json']:bind(p)

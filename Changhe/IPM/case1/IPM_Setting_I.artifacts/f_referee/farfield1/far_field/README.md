@@ -6,7 +6,7 @@ archives were read only. No GPU, JavaScript, server, or RLScience cluster
 was used. No fit with rows extending to 9000 L was inspected.
 
 The optional Opus collaboration could not run: the configured model is
-`us.anthropic.claude-opus-5-5`, but both existing AWS profiles failed
+`the main model`, but both existing AWS profiles failed
 credential retrieval. No other reviewer model was substituted.
 
 ## Reproduction

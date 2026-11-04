@@ -78,7 +78,7 @@ For every tau>=T, the strict bounds below hold for the exact normalized modal tr
 | 10 | 0.000008067437 | 0.000000449353 | 0.001408491 | 0.000078452209 |
 | 17 | 0.000000066848357 | 0.000000001060902 | 0.000110121685 | 0.000001747661 |
 
-Also C_*<0.003623778, replacing the old gamma_* coefficient upper bound160.153387682903..., and N_ext<4949188. The original coefficient is the unique gamma_* row of the pinned outer_result.json, and its exact rational upper endpoint is recorded as old_C_star_upper_exact. The final verification includes1048exact raw projection scalar equalities and68121direct trigonometric pairs. Actual Claude Opus5.5 reviewed the theorem and sources, corrected its overstrong general rate claim after challenge, and accepted the exact row isolation argument. Its degree and length checks were added before the final rerun.
+Also C_*<0.003623778, replacing the old gamma_* coefficient upper bound160.153387682903..., and N_ext<4949188. The original coefficient is the unique gamma_* row of the pinned outer_result.json, and its exact rational upper endpoint is recorded as old_C_star_upper_exact. The final verification includes1048exact raw projection scalar equalities and68121direct trigonometric pairs. Actual the main model reviewed the theorem and sources, corrected its overstrong general rate claim after challenge, and accepted the exact row isolation argument. Its degree and length checks were added before the final rerun.
 
 ## Scope
 

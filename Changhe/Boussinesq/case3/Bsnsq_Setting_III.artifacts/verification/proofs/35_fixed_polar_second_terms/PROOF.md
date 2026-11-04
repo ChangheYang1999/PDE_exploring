@@ -1,6 +1,6 @@
 # Fixed-polar second terms from local Boussinesq continuation
 
-Date: 2026-10-20. Status: CONFIRMED by the independent verifier and the checked actual Claude Opus5.5 review23. The verifier separately retrieved and checked the exact external theorem; Opus reviewed its transcribed statement.
+Date: 2026-10-20. Status: CONFIRMED by the independent verifier and the checked actual the main model review23. The verifier separately retrieved and checked the exact external theorem; Opus reviewed its transcribed statement.
 This is a far-field necessary theorem for the exact power-decay class A, not a YES or NO endpoint.
 
 ## 1. Statement, notation and dependencies
@@ -302,7 +302,7 @@ and an all-orders fixed-angle expansion remain open here.
 
 ## Audit record
 
-Actual requested `us.anthropic.claude-opus-5-5`, returned `claude-opus-5-5`,
+Actual requested `the main model`, returned `main-model`,
 review23 completed2026-10-20T16:06:14.594576Z in92.43894seconds with a visible
 written audit and end_turn. The verifier independently rechecked all advice.
 The explicit angular orientation, closed-interval flow regularity and

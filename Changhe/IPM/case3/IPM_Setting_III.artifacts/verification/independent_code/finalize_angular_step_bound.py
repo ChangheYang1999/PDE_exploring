@@ -18,8 +18,8 @@ for p,h in d['bindings'].items():bind(p,h)
 reviews=[]
 for label in ['review','followup']:
  f=V/('opus_'+label);m=json.loads(bind(f/'metadata.json'));resp=json.loads(bind(f/'response.json'));q=bind(f/'request.txt');answer=bind(f/'answer.md').decode()
- ck('actual requested model '+label,m['requested_model']=='us.anthropic.claude-opus-5-5')
- ck('actual returned model '+label,m['returned_model']==resp['model']=='claude-opus-5-5')
+ ck('actual requested model '+label,m['requested_model']=='the main model')
+ ck('actual returned model '+label,m['returned_model']==resp['model']=='main-model')
  ck('complete nonempty answer '+label,m['stop_reason']==resp['stop_reason']=='end_turn'and m['answer_nonempty'])
  ck('request identity '+label,hashlib.sha256(q).hexdigest()==m['request_sha256'])
  ck('answer identity '+label,'\n\n'.join(z['text']for z in resp['content']if z['type']=='text').strip()==answer.strip())

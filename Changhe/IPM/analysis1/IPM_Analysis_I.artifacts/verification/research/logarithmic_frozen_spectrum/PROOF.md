@@ -1,6 +1,6 @@
 # Complete frozen-transport inverse classification in the logarithmic axis space
 
-Date 2026-10-22T03:19:35.416063+00:00. Standalone informal proof written before new symbolic or exact scalar checks. Status OPEN pending independent checks, complete actual Claude Opus5.5 review and later own adjudication. This result concerns a precisely specified global frozen transport operator, not the full IPM linearization.
+Date 2026-10-22T03:19:35.416063+00:00. Standalone informal proof written before new symbolic or exact scalar checks. Status OPEN pending independent checks, complete actual the main model review and later own adjudication. This result concerns a precisely specified global frozen transport operator, not the full IPM linearization.
 
 ## Space, domain and exact statement
 

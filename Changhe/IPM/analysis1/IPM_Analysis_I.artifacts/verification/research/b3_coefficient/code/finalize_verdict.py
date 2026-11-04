@@ -16,7 +16,7 @@ assert datetime.fromisoformat(run['start_utc'])<datetime.fromisoformat(r['utc'])
 paths={Path(__file__),B/'research/b3_coefficient/PROOF.md',B/'research/b3_coefficient/code/check_b3.py',B/'research/b3_coefficient/code/audit_output.py',B/'data_exact/modal_v2.json'}|{E/f for f in ['checks.json','output_audit.json','local_run.json','audit_run.json','proof_first.json','review_repairs.json','lead_pinf_B3.md']};reviews={}
 for tag in ['b3_coefficient_proof','b3_coefficient_closure']:
  m=load(B/f'notes/reviews/{tag}_metadata.json');resp=load(B/f'notes/reviews/{tag}_response.json');req=(B/f'notes/reviews/{tag}_request.txt').read_text();text=(B/f'notes/reviews/{tag}_response.md').read_text()
- assert m['actual_response_model']==resp['model']=='claude-opus-5-5' and m['stop_reason']==resp['stop_reason']=='end_turn'
+ assert m['actual_response_model']==resp['model']=='main-model' and m['stop_reason']==resp['stop_reason']=='end_turn'
  assert sha(B/f'notes/reviews/{tag}_request.txt')==m['input_sha256'] and text=='\n\n'.join(x['text'] for x in resp['content'] if x['type']=='text')+'\n'
  if tag.endswith('closure'):
   assert 'ACCEPT_STATED_SCOPE' in text and datetime.fromisoformat(arun['end_utc'])<datetime.fromisoformat(m['start_utc'])

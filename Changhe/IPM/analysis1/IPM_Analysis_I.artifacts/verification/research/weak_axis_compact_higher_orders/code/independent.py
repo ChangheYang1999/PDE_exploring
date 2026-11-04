@@ -5,7 +5,7 @@ import sys,json
 sys.dont_write_bytecode=True
 from flint import fmpq
 R=Path(__file__).resolve().parents[3];D=R/'research/weak_axis_compact_higher_orders';E=D/'evidence';sys.path.insert(0,str(R/'research/full_derivative_norm_bound_v2/code'));import protocol as p
-start=p.now();A=p.load(E/'check.json');p.rehash(A['parent_files']);assert p.sha(D/'PROOF.md')==A['proof_sha256']=='0dcddf0f8356c434242ffc63986a74079e578d70acb7c32acc76975018730f4f'
+start=p.now();A=p.load(E/'check.json');p.rehash(A['parent_files']);assert p.sha(D/'PROOF.md')==A['proof_sha256']=='e32c2a36e378706c5b621fab79c23a189fe6b9af2294a972a0c6a4231c552733'
 raw=R/'data_exact/modal_v2.json';assert p.sha(raw)=='57f67a53c1ee5c8fd5ede8480428f1a5584123ac4e54b6d3530d091ea2a67ca6';raw=p.load(raw)
 def hx(t):
  sign=-1 if t.startswith('-') else 1;t=t.lstrip('+-');m,e=t.split('p');whole,frac=m[2:].split('.');return fmpq(sign*int(whole+frac,16))*fmpq(2)**(int(e)-4*len(frac))

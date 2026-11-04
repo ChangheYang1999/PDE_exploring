@@ -44,10 +44,10 @@ component cannot be relabelled a Euclidean gradient bound. The review's
 illustrative value .13805 is a rounded example: the actual stored value
 is .13804911144342183. All comparisons used the exact stored dyadic.
 
-The four actual Claude Opus5.5 reviews and their complete supplied files
+The four actual the main model reviews and their complete supplied files
 are authenticated. The latest review ended2026-10-21T08:20:52.158562Z,
 request0c53030e-6fda-4790-a585-f699e38f2294, actual model
-claude-opus-5-5, end_turn, input SHA
+main-model, end_turn, input SHA
 7fa9c8a2c67d424962b81b89223584b9bca0d152985cb446f885b2c561f5be88.
 It independently rebuilt the r2 sufficient-input proof and accepted the
 finite dimensional and public-table linkage. Its caveats are retained

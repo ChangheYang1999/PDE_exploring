@@ -1,4 +1,4 @@
-# Actual Claude Opus 5.5 hand review
+# Actual the main model hand review
 
 2026-10-20T20:23:13Z (lead): reviews of inexact-axis-accounting, source-exception and source-fixed-value: all CONFIRMED; o53 dry run
 

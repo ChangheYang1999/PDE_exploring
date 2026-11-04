@@ -15,7 +15,7 @@ for rel in files:
   rows.append({'file':rel,'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'N':N,'M':M,'shape':list(z['b'].shape),'dtypes':d,'q_ascending':True,'s_ascending':True,'row0_is_one':True,'q_double_formula_maxdifference':e1,'theta_double_formula_maxdifference':e2})
 checks=[];metapins={}
 for tag in ['center_code_low','hessian_code_low']:
- mp=ROOT.parent/'model-review/verification'/f'{tag}_metadata.json';metapins[tag]=hashlib.sha256(mp.read_bytes()).hexdigest();m=json.loads(mp.read_text());assert m['actual_response_model']=='claude-opus-5-5' and m['stop_reason']=='end_turn'
+ mp=ROOT.parent/'model-review/verification'/f'{tag}_metadata.json';metapins[tag]=hashlib.sha256(mp.read_bytes()).hexdigest();m=json.loads(mp.read_text());assert m['actual_response_model']=='main-model' and m['stop_reason']=='end_turn'
  for file,digest in m['files'].items():
   actual=hashlib.sha256((ROOT.parent.parent/file).read_bytes()).hexdigest();assert actual==digest
   checks.append({'review':tag,'file':file,'review_sha256':digest,'current_sha256':actual,'equal':True})

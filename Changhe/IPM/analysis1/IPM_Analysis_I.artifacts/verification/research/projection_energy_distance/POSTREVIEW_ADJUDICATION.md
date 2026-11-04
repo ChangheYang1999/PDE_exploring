@@ -1,6 +1,6 @@
 # Independent adjudication after the completed review
 
-Written 2026-10-21T20:14:56.712427+00:00. I read the entire actual Claude Opus5.5 response, including every qualification, and rechecked its request against all15 current input files. Request0089f1fa-de36-4d6d-82a5-51da6be0b96e ended2026-10-21T20:14:20.777508Z with end_turn. The requested and actual models are us.anthropic.claude-opus-5-5 and claude-opus-5-5. Its response accepts only the scalar audit.
+Written 2026-10-21T20:14:56.712427+00:00. I read the entire actual the main model response, including every qualification, and rechecked its request against all15 current input files. Request0089f1fa-de36-4d6d-82a5-51da6be0b96e ended2026-10-21T20:14:20.777508Z with end_turn. The requested and actual models are the main model and main-model. Its response accepts only the scalar audit.
 
 The Pythagorean calculation is independent of all numerical artifacts and was reconstructed directly. Each saved energy ratio was computed from exact binary64 integers by two import paths. Both interval engines were checked against the exact rational radicand by squaring, so their agreement is not being used as a substitute for containment. The original energies are positive and their differences are strictly positive in every accepted version2 row. The review's approximate first missing-energy decimal is slightly loose: the exact recorded rational lies between0.00033038 and0.00033039. The accepted percent boxes come from the exact rational, not that approximation.
 

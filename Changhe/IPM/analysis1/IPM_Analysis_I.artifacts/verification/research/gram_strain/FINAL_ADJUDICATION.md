@@ -24,7 +24,7 @@ arguments are supplied as proofs, not claimed to be machine-checked.
 Read PROOF.md with ADDENDUM.md. The latter binds the factor3 to PROMPT
 and its leading-jet derivation, states X membership separately, and rejects
 the first review's incorrect gamma<k threshold and its unsupported claim
-of strict non-optimality. Actual Claude Opus5.5 withdrew those objections
+of strict non-optimality. Actual the main model withdrew those objections
 and accepted the restricted theorem in a completed end_turn response.
 The earlier max_tokens response is retained but is not acceptance.
 

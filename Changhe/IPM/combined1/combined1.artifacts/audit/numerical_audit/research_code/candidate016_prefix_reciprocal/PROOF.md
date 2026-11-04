@@ -65,6 +65,6 @@ No new full residual or moment integral is computed, no peer program
 is run, and no infinite angular extension is needed for this candidate.
 No exactH, stationary inverse, contraction, existence or correction-
 distance conclusion follows. Existing Opus5.5 theory lanes provide
-collaboration; configured identity us.anthropic.claude-opus-5-5, actual
+collaboration; configured identity the main model, actual
 provider unobservable. No new remote client, JavaScript/TypeScript,
 server or cluster is used. Exact JSON and proof hashes precede code.

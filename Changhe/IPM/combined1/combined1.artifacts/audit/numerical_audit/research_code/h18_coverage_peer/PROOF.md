@@ -148,7 +148,7 @@ WU3 bound at the bL margin cap is a separate CLAIMED supplement at this
 capture and is excluded from this acceptance. Candidate001's stronger
 annular application is also separate. Candidates011,027 and any newly
 published028 remain outside the 24-candidate statement. The configured
-Opus model is us.anthropic.claude-opus-5-5; this file collaboration does
+Opus model is the main model; this file collaboration does
 not expose an actual provider response identity and uses no remote
 client or substituted model. Only passing own checks authorize this
 finite acceptance.

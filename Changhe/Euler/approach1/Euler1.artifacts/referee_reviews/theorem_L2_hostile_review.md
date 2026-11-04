@@ -6,7 +6,7 @@ There is a version qualification. The file at the requested path identifies itse
 `48c76438fe5995496033c69a396ec089f0dd2aafac41d2b1d18435a6f1ab62b0`.
 I also identify the omissions in the earlier text. I did not modify the source.
 
-This is an independent mathematical verification, not machine-checked formalization or a novelty assessment. A Python/Bedrock consultation requesting Claude Opus 5.5 failed at credential retrieval for the configured `cline-profile`; no response from that model was obtained, and no other model was silently substituted. External literature access failed at DNS resolution. Accordingly, the proof below does not rely on the notes' previous referee endorsements, their external theorem citations, or their numerical existence claim at \(c=1/2\).
+This is an independent mathematical verification, not machine-checked formalization or a novelty assessment. A Python/Bedrock consultation requesting the main model failed at credential retrieval for the configured `cline-profile`; no response from that model was obtained, and no other model was silently substituted. External literature access failed at DNS resolution. Accordingly, the proof below does not rely on the notes' previous referee endorsements, their external theorem citations, or their numerical existence claim at \(c=1/2\).
 
 **Statement and notation.** Assume \(0<c<1/2\), \(U\in C^2(\mathbb R^3;\mathbb R^3)\), and a pointwise pressure gradient satisfying
 \[

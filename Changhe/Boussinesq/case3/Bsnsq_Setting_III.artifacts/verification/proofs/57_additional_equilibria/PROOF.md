@@ -452,7 +452,7 @@ Actual second-model audit record: review48 returned a truncated usable Section3
 audit only (188.871s, max_tokens). Review49 returned refusal/no text (14.652s).
 Review50 (78.213s, end_turn) checked the source construction, and review51
 (80.772s, end_turn) checked source boundaries and the hyperbolic tree/flatness
-lemma. All returned model identifiers were claude-opus-5-5. Their actual
+lemma. All returned model identifiers were main-model. Their actual
 written suggestions were read, not inferred from summaries. Review50's
 complex/Jordan-source suggestion is inapplicable: Section4 proves all spectra
 real and semisimple using the coupled equations. A focused follow-up records
@@ -460,7 +460,7 @@ that counterargument. Definitions of V, the escape/bounded dichotomy and
 the scattering submersion, and the off-axis escape dependency are explicit.
 No unavailable or unsupplied portion of an answer counts as confirmation.
 
-Follow-up52 (actual claude-opus-5-5,21.615s,end_turn) withdrew the complex/Jordan
+Follow-up52 (actual main-model,21.615s,end_turn) withdrew the complex/Jordan
 objection. Its answer carelessly wrote zero of V and suggested M=DV; neither
 notation is adopted. Throughout this proof z is a zero of W and M=DW(z),
 so trM=2beta. Its core two-case linear-algebra check is correct. The source,

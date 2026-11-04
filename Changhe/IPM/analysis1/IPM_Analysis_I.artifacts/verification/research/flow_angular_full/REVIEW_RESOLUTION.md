@@ -1,7 +1,7 @@
 # Independent preflight adjudication
 
 The actual Opus5.5 proof review and complete-current-code preflight review
-both finished with end_turn and authenticated model claude-opus-5-5.
+both finished with end_turn and authenticated model main-model.
 The second review accepts preparation for queuing, not a full result.
 Its current input includes every implementation file, the source,
 proof/addendum, diagnostics and restart evidence. Source hashes and the

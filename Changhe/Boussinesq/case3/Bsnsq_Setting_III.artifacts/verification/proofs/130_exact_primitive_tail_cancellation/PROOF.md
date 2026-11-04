@@ -1,6 +1,6 @@
 # Exact two-moment cancellation for polynomial angular source tails
 
-Status: independent informal proof, written before implementation. Exact polynomial, independent Cartesian and nonlinear chart controls passed. Written review182 by the actual claude-opus-5-5 model CONFIRMED the algebra and chart after independently rederiving the signs. Earlier requests175,176,177 and180 did not supply a written audit, as recorded in their status files. This is a necessary tail compatibility and a trial-space construction, not a B2 existence or exclusion theorem.
+Status: independent informal proof, written before implementation. Exact polynomial, independent Cartesian and nonlinear chart controls passed. Written review182 by the actual main-model model CONFIRMED the algebra and chart after independently rederiving the signs. Earlier requests175,176,177 and180 did not supply a written audit, as recorded in their status files. This is a necessary tail compatibility and a trial-space construction, not a B2 existence or exclusion theorem.
 
 ## Statement and notation
 

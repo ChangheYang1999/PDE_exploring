@@ -54,4 +54,4 @@ The second expression eliminates U_o and uses a different multiplication and pow
 
 Also evaluate the two enlarged constants explicitly printed in NUM_REPORT, C_o=1.75412e-6 and C_i=2.13842e-6, before judging the displayed ceilings 6.504e-16 and 3.819e-20. Replacing an exact scalar by a larger printed constant increases the corresponding bound quadratically.
 
-All code and exact JSON inputs must be saved and hashed before the numerical check. The numerical instance remains OPEN until actual Claude Opus 5.5 reviews the proof, code and complete outputs, its actual recorded model/end condition are checked, and a later own adjudication resolves the findings. Recompute every scalar in both interval systems. No large field, GPU or heavy process is needed.
+All code and exact JSON inputs must be saved and hashed before the numerical check. The numerical instance remains OPEN until actual the main model reviews the proof, code and complete outputs, its actual recorded model/end condition are checked, and a later own adjudication resolves the findings. Recompute every scalar in both interval systems. No large field, GPU or heavy process is needed.

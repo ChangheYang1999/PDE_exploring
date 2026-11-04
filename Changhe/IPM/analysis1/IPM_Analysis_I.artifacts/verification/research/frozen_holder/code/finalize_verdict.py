@@ -23,7 +23,7 @@ for name,text in expected.items():assert(E/f'review_{name}_excerpt.md').read_tex
 reviews={};files={}
 for tag in ['frozen_holder_upper','frozen_holder_packet','frozen_holder_logs','frozen_holder_ceiling','frozen_holder_closure']:
  meta=json.loads((B/f'notes/reviews/{tag}_metadata.json').read_text());request=(B/f'notes/reviews/{tag}_request.txt').read_text();answer=(B/f'notes/reviews/{tag}_response.md').read_text()
- assert meta['actual_response_model']=='claude-opus-5-5' and meta['stop_reason']=='end_turn' and len(answer)>200
+ assert meta['actual_response_model']=='main-model' and meta['stop_reason']=='end_turn' and len(answer)>200
  assert hashlib.sha256(request.encode()).hexdigest()==meta['input_sha256']
  marker='\n\nFILE '+meta['files'][0]+'\n';assert request.count(marker)==1
  rebuilt=request.split(marker,1)[0]+'\n\n'+'\n\n'.join('FILE '+p+'\n'+(B/p).read_text() for p in meta['files']);assert request==rebuilt,tag

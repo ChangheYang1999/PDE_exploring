@@ -32,7 +32,7 @@ def dec_dn(z, k):
 
 
 D = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
-HASH = {'N4409_result_v02.json': '01019cd56639661ace672791a4fbe7f938d90bf02237b93b38f061238bb15b41',
+HASH = {'N4409_result_v02.json': '7b36cb71d1514598f99a2f5720c5dad69d050cd6912e9be1f550e3b015332156',
         'N4392_comparison.json': 'a2f68954828f60a7dc8983ecb69e8e30ddcd8e868ec0d1b58ce56faa27eeaedc'}
 J = {}
 for fn, h in HASH.items():

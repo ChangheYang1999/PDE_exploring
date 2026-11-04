@@ -7,7 +7,7 @@ R=Path(__file__).resolve().parents[3];D=R/'research/logarithmic_graph_constraint
 def now():return datetime.now(timezone.utc).isoformat()
 def sha(path):
  with path.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
-start=now();a=json.loads((E/'check.json').read_text());assert sha(D/'PROOF.md')==a['proof_sha256']=='5938f6fb1e1d96d44cce1e962cb24fc94fd2367d3dca5449a6646174da6de3c6'
+start=now();a=json.loads((E/'check.json').read_text());assert sha(D/'PROOF.md')==a['proof_sha256']=='31fd7b87c27f079284ce6a6d415275262d2aea30313cdb76f54b33f80694f92c'
 for name,value in a['parent_files'].items():assert sha(R/name)==value, name
 # Independent sparse commutative polynomial algebra over fmpq. No Sympy
 # or primary implementation is imported. Variables are u,v,c,d,a,b,e,f,t,w1,w2,l.

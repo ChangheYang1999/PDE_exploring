@@ -110,6 +110,6 @@ three scalars.
 
 An audit must distinguish analytic implications, exact finite checks,
 inherited physical geometry, and unresolved physical model assumptions.
-An actual Claude Opus5.5 review and substantive followups will be retained
+An actual the main model review and substantive followups will be retained
 and authenticated. Even a successful finite audit is not a full-plane
 inverse theorem, a closed fixed point, or an IPM Analysis I endpoint.

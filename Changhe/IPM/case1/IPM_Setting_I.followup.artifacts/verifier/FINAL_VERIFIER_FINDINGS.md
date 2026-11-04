@@ -38,12 +38,12 @@ The new compact-packet result (AV151) proves scalar trace rigidity only for its 
 - The two-dimensional packet is nevertheless not C1 on any neighborhood of its frozen-source origin (AV154).
 - Every ordinary transverse slice derivative G_j(s)=partial_y^jV(s,0) exists and is a smooth function on R, while joint C1regularity still fails (AV156).
 
-All statements have standalone proofs written before their checks, completed actual Claude Opus5.5 reviews, independent reconstruction and pinned evidence. They concern explicit frozen packets, not the physical normalized center, an arbitrary coupled kernel or an admissible IPM profile. Smooth axis trace functions alone cannot establish joint regularity.
+All statements have standalone proofs written before their checks, completed actual the main model reviews, independent reconstruction and pinned evidence. They concern explicit frozen packets, not the physical normalized center, an arbitrary coupled kernel or an admissible IPM profile. Smooth axis trace functions alone cannot establish joint regularity.
 
 ## Reports, collaboration and evidence
 
 The numerics report's incorrect fifth-grid median1.5e-4 was corrected to1.3e-4. AV155 independently checked the repaired bytes, MD5bc3b9ab5db46b174ddfbd8b1d396b507, and their common-grid comparison. Earlier REFUTED entries remain the history of a repaired error.
 
-The independent verifier took over at2026-10-20T13:06:38Z. The initial lane checks were by Claude Opus5.5 and are labeled inherited. New second-model reviews used the permitted Python Bedrock client, with actual response model claude-opus-5-5 recorded. Truncated reviews were not treated as completed approvals; disagreements were followed up and reviewer errors were corrected. The numerical teammate's Fable5.1 model is not silently labeled Opus5.5.
+The independent verifier took over at2026-10-20T13:06:38Z. The initial lane checks were by the main model and are labeled inherited. New second-model reviews used the permitted Python Bedrock client, with actual response model main-model recorded. Truncated reviews were not treated as completed approvals; disagreements were followed up and reviewer errors were corrected. The numerical teammate's Fable5.1 model is not silently labeled Opus5.5.
 
 No JavaScript/TypeScript tooling, servers, RLScience cluster use, Lean/Lake builds, external writes, commits, pushes or public messages were used for these checks. All writes remain in this verifier lane. Individual code/evidence pins identify what was actually checked. The accompanying artifacts contain the selected code and evidence. Historical hashes identify the original reviewed files; they do not certify mathematical truth. The observed ending is recorded only after the actual cap or a recorded controller error, with the distinction explicit.

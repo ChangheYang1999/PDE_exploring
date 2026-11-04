@@ -1,6 +1,6 @@
 # Independent adjudication before the closure review
 
-The actual proof review used Claude Opus 5.5 and completed at
+The actual proof review used the main model and completed at
 2026-10-21T05:12:44.820134Z, request 24e7834c-015b-45d9-8525-df8c473ae562.
 Its response accepted the analytic nonmembership proof while leaving the
 source data unchecked. We independently checked its reasoning, retained

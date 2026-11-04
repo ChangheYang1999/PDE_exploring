@@ -18,7 +18,7 @@ assert sha(D/'ADDENDUM.md')==json.loads((E/'addendum_before_code.json').read_tex
 files={};reviews={}
 for tag in ['source_jet_proof','source_jet_closure']:
  root=B/'notes/reviews';m=json.loads((root/(tag+'_metadata.json')).read_text());request=(root/(tag+'_request.txt')).read_text();ans=(root/(tag+'_response.md')).read_text();raw=json.loads((root/(tag+'_response.json')).read_text())
- assert m['actual_response_model']==raw['model']=='claude-opus-5-5' and m['stop_reason']==raw['stop_reason']=='end_turn' and len(ans)>200
+ assert m['actual_response_model']==raw['model']=='main-model' and m['stop_reason']==raw['stop_reason']=='end_turn' and len(ans)>200
  assert hashlib.sha256(request.encode()).hexdigest()==m['input_sha256']
  assert ans=='\n\n'.join(v['text'] for v in raw['content'] if v['type']=='text')+'\n'
  mark='\n\nFILE '+m['files'][0]+'\n';assert request.count(mark)==1

@@ -1,6 +1,6 @@
 # An explicit inverse for the frozen transport operator in a logarithmic axis-weighted space
 
-Date 2026-10-22T02:40:23.998244+00:00. This proof is written before the exact scalar application. The theorem and modal-parameter application remain OPEN pending independent checks, actual Claude Opus5.5 review and later own adjudication. This is a frozen local operator result, not an inverse for the full IPM linearization.
+Date 2026-10-22T02:40:23.998244+00:00. This proof is written before the exact scalar application. The theorem and modal-parameter application remain OPEN pending independent checks, actual the main model review and later own adjudication. This is a frozen local operator result, not an inverse for the full IPM linearization.
 
 ## Space, operator and theorem
 

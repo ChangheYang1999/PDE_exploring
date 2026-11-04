@@ -2,7 +2,7 @@
 
 2026-10-21T18:54:01.908591+00:00
 
-I read the complete actual Claude Opus5.5 response after its end_turn response at 18:53:13.795995 UTC. The response confirms the limited finite certificate. I checked its arithmetic examples against the exact record fractions, the eight rational upper endpoints against the printed decimal table, and the source dependency statements against the saved producer source. Both executed checkers have passed; the second imports IEEE numbers and NPY payloads by different code and uses fmpq rather than Fraction. No spectral solver was rerun, as none of the proved claims asserts a true singular value.
+I read the complete actual the main model response after its end_turn response at 18:53:13.795995 UTC. The response confirms the limited finite certificate. I checked its arithmetic examples against the exact record fractions, the eight rational upper endpoints against the printed decimal table, and the source dependency statements against the saved producer source. Both executed checkers have passed; the second imports IEEE numbers and NPY payloads by different code and uses fmpq rather than Fraction. No spectral solver was rerun, as none of the proved claims asserts a true singular value.
 
 One model sentence is numerically wrong but does not affect the certificate: “all 40 L2 and H1 deltas” should say all 20 unweighted L2/H1 deltas. The total forty comparisons also contain twenty L2q/H1q changes. The exact saved record list makes this clear; the two L2q j=3 changes are negative. I reject that incidental count, retain the checked forty-total claim, and do not repeat the model's phrase in the result.
 

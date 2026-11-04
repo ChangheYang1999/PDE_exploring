@@ -1,6 +1,6 @@
 # Concentration of a homogeneous adjoint mode at a smooth fixed point
 
-Date:2026-10-20. Status: CONFIRMED conditional theorem, independently derived and reviewed by actual Claude Opus5.5. This is a conditional theorem about specified Sobolev graph realizations. It is not a nonexistence theorem for the IPM profile, and does not identify the domain or target of the lead's proposed inverse.
+Date:2026-10-20. Status: CONFIRMED conditional theorem, independently derived and reviewed by actual the main model. This is a conditional theorem about specified Sobolev graph realizations. It is not a nonexistence theorem for the IPM profile, and does not identify the domain or target of the lead's proposed inverse.
 
 ## Precise statement
 
@@ -156,7 +156,7 @@ The compact Fourier support away from zero makes phi_j Schwartz. Thus the theore
 Dependencies are the explicit frozen adjoint calculation, Taylor's theorem with bounded derivatives, Plancherel, the elementary Sobolev duality and closed-range theorem, and compactness of finite-rank maps. The high regularity of V and a_j is an explicit hypothesis. It has not been certified for an unknown exact P_2 profile. No coefficient-enclosure calculation, residual bound, nonlinear estimate, spatially weighted realization, source/saddle trace domain, or global canonical normalization functional is proved here.
 
 
-Review record: actual Claude Opus5.5 accepted the elementary Taylor estimate and its rate at2026-10-20T15:53:24Z in ../../notes/reviews/taylor_only_response.md. Larger requests returned refusal without a final text; they provide no review evidence. The graph-dual and frozen-premise constructions were subsequently accepted in graph_dual_localization_response.md and frozen_premise_localization_response.md. The symmetric and general-mu extensions were accepted at2026-10-20T15:59:14Z in source_localization_extensions_response.md. Its stronger per-multiplier parity condition was challenged using a(x,y)=xy exp(-x^2-y^2) and symbol xi*eta/(xi^2+eta^2): each factor anticommutes with either reflection while their product commutes. Actual Opus5.5 checked the counterexample and withdrew that unnecessary condition at2026-10-20T16:01:26Z in source_parity_correction_response.md.
+Review record: actual the main model accepted the elementary Taylor estimate and its rate at2026-10-20T15:53:24Z in ../../notes/reviews/taylor_only_response.md. Larger requests returned refusal without a final text; they provide no review evidence. The graph-dual and frozen-premise constructions were subsequently accepted in graph_dual_localization_response.md and frozen_premise_localization_response.md. The symmetric and general-mu extensions were accepted at2026-10-20T15:59:14Z in source_localization_extensions_response.md. Its stronger per-multiplier parity condition was challenged using a(x,y)=xy exp(-x^2-y^2) and symbol xi*eta/(xi^2+eta^2): each factor anticommutes with either reflection while their product commutes. Actual Opus5.5 checked the counterexample and withdrew that unnecessary condition at2026-10-20T16:01:26Z in source_parity_correction_response.md.
 
 
 ## Symmetric real realization

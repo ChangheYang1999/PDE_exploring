@@ -1,6 +1,6 @@
 # Actual coupled source solutions of any odd initial order on a cone
 
-Date: 2026-10-20. Status: complete informal proof written before the checks. All60exact coefficient cases passed. Actual lead Claude Opus5.5 reviewed the proof and independently checked its recurrence at17:13:34Z. This is a theorem on a left cone, with no claim about a full source neighborhood or the global admissible class.
+Date: 2026-10-20. Status: complete informal proof written before the checks. All60exact coefficient cases passed. Actual lead the main model reviewed the proof and independently checked its recurrence at17:13:34Z. This is a theorem on a left cone, with no claim about a full source neighborhood or the global admissible class.
 
 ## Statement
 

@@ -1,7 +1,7 @@
 # Beta-two equilibrium arc, flat endpoints, and an outgoing open set
 
 Date:2026-10-20. Status: CONFIRMED by independent derivation and a checked audit
-from actual Claude Opus 5.5, returned2026-10-20T16:59:13Z. No full B2 endpoint is claimed.
+from actual the main model, returned2026-10-20T16:59:13Z. No full B2 endpoint is claimed.
 
 ## 1. Hypotheses and conclusions
 

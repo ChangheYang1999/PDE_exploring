@@ -15,7 +15,7 @@ proof=(v.parent/'PROOF.md').read_text();supp=(v/'SUPPORT_PROOF.md').read_text()
 ck('four_active_cutoffs_named',all(q in supp for q in ['chi0,chic,chi1,zeta1','finite intersection','|y(t)|<=|y0|+2|K||x0|^2']))
 ck('no_common_all_cutoff_claim','every cutoff equals'not in proof)
 for number in [492,493,494]:
- st=json.loads(Path(f'verification/opus{number}/status.json').read_text());ck('actual_complete_model_'+str(number),st['returned_model']=='claude-opus-5-5'and st['http_status']==200 and st['stop_reason']=='end_turn')
+ st=json.loads(Path(f'verification/opus{number}/status.json').read_text());ck('actual_complete_model_'+str(number),st['returned_model']=='main-model'and st['http_status']==200 and st['stop_reason']=='end_turn')
 st=json.loads(Path('verification/opus491/status.json').read_text());ck('491_truncation_disclosed',st['stop_reason']=='max_tokens')
 pb=json.loads((v/'support_proof_before_checks.json').read_text());ck('support_proof_precedes_checks',pb['utc']<start and pb['sha256']==hashlib.sha256(supp.encode()).hexdigest())
 res={'started_utc':start,'ended_utc':datetime.now(timezone.utc).isoformat(),'elapsed_seconds':time.monotonic()-tick,'passed':sum(checks.values()),'total':len(checks),'checks':checks,'scope':'Exact correction of model-review prose; support argument and active-cutoff proof are analytic, not established by finite sampling.','code_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest()};(v/'support_checks.json').write_text(json.dumps(res,indent=2)+'\n');print(json.dumps({k:res[k]for k in ['started_utc','ended_utc','elapsed_seconds','passed','total']},indent=2));print('failed',[k for k,v in checks.items()if not v])

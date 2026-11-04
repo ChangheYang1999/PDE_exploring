@@ -1,6 +1,6 @@
 # Own adjudication of the exterior derivative engines
 
-UTC 2026-10-22T00:45:22.925517+00:00. Actual modelclaude-opus-5-5/end_turn; requestae094c4c-7fd0-4dad-b2bd-1a62fc005c9d; raw response SHA256 26395128fd3f4a88b06fb2849fd21f146a3ef0cd13eda36d6390bb03fae3f743. I read the complete response after its end00:42:40.607980. No substantive objection was raised. This accepts the mathematical source engines only, not the89-cell instance or its execution protocol.
+UTC 2026-10-22T00:45:22.925517+00:00. Actual modelmain-model/end_turn; requestae094c4c-7fd0-4dad-b2bd-1a62fc005c9d; raw response SHA256 26395128fd3f4a88b06fb2849fd21f146a3ef0cd13eda36d6390bb03fae3f743. I read the complete response after its end00:42:40.607980. No substantive objection was raised. This accepts the mathematical source engines only, not the89-cell instance or its execution protocol.
 
 I reconstructed the falling-factorial exponential tail, including the x^N factor and h^(-p), and checked every mixed Leibniz error term. In the second method the Taylor polynomial of the analytically differentiated exponential polynomial equals the derivative of the original retained polynomial. Coefficient overlap is a diagnostic, not the reason the identity holds. All input coefficient intervals enclose fixed analytic parameters. The384-bit input enclosures remain valid under512-bit later evaluation; the Bernstein matrix is also an enclosure.
 

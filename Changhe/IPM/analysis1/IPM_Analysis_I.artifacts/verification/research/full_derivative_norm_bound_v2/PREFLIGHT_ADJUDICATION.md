@@ -1,6 +1,6 @@
 # Independent preparation adjudication, version 2
 
-Written 2026-10-22T00:31:21.446448+00:00, after the entire actual response was read. Actual model claude-opus-5-5, stop reason end_turn, request dd882567-edc1-4db1-9df2-dc14a34b0cb0, raw response SHA256 5588bf31e28b6b7a28133dbfae358ebfdf6ef39823495a8dcb0d31a14b8a542e. The request digest is ee5cab5e61d95488c2c62c066f0c947d6457b8357e44640d49521adcb1753a21. This note was not in that request.
+Written 2026-10-22T00:31:21.446448+00:00, after the entire actual response was read. Actual model main-model, stop reason end_turn, request dd882567-edc1-4db1-9df2-dc14a34b0cb0, raw response SHA256 5588bf31e28b6b7a28133dbfae358ebfdf6ef39823495a8dcb0d31a14b8a542e. The request digest is ee5cab5e61d95488c2c62c066f0c947d6457b8357e44640d49521adcb1753a21. This note was not in that request.
 
 CONFIRMED preparation only. I reconstructed P'=-2P+mR and R'=mP-2R-r^2F, and then P''=(4+m^2)P-4mR-mr^2F and R''=-4mP+(4+m^2)R-r^2F'. The forcing terms in W1,W2 follow from the radial minus sign and the sine tangential velocity. Velocity remainder bounds are not differentiated. The formal jet identity and injective packing prove the binomial products; actual output coefficients are compared by the integer and modular CRT methods. The stronger old dense-output binomial diagnostic claim remains withdrawn.
 

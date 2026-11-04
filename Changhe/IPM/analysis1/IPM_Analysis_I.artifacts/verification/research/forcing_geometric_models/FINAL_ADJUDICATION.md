@@ -32,7 +32,7 @@ equalities. The first extractor accidentally keyed statements only by
 line number. Its completeness assertion caught the semicolon collision;
 the preserved failed version is replaced by a line-and-column key.
 
-Two actual Claude Opus5.5/end_turn exchanges are authenticated. The first
+Two actual the main model exchanges are authenticated. The first
 accepted the mathematical argument subject to coordinate linkage and the
 finite-endpoint repair. The substantive followup accepted those repairs
 and the narrow result. Requested model and actual response both identify

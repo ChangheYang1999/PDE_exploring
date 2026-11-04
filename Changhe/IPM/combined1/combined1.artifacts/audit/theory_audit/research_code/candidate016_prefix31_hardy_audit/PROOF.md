@@ -92,7 +92,7 @@ is checked as a rational inequality, without floating-point rounding.
 ## Independent finite replay and source scope
 
 N4-409's version2 result is
-01019cd56639661ace672791a4fbe7f938d90bf02237b93b38f061238bb15b41.
+7b36cb71d1514598f99a2f5720c5dad69d050cd6912e9be1f550e3b015332156.
 Its sixteen complete mode files contain484groups:31groups per mode
 through19, then29 per mode21 through31. For each mode the complete
 ordered branch-pair set and exponent sums are rechecked. In the source
@@ -125,5 +125,5 @@ optimization or FLOAT quadrature executes in this audit.
 All large values stay in exact JSON inputs and are registered in the
 manifest. The proof precedes the checker and original outputs are
 immutable. Existing Opus5.5 lanes provide the independent reviews;
-the configured identity is us.anthropic.claude-opus-5-5 and the actual
+the configured identity is the main model and the actual
 provider identity is unobservable. No new remote model client runs.

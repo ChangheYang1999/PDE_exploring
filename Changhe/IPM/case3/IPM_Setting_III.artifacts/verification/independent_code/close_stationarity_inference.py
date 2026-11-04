@@ -27,7 +27,7 @@ ck('false half-slope bound disproved exactly',h2<(1-q*l/2)**2)
 ck('correct supporting bound',h2>=(1-q*l)**2)
 reviews=[]
 for name in ['opus_design','opus_followup']:
- p=v/name;m=json.loads((p/'metadata.json').read_text());a=json.loads((p/'response.json').read_text());ck('actual model '+name,m['requested_model']=='us.anthropic.claude-opus-5-5'and m['returned_model']==a['model']=='claude-opus-5-5');ck('completed review '+name,m['stop_reason']==a['stop_reason']=='end_turn'and m['answer_nonempty']);bind(p/'request.txt',m['request_sha256']);ck('response text '+name,'\n\n'.join(z.get('text','')for z in a['content']if z['type']=='text').strip()==(p/'answer.md').read_text().strip())
+ p=v/name;m=json.loads((p/'metadata.json').read_text());a=json.loads((p/'response.json').read_text());ck('actual model '+name,m['requested_model']=='the main model'and m['returned_model']==a['model']=='main-model');ck('completed review '+name,m['stop_reason']==a['stop_reason']=='end_turn'and m['answer_nonempty']);bind(p/'request.txt',m['request_sha256']);ck('response text '+name,'\n\n'.join(z.get('text','')for z in a['content']if z['type']=='text').strip()==(p/'answer.md').read_text().strip())
  for f in ['metadata.json','response.json','answer.md']:bind(p/f)
  reviews.append(m)
 for p in [Path(__file__),'independent_code/opus_review_308.py',r/'REVIEW_RESOLUTION_PROOF.md',r/'FINAL_REVIEW_RESOLUTION.md',r/'CLOSURE_PROOF.md',r/'RESULTS.md']:bind(p)

@@ -4,7 +4,7 @@ import sys,json
 sys.dont_write_bytecode=True
 from flint import fmpq as Q
 R=Path(__file__).resolve().parents[3];D=R/'research/logarithmic_center_trace';E=D/'evidence';sys.path.insert(0,str(R/'research/full_derivative_norm_bound_v2/code'));import protocol as p
-start=p.now();primary=p.load(E/'check.json');p.rehash(primary['parent_files']);assert p.sha(D/'PROOF.md')==primary['proof_sha256']=='1520a97d475afcfd62a464c32d7549d299d2d33ddf3ef24776528006ecdd3f58'
+start=p.now();primary=p.load(E/'check.json');p.rehash(primary['parent_files']);assert p.sha(D/'PROOF.md')==primary['proof_sha256']=='d64d1607d4b0944a1a78639b0feca4790ef7f86c6fdd6686265cc3d60662d3ae'
 raw=R/'data_exact/modal_v2.json';assert p.sha(raw)=='57f67a53c1ee5c8fd5ede8480428f1a5584123ac4e54b6d3530d091ea2a67ca6';raw=p.load(raw)
 def hx(t):
  sign=-1 if t.startswith('-') else 1;t=t.lstrip('+-');m,e=t.split('p');whole,frac=m[2:].split('.');return Q(sign*int(whole+frac,16))*Q(2)**(int(e)-4*len(frac))

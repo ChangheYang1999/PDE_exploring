@@ -45,7 +45,7 @@ for h,p in pairs:
   local=B/'source'/Path(p).name;need('replaced README '+p,sha(local)==h);changed.append(p)
 need('two replacements',changed==['checks/check_N4418.py','checks/check_N4418.out'])
 code=(B/'source/check_N4418.py').read_text();ast.parse(code)
-need('review code hash',sha(B/'source/check_N4418.py')=='04dad65377c0fa6db08bcc48f27f439b28ed323664b01f5eb041b2f0bbc9a440');need('review output hash',sha(B/'source/check_N4418.out')=='24c61edaf70f5b7d81724bdc29ace821dcec2f36a9388f3cd8e0945308bdf412')
+need('review code hash',sha(B/'source/check_N4418.py')=='a1df6149e741de5e5e173abde7f2a3036cc6233694d683e7e5a778b5505dcd88');need('review output hash',sha(B/'source/check_N4418.out')=='24c61edaf70f5b7d81724bdc29ace821dcec2f36a9388f3cd8e0945308bdf412')
 oldtree=ast.parse((B/'../theory_final_draft58_audit/source/T1_check_N4418.py').read_text());newtree=ast.parse(code)
 def calls(tree):return [ast.dump(n,include_attributes=False) for n in ast.walk(tree) if isinstance(n,ast.Call) and isinstance(n.func,ast.Name) and n.func.id=='ok']
 a,c=calls(oldtree),calls(newtree);diff=[v for v in c if v not in a];need('one added ok',len(c)==len(a)+1 and len(diff)==1 and all(v in c for v in a));need('directed comparison added',"Constant(value=18225240013184170643)" in diff[0] and "Constant(value=364)" in diff[0] and "Constant(value=365)" in diff[0]);need('recorded89','checks passed 89' in (B/'source/check_N4418.out').read_text())

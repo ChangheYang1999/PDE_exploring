@@ -57,7 +57,7 @@ def main():
  ck(selection['frozen_documents']['AUDIT_SUMMARY.md']=='d9e0c36554b1aff4f5ebe0809133e8397f6cd8f114b16af63091f92fd3863931','summary original freeze')
  ck(selection['frozen_documents']['FINAL_REPORT_NUMERICAL_AUDIT.md']=='15dec90541c3708d88dc92c582da16edcdc2c111f04fc6f560c52a34bbf193bc','numerical audit original freeze')
  ck(selection['frozen_documents']['NEXT_AUDIT_PLAN.md']=='b4e5e460f4844e4853a8d99bfdf37de80dace0e2a7c3bcc4921c99ed29d7f934','next plan original freeze')
- ck(selection['frozen_documents']['FINAL_EVIDENCE_INDEX_v03.json']=='a66ac924b3d283b883b9a1846eca00eaaba1799f1bd26f424a011527388d15d5','H22index original freeze')
+ ck(selection['frozen_documents']['FINAL_EVIDENCE_INDEX_v03.json']=='41eb323de8ab07de0ed6e21c833fe10b2b977902e901aacd5201d504f9c9cac3','H22index original freeze')
  foreign=json.loads((R/'research/final_report_diff/verification/result.json').read_text())['external_current_readonly_hashes']
  ck(len(foreign)==739,'N443retainedexternalprovenancecount')
  for path,sig in observed.items():ck(signature(Path(path))==sig,'final unchanged signature '+path)

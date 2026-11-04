@@ -186,7 +186,7 @@ Record the raw and canonical hashes, all own imported modules, the
 original N4-028 result, peer proof and review hashes, every coefficient
 comparison, exact nonzero norms, source preservation and actual runtime.
 The Opus collaboration is through the existing theory lanes configured
-for us.anthropic.claude-opus-5-5. Their provider response identity is not
+for the main model. Their provider response identity is not
 observable from these local files; no substitute or remote client is
 used by this lane.
 

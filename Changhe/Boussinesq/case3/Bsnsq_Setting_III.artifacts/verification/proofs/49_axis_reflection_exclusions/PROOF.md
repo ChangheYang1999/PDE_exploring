@@ -183,7 +183,7 @@ only the explicit finite algebra; it is not a proof of the PDE theorem.
 
 ## Review record
 
-Actual Opus38 (claude-opus-5-5,219.372655seconds,completed17:34:50Z)
+Actual Opus38 (main-model,219.372655seconds,completed17:34:50Z)
 confirmed every theorem, including the exact kernel signs. The verifier
 checked its algebra and adopted an explicit velocity-parity argument
 and a wording fix keeping the reflection hypothesis in the common-peak

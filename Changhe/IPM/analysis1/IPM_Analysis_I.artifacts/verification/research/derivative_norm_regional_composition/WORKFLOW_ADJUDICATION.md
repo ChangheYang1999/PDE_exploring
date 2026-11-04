@@ -1,6 +1,6 @@
 # Regional composition workflow adjudication
 
-Date 2026-10-22T01:37:01.946757+00:00. Review request df95ca13-c7a2-436a-b070-9efd0f583113; input SHA256 3d455e7411f697a173a225eb4287b3acfcff7c10e3c572991c965945a7f26b20; response JSON SHA256 62c29eb2418ec26b516bec9efb46c64414a592d93192b32c6d2c452d62acfea4. The complete response was read. Recorded actual model is claude-opus-5-5 and stop condition end_turn. This checks the saved provider response identity and file consistency, not a provider digital signature.
+Date 2026-10-22T01:37:01.946757+00:00. Review request df95ca13-c7a2-436a-b070-9efd0f583113; input SHA256 3d455e7411f697a173a225eb4287b3acfcff7c10e3c572991c965945a7f26b20; response JSON SHA256 62c29eb2418ec26b516bec9efb46c64414a592d93192b32c6d2c452d62acfea4. The complete response was read. Recorded actual model is main-model and stop condition end_turn. This checks the saved provider response identity and file consistency, not a provider digital signature.
 
 The review found no source or mathematical gap and returned CONFIRM_REGIONAL_COMPOSITION_SOURCE_PENDING_PARENT_FINALS. I independently checked PROOF.md and the actual extraction, evaluation, replay and gate sources after reading the response. Additivity applies to the same global weak derivatives on disjoint measurable regions, up to boundary circles of measure zero. This is exactly why the common canonical identity pins and accepted annular regularity theorem are required. A sum of bounds from different trials would not prove the claim and cannot pass the present identity gate.
 

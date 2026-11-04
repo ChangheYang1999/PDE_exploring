@@ -241,7 +241,7 @@ assistant or numerical solver is used.
 ## 8. Review record
 
 Actual Opus37 returned a detailed audit on2026-10-20 at17:27:04Z
-(claude-opus-5-5,180.325190seconds). The verifier checked its response.
+(main-model,180.325190seconds). The verifier checked its response.
 Sections1-6 were confirmed; a box restriction for h, an explicit
 backward-invariant disk and the exact relative-velocity/PDE convention
 were added. Section7 depends on the existing scattering results, which

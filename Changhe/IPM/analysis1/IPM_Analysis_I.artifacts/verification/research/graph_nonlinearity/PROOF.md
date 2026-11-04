@@ -1,6 +1,6 @@
 # A transport graph norm does not control a transverse quadratic transport term
 
-Date: 2026-10-20. Status: conditional analytic obstruction accepted by actual Claude Opus 5.5 with minor exposition repairs, now incorporated. Candidate-specific constrained application is separate. This is a statement about a Banach formulation, not nonexistence of an IPM profile.
+Date: 2026-10-20. Status: conditional analytic obstruction accepted by actual the main model with minor exposition repairs, now incorporated. Candidate-specific constrained application is separate. This is a statement about a Banach formulation, not nonexistence of an IPM profile.
 
 ## Exact statement
 

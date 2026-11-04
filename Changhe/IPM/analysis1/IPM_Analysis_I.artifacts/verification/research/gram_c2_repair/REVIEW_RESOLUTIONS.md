@@ -1,6 +1,6 @@
 # First-review requirements and their binding
 
-The first authenticated Claude Opus5.5/end_turn review accepted the abstract Hermite repair and both norm estimates. It asked for explicit common-geometry, continuity and same-raw-column hypotheses in the X-distance application. Those hypotheses are required and are now checked as follows.
+The first authenticated the main model review accepted the abstract Hermite repair and both norm estimates. It asked for explicit common-geometry, continuity and same-raw-column hypotheses in the X-distance application. Those hypotheses are required and are now checked as follows.
 
 For each application, h0 is precisely the topic132 repair of the same source column and same single angular factor as hhat. It uses exactly the same interval partition and the same L and k. Both repairs share their value targets at every join, including zero values outside the support. The supplemental binding check compares all2216 pairs of piece records, source names, column indices, labels, interval endpoints, target values and original denominator moments, along with all inherited hashes. It also checks every original first-piece degree equals7 and every support is inside exp(-5)<r<exp(9). The topic132 proof and exact trace audit establish h0's continuity. Thus the broken norm equals the weak X norm on both repairs and their difference. The strict original delta0 values are8447/10^18 forM16 and6419/250000000000000000 forM24. Both engines explicitly check the rational division by1-delta0 in the X-distance ceiling.
 

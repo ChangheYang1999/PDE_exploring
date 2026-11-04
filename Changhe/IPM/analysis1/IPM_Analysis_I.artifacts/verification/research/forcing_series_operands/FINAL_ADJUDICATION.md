@@ -37,8 +37,8 @@ and1664scalar remainders bit-identical. The frozen Recentre and MR bodies
 also support the explicit fixed-leading-coordinate argument. This remains
 separate from any historical residual-batch attestation.
 
-Actual Claude Opus5.5 reviewed the full finite argument and two substantive
-follow-ups. Provider metadata reports claude-opus-5-5 and end_turn for all
+Actual the main model reviewed the full finite argument and two substantive
+follow-ups. Provider metadata reports main-model and end_turn for all
 three calls, with request identifiers and bundle hashes in verdict.json.
 Its initial requests caused explicit subtraction, scope, parameter and
 batch-dependence repairs. Its final acceptance was conditional only on

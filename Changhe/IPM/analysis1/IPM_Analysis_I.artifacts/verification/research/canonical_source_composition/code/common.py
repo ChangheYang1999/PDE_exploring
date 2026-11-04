@@ -27,7 +27,7 @@ def merge(pins,v):
  for n,h in v['files'].items():pin(pins,n,h)
 def auth(pins,tag,verdict,required):
  m=load(R/(tag+'_metadata.json'));raw=load(R/(tag+'_response.json'));text=(R/(tag+'_response.md')).read_text();req=(R/(tag+'_request.txt')).read_text()
- need(m['requested_model']=='us.anthropic.claude-opus-5-5' and m['actual_response_model']==raw['model']=='claude-opus-5-5' and m['stop_reason']==raw['stop_reason']=='end_turn' and 'availability_error' not in m,'actual completed Opus5.5')
+ need(m['requested_model']=='the main model' and m['actual_response_model']==raw['model']=='main-model' and m['stop_reason']==raw['stop_reason']=='end_turn' and 'availability_error' not in m,'actual completed Opus5.5')
  need(len(m['files'])==len(set(m['files'])) and set(required)<=set(m['files']),'mandatory complete review bundle')
  pre=req.split('\n\nFILE ',1)[0];need(all(v in pre for v in ['no JavaScript/TypeScript','no servers/listeners/tunnels','no RLScience cluster','no Lean/Lake builds','no outside writes','no people contact']),'all delegated restrictions')
  need(req==pre+'\n\n'+'\n\n'.join('FILE '+n+'\n'+(B/n).read_text() for n in m['files']) and hashlib.sha256(req.encode()).hexdigest()==m['input_sha256'],'unchanged actual full request')

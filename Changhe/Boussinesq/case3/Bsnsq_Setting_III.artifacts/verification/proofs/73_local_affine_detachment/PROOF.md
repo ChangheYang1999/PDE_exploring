@@ -58,4 +58,4 @@ If this ansatz were instead imposed globally with sublinear V=W-beta X, it would
 
 ## Dependencies and verification
 
-Only Cartesian differentiation, comparison of polynomial coefficients and integration of an ordinary derivative are used. The informal proof was written before the symbolic verification. The exact symbolic checks are recorded in verification/; no formal proof assistant is used. A separate actual Claude Opus5.5 request76 asks about this ODE and the finite-time analyticity scope issue. Its result must be recorded independently and is not presumed here.
+Only Cartesian differentiation, comparison of polynomial coefficients and integration of an ordinary derivative are used. The informal proof was written before the symbolic verification. The exact symbolic checks are recorded in verification/; no formal proof assistant is used. A separate actual the main model request76 asks about this ODE and the finite-time analyticity scope issue. Its result must be recorded independently and is not presumed here.

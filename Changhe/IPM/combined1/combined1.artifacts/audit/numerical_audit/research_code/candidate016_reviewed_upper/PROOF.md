@@ -93,5 +93,5 @@ This result accepts its own upper, not N3's narrower display or an
 017 norm. It orders the registered energy only, not correction
 distances. It proves no inverse, nonlinear contraction or stationary
 solution and changes no exclusion. Peer configuration is
-us.anthropic.claude-opus-5-5, with actual provider response identity
+the main model, with actual provider response identity
 unobservable. No substitute model or remote client is used.

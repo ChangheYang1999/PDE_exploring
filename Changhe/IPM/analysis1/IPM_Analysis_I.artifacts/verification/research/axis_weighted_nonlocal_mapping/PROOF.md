@@ -1,6 +1,6 @@
 # A compact perturbation whose nonlocal image fails strong axis-weighted integrability
 
-Date 2026-10-22T02:46:25.142827+00:00. This standalone proof is written before the new algebra and application checks. The theorem and canonical-modal application remain OPEN until independent checks, complete actual Claude Opus5.5 review and later own adjudication. This result concerns the full operator's mapping of a natural test class, not failure of its inverse on every restricted domain.
+Date 2026-10-22T02:46:25.142827+00:00. This standalone proof is written before the new algebra and application checks. The theorem and canonical-modal application remain OPEN until independent checks, complete actual the main model review and later own adjudication. This result concerns the full operator's mapping of a natural test class, not failure of its inverse on every restricted domain.
 
 ## Statement, background and space
 

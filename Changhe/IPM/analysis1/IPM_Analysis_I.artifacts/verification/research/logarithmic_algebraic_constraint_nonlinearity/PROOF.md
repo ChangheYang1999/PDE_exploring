@@ -1,6 +1,6 @@
 # No finite algebraic linear constraints remove full-graph nonlinear discontinuity
 
-This standalone informal proof is written before its new finite checks. Its status is OPEN until independent verification, actual Claude Opus5.5 review, resolution of objections and later own adjudication. It strengthens result210(B) by removing continuity and closedness assumptions on the finite constraints. It does not change210(A)'s inverse-constant statement.
+This standalone informal proof is written before its new finite checks. Its status is OPEN until independent verification, actual the main model review, resolution of objections and later own adjudication. It strengthens result210(B) by removing continuity and closedness assumptions on the finite constraints. It does not change210(A)'s inverse-constant statement.
 
 ## Setting and exact statement
 

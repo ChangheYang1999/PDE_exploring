@@ -30,7 +30,7 @@ for name in ['dependency_extract.json','dependency_extract_v2.json']:
 reviews={}
 for tag,expected in [('global_residual_first','c80ed871ab917da126abbbe4ec9ddd6b00419923b5e41a3af72a25708ade5e36'),('global_residual_completed','aad96a2c7e75469bc401204c53ff257462927666c0b32096caed95b49c9f09e7'),('global_residual_repaired','f03c7c7889f7bded0aa9699329d1a72814188cf5396ab95bd86974556146b8e8')]:
  m=load(R/(tag+'_metadata.json'));raw=load(R/(tag+'_response.json'));req=(R/(tag+'_request.txt')).read_text()
- require(m['requested_model']=='us.anthropic.claude-opus-5-5' and m['actual_response_model']==raw['model']=='claude-opus-5-5' and m['stop_reason']==raw['stop_reason']=='end_turn','actual model/stop')
+ require(m['requested_model']=='the main model' and m['actual_response_model']==raw['model']=='main-model' and m['stop_reason']==raw['stop_reason']=='end_turn','actual model/stop')
  require(hashlib.sha256(req.encode()).hexdigest()==m['input_sha256']==expected,'review request hash')
  require(req[req.index('\n\nFILE ')+2:]=='\n\n'.join('FILE '+f+'\n'+(B/f).read_text() for f in m['files']),'review current bundle')
  text='\n\n'.join(q['text'] for q in raw['content'] if q['type']=='text')+'\n'

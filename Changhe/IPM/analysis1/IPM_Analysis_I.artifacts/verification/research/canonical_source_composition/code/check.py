@@ -31,7 +31,7 @@ def gate(v):
  need(v['status']=='CONFIRMED_COMPLETE_CANONICAL_MOMENT_ARCHIVE','actual complete156 verdict')
  need(v['counts']==EXPECTED and v['moment_targets']==813276 and v['exact_H_coefficients']==3265568 and v['independent_exact_anchors']==783,'all complete156 counters')
  for p,h in [(ARCHIVE,ASHA),(SOURCE,SSHA),(ZPATH,ZSHA)]:need(v['files'][p]==h,'156 exact mathematical identity')
- r=v['actual_output_review'];need(r['actual_response_model']=='claude-opus-5-5' and r['stop_reason']=='end_turn','actual completed156 model review')
+ r=v['actual_output_review'];need(r['actual_response_model']=='main-model' and r['stop_reason']=='end_turn','actual completed156 model review')
  need(datetime.fromisoformat(r['end_utc'])<datetime.fromisoformat(v['utc']),'156 final after actual review')
 def ball(x):
  need(set(x)=={'schema','mid_m','mid_e','rad_m','rad_e'} and x['schema']=='arb-dyadic-mid-radius-v1','exact archived ball schema')

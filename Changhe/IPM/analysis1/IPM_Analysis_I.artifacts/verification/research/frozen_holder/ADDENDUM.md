@@ -1,6 +1,6 @@
 # Review resolutions for topic74
 
-Written 2026-10-20T23:59:52.979949+00:00, after four substantive actualClaudeOpus5.5 reviews. The original PROOF.md and computed inputs remain unchanged. This addendum supplies the details requested during review and corrects overstatements in the reviews.
+Written 2026-10-20T23:59:52.979949+00:00, after four substantive actualthe main model reviews. The original PROOF.md and computed inputs remain unchanged. This addendum supplies the details requested during review and corrects overstatements in the reviews.
 
 ## Core density used in section2
 In Fourier variables write Q=B zeta dot grad_zeta. Choose smooth cutoffs chi_R supported where 1/(2R)<|zeta|<2R, equal1 where1/R<|zeta|<R, with |Q chi_R|<=C independent ofR. For f inD(Q), distributional product differentiation gives Q(chi_R f)=chi_R Qf+(Qchi_R)f. The final term tends to0 inL2 because its support lies in the two shrinking L2 tails; chi_Rf andchi_RQf converge inL2.

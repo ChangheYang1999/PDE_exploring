@@ -1,6 +1,6 @@
 # Scaling, source functionals and conditional index bookkeeping
 
-Date: 2026-10-20. Status: CONFIRMED for the conditional statements below after independent derivation and actual Claude Opus 5.5 review with two exchanges. The identities below have explicit regularity and graph-domain hypotheses. No global IPM Fredholm assertion is proved here.
+Date: 2026-10-20. Status: CONFIRMED for the conditional statements below after independent derivation and actual the main model review with two exchanges. The identities below have explicit regularity and graph-domain hypotheses. No global IPM Fredholm assertion is proved here.
 
 ## Setting and claims
 
@@ -98,4 +98,4 @@ This note confirms exact algebra subject to stated regularity, and conditional f
 
 ## Review record
 
-Actual model claude-opus-5-5 reviewed this note in scaling_source_index and scaling_source_index_followup (../../notes/reviews/). The follow-up accepted all five resolutions and withdrew its proposed blanket nonresonance requirement and its proposed replacement of graph-norm differentiability by mere membership. Its optional convergence discussion does not replace this note's explicit integral-convergence hypothesis: C^1 and f_y(P)=0 alone need not give an integrable modulus. The stronger hypotheses written above are retained.
+Actual model main-model reviewed this note in scaling_source_index and scaling_source_index_followup (../../notes/reviews/). The follow-up accepted all five resolutions and withdrew its proposed blanket nonresonance requirement and its proposed replacement of graph-norm differentiability by mere membership. Its optional convergence discussion does not replace this note's explicit integral-convergence hypothesis: C^1 and f_y(P)=0 alone need not give an integrable modulus. The stronger hypotheses written above are retained.

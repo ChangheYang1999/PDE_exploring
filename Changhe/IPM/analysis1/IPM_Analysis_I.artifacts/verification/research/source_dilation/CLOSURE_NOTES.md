@@ -1,6 +1,6 @@
 # Closure audit
 
-Both complete current-file reviews report actual model claude-opus-5-5
+Both complete current-file reviews report actual model main-model
 and end_turn. The finalizer checks the raw response, rendered response,
 request hash, every full input file and metadata. Neither truncated
 responses nor model substitution are accepted.

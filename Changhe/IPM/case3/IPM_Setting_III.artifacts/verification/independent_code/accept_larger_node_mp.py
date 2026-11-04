@@ -35,7 +35,7 @@ try:
  a=read(V/'DESIGN_ACCEPTANCE.json');ck('B design status',a['status']=='ACCEPTED_FOR_FINITE_COMPUTATION')
  for p,h in a['bindings'].items():bind(p,h)
  for label in ['mp_design','mp_followup','mp_clarification']:
-  p=V/('opus_'+label);m=read(p/'metadata.json');ck('actual model completed '+label,m['requested_model']=='us.anthropic.claude-opus-5-5'and m['returned_model']=='claude-opus-5-5'and m['stop_reason']=='end_turn'and m['answer_nonempty'])
+  p=V/('opus_'+label);m=read(p/'metadata.json');ck('actual model completed '+label,m['requested_model']=='the main model'and m['returned_model']=='main-model'and m['stop_reason']=='end_turn'and m['answer_nonempty'])
   for name in ['request.txt','response.json','answer.md']:bind(p/name)
  for p in R.glob('MP*.md'):bind(p)
  for p in ['independent_code/run_larger_node_mp.py','independent_code/launch_larger_node_mp.py','independent_code/larger_node_stage.py','independent_code/q_local_checkpoint.py','independent_code/q_checkpoint_reader.py',__file__]:bind(p)

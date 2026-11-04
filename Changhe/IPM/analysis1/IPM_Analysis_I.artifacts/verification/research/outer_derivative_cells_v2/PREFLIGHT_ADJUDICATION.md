@@ -1,6 +1,6 @@
 # Own exterior preparation adjudication
 
-UTC 2026-10-22T08:56:55.053810+00:00. I read the complete actual Claude Opus5.5 response and metadata. Request c11b37fd-b854-4b10-a64d-dce591426d3a, input SHA256 6047952957d972423c1ea337d5ebc87ebc275495fd5abbf3f487dd89e5b251f1, raw response SHA256 b701def29cb0cc5314496a28cd4e8248568432b22a62df619aeab98fdca96df6, response end 2026-10-22T08:56:24.140765+00:00. This is local recorded correspondence, not a provider digital signature.
+UTC 2026-10-22T08:56:55.053810+00:00. I read the complete actual the main model response and metadata. Request c11b37fd-b854-4b10-a64d-dce591426d3a, input SHA256 6047952957d972423c1ea337d5ebc87ebc275495fd5abbf3f487dd89e5b251f1, raw response SHA256 b701def29cb0cc5314496a28cd4e8248568432b22a62df619aeab98fdca96df6, response end 2026-10-22T08:56:24.140765+00:00. This is local recorded correspondence, not a provider digital signature.
 
 I confirm preparation only. The three smoke cells are disjoint pieces of the89-cell cover, not an exterior bound. Their audit began08:51:15 and ended08:51:27; the complete three-cell engine replay ran08:51:38 through08:54:18. Every mathematical output field agrees, excluding the engine seconds fields. The aggregate records bind every replay piece, the exact smoke summary, all saved rows and the same source freeze003ce6478c1d71d404c0eb0cda98c2fdff040b1e6b86a172731e33f2c973b298.
 

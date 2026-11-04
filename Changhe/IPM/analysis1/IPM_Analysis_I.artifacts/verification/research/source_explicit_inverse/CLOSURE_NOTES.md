@@ -1,7 +1,7 @@
 # Closure of the review obligations
 
 The actual Opus5.5 proof review ended2026-10-21T02:44:07Z; its follow-up
-ended02:51:14Z. Both used the model returned as claude-opus-5-5, not a
+ended02:51:14Z. Both used the model returned as main-model, not a
 substitute. The latter found no fatal gap and accepted the specified
 auxiliary operator conditional on the imported proved topics and the
 artifact audit. This note records the audit results independently.

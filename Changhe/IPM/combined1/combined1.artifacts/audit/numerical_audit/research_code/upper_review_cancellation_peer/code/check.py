@@ -24,7 +24,7 @@ def main():
  own=read(R/'research/candidate016_upper_opus_primary/verification/result.json','94c9b9cdf6c6aac7f831a23253ba4b8bae7c576942390b17fd77aabf38d780ea')
  ck('own404 accepted',own['check_count']==77 and all(own['checks'].values()))
  for rel,h in own['inputs'].items():bind(R/rel,h)
- lib=bind(R/'research/candidate016_upper_opus_primary/code/check_v02.py','ae63d919f60b458b074df764cf7f94e35109a13e9828fe8949c0ccbb29b30eeb')
+ lib=bind(R/'research/candidate016_upper_opus_primary/code/check_v02.py','3c1b76898202e9e657372edc5c952db23df2311e20e3d49be7ba8fcdbcabe12d')
  spec=importlib.util.spec_from_file_location('own404',lib);W=importlib.util.module_from_spec(spec);spec.loader.exec_module(W)
  p=read(f('parameters.json'));n=p['n'];T=P([0,1]);v=1-T;raw=P([Q(x) for x in p['raw_P']]);b=Q(p['grouped_b']);A=P([Q(x) for x in p['grouped_P']])
  ck('raw boundary beta',Q(p['ungrouped_beta'])==Q(3,2));ck('leading cancellation',raw==v and A==T and T*raw==v*A)

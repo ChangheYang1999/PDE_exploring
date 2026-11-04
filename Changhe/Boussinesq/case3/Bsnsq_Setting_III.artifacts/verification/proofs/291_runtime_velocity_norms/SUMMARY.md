@@ -29,7 +29,7 @@ Every radius and both beta-r normalizations appear in verification/NORM_COMPARIS
 
 ## Actual model review and adjudication
 
-Opus501 and503 both returned claude-opus-5-5 through the existing Bedrock Python client, requested as us.anthropic.claude-opus-5-5. Their public answers were read in full. Opus501 validated the norm inequalities, inverse, gauge and conditional interpretation, identified the displayed dummy-variable typo, and marked the storage-to-moment dependency OPEN because it had not been supplied. The corrected proof and complete storage calculation were sent in503, which explicitly resolves both issues. The verifier independently checked the corrected formulas symbolically and the moment numerically. Its minor notes are accounted for: the knots span[0,1], and both b and L are read as exact binary rationals by exact_moment2. Neither model verified raw artifacts, so their review is not presented as a numerical endorsement.
+Opus501 and503 both returned main-model through the existing Bedrock Python client, requested as the main model. Their public answers were read in full. Opus501 validated the norm inequalities, inverse, gauge and conditional interpretation, identified the displayed dummy-variable typo, and marked the storage-to-moment dependency OPEN because it had not been supplied. The corrected proof and complete storage calculation were sent in503, which explicitly resolves both issues. The verifier independently checked the corrected formulas symbolically and the moment numerically. Its minor notes are accounted for: the knots span[0,1], and both b and L are read as exact binary rationals by exact_moment2. Neither model verified raw artifacts, so their review is not presented as a numerical endorsement.
 
 ## Dated verdicts
 

@@ -49,7 +49,7 @@ def ai(x):x=F(x);return arb(x.numerator)/arb(x.denominator)
 def ae(x):return [qf(x.lower().fmpq()),qf(x.upper().fmpq())]
 def review_gate(v,tag,r,post):
  m=load(B/'notes/reviews'/f'{tag}_metadata.json');raw=load(B/'notes/reviews'/f'{tag}_response.json');text=(B/'notes/reviews'/f'{tag}_response.md').read_text();req=B/'notes/reviews'/f'{tag}_request.txt'
- need(m['actual_response_model']==raw['model']=='claude-opus-5-5' and m['requested_model']=='us.anthropic.claude-opus-5-5' and m['stop_reason']==raw['stop_reason']=='end_turn','actual accepted dependency model')
+ need(m['actual_response_model']==raw['model']=='main-model' and m['requested_model']=='the main model' and m['stop_reason']==raw['stop_reason']=='end_turn','actual accepted dependency model')
  need(m['request_id']==r['request_id'] and m['input_sha256']==r['input_sha256']==sha(req),'actual dependency request binding');need(text=='\n\n'.join(c['text'] for c in raw['content'] if c['type']=='text')+'\n','full raw response');need(datetime.fromisoformat(m['end_utc'])<datetime.fromisoformat(post['utc'])<datetime.fromisoformat(v['utc']),'actual later dependency disposition')
  need(post['review_request_id']==m['request_id'] and post['review_input_sha256']==m['input_sha256'] and post['review_response_sha256']==sha(B/'notes/reviews'/f'{tag}_response.json'),'actual disposition identity')
  return {k:m[k] for k in ['request_id','input_sha256','actual_response_model','stop_reason','start_utc','end_utc']}
@@ -63,7 +63,7 @@ def main():
  for tag,(name,h) in DEPS.items():pin(pins,name,h);deps[tag]=load(B/name);merge(pins,deps[tag])
  v146=deps['146'];v156=deps['156'];gate146(v146);gate156(v156)
  reviews={'146':review_gate(v146,'global_residual_second_complete_v2',v146['reviews']['global_residual_second_complete_v2'],v146['postreview_record']),'156':review_gate(v156,'canonical_archive_second_actual',v156['actual_output_review'],load(B/'research/canonical_archive_second/evidence/postreview_record.json'))}
- for n,h in [(ARCHIVE,ASHA),(SOURCE,SSHA),(ZPATH,ZSHA),('research/modal_repair/PROOF.md','9f97fa684956c47bb5b9547f0fe8fabe1df51f036e312dd7022873f8cec37843'),('research/modal_repair/evidence/audit_verdict.json','c17c7f4dfbc86ac789838d59d846f5641cae59577dd8e62987edd31904dab6b8')]:pin(pins,n,h)
+ for n,h in [(ARCHIVE,ASHA),(SOURCE,SSHA),(ZPATH,ZSHA),('research/modal_repair/PROOF.md','1cc6a63c3439ce81b497c17b30f88dc84bd5d6044134105051777f052fa4d472'),('research/modal_repair/evidence/audit_verdict.json','c17c7f4dfbc86ac789838d59d846f5641cae59577dd8e62987edd31904dab6b8')]:pin(pins,n,h)
  src=load(B/SOURCE);knots=sorted(set(map(hx,src['arrays']['knots']['hex'])));need(len(knots)==1559 and [knots[0],knots[-1]]==JOINS,'all exact original knots');need(hx(src['scalars_hex']['k'])==K and hx(src['scalars_hex']['L'])==L,'distinguished exact parameters')
  z=load(B/ZPATH)['values']['A00_correction'];Z=[str(ff(z[k])) for k in ['lower_exact_dyadic','upper_exact_dyadic']];need(F(Z[0])<=F(Z[1]),'ordered common Z')
  with (B/'research/canonical_archive_second/evidence/full_spans.jsonl').open() as f:head=parse(next(f))

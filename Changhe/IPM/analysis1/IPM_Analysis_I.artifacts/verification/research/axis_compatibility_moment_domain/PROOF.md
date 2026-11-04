@@ -1,6 +1,6 @@
 # Infinite moment compatibility for a strong axis-weighted graph domain
 
-Date 2026-10-22T02:51:08.584876+00:00. Proof written before the new finite algebra and canonical-application checks. Status OPEN until complete actual Claude Opus5.5 review, independent checks and later own adjudication. This characterizes a test-class restriction of a graph domain; it is not a full inverse theorem.
+Date 2026-10-22T02:51:08.584876+00:00. Proof written before the new finite algebra and canonical-application checks. Status OPEN until complete actual the main model review, independent checks and later own adjudication. This characterizes a test-class restriction of a graph domain; it is not a full inverse theorem.
 
 ## Exact hypotheses and result
 

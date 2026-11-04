@@ -343,7 +343,7 @@ by the coordinator's report hour. No padded 24-hour runtime is claimed.
 Opus collaboration has continued through the existing T1, T2 and
 coordinator files, with independent T4 comparisons and follow-ups on
 rounding, endpoint cancellation and formula scope. Their configured
-model is us.anthropic.claude-opus-5-5; this lane cannot inspect a returned
+model is the main model; this lane cannot inspect a returned
 provider model identifier and makes no stronger identity claim.
 
 ## Final enclosure width

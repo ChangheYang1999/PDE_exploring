@@ -30,7 +30,7 @@ for p,h in d['bindings'].items():bind(p,h)
 reviews=[]
 for label in ['design2','design3','results','results_followup','final','closure']:
  f=V/('opus_'+label);m=json.loads(bind(f/'metadata.json'));resp=json.loads(bind(f/'response.json'));q=bind(f/'request.txt');a=bind(f/'answer.md').decode()
- ck('actual model '+label,m['requested_model']=='us.anthropic.claude-opus-5-5'and m['returned_model']==resp['model']=='claude-opus-5-5')
+ ck('actual model '+label,m['requested_model']=='the main model'and m['returned_model']==resp['model']=='main-model')
  ck('complete '+label,m['stop_reason']==resp['stop_reason']=='end_turn'and m['answer_nonempty'])
  ck('request '+label,hashlib.sha256(q).hexdigest()==m['request_sha256'])
  ck('answer '+label,'\n\n'.join(z['text']for z in resp['content']if z['type']=='text').strip()==a.strip())

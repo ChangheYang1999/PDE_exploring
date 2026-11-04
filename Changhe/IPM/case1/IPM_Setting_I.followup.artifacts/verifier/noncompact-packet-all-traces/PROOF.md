@@ -1,6 +1,6 @@
 # Every transverse axis trace is smooth for the noncompact packet
 
-Date: 2026-10-21. Status: CONFIRMED by independent derivation, exact checks and completed actual Claude Opus5.5 review.
+Date: 2026-10-21. Status: CONFIRMED by independent derivation, exact checks and completed actual the main model review.
 
 ## Exact statement and dependencies
 

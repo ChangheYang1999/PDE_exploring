@@ -1,6 +1,6 @@
 # Independent adjudication after actual completed review
 
-2026-10-21T17:21:41.596963+00:00. Actual model claude-opus-5-5, stop_reason=end_turn, request a354bfd7-2fa3-440a-bedf-f3398f236efa; request digest af572f53a158bf209b21ba9763edc5acf436c83e632a6c8bf1dfed7c8e368dbe; raw response digest b13efc666400a82ce5b982787fa8fe47301e7d30de4ad2dd3406d4254ad97ec4. I read the entire response and rechecked its claims against the actual proofs and implementations.
+2026-10-21T17:21:41.596963+00:00. Actual model main-model, stop_reason=end_turn, request a354bfd7-2fa3-440a-bedf-f3398f236efa; request digest af572f53a158bf209b21ba9763edc5acf436c83e632a6c8bf1dfed7c8e368dbe; raw response digest b13efc666400a82ce5b982787fa8fe47301e7d30de4ad2dd3406d4254ad97ec4. I read the entire response and rechecked its claims against the actual proofs and implementations.
 
 The follow-up explicitly withdraws its earlier claim that K graph membership and the image identity were unproved. Topic138 supplies these and a strictly positive unevaluated image norm. A rigorous restricted-region numerator lower bound would suffice to obtain a numerical quotient, but no such numerical bound is supplied here. This qualification does not affect the established positive necessary quotient.
 

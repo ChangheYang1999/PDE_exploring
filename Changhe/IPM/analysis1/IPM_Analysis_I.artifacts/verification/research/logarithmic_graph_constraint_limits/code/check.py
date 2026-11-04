@@ -5,7 +5,7 @@ sys.dont_write_bytecode=True
 for key in ['OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS']:os.environ[key]='1'
 import sympy as S
 R=Path(__file__).resolve().parents[3];D=R/'research/logarithmic_graph_constraint_limits';E=D/'evidence';sys.path.insert(0,str(R/'research/full_derivative_norm_bound_v2/code'));import protocol as p
-start=p.now();pf=p.load(E/'proof_first.json');assert p.sha(D/'PROOF.md')==pf['proof_sha256']=='5938f6fb1e1d96d44cce1e962cb24fc94fd2367d3dca5449a6646174da6de3c6'
+start=p.now();pf=p.load(E/'proof_first.json');assert p.sha(D/'PROOF.md')==pf['proof_sha256']=='31fd7b87c27f079284ce6a6d415275262d2aea30313cdb76f54b33f80694f92c'
 parent='research/logarithmic_full_graph_nonlinearity/evidence/verdict.json';pv=p.load(R/parent);assert pv['status']=='CONFIRMED_QUADRATIC_DISCONTINUITY_IN_FULL_LOGARITHMIC_LINEARIZED_GRAPH';assert p.sha(R/parent)=='5903873f7766900dcf90224576d926b064a7902243cccfc8aa3838618adadc5e';pins=dict(pv['files']);p.pin(pins,parent);p.rehash(pins)
 checks={}
 def put(name,v):

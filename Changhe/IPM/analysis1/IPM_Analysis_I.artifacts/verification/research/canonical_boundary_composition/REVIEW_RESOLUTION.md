@@ -1,6 +1,6 @@
 # Proof-review binding obligations
 
-Written 2026-10-21T21:45:21.574576+00:00, after reading the complete actual proof response and before this topic's new checker. The actual proof review is request488bba9f-70a2-438c-97b4-e3304abb36b9, claude-opus-5-5/end_turn, completed21:38:04.131318Z. It confirms the conditional mathematics and specifies binding checks.
+Written 2026-10-21T21:45:21.574576+00:00, after reading the complete actual proof response and before this topic's new checker. The actual proof review is request488bba9f-70a2-438c-97b4-e3304abb36b9, main-model/end_turn, completed21:38:04.131318Z. It confirms the conditional mathematics and specifies binding checks.
 
 Topic157 inherits93,98 and99. The original statement's phrase other dependencies93and99 omits the word98 there, although its direct-edge sentence and proof include98. The full dependency list is93,98,99 and is checked explicitly.
 

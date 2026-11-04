@@ -105,5 +105,5 @@ or additional large-mode truncation. It proves no finite angular coverage,
 finite annulus range, global flow topology, transit or orbit cost, coercive
 functional norm, inverse, nonlinear estimate, X3 distance or source
 neighborhood. Neither decisive endpoint of PROMPT.md follows. Actual
-Claude Opus5.5 reviews both this argument and the completed evidence, and
+the main model reviews both this argument and the completed evidence, and
 any unresolved mathematical objection leaves the numerical conclusion OPEN.

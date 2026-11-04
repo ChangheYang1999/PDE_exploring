@@ -26,7 +26,7 @@ check(datetime.fromisoformat(load(D/'evidence/proof_first.json')['utc'])<datetim
 reviews={}
 for tag,stop in [('derivative_scalar_aggregation_complete','end_turn'),('derivative_scalar_aggregation_resolved','end_turn')]:
  m=load(R/(tag+'_metadata.json'));raw=load(R/(tag+'_response.json'));req=(R/(tag+'_request.txt')).read_text()
- check(m['requested_model']=='us.anthropic.claude-opus-5-5' and m['actual_response_model']==raw['model']=='claude-opus-5-5','actual model');check(m['stop_reason']==raw['stop_reason']==stop,'stop');check(hashlib.sha256(req.encode()).hexdigest()==m['input_sha256'],'request digest')
+ check(m['requested_model']=='the main model' and m['actual_response_model']==raw['model']=='main-model','actual model');check(m['stop_reason']==raw['stop_reason']==stop,'stop');check(hashlib.sha256(req.encode()).hexdigest()==m['input_sha256'],'request digest')
  check(req[req.index('\n\nFILE ')+2:]=='\n\n'.join('FILE '+n+'\n'+(B/n).read_text() for n in m['files']),'current bundle')
  text='\n\n'.join(q['text'] for q in raw['content'] if q['type']=='text')+'\n';check(text==(R/(tag+'_response.md')).read_text(),'raw text')
  check('VERDICT: CONFIRM_SAVED_DERIVATIVE_SCALARS_PHYSICAL_OPEN' in text.splitlines(),'accepted restricted scalar audit')

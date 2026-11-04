@@ -62,4 +62,4 @@ For beta=2, the required local zero curve contains nonzero points arbitrarily cl
 
 Dependencies: finite Taylor expansion and trigonometric orthogonality, smooth one-dimensional division, the elementary clamped-spline endpoint derivative formula, and the previously proved beta=2 zero curve. No fitting-lane implementation is imported or executed by the verifier reader.
 
-Audit 2026-10-20T14:26:06.569409+00:00: actual claude-opus-5-5 independently confirmed the calculation and alternative map in opus_reviews/04_polar_regularization/answer.md. The explicit finite-mode, local-interval, necessary-only, and leading-tail qualifications above incorporate its checked comments.
+Audit 2026-10-20T14:26:06.569409+00:00: actual main-model independently confirmed the calculation and alternative map in opus_reviews/04_polar_regularization/answer.md. The explicit finite-mode, local-interval, necessary-only, and leading-tail qualifications above incorporate its checked comments.

@@ -1,7 +1,7 @@
 # Fixed mathematical centres and first review resolutions
 
 This addendum is mandatory with PROOF.md. The original proof is retained.
-The actual first response used claude-opus-5-5 and ended normally. It
+The actual first response used main-model and ended normally. It
 accepted the conditional criterion and requested explicit input premises.
 
 The exact angular nodes are [l*pi/51200,r*pi/51200]. Their expansion

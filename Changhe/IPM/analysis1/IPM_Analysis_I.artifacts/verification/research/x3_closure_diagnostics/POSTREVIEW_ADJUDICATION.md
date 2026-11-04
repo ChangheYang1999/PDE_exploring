@@ -1,6 +1,6 @@
 # Independent post-review adjudication
 
-2026-10-21T16:56:37.790358+00:00. I read the complete actual Opus5.5 follow-up, request f34406f7-1add-4a7e-ac50-2fd0daae28ba, ended 2026-10-21T16:55:42.213621+00:00, input SHA256 fde429b2ab392761d3f4e61d816da210bd799495eaf3e5a6e91046c7ddd5f789, raw response SHA256 e8e07f9b63a6dfd65bccfe8f7fdf847c58f921b337380fdfda4f215883b9684f. Actual model claude-opus-5-5, stop end_turn. This assessment was written after that response and is outside its reviewed bundle.
+2026-10-21T16:56:37.790358+00:00. I read the complete actual Opus5.5 follow-up, request f34406f7-1add-4a7e-ac50-2fd0daae28ba, ended 2026-10-21T16:55:42.213621+00:00, input SHA256 fde429b2ab392761d3f4e61d816da210bd799495eaf3e5a6e91046c7ddd5f789, raw response SHA256 e8e07f9b63a6dfd65bccfe8f7fdf847c58f921b337380fdfda4f215883b9684f. Actual model main-model, stop end_turn. This assessment was written after that response and is outside its reviewed bundle.
 
 The analytic statements withstand my own reconstruction. Expanding the compact radius at infinity gives exponent lattice ja+2l; k<1/3 places2 before3a. The four displayed coefficients may vanish. The C1-valued analytic argument supplies a finite but unevaluated remainder constant. Direct power integration gives the stated outer Green perturbation, its n=1 strain and the conditional degree3 cancellation with normalized c_l feedback. Higher-mode summation is not needed for the n=1 cancellation statement.
 

@@ -1,6 +1,6 @@
 # A compact thermal conjugacy changes the strain-weighted residual moment
 
-Status: CONFIRMED by independent informal proof and8 exact controls, 2026-10-21. Nine finite quadrature checks support the implementation. Three actual claude-opus-5-5 requests returned no written audit; that availability limitation is recorded below. This is a conditional construction from the already verified configuration of packet135, not a B2 profile or a general residual-removal theorem.
+Status: CONFIRMED by independent informal proof and8 exact controls, 2026-10-21. Nine finite quadrature checks support the implementation. Three actual main-model requests returned no written audit; that availability limitation is recorded below. This is a conditional construction from the already verified configuration of packet135, not a B2 profile or a general residual-removal theorem.
 
 ## Statement and hypotheses
 

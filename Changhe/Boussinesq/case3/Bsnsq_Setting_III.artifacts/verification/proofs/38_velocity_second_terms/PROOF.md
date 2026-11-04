@@ -284,7 +284,7 @@ No extra decay, analyticity or global Sobolev assumption is added.
 
 ## 7. External audit and a numerical extraction convention
 
-Actual Opus26 returned claude-opus-5-5 with a written audit agreeing
+Actual Opus26 returned main-model with a written audit agreeing
 with all formulas and the remainder argument, conditional on33 and36.
 The verifier checked its suggestions and made the canonical mode-sum
 identification, explicit parity and derivative notation more explicit.

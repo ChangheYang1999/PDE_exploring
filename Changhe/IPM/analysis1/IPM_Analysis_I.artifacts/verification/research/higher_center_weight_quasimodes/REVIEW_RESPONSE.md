@@ -1,6 +1,6 @@
 # Correction of a scope inference in the first model review
 
-Date 2026-10-22T02:19:53.368173+00:00. This note preserves the original proof unchanged and challenges one sentence in the complete actual Claude Opus5.5 review, request7febcb4a-6050-41ad-9002-3d8f21d384bd.
+Date 2026-10-22T02:19:53.368173+00:00. This note preserves the original proof unchanged and challenges one sentence in the complete actual the main model review, request7febcb4a-6050-41ad-9002-3d8f21d384bd.
 
 The review correctly verifies the quasimode construction. Its section7 also says: "As a consequence, L_ρ does not map general Σ ≠ 0 domain elements into X_m when m ≥ 3." This does not follow from the preceding fact that D rho is outside X_m. The rank term and nonlocal term can cancel at the center. Nonzero strain by itself is not an obstruction to membership of the full image. The statement should not be used to exclude every nonzero-strain perturbation, or to infer generic failure already for m=3,4 among compact perturbations vanishing near the center.
 

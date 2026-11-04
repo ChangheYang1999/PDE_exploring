@@ -32,7 +32,7 @@ def main():
  for row in read(B/'source/T4_bindings.json')['rows']:ex(row['source'],row['sha256'])
  archive=read(R/'research/candidate016_pairing_archive/verification/result.json','c3e148aaab94ed6b50920f114c80260cb7f0061756398a90f6f444fa6b0367c6')
  dual=read(R/'research/candidate016_dual_lower/verification/result.json','e91c096d6ccb1cb0f9e08e63ae53a2c258875cad720c5ab483b875bfb4a4dffa')
- cross=read(R/'research/candidate016_solenoidal_upper/verification/result.json','e97891e271837201e3f4a0d18f96732825238604cbad65fc8b31923e36463603')
+ cross=read(R/'research/candidate016_solenoidal_upper/verification/result.json','817b875413c9ebe2499bb42d36a61dee7af7e35b0423b58a70b569d4deeb9817')
  old=read(R/'research/candidate016_reciprocal_audits/verification/result.json','db9c1fd53efbc78c8de3bb3b5031dce0ca99b26c27d74d09c1024b370d1be35f')
  for d in [archive,dual,cross,old]:
   ck('ownaccepted:'+d['utc'],all(d['checks'].values()))

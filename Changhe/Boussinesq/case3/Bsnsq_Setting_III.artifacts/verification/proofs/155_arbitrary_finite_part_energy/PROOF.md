@@ -146,4 +146,4 @@ The first run integrated across the larger interval[1,2] and FAILED its finest q
 
 The application was checked against the actual126,135,147,148,150,151 and154 proofs, including135's exact scaling formula and uniform strong-ball norm. The positive exterior lower bound needed here uses only the common exterior, so148's interior negative-vorticity region causes no obstruction to it.
 
-Actual model requests240,241,242 all returned model claude-opus-5-5 but no written audit text, with stop reason refusal and no written explanation. No model endorsement is claimed. Earlier152/154 written model reviews do not count as reviews of the new negative-energy lemma. The result is published for further team review with this limitation explicit. No decisive endpoint has been reached.
+Actual model requests240,241,242 all returned model main-model but no written audit text, with stop reason refusal and no written explanation. No model endorsement is claimed. Earlier152/154 written model reviews do not count as reviews of the new negative-energy lemma. The result is published for further team review with this limitation explicit. No decisive endpoint has been reached.

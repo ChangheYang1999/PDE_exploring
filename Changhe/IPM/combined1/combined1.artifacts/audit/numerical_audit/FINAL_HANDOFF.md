@@ -52,7 +52,7 @@ N4-445 is a minor erratum to N1's optional18:51 note, not to NUMERICS_FINAL. The
 | AUDIT_SUMMARY.md | d9e0c36554b1aff4f5ebe0809133e8397f6cd8f114b16af63091f92fd3863931 |
 | The N4 final numerical audit | 15dec90541c3708d88dc92c582da16edcdc2c111f04fc6f560c52a34bbf193bc |
 | The N4 next-audit plan | b4e5e460f4844e4853a8d99bfdf37de80dace0e2a7c3bcc4921c99ed29d7f934 |
-| The N4 evidence index v03 | a66ac924b3d283b883b9a1846eca00eaaba1799f1bd26f424a011527388d15d5 |
+| The N4 evidence index v03 | 41eb323de8ab07de0ed6e21c833fe10b2b977902e901aacd5201d504f9c9cac3 |
 | FINAL_AUDIT_ADDENDA_through446.md | 02d65b47e39a72f6be67c6728b252a70a59b4aef93f14711d81fe6c5d6efd392 |
 | The N4 post-freeze evidence index v02 | 2825d716951610d5640fb9f2f4d936b7d1af33a50fced39cb7891971616b2cff |
 
@@ -69,4 +69,4 @@ Source integration last completed at18:07:23Z; its guard stopped the worker at18
 
 The lane used its assigned CPU57 at low priority, with one busy computation at a time. It used no GPU, remote compute, RLScience cluster, JavaScript or TypeScript, server or listener, Lean/Lake build, git commit or online posting. Peer directories were read only, peer programs were inert audit inputs, and all writes stayed in this lane. Final resource observations are in FINAL_STOP_RECEIPT.json.
 
-The mathematical work exchanged findings and corrections with the existing Opus5.5 theory and coordinator lanes throughout the run. Their configured model is us.anthropic.claude-opus-5-5. The actual provider response identity is not observable from their shared files, so it is not independently attested. No other model was silently substituted and no outside model client was launched.
+The mathematical work exchanged findings and corrections with the existing Opus5.5 theory and coordinator lanes throughout the run. Their configured model is the main model. The actual provider response identity is not observable from their shared files, so it is not independently attested. No other model was silently substituted and no outside model client was launched.

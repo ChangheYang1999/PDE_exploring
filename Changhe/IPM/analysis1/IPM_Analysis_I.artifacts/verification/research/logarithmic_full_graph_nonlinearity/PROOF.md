@@ -1,6 +1,6 @@
 # Quadratic IPM discontinuity in the full logarithmic graph norm
 
-This standalone argument precedes its finite checks. Status OPEN until independent checking, actual Claude Opus5.5 review, resolution of objections and later own adjudication. It applies the transverse mechanism of topic36 to the actual canonical trial with exact compact potentials. It is distinct from topic177, which used an equilibrium and a weaker first-order weighted norm.
+This standalone argument precedes its finite checks. Status OPEN until independent checking, actual the main model review, resolution of objections and later own adjudication. It applies the transverse mechanism of topic36 to the actual canonical trial with exact compact potentials. It is distinct from topic177, which used an equilibrium and a weaker first-order weighted norm.
 
 ## Statement and notation
 

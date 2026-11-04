@@ -1,6 +1,6 @@
 # Final own adjudication
 
-Written 2026-10-22T09:34:58.532796+00:00 after reading all four complete actual Claude Opus5.5/end_turn responses. Main actual review request 972bcc5e-3cc2-4a68-bbe4-0a938959ee88, inputSHA d34083a1ffc4875278d6ad7ddee58b6aaa7913bc4a376d3a6c7f37dd64ec2129, raw responseSHA fb00e2edbb47cc9d2f815bf5ed065f56a57dfe27373c60a9cd99644cf1e64829; its arithmetic follow-up request 76ca6e05-9ae8-489e-9e6a-fdbf95a931c5 ended 2026-10-22T09:34:06.751592+00:00.
+Written 2026-10-22T09:34:58.532796+00:00 after reading all four complete actual the main model responses. Main actual review request 972bcc5e-3cc2-4a68-bbe4-0a938959ee88, inputSHA d34083a1ffc4875278d6ad7ddee58b6aaa7913bc4a376d3a6c7f37dd64ec2129, raw responseSHA fb00e2edbb47cc9d2f815bf5ed065f56a57dfe27373c60a9cd99644cf1e64829; its arithmetic follow-up request 76ca6e05-9ae8-489e-9e6a-fdbf95a931c5 ended 2026-10-22T09:34:06.751592+00:00.
 
 The main actual review's first derivative-table bullet had a doubled arithmetic contribution and an invalid sign rationale. The follow-up explicitly withdrew both. Own exact calculation is (1/8)(1/2+1/6)=1/12 for arbitrary signed chi with |chi|<=1; it agrees with the unchanged informal proof and two executed finite checks. The full derivative table, Hessian bound and strain coefficient have been reconstructed again. The earlier omitted compact-linearity condition was repaired before the completed checks and the prior follow-up. No substantive objection remains.
 

@@ -9,7 +9,7 @@ assert sha(D/'code/audit_boundaries.py')=='41c39254a7d435a92cb5cf2865924aeb4a3ad
 reviews=[];files={}
 for tag in ('full_green_linkage_proof','full_green_linkage_precode_closure','full_green_linkage_preflight'):
  meta=json.loads((R/(tag+'_metadata.json')).read_text());raw=json.loads((R/(tag+'_response.json')).read_text());request=(R/(tag+'_request.txt')).read_text();response=(R/(tag+'_response.md')).read_text()
- assert meta['requested_model']=='us.anthropic.claude-opus-5-5' and meta['actual_response_model']==raw['model']=='claude-opus-5-5' and meta['stop_reason']==raw['stop_reason']=='end_turn'
+ assert meta['requested_model']=='the main model' and meta['actual_response_model']==raw['model']=='main-model' and meta['stop_reason']==raw['stop_reason']=='end_turn'
  assert hashlib.sha256(request.encode()).hexdigest()==meta['input_sha256']
  assert response=='\n\n'.join(x['text'] for x in raw['content'] if x['type']=='text')+'\n'
  assert request.endswith('\n\n'.join('FILE '+p+'\n'+(B/p).read_text() for p in meta['files'])),('review bundle no longer current',tag)

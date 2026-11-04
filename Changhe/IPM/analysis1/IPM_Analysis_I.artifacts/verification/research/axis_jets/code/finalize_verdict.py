@@ -22,7 +22,7 @@ def main():
  paths={Path(__file__),B/'research/axis_jets/PROOF.md',B/'research/axis_jets/code/check_exact.py',B/'data_exact/modal_v2.json'}|{E/p for p in ['checks.json','local_run.json','review_repairs.json','proof_first.json','lead_global_flow.md']};reviews={}
  for tag in ['axis_jets_proof','axis_jets_closure']:
   meta=load(B/f'notes/reviews/{tag}_metadata.json');resp=load(B/f'notes/reviews/{tag}_response.json');req=(B/f'notes/reviews/{tag}_request.txt').read_text();text=(B/f'notes/reviews/{tag}_response.md').read_text()
-  assert meta['actual_response_model']==resp['model']=='claude-opus-5-5' and meta['stop_reason']==resp['stop_reason']=='end_turn'
+  assert meta['actual_response_model']==resp['model']=='main-model' and meta['stop_reason']==resp['stop_reason']=='end_turn'
   assert sha(B/f'notes/reviews/{tag}_request.txt')==meta['input_sha256']
   assert text=='\n\n'.join(x['text'] for x in resp['content'] if x['type']=='text')+'\n'
   if tag.endswith('closure'):

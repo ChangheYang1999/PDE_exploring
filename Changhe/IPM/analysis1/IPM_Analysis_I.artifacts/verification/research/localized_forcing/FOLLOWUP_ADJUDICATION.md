@@ -1,6 +1,6 @@
 # Adjudication of the finite review and linkage follow-up
 
-The whole finite-component review returned actual claude-opus-5-5,
+The whole finite-component review returned actual main-model,
 end_turn, on2026-10-21T08:08:38.817763Z, request
 65d73831-f7c9-4a5f-8e5e-31186212a6e0. It accepted only the restricted
 finite scope, with explicit input and kernel gaps. Its request contained

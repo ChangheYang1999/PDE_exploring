@@ -250,4 +250,4 @@ primary theorem audit in35 remains valid as a separate route to its
 weaker W1q angular conclusion. Neither unavailable external request
 24 nor25 reviewed this final simplified starting step.
 
-Actual Opus27 returned a written audit of the final k=2 starting step on 2026-10-20 at16:29:09Z (claude-opus-5-5,46.644273s). It found no substantive gap and identified the finite-q range, uniform cutoff derivatives, nonnegative transport weight and finite initial high-order norms, all explicitly present above. Its unrelated 3D aside is not used. The verifier checked the response; requests24/25 remain recorded as unavailable audits.
+Actual Opus27 returned a written audit of the final k=2 starting step on 2026-10-20 at16:29:09Z (main-model,46.644273s). It found no substantive gap and identified the finite-q range, uniform cutoff derivatives, nonnegative transport weight and finite initial high-order norms, all explicitly present above. Its unrelated 3D aside is not used. The verifier checked the response; requests24/25 remain recorded as unavailable audits.

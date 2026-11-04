@@ -1,6 +1,6 @@
 # Review resolutions for topic128
 
-The first actual Claude Opus5.5 response stopped at max_tokens and is not
+The first actual the main model response stopped at max_tokens and is not
 acceptance. It independently reconstructed the energy, local jump test,
 endpoint powers and level-set argument. Its complete visible objections
 were checked directly. The current standalone PROOF defines X explicitly

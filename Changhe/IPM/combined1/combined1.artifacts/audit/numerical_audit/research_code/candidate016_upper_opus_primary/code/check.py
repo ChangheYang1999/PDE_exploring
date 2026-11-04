@@ -84,11 +84,11 @@ def main():
  arc=read(R/'research/candidate016_pairing_archive/verification/result.json','c3e148aaab94ed6b50920f114c80260cb7f0061756398a90f6f444fa6b0367c6')
  ck('399_actual_pairings_accepted',all(arc['checks'].values()))
  for rel,h in arc['inputs'].items():bind(R/rel,h)
- tail=read(R/'research/candidate016_angular_tail_bound/verification/result_v01.json','8a6bc15f52acec01664df0e69f47888f6bd422dad3b954962978450d1e59bea1')
+ tail=read(R/'research/candidate016_angular_tail_bound/verification/result_v01.json','bd2c6a135540dc5a7122c2d742eaa8cc9720b4d86b88b123a89580d3aae9c51b')
  ck('403_complete_tail_pattern',all(tail['checks'].values()) and tail['complete_uncomputed_tail_retained'] and not tail['all160_individual_mode_integrals_replayed'])
  for rel,h in tail['inputs'].items():bind(R/rel,h)
  for rel,h in inputs.items():assert sha(R/rel)==h
- out={'utc':datetime.now(timezone.utc).isoformat(),'inputs':inputs,'external_inputs':external,'check_count':len(checks),'checks':checks,'fixtures':rows,'combined':{k:str(v) for k,v in combined.items()},'single':{k:str(v) for k,v in single.items()},'gram':{k:str(v) for k,v in gram.items()},'positive_pole_closed_form_coefficients':{'rational':str(rational),'sqrt3_pi':str(irr)},'configured_peer_model':'us.anthropic.claude-opus-5-5','actual_provider_response_identity_observable':False,'peer_code_executed':False,'elapsed_seconds':time.monotonic()-start,'verdict':'CONFIRMED primary Opus general review, exact fixtures and candidate finite-source premise. Numerical improved upper and reciprocal review remain separate.'}
+ out={'utc':datetime.now(timezone.utc).isoformat(),'inputs':inputs,'external_inputs':external,'check_count':len(checks),'checks':checks,'fixtures':rows,'combined':{k:str(v) for k,v in combined.items()},'single':{k:str(v) for k,v in single.items()},'gram':{k:str(v) for k,v in gram.items()},'positive_pole_closed_form_coefficients':{'rational':str(rational),'sqrt3_pi':str(irr)},'configured_peer_model':'the main model','actual_provider_response_identity_observable':False,'peer_code_executed':False,'elapsed_seconds':time.monotonic()-start,'verdict':'CONFIRMED primary Opus general review, exact fixtures and candidate finite-source premise. Numerical improved upper and reciprocal review remain separate.'}
  p=B/'verification/result.json'
  with p.open('x') as f:json.dump(out,f,indent=2);f.write('\n')
  print(out['utc'],len(checks),'checks',len(inputs),'bindings',sha(p),'seconds',out['elapsed_seconds'],flush=True)

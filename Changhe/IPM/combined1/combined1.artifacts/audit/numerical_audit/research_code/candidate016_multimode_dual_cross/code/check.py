@@ -51,7 +51,7 @@ def main():
     for rel,h in archive['inputs'].items():bind(R/rel,h)
     for row in archive['rows']:bind(R/row['group_record'],row['group_sha256'])
     olddual=read(R/'research/candidate016_dual_lower/verification/result.json','e91c096d6ccb1cb0f9e08e63ae53a2c258875cad720c5ab483b875bfb4a4dffa')
-    oldcross=read(R/'research/candidate016_solenoidal_upper/verification/result.json','e97891e271837201e3f4a0d18f96732825238604cbad65fc8b31923e36463603')
+    oldcross=read(R/'research/candidate016_solenoidal_upper/verification/result.json','817b875413c9ebe2499bb42d36a61dee7af7e35b0423b58a70b569d4deeb9817')
     deepdual={v['n']:Q(v['strict_floor_exact']) for v in archive['rows'] if v['kind']=='dual'}
     deepcross={v['n']:Q(v['strict_floor_exact']) for v in archive['rows'] if v['kind']=='cross'}
     accepted=read(R/'research/candidate016_scaled_norm_peer/verification/comparison_G0_rF_G1_P2_v01.json','a2f68954828f60a7dc8983ecb69e8e30ddcd8e868ec0d1b58ce56faa27eeaedc')

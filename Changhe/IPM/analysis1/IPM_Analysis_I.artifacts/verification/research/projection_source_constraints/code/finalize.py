@@ -25,7 +25,7 @@ for out in [c,s]:
 reviews=[]
 for tag in ['projection_source_constraints_proof','projection_source_constraints_followup']:
  m=load(R/(tag+'_metadata.json'));raw=load(R/(tag+'_response.json'));req=(R/(tag+'_request.txt')).read_text();text='\n\n'.join(v['text'] for v in raw['content'] if v['type']=='text')+'\n'
- assert m['requested_model']=='us.anthropic.claude-opus-5-5' and m['actual_response_model']==raw['model']=='claude-opus-5-5'
+ assert m['requested_model']=='the main model' and m['actual_response_model']==raw['model']=='main-model'
  assert m['stop_reason']==raw['stop_reason']=='end_turn' and text==(R/(tag+'_response.md')).read_text()
  assert hashlib.sha256(req.encode()).hexdigest()==m['input_sha256']
  assert all(v in req for v in ['no JavaScript/TypeScript','no servers/listeners/tunnels','no RLScience cluster','no Lean/Lake builds'])

@@ -10,7 +10,7 @@ for n,s in [('lemma_evenness','If Theta0 is even, so is F.'),('final_taper_accou
 check('finite_active_cutoffs_proved','The only active horizontal cutoffs are chi0,chic,chi1,zeta1' in support)
 check('supercritical_strip_residual_distinguished',"(beta-2)A x^3 zeta1'(x)/4" in support)
 check('review_no_opus_invocation','No model invocation succeeded' in review)
-check('existing_actual_opus_followups',all(json.loads((v/f'opus{j}_status.json').read_text())['returned_model']=='claude-opus-5-5'for j in [492,493,494]))
+check('existing_actual_opus_followups',all(json.loads((v/f'opus{j}_status.json').read_text())['returned_model']=='main-model'for j in [492,493,494]))
 eq('endpoint_index_constant',12*(-(3*beta+2)/(4*beta))+6*d/beta)
 eq('critical_transient_loss',S.Rational(3,4)*S.Rational(1,2)-S.Rational(3,8))
 eq('critical_passage_lower',S.Rational(3,2)-S.Rational(1,4)-S.Rational(5,4))

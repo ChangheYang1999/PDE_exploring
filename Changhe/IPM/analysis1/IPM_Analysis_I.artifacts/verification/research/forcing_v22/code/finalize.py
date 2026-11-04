@@ -43,13 +43,13 @@ for tag,expected,stop in [
  ('forcing_v22_completed_followup','e922abc48a9a2d4e3b28f15dbfa53dadb1d72b515d38751247cef127a26cc629',None),
  ('forcing_v22_completed_adaptive','8125e83370fe50b8c6e1caca79092b05392a670f061c6e629e59763476ccf323','end_turn')]:
  m=read(R/(tag+'_metadata.json'));req=(R/(tag+'_request.txt')).read_text()
- assert m['requested_model']=='us.anthropic.claude-opus-5-5' and hashlib.sha256(req.encode()).hexdigest()==m['input_sha256']==expected
+ assert m['requested_model']=='the main model' and hashlib.sha256(req.encode()).hexdigest()==m['input_sha256']==expected
  assert req[req.index('\n\nFILE ')+2:]=='\n\n'.join('FILE '+f+'\n'+(B/f).read_text() for f in m['files'])
  if stop is None:
   assert 'actual_response_model' not in m and 'ValidationException' in m['availability_error'] and not (R/(tag+'_response.json')).exists()
   reviews[tag]=dict(status='PROVIDER_CONFIGURATION_REJECTED_NO_MODEL_EXECUTION',input_sha256=expected,availability_error=m['availability_error'],start_utc=m['start_utc'],end_utc=m['end_utc']);suffixes=['_metadata.json','_request.txt']
  else:
-  raw=read(R/(tag+'_response.json'));assert m['actual_response_model']==raw['model']=='claude-opus-5-5' and m['stop_reason']==raw['stop_reason']==stop
+  raw=read(R/(tag+'_response.json'));assert m['actual_response_model']==raw['model']=='main-model' and m['stop_reason']==raw['stop_reason']==stop
   text='\n\n'.join(c['text'] for c in raw['content'] if c['type']=='text')+'\n';assert text==(R/(tag+'_response.md')).read_text()
   if stop=='end_turn':assert 'I accept the restricted conditional finite theorem' in text and 'No physical forcing norm, inverse estimate, fixed point or IPM endpoint follows.' in text
   reviews[tag]={k:m[k] for k in ['actual_response_model','stop_reason','request_id','input_sha256','start_utc','end_utc']};reviews[tag]['accepted_restricted_theorem']=(stop=='end_turn');suffixes=['_metadata.json','_request.txt','_response.json','_response.md']

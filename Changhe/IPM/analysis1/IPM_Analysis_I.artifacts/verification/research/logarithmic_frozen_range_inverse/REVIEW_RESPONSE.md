@@ -1,6 +1,6 @@
 # Response to the actual-model review
 
-Date 2026-10-22T03:37:22.651305+00:00. Actual Claude Opus5.5/end_turn review 8f3628bf-8b33-41ae-bc92-9e26b9bf61f0 has been read in full. No proof or reviewed code is changed.
+Date 2026-10-22T03:37:22.651305+00:00. Actual the main model review 8f3628bf-8b33-41ae-bc92-9e26b9bf61f0 has been read in full. No proof or reviewed code is changed.
 
 I agree that the assertions s+(-s)=0 and the secondary integer cancellation are tautological. The secondary logarithmic coefficient checks record the formula being checked; they do not independently reconstruct it. Reusing the unused polynomial variable r as the formal phase h is algebraically valid, but does not itself supply that reconstruction. The final report will not cite these assertions as independent evidence. The independent quadratic coefficient expansion, completion of the square, direct original Fourier endpoint integrability margins, hexadecimal parameter decoding and separate minimum-by-derivative-sign checks remain meaningful. The actual-model analytic review and my derivation below support the Fourier pairing.
 

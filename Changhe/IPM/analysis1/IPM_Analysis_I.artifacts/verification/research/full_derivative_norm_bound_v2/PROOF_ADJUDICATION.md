@@ -2,7 +2,7 @@
 
 2026-10-21T23:59:48.059024+00:00. Verdict: CONFIRMED analytic argument, numerical application OPEN.
 
-I read the complete actual Claude Opus5.5 proof review and clarification. I independently reconstructed P'=-2P+mR and R'=mP-2R-r²F. Differentiating the latter gives R''=-4mP+(m²+4)R-r²F', with the 2r²F cancellation. The signs of W1 and W2 then follow from U_r/r=-P and U_theta/r=R. Jet factorials and Fourier imaginary coefficient extraction remain implementation obligations.
+I read the complete actual the main model proof review and clarification. I independently reconstructed P'=-2P+mR and R'=mP-2R-r²F. Differentiating the latter gives R''=-4mP+(m²+4)R-r²F', with the 2r²F cancellation. The signs of W1 and W2 then follow from U_r/r=-P and U_theta/r=R. Jet factorials and Fourier imaginary coefficient extraction remain implementation obligations.
 
 The review's inner-integral exponent was a typo in its prose, not in the proof. Squared physical residual bounds give r^10, so the weighted polar integrand is r^5 and its integral is R_i^6/6. I checked this directly. The first-order forcing jet optimization implements precisely W1 and W2 if the ODE-derived F' slot is used; differentiating r²F a second time there would be wrong.
 

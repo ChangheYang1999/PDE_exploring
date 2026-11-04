@@ -1,6 +1,6 @@
 # Explicit weighted tail bounds for a finite smooth Q interpolant
 
-Status: CONFIRMED. Independent informal proof preceded its checker, which passed at 21:00:58Z. Actual Claude Opus5.5 lead reviewed all bounds at 21:03Z. This is a statement about finite coefficient formulas, not a profile theorem.
+Status: CONFIRMED. Independent informal proof preceded its checker, which passed at 21:00:58Z. Actual the main model lead reviewed all bounds at 21:03Z. This is a statement about finite coefficient formulas, not a profile theorem.
 
 ## Statement and notation
 

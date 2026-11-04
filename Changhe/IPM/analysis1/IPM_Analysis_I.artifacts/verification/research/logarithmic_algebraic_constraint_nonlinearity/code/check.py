@@ -4,7 +4,7 @@ sys.dont_write_bytecode=True
 for key in ['OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS']:os.environ[key]='1'
 import sympy as S
 R=Path(__file__).resolve().parents[3];D=R/'research/logarithmic_algebraic_constraint_nonlinearity';E=D/'evidence';sys.path.insert(0,str(R/'research/full_derivative_norm_bound_v2/code'));import protocol as p
-start=p.now();pf=p.load(E/'proof_first.json');assert p.sha(D/'PROOF.md')==pf['proof_sha256']=='989c8c8eebeecf3a85b346b2acede286ad2d86d8ad05f1769221e9693963cc02'
+start=p.now();pf=p.load(E/'proof_first.json');assert p.sha(D/'PROOF.md')==pf['proof_sha256']=='0f6cdea01e3732da91219ed42eece5b3f16908dcd1bca4112465cb09705fb7dc'
 parent='research/logarithmic_graph_constraint_limits/evidence/verdict.json';pv=p.load(R/parent);assert p.sha(R/parent)=='b42ab9793e3851b8aaf16dc79a822c4c001d17140365a3b20b12eada8a73366b';assert pv['status']=='CONFIRMED_GRAPH_DENSE_NORMALIZATION_IDENTICAL_INVERSE_CONSTANTS_AND_FINITE_CONTINUOUS_CONSTRAINT_NONLINEARITY';pins=dict(pv['files']);p.pin(pins,parent);p.rehash(pins)
 checks={}
 def put(n,v):

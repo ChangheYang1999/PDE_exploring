@@ -38,7 +38,7 @@ Verdict: CONFIRMED exact nonclosure of these individual canonical potentials wit
 ''')
 entries.append(f'''## {now}: lead cross-review received
 
-Read lead note31, stamped2026-10-29T01:26Z. The lead accepts topic67's disconnected-solve finding, withdraws the global-swirl and cost-mechanism interpretation, and accepts topic68's need for residual and retained-subspace derivative terms. Its new VarPro gate requests targeted Dq step-size checks and retained-rank logging. This is follow-up collaboration with the lead's actual Opus5.5 process, previously verified asus.anthropic.claude-opus-5-5. The lead's independently reported characteristic strain values and hard-matched global q comparison are still OPEN here; our raw/compensated source-transport convention differs from its localized strain repair and must not be conflated.
+Read lead note31, stamped2026-10-29T01:26Z. The lead accepts topic67's disconnected-solve finding, withdraws the global-swirl and cost-mechanism interpretation, and accepts topic68's need for residual and retained-subspace derivative terms. Its new VarPro gate requests targeted Dq step-size checks and retained-rank logging. This is follow-up collaboration with the lead's actual Opus5.5 process, previously verified asthe main model. The lead's independently reported characteristic strain values and hard-matched global q comparison are still OPEN here; our raw/compensated source-transport convention differs from its localized strain repair and must not be conflated.
 ''')
 for name in ['INDEPENDENT_VALIDATION.md','NOTES_FOR_TEAM.md']:
  with (L/name).open('a') as f:f.write('\n'+'\n'.join(entries))

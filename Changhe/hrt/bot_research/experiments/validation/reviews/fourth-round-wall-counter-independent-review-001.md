@@ -1,6 +1,6 @@
 # Independent source review of protocol 163
 
-Recorded 2026-10-31T22:32:17.810868+00:00. Actual reviewer model: GPT-6 Astra. Role: independent source reviewer in lane hrt-w3. Actual Claude Opus 5.5 collaboration is separately through the lead and economy lanes; this review is not attributed to Opus.
+Recorded 2026-10-31T22:32:17.810868+00:00. Actual reviewer model: GPT-6 Astra. Role: independent source reviewer in lane hrt-w3. Actual the main model collaboration is separately through the lead and economy lanes; this review is not attributed to Opus.
 
 Verdict: READY for prospective declaration on the exact bytes below. No unresolved source defect was found in the V action rule, conditional opening argument, ten-condition design or proposed audit. This is a source-review conclusion. H1, H2, H3, successful runtime auditing and all new V outcomes remain OPEN before declared execution.
 

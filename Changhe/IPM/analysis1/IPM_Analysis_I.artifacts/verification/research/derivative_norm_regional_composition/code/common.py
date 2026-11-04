@@ -8,7 +8,7 @@ assert not sys.flags.optimize
 for key in ['OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','NUMEXPR_NUM_THREADS']:os.environ[key]='1'
 ROOT=Path(__file__).resolve().parents[3];D=ROOT/'research/derivative_norm_regional_composition';E=D/'evidence';REV=ROOT/'notes/reviews'
 UP=ROOT/'research/full_derivative_norm_bound_v2/code/protocol.py'
-assert hashlib.sha256(UP.read_bytes()).hexdigest()=='b57406959b9857d3acf994d7c1067fe4f534fa3b2362d2ddc3ed785be2cdcdcf'
+assert hashlib.sha256(UP.read_bytes()).hexdigest()=='b3bb1f089eaddd540e4b478f4c4108271172cb12550eb82dae3845744be0fd0f'
 spec=importlib.util.spec_from_file_location('regional183_review_util',UP);u=importlib.util.module_from_spec(spec);spec.loader.exec_module(u)
 load,sha,write,pin,rehash,auth,when,now=u.load,u.sha,u.write,u.pin,u.rehash,u.auth,u.when,u.now
 MODES=['coarse','exterior','both'];REGIONS=['inner','middle','outer'];ENGINES=['arb512','iv220']

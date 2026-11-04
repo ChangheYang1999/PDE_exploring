@@ -1,6 +1,6 @@
 # Review resolutions
 
-2026-10-21. The first review was actual Claude Opus5.5, stop end_turn, request84a6fedb-5e81-4ec2-bf98-e2a428730bd2. It accepted the estimates with explicit scope and wording requests. The original proof has been preserved.
+2026-10-21. The first review was actual the main model, stop end_turn, request84a6fedb-5e81-4ec2-bf98-e2a428730bd2. It accepted the estimates with explicit scope and wording requests. The original proof has been preserved.
 
 G1. D_L is a real linear subspace containing every h_delta. Each h in D_L has a continuous even-even factor in h=x^2 y a near the center and J(h)=a(0). This makes J real-linear and J(h_delta)=1. Factor continuity is a property of each element; it is not continuity of J as a functional on the graph norm. The phrase closed under addition in the original proof is redundant with linearity, and the construction uses all real scalar multiples.
 

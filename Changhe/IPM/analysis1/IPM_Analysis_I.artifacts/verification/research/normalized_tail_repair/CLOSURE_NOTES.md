@@ -66,7 +66,7 @@ claim was rejected before finalization.
 The first complete closure review ended05:51:12.540553Z, request
 ce2f8cef-33a5-4dcc-869d-065762ecd296, input SHA
 c0aa0f3286967f214302dd4fa25c0cd7dd4805163434fc41764e323231dd8f72,
-actualclaude-opus-5-5/end_turn. It accepted the scoped construction.
+actualmain-model/end_turn. It accepted the scoped construction.
 Independent adjudication rejected several incidental review statements:
 the Laurent q0 does not depend on the lowest sine h0. Three descending
 synthetic divisions make output coefficient at indexM depend only on

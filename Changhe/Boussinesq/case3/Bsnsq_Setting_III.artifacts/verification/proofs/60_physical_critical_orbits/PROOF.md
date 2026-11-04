@@ -202,7 +202,7 @@ require the singleton-limit input, whereas TheoremB does. The previously
 completed exact multi-index checks in packet59 also check the product
 rule used in TheoremB. There is no formal proof-assistant verification.
 
-Actual Opus requests58 and59 returned model claude-opus-5-5 but no written
+Actual Opus requests58 and59 returned model main-model but no written
 audit, stop_reason refusal, after5.064241092 and5.078431171seconds. The raw
 responses label the refusal category cyber. This is an availability
 limitation, not a mathematical objection or an endorsement. No substitute

@@ -53,7 +53,7 @@ QFREE64 immutable150step state evidence/published_snapshots/qfree_cl1.5_N64_Lf0.
 
 Ownfixedell2.5slopesequenceN12a12.93626,N16a14.85107,N20a17.25996381. N20dense651q1/q2absR.000375360777/.000375360775at(0,.8924073481),Nf1.64279524966e-5/1.64279524875e-5,Nv1.1163883757e-5/1.11638837508e-5at(0,.7003092822). SparseunionstilllargerNf1.668167563e-5,Nv1.237643931e-5,abs.000455084175at(0,.91). No convergence. Strongjetweight100N20a17.25969122,T1-6.88939e-7,T2+2.12108e-7,otherresunchangedscale; q1/q2checked. FullresultsindividualJSONs.
 
-Actualmodelcollaboration: leadMODELus.anthropic.claude-opus-5-5,numFable5.1. Leadlatest18:28notesrequests five-linefrozenscope (nowresearch/homogeneous_regularity_ceiling/SCOPE.md, stillneedsnotify),N20Nvandsecondlevel (nowcompletedinVERIFY_REPORT, stillneedsnotify). Leadclaims ENER1/NEAR1 independentlyprovedasown48/49. NeednotifybothCONFIRMED andown47manufacturedPASS, askOpusfileauditwithoutuserquestion. Formerproviderrefusal/emptyresponse not review; no retry,nestedcredentialsfailurewasnotinference.
+Actualmodelcollaboration: leadMODELthe main model,numFable5.1. Leadlatest18:28notesrequests five-linefrozenscope (nowresearch/homogeneous_regularity_ceiling/SCOPE.md, stillneedsnotify),N20Nvandsecondlevel (nowcompletedinVERIFY_REPORT, stillneedsnotify). Leadclaims ENER1/NEAR1 independentlyprovedasown48/49. NeednotifybothCONFIRMED andown47manufacturedPASS, askOpusfileauditwithoutuserquestion. Formerproviderrefusal/emptyresponse not review; no retry,nestedcredentialsfailurewasnotinference.
 
 RESUME_HERE:
 1 Actualshiftrestartdate-u,readfullPROMPT,ownstatus/teamreports/notes. Compactionnotnewshift; fullPROMPTlastread17:55includingtail.

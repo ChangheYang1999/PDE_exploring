@@ -27,7 +27,7 @@ assert green['status']=='PASS_CORRECTED_CANONICAL_GREEN_PREFACTOR' and green['mo
 for n,h in green['files'].items():pin(n,h)
 raw=load(R/(tag+'_response.json'));m=load(R/(tag+'_metadata.json'));req=(R/(tag+'_request.txt')).read_text()
 text='\n\n'.join(v['text'] for v in raw['content'] if v['type']=='text')+'\n'
-assert m['requested_model']=='us.anthropic.claude-opus-5-5' and m['actual_response_model']==raw['model']=='claude-opus-5-5'
+assert m['requested_model']=='the main model' and m['actual_response_model']==raw['model']=='main-model'
 assert m['stop_reason']==raw['stop_reason']=='end_turn'
 assert text==(R/(tag+'_response.md')).read_text() and hashlib.sha256(req.encode()).hexdigest()==m['input_sha256']
 assert all(x in req for x in ['no JavaScript/TypeScript','no servers/listeners/tunnels','no RLScience cluster','no Lean/Lake builds'])
@@ -41,7 +41,7 @@ assert [v for v in text.splitlines() if v.strip()][-1]=='VERDICT: CONFIRM_EXACT_
 # Authenticate the complete original review as well as its retained immutable inputs.
 oldtag='modal_annular_regularity';om=load(R/(oldtag+'_metadata.json'));orr=load(R/(oldtag+'_response.json'));oq=(R/(oldtag+'_request.txt')).read_text()
 ot='\n\n'.join(v['text'] for v in orr['content'] if v['type']=='text')+'\n'
-assert om['requested_model']=='us.anthropic.claude-opus-5-5' and om['actual_response_model']==orr['model']=='claude-opus-5-5'
+assert om['requested_model']=='the main model' and om['actual_response_model']==orr['model']=='main-model'
 assert om['stop_reason']==orr['stop_reason']=='end_turn' and ot==(R/(oldtag+'_response.md')).read_text()
 assert hashlib.sha256(oq.encode()).hexdigest()==om['input_sha256']
 assert om['files']==load(D/'review_files.json')

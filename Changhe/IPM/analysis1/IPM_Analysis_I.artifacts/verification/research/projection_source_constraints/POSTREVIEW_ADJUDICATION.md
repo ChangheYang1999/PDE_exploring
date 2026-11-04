@@ -1,10 +1,10 @@
 # Independent adjudication after the completed follow-up
 
-Written 2026-10-21T20:47:42.069438+00:00. I read both complete actual Claude Opus5.5 responses. The first
+Written 2026-10-21T20:47:42.069438+00:00. I read both complete actual the main model responses. The first
 request b8b7a51f-aceb-4de1-b5b7-51dad87dacae ended20:42:56.946156Z with objections.
 The follow-up request 39f4894e-70f8-4876-8925-652af01719ea, input SHA0ea4fafad1fe4ad9543e5a69ed1170f6a61c442308149b8e411e5f9253a4d675, ended
 2026-10-21T20:46:52.858154+00:00 with end_turn and accepted only the explicit-pair result.
-The actual response model is claude-opus-5-5 in both records.
+The actual response model is main-model in both records.
 
 I independently checked the exact left-minus-right product-rule signs and
 normalization of the source-only matrix. The full coordinate-array checks do

@@ -1,6 +1,6 @@
 # A transverse-pressure term missing from an asserted axis reduction
 
-Status: CONFIRMED independent axis-limit calculation and exact counterexample, with 37 exact controls and two written actual Claude Opus5.5 reviews. The proof was written before the controls and refined after independent source and model checks. The claim concerns a particular published preprint equation, not existence or nonexistence in B2.
+Status: CONFIRMED independent axis-limit calculation and exact counterexample, with 37 exact controls and two written actual the main model reviews. The proof was written before the controls and refined after independent source and model checks. The claim concerns a particular published preprint equation, not existence or nonexistence in B2.
 
 ## 1. Source and precise statement
 
@@ -106,4 +106,4 @@ Rendered-source correction UTC 2026-10-21T10:05:52.377975+00:00: the PDF page10 
 
 Scope refinement UTC 2026-10-21T10:07:53.866141+00:00: actualOpus235 agrees with the axis-limit/refutation and independently identifies the correctedmu16. Its valid zero-buoyancy objection is adopted: reducedU0 fixes only axis data. Its suggestion that Theorem4.2 itself has an invalid proof is not adopted; the theorem explicitly assumes the reduced system, and that conditional ODE deduction remains valid. A follow-up review has been requested on these distinctions with the previously omitted source sections.
 
-Final audit UTC 2026-10-21T10:11:08.627759+00:00: returned_model claude-opus-5-5 confirmed for235 and236. The follow-up agrees with the corrected source scope and the exact Q identity; its lifespan refinement is adopted and independently verified from the printed Lemma4.1/Theorem4.2. No audit of the global reduced-profile construction or the conditional estimates is claimed.
+Final audit UTC 2026-10-21T10:11:08.627759+00:00: returned_model main-model confirmed for235 and236. The follow-up agrees with the corrected source scope and the exact Q identity; its lifespan refinement is adopted and independently verified from the printed Lemma4.1/Theorem4.2. No audit of the global reduced-profile construction or the conditional estimates is claimed.

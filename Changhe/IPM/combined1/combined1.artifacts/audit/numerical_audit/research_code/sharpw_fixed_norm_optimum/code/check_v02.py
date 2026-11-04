@@ -176,7 +176,7 @@ def main():
         "other_s_star": str(s0), "other_s_maximum_square_exact": str(sup2),
         "X007_floor_exact": str(p["X007_floor"]),
         "X007_over_eta_star_strict_lower_exact": str(p["X007_floor"]/eta),
-        "configured_peer_model": "us.anthropic.claude-opus-5-5",
+        "configured_peer_model": "the main model",
         "actual_provider_response_observed": False,
         "peer_code_executed": False, "source_integrals_recomputed": False,
         "verdict": "CONFIRMED fixed-norm scalar maximum, T4-479 witness and T2 reviews/repair arithmetic. REFUTED original unrestricted selected-threshold maximality. No candidate existence, optimality over different norms, or new correction-distance conclusion."

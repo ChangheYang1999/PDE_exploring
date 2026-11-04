@@ -1,6 +1,6 @@
 # Independent final adjudication of nine canonical rectangles
 
-Written 2026-10-21T22:59:01.978597+00:00, after fully reading the actual complete Claude Opus5.5 response. Request cec81854-5dae-47d1-a6dd-adab8356fd6e; input SHA256 61424ca85dd276b0f5a4597fd96912e3183ff9339c7c21a132bb4ad22fe7c117; raw response SHA256 71a064f2d9b9ac5e621d004ee059306fc95086c2f56b94a7f5c20d5da38e307f; review ended 2026-10-21T22:58:21.681023+00:00.
+Written 2026-10-21T22:59:01.978597+00:00, after fully reading the actual complete the main model response. Request cec81854-5dae-47d1-a6dd-adab8356fd6e; input SHA256 61424ca85dd276b0f5a4597fd96912e3183ff9339c7c21a132bb4ad22fe7c117; raw response SHA256 71a064f2d9b9ac5e621d004ee059306fc95086c2f56b94a7f5c20d5da38e307f; review ended 2026-10-21T22:58:21.681023+00:00.
 
 CONFIRMED for the exact nine-rectangle statement in PROOF.md and targets_exact.json. I independently re-derived U_r=-psi_theta/r and U_theta=psi_r, the signs in v1,v2,T, the finite continuous axis quotient polynomials and the Green P/R correspondence. The Chebyshev construction gives the third-derivative sum bound 8n^3+16(sum_(j=1)^(n-1)j^3)=4n^4+4n^2, below the retained source majorant. Whole input boxes contain the correlated canonical tuple only at distinguished z_star. Neither the mathematical statement nor the checker substitutes an arbitrary interval center for that scalar or for the exact angular center.
 

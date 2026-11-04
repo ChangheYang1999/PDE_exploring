@@ -16,7 +16,7 @@ times=[first['proof_existed_by_utc'],run['start_utc'],r['utc'],run['end_utc'],ar
 paths={Path(__file__),B/'research/lower_regularity/PROOF.md',B/'research/lower_regularity/code/check_regularity.py',B/'research/lower_regularity/code/audit_output.py',B/'data_exact/modal_v2.json'}|{E/n for n in ['inputs.json','checks.json','output_audit.json','review_summary.json','local_run.json','audit_run.json','proof_first.json','proof_before_review.md','review_repairs.json','audit_first_diagnostic.json','audit_first_diagnostic.log']};reviews={}
 for tag in ['lower_regularity_proof','lower_regularity_closure']:
  m=load(B/f'notes/reviews/{tag}_metadata.json');resp=load(B/f'notes/reviews/{tag}_response.json');req=(B/f'notes/reviews/{tag}_request.txt').read_text();text=(B/f'notes/reviews/{tag}_response.md').read_text()
- assert m['actual_response_model']==resp['model']=='claude-opus-5-5' and m['stop_reason']==resp['stop_reason']=='end_turn'
+ assert m['actual_response_model']==resp['model']=='main-model' and m['stop_reason']==resp['stop_reason']=='end_turn'
  assert sha(B/f'notes/reviews/{tag}_request.txt')==m['input_sha256'] and text=='\n\n'.join(x['text'] for x in resp['content'] if x['type']=='text')+'\n'
  if tag.endswith('closure'):
   assert 'ACCEPT_STATED_SCOPE' in text and datetime.fromisoformat(arun['end_utc'])<datetime.fromisoformat(m['start_utc'])

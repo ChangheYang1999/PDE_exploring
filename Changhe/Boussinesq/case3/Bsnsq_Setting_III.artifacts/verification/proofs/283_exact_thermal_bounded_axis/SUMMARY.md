@@ -8,7 +8,7 @@ The construction is **not a B2solution**: its vorticity residual is nonzero some
 
 New proof ingredients: a flat-residual correction integrated along the complete backward flow, justified under transverse expansion from suppR; uniform transverse expansion for beta>2; and an explicit one-way passage estimate from suppRfor beta2. See PROOF.mdand verification/SUPPORT_PROOF.md. The all-order coefficient construction is P278with a modified exterior drift and additional summable bounds on cutoffs. No numerical candidate or formal proof build is claimed.
 
-Exact/literal controls and manufactured ordinary quadrature checks are in verification/controls.json. Additional15/15controls are in verification/support_checks.json. Public review metadata and full independent adjudication are in verification/opus_adjudication.md. All four modelcalls returned claude-opus-5-5; their public text is preserved separately from unused private response blocks. Three explanatory errors in the review prose were corrected through follow-ups, without changing the main theorem.
+Exact/literal controls and manufactured ordinary quadrature checks are in verification/controls.json. Additional15/15controls are in verification/support_checks.json. Public review metadata and full independent adjudication are in verification/opus_adjudication.md. All four modelcalls returned main-model; their public text is preserved separately from unused private response blocks. Three explanatory errors in the review prose were corrected through follow-ups, without changing the main theorem.
 
 
 ## A164 review adjudication, 2026-10-22T05:53:10.031992+00:00

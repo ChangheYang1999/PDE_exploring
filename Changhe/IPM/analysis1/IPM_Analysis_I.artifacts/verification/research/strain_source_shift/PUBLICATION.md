@@ -8,4 +8,4 @@ Exact rational rectangle extrema, Arb512 multiplication and independently groupe
 
 The first variation gives W[h]_1(P)=U1[h](P)+p*sigma[h]/3. U1[h](P) is unevaluated here. Neither membership nor nonmembership in the four-jet exclusion ball follows. The elementary cancellation illustration makes no claim about the actual correction.
 
-Two actual Claude Opus5.5 rounds accepted this scope. Its incidental concern about the original source paths being relative does not apply: both recorded paths are absolute, as checked when finalizing. Archive hashes verify linkage, not a fresh reproof of those archives. No decisive endpoint follows.
+Two actual the main model rounds accepted this scope. Its incidental concern about the original source paths being relative does not apply: both recorded paths are absolute, as checked when finalizing. Archive hashes verify linkage, not a fresh reproof of those archives. No decisive endpoint follows.

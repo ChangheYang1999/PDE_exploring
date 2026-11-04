@@ -1,6 +1,6 @@
 # A center residual bound with the canonical strain removed first
 
-Date: 2026-10-20. Status: CONFIRMED for the explicitly repaired modal trial, with the independently audited canonical moment archive as a stated dependency. The scalar-maximum extension and both numerical sources were accepted by actual Claude Opus 5.5 after follow-up; independent interval recomputation passed at 16:52:56Z. The statement is an a priori inequality for an explicitly given trial, not an existence theorem.
+Date: 2026-10-20. Status: CONFIRMED for the explicitly repaired modal trial, with the independently audited canonical moment archive as a stated dependency. The scalar-maximum extension and both numerical sources were accepted by actual the main model after follow-up; independent interval recomputation passed at 16:52:56Z. The statement is an a priori inequality for an explicitly given trial, not an existence theorem.
 
 ## Statement
 

@@ -33,7 +33,7 @@ ck('converted_determinant',s.expand(convmat.det()+s.Rational(3,2000)*C**4*k**2)=
 text=(V/'A171_PROOF.md').read_text();old='-Cku^{-8}P^2\n\\frac{CH}{3}u^{-6}(6+4ku)J_0';new='-Cku^{-8}P^2\n+\\frac{CH}{3}u^{-6}(6+4ku)J_0'
 ck('exact_missing_plus_anchor',text.count(old)==1,text.count(old));fixed=text.replace(old,new);ck('one_plus_added',len(fixed)==len(text)+1 and fixed.replace(new,old)==text)
 (V/'corrected_A171_PROOF.md').write_text(fixed);(V/'required_A171_replacement.json').write_text(json.dumps(dict(old=old,new=new,scope='Intermediate displayed formula only; all matrix entries and final verdict unchanged.'),indent=2)+'\n')
-status=json.loads((V/'A171_opus_status.json').read_text());ck('A171_failed_before_invocation',status['error_type']=='CredentialRetrievalError' and status['requested_model_id']=='us.anthropic.claude-opus-5-5')
+status=json.loads((V/'A171_opus_status.json').read_text());ck('A171_failed_before_invocation',status['error_type']=='CredentialRetrievalError' and status['requested_model_id']=='the main model')
 for fn,expected in [('P308_fraction_checks.json',256),('P308_symbolic_checks.json',23)]:
  z=json.loads((V/fn).read_text());ck('antecedent_'+fn,z['passed']==z['total']==expected)
 out=dict(started_utc=start,ended_utc=datetime.now(timezone.utc).isoformat(),elapsed_seconds=time.monotonic()-tick,passed=sum(x['passed']for x in checks),total=len(checks),checks=checks,code_sha256=sha(Path(__file__)),corrected_proof_sha256=sha(V/'corrected_A171_PROOF.md'),scope='Finite adjudication of A171, including an intermediate missing plus sign and normalization conversion. P308 proof remains the independent mathematical dependency.')

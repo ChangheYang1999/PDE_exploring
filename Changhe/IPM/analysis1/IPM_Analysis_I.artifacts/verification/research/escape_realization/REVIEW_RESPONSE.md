@@ -1,6 +1,6 @@
 # Response to the complete model review
 
-The complete actual Claude Opus5.5 review, request38e54480-9629-4aaa-b183-ec2ce3a3b56f, covered all seven sections and returned end_turn. The first truncated response remains an incomplete review. The failed disabled-thinking call is an availability record, not a mathematical review.
+The complete actual the main model review, request38e54480-9629-4aaa-b183-ec2ce3a3b56f, covered all seven sections and returned end_turn. The first truncated response remains an incomplete review. The failed disabled-thinking call is an availability record, not a mathematical review.
 
 The proposed erratum E1 assumes skew-adjoint Riesz transforms. Here, as explicitly defined in the accepted topic87, R_j denotes the self-adjoint Fourier multiplier with real symbol xi_j/|xi|, acting on complexified L2. Thus M=R_1^2 has symbol n_1^2 and is nonnegative, while the physical U_2=-R_1^2. If one instead writes the usual skew-adjoint transform T_1 with symbol -i n_1, the same M is T_1^*T_1=-T_1^2. These are the same positive operator with different names. This paragraph fixes the convention explicitly for topic88; no physical sign or formula changes. The normalization correction sigma=B'(0) in ADDENDUM remains necessary and in force.
 

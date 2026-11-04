@@ -1,6 +1,6 @@
 # Independent review of the frr3 extension and runtime report
 
-Recorded 2026-10-31T22:45:55.873468+00:00. Actual reviewer model: GPT-6 Astra, hrt-w3. Claude Opus 5.5 collaboration remains through the active team and dated lane notes; no external model client was invoked by this review. Findings were exchanged with the parent before finalization.
+Recorded 2026-10-31T22:45:55.873468+00:00. Actual reviewer model: GPT-6 Astra, hrt-w3. the main model collaboration remains through the active team and dated lane notes; no external model client was invoked by this review. Findings were exchanged with the parent before finalization.
 
 The fixed report snapshot is bot_research/reports/REPORT.md, SHA256 471620efbf169a2f9118b58c2c2a1fd640b8640c00de05bc034e67044e3175af, retained verbatim in frr3_extension_review_001/REPORT.snapshot.md. Its header says last update 22:39Z. Line references below refer to these fixed bytes, not a later revision.
 

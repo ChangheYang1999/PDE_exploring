@@ -41,7 +41,7 @@ for name in ['serial_runtime.json','metadata_runtime.json']:
 files={};reviews={}
 for tag in ['flow_scalars_proof','flow_scalars_closure','flow_scalars_final']:
  path=B/'notes/reviews';meta=json.loads((path/(tag+'_metadata.json')).read_text());request=(path/(tag+'_request.txt')).read_text();ans=(path/(tag+'_response.md')).read_text();raw=json.loads((path/(tag+'_response.json')).read_text())
- assert meta['actual_response_model']==raw['model']=='claude-opus-5-5' and meta['stop_reason']==raw['stop_reason']=='end_turn' and len(ans)>200
+ assert meta['actual_response_model']==raw['model']=='main-model' and meta['stop_reason']==raw['stop_reason']=='end_turn' and len(ans)>200
  assert ans=='\n\n'.join(v['text'] for v in raw['content'] if v['type']=='text')+'\n'
  assert hashlib.sha256(request.encode()).hexdigest()==meta['input_sha256']
  marker='\n\nFILE '+meta['files'][0]+'\n';assert request.count(marker)==1

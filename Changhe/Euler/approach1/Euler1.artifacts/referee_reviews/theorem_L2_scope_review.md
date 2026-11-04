@@ -4,7 +4,7 @@ I read [PROMPT.md](../Euler1.prompt.md) in full, including all the sections spec
 
 A final reread found intervening edits within Theory §7's proof. The theorem statement, §7.8, and §8 relevant to this scope audit were unchanged; the corrections below address their quoted wording. I have edited neither input file.
 
-The requested Claude Opus 5.5 collaboration was unavailable. I attempted the permitted Python/Bedrock route through both configured AWS profiles; both failed to obtain credentials before a model request could be made. No Opus model was invoked or confirmed, and no other model was substituted as an Opus review. The mathematical checks below are my own.
+The requested the main model collaboration was unavailable. I attempted the permitted Python/Bedrock route through both configured AWS profiles; both failed to obtain credentials before a model request could be made. No Opus model was invoked or confirmed, and no other model was substituted as an Opus review. The mathematical checks below are my own.
 
 For question 1, the essential implication is short. Write \(c=c_l\). Every exact primary target is a smooth, divergence-free solution of \((E_C)\) on all of \(\mathbb R^3\), with
 \[

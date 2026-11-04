@@ -2,7 +2,7 @@
 
 UTC 2026-10-22T00:23:14.469010+00:00. Verdict CONFIRMED within the exact finite scope below.
 
-I read the entire actual Claude Opus 5.5 response, request a57612a7-a17c-4f9b-a3c1-e2bbee6758d5, raw response SHA256 94dff668e9557a6966b8618c4d72e16485799e44593f91cdf973b1b64a2410ee, completed 2026-10-22T00:20:19.569617+00:00. The actual model was claude-opus-5-5 and its stop condition was end_turn. This disposition was written later and was not supplied to that review.
+I read the entire actual the main model response, request a57612a7-a17c-4f9b-a3c1-e2bbee6758d5, raw response SHA256 94dff668e9557a6966b8618c4d72e16485799e44593f91cdf973b1b64a2410ee, completed 2026-10-22T00:20:19.569617+00:00. The actual model was main-model and its stop condition was end_turn. This disposition was written later and was not supplied to that review.
 
 I independently checked the differentiated Green equations I'=-(m+4)I+H_(n-1) and J'=(m-4)J-H_n. Reversing the J coordinate changes its rate to 4-m and its forcing sign to positive. The exact particular polynomial satisfies q'-zeta q=dQ coefficient by coefficient. Center branches use the original span endpoint state without replacing the full-span propagation. The n=2 zero rate uses the exact primitive; the n=261 outer datum and forcing are exactly zero. The normalizer occurs once in the homogeneous J component. Exact infinite anchors include all analytic continuation terms and positive decay denominators.
 

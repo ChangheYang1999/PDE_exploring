@@ -1,6 +1,6 @@
 # Independent post-review adjudication
 
-Written 2026-10-21T20:26:14.039979+00:00, after reading both complete actual Claude Opus5.5 responses.
+Written 2026-10-21T20:26:14.039979+00:00, after reading both complete actual the main model responses.
 
 The first review's count, generic rate and numerical canonicality-dependency errors are corrected in REVIEW_RESOLUTION.md. The follow-up explicitly withdraws all three after reconstructing the estimates. I checked the exact source shape1565, distinct-span count1558 and all261 rates independently with Fraction and manually decoded fmpq. The admissible rational counterexample refutes the first review's generic stronger bound; the actual source also satisfies that stronger bound, which is not needed. All review-check inputs were rehashed.
 
@@ -10,6 +10,6 @@ Both spline endpoint methods agree on all3640 equations per method, and the anal
 
 The follow-up's final list of open numerical arrays describes what this topic does not establish. It does not revoke previously accepted z or A/B certificates, and no new moment integration was performed. Physical W membership remains OPEN, so no numerical norm ceiling follows from166alone. The uniqueness argument added here is for each finite parity-compatible angular mode; the separate whole-plane uniqueness theorem is retained when identifying the canonical inverse among arbitrary fields.
 
-I inspected the complete original response's actual last line; it is exactly VERDICT: CONFIRM_EXACT_MODAL_ANNULAR_REGULARITY. The finalizer's original-response regex is therefore sufficient for this actual record, although the current follow-up has an additional enforced last-line check. I independently verified that both requests' file sections are byte-for-byte current and that both actual responses used claude-opus-5-5 and ended with end_turn. There is no remaining substantive objection to the scoped theorem. No claim about the original X3 center, physical derivative majorants, tails, global inverse, nearby solution or decisive endpoint is made.
+I inspected the complete original response's actual last line; it is exactly VERDICT: CONFIRM_EXACT_MODAL_ANNULAR_REGULARITY. The finalizer's original-response regex is therefore sufficient for this actual record, although the current follow-up has an additional enforced last-line check. I independently verified that both requests' file sections are byte-for-byte current and that both actual responses used main-model and ended with end_turn. There is no remaining substantive objection to the scoped theorem. No claim about the original X3 center, physical derivative majorants, tails, global inverse, nearby solution or decisive endpoint is made.
 
 Verdict: CONFIRMED_EXACT_MODAL_ANNULAR_REGULARITY, with every mandatory supplement and the stated scope.

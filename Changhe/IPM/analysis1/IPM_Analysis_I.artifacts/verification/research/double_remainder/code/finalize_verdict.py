@@ -31,7 +31,7 @@ def main():
  paths={B/p for p in fixed}|{Path(__file__),E/'revised_run.json',E/'revised_run.log',E/'review_summary.json',E/'lead_corner_coupling.md',E/'proof_first.json'};reviews={}
  for tag in ['double_remainder_proof','double_remainder_closure']:
   m=json.loads((B/f'notes/reviews/{tag}_metadata.json').read_text());req=(B/f'notes/reviews/{tag}_request.txt').read_text();resp=json.loads((B/f'notes/reviews/{tag}_response.json').read_text());text=(B/f'notes/reviews/{tag}_response.md').read_text()
-  assert m['actual_response_model']==resp['model']=='claude-opus-5-5' and m['stop_reason']==resp['stop_reason']=='end_turn'
+  assert m['actual_response_model']==resp['model']=='main-model' and m['stop_reason']==resp['stop_reason']=='end_turn'
   assert sha(B/f'notes/reviews/{tag}_request.txt')==m['input_sha256'] and 'ACCEPT' in text
   assert text=='\n\n'.join(x['text'] for x in resp['content'] if x['type']=='text')+'\n'
   if tag.endswith('closure'):

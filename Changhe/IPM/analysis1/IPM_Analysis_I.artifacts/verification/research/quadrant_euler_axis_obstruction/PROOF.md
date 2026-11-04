@@ -1,6 +1,6 @@
 # Axis leakage in the quadrant Euler-derivative saddle norm
 
-Date 2026-10-22T03:05:37.606661+00:00. Proof written before the new exact working-weight check and actual review. Status OPEN until the parent pins, complete actual Claude Opus5.5 review and later own adjudication are recorded.
+Date 2026-10-22T03:05:37.606661+00:00. Proof written before the new exact working-weight check and actual review. Status OPEN until the parent pins, complete actual the main model review and later own adjudication are recorded.
 
 ## Exact statement and dependencies
 

@@ -8,7 +8,7 @@ assert not sys.flags.optimize
 for k in ['OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','NUMEXPR_NUM_THREADS']:os.environ[k]='1'
 ROOT=Path(__file__).resolve().parents[3];DIR=ROOT/'research/outer_derivative_cells_v2';OUT=DIR/'evidence';REV=ROOT/'notes/reviews'
 UP=ROOT/'research/full_derivative_norm_bound_v2/code/protocol.py'
-assert hashlib.sha256(UP.read_bytes()).hexdigest()=='b57406959b9857d3acf994d7c1067fe4f534fa3b2362d2ddc3ed785be2cdcdcf'
+assert hashlib.sha256(UP.read_bytes()).hexdigest()=='b3bb1f089eaddd540e4b478f4c4108271172cb12550eb82dae3845744be0fd0f'
 sp=importlib.util.spec_from_file_location('review180_parent_util',UP);u=importlib.util.module_from_spec(sp);sp.loader.exec_module(u)
 load,sha,write,pin,rehash,auth,when,now,parse=u.load,u.sha,u.write,u.pin,u.rehash,u.auth,u.when,u.now,u.parse
 PREP=ROOT/'research/full_derivative_norm_bound_v2/evidence/preparation_acceptance.json'

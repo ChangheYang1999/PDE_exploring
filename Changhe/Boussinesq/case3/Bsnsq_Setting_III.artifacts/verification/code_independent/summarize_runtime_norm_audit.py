@@ -37,7 +37,7 @@ Every radius and both beta-r normalizations appear in verification/NORM_COMPARIS
 
 ## Actual model review and adjudication
 
-Opus501 and503 both returned claude-opus-5-5 through the existing Bedrock Python client, requested as us.anthropic.claude-opus-5-5. Their public answers were read in full. Opus501 validated the norm inequalities, inverse, gauge and conditional interpretation, identified the displayed dummy-variable typo, and marked the storage-to-moment dependency OPEN because it had not been supplied. The corrected proof and complete storage calculation were sent in503, which explicitly resolves both issues. The verifier independently checked the corrected formulas symbolically and the moment numerically. Its minor notes are accounted for: the knots span[0,1], and both b and L are read as exact binary rationals by exact_moment2. Neither model verified raw artifacts, so their review is not presented as a numerical endorsement.
+Opus501 and503 both returned main-model through the existing Bedrock Python client, requested as the main model. Their public answers were read in full. Opus501 validated the norm inequalities, inverse, gauge and conditional interpretation, identified the displayed dummy-variable typo, and marked the storage-to-moment dependency OPEN because it had not been supplied. The corrected proof and complete storage calculation were sent in503, which explicitly resolves both issues. The verifier independently checked the corrected formulas symbolically and the moment numerically. Its minor notes are accounted for: the knots span[0,1], and both b and L are read as exact binary rationals by exact_moment2. Neither model verified raw artifacts, so their review is not presented as a numerical endorsement.
 
 ## Dated verdicts
 
@@ -49,7 +49,7 @@ Opus501 and503 both returned claude-opus-5-5 through the existing Bedrock Python
 (R/'SUMMARY.md').write_text(text);(V/'SUMMARY.md').write_text(text)
 reviews=[]
 for num in [501,503]:
- src=Path(f'verification/opus{num}');d=json.loads((src/'status.json').read_text());assert d['status']=='COMPLETE' and d['returned_model']=='claude-opus-5-5'
+ src=Path(f'verification/opus{num}');d=json.loads((src/'status.json').read_text());assert d['status']=='COMPLETE' and d['returned_model']=='main-model'
  reviews.append({'number':num,'requested_model':d['requested_model'],'returned_model':d['returned_model'],'started_utc':d['started_utc'],'ended_utc':d['ended_utc'],'elapsed_seconds':d['elapsed_seconds']})
  for name in ['question.md','answer.md','status.json','options.json']:shutil.copy2(src/name,V/f'opus{num}_{name}')
 (V/'OPUS_ADJUDICATION.md').write_text(text[text.index('## Actual model review'):]+ '\n'+json.dumps(reviews,indent=2)+'\n')

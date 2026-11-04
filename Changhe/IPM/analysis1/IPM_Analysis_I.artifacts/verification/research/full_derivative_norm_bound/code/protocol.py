@@ -11,7 +11,7 @@ PARENTS={'radial':('research/radial_tm_refined/evidence/verdict.json','CONFIRMED
 TAILSHA='cd74be46c37ccee9f4a29c6bd63c72d1a87065787d781f53c08f6d44962980ee'
 SMOKE=[0,2955,4102,4125,4211,7808];REPLAY=[0,1955,2955,4102,4125,4211,7808]
 OWN=['PROOF.md','PROOF_ADJUDICATION.md','evidence/proof_first.json','evidence/proof_adjudication.json','KERNEL_ADJUDICATION.md','evidence/KERNEL_ADJUDICATION.json','SOURCE_SCOPE.md','IMPLEMENTATION_ADDENDUM.md','code/error_diagnostics.py','code/kernels.py','code/bounds.py','code/selfcheck.py','code/protocol.py','code/prepare.py','code/run.py','code/audit.py','code/replay.py','code/review.py','code/finalize.py','code/queue.sh','review_files.json','preparation_question.txt','actual_question.txt']
-PREFIX='You are Claude Opus 5.5 collaborating with GPT-6, reviewing a mathematical computer-assisted IPM proof. Restrictions on this delegated task: no JavaScript/TypeScript development or execution; no servers/listeners/tunnels; no RLScience cluster; no Lean/Lake builds; no outside writes; no people contact. Pure text review only. Return a concise substantive FINAL ANSWER, not just internal reasoning. Reconstruct claims and reject gaps. '
+PREFIX='You are the main model collaborating with GPT-6, reviewing a mathematical computer-assisted IPM proof. Restrictions on this delegated task: no JavaScript/TypeScript development or execution; no servers/listeners/tunnels; no RLScience cluster; no Lean/Lake builds; no outside writes; no people contact. Pure text review only. Return a concise substantive FINAL ANSWER, not just internal reasoning. Reconstruct claims and reject gaps. '
 
 def now():return datetime.now(timezone.utc).isoformat()
 def when(s):
@@ -55,7 +55,7 @@ def parents():
 
 def auth(pins,tag,verdict,files=None,question=None):
     m=load(REV/(tag+'_metadata.json'));r=load(REV/(tag+'_response.json'));text=(REV/(tag+'_response.md')).read_text();req=(REV/(tag+'_request.txt')).read_text()
-    assert m['requested_model']=='us.anthropic.claude-opus-5-5' and m['actual_response_model']==r['model']=='claude-opus-5-5' and m['stop_reason']==r['stop_reason']=='end_turn' and 'availability_error' not in m
+    assert m['requested_model']=='the main model' and m['actual_response_model']==r['model']=='main-model' and m['stop_reason']==r['stop_reason']=='end_turn' and 'availability_error' not in m
     if files is not None:assert m['files']==files
     assert len(m['files'])==len(set(m['files']))
     pre=req.split('\n\nFILE ',1)[0]

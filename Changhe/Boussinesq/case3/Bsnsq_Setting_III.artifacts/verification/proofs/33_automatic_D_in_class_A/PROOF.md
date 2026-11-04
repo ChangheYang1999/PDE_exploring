@@ -1,6 +1,6 @@
 # An automatic derivative-decay bootstrap from transported temperature
 
-Date:2026-10-20. Status: CONFIRMED by the independent verifier on 2026-10-20 after checking the proof below and the lead's distinct double div-curl proof. Recent requests to actual Claude Opus 5.5 produced no usable audit text; they are not endorsements.
+Date:2026-10-20. Status: CONFIRMED by the independent verifier on 2026-10-20 after checking the proof below and the lead's distinct double div-curl proof. Recent requests to actual the main model produced no usable audit text; they are not endorsements.
 
 ## Theorem
 

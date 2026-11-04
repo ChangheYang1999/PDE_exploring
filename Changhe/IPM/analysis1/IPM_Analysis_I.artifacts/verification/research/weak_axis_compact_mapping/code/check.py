@@ -9,7 +9,7 @@ import sympy as S
 from flint import arb,fmpq,ctx
 ctx.prec=256;ctx.threads=1
 R=Path(__file__).resolve().parents[3];D=R/'research/weak_axis_compact_mapping';E=D/'evidence';sys.path.insert(0,str(R/'research/full_derivative_norm_bound_v2/code'));import protocol as p
-start=p.now();pf=p.load(E/'proof_first.json');assert p.sha(D/'PROOF.md')==pf['proof_sha256']=='3bd85b7a29499ddd57fc3e13335bb8571c54f2aefcfec1fd93ba306c3a6de6a7'
+start=p.now();pf=p.load(E/'proof_first.json');assert p.sha(D/'PROOF.md')==pf['proof_sha256']=='0a812be3f4653b8d124d0483e616f055131296204e0acf3613d93fbbca1454dd'
 parent='research/variable_transport_graph_obstruction/evidence/verdict.json';pv=p.load(R/parent);assert p.sha(R/parent)=='f4c7ffb261a3e26b51011fde486202d577ec2b254cb5a7509d9d475604cb0b6c';assert pv['status'].startswith('CONFIRMED');pins=dict(pv['files']);p.pin(pins,parent);p.rehash(pins)
 # Parent199 already replaces six old mutable foreign files by byte-identical local snapshots.
 # This audit never substitutes newly changed producer files into that chain.

@@ -1,6 +1,6 @@
 # First review adjudication
 
-Written 2026-10-22T09:27:45.061570+00:00, after reading the complete actual Claude Opus5.5 response, request 6c14ad95-996a-479a-98f3-1e0a618ce093, end_turn, ended09:26:44.288439Z.
+Written 2026-10-22T09:27:45.061570+00:00, after reading the complete actual the main model response, request 6c14ad95-996a-479a-98f3-1e0a618ce093, end_turn, ended09:26:44.288439Z.
 
 The reviewer confirms the displayed argument. Own review found a substantive omitted hypothesis: compact T must be linear. A nonlinear compact map T(h)=||h||F into R would invalidate the unrestricted compact-remainder conclusion. The proof used weak continuity of bounded linear maps. The statement now explicitly requires T bounded linear compact, and explicitly states that a closed Fredholm realization is linear. The first positive review is therefore insufficient for the corrected result; a follow-up must assess this repair.
 

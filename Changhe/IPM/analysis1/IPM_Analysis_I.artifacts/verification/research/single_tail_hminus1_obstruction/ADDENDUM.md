@@ -33,7 +33,7 @@ b_d was incorrect; exact comparison rejected it. It was replaced by floor
 and ceiling decimal rounding followed by exact rational inequalities.
 The mistaken draft audit is archived as text and no verdict uses it.
 
-Two actual Claude Opus 5.5 requests were made. Both returned
+Two actual the main model requests were made. Both returned
 stop_reason=refusal, cyber category, and no final response text. The second
 request transparently identified the apparent classification error and
 submitted the same proof file unchanged. These responses give no

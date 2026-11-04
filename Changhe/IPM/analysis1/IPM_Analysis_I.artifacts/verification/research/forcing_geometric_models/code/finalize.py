@@ -16,7 +16,7 @@ z=read(D/'evidence/iv_finite.json');assert z['endpoint_checks']==391040 and z['s
 assert read(D/'evidence/conventions.json')['status']=='PASS_COORDINATE_CONVENTION_SOURCE_BINDING' and read(D/'evidence/convention_supplement.json')['status']=='PASS_OPTIONAL_CONVENTION_RECORDS'
 reviews={}
 for tag,h in [('forcing_geometric_models','89420913b54a7960fff940a85a9f83713162ca0e32aacc6d2039d1175e0a37b8'),('forcing_geometric_followup','55a6ef84722f92c8a76557324f4c32d9eae7ce74eddb7766bdae82156f3b5a1d')]:
- m=read(R/(tag+'_metadata.json'));raw=read(R/(tag+'_response.json'));request=(R/(tag+'_request.txt')).read_text();text=(R/(tag+'_response.md')).read_text();assert m['actual_response_model']==raw['model']=='claude-opus-5-5' and m['stop_reason']==raw['stop_reason']=='end_turn'
+ m=read(R/(tag+'_metadata.json'));raw=read(R/(tag+'_response.json'));request=(R/(tag+'_request.txt')).read_text();text=(R/(tag+'_response.md')).read_text();assert m['actual_response_model']==raw['model']=='main-model' and m['stop_reason']==raw['stop_reason']=='end_turn'
  assert hashlib.sha256(request.encode()).hexdigest()==m['input_sha256']==h
  assert request[request.index('\n\nFILE ')+2:]=='\n\n'.join('FILE '+f+'\n'+(B/f).read_text() for f in m['files'])
  assert text=='\n\n'.join(c['text'] for c in raw['content'] if c['type']=='text')+'\n'

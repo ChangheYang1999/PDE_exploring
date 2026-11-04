@@ -25,7 +25,7 @@ symbolic identity, not an interval containing zero. The estimate for the
 higher-tail family is qualitative with unevaluated constants; the
 numerical source consequence is only for the topic105 single-tail family.
 
-Actual Claude Opus5.5 was consulted on this new proof. The actual response
+Actual the main model was consulted on this new proof. The actual response
 ended at2026-10-21T06:42:02.272091+00:00, request
 e9bb63f9-c905-4108-83ba-cd48f0887436, with stop_reason=refusal, cyber
 category, and no mathematical response text. It gives no acceptance or

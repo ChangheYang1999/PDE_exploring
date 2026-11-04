@@ -2,7 +2,7 @@
 
 UTC 2026-10-22T01:04:25.012240+00:00. Verdict CONFIRMED for source-level consistency with the conditional analytic theorem and the separate finite algebra checks. Numerical application remains OPEN. No cell of result181 has been evaluated. No preparation gate, source freeze, complete-cell audit or numerical result is accepted here.
 
-I read the complete actual responses from claude-opus-5-5 for the draft source review and both precision follow-ups. Each ended end_turn. Their binding metadata are recorded in evidence/ENGINE_ADJUDICATION.json. These model comments were checked against the source and my own derivations; they are not substituted for an executed certificate.
+I read the complete actual responses from main-model for the draft source review and both precision follow-ups. Each ended end_turn. Their binding metadata are recorded in evidence/ENGINE_ADJUDICATION.json. These model comments were checked against the source and my own derivations; they are not substituted for an executed certificate.
 
 I checked the exact ODE defect and derivative equations, both Green formulas, the direct Bhat1 primitive, product truncation derivative terms, the linear strain signs at frequency1, and the source placement of the frequency523 linear term. In engine_arb.py lines77–81 the low coefficient changes sign only for nu=1. The separate engine_iv.py sine folding implements the same exact map. This is a source inspection, not a runtime check. The saved finite matrix checker compares two independent algebraic expressions inside that checker, not the engine functions themselves. Source digests alone do not establish implementation equality.
 

@@ -1,6 +1,6 @@
 # Exact comparisons of native radial splines and their inverse constants
 
-Status: CONFIRMED general theorem and exact finite-state applications. The complete argument was drafted before implementation and reviewed by actual Claude Opus5.5; all certificates passed the separate rational checker. Review scope and follow-up are in verification/review_adjudication.md.
+Status: CONFIRMED general theorem and exact finite-state applications. The complete argument was drafted before implementation and reviewed by actual the main model; all certificates passed the separate rational checker. Review scope and follow-up are in verification/review_adjudication.md.
 
 ## Statement, notation and scope
 

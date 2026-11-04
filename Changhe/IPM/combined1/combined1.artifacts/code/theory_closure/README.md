@@ -146,22 +146,22 @@ Each command is run from the script's directory, for example
 - checks/data/N4252_result.json: copy of audit/numerical_audit/research_code/negative_norm_forcing_assembly/verification/result.json (N4-252, the 007
   E2 upper bound), sha256 d94473eb11c0708e25a9529f00b49576628023066e626ed9170bf29b62e22e7c.
 - checks/data/N4398_mode_001.json, N4398_mode_003.json, N4398_result.json: copies of audit/numerical_audit/research_code/candidate016_solenoidal_upper/
-  verification/mode_001.json, mode_003.json and result.json (N4-398), sha256 53e2f9a049a97a7f85a6fcb692b272c16e048d0723a2518ee7e671065975634e,
-  2dff6601c75bdf39c6fd038ba57020ef1fd257ed5bcf9ce04a39066406eab40e, e97891e271837201e3f4a0d18f96732825238604cbad65fc8b31923e36463603.
+  verification/mode_001.json, mode_003.json and result.json (N4-398), sha256 e597f420d7a1813725c0bd5974e3056d377981186316724d33b3124084de5e31,
+  e973c0533612e39af5fc9f2831af59448373d291d552322785e1f85f2e30904b, 817b875413c9ebe2499bb42d36a61dee7af7e35b0423b58a70b569d4deeb9817.
 - checks/data/N4403_result_v01.json: copy of audit/numerical_audit/research_code/candidate016_angular_tail_bound/verification/result_v01.json
-  (N4-403, prefix 1, 3, 5, 7 of candidate 016), sha256 8a6bc15f52acec01664df0e69f47888f6bd422dad3b954962978450d1e59bea1.
+  (N4-403, prefix 1, 3, 5, 7 of candidate 016), sha256 bd2c6a135540dc5a7122c2d742eaa8cc9720b4d86b88b123a89580d3aae9c51b.
 - checks/data/T4474_parameters.json: copy of audit/theory_audit/research_code/partial_mode_hardy_certificate/data/parameters.json (T4-474
   fixture lists, rF upper, cross improvement floor, loss cuts), sha256 659210cd3824e5367dd5eea0d8b8a649c8242a78cebc415f6d8301dc8040ed05.
 - checks/data/N4409_result_v02.json: copy of audit/numerical_audit/research_code/candidate016_angular_tail_bound/verification/result_v02.json
-  (N4-409, prefix 1, 3, ..., 31 of candidate 016), sha256 01019cd56639661ace672791a4fbe7f938d90bf02237b93b38f061238bb15b41.
+  (N4-409, prefix 1, 3, ..., 31 of candidate 016), sha256 7b36cb71d1514598f99a2f5720c5dad69d050cd6912e9be1f550e3b015332156.
 - checks/data/N4410_result.json and N4410_parameters.json: copies of
   audit/numerical_audit/research_code/candidate016_reviewed_upper/verification/result.json and source/parameters.json (N4-410, complete 016
-  H and E2 bounds; PROOF.md sha256 bf8cb48f0f49dd226a009f92923ba74a3dea366ee63d95641861db2850f37ed2), sha256
-  d50ef2bb8868b2eb505933a488e91df979146c269b5b788dad928dfcab7bb7d0 and a65ce341175cfaf85d5959a398d38ddd908f66bb233b43f1cb8a654840e3053d.
+  H and E2 bounds; PROOF.md sha256 e396009b848d952c678f1945ae9307026af5eebcb163334bb78bc920b54bd964), sha256
+  56a67b479f33071e7f0c4c5351dd1b7b7909dc172175126e881a6484d6a246f9 and 018018d9c45adb76fedc5cc27ec147ffb74def852c7341584b6149568b7f915c.
 - checks/data/N4418_result_v01.json: copy of audit/numerical_audit/research_code/candidate016_multimode_complete_bounds/verification/result_v01.json
   (N4-418, complete 016 H and E2 bounds from 16 corrected modes; PROOF.md sha256
-  967c25cdeb2192c56ba8212ae7d356c1dac206fc7f1f7fe794d527fcd0dac568), sha256
-  8eec600612f7719a1c0cbcb408d1665659b8d2c06d861f032a102651953c3728.
+  c35213e52945918058e9fc1e378af0ed318aabf1a4efc1fc2620c56ac1355cf8), sha256
+  928c05b95385bc7e5ecafd8187e15897e79ec3127551847a3d53137f7c36f117.
 - checks/data/N4425_extract.json: fields copied verbatim from audit/numerical_audit/research_code/candidate017_dual_residual_replay/verification/result.json
   (N4-425, sha256 7e093982e733237262819ca3ad0486f85bdc4d31c69d73a99e382dbad5c3ab06), mode_001.json (28d03477...) and
   mode_003.json (b768eea2...), written by `python3 -B checks/make_N4425_extract.py` (a full copy of the three files,
@@ -175,10 +175,10 @@ Each command is run from the script's directory, for example
   6c5f02dc951d92cff7df788228594d2137e5f41b5bdea58b17b8505cb40cd3ee), written by
   `python3 -B checks/make_N4427_extract.py`: exact strings under 400 characters verbatim, longer ones as their sha256,
   mode intervals as q_lower and q_upper - q_lower (a full copy of the four files, about 1.1 MB, would not fit the 20 MB
-  artifact limit); sha256 611a8febe1f823f04fd32047bba49f647452f713349f3aa0cb34898465427cac.
+  artifact limit); sha256 8f392b6e71e8fd5064b95aee2e408dfe0487de55bcab2665bd7fdc441be00c31.
 - checks/data/N4417_result_v03.json: copy of audit/numerical_audit/research_code/candidate016_angular_tail_bound/verification/result_v03.json
   (N4-417, prefix 1, 3, ..., 31 with all 16 corrected modes), sha256
-  285dac39d93e32574c214d00cef9764087c0718c19b4042398c7ec728b530840.
+  898e15d71bbf6a0be7e3676fb6f7b025807c527aa5f883518b37ef06c01429d1.
 - checks/data/N4_cartesian_witnesses.json: copy of
   audit/theory_audit/research_code/symmetry_point_witness/source/N4_cartesian_witnesses.json, where
   the run directory = working file r6 (not published) These are the N4 Cartesian point intervals for C1-A2-d2, C1-A2-Mpen2 and
@@ -374,7 +374,7 @@ Each command is run from the script's directory, for example
     c7cb5657de235ba3cc78a33bbd1b56a6b1c204064b01f352760ba2af68a71b5c  checks/check_T4462.out
     580e957bebd2d51adcef2c3a0ce39d15433858e5dbdf3d5f8e881dbba2d09452  checks/check_N4396.py
     7c9fd9a8c9b49c60138e515e017bbb957bfde0fda80e1621fae94aecaeae4234  checks/check_N4396.out
-    049776c91f253702d118b53307e21c258cd4ad03445fa08fb308396d9db78ed6  checks/check_T4469.py
+    33e0967416cbaf284925a82c283504dab0c9394b63eb465a1fe4d17066de7ba0  checks/check_T4469.py
     4b8a684424901def9b5db2457869edf3c0bca60ecac09a67935f39702bc27f10  checks/check_T4469.out
     a32a02e71da636635e3b1d6c3289d5dc478bd8a63cda07f06f8cae98e9a968e5  checks/data/N3_016_hdual_m13deep.json
     4291bb11104879c7821a888c52ad666d1700065d6cf365540250dd0080b34cda  checks/data/N4396_mode_001.json
@@ -382,24 +382,24 @@ Each command is run from the script's directory, for example
     e91c096d6ccb1cb0f9e08e63ae53a2c258875cad720c5ab483b875bfb4a4dffa  checks/data/N4396_result.json
     a2f68954828f60a7dc8983ecb69e8e30ddcd8e868ec0d1b58ce56faa27eeaedc  checks/data/N4392_comparison.json
     d94473eb11c0708e25a9529f00b49576628023066e626ed9170bf29b62e22e7c  checks/data/N4252_result.json
-    53e2f9a049a97a7f85a6fcb692b272c16e048d0723a2518ee7e671065975634e  checks/data/N4398_mode_001.json
-    2dff6601c75bdf39c6fd038ba57020ef1fd257ed5bcf9ce04a39066406eab40e  checks/data/N4398_mode_003.json
-    e97891e271837201e3f4a0d18f96732825238604cbad65fc8b31923e36463603  checks/data/N4398_result.json
-    b22bf2be6608c210ff26497b0e183486a3e65f2ff16dec7e9875d89ef1d58cc9  checks/check_T4474.py
+    e597f420d7a1813725c0bd5974e3056d377981186316724d33b3124084de5e31  checks/data/N4398_mode_001.json
+    e973c0533612e39af5fc9f2831af59448373d291d552322785e1f85f2e30904b  checks/data/N4398_mode_003.json
+    817b875413c9ebe2499bb42d36a61dee7af7e35b0423b58a70b569d4deeb9817  checks/data/N4398_result.json
+    a5fc1bd129c88bd64ea8f517544e4f3c835ca822efca1d822178f284b51f5902  checks/check_T4474.py
     9aac773a3231d0abba29272e9e67c42a77e04cb9fca3dfd02d3bcc6ea9fd5d01  checks/check_T4474.out
-    8a6bc15f52acec01664df0e69f47888f6bd422dad3b954962978450d1e59bea1  checks/data/N4403_result_v01.json
+    bd2c6a135540dc5a7122c2d742eaa8cc9720b4d86b88b123a89580d3aae9c51b  checks/data/N4403_result_v01.json
     659210cd3824e5367dd5eea0d8b8a649c8242a78cebc415f6d8301dc8040ed05  checks/data/T4474_parameters.json
-    79f98f5f2446ec705844e35186f2caa08c3d9af6cb4eddd17687ccd3821a4415  checks/check_N4409.py
+    c4f68615aa1e4cf61801c5f686a4861829a73a7b87ab17f3aab09e6491f51681  checks/check_N4409.py
     dcc6a9bdaea5629c7ddf52c06feafaa8708a091f69d4e1f0c3c4bcef914f9163  checks/check_N4409.out
-    3f53ab49d70e0f49615dbe7278b4c92c808579c666560bd7f59095c0223ebe59  checks/check_v50.py
+    b0db868363e7df0d33c71e356a6a92b0a5be5868c5eee8c35bb30a4c969c6078  checks/check_v50.py
     fb4fa87fa21ddba29b20a4b33f158dc5751f1737067168cd78187e75ad65e840  checks/check_v50.out
-    01019cd56639661ace672791a4fbe7f938d90bf02237b93b38f061238bb15b41  checks/data/N4409_result_v02.json
-    d50ef2bb8868b2eb505933a488e91df979146c269b5b788dad928dfcab7bb7d0  checks/data/N4410_result.json
-    a65ce341175cfaf85d5959a398d38ddd908f66bb233b43f1cb8a654840e3053d  checks/data/N4410_parameters.json
-    04dad65377c0fa6db08bcc48f27f439b28ed323664b01f5eb041b2f0bbc9a440  checks/check_N4418.py
+    7b36cb71d1514598f99a2f5720c5dad69d050cd6912e9be1f550e3b015332156  checks/data/N4409_result_v02.json
+    56a67b479f33071e7f0c4c5351dd1b7b7909dc172175126e881a6484d6a246f9  checks/data/N4410_result.json
+    018018d9c45adb76fedc5cc27ec147ffb74def852c7341584b6149568b7f915c  checks/data/N4410_parameters.json
+    a1df6149e741de5e5e173abde7f2a3036cc6233694d683e7e5a778b5505dcd88  checks/check_N4418.py
     24c61edaf70f5b7d81724bdc29ace821dcec2f36a9388f3cd8e0945308bdf412  checks/check_N4418.out
-    8eec600612f7719a1c0cbcb408d1665659b8d2c06d861f032a102651953c3728  checks/data/N4418_result_v01.json
-    285dac39d93e32574c214d00cef9764087c0718c19b4042398c7ec728b530840  checks/data/N4417_result_v03.json
+    928c05b95385bc7e5ecafd8187e15897e79ec3127551847a3d53137f7c36f117  checks/data/N4418_result_v01.json
+    898e15d71bbf6a0be7e3676fb6f7b025807c527aa5f883518b37ef06c01429d1  checks/data/N4417_result_v03.json
     7249be609524b953c413d72ed90998923c66b72f1aaee69e843c7563573566e1  checks/check_N4425.py
     85d63f2da6a40677a23e9e98a31e8d88e7ad0d52122fd5c49fd80cda9ae6e892  checks/check_N4425.out
     8ef5cbb01e87f7327cda5b00efcdb2b13f8ce40b8210eb3ca94afd7a04afb5a4  checks/make_N4425_extract.py
@@ -407,7 +407,7 @@ Each command is run from the script's directory, for example
     fb1f7ec32dc1950e009f85a8db22d31178df14422c3b9a04ed10fed2c7a67995  checks/check_N4427.py
     fc37d48d3b619967c3ed9708199c6bf5937fbab401935f69028b79567a5716ca  checks/check_N4427.out
     6677d230843bcf16a09a27706b166569c0b386637ab08c4e15de58942f085094  checks/make_N4427_extract.py
-    611a8febe1f823f04fd32047bba49f647452f713349f3aa0cb34898465427cac  checks/data/N4427_extract.json
+    8f392b6e71e8fd5064b95aee2e408dfe0487de55bcab2665bd7fdc441be00c31  checks/data/N4427_extract.json
     8cc556b17e8bf4874782f4478faeb061e93dad4393df9c28ca9544b70ff0c546  run_all.sh
 
 ## Labels

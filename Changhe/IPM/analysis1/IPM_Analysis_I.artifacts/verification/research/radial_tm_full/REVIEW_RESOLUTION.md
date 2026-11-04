@@ -4,7 +4,7 @@ The proof review completed at2026-10-21T04:22:16.201457+00:00, request
 56dcfa4a-43fe-46e1-8f8f-34c38be61e22. The engine review completed at
 2026-10-21T04:33:31.831459+00:00, request
 5c1a2e2d-ea36-4ce3-a7ba-4598e9d88a44. Both actual raw responses report
-claude-opus-5-5 and end_turn. The exact request, response, model metadata
+main-model and end_turn. The exact request, response, model metadata
 and complete reviewed file bundles have been checked. The engine review
 used the smoke_v1 common.py before the JSON libc tuple/list repair.
 The current complete bundle will receive a further preflight review.
@@ -50,7 +50,7 @@ Analysis I endpoint.
 
 ## Complete preflight review and operational repair
 
-The complete first preflight response, actual claude-opus-5-5/end_turn,
+The complete first preflight response, actual main-model/end_turn,
 completed2026-10-21T04:52:41.928514+00:00, request
 c962aed6-910a-400e-a9c6-8cd75de12982. Its whole bundle and raw response
 were authenticated before editing, and preserved under

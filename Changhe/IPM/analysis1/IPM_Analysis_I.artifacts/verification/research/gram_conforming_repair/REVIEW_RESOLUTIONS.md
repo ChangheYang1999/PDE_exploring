@@ -1,6 +1,6 @@
 # Final review resolutions and precise norm binding
 
-The first actual Claude Opus 5.5 review accepted the repair, interval
+The first actual the main model review accepted the repair, interval
 directions, independence and limited conclusion. Its remaining dependency
 was the precise definition of X. The frozen definition is in
 research/gram_internal_jumps/SOURCE_BINDING.md and is pinned by that topic's

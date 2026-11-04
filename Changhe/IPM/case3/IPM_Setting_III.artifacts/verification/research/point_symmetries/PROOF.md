@@ -1,6 +1,6 @@
 # Complete point-symmetry audit of the normalized differential system
 
-Status: CONFIRMED after independent derivation, 15 exact rational substitution tests and completed actual Claude Opus 5.5 review 13. Date: 2026-10-20.
+Status: CONFIRMED after independent derivation, 15 exact rational substitution tests and completed actual the main model review 13. Date: 2026-10-20.
 
 ## Statement and scope
 
@@ -144,4 +144,4 @@ Iteration contradicts U=o(r) when e!=0, equivalently d!=0. This covers translati
 
 ## Verification evidence
 
-The original and reviewed argument are recorded in evidence/opus_review_13/. The returned model was claude-opus-5-5 and stop_reason was end_turn. Its jet-realization, leaf-ordering and composite-translation clarifications have been checked and incorporated. independent_code/check_point_symmetries.py verifies F'=beta F and E'=(beta/alpha)E on 15 rational off-equation jets, with a negative control omitting the translation compensation. The growth and scaling-invariance dependencies were checked directly in this lane, not delegated to the reviewer.
+The original and reviewed argument are recorded in evidence/opus_review_13/. The returned model was main-model and stop_reason was end_turn. Its jet-realization, leaf-ordering and composite-translation clarifications have been checked and incorporated. independent_code/check_point_symmetries.py verifies F'=beta F and E'=(beta/alpha)E on 15 rational off-equation jets, with a negative control omitting the translation compensation. The growth and scaling-invariance dependencies were checked directly in this lane, not delegated to the reviewer.
